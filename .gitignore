@@ -1,1 +1,5 @@
 .superpowers/
+data/
+pipeline/.venv/
+__pycache__/
+.pytest_cache/
