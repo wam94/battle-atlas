@@ -26,12 +26,12 @@ def export_unity_heightmap(heights, square_bounds, out_dir, crs):
     minx, miny, maxx, maxy = square_bounds
     meta = {
         "resolution": int(heights.shape[0]),
-        "width_m": maxx - minx,
-        "depth_m": maxy - miny,
+        "width_m": float(maxx - minx),
+        "depth_m": float(maxy - miny),
         "min_elev_m": min_e,
         "max_elev_m": max_e,
-        "origin_utm_e": minx,
-        "origin_utm_n": miny,
+        "origin_utm_e": float(minx),
+        "origin_utm_n": float(miny),
         "crs": crs,
         "row0": "north",
     }
