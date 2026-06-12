@@ -1,4 +1,5 @@
 using System.IO;
+using BattleAtlas;
 using UnityEditor;
 using UnityEngine;
 
@@ -51,6 +52,14 @@ namespace BattleAtlas.EditorTools
                 Object.DestroyImmediate(previous);
             var go = Terrain.CreateTerrainGameObject(terrainData);
             go.name = "Gettysburg Terrain";
+            var info = go.AddComponent<BattlefieldInfo>();
+            info.widthM = meta.width_m;
+            info.depthM = meta.depth_m;
+            info.minElevM = meta.min_elev_m;
+            info.maxElevM = meta.max_elev_m;
+            info.originUtmE = meta.origin_utm_e;
+            info.originUtmN = meta.origin_utm_n;
+            info.verticalExaggeration = VerticalExaggeration;
             AssetDatabase.SaveAssets();
             Debug.Log($"Imported terrain {meta.width_m:F0}m x {meta.depth_m:F0}m, " +
                       $"elevation range {meta.max_elev_m - meta.min_elev_m:F0}m. " +
