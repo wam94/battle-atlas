@@ -27,7 +27,22 @@ namespace BattleAtlas
 
         void LateUpdate()
         {
-            if (Input.touchCount == 1)
+            bool anyTouchOverHud = false;
+            for (int i = 0; i < Input.touchCount; i++)
+            {
+                if (TimelineHud.IsTouchOverHud(
+                        Input.GetTouch(i).position, TimelineHud.CurrentHudHeightPx))
+                {
+                    anyTouchOverHud = true;
+                    break;
+                }
+            }
+
+            if (anyTouchOverHud)
+            {
+                // scrubbing, not flying: leave the camera alone this frame
+            }
+            else if (Input.touchCount == 1)
             {
                 // one finger: pan (drag the map)
                 Vector2 d = Input.GetTouch(0).deltaPosition;
