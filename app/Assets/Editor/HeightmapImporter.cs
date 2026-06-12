@@ -22,6 +22,14 @@ namespace BattleAtlas.EditorTools
             var meta = JsonUtility.FromJson<HeightmapMetadata>(
                 File.ReadAllText(Path.Combine(dir, "heightmap.json")));
 
+            // fail loudly on contract drift rather than rendering garbage
+            if (meta.row0 != "north")
+                throw new System.InvalidOperationException(
+                    $"heightmap.json row0 '{meta.row0}' != 'north'; decoder assumes north-first rows");
+            if (meta.resolution < 2 || ((meta.resolution - 1) & (meta.resolution - 2)) != 0)
+                throw new System.InvalidOperationException(
+                    $"heightmap resolution {meta.resolution} is not 2^n+1; Unity would silently clamp it");
+
             var terrainData = new TerrainData();
             // resolution must be set BEFORE size (setting it resets terrain size)
             terrainData.heightmapResolution = meta.resolution;
