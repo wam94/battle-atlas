@@ -275,6 +275,85 @@ MonoBehaviour:
   distance: 4000
   orbitSpeed: 0.2
   panSpeed: 1
+  tiltSpeed: 0.1
+--- !u!1 &408470586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 408470590}
+  - component: {fileID: 408470589}
+  - component: {fileID: 408470588}
+  - component: {fileID: 408470587}
+  m_Layer: 0
+  m_Name: Battle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &408470587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408470586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0658dbf396caa49998abc6ddc0842f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.TimelineHud
+  clock: {fileID: 408470589}
+--- !u!114 &408470588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408470586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e4b9b59c2134d23b39fa0d36e26740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.BattleDirector
+  battleJson: {fileID: 4900000, guid: ee9abc71ba72e488cb27a3eb3ef4d100, type: 3}
+  terrain: {fileID: 1375780065}
+  clock: {fileID: 408470589}
+--- !u!114 &408470589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408470586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d342a3692eda24de09b0857482ffb4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.BattleClock
+  CurrentTime: 0
+  EndTime: 3600
+  Playing: 0
+  Speed: 60
+--- !u!4 &408470590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408470586}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 222.60033, y: 155.8203, z: 222.60057}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,3 +632,4 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1375780066}
+  - {fileID: 408470590}
