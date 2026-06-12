@@ -33,17 +33,24 @@ namespace BattleAtlas
         readonly List<(UnitTrack track, Transform marker)> units = new();
         readonly Vector2[] samplePoints = new Vector2[9];
 
-        public static Color SideColor(string side) => side switch
+        public static Color SideColor(string side)
         {
-            "union" => new Color(0.23f, 0.35f, 0.61f),       // deep blue
-            "confederate" => new Color(0.63f, 0.31f, 0.31f), // muted red
-            _ => Color.gray,
-        };
+            switch (side)
+            {
+                case "union": return new Color(0.23f, 0.35f, 0.61f);       // deep blue
+                case "confederate": return new Color(0.63f, 0.31f, 0.31f); // muted red
+                default:
+                    // gray keeps rendering but a typo'd side in authored data
+                    // should be loud, not invisible
+                    Debug.LogWarning($"unknown unit side '{side}', rendering gray");
+                    return Color.gray;
+            }
+        }
 
         // Fills the buffer with world-XZ sample points under a unit: center,
-        // footprint corners, and edge midpoints, rotated by facing. The marker
-        // sits on the MAX ground height of these so rising ground inside the
-        // footprint can't poke through the block.
+        // footprint corners, and edge midpoints, rotated by facing. Update
+        // stretches the block from the MIN to the MAX ground height of these,
+        // embedding it in the slope.
         public static void FootprintSamplePoints(
             Vector2 centerXZ, float facingDeg, float frontage, float depth, Vector2[] buffer)
         {
@@ -70,13 +77,20 @@ namespace BattleAtlas
 
         void Start()
         {
+            if (terrain == null)
+            {
+                // terrain re-imports replace the scene object and orphan the
+                // serialized reference; fall back rather than NRE every frame
+                terrain = Terrain.activeTerrain;
+                Debug.LogWarning("BattleDirector.terrain was unset; using Terrain.activeTerrain");
+            }
             BattleDto battle = BattleLoader.Parse(battleJson.text);
             clock.EndTime = battle.endTime;
             foreach (UnitDto u in battle.units)
             {
                 var marker = GameObject.CreatePrimitive(PrimitiveType.Cube).transform;
                 marker.name = $"unit {u.id} ({u.name})";
-                marker.localScale = new Vector3(u.frontage_m, MarkerHeight, u.depth_m);
+                marker.localScale = new Vector3(u.frontage_m, MarkerHeight, u.depth_m); // y overwritten per-frame
                 var renderer = marker.GetComponent<Renderer>();
                 renderer.sharedMaterial = unitMaterial;
                 var block = new MaterialPropertyBlock();
