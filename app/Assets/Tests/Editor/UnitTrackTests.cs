@@ -67,4 +67,17 @@ public class UnitTrackTests
         Assert.AreEqual("column", track.StateAt(5f).formation);
         Assert.AreEqual("line", track.StateAt(10f).formation);
     }
+
+    [Test]
+    public void StateAt_ExactInteriorKeyframeStartsNewSegment()
+    {
+        var u = MakeUnit((0, 0, 0, 0, 1), (10, 10, 0, 0, 1), (20, 30, 0, 0, 1));
+        u.keyframes[0].formation = "column";
+        u.keyframes[1].formation = "line";
+        u.keyframes[2].formation = "march";
+        var track = new UnitTrack(u);
+        // t exactly on an interior keyframe belongs to the segment it STARTS
+        Assert.AreEqual("line", track.StateAt(10f).formation);
+        Assert.AreEqual(10f, track.StateAt(10f).posXZ.x, 1e-3f);
+    }
 }
