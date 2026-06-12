@@ -18,11 +18,17 @@ namespace BattleAtlas
 
         const float MarkerHeight = 3f;
         static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
+        // corners first (order is load-bearing for tests), then edge midpoints —
+        // a denser ring catches ground rising inside the footprint, not just at
+        // its extremes
         static readonly (float dx, float dz)[] CornerOffsets =
-            { (-0.5f, -0.5f), (0.5f, -0.5f), (-0.5f, 0.5f), (0.5f, 0.5f) };
+        {
+            (-0.5f, -0.5f), (0.5f, -0.5f), (-0.5f, 0.5f), (0.5f, 0.5f),
+            (0f, -0.5f), (0f, 0.5f), (-0.5f, 0f), (0.5f, 0f),
+        };
 
         readonly List<(UnitTrack track, Transform marker)> units = new();
-        readonly Vector2[] samplePoints = new Vector2[5];
+        readonly Vector2[] samplePoints = new Vector2[9];
 
         public static Color SideColor(string side) => side switch
         {
@@ -31,20 +37,20 @@ namespace BattleAtlas
             _ => Color.gray,
         };
 
-        // Fills buffer5 with world-XZ sample points under a unit: center + the
-        // four footprint corners rotated by facing. Sampling all five (and using
-        // the max ground height) keeps wide blocks from burying their edges in
-        // ground that rises inside their own footprint.
+        // Fills the buffer with world-XZ sample points under a unit: center,
+        // footprint corners, and edge midpoints, rotated by facing. The marker
+        // sits on the MAX ground height of these so rising ground inside the
+        // footprint can't poke through the block.
         public static void FootprintSamplePoints(
-            Vector2 centerXZ, float facingDeg, float frontage, float depth, Vector2[] buffer5)
+            Vector2 centerXZ, float facingDeg, float frontage, float depth, Vector2[] buffer)
         {
             var rot = Quaternion.Euler(0f, facingDeg, 0f);
-            buffer5[0] = centerXZ;
+            buffer[0] = centerXZ;
             for (int i = 0; i < CornerOffsets.Length; i++)
             {
                 Vector3 off = rot * new Vector3(
                     CornerOffsets[i].dx * frontage, 0f, CornerOffsets[i].dz * depth);
-                buffer5[i + 1] = new Vector2(centerXZ.x + off.x, centerXZ.y + off.z);
+                buffer[i + 1] = new Vector2(centerXZ.x + off.x, centerXZ.y + off.z);
             }
         }
 
