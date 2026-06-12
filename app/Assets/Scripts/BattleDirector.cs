@@ -11,10 +11,18 @@ namespace BattleAtlas
         public TextAsset battleJson;
         public Terrain terrain;
         public BattleClock clock;
+        // a real material ASSET (not a runtime instance): asset references keep
+        // the shader in device builds, where runtime-created materials render
+        // magenta because the shader was stripped
+        public Material unitMaterial;
 
         const float MarkerHeight = 3f;
+        static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
+        static readonly (float dx, float dz)[] CornerOffsets =
+            { (-0.5f, -0.5f), (0.5f, -0.5f), (-0.5f, 0.5f), (0.5f, 0.5f) };
 
         readonly List<(UnitTrack track, Transform marker)> units = new();
+        readonly Vector2[] samplePoints = new Vector2[5];
 
         public static Color SideColor(string side) => side switch
         {
@@ -22,6 +30,23 @@ namespace BattleAtlas
             "confederate" => new Color(0.63f, 0.31f, 0.31f), // muted red
             _ => Color.gray,
         };
+
+        // Fills buffer5 with world-XZ sample points under a unit: center + the
+        // four footprint corners rotated by facing. Sampling all five (and using
+        // the max ground height) keeps wide blocks from burying their edges in
+        // ground that rises inside their own footprint.
+        public static void FootprintSamplePoints(
+            Vector2 centerXZ, float facingDeg, float frontage, float depth, Vector2[] buffer5)
+        {
+            var rot = Quaternion.Euler(0f, facingDeg, 0f);
+            buffer5[0] = centerXZ;
+            for (int i = 0; i < CornerOffsets.Length; i++)
+            {
+                Vector3 off = rot * new Vector3(
+                    CornerOffsets[i].dx * frontage, 0f, CornerOffsets[i].dz * depth);
+                buffer5[i + 1] = new Vector2(centerXZ.x + off.x, centerXZ.y + off.z);
+            }
+        }
 
         // groundY: world-space terrain height under the unit. Marker pivot is
         // its center, so lift by half its height to sit on the ground.
@@ -43,7 +68,11 @@ namespace BattleAtlas
                 var marker = GameObject.CreatePrimitive(PrimitiveType.Cube).transform;
                 marker.name = $"unit {u.id} ({u.name})";
                 marker.localScale = new Vector3(u.frontage_m, MarkerHeight, u.depth_m);
-                marker.GetComponent<Renderer>().material.color = SideColor(u.side);
+                var renderer = marker.GetComponent<Renderer>();
+                renderer.sharedMaterial = unitMaterial;
+                var block = new MaterialPropertyBlock();
+                block.SetColor(BaseColorId, SideColor(u.side));
+                renderer.SetPropertyBlock(block);
                 Object.Destroy(marker.GetComponent<Collider>()); // not clickable yet
                 units.Add((new UnitTrack(u), marker));
             }
@@ -54,8 +83,15 @@ namespace BattleAtlas
             foreach (var (track, marker) in units)
             {
                 UnitState s = track.StateAt(clock.CurrentTime);
-                float groundY = terrain.SampleHeight(
-                    new Vector3(s.posXZ.x, 0f, s.posXZ.y)) + terrain.transform.position.y;
+                FootprintSamplePoints(s.posXZ, s.facingDeg,
+                    track.Unit.frontage_m, track.Unit.depth_m, samplePoints);
+                float groundY = float.MinValue;
+                foreach (Vector2 p in samplePoints)
+                {
+                    float y = terrain.SampleHeight(new Vector3(p.x, 0f, p.y));
+                    if (y > groundY) groundY = y;
+                }
+                groundY += terrain.transform.position.y;
                 var (pos, rot) = MarkerPose(s, groundY, MarkerHeight);
                 marker.SetPositionAndRotation(pos, rot);
             }

@@ -323,6 +323,7 @@ MonoBehaviour:
   battleJson: {fileID: 4900000, guid: ee9abc71ba72e488cb27a3eb3ef4d100, type: 3}
   terrain: {fileID: 1375780065}
   clock: {fileID: 408470589}
+  unitMaterial: {fileID: 2100000, guid: 02781c7757a964eb39207b14a1eb3fa6, type: 2}
 --- !u!114 &408470589
 MonoBehaviour:
   m_ObjectHideFlags: 0
