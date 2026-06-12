@@ -1,0 +1,14 @@
+Library/
+Logs/
+Temp/
+Obj/
+Build/
+Builds/
+UserSettings/
+MemoryCaptures/
+*.csproj
+*.sln
+*.slnx
+test-results.xml
+Assets/Generated/
+Assets/Generated.meta
