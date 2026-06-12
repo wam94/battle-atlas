@@ -62,6 +62,33 @@ public class BattleLoaderTests
     }
 
     [Test]
+    public void Parse_RejectsKeyframeBeyondEndTime()
+    {
+        string bad = ValidJson.Replace(@"""endTime"": 100", @"""endTime"": 50");
+        var ex = Assert.Throws<System.ArgumentException>(() => BattleLoader.Parse(bad));
+        StringAssert.Contains("endTime", ex.Message);
+    }
+
+    [Test]
+    public void Parse_RejectsNonPositiveFrontage()
+    {
+        string bad = ValidJson.Replace(@"""frontage_m"": 200", @"""frontage_m"": 0");
+        var ex = Assert.Throws<System.ArgumentException>(() => BattleLoader.Parse(bad));
+        StringAssert.Contains("u1", ex.Message);
+    }
+
+    [Test]
+    public void Parse_ReadsProvenanceFields()
+    {
+        string json = ValidJson.Replace(
+            @"{""t"": 0, ""x"": 100,",
+            @"{""t"": 0, ""confidence"": ""documented"", ""citation"": ""test source"", ""x"": 100,");
+        BattleDto b = BattleLoader.Parse(json);
+        Assert.AreEqual("documented", b.units[0].keyframes[0].confidence);
+        Assert.AreEqual("test source", b.units[0].keyframes[0].citation);
+    }
+
+    [Test]
     public void PlaceholderAsset_ParsesAndStaysOnBattlefield()
     {
         var asset = UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.TextAsset>(

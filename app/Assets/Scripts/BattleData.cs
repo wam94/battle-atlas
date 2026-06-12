@@ -37,6 +37,8 @@ namespace BattleAtlas
         public float facing;
         public string formation;
         public float strength;
+        public string confidence; // "documented" | "inferred" | "unknown"; empty = unknown
+        public string citation;
     }
 
     public static class BattleLoader
@@ -57,6 +59,13 @@ namespace BattleAtlas
                             $"unit '{unit.id}' keyframe times must strictly increase " +
                             $"(index {i}: {unit.keyframes[i].t} <= {unit.keyframes[i - 1].t})");
                 }
+                if (unit.frontage_m <= 0f || unit.depth_m <= 0f)
+                    throw new ArgumentException(
+                        $"unit '{unit.id}' frontage/depth must be positive");
+                KeyframeDto lastKf = unit.keyframes[unit.keyframes.Count - 1];
+                if (lastKf.t > battle.endTime)
+                    throw new ArgumentException(
+                        $"unit '{unit.id}' keyframe t {lastKf.t} exceeds battle endTime {battle.endTime}");
             }
             return battle;
         }
