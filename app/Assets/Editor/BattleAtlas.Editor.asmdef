@@ -1,0 +1,6 @@
+{
+    "name": "BattleAtlas.Editor",
+    "rootNamespace": "BattleAtlas.EditorTools",
+    "references": ["BattleAtlas.Runtime"],
+    "includePlatforms": ["Editor"]
+}
