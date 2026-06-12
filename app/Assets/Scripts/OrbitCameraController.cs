@@ -14,6 +14,14 @@ namespace BattleAtlas
         void Awake()
         {
             Application.targetFrameRate = 60;
+            // battlefield is ~8.5 km across; URP default far plane (1000 m) clips
+            // most of it. Near plane raised to keep depth precision at this scale.
+            var cam = GetComponent<Camera>();
+            if (cam != null)
+            {
+                cam.nearClipPlane = 10f;
+                cam.farClipPlane = 20000f;
+            }
         }
 
         void LateUpdate()
