@@ -53,9 +53,11 @@ namespace BattleAtlas
                 clock.Speed = Speeds[(i + 1) % Speeds.Length];
             }
 
-            // time label
-            GUI.Label(new Rect(140, top + 14, 100, 24),
-                ClockMath.FormatTime(clock.CurrentTime));
+            // time label: wall clock when the battle has a real-day anchor
+            string timeLabel = clock.StartTime > 0f
+                ? ClockMath.FormatClockTime(clock.StartTime, clock.CurrentTime)
+                : ClockMath.FormatTime(clock.CurrentTime);
+            GUI.Label(new Rect(140, top + 14, 100, 24), timeLabel);
 
             // scrubber
             float scrubbed = GUI.HorizontalSlider(

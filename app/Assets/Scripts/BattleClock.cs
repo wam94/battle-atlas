@@ -19,6 +19,14 @@ namespace BattleAtlas
             int s = Mathf.FloorToInt(seconds);
             return $"{s / 3600:D2}:{s / 60 % 60:D2}:{s % 60:D2}";
         }
+
+        // startTime is seconds since local midnight of the battle day; shows
+        // the wall clock the participants lived ("14:32:10"), not elapsed time
+        public static string FormatClockTime(float startTime, float t)
+        {
+            int s = Mathf.FloorToInt(startTime + t);
+            return $"{s / 3600 % 24:D2}:{s / 60 % 60:D2}:{s % 60:D2}";
+        }
     }
 
     // The battle's single source of time. Everything renders FROM this clock;
@@ -26,6 +34,7 @@ namespace BattleAtlas
     public class BattleClock : MonoBehaviour
     {
         public float CurrentTime;
+        public float StartTime; // seconds since local midnight of the battle day
         public float EndTime = 3600f;
         public bool Playing;
         public float Speed = 60f; // battle-seconds per real second

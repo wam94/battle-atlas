@@ -25,4 +25,11 @@ public class ClockMathTests
         Assert.AreEqual("01:02:03", ClockMath.FormatTime(3723f));
         Assert.AreEqual("00:00:00", ClockMath.FormatTime(0f));
     }
+
+    [Test]
+    public void FormatClockTime_AnchorsToLocalMidnight()
+    {
+        Assert.AreEqual("13:00:30", ClockMath.FormatClockTime(46800f, 30f));
+        Assert.AreEqual("00:00:05", ClockMath.FormatClockTime(0f, 5f));
+    }
 }

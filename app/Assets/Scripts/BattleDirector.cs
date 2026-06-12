@@ -86,6 +86,7 @@ namespace BattleAtlas
             }
             BattleDto battle = BattleLoader.Parse(battleJson.text);
             clock.EndTime = battle.endTime;
+            clock.StartTime = battle.startTime;
             foreach (UnitDto u in battle.units)
             {
                 var marker = GameObject.CreatePrimitive(PrimitiveType.Cube).transform;
