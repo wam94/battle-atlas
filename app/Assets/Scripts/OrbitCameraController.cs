@@ -78,7 +78,8 @@ namespace BattleAtlas
 
 #if UNITY_EDITOR
             // mouse fallback so the editor Play button is usable
-            if (Input.GetMouseButton(0))
+            // hotControl != 0 means IMGUI (the HUD slider) owns the drag
+            if (Input.GetMouseButton(0) && GUIUtility.hotControl == 0)
             {
                 yawDeg += Input.GetAxis("Mouse X") * 3f;
                 pitchDeg = OrbitMath.ClampPitch(pitchDeg - Input.GetAxis("Mouse Y") * 3f);
