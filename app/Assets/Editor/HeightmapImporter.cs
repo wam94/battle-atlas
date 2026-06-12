@@ -6,6 +6,12 @@ namespace BattleAtlas.EditorTools
 {
     public static class HeightmapImporter
     {
+        // Sand-table style vertical exaggeration. Real Gettysburg relief is ~167 m
+        // over 8.5 km — visually near-flat at map scale. Display-only: the raw
+        // elevation data stays honest; this scales presentation, like a museum
+        // terrain model. Tune to taste.
+        const float VerticalExaggeration = 2.5f;
+
         [MenuItem("BattleAtlas/Import Heightmap")]
         public static void Import()
         {
@@ -20,7 +26,9 @@ namespace BattleAtlas.EditorTools
             // resolution must be set BEFORE size (setting it resets terrain size)
             terrainData.heightmapResolution = meta.resolution;
             terrainData.size = new Vector3(
-                meta.width_m, meta.max_elev_m - meta.min_elev_m, meta.depth_m);
+                meta.width_m,
+                (meta.max_elev_m - meta.min_elev_m) * VerticalExaggeration,
+                meta.depth_m);
             terrainData.SetHeights(0, 0, HeightmapDecoder.Decode(raw, meta.resolution));
 
             Directory.CreateDirectory(Path.Combine(Application.dataPath, "Generated"));
