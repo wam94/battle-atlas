@@ -24,8 +24,15 @@ namespace BattleAtlas.EditorTools
             terrainData.SetHeights(0, 0, HeightmapDecoder.Decode(raw, meta.resolution));
 
             Directory.CreateDirectory(Path.Combine(Application.dataPath, "Generated"));
-            AssetDatabase.CreateAsset(terrainData, "Assets/Generated/GettysburgTerrain.asset");
+            // make re-imports idempotent: replace the previous asset and scene object
+            const string assetPath = "Assets/Generated/GettysburgTerrain.asset";
+            if (AssetDatabase.LoadAssetAtPath<TerrainData>(assetPath) != null)
+                AssetDatabase.DeleteAsset(assetPath);
+            AssetDatabase.CreateAsset(terrainData, assetPath);
 
+            var previous = GameObject.Find("Gettysburg Terrain");
+            if (previous != null)
+                Object.DestroyImmediate(previous);
             var go = Terrain.CreateTerrainGameObject(terrainData);
             go.name = "Gettysburg Terrain";
             AssetDatabase.SaveAssets();
