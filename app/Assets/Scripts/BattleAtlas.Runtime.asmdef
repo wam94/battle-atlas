@@ -1,0 +1,5 @@
+{
+    "name": "BattleAtlas.Runtime",
+    "rootNamespace": "BattleAtlas",
+    "references": []
+}
