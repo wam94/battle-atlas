@@ -75,4 +75,13 @@ public class OrbitMathTests
         Vector3 far = OrbitMath.PanWorldDelta(0f, new Vector2(0f, 100f), 1000f, 1f);
         Assert.AreEqual(10f * near.z, far.z, 1e-3f);
     }
+
+    [Test]
+    public void PanWorldDelta_RotatesWithYaw()
+    {
+        // at yaw 90, screen-right maps to world +Z
+        Vector3 d = OrbitMath.PanWorldDelta(90f, new Vector2(100f, 0f), 1000f, 1f);
+        Assert.AreEqual(0f, d.x, 1e-3f);
+        Assert.Greater(d.z, 0f);
+    }
 }

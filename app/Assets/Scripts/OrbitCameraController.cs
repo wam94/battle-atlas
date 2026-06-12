@@ -37,6 +37,12 @@ namespace BattleAtlas
             {
                 Touch t0 = Input.GetTouch(0);
                 Touch t1 = Input.GetTouch(1);
+                // touch indices aren't stable across frames; pair by fingerId so a
+                // transient third touch can't swap fingers and spike the twist 180°
+                if (t0.fingerId > t1.fingerId)
+                {
+                    (t0, t1) = (t1, t0);
+                }
                 Vector2 p0 = t0.position, p1 = t1.position;
                 Vector2 q0 = p0 - t0.deltaPosition, q1 = p1 - t1.deltaPosition;
 
