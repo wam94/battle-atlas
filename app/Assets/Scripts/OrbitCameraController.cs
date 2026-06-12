@@ -10,6 +10,7 @@ namespace BattleAtlas
         public float distance = 4000f;
         public float orbitSpeed = 0.2f;
         public float panSpeed = 1.0f;
+        public float tiltSpeed = 0.1f;
 
         void Awake()
         {
@@ -28,26 +29,30 @@ namespace BattleAtlas
         {
             if (Input.touchCount == 1)
             {
+                // one finger: pan (drag the map)
                 Vector2 d = Input.GetTouch(0).deltaPosition;
-                yawDeg += d.x * orbitSpeed;
-                pitchDeg = OrbitMath.ClampPitch(pitchDeg - d.y * orbitSpeed);
+                pivot += OrbitMath.PanWorldDelta(yawDeg, d, distance, panSpeed);
             }
             else if (Input.touchCount == 2)
             {
                 Touch t0 = Input.GetTouch(0);
                 Touch t1 = Input.GetTouch(1);
-                float prev = ((t0.position - t0.deltaPosition) -
-                              (t1.position - t1.deltaPosition)).magnitude;
-                float curr = (t0.position - t1.position).magnitude;
-                // ignore pinch when fingers nearly touch: the ratio explodes and
-                // teleports the camera to a clamp limit in a single frame
+                Vector2 p0 = t0.position, p1 = t1.position;
+                Vector2 q0 = p0 - t0.deltaPosition, q1 = p1 - t1.deltaPosition;
+
+                // pinch: zoom (guarded against near-zero finger separation)
+                float prev = (q0 - q1).magnitude;
+                float curr = (p0 - p1).magnitude;
                 if (prev > 20f && curr > 20f)
                     distance = OrbitMath.ClampDistance(distance * (prev / curr));
 
-                Vector2 avg = (t0.deltaPosition + t1.deltaPosition) * 0.5f;
-                Quaternion yawRot = Quaternion.Euler(0f, yawDeg, 0f);
-                pivot -= (yawRot * Vector3.right * avg.x + yawRot * Vector3.forward * avg.y)
-                         * panSpeed * distance * 0.001f;
+                // twist: rotate. yaw+ spins the scene the same direction as a
+                // CCW finger twist; flip the sign here if device feel disagrees.
+                yawDeg += OrbitMath.TwistDegrees(q0, q1, p0, p1);
+
+                // two-finger vertical drag: tilt (fingers up = more oblique)
+                float avgY = (t0.deltaPosition.y + t1.deltaPosition.y) * 0.5f;
+                pitchDeg = OrbitMath.ClampPitch(pitchDeg - avgY * tiltSpeed);
             }
 
 #if UNITY_EDITOR
