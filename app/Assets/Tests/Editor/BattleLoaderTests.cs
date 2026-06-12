@@ -60,4 +60,24 @@ public class BattleLoaderTests
         var ex = Assert.Throws<System.ArgumentException>(() => BattleLoader.Parse(bad));
         StringAssert.Contains("ux", ex.Message);
     }
+
+    [Test]
+    public void PlaceholderAsset_ParsesAndStaysOnBattlefield()
+    {
+        var asset = UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.TextAsset>(
+            "Assets/Battle/placeholder_battle.json");
+        Assert.IsNotNull(asset, "placeholder_battle.json missing");
+        BattleDto b = BattleLoader.Parse(asset.text);
+        Assert.GreaterOrEqual(b.units.Count, 4);
+        foreach (var u in b.units)
+        {
+            StringAssert.Contains("Test", u.name, "placeholder units must be obviously fake");
+            foreach (var k in u.keyframes)
+            {
+                // terrain is an 8507 m square; keep test data well inside it
+                Assert.That(k.x, Is.InRange(500f, 8000f), $"{u.id} x out of range");
+                Assert.That(k.z, Is.InRange(500f, 8000f), $"{u.id} z out of range");
+            }
+        }
+    }
 }
