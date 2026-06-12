@@ -16,7 +16,10 @@ namespace BattleAtlas
         // magenta because the shader was stripped
         public Material unitMaterial;
 
-        const float MarkerHeight = 3f;
+        // visible clearance of the block's top face above the highest ground in
+        // its footprint (the block extends down to the lowest ground, embedding
+        // in the hillside like a piece on a physical relief map)
+        const float MarkerHeight = 6f;
         static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
         // corners first (order is load-bearing for tests), then edge midpoints —
         // a denser ring catches ground rising inside the footprint, not just at
@@ -91,14 +94,23 @@ namespace BattleAtlas
                 UnitState s = track.StateAt(clock.CurrentTime);
                 FootprintSamplePoints(s.posXZ, s.facingDeg,
                     track.Unit.frontage_m, track.Unit.depth_m, samplePoints);
-                float groundY = float.MinValue;
+                float minY = float.MaxValue, maxY = float.MinValue;
                 foreach (Vector2 p in samplePoints)
                 {
                     float y = terrain.SampleHeight(new Vector3(p.x, 0f, p.y));
-                    if (y > groundY) groundY = y;
+                    if (y < minY) minY = y;
+                    if (y > maxY) maxY = y;
                 }
-                groundY += terrain.transform.position.y;
-                var (pos, rot) = MarkerPose(s, groundY, MarkerHeight);
+                float baseY = terrain.transform.position.y;
+                // a rigid slab can't lie on ~20 m of relief: stretch the block
+                // from the lowest ground under it to MarkerHeight above the
+                // highest, so it embeds in the slope instead of floating or
+                // letting the crest poke through its top
+                float blockHeight = (maxY - minY) + MarkerHeight;
+                Vector3 scale = marker.localScale;
+                scale.y = blockHeight;
+                marker.localScale = scale;
+                var (pos, rot) = MarkerPose(s, baseY + minY, blockHeight);
                 marker.SetPositionAndRotation(pos, rot);
             }
         }
