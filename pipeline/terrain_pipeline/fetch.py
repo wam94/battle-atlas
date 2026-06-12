@@ -19,7 +19,12 @@ def query_dem_products(bbox_wgs84, get=requests.get):
     resp = get(TNM_API, params=params, timeout=60)
     resp.raise_for_status()
     items = resp.json()["items"]
-    return [{"title": i["title"], "url": i["downloadURL"]} for i in items]
+    # TNM occasionally returns items with a null downloadURL (provisional products)
+    return [
+        {"title": i["title"], "url": i["downloadURL"]}
+        for i in items
+        if i.get("downloadURL")
+    ]
 
 
 def download_products(products, dest_dir, get=requests.get):
@@ -31,6 +36,10 @@ def download_products(products, dest_dir, get=requests.get):
         if not out.exists():
             resp = get(p["url"], timeout=600)
             resp.raise_for_status()
-            out.write_bytes(resp.content)
+            # write via temp file + rename so an interrupted run can't leave a
+            # truncated GeoTIFF that later reads as a valid cache hit
+            tmp = out.with_suffix(".tmp")
+            tmp.write_bytes(resp.content)
+            tmp.rename(out)
         paths.append(out)
     return paths

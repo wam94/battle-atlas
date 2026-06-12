@@ -29,6 +29,8 @@ def test_query_parses_products():
     products = fetch.query_dem_products((-77.28, 39.77, -77.195, 39.845), get=fake_get)
     assert captured["url"] == fetch.TNM_API
     assert captured["params"]["bbox"] == "-77.28,39.77,-77.195,39.845"
+    assert captured["params"]["datasets"] == fetch.DATASET
+    assert captured["params"]["max"] == 100
     assert [p["url"] for p in products] == ["https://example.com/a.tif", "https://example.com/b.tif"]
 
 
