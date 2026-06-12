@@ -31,8 +31,10 @@ namespace BattleAtlas
                 float prev = ((t0.position - t0.deltaPosition) -
                               (t1.position - t1.deltaPosition)).magnitude;
                 float curr = (t0.position - t1.position).magnitude;
-                distance = OrbitMath.ClampDistance(
-                    distance * (prev / Mathf.Max(curr, 1f)));
+                // ignore pinch when fingers nearly touch: the ratio explodes and
+                // teleports the camera to a clamp limit in a single frame
+                if (prev > 20f && curr > 20f)
+                    distance = OrbitMath.ClampDistance(distance * (prev / curr));
 
                 Vector2 avg = (t0.deltaPosition + t1.deltaPosition) * 0.5f;
                 Quaternion yawRot = Quaternion.Euler(0f, yawDeg, 0f);
