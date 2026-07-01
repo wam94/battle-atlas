@@ -56,8 +56,16 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
     if (!unit) return;
     const [x, z] = bf.lonLatToLocal(e.lngLat.lng, e.lngLat.lat);
     const lastT = unit.keyframes.length ? unit.keyframes[unit.keyframes.length - 1]!.t : null;
+    const t = nextKeyframeTime(draftTime, lastT, battle.endTime);
+    if (t === null) {
+      // the track already reaches endTime — refuse loudly instead of creating
+      // an equal-t keyframe the validator would reject
+      autosaveNotice = "track reaches endTime — extend endTime to add more keyframes";
+      render();
+      return;
+    }
     unit.keyframes.push({
-      t: nextKeyframeTime(draftTime, lastT, battle.endTime),
+      t,
       x: Math.round(x), z: Math.round(z),
       facing: 90, formation: "line",
       strength: unit.keyframes.length ? unit.keyframes[unit.keyframes.length - 1]!.strength : 1000,

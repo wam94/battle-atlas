@@ -49,6 +49,9 @@ npm run dev    # http://localhost:5180 — load data/heightmap/heightmap.json to
 npm test
 ```
 
+The tool autosaves to browser localStorage as a crash net; exported JSON
+files are the durable, validated artifact — export early and often.
+
 ## Tests
 
 - Pipeline: `cd pipeline && uv run pytest -q`

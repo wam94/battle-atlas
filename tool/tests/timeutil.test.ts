@@ -9,8 +9,12 @@ describe("nextKeyframeTime", () => {
     expect(nextKeyframeTime(100, 200, 3600)).toBe(201);
     expect(nextKeyframeTime(500, 200, 3600)).toBe(500);
   });
-  it("clamps to endTime", () => {
-    expect(nextKeyframeTime(4000, 3999, 3600)).toBe(3600);
+  it("returns null when the track already reaches endTime", () => {
+    expect(nextKeyframeTime(4000, 3999, 3600)).toBeNull();
+    expect(nextKeyframeTime(3600, 3600, 3600)).toBeNull();
+  });
+  it("first keyframe clamps to endTime instead of refusing", () => {
+    expect(nextKeyframeTime(4000, null, 3600)).toBe(3600);
   });
 });
 
