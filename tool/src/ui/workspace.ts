@@ -13,6 +13,7 @@ const CONFIDENCES: Confidence[] = ["unknown", "inferred", "documented"];
 export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefield): void {
   let battle: Battle = { name: "untitled battle", startTime: 0, endTime: 3600, units: [] };
   let selectedUnitId: string | null = null;
+  let selectedKfIndex: number | null = null;
   let draftTime = 0;
 
   // Restore a crash-recovered autosave on startup. The banner is dismissible
@@ -41,8 +42,15 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
   if (map.isStyleLoaded()) installLayers();
   else map.on("load", installLayers);
 
+  // Drag-in-progress guard: a mousedown on a dot starts a drag (see the
+  // "unit-dots" mousedown handler below). When a drag has happened, the map's
+  // own click handler still fires on mouseup — this flag lets it bail so a
+  // drag never also appends a new keyframe at the drop point.
+  let dragJustHappened = false;
+
   map.on("click", (e) => {
     if (isPickingTiePoint()) return; // tie-point picks are not keyframes
+    if (dragJustHappened) { dragJustHappened = false; return; } // drag, not an append click
     const unit = battle.units.find((u) => u.id === selectedUnitId);
     if (!unit) return;
     const [x, z] = bf.lonLatToLocal(e.lngLat.lng, e.lngLat.lat);
@@ -56,10 +64,57 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
     render();
   });
 
+  // Keyframe drag-to-move. Registered once (not per render): mousedown on a
+  // dot belonging to the selected unit starts a drag — map panning is
+  // disabled so the drag reads as moving the point, not the camera — and
+  // mousemove live-updates that keyframe's position via syncMap() (cheap,
+  // skips the full sidebar rebuild) until mouseup commits with a full render().
+  map.on("mousedown", "unit-dots", (e) => {
+    const feature = e.features?.[0];
+    if (!feature) return;
+    const unitId = feature.properties?.unitId as string | undefined;
+    const index = feature.properties?.index as number | undefined;
+    if (unitId == null || index == null || unitId !== selectedUnitId) return;
+    const unit = battle.units.find((u) => u.id === unitId);
+    if (!unit) return;
+
+    e.preventDefault();
+    selectedKfIndex = index;
+    map.dragPan.disable();
+    render();
+
+    const onMouseMove = (ev: maplibregl.MapMouseEvent) => {
+      const kf = unit.keyframes[index];
+      if (!kf) return;
+      const [x, z] = bf.lonLatToLocal(ev.lngLat.lng, ev.lngLat.lat);
+      kf.x = Math.round(x);
+      kf.z = Math.round(z);
+      syncMap(); // live feedback without rebuilding the sidebar mid-drag
+    };
+    map.on("mousemove", onMouseMove);
+    map.once("mouseup", () => {
+      map.off("mousemove", onMouseMove);
+      map.dragPan.enable();
+      dragJustHappened = true;
+      render();
+    });
+  });
+
+  // Cursor feedback: only invite dragging over dots belonging to the
+  // currently selected unit (dots on other units aren't draggable).
+  map.on("mouseenter", "unit-dots", (e) => {
+    const feature = e.features?.[0];
+    const unitId = feature?.properties?.unitId as string | undefined;
+    map.getCanvas().style.cursor = unitId != null && unitId === selectedUnitId ? "move" : "pointer";
+  });
+  map.on("mouseleave", "unit-dots", () => {
+    map.getCanvas().style.cursor = "";
+  });
+
   function syncMap(): void {
     saveAutosave(battle);
     if (!map.getSource("unit-paths")) return;
-    const gj = battleToGeoJSON(battle, bf, selectedUnitId);
+    const gj = battleToGeoJSON(battle, bf, selectedUnitId, selectedKfIndex);
     (map.getSource("unit-paths") as maplibregl.GeoJSONSource).setData(gj.paths);
     (map.getSource("unit-dots") as maplibregl.GeoJSONSource).setData(gj.dots);
     (map.getSource("unit-preview") as maplibregl.GeoJSONSource).setData(
@@ -113,7 +168,11 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
       const btn = document.createElement("button");
       btn.textContent = `${unit.id === selectedUnitId ? "▶ " : ""}${unit.name} (${unit.side}, ${unit.keyframes.length} kf)`;
       btn.style.display = "block"; btn.style.width = "100%"; btn.style.margin = "2px 0";
-      btn.addEventListener("click", () => { selectedUnitId = unit.id === selectedUnitId ? null : unit.id; render(); });
+      btn.addEventListener("click", () => {
+        selectedUnitId = unit.id === selectedUnitId ? null : unit.id;
+        selectedKfIndex = null;
+        render();
+      });
       frag.append(btn);
     }
     const addBtn = document.createElement("button");
@@ -121,7 +180,7 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
     addBtn.addEventListener("click", () => {
       const id = `unit-${battle.units.length + 1}`;
       battle.units.push({ id, name: id, side: "union", frontage_m: 200, depth_m: 30, keyframes: [] });
-      selectedUnitId = id; render();
+      selectedUnitId = id; selectedKfIndex = null; render();
     });
     frag.append(addBtn);
 
@@ -154,7 +213,7 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
       if (!f) return;
       try {
         battle = importBattle(await f.text());
-        selectedUnitId = null; draftTime = 0;
+        selectedUnitId = null; selectedKfIndex = null; draftTime = 0;
         autosaveNotice = null;
         // Imported battle replaces whatever the autosave slot held.
         saveAutosave(battle);
@@ -184,14 +243,21 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
     del.textContent = "delete unit";
     del.addEventListener("click", () => {
       battle.units = battle.units.filter((u) => u.id !== unit.id);
-      selectedUnitId = null; render();
+      selectedUnitId = null; selectedKfIndex = null; render();
     });
     frag.append(del);
 
     frag.append(h2("Keyframes (click map to append at preview time)"));
     unit.keyframes.forEach((kf, i) => {
       const box = document.createElement("div");
-      box.className = "kf";
+      box.className = i === selectedKfIndex ? "kf selected" : "kf";
+      box.addEventListener("click", (ev) => {
+        // Don't hijack clicks on the box's own inputs/buttons — only
+        // selecting via the box's empty space (and the text/label chrome).
+        if (ev.target instanceof HTMLInputElement || ev.target instanceof HTMLSelectElement || ev.target instanceof HTMLButtonElement) return;
+        selectedKfIndex = i;
+        render();
+      });
       box.append(row(
         labeled("t", numInput(kf.t, (v) => { kf.t = v; render(); })),
         labeled("facing", numInput(kf.facing, (v) => { kf.facing = v; syncMap(); })),

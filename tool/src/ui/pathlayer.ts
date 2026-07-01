@@ -3,7 +3,12 @@ import type { Battle } from "../model";
 import { stateAt } from "../model";
 import type { Battlefield } from "../geo";
 
-export function battleToGeoJSON(battle: Battle, bf: Battlefield, selectedUnitId: string | null) {
+export function battleToGeoJSON(
+  battle: Battle,
+  bf: Battlefield,
+  selectedUnitId: string | null,
+  selectedKfIndex: number | null = null,
+) {
   const paths: GeoJSON.Feature[] = [];
   const dots: GeoJSON.Feature[] = [];
   for (const unit of battle.units) {
@@ -16,7 +21,13 @@ export function battleToGeoJSON(battle: Battle, bf: Battlefield, selectedUnitId:
     unit.keyframes.forEach((k, i) => {
       dots.push({
         type: "Feature",
-        properties: { side: unit.side, unitId: unit.id, index: i, selected: unit.id === selectedUnitId },
+        properties: {
+          side: unit.side,
+          unitId: unit.id,
+          index: i,
+          selected: unit.id === selectedUnitId,
+          kfSelected: unit.id === selectedUnitId && i === selectedKfIndex,
+        },
         geometry: { type: "Point", coordinates: bf.localToLonLat(k.x, k.z) },
       });
     });
@@ -77,10 +88,10 @@ export function installBattleLayers(map: maplibregl.Map): void {
   map.addLayer({
     id: "unit-dots", type: "circle", source: "unit-dots",
     paint: {
-      "circle-radius": ["case", ["get", "selected"], 5, 3],
+      "circle-radius": ["case", ["get", "kfSelected"], 7, ["get", "selected"], 5, 3],
       "circle-color": ["match", ["get", "side"], "union", "#3b5a9c", "confederate", "#a05050", "#888888"],
-      "circle-stroke-width": 1,
-      "circle-stroke-color": "#ffffff",
+      "circle-stroke-width": ["case", ["get", "kfSelected"], 2, 1],
+      "circle-stroke-color": ["case", ["get", "kfSelected"], "#c9a227", "#ffffff"],
     },
   });
 }

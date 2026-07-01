@@ -36,3 +36,13 @@ describe("previewToGeoJSON with keyframeless units", () => {
     expect(gj.features.length).toBe(placeholder.units.length);
   });
 });
+
+describe("selected keyframe styling", () => {
+  it("marks the selected keyframe dot", () => {
+    const gj = battleToGeoJSON(placeholder as any, bf, "atk-a", 2);
+    const marked = gj.dots.features.filter((f) => f.properties!.kfSelected);
+    expect(marked.length).toBe(1);
+    expect(marked[0]!.properties!.index).toBe(2);
+    expect(marked[0]!.properties!.unitId).toBe("atk-a");
+  });
+});
