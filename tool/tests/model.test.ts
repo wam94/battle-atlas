@@ -51,3 +51,12 @@ describe("stateAt (must match Unity UnitTrack semantics)", () => {
     expect(stateAt(u, 10).formation).toBe("line");
   });
 });
+
+describe("stateAt single-keyframe units", () => {
+  it("returns the lone keyframe at any time", () => {
+    const u = makeUnit([[100, 42, 24, 180, 500]]);
+    expect(stateAt(u, 0).x).toBeCloseTo(42);
+    expect(stateAt(u, 100).x).toBeCloseTo(42);
+    expect(stateAt(u, 9999).z).toBeCloseTo(24);
+  });
+});

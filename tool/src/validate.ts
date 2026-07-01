@@ -8,13 +8,10 @@ export interface ValidationResult {
 }
 
 const ajv = new Ajv({ allErrors: true, allowUnionTypes: true });
-// The schema is imported as plain JSON, so Ajv's compiled validator infers a
-// structural type from it rather than our hand-written `Battle` model. Assert
-// the validator's shape so the type guard below narrows `data` to `unknown`
-// on failure and lets us cast to `Battle` on success (checked at runtime by
-// Ajv; `Battle` is the source of truth for the authoring tool's TS code).
-const compiled = ajv.compile(schema);
-const schemaValidate = compiled as unknown as (data: unknown) => data is Battle;
+// Ajv's compile is generic: the returned validator is a `data is Battle` type
+// guard, checked at runtime against the schema (Battle stays the source of
+// truth for the tool's TS code; the schema is the cross-language contract).
+const schemaValidate = ajv.compile<Battle>(schema);
 
 // Schema first, then the rules draft-07 can't express (see battle-format.md):
 // strictly increasing t, unique unit ids, endTime covers all keyframes,
@@ -22,7 +19,7 @@ const schemaValidate = compiled as unknown as (data: unknown) => data is Battle;
 export function validateBattle(data: unknown): ValidationResult {
   const errors: string[] = [];
   if (!schemaValidate(data)) {
-    for (const e of compiled.errors ?? [])
+    for (const e of schemaValidate.errors ?? [])
       errors.push(`${e.instancePath || "/"} ${e.message ?? "invalid"}`);
     return { ok: false, errors };
   }
