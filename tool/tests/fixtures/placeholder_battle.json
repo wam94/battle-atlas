@@ -1,0 +1,64 @@
+{
+  "name": "Placeholder maneuvers (synthetic test data, not history)",
+  "startTime": 0,
+  "endTime": 3600,
+  "units": [
+    {
+      "id": "atk-a", "name": "Test Brigade A", "side": "confederate",
+      "frontage_m": 300, "depth_m": 40,
+      "keyframes": [
+        {"t": 0,    "x": 2200, "z": 3600, "facing": 90, "formation": "line", "strength": 1800},
+        {"t": 1200, "x": 3400, "z": 3700, "facing": 90, "formation": "line", "strength": 1750},
+        {"t": 2400, "x": 4400, "z": 3800, "facing": 75, "formation": "line", "strength": 1500},
+        {"t": 3600, "x": 5000, "z": 4000, "facing": 60, "formation": "scattered", "strength": 1100}
+      ]
+    },
+    {
+      "id": "atk-b", "name": "Test Brigade B", "side": "confederate",
+      "frontage_m": 300, "depth_m": 40,
+      "keyframes": [
+        {"t": 0,    "x": 2200, "z": 4200, "facing": 90, "formation": "line", "strength": 1700},
+        {"t": 1400, "x": 3500, "z": 4200, "facing": 90, "formation": "line", "strength": 1650},
+        {"t": 2600, "x": 4500, "z": 4200, "facing": 90, "formation": "line", "strength": 1400},
+        {"t": 3600, "x": 5100, "z": 4250, "facing": 90, "formation": "scattered", "strength": 1000}
+      ]
+    },
+    {
+      "id": "atk-c", "name": "Test Brigade C", "side": "confederate",
+      "frontage_m": 250, "depth_m": 60,
+      "keyframes": [
+        {"t": 0,    "x": 2300, "z": 4800, "facing": 135, "formation": "column", "strength": 1600},
+        {"t": 1000, "x": 3200, "z": 4500, "facing": 110, "formation": "column", "strength": 1600},
+        {"t": 2200, "x": 4300, "z": 4400, "facing": 95,  "formation": "line", "strength": 1450},
+        {"t": 3600, "x": 5050, "z": 4400, "facing": 90,  "formation": "line", "strength": 1200}
+      ]
+    },
+    {
+      "id": "def-a", "name": "Test Regiment D", "side": "union",
+      "frontage_m": 200, "depth_m": 25,
+      "keyframes": [
+        {"t": 0,    "x": 5400, "z": 3900, "facing": 270, "formation": "line", "strength": 900},
+        {"t": 3600, "x": 5400, "z": 3900, "facing": 270, "formation": "line", "strength": 800}
+      ]
+    },
+    {
+      "id": "def-b", "name": "Test Regiment E", "side": "union",
+      "frontage_m": 200, "depth_m": 25,
+      "keyframes": [
+        {"t": 0,    "x": 5450, "z": 4250, "facing": 270, "formation": "line", "strength": 950},
+        {"t": 3600, "x": 5450, "z": 4250, "facing": 270, "formation": "line", "strength": 820}
+      ]
+    },
+    {
+      "id": "def-c", "name": "Test Regiment F", "side": "union",
+      "frontage_m": 200, "depth_m": 25,
+      "keyframes": [
+        {"t": 0,    "x": 5600, "z": 5000, "facing": 270, "formation": "column", "strength": 1000},
+        {"t": 900,  "x": 5500, "z": 4650, "facing": 250, "formation": "column", "strength": 1000},
+        {"t": 1500, "x": 5480, "z": 4500, "facing": 260, "formation": "line", "strength": 1000},
+        {"t": 3600, "x": 5480, "z": 4500, "facing": 260, "formation": "line", "strength": 870}
+      ]
+    }
+  ]
+
+}
