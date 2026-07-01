@@ -15,3 +15,9 @@ button { cursor: pointer; }
 .kf.selected { border-color: #c9a227; background: #fdf8e7; }
 .error { color: #b00020; white-space: pre-wrap; }
 .muted { color: #888; }
+.autosave-notice {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px; background: #fdf8e7; border: 1px solid #c9a227; border-radius: 4px;
+  padding: 6px 8px; margin-bottom: 8px; font-size: 12px;
+}
+.autosave-notice button { flex: none; }

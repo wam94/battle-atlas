@@ -3,6 +3,7 @@ import type { Battlefield } from "../geo";
 import type { Battle, Confidence, Formation, Side, Unit } from "../model";
 import { exportBattle, importBattle } from "../io";
 import { validateBattle } from "../validate";
+import { loadAutosave, saveAutosave } from "../persist";
 import { battleToGeoJSON, installBattleLayers, previewToGeoJSON } from "./pathlayer";
 import { initOverlayUI, isPickingTiePoint } from "./overlayui";
 
@@ -13,6 +14,16 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
   let battle: Battle = { name: "untitled battle", startTime: 0, endTime: 3600, units: [] };
   let selectedUnitId: string | null = null;
   let draftTime = 0;
+
+  // Restore a crash-recovered autosave on startup. The banner is dismissible
+  // (not auto-hidden) since the author needs a deliberate cue that what's on
+  // screen came from a recovered draft, not the file they think they opened.
+  const restored = loadAutosave();
+  let autosaveNotice: string | null = null;
+  if (restored) {
+    battle = restored;
+    autosaveNotice = "restored autosave — Export to keep it";
+  }
 
   // `el` splits into two stable children: `dynamicEl` is fully rebuilt by every
   // render() call (as before), while `overlaySection` is built exactly once
@@ -46,6 +57,7 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
   });
 
   function syncMap(): void {
+    saveAutosave(battle);
     if (!map.getSource("unit-paths")) return;
     const gj = battleToGeoJSON(battle, bf, selectedUnitId);
     (map.getSource("unit-paths") as maplibregl.GeoJSONSource).setData(gj.paths);
@@ -59,6 +71,20 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
     syncMap();
     dynamicEl.replaceChildren();
     const frag = document.createDocumentFragment();
+
+    // dismissible autosave-restore banner — only shown until the author
+    // acknowledges it, then gone for the rest of the session.
+    if (autosaveNotice) {
+      const banner = document.createElement("div");
+      banner.className = "autosave-notice";
+      const msg = document.createElement("span");
+      msg.textContent = autosaveNotice;
+      const dismiss = document.createElement("button");
+      dismiss.textContent = "dismiss";
+      dismiss.addEventListener("click", () => { autosaveNotice = null; render(); });
+      banner.append(msg, dismiss);
+      frag.append(banner);
+    }
 
     // battle header
     frag.append(h2("Battle"));
@@ -116,6 +142,9 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
         a.href = URL.createObjectURL(new Blob([out], { type: "application/json" }));
         a.download = "battle.json";
         a.click();
+        // Export is the durable artifact, but the save should always mirror
+        // the screen — not cleared here, just kept in sync.
+        saveAutosave(battle);
       } catch (err) { errBox.textContent = String(err); }
     });
     const importInput = document.createElement("input");
@@ -126,6 +155,9 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
       try {
         battle = importBattle(await f.text());
         selectedUnitId = null; draftTime = 0;
+        autosaveNotice = null;
+        // Imported battle replaces whatever the autosave slot held.
+        saveAutosave(battle);
         errBox.textContent = ""; render();
       } catch (err) { errBox.textContent = String(err); }
     });
