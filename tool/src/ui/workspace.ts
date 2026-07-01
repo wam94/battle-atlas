@@ -202,6 +202,7 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
         a.href = URL.createObjectURL(new Blob([out], { type: "application/json" }));
         a.download = "battle.json";
         a.click();
+        URL.revokeObjectURL(a.href);
         // Export is the durable artifact, but the save should always mirror
         // the screen — not cleared here, just kept in sync.
         saveAutosave(battle);

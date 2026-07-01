@@ -22,20 +22,72 @@ export function initOverlayUI(
   const opacity = document.createElement("input");
   opacity.type = "range"; opacity.min = "0"; opacity.max = "100"; opacity.value = "60";
 
+  const basemapOpacity = document.createElement("input");
+  basemapOpacity.type = "range"; basemapOpacity.min = "0"; basemapOpacity.max = "100"; basemapOpacity.value = "100";
+
   let imgUrl: string | null = null;
   let imgSize: [number, number] | null = null;
   let imgPts: [number, number][] = [];
   let mapPts: [number, number][] = [];
 
+  // The pending map-click listener for the current tie-point pick, so it can
+  // be torn down (map.off) on cancel or when a new overlay load supersedes
+  // it — otherwise a stale listener from an abandoned session fires later
+  // and corrupts the next session's tie points.
+  let pendingMapClickHandler: ((e: maplibregl.MapMouseEvent) => void) | null = null;
+  // The Esc handler is registered for the whole picking session (image-pick
+  // AND map-pick phases), not just while the modal DOM is present, so Esc
+  // cancels a map-pick-phase wait too.
+  let escHandler: ((e: KeyboardEvent) => void) | null = null;
+  // Set only while the image-pick modal is showing, so cancellation during
+  // that phase can remove it from the DOM (no modal exists during the
+  // map-pick phase — the modal is already gone by then).
+  let activeModal: HTMLDivElement | null = null;
+
+  function endPickingSession(): void {
+    pickingActive = false;
+    if (pendingMapClickHandler) {
+      map.off("click", pendingMapClickHandler);
+      pendingMapClickHandler = null;
+    }
+    if (escHandler) {
+      document.removeEventListener("keydown", escHandler);
+      escHandler = null;
+    }
+    if (activeModal) {
+      activeModal.remove();
+      activeModal = null;
+    }
+  }
+
+  function cancelPicking(): void {
+    endPickingSession();
+    status.textContent = "tie-point picking cancelled";
+  }
+
+  function startPickingSession(): void {
+    // Starting a new session must not leave a previous session's listeners
+    // dangling (e.g. author loads a second image before finishing the
+    // first's tie points).
+    endPickingSession();
+    pickingActive = true;
+    escHandler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") cancelPicking();
+    };
+    document.addEventListener("keydown", escHandler);
+  }
+
   fileInput.addEventListener("change", async () => {
     const f = fileInput.files?.[0];
     if (!f) return;
+    const prevUrl = imgUrl;
     imgUrl = URL.createObjectURL(f);
+    if (prevUrl) URL.revokeObjectURL(prevUrl);
     const probe = new Image();
     probe.onload = () => {
       imgSize = [probe.naturalWidth, probe.naturalHeight];
       imgPts = []; mapPts = [];
-      pickingActive = true;
+      startPickingSession();
       pickImagePoint(1);
     };
     probe.src = imgUrl;
@@ -54,24 +106,33 @@ export function initOverlayUI(
       const sx = imgSize![0] / r.width;
       const sy = imgSize![1] / r.height;
       imgPts.push([(e.clientX - r.left) * sx, (e.clientY - r.top) * sy]);
+      activeModal = null;
       modal.remove();
       pickMapPoint(n);
     });
+    // Backdrop click (on the modal itself, not the image) cancels.
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) cancelPicking();
+    });
     modal.append(img);
     document.body.append(modal);
+    activeModal = modal;
   }
 
   function pickMapPoint(n: 1 | 2): void {
     status.textContent = `Now click where tie point ${n} really is on the MAP…`;
-    map.once("click", (e) => {
+    const handler = (e: maplibregl.MapMouseEvent) => {
+      pendingMapClickHandler = null;
       mapPts.push([e.lngLat.lng, e.lngLat.lat]);
       if (n === 1) {
         pickImagePoint(2);
       } else {
-        pickingActive = false;
+        endPickingSession();
         placeOverlay();
       }
-    });
+    };
+    pendingMapClickHandler = handler;
+    map.once("click", handler);
   }
 
   function placeOverlay(): void {
@@ -99,7 +160,15 @@ export function initOverlayUI(
       map.setPaintProperty("hist-overlay", "raster-opacity", Number(opacity.value) / 100);
   });
 
+  basemapOpacity.addEventListener("input", () => {
+    if (map.getLayer("osm"))
+      map.setPaintProperty("osm", "raster-opacity", Number(basemapOpacity.value) / 100);
+  });
+
   const h = document.createElement("h2");
   h.textContent = "Historical map overlay";
-  container.append(h, fileInput, status, opacity);
+  const basemapLabel = document.createElement("label");
+  basemapLabel.textContent = "modern basemap opacity (dim under period overlays)";
+  basemapLabel.append(basemapOpacity);
+  container.append(basemapLabel, h, fileInput, status, opacity);
 }
