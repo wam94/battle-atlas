@@ -4,6 +4,7 @@ import type { Battle, Confidence, Formation, Side, Unit } from "../model";
 import { exportBattle, importBattle } from "../io";
 import { validateBattle } from "../validate";
 import { loadAutosave, saveAutosave } from "../persist";
+import { nextKeyframeTime, clampDraftTime } from "../timeutil";
 import { battleToGeoJSON, installBattleLayers, previewToGeoJSON } from "./pathlayer";
 import { initOverlayUI, isPickingTiePoint } from "./overlayui";
 
@@ -54,9 +55,9 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
     const unit = battle.units.find((u) => u.id === selectedUnitId);
     if (!unit) return;
     const [x, z] = bf.lonLatToLocal(e.lngLat.lng, e.lngLat.lat);
-    const lastT = unit.keyframes.length ? unit.keyframes[unit.keyframes.length - 1]!.t : -1;
+    const lastT = unit.keyframes.length ? unit.keyframes[unit.keyframes.length - 1]!.t : null;
     unit.keyframes.push({
-      t: Math.max(draftTime, lastT + 1),
+      t: nextKeyframeTime(draftTime, lastT, battle.endTime),
       x: Math.round(x), z: Math.round(z),
       facing: 90, formation: "line",
       strength: unit.keyframes.length ? unit.keyframes[unit.keyframes.length - 1]!.strength : 1000,
@@ -146,7 +147,7 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
     frag.append(labeled("name", textInput(battle.name, (v) => { battle.name = v; })));
     frag.append(row(
       labeled("startTime (s since midnight)", numInput(battle.startTime, (v) => { battle.startTime = v; })),
-      labeled("endTime (s)", numInput(battle.endTime, (v) => { battle.endTime = v; render(); })),
+      labeled("endTime (s)", numInput(battle.endTime, (v) => { battle.endTime = v; draftTime = clampDraftTime(draftTime, battle.endTime); render(); })),
     ));
 
     // time scrubber for preview — stable heading reference, updated in place on
@@ -247,7 +248,7 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
     });
     frag.append(del);
 
-    frag.append(h2("Keyframes (click map to append at preview time)"));
+    frag.append(h2("Keyframes (click map to add at preview time)"));
     unit.keyframes.forEach((kf, i) => {
       const box = document.createElement("div");
       box.className = i === selectedKfIndex ? "kf selected" : "kf";
