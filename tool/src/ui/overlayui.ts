@@ -2,6 +2,14 @@ import type maplibregl from "maplibre-gl";
 import type { Battlefield } from "../geo";
 import { applySimilarity, similarityFromTwoPoints, type TiePoint } from "../overlay";
 
+// True while a tie-point pick is in progress, so the workspace's map-click
+// handler doesn't ALSO drop a keyframe on the selected unit when the author
+// clicks a tie point's true location.
+let pickingActive = false;
+export function isPickingTiePoint(): boolean {
+  return pickingActive;
+}
+
 // Workflow: load a scanned map image; click two points ON THE IMAGE (shown in
 // a modal canvas), then their true locations ON THE MAP; the similarity
 // transform places the image as a raster source with adjustable opacity.
@@ -27,6 +35,7 @@ export function initOverlayUI(
     probe.onload = () => {
       imgSize = [probe.naturalWidth, probe.naturalHeight];
       imgPts = []; mapPts = [];
+      pickingActive = true;
       pickImagePoint(1);
     };
     probe.src = imgUrl;
@@ -56,8 +65,12 @@ export function initOverlayUI(
     status.textContent = `Now click where tie point ${n} really is on the MAP…`;
     map.once("click", (e) => {
       mapPts.push([e.lngLat.lng, e.lngLat.lat]);
-      if (n === 1) pickImagePoint(2);
-      else placeOverlay();
+      if (n === 1) {
+        pickImagePoint(2);
+      } else {
+        pickingActive = false;
+        placeOverlay();
+      }
     });
   }
 

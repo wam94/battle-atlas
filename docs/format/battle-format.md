@@ -46,8 +46,9 @@ load-bearing rules at runtime (BattleData.cs).
 ## The no-faking gate
 
 The authoring tool refuses to export a keyframe claiming `documented`
-confidence without a citation. Provenance renders in-app (documented = solid,
-inferred = ghosted, unknown = explicit "no reliable record").
+confidence without a citation. Provenance will render in-app from Phase 4 (documented = solid,
+inferred = ghosted, unknown = explicit "no reliable record"); today the
+Unity loader parses but does not yet display it.
 
 ## Planned extensions (not yet valid)
 

@@ -3,7 +3,7 @@ import placeholder from "./fixtures/placeholder_battle.json";
 import { exportBattle, importBattle } from "../src/io";
 
 describe("battle IO", () => {
-  it("round-trips the placeholder battle byte-stably", () => {
+  it("round-trips the placeholder battle structurally (parsed-equal)", () => {
     const battle = importBattle(JSON.stringify(placeholder));
     const out = exportBattle(battle);
     expect(JSON.parse(out)).toEqual(placeholder);

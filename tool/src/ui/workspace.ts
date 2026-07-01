@@ -4,7 +4,7 @@ import type { Battle, Confidence, Formation, Side, Unit } from "../model";
 import { exportBattle, importBattle } from "../io";
 import { validateBattle } from "../validate";
 import { battleToGeoJSON, installBattleLayers, previewToGeoJSON } from "./pathlayer";
-import { initOverlayUI } from "./overlayui";
+import { initOverlayUI, isPickingTiePoint } from "./overlayui";
 
 const FORMATIONS: Formation[] = ["column", "line", "skirmish", "scattered", "routed"];
 const CONFIDENCES: Confidence[] = ["unknown", "inferred", "documented"];
@@ -31,6 +31,7 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
   else map.on("load", installLayers);
 
   map.on("click", (e) => {
+    if (isPickingTiePoint()) return; // tie-point picks are not keyframes
     const unit = battle.units.find((u) => u.id === selectedUnitId);
     if (!unit) return;
     const [x, z] = bf.lonLatToLocal(e.lngLat.lng, e.lngLat.lat);
