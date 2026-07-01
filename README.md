@@ -35,9 +35,24 @@ Prereqs: [uv](https://docs.astral.sh/uv/), Unity 6 LTS with iOS Build Support, X
 3. iOS: File ▸ Build Profiles ▸ iOS ▸ Build, then open the generated
    `Unity-iPhone.xcodeproj`, set your signing team, run on device.
 
+## Authoring tool
+
+`tool/` is a browser app for authoring battle data: trace unit paths over a
+georeferenced map (with scanned historical maps as overlays), edit keyframes
+with provenance, preview interpolated movement, and export schema-validated
+battle JSON (see `docs/format/battle-format.md`).
+
+```bash
+cd tool
+npm install
+npm run dev    # http://localhost:5180 — load data/heightmap/heightmap.json to begin
+npm test
+```
+
 ## Tests
 
 - Pipeline: `cd pipeline && uv run pytest -q`
+- Authoring tool: `cd tool && npm test`
 - Unity (editor closed): `"$UNITY" -batchmode -projectPath "$(pwd)/app" -runTests -testPlatform EditMode -testResults "$(pwd)/app/test-results.xml" -logFile -`
 
 Note: terrain renders with 2.5× vertical exaggeration (sand-table convention),
