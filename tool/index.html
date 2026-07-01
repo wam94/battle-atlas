@@ -6,7 +6,14 @@
     <title>Battle Atlas — Authoring</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="map"></div>
+    <div id="sidebar">
+      <h1 style="font-size:16px">Battle Atlas — Authoring</h1>
+      <label>heightmap.json (georeference anchor)
+        <input type="file" id="heightmap-file" accept=".json" />
+      </label>
+      <div id="workspace" class="muted">Load data/heightmap/heightmap.json to begin.</div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
