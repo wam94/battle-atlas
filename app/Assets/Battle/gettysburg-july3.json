@@ -1,0 +1,286 @@
+{
+  "name": "Pickett's Charge — July 3, 1863 (brigade level, reconstruction)",
+  "startTime": 46800,
+  "endTime": 10800,
+  "units": [
+    {
+      "id": "csa-garnett", "name": "Garnett's Brigade", "side": "confederate",
+      "frontage_m": 400, "depth_m": 40,
+      "keyframes": [
+        {"t": 0, "x": 3200, "z": 4930, "facing": 88, "formation": "line", "strength": 1480, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (Pickett's start line just south of the Virginia Memorial / east edge of Spangler's Woods); strength 1,480 present: Stone Sentinels Garnett's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 3200, "z": 4930, "facing": 88, "formation": "line", "strength": 1455, "confidence": "inferred", "citation": "interpolated: line static in the swale under two-hour bombardment (Alexander 1907; Haskell 1908 'two mortal hours'); small counter-battery losses reconstructed"},
+        {"t": 7500, "x": 3200, "z": 4930, "facing": 88, "formation": "line", "strength": 1450, "confidence": "inferred", "citation": "step-off: modern reconstruction ~3:00 PM (ABT map set; Haskell 1908 has the cannonade end 'at three o'clock almost precisely'); Alexander 1907 says ~1:50 and Jacobs 1864 says 2:30 — witnesses disagree by over an hour"},
+        {"t": 8160, "x": 4090, "z": 4805, "facing": 95, "formation": "line", "strength": 1380, "confidence": "inferred", "citation": "reconstruction: reaches the Emmitsburg Road fences ~15:16 (ABT Pickett's Charge 3:30-3:45 PM map; Codori farm anchor OSM way 779833686); pace 1.36 m/s"},
+        {"t": 8280, "x": 4090, "z": 4805, "facing": 95, "formation": "line", "strength": 1360, "confidence": "inferred", "citation": "reconstruction: formation-dress pause at the road fences ~15:16-15:18 (ABT maps); losses to canister while halted"},
+        {"t": 8580, "x": 4380, "z": 4868, "facing": 78, "formation": "line", "strength": 1050, "confidence": "documented", "citation": "Stone Sentinels Garnett's Brigade page: Garnett shot dead roughly 20 yards from the Angle; Bachelder Third Day sheet (High Water Mark); time ~15:23 inferred from step-off reconstruction"},
+        {"t": 8700, "x": 4390, "z": 4870, "facing": 78, "formation": "scattered", "strength": 850, "confidence": "inferred", "citation": "reconstruction: brigade shattered at the stone wall, mixed with Armistead's men (Rawley Martin SHSP v32; Haskell 1908)"},
+        {"t": 9000, "x": 4200, "z": 4850, "facing": 265, "formation": "routed", "strength": 700, "confidence": "inferred", "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map): survivors stream back toward Seminary Ridge"},
+        {"t": 9600, "x": 3600, "z": 4880, "facing": 265, "formation": "routed", "strength": 580, "confidence": "inferred", "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"},
+        {"t": 10800, "x": 3250, "z": 4920, "facing": 265, "formation": "scattered", "strength": 539, "confidence": "inferred", "citation": "end strength 1,480 minus 941 losses: Stone Sentinels Garnett's Brigade page; ~60% Confederate loss per Longstreet 1896 p.315; survivors rally behind Seminary Ridge (reconstruction)"}
+      ]
+    },
+    {
+      "id": "csa-kemper", "name": "Kemper's Brigade", "side": "confederate",
+      "frontage_m": 420, "depth_m": 40,
+      "keyframes": [
+        {"t": 0, "x": 3150, "z": 4680, "facing": 80, "formation": "line", "strength": 1575, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (Pickett's right, near Spangler's Woods); Kemper on the division right per Rawley Martin SHSP v32; strength 1,575 present: Stone Sentinels Kemper's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 3150, "z": 4680, "facing": 80, "formation": "line", "strength": 1550, "confidence": "inferred", "citation": "interpolated: line static under bombardment (Alexander 1907); small counter-battery losses reconstructed"},
+        {"t": 7500, "x": 3150, "z": 4680, "facing": 80, "formation": "line", "strength": 1545, "confidence": "inferred", "citation": "step-off: modern reconstruction ~3:00 PM (ABT map set; Haskell-implied); Alexander 1907 ~1:50 and Jacobs 1864 2:30 disagree — recorded, not reconciled"},
+        {"t": 8160, "x": 4010, "z": 4615, "facing": 80, "formation": "line", "strength": 1480, "confidence": "inferred", "citation": "reconstruction: crosses the Emmitsburg Road just south of the Codori barn (Codori anchor OSM way 779833686; ABT 3:30-3:45 PM map; Kemper's line of advance passed the Codori buildings); pace 1.31 m/s"},
+        {"t": 8280, "x": 4010, "z": 4615, "facing": 80, "formation": "line", "strength": 1470, "confidence": "inferred", "citation": "reconstruction: formation-dress pause at the road fences ~15:16-15:18 (ABT maps)"},
+        {"t": 8400, "x": 4130, "z": 4670, "facing": 60, "formation": "line", "strength": 1380, "confidence": "inferred", "citation": "reconstruction: obliquing left toward the Angle while taking flank fire from Stannard's wheeled Vermont regiments (Sturtevant 1910 pp.304-305: Pickett's command 'not sixty yards away')"},
+        {"t": 8640, "x": 4370, "z": 4790, "facing": 60, "formation": "line", "strength": 1150, "confidence": "documented", "citation": "Stone Sentinels Kemper's Brigade page: Kemper badly wounded near the Union line south of the Angle, briefly captured, rescued by Sgt. Blanton; Bachelder Third Day sheet; time ~15:24 inferred from step-off reconstruction"},
+        {"t": 8700, "x": 4375, "z": 4795, "facing": 60, "formation": "scattered", "strength": 1100, "confidence": "inferred", "citation": "reconstruction: right of the assault crushed between front and Stannard's flank fire (Sturtevant 1910; Stone Sentinels 1st NY Battery B page: Kemper's Virginians briefly overran Rorty's guns)"},
+        {"t": 9000, "x": 4150, "z": 4720, "facing": 260, "formation": "routed", "strength": 950, "confidence": "inferred", "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"},
+        {"t": 9600, "x": 3600, "z": 4690, "facing": 260, "formation": "routed", "strength": 870, "confidence": "inferred", "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"},
+        {"t": 10800, "x": 3200, "z": 4680, "facing": 260, "formation": "scattered", "strength": 844, "confidence": "inferred", "citation": "end strength 1,575 minus 731 losses: Stone Sentinels Kemper's Brigade page; survivors rally behind Seminary Ridge (reconstruction)"}
+      ]
+    },
+    {
+      "id": "csa-armistead", "name": "Armistead's Brigade", "side": "confederate",
+      "frontage_m": 440, "depth_m": 40,
+      "keyframes": [
+        {"t": 0, "x": 3090, "z": 4830, "facing": 85, "formation": "line", "strength": 1650, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (second line behind Garnett/Kemper; Rawley Martin SHSP v32 places Armistead 'in rear and center', some modern accounts left-rear — recorded, not reconciled); strength 1,650 present: Stone Sentinels Armistead's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 3090, "z": 4830, "facing": 85, "formation": "line", "strength": 1630, "confidence": "inferred", "citation": "interpolated: second line static under bombardment (Alexander 1907)"},
+        {"t": 7500, "x": 3090, "z": 4830, "facing": 85, "formation": "line", "strength": 1625, "confidence": "inferred", "citation": "step-off in support ~15:05: modern reconstruction (ABT map set); Alexander 1907 ~1:50 and Jacobs 1864 2:30 disagree on the hour"},
+        {"t": 8280, "x": 4060, "z": 4820, "facing": 85, "formation": "line", "strength": 1560, "confidence": "inferred", "citation": "reconstruction: crosses the Emmitsburg Road ~200m behind the first line ~15:18 (ABT 3:30-3:45 PM map); pace 1.24 m/s including fence delay"},
+        {"t": 8640, "x": 4385, "z": 4860, "facing": 80, "formation": "line", "strength": 1250, "confidence": "inferred", "citation": "reconstruction: closes on the wall at the Angle through the wreck of Garnett's line (Rawley Martin SHSP v32)"},
+        {"t": 8700, "x": 4415, "z": 4855, "facing": 80, "formation": "scattered", "strength": 1050, "confidence": "documented", "citation": "Rawley Martin, SHSP v32 pp.183-195: Armistead 'scaled the wall' crying 'Boys, give them the cold steel!' and fell mortally wounded under the captured guns; Fuger via NPS Hartwig 2012 (Armistead leapt the wall into Cushing's battery); time ~15:25 per NPS/modern reconstruction"},
+        {"t": 9000, "x": 4250, "z": 4850, "facing": 265, "formation": "routed", "strength": 700, "confidence": "inferred", "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map): breakthrough sealed by Webb's and Hall's counterattack; survivors fall back"},
+        {"t": 9600, "x": 3650, "z": 4870, "facing": 265, "formation": "routed", "strength": 500, "confidence": "inferred", "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"},
+        {"t": 10800, "x": 3150, "z": 4890, "facing": 265, "formation": "scattered", "strength": 459, "confidence": "inferred", "citation": "end strength 1,650 minus 1,191 losses: Stone Sentinels Armistead's Brigade page, corroborated by Col. W.R. Aylett's July 12, 1863 report (via Encyclopedia Virginia)"}
+      ]
+    },
+    {
+      "id": "csa-fry", "name": "Fry's Brigade (Archer's)", "side": "confederate",
+      "frontage_m": 300, "depth_m": 40,
+      "keyframes": [
+        {"t": 0, "x": 3230, "z": 5120, "facing": 98, "formation": "line", "strength": 1048, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (Pettigrew's right, north of the Virginia Memorial); brigade of direction for the whole assault per Fry, SHSP v7 pp.91-93; strength 1,048 present: Stone Sentinels Archer's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 3230, "z": 5120, "facing": 98, "formation": "line", "strength": 1030, "confidence": "inferred", "citation": "interpolated: line static under bombardment (Alexander 1907)"},
+        {"t": 7500, "x": 3230, "z": 5120, "facing": 98, "formation": "line", "strength": 1025, "confidence": "inferred", "citation": "step-off: modern reconstruction ~3:00 PM (ABT map set); both divisions dressed on Fry's command (Fry SHSP v7); Alexander ~1:50 / Jacobs 2:30 disagree on the hour"},
+        {"t": 8340, "x": 4210, "z": 5010, "facing": 100, "formation": "line", "strength": 920, "confidence": "inferred", "citation": "reconstruction: crosses the Emmitsburg Road converging from the north so both fronts arrive together (ABT 3:30-3:45 PM map); pace 1.17 m/s including fence crossing"},
+        {"t": 8580, "x": 4385, "z": 4915, "facing": 100, "formation": "line", "strength": 700, "confidence": "documented", "citation": "Fry, SHSP v7 pp.91-93: 'All of the five regimental colors of my command reached the line of the enemy's works' just north of the Angle (against Virginia-centric accounts that Pettigrew's men hung back — disagreement recorded); Fry wounded and captured at the wall; time ~15:23 inferred"},
+        {"t": 8700, "x": 4390, "z": 4918, "facing": 100, "formation": "scattered", "strength": 640, "confidence": "inferred", "citation": "reconstruction: brigade wrecked at the wall alongside Garnett's left (Fry SHSP v7)"},
+        {"t": 9000, "x": 4200, "z": 4950, "facing": 270, "formation": "routed", "strength": 480, "confidence": "inferred", "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"},
+        {"t": 9600, "x": 3700, "z": 5080, "facing": 270, "formation": "routed", "strength": 400, "confidence": "inferred", "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"},
+        {"t": 10800, "x": 3280, "z": 5110, "facing": 270, "formation": "scattered", "strength": 371, "confidence": "documented", "citation": "Stone Sentinels Archer's Brigade page: 'less than 400 men remained at the end of July 3rd' (1,048 present minus 677 losses = 371); position behind Seminary Ridge reconstructed"}
+      ]
+    },
+    {
+      "id": "csa-marshall", "name": "Marshall's Brigade (Pettigrew's)", "side": "confederate",
+      "frontage_m": 520, "depth_m": 40,
+      "keyframes": [
+        {"t": 0, "x": 3250, "z": 5330, "facing": 100, "formation": "line", "strength": 2000, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (Pettigrew's line north of Fry); strength 'about 2,000 present on the first day': Stone Sentinels Pettigrew's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after first-day losses (flagged, no sourced July 3 figure exists); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 3250, "z": 5330, "facing": 100, "formation": "line", "strength": 1970, "confidence": "inferred", "citation": "interpolated: line static under bombardment (Alexander 1907)"},
+        {"t": 7500, "x": 3250, "z": 5330, "facing": 100, "formation": "line", "strength": 1965, "confidence": "inferred", "citation": "step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour"},
+        {"t": 8340, "x": 4230, "z": 5085, "facing": 105, "formation": "line", "strength": 1800, "confidence": "inferred", "citation": "reconstruction: crosses the Emmitsburg Road under canister and rifle fire from Hays's line (ABT 3:30-3:45 PM map); pace 1.20 m/s including fence crossing"},
+        {"t": 8640, "x": 4415, "z": 5015, "facing": 105, "formation": "line", "strength": 1300, "confidence": "inferred", "citation": "reconstruction: front reaches the wall south of the Bryan barn (Fry SHSP v7 insists Pettigrew's front fought to the wall; modern scholarship partially supports); Col. Marshall killed in the advance (Stone Sentinels)"},
+        {"t": 8700, "x": 4418, "z": 5013, "facing": 105, "formation": "scattered", "strength": 1100, "confidence": "inferred", "citation": "reconstruction: repulsed at the wall by Smyth's and Sherrill's fire (ABT maps)"},
+        {"t": 9060, "x": 4150, "z": 5120, "facing": 275, "formation": "routed", "strength": 800, "confidence": "inferred", "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"},
+        {"t": 9600, "x": 3650, "z": 5260, "facing": 275, "formation": "routed", "strength": 640, "confidence": "inferred", "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"},
+        {"t": 10800, "x": 3280, "z": 5325, "facing": 275, "formation": "scattered", "strength": 595, "confidence": "inferred", "citation": "end strength 2,000 minus 1,405 losses (whole-battle figures): Stone Sentinels Pettigrew's Brigade page — endpoints sourced, but both include July 1 fighting; per-day split not documented"}
+      ]
+    },
+    {
+      "id": "csa-davis", "name": "Davis's Brigade", "side": "confederate",
+      "frontage_m": 520, "depth_m": 40,
+      "keyframes": [
+        {"t": 0, "x": 3270, "z": 5540, "facing": 102, "formation": "line", "strength": 2000, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (Pettigrew's left-center); strength 'about 2,000 present on the first day': Stone Sentinels Davis's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after heavy first-day losses; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 3270, "z": 5540, "facing": 102, "formation": "line", "strength": 1970, "confidence": "inferred", "citation": "interpolated: line static under bombardment (Alexander 1907)"},
+        {"t": 7500, "x": 3270, "z": 5540, "facing": 102, "formation": "line", "strength": 1965, "confidence": "inferred", "citation": "step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour"},
+        {"t": 8340, "x": 4230, "z": 5170, "facing": 110, "formation": "line", "strength": 1750, "confidence": "inferred", "citation": "reconstruction: crosses the Emmitsburg Road angling toward the Bryan farm front (ABT 3:30-3:45 PM map); pace 1.22 m/s including fence crossing"},
+        {"t": 8580, "x": 4310, "z": 5120, "facing": 110, "formation": "scattered", "strength": 1300, "confidence": "inferred", "citation": "reconstruction: advance stalls and breaks short of the wall under Hays's massed rifle fire and Woodruff's canister from Ziegler's Grove (ABT maps; Bryan farm anchor OSM way 451707950)"},
+        {"t": 9000, "x": 3900, "z": 5300, "facing": 280, "formation": "routed", "strength": 850, "confidence": "inferred", "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"},
+        {"t": 9600, "x": 3450, "z": 5480, "facing": 280, "formation": "routed", "strength": 650, "confidence": "inferred", "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"},
+        {"t": 10800, "x": 3290, "z": 5530, "facing": 280, "formation": "scattered", "strength": 603, "confidence": "inferred", "citation": "end strength 2,000 minus 1,397 losses (whole-battle figures): Stone Sentinels Davis's Brigade page — both endpoints include July 1 fighting; per-day split not documented"}
+      ]
+    },
+    {
+      "id": "csa-brockenbrough", "name": "Brockenbrough's Brigade", "side": "confederate",
+      "frontage_m": 250, "depth_m": 40,
+      "keyframes": [
+        {"t": 0, "x": 3280, "z": 5730, "facing": 102, "formation": "line", "strength": 880, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (far left of Pettigrew's line); strength '800 muskets' (~880 officers and men): Col. R.M. Mayo's Aug. 13, 1863 report, cited via NPS Gettysburg Seminar essay 5 (secondary hop flagged; Stone Sentinels page for this brigade is a known duplication artifact and is not used); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 3280, "z": 5730, "facing": 102, "formation": "line", "strength": 875, "confidence": "inferred", "citation": "interpolated: line static under bombardment (Alexander 1907)"},
+        {"t": 7500, "x": 3280, "z": 5730, "facing": 102, "formation": "line", "strength": 873, "confidence": "inferred", "citation": "step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour"},
+        {"t": 7920, "x": 3690, "z": 5680, "facing": 102, "formation": "scattered", "strength": 830, "confidence": "documented", "citation": "the break itself is documented — Fry, SHSP v7 (Brockenbrough's brigade broke early on the assault's left, corroborated by modern scholarship) — but the ~15:12 timing and this position are inferred reconstruction"},
+        {"t": 8400, "x": 3400, "z": 5710, "facing": 280, "formation": "routed", "strength": 800, "confidence": "inferred", "citation": "reconstruction: falls back to Seminary Ridge without reaching the Emmitsburg Road (Fry SHSP v7; modern scholarship)"},
+        {"t": 9000, "x": 3290, "z": 5725, "facing": 280, "formation": "scattered", "strength": 785, "confidence": "inferred", "citation": "reconstruction: rallying at the start line (ABT maps)"},
+        {"t": 10800, "x": 3285, "z": 5728, "facing": 280, "formation": "scattered", "strength": 780, "confidence": "inferred", "citation": "no reliable casualty figure located for this brigade (research pass, oob-strengths doc); light losses reconstructed from the early break"}
+      ]
+    },
+    {
+      "id": "csa-lane", "name": "Lane's Brigade", "side": "confederate",
+      "frontage_m": 370, "depth_m": 40,
+      "keyframes": [
+        {"t": 0, "x": 3080, "z": 5350, "facing": 100, "formation": "line", "strength": 1355, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (Trimble's second line behind Pettigrew's left-center); strength 1,355 present: Stone Sentinels Lane's Brigade page (monument inscription; a conflicting 1,730 extraction of the same page exists — direct-fetch figure used, conflict flagged); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 3080, "z": 5350, "facing": 100, "formation": "line", "strength": 1340, "confidence": "inferred", "citation": "interpolated: second line static under bombardment (Alexander 1907)"},
+        {"t": 7500, "x": 3080, "z": 5350, "facing": 100, "formation": "line", "strength": 1338, "confidence": "inferred", "citation": "step-off in support of Pettigrew: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour"},
+        {"t": 8400, "x": 4150, "z": 5150, "facing": 105, "formation": "line", "strength": 1200, "confidence": "inferred", "citation": "reconstruction: crosses the Emmitsburg Road behind Pettigrew's wrecked front (ABT 3:30-3:45 PM map); pace 1.21 m/s including fence crossing"},
+        {"t": 8700, "x": 4330, "z": 5090, "facing": 105, "formation": "line", "strength": 950, "confidence": "inferred", "citation": "reconstruction: pushes to within yards of the wall near the Bryan barn before the assault collapses (ABT maps; Trimble wounded here per Encyclopedia Virginia)"},
+        {"t": 9060, "x": 4000, "z": 5200, "facing": 280, "formation": "routed", "strength": 800, "confidence": "inferred", "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"},
+        {"t": 9600, "x": 3500, "z": 5320, "facing": 280, "formation": "routed", "strength": 720, "confidence": "inferred", "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"},
+        {"t": 10800, "x": 3100, "z": 5345, "facing": 280, "formation": "scattered", "strength": 695, "confidence": "inferred", "citation": "end strength 1,355 minus 660 losses: Stone Sentinels Lane's Brigade page (monument figures; page narrative separately claims Lane+Lowrance combined could field only ~800 on July 3 — conflict flagged, not reconciled)"}
+      ]
+    },
+    {
+      "id": "csa-lowrance", "name": "Lowrance's Brigade (Scales's)", "side": "confederate",
+      "frontage_m": 340, "depth_m": 40,
+      "keyframes": [
+        {"t": 0, "x": 3100, "z": 5150, "facing": 100, "formation": "line", "strength": 1250, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (Trimble's second line behind Fry); strength 'about 1,250 present': Stone Sentinels Scales's Brigade page — CAVEAT: brigade had lost heavily July 1 (Wikipedia: nearly two-thirds), figure likely overstates July 3 strength; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 3100, "z": 5150, "facing": 100, "formation": "line", "strength": 1235, "confidence": "inferred", "citation": "interpolated: second line static under bombardment (Alexander 1907)"},
+        {"t": 7500, "x": 3100, "z": 5150, "facing": 100, "formation": "line", "strength": 1233, "confidence": "inferred", "citation": "step-off in support: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour"},
+        {"t": 8400, "x": 4160, "z": 5030, "facing": 105, "formation": "line", "strength": 1100, "confidence": "inferred", "citation": "reconstruction: crosses the Emmitsburg Road behind Fry (ABT 3:30-3:45 PM map); pace 1.19 m/s including fence crossing; Col. Lowrance wounded in the charge (Stone Sentinels)"},
+        {"t": 8700, "x": 4320, "z": 4990, "facing": 105, "formation": "line", "strength": 900, "confidence": "inferred", "citation": "reconstruction: closes toward the wall north of the Angle as the front collapses (ABT maps)"},
+        {"t": 9060, "x": 4000, "z": 5060, "facing": 280, "formation": "routed", "strength": 760, "confidence": "inferred", "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"},
+        {"t": 9600, "x": 3500, "z": 5120, "facing": 280, "formation": "routed", "strength": 680, "confidence": "inferred", "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"},
+        {"t": 10800, "x": 3120, "z": 5148, "facing": 280, "formation": "scattered", "strength": 651, "confidence": "inferred", "citation": "end strength 1,250 minus 599 losses: Stone Sentinels Scales's Brigade page (whole-battle figures; Trimble's command combined lost 885 / 52% per Encyclopedia Virginia — not split by brigade)"}
+      ]
+    },
+    {
+      "id": "csa-wilcox", "name": "Wilcox's Brigade", "side": "confederate",
+      "frontage_m": 470, "depth_m": 40,
+      "keyframes": [
+        {"t": 0, "x": 3130, "z": 4450, "facing": 80, "formation": "line", "strength": 1777, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (echelon on Pickett's right, south of Spangler's Woods); strength 1,777 present: Stone Sentinels Wilcox's Brigade page (monument inscription; a conflicting 1,725 extraction of the same page exists — flagged); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 3130, "z": 4450, "facing": 80, "formation": "line", "strength": 1772, "confidence": "inferred", "citation": "interpolated: line static under bombardment (Alexander 1907)"},
+        {"t": 9840, "x": 3130, "z": 4450, "facing": 80, "formation": "line", "strength": 1770, "confidence": "inferred", "citation": "belated supporting advance steps off ~15:44: inferred timing (modern reconstruction; Wilcox advanced roughly 20 minutes after Pickett, too late to support the repulsed column)"},
+        {"t": 10380, "x": 3720, "z": 4425, "facing": 85, "formation": "line", "strength": 1650, "confidence": "inferred", "citation": "reconstruction: advances ~590m into the open (1.09 m/s), taking artillery and flank fire from Stannard's Vermonters wheeled south (Stone Sentinels 3rd Brig 3rd Div I Corps page)"},
+        {"t": 10500, "x": 3650, "z": 4430, "facing": 260, "formation": "scattered", "strength": 1620, "confidence": "inferred", "citation": "reconstruction: withdrawal ordered ~15:55 with no support on either flank (Stone Sentinels Wilcox's Brigade narrative; ABT 3:45-4:00 PM map)"},
+        {"t": 10800, "x": 3300, "z": 4445, "facing": 260, "formation": "scattered", "strength": 1577, "confidence": "inferred", "citation": "end strength: Wilcox reported losses of ~200 in the July 3 advance (Wikipedia 'Pickett's Charge', uncited there; his whole-battle monument total is 781 — conflict flagged, July-3-only reading used)"}
+      ]
+    },
+    {
+      "id": "csa-lang", "name": "Lang's Brigade (Perry's Florida Brigade)", "side": "confederate",
+      "frontage_m": 200, "depth_m": 40,
+      "keyframes": [
+        {"t": 0, "x": 3120, "z": 4300, "facing": 80, "formation": "line", "strength": 700, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (echelon on Wilcox's left-rear, far right of the supports); strength 700 present: Stone Sentinels Perry's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 3120, "z": 4300, "facing": 80, "formation": "line", "strength": 697, "confidence": "inferred", "citation": "interpolated: line static under bombardment (Alexander 1907)"},
+        {"t": 9840, "x": 3120, "z": 4300, "facing": 80, "formation": "line", "strength": 695, "confidence": "inferred", "citation": "steps off with Wilcox ~15:44: inferred timing (modern reconstruction)"},
+        {"t": 10380, "x": 3700, "z": 4285, "facing": 85, "formation": "line", "strength": 480, "confidence": "inferred", "citation": "reconstruction: advances ~580m (1.07 m/s) under flank fire from Stannard's 16th/14th Vermont wheeled south (Stone Sentinels 3rd Brig 3rd Div I Corps page)"},
+        {"t": 10500, "x": 3630, "z": 4290, "facing": 260, "formation": "scattered", "strength": 420, "confidence": "inferred", "citation": "reconstruction: withdraws with Wilcox ~15:55 (ABT 3:45-4:00 PM map)"},
+        {"t": 10800, "x": 3290, "z": 4297, "facing": 260, "formation": "scattered", "strength": 300, "confidence": "inferred", "citation": "end strength: 'about 400' casualties per Wikipedia 'Pickett's Charge' (uncited there; Stone Sentinels whole-battle total is 455 — conflict flagged; July-3-leaning reading used); Lang's own fate on July 3 not located in any source"}
+      ]
+    },
+    {
+      "id": "us-webb", "name": "Webb's Brigade (Philadelphia Brigade)", "side": "union",
+      "frontage_m": 240, "depth_m": 60,
+      "keyframes": [
+        {"t": 0, "x": 4410, "z": 4850, "facing": 262, "formation": "line", "strength": 1250, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (at the Angle and the Copse; 69th/71st/72nd PA per Haskell 1908); strength 1,250: Stone Sentinels Strength & Casualties USA table; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 4410, "z": 4850, "facing": 262, "formation": "line", "strength": 1180, "confidence": "inferred", "citation": "interpolated: holding under the bombardment's concentric fire on Gibbon's division (Waitt 1906 pp.234-237)"},
+        {"t": 8580, "x": 4410, "z": 4850, "facing": 262, "formation": "line", "strength": 1150, "confidence": "inferred", "citation": "reconstruction: holding the wall as Pickett's front closes (Haskell 1908)"},
+        {"t": 8700, "x": 4405, "z": 4855, "facing": 262, "formation": "line", "strength": 1000, "confidence": "documented", "citation": "Haskell 1908: the Angle crisis — a rebel flag 'already waving over one of the guns of the dead Cushing'; Webb wounded (Medal of Honor citation); time ~15:25 per NPS/modern reconstruction"},
+        {"t": 9000, "x": 4405, "z": 4860, "facing": 262, "formation": "line", "strength": 820, "confidence": "inferred", "citation": "reconstruction: breakthrough sealed, wall retaken (Haskell 1908; ABT 3:45-4:00 PM map)"},
+        {"t": 10800, "x": 4410, "z": 4850, "facing": 262, "formation": "line", "strength": 760, "confidence": "inferred", "citation": "end strength 1,250 minus 490 losses: Stone Sentinels Strength & Casualties USA table"}
+      ]
+    },
+    {
+      "id": "us-hall", "name": "Hall's Brigade", "side": "union",
+      "frontage_m": 200, "depth_m": 50,
+      "keyframes": [
+        {"t": 0, "x": 4420, "z": 4750, "facing": 262, "formation": "line", "strength": 920, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (immediately south of the Copse of Trees); strength 920: Stone Sentinels Strength & Casualties USA table; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 4420, "z": 4750, "facing": 262, "formation": "line", "strength": 880, "confidence": "inferred", "citation": "interpolated: prostrate under the bombardment (Waitt 1906 pp.234-237, 19th MA of this brigade)"},
+        {"t": 8700, "x": 4415, "z": 4780, "facing": 262, "formation": "line", "strength": 750, "confidence": "inferred", "citation": "reconstruction: regiments shift right/north into the melee at the Copse (Haskell 1908)"},
+        {"t": 9000, "x": 4415, "z": 4775, "facing": 262, "formation": "line", "strength": 620, "confidence": "inferred", "citation": "reconstruction: counterattack seals the breakthrough (Haskell 1908; ABT 3:45-4:00 PM map)"},
+        {"t": 10800, "x": 4420, "z": 4750, "facing": 262, "formation": "line", "strength": 555, "confidence": "inferred", "citation": "end strength 920 minus 365 losses: Stone Sentinels Strength & Casualties USA table"}
+      ]
+    },
+    {
+      "id": "us-harrow", "name": "Harrow's Brigade", "side": "union",
+      "frontage_m": 240, "depth_m": 60,
+      "keyframes": [
+        {"t": 0, "x": 4440, "z": 4640, "facing": 262, "formation": "line", "strength": 1410, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (Gibbon's left, south of Hall); strength 1,410: Stone Sentinels Strength & Casualties USA table — CAVEAT: engaged figure for the whole battle; brigade lost heavily July 2 (1st MN); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 4440, "z": 4640, "facing": 262, "formation": "line", "strength": 1350, "confidence": "inferred", "citation": "interpolated: holding under bombardment (Waitt 1906)"},
+        {"t": 8700, "x": 4430, "z": 4700, "facing": 262, "formation": "line", "strength": 1150, "confidence": "inferred", "citation": "reconstruction: regiments crowd north toward the Copse to meet the breakthrough (Haskell 1908)"},
+        {"t": 9000, "x": 4430, "z": 4695, "facing": 262, "formation": "line", "strength": 680, "confidence": "inferred", "citation": "reconstruction: close-range fight at the Copse (Haskell 1908; ABT 3:45-4:00 PM map)"},
+        {"t": 10800, "x": 4440, "z": 4640, "facing": 262, "formation": "line", "strength": 630, "confidence": "inferred", "citation": "strength from Stone Sentinels table (780 base) minus casualties; note War Dept marker (768) vs Harrow's own report (722) disagree by 46; totals include July 2"}
+      ]
+    },
+    {
+      "id": "us-smyth", "name": "Smyth's Brigade", "side": "union",
+      "frontage_m": 260, "depth_m": 50,
+      "keyframes": [
+        {"t": 0, "x": 4440, "z": 5010, "facing": 258, "formation": "line", "strength": 1190, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (Hays's line north of the Angle, toward the Bryan farm); strength 1,190: Stone Sentinels Strength & Casualties USA table; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864; Smyth's own report puts the cannonade start at 2:00 PM — disagreement recorded)"},
+        {"t": 7200, "x": 4440, "z": 5010, "facing": 258, "formation": "line", "strength": 1130, "confidence": "inferred", "citation": "interpolated: holding under bombardment; Smyth wounded in the face by a shell fragment July 3 (Wikipedia Thomas A. Smyth)"},
+        {"t": 8700, "x": 4440, "z": 5010, "facing": 258, "formation": "line", "strength": 950, "confidence": "inferred", "citation": "reconstruction: massed rifle fire repulses Marshall's and Lane's front at the wall (ABT maps)"},
+        {"t": 9000, "x": 4440, "z": 5010, "facing": 258, "formation": "line", "strength": 860, "confidence": "inferred", "citation": "reconstruction: line holds throughout (ABT 3:45-4:00 PM map)"},
+        {"t": 10800, "x": 4440, "z": 5010, "facing": 258, "formation": "line", "strength": 825, "confidence": "inferred", "citation": "end strength 1,190 minus 365 losses: Stone Sentinels Strength & Casualties USA table"}
+      ]
+    },
+    {
+      "id": "us-sherrill", "name": "Sherrill's Brigade (Willard's)", "side": "union",
+      "frontage_m": 300, "depth_m": 50,
+      "keyframes": [
+        {"t": 0, "x": 4470, "z": 5110, "facing": 258, "formation": "line", "strength": 1510, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (Hays's right, Bryan farm toward Ziegler's Grove; Bryan house anchor OSM way 451707950); strength 1,510: Stone Sentinels Strength & Casualties USA table; Willard killed July 2, Sherrill commanding; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 4470, "z": 5110, "facing": 258, "formation": "line", "strength": 1440, "confidence": "inferred", "citation": "interpolated: holding under bombardment (Alexander 1907)"},
+        {"t": 8700, "x": 4470, "z": 5110, "facing": 258, "formation": "line", "strength": 1000, "confidence": "documented", "citation": "Stone Sentinels 3rd Brigade 3rd Division 2nd Corps page: Col. Sherrill mortally wounded during the repulse of Pickett's Charge (died July 4); position at the Bryan farm line per Bachelder sheet; time ~15:25 inferred"},
+        {"t": 9000, "x": 4470, "z": 5110, "facing": 258, "formation": "line", "strength": 850, "confidence": "inferred", "citation": "reconstruction: line holds; Lt. Col. Bull assumes command (Stone Sentinels)"},
+        {"t": 10800, "x": 4470, "z": 5110, "facing": 258, "formation": "line", "strength": 800, "confidence": "inferred", "citation": "end strength 1,510 minus 710 losses: Stone Sentinels Strength & Casualties USA table (includes July 2 fighting against Barksdale)"}
+      ]
+    },
+    {
+      "id": "us-stannard", "name": "Stannard's Vermont Brigade", "side": "union",
+      "frontage_m": 350, "depth_m": 60,
+      "keyframes": [
+        {"t": 0, "x": 4300, "z": 4470, "facing": 260, "formation": "line", "strength": 1950, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (advanced position southwest of the main line, south of the Copse); strength 1,950: Stone Sentinels Strength & Casualties USA table — CAVEAT: only 13th/14th/16th VT engaged July 3, which sum to 1,788 (~160-man gap flagged, not reconciled); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 4300, "z": 4470, "facing": 260, "formation": "line", "strength": 1900, "confidence": "inferred", "citation": "interpolated: holding the advanced line under bombardment (Sturtevant 1910)"},
+        {"t": 8100, "x": 4300, "z": 4470, "facing": 260, "formation": "line", "strength": 1880, "confidence": "inferred", "citation": "reconstruction: Pickett's right passes across the brigade's front as it obliques toward the Copse (Sturtevant 1910; ABT 3:30-3:45 PM map)"},
+        {"t": 8400, "x": 4250, "z": 4560, "facing": 15, "formation": "line", "strength": 1850, "confidence": "inferred", "citation": "order + flank fire documented (Sturtevant 1910 pp.304-305); regimental split per Stone Sentinels brigade page (secondary, not in verified excerpts)"},
+        {"t": 9600, "x": 4290, "z": 4500, "facing": 260, "formation": "line", "strength": 1700, "confidence": "inferred", "citation": "reconstruction: regiments return toward the original front after Pickett's repulse (Sturtevant 1910)"},
+        {"t": 10200, "x": 4270, "z": 4430, "facing": 190, "formation": "line", "strength": 1660, "confidence": "inferred", "citation": "reconstruction: 16th and 14th VT wheel south against Wilcox and Lang's advance (Stone Sentinels 3rd Brig 3rd Div I Corps page; Stannard wounded in the thigh directing the flank attack)"},
+        {"t": 10800, "x": 4300, "z": 4470, "facing": 260, "formation": "line", "strength": 1600, "confidence": "inferred", "citation": "end strength 1,950 minus 350 losses: Stone Sentinels Strength & Casualties USA table"}
+      ]
+    },
+    {
+      "id": "us-btty-cushing", "name": "Cushing's Battery A, 4th US Artillery", "side": "union",
+      "frontage_m": 80, "depth_m": 40,
+      "keyframes": [
+        {"t": 0, "x": 4398, "z": 4880, "facing": 262, "formation": "line", "strength": 126, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (at the Angle; wall-corner anchor per Stone Sentinels The Angle page); strength '126 men and six cannons': US Army Medal of Honor page for Cushing; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 4398, "z": 4880, "facing": 262, "formation": "line", "strength": 105, "confidence": "inferred", "citation": "reconstruction: battery wrecked by the bombardment — guns disabled, Cushing wounded in shoulder and abdomen but refusing the rear (Fuger 1904 manuscript; NPS Hartwig 2012; Webb's report has Cushing wounded much earlier and functioning longer than Fuger implies — conflict flagged)"},
+        {"t": 8580, "x": 4398, "z": 4880, "facing": 262, "formation": "line", "strength": 92, "confidence": "inferred", "citation": "reconstruction: remaining guns run down to the wall, firing double canister as the assault closes (Fuger via NPS Hartwig 2012)"},
+        {"t": 8700, "x": 4398, "z": 4880, "facing": 262, "formation": "scattered", "strength": 88, "confidence": "documented", "citation": "Cushing killed ~15:20-15:25 — shot through the mouth per Fuger (1904 manuscript; JMSI 1907 via NPS Hartwig 2012), 'through the head' per Haskell 1908 (competing detail, not reconciled); Armistead's men land among the guns (Fuger, verified via NPS quote); casualties 38 per Stone Sentinels battery page"},
+        {"t": 9000, "x": 4398, "z": 4880, "facing": 262, "formation": "line", "strength": 88, "confidence": "inferred", "citation": "reconstruction: position retaken as the breakthrough is sealed; battery effectively destroyed (NPS Hartwig 2012)"},
+        {"t": 10800, "x": 4398, "z": 4880, "facing": 262, "formation": "line", "strength": 88, "confidence": "inferred", "citation": "end strength 126 minus 38 casualties: Stone Sentinels battery page (1 officer + 5 men killed, 1 officer + 31 men wounded)"}
+      ]
+    },
+    {
+      "id": "us-btty-rorty", "name": "Rorty's Battery B, 1st New York Light Artillery", "side": "union",
+      "frontage_m": 80, "depth_m": 40,
+      "keyframes": [
+        {"t": 0, "x": 4435, "z": 4570, "facing": 262, "formation": "line", "strength": 114, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (~250m south of the Copse, in front of Hall's/Harrow's sector); strength 114: Stone Sentinels 1st NY Battery B page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 4435, "z": 4570, "facing": 262, "formation": "line", "strength": 95, "confidence": "documented", "citation": "Waitt 1906 pp.234-237 (19th MA history): Rorty's battery in front of the regiment mauled during the cannonade — horses and drivers down, guns rolled helpless, a caisson burst; strength decline reconstructed from that account"},
+        {"t": 8700, "x": 4435, "z": 4570, "facing": 262, "formation": "scattered", "strength": 90, "confidence": "documented", "citation": "Stone Sentinels 1st NY Battery B page: Capt. Rorty killed when Kemper's Virginians briefly overran the battery in hand-to-hand fighting; time ~15:25 inferred from the assault reconstruction"},
+        {"t": 9000, "x": 4435, "z": 4570, "facing": 262, "formation": "line", "strength": 89, "confidence": "inferred", "citation": "reconstruction: guns recovered as Kemper's men are driven off (ABT 3:45-4:00 PM map)"},
+        {"t": 10800, "x": 4435, "z": 4570, "facing": 262, "formation": "line", "strength": 88, "confidence": "inferred", "citation": "end strength 114 minus 26 casualties (10 killed, 16 wounded): Stone Sentinels 1st NY Battery B page"}
+      ]
+    },
+    {
+      "id": "us-btty-arnold", "name": "Arnold's Battery A, 1st Rhode Island Light Artillery", "side": "union",
+      "frontage_m": 80, "depth_m": 40,
+      "keyframes": [
+        {"t": 0, "x": 4425, "z": 4955, "facing": 260, "formation": "line", "strength": 139, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (at the wall north of the Angle, on Smyth's front); strength 139: Stone Sentinels battery page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 4425, "z": 4955, "facing": 260, "formation": "line", "strength": 125, "confidence": "inferred", "citation": "interpolated: served under the bombardment (Alexander 1907)"},
+        {"t": 8700, "x": 4425, "z": 4955, "facing": 260, "formation": "line", "strength": 115, "confidence": "inferred", "citation": "reconstruction: canister into Fry's and Marshall's front at the wall (ABT maps)"},
+        {"t": 10800, "x": 4425, "z": 4955, "facing": 260, "formation": "line", "strength": 111, "confidence": "documented", "citation": "end strength 139 minus 28 casualties (4 killed, 24 wounded): Stone Sentinels battery page; Arnold survived unwounded, 'gallantly fighting his own battery and saving it' per Hazard's report (via Iron Brigader)"}
+      ]
+    },
+    {
+      "id": "us-btty-cowan", "name": "Cowan's 1st New York Independent Battery", "side": "union",
+      "frontage_m": 80, "depth_m": 40,
+      "keyframes": [
+        {"t": 0, "x": 4450, "z": 4770, "facing": 262, "formation": "line", "strength": 113, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492 (just south of the Copse of Trees); strength 113: Stone Sentinels 1st NY Independent Battery page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 4450, "z": 4770, "facing": 262, "formation": "line", "strength": 108, "confidence": "inferred", "citation": "interpolated: served under the bombardment (Alexander 1907)"},
+        {"t": 8700, "x": 4450, "z": 4770, "facing": 262, "formation": "line", "strength": 103, "confidence": "documented", "citation": "Stone Sentinels 1st NY Independent Battery page / Wikipedia Andrew Cowan: the 'double canister at ten yards' repulse at the Copse as Armistead's men crossed the wall; time ~15:25 inferred"},
+        {"t": 10800, "x": 4450, "z": 4770, "facing": 262, "formation": "line", "strength": 101, "confidence": "inferred", "citation": "end strength 113 minus 12 casualties (4 killed, 8 wounded): Stone Sentinels battery page"}
+      ]
+    },
+    {
+      "id": "us-btty-woodruff", "name": "Woodruff's Battery I, 1st US Artillery", "side": "union",
+      "frontage_m": 80, "depth_m": 40,
+      "keyframes": [
+        {"t": 0, "x": 4570, "z": 5095, "facing": 252, "formation": "line", "strength": 120, "confidence": "documented", "citation": "Bachelder Third Day sheet, LOC 99447492; posted at Ziegler's Grove, not the Angle proper (Stone Sentinels 1st US Battery I page; Ziegler's Grove anchor OSM node 4497323192); strength 120: Stone Sentinels; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"},
+        {"t": 7200, "x": 4570, "z": 5095, "facing": 252, "formation": "line", "strength": 108, "confidence": "inferred", "citation": "interpolated: served under the bombardment (Alexander 1907)"},
+        {"t": 8700, "x": 4570, "z": 5095, "facing": 252, "formation": "line", "strength": 98, "confidence": "documented", "citation": "Hazard's report (via Iron Brigader): Woodruff fell mortally wounded July 3 during the repulse, died July 4; command to Lt. McCrea; time ~15:25 inferred"},
+        {"t": 10800, "x": 4570, "z": 5095, "facing": 252, "formation": "line", "strength": 95, "confidence": "inferred", "citation": "end strength 120 minus 25 casualties: Stone Sentinels battery page — two extractions of the source give 25 vs 30 total casualties; conflict flagged, smaller reading used"}
+      ]
+    }
+  ]
+}
