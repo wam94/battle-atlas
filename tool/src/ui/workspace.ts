@@ -4,6 +4,7 @@ import type { Battle, Confidence, Formation, Side, Unit } from "../model";
 import { exportBattle, importBattle } from "../io";
 import { validateBattle } from "../validate";
 import { battleToGeoJSON, installBattleLayers, previewToGeoJSON } from "./pathlayer";
+import { initOverlayUI } from "./overlayui";
 
 const FORMATIONS: Formation[] = ["column", "line", "skirmish", "scattered", "routed"];
 const CONFIDENCES: Confidence[] = ["unknown", "inferred", "documented"];
@@ -12,6 +13,18 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
   let battle: Battle = { name: "untitled battle", startTime: 0, endTime: 3600, units: [] };
   let selectedUnitId: string | null = null;
   let draftTime = 0;
+
+  // `el` splits into two stable children: `dynamicEl` is fully rebuilt by every
+  // render() call (as before), while `overlaySection` is built exactly once
+  // here so overlay state (loaded image, tie points, placed raster source)
+  // survives sidebar re-renders instead of being torn down each edit.
+  el.replaceChildren();
+  const dynamicEl = document.createElement("div");
+  dynamicEl.id = "workspace-dynamic";
+  const overlaySection = document.createElement("div");
+  overlaySection.id = "overlay-section";
+  el.append(dynamicEl, overlaySection);
+  initOverlayUI(overlaySection, map, bf);
 
   const installLayers = () => installBattleLayers(map);
   if (map.isStyleLoaded()) installLayers();
@@ -43,7 +56,7 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
 
   function render(): void {
     syncMap();
-    el.replaceChildren();
+    dynamicEl.replaceChildren();
     const frag = document.createDocumentFragment();
 
     // battle header
@@ -121,7 +134,7 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
     status.textContent = liveErrors.ok ? "battle is valid" : liveErrors.errors.join("\n");
     frag.append(row(exportBtn), labeled("import battle JSON", importInput), status, errBox);
 
-    el.append(frag);
+    dynamicEl.append(frag);
   }
 
   function unitEditor(unit: Unit): DocumentFragment {
