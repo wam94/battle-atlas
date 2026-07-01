@@ -28,7 +28,10 @@ export function battleToGeoJSON(battle: Battle, bf: Battlefield, selectedUnitId:
 }
 
 export function previewToGeoJSON(battle: Battle, bf: Battlefield, t: number) {
-  const features: GeoJSON.Feature[] = battle.units.map((unit) => {
+  // freshly-added units have no keyframes yet (a legal transient state in the
+  // authoring tool, though not in exported data) — nothing to preview for them
+  const previewable = battle.units.filter((u) => u.keyframes.length > 0);
+  const features: GeoJSON.Feature[] = previewable.map((unit) => {
     const s = stateAt(unit, t);
     // oriented footprint rectangle (local meters -> lon/lat ring)
     const rad = ((90 - s.facing) * Math.PI) / 180; // compass -> math angle of unit FORWARD

@@ -24,3 +24,15 @@ describe("pathlayer geojson", () => {
     expect(cy).toBeCloseTo(lat, 6);
   });
 });
+
+describe("previewToGeoJSON with keyframeless units", () => {
+  it("skips units that have no keyframes yet instead of throwing", () => {
+    const battle = structuredClone(placeholder) as any;
+    battle.units.push({
+      id: "fresh", name: "Fresh Unit", side: "union",
+      frontage_m: 100, depth_m: 20, keyframes: [],
+    });
+    const gj = previewToGeoJSON(battle, bf, 0);
+    expect(gj.features.length).toBe(placeholder.units.length);
+  });
+});
