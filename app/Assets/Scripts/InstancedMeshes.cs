@@ -32,7 +32,7 @@ namespace BattleAtlas
         }
 
         // fence post: a vertical post box + two horizontal rail boxes
-        // extending +x from the post, ~1.4m tall, 24 verts (3 boxes x 8).
+        // extending along local +Z from the post, ~1.4m tall, 24 verts (3 boxes x 8).
         // Shared by both stone_wall and rail_fence renders (FenceField):
         // rail geometry reads fine as a low grey box row for stone walls too,
         // so one mesh serves both classes.
@@ -42,9 +42,12 @@ namespace BattleAtlas
             var tris = new List<int>();
             // post: 0.15 x 1.4 x 0.15, centered so its base sits at y=0
             AddBox(verts, tris, new Vector3(0f, 0.7f, 0f), new Vector3(0.15f, 1.4f, 0.15f), 1f);
-            // two rails, 1.5m long, extending +x from the post center
-            AddBox(verts, tris, new Vector3(0.75f, 0.6f, 0f), new Vector3(1.5f, 0.08f, 0.08f), 1f);
-            AddBox(verts, tris, new Vector3(0.75f, 1.1f, 0f), new Vector3(1.5f, 0.08f, 0.08f), 1f);
+            // two rails, 1.5m long, extending along local +Z from the post center.
+            // Quaternion.Euler(0, bearingDeg, 0) maps local +Z to the compass bearing
+            // (the unit-facing / FormationLayout convention), so the rails must run
+            // along +Z to align with the fence line rather than perpendicular to it.
+            AddBox(verts, tris, new Vector3(0f, 0.6f, 0.75f), new Vector3(0.08f, 0.08f, 1.5f), 1f);
+            AddBox(verts, tris, new Vector3(0f, 1.1f, 0.75f), new Vector3(0.08f, 0.08f, 1.5f), 1f);
             return Build(verts, tris, "FencePost");
         }
 

@@ -33,7 +33,12 @@ public class InstancedMeshesTests
         Assert.LessOrEqual(m.vertexCount, 36); // post + two rails, low-poly
         Assert.Greater(m.bounds.size.y, 1f);   // roughly post-height
         Assert.Less(m.bounds.size.y, 2f);
-        Assert.Greater(m.bounds.size.x, 1f);   // rails extend well past the post
+        // Rails must extend along local +Z, not +X: Quaternion.Euler(0, bearingDeg, 0)
+        // maps local +Z to the compass bearing (unit-facing / FormationLayout
+        // convention), so a fence post's rails need to run along +Z to align with
+        // the fence line instead of sitting perpendicular to it.
+        Assert.Greater(m.bounds.size.z, 1f);   // rails extend well past the post, along +Z
+        Assert.Less(m.bounds.size.x, 0.5f);    // no extent along +X (perpendicular to bearing)
         Object.DestroyImmediate(m);
     }
 }
