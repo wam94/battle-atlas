@@ -213,3 +213,14 @@ def test_fence_posts_ignores_polygon_features():
     posts = landcover.fence_posts(features)
 
     assert posts == []
+
+
+def test_fence_posts_no_duplicate_at_bend():
+    feature = {
+        "id": "f1", "kind": "line", "cls": "rail_fence",
+        "points": [[0, 0], [30, 0], [30, 30]],
+    }
+    posts = landcover.fence_posts([feature])
+    positions = [(round(p["x"], 6), round(p["z"], 6)) for p in posts]
+    assert len(positions) == len(set(positions)), "duplicate post positions"
+    assert (30.0, 0.0) in positions  # the corner post exists exactly once

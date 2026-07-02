@@ -227,6 +227,12 @@ def fence_posts(features, spacing=3.0):
             steps = max(1, math.ceil(length / spacing))
             for i in range(steps + 1):
                 t = min(i * spacing / length, 1.0)
+                # skip the segment-start post when it coincides with the
+                # previous segment's end (shared vertex of a bent line)
+                if i == 0 and posts and feature["kind"] == "line":
+                    prev = posts[-1]
+                    if abs(prev["x"] - x0) < 1e-9 and abs(prev["z"] - z0) < 1e-9 and prev["cls"] == feature["cls"]:
+                        continue
                 posts.append({
                     "x": x0 + (x1 - x0) * t,
                     "z": z0 + (z1 - z0) * t,
