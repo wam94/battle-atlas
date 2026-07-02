@@ -53,7 +53,9 @@ describe("authored July 3 battle", () => {
   });
   it("the two new units exist and the unit count is pinned", () => {
     const units = (battle as any).units;
-    expect(units).toHaveLength(35); // 22 + 11 children + 8th Ohio + Brown's B
+    // 22 + 11 A-grade children + 8th Ohio + Brown's B (A5)
+    //    + 28 B-grade children + 2 Brockenbrough wings (A6)
+    expect(units).toHaveLength(65);
     const ohio = units.find((u: any) => u.id === "us-8oh");
     expect(ohio).toBeDefined();
     expect(ohio.parent).toBeUndefined(); // Carroll's brigade isn't modeled
@@ -63,5 +65,43 @@ describe("authored July 3 battle", () => {
     // Cowan's gallop-in fix: no longer starts in place at its Copse position
     const cowan = units.find((u: any) => u.id === "us-btty-cowan");
     expect(cowan.keyframes[0].z).not.toBe(cowan.keyframes[cowan.keyframes.length - 1].z);
+  });
+  it("B-grade Confederate children are valid; the four display-LOD brigades keep rosters and no children", () => {
+    const units = (battle as any).units;
+    const childrenOf = (p: string) =>
+      units.filter((u: any) => u.parent === p).map((u: any) => u.id).sort();
+    expect(childrenOf("csa-garnett")).toEqual(
+      ["csa-18va", "csa-19va", "csa-28va", "csa-56va", "csa-8va"]);
+    expect(childrenOf("csa-kemper")).toEqual(
+      ["csa-11va", "csa-1va", "csa-24va", "csa-3va", "csa-7va"]);
+    expect(childrenOf("csa-armistead")).toEqual(
+      ["csa-14va", "csa-38va", "csa-53va", "csa-57va", "csa-9va"]);
+    expect(childrenOf("csa-fry")).toEqual(
+      ["csa-13al", "csa-14tn", "csa-1tn", "csa-5al-bn", "csa-7tn"]);
+    expect(childrenOf("csa-marshall")).toEqual(
+      ["csa-11nc", "csa-26nc", "csa-47nc", "csa-52nc"]);
+    expect(childrenOf("csa-davis")).toEqual(
+      ["csa-11miss", "csa-2miss", "csa-42miss", "csa-55nc"]);
+    // Brockenbrough: two WINGS, not four regiments — the wing split is
+    // attested (Mayo's OR), the regiment split is not; children MAY roster
+    expect(childrenOf("csa-brockenbrough")).toEqual(["csa-brock-left", "csa-brock-right"]);
+    for (const id of ["csa-brock-right", "csa-brock-left"]) {
+      const wing = units.find((u: any) => u.id === id);
+      expect(wing.regiments).toHaveLength(2);
+    }
+    for (const id of ["csa-garnett", "csa-kemper", "csa-armistead", "csa-fry",
+      "csa-marshall", "csa-davis", "csa-brockenbrough"]) {
+      const parent = units.find((u: any) => u.id === id);
+      expect(parent.regiments).toBeUndefined(); // full decomposition or none
+      expect(parent.parent).toBeUndefined(); // depth 1
+    }
+    // Lane/Lowrance/Wilcox/Lang stay display-LOD rosters — decomposing them
+    // would manufacture unattested tracks (the plan's honesty line)
+    for (const id of ["csa-lane", "csa-lowrance", "csa-wilcox", "csa-lang"]) {
+      const u = units.find((x: any) => x.id === id);
+      expect(u.regiments.length).toBeGreaterThanOrEqual(2);
+      expect(u.parent).toBeUndefined();
+      expect(childrenOf(id)).toEqual([]);
+    }
   });
 });

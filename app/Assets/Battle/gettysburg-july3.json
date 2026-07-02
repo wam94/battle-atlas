@@ -9,13 +9,6 @@
       "side": "confederate",
       "frontage_m": 400,
       "depth_m": 40,
-      "regiments": [
-        "8th Virginia",
-        "18th Virginia",
-        "19th Virginia",
-        "28th Virginia",
-        "56th Virginia"
-      ],
       "keyframes": [
         {
           "t": 0,
@@ -120,18 +113,561 @@
       ]
     },
     {
+      "id": "csa-8va",
+      "name": "8th Virginia",
+      "side": "confederate",
+      "frontage_m": 75.2,
+      "depth_m": 40,
+      "parent": "csa-garnett",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3206,
+          "z": 4768,
+          "facing": 88,
+          "formation": "line",
+          "strength": 296,
+          "confidence": "documented",
+          "citation": "Bachelder Third Day sheet, LOC 99447492 — Garnett's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '8'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,480 (Stone Sentinels Garnett's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); slot order right-to-left per Rawley Martin, SHSP v32"
+        },
+        {
+          "t": 7200,
+          "x": 3206,
+          "z": 4768,
+          "facing": 88,
+          "formation": "line",
+          "strength": 291,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static in the swale under two-hour bombardment (Alexander 1907; Haskell 1908 'two mortal hours'); small counter-battery losses reconstructed]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3206,
+          "z": 4768,
+          "facing": 88,
+          "formation": "line",
+          "strength": 290,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set; Haskell 1908 has the cannonade end 'at three o'clock almost precisely'); Alexander 1907 says ~1:50 and Jacobs 1864 says 2:30 — witnesses disagree by over an hour]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8160,
+          "x": 4076,
+          "z": 4643,
+          "facing": 95,
+          "formation": "line",
+          "strength": 276,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: reaches the Emmitsburg Road fences ~15:16 (ABT Pickett's Charge 3:30-3:45 PM map; Codori farm anchor OSM way 779833686); pace 1.36 m/s]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8280,
+          "x": 4076,
+          "z": 4643,
+          "facing": 95,
+          "formation": "line",
+          "strength": 272,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: formation-dress pause at the road fences ~15:16-15:18 (ABT maps); losses to canister while halted]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8580,
+          "x": 4414,
+          "z": 4709,
+          "facing": 78,
+          "formation": "line",
+          "strength": 210,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Stone Sentinels Garnett's Brigade page: Garnett shot dead roughly 20 yards from the Angle; Bachelder Third Day sheet (High Water Mark); time ~15:23 inferred from step-off reconstruction]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8700,
+          "x": 4424,
+          "z": 4711,
+          "facing": 78,
+          "formation": "scattered",
+          "strength": 170,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: brigade shattered at the stone wall, mixed with Armistead's men (Rawley Martin SHSP v32; Haskell 1908)]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4186,
+          "z": 5012,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 140,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map): survivors stream back toward Seminary Ridge]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3586,
+          "z": 5042,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 116,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3236,
+          "z": 5082,
+          "facing": 265,
+          "formation": "scattered",
+          "strength": 108,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 1,480 minus 941 losses: Stone Sentinels Garnett's Brigade page; ~60% Confederate loss per Longstreet 1896 p.315; survivors rally behind Seminary Ridge (reconstruction)]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-18va",
+      "name": "18th Virginia",
+      "side": "confederate",
+      "frontage_m": 75.2,
+      "depth_m": 40,
+      "parent": "csa-garnett",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3203,
+          "z": 4849,
+          "facing": 88,
+          "formation": "line",
+          "strength": 296,
+          "confidence": "documented",
+          "citation": "Bachelder Third Day sheet, LOC 99447492 — Garnett's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '18'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,480 (Stone Sentinels Garnett's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); slot order right-to-left per Rawley Martin, SHSP v32"
+        },
+        {
+          "t": 7200,
+          "x": 3203,
+          "z": 4849,
+          "facing": 88,
+          "formation": "line",
+          "strength": 291,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static in the swale under two-hour bombardment (Alexander 1907; Haskell 1908 'two mortal hours'); small counter-battery losses reconstructed]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3203,
+          "z": 4849,
+          "facing": 88,
+          "formation": "line",
+          "strength": 290,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set; Haskell 1908 has the cannonade end 'at three o'clock almost precisely'); Alexander 1907 says ~1:50 and Jacobs 1864 says 2:30 — witnesses disagree by over an hour]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8160,
+          "x": 4083,
+          "z": 4724,
+          "facing": 95,
+          "formation": "line",
+          "strength": 276,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: reaches the Emmitsburg Road fences ~15:16 (ABT Pickett's Charge 3:30-3:45 PM map; Codori farm anchor OSM way 779833686); pace 1.36 m/s]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8280,
+          "x": 4083,
+          "z": 4724,
+          "facing": 95,
+          "formation": "line",
+          "strength": 272,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: formation-dress pause at the road fences ~15:16-15:18 (ABT maps); losses to canister while halted]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8580,
+          "x": 4397,
+          "z": 4789,
+          "facing": 78,
+          "formation": "line",
+          "strength": 210,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Stone Sentinels Garnett's Brigade page: Garnett shot dead roughly 20 yards from the Angle; Bachelder Third Day sheet (High Water Mark); time ~15:23 inferred from step-off reconstruction]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8700,
+          "x": 4407,
+          "z": 4791,
+          "facing": 78,
+          "formation": "scattered",
+          "strength": 170,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: brigade shattered at the stone wall, mixed with Armistead's men (Rawley Martin SHSP v32; Haskell 1908)]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4193,
+          "z": 4931,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 140,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map): survivors stream back toward Seminary Ridge]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3593,
+          "z": 4961,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 116,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3243,
+          "z": 5001,
+          "facing": 265,
+          "formation": "scattered",
+          "strength": 108,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 1,480 minus 941 losses: Stone Sentinels Garnett's Brigade page; ~60% Confederate loss per Longstreet 1896 p.315; survivors rally behind Seminary Ridge (reconstruction)]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-19va",
+      "name": "19th Virginia",
+      "side": "confederate",
+      "frontage_m": 75.2,
+      "depth_m": 40,
+      "parent": "csa-garnett",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3200,
+          "z": 4930,
+          "facing": 88,
+          "formation": "line",
+          "strength": 296,
+          "confidence": "documented",
+          "citation": "Bachelder Third Day sheet, LOC 99447492 — Garnett's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '19'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,480 (Stone Sentinels Garnett's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); bar named in the survey's full-res inspection"
+        },
+        {
+          "t": 7200,
+          "x": 3200,
+          "z": 4930,
+          "facing": 88,
+          "formation": "line",
+          "strength": 291,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static in the swale under two-hour bombardment (Alexander 1907; Haskell 1908 'two mortal hours'); small counter-battery losses reconstructed]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3200,
+          "z": 4930,
+          "facing": 88,
+          "formation": "line",
+          "strength": 290,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set; Haskell 1908 has the cannonade end 'at three o'clock almost precisely'); Alexander 1907 says ~1:50 and Jacobs 1864 says 2:30 — witnesses disagree by over an hour]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8160,
+          "x": 4090,
+          "z": 4805,
+          "facing": 95,
+          "formation": "line",
+          "strength": 276,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: reaches the Emmitsburg Road fences ~15:16 (ABT Pickett's Charge 3:30-3:45 PM map; Codori farm anchor OSM way 779833686); pace 1.36 m/s]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8280,
+          "x": 4090,
+          "z": 4805,
+          "facing": 95,
+          "formation": "line",
+          "strength": 272,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: formation-dress pause at the road fences ~15:16-15:18 (ABT maps); losses to canister while halted]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8580,
+          "x": 4380,
+          "z": 4868,
+          "facing": 78,
+          "formation": "line",
+          "strength": 210,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Stone Sentinels Garnett's Brigade page: Garnett shot dead roughly 20 yards from the Angle; Bachelder Third Day sheet (High Water Mark); time ~15:23 inferred from step-off reconstruction]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8700,
+          "x": 4390,
+          "z": 4870,
+          "facing": 78,
+          "formation": "scattered",
+          "strength": 170,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: brigade shattered at the stone wall, mixed with Armistead's men (Rawley Martin SHSP v32; Haskell 1908)]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4200,
+          "z": 4850,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 140,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map): survivors stream back toward Seminary Ridge]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3600,
+          "z": 4880,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 116,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3250,
+          "z": 4920,
+          "facing": 265,
+          "formation": "scattered",
+          "strength": 108,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 1,480 minus 941 losses: Stone Sentinels Garnett's Brigade page; ~60% Confederate loss per Longstreet 1896 p.315; survivors rally behind Seminary Ridge (reconstruction)]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-28va",
+      "name": "28th Virginia",
+      "side": "confederate",
+      "frontage_m": 75.2,
+      "depth_m": 40,
+      "parent": "csa-garnett",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3197,
+          "z": 5011,
+          "facing": 88,
+          "formation": "line",
+          "strength": 296,
+          "confidence": "documented",
+          "citation": "Bachelder Third Day sheet, LOC 99447492 — Garnett's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '28'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,480 (Stone Sentinels Garnett's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); bar named in the survey's full-res inspection"
+        },
+        {
+          "t": 7200,
+          "x": 3197,
+          "z": 5011,
+          "facing": 88,
+          "formation": "line",
+          "strength": 291,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static in the swale under two-hour bombardment (Alexander 1907; Haskell 1908 'two mortal hours'); small counter-battery losses reconstructed]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3197,
+          "z": 5011,
+          "facing": 88,
+          "formation": "line",
+          "strength": 290,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set; Haskell 1908 has the cannonade end 'at three o'clock almost precisely'); Alexander 1907 says ~1:50 and Jacobs 1864 says 2:30 — witnesses disagree by over an hour]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8160,
+          "x": 4097,
+          "z": 4886,
+          "facing": 95,
+          "formation": "line",
+          "strength": 276,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: reaches the Emmitsburg Road fences ~15:16 (ABT Pickett's Charge 3:30-3:45 PM map; Codori farm anchor OSM way 779833686); pace 1.36 m/s]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8280,
+          "x": 4097,
+          "z": 4886,
+          "facing": 95,
+          "formation": "line",
+          "strength": 272,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: formation-dress pause at the road fences ~15:16-15:18 (ABT maps); losses to canister while halted]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8580,
+          "x": 4363,
+          "z": 4947,
+          "facing": 78,
+          "formation": "line",
+          "strength": 210,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Stone Sentinels Garnett's Brigade page: Garnett shot dead roughly 20 yards from the Angle; Bachelder Third Day sheet (High Water Mark); time ~15:23 inferred from step-off reconstruction]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8700,
+          "x": 4373,
+          "z": 4949,
+          "facing": 78,
+          "formation": "scattered",
+          "strength": 170,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: brigade shattered at the stone wall, mixed with Armistead's men (Rawley Martin SHSP v32; Haskell 1908)]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4207,
+          "z": 4769,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 140,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map): survivors stream back toward Seminary Ridge]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3607,
+          "z": 4799,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 116,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3257,
+          "z": 4839,
+          "facing": 265,
+          "formation": "scattered",
+          "strength": 108,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 1,480 minus 941 losses: Stone Sentinels Garnett's Brigade page; ~60% Confederate loss per Longstreet 1896 p.315; survivors rally behind Seminary Ridge (reconstruction)]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-56va",
+      "name": "56th Virginia",
+      "side": "confederate",
+      "frontage_m": 75.2,
+      "depth_m": 40,
+      "parent": "csa-garnett",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3194,
+          "z": 5092,
+          "facing": 88,
+          "formation": "line",
+          "strength": 296,
+          "confidence": "documented",
+          "citation": "Bachelder Third Day sheet, LOC 99447492 — Garnett's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '56'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,480 (Stone Sentinels Garnett's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); bar named in the survey's full-res inspection (brigade left)"
+        },
+        {
+          "t": 7200,
+          "x": 3194,
+          "z": 5092,
+          "facing": 88,
+          "formation": "line",
+          "strength": 291,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static in the swale under two-hour bombardment (Alexander 1907; Haskell 1908 'two mortal hours'); small counter-battery losses reconstructed]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3194,
+          "z": 5092,
+          "facing": 88,
+          "formation": "line",
+          "strength": 290,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set; Haskell 1908 has the cannonade end 'at three o'clock almost precisely'); Alexander 1907 says ~1:50 and Jacobs 1864 says 2:30 — witnesses disagree by over an hour]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8160,
+          "x": 4104,
+          "z": 4967,
+          "facing": 95,
+          "formation": "line",
+          "strength": 276,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: reaches the Emmitsburg Road fences ~15:16 (ABT Pickett's Charge 3:30-3:45 PM map; Codori farm anchor OSM way 779833686); pace 1.36 m/s]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8280,
+          "x": 4104,
+          "z": 4967,
+          "facing": 95,
+          "formation": "line",
+          "strength": 272,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: formation-dress pause at the road fences ~15:16-15:18 (ABT maps); losses to canister while halted]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8580,
+          "x": 4346,
+          "z": 5027,
+          "facing": 78,
+          "formation": "line",
+          "strength": 210,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Stone Sentinels Garnett's Brigade page: Garnett shot dead roughly 20 yards from the Angle; Bachelder Third Day sheet (High Water Mark); time ~15:23 inferred from step-off reconstruction]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8700,
+          "x": 4356,
+          "z": 5029,
+          "facing": 78,
+          "formation": "scattered",
+          "strength": 170,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: brigade shattered at the stone wall, mixed with Armistead's men (Rawley Martin SHSP v32; Haskell 1908)]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4214,
+          "z": 4688,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 140,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map): survivors stream back toward Seminary Ridge]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3614,
+          "z": 4718,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 116,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3264,
+          "z": 4758,
+          "facing": 265,
+          "formation": "scattered",
+          "strength": 108,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 1,480 minus 941 losses: Stone Sentinels Garnett's Brigade page; ~60% Confederate loss per Longstreet 1896 p.315; survivors rally behind Seminary Ridge (reconstruction)]; slot order [slot order per Rawley Martin, SHSP v32, matching the Bachelder sheet 3 bar sequence (56'/28'/19'... read at full res, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,480 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
       "id": "csa-kemper",
       "name": "Kemper's Brigade",
       "side": "confederate",
       "frontage_m": 420,
       "depth_m": 40,
-      "regiments": [
-        "1st Virginia",
-        "3rd Virginia",
-        "7th Virginia",
-        "11th Virginia",
-        "24th Virginia"
-      ],
       "keyframes": [
         {
           "t": 0,
@@ -246,18 +782,611 @@
       ]
     },
     {
+      "id": "csa-1va",
+      "name": "1st Virginia",
+      "side": "confederate",
+      "frontage_m": 79.2,
+      "depth_m": 40,
+      "parent": "csa-kemper",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3180,
+          "z": 4512,
+          "facing": 80,
+          "formation": "line",
+          "strength": 315,
+          "confidence": "documented",
+          "citation": "Bachelder Third Day sheet, LOC 99447492 — Kemper's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '1'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,575 (Stone Sentinels Kemper's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); slot order right-to-left per Rawley Martin, SHSP v32 (Kemper on the division right)"
+        },
+        {
+          "t": 7200,
+          "x": 3180,
+          "z": 4512,
+          "facing": 80,
+          "formation": "line",
+          "strength": 310,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907); small counter-battery losses reconstructed]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3180,
+          "z": 4512,
+          "facing": 80,
+          "formation": "line",
+          "strength": 309,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set; Haskell-implied); Alexander 1907 ~1:50 and Jacobs 1864 2:30 disagree — recorded, not reconciled]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8160,
+          "x": 4040,
+          "z": 4447,
+          "facing": 80,
+          "formation": "line",
+          "strength": 296,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road just south of the Codori barn (Codori anchor OSM way 779833686; ABT 3:30-3:45 PM map; Kemper's line of advance passed the Codori buildings); pace 1.31 m/s]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8280,
+          "x": 4040,
+          "z": 4447,
+          "facing": 80,
+          "formation": "line",
+          "strength": 294,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: formation-dress pause at the road fences ~15:16-15:18 (ABT maps)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8400,
+          "x": 4215,
+          "z": 4522,
+          "facing": 60,
+          "formation": "line",
+          "strength": 276,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: obliquing left toward the Angle while taking flank fire from Stannard's wheeled Vermont regiments (Sturtevant 1910 pp.304-305: Pickett's command 'not sixty yards away')]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8640,
+          "x": 4455,
+          "z": 4642,
+          "facing": 60,
+          "formation": "line",
+          "strength": 230,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Stone Sentinels Kemper's Brigade page: Kemper badly wounded near the Union line south of the Angle, briefly captured, rescued by Sgt. Blanton; Bachelder Third Day sheet; time ~15:24 inferred from step-off reconstruction]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8700,
+          "x": 4460,
+          "z": 4647,
+          "facing": 60,
+          "formation": "scattered",
+          "strength": 220,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: right of the assault crushed between front and Stannard's flank fire (Sturtevant 1910; Stone Sentinels 1st NY Battery B page: Kemper's Virginians briefly overran Rorty's guns)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4120,
+          "z": 4888,
+          "facing": 260,
+          "formation": "routed",
+          "strength": 190,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3570,
+          "z": 4858,
+          "facing": 260,
+          "formation": "routed",
+          "strength": 174,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3170,
+          "z": 4848,
+          "facing": 260,
+          "formation": "scattered",
+          "strength": 169,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 1,575 minus 731 losses: Stone Sentinels Kemper's Brigade page; survivors rally behind Seminary Ridge (reconstruction)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-3va",
+      "name": "3rd Virginia",
+      "side": "confederate",
+      "frontage_m": 79.2,
+      "depth_m": 40,
+      "parent": "csa-kemper",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3165,
+          "z": 4596,
+          "facing": 80,
+          "formation": "line",
+          "strength": 315,
+          "confidence": "documented",
+          "citation": "Bachelder Third Day sheet, LOC 99447492 — Kemper's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '3'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,575 (Stone Sentinels Kemper's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); slot order right-to-left per Rawley Martin, SHSP v32 (Kemper on the division right)"
+        },
+        {
+          "t": 7200,
+          "x": 3165,
+          "z": 4596,
+          "facing": 80,
+          "formation": "line",
+          "strength": 310,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907); small counter-battery losses reconstructed]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3165,
+          "z": 4596,
+          "facing": 80,
+          "formation": "line",
+          "strength": 309,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set; Haskell-implied); Alexander 1907 ~1:50 and Jacobs 1864 2:30 disagree — recorded, not reconciled]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8160,
+          "x": 4025,
+          "z": 4531,
+          "facing": 80,
+          "formation": "line",
+          "strength": 296,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road just south of the Codori barn (Codori anchor OSM way 779833686; ABT 3:30-3:45 PM map; Kemper's line of advance passed the Codori buildings); pace 1.31 m/s]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8280,
+          "x": 4025,
+          "z": 4531,
+          "facing": 80,
+          "formation": "line",
+          "strength": 294,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: formation-dress pause at the road fences ~15:16-15:18 (ABT maps)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8400,
+          "x": 4173,
+          "z": 4596,
+          "facing": 60,
+          "formation": "line",
+          "strength": 276,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: obliquing left toward the Angle while taking flank fire from Stannard's wheeled Vermont regiments (Sturtevant 1910 pp.304-305: Pickett's command 'not sixty yards away')]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8640,
+          "x": 4413,
+          "z": 4716,
+          "facing": 60,
+          "formation": "line",
+          "strength": 230,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Stone Sentinels Kemper's Brigade page: Kemper badly wounded near the Union line south of the Angle, briefly captured, rescued by Sgt. Blanton; Bachelder Third Day sheet; time ~15:24 inferred from step-off reconstruction]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8700,
+          "x": 4418,
+          "z": 4721,
+          "facing": 60,
+          "formation": "scattered",
+          "strength": 220,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: right of the assault crushed between front and Stannard's flank fire (Sturtevant 1910; Stone Sentinels 1st NY Battery B page: Kemper's Virginians briefly overran Rorty's guns)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4135,
+          "z": 4804,
+          "facing": 260,
+          "formation": "routed",
+          "strength": 190,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3585,
+          "z": 4774,
+          "facing": 260,
+          "formation": "routed",
+          "strength": 174,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3185,
+          "z": 4764,
+          "facing": 260,
+          "formation": "scattered",
+          "strength": 169,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 1,575 minus 731 losses: Stone Sentinels Kemper's Brigade page; survivors rally behind Seminary Ridge (reconstruction)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-7va",
+      "name": "7th Virginia",
+      "side": "confederate",
+      "frontage_m": 79.2,
+      "depth_m": 40,
+      "parent": "csa-kemper",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3150,
+          "z": 4680,
+          "facing": 80,
+          "formation": "line",
+          "strength": 315,
+          "confidence": "documented",
+          "citation": "Bachelder Third Day sheet, LOC 99447492 — Kemper's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '7'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,575 (Stone Sentinels Kemper's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); slot order right-to-left per Rawley Martin, SHSP v32 (Kemper on the division right)"
+        },
+        {
+          "t": 7200,
+          "x": 3150,
+          "z": 4680,
+          "facing": 80,
+          "formation": "line",
+          "strength": 310,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907); small counter-battery losses reconstructed]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3150,
+          "z": 4680,
+          "facing": 80,
+          "formation": "line",
+          "strength": 309,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set; Haskell-implied); Alexander 1907 ~1:50 and Jacobs 1864 2:30 disagree — recorded, not reconciled]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8160,
+          "x": 4010,
+          "z": 4615,
+          "facing": 80,
+          "formation": "line",
+          "strength": 296,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road just south of the Codori barn (Codori anchor OSM way 779833686; ABT 3:30-3:45 PM map; Kemper's line of advance passed the Codori buildings); pace 1.31 m/s]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8280,
+          "x": 4010,
+          "z": 4615,
+          "facing": 80,
+          "formation": "line",
+          "strength": 294,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: formation-dress pause at the road fences ~15:16-15:18 (ABT maps)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8400,
+          "x": 4130,
+          "z": 4670,
+          "facing": 60,
+          "formation": "line",
+          "strength": 276,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: obliquing left toward the Angle while taking flank fire from Stannard's wheeled Vermont regiments (Sturtevant 1910 pp.304-305: Pickett's command 'not sixty yards away')]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8640,
+          "x": 4370,
+          "z": 4790,
+          "facing": 60,
+          "formation": "line",
+          "strength": 230,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Stone Sentinels Kemper's Brigade page: Kemper badly wounded near the Union line south of the Angle, briefly captured, rescued by Sgt. Blanton; Bachelder Third Day sheet; time ~15:24 inferred from step-off reconstruction]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8700,
+          "x": 4375,
+          "z": 4795,
+          "facing": 60,
+          "formation": "scattered",
+          "strength": 220,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: right of the assault crushed between front and Stannard's flank fire (Sturtevant 1910; Stone Sentinels 1st NY Battery B page: Kemper's Virginians briefly overran Rorty's guns)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4150,
+          "z": 4720,
+          "facing": 260,
+          "formation": "routed",
+          "strength": 190,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3600,
+          "z": 4690,
+          "facing": 260,
+          "formation": "routed",
+          "strength": 174,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3200,
+          "z": 4680,
+          "facing": 260,
+          "formation": "scattered",
+          "strength": 169,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 1,575 minus 731 losses: Stone Sentinels Kemper's Brigade page; survivors rally behind Seminary Ridge (reconstruction)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-11va",
+      "name": "11th Virginia",
+      "side": "confederate",
+      "frontage_m": 79.2,
+      "depth_m": 40,
+      "parent": "csa-kemper",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3135,
+          "z": 4764,
+          "facing": 80,
+          "formation": "line",
+          "strength": 315,
+          "confidence": "documented",
+          "citation": "Bachelder Third Day sheet, LOC 99447492 — Kemper's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '11'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,575 (Stone Sentinels Kemper's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); slot order right-to-left per Rawley Martin, SHSP v32 (Kemper on the division right)"
+        },
+        {
+          "t": 7200,
+          "x": 3135,
+          "z": 4764,
+          "facing": 80,
+          "formation": "line",
+          "strength": 310,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907); small counter-battery losses reconstructed]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3135,
+          "z": 4764,
+          "facing": 80,
+          "formation": "line",
+          "strength": 309,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set; Haskell-implied); Alexander 1907 ~1:50 and Jacobs 1864 2:30 disagree — recorded, not reconciled]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8160,
+          "x": 3995,
+          "z": 4699,
+          "facing": 80,
+          "formation": "line",
+          "strength": 296,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road just south of the Codori barn (Codori anchor OSM way 779833686; ABT 3:30-3:45 PM map; Kemper's line of advance passed the Codori buildings); pace 1.31 m/s]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8280,
+          "x": 3995,
+          "z": 4699,
+          "facing": 80,
+          "formation": "line",
+          "strength": 294,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: formation-dress pause at the road fences ~15:16-15:18 (ABT maps)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8400,
+          "x": 4087,
+          "z": 4744,
+          "facing": 60,
+          "formation": "line",
+          "strength": 276,
+          "confidence": "inferred",
+          "citation": "the oblique left toward the Angle under Stannard's flank fire — J. H. Smith (11th Virginia), SHSP v32 (repo-verified via the 2026-07-02 survey); Sturtevant 1910 pp.304-305 (Pickett's command 'not sixty yards away'); slot-follow of the brigade track; ABT 3:30-3:45 PM map clock frame noted, never mixed silently"
+        },
+        {
+          "t": 8640,
+          "x": 4327,
+          "z": 4864,
+          "facing": 60,
+          "formation": "line",
+          "strength": 230,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Stone Sentinels Kemper's Brigade page: Kemper badly wounded near the Union line south of the Angle, briefly captured, rescued by Sgt. Blanton; Bachelder Third Day sheet; time ~15:24 inferred from step-off reconstruction]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8700,
+          "x": 4332,
+          "z": 4869,
+          "facing": 60,
+          "formation": "scattered",
+          "strength": 220,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: right of the assault crushed between front and Stannard's flank fire (Sturtevant 1910; Stone Sentinels 1st NY Battery B page: Kemper's Virginians briefly overran Rorty's guns)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4165,
+          "z": 4636,
+          "facing": 260,
+          "formation": "routed",
+          "strength": 190,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3615,
+          "z": 4606,
+          "facing": 260,
+          "formation": "routed",
+          "strength": 174,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3215,
+          "z": 4596,
+          "facing": 260,
+          "formation": "scattered",
+          "strength": 169,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 1,575 minus 731 losses: Stone Sentinels Kemper's Brigade page; survivors rally behind Seminary Ridge (reconstruction)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-24va",
+      "name": "24th Virginia",
+      "side": "confederate",
+      "frontage_m": 79.2,
+      "depth_m": 40,
+      "parent": "csa-kemper",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3120,
+          "z": 4848,
+          "facing": 80,
+          "formation": "line",
+          "strength": 315,
+          "confidence": "documented",
+          "citation": "Bachelder Third Day sheet, LOC 99447492 — Kemper's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '24'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,575 (Stone Sentinels Kemper's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); slot order right-to-left per Rawley Martin, SHSP v32 (Kemper on the division right)"
+        },
+        {
+          "t": 7200,
+          "x": 3120,
+          "z": 4848,
+          "facing": 80,
+          "formation": "line",
+          "strength": 310,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907); small counter-battery losses reconstructed]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3120,
+          "z": 4848,
+          "facing": 80,
+          "formation": "line",
+          "strength": 309,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set; Haskell-implied); Alexander 1907 ~1:50 and Jacobs 1864 2:30 disagree — recorded, not reconciled]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8160,
+          "x": 3980,
+          "z": 4783,
+          "facing": 80,
+          "formation": "line",
+          "strength": 296,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road just south of the Codori barn (Codori anchor OSM way 779833686; ABT 3:30-3:45 PM map; Kemper's line of advance passed the Codori buildings); pace 1.31 m/s]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8280,
+          "x": 3980,
+          "z": 4783,
+          "facing": 80,
+          "formation": "line",
+          "strength": 294,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: formation-dress pause at the road fences ~15:16-15:18 (ABT maps)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8400,
+          "x": 4045,
+          "z": 4818,
+          "facing": 60,
+          "formation": "line",
+          "strength": 276,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: obliquing left toward the Angle while taking flank fire from Stannard's wheeled Vermont regiments (Sturtevant 1910 pp.304-305: Pickett's command 'not sixty yards away')]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8640,
+          "x": 4285,
+          "z": 4938,
+          "facing": 60,
+          "formation": "line",
+          "strength": 230,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Stone Sentinels Kemper's Brigade page: Kemper badly wounded near the Union line south of the Angle, briefly captured, rescued by Sgt. Blanton; Bachelder Third Day sheet; time ~15:24 inferred from step-off reconstruction]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8700,
+          "x": 4290,
+          "z": 4943,
+          "facing": 60,
+          "formation": "scattered",
+          "strength": 220,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: right of the assault crushed between front and Stannard's flank fire (Sturtevant 1910; Stone Sentinels 1st NY Battery B page: Kemper's Virginians briefly overran Rorty's guns)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4180,
+          "z": 4552,
+          "facing": 260,
+          "formation": "routed",
+          "strength": 190,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3630,
+          "z": 4522,
+          "facing": 260,
+          "formation": "routed",
+          "strength": 174,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3230,
+          "z": 4512,
+          "facing": 260,
+          "formation": "scattered",
+          "strength": 169,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 1,575 minus 731 losses: Stone Sentinels Kemper's Brigade page; survivors rally behind Seminary Ridge (reconstruction)]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
       "id": "csa-armistead",
       "name": "Armistead's Brigade",
       "side": "confederate",
       "frontage_m": 440,
       "depth_m": 40,
-      "regiments": [
-        "9th Virginia",
-        "14th Virginia",
-        "38th Virginia",
-        "53rd Virginia",
-        "57th Virginia"
-      ],
       "keyframes": [
         {
           "t": 0,
@@ -352,18 +1481,511 @@
       ]
     },
     {
+      "id": "csa-9va",
+      "name": "9th Virginia",
+      "side": "confederate",
+      "frontage_m": 83.2,
+      "depth_m": 40,
+      "parent": "csa-armistead",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3106,
+          "z": 4652,
+          "facing": 85,
+          "formation": "line",
+          "strength": 330,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (second line behind Garnett/Kemper; Rawley Martin SHSP v32 places Armistead 'in rear and center', some modern accounts left-rear — recorded, not reconciled); strength 1,650 present: Stone Sentinels Armistead's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: Rawley Martin, SHSP v32 (regiment-by-regiment, Armistead rear-center)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7200,
+          "x": 3106,
+          "z": 4652,
+          "facing": 85,
+          "formation": "line",
+          "strength": 326,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: second line static under bombardment (Alexander 1907)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3106,
+          "z": 4652,
+          "facing": 85,
+          "formation": "line",
+          "strength": 325,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off in support ~15:05: modern reconstruction (ABT map set); Alexander 1907 ~1:50 and Jacobs 1864 2:30 disagree on the hour]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8280,
+          "x": 4076,
+          "z": 4642,
+          "facing": 85,
+          "formation": "line",
+          "strength": 312,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road ~200m behind the first line ~15:18 (ABT 3:30-3:45 PM map); pace 1.24 m/s including fence delay]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8640,
+          "x": 4416,
+          "z": 4684,
+          "facing": 80,
+          "formation": "line",
+          "strength": 250,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: closes on the wall at the Angle through the wreck of Garnett's line (Rawley Martin SHSP v32)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8700,
+          "x": 4446,
+          "z": 4679,
+          "facing": 80,
+          "formation": "scattered",
+          "strength": 210,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Rawley Martin, SHSP v32 pp.183-195: Armistead 'scaled the wall' crying 'Boys, give them the cold steel!' and fell mortally wounded under the captured guns; Fuger via NPS Hartwig 2012 (Armistead leapt the wall into Cushing's battery); time ~15:25 per NPS/modern reconstruction]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4234,
+          "z": 5028,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 140,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map): breakthrough sealed by Webb's and Hall's counterattack; survivors fall back]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3634,
+          "z": 5048,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 100,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3134,
+          "z": 5068,
+          "facing": 265,
+          "formation": "scattered",
+          "strength": 92,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 1,650 minus 1,191 losses: Stone Sentinels Armistead's Brigade page, corroborated by Col. W.R. Aylett's July 12, 1863 report (via Encyclopedia Virginia)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-14va",
+      "name": "14th Virginia",
+      "side": "confederate",
+      "frontage_m": 83.2,
+      "depth_m": 40,
+      "parent": "csa-armistead",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3098,
+          "z": 4741,
+          "facing": 85,
+          "formation": "line",
+          "strength": 330,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (second line behind Garnett/Kemper; Rawley Martin SHSP v32 places Armistead 'in rear and center', some modern accounts left-rear — recorded, not reconciled); strength 1,650 present: Stone Sentinels Armistead's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: Rawley Martin, SHSP v32 (regiment-by-regiment, Armistead rear-center)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7200,
+          "x": 3098,
+          "z": 4741,
+          "facing": 85,
+          "formation": "line",
+          "strength": 326,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: second line static under bombardment (Alexander 1907)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3098,
+          "z": 4741,
+          "facing": 85,
+          "formation": "line",
+          "strength": 325,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off in support ~15:05: modern reconstruction (ABT map set); Alexander 1907 ~1:50 and Jacobs 1864 2:30 disagree on the hour]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8280,
+          "x": 4068,
+          "z": 4731,
+          "facing": 85,
+          "formation": "line",
+          "strength": 312,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road ~200m behind the first line ~15:18 (ABT 3:30-3:45 PM map); pace 1.24 m/s including fence delay]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8640,
+          "x": 4400,
+          "z": 4772,
+          "facing": 80,
+          "formation": "line",
+          "strength": 250,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: closes on the wall at the Angle through the wreck of Garnett's line (Rawley Martin SHSP v32)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8700,
+          "x": 4430,
+          "z": 4767,
+          "facing": 80,
+          "formation": "scattered",
+          "strength": 210,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Rawley Martin, SHSP v32 pp.183-195: Armistead 'scaled the wall' crying 'Boys, give them the cold steel!' and fell mortally wounded under the captured guns; Fuger via NPS Hartwig 2012 (Armistead leapt the wall into Cushing's battery); time ~15:25 per NPS/modern reconstruction]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4242,
+          "z": 4939,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 140,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map): breakthrough sealed by Webb's and Hall's counterattack; survivors fall back]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3642,
+          "z": 4959,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 100,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3142,
+          "z": 4979,
+          "facing": 265,
+          "formation": "scattered",
+          "strength": 92,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 1,650 minus 1,191 losses: Stone Sentinels Armistead's Brigade page, corroborated by Col. W.R. Aylett's July 12, 1863 report (via Encyclopedia Virginia)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-38va",
+      "name": "38th Virginia",
+      "side": "confederate",
+      "frontage_m": 83.2,
+      "depth_m": 40,
+      "parent": "csa-armistead",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3090,
+          "z": 4830,
+          "facing": 85,
+          "formation": "line",
+          "strength": 330,
+          "confidence": "documented",
+          "citation": "Bachelder Third Day sheet, LOC 99447492 — Armistead's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '38'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,650 (Stone Sentinels Armistead's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); bar verified by inspection (survey: Armistead's 38'/57'/53' bars); slot order per Rawley Martin, SHSP v32"
+        },
+        {
+          "t": 7200,
+          "x": 3090,
+          "z": 4830,
+          "facing": 85,
+          "formation": "line",
+          "strength": 326,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: second line static under bombardment (Alexander 1907)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3090,
+          "z": 4830,
+          "facing": 85,
+          "formation": "line",
+          "strength": 325,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off in support ~15:05: modern reconstruction (ABT map set); Alexander 1907 ~1:50 and Jacobs 1864 2:30 disagree on the hour]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8280,
+          "x": 4060,
+          "z": 4820,
+          "facing": 85,
+          "formation": "line",
+          "strength": 312,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road ~200m behind the first line ~15:18 (ABT 3:30-3:45 PM map); pace 1.24 m/s including fence delay]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8640,
+          "x": 4400,
+          "z": 4990,
+          "facing": 80,
+          "formation": "line",
+          "strength": 250,
+          "confidence": "inferred",
+          "citation": "leftward drift toward the brigade left, inferred from its colors falling to the 8th Ohio on the column's left (see t=9000); Rawley Martin's slot order (SHSP v32) has the 38th center — tension recorded, not resolved"
+        },
+        {
+          "t": 8700,
+          "x": 4406,
+          "z": 5000,
+          "facing": 80,
+          "formation": "scattered",
+          "strength": 210,
+          "confidence": "inferred",
+          "citation": "at the wall on the brigade left as Armistead crosses at the Angle (inferred; Rawley Martin SHSP v32 for the brigade's crossing; melee-zone positions carry the survey's widest uncertainty, disagreement 9)"
+        },
+        {
+          "t": 9000,
+          "x": 4280,
+          "z": 5180,
+          "facing": 275,
+          "formation": "routed",
+          "strength": 140,
+          "confidence": "documented",
+          "citation": "colors of the 38th Virginia taken by the 8th Ohio as it 'advanced and cut off three regiments' of the column's left during the repulse (Sawyer 1881, full text verified; OR 27/1:461-62) — the capture is documented; this position and the ~15:30 time are inferred; cross-reference us-8oh's t=8700 advance keyframe (4310,5360) for spatial coherence"
+        },
+        {
+          "t": 9600,
+          "x": 3650,
+          "z": 4870,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 100,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3150,
+          "z": 4890,
+          "facing": 265,
+          "formation": "scattered",
+          "strength": 92,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 1,650 minus 1,191 losses: Stone Sentinels Armistead's Brigade page, corroborated by Col. W.R. Aylett's July 12, 1863 report (via Encyclopedia Virginia)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-53va",
+      "name": "53rd Virginia",
+      "side": "confederate",
+      "frontage_m": 83.2,
+      "depth_m": 40,
+      "parent": "csa-armistead",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3082,
+          "z": 4919,
+          "facing": 85,
+          "formation": "line",
+          "strength": 330,
+          "confidence": "documented",
+          "citation": "Bachelder Third Day sheet, LOC 99447492 — Armistead's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '53'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,650 (Stone Sentinels Armistead's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); bar verified by inspection (survey: Armistead's 38'/57'/53' bars); slot order per Rawley Martin, SHSP v32"
+        },
+        {
+          "t": 7200,
+          "x": 3082,
+          "z": 4919,
+          "facing": 85,
+          "formation": "line",
+          "strength": 326,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: second line static under bombardment (Alexander 1907)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3082,
+          "z": 4919,
+          "facing": 85,
+          "formation": "line",
+          "strength": 325,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off in support ~15:05: modern reconstruction (ABT map set); Alexander 1907 ~1:50 and Jacobs 1864 2:30 disagree on the hour]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8280,
+          "x": 4052,
+          "z": 4909,
+          "facing": 85,
+          "formation": "line",
+          "strength": 312,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road ~200m behind the first line ~15:18 (ABT 3:30-3:45 PM map); pace 1.24 m/s including fence delay]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8640,
+          "x": 4390,
+          "z": 4900,
+          "facing": 80,
+          "formation": "line",
+          "strength": 250,
+          "confidence": "inferred",
+          "citation": "closing on the Angle through the wreck of Garnett's line (Rawley Martin, SHSP v32); converging toward its documented crossing point — position inferred, pace kept within the file's 0.4-1.4 m/s march-speed discipline"
+        },
+        {
+          "t": 8700,
+          "x": 4416,
+          "z": 4858,
+          "facing": 80,
+          "formation": "scattered",
+          "strength": 210,
+          "confidence": "documented",
+          "citation": "colors over the wall at the Angle: the 53rd Virginia, the brigade's center regiment, crossed with Armistead — 'Boys, give them the cold steel!' (Rawley Martin, SHSP v32 pp.183-195; Armistead fell mortally wounded under the captured guns, Fuger via NPS Hartwig 2012); time ~15:25 per the NPS reconstruction, ~15:30 in other readings — recorded, not reconciled; position = the Angle wall corner (cross-reference us-btty-cushing)"
+        },
+        {
+          "t": 9000,
+          "x": 4258,
+          "z": 4761,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 140,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map): breakthrough sealed by Webb's and Hall's counterattack; survivors fall back]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3658,
+          "z": 4781,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 100,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3158,
+          "z": 4801,
+          "facing": 265,
+          "formation": "scattered",
+          "strength": 92,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 1,650 minus 1,191 losses: Stone Sentinels Armistead's Brigade page, corroborated by Col. W.R. Aylett's July 12, 1863 report (via Encyclopedia Virginia)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-57va",
+      "name": "57th Virginia",
+      "side": "confederate",
+      "frontage_m": 83.2,
+      "depth_m": 40,
+      "parent": "csa-armistead",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3074,
+          "z": 5008,
+          "facing": 85,
+          "formation": "line",
+          "strength": 330,
+          "confidence": "documented",
+          "citation": "Bachelder Third Day sheet, LOC 99447492 — Armistead's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '57'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,650 (Stone Sentinels Armistead's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); bar verified by inspection (survey: Armistead's 38'/57'/53' bars); slot order per Rawley Martin, SHSP v32"
+        },
+        {
+          "t": 7200,
+          "x": 3074,
+          "z": 5008,
+          "facing": 85,
+          "formation": "line",
+          "strength": 326,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: second line static under bombardment (Alexander 1907)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3074,
+          "z": 5008,
+          "facing": 85,
+          "formation": "line",
+          "strength": 325,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off in support ~15:05: modern reconstruction (ABT map set); Alexander 1907 ~1:50 and Jacobs 1864 2:30 disagree on the hour]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8280,
+          "x": 4044,
+          "z": 4998,
+          "facing": 85,
+          "formation": "line",
+          "strength": 312,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road ~200m behind the first line ~15:18 (ABT 3:30-3:45 PM map); pace 1.24 m/s including fence delay]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8640,
+          "x": 4354,
+          "z": 5036,
+          "facing": 80,
+          "formation": "line",
+          "strength": 250,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: closes on the wall at the Angle through the wreck of Garnett's line (Rawley Martin SHSP v32)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8700,
+          "x": 4384,
+          "z": 5031,
+          "facing": 80,
+          "formation": "scattered",
+          "strength": 210,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Rawley Martin, SHSP v32 pp.183-195: Armistead 'scaled the wall' crying 'Boys, give them the cold steel!' and fell mortally wounded under the captured guns; Fuger via NPS Hartwig 2012 (Armistead leapt the wall into Cushing's battery); time ~15:25 per NPS/modern reconstruction]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4266,
+          "z": 4672,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 140,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map): breakthrough sealed by Webb's and Hall's counterattack; survivors fall back]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3666,
+          "z": 4692,
+          "facing": 265,
+          "formation": "routed",
+          "strength": 100,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3166,
+          "z": 4712,
+          "facing": 265,
+          "formation": "scattered",
+          "strength": 92,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 1,650 minus 1,191 losses: Stone Sentinels Armistead's Brigade page, corroborated by Col. W.R. Aylett's July 12, 1863 report (via Encyclopedia Virginia)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
       "id": "csa-fry",
       "name": "Fry's Brigade (Archer's)",
       "side": "confederate",
       "frontage_m": 300,
       "depth_m": 40,
-      "regiments": [
-        "5th Alabama Battalion",
-        "13th Alabama",
-        "1st Tennessee (Provisional Army)",
-        "7th Tennessee",
-        "14th Tennessee"
-      ],
       "keyframes": [
         {
           "t": 0,
@@ -458,17 +2080,511 @@
       ]
     },
     {
+      "id": "csa-5al-bn",
+      "name": "5th Alabama Battalion",
+      "side": "confederate",
+      "frontage_m": 55.2,
+      "depth_m": 40,
+      "parent": "csa-fry",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3213,
+          "z": 4999,
+          "facing": 98,
+          "formation": "line",
+          "strength": 210,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's right, north of the Virginia Memorial); brigade of direction for the whole assault per Fry, SHSP v7 pp.91-93; strength 1,048 present: Stone Sentinels Archer's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Fry's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7200,
+          "x": 3213,
+          "z": 4999,
+          "facing": 98,
+          "formation": "line",
+          "strength": 206,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3213,
+          "z": 4999,
+          "facing": 98,
+          "formation": "line",
+          "strength": 205,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); both divisions dressed on Fry's command (Fry SHSP v7); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8340,
+          "x": 4189,
+          "z": 4889,
+          "facing": 100,
+          "formation": "line",
+          "strength": 184,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road converging from the north so both fronts arrive together (ABT 3:30-3:45 PM map); pace 1.17 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8580,
+          "x": 4364,
+          "z": 4794,
+          "facing": 100,
+          "formation": "line",
+          "strength": 140,
+          "confidence": "documented",
+          "citation": "Fry, SHSP v7 pp.91-93: 'All of the five regimental colors of my command reached the line of the enemy's works' just north of the Angle — a rare all-regiment documented endpoint, against Virginia-centric accounts that Pettigrew's front hung back (survey disagreement 2 — both carried, not reconciled); this regiment's position along the works = its slot share of the brigade front, inferred; time ~15:23 inferred from the step-off reconstruction"
+        },
+        {
+          "t": 8700,
+          "x": 4369,
+          "z": 4797,
+          "facing": 100,
+          "formation": "scattered",
+          "strength": 128,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: brigade wrecked at the wall alongside Garnett's left (Fry SHSP v7)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4200,
+          "z": 5072,
+          "facing": 270,
+          "formation": "routed",
+          "strength": 96,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3700,
+          "z": 5202,
+          "facing": 270,
+          "formation": "routed",
+          "strength": 80,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3280,
+          "z": 5232,
+          "facing": 270,
+          "formation": "scattered",
+          "strength": 74,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Stone Sentinels Archer's Brigade page: 'less than 400 men remained at the end of July 3rd' (1,048 present minus 677 losses = 371); position behind Seminary Ridge reconstructed]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-13al",
+      "name": "13th Alabama",
+      "side": "confederate",
+      "frontage_m": 55.2,
+      "depth_m": 40,
+      "parent": "csa-fry",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3221,
+          "z": 5059,
+          "facing": 98,
+          "formation": "line",
+          "strength": 210,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's right, north of the Virginia Memorial); brigade of direction for the whole assault per Fry, SHSP v7 pp.91-93; strength 1,048 present: Stone Sentinels Archer's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Fry's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7200,
+          "x": 3221,
+          "z": 5059,
+          "facing": 98,
+          "formation": "line",
+          "strength": 206,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3221,
+          "z": 5059,
+          "facing": 98,
+          "formation": "line",
+          "strength": 205,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); both divisions dressed on Fry's command (Fry SHSP v7); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8340,
+          "x": 4199,
+          "z": 4950,
+          "facing": 100,
+          "formation": "line",
+          "strength": 184,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road converging from the north so both fronts arrive together (ABT 3:30-3:45 PM map); pace 1.17 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8580,
+          "x": 4374,
+          "z": 4855,
+          "facing": 100,
+          "formation": "line",
+          "strength": 140,
+          "confidence": "documented",
+          "citation": "Fry, SHSP v7 pp.91-93: 'All of the five regimental colors of my command reached the line of the enemy's works' just north of the Angle — a rare all-regiment documented endpoint, against Virginia-centric accounts that Pettigrew's front hung back (survey disagreement 2 — both carried, not reconciled); this regiment's position along the works = its slot share of the brigade front, inferred; time ~15:23 inferred from the step-off reconstruction"
+        },
+        {
+          "t": 8700,
+          "x": 4379,
+          "z": 4858,
+          "facing": 100,
+          "formation": "scattered",
+          "strength": 128,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: brigade wrecked at the wall alongside Garnett's left (Fry SHSP v7)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4200,
+          "z": 5011,
+          "facing": 270,
+          "formation": "routed",
+          "strength": 96,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3700,
+          "z": 5141,
+          "facing": 270,
+          "formation": "routed",
+          "strength": 80,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3280,
+          "z": 5171,
+          "facing": 270,
+          "formation": "scattered",
+          "strength": 74,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Stone Sentinels Archer's Brigade page: 'less than 400 men remained at the end of July 3rd' (1,048 present minus 677 losses = 371); position behind Seminary Ridge reconstructed]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-1tn",
+      "name": "1st Tennessee (Provisional Army)",
+      "side": "confederate",
+      "frontage_m": 55.2,
+      "depth_m": 40,
+      "parent": "csa-fry",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3230,
+          "z": 5120,
+          "facing": 98,
+          "formation": "line",
+          "strength": 210,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's right, north of the Virginia Memorial); brigade of direction for the whole assault per Fry, SHSP v7 pp.91-93; strength 1,048 present: Stone Sentinels Archer's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Fry's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7200,
+          "x": 3230,
+          "z": 5120,
+          "facing": 98,
+          "formation": "line",
+          "strength": 206,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3230,
+          "z": 5120,
+          "facing": 98,
+          "formation": "line",
+          "strength": 205,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); both divisions dressed on Fry's command (Fry SHSP v7); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8340,
+          "x": 4210,
+          "z": 5010,
+          "facing": 100,
+          "formation": "line",
+          "strength": 184,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road converging from the north so both fronts arrive together (ABT 3:30-3:45 PM map); pace 1.17 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8580,
+          "x": 4385,
+          "z": 4915,
+          "facing": 100,
+          "formation": "line",
+          "strength": 140,
+          "confidence": "documented",
+          "citation": "Fry, SHSP v7 pp.91-93: 'All of the five regimental colors of my command reached the line of the enemy's works' just north of the Angle — a rare all-regiment documented endpoint, against Virginia-centric accounts that Pettigrew's front hung back (survey disagreement 2 — both carried, not reconciled); this regiment's position along the works = its slot share of the brigade front, inferred; time ~15:23 inferred from the step-off reconstruction"
+        },
+        {
+          "t": 8700,
+          "x": 4390,
+          "z": 4918,
+          "facing": 100,
+          "formation": "scattered",
+          "strength": 128,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: brigade wrecked at the wall alongside Garnett's left (Fry SHSP v7)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4200,
+          "z": 4950,
+          "facing": 270,
+          "formation": "routed",
+          "strength": 96,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3700,
+          "z": 5080,
+          "facing": 270,
+          "formation": "routed",
+          "strength": 80,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3280,
+          "z": 5110,
+          "facing": 270,
+          "formation": "scattered",
+          "strength": 74,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Stone Sentinels Archer's Brigade page: 'less than 400 men remained at the end of July 3rd' (1,048 present minus 677 losses = 371); position behind Seminary Ridge reconstructed]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-7tn",
+      "name": "7th Tennessee",
+      "side": "confederate",
+      "frontage_m": 55.2,
+      "depth_m": 40,
+      "parent": "csa-fry",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3239,
+          "z": 5181,
+          "facing": 98,
+          "formation": "line",
+          "strength": 209,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's right, north of the Virginia Memorial); brigade of direction for the whole assault per Fry, SHSP v7 pp.91-93; strength 1,048 present: Stone Sentinels Archer's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Fry's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7200,
+          "x": 3239,
+          "z": 5181,
+          "facing": 98,
+          "formation": "line",
+          "strength": 205,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3239,
+          "z": 5181,
+          "facing": 98,
+          "formation": "line",
+          "strength": 204,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); both divisions dressed on Fry's command (Fry SHSP v7); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8340,
+          "x": 4221,
+          "z": 5070,
+          "facing": 100,
+          "formation": "line",
+          "strength": 183,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road converging from the north so both fronts arrive together (ABT 3:30-3:45 PM map); pace 1.17 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8580,
+          "x": 4396,
+          "z": 4975,
+          "facing": 100,
+          "formation": "line",
+          "strength": 140,
+          "confidence": "documented",
+          "citation": "Fry, SHSP v7 pp.91-93: 'All of the five regimental colors of my command reached the line of the enemy's works' just north of the Angle — a rare all-regiment documented endpoint, against Virginia-centric accounts that Pettigrew's front hung back (survey disagreement 2 — both carried, not reconciled); this regiment's position along the works = its slot share of the brigade front, inferred; time ~15:23 inferred from the step-off reconstruction"
+        },
+        {
+          "t": 8700,
+          "x": 4401,
+          "z": 4978,
+          "facing": 100,
+          "formation": "scattered",
+          "strength": 128,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: brigade wrecked at the wall alongside Garnett's left (Fry SHSP v7)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4200,
+          "z": 4889,
+          "facing": 270,
+          "formation": "routed",
+          "strength": 96,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3700,
+          "z": 5019,
+          "facing": 270,
+          "formation": "routed",
+          "strength": 80,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3280,
+          "z": 5049,
+          "facing": 270,
+          "formation": "scattered",
+          "strength": 74,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Stone Sentinels Archer's Brigade page: 'less than 400 men remained at the end of July 3rd' (1,048 present minus 677 losses = 371); position behind Seminary Ridge reconstructed]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-14tn",
+      "name": "14th Tennessee",
+      "side": "confederate",
+      "frontage_m": 55.2,
+      "depth_m": 40,
+      "parent": "csa-fry",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3247,
+          "z": 5241,
+          "facing": 98,
+          "formation": "line",
+          "strength": 209,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's right, north of the Virginia Memorial); brigade of direction for the whole assault per Fry, SHSP v7 pp.91-93; strength 1,048 present: Stone Sentinels Archer's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Fry's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7200,
+          "x": 3247,
+          "z": 5241,
+          "facing": 98,
+          "formation": "line",
+          "strength": 205,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3247,
+          "z": 5241,
+          "facing": 98,
+          "formation": "line",
+          "strength": 204,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); both divisions dressed on Fry's command (Fry SHSP v7); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8340,
+          "x": 4231,
+          "z": 5131,
+          "facing": 100,
+          "formation": "line",
+          "strength": 183,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road converging from the north so both fronts arrive together (ABT 3:30-3:45 PM map); pace 1.17 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 8580,
+          "x": 4406,
+          "z": 5036,
+          "facing": 100,
+          "formation": "line",
+          "strength": 140,
+          "confidence": "documented",
+          "citation": "Fry, SHSP v7 pp.91-93: 'All of the five regimental colors of my command reached the line of the enemy's works' just north of the Angle — a rare all-regiment documented endpoint, against Virginia-centric accounts that Pettigrew's front hung back (survey disagreement 2 — both carried, not reconciled); this regiment's position along the works = its slot share of the brigade front, inferred; time ~15:23 inferred from the step-off reconstruction"
+        },
+        {
+          "t": 8700,
+          "x": 4411,
+          "z": 5039,
+          "facing": 100,
+          "formation": "scattered",
+          "strength": 128,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: brigade wrecked at the wall alongside Garnett's left (Fry SHSP v7)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 4200,
+          "z": 4828,
+          "facing": 270,
+          "formation": "routed",
+          "strength": 96,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3700,
+          "z": 4958,
+          "facing": 270,
+          "formation": "routed",
+          "strength": 80,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3280,
+          "z": 4988,
+          "facing": 270,
+          "formation": "scattered",
+          "strength": 74,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Stone Sentinels Archer's Brigade page: 'less than 400 men remained at the end of July 3rd' (1,048 present minus 677 losses = 371); position behind Seminary Ridge reconstructed]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+        }
+      ]
+    },
+    {
       "id": "csa-marshall",
       "name": "Marshall's Brigade (Pettigrew's)",
       "side": "confederate",
       "frontage_m": 520,
       "depth_m": 40,
-      "regiments": [
-        "11th North Carolina",
-        "26th North Carolina",
-        "47th North Carolina",
-        "52nd North Carolina"
-      ],
       "keyframes": [
         {
           "t": 0,
@@ -563,17 +2679,411 @@
       ]
     },
     {
+      "id": "csa-11nc",
+      "name": "11th North Carolina",
+      "side": "confederate",
+      "frontage_m": 125.5,
+      "depth_m": 40,
+      "parent": "csa-marshall",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3216,
+          "z": 5136,
+          "facing": 100,
+          "formation": "line",
+          "strength": 500,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's line north of Fry); strength 'about 2,000 present on the first day': Stone Sentinels Pettigrew's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after first-day losses (flagged, no sourced July 3 figure exists); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 7200,
+          "x": 3216,
+          "z": 5136,
+          "facing": 100,
+          "formation": "line",
+          "strength": 493,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3216,
+          "z": 5136,
+          "facing": 100,
+          "formation": "line",
+          "strength": 491,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8340,
+          "x": 4179,
+          "z": 4894,
+          "facing": 105,
+          "formation": "line",
+          "strength": 450,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road under canister and rifle fire from Hays's line (ABT 3:30-3:45 PM map); pace 1.20 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8640,
+          "x": 4364,
+          "z": 4824,
+          "facing": 105,
+          "formation": "line",
+          "strength": 325,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: front reaches the wall south of the Bryan barn (Fry SHSP v7 insists Pettigrew's front fought to the wall; modern scholarship partially supports); Col. Marshall killed in the advance (Stone Sentinels)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8700,
+          "x": 4367,
+          "z": 4822,
+          "facing": 105,
+          "formation": "scattered",
+          "strength": 275,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: repulsed at the wall by Smyth's and Sherrill's fire (ABT maps)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 9060,
+          "x": 4167,
+          "z": 5316,
+          "facing": 275,
+          "formation": "routed",
+          "strength": 200,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3667,
+          "z": 5456,
+          "facing": 275,
+          "formation": "routed",
+          "strength": 160,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3297,
+          "z": 5521,
+          "facing": 275,
+          "formation": "scattered",
+          "strength": 149,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 2,000 minus 1,405 losses (whole-battle figures): Stone Sentinels Pettigrew's Brigade page — endpoints sourced, but both include July 1 fighting; per-day split not documented]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-26nc",
+      "name": "26th North Carolina",
+      "side": "confederate",
+      "frontage_m": 125.5,
+      "depth_m": 40,
+      "parent": "csa-marshall",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3239,
+          "z": 5265,
+          "facing": 100,
+          "formation": "line",
+          "strength": 500,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's line north of Fry); strength 'about 2,000 present on the first day': Stone Sentinels Pettigrew's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after first-day losses (flagged, no sourced July 3 figure exists); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 7200,
+          "x": 3239,
+          "z": 5265,
+          "facing": 100,
+          "formation": "line",
+          "strength": 493,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3239,
+          "z": 5265,
+          "facing": 100,
+          "formation": "line",
+          "strength": 491,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8340,
+          "x": 4213,
+          "z": 5021,
+          "facing": 105,
+          "formation": "line",
+          "strength": 450,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road under canister and rifle fire from Hays's line (ABT 3:30-3:45 PM map); pace 1.20 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8640,
+          "x": 4398,
+          "z": 4951,
+          "facing": 105,
+          "formation": "line",
+          "strength": 325,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: front reaches the wall south of the Bryan barn (Fry SHSP v7 insists Pettigrew's front fought to the wall; modern scholarship partially supports); Col. Marshall killed in the advance (Stone Sentinels)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8700,
+          "x": 4421,
+          "z": 4958,
+          "facing": 105,
+          "formation": "scattered",
+          "strength": 275,
+          "confidence": "documented",
+          "citation": "the pair at the wall: the 26th North Carolina's colors reached the stone wall on the 12th New Jersey front — Arnold's Battery A's last double-shotted canister round is 'traditionally attributed to the 26th North Carolina' (Stone Sentinels Rhode Island Battery A page, verified; the 26th NC flag tradition, survey §3); time ~15:25 inferred; position = the wall on Smyth's front (cross-reference us-btty-arnold); melee-zone position uncertainty per survey disagreement 9"
+        },
+        {
+          "t": 9060,
+          "x": 4156,
+          "z": 5185,
+          "facing": 275,
+          "formation": "routed",
+          "strength": 200,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3656,
+          "z": 5325,
+          "facing": 275,
+          "formation": "routed",
+          "strength": 160,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3286,
+          "z": 5390,
+          "facing": 275,
+          "formation": "scattered",
+          "strength": 149,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 2,000 minus 1,405 losses (whole-battle figures): Stone Sentinels Pettigrew's Brigade page — endpoints sourced, but both include July 1 fighting; per-day split not documented]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-47nc",
+      "name": "47th North Carolina",
+      "side": "confederate",
+      "frontage_m": 125.5,
+      "depth_m": 40,
+      "parent": "csa-marshall",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3261,
+          "z": 5395,
+          "facing": 100,
+          "formation": "line",
+          "strength": 500,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's line north of Fry); strength 'about 2,000 present on the first day': Stone Sentinels Pettigrew's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after first-day losses (flagged, no sourced July 3 figure exists); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 7200,
+          "x": 3261,
+          "z": 5395,
+          "facing": 100,
+          "formation": "line",
+          "strength": 493,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3261,
+          "z": 5395,
+          "facing": 100,
+          "formation": "line",
+          "strength": 491,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8340,
+          "x": 4247,
+          "z": 5149,
+          "facing": 105,
+          "formation": "line",
+          "strength": 450,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road under canister and rifle fire from Hays's line (ABT 3:30-3:45 PM map); pace 1.20 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8640,
+          "x": 4432,
+          "z": 5079,
+          "facing": 105,
+          "formation": "line",
+          "strength": 325,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: front reaches the wall south of the Bryan barn (Fry SHSP v7 insists Pettigrew's front fought to the wall; modern scholarship partially supports); Col. Marshall killed in the advance (Stone Sentinels)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8700,
+          "x": 4435,
+          "z": 5077,
+          "facing": 105,
+          "formation": "scattered",
+          "strength": 275,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: repulsed at the wall by Smyth's and Sherrill's fire (ABT maps)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 9060,
+          "x": 4144,
+          "z": 5055,
+          "facing": 275,
+          "formation": "routed",
+          "strength": 200,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3644,
+          "z": 5195,
+          "facing": 275,
+          "formation": "routed",
+          "strength": 160,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3274,
+          "z": 5260,
+          "facing": 275,
+          "formation": "scattered",
+          "strength": 149,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 2,000 minus 1,405 losses (whole-battle figures): Stone Sentinels Pettigrew's Brigade page — endpoints sourced, but both include July 1 fighting; per-day split not documented]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-52nc",
+      "name": "52nd North Carolina",
+      "side": "confederate",
+      "frontage_m": 125.5,
+      "depth_m": 40,
+      "parent": "csa-marshall",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3284,
+          "z": 5524,
+          "facing": 100,
+          "formation": "line",
+          "strength": 500,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's line north of Fry); strength 'about 2,000 present on the first day': Stone Sentinels Pettigrew's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after first-day losses (flagged, no sourced July 3 figure exists); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 7200,
+          "x": 3284,
+          "z": 5524,
+          "facing": 100,
+          "formation": "line",
+          "strength": 493,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3284,
+          "z": 5524,
+          "facing": 100,
+          "formation": "line",
+          "strength": 491,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8340,
+          "x": 4281,
+          "z": 5276,
+          "facing": 105,
+          "formation": "line",
+          "strength": 450,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road under canister and rifle fire from Hays's line (ABT 3:30-3:45 PM map); pace 1.20 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8640,
+          "x": 4466,
+          "z": 5206,
+          "facing": 105,
+          "formation": "line",
+          "strength": 325,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: front reaches the wall south of the Bryan barn (Fry SHSP v7 insists Pettigrew's front fought to the wall; modern scholarship partially supports); Col. Marshall killed in the advance (Stone Sentinels)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8700,
+          "x": 4469,
+          "z": 5204,
+          "facing": 105,
+          "formation": "scattered",
+          "strength": 275,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: repulsed at the wall by Smyth's and Sherrill's fire (ABT maps)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 9060,
+          "x": 4133,
+          "z": 4924,
+          "facing": 275,
+          "formation": "routed",
+          "strength": 200,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3633,
+          "z": 5064,
+          "facing": 275,
+          "formation": "routed",
+          "strength": 160,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3263,
+          "z": 5129,
+          "facing": 275,
+          "formation": "scattered",
+          "strength": 149,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 2,000 minus 1,405 losses (whole-battle figures): Stone Sentinels Pettigrew's Brigade page — endpoints sourced, but both include July 1 fighting; per-day split not documented]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        }
+      ]
+    },
+    {
       "id": "csa-davis",
       "name": "Davis's Brigade",
       "side": "confederate",
       "frontage_m": 520,
       "depth_m": 40,
-      "regiments": [
-        "2nd Mississippi",
-        "11th Mississippi",
-        "42nd Mississippi",
-        "55th North Carolina"
-      ],
       "keyframes": [
         {
           "t": 0,
@@ -658,17 +3168,381 @@
       ]
     },
     {
+      "id": "csa-2miss",
+      "name": "2nd Mississippi",
+      "side": "confederate",
+      "frontage_m": 125.5,
+      "depth_m": 40,
+      "parent": "csa-davis",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3229,
+          "z": 5347,
+          "facing": 102,
+          "formation": "line",
+          "strength": 500,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's left-center); strength 'about 2,000 present on the first day': Stone Sentinels Davis's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after heavy first-day losses; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Davis's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 7200,
+          "x": 3229,
+          "z": 5347,
+          "facing": 102,
+          "formation": "line",
+          "strength": 493,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3229,
+          "z": 5347,
+          "facing": 102,
+          "formation": "line",
+          "strength": 491,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8340,
+          "x": 4163,
+          "z": 4985,
+          "facing": 110,
+          "formation": "line",
+          "strength": 438,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road angling toward the Bryan farm front (ABT 3:30-3:45 PM map); pace 1.22 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8580,
+          "x": 4243,
+          "z": 4935,
+          "facing": 110,
+          "formation": "scattered",
+          "strength": 325,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: advance stalls and breaks short of the wall under Hays's massed rifle fire and Woodruff's canister from Ziegler's Grove (ABT maps; Bryan farm anchor OSM way 451707950)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 3934,
+          "z": 5494,
+          "facing": 280,
+          "formation": "routed",
+          "strength": 213,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3484,
+          "z": 5674,
+          "facing": 280,
+          "formation": "routed",
+          "strength": 163,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3324,
+          "z": 5724,
+          "facing": 280,
+          "formation": "scattered",
+          "strength": 151,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 2,000 minus 1,397 losses (whole-battle figures): Stone Sentinels Davis's Brigade page — both endpoints include July 1 fighting; per-day split not documented]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-11miss",
+      "name": "11th Mississippi",
+      "side": "confederate",
+      "frontage_m": 125.5,
+      "depth_m": 40,
+      "parent": "csa-davis",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3256,
+          "z": 5476,
+          "facing": 102,
+          "formation": "line",
+          "strength": 500,
+          "confidence": "inferred",
+          "citation": "slot share of the documented brigade start (Bachelder Third Day sheet, LOC 99447492, Pettigrew's left-center; slot order per the oob-strengths roster list, not independently attested); the regiment was FRESH on July 3 — train guard July 1 (University Greys literature via the 2026-07-02 survey: gdg.org research page; thelocalvoice.net 150th-anniversary account); strength: equal quarter of the brigade's 'about 2,000 present on the first day' (July-1 figure) — the fresh 11th likely made up a larger share of the July 3 line, but no per-regiment figure is documented; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"
+        },
+        {
+          "t": 7200,
+          "x": 3256,
+          "z": 5476,
+          "facing": 102,
+          "formation": "line",
+          "strength": 495,
+          "confidence": "inferred",
+          "citation": "interpolated: line static under bombardment (Alexander 1907); slot-follow of the brigade track"
+        },
+        {
+          "t": 7500,
+          "x": 3256,
+          "z": 5476,
+          "facing": 102,
+          "formation": "line",
+          "strength": 494,
+          "confidence": "inferred",
+          "citation": "step-off: modern reconstruction ~3:00 PM (ABT map set — ABT clock frame, noted per survey disagreement 7); Alexander 1907 ~1:50 / Jacobs 1864 2:30 disagree on the hour"
+        },
+        {
+          "t": 8340,
+          "x": 4208,
+          "z": 5108,
+          "facing": 110,
+          "formation": "line",
+          "strength": 450,
+          "confidence": "inferred",
+          "citation": "crosses the Emmitsburg Road with the brigade, angling toward the Bryan farm front (ABT 3:30-3:45 PM map — ABT clock frame noted); slot-follow of the brigade track"
+        },
+        {
+          "t": 8580,
+          "x": 4360,
+          "z": 5122,
+          "facing": 105,
+          "formation": "line",
+          "strength": 400,
+          "confidence": "inferred",
+          "citation": "the brigade's advance stalls and breaks short of the wall under Hays's massed fire; the fresh 11th presses on (University Greys literature via survey; reconstruction — position inferred)"
+        },
+        {
+          "t": 8700,
+          "x": 4438,
+          "z": 5125,
+          "facing": 100,
+          "formation": "line",
+          "strength": 340,
+          "confidence": "documented",
+          "citation": "farthest advance on this front: the 11th Mississippi reached the stone wall at the Brian barn, its colors with Co. A, the 'University Greys' (~31 men, ~100% casualties — University Greys literature, verified via the 2026-07-02 survey: en.wikipedia.org/wiki/University_Greys; thelocalvoice.net; gdg.org/research/OOB/Confederate/July1-3/greys.html); Bryan house anchor OSM way 451707950 (cross-reference us-sherrill's Bryan farm line); time ~15:25 inferred; whole-regiment strength at the wall not documented — reconstructed"
+        },
+        {
+          "t": 9000,
+          "x": 4050,
+          "z": 5220,
+          "facing": 280,
+          "formation": "routed",
+          "strength": 220,
+          "confidence": "inferred",
+          "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map — ABT clock frame noted); survivors stream back across the road"
+        },
+        {
+          "t": 9600,
+          "x": 3460,
+          "z": 5450,
+          "facing": 280,
+          "formation": "routed",
+          "strength": 160,
+          "confidence": "inferred",
+          "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"
+        },
+        {
+          "t": 10800,
+          "x": 3285,
+          "z": 5510,
+          "facing": 280,
+          "formation": "scattered",
+          "strength": 140,
+          "confidence": "inferred",
+          "citation": "end (reconstruction): July-3 casualty split for the regiment not documented; decline reconstructed steeper than the brigade average — farthest in, Co. A ~100% casualties (University Greys literature)"
+        }
+      ]
+    },
+    {
+      "id": "csa-42miss",
+      "name": "42nd Mississippi",
+      "side": "confederate",
+      "frontage_m": 125.5,
+      "depth_m": 40,
+      "parent": "csa-davis",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3284,
+          "z": 5604,
+          "facing": 102,
+          "formation": "line",
+          "strength": 500,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's left-center); strength 'about 2,000 present on the first day': Stone Sentinels Davis's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after heavy first-day losses; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Davis's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 7200,
+          "x": 3284,
+          "z": 5604,
+          "facing": 102,
+          "formation": "line",
+          "strength": 493,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3284,
+          "z": 5604,
+          "facing": 102,
+          "formation": "line",
+          "strength": 491,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8340,
+          "x": 4252,
+          "z": 5232,
+          "facing": 110,
+          "formation": "line",
+          "strength": 438,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road angling toward the Bryan farm front (ABT 3:30-3:45 PM map); pace 1.22 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8580,
+          "x": 4332,
+          "z": 5182,
+          "facing": 110,
+          "formation": "scattered",
+          "strength": 325,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: advance stalls and breaks short of the wall under Hays's massed rifle fire and Woodruff's canister from Ziegler's Grove (ABT maps; Bryan farm anchor OSM way 451707950)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 3889,
+          "z": 5235,
+          "facing": 280,
+          "formation": "routed",
+          "strength": 213,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3439,
+          "z": 5415,
+          "facing": 280,
+          "formation": "routed",
+          "strength": 163,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3279,
+          "z": 5465,
+          "facing": 280,
+          "formation": "scattered",
+          "strength": 151,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 2,000 minus 1,397 losses (whole-battle figures): Stone Sentinels Davis's Brigade page — both endpoints include July 1 fighting; per-day split not documented]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        }
+      ]
+    },
+    {
+      "id": "csa-55nc",
+      "name": "55th North Carolina",
+      "side": "confederate",
+      "frontage_m": 125.5,
+      "depth_m": 40,
+      "parent": "csa-davis",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3311,
+          "z": 5733,
+          "facing": 102,
+          "formation": "line",
+          "strength": 500,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's left-center); strength 'about 2,000 present on the first day': Stone Sentinels Davis's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after heavy first-day losses; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Davis's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 7200,
+          "x": 3311,
+          "z": 5733,
+          "facing": 102,
+          "formation": "line",
+          "strength": 493,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 7500,
+          "x": 3311,
+          "z": 5733,
+          "facing": 102,
+          "formation": "line",
+          "strength": 491,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8340,
+          "x": 4297,
+          "z": 5355,
+          "facing": 110,
+          "formation": "line",
+          "strength": 438,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road angling toward the Bryan farm front (ABT 3:30-3:45 PM map); pace 1.22 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 8580,
+          "x": 4377,
+          "z": 5305,
+          "facing": 110,
+          "formation": "scattered",
+          "strength": 325,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction: advance stalls and breaks short of the wall under Hays's massed rifle fire and Woodruff's canister from Ziegler's Grove (ABT maps; Bryan farm anchor OSM way 451707950)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 9000,
+          "x": 3866,
+          "z": 5106,
+          "facing": 280,
+          "formation": "routed",
+          "strength": 213,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 9600,
+          "x": 3416,
+          "z": 5286,
+          "facing": 280,
+          "formation": "routed",
+          "strength": 163,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        },
+        {
+          "t": 10800,
+          "x": 3256,
+          "z": 5336,
+          "facing": 280,
+          "formation": "scattered",
+          "strength": 151,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [end strength 2,000 minus 1,397 losses (whole-battle figures): Stone Sentinels Davis's Brigade page — both endpoints include July 1 fighting; per-day split not documented]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+        }
+      ]
+    },
+    {
       "id": "csa-brockenbrough",
       "name": "Brockenbrough's Brigade",
       "side": "confederate",
       "frontage_m": 250,
       "depth_m": 40,
-      "regiments": [
-        "40th Virginia",
-        "47th Virginia",
-        "55th Virginia",
-        "22nd Virginia Battalion"
-      ],
       "keyframes": [
         {
           "t": 0,
@@ -739,6 +3613,174 @@
           "strength": 780,
           "confidence": "inferred",
           "citation": "no reliable casualty figure located for this brigade (research pass, oob-strengths doc); light losses reconstructed from the early break"
+        }
+      ]
+    },
+    {
+      "id": "csa-brock-right",
+      "name": "Brockenbrough's right wing",
+      "side": "confederate",
+      "frontage_m": 122,
+      "depth_m": 40,
+      "regiments": [
+        "40th Virginia",
+        "22nd Virginia Battalion"
+      ],
+      "parent": "csa-brockenbrough",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3267,
+          "z": 5667,
+          "facing": 102,
+          "formation": "line",
+          "strength": 440,
+          "confidence": "inferred",
+          "citation": "wing organization documented — the brigade advanced in two wings (Col. R. M. Mayo's report, OR 27/2, cited via NPS Gettysburg Seminar 12 essay 5, secondary hop flagged; docs/research/2026-07-02-regiment-track-sources.md §3.1); Brockenbrough's right wing position = documented brigade start (Bachelder Third Day sheet, LOC 99447492, far left of Pettigrew's line) + lateral wing offset, inferred; strength: equal half of Mayo's '800 muskets' (~880 officers and men) — per-wing strength not documented; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); per-regiment movement within the wing unattested — the wing is the honest floor (survey grade W)"
+        },
+        {
+          "t": 7200,
+          "x": 3267,
+          "z": 5667,
+          "facing": 102,
+          "formation": "line",
+          "strength": 437,
+          "confidence": "inferred",
+          "citation": "interpolated: line static under bombardment (Alexander 1907); wing offset inferred"
+        },
+        {
+          "t": 7500,
+          "x": 3267,
+          "z": 5667,
+          "facing": 102,
+          "formation": "line",
+          "strength": 436,
+          "confidence": "inferred",
+          "citation": "step-off with Pettigrew's left ~15:05: modern reconstruction (ABT map set — ABT clock frame, noted per survey disagreement 7); Alexander 1907 ~1:50 / Jacobs 1864 2:30 disagree on the hour"
+        },
+        {
+          "t": 7980,
+          "x": 3705,
+          "z": 5615,
+          "facing": 102,
+          "formation": "routed",
+          "strength": 415,
+          "confidence": "documented",
+          "citation": "the break itself is documented — Brockenbrough's command broke under the 8th Ohio's flank fire and Osborn's Cemetery Hill guns before reaching the Emmitsburg Road, the only assault brigade that never closed (Mayo's OR report via NPS Seminar 12 essay 5; Fry, SHSP v7; Gottfried, 'Brockenbrough's Brigade', Gettysburg Magazine 23) — this position and the ~15:00-15:15 timing are inferred, sequenced after the 8th Ohio's t=7800 flank-fire keyframe (cross-reference us-8oh); relative order of the two wings' breaks not attested — the right wing is sequenced second only because it lay farther from the 8th Ohio's fence (adjacency inference)"
+        },
+        {
+          "t": 8400,
+          "x": 3387,
+          "z": 5647,
+          "facing": 280,
+          "formation": "routed",
+          "strength": 400,
+          "confidence": "inferred",
+          "citation": "reconstruction: falls back to Seminary Ridge without reaching the road (Fry, SHSP v7; Gottfried GM 23)"
+        },
+        {
+          "t": 9000,
+          "x": 3277,
+          "z": 5662,
+          "facing": 280,
+          "formation": "scattered",
+          "strength": 392,
+          "confidence": "inferred",
+          "citation": "reconstruction: rallying at the start line (ABT maps — ABT clock frame noted)"
+        },
+        {
+          "t": 10800,
+          "x": 3272,
+          "z": 5665,
+          "facing": 280,
+          "formation": "scattered",
+          "strength": 390,
+          "confidence": "inferred",
+          "citation": "no reliable casualty figure located for this brigade (oob-strengths doc); light losses reconstructed from the early break, split equally between the wings (inferred)"
+        }
+      ]
+    },
+    {
+      "id": "csa-brock-left",
+      "name": "Brockenbrough's left wing",
+      "side": "confederate",
+      "frontage_m": 122,
+      "depth_m": 40,
+      "regiments": [
+        "47th Virginia",
+        "55th Virginia"
+      ],
+      "parent": "csa-brockenbrough",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3293,
+          "z": 5793,
+          "facing": 102,
+          "formation": "line",
+          "strength": 440,
+          "confidence": "inferred",
+          "citation": "wing organization documented — the brigade advanced in two wings (Col. R. M. Mayo's report, OR 27/2, cited via NPS Gettysburg Seminar 12 essay 5, secondary hop flagged; docs/research/2026-07-02-regiment-track-sources.md §3.1); Brockenbrough's left wing position = documented brigade start (Bachelder Third Day sheet, LOC 99447492, far left of Pettigrew's line) + lateral wing offset, inferred; strength: equal half of Mayo's '800 muskets' (~880 officers and men) — per-wing strength not documented; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); per-regiment movement within the wing unattested — the wing is the honest floor (survey grade W)"
+        },
+        {
+          "t": 7200,
+          "x": 3293,
+          "z": 5793,
+          "facing": 102,
+          "formation": "line",
+          "strength": 437,
+          "confidence": "inferred",
+          "citation": "interpolated: line static under bombardment (Alexander 1907); wing offset inferred"
+        },
+        {
+          "t": 7500,
+          "x": 3293,
+          "z": 5793,
+          "facing": 102,
+          "formation": "line",
+          "strength": 436,
+          "confidence": "inferred",
+          "citation": "step-off with Pettigrew's left ~15:05: modern reconstruction (ABT map set — ABT clock frame, noted per survey disagreement 7); Alexander 1907 ~1:50 / Jacobs 1864 2:30 disagree on the hour"
+        },
+        {
+          "t": 7860,
+          "x": 3660,
+          "z": 5745,
+          "facing": 102,
+          "formation": "routed",
+          "strength": 415,
+          "confidence": "documented",
+          "citation": "the break itself is documented — Brockenbrough's command broke under the 8th Ohio's flank fire and Osborn's Cemetery Hill guns before reaching the Emmitsburg Road, the only assault brigade that never closed (Mayo's OR report via NPS Seminar 12 essay 5; Fry, SHSP v7; Gottfried, 'Brockenbrough's Brigade', Gettysburg Magazine 23) — this position and the ~15:00-15:15 timing are inferred, sequenced after the 8th Ohio's t=7800 flank-fire keyframe (cross-reference us-8oh); relative order of the two wings' breaks not attested — the left wing is sequenced first only because it lay nearest the 8th Ohio's fence (adjacency inference)"
+        },
+        {
+          "t": 8400,
+          "x": 3413,
+          "z": 5773,
+          "facing": 280,
+          "formation": "routed",
+          "strength": 400,
+          "confidence": "inferred",
+          "citation": "reconstruction: falls back to Seminary Ridge without reaching the road (Fry, SHSP v7; Gottfried GM 23)"
+        },
+        {
+          "t": 9000,
+          "x": 3303,
+          "z": 5788,
+          "facing": 280,
+          "formation": "scattered",
+          "strength": 392,
+          "confidence": "inferred",
+          "citation": "reconstruction: rallying at the start line (ABT maps — ABT clock frame noted)"
+        },
+        {
+          "t": 10800,
+          "x": 3298,
+          "z": 5791,
+          "facing": 280,
+          "formation": "scattered",
+          "strength": 390,
+          "confidence": "inferred",
+          "citation": "no reliable casualty figure located for this brigade (oob-strengths doc); light losses reconstructed from the early break, split equally between the wings (inferred)"
         }
       ]
     },
@@ -2517,7 +5559,7 @@
           "formation": "line",
           "strength": 103,
           "confidence": "documented",
-          "citation": "Bachelder Third Day sheet, LOC 99447492 ('BROWN' named just south of the Copse of Trees; position class, time inferred); 'On July 3rd the four serviceable guns of Brown's Battery were placed just south of the Copse of Trees under the command of Lieutenant Perrin' — Capt. Brown wounded July 2 (Stone Sentinels Rhode Island Battery B page); strength 103 brought to the field, six 12-pdr Napoleons; Lt. Milne detached to Cushing's battery and killed there (Brown 1985 Filson); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"
+          "citation": "Bachelder Third Day sheet, LOC 99447492 ('BROWN' named just south of the Copse of Trees; position class, time inferred); 'On July 3rd the four serviceable guns of Brown's Battery were placed just south of the Copse of Trees under the command of Lieutenant Perrin' — Capt. Brown wounded July 2 (Stone Sentinels Rhode Island Battery B page); strength 103 brought to the field, six 12-pdr Napoleons (four serviceable July 3; two disabled July 2); Lt. Milne detached to Cushing's battery and killed there (Brown 1985 Filson); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"
         },
         {
           "t": 5400,
