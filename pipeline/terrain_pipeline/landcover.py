@@ -10,17 +10,26 @@ last row to z=0 (south). Land-cover feature points are battlefield-local
 meters (x east, z north from the SW corner; see landcover-format.md), so this
 falls out of `from_bounds` for free: increasing z moves toward row 0.
 
-Channel layout: R=field, G=woodlot (woods-floor), B=orchard, A=marsh.
-`pasture` is the implied base layer (no channel of its own) — terrain reads
-as pasture wherever none of the four channels are painted.
+Channel layout (docs/format/landcover-format.md "Baked splat channels"):
+R=field, G=woodlot (woods-floor), B=marsh, A=unused (always 0). `pasture` is
+the implied base layer (no channel of its own) — terrain reads as pasture
+wherever no channel is painted. `orchard` polygons paint NO channel either:
+the ground under an 1863 orchard is grass, so it reads as pasture, and the
+orchard's visual signature is its baked tree ROW structure (see
+`tree_placements` below — orchards still emit trees). Merging orchard into
+the base keeps the Unity terrain at exactly 4 layers: URP's Terrain Lit
+shader packs 4 layers per pass, and a 5th re-rasterizes the entire terrain
+in an add pass while silently disabling height-based blending
+(docs/research/2026-07-02-descriptive-graphics-techniques.md section 1a).
 
 Overlap semantics ("later wins"): where two features' polygons cover the same
 pixel, the LATER-listed feature in `features` wins outright, regardless of
-class — the pixel takes on the later feature's class (or no class, if the
-later feature is `pasture`/a line), clearing any earlier paint at that pixel.
+class — the pixel takes on the later feature's class (or no paint, if the
+later feature is `pasture`/`orchard`), clearing any earlier paint at that
+pixel.
 This is implemented with a single class-index raster: each pixel is burned
 with the index (in `features`) of the last polygon covering it, then the
-4 output channels are derived by comparing each pixel's winning index against
+painted channels are derived by comparing each pixel's winning index against
 each feature's class. `line` features never win any pixel (they contribute
 no geometry to the class-index raster).
 
@@ -59,12 +68,12 @@ from rasterio.features import rasterize
 from rasterio.transform import from_bounds
 from shapely.geometry import Point, Polygon
 
-# Polygon class -> output channel index (R, G, B, A). Pasture has none.
+# Polygon class -> output channel index (R, G, B; A stays 0). Pasture and
+# orchard have none — see the module docstring's channel-layout section.
 _CHANNELS = {
     "field": 0,
     "woodlot": 1,
-    "orchard": 2,
-    "marsh": 3,
+    "marsh": 2,
 }
 
 

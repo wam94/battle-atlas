@@ -37,31 +37,31 @@ def test_north_polygon_lands_in_first_rows():
     assert (arr[2:4, :, 0] == 0).all()    # last (south) rows empty
 
 
-def test_marsh_polygon_fills_alpha_channel():
+def test_marsh_polygon_fills_blue_channel():
     features = [
         _feature("f-3", "polygon", "marsh", [[0, 0], [100, 0], [100, 100], [0, 100]]),
     ]
     arr = landcover.rasterize_splats(features, size_m=100, resolution=4)
 
-    assert (arr[:, :, 3] == 255).all()
+    assert (arr[:, :, 2] == 255).all()
     assert (arr[:, :, 0] == 0).all()
     assert (arr[:, :, 1] == 0).all()
-    assert (arr[:, :, 2] == 0).all()
+    assert (arr[:, :, 3] == 0).all()
 
 
 def test_later_feature_wins_on_cross_class_overlap():
     # Load-bearing "later wins" test: an earlier field polygon (whole square)
-    # is partially overlapped by a LATER orchard polygon (west half). At
-    # shared pixels the later feature must win: west half reads as orchard
-    # only (B=255, R=0); east half (untouched by the later polygon) keeps
+    # is partially overlapped by a LATER woodlot polygon (west half). At
+    # shared pixels the later feature must win: west half reads as woodlot
+    # only (G=255, R=0); east half (untouched by the later polygon) keeps
     # the earlier field paint (R=255).
     features = [
         _feature("f-4", "polygon", "field", [[0, 0], [100, 0], [100, 100], [0, 100]]),
-        _feature("f-5", "polygon", "orchard", [[0, 0], [50, 0], [50, 100], [0, 100]]),
+        _feature("f-5", "polygon", "woodlot", [[0, 0], [50, 0], [50, 100], [0, 100]]),
     ]
     arr = landcover.rasterize_splats(features, size_m=100, resolution=4)
 
-    assert (arr[:, 0:2, 2] == 255).all()  # west: orchard (later) wins -> B
+    assert (arr[:, 0:2, 1] == 255).all()  # west: woodlot (later) wins -> G
     assert (arr[:, 0:2, 0] == 0).all()    # west: field overwritten -> R cleared
     assert (arr[:, 2:4, 0] == 255).all()  # east: untouched, field remains -> R
 
@@ -79,6 +79,44 @@ def test_later_pasture_clears_earlier_field():
 
     assert (arr[:, 0:2, 0] == 0).all()    # west: pasture (later) wins, field cleared
     assert (arr[:, 2:4, 0] == 255).all()  # east: untouched, field remains
+
+
+def test_orchard_paints_no_channel_but_still_emits_trees():
+    # Orchard merged into the pasture base at the splat level: URP's Terrain
+    # Lit packs 4 layers per pass, and a 5th silently disables height-based
+    # blending (research doc section 1a), so the ground under an orchard
+    # reads as grass. The orchard's read comes from its tree ROW structure —
+    # the polygon must still emit its regular 8m tree grid.
+    features = [
+        _feature("o-3", "polygon", "orchard", [[0, 0], [100, 0], [100, 100], [0, 100]]),
+    ]
+    arr = landcover.rasterize_splats(features, size_m=100, resolution=4)
+    assert (arr == 0).all()
+
+    trees = landcover.tree_placements(features)
+    assert len(trees) > 0
+    assert all(t["cls"] == "orchard" for t in trees)
+
+
+def test_channel_layout_r_field_g_woods_b_marsh_a_unused():
+    # Layout pin (landcover-format.md "Baked splat channels"): R=field,
+    # G=woodlot, B=marsh, alpha never painted. Three adjacent 25m strips at
+    # resolution 4 -> one column each.
+    features = [
+        _feature("f-8", "polygon", "field", [[0, 0], [25, 0], [25, 100], [0, 100]]),
+        _feature("w-8", "polygon", "woodlot", [[25, 0], [50, 0], [50, 100], [25, 100]]),
+        _feature("m-8", "polygon", "marsh", [[50, 0], [75, 0], [75, 100], [50, 100]]),
+    ]
+    arr = landcover.rasterize_splats(features, size_m=100, resolution=4)
+
+    assert (arr[:, 0, 0] == 255).all()  # col 0: field -> R
+    assert (arr[:, 1, 1] == 255).all()  # col 1: woodlot -> G
+    assert (arr[:, 2, 2] == 255).all()  # col 2: marsh -> B
+    assert (arr[:, :, 3] == 0).all()    # A: unused, always 0
+    # each class paints ONLY its own channel
+    assert (arr[:, 0, 1:3] == 0).all()
+    assert (arr[:, 1, 0] == 0).all() and (arr[:, 1, 2] == 0).all()
+    assert (arr[:, 2, 0:2] == 0).all()
 
 
 def test_line_feature_contributes_nothing():

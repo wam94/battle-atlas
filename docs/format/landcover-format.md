@@ -52,6 +52,29 @@ Same rule as the battle track (`battle-format.md`): the authoring tool
 refuses to export a feature claiming `documented` confidence without a
 `source`. Every polygon and line must be able to answer "says who."
 
+## Baked splat channels (pipeline output contract)
+
+`terrain_pipeline.cli landcover` bakes the polygon features into
+`data/landcover/splatmap.png`, a square RGBA PNG (row 0 = north, the same
+orientation contract as `heightmap.raw`). Channel layout:
+
+| Channel | Class |
+|---|---|
+| R | `field` |
+| G | `woodlot` |
+| B | `marsh` |
+| A | unused, always 0 |
+
+`pasture` is the implied base layer: terrain reads as pasture wherever no
+channel is painted. `orchard` polygons also paint **no** channel — the
+ground under an 1863 orchard is grass, and the orchard read comes from the
+baked tree rows (`trees.json`), not ground tint. Merging orchard into the
+base keeps the Unity terrain at exactly 4 layers (pasture + 3 channels):
+URP's Terrain Lit shader packs 4 layers per pass — a 5th layer
+re-rasterizes the entire terrain in an add pass and silently disables
+height-based blending (see
+`docs/research/2026-07-02-descriptive-graphics-techniques.md` §1a).
+
 ## Planned extensions (not yet valid)
 
 - Buildings, roads, and crop typing — fact-checked attributes, never traced

@@ -1,4 +1,5 @@
 import numpy as np
+import pytest
 from PIL import Image
 
 from terrain_pipeline import relief
@@ -101,6 +102,35 @@ def test_bake_deterministic_byte_identical(tmp_path):
     assert c1.read_bytes() == c2.read_bytes()
     # and the contour variant is genuinely different from the base bake
     assert c1.read_bytes() != p1.read_bytes()
+
+
+def test_downsample_rejects_non_square_dem():
+    # downsample's block-mean math assumes a square grid; a rectangular DEM
+    # must fail loudly, not silently distort (run_relief guards the same
+    # contract from heightmap.json's width_m/depth_m).
+    with pytest.raises(AssertionError, match="square"):
+        relief.downsample(np.zeros((64, 32)), 16)
+
+
+def test_contour_variant_threads_exaggeration_through():
+    # bake_relief_contours must forward its exaggeration to contour_mask,
+    # not just to bake_relief: contours have to sit on the SAME display
+    # surface the base bake shaded, or a non-default exaggeration would
+    # silently draw contours for a different terrain.
+    heights = _bowl()
+    exagg = 1.0  # non-default (module default is 2.5)
+
+    base = relief.bake_relief(heights, pixel_size_m=10.0, exaggeration=exagg)
+    contoured = relief.bake_relief_contours(heights, pixel_size_m=10.0, exaggeration=exagg)
+    mask = relief.contour_mask(heights, exaggeration=exagg)
+
+    # the exaggeration actually changes contour placement, so a dropped
+    # argument would be caught...
+    assert mask.any() and not mask.all()
+    assert not np.array_equal(mask, relief.contour_mask(heights))
+    # ...and the darkened texels are exactly the passed-exaggeration mask
+    assert (contoured[mask] < base[mask]).all()
+    assert np.array_equal(contoured[~mask], base[~mask])
 
 
 def test_row0_north_orientation_pin(tmp_path):

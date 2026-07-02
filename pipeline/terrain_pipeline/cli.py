@@ -3,6 +3,7 @@
 `relief` bakes the DEM's sky-view/curvature modulation textures."""
 import argparse
 import json
+import math
 import sys
 from pathlib import Path
 
@@ -101,6 +102,13 @@ def run_relief():
         sys.exit(f"no heightmap in {HEIGHTMAP_DIR}; run `build` first")
 
     heights, meta = relief.load_heightmap(HEIGHTMAP_DIR)
+    # the bake assumes a square battlefield: one pixel_size_m serves both
+    # axes and downsample block-means square blocks — fail loudly on
+    # contract drift instead of silently skewing the shading
+    assert math.isclose(meta["width_m"], meta["depth_m"], rel_tol=1e-6), (
+        f"relief bake assumes a square DEM; heightmap.json says "
+        f"{meta['width_m']} x {meta['depth_m']} m"
+    )
     down = relief.downsample(heights, RELIEF_RESOLUTION)
     pixel_size_m = meta["width_m"] / RELIEF_RESOLUTION
 

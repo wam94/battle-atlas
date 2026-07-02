@@ -112,6 +112,10 @@ def downsample(heights, resolution):
     south/east edge). Mean (not decimation) so the bake sees anti-aliased
     ground, and deterministically so.
     """
+    assert heights.shape[0] == heights.shape[1], (
+        f"downsample assumes a square DEM, got {heights.shape}: the "
+        "square-block-mean math would silently distort a rectangular grid"
+    )
     src = heights.shape[0]
     block = src // resolution
     trimmed = heights[: block * resolution, : block * resolution]
