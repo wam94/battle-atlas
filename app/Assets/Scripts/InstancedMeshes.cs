@@ -124,6 +124,41 @@ namespace BattleAtlas
             return Build(verts, tris, "FencePost");
         }
 
+        // wheat clump for the soldier-zoom crop ring (CropField): two opaque
+        // crossed quads ("X" cards), 0.9m tall — July wheat, ripe/being cut —
+        // slightly tapered so the silhouette reads as standing grain. Each
+        // card is emitted twice with opposite winding so it shows from both
+        // sides without alpha or Cull Off (alpha-tested vegetation defeats
+        // TBDR hidden-surface removal — research doc §6 trap #4). 16 verts.
+        public static Mesh BuildCropClump()
+        {
+            var verts = new List<Vector3>();
+            var tris = new List<int>();
+            AddCropCard(verts, tris, 0f);
+            AddCropCard(verts, tris, 90f);
+            return Build(verts, tris, "CropClump");
+        }
+
+        // one tapered card of the crossed-quad clump, rotated yawDeg about Y,
+        // double-sided via duplicated verts (RecalculateNormals would zero
+        // out shared verts with opposing faces)
+        static void AddCropCard(List<Vector3> verts, List<int> tris, float yawDeg)
+        {
+            var rot = Quaternion.Euler(0f, yawDeg, 0f);
+            Vector3 bl = rot * new Vector3(-0.35f, 0f, 0f);
+            Vector3 br = rot * new Vector3(0.35f, 0f, 0f);
+            Vector3 tr = rot * new Vector3(0.25f, 0.9f, 0f);
+            Vector3 tl = rot * new Vector3(-0.25f, 0.9f, 0f);
+            int b = verts.Count;
+            verts.Add(bl); verts.Add(br); verts.Add(tr); verts.Add(tl);
+            tris.Add(b); tris.Add(b + 1); tris.Add(b + 2);
+            tris.Add(b); tris.Add(b + 2); tris.Add(b + 3);
+            b = verts.Count;
+            verts.Add(bl); verts.Add(br); verts.Add(tr); verts.Add(tl);
+            tris.Add(b); tris.Add(b + 2); tris.Add(b + 1);
+            tris.Add(b); tris.Add(b + 3); tris.Add(b + 2);
+        }
+
         // unit box for regiment sub-blocks at the middle LOD tier: 1 x 1 x 1,
         // base at y=0 (centered at y +0.5) so a TRS with position = ground and
         // scale = (width, height, depth) stands the block on the terrain the

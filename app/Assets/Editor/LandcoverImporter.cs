@@ -173,6 +173,13 @@ namespace BattleAtlas.EditorTools
             fenceField.fenceMaterial = AssetDatabase.LoadAssetAtPath<Material>(
                 "Assets/Battle/UnitMarker.mat");
 
+            // the wheat ring reads Field weights straight from the terrain
+            // alphamaps this importer just set, so it only needs a material
+            var cropField = terrainGo.GetComponent<CropField>();
+            if (cropField == null) cropField = terrainGo.AddComponent<CropField>();
+            cropField.cropMaterial = AssetDatabase.LoadAssetAtPath<Material>(
+                "Assets/Battle/UnitMarker.mat");
+
             string treesSrc = Path.Combine(dataDir, "trees.json");
             if (File.Exists(treesSrc))
                 vegField.treesJson = CopyJsonAsset(treesSrc, "LandcoverTrees.json");
