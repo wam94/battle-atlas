@@ -545,6 +545,7 @@ GameObject:
   - component: {fileID: 1375780065}
   - component: {fileID: 1375780064}
   - component: {fileID: 1375780067}
+  - component: {fileID: 1375780068}
   m_Layer: 0
   m_Name: Gettysburg Terrain
   m_TagString: Untagged
@@ -641,6 +642,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.VegetationField
   treeMaterial: {fileID: 2100000, guid: 02781c7757a964eb39207b14a1eb3fa6, type: 2}
+  treesJson: {fileID: 4900000, guid: d02258e8035c549ed97756f558a2bfe1, type: 3}
+--- !u!114 &1375780068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375780063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d8fcfebbbd94b04b0d372d871d429e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.FenceField
+  fencesJson: {fileID: 4900000, guid: bfa4ac6bdb1464324891ddf2f639ed12, type: 3}
+  fenceMaterial: {fileID: 2100000, guid: 02781c7757a964eb39207b14a1eb3fa6, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
