@@ -2,9 +2,15 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import placeholder from "./fixtures/placeholder_battle.json";
 import placeholderLandcover from "./fixtures/placeholder_landcover.json";
 import {
-  loadAutosave, saveAutosave, clearAutosave, debouncedSaveAutosave,
+  loadAutosave, saveAutosave, clearAutosave, debouncedSaveAutosave, flushAutosaves,
   loadLandcoverAutosave, saveLandcoverAutosave, clearLandcoverAutosave,
 } from "../src/persist";
+
+// Drain the module-level debounce map between tests so a timer armed in one
+// test can't fire (or linger) into the next.
+afterEach(() => {
+  flushAutosaves();
+});
 
 // vitest node environment: provide a minimal localStorage
 beforeEach(() => {
@@ -99,6 +105,27 @@ describe("debouncedSaveAutosave", () => {
     saveAutosave(placeholder as never);
     expect(loadAutosave()).toEqual(placeholder);
   });
+
+  it("a synchronous save cancels the pending debounced save for the same slot", () => {
+    debouncedSaveAutosave({ ...placeholder, name: "state-a" } as never);
+    saveAutosave({ ...placeholder, name: "state-b" } as never);
+    // if the stale timer survived, it would now clobber state-b with state-a
+    vi.advanceTimersByTime(500);
+    const saved = loadAutosave();
+    expect((saved as unknown as { name: string }).name).toBe("state-b");
+  });
+
+  it("flushAutosaves writes pending saves immediately and disarms their timers", () => {
+    debouncedSaveAutosave({ ...placeholder, name: "pending" } as never);
+    expect(loadAutosave()).toBeNull();
+    flushAutosaves();
+    const saved = loadAutosave();
+    expect((saved as unknown as { name: string }).name).toBe("pending");
+    // the flushed timer must not fire a second, stale write later
+    saveAutosave({ ...placeholder, name: "after-flush" } as never);
+    vi.advanceTimersByTime(500);
+    expect((loadAutosave() as unknown as { name: string }).name).toBe("after-flush");
+  });
 });
 
 describe("autosave scoping by battlefield origin", () => {
@@ -119,6 +146,21 @@ describe("autosave scoping by battlefield origin", () => {
   it("falls back to the legacy unscoped key when the scoped slot is empty", () => {
     saveAutosave(placeholder as never); // legacy, unscoped write
     expect(loadAutosave(500000)).toEqual(placeholder);
+  });
+
+  it("migrates legacy data to the first scoped reader and deletes the legacy key", () => {
+    saveAutosave(placeholder as never); // legacy, unscoped write
+    expect(loadAutosave(500000)).toEqual(placeholder); // first reader claims it
+    expect(localStorage.getItem("battle-atlas-autosave")).toBeNull();
+    expect(loadAutosave(500000)).toEqual(placeholder); // now served from its own slot
+    expect(loadAutosave(600000)).toBeNull(); // no cross-battlefield inheritance
+  });
+
+  it("migrates legacy landcover data the same way", () => {
+    saveLandcoverAutosave(placeholderLandcover as never); // legacy, unscoped write
+    expect(loadLandcoverAutosave(500000)).toEqual(placeholderLandcover);
+    expect(localStorage.getItem("battle-atlas-landcover-autosave")).toBeNull();
+    expect(loadLandcoverAutosave(600000)).toBeNull();
   });
 
   it("prefers the scoped slot over the legacy key once it has its own data", () => {

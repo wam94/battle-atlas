@@ -3,6 +3,12 @@ import type maplibregl from "maplibre-gl";
 import { Battlefield } from "./geo";
 import { createMap } from "./ui/map";
 import { initWorkspace } from "./ui/workspace";
+import { flushAutosaves } from "./persist";
+
+// Debounced autosaves sit pending for up to 500ms — closing the tab inside
+// that window would drop the last edits. pagehide (not unload) also covers
+// bfcache navigation. main.ts only runs in the browser, so no window guard.
+window.addEventListener("pagehide", flushAutosaves);
 
 const fileInput = document.querySelector<HTMLInputElement>("#heightmap-file")!;
 const workspaceEl = document.querySelector<HTMLDivElement>("#workspace")!;
