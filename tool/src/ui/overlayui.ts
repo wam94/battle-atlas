@@ -150,7 +150,10 @@ export function initOverlayUI(
     map.addSource("hist-overlay", { type: "image", url: imgUrl!, coordinates: coords });
     map.addLayer(
       { id: "hist-overlay", type: "raster", source: "hist-overlay", paint: { "raster-opacity": 0.6 } },
-      "unit-preview", // keep overlays under the authored content
+      // keep overlays under the authored content — below the land-cover
+      // traces (so traced polygons/fences stay legible over the period map)
+      // if that layer exists yet, otherwise just under unit layers.
+      map.getLayer("landcover-fill") ? "landcover-fill" : "unit-preview",
     );
     status.textContent = "Overlay placed. Adjust opacity below; reload the image to redo tie points.";
   }

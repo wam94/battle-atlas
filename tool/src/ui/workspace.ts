@@ -7,6 +7,7 @@ import { loadAutosave, saveAutosave } from "../persist";
 import { nextKeyframeTime, clampDraftTime } from "../timeutil";
 import { battleToGeoJSON, installBattleLayers, previewToGeoJSON } from "./pathlayer";
 import { initOverlayUI, isPickingTiePoint } from "./overlayui";
+import { initLandcoverUI, isTracing, landcoverHandleMapClick } from "./landcoverui";
 
 const FORMATIONS: Formation[] = ["column", "line", "skirmish", "scattered", "routed"];
 const CONFIDENCES: Confidence[] = ["unknown", "inferred", "documented"];
@@ -27,17 +28,21 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
     autosaveNotice = "restored autosave — Export to keep it";
   }
 
-  // `el` splits into two stable children: `dynamicEl` is fully rebuilt by every
-  // render() call (as before), while `overlaySection` is built exactly once
-  // here so overlay state (loaded image, tie points, placed raster source)
-  // survives sidebar re-renders instead of being torn down each edit.
+  // `el` splits into stable children: `dynamicEl` is fully rebuilt by every
+  // render() call (as before), while `overlaySection` and `landcoverSection`
+  // are built exactly once here so their state (loaded image/tie points/
+  // placed raster source; traced features/tracing mode) survives sidebar
+  // re-renders instead of being torn down each edit.
   el.replaceChildren();
   const dynamicEl = document.createElement("div");
   dynamicEl.id = "workspace-dynamic";
   const overlaySection = document.createElement("div");
   overlaySection.id = "overlay-section";
-  el.append(dynamicEl, overlaySection);
+  const landcoverSection = document.createElement("div");
+  landcoverSection.id = "landcover-section";
+  el.append(dynamicEl, overlaySection, landcoverSection);
   initOverlayUI(overlaySection, map, bf);
+  initLandcoverUI(landcoverSection, map, bf);
 
   const installLayers = () => installBattleLayers(map);
   if (map.isStyleLoaded()) installLayers();
@@ -51,6 +56,7 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
 
   map.on("click", (e) => {
     if (isPickingTiePoint()) return; // tie-point picks are not keyframes
+    if (isTracing()) { landcoverHandleMapClick(e.lngLat); return; } // land-cover vertex, not a keyframe
     if (dragJustHappened) { dragJustHappened = false; return; } // drag, not an append click
     const unit = battle.units.find((u) => u.id === selectedUnitId);
     if (!unit) return;
