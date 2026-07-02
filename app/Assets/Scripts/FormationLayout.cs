@@ -61,7 +61,8 @@ namespace BattleAtlas
         // right-to-left convention. Column: the blocks stack front-to-back
         // inside the column footprint (frontage/4 wide, depth*4 deep — the same
         // footprint FillRanks gives column figures), slot 0 leading. Count 1
-        // degenerates to the formation's full block. Scattered/routed
+        // degenerates to the formation's full footprint (line: frontage x
+        // depth; column: the narrow-deep column footprint). Scattered/routed
         // formations never call this — the middle LOD tier renders those as
         // the monolithic block (a dissolving unit has no ordered sub-blocks).
         public static (Vector2 center, Vector2 size)[] RegimentSlots(
@@ -83,7 +84,9 @@ namespace BattleAtlas
             {
                 float width = frontage / 4f;
                 float totalDepth = depth * 4f;
-                float subDepth = (totalDepth - RegimentGap * (count - 1)) / count;
+                // floor at 0: a deep roster in a shallow footprint must yield
+                // degenerate (invisible) slots, never negative TRS scales
+                float subDepth = Mathf.Max(0f, (totalDepth - RegimentGap * (count - 1)) / count);
                 for (int i = 0; i < count; i++)
                 {
                     float y = totalDepth / 2f - subDepth / 2f - i * (subDepth + RegimentGap);
@@ -92,7 +95,7 @@ namespace BattleAtlas
             }
             else // "line" (and anything unrecognized, matching Offsets' fallback)
             {
-                float width = (frontage - RegimentGap * (count - 1)) / count;
+                float width = Mathf.Max(0f, (frontage - RegimentGap * (count - 1)) / count);
                 for (int i = 0; i < count; i++)
                 {
                     float x = frontage / 2f - width / 2f - i * (width + RegimentGap);

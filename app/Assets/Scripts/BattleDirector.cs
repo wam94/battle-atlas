@@ -174,7 +174,12 @@ namespace BattleAtlas
                 var formationRenderer = new UnitFormationRenderer(
                     u.id, u.frontage_m, u.depth_m, soldierMesh, soldierMaterial, SideColor(u.side));
                 // clamp defensively: the schema doesn't cap roster length, and
-                // the persistent matrix buffer must never grow at render time
+                // the persistent matrix buffer must never grow at render time.
+                // Loud, like unknown sides: authored data the renderer refuses
+                // to fully show must never vanish silently.
+                if (u.regiments != null && u.regiments.Count > MaxRegiments)
+                    Debug.LogWarning(
+                        $"unit '{u.id}' has {u.regiments.Count} regiments; rendering only the first {MaxRegiments}");
                 int regimentCount = u.regiments == null
                     ? 0 : Mathf.Min(u.regiments.Count, MaxRegiments);
                 units.Add(new UnitEntry
