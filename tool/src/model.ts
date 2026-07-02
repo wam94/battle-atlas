@@ -23,6 +23,7 @@ export interface Unit {
   side: Side;
   frontage_m: number;
   depth_m: number;
+  regiments?: string[];
   keyframes: Keyframe[];
 }
 
