@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace BattleAtlas
 {
@@ -8,9 +9,10 @@ namespace BattleAtlas
     // pipeline/terrain_pipeline/landcover.py `fence_posts` and
     // docs/superpowers/plans/2026-07-01-landcover.md Task 6). Mirrors
     // VegetationField's structure: precompute per-post TRS matrices once in
-    // Start(), batch to ≤1023 instances, draw with RenderMeshInstanced in
-    // Update(). Two classes (stone_wall / rail_fence) get their own scale
-    // and tint, so posts are split into class-homogeneous batches.
+    // Start(), group into spatial cells and batch to ≤1023 instances
+    // (SpatialBatcher), draw with RenderMeshInstanced in Update(). Two
+    // classes (stone_wall / rail_fence) get their own scale and tint, so
+    // posts are split into class-homogeneous batches.
     public class FenceField : MonoBehaviour
     {
         public TextAsset fencesJson;
@@ -18,6 +20,11 @@ namespace BattleAtlas
 
         // Graphics.RenderMeshInstanced caps out at 1023 instances per call.
         const int MaxInstancesPerCall = 1023;
+
+        // Conservative mesh extents around each post position for the
+        // per-batch cull bounds: rails reach 3 m along the post's bearing
+        // (InstancedMeshes.BuildFencePost) and the post is ~1.4 m tall.
+        static readonly Vector3 BoundsMargin = new Vector3(3f, 2f, 3f);
 
         // rail_fence posts render at the mesh's native scale (post + two
         // horizontal rails, see InstancedMeshes.BuildFencePost). stone_wall
@@ -34,9 +41,10 @@ namespace BattleAtlas
         MaterialPropertyBlock railBlock;
         MaterialPropertyBlock stoneBlock;
 
-        // Per-class batches of ≤1023-instance matrix arrays.
-        Matrix4x4[][] railBatches;
-        Matrix4x4[][] stoneBatches;
+        // Per-class spatial-cell batches (SpatialBatcher): ≤1023 instances
+        // each, all from one 512 m grid cell, with explicit cull bounds.
+        InstanceBatch[] railBatches;
+        InstanceBatch[] stoneBatches;
 
         void Start()
         {
@@ -60,8 +68,8 @@ namespace BattleAtlas
             stoneBlock = new MaterialPropertyBlock();
             stoneBlock.SetColor(BaseColorId, StoneColor);
 
-            railBatches = new Matrix4x4[0][];
-            stoneBatches = new Matrix4x4[0][];
+            railBatches = new InstanceBatch[0];
+            stoneBatches = new InstanceBatch[0];
 
             if (fencesJson == null) return;
 
@@ -69,8 +77,6 @@ namespace BattleAtlas
 
             var rail = new List<Matrix4x4>();
             var stone = new List<Matrix4x4>();
-            var railList = new List<Matrix4x4[]>();
-            var stoneList = new List<Matrix4x4[]>();
 
             foreach (PostDto post in dto.posts)
             {
@@ -84,45 +90,55 @@ namespace BattleAtlas
                     new Vector3(x, y, z),
                     Quaternion.Euler(0f, post.bearing_deg, 0f),
                     isStone ? StoneScale : RailScale);
-
-                List<Matrix4x4> bucket = isStone ? stone : rail;
-                List<Matrix4x4[]> bucketBatches = isStone ? stoneList : railList;
-                bucket.Add(m);
-                if (bucket.Count == MaxInstancesPerCall)
-                {
-                    bucketBatches.Add(bucket.ToArray());
-                    bucket.Clear();
-                }
+                (isStone ? stone : rail).Add(m);
             }
-            if (rail.Count > 0) railList.Add(rail.ToArray());
-            if (stone.Count > 0) stoneList.Add(stone.ToArray());
 
-            railBatches = railList.ToArray();
-            stoneBatches = stoneList.ToArray();
+            // group each class into 512 m spatial cells so per-call culling
+            // can drop off-screen cells (file-order batches span the map and
+            // never cull — see SpatialBatcher)
+            railBatches = SpatialBatcher.Build(
+                rail, SpatialBatcher.CellSize, BoundsMargin, MaxInstancesPerCall);
+            stoneBatches = SpatialBatcher.Build(
+                stone, SpatialBatcher.CellSize, BoundsMargin, MaxInstancesPerCall);
         }
 
         void Update()
         {
             if (fenceMaterial == null || postMesh == null) return;
 
-            var railRp = new RenderParams(fenceMaterial) { matProps = railBlock };
+            // shadows are off project-wide today, but RenderParams defaults
+            // shadowCastingMode to On — left implicit, enabling main-light
+            // shadows later would silently re-render every post into each
+            // cascade, so keep it explicitly Off
+            var railRp = new RenderParams(fenceMaterial)
+            {
+                matProps = railBlock,
+                shadowCastingMode = ShadowCastingMode.Off,
+            };
             DrawBatches(railRp, railBatches);
 
-            var stoneRp = new RenderParams(fenceMaterial) { matProps = stoneBlock };
+            var stoneRp = new RenderParams(fenceMaterial)
+            {
+                matProps = stoneBlock,
+                shadowCastingMode = ShadowCastingMode.Off,
+            };
             DrawBatches(stoneRp, stoneBatches);
         }
 
-        void DrawBatches(RenderParams rp, Matrix4x4[][] batches)
+        void DrawBatches(RenderParams rp, InstanceBatch[] batches)
         {
             if (batches == null) return;
             for (int b = 0; b < batches.Length; b++)
             {
-                Matrix4x4[] matrices = batches[b];
-                // documented, not just asserted: Start() splits into
-                // ≤MaxInstancesPerCall chunks, so every batch here fits
-                Debug.Assert(matrices.Length <= MaxInstancesPerCall,
+                InstanceBatch batch = batches[b];
+                // documented, not just asserted: SpatialBatcher splits cells
+                // into ≤MaxInstancesPerCall chunks, so every batch here fits
+                Debug.Assert(batch.matrices.Length <= MaxInstancesPerCall,
                     $"fence batch {b} exceeds RenderMeshInstanced's {MaxInstancesPerCall}-instance cap");
-                Graphics.RenderMeshInstanced(rp, postMesh, 0, matrices, matrices.Length);
+                // per-call culling: the batch's own cell bounds, not Unity's
+                // merged default, so off-screen cells skip vertex work
+                rp.worldBounds = batch.bounds;
+                Graphics.RenderMeshInstanced(rp, postMesh, 0, batch.matrices, batch.matrices.Length);
             }
         }
     }
