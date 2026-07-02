@@ -88,6 +88,69 @@ public class BattleLoaderTests
         Assert.AreEqual("test source", b.units[0].keyframes[0].citation);
     }
 
+    // A two-unit family for the parent/children rules: u1 decomposed into u2.
+    const string FamilyJson = @"{
+        ""name"": ""Family battle"",
+        ""startTime"": 0,
+        ""endTime"": 100,
+        ""units"": [
+            {
+                ""id"": ""u1"",
+                ""name"": ""Test Brigade A"",
+                ""side"": ""union"",
+                ""frontage_m"": 200,
+                ""depth_m"": 30,
+                ""keyframes"": [
+                    {""t"": 0, ""x"": 100, ""z"": 200, ""facing"": 90, ""formation"": ""column"", ""strength"": 1500}
+                ]
+            },
+            {
+                ""id"": ""u2"",
+                ""name"": ""Test Regiment A1"",
+                ""side"": ""union"",
+                ""parent"": ""u1"",
+                ""frontage_m"": 100,
+                ""depth_m"": 30,
+                ""keyframes"": [
+                    {""t"": 0, ""x"": 100, ""z"": 180, ""facing"": 90, ""formation"": ""column"", ""strength"": 750}
+                ]
+            }
+        ]
+    }";
+
+    [Test]
+    public void Parse_ReadsParentAndRejectsUnknownParent()
+    {
+        BattleDto b = BattleLoader.Parse(FamilyJson);
+        Assert.AreEqual("u1", b.units[1].parent);
+        Assert.IsTrue(string.IsNullOrEmpty(b.units[0].parent)); // absent = null/empty
+
+        string bad = FamilyJson.Replace(@"""parent"": ""u1""", @"""parent"": ""no-such-unit""");
+        var ex = Assert.Throws<System.ArgumentException>(() => BattleLoader.Parse(bad));
+        StringAssert.Contains("no-such-unit", ex.Message);
+    }
+
+    [Test]
+    public void Parse_RejectsGrandparent()
+    {
+        // point u1 at u2: u1 becomes both parent and child — depth 2, forbidden
+        string bad = FamilyJson.Replace(
+            @"""id"": ""u1"",", @"""id"": ""u1"", ""parent"": ""u2"",");
+        var ex = Assert.Throws<System.ArgumentException>(() => BattleLoader.Parse(bad));
+        StringAssert.Contains("parent", ex.Message);
+    }
+
+    [Test]
+    public void Parse_RejectsParentWithChildrenCarryingRoster()
+    {
+        // full decomposition or none: u1 has a child, so a roster is an error
+        string bad = FamilyJson.Replace(
+            @"""id"": ""u1"",",
+            @"""id"": ""u1"", ""regiments"": [""1st Test"", ""2nd Test""],");
+        var ex = Assert.Throws<System.ArgumentException>(() => BattleLoader.Parse(bad));
+        StringAssert.Contains("regiments", ex.Message);
+    }
+
     [Test]
     public void PlaceholderAsset_ParsesAndStaysOnBattlefield()
     {

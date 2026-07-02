@@ -242,7 +242,10 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
     const liveErrors = validateBattle(battle);
     const status = document.createElement("div");
     status.className = liveErrors.ok ? "muted" : "error";
-    status.textContent = liveErrors.ok ? "battle is valid" : liveErrors.errors.join("\n");
+    // warnings are advisory (strength re-total): shown, never blocking
+    status.textContent = liveErrors.ok
+      ? ["battle is valid", ...liveErrors.warnings].join("\n")
+      : liveErrors.errors.join("\n");
     frag.append(row(exportBtn), labeled("import battle JSON", importInput), status, errBox);
 
     dynamicEl.append(frag);

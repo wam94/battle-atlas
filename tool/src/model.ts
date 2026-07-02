@@ -24,6 +24,7 @@ export interface Unit {
   frontage_m: number;
   depth_m: number;
   regiments?: string[];
+  parent?: string; // id of an existing depth-0 unit; see battle-format.md "Parent / children"
   keyframes: Keyframe[];
 }
 

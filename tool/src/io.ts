@@ -23,6 +23,8 @@ export function exportBattle(battle: Battle): string {
       side: u.side,
       frontage_m: u.frontage_m,
       depth_m: u.depth_m,
+      ...(u.regiments !== undefined && { regiments: u.regiments }),
+      ...(u.parent !== undefined && { parent: u.parent }),
       keyframes: u.keyframes.map((k) => ({
         t: k.t,
         x: k.x,

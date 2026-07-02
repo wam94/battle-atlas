@@ -20,6 +20,15 @@ describe("battle IO", () => {
     expect(() => exportBattle(battle)).toThrow(/citation/i);
   });
 
+  it("round-trips parent and regiments through export", () => {
+    const withFamily = structuredClone(placeholder) as any;
+    withFamily.units[3].parent = "atk-a"; // def-a rides atk-a for the test
+    withFamily.units[3].regiments = ["1st Test", "2nd Test"]; // children MAY roster
+    const battle = importBattle(JSON.stringify(withFamily));
+    const out = exportBattle(battle);
+    expect(JSON.parse(out)).toEqual(withFamily);
+  });
+
   it("export emits keys in canonical order for clean diffs", () => {
     const battle = importBattle(JSON.stringify(placeholder));
     const out = exportBattle(battle);
