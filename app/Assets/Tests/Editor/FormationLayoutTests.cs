@@ -70,4 +70,69 @@ public class FormationLayoutTests
         for (int i = 0; i < line.Length; i++)
             Assert.AreEqual(line[i].x, unknown[i].x, 1e-5f);
     }
+
+    [Test]
+    public void RegimentSlots_Line_FiveSlots_SpanFrontageWithGaps()
+    {
+        var slots = FormationLayout.RegimentSlots("line", 5, 300f, 40f);
+        Assert.AreEqual(5, slots.Length);
+        // outer edges reach the unit's frontage: right edge of slot 0 at +150,
+        // left edge of slot 4 at -150
+        Assert.AreEqual(150f, slots[0].center.x + slots[0].size.x / 2f, 1e-3f);
+        Assert.AreEqual(-150f, slots[4].center.x - slots[4].size.x / 2f, 1e-3f);
+        for (int i = 0; i < 4; i++)
+        {
+            // 6m interval gap between adjacent sub-blocks
+            float gap = (slots[i].center.x - slots[i].size.x / 2f)
+                      - (slots[i + 1].center.x + slots[i + 1].size.x / 2f);
+            Assert.AreEqual(6f, gap, 1e-3f);
+        }
+        foreach (var s in slots)
+        {
+            Assert.AreEqual(0f, s.center.y, 1e-3f);  // all on the frontage axis
+            Assert.AreEqual(40f, s.size.y, 1e-3f);   // full unit depth each
+        }
+    }
+
+    [Test]
+    public void RegimentSlots_Line_EqualWidths_OrderedRightToLeft()
+    {
+        var slots = FormationLayout.RegimentSlots("line", 5, 300f, 40f);
+        float expectedWidth = (300f - 4 * 6f) / 5f; // frontage minus 4 gaps, split 5 ways
+        foreach (var s in slots)
+            Assert.AreEqual(expectedWidth, s.size.x, 1e-3f);
+        // roster convention: slot 0 = rightmost (+x), last = leftmost (-x)
+        for (int i = 0; i < 4; i++)
+            Assert.Greater(slots[i].center.x, slots[i + 1].center.x);
+    }
+
+    [Test]
+    public void RegimentSlots_Column_StacksFrontToBack()
+    {
+        var slots = FormationLayout.RegimentSlots("column", 4, 300f, 40f);
+        Assert.AreEqual(4, slots.Length);
+        float expectedDepth = (40f * 4f - 3 * 6f) / 4f; // column footprint depth minus 3 gaps
+        foreach (var s in slots)
+        {
+            Assert.AreEqual(0f, s.center.x, 1e-3f);        // stacked on the depth axis
+            Assert.AreEqual(300f / 4f, s.size.x, 1e-3f);   // column width = frontage/4
+            Assert.AreEqual(expectedDepth, s.size.y, 1e-3f);
+        }
+        // slot 0 leads (+y = forward), later slots trail behind it
+        Assert.AreEqual(80f, slots[0].center.y + slots[0].size.y / 2f, 1e-3f);  // front edge
+        Assert.AreEqual(-80f, slots[3].center.y - slots[3].size.y / 2f, 1e-3f); // rear edge
+        for (int i = 0; i < 3; i++)
+            Assert.Greater(slots[i].center.y, slots[i + 1].center.y);
+    }
+
+    [Test]
+    public void RegimentSlots_CountOne_DegeneratesToFullBlock()
+    {
+        var slots = FormationLayout.RegimentSlots("line", 1, 300f, 40f);
+        Assert.AreEqual(1, slots.Length);
+        Assert.AreEqual(0f, slots[0].center.x, 1e-3f);
+        Assert.AreEqual(0f, slots[0].center.y, 1e-3f);
+        Assert.AreEqual(300f, slots[0].size.x, 1e-3f);
+        Assert.AreEqual(40f, slots[0].size.y, 1e-3f);
+    }
 }

@@ -51,6 +51,59 @@ namespace BattleAtlas
             }
         }
 
+        // interval between regiment sub-blocks, meters (drill-manual spacing)
+        const float RegimentGap = 6f;
+
+        // Where each regiment sub-block sits inside the unit's footprint, in the
+        // unit-local frame (same axes as Offsets): center + size per sub-block.
+        // Line: count blocks side by side along the frontage, equal widths, 6m
+        // gaps, ordered +x (right) to -x (left) to match the roster's
+        // right-to-left convention. Column: the blocks stack front-to-back
+        // inside the column footprint (frontage/4 wide, depth*4 deep — the same
+        // footprint FillRanks gives column figures), slot 0 leading. Count 1
+        // degenerates to the formation's full footprint (line: frontage x
+        // depth; column: the narrow-deep column footprint). Scattered/routed
+        // formations never call this — the middle LOD tier renders those as
+        // the monolithic block (a dissolving unit has no ordered sub-blocks).
+        public static (Vector2 center, Vector2 size)[] RegimentSlots(
+            string formation, int count, float frontage, float depth)
+        {
+            var slots = new (Vector2 center, Vector2 size)[count];
+            RegimentSlots(formation, count, frontage, depth, slots);
+            return slots;
+        }
+
+        // Buffer-reuse overload: fills the first `count` entries of a
+        // caller-provided buffer instead of allocating (per-frame render path).
+        public static void RegimentSlots(
+            string formation, int count, float frontage, float depth,
+            (Vector2 center, Vector2 size)[] buffer)
+        {
+            if (count <= 0) return;
+            if (formation == "column")
+            {
+                float width = frontage / 4f;
+                float totalDepth = depth * 4f;
+                // floor at 0: a deep roster in a shallow footprint must yield
+                // degenerate (invisible) slots, never negative TRS scales
+                float subDepth = Mathf.Max(0f, (totalDepth - RegimentGap * (count - 1)) / count);
+                for (int i = 0; i < count; i++)
+                {
+                    float y = totalDepth / 2f - subDepth / 2f - i * (subDepth + RegimentGap);
+                    buffer[i] = (new Vector2(0f, y), new Vector2(width, subDepth));
+                }
+            }
+            else // "line" (and anything unrecognized, matching Offsets' fallback)
+            {
+                float width = Mathf.Max(0f, (frontage - RegimentGap * (count - 1)) / count);
+                for (int i = 0; i < count; i++)
+                {
+                    float x = frontage / 2f - width / 2f - i * (width + RegimentGap);
+                    buffer[i] = (new Vector2(x, 0f), new Vector2(width, depth));
+                }
+            }
+        }
+
         // even grid: as many ranks as needed to fit count across the width
         static void FillRanks(Vector2[] offsets, int count, float width, float depth)
         {
