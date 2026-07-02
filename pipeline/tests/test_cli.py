@@ -8,6 +8,7 @@ def test_parser_has_fetch_and_build():
     assert args.command == "build"
 
 
-def test_parser_has_landcover():
+def test_parser_has_landcover_and_relief():
     p = cli.make_parser()
     assert p.parse_args(["landcover"]).command == "landcover"
+    assert p.parse_args(["relief"]).command == "relief"
