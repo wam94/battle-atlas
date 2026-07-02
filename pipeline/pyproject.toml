@@ -9,6 +9,12 @@ dependencies = [
     "pyproj>=3.6",
     "requests>=2.31",
     "pillow>=10.0",
+    # Point-in-polygon for tree placement (landcover.py). shapely is the
+    # standard companion to rasterio in the geospatial-Python ecosystem
+    # (both wrap GEOS/GDAL), so it's a natural fit rather than a new
+    # dependency family — chosen over matplotlib.path to avoid pulling in
+    # a plotting library just for containment tests.
+    "shapely>=2.0",
 ]
 
 [dependency-groups]
