@@ -57,4 +57,62 @@ public class BattleDirectorTests
         Assert.AreEqual(-20f, buffer[1].x, 1e-3f);
         Assert.AreEqual(150f, buffer[1].y, 1e-3f);
     }
+
+    [Test]
+    public void RendersAtTier_SuppressionTruthTable()
+    {
+        // parentless & childless: every tier (the pre-family behavior, untouched)
+        Assert.IsTrue(BattleDirector.RendersAtTier(false, false, BattleDirector.LodTier.Block));
+        Assert.IsTrue(BattleDirector.RendersAtTier(false, false, BattleDirector.LodTier.Regiments));
+        Assert.IsTrue(BattleDirector.RendersAtTier(false, false, BattleDirector.LodTier.Soldiers));
+        // parent: far tier only — the near tiers belong to its children
+        Assert.IsTrue(BattleDirector.RendersAtTier(false, true, BattleDirector.LodTier.Block));
+        Assert.IsFalse(BattleDirector.RendersAtTier(false, true, BattleDirector.LodTier.Regiments));
+        Assert.IsFalse(BattleDirector.RendersAtTier(false, true, BattleDirector.LodTier.Soldiers));
+        // child: hidden while the parent's block represents the family
+        Assert.IsFalse(BattleDirector.RendersAtTier(true, false, BattleDirector.LodTier.Block));
+        Assert.IsTrue(BattleDirector.RendersAtTier(true, false, BattleDirector.LodTier.Regiments));
+        Assert.IsTrue(BattleDirector.RendersAtTier(true, false, BattleDirector.LodTier.Soldiers));
+    }
+
+    [Test]
+    public void EvaluateTier_FamilyTierKeyedOnParentCenterWithHysteresis()
+    {
+        // EvaluateTier sees ONE distance — the family parent's center — so a
+        // family can never half-swap: children at any range share this result
+        Assert.AreEqual(BattleDirector.LodTier.Block,
+            BattleDirector.EvaluateTier(5000f, BattleDirector.LodTier.Block));
+        // resolve in below the In distances...
+        Assert.AreEqual(BattleDirector.LodTier.Regiments,
+            BattleDirector.EvaluateTier(3900f, BattleDirector.LodTier.Block));
+        Assert.AreEqual(BattleDirector.LodTier.Soldiers,
+            BattleDirector.EvaluateTier(1400f, BattleDirector.LodTier.Regiments));
+        // ...and hold through the hysteresis band on the way out
+        Assert.AreEqual(BattleDirector.LodTier.Soldiers,
+            BattleDirector.EvaluateTier(1600f, BattleDirector.LodTier.Soldiers));
+        Assert.AreEqual(BattleDirector.LodTier.Regiments,
+            BattleDirector.EvaluateTier(1700f, BattleDirector.LodTier.Soldiers));
+        Assert.AreEqual(BattleDirector.LodTier.Regiments,
+            BattleDirector.EvaluateTier(4200f, BattleDirector.LodTier.Regiments));
+        Assert.AreEqual(BattleDirector.LodTier.Block,
+            BattleDirector.EvaluateTier(4500f, BattleDirector.LodTier.Regiments));
+    }
+
+    [Test]
+    public void RosterlessChildRendersMonolithicAtRegimentsTier()
+    {
+        // a roster-less child renders at the middle tier — but as a single
+        // block marker, not sub-blocks
+        Assert.IsTrue(BattleDirector.RendersAtTier(true, false, BattleDirector.LodTier.Regiments));
+        Assert.IsFalse(BattleDirector.RendersRegimentSubBlocks(
+            0, "line", BattleDirector.LodTier.Regiments));
+        // a child WITH a roster in ordered formation may sub-block
+        Assert.IsTrue(BattleDirector.RendersRegimentSubBlocks(
+            2, "line", BattleDirector.LodTier.Regiments));
+        // never in disordered formations, never at other tiers
+        Assert.IsFalse(BattleDirector.RendersRegimentSubBlocks(
+            2, "routed", BattleDirector.LodTier.Regiments));
+        Assert.IsFalse(BattleDirector.RendersRegimentSubBlocks(
+            2, "line", BattleDirector.LodTier.Block));
+    }
 }

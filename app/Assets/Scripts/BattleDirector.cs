@@ -11,7 +11,10 @@ namespace BattleAtlas
     // (with a hysteresis band at each boundary to avoid flicker). Units
     // without a regiments roster — or in scattered/routed formation, where
     // ordered sub-blocks would be a lie — keep the monolithic block at the
-    // middle tier.
+    // middle tier. Decomposed brigades (units with a `parent`) form a
+    // family: the tier is evaluated ONCE from the parent's center and the
+    // whole family swaps atomically — parent block far, children (own
+    // tracks) near — per battle-format.md "Parent / children".
     public class BattleDirector : MonoBehaviour
     {
         public TextAsset battleJson;
@@ -50,7 +53,7 @@ namespace BattleAtlas
             (0f, -0.5f), (0f, 0.5f), (-0.5f, 0f), (0.5f, 0f),
         };
 
-        enum LodTier { Soldiers, Regiments, Block }
+        public enum LodTier { Soldiers, Regiments, Block }
 
         // per-unit runtime state: the block marker plus everything needed to
         // switch it for regiment sub-blocks or soldier ranks at closer range.
@@ -62,6 +65,11 @@ namespace BattleAtlas
             public Transform Marker;
             public UnitFormationRenderer FormationRenderer;
             public LodTier Tier;
+            // family links, built once in Start from UnitDto.parent (the
+            // loader already guaranteed validity and depth 1): a child holds
+            // its parent, a parent holds its children, everyone else null
+            public UnitEntry Parent;
+            public List<UnitEntry> Children;
             // middle-tier state, null/0 when the unit has no regiments roster
             public int RegimentCount;
             public Matrix4x4[] RegimentMatrices;
@@ -124,6 +132,43 @@ namespace BattleAtlas
             return (pos, rot);
         }
 
+        // The family suppression contract (battle-format.md "Parent /
+        // children"): at Block tier the parent's block IS the family; at the
+        // nearer tiers the children are, and the parent hides. Parentless,
+        // childless units render at every tier — the pre-family behavior.
+        // Pure static so the truth table is testable without a scene.
+        public static bool RendersAtTier(bool isChild, bool hasChildren, LodTier tier)
+        {
+            if (hasChildren) return tier == LodTier.Block;
+            if (isChild) return tier != LodTier.Block;
+            return true;
+        }
+
+        // Three tiers with a sticky band at each boundary: a tier only
+        // switches once the camera clears the far edge of its band. For a
+        // family, dist is the PARENT's center distance and the latch lives on
+        // the parent — evaluated once, so a family never half-swaps.
+        public static LodTier EvaluateTier(float dist, LodTier current)
+        {
+            if (dist < SoldiersInDist
+                || (current == LodTier.Soldiers && dist < SoldiersOutDist))
+                return LodTier.Soldiers;
+            if (dist < RegimentsInDist
+                || (current == LodTier.Regiments && dist < RegimentsOutDist))
+                return LodTier.Regiments;
+            return LodTier.Block;
+        }
+
+        // Middle-tier sub-blocks only for units with a roster holding an
+        // ordered formation; scattered/routed (and roster-less units) fall
+        // through to the monolithic block — honesty over uniformity.
+        public static bool RendersRegimentSubBlocks(
+            int regimentCount, string formation, LodTier tier)
+        {
+            return tier == LodTier.Regiments && regimentCount > 0
+                && (formation == "line" || formation == "column");
+        }
+
         // World-space terrain height at (x, z), offset by groundYBase (the
         // terrain object's Y, refreshed once per Update). Instance method so
         // groundYFunc can be built once in Start instead of allocating a
@@ -159,6 +204,7 @@ namespace BattleAtlas
             BattleDto battle = BattleLoader.Parse(battleJson.text);
             clock.EndTime = battle.endTime;
             clock.StartTime = battle.startTime;
+            var entriesById = new Dictionary<string, UnitEntry>(battle.units.Count);
             foreach (UnitDto u in battle.units)
             {
                 var marker = GameObject.CreatePrimitive(PrimitiveType.Cube).transform;
@@ -182,7 +228,7 @@ namespace BattleAtlas
                         $"unit '{u.id}' has {u.regiments.Count} regiments; rendering only the first {MaxRegiments}");
                 int regimentCount = u.regiments == null
                     ? 0 : Mathf.Min(u.regiments.Count, MaxRegiments);
-                units.Add(new UnitEntry
+                var entry = new UnitEntry
                 {
                     Track = new UnitTrack(u),
                     Marker = marker,
@@ -191,7 +237,23 @@ namespace BattleAtlas
                     RegimentCount = regimentCount,
                     RegimentMatrices = regimentCount > 0 ? new Matrix4x4[MaxRegiments] : null,
                     ColorBlock = block,
-                });
+                };
+                units.Add(entry);
+                entriesById[u.id] = entry;
+            }
+            // second pass: link families. Built once here so Update never
+            // searches or allocates; Parse already threw on unknown parents,
+            // grandparents, and roster-carrying parents.
+            for (int i = 0; i < battle.units.Count; i++)
+            {
+                string parentId = battle.units[i].parent;
+                if (string.IsNullOrEmpty(parentId))
+                    continue;
+                UnitEntry parent = entriesById[parentId];
+                if (parent.Children == null)
+                    parent.Children = new List<UnitEntry>();
+                parent.Children.Add(units[i]);
+                units[i].Parent = parent;
             }
         }
 
@@ -201,9 +263,9 @@ namespace BattleAtlas
             groundYBase = baseY;
             foreach (UnitEntry entry in units)
             {
-                UnitTrack track = entry.Track;
-                Transform marker = entry.Marker;
-                UnitState s = track.StateAt(clock.CurrentTime);
+                if (entry.Parent != null)
+                    continue; // children render on their family's pass below
+                UnitState s = entry.Track.StateAt(clock.CurrentTime);
 
                 // one representative height sample (unit center) is enough to
                 // judge camera distance; the block path does its own denser
@@ -215,56 +277,76 @@ namespace BattleAtlas
                 float dist = lodCamera != null
                     ? Vector3.Distance(lodCamera.transform.position, worldPos)
                     : float.MaxValue;
-                // three tiers with a sticky band at each boundary: a tier only
-                // switches once the camera clears the far edge of its band
-                if (dist < SoldiersInDist
-                    || (entry.Tier == LodTier.Soldiers && dist < SoldiersOutDist))
-                    entry.Tier = LodTier.Soldiers;
-                else if (dist < RegimentsInDist
-                    || (entry.Tier == LodTier.Regiments && dist < RegimentsOutDist))
-                    entry.Tier = LodTier.Regiments;
-                else
-                    entry.Tier = LodTier.Block;
+                // the hysteresis latch lives on this entry — for a family,
+                // that's the parent: one center, one tier, atomic swap
+                entry.Tier = EvaluateTier(dist, entry.Tier);
 
-                if (entry.Tier == LodTier.Soldiers)
-                {
-                    marker.gameObject.SetActive(false);
-                    entry.FormationRenderer.Render(s, groundYFunc);
+                RenderMember(entry, s, entry.Tier, baseY);
+                if (entry.Children == null)
                     continue;
-                }
-
-                // middle tier only for units with a roster holding an ordered
-                // formation; scattered/routed (and roster-less units) fall
-                // through to the monolithic block — honesty over uniformity
-                if (entry.Tier == LodTier.Regiments && entry.RegimentCount > 0
-                    && (s.formation == "line" || s.formation == "column"))
+                for (int i = 0; i < entry.Children.Count; i++)
                 {
-                    marker.gameObject.SetActive(false);
-                    RenderRegiments(entry, s, baseY);
-                    continue;
+                    UnitEntry child = entry.Children[i];
+                    RenderMember(child, child.Track.StateAt(clock.CurrentTime),
+                        entry.Tier, baseY);
                 }
-
-                marker.gameObject.SetActive(true);
-                FootprintSamplePoints(s.posXZ, s.facingDeg,
-                    track.Unit.frontage_m, track.Unit.depth_m, samplePoints);
-                float minY = float.MaxValue, maxY = float.MinValue;
-                foreach (Vector2 p in samplePoints)
-                {
-                    float y = terrain.SampleHeight(new Vector3(p.x, 0f, p.y));
-                    if (y < minY) minY = y;
-                    if (y > maxY) maxY = y;
-                }
-                // a rigid slab can't lie on ~20 m of relief: stretch the block
-                // from the lowest ground under it to MarkerHeight above the
-                // highest, so it embeds in the slope instead of floating or
-                // letting the crest poke through its top
-                float blockHeight = (maxY - minY) + MarkerHeight;
-                Vector3 scale = marker.localScale;
-                scale.y = blockHeight;
-                marker.localScale = scale;
-                var (pos, rot) = MarkerPose(s, baseY + minY, blockHeight);
-                marker.SetPositionAndRotation(pos, rot);
             }
+        }
+
+        // Renders one unit at the given tier — or hides it when the family
+        // contract says another tier's representation owns the family right
+        // now. For parentless, childless units RendersAtTier is always true,
+        // so this is exactly the pre-family tier dispatch.
+        void RenderMember(UnitEntry entry, UnitState s, LodTier tier, float baseY)
+        {
+            if (!RendersAtTier(entry.Parent != null, entry.Children != null, tier))
+            {
+                entry.Marker.gameObject.SetActive(false);
+                return;
+            }
+
+            if (tier == LodTier.Soldiers)
+            {
+                entry.Marker.gameObject.SetActive(false);
+                entry.FormationRenderer.Render(s, groundYFunc);
+                return;
+            }
+
+            if (RendersRegimentSubBlocks(entry.RegimentCount, s.formation, tier))
+            {
+                entry.Marker.gameObject.SetActive(false);
+                RenderRegiments(entry, s, baseY);
+                return;
+            }
+
+            RenderBlock(entry, s, baseY);
+        }
+
+        // Far tier (and the middle-tier fallback): the monolithic block,
+        // stretched into the slope.
+        void RenderBlock(UnitEntry entry, UnitState s, float baseY)
+        {
+            Transform marker = entry.Marker;
+            marker.gameObject.SetActive(true);
+            FootprintSamplePoints(s.posXZ, s.facingDeg,
+                entry.Track.Unit.frontage_m, entry.Track.Unit.depth_m, samplePoints);
+            float minY = float.MaxValue, maxY = float.MinValue;
+            foreach (Vector2 p in samplePoints)
+            {
+                float y = terrain.SampleHeight(new Vector3(p.x, 0f, p.y));
+                if (y < minY) minY = y;
+                if (y > maxY) maxY = y;
+            }
+            // a rigid slab can't lie on ~20 m of relief: stretch the block
+            // from the lowest ground under it to MarkerHeight above the
+            // highest, so it embeds in the slope instead of floating or
+            // letting the crest poke through its top
+            float blockHeight = (maxY - minY) + MarkerHeight;
+            Vector3 scale = marker.localScale;
+            scale.y = blockHeight;
+            marker.localScale = scale;
+            var (pos, rot) = MarkerPose(s, baseY + minY, blockHeight);
+            marker.SetPositionAndRotation(pos, rot);
         }
 
         // Middle tier: one RenderMeshInstanced of the unit box per unit, one
