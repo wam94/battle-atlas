@@ -84,8 +84,11 @@ namespace BattleAtlas
                     yBias + Jitter(unitId, i, 13) * depth * 0.5f);
         }
 
-        // deterministic pseudo-random in [-1, 1] from (unitId, index, salt)
-        static float Jitter(string unitId, int index, int salt)
+        // deterministic pseudo-random in [-1, 1] from (unitId, index, salt).
+        // Internal (not private) so other deterministic placement code in this
+        // assembly — e.g. VegetationField — shares the same hash-jitter approach
+        // instead of duplicating it.
+        internal static float Jitter(string unitId, int index, int salt)
         {
             unchecked
             {
