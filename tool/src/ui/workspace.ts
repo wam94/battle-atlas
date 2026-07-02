@@ -2,6 +2,7 @@ import type maplibregl from "maplibre-gl";
 import type { Battlefield } from "../geo";
 import type { Battle, Confidence, Formation, Side, Unit } from "../model";
 import { exportBattle, importBattle } from "../io";
+import { decomposeBrigade } from "../decompose";
 import { validateBattle } from "../validate";
 import { loadAutosave, saveAutosave, debouncedSaveAutosave } from "../persist";
 import { nextKeyframeTime, clampDraftTime } from "../timeutil";
@@ -242,7 +243,10 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
     const liveErrors = validateBattle(battle);
     const status = document.createElement("div");
     status.className = liveErrors.ok ? "muted" : "error";
-    status.textContent = liveErrors.ok ? "battle is valid" : liveErrors.errors.join("\n");
+    // warnings are advisory (strength re-total): shown, never blocking
+    status.textContent = liveErrors.ok
+      ? ["battle is valid", ...liveErrors.warnings].join("\n")
+      : liveErrors.errors.join("\n");
     frag.append(row(exportBtn), labeled("import battle JSON", importInput), status, errBox);
 
     dynamicEl.append(frag);
@@ -265,6 +269,41 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
       selectedUnitId = null; selectedKfIndex = null; render();
     });
     frag.append(del);
+
+    // Decompose the roster into first-class child regiments (Task A4). The
+    // generated tracks are inferred slot-follow scaffolding the author edits
+    // afterwards; the result flows through the normal validation gate (the
+    // live status below and the export gate), never a separate one.
+    const decompose = document.createElement("button");
+    decompose.textContent = "Decompose into regiments…";
+    decompose.disabled = !unit.regiments || unit.regiments.length === 0;
+    decompose.style.marginLeft = "8px";
+    decompose.addEventListener("click", () => {
+      const roster = unit.regiments ?? [];
+      const equalShare = Math.round((unit.keyframes[0]?.strength ?? 0) / Math.max(1, roster.length));
+      const strengths = new Map<string, number>();
+      for (const name of roster) {
+        const v = window.prompt(`t=0 strength for ${name} (per-regiment, from sources)`, String(equalShare));
+        if (v === null) return; // author cancelled — apply nothing
+        const parsed = Number(v);
+        if (!Number.isFinite(parsed)) {
+          // non-numeric entry: refuse loudly rather than let NaN flow into
+          // decomposeBrigade — same treatment as Cancel, nothing applied
+          autosaveNotice = `decompose cancelled: '${v}' is not a number (strength for ${name})`;
+          render();
+          return;
+        }
+        strengths.set(name, parsed);
+      }
+      try {
+        battle = decomposeBrigade(battle, unit.id, strengths);
+        selectedKfIndex = null;
+      } catch (err) {
+        autosaveNotice = String(err); // same loud-refusal surface as endTime clashes
+      }
+      render();
+    });
+    frag.append(decompose);
 
     frag.append(h2("Keyframes (click map to add at preview time)"));
     unit.keyframes.forEach((kf, i) => {

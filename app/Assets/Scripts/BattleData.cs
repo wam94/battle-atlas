@@ -26,6 +26,7 @@ namespace BattleAtlas
         public float frontage_m;
         public float depth_m;
         public List<string> regiments; // optional display roster; JsonUtility leaves this null when absent = no roster
+        public string parent; // optional id of the unit this decomposes (depth 1); JsonUtility leaves this null/empty when absent
         public List<KeyframeDto> keyframes;
     }
 
@@ -67,6 +68,27 @@ namespace BattleAtlas
                 if (lastKf.t > battle.endTime)
                     throw new ArgumentException(
                         $"unit '{unit.id}' keyframe t {lastKf.t} exceeds battle endTime {battle.endTime}");
+            }
+            // parent/children rules (battle-format.md "Parent / children"):
+            // parent must exist, depth 1 only, and a unit with children must
+            // not also carry a regiments roster (full decomposition or none)
+            var byId = new Dictionary<string, UnitDto>();
+            foreach (UnitDto unit in battle.units)
+                byId[unit.id] = unit;
+            foreach (UnitDto unit in battle.units)
+            {
+                if (string.IsNullOrEmpty(unit.parent))
+                    continue;
+                if (!byId.TryGetValue(unit.parent, out UnitDto parent))
+                    throw new ArgumentException(
+                        $"unit '{unit.id}' parent '{unit.parent}' does not exist");
+                if (!string.IsNullOrEmpty(parent.parent))
+                    throw new ArgumentException(
+                        $"unit '{unit.id}' parent '{unit.parent}' has a parent itself (depth 1 only)");
+                if (parent.regiments != null && parent.regiments.Count > 0)
+                    throw new ArgumentException(
+                        $"unit '{parent.id}' has children but still carries a regiments roster " +
+                        "(full decomposition or none)");
             }
             return battle;
         }
