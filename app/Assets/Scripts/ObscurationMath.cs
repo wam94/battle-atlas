@@ -88,9 +88,9 @@ namespace BattleAtlas
         // form (position from e.x/z..x2/z2). Also serves derived dust:
         // call with dust params' kind on a synthetic per-unit event and the
         // unit-track position function. Caller owns the buffer — zero
-        // allocation here. Overflow clamps deterministically OLDEST-first
+        // allocation here. Overflow keeps the newest buffer.Length puffs
         // (ticks walk newest to oldest and stop when full): the dropped
-        // puffs are the ones about to die anyway, and the same t always
+        // ones are those about to expire anyway, and the same t always
         // drops the same ones. The one-time overflow warning is the
         // caller's job — this stays pure.
         public static int LivePuffs(
@@ -113,12 +113,18 @@ namespace BattleAtlas
             if (jLow < 0) jLow = 0;
             if (jHigh < jLow) return 0;
 
-            // segment emitters spread several puffs per tick along the line
-            var segA = new Vector2(e.x, e.z);
-            var segB = new Vector2(e.x2, e.z2);
-            int perTick = emitterPosAt != null
-                ? 1
-                : Mathf.Max(1, Mathf.RoundToInt((segB - segA).magnitude / SegmentMetersPerPuff));
+            // segment emitters spread several puffs per tick along the line;
+            // the segment endpoints only exist on that path (unit-form events
+            // carry zeroed x/z fields)
+            var segA = Vector2.zero;
+            var segB = Vector2.zero;
+            int perTick = 1;
+            if (emitterPosAt == null)
+            {
+                segA = new Vector2(e.x, e.z);
+                segB = new Vector2(e.x2, e.z2);
+                perTick = Mathf.Max(1, Mathf.RoundToInt((segB - segA).magnitude / SegmentMetersPerPuff));
+            }
 
             int count = 0;
             for (int j = jHigh; j >= jLow && count < buffer.Length; j--)
@@ -146,7 +152,7 @@ namespace BattleAtlas
                         basePos = Vector2.LerpUnclamped(segA, segB, along);
                     }
                     basePos.x += FormationLayout.Jitter(e.id, idx, 11) * p.jitterM;
-                    basePos.y += FormationLayout.Jitter(e.id, idx, 23) * p.jitterM;
+                    basePos.y += FormationLayout.Jitter(e.id, idx, 23) * p.jitterM; // .y = Z/north (XZ Vector2, not altitude)
                     buffer[count++] = new Puff
                     {
                         posXZ = basePos + windMps * age, // linear downwind advection

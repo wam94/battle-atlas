@@ -68,6 +68,30 @@ public class ObscurationMathTests
     }
 
     [Test]
+    public void LivePuffs_MovingEmitterSamplesPositionAtEmissionTime()
+    {
+        // an emitter marching east at 1 m/s: the puff emitted at tEmit must
+        // sit at x = tEmit (plus its own wind drift) — smoke TRAILS the
+        // column. A bug sampling emitterPosAt(t) instead of
+        // emitterPosAt(tEmit) would stack every puff at the emitter's
+        // current position and still pass every fixed-emitter test.
+        System.Func<float, Vector2> marching = time => new Vector2(time, 0f);
+        var e = UnitEvent("ev-march", "musketry", 0f, 30f); // cadence 3, life 30
+        var wind = new Vector2(0.2f, 0f);
+        var buffer = new Puff[32];
+        int n = ObscurationMath.LivePuffs(e, marching, wind, 29f, buffer);
+        Assert.AreEqual(10, n); // ticks at 0, 3, ..., 27 all still alive at t=29
+        PuffParams p = PuffParams.For("musketry");
+        for (int i = 0; i < n; i++)
+        {
+            float age = buffer[i].age01 * p.life;
+            float tEmit = 29f - age;
+            Assert.AreEqual(tEmit + wind.x * age, buffer[i].posXZ.x, p.jitterM + 1e-3f);
+            Assert.AreEqual(0f, buffer[i].posXZ.y, p.jitterM + 1e-3f);
+        }
+    }
+
+    [Test]
     public void LivePuffs_JitterVariesByEventId()
     {
         var a = UnitEvent("ev-a", "musketry", 0f, 30f);

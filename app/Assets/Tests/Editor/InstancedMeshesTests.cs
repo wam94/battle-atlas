@@ -132,6 +132,26 @@ public class InstancedMeshesTests
     }
 
     [Test]
+    public void PuffMesh_IsDeterministicLowPolyUnitBlob()
+    {
+        Mesh a = InstancedMeshes.BuildPuff();
+        Mesh b = InstancedMeshes.BuildPuff();
+        // hash-perturbed, not random: two builds are vertex-identical
+        Assert.AreEqual(a.vertexCount, b.vertexCount);
+        Vector3[] va = a.vertices, vb = b.vertices;
+        for (int i = 0; i < va.Length; i++)
+            Assert.AreEqual(va[i], vb[i]);
+        // low-poly blob (three tapered boxes), roughly unit radius so the
+        // renderer's TRS scale is the puff radius in meters
+        Assert.LessOrEqual(a.vertexCount, 120);
+        Assert.That(a.bounds.size.x, Is.InRange(0.8f, 3f));
+        Assert.That(a.bounds.size.z, Is.InRange(0.8f, 3f));
+        Assert.That(a.bounds.size.y, Is.InRange(0.5f, 2.5f));
+        Object.DestroyImmediate(a);
+        Object.DestroyImmediate(b);
+    }
+
+    [Test]
     public void UnitBoxMesh_IsUnitCubeWithBaseAtOrigin()
     {
         Mesh m = InstancedMeshes.BuildUnitBox();

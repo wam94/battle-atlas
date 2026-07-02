@@ -35,6 +35,12 @@ namespace BattleAtlas
         // its shader carries the deterministic vertex wave). Unset: flags
         // are skipped with a warning, everything else renders as before.
         public Material flagMaterial;
+        // transparent materials for the obscuration field (Assets/Battle/
+        // Smoke.mat and Dust.mat, created + wired by the BattleAtlas/Setup
+        // Obscuration menu item). Unset: ObscurationField warns once and
+        // renders no obscuration, everything else renders as before.
+        public Material smokeMaterial;
+        public Material dustMaterial;
 
         // visible clearance of the block's top face above the highest ground in
         // its footprint (the block extends down to the lowest ground, embedding
@@ -305,6 +311,26 @@ namespace BattleAtlas
             // one slot per unit — every unit flies a flag every frame
             unionFlagMatrices = new Matrix4x4[units.Count];
             csaFlagMatrices = new Matrix4x4[units.Count];
+
+            // obscuration rides its own component but the SAME parsed battle:
+            // authored events resolve emitter positions from each event's own
+            // unit's track, and dust derives only from CHILDLESS units — a
+            // decomposed brigade's parent track is the far-tier record of the
+            // same men, so deriving from both would double-dust the family
+            var tracksById = new Dictionary<string, UnitTrack>(units.Count);
+            var childlessTracks = new List<UnitTrack>();
+            // authored file order, not dictionary order: emitter order feeds
+            // ObscurationField's deterministic overflow clamp
+            foreach (UnitDto u in battle.units)
+            {
+                UnitEntry entry = entriesById[u.id];
+                tracksById[u.id] = entry.Track;
+                if (entry.Children == null)
+                    childlessTracks.Add(entry.Track);
+            }
+            gameObject.AddComponent<ObscurationField>().Init(
+                battle, tracksById, childlessTracks, clock, terrain,
+                smokeMaterial, dustMaterial);
         }
 
         void Update()
