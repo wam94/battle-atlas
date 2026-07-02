@@ -118,27 +118,27 @@ for these reasons:
   Unity +3 loader tests → **63**. `cd tool && npm test` + typecheck; Unity CLI verify
   (BLOCKED if locked). Commit.
 
-### Task A2: Bachelder timed-set acquisition (early; feeds A5/A6)
+### Task A2: Bachelder timed-set acquisition ✅ SCOUTED (pre-plan); overlay session remains
 
-**Files:** `docs/research/` (new dated note), tool overlay session (no code)
+**Scouted before this plan was committed** — see
+`docs/research/2026-07-02-bachelder-timed-set-acquisition.md` (commit f677a6d). Findings
+that supersede the survey: **sheet No. 8 is "1–5 P.M. July 3" and depicts the charge in
+motion at regiment granularity** (verified by full-res crop inspection: regiment bars
+mid-field, batteries individually named) — the "3–4 PM gap between sheets" is REFUTED;
+the No. 10–12 numbering conflict was East Cavalry Field conflation. Rumsey pub-group
+12440, list nos. 12440.020–.023; Luna IIIF endpoints answer plain curl (drapeable like
+the LOC precedent); IA mirrors hold full-res JP2 masters.
 
-- [ ] Hunt the July 3 main-field sheets of Bachelder's 1880s timed set in David Rumsey's
-  digitization of the 1995 Morningside reprint (browse route in the survey §1.2); resolve
-  the sheet-slicing conflict as data: Horse Soldier's 4–8 AM / 8–11 AM / **1:00–3:00 PM**
-  / 5:00 PM vs the maps-10–12 numbering (likely East Cavalry Field conflation). Fallbacks
-  in order: *Bachelder Papers* vol. 3 map supplement; NARA RG 77 originals.
-- [ ] Provenance discipline: the 1880s maps are PD; Rumsey's site license (CC BY-NC-SA)
-  covers the scans. **Trace positions as facts; never ship or trace scan imagery as
-  geometry we redistribute.** Prefer georeferencing the scan in the tool as a working
-  overlay (like Warren/Bachelder sheet 3 in Phase 5A Task 7) and authoring keyframes from
-  what it attests, cited "Bachelder 1880s timed set, July 3 1:00–3:00 PM sheet (1995
-  Morningside reprint)".
-- [ ] Deliverable: a short dated research note — which sheets exist digitized, at what
-  resolution, what the 1–3 PM sheet actually attests at regiment level for both armies
-  (the dealer's "every regiment and battery" claim is unverified until read by eye), and
-  the confirmed slicing. **The 3:00–4:00 PM charge window falls in the gap between sheets
-  on either numbering — say so in the note; it is this plan's central data risk.**
-- [ ] No tests. Commit (research note + any overlay config).
+- [ ] Remaining: georeference sheet No. 8 (and No. 9, 5 PM, as end-state anchor) in the
+  tool as working overlays; author from what they attest, cited "Bachelder 1880s timed
+  set, sheet No. 8 (1–5 PM July 3), 1995 Morningside reprint via Rumsey 12440.0xx".
+  **Time honesty:** one sheet superimposes four hours — positions are `documented`, the
+  time each bar represents within 1–5 PM is `inferred` from context (arrows, phase
+  labels) and must say so per keyframe.
+- [ ] Provenance discipline unchanged: trace positions as FACTS; never redistribute scan
+  imagery. The acquisition note flags an unpublished-until-1995 copyright wrinkle on the
+  scans themselves (user judgment pending) — it does not affect facts-only usage.
+- [ ] No tests. Commit (overlay config only).
 
 ### Task A3: Family LOD in BattleDirector (Unity CLI)
 
@@ -507,12 +507,11 @@ presentation with a label.
 
 ## Risks
 
-- **The 3–4 PM Bachelder gap is structural:** the timed set brackets the charge
-  (1:00–3:00 PM and 5:00 PM sheets) but the charge itself falls between sheets — so the
-  regiment positions in the window's most-watched minutes lean on interpolation plus prose
-  sources. The confidence system carries this honestly (documented starts, documented
-  endpoints, inferred middles); the risk is reviewer expectation, not data integrity —
-  say it in the research note and let the ghosting say it in-app.
+- **Bachelder time-superimposition (was: the 3–4 PM gap, now refuted):** sheet No. 8
+  covers 1–5 PM including the charge in motion — but ONE sheet superimposes four hours,
+  so a regiment bar's position is `documented` while the clock it represents is
+  `inferred` from phase context. The confidence system carries this honestly; the A6
+  literature clocks (step-off ~14:50–15:00, repulse ~15:30–15:50) remain the time spine.
 - **iOS thermal budget:** near tree meshes, the crop ring, pose buckets, and shadows all
   land at the same zoom band. Mitigations: B1 recovers budget first and is measured;
   every Track B rung is independently revertible; the punchlist gates on the Angle-at-15:25
