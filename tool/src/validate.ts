@@ -61,6 +61,28 @@ export function validateBattle(data: unknown): ValidationResult {
           `unit '${unit.id}' parent '${unit.parent}' has a parent itself (depth 1 only)`);
     }
   }
+  // Engagement events (battle-format.md "Engagement events"): unique ids,
+  // t0 < t1 <= endTime, unitId references an existing unit (any unit —
+  // parent, child, or parentless), the no-faking gate, and exactly one
+  // emitter form (belt-and-suspenders: the schema's oneOf already enforces
+  // it, but the loader-side rule must have a tool-side twin).
+  const seenEventIds = new Set<string>();
+  for (const ev of battle.events ?? []) {
+    if (seenEventIds.has(ev.id)) errors.push(`duplicate event id '${ev.id}'`);
+    seenEventIds.add(ev.id);
+    if (ev.t0 >= ev.t1)
+      errors.push(`event '${ev.id}' window must satisfy t0 < t1 (${ev.t0} >= ${ev.t1})`);
+    if (ev.t1 > battle.endTime)
+      errors.push(`event '${ev.id}' t1 ${ev.t1} exceeds endTime ${battle.endTime}`);
+    const segmentFields = [ev.x, ev.z, ev.x2, ev.z2].filter((v) => v !== undefined).length;
+    if (ev.unitId !== undefined ? segmentFields > 0 : segmentFields !== 4)
+      errors.push(
+        `event '${ev.id}' must carry exactly one emitter form (unitId XOR x/z/x2/z2)`);
+    if (ev.unitId !== undefined && !byId.has(ev.unitId))
+      errors.push(`event '${ev.id}' unitId '${ev.unitId}' does not exist`);
+    if (ev.confidence === "documented" && !ev.citation?.trim())
+      errors.push(`event '${ev.id}': documented confidence requires a citation`);
+  }
   // Full decomposition or none, plus the advisory strength re-total — both
   // need the family assembled, so they run after the per-unit pass.
   for (const parent of battle.units) {

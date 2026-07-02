@@ -36,6 +36,36 @@ export function exportBattle(battle: Battle): string {
         ...(k.citation !== undefined && { citation: k.citation }),
       })),
     })),
+    // events export sorted by t0 then id — canonical order, diffable
+    ...(battle.events !== undefined && {
+      events: [...battle.events]
+        .sort((a, b) => a.t0 - b.t0 || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0))
+        .map((e) => ({
+          id: e.id,
+          kind: e.kind,
+          t0: e.t0,
+          t1: e.t1,
+          ...(e.unitId !== undefined && { unitId: e.unitId }),
+          ...(e.x !== undefined && { x: e.x }),
+          ...(e.z !== undefined && { z: e.z }),
+          ...(e.x2 !== undefined && { x2: e.x2 }),
+          ...(e.z2 !== undefined && { z2: e.z2 }),
+          ...(e.confidence !== undefined && { confidence: e.confidence }),
+          ...(e.citation !== undefined && { citation: e.citation }),
+          ...(e.note !== undefined && { note: e.note }),
+        })),
+    }),
+    ...(battle.environment !== undefined && {
+      environment: {
+        windTowardDeg: battle.environment.windTowardDeg,
+        windMps: battle.environment.windMps,
+        ...(battle.environment.confidence !== undefined &&
+          { confidence: battle.environment.confidence }),
+        ...(battle.environment.citation !== undefined &&
+          { citation: battle.environment.citation }),
+        ...(battle.environment.note !== undefined && { note: battle.environment.note }),
+      },
+    }),
   };
   return JSON.stringify(ordered, null, 2);
 }

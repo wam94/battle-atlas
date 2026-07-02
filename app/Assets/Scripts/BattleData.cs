@@ -15,6 +15,47 @@ namespace BattleAtlas
         public float startTime;
         public float endTime;
         public List<UnitDto> units;
+        public List<EventDto> events; // optional; JsonUtility leaves this null when absent = no events
+        // optional; JsonUtility deserializes an absent block as a ZEROED
+        // instance (never null) — windMps 0 means calm = no drift, which is
+        // exactly the right fallback, so the quirk is load-bearing
+        public EnvironmentDto environment;
+    }
+
+    // Engagement event: a provenance-gated fire window (battle-format.md
+    // "Engagement events"). Exactly one emitter form; JsonUtility can't
+    // express absent-vs-zero, so the form is keyed on non-empty unitId:
+    // set = moving emitter (position from that unit's track at emission
+    // time), empty = the x/z..x2/z2 fixed segment. Dust is never authored —
+    // it derives from unit velocity (no "advance_dust" kind, by design).
+    [Serializable]
+    public class EventDto
+    {
+        public string id;
+        public string kind; // "artillery_fire" | "musketry"
+        public float t0;
+        public float t1;
+        public string unitId; // emitter form A; empty = segment form
+        public float x;       // emitter form B: fixed segment, battlefield-local meters
+        public float z;
+        public float x2;
+        public float z2;
+        public string confidence; // "documented" | "inferred" | "unknown"; empty = unknown
+        public string citation;
+        public string note;
+    }
+
+    // Battlefield wind (battle-format.md "Environment"): windTowardDeg is
+    // the compass bearing smoke drifts TOWARD (not the meteorological
+    // from-direction).
+    [Serializable]
+    public class EnvironmentDto
+    {
+        public float windTowardDeg;
+        public float windMps;
+        public string confidence;
+        public string citation;
+        public string note;
     }
 
     [Serializable]
@@ -89,6 +130,27 @@ namespace BattleAtlas
                     throw new ArgumentException(
                         $"unit '{parent.id}' has children but still carries a regiments roster " +
                         "(full decomposition or none)");
+            }
+            // engagement event rules (battle-format.md "Engagement events"):
+            // kind vocabulary, t0 < t1 <= endTime, and a non-empty unitId
+            // must resolve — the load-bearing subset the renderer trusts
+            if (battle.events != null)
+            {
+                foreach (EventDto ev in battle.events)
+                {
+                    if (ev.kind != "artillery_fire" && ev.kind != "musketry")
+                        throw new ArgumentException(
+                            $"event '{ev.id}' has unknown kind '{ev.kind}'");
+                    if (ev.t0 >= ev.t1)
+                        throw new ArgumentException(
+                            $"event '{ev.id}' window must satisfy t0 < t1 ({ev.t0} >= {ev.t1})");
+                    if (ev.t1 > battle.endTime)
+                        throw new ArgumentException(
+                            $"event '{ev.id}' t1 {ev.t1} exceeds battle endTime {battle.endTime}");
+                    if (!string.IsNullOrEmpty(ev.unitId) && !byId.ContainsKey(ev.unitId))
+                        throw new ArgumentException(
+                            $"event '{ev.id}' unitId '{ev.unitId}' does not exist");
+                }
             }
             return battle;
         }

@@ -28,11 +28,46 @@ export interface Unit {
   keyframes: Keyframe[];
 }
 
+export type EventKind = "artillery_fire" | "musketry";
+
+// Engagement event: a provenance-gated fire window (battle-format.md
+// "Engagement events"). Exactly one emitter form: `unitId` (moving emitter,
+// position read from that unit's track at emission time) XOR the x/z/x2/z2
+// fixed segment (gun lines not authored as units). Dust is never authored —
+// it derives from unit velocity (no `advance_dust` kind, by design).
+export interface EngagementEvent {
+  id: string;
+  kind: EventKind;
+  t0: number;
+  t1: number;
+  unitId?: string;
+  x?: number;
+  z?: number;
+  x2?: number;
+  z2?: number;
+  confidence?: Confidence;
+  citation?: string;
+  note?: string;
+}
+
+// Wind (battle-format.md "Environment"): `windTowardDeg` is the compass
+// bearing smoke drifts TOWARD (not the meteorological from-direction);
+// windMps 0 = calm = no drift.
+export interface Environment {
+  windTowardDeg: number;
+  windMps: number;
+  confidence?: Confidence;
+  citation?: string;
+  note?: string;
+}
+
 export interface Battle {
   name: string;
   startTime: number;
   endTime: number;
   units: Unit[];
+  events?: EngagementEvent[];
+  environment?: Environment;
 }
 
 export interface UnitState {
