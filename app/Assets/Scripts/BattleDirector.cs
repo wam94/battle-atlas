@@ -4,8 +4,10 @@ using UnityEngine;
 namespace BattleAtlas
 {
     // Loads the battle JSON, spawns a block marker per unit, and poses every
-    // marker each frame from the clock's current time. Simple primitives for
-    // this phase; instanced formation rendering arrives with the zoom ladder.
+    // marker each frame from the clock's current time. Beyond BlocksOutDist
+    // the block renders as before; inside SoldiersInDist it hides and an
+    // instanced UnitFormationRenderer draws the unit as soldier ranks instead
+    // (with hysteresis between the two thresholds to avoid flicker).
     public class BattleDirector : MonoBehaviour
     {
         public TextAsset battleJson;
@@ -15,11 +17,19 @@ namespace BattleAtlas
         // the shader in device builds, where runtime-created materials render
         // magenta because the shader was stripped
         public Material unitMaterial;
+        // material for instanced soldier figures; falls back to unitMaterial
+        // when left unset in the inspector (e.g. older scenes)
+        public Material soldierMaterial;
 
         // visible clearance of the block's top face above the highest ground in
         // its footprint (the block extends down to the lowest ground, embedding
         // in the hillside like a piece on a physical relief map)
         const float MarkerHeight = 6f;
+        // LOD hysteresis: soldiers resolve in below SoldiersInDist, blocks
+        // resolve back in beyond BlocksOutDist; the 150m band between them
+        // prevents flicker when the camera hovers near the boundary
+        const float SoldiersInDist = 1500f;
+        const float BlocksOutDist = 1650f;
         static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
         // corners first (order is load-bearing for tests), then edge midpoints —
         // a denser ring catches ground rising inside the footprint, not just at
@@ -30,8 +40,21 @@ namespace BattleAtlas
             (0f, -0.5f), (0f, 0.5f), (-0.5f, 0f), (0.5f, 0f),
         };
 
-        readonly List<(UnitTrack track, Transform marker)> units = new();
+        // per-unit runtime state: the block marker plus everything needed to
+        // switch it for instanced soldier ranks at close range. A small class
+        // beats a growing tuple once it carries a latch and a renderer.
+        class UnitEntry
+        {
+            public UnitTrack Track;
+            public Transform Marker;
+            public UnitFormationRenderer FormationRenderer;
+            public bool SoldiersVisible;
+        }
+
+        readonly List<UnitEntry> units = new();
         readonly Vector2[] samplePoints = new Vector2[9];
+        Mesh soldierMesh;
+        Camera lodCamera;
 
         public static Color SideColor(string side)
         {
@@ -84,6 +107,16 @@ namespace BattleAtlas
                 terrain = Terrain.activeTerrain;
                 Debug.LogWarning("BattleDirector.terrain was unset; using Terrain.activeTerrain");
             }
+            if (soldierMaterial == null)
+            {
+                soldierMaterial = unitMaterial;
+            }
+            // asset reference keeps the shader in device builds; the
+            // instancing flag itself is not stripped, so it's safe to set here
+            soldierMaterial.enableInstancing = true;
+            soldierMesh = InstancedMeshes.BuildSoldier();
+            lodCamera = Camera.main;
+
             BattleDto battle = BattleLoader.Parse(battleJson.text);
             clock.EndTime = battle.endTime;
             clock.StartTime = battle.startTime;
@@ -98,15 +131,50 @@ namespace BattleAtlas
                 block.SetColor(BaseColorId, SideColor(u.side));
                 renderer.SetPropertyBlock(block);
                 Object.Destroy(marker.GetComponent<Collider>()); // not clickable yet
-                units.Add((new UnitTrack(u), marker));
+
+                var formationRenderer = new UnitFormationRenderer(
+                    u.id, u.frontage_m, u.depth_m, soldierMesh, soldierMaterial, SideColor(u.side));
+                units.Add(new UnitEntry
+                {
+                    Track = new UnitTrack(u),
+                    Marker = marker,
+                    FormationRenderer = formationRenderer,
+                    SoldiersVisible = false,
+                });
             }
         }
 
         void Update()
         {
-            foreach (var (track, marker) in units)
+            float baseY = terrain.transform.position.y;
+            foreach (UnitEntry entry in units)
             {
+                UnitTrack track = entry.Track;
+                Transform marker = entry.Marker;
                 UnitState s = track.StateAt(clock.CurrentTime);
+
+                // one representative height sample (unit center) is enough to
+                // judge camera distance; the block path does its own denser
+                // footprint sampling only when it's actually the one rendering
+                float centerY = baseY + terrain.SampleHeight(new Vector3(s.posXZ.x, 0f, s.posXZ.y));
+                Vector3 worldPos = new Vector3(s.posXZ.x, centerY, s.posXZ.y);
+                // no camera (editor edge case): treat everything as far so the
+                // familiar block path keeps working
+                float dist = lodCamera != null
+                    ? Vector3.Distance(lodCamera.transform.position, worldPos)
+                    : float.MaxValue;
+                entry.SoldiersVisible = dist < SoldiersInDist
+                    || (entry.SoldiersVisible && dist < BlocksOutDist);
+
+                if (entry.SoldiersVisible)
+                {
+                    marker.gameObject.SetActive(false);
+                    entry.FormationRenderer.Render(s,
+                        (x, z) => terrain.SampleHeight(new Vector3(x, 0f, z)) + baseY);
+                    continue;
+                }
+
+                marker.gameObject.SetActive(true);
                 FootprintSamplePoints(s.posXZ, s.facingDeg,
                     track.Unit.frontage_m, track.Unit.depth_m, samplePoints);
                 float minY = float.MaxValue, maxY = float.MinValue;
@@ -116,7 +184,6 @@ namespace BattleAtlas
                     if (y < minY) minY = y;
                     if (y > maxY) maxY = y;
                 }
-                float baseY = terrain.transform.position.y;
                 // a rigid slab can't lie on ~20 m of relief: stretch the block
                 // from the lowest ground under it to MarkerHeight above the
                 // highest, so it embeds in the slope instead of floating or
