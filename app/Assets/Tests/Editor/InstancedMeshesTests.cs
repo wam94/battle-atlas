@@ -37,7 +37,10 @@ public class InstancedMeshesTests
         // maps local +Z to the compass bearing (unit-facing / FormationLayout
         // convention), so a fence post's rails need to run along +Z to align with
         // the fence line instead of sitting perpendicular to it.
-        Assert.Greater(m.bounds.size.z, 1f);   // rails extend well past the post, along +Z
+        // Rails are 3.0m long (matching the pipeline's 3.0m post spacing) so
+        // consecutive posts' rails meet rather than reading as disconnected
+        // sawhorses; z extent must clear 2.5m to confirm that reach.
+        Assert.Greater(m.bounds.size.z, 2.5f); // rails span the post-to-post spacing, along +Z
         Assert.Less(m.bounds.size.x, 0.5f);    // no extent along +X (perpendicular to bearing)
         Object.DestroyImmediate(m);
     }
