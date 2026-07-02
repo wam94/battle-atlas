@@ -10,9 +10,11 @@ namespace BattleAtlas
     // BattleDirector in Start (AddComponent + Init). The three loops are
     // synthesized once (AudioSynth) and never seek: only gain and position
     // depend on t, so scrubbing in either direction is trivially safe.
-    // A PAUSED clock keeps its soundscape (rumble holds mid-bombardment) —
-    // audio reflects the state at t exactly like the visible smoke; if that
-    // grates, a mute toggle is one line here (zero the ambient + kind gains).
+    // A PAUSED clock is SILENT (user decision, Task 7 session 2026-07-02:
+    // ambient-under-idle read as a bug, not ambience). The whole soundscape
+    // ducks to zero through the same anti-click slew when Playing is false
+    // and swells back on play — the visible smoke still reflects t while
+    // paused; only the sound treats pause as "not now."
     public class AcousticField : MonoBehaviour
     {
         // 1 ambient 2D source always on + up to 7 spatialized event sources
@@ -131,7 +133,8 @@ namespace BattleAtlas
 
             ambientSource = NewSource("acoustic ambient", spatial: false);
             ambientSource.clip = ambientClip;
-            ambientSource.volume = AmbientGain;
+            // starts silent; Update swells it in once the clock is Playing
+            ambientSource.volume = 0f;
             ambientSource.Play();
 
             sources = new AudioSource[SpatialSourceCount];
@@ -233,6 +236,11 @@ namespace BattleAtlas
             // rebound to a waiting winner — so every audible transition is
             // covered by the slew and nothing pops
             float maxDelta = Time.unscaledDeltaTime / SlewSeconds;
+            // pause-silence master: rides the same slew, so pausing fades
+            // rather than cuts (and un-pausing swells rather than pops)
+            float master = clock.Playing ? 1f : 0f;
+            ambientSource.volume = Mathf.MoveTowards(
+                ambientSource.volume, AmbientGain * master, maxDelta);
             for (int i = 0; i < SpatialSourceCount; i++)
             {
                 int c = assigned[i];
@@ -243,7 +251,7 @@ namespace BattleAtlas
                     sources[i].transform.position = positions[c];
                 }
                 float kindGain = c >= 0 && candidates[c].Crackle ? CrackleGain : RumbleGain;
-                float target = keep ? gains[c] * kindGain : 0f;
+                float target = keep ? gains[c] * kindGain * master : 0f;
                 float volume = Mathf.MoveTowards(sources[i].volume, target, maxDelta);
                 sources[i].volume = volume;
                 if (!keep && volume <= SilenceEpsilon)

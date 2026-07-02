@@ -104,7 +104,10 @@ namespace BattleAtlas
                 if (!string.IsNullOrEmpty(ev.unitId))
                 {
                     UnitTrack track = tracksById[ev.unitId]; // loader guaranteed it resolves
-                    posAt = tEmit => track.StateAt(tEmit).posXZ;
+                    // born at the MUZZLE, not the unit center: offset along
+                    // the keyframed facing so smoke blooms toward the target
+                    float muzzleM = PuffParams.For(ev.kind).muzzleM;
+                    posAt = tEmit => ObscurationMath.MuzzlePoint(track.StateAt(tEmit), muzzleM);
                 }
                 smokeEmitters[i] = new Emitter
                 { Ev = ev, PosAt = posAt, Life = PuffParams.For(ev.kind).life };

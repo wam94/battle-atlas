@@ -191,4 +191,20 @@ public class ObscurationMathTests
         var track = Track((0f, 4000f, 3000f), (600f, 4000f, 3000f));
         Assert.AreEqual(0f, ObscurationMath.DustSpeedAt(track, 300f), 1e-5f);
     }
+
+    [Test]
+    public void MuzzlePoint_OffsetsAlongCompassFacing()
+    {
+        // 90 = east = +x; 0 = north = +z(.y) — the compass convention.
+        // A west-facing (270) Union gun's smoke must bloom WEST of the piece.
+        var s = new UnitState { posXZ = new Vector2(100f, 200f), facingDeg = 90f };
+        Vector2 east = ObscurationMath.MuzzlePoint(s, 10f);
+        Assert.AreEqual(110f, east.x, 1e-3f);
+        Assert.AreEqual(200f, east.y, 1e-3f);
+        s.facingDeg = 270f;
+        Vector2 west = ObscurationMath.MuzzlePoint(s, 10f);
+        Assert.AreEqual(90f, west.x, 1e-3f);
+        Assert.AreEqual(200f, west.y, 1e-3f);
+        Assert.AreEqual(s.posXZ, ObscurationMath.MuzzlePoint(s, 0f)); // dust: no offset
+    }
 }
