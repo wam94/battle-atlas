@@ -132,7 +132,7 @@ export function installLandcoverLayers(map: maplibregl.Map): void {
 const emptyFC = () => ({ type: "FeatureCollection" as const, features: [] });
 
 export function initLandcoverUI(container: HTMLElement, map: maplibregl.Map, bf: Battlefield): void {
-  let landcover: Landcover = loadLandcoverAutosave() ?? { name: "untitled land cover", features: [] };
+  let landcover: Landcover = loadLandcoverAutosave(bf.originUtmE) ?? { name: "untitled land cover", features: [] };
   let selectedId: string | null = null;
 
   // In-progress feature state, live while tracing.
@@ -147,7 +147,7 @@ export function initLandcoverUI(container: HTMLElement, map: maplibregl.Map, bf:
   else map.on("load", installLayers);
 
   function syncMap(): void {
-    saveLandcoverAutosave(landcover);
+    saveLandcoverAutosave(landcover, bf.originUtmE);
     if (!map.getSource("landcover-fills")) return;
     const gj = landcoverToGeoJSON(landcover.features);
     (map.getSource("landcover-fills") as maplibregl.GeoJSONSource).setData(gj.fills);
@@ -288,7 +288,7 @@ export function initLandcoverUI(container: HTMLElement, map: maplibregl.Map, bf:
         a.download = "landcover.json";
         a.click();
         URL.revokeObjectURL(a.href);
-        saveLandcoverAutosave(landcover);
+        saveLandcoverAutosave(landcover, bf.originUtmE);
       } catch (err) {
         errBox.textContent = String(err);
       }
@@ -303,7 +303,7 @@ export function initLandcoverUI(container: HTMLElement, map: maplibregl.Map, bf:
         landcover = importLandcover(await file.text());
         selectedId = null;
         resetDraft();
-        saveLandcoverAutosave(landcover);
+        saveLandcoverAutosave(landcover, bf.originUtmE);
         errBox.textContent = "";
         syncMap();
         render();
