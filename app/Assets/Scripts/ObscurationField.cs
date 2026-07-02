@@ -151,11 +151,18 @@ namespace BattleAtlas
             dustBlocks = BucketBlocks(dustMaterial);
 
             // one conservative cull bounds for the whole field: the terrain
-            // extent inflated for wind drift past the edges and rising smoke
+            // extent inflated for wind drift past the edges and rising smoke.
+            // The horizontal margin is DERIVED from the authored wind and the
+            // longest puff life (artillery, 90s) plus radius/jitter headroom —
+            // a fixed constant here would silently cull mid-drift puffs the
+            // moment Task 7 tuning authors a stronger wind or a longer life.
+            float maxLife = PuffParams.For("artillery_fire").life;
+            float driftMargin = wind.magnitude * maxLife + 100f;
+            float horizMargin = Mathf.Max(500f, 2f * driftMargin);
             Vector3 size = terrain.terrainData.size;
             fieldBounds = new Bounds(
                 terrain.transform.position + size * 0.5f,
-                size + new Vector3(1000f, 400f, 1000f));
+                size + new Vector3(horizMargin, 400f, horizMargin));
         }
 
         static Matrix4x4[][] NewBuckets()
@@ -170,8 +177,13 @@ namespace BattleAtlas
         // tunes the smoke/dust tint on the ASSET and the fade stays here
         static MaterialPropertyBlock[] BucketBlocks(Material material)
         {
-            Color baseColor = material != null && material.HasProperty(BaseColorId)
-                ? material.GetColor(BaseColorId) : Color.white;
+            bool hasBase = material != null && material.HasProperty(BaseColorId);
+            if (material != null && !hasBase)
+                // mis-authored material: render white rather than nothing,
+                // but say so — silent fallbacks hide authored-asset mistakes
+                Debug.LogWarning(
+                    $"obscuration material '{material.name}' has no _BaseColor; puffs render white");
+            Color baseColor = hasBase ? material.GetColor(BaseColorId) : Color.white;
             var blocks = new MaterialPropertyBlock[BucketCount];
             for (int b = 0; b < BucketCount; b++)
             {
