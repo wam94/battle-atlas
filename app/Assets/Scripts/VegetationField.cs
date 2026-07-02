@@ -1,19 +1,29 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace BattleAtlas
 {
-    // Instanced woods at three landmark anchors. Coordinates and radii come
-    // from docs/research/2026-06-13-landmark-anchors.md — this is indicative
-    // vegetation for scale and silhouette, NOT surveyed 1863 tree-line
-    // extents (that's the future land-cover pipeline phase).
+    // Instanced woods. Preferred source: baked trees.json from the land-cover
+    // pipeline (docs/superpowers/plans/2026-07-01-landcover.md Task 6),
+    // wired via `treesJson`. When `treesJson` is unset, falls back to three
+    // hardcoded landmark groves — legacy-indicative vegetation for scale and
+    // silhouette, NOT surveyed 1863 tree-line extents; coordinates and radii
+    // come from docs/research/2026-06-13-landmark-anchors.md.
     public class VegetationField : MonoBehaviour
     {
         public Material treeMaterial;
 
-        // Grove: (id, center in world XZ, radius in meters, tree count).
-        // Copse of Trees (High Water Mark), Spangler's Woods (Pickett's
-        // Division formation area), Ziegler's Grove (Woodruff's battery /
-        // Hays's right) — see docs/research/2026-06-13-landmark-anchors.md.
+        // Optional: baked land-cover tree placements (pipeline's trees.json,
+        // {"trees":[{x,z,cls}]}). When set, Start() builds batches from this
+        // instead of the hardcoded Groves fallback below.
+        public TextAsset treesJson;
+
+        // Legacy fallback grove: (id, center in world XZ, radius in meters,
+        // tree count). Copse of Trees (High Water Mark), Spangler's Woods
+        // (Pickett's Division formation area), Ziegler's Grove (Woodruff's
+        // battery / Hays's right) — see
+        // docs/research/2026-06-13-landmark-anchors.md. Used only when
+        // treesJson is unset.
         static readonly (string id, Vector2 center, float radius, int count)[] Groves =
         {
             ("copse",    new Vector2(4407.3f, 4801.1f), 40f,  40),
@@ -22,9 +32,11 @@ namespace BattleAtlas
         };
 
         // Graphics.RenderMeshInstanced caps out at 1023 instances per call.
-        // The largest grove here (Spangler's Woods, 350 trees) is well under
-        // that, so one call per grove is safe without batching.
         const int MaxInstancesPerCall = 1023;
+
+        // Orchard trees render smaller than woodlot trees (planted stock vs.
+        // mature woods) — a uniform scale-down of the same tree mesh.
+        const float OrchardScale = 0.7f;
 
         static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
         static readonly Color FoliageColor = new Color(0.28f, 0.42f, 0.24f);
@@ -72,26 +84,64 @@ namespace BattleAtlas
             block = new MaterialPropertyBlock();
             block.SetColor(BaseColorId, FoliageColor);
 
-            // trees don't move: precompute each grove's placement matrices
-            // once here rather than every frame
-            groveMatrices = new Matrix4x4[Groves.Length][];
-            for (int g = 0; g < Groves.Length; g++)
+            // trees don't move: precompute placement matrices once here
+            // rather than every frame
+            if (treesJson != null)
             {
-                var (id, center, radius, count) = Groves[g];
-                Vector2[] placements = Placements(id, center, radius, count);
-                var matrices = new Matrix4x4[count];
-                for (int i = 0; i < count; i++)
-                {
-                    float x = placements[i].x;
-                    float z = placements[i].y;
-                    float y = baseY + (terrain != null
-                        ? terrain.SampleHeight(new Vector3(x, 0f, z))
-                        : 0f);
-                    matrices[i] = Matrix4x4.TRS(
-                        new Vector3(x, y, z), Quaternion.identity, Vector3.one);
-                }
-                groveMatrices[g] = matrices;
+                groveMatrices = BuildBatchesFromTrees(treesJson.text, terrain, baseY);
             }
+            else
+            {
+                groveMatrices = new Matrix4x4[Groves.Length][];
+                for (int g = 0; g < Groves.Length; g++)
+                {
+                    var (id, center, radius, count) = Groves[g];
+                    Vector2[] placements = Placements(id, center, radius, count);
+                    var matrices = new Matrix4x4[count];
+                    for (int i = 0; i < count; i++)
+                    {
+                        float x = placements[i].x;
+                        float z = placements[i].y;
+                        float y = baseY + (terrain != null
+                            ? terrain.SampleHeight(new Vector3(x, 0f, z))
+                            : 0f);
+                        matrices[i] = Matrix4x4.TRS(
+                            new Vector3(x, y, z), Quaternion.identity, Vector3.one);
+                    }
+                    groveMatrices[g] = matrices;
+                }
+            }
+        }
+
+        // Builds ≤1023-instance batches from baked trees.json. Orchard trees
+        // render at OrchardScale; every tree is height-sampled onto the
+        // terrain exactly as the legacy grove path does above.
+        static Matrix4x4[][] BuildBatchesFromTrees(string json, Terrain terrain, float baseY)
+        {
+            TreesDto dto = LandcoverData.ParseTrees(json);
+            var batches = new List<Matrix4x4[]>();
+            var current = new List<Matrix4x4>(MaxInstancesPerCall);
+
+            foreach (TreeDto tree in dto.trees)
+            {
+                if (current.Count == MaxInstancesPerCall)
+                {
+                    batches.Add(current.ToArray());
+                    current = new List<Matrix4x4>(MaxInstancesPerCall);
+                }
+
+                float x = tree.x;
+                float z = tree.z;
+                float y = baseY + (terrain != null
+                    ? terrain.SampleHeight(new Vector3(x, 0f, z))
+                    : 0f);
+                float scale = tree.cls == "orchard" ? OrchardScale : 1f;
+                current.Add(Matrix4x4.TRS(
+                    new Vector3(x, y, z), Quaternion.identity, Vector3.one * scale));
+            }
+            if (current.Count > 0) batches.Add(current.ToArray());
+
+            return batches.ToArray();
         }
 
         void Update()
@@ -101,10 +151,10 @@ namespace BattleAtlas
             for (int g = 0; g < groveMatrices.Length; g++)
             {
                 Matrix4x4[] matrices = groveMatrices[g];
-                // documented, not just asserted: every grove here is well
-                // under the per-call instance cap, so one call each suffices
+                // documented, not just asserted: both the fallback groves and
+                // the BuildBatchesFromTrees batches are pre-sized to the cap
                 Debug.Assert(matrices.Length <= MaxInstancesPerCall,
-                    $"grove '{Groves[g].id}' exceeds RenderMeshInstanced's {MaxInstancesPerCall}-instance cap");
+                    $"batch {g} exceeds RenderMeshInstanced's {MaxInstancesPerCall}-instance cap");
                 Graphics.RenderMeshInstanced(rp, treeMesh, 0, matrices, matrices.Length);
             }
         }

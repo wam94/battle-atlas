@@ -91,10 +91,55 @@ namespace BattleAtlas.EditorTools
 
             Object.DestroyImmediate(tex);
 
+            ImportTreesAndFences(dir, terrainGo);
+
             EditorSceneManager.MarkSceneDirty(terrainGo.scene);
             AssetDatabase.SaveAssets();
             Debug.Log($"LandcoverImporter: imported {resolution}x{resolution} splatmap, " +
                       $"{Layers.Length} terrain layers applied to 'Gettysburg Terrain'.");
+        }
+
+        // TextAssets must live under Assets, so trees.json/fences.json get
+        // copied from data/landcover/ into Assets/Generated/ (idempotent:
+        // File.Copy overwrite=true + re-import) and then wired onto
+        // VegetationField/FenceField (added to the terrain GameObject if
+        // missing) exactly like VegetationPlanter wires treeMaterial.
+        static void ImportTreesAndFences(string dataDir, GameObject terrainGo)
+        {
+            var vegField = terrainGo.GetComponent<VegetationField>();
+            if (vegField == null) vegField = terrainGo.AddComponent<VegetationField>();
+            vegField.treeMaterial = AssetDatabase.LoadAssetAtPath<Material>(
+                "Assets/Battle/UnitMarker.mat");
+
+            var fenceField = terrainGo.GetComponent<FenceField>();
+            if (fenceField == null) fenceField = terrainGo.AddComponent<FenceField>();
+            fenceField.fenceMaterial = AssetDatabase.LoadAssetAtPath<Material>(
+                "Assets/Battle/UnitMarker.mat");
+
+            string treesSrc = Path.Combine(dataDir, "trees.json");
+            if (File.Exists(treesSrc))
+                vegField.treesJson = CopyJsonAsset(treesSrc, "LandcoverTrees.json");
+            else
+                Debug.LogWarning(
+                    $"LandcoverImporter: {treesSrc} not found; VegetationField keeps its " +
+                    "legacy fallback groves.");
+
+            string fencesSrc = Path.Combine(dataDir, "fences.json");
+            if (File.Exists(fencesSrc))
+                fenceField.fencesJson = CopyJsonAsset(fencesSrc, "LandcoverFences.json");
+            else
+                Debug.LogWarning(
+                    $"LandcoverImporter: {fencesSrc} not found; FenceField has no posts to render.");
+        }
+
+        static TextAsset CopyJsonAsset(string sourcePath, string assetFileName)
+        {
+            Directory.CreateDirectory(Path.Combine(Application.dataPath, "Generated"));
+            string assetPath = $"{GeneratedDir}/{assetFileName}";
+            string destPath = Path.Combine(Application.dataPath, "Generated", assetFileName);
+            File.Copy(sourcePath, destPath, overwrite: true);
+            AssetDatabase.ImportAsset(assetPath);
+            return AssetDatabase.LoadAssetAtPath<TextAsset>(assetPath);
         }
 
         static TerrainLayer CreateTerrainLayer(LayerSpec spec)

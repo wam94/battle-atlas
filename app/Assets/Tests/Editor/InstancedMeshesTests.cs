@@ -24,4 +24,16 @@ public class InstancedMeshesTests
         Assert.Greater(m.bounds.size.y, 6f); // tree-scale
         Object.DestroyImmediate(m);
     }
+
+    [Test]
+    public void FencePostMesh_IsSmallAndValid()
+    {
+        Mesh m = InstancedMeshes.BuildFencePost();
+        Assert.Greater(m.vertexCount, 0);
+        Assert.LessOrEqual(m.vertexCount, 36); // post + two rails, low-poly
+        Assert.Greater(m.bounds.size.y, 1f);   // roughly post-height
+        Assert.Less(m.bounds.size.y, 2f);
+        Assert.Greater(m.bounds.size.x, 1f);   // rails extend well past the post
+        Object.DestroyImmediate(m);
+    }
 }
