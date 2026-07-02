@@ -15,23 +15,30 @@ namespace BattleAtlas
         // soldiers stop being monochrome boxes (research doc §5). Coat is
         // white=side color; a coat-band multiplier tints BOTH sides'
         // uniforms consistently with the existing block/marker palette.
-        static readonly Color32 TrouserColor = new Color32(140, 140, 158, 255);
+        // band contrast tuned for legibility at 50-300m: the coat is the
+        // side color at full strength, trousers drop to ~40% so the two-tone
+        // reads at distance, and the dark kepi over the flesh head is the
+        // strongest "this is a person" cue a 30-vert figure can carry
+        static readonly Color32 TrouserColor = new Color32(100, 102, 128, 255);
         static readonly Color32 CoatColor = new Color32(255, 255, 255, 255);
         static readonly Color32 FleshColor = new Color32(255, 205, 165, 255);
+        static readonly Color32 HatColor = new Color32(58, 58, 66, 255);
 
         // standing / shoulder-arms pose: trouser legs + tapered coat torso +
-        // head, ~1.8m tall, reads as a human silhouette at 50m+, 24 verts
+        // head + kepi, ~1.8m tall, reads as a human silhouette at 50m+, 32 verts
         public static Mesh BuildSoldier()
         {
             var verts = new List<Vector3>();
             var tris = new List<int>();
             var colors = new List<Color32>();
             AddColoredBox(verts, tris, colors,
-                new Vector3(0f, 0.325f, 0f), new Vector3(0.40f, 0.65f, 0.28f), 1f, 0f, TrouserColor);
+                new Vector3(0f, 0.325f, 0f), new Vector3(0.36f, 0.65f, 0.26f), 1f, 0f, TrouserColor);
             AddColoredBox(verts, tris, colors,
-                new Vector3(0f, 1.05f, 0f), new Vector3(0.45f, 0.80f, 0.30f), 0.8f, 0f, CoatColor);
+                new Vector3(0f, 1.04f, 0f), new Vector3(0.42f, 0.78f, 0.28f), 0.8f, 0f, CoatColor);
             AddColoredBox(verts, tris, colors,
-                new Vector3(0f, 1.62f, 0f), new Vector3(0.28f, 0.30f, 0.28f), 1f, 0f, FleshColor);
+                new Vector3(0f, 1.55f, 0f), new Vector3(0.24f, 0.24f, 0.24f), 1f, 0f, FleshColor);
+            AddColoredBox(verts, tris, colors,
+                new Vector3(0f, 1.73f, 0f), new Vector3(0.27f, 0.12f, 0.27f), 1f, 0f, HatColor);
             return BuildColored(verts, tris, colors, "Soldier");
         }
 
@@ -45,12 +52,14 @@ namespace BattleAtlas
             var colors = new List<Color32>();
             // striding legs: deeper stance, top pushed forward
             AddColoredBox(verts, tris, colors,
-                new Vector3(0f, 0.325f, 0.02f), new Vector3(0.40f, 0.65f, 0.34f), 1f, 0.12f, TrouserColor);
+                new Vector3(0f, 0.325f, 0.02f), new Vector3(0.36f, 0.65f, 0.32f), 1f, 0.12f, TrouserColor);
             // torso leans: sheared toward +Z, carried by the leg shift
             AddColoredBox(verts, tris, colors,
-                new Vector3(0f, 1.03f, 0.10f), new Vector3(0.45f, 0.78f, 0.30f), 0.8f, 0.22f, CoatColor);
+                new Vector3(0f, 1.02f, 0.10f), new Vector3(0.42f, 0.76f, 0.28f), 0.8f, 0.22f, CoatColor);
             AddColoredBox(verts, tris, colors,
-                new Vector3(0f, 1.56f, 0.34f), new Vector3(0.28f, 0.28f, 0.28f), 1f, 0f, FleshColor);
+                new Vector3(0f, 1.52f, 0.34f), new Vector3(0.24f, 0.24f, 0.24f), 1f, 0f, FleshColor);
+            AddColoredBox(verts, tris, colors,
+                new Vector3(0f, 1.70f, 0.36f), new Vector3(0.27f, 0.12f, 0.27f), 1f, 0f, HatColor);
             return BuildColored(verts, tris, colors, "SoldierAdvancing");
         }
 
@@ -63,11 +72,13 @@ namespace BattleAtlas
             var tris = new List<int>();
             var colors = new List<Color32>();
             AddColoredBox(verts, tris, colors,
-                new Vector3(0f, 0.25f, 0.05f), new Vector3(0.42f, 0.50f, 0.50f), 0.9f, 0f, TrouserColor);
+                new Vector3(0f, 0.25f, 0.05f), new Vector3(0.40f, 0.50f, 0.48f), 0.9f, 0f, TrouserColor);
             AddColoredBox(verts, tris, colors,
-                new Vector3(0f, 0.78f, 0f), new Vector3(0.45f, 0.60f, 0.30f), 0.85f, 0f, CoatColor);
+                new Vector3(0f, 0.76f, 0f), new Vector3(0.42f, 0.58f, 0.28f), 0.85f, 0f, CoatColor);
             AddColoredBox(verts, tris, colors,
-                new Vector3(0f, 1.20f, 0.02f), new Vector3(0.26f, 0.28f, 0.26f), 1f, 0f, FleshColor);
+                new Vector3(0f, 1.16f, 0.02f), new Vector3(0.23f, 0.22f, 0.23f), 1f, 0f, FleshColor);
+            AddColoredBox(verts, tris, colors,
+                new Vector3(0f, 1.32f, 0.03f), new Vector3(0.26f, 0.11f, 0.26f), 1f, 0f, HatColor);
             return BuildColored(verts, tris, colors, "SoldierKneeling");
         }
 

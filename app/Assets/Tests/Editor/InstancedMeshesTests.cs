@@ -16,6 +16,31 @@ public class InstancedMeshesTests
     }
 
     [Test]
+    public void SoldierPoseMeshes_CarryBandedVertexColors()
+    {
+        // the SoldierVertexTint shader multiplies mesh Color32 bands by the
+        // side color — a mesh without distinct bands renders as the flat
+        // monochrome slab this test exists to prevent (review follow-up)
+        Mesh[] poses =
+        {
+            InstancedMeshes.BuildSoldier(),
+            InstancedMeshes.BuildSoldierAdvancing(),
+            InstancedMeshes.BuildSoldierKneeling(),
+        };
+        foreach (Mesh m in poses)
+        {
+            Color32[] colors = m.colors32;
+            Assert.AreEqual(m.vertexCount, colors.Length, $"{m.name}: color per vertex");
+            var distinct = new System.Collections.Generic.HashSet<uint>();
+            foreach (Color32 c in colors)
+                distinct.Add((uint)(c.r << 16 | c.g << 8 | c.b));
+            Assert.GreaterOrEqual(distinct.Count, 4,
+                $"{m.name}: trousers/coat/flesh/kepi bands must be distinct");
+            Object.DestroyImmediate(m);
+        }
+    }
+
+    [Test]
     public void TreeMesh_IsSmallAndValid()
     {
         Mesh m = InstancedMeshes.BuildTree();
