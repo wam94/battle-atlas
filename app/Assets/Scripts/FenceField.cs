@@ -11,8 +11,11 @@ namespace BattleAtlas
     // VegetationField's structure: precompute per-post TRS matrices once in
     // Start(), group into spatial cells and batch to ≤1023 instances
     // (SpatialBatcher), draw with RenderMeshInstanced in Update(). Two
-    // classes (stone_wall / rail_fence) get their own scale and tint, so
-    // posts are split into class-homogeneous batches.
+    // classes get their own mesh and tint, so posts are split into
+    // class-homogeneous batches: rail_fence keeps the post+rails mesh,
+    // stone_wall draws the low irregular block strip
+    // (InstancedMeshes.BuildWallSegment) — a wall the viewer must read as
+    // cover, not a squashed fence.
     public class FenceField : MonoBehaviour
     {
         public TextAsset fencesJson;
@@ -22,22 +25,17 @@ namespace BattleAtlas
         const int MaxInstancesPerCall = 1023;
 
         // Conservative mesh extents around each post position for the
-        // per-batch cull bounds: rails reach 3 m along the post's bearing
-        // (InstancedMeshes.BuildFencePost) and the post is ~1.4 m tall.
+        // per-batch cull bounds: rails and wall blocks reach 3 m along the
+        // post's bearing (InstancedMeshes.BuildFencePost / BuildWallSegment)
+        // and the post is ~1.4 m tall.
         static readonly Vector3 BoundsMargin = new Vector3(3f, 2f, 3f);
-
-        // rail_fence posts render at the mesh's native scale (post + two
-        // horizontal rails, see InstancedMeshes.BuildFencePost). stone_wall
-        // reuses the same mesh but squashed/widened into a low grey block
-        // that reads as a stone wall course rather than a rail fence.
-        static readonly Vector3 RailScale = Vector3.one;
-        static readonly Vector3 StoneScale = new Vector3(2.2f, 0.6f, 1f);
 
         static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
         static readonly Color RailColor = new Color(0.35f, 0.24f, 0.15f);   // matte timber brown
         static readonly Color StoneColor = new Color(0.45f, 0.45f, 0.42f);  // matte stone grey
 
         Mesh postMesh;
+        Mesh wallMesh;
         MaterialPropertyBlock railBlock;
         MaterialPropertyBlock stoneBlock;
 
@@ -49,6 +47,7 @@ namespace BattleAtlas
         void Start()
         {
             postMesh = InstancedMeshes.BuildFencePost();
+            wallMesh = InstancedMeshes.BuildWallSegment();
 
             Terrain terrain = Terrain.activeTerrain;
             if (terrain == null)
@@ -86,10 +85,12 @@ namespace BattleAtlas
                 float y = baseY + (terrain != null
                     ? terrain.SampleHeight(new Vector3(x, 0f, z))
                     : 0f);
+                // both meshes are built at real-world size along local +Z
+                // (the pipeline's 3.0 m post spacing), so no per-class scale
                 Matrix4x4 m = Matrix4x4.TRS(
                     new Vector3(x, y, z),
                     Quaternion.Euler(0f, post.bearing_deg, 0f),
-                    isStone ? StoneScale : RailScale);
+                    Vector3.one);
                 (isStone ? stone : rail).Add(m);
             }
 
@@ -115,17 +116,17 @@ namespace BattleAtlas
                 matProps = railBlock,
                 shadowCastingMode = ShadowCastingMode.Off,
             };
-            DrawBatches(railRp, railBatches);
+            DrawBatches(railRp, postMesh, railBatches);
 
             var stoneRp = new RenderParams(fenceMaterial)
             {
                 matProps = stoneBlock,
                 shadowCastingMode = ShadowCastingMode.Off,
             };
-            DrawBatches(stoneRp, stoneBatches);
+            DrawBatches(stoneRp, wallMesh, stoneBatches);
         }
 
-        void DrawBatches(RenderParams rp, InstanceBatch[] batches)
+        void DrawBatches(RenderParams rp, Mesh mesh, InstanceBatch[] batches)
         {
             if (batches == null) return;
             for (int b = 0; b < batches.Length; b++)
@@ -138,7 +139,7 @@ namespace BattleAtlas
                 // per-call culling: the batch's own cell bounds, not Unity's
                 // merged default, so off-screen cells skip vertex work
                 rp.worldBounds = batch.bounds;
-                Graphics.RenderMeshInstanced(rp, postMesh, 0, batch.matrices, batch.matrices.Length);
+                Graphics.RenderMeshInstanced(rp, mesh, 0, batch.matrices, batch.matrices.Length);
             }
         }
     }

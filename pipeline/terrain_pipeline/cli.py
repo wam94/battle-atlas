@@ -1,11 +1,13 @@
 """CLI: `fetch` downloads DEM tiles, `build` produces the Unity heightmap,
-`landcover` bakes traced land-cover features into splats/trees/fences."""
+`landcover` bakes traced land-cover features into splats/trees/fences,
+`relief` bakes the DEM's sky-view/curvature modulation textures."""
 import argparse
 import json
+import math
 import sys
 from pathlib import Path
 
-from terrain_pipeline import config, export, fetch, landcover, process
+from terrain_pipeline import config, export, fetch, landcover, process, relief
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEM_CACHE = REPO_ROOT / "data" / "dem_cache"
@@ -13,6 +15,13 @@ HEIGHTMAP_DIR = REPO_ROOT / "data" / "heightmap"
 LANDCOVER_DIR = REPO_ROOT / "data" / "landcover"
 LANDCOVER_JSON = LANDCOVER_DIR / "landcover.json"
 SPLATMAP_RESOLUTION = 1024
+# Relief bakes at the splatmap's resolution ON PURPOSE: the importer
+# multiplies layer tints by the relief texture at splat-map resolution, so
+# matching 1024 keeps the modulation texel-aligned with the splats (no
+# resampling seams), and one texel is ~8.3 m — the scale of the swales the
+# bake exists to darken. 2048 would quadruple bake time and texture memory
+# for detail below the splat grid the tints can't carry anyway.
+RELIEF_RESOLUTION = SPLATMAP_RESOLUTION
 
 
 def make_parser():
@@ -23,6 +32,11 @@ def make_parser():
     sub.add_parser(
         "landcover",
         help="bake data/landcover/landcover.json into splatmap.png, trees.json, fences.json",
+    )
+    sub.add_parser(
+        "relief",
+        help="bake the heightmap's sky-view/curvature modulation into "
+        "relief.png and relief_contours.png",
     )
     return parser
 
@@ -83,14 +97,58 @@ def run_landcover():
     )
 
 
+def run_relief():
+    if not (HEIGHTMAP_DIR / "heightmap.json").exists():
+        sys.exit(f"no heightmap in {HEIGHTMAP_DIR}; run `build` first")
+
+    heights, meta = relief.load_heightmap(HEIGHTMAP_DIR)
+    # the bake assumes a square battlefield: one pixel_size_m serves both
+    # axes and downsample block-means square blocks — fail loudly on
+    # contract drift instead of silently skewing the shading
+    assert math.isclose(meta["width_m"], meta["depth_m"], rel_tol=1e-6), (
+        f"relief bake assumes a square DEM; heightmap.json says "
+        f"{meta['width_m']} x {meta['depth_m']} m"
+    )
+    down = relief.downsample(heights, RELIEF_RESOLUTION)
+    pixel_size_m = meta["width_m"] / RELIEF_RESOLUTION
+
+    mult = relief.bake_relief(down, pixel_size_m)
+    contoured = relief.bake_relief_contours(down, pixel_size_m)
+    relief_path = relief.write_relief(mult, LANDCOVER_DIR / "relief.png")
+    contours_path = relief.write_relief(contoured, LANDCOVER_DIR / "relief_contours.png")
+
+    # Decode constants for the importer (same self-describing-sidecar
+    # pattern as heightmap.json).
+    meta_out = {
+        "resolution": RELIEF_RESOLUTION,
+        "row0": "north",
+        "clamp": relief.CLAMP,
+        "encode_min": relief.ENCODE_MIN,
+        "encode_max": relief.ENCODE_MAX,
+        "decode": "multiplier = encode_min + byte / 255 * (encode_max - encode_min)",
+        "contour_interval_display_m": relief.CONTOUR_INTERVAL_DISPLAY_M,
+        "contour_darken": relief.CONTOUR_DARKEN,
+        "vertical_exaggeration": relief.DISPLAY_VERTICAL_EXAGGERATION,
+    }
+    (LANDCOVER_DIR / "relief.json").write_text(json.dumps(meta_out, indent=2))
+
+    print(
+        f"relief: {RELIEF_RESOLUTION}px ({pixel_size_m:.2f} m/texel), "
+        f"modulation {mult.min() - 1:+.1%}..{mult.max() - 1:+.1%} vs neutral -> "
+        f"{relief_path.name}, {contours_path.name}"
+    )
+
+
 def main(argv=None):
     args = make_parser().parse_args(argv)
     if args.command == "fetch":
         run_fetch()
     elif args.command == "build":
         run_build()
-    else:
+    elif args.command == "landcover":
         run_landcover()
+    else:
+        run_relief()
 
 
 if __name__ == "__main__":

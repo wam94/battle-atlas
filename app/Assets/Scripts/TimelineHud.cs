@@ -7,9 +7,16 @@ namespace BattleAtlas
     public class TimelineHud : MonoBehaviour
     {
         public BattleClock clock;
+        // sun rig on the Directional Light; the chip toggles its
+        // presentation mode (see SunDirector for the labeling doctrine)
+        public SunDirector sun;
+        // contour swap on the terrain (added by LandcoverImporter); found
+        // at Start since re-imports replace the terrain GameObject
+        public ReliefContourToggle contours;
 
         const float HudHeightPts = 96f;  // logical points; scaled by dpi
         static readonly float[] Speeds = { 1f, 60f, 300f };
+        const float ChipWidth = 200f;
 
         // Set every frame so OrbitCameraController can ignore touches over the HUD.
         public static float CurrentHudHeightPx { get; private set; }
@@ -24,6 +31,14 @@ namespace BattleAtlas
         void Awake()
         {
             CurrentHudHeightPx = HudHeightPts * HudScale(Screen.dpi);
+        }
+
+        void Start()
+        {
+            // tolerate a lost scene reference (same fallback doctrine as
+            // BattleDirector.terrain) so the chips survive scene surgery
+            if (sun == null) sun = FindFirstObjectByType<SunDirector>();
+            if (contours == null) contours = FindFirstObjectByType<ReliefContourToggle>();
         }
 
         void OnGUI()
@@ -52,6 +67,23 @@ namespace BattleAtlas
                 int i = System.Array.IndexOf(Speeds, clock.Speed);
                 clock.Speed = Speeds[(i + 1) % Speeds.Length];
             }
+
+            // Reading-light chip: the ephemeris sun is the record, the NW
+            // raking light is presentation — the label says so on the chip
+            // itself (the same labeled-not-smuggled doctrine as the 2.5x
+            // vertical exaggeration)
+            if (sun != null)
+                sun.ReadingLight = GUI.Toggle(
+                    new Rect(w - ChipWidth - 8, top + 8, ChipWidth, 36),
+                    sun.ReadingLight, "Reading light (presentation)", GUI.skin.button);
+
+            // Contour chip: swaps the terrain albedos for the pipeline's
+            // relief_contours variant — both are derivatives of the DEM,
+            // honest in either position (see ReliefContourToggle)
+            if (contours != null)
+                contours.SetContours(GUI.Toggle(
+                    new Rect(w - ChipWidth - 8 - 92, top + 8, 84, 36),
+                    contours.Contours, "Contours", GUI.skin.button));
 
             // time label: wall clock when the battle has a real-day anchor
             string timeLabel = clock.StartTime > 0f
