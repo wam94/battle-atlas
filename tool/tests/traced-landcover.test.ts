@@ -8,8 +8,8 @@ describe("traced 1863 land cover (Bachelder, charge corridor)", () => {
     expect(result.errors).toEqual([]);
     expect(result.ok).toBe(true);
   });
-  it("covers the corridor with a real first cut", () => {
-    expect((landcover as any).features.length).toBeGreaterThanOrEqual(15);
+  it("covers the corridor and the full battlefield square", () => {
+    expect((landcover as any).features.length).toBeGreaterThanOrEqual(59);
   });
   it("every feature answers 'says who'", () => {
     for (const f of (landcover as any).features)
