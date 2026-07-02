@@ -1,0 +1,21 @@
+{
+  "name": "Placeholder land cover (synthetic test data, not history)",
+  "features": [
+    {
+      "id": "wl-1",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [[1000, 1000], [1200, 1000], [1200, 1200], [1000, 1200]],
+      "source": "Warren 1868-69, LOC 99448794",
+      "confidence": "documented",
+      "note": "Warren survey postdates the battle by ~5 years; treated as best available trace."
+    },
+    {
+      "id": "fl-1",
+      "kind": "line",
+      "cls": "rail_fence",
+      "points": [[1000, 900], [1200, 900]],
+      "confidence": "inferred"
+    }
+  ]
+}

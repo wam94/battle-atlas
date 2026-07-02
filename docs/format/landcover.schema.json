@@ -1,0 +1,152 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "landcover.schema.json",
+  "title": "Battle Atlas land-cover data",
+  "type": "object",
+  "required": [
+    "name",
+    "features"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "cls",
+          "points",
+          "confidence"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "polygon",
+              "line"
+            ]
+          },
+          "cls": {
+            "enum": [
+              "woodlot",
+              "orchard",
+              "field",
+              "pasture",
+              "marsh",
+              "stone_wall",
+              "rail_fence"
+            ]
+          },
+          "points": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 8507.2
+                },
+                {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 8507.2
+                }
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            }
+          },
+          "source": {
+            "type": "string"
+          },
+          "confidence": {
+            "enum": [
+              "documented",
+              "inferred"
+            ]
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "polygon"
+            }
+          },
+          "required": [
+            "kind"
+          ]
+        },
+        "then": {
+          "properties": {
+            "points": {
+              "type": "array",
+              "minItems": 3
+            },
+            "cls": {
+              "enum": [
+                "woodlot",
+                "orchard",
+                "field",
+                "pasture",
+                "marsh"
+              ]
+            }
+          }
+        },
+        "else": {
+          "properties": {
+            "points": {
+              "type": "array",
+              "minItems": 2
+            },
+            "cls": {
+              "enum": [
+                "stone_wall",
+                "rail_fence"
+              ]
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "confidence": {
+                  "const": "documented"
+                }
+              },
+              "required": [
+                "confidence"
+              ]
+            },
+            "then": {
+              "required": [
+                "source"
+              ],
+              "properties": {
+                "source": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
