@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e4b9b59c2134d23b39fa0d36e26740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.BattleDirector
-  battleJson: {fileID: 4900000, guid: ee9abc71ba72e488cb27a3eb3ef4d100, type: 3}
+  battleJson: {fileID: 4900000, guid: 6f7de17e4eee947498f4d82a7859ce27, type: 3}
   terrain: {fileID: 1375780065}
   clock: {fileID: 408470589}
   unitMaterial: {fileID: 2100000, guid: 02781c7757a964eb39207b14a1eb3fa6, type: 2}
@@ -337,6 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.BattleClock
   CurrentTime: 0
+  StartTime: 0
   EndTime: 3600
   Playing: 0
   Speed: 60
