@@ -3,7 +3,7 @@ import type { Battlefield } from "../geo";
 import type { Battle, Confidence, Formation, Side, Unit } from "../model";
 import { exportBattle, importBattle } from "../io";
 import { validateBattle } from "../validate";
-import { loadAutosave, saveAutosave } from "../persist";
+import { loadAutosave, saveAutosave, debouncedSaveAutosave } from "../persist";
 import { nextKeyframeTime, clampDraftTime } from "../timeutil";
 import { battleToGeoJSON, installBattleLayers, previewToGeoJSON } from "./pathlayer";
 import { initOverlayUI, isPickingTiePoint } from "./overlayui";
@@ -21,7 +21,7 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
   // Restore a crash-recovered autosave on startup. The banner is dismissible
   // (not auto-hidden) since the author needs a deliberate cue that what's on
   // screen came from a recovered draft, not the file they think they opened.
-  const restored = loadAutosave();
+  const restored = loadAutosave(bf.originUtmE);
   let autosaveNotice: string | null = null;
   if (restored) {
     battle = restored;
@@ -128,7 +128,7 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
   });
 
   function syncMap(): void {
-    saveAutosave(battle);
+    debouncedSaveAutosave(battle, bf.originUtmE);
     if (!map.getSource("unit-paths")) return;
     const gj = battleToGeoJSON(battle, bf, selectedUnitId, selectedKfIndex);
     (map.getSource("unit-paths") as maplibregl.GeoJSONSource).setData(gj.paths);
@@ -219,8 +219,9 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
         a.click();
         URL.revokeObjectURL(a.href);
         // Export is the durable artifact, but the save should always mirror
-        // the screen — not cleared here, just kept in sync.
-        saveAutosave(battle);
+        // the screen — not cleared here, just kept in sync. Immediate (not
+        // debounced): a deliberate user action shouldn't leave a save pending.
+        saveAutosave(battle, bf.originUtmE);
       } catch (err) { errBox.textContent = String(err); }
     });
     const importInput = document.createElement("input");
@@ -232,8 +233,9 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
         battle = importBattle(await f.text());
         selectedUnitId = null; selectedKfIndex = null; draftTime = 0;
         autosaveNotice = null;
-        // Imported battle replaces whatever the autosave slot held.
-        saveAutosave(battle);
+        // Imported battle replaces whatever the autosave slot held. Immediate:
+        // a deliberate user action shouldn't leave a save pending.
+        saveAutosave(battle, bf.originUtmE);
         errBox.textContent = ""; render();
       } catch (err) { errBox.textContent = String(err); }
     });
