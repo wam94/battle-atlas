@@ -66,6 +66,40 @@ describe("authored July 3 battle", () => {
     const cowan = units.find((u: any) => u.id === "us-btty-cowan");
     expect(cowan.keyframes[0].z).not.toBe(cowan.keyframes[cowan.keyframes.length - 1].z);
   });
+  it("engagement events: validate, cite when documented, never the same fire at two family levels", () => {
+    const result = validateBattle(battle);
+    expect(result.errors).toEqual([]);
+    expect(result.ok).toBe(true);
+    const events = (battle as any).events;
+    // the authored slice carries both kinds (bombardment + the climax musketry)
+    expect(events.some((e: any) => e.kind === "artillery_fire")).toBe(true);
+    expect(events.some((e: any) => e.kind === "musketry")).toBe(true);
+    // the no-faking gate, asserted on the data (validate.ts enforces it too)
+    for (const e of events)
+      if (e.confidence === "documented") expect(e.citation?.trim()).toBeTruthy();
+    // canonical export order: t0 then id (tool/src/io.ts exportBattle)
+    const order = events.map((e: any) => [e.t0, e.id] as const);
+    const sorted = [...order].sort((a, b) => a[0] - b[0] || (a[1] < b[1] ? -1 : 1));
+    expect(order).toEqual(sorted);
+    // Attach-level discipline as a data test (battle-format.md "Engagement
+    // events"): an event attaches at the level the SOURCE attests, and the
+    // same fire must never be authored at both a parent and its child — a
+    // regiment window plus a parent window over the same span would double
+    // the smoke and the sound. The validator cannot read attestation grain;
+    // THIS file's discipline is checked here.
+    const units = (battle as any).units;
+    const byId = new Map<string, any>(units.map((u: any) => [u.id, u]));
+    const unitEvents = events.filter((e: any) => e.unitId !== undefined);
+    for (const a of unitEvents)
+      for (const b of unitEvents) {
+        if (a === b || a.kind !== b.kind) continue;
+        if (a.t0 >= b.t1 || b.t0 >= a.t1) continue; // windows don't overlap
+        const parentAndChild =
+          byId.get(a.unitId)?.parent === b.unitId ||
+          byId.get(b.unitId)?.parent === a.unitId;
+        expect(parentAndChild).toBe(false);
+      }
+  });
   it("B-grade Confederate children are valid; the four display-LOD brigades keep rosters and no children", () => {
     const units = (battle as any).units;
     const childrenOf = (p: string) =>

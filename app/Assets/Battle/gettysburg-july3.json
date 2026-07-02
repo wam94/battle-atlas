@@ -5652,5 +5652,326 @@
         }
       ]
     }
-  ]
+  ],
+  "events": [
+    {
+      "id": "csa-seminary-bombardment",
+      "kind": "artillery_fire",
+      "t0": 420,
+      "t1": 7500,
+      "x": 3240,
+      "z": 4150,
+      "x2": 3400,
+      "z2": 5950,
+      "confidence": "documented",
+      "citation": "Jacobs 1864 (Notes on the Rebel Invasion): 'At seven minutes past 1 p.m., the awful and portentous silence was broken' - 13:07, contemporaneous and habitually precise; Waitt 1906 pp.234-237 (19th MA history): the signal gun, then 'every rebel gun on Seminary Ridge opened in one grand salvo, with concentric fire on Gibbon's Division'; end: Haskell 1908, 'two mortal hours', cannonade ends 'at three o'clock almost precisely'",
+      "note": "Onset disagreement carried, never reconciled: Alexander 1907 'just 1 P.M. by my watch'; Haskell watch-checked ~13:00; Sawyer (8th OH) 'between twelve and one' - a 0-7 minute spread against Jacobs's 13:07 (t0=420). t1=7500 follows the authored track spine (step-off keyframes at t=7500); witnesses put the step-off anywhere 13:50-15:00 (Alexander ~13:50, Jacobs 14:30, Haskell ~15:00) - geometry follows the spine, the citation carries the spread. Segment position INFERRED: no CSA batteries are authored as units, so the gun line is a fixed segment traced ~120 m in front of the authored infantry start line, through the Virginia Memorial anchor (3176.8, 5016.5), ~1,800 m Spangler's Woods to Pettigrew's left; this event migrates to unitId form when CSA batteries are authored."
+    },
+    {
+      "id": "us-btty-arnold-reply",
+      "kind": "artillery_fire",
+      "t0": 600,
+      "t1": 5400,
+      "unitId": "us-btty-arnold",
+      "confidence": "inferred",
+      "citation": "reply documented at ridge grain: Waitt 1906 ('From this time on, for an hour and thirty minutes, the roaring of cannon and the bursting of shells from both sides was so incessant...'); Hunt's conservation order caps the reply at ~80 guns (pass-1 library; Jacobs's '150 guns on each side' flagged as overstatement)",
+      "note": "Arnold's battery-specific fire is not individually attested in the library - window inferred from the ridge-grain reply and the battery's in-line track (kf t=7200 'served under the bombardment'). t1=5400 (~14:30) per Waitt's 'hour and thirty minutes' of both-sides fire plus Hunt's deliberate ammunition-conserving slackening (Battles & Leaders, pass-1 library) - 'not purely a ruse: encode as mixed' (genuine withdrawals near the Copse; Alexander was 'incorrectly told it was the cemetery')."
+    },
+    {
+      "id": "us-btty-brown-reply",
+      "kind": "artillery_fire",
+      "t0": 600,
+      "t1": 5400,
+      "unitId": "us-btty-brown",
+      "confidence": "documented",
+      "citation": "Stone Sentinels Rhode Island Battery B page: wrecked in the duel (Hunt found the battery wrecked), withdrawn mid-bombardment on Hunt's order, 'an order it obeyed promptly'; Brown 1985 (Filson); reply onset at ridge grain: Waitt 1906",
+      "note": "Window ENDS at the battery's last in-position keyframe (t=5400: wrecked, ammunition nearly gone); the track limbers and pulls out over t=5400-6000, withdrawal complete at the documented kf t=6000. The wrecked battery going silent near the Copse is part of what Alexander read as knocked-out Union artillery - the mixed ruse the advance was keyed on (pass-1 library). t1=5400 (~14:30) per Waitt's 'hour and thirty minutes' of both-sides fire plus Hunt's deliberate ammunition-conserving slackening (Battles & Leaders, pass-1 library) - 'not purely a ruse: encode as mixed' (genuine withdrawals near the Copse; Alexander was 'incorrectly told it was the cemetery')."
+    },
+    {
+      "id": "us-btty-cushing-reply",
+      "kind": "artillery_fire",
+      "t0": 600,
+      "t1": 5400,
+      "unitId": "us-btty-cushing",
+      "confidence": "documented",
+      "citation": "Webb's official report (via NPS Hartwig 2012, npsgnmp.wordpress.com): Cushing 'fought his guns... for an hour and a half after he had reported to me that he was wounded in both thighs'; Waitt 1906: the concentric fire on Gibbon's division answered from the ridge",
+      "note": "t0=600: the reply opens minutes after the 13:07 salvo (Waitt: 'From this time on... from both sides'). t1=5400 (~14:30) per Waitt's 'hour and thirty minutes' of both-sides fire plus Hunt's deliberate ammunition-conserving slackening (Battles & Leaders, pass-1 library) - 'not purely a ruse: encode as mixed' (genuine withdrawals near the Copse; Alexander was 'incorrectly told it was the cemetery')."
+    },
+    {
+      "id": "us-btty-rorty-reply",
+      "kind": "artillery_fire",
+      "t0": 600,
+      "t1": 5400,
+      "unitId": "us-btty-rorty",
+      "confidence": "documented",
+      "citation": "Waitt 1906 pp.234-237 (19th MA history): the battery mauled gun by gun in front of the regiment - 'With but two guns left, heroic Rorty continued to fire'",
+      "note": "t1=5400 (~14:30) per Waitt's 'hour and thirty minutes' of both-sides fire plus Hunt's deliberate ammunition-conserving slackening (Battles & Leaders, pass-1 library) - 'not purely a ruse: encode as mixed' (genuine withdrawals near the Copse; Alexander was 'incorrectly told it was the cemetery')."
+    },
+    {
+      "id": "us-btty-woodruff-reply",
+      "kind": "artillery_fire",
+      "t0": 600,
+      "t1": 5400,
+      "unitId": "us-btty-woodruff",
+      "confidence": "inferred",
+      "citation": "reply documented at ridge grain: Waitt 1906; Hunt's conservation order ~80 guns (pass-1 library)",
+      "note": "Woodruff's battery-specific fire at Ziegler's Grove is not individually attested for the cannonade - inferred from the ridge-grain reply and the in-line track (kf t=7200 'served under the bombardment'). t1=5400 (~14:30) per Waitt's 'hour and thirty minutes' of both-sides fire plus Hunt's deliberate ammunition-conserving slackening (Battles & Leaders, pass-1 library) - 'not purely a ruse: encode as mixed' (genuine withdrawals near the Copse; Alexander was 'incorrectly told it was the cemetery')."
+    },
+    {
+      "id": "us-btty-cowan-cannonade",
+      "kind": "artillery_fire",
+      "t0": 6300,
+      "t1": 7500,
+      "unitId": "us-btty-cowan",
+      "confidence": "inferred",
+      "citation": "arrival documented: the gallop-in to the position Brown's Battery B vacated just south of the Copse, mid-bombardment (Brown 1985 Filson; track kf t=6300 documented)",
+      "note": "Window starts AT the documented arrival (t=6300) - the battery cannot fire from a position it has not reached. Fire through the cannonade's end (t1=7500, the track spine's step-off) is inferred from the track's 'served under the bombardment' (kf t=7200, inferred); no witness times Cowan's first round."
+    },
+    {
+      "id": "us-8oh-flank-fire",
+      "kind": "musketry",
+      "t0": 7800,
+      "t1": 8700,
+      "unitId": "us-8oh",
+      "confidence": "documented",
+      "citation": "Sawyer, A Military History of the 8th Regiment Ohio Vol. Inf'y (archive.org amilitaryhistor00groogoog): 'We changed our front, and taking position by a fence, facing the left flank of the advancing column of rebels, the men were ordered to fire into their flank at will'; Sawyer's report, OR 27/1:461-62",
+      "note": "REGIMENT grain per Sawyer's own account (Carroll's brigade is unmodeled, the 8th Ohio is parentless). Window rides the track keyframes: front changed at the fence t=7800, ends at the documented t=8700 advance that cut off three regiments and took the colors of the 34th NC (Lowrance's) and 38th VA (Armistead's). Brockenbrough's documented break (t=7920) sits inside this window."
+    },
+    {
+      "id": "csa-fry-wall-fight",
+      "kind": "musketry",
+      "t0": 8340,
+      "t1": 8700,
+      "unitId": "csa-fry",
+      "confidence": "documented",
+      "citation": "Fry, 'Pettigrew's Charge at Gettysburg', SHSP v7 pp.91-93: 'All of the five regimental colors of my command reached the line of the enemy's works' - the brigade fought to the wall (track kf t=8580 documented)",
+      "note": "Attached at BRIGADE grain: Fry attests 'my command' as a whole; no per-regiment fire attestation exists, so his five children carry no musketry events (attach-level discipline - never the same fire at two family levels). Window: from the Emmitsburg Road crossing on the track spine (t=8340) to the brigade wrecked at the wall (t=8700). Library caveats: Fry was down wounded before the end; his account contests Virginia-centric readings - kept, not reconciled."
+    },
+    {
+      "id": "us-20ma-wall-fire",
+      "kind": "musketry",
+      "t0": 8340,
+      "t1": 9000,
+      "unitId": "us-20ma",
+      "confidence": "inferred",
+      "citation": "Hall's OR report (OR 27/1): the wall line engages the approach, regiments then crowd right toward the Copse (track kfs t=8700/9000, inferred)",
+      "note": "Regiment-grain window inferred on the brigade's attested spine; parent us-hall carries no event (attach-level discipline). Opens as the column crosses the Emmitsburg Road on the track spine (t=8340); ends with the penetration collapsed (t=9000)."
+    },
+    {
+      "id": "us-59ny-wall-fire",
+      "kind": "musketry",
+      "t0": 8340,
+      "t1": 8700,
+      "unitId": "us-59ny",
+      "confidence": "inferred",
+      "citation": "Hall's OR report (OR 27/1): at the wall immediately south of the Copse as Kemper's and Armistead's fronts close; the bolt documented - the battalion 'inexplicably bolted for the rear' at the climax, uncovering Cowan's guns (track kf t=8700, documented)",
+      "note": "Window ENDS at the documented bolt (t=8700) - no fire authored past it; the rally (t=9000) returns the unit to the line after the crisis."
+    },
+    {
+      "id": "us-7mi-wall-fire",
+      "kind": "musketry",
+      "t0": 8340,
+      "t1": 9000,
+      "unitId": "us-7mi",
+      "confidence": "inferred",
+      "citation": "Hall's OR report (OR 27/1): the wall line engages, then Hall shifts his regiments right/north toward the Copse at the break (track kfs t=8700/9000, inferred); Haskell 1908",
+      "note": "Regiment-grain window inferred on the brigade's attested spine; parent us-hall carries no event (attach-level discipline)."
+    },
+    {
+      "id": "us-sherrill-wall-fire",
+      "kind": "musketry",
+      "t0": 8340,
+      "t1": 9000,
+      "unitId": "us-sherrill",
+      "confidence": "inferred",
+      "citation": "massed rifle fire from Hays's line repulses Pettigrew's front (ABT maps; track kfs inferred); Col. Sherrill mortally wounded during the repulse (Stone Sentinels, track kf t=8700 documented)",
+      "note": "Attached at BRIGADE grain - Sherrill's brigade is undecomposed (display-LOD roster); the record gives no finer attestation. Fire window itself is a modern reconstruction (ABT maps), hence inferred despite the documented casualty inside it."
+    },
+    {
+      "id": "us-smyth-wall-fire",
+      "kind": "musketry",
+      "t0": 8340,
+      "t1": 9000,
+      "unitId": "us-smyth",
+      "confidence": "inferred",
+      "citation": "massed rifle fire repulses Marshall's and Lane's front at the wall (ABT maps; track kf t=8700 inferred); Marshall's road crossing 'under canister and rifle fire from Hays's line' (ABT 3:30-3:45 PM map, csa-marshall kf t=8340)",
+      "note": "Attached at BRIGADE grain - undecomposed (display-LOD roster). The regiment-track survey notes 12th NJ / 1st DE fence volleys as a future decomposition target; until those regiments exist as units there is nothing finer to attach to."
+    },
+    {
+      "id": "us-13vt-flank-fire",
+      "kind": "musketry",
+      "t0": 8400,
+      "t1": 9000,
+      "unitId": "us-13vt",
+      "confidence": "documented",
+      "citation": "Sturtevant 1910 pp.304-305: Stannard's order 'Change front, forward on first company' - each company 'saw in their immediate front not sixty yards away General Pickett's command... and at once opened a deadly fire on their flank'; 13th VT monument: 'changed front forward on first company, advanced 200 yards, attacking the Confederate right flank' (track kf t=8700 documented)",
+      "note": "REGIMENT grain (Sturtevant narrates the 13th); parent us-stannard carries no event (attach-level discipline). Window rides the wheel keyframes (t=8400 wheel under way -> t=8700 documented firing position), ends with the repulse sealed (t=9000). Clock time ~15:20+ is inferred - the pass-1 library flags Stannard's maneuver as not clock-attested by any witness."
+    },
+    {
+      "id": "us-14vt-front-fire",
+      "kind": "musketry",
+      "t0": 8400,
+      "t1": 9000,
+      "unitId": "us-14vt",
+      "confidence": "inferred",
+      "citation": "Sturtevant 1910: the 14th essentially static through the crisis, firing into Kemper's front as the assault obliques past (track kf t=8700, inferred)",
+      "note": "Regiment-grain frontal fire inferred on the brigade's attested engagement; parent us-stannard carries no event (attach-level discipline)."
+    },
+    {
+      "id": "us-16vt-flank-fire",
+      "kind": "musketry",
+      "t0": 8400,
+      "t1": 9000,
+      "unitId": "us-16vt",
+      "confidence": "documented",
+      "citation": "Sturtevant 1910 pp.304-305 (the brigade's flank fire, 'a deadly fire on their flank'); Veazey's OR report: on the 13th's left firing into the right flank of Pickett's column (track kf t=8700)",
+      "note": "REGIMENT grain; parent us-stannard carries no event (attach-level discipline). Wheels out with the 13th (t=8400), forming on its left; window ends with the repulse sealed (t=9000). Clock time inferred (pass-1 library: Stannard's maneuver not clock-attested)."
+    },
+    {
+      "id": "us-btty-arnold-canister",
+      "kind": "artillery_fire",
+      "t0": 8400,
+      "t1": 9000,
+      "unitId": "us-btty-arnold",
+      "confidence": "inferred",
+      "citation": "canister into Fry's and Marshall's front at the wall - modern reconstruction (ABT maps; track kf t=8700 inferred)",
+      "note": "Climax window ~15:20-15:30 on the assault's track spine; no witness times Arnold's canister fire - inferred throughout."
+    },
+    {
+      "id": "us-btty-cowan-canister",
+      "kind": "artillery_fire",
+      "t0": 8400,
+      "t1": 9000,
+      "unitId": "us-btty-cowan",
+      "confidence": "documented",
+      "citation": "Stone Sentinels 1st NY Independent Battery page / Andrew Cowan: the 'double canister at ten yards' repulse in front of the Copse (track kf t=8700 documented)",
+      "note": "The ten-yards blast sits at kf t=8700 (~15:25); window brackets it across the climax ~15:20-15:30, edges inferred. The 59th NY's documented bolt (t=8700) uncovered these guns at exactly the blast's moment."
+    },
+    {
+      "id": "us-btty-cushing-canister",
+      "kind": "artillery_fire",
+      "t0": 8400,
+      "t1": 8700,
+      "unitId": "us-btty-cushing",
+      "confidence": "documented",
+      "citation": "Fuger, 'Cushing's Battery at Gettysburg', JMSI v41 (1907) p.408, verbatim via NPS Hartwig 2012: 'We continued to fire double and treble charges of our canister'; Haskell 1908: 'Cushing, firing almost his last canister, had dropped dead among his guns'",
+      "note": "Window ends at Cushing's death and the battery's effective destruction (kf t=8700, documented, ~15:20-15:25; remaining guns run to the wall at kf t=8580). Library flag carried: Fuger is a contested, self-interested retelling - the canister passage is its most solidly verified element (matches the 1907 JMSI wording via NPS's direct quote); Haskell's 'shot through the head' vs Fuger's 'shot in the mouth' stays unreconciled."
+    },
+    {
+      "id": "us-btty-rorty-canister",
+      "kind": "artillery_fire",
+      "t0": 8400,
+      "t1": 8700,
+      "unitId": "us-btty-rorty",
+      "confidence": "inferred",
+      "citation": "overrun documented: Capt. Rorty killed when Kemper's Virginians briefly overran the battery (Stone Sentinels 1st NY Battery B page; track kf t=8700 documented)",
+      "note": "Canister into the final approach is inferred - the overrun attests close action, not a fire window; window ends at the overrun (t=8700), guns recovered by t=9000 on the track."
+    },
+    {
+      "id": "us-btty-woodruff-canister",
+      "kind": "artillery_fire",
+      "t0": 8400,
+      "t1": 9000,
+      "unitId": "us-btty-woodruff",
+      "confidence": "inferred",
+      "citation": "fire into Davis's and Pettigrew's front from Ziegler's Grove reconstructed (ABT maps); Woodruff mortally wounded during the repulse - Hazard's report via Iron Brigader (track kf t=8700 documented)",
+      "note": "Window inferred around the documented casualty; Davis's advance breaks short of the wall under this sector's fire on the track spine (csa-davis kf t=8580)."
+    },
+    {
+      "id": "us-69pa-angle-fire",
+      "kind": "musketry",
+      "t0": 8580,
+      "t1": 9000,
+      "unitId": "us-69pa",
+      "confidence": "documented",
+      "citation": "McDermott 1889: the regiment never leaves the wall; Cos. I and A change front against the flankers as Armistead crosses (track kf t=8700 documented); Haskell 1908 (the Angle crisis)",
+      "note": "The anchor of the Angle musketry - static at the wall between the Angle and the Copse; t0=8580 as Pickett's front closes on the track spine; siblings ride the same spine at inferred confidence. Parent us-webb carries no event (attach-level discipline)."
+    },
+    {
+      "id": "us-71pa-angle-fire",
+      "kind": "musketry",
+      "t0": 8580,
+      "t1": 9000,
+      "unitId": "us-71pa",
+      "confidence": "inferred",
+      "citation": "Smith's OR report: at the outer-angle wall as the column closes, ~50 men helping serve Cushing's guns; the two-step fallback at the breakthrough (track kf t=8700 documented)",
+      "note": "Fire window inferred on the 69th's spine; the regiment keeps firing from its stepped-back position through the sealing of the breakthrough (t=9000). Parent us-webb carries no event (attach-level discipline)."
+    },
+    {
+      "id": "csa-53va-angle-fight",
+      "kind": "musketry",
+      "t0": 8640,
+      "t1": 9000,
+      "unitId": "csa-53va",
+      "confidence": "documented",
+      "citation": "Rawley Martin, SHSP v32 pp.183-195: Armistead 'scaled the wall' crying 'Boys, give them the cold steel!' - the 53rd, the brigade's center regiment, crossed with him (track kf t=8700 documented); Fuger (JMSI v41 via NPS Hartwig): Armistead's men 'landing right in the middle of our Battery', hand-to-hand",
+      "note": "REGIMENT grain: the 53rd VA is the attested crossing regiment; parent csa-armistead carries no event and no other Armistead child has fire attestation (attach-level discipline). Window: closing on the Angle (t=8640) through the sealed breakthrough (t=9000, unit routed on the track). Library flag: Martin is a 34-year recollection."
+    },
+    {
+      "id": "us-19ma-copse-fight",
+      "kind": "musketry",
+      "t0": 8700,
+      "t1": 9000,
+      "unitId": "us-19ma",
+      "confidence": "documented",
+      "citation": "Waitt 1906 (19th MA history): Devereux asks Hancock's leave and throws the 19th MA and 42nd NY into the gap at the Copse; hand-to-hand at the clump until the penetration collapses",
+      "note": "REGIMENT grain (Waitt narrates the 19th); parent us-hall carries no event (attach-level discipline). t0=8700 is the plunge on the track spine - the position keyframe is inferred, the episode documented in Waitt."
+    },
+    {
+      "id": "us-42ny-copse-fight",
+      "kind": "musketry",
+      "t0": 8700,
+      "t1": 9000,
+      "unitId": "us-42ny",
+      "confidence": "inferred",
+      "citation": "the plunge beside the 19th MA on Devereux's initiative with Hancock's verbal leave (Waitt 1906; Hall's OR report; track kfs inferred)",
+      "note": "The 42nd's own fire is not separately attested - inferred from the documented paired plunge; parent us-hall carries no event (attach-level discipline)."
+    },
+    {
+      "id": "us-72pa-crest-fire",
+      "kind": "musketry",
+      "t0": 8700,
+      "t1": 9300,
+      "unitId": "us-72pa",
+      "confidence": "documented",
+      "citation": "Haskell 1908 - CONTESTED, tracked reading: brought up to the crest and fires from it, not advancing when Webb ordered (track kf t=8700 documented); the final advance to the wall ~15:35 (track kf t=9300)",
+      "note": "The 72nd's conduct is the Haskell-vs-veterans dispute (the regiment's veterans disputed his Angle characterization - library flag); the tracked reading has it firing from the crest, then advancing as the penetration collapses; window ends at the advance (t=9300). Parent us-webb carries no event (attach-level discipline)."
+    },
+    {
+      "id": "us-harrow-copse-fire",
+      "kind": "musketry",
+      "t0": 8700,
+      "t1": 9000,
+      "unitId": "us-harrow",
+      "confidence": "inferred",
+      "citation": "regiments crowd north toward the Copse to meet the breakthrough; close-range fight at the Copse (Haskell 1908; ABT 3:45-4:00 PM map; track kfs inferred)",
+      "note": "Attached at BRIGADE grain - Harrow's brigade is undecomposed (display-LOD roster); the record gives no finer attestation."
+    },
+    {
+      "id": "us-14vt-wilcox-front",
+      "kind": "musketry",
+      "t0": 10200,
+      "t1": 10500,
+      "unitId": "us-14vt",
+      "confidence": "inferred",
+      "citation": "Sturtevant 1910: front refused south from its position, joining the 16th's fire against Wilcox and Lang's advance (track kf t=10200, inferred)",
+      "note": "Regiment-grain window inferred alongside the 16th's documented reversal; parent us-stannard carries no event (attach-level discipline)."
+    },
+    {
+      "id": "us-16vt-wilcox-flank",
+      "kind": "musketry",
+      "t0": 10200,
+      "t1": 10500,
+      "unitId": "us-16vt",
+      "confidence": "documented",
+      "citation": "Veazey's OR report: the 16th's reversal - strikes the left flank of Wilcox and Lang's supporting advance (track kf t=10380 documented)",
+      "note": "Window brackets the documented strike (kf t=10380) between the re-form facing south (track kfs t=9900-10200) and Wilcox's/Lang's withdrawal ~15:55 (their tracks, t=10500); window edges inferred around the documented event."
+    }
+  ],
+  "environment": {
+    "windTowardDeg": 45,
+    "windMps": 2,
+    "confidence": "inferred",
+    "note": "unattested; light SW breeze on a hot July afternoon - smoke drifts toward the NE (windTowardDeg is the drift-TOWARD bearing, battle-format.md 'Environment'). The research corpus carries no July 3 wind claim; likeliest attestation path is Michael Jacobs's meteorological register - he is already a verified, habitually precise source in the library (Notes on the Rebel Invasion, 1864) and kept regular thermometer/wind readings; a targeted research fetch would upgrade this to documented. No citation field on purpose: nothing attests these values yet."
+  }
 }
