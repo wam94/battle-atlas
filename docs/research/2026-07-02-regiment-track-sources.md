@@ -191,3 +191,39 @@ Ratings: **A** = decomposable now, cited, phase resolution with some clock ancho
 ## Workflow note
 
 Five research agents were dispatched (Bachelder / modern map studies / movement facts / company level / NPS maps); four returned complete reports (incorporated throughout), and the movement-facts agent's partial evidence (Sawyer full text, OR access routes, Vermont sources) was salvaged from its transcript and re-verified directly where load-bearing. The two decisive primary verifications were done first-hand: the 1876 Third-Day sheet's legend and Angle/Seminary Ridge imagery (IIIF crops read by eye — regiment bars confirmed on both armies' start positions) and Sawyer's July 3 narrative (full djvu text read). All URLs above were live in this session except where marked SNIPPET.
+
+---
+
+## Post-authoring verification addendum (2026-07-02)
+
+The A6 authoring pass (commit 5aca1b4) wrote three pieces of citation precision into `app/Assets/Battle/gettysburg-july3.json` that this survey did not attest (it gave SHSP volumes without pages, and "~3:30 inferable" for the wall crossing). Each was checked against digitized primary sources this session.
+
+### 1. "Rawley Martin, SHSP v32 pp.183-195" — VERIFIED
+
+Checked against the Internet Archive scan of SHSP volume 32 (full djvu text: https://archive.org/download/southernhistoricv32sout/southernhistoricv32sout_djvu.txt, item https://archive.org/details/southernhistoricv32sout):
+
+- Table of contents: "XXVI. Battle of Gettysburg, and the Charge of Pickett's Division. By Colonel Rawley Martin and Captain John Holmes Smith … **183**"; the next entry (XXVII, "List of Confederate States Flags Captured from Virginia Troops") begins at **195** — so the article spans pp. 183–195 exactly.
+- Volume index: "Martin, Colonel Rawley, 183." Running heads 184–194 confirmed in the body.
+- The quoted passage is inside the span: "…wall, and cried: 'Boys, give them the cold steel!'" (Martin's account).
+- Nuance, no action needed: pp. 183–195 is the **combined** Martin + John Holmes Smith article (Martin's own account ≈ pp. 184–189; Smith's, 11th VA/Kemper, ≈ pp. 189–195). Citing the whole article under Martin's name is the standard form; the slot-order and wall-crossing facts drawn from it sit in Martin's portion.
+
+### 2. "Fry, SHSP v7 pp.91-93" — VERIFIED
+
+Checked against the Internet Archive scan of the SHSP vol. 7 no. 2 (February 1879) number (item https://archive.org/details/sim_southern-historical-society-papers_1879-02_7_2, djvu text fetched):
+
+- Article header on p. 91: "Pettigrew's Charge at Gettysburg. By General B. D. Fry." (running head "Pettigrew's Charge at Gettysburg. 91").
+- Ends with Fry's signature ("B. D. Fry. Montgomery, Alabama, December 14th, 1878") on p. 93; the next article ("A Correction of Dr. McKim's Paper") opens p. 94.
+- The load-bearing quote is on p. 93: "All of the five regimental colors of my com[mand]…"
+- The gdg.org transcription this survey repo-verified (http://www.gdg.org/research/SHSP/shpettig.html — http, TLS expired) itself carries the line "(Source: Southern Historical Society Papers, Vol.7, p91-93)". Two independent routes agree.
+
+### 3. "~15:25 per the NPS reconstruction (Hartwig 2012)" — CORRECTED (attribution wrong for the *time*; keep it for the *event*)
+
+Split verdict:
+
+- **The Hartwig 2012 citation is real and supports the event, not the clock.** D. Scott Hartwig, "Lieutenant Cushing," *From the Fields of Gettysburg* (NPS GNMP blog), June 21, 2012 — https://npsgnmp.wordpress.com/2012/06/21/lieutenant-cushing/ — is signed by Hartwig and quotes Sgt. Frederick Fuger: "I saw General Armistead leap over the stone wall with a number of his troops, landing right in the middle of our Battery." The battle file's "Fuger via NPS Hartwig 2012 (Armistead leapt the wall into Cushing's battery)" is **VERIFIED** and should stay (ideally with the post title/date).
+- **No clock time appears in that post — or in any NPS source found.** The Hartwig post contains no times at all (fetch-verified). The NPS "The Angle" page (https://www.nps.gov/places/the-angle.htm) says only "in less than one hour," no clocks. Encyclopedia Virginia's Pickett's Charge entry gives no time for the crossing. The ABT timed map set — the survey's actual modern-reconstruction clock source — puts the climax in its **3:45–4:00** slice, not 3:25. Searches for a Hartwig/NPS "~3:25" (2012 blog, 2013 150th posts, Seminar 12 essay) found nothing.
+- **Where ~15:25 really comes from:** the repo's own step-off arithmetic (~3:00 step-off → road fences ~15:16 → Angle wall ~15:23 → crossing ~15:25), consistent with this survey's "sequence-attested, clock-inferable (~3:30)" (§4 item 6). That is an *inferred* time on a documented event — exactly the split disagreement 8 (§7) prescribes — and other keyframes in the same file already phrase it correctly ("time ~15:25 inferred").
+
+**Correction required in `app/Assets/Battle/gettysburg-july3.json`** (do not attribute the clock to NPS/Hartwig): every citation reading "time ~15:25 per NPS/modern reconstruction" or "~15:25 per the NPS reconstruction" (Armistead brigade/regiment tracks and the us-webb Angle-crisis keyframe; lines ≈1449, 1549, 1649, 1849, 1949, 4174 as of this writing) should instead read "time ~15:25 inferred from the step-off reconstruction (survey: clock-inferable ~3:30)". The "~15:30 in other readings — recorded, not reconciled" clause on the 53rd VA keyframe is fine to keep; "Fuger via NPS Hartwig 2012" is fine to keep for the leap itself.
+
+Method note: SHSP verifications read the archive.org djvu full texts directly (TOC, index, running heads, quoted passages); the Hartwig post, NPS Angle page, and Encyclopedia Virginia entry were fetch-checked this session. All URLs above were live 2026-07-02.
