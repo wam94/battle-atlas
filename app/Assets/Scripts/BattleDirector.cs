@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace BattleAtlas
 {
@@ -22,8 +23,15 @@ namespace BattleAtlas
         // magenta because the shader was stripped
         public Material unitMaterial;
         // material for instanced soldier figures; falls back to unitMaterial
-        // when left unset in the inspector (e.g. older scenes)
+        // when left unset in the inspector (e.g. older scenes). For the
+        // two-tone uniforms, wire Assets/Battle/SoldierFigure.mat here — the
+        // vertex-color bands need its SoldierVertexTint shader (URP Lit
+        // ignores vertex color, so the fallback renders monochrome figures).
         public Material soldierMaterial;
+        // material for the instanced flag layer (Assets/Battle/Flag.mat —
+        // its shader carries the deterministic vertex wave). Unset: flags
+        // are skipped with a warning, everything else renders as before.
+        public Material flagMaterial;
 
         // visible clearance of the block's top face above the highest ground in
         // its footprint (the block extends down to the lowest ground, embedding
@@ -40,7 +48,20 @@ namespace BattleAtlas
         // regiment rosters realistically run <= 10; sized with headroom so the
         // per-unit matrix buffer never reallocates (over-long rosters clamp)
         const int MaxRegiments = 16;
+        // pose bias input (UnitFormationRenderer.PoseFor): a unit is
+        // "moving" when its track position changes across a 1s window
+        // around now — sampled symmetrically so scrub direction can't flip
+        // the answer at the same t
+        const float MovingSampleHalfWindow = 0.5f;
+        const float MovingEpsilonM = 0.05f;
+        // flag pivot above the unit-center ground: clears the 6m block
+        // marker and the figures, so the flag reads at every tier
+        const float FlagPoleHeight = 10f;
         static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
+        // battle-clock seconds for the Flag shader's vertex wave — a global
+        // driven from BattleClock, NOT _Time, so time-scrubbing replays the
+        // identical wave (determinism even in the cloth)
+        static readonly int BattleWaveTimeId = Shader.PropertyToID("_BattleWaveTime");
         // corners first (order is load-bearing for tests), then edge midpoints —
         // a denser ring catches ground rising inside the footprint, not just at
         // its extremes
@@ -66,6 +87,7 @@ namespace BattleAtlas
             public int RegimentCount;
             public Matrix4x4[] RegimentMatrices;
             public MaterialPropertyBlock ColorBlock;
+            public bool IsUnion; // flag color bucket
         }
 
         readonly List<UnitEntry> units = new();
@@ -73,8 +95,20 @@ namespace BattleAtlas
         // scratch for RegimentSlots, reused across units within one Update
         readonly (Vector2 center, Vector2 size)[] slotsBuffer =
             new (Vector2, Vector2)[MaxRegiments];
-        Mesh soldierMesh;
+        Mesh[] soldierPoseMeshes;
         Mesh unitBoxMesh;
+        Mesh flagMesh;
+        // one flag per unit at every tier, ONE RenderMeshInstanced per side
+        // across all units (side color rides the MPB, so union and
+        // confederate flags are the two class-homogeneous batches);
+        // preallocated at unit count in Start, refilled each Update
+        Matrix4x4[] unionFlagMatrices;
+        Matrix4x4[] csaFlagMatrices;
+        int unionFlagCount;
+        int csaFlagCount;
+        MaterialPropertyBlock unionFlagBlock;
+        MaterialPropertyBlock csaFlagBlock;
+        bool warnedNoFlagMaterial;
         Camera lodCamera;
         // cached once in Start: avoids allocating a closure per unit per
         // frame. groundYBase is refreshed once per Update (not per unit)
@@ -149,8 +183,19 @@ namespace BattleAtlas
             soldierMaterial.enableInstancing = true;
             // unitMaterial also renders instanced at the regiment tier
             unitMaterial.enableInstancing = true;
-            soldierMesh = InstancedMeshes.BuildSoldier();
+            if (flagMaterial != null) flagMaterial.enableInstancing = true;
+            // pose meshes indexed by UnitFormationRenderer.Pose* — shared
+            // across every unit's renderer
+            soldierPoseMeshes = new Mesh[UnitFormationRenderer.PoseCount];
+            soldierPoseMeshes[UnitFormationRenderer.PoseStanding] = InstancedMeshes.BuildSoldier();
+            soldierPoseMeshes[UnitFormationRenderer.PoseAdvancing] = InstancedMeshes.BuildSoldierAdvancing();
+            soldierPoseMeshes[UnitFormationRenderer.PoseKneeling] = InstancedMeshes.BuildSoldierKneeling();
             unitBoxMesh = InstancedMeshes.BuildUnitBox();
+            flagMesh = InstancedMeshes.BuildFlag();
+            unionFlagBlock = new MaterialPropertyBlock();
+            unionFlagBlock.SetColor(BaseColorId, SideColor("union"));
+            csaFlagBlock = new MaterialPropertyBlock();
+            csaFlagBlock.SetColor(BaseColorId, SideColor("confederate"));
             lodCamera = Camera.main;
             // built once: a fresh (x, z) => ... lambda per unit per frame
             // would allocate a closure every Update
@@ -172,7 +217,8 @@ namespace BattleAtlas
                 Object.Destroy(marker.GetComponent<Collider>()); // not clickable yet
 
                 var formationRenderer = new UnitFormationRenderer(
-                    u.id, u.frontage_m, u.depth_m, soldierMesh, soldierMaterial, SideColor(u.side));
+                    u.id, u.frontage_m, u.depth_m, soldierPoseMeshes, soldierMaterial,
+                    SideColor(u.side));
                 // clamp defensively: the schema doesn't cap roster length, and
                 // the persistent matrix buffer must never grow at render time.
                 // Loud, like unknown sides: authored data the renderer refuses
@@ -191,14 +237,22 @@ namespace BattleAtlas
                     RegimentCount = regimentCount,
                     RegimentMatrices = regimentCount > 0 ? new Matrix4x4[MaxRegiments] : null,
                     ColorBlock = block,
+                    IsUnion = u.side == "union",
                 });
             }
+            // one slot per unit — every unit flies a flag every frame
+            unionFlagMatrices = new Matrix4x4[units.Count];
+            csaFlagMatrices = new Matrix4x4[units.Count];
         }
 
         void Update()
         {
             float baseY = terrain.transform.position.y;
             groundYBase = baseY;
+            // the Flag shader's wave runs on battle time, set once per frame
+            Shader.SetGlobalFloat(BattleWaveTimeId, clock.CurrentTime);
+            unionFlagCount = 0;
+            csaFlagCount = 0;
             foreach (UnitEntry entry in units)
             {
                 UnitTrack track = entry.Track;
@@ -210,6 +264,14 @@ namespace BattleAtlas
                 // footprint sampling only when it's actually the one rendering
                 float centerY = baseY + terrain.SampleHeight(new Vector3(s.posXZ.x, 0f, s.posXZ.y));
                 Vector3 worldPos = new Vector3(s.posXZ.x, centerY, s.posXZ.y);
+
+                // flag at the unit center, above block/figures, yawed with
+                // the unit — identity at every tier, one instance per unit
+                var flagMatrix = Matrix4x4.TRS(
+                    new Vector3(s.posXZ.x, centerY + FlagPoleHeight, s.posXZ.y),
+                    Quaternion.Euler(0f, s.facingDeg, 0f), Vector3.one);
+                if (entry.IsUnion) unionFlagMatrices[unionFlagCount++] = flagMatrix;
+                else csaFlagMatrices[csaFlagCount++] = flagMatrix;
                 // no camera (editor edge case): treat everything as far so the
                 // familiar block path keeps working
                 float dist = lodCamera != null
@@ -229,7 +291,14 @@ namespace BattleAtlas
                 if (entry.Tier == LodTier.Soldiers)
                 {
                     marker.gameObject.SetActive(false);
-                    entry.FormationRenderer.Render(s, groundYFunc);
+                    // pose bias input: is the track position changing around
+                    // now? StateAt clamps at the track ends, so the window
+                    // degrades to one-sided there instead of misreading
+                    bool moving = Vector2.Distance(
+                        track.StateAt(clock.CurrentTime - MovingSampleHalfWindow).posXZ,
+                        track.StateAt(clock.CurrentTime + MovingSampleHalfWindow).posXZ)
+                        > MovingEpsilonM;
+                    entry.FormationRenderer.Render(s, moving, groundYFunc);
                     continue;
                 }
 
@@ -264,6 +333,44 @@ namespace BattleAtlas
                 marker.localScale = scale;
                 var (pos, rot) = MarkerPose(s, baseY + minY, blockHeight);
                 marker.SetPositionAndRotation(pos, rot);
+            }
+            RenderFlags();
+        }
+
+        // Two RenderMeshInstanced calls total — one per side across ALL
+        // units (the class-homogeneous MPB pattern, like FenceField). The
+        // flag material must be an ASSET (the magenta/stripping lesson);
+        // when unset, say so once and keep everything else rendering.
+        void RenderFlags()
+        {
+            if (flagMaterial == null)
+            {
+                if (!warnedNoFlagMaterial)
+                {
+                    Debug.LogWarning(
+                        "BattleDirector.flagMaterial is unset; wire Assets/Battle/Flag.mat " +
+                        "to fly unit flags");
+                    warnedNoFlagMaterial = true;
+                }
+                return;
+            }
+            var rp = new RenderParams(flagMaterial)
+            {
+                // a waving flag's shadow would flicker across the whole
+                // block at strategic zoom; flags never cast (the B8 audit)
+                shadowCastingMode = ShadowCastingMode.Off,
+            };
+            if (unionFlagCount > 0)
+            {
+                rp.matProps = unionFlagBlock;
+                Graphics.RenderMeshInstanced(
+                    rp, flagMesh, 0, unionFlagMatrices, unionFlagCount);
+            }
+            if (csaFlagCount > 0)
+            {
+                rp.matProps = csaFlagBlock;
+                Graphics.RenderMeshInstanced(
+                    rp, flagMesh, 0, csaFlagMatrices, csaFlagCount);
             }
         }
 

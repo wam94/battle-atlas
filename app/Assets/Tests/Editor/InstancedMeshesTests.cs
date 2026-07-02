@@ -92,6 +92,21 @@ public class InstancedMeshesTests
     }
 
     [Test]
+    public void FlagMesh_MeetsBudget()
+    {
+        // one 8x4-segment quad grid, exactly 45 verts (the report's flag
+        // budget) — instanced across every unit in one call per side, so
+        // the per-vertex wave cost is the whole bill
+        Mesh m = InstancedMeshes.BuildFlag();
+        Assert.AreEqual(45, m.vertexCount);
+        // staff edge at x=0, 1.8m fly, hanging below the pole-top pivot
+        Assert.AreEqual(0f, m.bounds.min.x, 1e-4f);
+        Assert.AreEqual(1.8f, m.bounds.max.x, 1e-4f);
+        Assert.LessOrEqual(m.bounds.max.y, 1e-4f);
+        Object.DestroyImmediate(m);
+    }
+
+    [Test]
     public void UnitBoxMesh_IsUnitCubeWithBaseAtOrigin()
     {
         Mesh m = InstancedMeshes.BuildUnitBox();

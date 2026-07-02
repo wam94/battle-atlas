@@ -7,17 +7,93 @@ namespace BattleAtlas
     // import pipeline is involved and vertex counts stay honest.
     public static class InstancedMeshes
     {
-        // a soldier as a tapered box body + box head: ~1.8m tall, reads as a
-        // human silhouette at 50m+, costs 48 vertices
+        // Soldier figures carry vertex colors in three uniform bands —
+        // trousers / coat / flesh — multiplied against the per-side
+        // _BaseColor by the SoldierVertexTint shader (Assets/Battle): the
+        // coat band is white so it takes the side color straight, trousers
+        // darken it, the head band warms it. One mesh, same batching,
+        // soldiers stop being monochrome boxes (research doc §5). Coat is
+        // white=side color; a coat-band multiplier tints BOTH sides'
+        // uniforms consistently with the existing block/marker palette.
+        static readonly Color32 TrouserColor = new Color32(140, 140, 158, 255);
+        static readonly Color32 CoatColor = new Color32(255, 255, 255, 255);
+        static readonly Color32 FleshColor = new Color32(255, 205, 165, 255);
+
+        // standing / shoulder-arms pose: trouser legs + tapered coat torso +
+        // head, ~1.8m tall, reads as a human silhouette at 50m+, 24 verts
         public static Mesh BuildSoldier()
         {
             var verts = new List<Vector3>();
             var tris = new List<int>();
-            // body: 0.45m wide, 0.3m deep, 1.45m tall, slight taper
-            AddBox(verts, tris, new Vector3(0f, 0.725f, 0f), new Vector3(0.45f, 1.45f, 0.3f), 0.8f);
-            // head: 0.28m cube centered at 1.62m
-            AddBox(verts, tris, new Vector3(0f, 1.62f, 0f), new Vector3(0.28f, 0.30f, 0.28f), 1f);
-            return Build(verts, tris, "Soldier");
+            var colors = new List<Color32>();
+            AddColoredBox(verts, tris, colors,
+                new Vector3(0f, 0.325f, 0f), new Vector3(0.40f, 0.65f, 0.28f), 1f, 0f, TrouserColor);
+            AddColoredBox(verts, tris, colors,
+                new Vector3(0f, 1.05f, 0f), new Vector3(0.45f, 0.80f, 0.30f), 0.8f, 0f, CoatColor);
+            AddColoredBox(verts, tris, colors,
+                new Vector3(0f, 1.62f, 0f), new Vector3(0.28f, 0.30f, 0.28f), 1f, 0f, FleshColor);
+            return BuildColored(verts, tris, colors, "Soldier");
+        }
+
+        // advancing pose: the whole figure shears forward along local +Z —
+        // the unit-facing convention (BuildMatrices maps formation-forward
+        // to +Z), so a moving line visibly leans into its advance. 24 verts.
+        public static Mesh BuildSoldierAdvancing()
+        {
+            var verts = new List<Vector3>();
+            var tris = new List<int>();
+            var colors = new List<Color32>();
+            // striding legs: deeper stance, top pushed forward
+            AddColoredBox(verts, tris, colors,
+                new Vector3(0f, 0.325f, 0.02f), new Vector3(0.40f, 0.65f, 0.34f), 1f, 0.12f, TrouserColor);
+            // torso leans: sheared toward +Z, carried by the leg shift
+            AddColoredBox(verts, tris, colors,
+                new Vector3(0f, 1.03f, 0.10f), new Vector3(0.45f, 0.78f, 0.30f), 0.8f, 0.22f, CoatColor);
+            AddColoredBox(verts, tris, colors,
+                new Vector3(0f, 1.56f, 0.34f), new Vector3(0.28f, 0.28f, 0.28f), 1f, 0f, FleshColor);
+            return BuildColored(verts, tris, colors, "SoldierAdvancing");
+        }
+
+        // kneeling-firing pose: folded legs, low torso, head at ~1.2m —
+        // clearly shorter than the 1.8m standing figure at any distance the
+        // soldier tier renders. 24 verts.
+        public static Mesh BuildSoldierKneeling()
+        {
+            var verts = new List<Vector3>();
+            var tris = new List<int>();
+            var colors = new List<Color32>();
+            AddColoredBox(verts, tris, colors,
+                new Vector3(0f, 0.25f, 0.05f), new Vector3(0.42f, 0.50f, 0.50f), 0.9f, 0f, TrouserColor);
+            AddColoredBox(verts, tris, colors,
+                new Vector3(0f, 0.78f, 0f), new Vector3(0.45f, 0.60f, 0.30f), 0.85f, 0f, CoatColor);
+            AddColoredBox(verts, tris, colors,
+                new Vector3(0f, 1.20f, 0.02f), new Vector3(0.26f, 0.28f, 0.26f), 1f, 0f, FleshColor);
+            return BuildColored(verts, tris, colors, "SoldierKneeling");
+        }
+
+        // regiment flag: an 8x4-segment quad grid, exactly 45 verts — enough
+        // for the Flag shader's vertex wave to bend smoothly, nothing more.
+        // Staff edge at x=0 (the shader pins wave amplitude there), 1.8m fly,
+        // 1.2m drop hanging below the pole-top pivot. Single-sided geometry;
+        // the flag material draws Cull Off, so no duplicated backside verts.
+        public static Mesh BuildFlag()
+        {
+            const int segX = 8, segY = 4;
+            const float width = 1.8f, height = 1.2f;
+            var verts = new List<Vector3>();
+            var tris = new List<int>();
+            for (int y = 0; y <= segY; y++)
+                for (int x = 0; x <= segX; x++)
+                    verts.Add(new Vector3(width * x / segX, -height * y / segY, 0f));
+            for (int y = 0; y < segY; y++)
+                for (int x = 0; x < segX; x++)
+                {
+                    int i = y * (segX + 1) + x;
+                    int below = i + segX + 1;
+                    tris.Add(i); tris.Add(i + 1); tris.Add(below + 1);
+                    tris.Add(i); tris.Add(below + 1); tris.Add(below);
+                }
+            return Build(verts, tris, "Flag");
         }
 
         // tree, FAR tier: trunk box + two stacked foliage boxes, ~9m tall,
@@ -171,6 +247,21 @@ namespace BattleAtlas
             return Build(verts, tris, "UnitBox");
         }
 
+        // AddBox plus a uniform vertex color for the whole box and an
+        // optional shear: topShiftZ pushes the top face along +Z, which is
+        // how the pose meshes lean without any extra geometry
+        static void AddColoredBox(
+            List<Vector3> verts, List<int> tris, List<Color32> colors,
+            Vector3 c, Vector3 s, float topScale, float topShiftZ, Color32 color)
+        {
+            int start = verts.Count;
+            AddBox(verts, tris, c, s, topScale);
+            if (topShiftZ != 0f)
+                for (int i = start + 4; i < start + 8; i++) // AddBox: bottom 4, top 4
+                    verts[i] += new Vector3(0f, 0f, topShiftZ);
+            for (int i = 0; i < 8; i++) colors.Add(color);
+        }
+
         // axis-aligned box centered at c with size s; topScale tapers the top face
         static void AddBox(List<Vector3> verts, List<int> tris, Vector3 c, Vector3 s, float topScale)
         {
@@ -268,6 +359,15 @@ namespace BattleAtlas
             m.SetTriangles(tris, 0);
             m.RecalculateNormals();
             m.RecalculateBounds();
+            return m;
+        }
+
+        // Build plus the Color32 channel the SoldierVertexTint shader reads
+        static Mesh BuildColored(
+            List<Vector3> verts, List<int> tris, List<Color32> colors, string name)
+        {
+            Mesh m = Build(verts, tris, name);
+            m.SetColors(colors);
             return m;
         }
 
