@@ -15,6 +15,7 @@ namespace BattleAtlas
         readonly Material material;
         readonly MaterialPropertyBlock block;
         readonly Matrix4x4[] matrices = new Matrix4x4[FormationLayout.MaxFigures];
+        readonly Vector2[] offsetsBuffer = new Vector2[FormationLayout.MaxFigures];
         static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
 
         public UnitFormationRenderer(
@@ -30,17 +31,19 @@ namespace BattleAtlas
         }
 
         // Pure: fills matrices, returns count. groundY samples world height at (x, z).
+        // offsetsBuffer is scratch space the caller owns (sized MaxFigures);
+        // reused across calls to avoid a per-frame allocation.
         public static int BuildMatrices(
             string unitId, UnitState state, float frontage, float depth,
-            Func<float, float, float> groundY, Matrix4x4[] matrices)
+            Func<float, float, float> groundY, Matrix4x4[] matrices, Vector2[] offsetsBuffer)
         {
             int count = FormationLayout.FigureCount(state.strength);
-            Vector2[] offsets = FormationLayout.Offsets(unitId, state.formation, count, frontage, depth);
+            FormationLayout.Offsets(unitId, state.formation, count, frontage, depth, offsetsBuffer);
             var rot = Quaternion.Euler(0f, state.facingDeg, 0f);
             for (int i = 0; i < count; i++)
             {
                 // local (x=right-of-line, y=forward) -> world via facing
-                Vector3 world = rot * new Vector3(offsets[i].x, 0f, offsets[i].y);
+                Vector3 world = rot * new Vector3(offsetsBuffer[i].x, 0f, offsetsBuffer[i].y);
                 float wx = state.posXZ.x + world.x;
                 float wz = state.posXZ.y + world.z;
                 matrices[i] = Matrix4x4.TRS(
@@ -49,9 +52,21 @@ namespace BattleAtlas
             return count;
         }
 
+        // Compatibility overload matching the pre-buffer-reuse signature:
+        // allocates its own scratch offsets buffer internally.
+        public static int BuildMatrices(
+            string unitId, UnitState state, float frontage, float depth,
+            Func<float, float, float> groundY, Matrix4x4[] matrices)
+        {
+            return BuildMatrices(
+                unitId, state, frontage, depth, groundY, matrices,
+                new Vector2[FormationLayout.MaxFigures]);
+        }
+
         public void Render(UnitState state, Func<float, float, float> groundY)
         {
-            int count = BuildMatrices(unitId, state, frontage, depth, groundY, matrices);
+            int count = BuildMatrices(
+                unitId, state, frontage, depth, groundY, matrices, offsetsBuffer);
             if (count == 0) return;
             var rp = new RenderParams(material) { matProps = block };
             Graphics.RenderMeshInstanced(rp, mesh, 0, matrices, count);

@@ -18,33 +18,42 @@ namespace BattleAtlas
             string unitId, string formation, int count, float frontage, float depth)
         {
             var offsets = new Vector2[count];
-            if (count == 0) return offsets;
-            switch (formation)
-            {
-                case "column":
-                    FillRanks(offsets, frontage / 4f, depth * 4f);
-                    break;
-                case "skirmish":
-                    FillSkirmish(unitId, offsets, frontage);
-                    break;
-                case "scattered":
-                    FillScatter(unitId, offsets, frontage * 1.5f, depth * 1.5f, 0f);
-                    break;
-                case "routed":
-                    // heavy scatter trailing rearward (negative y) of the facing
-                    FillScatter(unitId, offsets, frontage, depth * 4f, -depth * 2f);
-                    break;
-                default: // "line" and anything unrecognized
-                    FillRanks(offsets, frontage, depth);
-                    break;
-            }
+            Offsets(unitId, formation, count, frontage, depth, offsets);
             return offsets;
         }
 
-        // even grid: as many ranks as needed to fit count across the width
-        static void FillRanks(Vector2[] offsets, float width, float depth)
+        // Buffer-reuse overload: fills the first `count` entries of a
+        // caller-provided buffer instead of allocating. Used by the per-frame
+        // render path (UnitFormationRenderer) to avoid GC pressure.
+        public static void Offsets(
+            string unitId, string formation, int count, float frontage, float depth,
+            Vector2[] buffer)
         {
-            int count = offsets.Length;
+            if (count == 0) return;
+            switch (formation)
+            {
+                case "column":
+                    FillRanks(buffer, count, frontage / 4f, depth * 4f);
+                    break;
+                case "skirmish":
+                    FillSkirmish(unitId, buffer, count, frontage);
+                    break;
+                case "scattered":
+                    FillScatter(unitId, buffer, count, frontage * 1.5f, depth * 1.5f, 0f);
+                    break;
+                case "routed":
+                    // heavy scatter trailing rearward (negative y) of the facing
+                    FillScatter(unitId, buffer, count, frontage, depth * 4f, -depth * 2f);
+                    break;
+                default: // "line" and anything unrecognized
+                    FillRanks(buffer, count, frontage, depth);
+                    break;
+            }
+        }
+
+        // even grid: as many ranks as needed to fit count across the width
+        static void FillRanks(Vector2[] offsets, int count, float width, float depth)
+        {
             int perRank = Mathf.Max(1, Mathf.CeilToInt(count / Mathf.Max(1f, depth / 10f)));
             perRank = Mathf.Min(perRank, count);
             int ranks = Mathf.CeilToInt((float)count / perRank);
@@ -63,9 +72,8 @@ namespace BattleAtlas
             }
         }
 
-        static void FillSkirmish(string unitId, Vector2[] offsets, float frontage)
+        static void FillSkirmish(string unitId, Vector2[] offsets, int count, float frontage)
         {
-            int count = offsets.Length;
             for (int i = 0; i < count; i++)
             {
                 float x = count <= 1 ? 0f : (i / (float)(count - 1) - 0.5f) * frontage * 1.2f;
@@ -76,9 +84,9 @@ namespace BattleAtlas
         }
 
         static void FillScatter(
-            string unitId, Vector2[] offsets, float width, float depth, float yBias)
+            string unitId, Vector2[] offsets, int count, float width, float depth, float yBias)
         {
-            for (int i = 0; i < offsets.Length; i++)
+            for (int i = 0; i < count; i++)
                 offsets[i] = new Vector2(
                     Jitter(unitId, i, 7) * width * 0.5f,
                     yBias + Jitter(unitId, i, 13) * depth * 0.5f);

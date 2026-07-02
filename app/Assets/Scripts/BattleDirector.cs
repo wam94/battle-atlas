@@ -55,6 +55,11 @@ namespace BattleAtlas
         readonly Vector2[] samplePoints = new Vector2[9];
         Mesh soldierMesh;
         Camera lodCamera;
+        // cached once in Start: avoids allocating a closure per unit per
+        // frame. groundYBase is refreshed once per Update (not per unit)
+        // since GroundY reads it on every call.
+        System.Func<float, float, float> groundYFunc;
+        float groundYBase;
 
         public static Color SideColor(string side)
         {
@@ -98,6 +103,13 @@ namespace BattleAtlas
             return (pos, rot);
         }
 
+        // World-space terrain height at (x, z), offset by groundYBase (the
+        // terrain object's Y, refreshed once per Update). Instance method so
+        // groundYFunc can be built once in Start instead of allocating a
+        // closure per unit per frame in Update.
+        float GroundY(float x, float z) =>
+            terrain.SampleHeight(new Vector3(x, 0f, z)) + groundYBase;
+
         void Start()
         {
             if (terrain == null)
@@ -116,6 +128,9 @@ namespace BattleAtlas
             soldierMaterial.enableInstancing = true;
             soldierMesh = InstancedMeshes.BuildSoldier();
             lodCamera = Camera.main;
+            // built once: a fresh (x, z) => ... lambda per unit per frame
+            // would allocate a closure every Update
+            groundYFunc = GroundY;
 
             BattleDto battle = BattleLoader.Parse(battleJson.text);
             clock.EndTime = battle.endTime;
@@ -147,6 +162,7 @@ namespace BattleAtlas
         void Update()
         {
             float baseY = terrain.transform.position.y;
+            groundYBase = baseY;
             foreach (UnitEntry entry in units)
             {
                 UnitTrack track = entry.Track;
@@ -169,8 +185,7 @@ namespace BattleAtlas
                 if (entry.SoldiersVisible)
                 {
                     marker.gameObject.SetActive(false);
-                    entry.FormationRenderer.Render(s,
-                        (x, z) => terrain.SampleHeight(new Vector3(x, 0f, z)) + baseY);
+                    entry.FormationRenderer.Render(s, groundYFunc);
                     continue;
                 }
 
