@@ -167,6 +167,14 @@ export function initLandcoverUI(container: HTMLElement, map: maplibregl.Map, bf:
     render();
   }
 
+  // Guards mode/class/kind switches that would silently drop an in-progress
+  // trace (toggling tracing off, or changing kind/class mid-draft). Esc
+  // deliberately skips this — it's a purposeful cancel gesture, not an
+  // incidental UI interaction that happens to also discard work.
+  function confirmDiscardDraft(): boolean {
+    return window.confirm(`Discard the in-progress feature (${draftPoints.length} points)?`);
+  }
+
   // Registered once via the exported landcoverHandleMapClick indirection —
   // workspace.ts's single map click handler calls it while isTracing().
   handleMapClick = (lngLat) => {
@@ -177,6 +185,10 @@ export function initLandcoverUI(container: HTMLElement, map: maplibregl.Map, bf:
     render();
   };
 
+  // overlayui.ts also registers a document-level Esc handler (for tie-point
+  // picking); if both sessions are active at once, a single Esc press fires
+  // both. Accepted as a narrow edge case — the two flows aren't normally
+  // run concurrently.
   const escHandler = (e: KeyboardEvent) => {
     if (e.key === "Escape" && tracing && draftPoints.length > 0) cancelDraft();
   };
@@ -209,6 +221,7 @@ export function initLandcoverUI(container: HTMLElement, map: maplibregl.Map, bf:
     const modeBtn = document.createElement("button");
     modeBtn.textContent = tracing ? "Stop tracing" : "Start tracing";
     modeBtn.addEventListener("click", () => {
+      if (tracing && draftPoints.length > 0 && !confirmDiscardDraft()) return;
       tracing = !tracing;
       if (!tracing) resetDraft();
       syncMap();
@@ -218,6 +231,7 @@ export function initLandcoverUI(container: HTMLElement, map: maplibregl.Map, bf:
 
     if (tracing) {
       const kindSel = select(["polygon", "line"], draftKind, (v) => {
+        if (draftPoints.length > 0 && !confirmDiscardDraft()) { render(); return; }
         draftKind = v as FeatureKind;
         draftCls = draftKind === "polygon" ? POLYGON_CLASSES[0]! : LINE_CLASSES[0]!;
         cancelDraft();
@@ -225,7 +239,10 @@ export function initLandcoverUI(container: HTMLElement, map: maplibregl.Map, bf:
       frag.append(labeled("feature kind", kindSel));
 
       const clsOptions = draftKind === "polygon" ? POLYGON_CLASSES : LINE_CLASSES;
-      const clsSel = select(clsOptions, draftCls, (v) => { draftCls = v as LandcoverClass; });
+      const clsSel = select(clsOptions, draftCls, (v) => {
+        if (draftPoints.length > 0 && !confirmDiscardDraft()) { render(); return; }
+        draftCls = v as LandcoverClass;
+      });
       frag.append(labeled("class", clsSel));
 
       const sourceInput = textInput(draftSource, (v) => { draftSource = v; });

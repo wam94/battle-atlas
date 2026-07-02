@@ -1,6 +1,10 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import placeholder from "./fixtures/placeholder_battle.json";
-import { loadAutosave, saveAutosave, clearAutosave } from "../src/persist";
+import placeholderLandcover from "./fixtures/placeholder_landcover.json";
+import {
+  loadAutosave, saveAutosave, clearAutosave,
+  loadLandcoverAutosave, saveLandcoverAutosave, clearLandcoverAutosave,
+} from "../src/persist";
 
 // vitest node environment: provide a minimal localStorage
 beforeEach(() => {
@@ -31,5 +35,35 @@ describe("autosave", () => {
     saveAutosave(placeholder as never);
     clearAutosave();
     expect(loadAutosave()).toBeNull();
+  });
+});
+
+describe("landcover autosave", () => {
+  it("round-trips a landcover", () => {
+    saveLandcoverAutosave(placeholderLandcover as never);
+    expect(loadLandcoverAutosave()).toEqual(placeholderLandcover);
+  });
+
+  it("returns null when empty or corrupt", () => {
+    expect(loadLandcoverAutosave()).toBeNull();
+    localStorage.setItem("battle-atlas-landcover-autosave", "{not json");
+    expect(loadLandcoverAutosave()).toBeNull();
+  });
+
+  it("clear removes the save", () => {
+    saveLandcoverAutosave(placeholderLandcover as never);
+    clearLandcoverAutosave();
+    expect(loadLandcoverAutosave()).toBeNull();
+  });
+
+  it("saving landcover does not clobber the battle slot, and vice versa", () => {
+    saveAutosave(placeholder as never);
+    saveLandcoverAutosave(placeholderLandcover as never);
+    expect(loadAutosave()).toEqual(placeholder);
+    expect(loadLandcoverAutosave()).toEqual(placeholderLandcover);
+
+    clearLandcoverAutosave();
+    expect(loadAutosave()).toEqual(placeholder);
+    expect(loadLandcoverAutosave()).toBeNull();
   });
 });

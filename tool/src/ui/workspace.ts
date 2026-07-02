@@ -56,7 +56,7 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
 
   map.on("click", (e) => {
     if (isPickingTiePoint()) return; // tie-point picks are not keyframes
-    if (isTracing()) { landcoverHandleMapClick(e.lngLat); return; } // land-cover vertex, not a keyframe
+    if (isTracing()) { dragJustHappened = false; landcoverHandleMapClick(e.lngLat); return; } // land-cover vertex, not a keyframe; belt-and-suspenders reset
     if (dragJustHappened) { dragJustHappened = false; return; } // drag, not an append click
     const unit = battle.units.find((u) => u.id === selectedUnitId);
     if (!unit) return;
@@ -85,6 +85,7 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
   // mousemove live-updates that keyframe's position via syncMap() (cheap,
   // skips the full sidebar rebuild) until mouseup commits with a full render().
   map.on("mousedown", "unit-dots", (e) => {
+    if (isTracing()) return; // land-cover tracing owns map clicks — don't let a stale drag start under it
     const feature = e.features?.[0];
     if (!feature) return;
     const unitId = feature.properties?.unitId as string | undefined;

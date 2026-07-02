@@ -71,6 +71,10 @@ export function initOverlayUI(
     // first's tie points).
     endPickingSession();
     pickingActive = true;
+    // landcoverui.ts also registers a document-level Esc handler (for
+    // in-progress trace cancellation); if both sessions are active at once,
+    // a single Esc press fires both. Accepted as a narrow edge case — the
+    // two flows aren't normally run concurrently.
     escHandler = (e: KeyboardEvent) => {
       if (e.key === "Escape") cancelPicking();
     };
