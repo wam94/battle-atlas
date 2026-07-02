@@ -324,6 +324,7 @@ MonoBehaviour:
   terrain: {fileID: 1375780065}
   clock: {fileID: 408470589}
   unitMaterial: {fileID: 2100000, guid: 02781c7757a964eb39207b14a1eb3fa6, type: 2}
+  soldierMaterial: {fileID: 0}
 --- !u!114 &408470589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,6 +544,7 @@ GameObject:
   - component: {fileID: 1375780066}
   - component: {fileID: 1375780065}
   - component: {fileID: 1375780064}
+  - component: {fileID: 1375780067}
   m_Layer: 0
   m_Name: Gettysburg Terrain
   m_TagString: Untagged
@@ -626,6 +628,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1375780067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375780063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35be1f039cc84f5ba4290d441011f18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.VegetationField
+  treeMaterial: {fileID: 2100000, guid: 02781c7757a964eb39207b14a1eb3fa6, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
