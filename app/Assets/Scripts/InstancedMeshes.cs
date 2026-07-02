@@ -246,6 +246,35 @@ namespace BattleAtlas
             tris.Add(b); tris.Add(b + 3); tris.Add(b + 2);
         }
 
+        // smoke/dust puff for ObscurationField: an irregular low-poly blob —
+        // three overlapping tapered boxes, hash-offset and hash-sized via the
+        // shared FNV jitter (deterministic like BuildWallSegment, never
+        // Random). Box-composed on purpose: no billboarding, no
+        // ParticleSystem, no custom shader — the Commander's Table aesthetic,
+        // and plain geometry stays swappable for an opaque-dithered fallback
+        // if transparent overdraw bites on device (phase plan, Risks).
+        // Unit-ish radius so the renderer's TRS scale IS the puff radius in
+        // meters. 24 verts.
+        public static Mesh BuildPuff()
+        {
+            var verts = new List<Vector3>();
+            var tris = new List<int>();
+            for (int i = 0; i < 3; i++)
+            {
+                var c = new Vector3(
+                    0.5f * FormationLayout.Jitter("puff", i, 17),
+                    0.22f * FormationLayout.Jitter("puff", i, 29),
+                    0.5f * FormationLayout.Jitter("puff", i, 43));
+                float w = 1.1f + 0.3f * FormationLayout.Jitter("puff", i, 61);
+                float h = 0.85f + 0.25f * FormationLayout.Jitter("puff", i, 71);
+                // per-box taper keeps every silhouette edge off-axis-parallel
+                // enough that the blob never reads as a stack of crates
+                float taper = 0.55f + 0.2f * FormationLayout.Jitter("puff", i, 83);
+                AddBox(verts, tris, c, new Vector3(w, h, w), taper);
+            }
+            return Build(verts, tris, "Puff");
+        }
+
         // unit box for regiment sub-blocks at the middle LOD tier: 1 x 1 x 1,
         // base at y=0 (centered at y +0.5) so a TRS with position = ground and
         // scale = (width, height, depth) stands the block on the terrain the

@@ -28,6 +28,8 @@ load-bearing rules at runtime (BattleData.cs).
 | `name` | string | required |
 | `startTime` | number | ≥ 0, seconds since local midnight |
 | `endTime` | number | > 0, battle duration |
+| `events[]` | array | optional; see Engagement events |
+| `environment` | object | optional; see Environment |
 | `units[]` | array | ≥ 1 entry |
 | `units[].id` | string | required, unique |
 | `units[].name` | string | required |
@@ -88,14 +90,86 @@ in the Unity loader's `BattleLoader.Parse`.
   exactly as today, all three tiers, roster sub-blocks included. Batteries
   unchanged. Additive optional field; no format version bump.
 
+## Engagement events
+
+`events[]` — optional top-level array of fire windows, provenance-gated
+exactly like keyframes. Events drive the app's obscuration (smoke) and
+acoustic layers; they are authored by hand against the research docs (the
+authoring tool validates and passes them through; an event authoring UI is a
+later phase).
+
+| Field | Type | Rules |
+|---|---|---|
+| `events[].id` | string | required, unique |
+| `events[].kind` | string | `artillery_fire` \| `musketry` |
+| `events[].t0`, `.t1` | number | required; `t0 < t1 ≤ endTime` |
+| `events[].unitId` | string | emitter form A; id of an existing unit |
+| `events[].x`, `.z`, `.x2`, `.z2` | number | emitter form B; fixed segment, battlefield-local meters |
+| `events[].confidence` | string | optional; `documented` \| `inferred` \| `unknown` (default `unknown`) |
+| `events[].citation` | string | optional; REQUIRED non-empty when `confidence == "documented"` |
+| `events[].note` | string | optional free text (e.g. witness-time spread, position provenance) |
+
+- **Exactly one emitter form** (schema `oneOf`; re-checked in the tool's
+  `validate.ts` and thrown in the Unity loader): `unitId` is a moving
+  emitter — the rendered position is read from that unit's own track at each
+  emission time; the `x,z,x2,z2` segment is a fixed line emitter for gun
+  lines not authored as units (e.g. the Confederate artillery along Seminary
+  Ridge; when batteries are authored as units, their events migrate to the
+  `unitId` form).
+- **Attach level:** an event attaches at whichever level the SOURCE attests.
+  A battery fires as a battery; a regiment's flank fire is regiment-level; a
+  volley attested only at brigade grain stays on the parent — the format
+  never pretends finer attestation than the record gives. **Never author the
+  same fire at two family levels**: a regiment event plus a parent event over
+  the same window doubles the smoke and the sound. A validator cannot read
+  attestation grain, so this is authoring discipline — review every event
+  batch against it. Family semantics live in Parent / children above; the
+  rendering side resolves an event's emitter position from THAT unit's own
+  track at time t (`UnitTrack.StateAt` — every unit, parent or child, keeps
+  its own full track) regardless of which family tier the LOD ladder
+  currently draws: the LOD switches what RENDERS, never what the data IS,
+  and events inherit that rule.
+- **Dust is derived, not authored — there is no `advance_dust` kind.** Units
+  moving faster than a threshold shed dust puffs (central-difference velocity
+  over the track, Δ=30 s battle time, threshold 0.5 m/s); provenance inherits
+  from the keyframes that produced the motion. **Family rule: dust derives
+  only from units WITHOUT children** — a decomposed brigade's parent track
+  still moves as the far-tier record of the same men, so deriving from both
+  parent and children would double-dust every family. Childless units
+  (regiment children, undecomposed brigades, batteries) are the dust
+  emitters.
+- Events reference the battle timeline, not the tracks: if a track spine is
+  re-authored, the event windows that cohere with that movement must move
+  with it.
+
+## Environment
+
+`environment` — optional top-level object carrying battlefield wind for the
+obscuration layer.
+
+| Field | Type | Rules |
+|---|---|---|
+| `environment.windTowardDeg` | number | required; compass bearing smoke drifts TOWARD |
+| `environment.windMps` | number | required, ≥ 0; meters per second |
+| `environment.confidence` | string | optional; `documented` \| `inferred` \| `unknown` (default `unknown`) |
+| `environment.citation` | string | optional; REQUIRED non-empty when `confidence == "documented"` |
+| `environment.note` | string | optional free text |
+
+`windTowardDeg` is the direction of drift, named to dodge the meteorological
+from-direction ambiguity (a "southwest wind" blows FROM the southwest; here
+`windTowardDeg: 45` means smoke drifts toward the northeast). `windMps: 0`
+means calm — no drift. The Unity loader's JSON layer deserializes an absent
+`environment` block as a zeroed instance, so absent = calm = no drift is the
+built-in fallback, which is exactly right.
+
 ## The no-faking gate
 
-The authoring tool refuses to export a keyframe claiming `documented`
-confidence without a citation. Provenance will render in-app from Phase 4 (documented = solid,
+The authoring tool refuses to export a keyframe, event, or environment block
+claiming `documented` confidence without a citation. Provenance will render in-app from Phase 4 (documented = solid,
 inferred = ghosted, unknown = explicit "no reliable record"); today the
 Unity loader parses but does not yet display it.
 
 ## Planned extensions (not yet valid)
 
 - Per-keyframe `frontage_m`/`depth_m` (formation morphing)
-- `engagement` flags (drives smoke/audio), path splines, comms/moments files
+- Path splines, comms/moments files

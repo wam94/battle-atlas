@@ -151,6 +151,76 @@ public class BattleLoaderTests
         StringAssert.Contains("regiments", ex.Message);
     }
 
+    // Engagement events + environment (battle-format.md "Engagement events" /
+    // "Environment"): one event per emitter form, plus wind.
+    const string EventsJson = @"{
+        ""name"": ""Events battle"",
+        ""startTime"": 0,
+        ""endTime"": 100,
+        ""events"": [
+            {""id"": ""ev-guns"", ""kind"": ""artillery_fire"", ""t0"": 10, ""t1"": 90,
+             ""x"": 100, ""z"": 200, ""x2"": 400, ""z2"": 250,
+             ""confidence"": ""documented"", ""citation"": ""test source""},
+            {""id"": ""ev-musket"", ""kind"": ""musketry"", ""t0"": 50, ""t1"": 80,
+             ""unitId"": ""u1"", ""confidence"": ""inferred"", ""note"": ""test window""}
+        ],
+        ""environment"": {""windTowardDeg"": 45, ""windMps"": 2, ""confidence"": ""inferred""},
+        ""units"": [
+            {
+                ""id"": ""u1"",
+                ""name"": ""Test Brigade A"",
+                ""side"": ""union"",
+                ""frontage_m"": 200,
+                ""depth_m"": 30,
+                ""keyframes"": [
+                    {""t"": 0, ""x"": 100, ""z"": 200, ""facing"": 90, ""formation"": ""column"", ""strength"": 1500}
+                ]
+            }
+        ]
+    }";
+
+    [Test]
+    public void Parse_ReadsEventsAndEnvironment()
+    {
+        BattleDto b = BattleLoader.Parse(EventsJson);
+        Assert.AreEqual(2, b.events.Count);
+        Assert.AreEqual("artillery_fire", b.events[0].kind);
+        Assert.AreEqual(400f, b.events[0].x2);
+        Assert.IsTrue(string.IsNullOrEmpty(b.events[0].unitId)); // segment form
+        Assert.AreEqual("u1", b.events[1].unitId);               // unit form
+        Assert.AreEqual(80f, b.events[1].t1);
+        Assert.AreEqual(45f, b.environment.windTowardDeg);
+        Assert.AreEqual(2f, b.environment.windMps);
+        // JsonUtility quirk, relied on as the calm fallback: an absent
+        // environment block deserializes as a zeroed instance = windMps 0 =
+        // no drift
+        Assert.AreEqual(0f, BattleLoader.Parse(ValidJson).environment.windMps);
+    }
+
+    [Test]
+    public void Parse_RejectsEventWithUnknownUnit()
+    {
+        string bad = EventsJson.Replace(@"""unitId"": ""u1""", @"""unitId"": ""no-such-unit""");
+        var ex = Assert.Throws<System.ArgumentException>(() => BattleLoader.Parse(bad));
+        StringAssert.Contains("no-such-unit", ex.Message);
+    }
+
+    [Test]
+    public void Parse_RejectsEventWithEmptyWindow()
+    {
+        string bad = EventsJson.Replace(@"""t0"": 50, ""t1"": 80", @"""t0"": 80, ""t1"": 80");
+        var ex = Assert.Throws<System.ArgumentException>(() => BattleLoader.Parse(bad));
+        StringAssert.Contains("ev-musket", ex.Message);
+    }
+
+    [Test]
+    public void Parse_RejectsEventWithUnknownKind()
+    {
+        string bad = EventsJson.Replace(@"""kind"": ""musketry""", @"""kind"": ""cavalry_charge""");
+        var ex = Assert.Throws<System.ArgumentException>(() => BattleLoader.Parse(bad));
+        StringAssert.Contains("cavalry_charge", ex.Message);
+    }
+
     [Test]
     public void PlaceholderAsset_ParsesAndStaysOnBattlefield()
     {
