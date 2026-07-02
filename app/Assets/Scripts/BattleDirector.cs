@@ -331,6 +331,11 @@ namespace BattleAtlas
             gameObject.AddComponent<ObscurationField>().Init(
                 battle, tracksById, childlessTracks, clock, terrain,
                 smokeMaterial, dustMaterial);
+            // and the soundscape: same parsed battle, same attach-level rule
+            // (emitters sound from their own track at t, whatever tier the
+            // LOD ladder currently draws)
+            gameObject.AddComponent<AcousticField>().Init(
+                battle, tracksById, clock, terrain);
         }
 
         void Update()
