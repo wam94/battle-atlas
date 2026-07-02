@@ -1,5 +1,5 @@
 {
-  "name": "Gettysburg 1863 land cover \u2014 Pickett's Charge corridor (first cut)",
+  "name": "Gettysburg 1863 land cover \u2014 Pickett's Charge corridor + full battlefield",
   "features": [
     {
       "id": "woodlot-spanglers-woods",
@@ -666,6 +666,1946 @@
       "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
       "confidence": "documented",
       "note": "dots-and-dashes = post-and-rail per legend; runs S from the E end of the Codori lane fence; traced to visible extent"
+    },
+    {
+      "id": "woodlot-mcphersons-herbst",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          2722,
+          7522
+        ],
+        [
+          2810,
+          7525
+        ],
+        [
+          2891,
+          7501
+        ],
+        [
+          2983,
+          7466
+        ],
+        [
+          3064,
+          7431
+        ],
+        [
+          3134,
+          7387
+        ],
+        [
+          3154,
+          7342
+        ],
+        [
+          3104,
+          7308
+        ],
+        [
+          3031,
+          7286
+        ],
+        [
+          2955,
+          7300
+        ],
+        [
+          2878,
+          7319
+        ],
+        [
+          2820,
+          7285
+        ],
+        [
+          2772,
+          7262
+        ],
+        [
+          2728,
+          7300
+        ],
+        [
+          2707,
+          7414
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "McPherson's (Herbst) Woods between Willoughby Run and the E. McPherson farm, S of the Chambersburg Pike; 'J. HERBST' and 'E. McPHERSON' labels adjacent on the sheet; tree-symbol boundary"
+    },
+    {
+      "id": "orchard-mcpherson",
+      "kind": "polygon",
+      "cls": "orchard",
+      "points": [
+        [
+          3008,
+          7576
+        ],
+        [
+          3182,
+          7532
+        ],
+        [
+          3189,
+          7456
+        ],
+        [
+          3095,
+          7440
+        ],
+        [
+          3013,
+          7495
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "fruit-tree rows at the E. McPherson farm buildings (labeled 'E. McPHERSON' on the sheet)"
+    },
+    {
+      "id": "field-mcpherson-farm",
+      "kind": "polygon",
+      "cls": "field",
+      "points": [
+        [
+          3194,
+          7578
+        ],
+        [
+          3309,
+          7614
+        ],
+        [
+          3399,
+          7539
+        ],
+        [
+          3382,
+          7394
+        ],
+        [
+          3235,
+          7349
+        ],
+        [
+          3194,
+          7454
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "inferred",
+      "note": "open fields E of McPherson's Woods around the farm; N/E closures are section cuts, fence lines not fully legible under contour work"
+    },
+    {
+      "id": "woodlot-herrs-ridge-east",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          1830,
+          7526
+        ],
+        [
+          1869,
+          7700
+        ],
+        [
+          1987,
+          7798
+        ],
+        [
+          2155,
+          7866
+        ],
+        [
+          2285,
+          7774
+        ],
+        [
+          2255,
+          7569
+        ],
+        [
+          2185,
+          7397
+        ],
+        [
+          2048,
+          7331
+        ],
+        [
+          1907,
+          7399
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "woods on Herr's Ridge W of Willoughby Run ('B. HERR' label adjacent NW); stipple boundary generalized"
+    },
+    {
+      "id": "woodlot-willoughby-run-west-bank",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          1923,
+          7295
+        ],
+        [
+          2066,
+          7268
+        ],
+        [
+          2100,
+          7102
+        ],
+        [
+          2060,
+          6918
+        ],
+        [
+          2021,
+          6734
+        ],
+        [
+          2022,
+          6527
+        ],
+        [
+          2043,
+          6320
+        ],
+        [
+          1985,
+          6178
+        ],
+        [
+          1918,
+          6285
+        ],
+        [
+          1909,
+          6533
+        ],
+        [
+          1910,
+          6780
+        ],
+        [
+          1900,
+          7028
+        ],
+        [
+          1887,
+          7194
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "wooded band along the W bank of Willoughby Run S of Herr's Ridge; E edge follows the run"
+    },
+    {
+      "id": "woodlot-willoughby-run-hagerstown-crossing",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          1999,
+          6033
+        ],
+        [
+          2151,
+          5965
+        ],
+        [
+          2227,
+          5817
+        ],
+        [
+          2178,
+          5654
+        ],
+        [
+          2053,
+          5618
+        ],
+        [
+          1966,
+          5746
+        ],
+        [
+          1953,
+          5912
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "woods at the Willoughby Run bend by the Sam. Dickon farm where the Hagerstown (Fairfield) Road crosses"
+    },
+    {
+      "id": "woodlot-schultz",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          3591,
+          6672
+        ],
+        [
+          3604,
+          6729
+        ],
+        [
+          3651,
+          6732
+        ],
+        [
+          3716,
+          6703
+        ],
+        [
+          3704,
+          6585
+        ],
+        [
+          3659,
+          6473
+        ],
+        [
+          3610,
+          6465
+        ],
+        [
+          3590,
+          6580
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "grove at the M. Shultz place on Seminary Ridge ('M. SHULTZ' label on sheet)"
+    },
+    {
+      "id": "woodlot-seminary-ridge-north",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          3637,
+          6103
+        ],
+        [
+          3661,
+          6056
+        ],
+        [
+          3618,
+          6006
+        ],
+        [
+          3596,
+          5930
+        ],
+        [
+          3578,
+          5827
+        ],
+        [
+          3534,
+          5706
+        ],
+        [
+          3478,
+          5605
+        ],
+        [
+          3426,
+          5540
+        ],
+        [
+          3367,
+          5486
+        ],
+        [
+          3261,
+          5434
+        ],
+        [
+          3180,
+          5407
+        ],
+        [
+          3143,
+          5435
+        ],
+        [
+          3243,
+          5490
+        ],
+        [
+          3334,
+          5550
+        ],
+        [
+          3383,
+          5656
+        ],
+        [
+          3431,
+          5762
+        ],
+        [
+          3475,
+          5863
+        ],
+        [
+          3504,
+          5965
+        ],
+        [
+          3522,
+          6036
+        ],
+        [
+          3549,
+          6095
+        ],
+        [
+          3598,
+          6121
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "tree line along Seminary Ridge from the McMillan place S to the traced corridor; NEW feature abutting the corridor's woodlot-spanglers-woods (whose note records the stipple merging N) - the old feature is unmodified; the final ~150 m splice between the two traced stipple ends is interpolated"
+    },
+    {
+      "id": "orchard-mcmillan",
+      "kind": "polygon",
+      "cls": "orchard",
+      "points": [
+        [
+          3598,
+          6218
+        ],
+        [
+          3716,
+          6246
+        ],
+        [
+          3730,
+          6156
+        ],
+        [
+          3675,
+          6093
+        ],
+        [
+          3602,
+          6117
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "orchard at the McMillan house on Seminary Ridge"
+    },
+    {
+      "id": "woodlot-pitzers",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          2443,
+          4002
+        ],
+        [
+          2577,
+          3996
+        ],
+        [
+          2655,
+          3909
+        ],
+        [
+          2669,
+          3744
+        ],
+        [
+          2620,
+          3581
+        ],
+        [
+          2552,
+          3460
+        ],
+        [
+          2473,
+          3536
+        ],
+        [
+          2430,
+          3713
+        ],
+        [
+          2417,
+          3879
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "Pitzer's Woods on the W spur of Seminary Ridge (Longstreet's July 2 approach); N extent merges with ridge stipple beyond the traced crop, boundary drawn at traced extent"
+    },
+    {
+      "id": "woodlot-biesecker-warfield-ridge",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          2537,
+          3456
+        ],
+        [
+          2602,
+          3412
+        ],
+        [
+          2649,
+          3322
+        ],
+        [
+          2669,
+          3197
+        ],
+        [
+          2668,
+          3042
+        ],
+        [
+          2630,
+          2889
+        ],
+        [
+          2653,
+          2723
+        ],
+        [
+          2612,
+          2509
+        ],
+        [
+          2553,
+          2336
+        ],
+        [
+          2479,
+          2298
+        ],
+        [
+          2446,
+          2475
+        ],
+        [
+          2424,
+          2682
+        ],
+        [
+          2423,
+          2889
+        ],
+        [
+          2443,
+          3094
+        ],
+        [
+          2462,
+          3279
+        ],
+        [
+          2487,
+          3391
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "continuous woods along the Willoughby Run headwaters on Warfield Ridge, J. Flaharty S to Biesecker's Woods; Hood's and McLaws's gun line stood along its E edge"
+    },
+    {
+      "id": "marsh-pitzer-run",
+      "kind": "polygon",
+      "cls": "marsh",
+      "points": [
+        [
+          3307,
+          6027
+        ],
+        [
+          3353,
+          6031
+        ],
+        [
+          3359,
+          5982
+        ],
+        [
+          3327,
+          5957
+        ],
+        [
+          3302,
+          5979
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "small patch of grass-tuft symbols on the run W of Seminary Ridge N of the traced corridor"
+    },
+    {
+      "id": "orchard-sherfy-peach-orchard",
+      "kind": "polygon",
+      "cls": "orchard",
+      "points": [
+        [
+          3243,
+          3671
+        ],
+        [
+          3291,
+          3700
+        ],
+        [
+          3384,
+          3701
+        ],
+        [
+          3428,
+          3652
+        ],
+        [
+          3432,
+          3565
+        ],
+        [
+          3410,
+          3483
+        ],
+        [
+          3360,
+          3408
+        ],
+        [
+          3277,
+          3396
+        ],
+        [
+          3223,
+          3450
+        ],
+        [
+          3217,
+          3549
+        ],
+        [
+          3223,
+          3621
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "THE Peach Orchard (Sherfy's) - labeled 'PEACH ORCHARD' on the sheet at the Emmitsburg Road / Wheatfield Road crossroads; fruit-tree symbols run N past the Wentz ('J. WANT' on sheet) corner and are included; S extent partly under Kershaw/Wofford overprint"
+    },
+    {
+      "id": "orchard-trostle",
+      "kind": "polygon",
+      "cls": "orchard",
+      "points": [
+        [
+          3770,
+          3694
+        ],
+        [
+          3843,
+          3706
+        ],
+        [
+          3887,
+          3662
+        ],
+        [
+          3878,
+          3575
+        ],
+        [
+          3815,
+          3547
+        ],
+        [
+          3760,
+          3591
+        ],
+        [
+          3758,
+          3653
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "orchard at the A. Trostle farm (Sickles's HQ ground)"
+    },
+    {
+      "id": "orchard-rose",
+      "kind": "polygon",
+      "cls": "orchard",
+      "points": [
+        [
+          2995,
+          3203
+        ],
+        [
+          3103,
+          3203
+        ],
+        [
+          3110,
+          3136
+        ],
+        [
+          3052,
+          3107
+        ],
+        [
+          2991,
+          3131
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "orchard at the J. Rose farm W of Rose Woods"
+    },
+    {
+      "id": "woodlot-stony-hill",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          3304,
+          3199
+        ],
+        [
+          3388,
+          3231
+        ],
+        [
+          3480,
+          3222
+        ],
+        [
+          3561,
+          3193
+        ],
+        [
+          3644,
+          3199
+        ],
+        [
+          3691,
+          3145
+        ],
+        [
+          3691,
+          3058
+        ],
+        [
+          3691,
+          2975
+        ],
+        [
+          3633,
+          2942
+        ],
+        [
+          3550,
+          2935
+        ],
+        [
+          3459,
+          2986
+        ],
+        [
+          3374,
+          3036
+        ],
+        [
+          3305,
+          3106
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "Stony Hill, the N lobe of the Rose Woods complex W of the Wheatfield (Kershaw's fight); continuous stipple with woodlot-rose-woods - the seam at the marshy branch is generalized and the two rings may slightly overlap"
+    },
+    {
+      "id": "woodlot-rose-woods",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          3266,
+          3046
+        ],
+        [
+          3300,
+          3106
+        ],
+        [
+          3380,
+          3062
+        ],
+        [
+          3461,
+          3017
+        ],
+        [
+          3562,
+          2971
+        ],
+        [
+          3662,
+          2915
+        ],
+        [
+          3743,
+          2880
+        ],
+        [
+          3824,
+          2835
+        ],
+        [
+          3867,
+          2776
+        ],
+        [
+          3853,
+          2689
+        ],
+        [
+          3774,
+          2646
+        ],
+        [
+          3683,
+          2682
+        ],
+        [
+          3589,
+          2676
+        ],
+        [
+          3497,
+          2685
+        ],
+        [
+          3406,
+          2730
+        ],
+        [
+          3306,
+          2797
+        ],
+        [
+          3271,
+          2922
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "Rose Woods S of the Wheatfield running E into the Houck's Ridge timber (abuts woodlot-devils-den-houcks-ridge); Anderson's/Benning's ground"
+    },
+    {
+      "id": "woodlot-trostle",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          3745,
+          3365
+        ],
+        [
+          3839,
+          3396
+        ],
+        [
+          3942,
+          3397
+        ],
+        [
+          4002,
+          3358
+        ],
+        [
+          4004,
+          3281
+        ],
+        [
+          3946,
+          3252
+        ],
+        [
+          3854,
+          3267
+        ],
+        [
+          3772,
+          3291
+        ],
+        [
+          3738,
+          3329
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "Trostle's Woods N of the Wheatfield Road"
+    },
+    {
+      "id": "field-wheatfield",
+      "kind": "polygon",
+      "cls": "field",
+      "points": [
+        [
+          3735,
+          3154
+        ],
+        [
+          3857,
+          3107
+        ],
+        [
+          3979,
+          3065
+        ],
+        [
+          4054,
+          3031
+        ],
+        [
+          4067,
+          2958
+        ],
+        [
+          3991,
+          2894
+        ],
+        [
+          3869,
+          2915
+        ],
+        [
+          3747,
+          2973
+        ],
+        [
+          3706,
+          3078
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "THE Wheatfield - labeled 'WHEATFIELD' on the sheet; N edge along the Wheatfield Road fences, other sides at the Rose Woods / Stony Hill / Houck's Ridge tree lines"
+    },
+    {
+      "id": "field-trostle-farm",
+      "kind": "polygon",
+      "cls": "field",
+      "points": [
+        [
+          3582,
+          3640
+        ],
+        [
+          3743,
+          3550
+        ],
+        [
+          3790,
+          3445
+        ],
+        [
+          3723,
+          3345
+        ],
+        [
+          3581,
+          3393
+        ],
+        [
+          3525,
+          3529
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "inferred",
+      "note": "enclosed ground at the A. Trostle farm S of the farm lane, W of Plum Run (Bigelow's stand); boundaries partly under battle overprint, closures generalized"
+    },
+    {
+      "id": "field-weikert",
+      "kind": "polygon",
+      "cls": "field",
+      "points": [
+        [
+          4191,
+          3643
+        ],
+        [
+          4336,
+          3658
+        ],
+        [
+          4371,
+          3532
+        ],
+        [
+          4323,
+          3390
+        ],
+        [
+          4199,
+          3375
+        ],
+        [
+          4154,
+          3511
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "enclosed field at the George Weikert farm ('GEORGE WEIKERT' label on sheet); E enclosure fences legible, W closure generalized under 6th Corps overprint"
+    },
+    {
+      "id": "marsh-plum-run-branch-weikert",
+      "kind": "polygon",
+      "cls": "marsh",
+      "points": [
+        [
+          4013,
+          3373
+        ],
+        [
+          4069,
+          3360
+        ],
+        [
+          4087,
+          3298
+        ],
+        [
+          4079,
+          3226
+        ],
+        [
+          4046,
+          3196
+        ],
+        [
+          4017,
+          3239
+        ],
+        [
+          4005,
+          3312
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "grass-tuft (wet meadow) symbols along the Plum Run branch W of J. Weikert, N of the Wheatfield Road"
+    },
+    {
+      "id": "marsh-plum-run-valley",
+      "kind": "polygon",
+      "cls": "marsh",
+      "points": [
+        [
+          3990,
+          2631
+        ],
+        [
+          4061,
+          2608
+        ],
+        [
+          4097,
+          2503
+        ],
+        [
+          4112,
+          2378
+        ],
+        [
+          4087,
+          2266
+        ],
+        [
+          4023,
+          2238
+        ],
+        [
+          3987,
+          2343
+        ],
+        [
+          3972,
+          2467
+        ],
+        [
+          3971,
+          2560
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "inferred",
+      "note": "valley floor of Plum Run between Devil's Den and Little Round Top (the 'Valley of Death'); dot/scrub texture read as wet meadow - the symbols are less explicit than the Rock Creek meadow tufts, hence inferred"
+    },
+    {
+      "id": "woodlot-little-round-top",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          4108,
+          2966
+        ],
+        [
+          4264,
+          3001
+        ],
+        [
+          4428,
+          2973
+        ],
+        [
+          4526,
+          2865
+        ],
+        [
+          4540,
+          2699
+        ],
+        [
+          4490,
+          2516
+        ],
+        [
+          4401,
+          2375
+        ],
+        [
+          4285,
+          2319
+        ],
+        [
+          4174,
+          2365
+        ],
+        [
+          4108,
+          2513
+        ],
+        [
+          4077,
+          2741
+        ],
+        [
+          4074,
+          2886
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "wooded/hachured mass of Little Round Top down to the saddle toward Round Top; the W face was cleared timber in 1863 but stipple and hachure are not separable at scan resolution under the 5th Corps overprint - boundary generalized"
+    },
+    {
+      "id": "woodlot-big-round-top",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          3773,
+          2177
+        ],
+        [
+          3941,
+          2252
+        ],
+        [
+          4128,
+          2264
+        ],
+        [
+          4311,
+          2215
+        ],
+        [
+          4451,
+          2105
+        ],
+        [
+          4505,
+          1938
+        ],
+        [
+          4476,
+          1753
+        ],
+        [
+          4406,
+          1591
+        ],
+        [
+          4276,
+          1453
+        ],
+        [
+          4107,
+          1357
+        ],
+        [
+          3921,
+          1345
+        ],
+        [
+          3760,
+          1435
+        ],
+        [
+          3664,
+          1604
+        ],
+        [
+          3633,
+          1812
+        ],
+        [
+          3673,
+          2017
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "Round Top ('ROUND TOP' label on sheet), fully forested; boundary from the continuous tree/hachure mass"
+    },
+    {
+      "id": "woodlot-devils-den-houcks-ridge",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          3665,
+          2739
+        ],
+        [
+          3821,
+          2773
+        ],
+        [
+          3983,
+          2704
+        ],
+        [
+          4039,
+          2578
+        ],
+        [
+          3992,
+          2456
+        ],
+        [
+          3866,
+          2400
+        ],
+        [
+          3741,
+          2385
+        ],
+        [
+          3641,
+          2451
+        ],
+        [
+          3607,
+          2597
+        ],
+        [
+          3621,
+          2690
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "timber on Houck's Ridge around Devil's Den ('DEVILS DEN' label within the ring); the boulder ground at the S tip is not separable from the stipple; abuts woodlot-rose-woods on the NW"
+    },
+    {
+      "id": "field-slyder",
+      "kind": "polygon",
+      "cls": "field",
+      "points": [
+        [
+          3284,
+          2303
+        ],
+        [
+          3532,
+          2312
+        ],
+        [
+          3673,
+          2244
+        ],
+        [
+          3732,
+          2179
+        ],
+        [
+          3674,
+          2037
+        ],
+        [
+          3536,
+          1961
+        ],
+        [
+          3372,
+          1989
+        ],
+        [
+          3255,
+          2118
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "open farm ground at the J. Slyder place between the Emmitsburg Road and the Round Top woods (Farnsworth's charge crossed it); scattered lone trees within not traced; internal cross-fences omitted"
+    },
+    {
+      "id": "orchard-plank",
+      "kind": "polygon",
+      "cls": "orchard",
+      "points": [
+        [
+          4562,
+          1615
+        ],
+        [
+          4697,
+          1619
+        ],
+        [
+          4714,
+          1546
+        ],
+        [
+          4569,
+          1532
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "orchard rows at the farm labeled 'LEWIS PLANK' on the sheet, SE of Round Top"
+    },
+    {
+      "id": "fence-slyder-lane",
+      "kind": "line",
+      "cls": "rail_fence",
+      "points": [
+        [
+          3218,
+          2215
+        ],
+        [
+          3310,
+          2196
+        ],
+        [
+          3422,
+          2175
+        ],
+        [
+          3503,
+          2140
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "fenced farm lane from the Emmitsburg Road E to the J. Slyder farm (Farnsworth's charge ground); drawn as a single line - the flanking pair is not resolvable at scan resolution"
+    },
+    {
+      "id": "woodlot-culps-hill",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          5626,
+          5868
+        ],
+        [
+          5789,
+          5911
+        ],
+        [
+          5904,
+          5833
+        ],
+        [
+          5990,
+          5714
+        ],
+        [
+          6101,
+          5640
+        ],
+        [
+          6211,
+          5520
+        ],
+        [
+          6314,
+          5379
+        ],
+        [
+          6364,
+          5204
+        ],
+        [
+          6321,
+          5022
+        ],
+        [
+          6200,
+          4879
+        ],
+        [
+          6072,
+          4850
+        ],
+        [
+          5961,
+          4913
+        ],
+        [
+          5864,
+          5055
+        ],
+        [
+          5754,
+          5157
+        ],
+        [
+          5665,
+          5293
+        ],
+        [
+          5603,
+          5456
+        ],
+        [
+          5564,
+          5623
+        ],
+        [
+          5581,
+          5783
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "Culp's Hill forest over both summits S to the Spangler's Spring saddle ('CULP'S HILL' label on sheet); 12th Corps breastworks inside; W edge toward Stevens Knoll generalized under heavy unit overprint"
+    },
+    {
+      "id": "woodlot-wolfs-hill",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          6407,
+          5420
+        ],
+        [
+          6591,
+          5607
+        ],
+        [
+          6882,
+          5656
+        ],
+        [
+          7168,
+          5602
+        ],
+        [
+          7411,
+          5508
+        ],
+        [
+          7580,
+          5366
+        ],
+        [
+          7646,
+          5229
+        ],
+        [
+          7608,
+          5076
+        ],
+        [
+          7500,
+          4968
+        ],
+        [
+          7519,
+          4802
+        ],
+        [
+          7465,
+          4639
+        ],
+        [
+          7315,
+          4528
+        ],
+        [
+          7137,
+          4458
+        ],
+        [
+          6972,
+          4552
+        ],
+        [
+          6843,
+          4723
+        ],
+        [
+          6710,
+          4824
+        ],
+        [
+          6576,
+          4913
+        ],
+        [
+          6475,
+          5107
+        ],
+        [
+          6411,
+          5275
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "Wolf's Hill forest E of Rock Creek ('WOLF HILL' label; Johnson's Division ground); interior clearings (H. Noel) not carved out; the forest continues E and S beyond the traced ring toward the sheet edge"
+    },
+    {
+      "id": "marsh-rock-creek-mcallister",
+      "kind": "polygon",
+      "cls": "marsh",
+      "points": [
+        [
+          6001,
+          4551
+        ],
+        [
+          6110,
+          4562
+        ],
+        [
+          6211,
+          4521
+        ],
+        [
+          6254,
+          4447
+        ],
+        [
+          6235,
+          4365
+        ],
+        [
+          6140,
+          4328
+        ],
+        [
+          6038,
+          4353
+        ],
+        [
+          5991,
+          4448
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "grass-tuft symbols in the wet meadow along Rock Creek above McAllister's Mill dam; Spangler's Spring lies at the NW head of this bottomland"
+    },
+    {
+      "id": "woodlot-mcallisters-hill",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          6195,
+          4284
+        ],
+        [
+          6294,
+          4303
+        ],
+        [
+          6385,
+          4268
+        ],
+        [
+          6428,
+          4186
+        ],
+        [
+          6393,
+          4105
+        ],
+        [
+          6274,
+          4090
+        ],
+        [
+          6205,
+          4160
+        ],
+        [
+          6183,
+          4233
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "wooded knoll at McAllister's Mill spanning the Rock Creek gorge below the dam; generalized; continues S beyond the traced extent"
+    },
+    {
+      "id": "woodlot-powers-hill",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          5713,
+          4234
+        ],
+        [
+          5818,
+          4260
+        ],
+        [
+          5920,
+          4235
+        ],
+        [
+          5968,
+          4171
+        ],
+        [
+          5935,
+          4111
+        ],
+        [
+          5811,
+          4106
+        ],
+        [
+          5720,
+          4151
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "trees on Power's Hill (12th Corps artillery, Slocum's HQ); summit partly clear for the batteries; S extent beyond the traced crop"
+    },
+    {
+      "id": "orchard-culp-farm",
+      "kind": "polygon",
+      "cls": "orchard",
+      "points": [
+        [
+          5541,
+          6106
+        ],
+        [
+          5651,
+          6114
+        ],
+        [
+          5664,
+          6003
+        ],
+        [
+          5563,
+          5976
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "orchard at the H. Culp farm between the town edge and Culp's Hill"
+    },
+    {
+      "id": "field-culp-farm",
+      "kind": "polygon",
+      "cls": "field",
+      "points": [
+        [
+          5676,
+          6134
+        ],
+        [
+          5841,
+          6064
+        ],
+        [
+          5926,
+          5923
+        ],
+        [
+          5853,
+          5812
+        ],
+        [
+          5692,
+          5796
+        ],
+        [
+          5582,
+          5870
+        ],
+        [
+          5597,
+          5983
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "inferred",
+      "note": "Culp's meadow/fields between the farm and Rock Creek toward Benner's Hill; closures generalized under Early's/Johnson's overprint"
+    },
+    {
+      "id": "orchard-clapsaddle",
+      "kind": "polygon",
+      "cls": "orchard",
+      "points": [
+        [
+          7776,
+          4557
+        ],
+        [
+          7905,
+          4563
+        ],
+        [
+          7915,
+          4431
+        ],
+        [
+          7785,
+          4424
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "orchard at the farm labeled 'D. CLAPSADLE' on the sheet, E of Wolf's Hill"
+    },
+    {
+      "id": "orchard-town-nw-kirk",
+      "kind": "polygon",
+      "cls": "orchard",
+      "points": [
+        [
+          3974,
+          7041
+        ],
+        [
+          4129,
+          7046
+        ],
+        [
+          4145,
+          6946
+        ],
+        [
+          4011,
+          6936
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "orchard on the NW edge of town at the J.J. Kirk / M. Sayer places"
+    },
+    {
+      "id": "field-bliss-north-extension",
+      "kind": "polygon",
+      "cls": "field",
+      "points": [
+        [
+          3799,
+          5466
+        ],
+        [
+          3954,
+          5470
+        ],
+        [
+          4027,
+          5714
+        ],
+        [
+          4005,
+          5911
+        ],
+        [
+          3850,
+          5897
+        ],
+        [
+          3758,
+          5695
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "inferred",
+      "note": "open ground N of the Bliss farm toward the town edge (July 2-3 skirmish ground); abuts the traced corridor's N boundary; field fences under Rodes's Division overprint, closures generalized"
+    },
+    {
+      "id": "field-codori-north",
+      "kind": "polygon",
+      "cls": "field",
+      "points": [
+        [
+          4022,
+          5601
+        ],
+        [
+          4189,
+          5645
+        ],
+        [
+          4270,
+          5837
+        ],
+        [
+          4225,
+          5983
+        ],
+        [
+          4078,
+          5933
+        ],
+        [
+          4048,
+          5713
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "inferred",
+      "note": "fields between the traced corridor's N edge and the town outskirts E of the Emmitsburg Road (Rodes's front); closures generalized"
+    },
+    {
+      "id": "fence-wheatfield-road-north",
+      "kind": "line",
+      "cls": "rail_fence",
+      "points": [
+        [
+          3219,
+          3614
+        ],
+        [
+          3343,
+          3559
+        ],
+        [
+          3464,
+          3497
+        ],
+        [
+          3585,
+          3430
+        ],
+        [
+          3705,
+          3352
+        ],
+        [
+          3805,
+          3275
+        ],
+        [
+          3905,
+          3209
+        ],
+        [
+          4005,
+          3142
+        ],
+        [
+          4085,
+          3097
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "N flanking fence of the Wheatfield Road from the Peach Orchard crossroads down toward Plum Run (Wofford's Brigade advanced astride this road, per the sheet's advance arrow); alignment generalized under overprint between the orchard and the Wheatfield; only this tactically critical road's fences are traced outside the corridor - ordinary field boundaries are deliberately omitted"
+    },
+    {
+      "id": "fence-wheatfield-road-south",
+      "kind": "line",
+      "cls": "rail_fence",
+      "points": [
+        [
+          3214,
+          3601
+        ],
+        [
+          3338,
+          3547
+        ],
+        [
+          3459,
+          3485
+        ],
+        [
+          3580,
+          3418
+        ],
+        [
+          3700,
+          3340
+        ],
+        [
+          3800,
+          3263
+        ],
+        [
+          3900,
+          3197
+        ],
+        [
+          4000,
+          3130
+        ],
+        [
+          4081,
+          3085
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "S flanking fence of the Wheatfield Road, same span as the N fence; the pair offset is approximate at scan resolution"
     }
   ]
 }
