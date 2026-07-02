@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace BattleAtlas
 {
@@ -34,6 +35,12 @@ namespace BattleAtlas
         // Graphics.RenderMeshInstanced caps out at 1023 instances per call.
         const int MaxInstancesPerCall = 1023;
 
+        // Conservative mesh extents around each instance position for the
+        // per-batch cull bounds: the tree mesh tops out at ~9 m with a
+        // ~4.5 m-wide canopy (InstancedMeshes.BuildTree), so 3 m sideways
+        // and 9 m vertically covers any tree hanging off its pivot.
+        static readonly Vector3 BoundsMargin = new Vector3(3f, 9f, 3f);
+
         // Orchard trees render smaller than woodlot trees (planted stock vs.
         // mature woods) — a uniform scale-down of the same tree mesh.
         const float OrchardScale = 0.7f;
@@ -43,7 +50,10 @@ namespace BattleAtlas
 
         Mesh treeMesh;
         MaterialPropertyBlock block;
-        Matrix4x4[][] groveMatrices;
+
+        // Spatial-cell batches (SpatialBatcher): ≤1023 instances each, all
+        // from one 512 m grid cell, with explicit per-batch cull bounds.
+        InstanceBatch[] batches;
 
         // Even-density placement of `count` points inside a disc of `radius`
         // around `center`, deterministic per (id, index) via the same
@@ -85,77 +95,83 @@ namespace BattleAtlas
             block.SetColor(BaseColorId, FoliageColor);
 
             // trees don't move: precompute placement matrices once here
-            // rather than every frame
-            if (treesJson != null)
-            {
-                groveMatrices = BuildBatchesFromTrees(treesJson.text, terrain, baseY);
-            }
-            else
-            {
-                groveMatrices = new Matrix4x4[Groves.Length][];
-                for (int g = 0; g < Groves.Length; g++)
-                {
-                    var (id, center, radius, count) = Groves[g];
-                    Vector2[] placements = Placements(id, center, radius, count);
-                    var matrices = new Matrix4x4[count];
-                    for (int i = 0; i < count; i++)
-                    {
-                        float x = placements[i].x;
-                        float z = placements[i].y;
-                        float y = baseY + (terrain != null
-                            ? terrain.SampleHeight(new Vector3(x, 0f, z))
-                            : 0f);
-                        matrices[i] = Matrix4x4.TRS(
-                            new Vector3(x, y, z), Quaternion.identity, Vector3.one);
-                    }
-                    groveMatrices[g] = matrices;
-                }
-            }
+            // rather than every frame, then group them into 512 m spatial
+            // cells so RenderMeshInstanced's per-call culling can actually
+            // drop off-screen cells (file-order batches span the map and
+            // never cull — see SpatialBatcher)
+            List<Matrix4x4> matrices = treesJson != null
+                ? BuildTreeMatrices(treesJson.text, terrain, baseY)
+                : BuildGroveMatrices(terrain, baseY);
+            batches = SpatialBatcher.Build(
+                matrices, SpatialBatcher.CellSize, BoundsMargin, MaxInstancesPerCall);
         }
 
-        // Builds ≤1023-instance batches from baked trees.json. Orchard trees
-        // render at OrchardScale; every tree is height-sampled onto the
-        // terrain exactly as the legacy grove path does above.
-        static Matrix4x4[][] BuildBatchesFromTrees(string json, Terrain terrain, float baseY)
+        // Per-tree TRS matrices from baked trees.json, in file order. Orchard
+        // trees render at OrchardScale; every tree is height-sampled onto the
+        // terrain exactly as the legacy grove path does below.
+        static List<Matrix4x4> BuildTreeMatrices(string json, Terrain terrain, float baseY)
         {
             TreesDto dto = LandcoverData.ParseTrees(json);
-            var batches = new List<Matrix4x4[]>();
-            var current = new List<Matrix4x4>(MaxInstancesPerCall);
+            var matrices = new List<Matrix4x4>(dto.trees.Count);
 
             foreach (TreeDto tree in dto.trees)
             {
-                if (current.Count == MaxInstancesPerCall)
-                {
-                    batches.Add(current.ToArray());
-                    current = new List<Matrix4x4>(MaxInstancesPerCall);
-                }
-
                 float x = tree.x;
                 float z = tree.z;
                 float y = baseY + (terrain != null
                     ? terrain.SampleHeight(new Vector3(x, 0f, z))
                     : 0f);
                 float scale = tree.cls == "orchard" ? OrchardScale : 1f;
-                current.Add(Matrix4x4.TRS(
+                matrices.Add(Matrix4x4.TRS(
                     new Vector3(x, y, z), Quaternion.identity, Vector3.one * scale));
             }
-            if (current.Count > 0) batches.Add(current.ToArray());
+            return matrices;
+        }
 
-            return batches.ToArray();
+        // Per-tree TRS matrices for the hardcoded legacy Groves fallback.
+        static List<Matrix4x4> BuildGroveMatrices(Terrain terrain, float baseY)
+        {
+            var matrices = new List<Matrix4x4>();
+            foreach (var (id, center, radius, count) in Groves)
+            {
+                Vector2[] placements = Placements(id, center, radius, count);
+                for (int i = 0; i < count; i++)
+                {
+                    float x = placements[i].x;
+                    float z = placements[i].y;
+                    float y = baseY + (terrain != null
+                        ? terrain.SampleHeight(new Vector3(x, 0f, z))
+                        : 0f);
+                    matrices.Add(Matrix4x4.TRS(
+                        new Vector3(x, y, z), Quaternion.identity, Vector3.one));
+                }
+            }
+            return matrices;
         }
 
         void Update()
         {
-            if (treeMaterial == null || treeMesh == null || groveMatrices == null) return;
-            var rp = new RenderParams(treeMaterial) { matProps = block };
-            for (int g = 0; g < groveMatrices.Length; g++)
+            if (treeMaterial == null || treeMesh == null || batches == null) return;
+            // shadows are off project-wide today, but RenderParams defaults
+            // shadowCastingMode to On — left implicit, enabling main-light
+            // shadows later would silently re-render every tree into each
+            // cascade, so keep it explicitly Off
+            var rp = new RenderParams(treeMaterial)
             {
-                Matrix4x4[] matrices = groveMatrices[g];
-                // documented, not just asserted: both the fallback groves and
-                // the BuildBatchesFromTrees batches are pre-sized to the cap
-                Debug.Assert(matrices.Length <= MaxInstancesPerCall,
-                    $"batch {g} exceeds RenderMeshInstanced's {MaxInstancesPerCall}-instance cap");
-                Graphics.RenderMeshInstanced(rp, treeMesh, 0, matrices, matrices.Length);
+                matProps = block,
+                shadowCastingMode = ShadowCastingMode.Off,
+            };
+            for (int b = 0; b < batches.Length; b++)
+            {
+                InstanceBatch batch = batches[b];
+                // documented, not just asserted: SpatialBatcher splits cells
+                // into ≤MaxInstancesPerCall chunks, so every batch here fits
+                Debug.Assert(batch.matrices.Length <= MaxInstancesPerCall,
+                    $"batch {b} exceeds RenderMeshInstanced's {MaxInstancesPerCall}-instance cap");
+                // per-call culling: the batch's own cell bounds, not Unity's
+                // merged default, so off-screen cells skip vertex work
+                rp.worldBounds = batch.bounds;
+                Graphics.RenderMeshInstanced(rp, treeMesh, 0, batch.matrices, batch.matrices.Length);
             }
         }
     }
