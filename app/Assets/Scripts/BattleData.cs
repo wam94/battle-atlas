@@ -25,6 +25,7 @@ namespace BattleAtlas
         public string side; // "union" | "confederate"
         public float frontage_m;
         public float depth_m;
+        public List<string> regiments; // optional display roster; JsonUtility leaves this null when absent = no roster
         public List<KeyframeDto> keyframes;
     }
 

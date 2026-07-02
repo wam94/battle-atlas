@@ -34,6 +34,7 @@ load-bearing rules at runtime (BattleData.cs).
 | `units[].side` | string | `union` \| `confederate` |
 | `units[].frontage_m` | number | > 0 |
 | `units[].depth_m` | number | > 0 |
+| `units[].regiments[]` | array | optional; ≥ 2 non-empty strings |
 | `units[].keyframes[]` | array | ≥ 1, `t` strictly increasing |
 | `keyframes[].t` | number | ≥ 0 |
 | `keyframes[].x`, `.z` | number | battlefield-local meters |
@@ -42,6 +43,19 @@ load-bearing rules at runtime (BattleData.cs).
 | `keyframes[].strength` | number | ≥ 0, effectives at this moment |
 | `keyframes[].confidence` | string | optional; `documented` \| `inferred` \| `unknown` (default `unknown`) |
 | `keyframes[].citation` | string | optional; REQUIRED non-empty when `confidence == "documented"` |
+
+## Regiment rosters
+
+`units[].regiments` is an optional display subdivision roster: the named
+regiments (or battalions) that make up the unit, in order. Order is a display
+convention — right-to-left along the frontage as the unit faces — used when
+the app renders regiment-level sub-blocks; it is attested where a source
+gives it explicitly (e.g. Rawley Martin's regiment-by-regiment description of
+Pickett's division) and otherwise follows the order the source lists the
+regiments in, which may not reflect actual battlefield placement. The array
+carries no per-regiment position, strength, or keyframe tracking — that's a
+planned extension. Units without a `regiments` roster render as a single
+block at every zoom level.
 
 ## The no-faking gate
 

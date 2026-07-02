@@ -20,4 +20,11 @@ describe("authored July 3 battle", () => {
       for (const k of u.keyframes)
         if (k.confidence === "documented") expect(k.citation?.trim()).toBeTruthy();
   });
+  it("every regiment roster has at least 2 unique entries", () => {
+    for (const u of (battle as any).units) {
+      if (u.regiments === undefined) continue;
+      expect(u.regiments.length).toBeGreaterThanOrEqual(2);
+      expect(new Set(u.regiments).size).toBe(u.regiments.length);
+    }
+  });
 });
