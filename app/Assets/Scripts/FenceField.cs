@@ -27,8 +27,8 @@ namespace BattleAtlas
         static readonly Vector3 StoneScale = new Vector3(2.2f, 0.6f, 1f);
 
         static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
-        static readonly Color RailColor = new Color(0.45f, 0.32f, 0.18f);   // brown
-        static readonly Color StoneColor = new Color(0.55f, 0.55f, 0.55f);  // grey
+        static readonly Color RailColor = new Color(0.35f, 0.24f, 0.15f);   // matte timber brown
+        static readonly Color StoneColor = new Color(0.45f, 0.45f, 0.42f);  // matte stone grey
 
         Mesh postMesh;
         MaterialPropertyBlock railBlock;

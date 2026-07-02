@@ -153,9 +153,17 @@ namespace BattleAtlas.EditorTools
             if (AssetDatabase.LoadAssetAtPath<TerrainLayer>(layerAssetPath) != null)
                 AssetDatabase.DeleteAsset(layerAssetPath);
 
+            // URP's terrain lit shader has no mask map here, so it reads
+            // smoothness straight from the diffuse texture's alpha channel
+            // (TerrainLayer.smoothness is only the fallback used when baking
+            // a mask map, which we don't have). Opaque alpha=1 was rendering
+            // as full-gloss "wet" terrain. Zero the tint alpha to kill that,
+            // and also zero TerrainLayer.smoothness/metallic belt-and-suspenders
+            // in case a mask map gets added later.
             var tex = new Texture2D(TintTextureSize, TintTextureSize, TextureFormat.RGBA32, false);
             var fill = new Color32[TintTextureSize * TintTextureSize];
             Color32 c = spec.Color;
+            c.a = 0;
             for (int i = 0; i < fill.Length; i++)
                 fill[i] = c;
             tex.SetPixels32(fill);
@@ -166,6 +174,8 @@ namespace BattleAtlas.EditorTools
             {
                 diffuseTexture = tex,
                 tileSize = new Vector2(TileSizeM, TileSizeM),
+                smoothness = 0f,
+                metallic = 0f,
             };
             AssetDatabase.CreateAsset(layer, layerAssetPath);
 

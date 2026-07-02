@@ -42,12 +42,17 @@ namespace BattleAtlas
             var tris = new List<int>();
             // post: 0.15 x 1.4 x 0.15, centered so its base sits at y=0
             AddBox(verts, tris, new Vector3(0f, 0.7f, 0f), new Vector3(0.15f, 1.4f, 0.15f), 1f);
-            // two rails, 1.5m long, extending along local +Z from the post center.
-            // Quaternion.Euler(0, bearingDeg, 0) maps local +Z to the compass bearing
-            // (the unit-facing / FormationLayout convention), so the rails must run
-            // along +Z to align with the fence line rather than perpendicular to it.
-            AddBox(verts, tris, new Vector3(0f, 0.6f, 0.75f), new Vector3(0.08f, 0.08f, 1.5f), 1f);
-            AddBox(verts, tris, new Vector3(0f, 1.1f, 0.75f), new Vector3(0.08f, 0.08f, 1.5f), 1f);
+            // two rails, 3.0m long, extending along local +Z from the post center.
+            // Matches the pipeline's 3.0m post spacing so each post's rails reach
+            // the next post and the fence reads as continuous rather than as
+            // disconnected sawhorses. Quaternion.Euler(0, bearingDeg, 0) maps
+            // local +Z to the compass bearing (the unit-facing / FormationLayout
+            // convention), so the rails must run along +Z to align with the fence
+            // line rather than perpendicular to it. Note: the last post of each
+            // fence run has no following post, so its rails overhang past the run's
+            // end by ~1.5m — acceptable for now.
+            AddBox(verts, tris, new Vector3(0f, 0.6f, 1.5f), new Vector3(0.08f, 0.08f, 3.0f), 1f);
+            AddBox(verts, tris, new Vector3(0f, 1.1f, 1.5f), new Vector3(0.08f, 0.08f, 3.0f), 1f);
             return Build(verts, tris, "FencePost");
         }
 
