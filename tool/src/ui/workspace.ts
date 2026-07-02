@@ -285,7 +285,15 @@ export function initWorkspace(el: HTMLElement, map: maplibregl.Map, bf: Battlefi
       for (const name of roster) {
         const v = window.prompt(`t=0 strength for ${name} (per-regiment, from sources)`, String(equalShare));
         if (v === null) return; // author cancelled — apply nothing
-        strengths.set(name, Number(v));
+        const parsed = Number(v);
+        if (!Number.isFinite(parsed)) {
+          // non-numeric entry: refuse loudly rather than let NaN flow into
+          // decomposeBrigade — same treatment as Cancel, nothing applied
+          autosaveNotice = `decompose cancelled: '${v}' is not a number (strength for ${name})`;
+          render();
+          return;
+        }
+        strengths.set(name, parsed);
       }
       try {
         battle = decomposeBrigade(battle, unit.id, strengths);
