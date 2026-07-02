@@ -135,6 +135,9 @@ namespace BattleAtlas
                 unitId, state, frontage, depth, moving, groundY,
                 poseBuckets, poseCounts, offsetsBuffer);
             if (total == 0) return;
+            // shadowCastingMode deliberately left at the On default: soldiers
+            // are the ONE intended shadow caster when B8 enables shadows —
+            // every other instance field in the project sets Off explicitly.
             var rp = new RenderParams(material) { matProps = block };
             for (int p = 0; p < PoseCount; p++)
             {
