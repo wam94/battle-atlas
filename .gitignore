@@ -1,5 +1,8 @@
 .superpowers/
-data/
+data/*
+!data/landcover/
+data/landcover/*
+!data/landcover/landcover.json
 pipeline/.venv/
 __pycache__/
 .pytest_cache/

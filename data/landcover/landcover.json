@@ -1,0 +1,671 @@
+{
+  "name": "Gettysburg 1863 land cover \u2014 Pickett's Charge corridor (first cut)",
+  "features": [
+    {
+      "id": "woodlot-spanglers-woods",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          3090,
+          5406
+        ],
+        [
+          3188,
+          5288
+        ],
+        [
+          3188,
+          5071
+        ],
+        [
+          3255,
+          4950
+        ],
+        [
+          3255,
+          4852
+        ],
+        [
+          3221,
+          4771
+        ],
+        [
+          3145,
+          4702
+        ],
+        [
+          3012,
+          4595
+        ],
+        [
+          2943,
+          4557
+        ],
+        [
+          2878,
+          4606
+        ],
+        [
+          2924,
+          4702
+        ],
+        [
+          2989,
+          4900
+        ],
+        [
+          2983,
+          5034
+        ],
+        [
+          2951,
+          5191
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "Spangler's Woods / Seminary Ridge woods, Pickett's Division formation cover; tree-symbol stipple boundary; north edge merges into continuous ridge stipple beyond the traced corridor"
+    },
+    {
+      "id": "woodlot-copse-of-trees",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          4358,
+          4827
+        ],
+        [
+          4394,
+          4833
+        ],
+        [
+          4411,
+          4807
+        ],
+        [
+          4404,
+          4777
+        ],
+        [
+          4374,
+          4768
+        ],
+        [
+          4351,
+          4796
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "the copse of trees at the Angle, just west of the stone wall; small tree-scribble cluster partly obscured by unit labels, extent approximate"
+    },
+    {
+      "id": "woodlot-zieglers-grove",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [
+        [
+          4555,
+          5375
+        ],
+        [
+          4607,
+          5371
+        ],
+        [
+          4668,
+          5355
+        ],
+        [
+          4659,
+          5309
+        ],
+        [
+          4624,
+          5298
+        ],
+        [
+          4602,
+          5265
+        ],
+        [
+          4592,
+          5206
+        ],
+        [
+          4563,
+          5177
+        ],
+        [
+          4540,
+          5195
+        ],
+        [
+          4540,
+          5268
+        ],
+        [
+          4550,
+          5350
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "Ziegler's Grove at Woodruff's battery position, Hays's right"
+    },
+    {
+      "id": "orchard-codori",
+      "kind": "polygon",
+      "cls": "orchard",
+      "points": [
+        [
+          4103,
+          4715
+        ],
+        [
+          4166,
+          4697
+        ],
+        [
+          4191,
+          4660
+        ],
+        [
+          4181,
+          4598
+        ],
+        [
+          4140,
+          4610
+        ],
+        [
+          4092,
+          4643
+        ],
+        [
+          4075,
+          4678
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "fruit-tree symbols in a band NE of the Codori buildings, east of the Emmitsburg Road"
+    },
+    {
+      "id": "orchard-smith-spangler-apple",
+      "kind": "polygon",
+      "cls": "orchard",
+      "points": [
+        [
+          3399,
+          4159
+        ],
+        [
+          3564,
+          4162
+        ],
+        [
+          3577,
+          4105
+        ],
+        [
+          3557,
+          4002
+        ],
+        [
+          3434,
+          4018
+        ],
+        [
+          3392,
+          4103
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "labeled 'APPLE ORCHARD' on the sheet, at the J. Smith farm east of H. Spangler"
+    },
+    {
+      "id": "orchard-bliss-farm",
+      "kind": "polygon",
+      "cls": "orchard",
+      "points": [
+        [
+          3839,
+          5444
+        ],
+        [
+          3954,
+          5468
+        ],
+        [
+          4025,
+          5436
+        ],
+        [
+          4015,
+          5261
+        ],
+        [
+          3969,
+          5170
+        ],
+        [
+          3870,
+          5166
+        ],
+        [
+          3823,
+          5311
+        ],
+        [
+          3817,
+          5402
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "orchard at the Bliss farm site (buildings marked 'w' on sheet); fruit-tree symbols in loose scatter rather than strict grid; extends slightly north of the traced corridor"
+    },
+    {
+      "id": "field-west-of-emmitsburg-codori-front",
+      "kind": "polygon",
+      "cls": "field",
+      "points": [
+        [
+          3227,
+          5013
+        ],
+        [
+          4237,
+          4991
+        ],
+        [
+          4122,
+          4843
+        ],
+        [
+          4007,
+          4704
+        ],
+        [
+          3944,
+          4630
+        ],
+        [
+          3872,
+          4511
+        ],
+        [
+          3247,
+          4429
+        ],
+        [
+          3174,
+          4752
+        ],
+        [
+          3238,
+          4914
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "open ground of Pickett's advance between Spangler's Woods and the Emmitsburg Road; bounded N by a worm fence (zigzag), E by the road fences, W by the woods edge; S boundary along the Spangler farm lane generalized under battle overprint. crop type not distinguished on Bachelder; McElfresh (c, not traced) would refine"
+    },
+    {
+      "id": "field-angle-final-assault",
+      "kind": "polygon",
+      "cls": "field",
+      "points": [
+        [
+          4375,
+          5203
+        ],
+        [
+          4484,
+          5175
+        ],
+        [
+          4476,
+          4915
+        ],
+        [
+          4398,
+          4918
+        ],
+        [
+          4411,
+          4747
+        ],
+        [
+          4420,
+          4613
+        ],
+        [
+          4185,
+          4660
+        ],
+        [
+          4166,
+          4697
+        ],
+        [
+          4103,
+          4715
+        ],
+        [
+          4024,
+          4734
+        ],
+        [
+          4121,
+          4838
+        ],
+        [
+          4241,
+          4982
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "ground of the final assault between the Emmitsburg Road and the stone wall at the Angle (Webb's front); N edge at the Bryan farm lane. crop type not distinguished on Bachelder; McElfresh (c, not traced) would refine"
+    },
+    {
+      "id": "field-southeast-of-codori",
+      "kind": "polygon",
+      "cls": "field",
+      "points": [
+        [
+          3876,
+          4511
+        ],
+        [
+          4136,
+          4412
+        ],
+        [
+          4116,
+          4163
+        ],
+        [
+          3608,
+          4206
+        ],
+        [
+          3704,
+          4346
+        ],
+        [
+          3827,
+          4490
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "inferred",
+      "note": "bounded N by the worm-fenced Codori farm lane, E by a post-and-rail fence, W by the Emmitsburg Road; the southern closure is a section cut, no fence legible there at scan resolution. crop type not distinguished on Bachelder; McElfresh (c, not traced) would refine"
+    },
+    {
+      "id": "field-hays-front-north-of-bryan-lane",
+      "kind": "polygon",
+      "cls": "field",
+      "points": [
+        [
+          4408,
+          5243
+        ],
+        [
+          4482,
+          5389
+        ],
+        [
+          4556,
+          5329
+        ],
+        [
+          4521,
+          5238
+        ],
+        [
+          4484,
+          5175
+        ],
+        [
+          4375,
+          5203
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "field on Hays's front between the Emmitsburg Road and the wall line, S of the E. Trostle house and W of Ziegler's Grove. crop type not distinguished on Bachelder; McElfresh (c, not traced) would refine"
+    },
+    {
+      "id": "wall-angle-webb-front",
+      "kind": "line",
+      "cls": "stone_wall",
+      "points": [
+        [
+          4420,
+          4613
+        ],
+        [
+          4411,
+          4742
+        ],
+        [
+          4404,
+          4804
+        ],
+        [
+          4399,
+          4867
+        ],
+        [
+          4396,
+          4928
+        ],
+        [
+          4472,
+          4910
+        ],
+        [
+          4478,
+          4971
+        ],
+        [
+          4480,
+          5074
+        ],
+        [
+          4484,
+          5175
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "the stone wall Webb's men defended, drawn per the sheet legend as a line of continuous fine dots; runs N from S of the copse to the inner angle, jogs ~75 m east (the famous right-angle jog), then N again to the Bryan barn area"
+    },
+    {
+      "id": "fence-emmitsburg-road-west",
+      "kind": "line",
+      "cls": "rail_fence",
+      "points": [
+        [
+          3251,
+          3839
+        ],
+        [
+          3531,
+          4100
+        ],
+        [
+          3699,
+          4350
+        ],
+        [
+          3822,
+          4494
+        ],
+        [
+          3896,
+          4582
+        ],
+        [
+          3939,
+          4633
+        ],
+        [
+          4002,
+          4707
+        ],
+        [
+          4116,
+          4841
+        ],
+        [
+          4270,
+          5046
+        ],
+        [
+          4403,
+          5246
+        ],
+        [
+          4477,
+          5392
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "west flanking fence of the Emmitsburg Road, Sherfy farm to the E. Trostle house; drawn dots-and-dashes = post-and-rail per the sheet legend; north of Codori the linework runs under battle overprint, alignment traced from the road corridor"
+    },
+    {
+      "id": "fence-emmitsburg-road-east",
+      "kind": "line",
+      "cls": "rail_fence",
+      "points": [
+        [
+          3261,
+          3832
+        ],
+        [
+          3541,
+          4093
+        ],
+        [
+          3709,
+          4343
+        ],
+        [
+          3832,
+          4487
+        ],
+        [
+          3906,
+          4576
+        ],
+        [
+          3949,
+          4626
+        ],
+        [
+          4012,
+          4701
+        ],
+        [
+          4126,
+          4835
+        ],
+        [
+          4280,
+          5039
+        ],
+        [
+          4413,
+          5239
+        ],
+        [
+          4487,
+          5386
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "east flanking fence of the Emmitsburg Road, same span as the west fence; drawn dots-and-dashes = post-and-rail per the sheet legend; style partly illegible under battle overprint N of Codori"
+    },
+    {
+      "id": "fence-worm-north-of-codori-east-west",
+      "kind": "line",
+      "cls": "rail_fence",
+      "points": [
+        [
+          3855,
+          5002
+        ],
+        [
+          4206,
+          4988
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "east-west worm fence (zigzag per legend) crossing the assault ground W of the road; west continuation illegible under battle overprint, traced to visible extent"
+    },
+    {
+      "id": "fence-post-and-rail-west-of-road",
+      "kind": "line",
+      "cls": "rail_fence",
+      "points": [
+        [
+          4087,
+          4755
+        ],
+        [
+          4206,
+          5063
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "dots-and-dashes = post-and-rail per legend; runs NNE, converging toward the road W of it; traced to visible extent"
+    },
+    {
+      "id": "fence-codori-lane-south-worm",
+      "kind": "line",
+      "cls": "rail_fence",
+      "points": [
+        [
+          3876,
+          4511
+        ],
+        [
+          4136,
+          4412
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "worm fence (zigzag per legend) along the lane S of the Codori farm"
+    },
+    {
+      "id": "fence-post-and-rail-southeast-of-codori",
+      "kind": "line",
+      "cls": "rail_fence",
+      "points": [
+        [
+          4130,
+          4410
+        ],
+        [
+          4114,
+          4163
+        ]
+      ],
+      "source": "Bachelder Third Day sheet (LOC 99447492, cw0326000c), traced via georeferenced raster measurement 2026-07-02",
+      "confidence": "documented",
+      "note": "dots-and-dashes = post-and-rail per legend; runs S from the E end of the Codori lane fence; traced to visible extent"
+    }
+  ]
+}
