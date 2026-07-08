@@ -66,7 +66,13 @@ describe("authored July 3 battle", () => {
     //    + 15 Wave-3 CSA artillery battalions (full-cast Task 5) — the
     //      bombardment's named emitters AND its documented silences; the
     //      csa-seminary-bombardment segment retired in the same commit.
-    expect(units).toHaveLength(113);
+    //    + 45 Wave-4 Union infantry brigades (full-cast Task 6): the ring —
+    //      XII Corps (6) + Wadsworth (2) on Culp's Hill, XI Corps (6) +
+    //      Carroll on Cemetery Hill, I Corps remnants (4, incl. Robinson's
+    //      two movers), Caldwell (4), III Corps reserve (6), V Corps (8),
+    //      VI Corps (8, incl. Shaler the ~3:30 mover). All parentless —
+    //      divisions/corps are not modeled.
+    expect(units).toHaveLength(158);
     const ohio = units.find((u: any) => u.id === "us-8oh");
     expect(ohio).toBeDefined();
     expect(ohio.parent).toBeUndefined(); // Carroll's brigade isn't modeled
@@ -316,6 +322,88 @@ describe("authored July 3 battle", () => {
       expect(live.length, `t=${t}`).toBeGreaterThanOrEqual(1);
       if (t >= 480 && t < 7200)
         expect(live.length, `t=${t}`).toBeGreaterThanOrEqual(10);
+    }
+  });
+  it("Wave 4: the Union infantry ring — 45 cited brigades, the movers move, the ring stays silent except where the survey attests fire", () => {
+    const units = (battle as any).units;
+    const events = (battle as any).events;
+    const byId = (id: string) => units.find((u: any) => u.id === id);
+    // all 45 Wave-4 brigades present, per sector (full-cast plan Task 6;
+    // survey §3.3 corps-by-corps)
+    const culpsHill = ["us-greene", "us-kane", "us-candy", "us-mcdougall",
+      "us-lockwood", "us-colgrove", "us-meredith", "us-cutler"];
+    const cemeteryHill = ["us-vongilsa", "us-harris", "us-coster", "us-smith",
+      "us-vonamsberg", "us-krzyzanowski", "us-carroll"];
+    const centre = ["us-coulter", "us-baxter", "us-biddle", "us-dana",
+      "us-mckeen", "us-kelly", "us-fraser", "us-brooke"];
+    const rearLeft = ["us-madill", "us-berdan", "us-detrobriand", "us-carr",
+      "us-brewster", "us-burling"];
+    const roundTops = ["us-tilton", "us-sweitzer", "us-rice", "us-day",
+      "us-burbank", "us-garrard", "us-mccandless", "us-fisher"];
+    const viCorps = ["us-torbert", "us-bartlett", "us-nevin", "us-russell",
+      "us-grant", "us-neill", "us-shaler", "us-eustis"];
+    const wave4 = [...culpsHill, ...cemeteryHill, ...centre, ...rearLeft,
+      ...roundTops, ...viCorps];
+    expect(wave4).toHaveLength(45);
+    for (const id of wave4) {
+      const u = byId(id);
+      expect(u, id).toBeDefined();
+      expect(u.side, id).toBe("union");
+      // parent/family rules: none — divisions and corps are not modeled
+      expect(u.parent, id).toBeUndefined();
+      // every Union brigade t=0 keyframe documented-with-citation (the wave
+      // assertion the plan pins)
+      expect(u.keyframes[0].confidence, id).toBe("documented");
+      expect(u.keyframes[0].citation?.trim(), id).toBeTruthy();
+    }
+    // the attested in-window movers actually move (>1 keyframe, displaced);
+    // everyone else is a 2-keyframe static at an identical pose
+    const movers = ["us-coulter", "us-baxter", "us-shaler"];
+    for (const id of movers) {
+      const kfs = byId(id).keyframes;
+      expect(kfs.length, id).toBeGreaterThan(2);
+      expect(kfs[0].x, id).not.toBe(kfs[kfs.length - 1].x);
+    }
+    for (const id of wave4.filter((i) => !movers.includes(i))) {
+      const kfs = byId(id).keyframes;
+      expect(kfs, id).toHaveLength(2);
+      expect(kfs[0].x, id).toBe(kfs[1].x);
+      expect(kfs[0].z, id).toBe(kfs[1].z);
+    }
+    // Robinson's two: the tablet's 3 P.M. arrival on the right of Second
+    // Corps (t=7200, documented) — and musketry NOT attested: flagged, no event
+    for (const id of ["us-coulter", "us-baxter"]) {
+      const arrive = byId(id).keyframes.find((k: any) => k.t === 7200);
+      expect(arrive, id).toBeDefined();
+      expect(arrive.confidence, id).toBe("documented");
+      expect(arrive.citation, id).toMatch(/right of Second Corps/);
+      expect(arrive.citation, id).toMatch(/MUSKETRY NOT ATTESTED/);
+    }
+    // Shaler: departs at the tablet's 3 P.M. (t=7200), arrives at the
+    // survey's ~3:30 (t=9000) — the clock spread carried, not reconciled
+    const shalerTs = byId("us-shaler").keyframes.map((k: any) => k.t);
+    expect(shalerTs).toContain(7200);
+    expect(shalerTs).toContain(9000);
+    // documented silences: the XII Corps works stand manned and quiet after
+    // 10:30 — the negative rides every t=0 citation (Wadsworth's two carry
+    // the division tablet's morning-only fight the same way)
+    for (const id of culpsHill.slice(0, 6))
+      expect(byId(id).keyframes[0].citation, id).toMatch(/10:30 A. M./);
+    // Carroll is authored minus the modeled 8th Ohio, and says so; the
+    // detached regiment stays a free-standing unit (no family link)
+    expect(byId("us-carroll").keyframes[0].citation).toMatch(/8th OHIO/i);
+    expect(byId("us-8oh").parent).toBeUndefined();
+    // NO musketry for the ring except the three survey-attested windows:
+    // Doubleday's two repulse events + Neill's Rock Creek skirmish
+    const wave4Ids = new Set(wave4);
+    const wave4Events = events.filter((e: any) => wave4Ids.has(e.unitId));
+    expect(wave4Events.map((e: any) => e.id).sort()).toEqual([
+      "us-biddle-repulse-fire", "us-dana-repulse-fire",
+      "us-neill-rock-creek-skirmish"]);
+    for (const e of wave4Events) {
+      expect(e.kind, e.id).toBe("musketry");
+      expect(e.confidence, e.id).toBe("documented");
+      expect(e.t1, e.id).toBeLessThanOrEqual(10800);
     }
   });
   it("B-grade Confederate children are valid; the four display-LOD brigades keep rosters and no children", () => {
