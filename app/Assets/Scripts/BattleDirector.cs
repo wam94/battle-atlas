@@ -46,6 +46,30 @@ namespace BattleAtlas
         // its footprint (the block extends down to the lowest ground, embedding
         // in the hillside like a piece on a physical relief map)
         const float MarkerHeight = 6f;
+        // field-legibility clamp: with 190 units the unbounded min-to-max
+        // stretch made block heights read "all over the place" — tall slabs
+        // wherever a footprint straddled relief. The stretch stays (the P2
+        // anti-clipping fix), but capped: the TOP face keeps its clearance
+        // above the highest ground (crests never poke through) and the block
+        // runs at most this far down the slope, sinking its low end into the
+        // hillside the way a sand-table piece does instead of towering
+        const float MaxBlockHeight = 14f;
+        // kind glyphs: relative marker heights and shades so batteries and
+        // cavalry read as different piece SHAPES at strategic zoom. The
+        // multipliers scale the block's ground clearance, so on flat ground
+        // an artillery marker is exactly 55% of an infantry marker while the
+        // anti-clipping guarantees hold on relief. Public: tests pin them.
+        public const float ArtilleryHeightMul = 0.55f;
+        public const float CavalryHeightMul = 0.8f;
+        public const float ArtilleryShadeMul = 0.75f; // darker: gun lines, not battle lines
+        public const float CavalryWarmR = 1.1f;       // slight warm shift, r up...
+        public const float CavalryWarmB = 0.85f;      // ...b down; g untouched
+        // activity salience: units neither moving nor named by a live battle
+        // event fall this far toward terrain gray, so the corridor's actors
+        // carry the frame over the attested-static ring. 0.55 keeps the side
+        // hue readable — the ring recedes, it doesn't vanish.
+        public const float InactiveDesat = 0.55f;
+        public static readonly Color FieldGray = new Color(0.45f, 0.43f, 0.39f);
         // LOD hysteresis: soldiers resolve in below SoldiersInDist and hold
         // until SoldiersOutDist; regiment sub-blocks resolve in below
         // RegimentsInDist and hold until RegimentsOutDist. The band at each
@@ -82,6 +106,19 @@ namespace BattleAtlas
 
         public enum LodTier { Soldiers, Regiments, Block }
 
+        // arm-of-service glyph buckets — see KindOf for the id convention
+        public enum UnitKind { Infantry, Artillery, Cavalry }
+
+        // one live window of a battle event attached to a unit. IsActiveAt
+        // scans the per-unit list Start builds once — a unit's windows are
+        // few, and nothing rebuilds or rescans battle.events per frame.
+        public readonly struct EventWindow
+        {
+            public readonly float T0;
+            public readonly float T1;
+            public EventWindow(float t0, float t1) { T0 = t0; T1 = t1; }
+        }
+
         // per-unit runtime state: the block marker plus everything needed to
         // switch it for regiment sub-blocks or soldier ranks at closer range.
         // A small class beats a growing tuple once it carries a latch and a
@@ -102,6 +139,19 @@ namespace BattleAtlas
             public Matrix4x4[] RegimentMatrices;
             public MaterialPropertyBlock ColorBlock;
             public bool IsUnion; // flag color bucket
+            // kind glyph state, fixed at Start (kind never changes): the
+            // marker's renderer (SetPropertyBlock COPIES, so color changes
+            // must re-set it — the instanced sub-blocks read ColorBlock live
+            // via RenderParams), the height multiplier, and the kind-shaded
+            // side color the MPB shows while the unit is active
+            public Renderer MarkerRenderer;
+            public float HeightMul;
+            public Color ActiveColor;
+            // activity salience: the Start-built event windows (null = no
+            // authored event names this unit) and the latch — the MPB color
+            // is rewritten ONLY when the active state flips, never per frame
+            public List<EventWindow> EventWindows;
+            public bool Active;
         }
 
         readonly List<UnitEntry> units = new();
@@ -144,10 +194,123 @@ namespace BattleAtlas
             }
         }
 
+        // Arm of service from the unit id. This is the LOCKED id convention
+        // from the full-cast plan (docs/superpowers/plans/2026-07-02-full-cast.md
+        // "Id conventions"): batteries `us-btty-*` / `csa-btty-*`, CSA
+        // artillery battalions `csa-bn-*` (the bn- prefix exists precisely to
+        // dodge the csa-garnett INFANTRY brigade), the Artillery Reserve park
+        // `us-arty-*`, cavalry `us-cav-*` — everything else is infantry.
+        // Prefixes, never substrings: csa-5al-bn (5th Alabama Battalion) is
+        // an infantry battalion and must stay infantry. A format-level `kind`
+        // field is a DEFERRED format decision — until it lands, the ids are
+        // the contract and this is its one decoder.
+        public static UnitKind KindOf(string unitId)
+        {
+            if (unitId.StartsWith("us-btty-", System.StringComparison.Ordinal)
+                || unitId.StartsWith("csa-btty-", System.StringComparison.Ordinal)
+                || unitId.StartsWith("csa-bn-", System.StringComparison.Ordinal)
+                || unitId.StartsWith("us-arty-", System.StringComparison.Ordinal))
+                return UnitKind.Artillery;
+            if (unitId.StartsWith("us-cav-", System.StringComparison.Ordinal))
+                return UnitKind.Cavalry;
+            return UnitKind.Infantry;
+        }
+
+        // The kind's block-height multiplier (applied to the ground-clearance
+        // term, see BlockCenterAndHeight): squat batteries, mid cavalry,
+        // full-height infantry.
+        public static float KindHeightMul(UnitKind kind)
+        {
+            switch (kind)
+            {
+                case UnitKind.Artillery: return ArtilleryHeightMul;
+                case UnitKind.Cavalry: return CavalryHeightMul;
+                default: return 1f;
+            }
+        }
+
+        // The kind's shade of the side color: artillery darker, cavalry a
+        // slight warm shift, infantry the side color untouched. Applied once
+        // in Start onto the per-unit MPB — kind never changes at runtime.
+        public static Color KindShade(Color sideColor, UnitKind kind)
+        {
+            switch (kind)
+            {
+                case UnitKind.Artillery:
+                    return new Color(sideColor.r * ArtilleryShadeMul,
+                        sideColor.g * ArtilleryShadeMul,
+                        sideColor.b * ArtilleryShadeMul, sideColor.a);
+                case UnitKind.Cavalry:
+                    // r up, b down — reads warmer without leaving the side's
+                    // hue family (both palette colors stay well below 1)
+                    return new Color(sideColor.r * CavalryWarmR, sideColor.g,
+                        sideColor.b * CavalryWarmB, sideColor.a);
+                default:
+                    return sideColor;
+            }
+        }
+
+        // The clamped successor to the raw min-to-max stretch. Given the
+        // lowest/highest sampled ground under a footprint (terrain-local;
+        // caller adds the terrain object's Y), returns the block's center-Y
+        // and height. The TOP face is the anchor — always `clearance` above
+        // the highest ground, so crests never poke through — and the block
+        // extends downward at most MaxBlockHeight, so a long unit on steep
+        // relief sinks its low end into the hillside (what a sand-table
+        // piece does) instead of stretching into a tower. On flat ground
+        // this is exactly the pre-clamp math: height = clearance, block
+        // sitting on the ground. `clearance` is MarkerHeight scaled by the
+        // unit's kind multiplier.
+        public static (float centerY, float height) BlockCenterAndHeight(
+            float minY, float maxY, float clearance)
+        {
+            float height = Mathf.Min((maxY - minY) + clearance, MaxBlockHeight);
+            float top = maxY + clearance;
+            return (top - height / 2f, height);
+        }
+
+        // Pose-bias and salience input: is the track position changing
+        // around t? Sampled symmetrically (MovingSampleHalfWindow each way)
+        // so scrub direction can't flip the answer at the same t; StateAt
+        // clamps at the track ends, so the window degrades to one-sided
+        // there instead of misreading.
+        public static bool IsMovingAt(UnitTrack track, float t)
+        {
+            return Vector2.Distance(
+                track.StateAt(t - MovingSampleHalfWindow).posXZ,
+                track.StateAt(t + MovingSampleHalfWindow).posXZ)
+                > MovingEpsilonM;
+        }
+
+        // Activity salience: a unit is "active" at t when it is moving (the
+        // same symmetric-window test as the soldier pose bias) or when any
+        // battle event naming it is live — t0 <= t <= t1, INCLUSIVE, an
+        // event owns its boundary instants. Deterministic in t, so scrubbing
+        // replays identical salience; the windows list is Start-built.
+        public static bool IsActiveAt(UnitTrack track, List<EventWindow> eventWindows, float t)
+        {
+            if (IsMovingAt(track, t))
+                return true;
+            if (eventWindows == null)
+                return false;
+            for (int i = 0; i < eventWindows.Count; i++)
+                if (eventWindows[i].T0 <= t && t <= eventWindows[i].T1)
+                    return true;
+            return false;
+        }
+
+        // Inactive units keep their kind-shaded side color but fall toward
+        // terrain gray, so the ring of attested-static brigades stops
+        // drowning the corridor's action. Figures (Soldiers tier) and flags
+        // NEVER take this: close zoom is deliberate attention, and the flag
+        // is the unit's identity.
+        public static Color InactiveColor(Color activeColor) =>
+            Color.Lerp(activeColor, FieldGray, InactiveDesat);
+
         // Fills the buffer with world-XZ sample points under a unit: center,
         // footprint corners, and edge midpoints, rotated by facing. Update
-        // stretches the block from the MIN to the MAX ground height of these,
-        // embedding it in the slope.
+        // feeds the MIN and MAX ground height of these to BlockCenterAndHeight,
+        // embedding the block in the slope (clamped, top-anchored).
         public static void FootprintSamplePoints(
             Vector2 centerXZ, float facingDeg, float frontage, float depth, Vector2[] buffer)
         {
@@ -263,8 +426,13 @@ namespace BattleAtlas
                 marker.localScale = new Vector3(u.frontage_m, MarkerHeight, u.depth_m); // y overwritten per-frame
                 var renderer = marker.GetComponent<Renderer>();
                 renderer.sharedMaterial = unitMaterial;
+                // the marker's resting color is the KIND-shaded side color;
+                // set once here (kind never changes), rewritten only when the
+                // activity latch flips in Update
+                UnitKind kind = KindOf(u.id);
+                Color activeColor = KindShade(SideColor(u.side), kind);
                 var block = new MaterialPropertyBlock();
-                block.SetColor(BaseColorId, SideColor(u.side));
+                block.SetColor(BaseColorId, activeColor);
                 renderer.SetPropertyBlock(block);
                 // not clickable yet. Destroy is illegal outside play mode —
                 // the EditMode scale test (BattleLoaderScaleTests) drives
@@ -295,6 +463,12 @@ namespace BattleAtlas
                     RegimentMatrices = regimentCount > 0 ? new Matrix4x4[MaxRegiments] : null,
                     ColorBlock = block,
                     IsUnion = u.side == "union",
+                    MarkerRenderer = renderer,
+                    HeightMul = KindHeightMul(kind),
+                    ActiveColor = activeColor,
+                    // latch starts true to match the color set above; the
+                    // first Update flips genuinely idle units to FieldGray
+                    Active = true,
                 };
                 units.Add(entry);
                 entriesById[u.id] = entry;
@@ -316,6 +490,24 @@ namespace BattleAtlas
             // one slot per unit — every unit flies a flag every frame
             unionFlagMatrices = new Matrix4x4[units.Count];
             csaFlagMatrices = new Matrix4x4[units.Count];
+
+            // activity salience: bucket each unit-attached event's window
+            // onto its unit ONCE, so IsActiveAt scans a short per-unit list
+            // instead of all of battle.events per frame. Segment-form events
+            // (empty unitId) light no unit — they have no marker to raise.
+            // Parse already guaranteed every non-empty unitId resolves.
+            if (battle.events != null)
+            {
+                foreach (EventDto ev in battle.events)
+                {
+                    if (string.IsNullOrEmpty(ev.unitId))
+                        continue;
+                    UnitEntry target = entriesById[ev.unitId];
+                    if (target.EventWindows == null)
+                        target.EventWindows = new List<EventWindow>();
+                    target.EventWindows.Add(new EventWindow(ev.t0, ev.t1));
+                }
+            }
 
             // obscuration rides its own component but the SAME parsed battle:
             // authored events resolve emitter positions from each event's own
@@ -444,17 +636,31 @@ namespace BattleAtlas
             if (entry.IsUnion) unionFlagMatrices[unionFlagCount++] = flagMatrix;
             else csaFlagMatrices[csaFlagCount++] = flagMatrix;
 
+            // activity salience: latch per entry, MPB rewritten only on a
+            // transition — 190 markers never see a per-frame SetColor. The
+            // flag blocks above and the figure color are untouched: flags
+            // keep full side color (identity), figures never desaturate.
+            // Hidden family members skip this (early return above) and
+            // reconcile through the same latch check when they reappear.
+            bool active = IsActiveAt(entry.Track, entry.EventWindows, clock.CurrentTime);
+            if (active != entry.Active)
+            {
+                entry.Active = active;
+                entry.ColorBlock.SetColor(BaseColorId,
+                    active ? entry.ActiveColor : InactiveColor(entry.ActiveColor));
+                // the renderer COPIES the MPB at set time, so re-set it; the
+                // regiment sub-blocks read entry.ColorBlock live and need no re-set
+                entry.MarkerRenderer.SetPropertyBlock(entry.ColorBlock);
+            }
+
             if (tier == LodTier.Soldiers)
             {
                 entry.Marker.gameObject.SetActive(false);
-                // pose bias input: is the track position changing around
-                // now? StateAt clamps at the track ends, so the window
-                // degrades to one-sided there instead of misreading
-                bool moving = Vector2.Distance(
-                    entry.Track.StateAt(clock.CurrentTime - MovingSampleHalfWindow).posXZ,
-                    entry.Track.StateAt(clock.CurrentTime + MovingSampleHalfWindow).posXZ)
-                    > MovingEpsilonM;
-                entry.FormationRenderer.Render(s, moving, groundYFunc);
+                // pose bias input: the same symmetric moving window the
+                // salience latch uses (IsMovingAt), shared so the two can
+                // never disagree about "moving" at the same t
+                entry.FormationRenderer.Render(
+                    s, IsMovingAt(entry.Track, clock.CurrentTime), groundYFunc);
                 return;
             }
 
@@ -484,14 +690,17 @@ namespace BattleAtlas
                 if (y > maxY) maxY = y;
             }
             // a rigid slab can't lie on ~20 m of relief: stretch the block
-            // from the lowest ground under it to MarkerHeight above the
-            // highest, so it embeds in the slope instead of floating or
-            // letting the crest poke through its top
-            float blockHeight = (maxY - minY) + MarkerHeight;
+            // down the slope from the kind-scaled clearance above the
+            // highest ground, clamped to MaxBlockHeight (see
+            // BlockCenterAndHeight) so it embeds without towering
+            var (centerY, blockHeight) = BlockCenterAndHeight(
+                minY, maxY, MarkerHeight * entry.HeightMul);
             Vector3 scale = marker.localScale;
             scale.y = blockHeight;
             marker.localScale = scale;
-            var (pos, rot) = MarkerPose(s, baseY + minY, blockHeight);
+            // MarkerPose lifts from the bottom face; hand it centerY minus
+            // the half-height it will add back
+            var (pos, rot) = MarkerPose(s, baseY + centerY - blockHeight / 2f, blockHeight);
             marker.SetPositionAndRotation(pos, rot);
         }
 
@@ -524,11 +733,16 @@ namespace BattleAtlas
                     if (y < minY) minY = y;
                     if (y > maxY) maxY = y;
                 }
-                // the unit box's base is at local y=0, so position = lowest
-                // ground and scale.y = block height stands it on the terrain
+                // same clamp + kind clearance as the monolithic block — the
+                // sub-blocks are the same piece at a finer grain. The unit
+                // box's base is at local y=0, so position = the block's
+                // BOTTOM face (centerY minus half-height) and scale.y = its
+                // height stands it on — or sinks it into — the terrain
+                var (centerY, h) = BlockCenterAndHeight(
+                    minY, maxY, MarkerHeight * entry.HeightMul);
                 entry.RegimentMatrices[i] = Matrix4x4.TRS(
-                    new Vector3(wx, baseY + minY, wz), rot,
-                    new Vector3(size.x, (maxY - minY) + MarkerHeight, size.y));
+                    new Vector3(wx, baseY + centerY - h / 2f, wz), rot,
+                    new Vector3(size.x, h, size.y));
             }
             var rp = new RenderParams(unitMaterial) { matProps = entry.ColorBlock };
             Graphics.RenderMeshInstanced(rp, unitBoxMesh, 0, entry.RegimentMatrices, count);
