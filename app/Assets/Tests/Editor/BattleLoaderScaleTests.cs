@@ -1,0 +1,184 @@
+using System.Reflection;
+using NUnit.Framework;
+using UnityEngine;
+using BattleAtlas;
+
+// Unit-count scaling sanity at the full-cast target (~210 units; plan
+// 2026-07-02-full-cast.md Task 2). Retires the perf risk BEFORE the waves
+// author ~127 real units: the synthetic fixture (tool/scripts/
+// make-scale-fixture.ts, built with the Task 1 generator lib) is parsed,
+// tracked, and driven through BattleDirector's real Start/Update headlessly.
+// The fixture is committed and stays as the regression pin.
+public class BattleLoaderScaleTests
+{
+    const string FixturePath = "Assets/Tests/Editor/Fixtures/scale-fixture-210.json";
+    const int FixtureUnits = 210;
+    const int FixtureEvents = 40;
+
+    static BattleDto LoadFixture()
+    {
+        var asset = UnityEditor.AssetDatabase.LoadAssetAtPath<TextAsset>(FixturePath);
+        Assert.IsNotNull(asset, FixturePath + " missing — regenerate with " +
+            "`npx vite-node scripts/make-scale-fixture.ts` from tool/");
+        return BattleLoader.Parse(asset.text);
+    }
+
+    [Test]
+    public void Parse_ScaleFixture_LoadsAllUnitsAndEvents()
+    {
+        BattleDto b = LoadFixture(); // loader throws nothing at 210 units
+        Assert.AreEqual(FixtureUnits, b.units.Count);
+        Assert.AreEqual(FixtureEvents, b.events.Count);
+        foreach (var u in b.units)
+        {
+            StringAssert.Contains("Test", u.name, "scale fixture must be obviously fake");
+            foreach (var k in u.keyframes)
+            {
+                Assert.That(k.x, Is.InRange(500f, 8000f), u.id + " x out of range");
+                Assert.That(k.z, Is.InRange(500f, 8000f), u.id + " z out of range");
+            }
+        }
+    }
+
+    [Test]
+    public void StateAt_All210UnitsAt100SampledTs_AllocationSaneAndClampCorrect()
+    {
+        BattleDto b = LoadFixture();
+        var tracks = new UnitTrack[b.units.Count];
+        for (int i = 0; i < b.units.Count; i++) tracks[i] = new UnitTrack(b.units[i]);
+
+        // clamp edges: before the first keyframe and after the last, StateAt
+        // returns exactly that keyframe's pose (movers' tracks start at t=600
+        // and end at t=10500, so both clamps are exercised inside the window)
+        foreach (var track in tracks)
+        {
+            var first = track.Unit.keyframes[0];
+            var last = track.Unit.keyframes[track.Unit.keyframes.Count - 1];
+            UnitState before = track.StateAt(first.t - 100f);
+            Assert.AreEqual(first.x, before.posXZ.x, 1e-4f, track.Unit.id);
+            Assert.AreEqual(first.z, before.posXZ.y, 1e-4f, track.Unit.id);
+            Assert.AreEqual(first.strength, before.strength, 1e-4f, track.Unit.id);
+            UnitState after = track.StateAt(last.t + 100f);
+            Assert.AreEqual(last.x, after.posXZ.x, 1e-4f, track.Unit.id);
+            Assert.AreEqual(last.z, after.posXZ.y, 1e-4f, track.Unit.id);
+            Assert.AreEqual(last.strength, after.strength, 1e-4f, track.Unit.id);
+        }
+
+        // allocation sanity over the per-frame access pattern: all 210 tracks
+        // sampled at 100 ts spanning (and overshooting) the window. UnitState
+        // is a struct and formation is a shared string reference, so the
+        // expected heap traffic is ZERO after warmup.
+        float sum = 0f;
+        foreach (var track in tracks) sum += track.StateAt(5400f).strength; // JIT warmup
+        long before2 = System.GC.GetAllocatedBytesForCurrentThread();
+        for (int s = 0; s < 100; s++)
+        {
+            float t = -200f + s * (11200f / 99f); // sweeps past both clamp edges
+            for (int i = 0; i < tracks.Length; i++) sum += tracks[i].StateAt(t).strength;
+        }
+        long allocated = System.GC.GetAllocatedBytesForCurrentThread() - before2;
+        Debug.Log($"[scale] StateAt 210x100: {allocated} bytes allocated (checksum {sum})");
+        Assert.LessOrEqual(allocated, 4096,
+            "StateAt allocated on the hot path — it must stay allocation-free");
+    }
+
+    [Test]
+    public void DirectorStart_ScaleFixture_BuffersScaleWithUnitCountAndFrameLoopIsCheap()
+    {
+        var asset = UnityEditor.AssetDatabase.LoadAssetAtPath<TextAsset>(FixturePath);
+        Assert.IsNotNull(asset);
+
+        var terrainData = new TerrainData();
+        terrainData.heightmapResolution = 513;
+        terrainData.size = new Vector3(8507f, 30f, 8507f);
+        GameObject terrainGO = Terrain.CreateTerrainGameObject(terrainData);
+        var directorGO = new GameObject("scale test director");
+        var material = new Material(Shader.Find("Standard"));
+        try
+        {
+            var clock = directorGO.AddComponent<BattleClock>();
+            var director = directorGO.AddComponent<BattleDirector>();
+            director.battleJson = asset;
+            director.terrain = terrainGO.GetComponent<Terrain>();
+            director.clock = clock;
+            director.unitMaterial = material;
+            // flag/smoke/dust materials stay null: RenderFlags warns once and
+            // skips, obscuration never Updates in edit mode — the measured
+            // loop is exactly the marker path (StateAt + height samples +
+            // tier eval + block pose for every parentless unit)
+
+            const BindingFlags priv = BindingFlags.Instance | BindingFlags.NonPublic;
+            var start = (System.Action)System.Delegate.CreateDelegate(typeof(System.Action),
+                director, typeof(BattleDirector).GetMethod("Start", priv));
+            var update = (System.Action)System.Delegate.CreateDelegate(typeof(System.Action),
+                director, typeof(BattleDirector).GetMethod("Update", priv));
+
+            var sw = System.Diagnostics.Stopwatch.StartNew();
+            start();
+            sw.Stop();
+            double startMs = sw.Elapsed.TotalMilliseconds;
+
+            // marker count == unit count: every unit spawned its block marker
+            var unitsList = (System.Collections.IList)
+                typeof(BattleDirector).GetField("units", priv).GetValue(director);
+            Assert.AreEqual(FixtureUnits, unitsList.Count);
+            FieldInfo markerField = unitsList[0].GetType().GetField("Marker");
+            int markers = 0;
+            foreach (object entry in unitsList)
+                if ((Transform)markerField.GetValue(entry) != null) markers++;
+            Assert.AreEqual(FixtureUnits, markers);
+
+            // flag matrix capacity == unit count — the regression pin: the
+            // buffers are sized from units.Count in Start and must keep
+            // auto-scaling; nobody gets to hardcode a capacity later
+            var unionFlags = (Matrix4x4[])
+                typeof(BattleDirector).GetField("unionFlagMatrices", priv).GetValue(director);
+            var csaFlags = (Matrix4x4[])
+                typeof(BattleDirector).GetField("csaFlagMatrices", priv).GetValue(director);
+            Assert.AreEqual(FixtureUnits, unionFlags.Length);
+            Assert.AreEqual(FixtureUnits, csaFlags.Length);
+
+            // per-frame loop: 100 frames sweeping the whole window at Block
+            // tier (no camera => far tier — the 210-marker strategic-zoom
+            // worst case: ~10 SampleHeight calls per unit per frame)
+            clock.CurrentTime = 0f;
+            update(); // warmup frame (JIT, first-touch, the one-time flag warn)
+            long allocBefore = System.GC.GetAllocatedBytesForCurrentThread();
+            sw.Restart();
+            for (int f = 0; f < 100; f++)
+            {
+                clock.CurrentTime = f * (10800f / 99f);
+                update();
+            }
+            sw.Stop();
+            long allocated = System.GC.GetAllocatedBytesForCurrentThread() - allocBefore;
+            double frameMs = sw.Elapsed.TotalMilliseconds / 100.0;
+            Debug.Log($"[scale] Start({FixtureUnits} units): {startMs:F1} ms; " +
+                $"Update avg over 100 frames: {frameMs:F3} ms/frame; " +
+                $"alloc {allocated / 100} bytes/frame");
+
+            // budgets, deliberately loose for CI machines: the point is
+            // catching a scaling cliff (quadratic loop, per-frame allocation
+            // storm), not benchmarking. 8 ms is half a 60 fps frame for the
+            // CPU marker loop alone; Start gets 5 s for 210 primitive spawns.
+            Assert.Less(startMs, 5000.0, "Start cost scaled past the budget");
+            Assert.Less(frameMs, 8.0, "per-frame marker loop scaled past the budget");
+            // measured 0 bytes/frame at landing; the loose ceiling catches a
+            // reintroduced steady leak that the frame budget would hide
+            // (review follow-up: assert the number, don't just log it)
+            Assert.LessOrEqual(allocated / 100, 1024,
+                "per-frame Update allocation crept in — the marker loop must stay allocation-free");
+        }
+        finally
+        {
+            // markers are unparented scene objects — sweep them by the name
+            // prefix Start gives them, then the rig itself
+            foreach (var go in Object.FindObjectsByType<GameObject>(FindObjectsSortMode.None))
+                if (go != null && go.name.StartsWith("unit sf-")) Object.DestroyImmediate(go);
+            Object.DestroyImmediate(directorGO);
+            Object.DestroyImmediate(terrainGO);
+            Object.DestroyImmediate(terrainData);
+            Object.DestroyImmediate(material);
+        }
+    }
+}
