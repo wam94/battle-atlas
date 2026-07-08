@@ -57,7 +57,13 @@ describe("authored July 3 battle", () => {
     //    + 28 B-grade children + 2 Brockenbrough wings (A6)
     //    + 13 Wave-1 batteries: McGilvery's line (9) + the four reinforcing
     //      batteries (full-cast Task 3)
-    expect(units).toHaveLength(78);
+    //    + 20 Wave-2 units: Osborn group (9), Wainwright (4), Rittenhouse,
+    //      XII Corps guns (5), Artillery Reserve park (full-cast Task 4).
+    //      The plan's arithmetic said 21/99: its 21st (Taft's 1st CT Heavy
+    //      B & M, "Not engaged") was verified NOT AT GETTYSBURG — held in
+    //      reserve off-map — and is not authored (see author-w2-gun-ring.ts
+    //      header adjudication; asserted in the Wave 2 test below).
+    expect(units).toHaveLength(98);
     const ohio = units.find((u: any) => u.id === "us-8oh");
     expect(ohio).toBeDefined();
     expect(ohio.parent).toBeUndefined(); // Carroll's brigade isn't modeled
@@ -114,11 +120,16 @@ describe("authored July 3 battle", () => {
     ];
     for (const id of wave1) expect(byId(id), id).toBeDefined();
     // Documented silence (battle-format.md "Engagement events"): every battery
-    // STANDING on McGilvery's line through the cannonade carries Hunt's
-    // hold-fire policy in its t=0 keyframe citation — the silence citation IS
-    // the encoding. Cooper and Wheeler arrive mid-window and go straight into
-    // attested fire; the reinforcements start in reserve — none of those five
-    // is a cannonade-silent line battery, so the policy rides the eight.
+    // STANDING on McGilvery's line at t=0 carries Hunt's hold-fire policy in
+    // its t=0 keyframe citation — the policy is the line's default posture,
+    // and for the six batteries with no attested cannonade fire the citation
+    // IS the silence encoding. Phillips and Hart are the two documented
+    // cannonade EXCEPTIONS (their counter-battery fire is separately
+    // evented); the policy citation still rides their keyframes because it
+    // governs them outside those attested windows. Cooper and Wheeler arrive
+    // mid-window and go straight into attested fire; the reinforcements
+    // start in reserve — none of those five stands on the line at t=0, so
+    // the policy rides the eight.
     const lineAtT0 = [
       "us-btty-thomas", "us-btty-james", "us-btty-thompson", "us-btty-phillips",
       "us-btty-hart", "us-btty-sterling", "us-btty-dow", "us-btty-ames",
@@ -151,6 +162,79 @@ describe("authored July 3 battle", () => {
     // the Florida/second-line follow-up rides the Wilcox/Lang spine window
     expect(evt("us-btty-phillips-florida-repulse").t0).toBe(10200);
     expect(evt("us-btty-hart-second-line").t1).toBe(10500);
+  });
+  it("Wave 2: the gun ring — Osborn's ruse gap, Wainwright, Rittenhouse's enfilade, the silent XII Corps guns, the Reserve park mover", () => {
+    const units = (battle as any).units;
+    const events = (battle as any).events;
+    const byId = (id: string) => units.find((u: any) => u.id === id);
+    // all 20 Wave-2 units present (full-cast plan Task 4; survey §3.3)
+    const osborn = [
+      "us-btty-wiedrich", "us-btty-dilger", "us-btty-bancroft", "us-btty-taft",
+      "us-btty-mason", "us-btty-edgell", "us-btty-norton", "us-btty-hill-wv",
+      "us-btty-ricketts",
+    ];
+    const wave2 = [
+      ...osborn,
+      "us-btty-stevens", "us-btty-breck", "us-btty-stewart", "us-btty-hall-2me",
+      "us-btty-rittenhouse",
+      "us-btty-rugg", "us-btty-kinzie", "us-btty-atwell", "us-btty-rigby",
+      "us-btty-winegar",
+      "us-arty-reserve-park",
+    ];
+    for (const id of wave2) expect(byId(id), id).toBeDefined();
+    // The adjudicated omission (author-w2-gun-ring.ts header): Taft's 1st CT
+    // Heavy Batteries B & M ("Not engaged" on the brigade tablet) were NOT at
+    // Gettysburg — held in reserve off-map. Never authored; the ruling rides
+    // Taft's t=0 citation. (The plan's 21-unit count assumed them present.)
+    expect(units.some((u: any) => /brooker|pratt|ct-heavy|conn/i.test(u.id))).toBe(false);
+    expect(byId("us-btty-taft").keyframes[0].citation).toMatch(/Not engaged/);
+    // THE RUSE GAP IS THE DATUM (survey §4 item 3): Osborn's hill goes
+    // deliberately quiet t=3000 (~13:50) until the advance (~7800) — no
+    // Osborn-group event may span the gap, and each firing battery has fire
+    // on BOTH sides of it (counter-battery, then the Pettigrew-flank window).
+    const gapStart = 3000, gapEnd = 7800;
+    const osbornEvents = events.filter((e: any) => osborn.includes(e.unitId));
+    expect(osbornEvents.length).toBe(18); // 9 firing batteries × 2 windows
+    for (const e of osbornEvents) {
+      const spansGap = e.t0 < gapEnd && e.t1 > gapStart;
+      expect(spansGap, e.id).toBe(false);
+    }
+    for (const id of osborn) {
+      const mine = osbornEvents.filter((e: any) => e.unitId === id);
+      expect(mine.some((e: any) => e.t1 <= gapStart), id).toBe(true);
+      expect(mine.some((e: any) => e.t0 >= gapEnd), id).toBe(true);
+    }
+    // Rittenhouse: the wave's headline — documented Little Round Top enfilade
+    // of the assault, window coherent with the spine (the Wave-1 pattern)
+    const enfilade = events.find((e: any) => e.id === "us-btty-rittenhouse-repulse-enfilade");
+    expect(enfilade.confidence).toBe("documented");
+    expect(enfilade.t0).toBe(7800);
+    expect(enfilade.t1).toBe(9000);
+    // Documented silences (battle-format.md): the XII Corps' 26 guns fired
+    // until 10:30 A.M. only, and Hall's 2nd ME went to the rear — presence
+    // WITHOUT events; the negative rides every t=0 keyframe citation.
+    const silent = ["us-btty-rugg", "us-btty-kinzie", "us-btty-atwell",
+      "us-btty-rigby", "us-btty-winegar", "us-btty-hall-2me"];
+    for (const id of silent) {
+      expect(events.some((e: any) => e.unitId === id), id).toBe(false);
+      const k0 = byId(id).keyframes[0];
+      expect(k0.confidence, id).toBe("documented");
+      expect(k0.citation, id).toMatch(id === "us-btty-hall-2me" ? /no further part/ : /10.30 A. M./);
+    }
+    // Wainwright's replies end at the army-wide ~14:30 cease (t=5400), not
+    // Osborn's ruse gap — his I Corps guns are not under Osborn's datum
+    for (const id of ["us-btty-stevens", "us-btty-breck", "us-btty-stewart"]) {
+      const mine = events.filter((e: any) => e.unitId === id);
+      expect(mine.length, id).toBe(1);
+      expect(mine[0].t1, id).toBe(5400);
+    }
+    // the Artillery Reserve park actually displaces (Hunt's A− mover; its
+    // motion is what derives the overshoot dust — childless, formation column)
+    const park = byId("us-arty-reserve-park");
+    expect(park.keyframes.length).toBeGreaterThan(2);
+    expect(park.keyframes[0].z).not.toBe(park.keyframes[park.keyframes.length - 1].z);
+    for (const k of park.keyframes) expect(k.formation).toBe("column");
+    expect(units.some((u: any) => u.parent === "us-arty-reserve-park")).toBe(false);
   });
   it("B-grade Confederate children are valid; the four display-LOD brigades keep rosters and no children", () => {
     const units = (battle as any).units;
