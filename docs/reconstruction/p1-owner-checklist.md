@@ -67,6 +67,12 @@ Every drift observation uses the video's burned-in text
 
 ## Verdict
 
-- [ ] Gate P1 PASSES (all of 1–8 clean) — Phase 2 may start.
+- [x] Gate P1 PASSES (all of 1–8 clean) — Phase 2 may start.
 - [ ] Gate P1 FAILS — file what broke (step number, battle time, drift,
       console output) against branch `v2-phase01`.
+
+**Closed 2026-07-08 by the project owner** (interactive editor session,
+branch `v2-phase01` at 9b111ac). All of checks 1–8 passed; observed entry
+drift ~7 ms (burned-in `t=8165s +02f` vs HUD `t=8165.06`), well inside the
+one-frame tolerance. Check 9 (missing-media refusal) not exercised —
+optional per this checklist; behavior covered by the PlayMode fallback test.
