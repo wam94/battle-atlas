@@ -8,10 +8,19 @@ describe("authored July 3 battle", () => {
     expect(result.errors).toEqual([]);
     expect(result.ok).toBe(true);
   });
-  it("keeps every keyframe on the battlefield", () => {
+  it("keeps every keyframe on the battlefield (one attested edge-lap excepted)", () => {
+    // The ONE exception (full-cast plan Task 8; survey §1): us-cav-merritt's
+    // keyframes sit at the attested Currens farm anchor (2733,−96) — 96 m off
+    // the square's south edge, the survey's EDGE ruling ("straddles the S
+    // boundary… his line laps both sides"). The edge-lapping is honest and
+    // carried HERE, explicitly, rather than silently pulled inside.
     for (const u of (battle as any).units)
       for (const k of u.keyframes) {
         expect(k.x).toBeGreaterThan(0); expect(k.x).toBeLessThan(8507);
+        if (u.id === "us-cav-merritt") {
+          expect(k.z).toBe(-96);
+          continue;
+        }
         expect(k.z).toBeGreaterThan(0); expect(k.z).toBeLessThan(8507);
       }
   });
@@ -47,9 +56,14 @@ describe("authored July 3 battle", () => {
     // Webb: the 106th PA stays unmodeled, counted only in the parent (short).
     // Hall: attested regimental sums (1,076) exceed the contested Stone
     // Sentinels brigade-table 920 — a kept disagreement, not a reconciliation.
+    // Henry (Wave 6): only Bachman's & Reilly's batteries are attested SCF
+    // actors and modeled as children (71 + 144 = 215); Garden's and Latham's
+    // stay unmodeled, counted only in the battalion's 456 — the known-short
+    // decomposition, the Webb/106th-PA precedent.
     expect(result.warnings.join(" ")).toContain("us-webb");
     expect(result.warnings.join(" ")).toContain("us-hall");
-    expect(result.warnings).toHaveLength(2);
+    expect(result.warnings.join(" ")).toContain("csa-bn-henry");
+    expect(result.warnings).toHaveLength(3);
   });
   it("the two new units exist and the unit count is pinned", () => {
     const units = (battle as any).units;
@@ -78,7 +92,15 @@ describe("authored July 3 battle", () => {
     //      Long Lane skirmish emitters Thomas & Perrin), Ewell 13 (Johnson's
     //      seven-brigade block east of Rock Creek, Early's three at the
     //      town, Rodes's three in Long Lane). All parentless.
-    expect(units).toHaveLength(184);
+    //    + 6 Wave-6 South Cavalry Field units (full-cast Task 8): Farnsworth's
+    //      and Merritt's brigades + Elder's and Graham's batteries (Union,
+    //      parentless), Bachman's and Reilly's batteries as csa-bn-henry
+    //      children (attested grain is battery there). The plan's "~7th" —
+    //      the 1st Texas shift — was adjudicated NOT authored (no attested
+    //      regiment strength; see author-w6-south-cavalry.ts header); East
+    //      Cavalry Field contributes ZERO units by the survey's off-map
+    //      ruling, annotated in the Wave-6 citations.
+    expect(units).toHaveLength(190);
     const ohio = units.find((u: any) => u.id === "us-8oh");
     expect(ohio).toBeDefined();
     expect(ohio.parent).toBeUndefined(); // Carroll's brigade isn't modeled
@@ -269,12 +291,14 @@ describe("authored July 3 battle", () => {
     expect(byId("csa-lane").regiments).toBeDefined();
     // THE SEGMENT RETIRED (battle-format.md "Segment-emitter migration"):
     // csa-seminary-bombardment is gone, and the only surviving segment-form
-    // events are the two attested detachments (Carter's rifles at the
-    // railroad cut, Raine's 20-pdr section N of Benner's Hill).
+    // events are the three attested detachments (Carter's rifles at the
+    // railroad cut, Raine's 20-pdr section N of Benner's Hill, and — Wave 6 —
+    // Reilly's two-Parrott section at its own marker-attested position).
     expect(events.some((e: any) => e.id === "csa-seminary-bombardment")).toBe(false);
     const segmentEvents = events.filter((e: any) => e.unitId === undefined);
     expect(segmentEvents.map((e: any) => e.id).sort()).toEqual(
-      ["csa-bn-carter-rifles-cannonade", "csa-bn-raine-20pdr-cannonade"]);
+      ["csa-bn-carter-rifles-cannonade", "csa-bn-raine-20pdr-cannonade",
+        "csa-btty-reilly-parrott-section"]);
     for (const e of segmentEvents) expect(e.confidence).toBe("documented");
     // DOCUMENTED SILENCES (survey §3.2 ⚠️; §4 item 13): Garnett's and
     // Jones's battalions have ZERO events — the negative rides the t=0
@@ -502,6 +526,93 @@ describe("authored July 3 battle", () => {
       expect(e.t0, e.id).toBe(0); // the tablets' all-window skirmishing
       expect(e.t1, e.id).toBe(10800);
     }
+  });
+  it("Wave 6: South Cavalry Field — the cluster present, the t=7200 family handoff holds, the edge and the spreads carried, East Cavalry Field empty", () => {
+    const units = (battle as any).units;
+    const events = (battle as any).events;
+    const byId = (id: string) => units.find((u: any) => u.id === id);
+    // the six Wave-6 units (full-cast plan Task 8; survey §3.4): Union
+    // parentless, the two CSA batteries as csa-bn-henry children (attested
+    // grain is battery there — the tablets attest their July 3 fire
+    // individually; Henry's parent track stays the battalion record)
+    const union6 = ["us-cav-farnsworth", "us-cav-merritt", "us-btty-elder",
+      "us-btty-graham"];
+    const csa6 = ["csa-btty-bachman", "csa-btty-reilly"];
+    for (const id of union6) {
+      const u = byId(id);
+      expect(u, id).toBeDefined();
+      expect(u.side, id).toBe("union");
+      expect(u.parent, id).toBeUndefined();
+    }
+    for (const id of csa6) {
+      const u = byId(id);
+      expect(u, id).toBeDefined();
+      expect(u.side, id).toBe("confederate");
+      expect(u.parent, id).toBe("csa-bn-henry");
+    }
+    // the whole cluster is 2-keyframe static (tablets weighted over Snell's
+    // swing reading — the adjudication in author-w6-south-cavalry.ts), every
+    // t=0 documented-with-citation; Farnsworth's mounted charge is
+    // POST-window: the end keyframe stays deployed and the citation says why
+    for (const id of [...union6, ...csa6]) {
+      const kfs = byId(id).keyframes;
+      expect(kfs, id).toHaveLength(2);
+      expect(kfs[0].x, id).toBe(kfs[1].x);
+      expect(kfs[0].z, id).toBe(kfs[1].z);
+      expect(kfs[0].confidence, id).toBe("documented");
+      expect(kfs[0].citation?.trim(), id).toBeTruthy();
+    }
+    expect(byId("us-cav-farnsworth").keyframes[0].citation)
+      .toMatch(/THE MOUNTED CHARGE IS POST-WINDOW/);
+    // Merritt: the attested Currens-anchor edge-lap (asserted per-keyframe in
+    // the on-battlefield test above) + the arrival spread carried whole —
+    // 11:00 / 13:00 / 15:00 and both tablets' clocks, never reconciled
+    const merritt = byId("us-cav-merritt").keyframes[0];
+    expect(merritt.z).toBe(-96);
+    expect(merritt.citation).toMatch(/ARRIVAL SPREAD CARRIED/);
+    expect(merritt.citation).toMatch(/~11:00/);
+    expect(merritt.citation).toMatch(/~13:00/);
+    expect(merritt.citation).toMatch(/~15:00/);
+    // THE t=7200 FAMILY HANDOFF (never the same fire at two family levels):
+    // csa-bn-henry's flank-cover window ends at 7200 exactly (pinned in the
+    // Wave 3 test) and every child event begins at 7200 exactly — windows
+    // touch, never overlap, so the arrivals cannot double-fire
+    const childEvents = events.filter((e: any) => csa6.includes(e.unitId));
+    expect(childEvents.map((e: any) => e.id).sort()).toEqual(
+      ["csa-btty-bachman-fire", "csa-btty-reilly-fire"]);
+    for (const e of childEvents) {
+      expect(e.t0, e.id).toBe(7200);
+      expect(e.confidence, e.id).toBe("documented");
+    }
+    // Reilly's detached Parrott section fires as a fixed segment at its own
+    // marker-attested position (different guns than the battery's remaining
+    // four — two attested fires, not one fire at two grains), on the same
+    // handoff clock
+    const section = events.find((e: any) => e.id === "csa-btty-reilly-parrott-section");
+    expect(section.unitId).toBeUndefined();
+    expect(section.z).toBe(1713);
+    expect(section.t0).toBe(7200);
+    expect(section.confidence).toBe("documented");
+    // the four Union windows (Elder shelling Law's line, Graham firing,
+    // Merritt-sector skirmish, Farnsworth's dismounted probing) — all
+    // documented, all inside the slice
+    const unionEvents = events.filter((e: any) => union6.includes(e.unitId));
+    expect(unionEvents.map((e: any) => e.id).sort()).toEqual([
+      "us-btty-elder-shelling", "us-btty-graham-fire",
+      "us-cav-farnsworth-probing", "us-cav-merritt-skirmish"]);
+    for (const e of unionEvents) {
+      expect(e.confidence, e.id).toBe("documented");
+      expect(e.t1, e.id).toBeLessThanOrEqual(10800);
+    }
+    // EAST CAVALRY FIELD: ZERO UNITS (the survey's off-map ruling — the
+    // fight is 4–5.5 km beyond the east edge); the annotation rides the
+    // Wave-6 citations instead (Custer-to-Gregg on Farnsworth, the 6th US at
+    // Fairfield on Merritt), so the omission is accounted for, not silent
+    expect(units.some((u: any) =>
+      /custer|stuart|hampton|chambliss|witcher|fitz-lee/i.test(u.id))).toBe(false);
+    expect(byId("us-cav-farnsworth").keyframes[0].citation)
+      .toMatch(/EAST CAVALRY FIELD/);
+    expect(byId("us-cav-merritt").keyframes[0].citation).toMatch(/FAIRFIELD/);
   });
   it("B-grade Confederate children are valid; the four display-LOD brigades keep rosters and no children", () => {
     const units = (battle as any).units;

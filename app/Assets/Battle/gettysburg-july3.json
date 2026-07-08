@@ -4272,6 +4272,66 @@
       ]
     },
     {
+      "id": "csa-btty-bachman",
+      "name": "Bachman's Battery, Henry's Battalion (German Artillery, SC)",
+      "side": "confederate",
+      "frontage_m": 90,
+      "depth_m": 25,
+      "parent": "csa-bn-henry",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2804,
+          "z": 2250,
+          "facing": 190,
+          "formation": "line",
+          "strength": 71,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim, July 3: 'In position here and actively engaged in firing upon the Union lines within range. About 5 P. M. aided in repelling cavalry under Brig. Gen. Farnsworth which had charged into the valley between this point and Round Top.' (https://gettysburg.stonesentinels.com/confederate-batteries/german-south-carolina-artillery/, fetched 2026-07-08) — Capt. William K. Bachman; four Napoleons; 71 men (the page's strength figure); the tablet anchor converts to local (2804,2250) — authored STATIC there: SWING DISAGREEMENT CARRIED, not reconciled (tablet weighted, the Garnett precedent): the survey reads Snell as 'Bachman's & Reilly's batteries swung south vs Merritt ~15:00+' and Snell's charge-time map draws the battery at the Emmitsburg Road, but his own tablet attests 'In position HERE' with no move (docs/research/2026-07-02-full-cast-sources.md §3.4; Snell, 'A hell of a damned fool' (npshistory.com/series/symposia/gettysburg_seminars/9/essay8.pdf, read 2026-07-08)); child of csa-bn-henry (attested grain is battery here, plan Task 8) — his fire before ~15:00 is inside the battalion's flank-cover window, his own post-handoff fire is the event csa-btty-bachman-fire (t0=7200, the family handoff); the 'About 5 P. M.' Farnsworth-repulse fire is POST-window, annotation only"
+        },
+        {
+          "t": 10800,
+          "x": 2804,
+          "z": 2250,
+          "facing": 190,
+          "formation": "line",
+          "strength": 71,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim, July 3: 'In position here and actively engaged in firing upon the Union lines within range. About 5 P. M. aided in repelling cavalry under Brig. Gen. Farnsworth which had charged into the valley between this point and Round Top.' (https://gettysburg.stonesentinels.com/confederate-batteries/german-south-carolina-artillery/, fetched 2026-07-08) — Capt. William K. Bachman; four Napoleons; 71 men (the page's strength figure); the tablet anchor converts to local (2804,2250) — authored STATIC there: SWING DISAGREEMENT CARRIED, not reconciled (tablet weighted, the Garnett precedent): the survey reads Snell as 'Bachman's & Reilly's batteries swung south vs Merritt ~15:00+' and Snell's charge-time map draws the battery at the Emmitsburg Road, but his own tablet attests 'In position HERE' with no move (docs/research/2026-07-02-full-cast-sources.md §3.4; Snell, 'A hell of a damned fool' (npshistory.com/series/symposia/gettysburg_seminars/9/essay8.pdf, read 2026-07-08)); child of csa-bn-henry (attested grain is battery here, plan Task 8) — his fire before ~15:00 is inside the battalion's flank-cover window, his own post-handoff fire is the event csa-btty-bachman-fire (t0=7200, the family handoff); the 'About 5 P. M.' Farnsworth-repulse fire is POST-window, annotation only"
+        }
+      ]
+    },
+    {
+      "id": "csa-btty-reilly",
+      "name": "Reilly's Battery, Henry's Battalion (Rowan Artillery, NC)",
+      "side": "confederate",
+      "frontage_m": 100,
+      "depth_m": 25,
+      "parent": "csa-bn-henry",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2769,
+          "z": 1831,
+          "facing": 175,
+          "formation": "line",
+          "strength": 144,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim, July 3: 'Two Parrotts moved to right. The other guns engaged in firing upon the Union lines within range. About 5 P. M. aided in repelling cavalry under Brig. Gen. Farnsworth which had charged into the valley between this point and Round Top.' (https://gettysburg.stonesentinels.com/confederate-batteries/rowan-north-carolina-artillery/, fetched 2026-07-08) — Capt. James Reilly; the tablet anchor converts to local (2769,1831) — the BATTERY authored STATIC there while its two-Parrott SECTION detached south (the tablet's 'moved to right'): the section's own second marker attests its position and fire verbatim ('These guns were detached and first occupied position 300 yards west of this hotly engaged with the artillery of the Union Cavalry Division down the Emmitsburg Road' — marker 2 converts to (2914,1713), the section 274 m west at (2640,1713)), authored as the fixed-segment event csa-btty-reilly-parrott-section per the locked detachment ruling; SWING DISAGREEMENT CARRIED as on csa-btty-bachman (survey/Snell 'swung south ~15:00+' vs the tablet's battery-stands-section-detaches — tablet weighted); child of csa-bn-henry (attested grain is battery, plan Task 8) — fire before ~15:00 is inside the battalion's window, his remaining guns' post-handoff fire is the event csa-btty-reilly-fire (t0=7200); the 'About 5 P. M.' charge repulse (the section 'placed here' at marker 2 for it) is POST-window, annotation only; 6-gun armament (two Napoleons, two 10-pdr Parrotts, rifles — one burst July 2, a captured 10-pdr Parrott substituted); NO personnel figure — strength ~24 men/gun, flagged (the Dilger precedent), kept whole while the section is detached (the Wofford outpost precedent)"
+        },
+        {
+          "t": 10800,
+          "x": 2769,
+          "z": 1831,
+          "facing": 175,
+          "formation": "line",
+          "strength": 144,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim, July 3: 'Two Parrotts moved to right. The other guns engaged in firing upon the Union lines within range. About 5 P. M. aided in repelling cavalry under Brig. Gen. Farnsworth which had charged into the valley between this point and Round Top.' (https://gettysburg.stonesentinels.com/confederate-batteries/rowan-north-carolina-artillery/, fetched 2026-07-08) — Capt. James Reilly; the tablet anchor converts to local (2769,1831) — the BATTERY authored STATIC there while its two-Parrott SECTION detached south (the tablet's 'moved to right'): the section's own second marker attests its position and fire verbatim ('These guns were detached and first occupied position 300 yards west of this hotly engaged with the artillery of the Union Cavalry Division down the Emmitsburg Road' — marker 2 converts to (2914,1713), the section 274 m west at (2640,1713)), authored as the fixed-segment event csa-btty-reilly-parrott-section per the locked detachment ruling; SWING DISAGREEMENT CARRIED as on csa-btty-bachman (survey/Snell 'swung south ~15:00+' vs the tablet's battery-stands-section-detaches — tablet weighted); child of csa-bn-henry (attested grain is battery, plan Task 8) — fire before ~15:00 is inside the battalion's window, his remaining guns' post-handoff fire is the event csa-btty-reilly-fire (t0=7200); the 'About 5 P. M.' charge repulse (the section 'placed here' at marker 2 for it) is POST-window, annotation only; 6-gun armament (two Napoleons, two 10-pdr Parrotts, rifles — one burst July 2, a captured 10-pdr Parrott substituted); NO personnel figure — strength ~24 men/gun, flagged (the Dilger precedent), kept whole while the section is detached (the Wofford outpost precedent)"
+        }
+      ]
+    },
+    {
       "id": "csa-bn-pegram",
       "name": "Pegram's Artillery Battalion",
       "side": "confederate",
@@ -4832,7 +4892,7 @@
         },
         {
           "t": 9660,
-          "x": 3540,
+          "x": 3509,
           "z": 5020,
           "facing": 95,
           "formation": "line",
@@ -9322,6 +9382,122 @@
           "citation": "holds the safer park to the window end; the dozen wrecked caissons on the Taneytown pike ride the arrival citation (Hunt)"
         }
       ]
+    },
+    {
+      "id": "us-cav-farnsworth",
+      "name": "Farnsworth's Cavalry Brigade, Kilpatrick's Division (1st Brigade, 3rd Division, Cavalry Corps)",
+      "side": "union",
+      "frontage_m": 650,
+      "depth_m": 100,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3350,
+          "z": 950,
+          "facing": 15,
+          "formation": "line",
+          "strength": 1925,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Moved to the left to attack the Confederate right and rear arriving about 1 P. M. and engaged with Confederate skirmishers being supported at 3 P. M. by the Reserve Cavalry Brigade on the left. At 5.30 P. M. the 18th Pa. 1st Vt. and 1st West Virginia charged the Confederate left through the woods and among stone fences held by superior forces of Infantry and Artillery but were repulsed with heavy loss including Brig. Gen. Farnsworth killed.' (https://gettysburg.stonesentinels.com/union-headquarters/1st-brigade-3rd-division-cavalry-corps/, fetched 2026-07-08) — arrives/deploys ~13:00 AS THE CANNONADE OPENS = the t=0 pose (docs/research/2026-07-02-full-cast-sources.md §3.4, A−); THE MOUNTED CHARGE IS POST-WINDOW (tablet 5.30 P. M.; Kilpatrick got word of the repulse ~17:00, sources 5:00 vs 5:30 P.M. — spread carried): the end keyframe stays DEPLOYED, dismounted and probing, the charge never modeled in-slice; position class: the brigade line south of the Bushman farm/Bushman Hill ground (survey §1 Bushman Hill 3284,1367 / Slyder 3448,1108), sheet 8 s8_southcav.jpg drawing the brigade at REGIMENT level (1st W.Va, 1st Vt, 5 N.Y., 18 Pa with Elder's battery) — regiment geometry rides here, the unit is brigade grain per plan Task 8; his in-window fire is the event us-cav-farnsworth-probing; OFF-MAP ANNOTATION (survey ruling 'annotate, never fake'): the division tablet — 'The Second Brigade reported to Gen. Gregg and was engaged on the extreme right' (https://gettysburg.stonesentinels.com/union-headquarters/3rd-division-cavalry-corps/, fetched 2026-07-08) — is Custer at EAST CAVALRY FIELD, 4–5.5 km beyond the square's east edge with Gregg's division vs Stuart: no unit is placed for that fight; strength 1,925 (docs/research/2026-07-02-full-cast-sources.md §3.4; Wikipedia third-day page verbatim '1,925 troops', fetched 2026-07-08; the tablet carries casualties only — 98, mostly the post-window charge)"
+        },
+        {
+          "t": 10800,
+          "x": 3350,
+          "z": 950,
+          "facing": 15,
+          "formation": "line",
+          "strength": 1925,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Moved to the left to attack the Confederate right and rear arriving about 1 P. M. and engaged with Confederate skirmishers being supported at 3 P. M. by the Reserve Cavalry Brigade on the left. At 5.30 P. M. the 18th Pa. 1st Vt. and 1st West Virginia charged the Confederate left through the woods and among stone fences held by superior forces of Infantry and Artillery but were repulsed with heavy loss including Brig. Gen. Farnsworth killed.' (https://gettysburg.stonesentinels.com/union-headquarters/1st-brigade-3rd-division-cavalry-corps/, fetched 2026-07-08) — arrives/deploys ~13:00 AS THE CANNONADE OPENS = the t=0 pose (docs/research/2026-07-02-full-cast-sources.md §3.4, A−); THE MOUNTED CHARGE IS POST-WINDOW (tablet 5.30 P. M.; Kilpatrick got word of the repulse ~17:00, sources 5:00 vs 5:30 P.M. — spread carried): the end keyframe stays DEPLOYED, dismounted and probing, the charge never modeled in-slice; position class: the brigade line south of the Bushman farm/Bushman Hill ground (survey §1 Bushman Hill 3284,1367 / Slyder 3448,1108), sheet 8 s8_southcav.jpg drawing the brigade at REGIMENT level (1st W.Va, 1st Vt, 5 N.Y., 18 Pa with Elder's battery) — regiment geometry rides here, the unit is brigade grain per plan Task 8; his in-window fire is the event us-cav-farnsworth-probing; OFF-MAP ANNOTATION (survey ruling 'annotate, never fake'): the division tablet — 'The Second Brigade reported to Gen. Gregg and was engaged on the extreme right' (https://gettysburg.stonesentinels.com/union-headquarters/3rd-division-cavalry-corps/, fetched 2026-07-08) — is Custer at EAST CAVALRY FIELD, 4–5.5 km beyond the square's east edge with Gregg's division vs Stuart: no unit is placed for that fight; strength 1,925 (docs/research/2026-07-02-full-cast-sources.md §3.4; Wikipedia third-day page verbatim '1,925 troops', fetched 2026-07-08; the tablet carries casualties only — 98, mostly the post-window charge)"
+        }
+      ]
+    },
+    {
+      "id": "us-cav-merritt",
+      "name": "Merritt's Reserve Cavalry Brigade (1st Division, Cavalry Corps)",
+      "side": "union",
+      "frontage_m": 800,
+      "depth_m": 100,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2733,
+          "z": -96,
+          "facing": 10,
+          "formation": "line",
+          "strength": 1300,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'At noon marched four miles on the road to Gettysburg met Confederate detachments and for more than a mile drove them from stone fences barricades and other positions being engaged four hours and until the operations were brought to a close by heavy rain.' (https://gettysburg.stonesentinels.com/union-headquarters/reserve-brigade-1st-division-cavalry-corps/, fetched 2026-07-08) — THE EDGE-LAPPING IS HONEST (plan Task 8; survey §1 'Currens farm, Emmitsburg Rd (Merritt) | 2733,−96 | EDGE — straddles the S boundary'): the unit centre sits AT the attested Currens anchor, z=−96, the one keyframe off the terrain square — sheet 8 s8_southcav.jpg draws his 6th Pa / 1 U.S. / 2 U.S. immediately N of the farm (on-map side), Snell's map echelons the brigade SW of it (off-map side), and the deeper Ridge Rd line (2373,−754) is OFF just south: his line laps both sides and the anchor splits the attested spread; ARRIVAL SPREAD CARRIED, not reconciled (docs/research/2026-07-02-full-cast-sources.md §3.4; §4): ~11:00 (Wittenberg-derived, studycivilwar.wordpress.com) vs ~13:00 (Snell, 'A hell of a damned fool' (npshistory.com/series/symposia/gettysburg_seminars/9/essay8.pdf, read 2026-07-08)) vs ~15:00 (https://en.wikipedia.org/wiki/Battle_of_Gettysburg,_third_day_cavalry_battles, fetched 2026-07-08: 'arrived at about 3:00 p.m. and took up a position striding the Emmitsburg Road, to Farnsworth's left') vs his own tablet's arithmetic ('At noon marched four miles on the road to Gettysburg' ≈ on the ground ~13:00–13:30) vs Farnsworth's tablet ('being supported at 3 P. M. by the Reserve Cavalry Brigade on the left') — either way skirmishing underway before 16:00; dismounted skirmishing vs the 9th GA + Black's ~100 SC troopers + armed teamsters + Hart's gun (docs/research/2026-07-02-full-cast-sources.md §3.4; the 5th US mounted charge and the Georgia counter ride the event note); his fire is the event us-cav-merritt-skirmish; OFF-MAP ANNOTATION: the 6th US Cavalry, detached, was wrecked at FAIRFIELD ~13 km SW that afternoon (242 cas., no precise clock attested — survey §3.4) — not placed; strength UNATTESTED: the tablet carries casualties only (418, of which 275 captured/missing are predominantly the 6th US at Fairfield, NOT South Cavalry Field losses) — reconstructed ~1,300 = the Reserve Brigade (1st/2nd/5th US, 6th PA) less the detached 6th US, approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 2733,
+          "z": -96,
+          "facing": 10,
+          "formation": "line",
+          "strength": 1300,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'At noon marched four miles on the road to Gettysburg met Confederate detachments and for more than a mile drove them from stone fences barricades and other positions being engaged four hours and until the operations were brought to a close by heavy rain.' (https://gettysburg.stonesentinels.com/union-headquarters/reserve-brigade-1st-division-cavalry-corps/, fetched 2026-07-08) — THE EDGE-LAPPING IS HONEST (plan Task 8; survey §1 'Currens farm, Emmitsburg Rd (Merritt) | 2733,−96 | EDGE — straddles the S boundary'): the unit centre sits AT the attested Currens anchor, z=−96, the one keyframe off the terrain square — sheet 8 s8_southcav.jpg draws his 6th Pa / 1 U.S. / 2 U.S. immediately N of the farm (on-map side), Snell's map echelons the brigade SW of it (off-map side), and the deeper Ridge Rd line (2373,−754) is OFF just south: his line laps both sides and the anchor splits the attested spread; ARRIVAL SPREAD CARRIED, not reconciled (docs/research/2026-07-02-full-cast-sources.md §3.4; §4): ~11:00 (Wittenberg-derived, studycivilwar.wordpress.com) vs ~13:00 (Snell, 'A hell of a damned fool' (npshistory.com/series/symposia/gettysburg_seminars/9/essay8.pdf, read 2026-07-08)) vs ~15:00 (https://en.wikipedia.org/wiki/Battle_of_Gettysburg,_third_day_cavalry_battles, fetched 2026-07-08: 'arrived at about 3:00 p.m. and took up a position striding the Emmitsburg Road, to Farnsworth's left') vs his own tablet's arithmetic ('At noon marched four miles on the road to Gettysburg' ≈ on the ground ~13:00–13:30) vs Farnsworth's tablet ('being supported at 3 P. M. by the Reserve Cavalry Brigade on the left') — either way skirmishing underway before 16:00; dismounted skirmishing vs the 9th GA + Black's ~100 SC troopers + armed teamsters + Hart's gun (docs/research/2026-07-02-full-cast-sources.md §3.4; the 5th US mounted charge and the Georgia counter ride the event note); his fire is the event us-cav-merritt-skirmish; OFF-MAP ANNOTATION: the 6th US Cavalry, detached, was wrecked at FAIRFIELD ~13 km SW that afternoon (242 cas., no precise clock attested — survey §3.4) — not placed; strength UNATTESTED: the tablet carries casualties only (418, of which 275 captured/missing are predominantly the 6th US at Fairfield, NOT South Cavalry Field losses) — reconstructed ~1,300 = the Reserve Brigade (1st/2nd/5th US, 6th PA) less the detached 6th US, approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "us-btty-elder",
+      "name": "Elder's Battery E, 4th US Artillery",
+      "side": "union",
+      "frontage_m": 90,
+      "depth_m": 25,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3353,
+          "z": 1743,
+          "facing": 60,
+          "formation": "line",
+          "strength": 96,
+          "confidence": "documented",
+          "citation": "monument verbatim, July 3: 'Arrived on the field and took position on a hill southwest of Round Top and engaged under Brig. General E. J. Farnsworth in the afternoon against the Confederate right.' (https://gettysburg.stonesentinels.com/us-regulars/us-artillery/4th-us-artillery-battery-e/, fetched 2026-07-08) — Lieut. Samuel S. Elder; four 3-inch Rifles; position: the monument's own anchor, converted to local (3353,1743) this session — the knoll S/SW of Big Round Top (docs/research/2026-07-02-full-cast-sources.md §3.4: 'shelling Law's line during the window — A−'); sheet 8 s8_southcav.jpg draws 'Elder's Bat. E 4 U.S.' inside Farnsworth's regiment cluster (the sheet reads south of the monument knoll — position-class spread carried); his fire is the event us-btty-elder-shelling; the ~17:00+ charge support (5th NY kept in his support per Snell; 'About 5 P. M.' on the CSA battery tablets) is POST-window; casualties killed 1 man (monument); NO personnel figure on the page — strength reconstructed at ~24 men/gun from the 4-gun armament, flagged (the Wave-2 Dilger precedent)"
+        },
+        {
+          "t": 10800,
+          "x": 3353,
+          "z": 1743,
+          "facing": 60,
+          "formation": "line",
+          "strength": 96,
+          "confidence": "documented",
+          "citation": "monument verbatim, July 3: 'Arrived on the field and took position on a hill southwest of Round Top and engaged under Brig. General E. J. Farnsworth in the afternoon against the Confederate right.' (https://gettysburg.stonesentinels.com/us-regulars/us-artillery/4th-us-artillery-battery-e/, fetched 2026-07-08) — Lieut. Samuel S. Elder; four 3-inch Rifles; position: the monument's own anchor, converted to local (3353,1743) this session — the knoll S/SW of Big Round Top (docs/research/2026-07-02-full-cast-sources.md §3.4: 'shelling Law's line during the window — A−'); sheet 8 s8_southcav.jpg draws 'Elder's Bat. E 4 U.S.' inside Farnsworth's regiment cluster (the sheet reads south of the monument knoll — position-class spread carried); his fire is the event us-btty-elder-shelling; the ~17:00+ charge support (5th NY kept in his support per Snell; 'About 5 P. M.' on the CSA battery tablets) is POST-window; casualties killed 1 man (monument); NO personnel figure on the page — strength reconstructed at ~24 men/gun from the 4-gun armament, flagged (the Wave-2 Dilger precedent)"
+        }
+      ]
+    },
+    {
+      "id": "us-btty-graham",
+      "name": "Graham's Battery K, 1st US Artillery",
+      "side": "union",
+      "frontage_m": 110,
+      "depth_m": 25,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2650,
+          "z": 120,
+          "facing": 10,
+          "formation": "line",
+          "strength": 144,
+          "confidence": "documented",
+          "citation": "monument verbatim, July 3: 'Arrived on the field and took position on the left with cavalry and engaged during the attack of Brig. General E. J. Farnsworth's and Brig. General W. Merritt's Brigades on the Confederate right.' (https://gettysburg.stonesentinels.com/us-regulars/us-artillery/1st-us-artillery-battery-k/, fetched 2026-07-08) — Capt. William M. Graham; six 3-inch Rifles; position class: with Merritt astride the Emmitsburg Rd at the Currens ground — sheet 8 s8_southcav.jpg draws his battery symbols immediately NW of the farm, ON-map (coordinate inferred within the class); firing attested — A− (docs/research/2026-07-02-full-cast-sources.md §3.4, Snell); his fire is the event us-btty-graham-fire; ARRIVAL SPREAD CARRIED, not reconciled (docs/research/2026-07-02-full-cast-sources.md §3.4; §4): ~11:00 (Wittenberg-derived, studycivilwar.wordpress.com) vs ~13:00 (Snell, 'A hell of a damned fool' (npshistory.com/series/symposia/gettysburg_seminars/9/essay8.pdf, read 2026-07-08)) vs ~15:00 (https://en.wikipedia.org/wiki/Battle_of_Gettysburg,_third_day_cavalry_battles, fetched 2026-07-08: 'arrived at about 3:00 p.m. and took up a position striding the Emmitsburg Road, to Farnsworth's left') vs his own tablet's arithmetic ('At noon marched four miles on the road to Gettysburg' ≈ on the ground ~13:00–13:30) vs Farnsworth's tablet ('being supported at 3 P. M. by the Reserve Cavalry Brigade on the left') — either way skirmishing underway before 16:00; NO personnel figure on the page — strength reconstructed at ~24 men/gun from the 6-gun armament, flagged (the Wave-2 Dilger precedent)"
+        },
+        {
+          "t": 10800,
+          "x": 2650,
+          "z": 120,
+          "facing": 10,
+          "formation": "line",
+          "strength": 144,
+          "confidence": "documented",
+          "citation": "monument verbatim, July 3: 'Arrived on the field and took position on the left with cavalry and engaged during the attack of Brig. General E. J. Farnsworth's and Brig. General W. Merritt's Brigades on the Confederate right.' (https://gettysburg.stonesentinels.com/us-regulars/us-artillery/1st-us-artillery-battery-k/, fetched 2026-07-08) — Capt. William M. Graham; six 3-inch Rifles; position class: with Merritt astride the Emmitsburg Rd at the Currens ground — sheet 8 s8_southcav.jpg draws his battery symbols immediately NW of the farm, ON-map (coordinate inferred within the class); firing attested — A− (docs/research/2026-07-02-full-cast-sources.md §3.4, Snell); his fire is the event us-btty-graham-fire; ARRIVAL SPREAD CARRIED, not reconciled (docs/research/2026-07-02-full-cast-sources.md §3.4; §4): ~11:00 (Wittenberg-derived, studycivilwar.wordpress.com) vs ~13:00 (Snell, 'A hell of a damned fool' (npshistory.com/series/symposia/gettysburg_seminars/9/essay8.pdf, read 2026-07-08)) vs ~15:00 (https://en.wikipedia.org/wiki/Battle_of_Gettysburg,_third_day_cavalry_battles, fetched 2026-07-08: 'arrived at about 3:00 p.m. and took up a position striding the Emmitsburg Road, to Farnsworth's left') vs his own tablet's arithmetic ('At noon marched four miles on the road to Gettysburg' ≈ on the ground ~13:00–13:30) vs Farnsworth's tablet ('being supported at 3 P. M. by the Reserve Cavalry Brigade on the left') — either way skirmishing underway before 16:00; NO personnel figure on the page — strength reconstructed at ~24 men/gun from the 6-gun armament, flagged (the Wave-2 Dilger precedent)"
+        }
+      ]
     }
   ],
   "events": [
@@ -9572,6 +9748,16 @@
       "note": "the attestation is phase-unwindowed — window rides the group's documented gap structure (counter-battery to ~13:50, then the ruse silence, then the flank fire on the advance); THE GAP IS THE DATUM (survey §4 item 3): this window ends at t=3000 (~13:50) because the hill's guns went DELIBERATELY silent mid-cannonade — Osborn proposed the cease-fire ruse, Hunt and Howard concurred, and Osborn rode battery to battery ordering it, to feign suppressed guns and invite the assault (padresteve.com Hunt essay; 'to fool Alexander, Hunt ordered his cannons to cease fire slowly to create the illusion they were being destroyed one by one' — https://en.wikipedia.org/wiki/Pickett%27s_Charge, fetched 2026-07-08). No Osborn-group event spans t 3000–7800; the silence between the windows is the documented datum, not missing data"
     },
     {
+      "id": "us-btty-elder-shelling",
+      "kind": "artillery_fire",
+      "t0": 600,
+      "t1": 10800,
+      "unitId": "us-btty-elder",
+      "confidence": "documented",
+      "citation": "monument verbatim: 'engaged under Brig. General E. J. Farnsworth in the afternoon against the Confederate right' (https://gettysburg.stonesentinels.com/us-regulars/us-artillery/4th-us-artillery-battery-e/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.4 — 'shelling Law's line during the window — A−')",
+      "note": "four 3-inch Rifles on the knoll vs Law's refused flank; t0=600 with the brigade's deployment (clock inferred within 'about 1 P. M.'/'in the afternoon'); the charge-support fire ~17:00+ is post-window"
+    },
+    {
       "id": "us-btty-hill-wv-counterbattery",
       "kind": "artillery_fire",
       "t0": 600,
@@ -9672,6 +9858,26 @@
       "note": "Woodruff's battery-specific fire at Ziegler's Grove is not individually attested for the cannonade - inferred from the ridge-grain reply and the in-line track (kf t=7200 'served under the bombardment'). t1=5400 (~14:30) per Waitt's 'hour and thirty minutes' of both-sides fire plus Hunt's deliberate ammunition-conserving slackening (Battles & Leaders, pass-1 library) - 'not purely a ruse: encode as mixed' (genuine withdrawals near the Copse; Alexander was 'incorrectly told it was the cemetery')."
     },
     {
+      "id": "us-cav-farnsworth-probing",
+      "kind": "musketry",
+      "t0": 600,
+      "t1": 10800,
+      "unitId": "us-cav-farnsworth",
+      "confidence": "documented",
+      "citation": "brigade tablet verbatim: 'arriving about 1 P. M. and engaged with Confederate skirmishers' (https://gettysburg.stonesentinels.com/union-headquarters/1st-brigade-3rd-division-cavalry-corps/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.4 — A−, 'dismounted probing of Law's line')",
+      "note": "dismounted probing, skirmish grain, LOW intensity — t0=600 gives the ~13:00 arrival a deployment interval (clock inferred within the tablet's 'about 1 P. M.'); the 1st VT squadron/Bushman-buildings episode rides here: the squadron took the Bushman buildings and was ejected when the 1st Texas arrived ('made some headway earlier in the afternoon' — Snell, 'A hell of a damned fool' (npshistory.com/series/symposia/gettysburg_seminars/9/essay8.pdf, read 2026-07-08)); the CSA side of this exchange (1st TX skirmish line behind the stone wall S of Bushman farm) is unmodeled and rides csa-robertson's citation, per the survey's emitter grain; the 5:30 P.M. mounted charge is POST-window"
+    },
+    {
+      "id": "us-btty-graham-fire",
+      "kind": "artillery_fire",
+      "t0": 1800,
+      "t1": 10800,
+      "unitId": "us-btty-graham",
+      "confidence": "documented",
+      "citation": "monument verbatim: 'engaged during the attack of Brig. General E. J. Farnsworth's and Brig. General W. Merritt's Brigades on the Confederate right' (https://gettysburg.stonesentinels.com/us-regulars/us-artillery/1st-us-artillery-battery-k/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.4 — A−)",
+      "note": "six 3-inch Rifles with Merritt at the Currens ground; window rides Merritt's (t0=1800, the tablet's noon-march arithmetic — the arrival spread governs this window too and rides the unit citations); his counter-battery opposite number is Reilly's detached Parrott section ('hotly engaged with the artillery of the Union Cavalry Division down the Emmitsburg Road')"
+    },
+    {
       "id": "us-btty-hart-counterbattery",
       "kind": "artillery_fire",
       "t0": 1800,
@@ -9692,6 +9898,16 @@
       "note": "window LENGTH inferred (~15 min of deliberate fire); the battery then held under Hunt's conserve-ammunition policy — the line's silence resumes and is documented on the keyframes"
     },
     {
+      "id": "us-cav-merritt-skirmish",
+      "kind": "musketry",
+      "t0": 1800,
+      "t1": 10800,
+      "unitId": "us-cav-merritt",
+      "confidence": "documented",
+      "citation": "brigade tablet verbatim: 'met Confederate detachments and for more than a mile drove them from stone fences barricades and other positions being engaged four hours' (https://gettysburg.stonesentinels.com/union-headquarters/reserve-brigade-1st-division-cavalry-corps/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.4 — 'skirmishing underway before 16:00' on every arrival reading)",
+      "note": "dismounted carbine skirmish astride the Emmitsburg Rd vs the 9th GA + Black's ~100 SC troopers + armed teamsters + Hart's gun (all unmodeled, riding the citations; Wikipedia adds the 47th AL and '1st South Carolina and artillery' reinforcing); TIME-SPREAD NOTE (plan Task 8): t0=1800 (~13:30) follows the tablet's own noon-march arithmetic — the ~11:00 reading would put fire underway at t=0, the ~15:00 reading at t≈7200; all clocks in the unit citation, never reconciled; the 5th US mounted charge and the Georgia counter ('early-to-mid afternoon', unwindowed) fall inside this window at the survey's chosen grain"
+    },
+    {
       "id": "us-neill-rock-creek-skirmish",
       "kind": "musketry",
       "t0": 1800,
@@ -9710,6 +9926,39 @@
       "confidence": "inferred",
       "citation": "arrival documented: the gallop-in to the position Brown's Battery B vacated just south of the Copse, mid-bombardment (Brown 1985 Filson; track kf t=6300 documented)",
       "note": "Window starts AT the documented arrival (t=6300) - the battery cannot fire from a position it has not reached. Fire through the cannonade's end (t1=7500, the track spine's step-off) is inferred from the track's 'served under the bombardment' (kf t=7200, inferred); no witness times Cowan's first round."
+    },
+    {
+      "id": "csa-btty-bachman-fire",
+      "kind": "artillery_fire",
+      "t0": 7200,
+      "t1": 10800,
+      "unitId": "csa-btty-bachman",
+      "confidence": "documented",
+      "citation": "War Dept tablet verbatim: 'In position here and actively engaged in firing upon the Union lines within range.' (https://gettysburg.stonesentinels.com/confederate-batteries/german-south-carolina-artillery/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.4 — the CSA counter vs Merritt ~15:00+, A−)",
+      "note": "THE t=7200 FAMILY HANDOFF (battle-format.md: never the same fire at two family levels): csa-bn-henry-flank-cover ends at t=7200 BY DESIGN and this window begins exactly there — the battery's unwindowed all-day tablet fire before ~15:00 is rendered by the battalion's window, in which its guns are counted; post-handoff the battery fires as itself (the survey's ~15:00+ southward counter-move clock); the 'About 5 P. M.' Farnsworth-repulse fire is post-window"
+    },
+    {
+      "id": "csa-btty-reilly-fire",
+      "kind": "artillery_fire",
+      "t0": 7200,
+      "t1": 10800,
+      "unitId": "csa-btty-reilly",
+      "confidence": "documented",
+      "citation": "War Dept tablet verbatim: 'The other guns engaged in firing upon the Union lines within range.' (https://gettysburg.stonesentinels.com/confederate-batteries/rowan-north-carolina-artillery/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.4 — the CSA counter vs Merritt ~15:00+, A−)",
+      "note": "the battery's four remaining guns (the two-Parrott section fires separately as csa-btty-reilly-parrott-section from its own attested position — different guns, two attested fires, not one fire at two grains); t0=7200 per the family handoff, as csa-btty-bachman-fire"
+    },
+    {
+      "id": "csa-btty-reilly-parrott-section",
+      "kind": "artillery_fire",
+      "t0": 7200,
+      "t1": 10800,
+      "x": 2610,
+      "z": 1713,
+      "x2": 2670,
+      "z2": 1713,
+      "confidence": "documented",
+      "citation": "section marker verbatim, July 3: 'These guns were detached and first occupied position 300 yards west of this hotly engaged with the artillery of the Union Cavalry Division down the Emmitsburg Road.' (https://gettysburg.stonesentinels.com/confederate-batteries/rowan-north-carolina-artillery/ marker 2, fetched 2026-07-08) — marker 2 converts to local (2914,1713); the attested position is 300 yards (274 m) west: segment centred at (2640,1713)",
+      "note": "the locked detachment ruling (battle-format.md 'Segment-emitter migration and attested detachments' — the Carter's-rifles/Raine's-20-pdr pattern): Reilly's two 10-pdr Parrotts fire from the section's OWN tablet-attested coordinates while the battery unit stands at its tablet position; opposite number Graham/Elder down the Emmitsburg Rd; t0=7200 per the family handoff — the tablet's 'moved to right' clock is unattested, the window follows the survey's ~15:00+ counter-move spine, earlier section fire (if any) subsumed in the battalion's flank-cover window by design; at the post-window charge the section 'were placed here' (marker 2) for the repulse — annotation only"
     },
     {
       "id": "us-btty-cooper-repulse-fire",
