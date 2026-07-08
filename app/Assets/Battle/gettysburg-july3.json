@@ -4562,6 +4562,800 @@
       ]
     },
     {
+      "id": "csa-sheffield",
+      "name": "Law's Brigade, Hood's Division (Col. James L. Sheffield)",
+      "side": "confederate",
+      "frontage_m": 257,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3920,
+          "z": 1850,
+          "facing": 75,
+          "formation": "line",
+          "strength": 950,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Occupied the breastworks on west slope of Round Top. The 4th and 15th Regiments assisted at 5 P. M. in repulsing cavalry led by Brig. Gen. E. J. Farnsworth in Plum Run Valley.' (https://gettysburg.stonesentinels.com/confederate-headquarters/laws-brigade/, fetched 2026-07-08) — the Farnsworth repulse is 5 P.M., POST-window: in 13:00–16:00 the brigade stands in the Big Round Top west-slope works (survey §1 Big RT 4076,1869); Col. James L. Sheffield commanding (Brig. Gen. Law up to division for the wounded Hood — acting-commander naming per the survey header); sheet 8 s8_roundtops.jpg names 'Law Ala.'; Hood's division tablet verbatim, July 3: 'Occupied the ground gained and with the exception of resisting a Cavalry charge and heavy skirmishing was not engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/hoods-division/, fetched 2026-07-08) — the cavalry charge (Farnsworth) is ~17:00, POST-window; the skirmishing is unwindowed division-grain and rides here, not an event (documented-silence convention, battle-format.md; docs/research/2026-07-02-full-cast-sources.md §3.1); strength: tablet Present about 1500 less its about 550 (July 2 Little Round Top) battle losses → ~950 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 3920,
+          "z": 1850,
+          "facing": 75,
+          "formation": "line",
+          "strength": 950,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Occupied the breastworks on west slope of Round Top. The 4th and 15th Regiments assisted at 5 P. M. in repulsing cavalry led by Brig. Gen. E. J. Farnsworth in Plum Run Valley.' (https://gettysburg.stonesentinels.com/confederate-headquarters/laws-brigade/, fetched 2026-07-08) — the Farnsworth repulse is 5 P.M., POST-window: in 13:00–16:00 the brigade stands in the Big Round Top west-slope works (survey §1 Big RT 4076,1869); Col. James L. Sheffield commanding (Brig. Gen. Law up to division for the wounded Hood — acting-commander naming per the survey header); sheet 8 s8_roundtops.jpg names 'Law Ala.'; Hood's division tablet verbatim, July 3: 'Occupied the ground gained and with the exception of resisting a Cavalry charge and heavy skirmishing was not engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/hoods-division/, fetched 2026-07-08) — the cavalry charge (Farnsworth) is ~17:00, POST-window; the skirmishing is unwindowed division-grain and rides here, not an event (documented-silence convention, battle-format.md; docs/research/2026-07-02-full-cast-sources.md §3.1); strength: tablet Present about 1500 less its about 550 (July 2 Little Round Top) battle losses → ~950 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-robertson",
+      "name": "Robertson's Texas Brigade, Hood's Division",
+      "side": "confederate",
+      "frontage_m": 151,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3950,
+          "z": 2130,
+          "facing": 60,
+          "formation": "line",
+          "strength": 560,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'At 2 A. M. the 1st Texas and 3d Arkansas were moved to the right and joined the 4th and 5th Texas on the northwest spur of Big Round Top. Three regiments occupied the breastworks there all day skirmishing hotly with Union sharpshooters. Early in the day the 1st Texas was sent to confront the Union Cavalry threatening the right flank.' (https://gettysburg.stonesentinels.com/confederate-headquarters/robertsons-brigade/, fetched 2026-07-08) — the all-day skirmishing is unwindowed sharpshooter grain, no event (the South Cavalry Field exchange is Wave 6's); the 1st Texas detachment southward is the survey's SCF shift, decided at Wave 6 per plan Task 8, strength kept whole here; COMMAND DISPUTE CARRIED, not reconciled (survey ⚠️): Brig. Gen. J. B. Robertson (wounded July 2 per his page) vs Lt. Col. P. A. Work — both readings kept; sheet 8 s8_roundtops.jpg names 'Robertson'; Hood's division tablet verbatim, July 3: 'Occupied the ground gained and with the exception of resisting a Cavalry charge and heavy skirmishing was not engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/hoods-division/, fetched 2026-07-08) — the cavalry charge (Farnsworth) is ~17:00, POST-window; the skirmishing is unwindowed division-grain and rides here, not an event (documented-silence convention, battle-format.md; docs/research/2026-07-02-full-cast-sources.md §3.1); strength: tablet Present about 1100 less its about 540 (July 2 Devil's Den/LRT) battle losses → ~560 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 3950,
+          "z": 2130,
+          "facing": 60,
+          "formation": "line",
+          "strength": 560,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'At 2 A. M. the 1st Texas and 3d Arkansas were moved to the right and joined the 4th and 5th Texas on the northwest spur of Big Round Top. Three regiments occupied the breastworks there all day skirmishing hotly with Union sharpshooters. Early in the day the 1st Texas was sent to confront the Union Cavalry threatening the right flank.' (https://gettysburg.stonesentinels.com/confederate-headquarters/robertsons-brigade/, fetched 2026-07-08) — the all-day skirmishing is unwindowed sharpshooter grain, no event (the South Cavalry Field exchange is Wave 6's); the 1st Texas detachment southward is the survey's SCF shift, decided at Wave 6 per plan Task 8, strength kept whole here; COMMAND DISPUTE CARRIED, not reconciled (survey ⚠️): Brig. Gen. J. B. Robertson (wounded July 2 per his page) vs Lt. Col. P. A. Work — both readings kept; sheet 8 s8_roundtops.jpg names 'Robertson'; Hood's division tablet verbatim, July 3: 'Occupied the ground gained and with the exception of resisting a Cavalry charge and heavy skirmishing was not engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/hoods-division/, fetched 2026-07-08) — the cavalry charge (Farnsworth) is ~17:00, POST-window; the skirmishing is unwindowed division-grain and rides here, not an event (documented-silence convention, battle-format.md; docs/research/2026-07-02-full-cast-sources.md §3.1); strength: tablet Present about 1100 less its about 540 (July 2 Devil's Den/LRT) battle losses → ~560 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-benning",
+      "name": "Benning's Brigade, Hood's Division",
+      "side": "confederate",
+      "frontage_m": 267,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3790,
+          "z": 2480,
+          "facing": 70,
+          "formation": "line",
+          "strength": 990,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Held Devil's Den and the adjacent crest of rocky ridge until late in the evening when under orders the Brigade retired to position near here. Through mistake of orders the 15th Georgia did not retire directly but moved northward encountered a superior Union force and suffered considerable loss.' (https://gettysburg.stonesentinels.com/confederate-headquarters/bennings-brigade/, fetched 2026-07-08) — the withdrawal and the 15th Georgia fight are LATE EVENING, post-window: in-slice the brigade holds Devil's Den (survey §1: 3808,2465); sheet 8 s8_roundtops.jpg names 'Benning Ga.'; Hood's division tablet verbatim, July 3: 'Occupied the ground gained and with the exception of resisting a Cavalry charge and heavy skirmishing was not engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/hoods-division/, fetched 2026-07-08) — the cavalry charge (Farnsworth) is ~17:00, POST-window; the skirmishing is unwindowed division-grain and rides here, not an event (documented-silence convention, battle-format.md; docs/research/2026-07-02-full-cast-sources.md §3.1); strength: tablet Present about 1500 less its 509 (July 2 + the post-window 15th GA fight — in-window effectives ran somewhat higher) battle losses → ~990 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 3790,
+          "z": 2480,
+          "facing": 70,
+          "formation": "line",
+          "strength": 990,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Held Devil's Den and the adjacent crest of rocky ridge until late in the evening when under orders the Brigade retired to position near here. Through mistake of orders the 15th Georgia did not retire directly but moved northward encountered a superior Union force and suffered considerable loss.' (https://gettysburg.stonesentinels.com/confederate-headquarters/bennings-brigade/, fetched 2026-07-08) — the withdrawal and the 15th Georgia fight are LATE EVENING, post-window: in-slice the brigade holds Devil's Den (survey §1: 3808,2465); sheet 8 s8_roundtops.jpg names 'Benning Ga.'; Hood's division tablet verbatim, July 3: 'Occupied the ground gained and with the exception of resisting a Cavalry charge and heavy skirmishing was not engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/hoods-division/, fetched 2026-07-08) — the cavalry charge (Farnsworth) is ~17:00, POST-window; the skirmishing is unwindowed division-grain and rides here, not an event (documented-silence convention, battle-format.md; docs/research/2026-07-02-full-cast-sources.md §3.1); strength: tablet Present about 1500 less its 509 (July 2 + the post-window 15th GA fight — in-window effectives ran somewhat higher) battle losses → ~990 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-luffman",
+      "name": "Anderson's Georgia Brigade, Hood's Division (Lt. Col. William Luffman)",
+      "side": "confederate",
+      "frontage_m": 305,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3320,
+          "z": 2880,
+          "facing": 175,
+          "formation": "line",
+          "strength": 1130,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'The Brigade was sent down Emmitsburg Road and assisted in repulsing and holding in check Union cavalry which sought to flank the division' (https://gettysburg.stonesentinels.com/confederate-headquarters/anderson/, fetched 2026-07-08) — the southward move's clock is UNATTESTED (Merritt's arrival spread 11:00/13:00/15:00, survey §3.4): authored static at the survey's Rose farm position class facing the flank, the elements-shifted-south note carried per plan Task 7 ('elements shifted S vs Merritt ~15:00+ — B+'); Lt. Col. William Luffman commanding (Brig. Gen. G. T. Anderson wounded July 2 — the division tablet rosters both; acting-commander naming per the survey header); Hood's division tablet verbatim, July 3: 'Occupied the ground gained and with the exception of resisting a Cavalry charge and heavy skirmishing was not engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/hoods-division/, fetched 2026-07-08) — the cavalry charge (Farnsworth) is ~17:00, POST-window; the skirmishing is unwindowed division-grain and rides here, not an event (documented-silence convention, battle-format.md; docs/research/2026-07-02-full-cast-sources.md §3.1); strength: tablet Present about 1800 less its 671 (July 2 Wheatfield + the flank affair) battle losses → ~1130 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 3320,
+          "z": 2880,
+          "facing": 175,
+          "formation": "line",
+          "strength": 1130,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'The Brigade was sent down Emmitsburg Road and assisted in repulsing and holding in check Union cavalry which sought to flank the division' (https://gettysburg.stonesentinels.com/confederate-headquarters/anderson/, fetched 2026-07-08) — the southward move's clock is UNATTESTED (Merritt's arrival spread 11:00/13:00/15:00, survey §3.4): authored static at the survey's Rose farm position class facing the flank, the elements-shifted-south note carried per plan Task 7 ('elements shifted S vs Merritt ~15:00+ — B+'); Lt. Col. William Luffman commanding (Brig. Gen. G. T. Anderson wounded July 2 — the division tablet rosters both; acting-commander naming per the survey header); Hood's division tablet verbatim, July 3: 'Occupied the ground gained and with the exception of resisting a Cavalry charge and heavy skirmishing was not engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/hoods-division/, fetched 2026-07-08) — the cavalry charge (Farnsworth) is ~17:00, POST-window; the skirmishing is unwindowed division-grain and rides here, not an event (documented-silence convention, battle-format.md; docs/research/2026-07-02-full-cast-sources.md §3.1); strength: tablet Present about 1800 less its 671 (July 2 Wheatfield + the flank affair) battle losses → ~1130 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-kershaw",
+      "name": "Kershaw's Brigade, McLaws's Division",
+      "side": "confederate",
+      "frontage_m": 316,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3330,
+          "z": 3390,
+          "facing": 95,
+          "formation": "line",
+          "strength": 1170,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'At Peach Orchard until noon then sent farther to front. At 1 P. M. under orders resumed position here extending line to right and keeping in touch with Hood's Division on left.' (https://gettysburg.stonesentinels.com/confederate-headquarters/kershaws-brigade/, fetched 2026-07-08) — at t=0 the brigade stands forward of the Peach Orchard ('sent farther to front', survey §1 Peach Orchard 3208,3457), the 1 P.M. return order just issued; coordinate inferred within the attested position class; sheet 8 s8_peachorchard.jpg names 'Kershaw S.C.'; McLaws's division tablet verbatim, July 3: 'With the exception of severe skirmishing the Division was not engaged and after night disposition were made to withdraw.' (https://gettysburg.stonesentinels.com/confederate-headquarters/mclaws-division/, fetched 2026-07-08) — the skirmishing is unwindowed division-grain, no brigade window attested: it rides the citations, never an event (plan Task 7; documented-silence convention); the withdrawal is after night, post-window (docs/research/2026-07-02-full-cast-sources.md §3.1); strength: tablet Present about 1800 less its 630 (July 2 Wheatfield/Loop) battle losses → ~1170 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 600,
+          "x": 2680,
+          "z": 3190,
+          "facing": 110,
+          "formation": "line",
+          "strength": 1170,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'At Peach Orchard until noon then sent farther to front. At 1 P. M. under orders resumed position here extending line to right and keeping in touch with Hood's Division on left.' (https://gettysburg.stonesentinels.com/confederate-headquarters/kershaws-brigade/, fetched 2026-07-08) — arrival: the tablet's 'resumed position here' is the Warfield Ridge monument line (300 ft S of the observation tower; neighboring Semmes monument converts to local 2650,3318), 'extending line to right and keeping in touch with Hood's Division' — READING SPREAD CARRIED, not reconciled: the survey reads the move as 'extended right to Hood's left at ~13:00' from the Peach Orchard; geometry here follows the tablet's monument anchor, t≈600 per plan Task 7 (a ~10-minute march); McLaws's division tablet verbatim, July 3: 'With the exception of severe skirmishing the Division was not engaged and after night disposition were made to withdraw.' (https://gettysburg.stonesentinels.com/confederate-headquarters/mclaws-division/, fetched 2026-07-08) — the skirmishing is unwindowed division-grain, no brigade window attested: it rides the citations, never an event (plan Task 7; documented-silence convention); the withdrawal is after night, post-window (docs/research/2026-07-02-full-cast-sources.md §3.1)"
+        },
+        {
+          "t": 10800,
+          "x": 2680,
+          "z": 3190,
+          "facing": 110,
+          "formation": "line",
+          "strength": 1170,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'At Peach Orchard until noon then sent farther to front. At 1 P. M. under orders resumed position here extending line to right and keeping in touch with Hood's Division on left.' (https://gettysburg.stonesentinels.com/confederate-headquarters/kershaws-brigade/, fetched 2026-07-08) — holds the extended ridge line to the window end; the division's withdrawal is after night, post-window"
+        }
+      ]
+    },
+    {
+      "id": "csa-bryan",
+      "name": "Semmes's Brigade, McLaws's Division (Col. Goode Bryan)",
+      "side": "confederate",
+      "frontage_m": 208,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2650,
+          "z": 3335,
+          "facing": 90,
+          "formation": "line",
+          "strength": 770,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'During the afternoon Anderson's Brigade being withdrawn for duty elsewhere the Brigade was left in the occupancy of the woodland south of the Wheatfield. At 1 P. M. under orders it resumed its original position near here.' (https://gettysburg.stonesentinels.com/confederate-headquarters/semmes-brigade/, fetched 2026-07-08) — the 1 P.M. clock completes at/just after the window opens: authored static at the resumed Warfield Ridge position (monument converts to local 2650,3318), the move sub-keyframe grain and said here per the survey's B-static grade (header adjudication); Col. Goode Bryan commanding (Brig. Gen. Semmes mortally wounded July 2 — acting-commander naming per the survey header; the division tablet prints 'Col. George Bryan', both spellings carried); McLaws's division tablet verbatim, July 3: 'With the exception of severe skirmishing the Division was not engaged and after night disposition were made to withdraw.' (https://gettysburg.stonesentinels.com/confederate-headquarters/mclaws-division/, fetched 2026-07-08) — the skirmishing is unwindowed division-grain, no brigade window attested: it rides the citations, never an event (plan Task 7; documented-silence convention); the withdrawal is after night, post-window (docs/research/2026-07-02-full-cast-sources.md §3.1); strength: tablet Present about 1200 less its 430 (July 2 Rose Hill/Loop) battle losses → ~770 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 2650,
+          "z": 3335,
+          "facing": 90,
+          "formation": "line",
+          "strength": 770,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'During the afternoon Anderson's Brigade being withdrawn for duty elsewhere the Brigade was left in the occupancy of the woodland south of the Wheatfield. At 1 P. M. under orders it resumed its original position near here.' (https://gettysburg.stonesentinels.com/confederate-headquarters/semmes-brigade/, fetched 2026-07-08) — the 1 P.M. clock completes at/just after the window opens: authored static at the resumed Warfield Ridge position (monument converts to local 2650,3318), the move sub-keyframe grain and said here per the survey's B-static grade (header adjudication); Col. Goode Bryan commanding (Brig. Gen. Semmes mortally wounded July 2 — acting-commander naming per the survey header; the division tablet prints 'Col. George Bryan', both spellings carried); McLaws's division tablet verbatim, July 3: 'With the exception of severe skirmishing the Division was not engaged and after night disposition were made to withdraw.' (https://gettysburg.stonesentinels.com/confederate-headquarters/mclaws-division/, fetched 2026-07-08) — the skirmishing is unwindowed division-grain, no brigade window attested: it rides the citations, never an event (plan Task 7; documented-silence convention); the withdrawal is after night, post-window (docs/research/2026-07-02-full-cast-sources.md §3.1); strength: tablet Present about 1200 less its 430 (July 2 Rose Hill/Loop) battle losses → ~770 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-humphreys",
+      "name": "Barksdale's Brigade, McLaws's Division (Col. B. G. Humphreys)",
+      "side": "confederate",
+      "frontage_m": 230,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3080,
+          "z": 3560,
+          "facing": 85,
+          "formation": "line",
+          "strength": 850,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Supported artIllery on Peach Orchard Ridge. Withdrew from the front late in the afternoon.' [sic, tablet-page spelling] (https://gettysburg.stonesentinels.com/confederate-headquarters/barksdales-brigade/, fetched 2026-07-08) — position class: Peach Orchard Ridge behind Eshleman's and Cabell's gun line (the battalions this brigade supports are the Wave-3 units csa-bn-eshleman/csa-bn-cabell); the 'late in the afternoon' withdrawal straddles/post-dates 16:00 per the survey (McLaws's withdrawal post-window) — left static, flagged; Col. Benjamin G. Humphreys commanding (Brig. Gen. Barksdale mortally wounded July 2 — acting-commander naming per the survey header); McLaws's division tablet verbatim, July 3: 'With the exception of severe skirmishing the Division was not engaged and after night disposition were made to withdraw.' (https://gettysburg.stonesentinels.com/confederate-headquarters/mclaws-division/, fetched 2026-07-08) — the skirmishing is unwindowed division-grain, no brigade window attested: it rides the citations, never an event (plan Task 7; documented-silence convention); the withdrawal is after night, post-window (docs/research/2026-07-02-full-cast-sources.md §3.1); strength: tablet Present 1598 less its 747 (July 2 Peach Orchard/Plum Run) battle losses → ~850 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 3080,
+          "z": 3560,
+          "facing": 85,
+          "formation": "line",
+          "strength": 850,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Supported artIllery on Peach Orchard Ridge. Withdrew from the front late in the afternoon.' [sic, tablet-page spelling] (https://gettysburg.stonesentinels.com/confederate-headquarters/barksdales-brigade/, fetched 2026-07-08) — position class: Peach Orchard Ridge behind Eshleman's and Cabell's gun line (the battalions this brigade supports are the Wave-3 units csa-bn-eshleman/csa-bn-cabell); the 'late in the afternoon' withdrawal straddles/post-dates 16:00 per the survey (McLaws's withdrawal post-window) — left static, flagged; Col. Benjamin G. Humphreys commanding (Brig. Gen. Barksdale mortally wounded July 2 — acting-commander naming per the survey header); McLaws's division tablet verbatim, July 3: 'With the exception of severe skirmishing the Division was not engaged and after night disposition were made to withdraw.' (https://gettysburg.stonesentinels.com/confederate-headquarters/mclaws-division/, fetched 2026-07-08) — the skirmishing is unwindowed division-grain, no brigade window attested: it rides the citations, never an event (plan Task 7; documented-silence convention); the withdrawal is after night, post-window (docs/research/2026-07-02-full-cast-sources.md §3.1); strength: tablet Present 1598 less its 747 (July 2 Peach Orchard/Plum Run) battle losses → ~850 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-wofford",
+      "name": "Wofford's Brigade, McLaws's Division",
+      "side": "confederate",
+      "frontage_m": 269,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3060,
+          "z": 3240,
+          "facing": 90,
+          "formation": "line",
+          "strength": 995,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'One regiment was left on outpost duty in that grove. The others supported artillery on Peach Orchard Ridge. All withdrew late in the afternoon.' (https://gettysburg.stonesentinels.com/confederate-headquarters/woffords-brigade/, fetched 2026-07-08) — position class: Peach Orchard Ridge south of the Wheatfield Road gun line; the outpost regiment (grove west of the Wheatfield) is an unattested-position detachment, strength kept whole; the 'late in the afternoon' withdrawal straddles/post-dates 16:00 — left static, flagged (the survey has McLaws's withdrawal post-window); McLaws's division tablet verbatim, July 3: 'With the exception of severe skirmishing the Division was not engaged and after night disposition were made to withdraw.' (https://gettysburg.stonesentinels.com/confederate-headquarters/mclaws-division/, fetched 2026-07-08) — the skirmishing is unwindowed division-grain, no brigade window attested: it rides the citations, never an event (plan Task 7; documented-silence convention); the withdrawal is after night, post-window (docs/research/2026-07-02-full-cast-sources.md §3.1); strength: tablet Present about 1350 less its 355 (July 2 Wheatfield) battle losses → ~995 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 3060,
+          "z": 3240,
+          "facing": 90,
+          "formation": "line",
+          "strength": 995,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'One regiment was left on outpost duty in that grove. The others supported artillery on Peach Orchard Ridge. All withdrew late in the afternoon.' (https://gettysburg.stonesentinels.com/confederate-headquarters/woffords-brigade/, fetched 2026-07-08) — position class: Peach Orchard Ridge south of the Wheatfield Road gun line; the outpost regiment (grove west of the Wheatfield) is an unattested-position detachment, strength kept whole; the 'late in the afternoon' withdrawal straddles/post-dates 16:00 — left static, flagged (the survey has McLaws's withdrawal post-window); McLaws's division tablet verbatim, July 3: 'With the exception of severe skirmishing the Division was not engaged and after night disposition were made to withdraw.' (https://gettysburg.stonesentinels.com/confederate-headquarters/mclaws-division/, fetched 2026-07-08) — the skirmishing is unwindowed division-grain, no brigade window attested: it rides the citations, never an event (plan Task 7; documented-silence convention); the withdrawal is after night, post-window (docs/research/2026-07-02-full-cast-sources.md §3.1); strength: tablet Present about 1350 less its 355 (July 2 Wheatfield) battle losses → ~995 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-wright",
+      "name": "Wright's Brigade, Anderson's Division",
+      "side": "confederate",
+      "frontage_m": 157,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2960,
+          "z": 5060,
+          "facing": 95,
+          "formation": "line",
+          "strength": 580,
+          "confidence": "documented",
+          "citation": "Anderson's division tablet verbatim, July 3: 'The Division remained in position until 3.30 P. M. Orders were given to support Lieut. Gen. Longstreet's attack on the Union centre Wilcox and Perry moved forward. The assault failed the order to advance was countermanded.' (https://gettysburg.stonesentinels.com/confederate-headquarters/andersons-division/, fetched 2026-07-08) — at t=0 in the division line on Seminary Ridge in close support behind the assault sector (position class: the July 2 formation ground at the brigade monument just south of the Virginia Monument, coordinate inferred within it, west of Armistead's step-off ground); the division tablet rosters 'Wright's Brigade Bde. Gen. A. R. Wright / Col. William Gibson' — command passed during the July 2 fight, both carried; strength: tablet Present 1450 less its 873 (July 2 — the deepest brigade loss on this ridge) battle losses → ~580 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 9000,
+          "x": 2960,
+          "z": 5060,
+          "facing": 95,
+          "formation": "line",
+          "strength": 580,
+          "confidence": "documented",
+          "citation": "Anderson's division tablet verbatim, July 3: 'The Division remained in position until 3.30 P. M. Orders were given to support Lieut. Gen. Longstreet's attack on the Union centre Wilcox and Perry moved forward. The assault failed the order to advance was countermanded.' (https://gettysburg.stonesentinels.com/confederate-headquarters/andersons-division/, fetched 2026-07-08) — departure: 'remained in position until 3.30 P. M.' = t 9000 exactly; the advance order comes as the assault collapses (docs/research/2026-07-02-full-cast-sources.md §3.1; plan Task 7 t=9000)"
+        },
+        {
+          "t": 9660,
+          "x": 3540,
+          "z": 5020,
+          "facing": 95,
+          "formation": "line",
+          "strength": 580,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Advanced 600 yards to cover the retreat of Pickett's Division.' (https://gettysburg.stonesentinels.com/confederate-headquarters/wrights-brigade/, fetched 2026-07-08) — forward position ~550 m east of the ridge line covering the stragglers streaming back from the repulse (the corridor collapse spine 8700–9300); bearing and clock of the advance inferred within the attested 600 yards (~11 minutes at quick step)"
+        },
+        {
+          "t": 10500,
+          "x": 2960,
+          "z": 5060,
+          "facing": 95,
+          "formation": "line",
+          "strength": 580,
+          "confidence": "documented",
+          "citation": "Anderson's division tablet verbatim, July 3: 'The Division remained in position until 3.30 P. M. Orders were given to support Lieut. Gen. Longstreet's attack on the Union centre Wilcox and Perry moved forward. The assault failed the order to advance was countermanded.' (https://gettysburg.stonesentinels.com/confederate-headquarters/andersons-division/, fetched 2026-07-08) — recall: 'The assault failed the order to advance was countermanded' — back on the ridge by ~16:00 (survey 'brief forward move ~15:30–16:00, recalled', plan t=10500); the brigade tablet's 'Afterward was moved to the right to meet a threatened attack' is UNWINDOWED and straddles/post-dates 16:00 — carried here as a flag, not modeled (header Declined)"
+        },
+        {
+          "t": 10800,
+          "x": 2960,
+          "z": 5060,
+          "facing": 95,
+          "formation": "line",
+          "strength": 580,
+          "confidence": "documented",
+          "citation": "Anderson's division tablet verbatim, July 3: 'The Division remained in position until 3.30 P. M. Orders were given to support Lieut. Gen. Longstreet's attack on the Union centre Wilcox and Perry moved forward. The assault failed the order to advance was countermanded.' (https://gettysburg.stonesentinels.com/confederate-headquarters/andersons-division/, fetched 2026-07-08) — holds the ridge line to the window end"
+        }
+      ]
+    },
+    {
+      "id": "csa-posey",
+      "name": "Posey's Brigade, Anderson's Division",
+      "side": "confederate",
+      "frontage_m": 288,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2950,
+          "z": 5250,
+          "facing": 95,
+          "formation": "line",
+          "strength": 1065,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Was held in reserve here supporting artillery in its front.' (https://gettysburg.stonesentinels.com/confederate-headquarters/poseys-brigade/, fetched 2026-07-08) — a documented reserve posture: the trench line behind the Seminary Ridge crest (survey 'trench line behind the crest, McMillan Woods sector'), the Wave-3 gun line (csa-bn-lane, csa-bn-poague) in its front; no fire attested, presence without events; Anderson's division tablet verbatim, July 3: 'The Division remained in position until 3.30 P. M. Orders were given to support Lieut. Gen. Longstreet's attack on the Union centre Wilcox and Perry moved forward. The assault failed the order to advance was countermanded.' (https://gettysburg.stonesentinels.com/confederate-headquarters/andersons-division/, fetched 2026-07-08); strength: tablet Present 1150 less its 83 (the lightest loss on the ridge) battle losses → ~1065 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 2950,
+          "z": 5250,
+          "facing": 95,
+          "formation": "line",
+          "strength": 1065,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Was held in reserve here supporting artillery in its front.' (https://gettysburg.stonesentinels.com/confederate-headquarters/poseys-brigade/, fetched 2026-07-08) — a documented reserve posture: the trench line behind the Seminary Ridge crest (survey 'trench line behind the crest, McMillan Woods sector'), the Wave-3 gun line (csa-bn-lane, csa-bn-poague) in its front; no fire attested, presence without events; Anderson's division tablet verbatim, July 3: 'The Division remained in position until 3.30 P. M. Orders were given to support Lieut. Gen. Longstreet's attack on the Union centre Wilcox and Perry moved forward. The assault failed the order to advance was countermanded.' (https://gettysburg.stonesentinels.com/confederate-headquarters/andersons-division/, fetched 2026-07-08); strength: tablet Present 1150 less its 83 (the lightest loss on the ridge) battle losses → ~1065 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-mahone",
+      "name": "Mahone's Brigade, Anderson's Division",
+      "side": "confederate",
+      "frontage_m": 378,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2960,
+          "z": 5480,
+          "facing": 95,
+          "formation": "line",
+          "strength": 1400,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Remained here in support of the artillery. Took no active part in the battle except by skirmishers.' (https://gettysburg.stonesentinels.com/confederate-headquarters/mahones-brigade/, fetched 2026-07-08) — a documented negative: the trench line behind the crest north of Posey; the skirmisher exception is picket grain, below the event model's attested threshold — no event, the negative rides here (documented-silence convention); Anderson's division tablet verbatim, July 3: 'The Division remained in position until 3.30 P. M. Orders were given to support Lieut. Gen. Longstreet's attack on the Union centre Wilcox and Perry moved forward. The assault failed the order to advance was countermanded.' (https://gettysburg.stonesentinels.com/confederate-headquarters/andersons-division/, fetched 2026-07-08); strength: tablet Present 1500 less its 102 battle losses → ~1400 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 2960,
+          "z": 5480,
+          "facing": 95,
+          "formation": "line",
+          "strength": 1400,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Remained here in support of the artillery. Took no active part in the battle except by skirmishers.' (https://gettysburg.stonesentinels.com/confederate-headquarters/mahones-brigade/, fetched 2026-07-08) — a documented negative: the trench line behind the crest north of Posey; the skirmisher exception is picket grain, below the event model's attested threshold — no event, the negative rides here (documented-silence convention); Anderson's division tablet verbatim, July 3: 'The Division remained in position until 3.30 P. M. Orders were given to support Lieut. Gen. Longstreet's attack on the Union centre Wilcox and Perry moved forward. The assault failed the order to advance was countermanded.' (https://gettysburg.stonesentinels.com/confederate-headquarters/andersons-division/, fetched 2026-07-08); strength: tablet Present 1500 less its 102 battle losses → ~1400 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-thomas",
+      "name": "Thomas's Brigade, Pender's Division",
+      "side": "confederate",
+      "frontage_m": 251,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4090,
+          "z": 5700,
+          "facing": 140,
+          "formation": "line",
+          "strength": 930,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Engaged most of the day in severe skirmishing and exposed to a heavy fire of artillery. After dark retired to this Ridge.' — in Long Lane since 10 P.M. July 2, 'left flank in touch with McGowan's Brigade and the right near the Bliss House and Barn' (https://gettysburg.stonesentinels.com/confederate-headquarters/thomas-brigade/, fetched 2026-07-08) — the SW end of the lane, right toward the Bliss ground; one of the survey's two attested in-window CSA skirmish emitters (A−, docs/research/2026-07-02-full-cast-sources.md §3.1; §4 item 11) — his fire is the event csa-thomas-long-lane-skirmish; the after-dark retirement is post-window; strength: tablet Present about 1200 less its 270 (July 1 + the lane's skirmishing) battle losses → ~930 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 4090,
+          "z": 5700,
+          "facing": 140,
+          "formation": "line",
+          "strength": 930,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Engaged most of the day in severe skirmishing and exposed to a heavy fire of artillery. After dark retired to this Ridge.' — in Long Lane since 10 P.M. July 2, 'left flank in touch with McGowan's Brigade and the right near the Bliss House and Barn' (https://gettysburg.stonesentinels.com/confederate-headquarters/thomas-brigade/, fetched 2026-07-08) — the SW end of the lane, right toward the Bliss ground; one of the survey's two attested in-window CSA skirmish emitters (A−, docs/research/2026-07-02-full-cast-sources.md §3.1; §4 item 11) — his fire is the event csa-thomas-long-lane-skirmish; the after-dark retirement is post-window; strength: tablet Present about 1200 less its 270 (July 1 + the lane's skirmishing) battle losses → ~930 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-perrin",
+      "name": "Perrin's Brigade (McGowan's), Pender's Division",
+      "side": "confederate",
+      "frontage_m": 277,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4210,
+          "z": 5880,
+          "facing": 140,
+          "formation": "line",
+          "strength": 1025,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'In the same position and constantly engaged in skirmishing.' — the position being July 2's 10 P.M. posting 'on Ramseur's right in the Long Lane leading from the town to the Bliss House and Barn' (https://gettysburg.stonesentinels.com/confederate-headquarters/perrins-brigade/, fetched 2026-07-08) — Col. Abner Perrin commanding for the wounded Brig. Gen. McGowan (acting-commander naming per the survey header; the page notes the brigade 'is often (and properly) called McGowan's Brigade'); the second of the survey's two attested in-window CSA skirmish emitters (A−) — his fire is the event csa-perrin-long-lane-skirmish; strength: tablet Present about 1600 less its 577 (overwhelmingly July 1) battle losses → ~1025 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 4210,
+          "z": 5880,
+          "facing": 140,
+          "formation": "line",
+          "strength": 1025,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'In the same position and constantly engaged in skirmishing.' — the position being July 2's 10 P.M. posting 'on Ramseur's right in the Long Lane leading from the town to the Bliss House and Barn' (https://gettysburg.stonesentinels.com/confederate-headquarters/perrins-brigade/, fetched 2026-07-08) — Col. Abner Perrin commanding for the wounded Brig. Gen. McGowan (acting-commander naming per the survey header; the page notes the brigade 'is often (and properly) called McGowan's Brigade'); the second of the survey's two attested in-window CSA skirmish emitters (A−) — his fire is the event csa-perrin-long-lane-skirmish; strength: tablet Present about 1600 less its 577 (overwhelmingly July 1) battle losses → ~1025 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-steuart",
+      "name": "Steuart's Brigade, Johnson's Division",
+      "side": "confederate",
+      "frontage_m": 275,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6420,
+          "z": 5150,
+          "facing": 255,
+          "formation": "line",
+          "strength": 1020,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'The Union troops reinforced the conflict at dawn and it raged fiercely until 11 A. M. when this Brigade and the entire line fell back to the base of the hill and from thence moved about midnight to Seminary Ridge northwest of the town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/steuarts-brigade/, fetched 2026-07-08) — the division's left, southern end of the block (clock spread 10:30/11 A.M. carried, both pre-window); Johnson's division tablet verbatim, July 3: 'The assault was renewed in early morning. An attempt was made by the Union forces to retake the works occupied the night before and was repulsed. The Division being reinforced by four brigades two other assaults were made and repulsed. Retired at 10.30 A. M. to former position of July 2 which was held until 10 P. M. when the Division was withdrawn to the ridge northwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/johnsons-division/, fetched 2026-07-08); DOCUMENTED SILENCE (battle-format.md): the Culp's Hill fight ended 10:30 A.M. when the division retired EAST of Rock Creek — in 13:00–16:00 the block stands at the Benner's Hill base in the open, spent and quiet, exactly where sheet 8 s8_culps.jpg draws it; presence without events IS the encoding (docs/research/2026-07-02-full-cast-sources.md §3.1); HOLD-UNTIL SPREAD CARRIED, not reconciled: division tablet 'held until 10 P. M.', the brigade tablets 'about midnight moved… to Seminary Ridge', Wikipedia's Culp's Hill 'until midnight' — all post-window; strength: tablet Present about 1700 less its 682 (the July 2–3 Culp's Hill fight) battle losses → ~1020 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 6420,
+          "z": 5150,
+          "facing": 255,
+          "formation": "line",
+          "strength": 1020,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'The Union troops reinforced the conflict at dawn and it raged fiercely until 11 A. M. when this Brigade and the entire line fell back to the base of the hill and from thence moved about midnight to Seminary Ridge northwest of the town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/steuarts-brigade/, fetched 2026-07-08) — the division's left, southern end of the block (clock spread 10:30/11 A.M. carried, both pre-window); Johnson's division tablet verbatim, July 3: 'The assault was renewed in early morning. An attempt was made by the Union forces to retake the works occupied the night before and was repulsed. The Division being reinforced by four brigades two other assaults were made and repulsed. Retired at 10.30 A. M. to former position of July 2 which was held until 10 P. M. when the Division was withdrawn to the ridge northwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/johnsons-division/, fetched 2026-07-08); DOCUMENTED SILENCE (battle-format.md): the Culp's Hill fight ended 10:30 A.M. when the division retired EAST of Rock Creek — in 13:00–16:00 the block stands at the Benner's Hill base in the open, spent and quiet, exactly where sheet 8 s8_culps.jpg draws it; presence without events IS the encoding (docs/research/2026-07-02-full-cast-sources.md §3.1); HOLD-UNTIL SPREAD CARRIED, not reconciled: division tablet 'held until 10 P. M.', the brigade tablets 'about midnight moved… to Seminary Ridge', Wikipedia's Culp's Hill 'until midnight' — all post-window; strength: tablet Present about 1700 less its 682 (the July 2–3 Culp's Hill fight) battle losses → ~1020 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-daniel",
+      "name": "Daniel's Brigade, Rodes's Division (attached to Johnson)",
+      "side": "confederate",
+      "frontage_m": 320,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6490,
+          "z": 5360,
+          "facing": 255,
+          "formation": "line",
+          "strength": 1185,
+          "confidence": "documented",
+          "citation": "East Confederate Avenue brigade tablet verbatim, July 3: 'the Brigade marched about 1.30 A. M. from its position in the town to Culp's Hill to reinforce Johnson's Division. Arriving about 4 A. M. it fought at different points wherever ordered through the long and fierce conflict its main position being in the ravine between the two summits of Culp's Hill. At the close of the struggle near noon it was withdrawn by Gen. Johnson with the rest of the line to the base of the hill from whence it moved during the night to Seminary Ridge' (https://gettysburg.stonesentinels.com/confederate-headquarters/daniels-brigade/, fetched 2026-07-08) — one of the division tablet's four reinforcing brigades, in the block through the window; Johnson's division tablet verbatim, July 3: 'The assault was renewed in early morning. An attempt was made by the Union forces to retake the works occupied the night before and was repulsed. The Division being reinforced by four brigades two other assaults were made and repulsed. Retired at 10.30 A. M. to former position of July 2 which was held until 10 P. M. when the Division was withdrawn to the ridge northwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/johnsons-division/, fetched 2026-07-08); DOCUMENTED SILENCE (battle-format.md): the Culp's Hill fight ended 10:30 A.M. when the division retired EAST of Rock Creek — in 13:00–16:00 the block stands at the Benner's Hill base in the open, spent and quiet, exactly where sheet 8 s8_culps.jpg draws it; presence without events IS the encoding (docs/research/2026-07-02-full-cast-sources.md §3.1); HOLD-UNTIL SPREAD CARRIED, not reconciled: division tablet 'held until 10 P. M.', the brigade tablets 'about midnight moved… to Seminary Ridge', Wikipedia's Culp's Hill 'until midnight' — all post-window; strength: tablet Present 2100 less its 916 (July 1 + the Culp's Hill morning) battle losses → ~1185 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 6490,
+          "z": 5360,
+          "facing": 255,
+          "formation": "line",
+          "strength": 1185,
+          "confidence": "documented",
+          "citation": "East Confederate Avenue brigade tablet verbatim, July 3: 'the Brigade marched about 1.30 A. M. from its position in the town to Culp's Hill to reinforce Johnson's Division. Arriving about 4 A. M. it fought at different points wherever ordered through the long and fierce conflict its main position being in the ravine between the two summits of Culp's Hill. At the close of the struggle near noon it was withdrawn by Gen. Johnson with the rest of the line to the base of the hill from whence it moved during the night to Seminary Ridge' (https://gettysburg.stonesentinels.com/confederate-headquarters/daniels-brigade/, fetched 2026-07-08) — one of the division tablet's four reinforcing brigades, in the block through the window; Johnson's division tablet verbatim, July 3: 'The assault was renewed in early morning. An attempt was made by the Union forces to retake the works occupied the night before and was repulsed. The Division being reinforced by four brigades two other assaults were made and repulsed. Retired at 10.30 A. M. to former position of July 2 which was held until 10 P. M. when the Division was withdrawn to the ridge northwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/johnsons-division/, fetched 2026-07-08); DOCUMENTED SILENCE (battle-format.md): the Culp's Hill fight ended 10:30 A.M. when the division retired EAST of Rock Creek — in 13:00–16:00 the block stands at the Benner's Hill base in the open, spent and quiet, exactly where sheet 8 s8_culps.jpg draws it; presence without events IS the encoding (docs/research/2026-07-02-full-cast-sources.md §3.1); HOLD-UNTIL SPREAD CARRIED, not reconciled: division tablet 'held until 10 P. M.', the brigade tablets 'about midnight moved… to Seminary Ridge', Wikipedia's Culp's Hill 'until midnight' — all post-window; strength: tablet Present 2100 less its 916 (July 1 + the Culp's Hill morning) battle losses → ~1185 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-oneal",
+      "name": "O'Neal's Brigade, Rodes's Division (attached to Johnson)",
+      "side": "confederate",
+      "frontage_m": 297,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6550,
+          "z": 5570,
+          "facing": 255,
+          "formation": "line",
+          "strength": 1100,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'The 5th Regiment lay in the southern borders of the town firing upon the Union artillery with their long range rifles. The other regiments moved to Culp's Hill to reinforce Johnson's Division.' (https://gettysburg.stonesentinels.com/confederate-headquarters/oneals-brigade/, fetched 2026-07-08); Rodes's division tablet: 'The Brigades of Daniel and O'Neal were ordered to report to Gen. E. Johnson on the left early in the morning and joined in the attack on Culp's Hill.' (https://gettysburg.stonesentinels.com/confederate-headquarters/rodes-division/, fetched 2026-07-08) — DETACHMENT FLAG, not modeled (header Declined): the 5th Alabama's town sharpshooting is attested but its position class is 'southern borders of the town' only, and the survey's chosen grain for the town-sector fire is the single collective Hays event — the detachment rides here, strength kept whole; the brigade body stands in Johnson's block after the 10:30 retirement; Johnson's division tablet verbatim, July 3: 'The assault was renewed in early morning. An attempt was made by the Union forces to retake the works occupied the night before and was repulsed. The Division being reinforced by four brigades two other assaults were made and repulsed. Retired at 10.30 A. M. to former position of July 2 which was held until 10 P. M. when the Division was withdrawn to the ridge northwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/johnsons-division/, fetched 2026-07-08); DOCUMENTED SILENCE (battle-format.md): the Culp's Hill fight ended 10:30 A.M. when the division retired EAST of Rock Creek — in 13:00–16:00 the block stands at the Benner's Hill base in the open, spent and quiet, exactly where sheet 8 s8_culps.jpg draws it; presence without events IS the encoding (docs/research/2026-07-02-full-cast-sources.md §3.1); HOLD-UNTIL SPREAD CARRIED, not reconciled: division tablet 'held until 10 P. M.', the brigade tablets 'about midnight moved… to Seminary Ridge', Wikipedia's Culp's Hill 'until midnight' — all post-window; strength: tablet Present 1794 less its 696 (overwhelmingly July 1) battle losses → ~1100 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 6550,
+          "z": 5570,
+          "facing": 255,
+          "formation": "line",
+          "strength": 1100,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'The 5th Regiment lay in the southern borders of the town firing upon the Union artillery with their long range rifles. The other regiments moved to Culp's Hill to reinforce Johnson's Division.' (https://gettysburg.stonesentinels.com/confederate-headquarters/oneals-brigade/, fetched 2026-07-08); Rodes's division tablet: 'The Brigades of Daniel and O'Neal were ordered to report to Gen. E. Johnson on the left early in the morning and joined in the attack on Culp's Hill.' (https://gettysburg.stonesentinels.com/confederate-headquarters/rodes-division/, fetched 2026-07-08) — DETACHMENT FLAG, not modeled (header Declined): the 5th Alabama's town sharpshooting is attested but its position class is 'southern borders of the town' only, and the survey's chosen grain for the town-sector fire is the single collective Hays event — the detachment rides here, strength kept whole; the brigade body stands in Johnson's block after the 10:30 retirement; Johnson's division tablet verbatim, July 3: 'The assault was renewed in early morning. An attempt was made by the Union forces to retake the works occupied the night before and was repulsed. The Division being reinforced by four brigades two other assaults were made and repulsed. Retired at 10.30 A. M. to former position of July 2 which was held until 10 P. M. when the Division was withdrawn to the ridge northwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/johnsons-division/, fetched 2026-07-08); DOCUMENTED SILENCE (battle-format.md): the Culp's Hill fight ended 10:30 A.M. when the division retired EAST of Rock Creek — in 13:00–16:00 the block stands at the Benner's Hill base in the open, spent and quiet, exactly where sheet 8 s8_culps.jpg draws it; presence without events IS the encoding (docs/research/2026-07-02-full-cast-sources.md §3.1); HOLD-UNTIL SPREAD CARRIED, not reconciled: division tablet 'held until 10 P. M.', the brigade tablets 'about midnight moved… to Seminary Ridge', Wikipedia's Culp's Hill 'until midnight' — all post-window; strength: tablet Present 1794 less its 696 (overwhelmingly July 1) battle losses → ~1100 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-williams",
+      "name": "Nicholls's Brigade, Johnson's Division (Col. J. M. Williams)",
+      "side": "confederate",
+      "frontage_m": 192,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6610,
+          "z": 5780,
+          "facing": 255,
+          "formation": "line",
+          "strength": 710,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'At dawn the Brigade reopened fire and continued it for many hours then retired to line near the creek whence about midnight it moved with Division and Corps to Seminary Ridge.' (https://gettysburg.stonesentinels.com/confederate-headquarters/nicholls-brigade/, fetched 2026-07-08) — 'retired to line near the creek': the block's centre; Col. Jesse M. Williams commanding (Brig. Gen. Nicholls absent wounded since Chancellorsville — the division tablet rosters 'Nicholl's Brigade Col. J. M. Williams'; acting-commander naming per the survey); Johnson's division tablet verbatim, July 3: 'The assault was renewed in early morning. An attempt was made by the Union forces to retake the works occupied the night before and was repulsed. The Division being reinforced by four brigades two other assaults were made and repulsed. Retired at 10.30 A. M. to former position of July 2 which was held until 10 P. M. when the Division was withdrawn to the ridge northwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/johnsons-division/, fetched 2026-07-08); DOCUMENTED SILENCE (battle-format.md): the Culp's Hill fight ended 10:30 A.M. when the division retired EAST of Rock Creek — in 13:00–16:00 the block stands at the Benner's Hill base in the open, spent and quiet, exactly where sheet 8 s8_culps.jpg draws it; presence without events IS the encoding (docs/research/2026-07-02-full-cast-sources.md §3.1); HOLD-UNTIL SPREAD CARRIED, not reconciled: division tablet 'held until 10 P. M.', the brigade tablets 'about midnight moved… to Seminary Ridge', Wikipedia's Culp's Hill 'until midnight' — all post-window; strength: tablet Present about 1100 less its 388 (the Culp's Hill fight) battle losses → ~710 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 6610,
+          "z": 5780,
+          "facing": 255,
+          "formation": "line",
+          "strength": 710,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'At dawn the Brigade reopened fire and continued it for many hours then retired to line near the creek whence about midnight it moved with Division and Corps to Seminary Ridge.' (https://gettysburg.stonesentinels.com/confederate-headquarters/nicholls-brigade/, fetched 2026-07-08) — 'retired to line near the creek': the block's centre; Col. Jesse M. Williams commanding (Brig. Gen. Nicholls absent wounded since Chancellorsville — the division tablet rosters 'Nicholl's Brigade Col. J. M. Williams'; acting-commander naming per the survey); Johnson's division tablet verbatim, July 3: 'The assault was renewed in early morning. An attempt was made by the Union forces to retake the works occupied the night before and was repulsed. The Division being reinforced by four brigades two other assaults were made and repulsed. Retired at 10.30 A. M. to former position of July 2 which was held until 10 P. M. when the Division was withdrawn to the ridge northwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/johnsons-division/, fetched 2026-07-08); DOCUMENTED SILENCE (battle-format.md): the Culp's Hill fight ended 10:30 A.M. when the division retired EAST of Rock Creek — in 13:00–16:00 the block stands at the Benner's Hill base in the open, spent and quiet, exactly where sheet 8 s8_culps.jpg draws it; presence without events IS the encoding (docs/research/2026-07-02-full-cast-sources.md §3.1); HOLD-UNTIL SPREAD CARRIED, not reconciled: division tablet 'held until 10 P. M.', the brigade tablets 'about midnight moved… to Seminary Ridge', Wikipedia's Culp's Hill 'until midnight' — all post-window; strength: tablet Present about 1100 less its 388 (the Culp's Hill fight) battle losses → ~710 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-walker",
+      "name": "Stonewall Brigade, Johnson's Division (Brig. Gen. James A. Walker)",
+      "side": "confederate",
+      "frontage_m": 302,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6670,
+          "z": 5990,
+          "facing": 255,
+          "formation": "line",
+          "strength": 1120,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Took part in the unsuccessful struggle lasting from daybreak until near noon and then retired to the foot of the hill and from thence about midnight moved with the Division and Corps to Seminary Ridge.' (https://gettysburg.stonesentinels.com/confederate-headquarters/walkers-brigade/, fetched 2026-07-08) — 'near noon' vs the division's 10:30 A.M., clock spread carried, both pre-window; Johnson's division tablet verbatim, July 3: 'The assault was renewed in early morning. An attempt was made by the Union forces to retake the works occupied the night before and was repulsed. The Division being reinforced by four brigades two other assaults were made and repulsed. Retired at 10.30 A. M. to former position of July 2 which was held until 10 P. M. when the Division was withdrawn to the ridge northwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/johnsons-division/, fetched 2026-07-08); DOCUMENTED SILENCE (battle-format.md): the Culp's Hill fight ended 10:30 A.M. when the division retired EAST of Rock Creek — in 13:00–16:00 the block stands at the Benner's Hill base in the open, spent and quiet, exactly where sheet 8 s8_culps.jpg draws it; presence without events IS the encoding (docs/research/2026-07-02-full-cast-sources.md §3.1); HOLD-UNTIL SPREAD CARRIED, not reconciled: division tablet 'held until 10 P. M.', the brigade tablets 'about midnight moved… to Seminary Ridge', Wikipedia's Culp's Hill 'until midnight' — all post-window; strength: tablet Present about 1450 less its 330 (July 2–3 Culp's Hill) battle losses → ~1120 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 6670,
+          "z": 5990,
+          "facing": 255,
+          "formation": "line",
+          "strength": 1120,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Took part in the unsuccessful struggle lasting from daybreak until near noon and then retired to the foot of the hill and from thence about midnight moved with the Division and Corps to Seminary Ridge.' (https://gettysburg.stonesentinels.com/confederate-headquarters/walkers-brigade/, fetched 2026-07-08) — 'near noon' vs the division's 10:30 A.M., clock spread carried, both pre-window; Johnson's division tablet verbatim, July 3: 'The assault was renewed in early morning. An attempt was made by the Union forces to retake the works occupied the night before and was repulsed. The Division being reinforced by four brigades two other assaults were made and repulsed. Retired at 10.30 A. M. to former position of July 2 which was held until 10 P. M. when the Division was withdrawn to the ridge northwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/johnsons-division/, fetched 2026-07-08); DOCUMENTED SILENCE (battle-format.md): the Culp's Hill fight ended 10:30 A.M. when the division retired EAST of Rock Creek — in 13:00–16:00 the block stands at the Benner's Hill base in the open, spent and quiet, exactly where sheet 8 s8_culps.jpg draws it; presence without events IS the encoding (docs/research/2026-07-02-full-cast-sources.md §3.1); HOLD-UNTIL SPREAD CARRIED, not reconciled: division tablet 'held until 10 P. M.', the brigade tablets 'about midnight moved… to Seminary Ridge', Wikipedia's Culp's Hill 'until midnight' — all post-window; strength: tablet Present about 1450 less its 330 (July 2–3 Culp's Hill) battle losses → ~1120 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-dungan",
+      "name": "Jones's Brigade, Johnson's Division (Lt. Col. R. H. Dungan)",
+      "side": "confederate",
+      "frontage_m": 319,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6760,
+          "z": 6090,
+          "facing": 250,
+          "formation": "line",
+          "strength": 1180,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'In line near here all day sometimes skirmishing heavily. About midnight moved with the Division and Corps to Seminary Ridge northwest of the town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/jones-brigade/, fetched 2026-07-08) — the brigade (wrecked July 2, Brig. Gen. John M. Jones badly wounded) held near the creek line through the day; the 'sometimes skirmishing heavily' is unwindowed and below the survey's attested-emitter grain — no event, it rides here (documented-silence convention); Lt. Col. Robert H. Dungan commanding (the division tablet spells 'Duncan' — both carried; acting-commander naming per the survey header; id csa-dungan dodges the csa-bn-jones surname collision, header note); position class: the block's right toward the Hanover Road, west face of Benner's Hill base; Johnson's division tablet verbatim, July 3: 'The assault was renewed in early morning. An attempt was made by the Union forces to retake the works occupied the night before and was repulsed. The Division being reinforced by four brigades two other assaults were made and repulsed. Retired at 10.30 A. M. to former position of July 2 which was held until 10 P. M. when the Division was withdrawn to the ridge northwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/johnsons-division/, fetched 2026-07-08); DOCUMENTED SILENCE (battle-format.md): the Culp's Hill fight ended 10:30 A.M. when the division retired EAST of Rock Creek — in 13:00–16:00 the block stands at the Benner's Hill base in the open, spent and quiet, exactly where sheet 8 s8_culps.jpg draws it; presence without events IS the encoding (docs/research/2026-07-02-full-cast-sources.md §3.1); HOLD-UNTIL SPREAD CARRIED, not reconciled: division tablet 'held until 10 P. M.', the brigade tablets 'about midnight moved… to Seminary Ridge', Wikipedia's Culp's Hill 'until midnight' — all post-window; strength: tablet Present 1600 less its 421 (July 2 Culp's Hill, where Gen. Jones fell) battle losses → ~1180 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 6760,
+          "z": 6090,
+          "facing": 250,
+          "formation": "line",
+          "strength": 1180,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'In line near here all day sometimes skirmishing heavily. About midnight moved with the Division and Corps to Seminary Ridge northwest of the town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/jones-brigade/, fetched 2026-07-08) — the brigade (wrecked July 2, Brig. Gen. John M. Jones badly wounded) held near the creek line through the day; the 'sometimes skirmishing heavily' is unwindowed and below the survey's attested-emitter grain — no event, it rides here (documented-silence convention); Lt. Col. Robert H. Dungan commanding (the division tablet spells 'Duncan' — both carried; acting-commander naming per the survey header; id csa-dungan dodges the csa-bn-jones surname collision, header note); position class: the block's right toward the Hanover Road, west face of Benner's Hill base; Johnson's division tablet verbatim, July 3: 'The assault was renewed in early morning. An attempt was made by the Union forces to retake the works occupied the night before and was repulsed. The Division being reinforced by four brigades two other assaults were made and repulsed. Retired at 10.30 A. M. to former position of July 2 which was held until 10 P. M. when the Division was withdrawn to the ridge northwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/johnsons-division/, fetched 2026-07-08); DOCUMENTED SILENCE (battle-format.md): the Culp's Hill fight ended 10:30 A.M. when the division retired EAST of Rock Creek — in 13:00–16:00 the block stands at the Benner's Hill base in the open, spent and quiet, exactly where sheet 8 s8_culps.jpg draws it; presence without events IS the encoding (docs/research/2026-07-02-full-cast-sources.md §3.1); HOLD-UNTIL SPREAD CARRIED, not reconciled: division tablet 'held until 10 P. M.', the brigade tablets 'about midnight moved… to Seminary Ridge', Wikipedia's Culp's Hill 'until midnight' — all post-window; strength: tablet Present 1600 less its 421 (July 2 Culp's Hill, where Gen. Jones fell) battle losses → ~1180 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-smith",
+      "name": "Smith's Brigade, Early's Division (attached to Johnson)",
+      "side": "confederate",
+      "frontage_m": 178,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6800,
+          "z": 6420,
+          "facing": 250,
+          "formation": "line",
+          "strength": 660,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'The Brigade having been detached two days guarding York Pike and other roads against the reported approach of Union Cavalry was ordered to Culp's Hill to reinforce Johnson's Division. Arriving early formed in line along this stone wall receiving and returning fire of Infantry and sharpshooters in the woods opposite and being subjected to heavy fire of Artillery. It repulsed the charge of the 2nd Massachusetts and 27th Indiana Regiments against this line and held its ground until the Union forces regained their works on the hill. It then moved to a position further up the creek' (https://gettysburg.stonesentinels.com/confederate-headquarters/smiths-brigade/, fetched 2026-07-08) — the Spangler's meadow repulse (2nd MA/27th IN) is ~10 A.M., PRE-window (Wave 4's us-colgrove carries the Union side); in-slice the brigade stands 'further up the creek' at the block's northern end near the Hanover Road; Early's division tablet: 'At daylight Smith's Brigade was ordered to support of Johnson's Division on the left.' (https://gettysburg.stonesentinels.com/confederate-headquarters/earlys-division/, fetched 2026-07-08); Johnson's division tablet verbatim, July 3: 'The assault was renewed in early morning. An attempt was made by the Union forces to retake the works occupied the night before and was repulsed. The Division being reinforced by four brigades two other assaults were made and repulsed. Retired at 10.30 A. M. to former position of July 2 which was held until 10 P. M. when the Division was withdrawn to the ridge northwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/johnsons-division/, fetched 2026-07-08); DOCUMENTED SILENCE (battle-format.md): the Culp's Hill fight ended 10:30 A.M. when the division retired EAST of Rock Creek — in 13:00–16:00 the block stands at the Benner's Hill base in the open, spent and quiet, exactly where sheet 8 s8_culps.jpg draws it; presence without events IS the encoding (docs/research/2026-07-02-full-cast-sources.md §3.1); HOLD-UNTIL SPREAD CARRIED, not reconciled: division tablet 'held until 10 P. M.', the brigade tablets 'about midnight moved… to Seminary Ridge', Wikipedia's Culp's Hill 'until midnight' — all post-window; strength: tablet Present about 800 less its 142 battle losses → ~660 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 6800,
+          "z": 6420,
+          "facing": 250,
+          "formation": "line",
+          "strength": 660,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'The Brigade having been detached two days guarding York Pike and other roads against the reported approach of Union Cavalry was ordered to Culp's Hill to reinforce Johnson's Division. Arriving early formed in line along this stone wall receiving and returning fire of Infantry and sharpshooters in the woods opposite and being subjected to heavy fire of Artillery. It repulsed the charge of the 2nd Massachusetts and 27th Indiana Regiments against this line and held its ground until the Union forces regained their works on the hill. It then moved to a position further up the creek' (https://gettysburg.stonesentinels.com/confederate-headquarters/smiths-brigade/, fetched 2026-07-08) — the Spangler's meadow repulse (2nd MA/27th IN) is ~10 A.M., PRE-window (Wave 4's us-colgrove carries the Union side); in-slice the brigade stands 'further up the creek' at the block's northern end near the Hanover Road; Early's division tablet: 'At daylight Smith's Brigade was ordered to support of Johnson's Division on the left.' (https://gettysburg.stonesentinels.com/confederate-headquarters/earlys-division/, fetched 2026-07-08); Johnson's division tablet verbatim, July 3: 'The assault was renewed in early morning. An attempt was made by the Union forces to retake the works occupied the night before and was repulsed. The Division being reinforced by four brigades two other assaults were made and repulsed. Retired at 10.30 A. M. to former position of July 2 which was held until 10 P. M. when the Division was withdrawn to the ridge northwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/johnsons-division/, fetched 2026-07-08); DOCUMENTED SILENCE (battle-format.md): the Culp's Hill fight ended 10:30 A.M. when the division retired EAST of Rock Creek — in 13:00–16:00 the block stands at the Benner's Hill base in the open, spent and quiet, exactly where sheet 8 s8_culps.jpg draws it; presence without events IS the encoding (docs/research/2026-07-02-full-cast-sources.md §3.1); HOLD-UNTIL SPREAD CARRIED, not reconciled: division tablet 'held until 10 P. M.', the brigade tablets 'about midnight moved… to Seminary Ridge', Wikipedia's Culp's Hill 'until midnight' — all post-window; strength: tablet Present about 800 less its 142 battle losses → ~660 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-hays",
+      "name": "Hays's Brigade, Early's Division",
+      "side": "confederate",
+      "frontage_m": 235,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4900,
+          "z": 6620,
+          "facing": 175,
+          "formation": "line",
+          "strength": 870,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Occupied a position on High St. in town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/hays-brigade/, fetched 2026-07-08) — the southern streets facing Cemetery Hill; the division's 'not further engaged' negative is carried WITH the sector's documented exception: the all-window house-sharpshooting Wave 4's us-carroll tablet complains of ('an annoying sharpshooters fire from the houses in the town'), authored as the single collective event csa-hays-town-sharpshooting per the survey's grain (§4 item 11); Early's division tablet verbatim, July 3: 'At daylight Smith's Brigade was ordered to support of Johnson's Division on the left. Hays' and Hoke's Brigades formed line in town holding the position of previous day. Gordon's Brigade held the line of the day before. The Division not further engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/earlys-division/, fetched 2026-07-08); strength: tablet Present about 1200 less its 332 (July 1–2, incl. the East Cemetery Hill assault) battle losses → ~870 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 4900,
+          "z": 6620,
+          "facing": 175,
+          "formation": "line",
+          "strength": 870,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Occupied a position on High St. in town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/hays-brigade/, fetched 2026-07-08) — the southern streets facing Cemetery Hill; the division's 'not further engaged' negative is carried WITH the sector's documented exception: the all-window house-sharpshooting Wave 4's us-carroll tablet complains of ('an annoying sharpshooters fire from the houses in the town'), authored as the single collective event csa-hays-town-sharpshooting per the survey's grain (§4 item 11); Early's division tablet verbatim, July 3: 'At daylight Smith's Brigade was ordered to support of Johnson's Division on the left. Hays' and Hoke's Brigades formed line in town holding the position of previous day. Gordon's Brigade held the line of the day before. The Division not further engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/earlys-division/, fetched 2026-07-08); strength: tablet Present about 1200 less its 332 (July 1–2, incl. the East Cemetery Hill assault) battle losses → ~870 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-godwin",
+      "name": "Hoke's Brigade, Early's Division (Col. A. C. Godwin)",
+      "side": "confederate",
+      "frontage_m": 150,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5060,
+          "z": 6630,
+          "facing": 180,
+          "formation": "line",
+          "strength": 555,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Ordered to railroad cut in rear and later to High Street in town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/hokes-brigade/, fetched 2026-07-08) — the shift's clock is unattested; authored at the High Street line beside Hays per the division tablet ('Hays' and Hoke's Brigades formed line in town holding the position of previous day'), the railroad-cut episode riding here; Col. Archibald C. Godwin commanding (Col. Isaac E. Avery mortally wounded July 2 — the division tablet rosters both; acting-commander naming per the survey header); the sector's sharpshooting fire is authored ONCE, on Hays (never the same fire at two levels — sibling share said there); Early's division tablet verbatim, July 3: 'At daylight Smith's Brigade was ordered to support of Johnson's Division on the left. Hays' and Hoke's Brigades formed line in town holding the position of previous day. Gordon's Brigade held the line of the day before. The Division not further engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/earlys-division/, fetched 2026-07-08); strength: tablet Present about 900 less its 345 (July 1–2) battle losses → ~555 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 5060,
+          "z": 6630,
+          "facing": 180,
+          "formation": "line",
+          "strength": 555,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Ordered to railroad cut in rear and later to High Street in town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/hokes-brigade/, fetched 2026-07-08) — the shift's clock is unattested; authored at the High Street line beside Hays per the division tablet ('Hays' and Hoke's Brigades formed line in town holding the position of previous day'), the railroad-cut episode riding here; Col. Archibald C. Godwin commanding (Col. Isaac E. Avery mortally wounded July 2 — the division tablet rosters both; acting-commander naming per the survey header); the sector's sharpshooting fire is authored ONCE, on Hays (never the same fire at two levels — sibling share said there); Early's division tablet verbatim, July 3: 'At daylight Smith's Brigade was ordered to support of Johnson's Division on the left. Hays' and Hoke's Brigades formed line in town holding the position of previous day. Gordon's Brigade held the line of the day before. The Division not further engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/earlys-division/, fetched 2026-07-08); strength: tablet Present about 900 less its 345 (July 1–2) battle losses → ~555 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-gordon",
+      "name": "Gordon's Brigade, Early's Division",
+      "side": "confederate",
+      "frontage_m": 302,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5230,
+          "z": 6470,
+          "facing": 195,
+          "formation": "line",
+          "strength": 1120,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Remained here skirmishing with sharpshooters and exposed to artillery fire.' (https://gettysburg.stonesentinels.com/confederate-headquarters/gordons-brigade/, fetched 2026-07-08) — Winebrenner's Run ground between the town and Rock Creek, held from July 2 evening; his skirmishing is part of the town-sector exchange the survey renders as the ONE collective Hays event — no second emitter authored (attach-level discipline), the attestation rides here; Early's division tablet verbatim, July 3: 'At daylight Smith's Brigade was ordered to support of Johnson's Division on the left. Hays' and Hoke's Brigades formed line in town holding the position of previous day. Gordon's Brigade held the line of the day before. The Division not further engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/earlys-division/, fetched 2026-07-08); strength: tablet Present about 1500 less its 380 (July 1 + supporting the July 2 assault) battle losses → ~1120 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 5230,
+          "z": 6470,
+          "facing": 195,
+          "formation": "line",
+          "strength": 1120,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'Remained here skirmishing with sharpshooters and exposed to artillery fire.' (https://gettysburg.stonesentinels.com/confederate-headquarters/gordons-brigade/, fetched 2026-07-08) — Winebrenner's Run ground between the town and Rock Creek, held from July 2 evening; his skirmishing is part of the town-sector exchange the survey renders as the ONE collective Hays event — no second emitter authored (attach-level discipline), the attestation rides here; Early's division tablet verbatim, July 3: 'At daylight Smith's Brigade was ordered to support of Johnson's Division on the left. Hays' and Hoke's Brigades formed line in town holding the position of previous day. Gordon's Brigade held the line of the day before. The Division not further engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/earlys-division/, fetched 2026-07-08); strength: tablet Present about 1500 less its 380 (July 1 + supporting the July 2 assault) battle losses → ~1120 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-ramseur",
+      "name": "Ramseur's Brigade, Rodes's Division",
+      "side": "confederate",
+      "frontage_m": 463,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4330,
+          "z": 6060,
+          "facing": 140,
+          "formation": "line",
+          "strength": 1715,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'In sunken lane southwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/ramseurs-brigade/, fetched 2026-07-08) — Perrin's tablet fixes the join ('took position on Ramseur's right in the Long Lane'): Ramseur is the lane's centre, Perrin on his right; Iverson's July 1 remnants serve with this brigade (Iverson's tablet) — counted there, not here; no fire attested for the Rodes three, presence without events under the cannonade; Rodes's division tablet verbatim, July 3: 'The remainder of the Division held the position of day before and at night retired to Seminary Ridge.' (https://gettysburg.stonesentinels.com/confederate-headquarters/rodes-division/, fetched 2026-07-08); strength: tablet Present 1909 less its 196 (July 1) battle losses → ~1715 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 4330,
+          "z": 6060,
+          "facing": 140,
+          "formation": "line",
+          "strength": 1715,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'In sunken lane southwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/ramseurs-brigade/, fetched 2026-07-08) — Perrin's tablet fixes the join ('took position on Ramseur's right in the Long Lane'): Ramseur is the lane's centre, Perrin on his right; Iverson's July 1 remnants serve with this brigade (Iverson's tablet) — counted there, not here; no fire attested for the Rodes three, presence without events under the cannonade; Rodes's division tablet verbatim, July 3: 'The remainder of the Division held the position of day before and at night retired to Seminary Ridge.' (https://gettysburg.stonesentinels.com/confederate-headquarters/rodes-division/, fetched 2026-07-08); strength: tablet Present 1909 less its 196 (July 1) battle losses → ~1715 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-iverson",
+      "name": "Iverson's Brigade, Rodes's Division",
+      "side": "confederate",
+      "frontage_m": 176,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4450,
+          "z": 6240,
+          "facing": 140,
+          "formation": "line",
+          "strength": 650,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'With other brigades in the sunken road southwest of town. At night withdrew to Seminary Ridge.' (https://gettysburg.stonesentinels.com/confederate-headquarters/iversons-brigade/, fetched 2026-07-08) — the July 1 wreck stands in the lane between Ramseur and Doles: 'a vigorous assault by Union forces in front and on left flank almost annihilated three regiments… the remnants of the others joined Ramseur's Brigade and served with it throughout the battle' — the unit here is the surviving body (the sheltered 12th NC + remnants), strength approximation-flagged accordingly; sheet 8 s8_town.jpg names 'Iverson's N.C.' in Long Lane; Rodes's division tablet verbatim, July 3: 'The remainder of the Division held the position of day before and at night retired to Seminary Ridge.' (https://gettysburg.stonesentinels.com/confederate-headquarters/rodes-division/, fetched 2026-07-08); strength: tablet Present 1470 less its 820 (July 1, three regiments nearly annihilated) battle losses → ~650 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 4450,
+          "z": 6240,
+          "facing": 140,
+          "formation": "line",
+          "strength": 650,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'With other brigades in the sunken road southwest of town. At night withdrew to Seminary Ridge.' (https://gettysburg.stonesentinels.com/confederate-headquarters/iversons-brigade/, fetched 2026-07-08) — the July 1 wreck stands in the lane between Ramseur and Doles: 'a vigorous assault by Union forces in front and on left flank almost annihilated three regiments… the remnants of the others joined Ramseur's Brigade and served with it throughout the battle' — the unit here is the surviving body (the sheltered 12th NC + remnants), strength approximation-flagged accordingly; sheet 8 s8_town.jpg names 'Iverson's N.C.' in Long Lane; Rodes's division tablet verbatim, July 3: 'The remainder of the Division held the position of day before and at night retired to Seminary Ridge.' (https://gettysburg.stonesentinels.com/confederate-headquarters/rodes-division/, fetched 2026-07-08); strength: tablet Present 1470 less its 820 (July 1, three regiments nearly annihilated) battle losses → ~650 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
+      "id": "csa-doles",
+      "name": "Doles's Brigade, Rodes's Division",
+      "side": "confederate",
+      "frontage_m": 305,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4570,
+          "z": 6420,
+          "facing": 140,
+          "formation": "line",
+          "strength": 1130,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'In line with other brigades in the sunken road southwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/doles-brigade/, fetched 2026-07-08) — the lane's NE end toward the town edge; the page's summary: 'The brigade was not engaged for the rest of the battle, occupying a quiet sector of the Confederate line southwest of Gettysburg' — a documented negative; sheet 8 s8_town.jpg names 'Doles' Ga.' in Long Lane; Rodes's division tablet verbatim, July 3: 'The remainder of the Division held the position of day before and at night retired to Seminary Ridge.' (https://gettysburg.stonesentinels.com/confederate-headquarters/rodes-division/, fetched 2026-07-08); strength: tablet Present 1369 less its 241 (July 1) battle losses → ~1130 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        },
+        {
+          "t": 10800,
+          "x": 4570,
+          "z": 6420,
+          "facing": 140,
+          "formation": "line",
+          "strength": 1130,
+          "confidence": "documented",
+          "citation": "brigade tablet verbatim, July 3: 'In line with other brigades in the sunken road southwest of town.' (https://gettysburg.stonesentinels.com/confederate-headquarters/doles-brigade/, fetched 2026-07-08) — the lane's NE end toward the town edge; the page's summary: 'The brigade was not engaged for the rest of the battle, occupying a quiet sector of the Confederate line southwest of Gettysburg' — a documented negative; sheet 8 s8_town.jpg names 'Doles' Ga.' in Long Lane; Rodes's division tablet verbatim, July 3: 'The remainder of the Division held the position of day before and at night retired to Seminary Ridge.' (https://gettysburg.stonesentinels.com/confederate-headquarters/rodes-division/, fetched 2026-07-08); strength: tablet Present 1369 less its 241 (July 1) battle losses → ~1130 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+        }
+      ]
+    },
+    {
       "id": "us-webb",
       "name": "Webb's Brigade (Philadelphia Brigade)",
       "side": "union",
@@ -8531,6 +9325,36 @@
     }
   ],
   "events": [
+    {
+      "id": "csa-hays-town-sharpshooting",
+      "kind": "musketry",
+      "t0": 0,
+      "t1": 10800,
+      "unitId": "csa-hays",
+      "confidence": "documented",
+      "citation": "collective attestation, both sides (survey §4 item 11 'B/documented-collective'): Hays's tablet places the brigade 'on High St. in town' facing Cemetery Hill (https://gettysburg.stonesentinels.com/confederate-headquarters/hays-brigade/, fetched 2026-07-08); the fire itself is documented by its TARGETS — Wave 4's us-carroll tablet ('the Brigade was subjected to an annoying sharpshooters fire from the houses in the town', https://gettysburg.stonesentinels.com/union-headquarters/1st-brigade-3rd-division-2nd-corps/) and the XI Corps division tablets' sharpshooter negatives",
+      "note": "the town-sector house-sharpshooting, all window, LOW intensity (sharpshooter grain, not a musketry line); authored ONCE on Hays per the survey's grain — Godwin's and Gordon's shares ride their citations, never a second event (attach-level rule); Wave 4 deferred this fire here by name in us-carroll's citation"
+    },
+    {
+      "id": "csa-perrin-long-lane-skirmish",
+      "kind": "musketry",
+      "t0": 0,
+      "t1": 10800,
+      "unitId": "csa-perrin",
+      "confidence": "documented",
+      "citation": "brigade tablet verbatim: 'In the same position and constantly engaged in skirmishing.' (https://gettysburg.stonesentinels.com/confederate-headquarters/perrins-brigade/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.1 — A−, the second attested in-window skirmish emitter)",
+      "note": "window spans the slice per the tablet's 'constantly engaged' (plan Task 7); skirmish grain, low intensity, as csa-thomas-long-lane-skirmish"
+    },
+    {
+      "id": "csa-thomas-long-lane-skirmish",
+      "kind": "musketry",
+      "t0": 0,
+      "t1": 10800,
+      "unitId": "csa-thomas",
+      "confidence": "documented",
+      "citation": "brigade tablet verbatim: 'Engaged most of the day in severe skirmishing and exposed to a heavy fire of artillery.' (https://gettysburg.stonesentinels.com/confederate-headquarters/thomas-brigade/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.1 — A−, one of 'the two attested in-window skirmish emitters of the CSA line')",
+      "note": "window spans the slice per the tablet's 'most of the day' (plan Task 7: 'one musketry event each spanning the window'); skirmish grain, low intensity — the Bliss-ground picket exchange opposite the II Corps line, not a volley line; no existing event models this fire (the corridor musketry is the Union repulse fire, 7800+)"
+    },
     {
       "id": "csa-bn-alexander-cannonade",
       "kind": "artillery_fire",

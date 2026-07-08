@@ -72,7 +72,13 @@ describe("authored July 3 battle", () => {
     //      two movers), Caldwell (4), III Corps reserve (6), V Corps (8),
     //      VI Corps (8, incl. Shaler the ~3:30 mover). All parentless —
     //      divisions/corps are not modeled.
-    expect(units).toHaveLength(158);
+    //    + 26 Wave-5 CSA infantry brigades (full-cast Task 7): Longstreet 8
+    //      (Hood 4 + McLaws 4, incl. Kershaw the ~13:00 extension-right
+    //      mover), Hill 5 (incl. Wright's advance-and-recall and the two
+    //      Long Lane skirmish emitters Thomas & Perrin), Ewell 13 (Johnson's
+    //      seven-brigade block east of Rock Creek, Early's three at the
+    //      town, Rodes's three in Long Lane). All parentless.
+    expect(units).toHaveLength(184);
     const ohio = units.find((u: any) => u.id === "us-8oh");
     expect(ohio).toBeDefined();
     expect(ohio.parent).toBeUndefined(); // Carroll's brigade isn't modeled
@@ -404,6 +410,97 @@ describe("authored July 3 battle", () => {
       expect(e.kind, e.id).toBe("musketry");
       expect(e.confidence, e.id).toBe("documented");
       expect(e.t1, e.id).toBeLessThanOrEqual(10800);
+    }
+  });
+  it("Wave 5: the CSA infantry ring — 26 cited brigades, Johnson's block east of Rock Creek, the two movers, the three attested emitters", () => {
+    const units = (battle as any).units;
+    const events = (battle as any).events;
+    const byId = (id: string) => units.find((u: any) => u.id === id);
+    // all 26 Wave-5 brigades present, per sector (full-cast plan Task 7;
+    // survey §3.1 — acting-commander ids per the survey header: Sheffield,
+    // Bryan, Humphreys, Godwin, Dungan, Perrin, Luffman, + Williams for
+    // Nicholls per the Johnson division tablet roster)
+    const hood = ["csa-sheffield", "csa-robertson", "csa-benning", "csa-luffman"];
+    const mclaws = ["csa-kershaw", "csa-bryan", "csa-humphreys", "csa-wofford"];
+    const hill = ["csa-wright", "csa-posey", "csa-mahone", "csa-thomas", "csa-perrin"];
+    const johnson = ["csa-steuart", "csa-daniel", "csa-oneal", "csa-williams",
+      "csa-walker", "csa-dungan", "csa-smith"];
+    const early = ["csa-hays", "csa-godwin", "csa-gordon"];
+    const rodes = ["csa-ramseur", "csa-iverson", "csa-doles"];
+    const wave5 = [...hood, ...mclaws, ...hill, ...johnson, ...early, ...rodes];
+    expect(wave5).toHaveLength(26);
+    for (const id of wave5) {
+      const u = byId(id);
+      expect(u, id).toBeDefined();
+      expect(u.side, id).toBe("confederate");
+      // parent/family rules: none — divisions and corps are not modeled
+      expect(u.parent, id).toBeUndefined();
+      // every CSA brigade t=0 keyframe documented-with-citation
+      expect(u.keyframes[0].confidence, id).toBe("documented");
+      expect(u.keyframes[0].citation?.trim(), id).toBeTruthy();
+    }
+    // id-collision dodges hold: no bare csa-jones (csa-bn-jones is H.P.
+    // Jones's artillery battalion; the VA infantry brigade is csa-dungan)
+    // and the assault-sector csa-garnett/csa-lane tracks are untouched
+    expect(units.some((u: any) => u.id === "csa-jones")).toBe(false);
+    expect(byId("csa-dungan").name).toMatch(/Jones's Brigade/);
+    expect(byId("csa-garnett").name).toMatch(/Brig/i);
+    expect(byId("csa-lane").regiments).toBeDefined();
+    // JOHNSON'S BLOCK EAST OF ROCK CREEK (the plan's wave assertion): all
+    // seven stand beyond the creek line at the Benner's Hill base — sheet 8
+    // and the division tablet agree exactly
+    for (const id of johnson) {
+      expect(byId(id).keyframes[0].x, id).toBeGreaterThan(6300);
+      // the documented silence: retired 10:30 A.M., held to 10 P.M. — the
+      // negative rides every t=0 citation
+      expect(byId(id).keyframes[0].citation, id).toMatch(/Retired at 10.30 A. M./);
+    }
+    // McLaws's documented negative rides all four of his brigades
+    for (const id of mclaws)
+      expect(byId(id).keyframes[0].citation, id)
+        .toMatch(/severe skirmishing the Division was not engaged/);
+    // the two attested in-window movers actually move; everyone else is a
+    // 2-keyframe static at an identical pose
+    const movers = ["csa-kershaw", "csa-wright"];
+    for (const id of wave5.filter((i) => !movers.includes(i))) {
+      const kfs = byId(id).keyframes;
+      expect(kfs, id).toHaveLength(2);
+      expect(kfs[0].x, id).toBe(kfs[1].x);
+      expect(kfs[0].z, id).toBe(kfs[1].z);
+    }
+    // Kershaw: the ~13:00 extension right — t=0 forward of the Peach
+    // Orchard, t=600 on the Warfield Ridge line (tablet '1 P. M.' clock)
+    const kershaw = byId("csa-kershaw").keyframes;
+    expect(kershaw.map((k: any) => k.t)).toEqual([0, 600, 10800]);
+    expect(kershaw[0].x).not.toBe(kershaw[1].x);
+    expect(kershaw[1].citation).toMatch(/At 1 P. M./);
+    // Wright: the advance-and-recall (t=9000→10500 per plan) — departs at
+    // the division tablet's 3.30 P.M., stands ~550 m forward covering
+    // Pickett's retreat, and is back on the ridge when the order is
+    // countermanded; per-keyframe citations throughout
+    const wright = byId("csa-wright").keyframes;
+    expect(wright.map((k: any) => k.t)).toEqual([0, 9000, 9660, 10500, 10800]);
+    expect(wright[2].x - wright[0].x).toBeGreaterThan(400); // the 600 yards
+    expect(wright[3].x).toBe(wright[0].x); // recalled to the start line
+    expect(wright[3].z).toBe(wright[0].z);
+    for (const k of wright) {
+      expect(k.confidence).toBe("documented");
+      expect(k.citation?.trim()).toBeTruthy();
+    }
+    // fire for the ring: EXACTLY the survey's three emitters — Thomas &
+    // Perrin in Long Lane (A−) and the collective Hays town-sharpshooting —
+    // documented musketry spanning the window; no other Wave-5 unit fires
+    // (McLaws/Hood/Ewell quiet is presence without events)
+    const wave5Ids = new Set(wave5);
+    const wave5Events = events.filter((e: any) => wave5Ids.has(e.unitId));
+    expect(wave5Events.map((e: any) => e.id).sort()).toEqual([
+      "csa-hays-town-sharpshooting", "csa-perrin-long-lane-skirmish",
+      "csa-thomas-long-lane-skirmish"]);
+    for (const e of wave5Events) {
+      expect(e.kind, e.id).toBe("musketry");
+      expect(e.confidence, e.id).toBe("documented");
+      expect(e.t0, e.id).toBe(0); // the tablets' all-window skirmishing
+      expect(e.t1, e.id).toBe(10800);
     }
   });
   it("B-grade Confederate children are valid; the four display-LOD brigades keep rosters and no children", () => {
