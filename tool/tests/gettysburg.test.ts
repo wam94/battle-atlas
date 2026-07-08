@@ -63,7 +63,10 @@ describe("authored July 3 battle", () => {
     //      B & M, "Not engaged") was verified NOT AT GETTYSBURG — held in
     //      reserve off-map — and is not authored (see author-w2-gun-ring.ts
     //      header adjudication; asserted in the Wave 2 test below).
-    expect(units).toHaveLength(98);
+    //    + 15 Wave-3 CSA artillery battalions (full-cast Task 5) — the
+    //      bombardment's named emitters AND its documented silences; the
+    //      csa-seminary-bombardment segment retired in the same commit.
+    expect(units).toHaveLength(113);
     const ohio = units.find((u: any) => u.id === "us-8oh");
     expect(ohio).toBeDefined();
     expect(ohio.parent).toBeUndefined(); // Carroll's brigade isn't modeled
@@ -235,6 +238,85 @@ describe("authored July 3 battle", () => {
     expect(park.keyframes[0].z).not.toBe(park.keyframes[park.keyframes.length - 1].z);
     for (const k of park.keyframes) expect(k.formation).toBe("column");
     expect(units.some((u: any) => u.parent === "us-arty-reserve-park")).toBe(false);
+  });
+  it("Wave 3: the 15 CSA artillery battalions — the segment retired, the silences encoded, the detachments as segments", () => {
+    const units = (battle as any).units;
+    const events = (battle as any).events;
+    const byId = (id: string) => units.find((u: any) => u.id === id);
+    // all 15 battalions present (full-cast plan Task 5; survey §3.2 table)
+    const wave3 = [
+      "csa-bn-alexander", "csa-bn-cabell", "csa-bn-dearing", "csa-bn-eshleman",
+      "csa-bn-henry", "csa-bn-pegram", "csa-bn-mcintosh", "csa-bn-garnett",
+      "csa-bn-poague", "csa-bn-lane", "csa-bn-dance", "csa-bn-nelson",
+      "csa-bn-carter", "csa-bn-jones", "csa-bn-raine",
+    ];
+    for (const id of wave3) expect(byId(id), id).toBeDefined();
+    // the bn- prefix dodges the infantry ids (csa-garnett, csa-lane are
+    // brigades and keep their own tracks untouched)
+    expect(byId("csa-garnett").name).toMatch(/Brig/i);
+    expect(byId("csa-lane").regiments).toBeDefined();
+    // THE SEGMENT RETIRED (battle-format.md "Segment-emitter migration"):
+    // csa-seminary-bombardment is gone, and the only surviving segment-form
+    // events are the two attested detachments (Carter's rifles at the
+    // railroad cut, Raine's 20-pdr section N of Benner's Hill).
+    expect(events.some((e: any) => e.id === "csa-seminary-bombardment")).toBe(false);
+    const segmentEvents = events.filter((e: any) => e.unitId === undefined);
+    expect(segmentEvents.map((e: any) => e.id).sort()).toEqual(
+      ["csa-bn-carter-rifles-cannonade", "csa-bn-raine-20pdr-cannonade"]);
+    for (const e of segmentEvents) expect(e.confidence).toBe("documented");
+    // DOCUMENTED SILENCES (survey §3.2 ⚠️; §4 item 13): Garnett's and
+    // Jones's battalions have ZERO events — the negative rides the t=0
+    // keyframe citation; Ewell's arc renders present and mostly dark.
+    for (const id of ["csa-bn-garnett", "csa-bn-jones"]) {
+      expect(events.some((e: any) => e.unitId === id), id).toBe(false);
+      const k0 = byId(id).keyframes[0];
+      expect(k0.confidence, id).toBe("documented");
+      expect(k0.citation, id).toMatch(/not actively engaged/i);
+    }
+    // the split battalions' PARENT tracks never fire as units — their
+    // detached pieces fire as the segments above (never the same fire at
+    // two grains), and the Ewell disagreement rides every II Corps t=0
+    for (const id of ["csa-bn-carter", "csa-bn-raine"])
+      expect(events.some((e: any) => e.unitId === id), id).toBe(false);
+    for (const id of ["csa-bn-dance", "csa-bn-nelson", "csa-bn-carter",
+      "csa-bn-jones", "csa-bn-raine"])
+      expect(byId(id).keyframes[0].citation, id).toMatch(/EWELL'S-WING DISAGREEMENT/);
+    // Nelson: the LIMITED window — short, then silent (tablet: 20-25 rounds)
+    const nelson = events.filter((e: any) => e.unitId === "csa-bn-nelson");
+    expect(nelson).toHaveLength(1);
+    expect(nelson[0].t1).toBeLessThanOrEqual(1500);
+    // Henry's flagged flank cover ends at t=7200 where Wave 6's
+    // Bachman/Reilly children begin — the two-family-levels guard
+    const henry = events.filter((e: any) => e.unitId === "csa-bn-henry");
+    expect(henry).toHaveLength(1);
+    expect(henry[0].t1).toBe(7200);
+    // the 13:07 signal guns are Eshleman's (Miller's battery in the citation)
+    const signal = events.find((e: any) => e.id === "csa-bn-eshleman-signal");
+    expect(signal.t0).toBe(420);
+    expect(signal.confidence).toBe("documented");
+    expect(signal.citation).toMatch(/Miller/);
+  });
+  it("smoke never regresses: CSA artillery_fire covers the cannonade window the segment covered", () => {
+    // The atomic-migration rule (full-cast plan Task 5; battle-format.md):
+    // the retired csa-seminary-bombardment segment covered t 420-7500 on
+    // Seminary Ridge — the replacement per-battalion events must cover the
+    // same window on the CSA side, with >= 10 emitters through the general
+    // fire (the survey's 10 YES battalions + the two detachment segments).
+    const events = (battle as any).events;
+    const csaFire = events.filter(
+      (e: any) => e.kind === "artillery_fire" &&
+        ((e.unitId ?? e.id).startsWith("csa-bn-")));
+    // outer envelope: fire from the 13:07 signal to the step-off spine
+    expect(Math.min(...csaFire.map((e: any) => e.t0))).toBe(420);
+    expect(Math.max(...csaFire.map((e: any) => e.t1))).toBe(7500);
+    // every instant of the old segment's window has a live CSA emitter, and
+    // the general fire runs >= 10 emitters deep (the never-regress check)
+    for (let t = 420; t < 7500; t += 60) { // half-open [t0, t1) sampling
+      const live = csaFire.filter((e: any) => e.t0 <= t && t < e.t1);
+      expect(live.length, `t=${t}`).toBeGreaterThanOrEqual(1);
+      if (t >= 480 && t < 7200)
+        expect(live.length, `t=${t}`).toBeGreaterThanOrEqual(10);
+    }
   });
   it("B-grade Confederate children are valid; the four display-LOD brigades keep rosters and no children", () => {
     const units = (battle as any).units;

@@ -4127,6 +4127,441 @@
       ]
     },
     {
+      "id": "csa-bn-alexander",
+      "name": "Alexander's Artillery Battalion (Maj. Huger)",
+      "side": "confederate",
+      "frontage_m": 500,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3170,
+          "z": 4150,
+          "facing": 78,
+          "formation": "line",
+          "strength": 576,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim: 'In the line on ridge from Peach Orchard to N. E. corner of Spangler's Woods. Aided in the cannonade and supported Longstreet's assault.' (https://gettysburg.stonesentinels.com/confederate-headquarters/alexanders-battalion/, fetched 2026-07-08) — the cannonade's core; Alexander's 'come quick' notes to Pickett (docs/research/2026-07-02-full-cast-sources.md §3.2); Col. E.P. Alexander directing the First Corps guns, Maj. Frank Huger the battalion (survey Cdr column: Alexander/Huger); 24 pieces (two 20-pdr Parrotts, one 10-pdr Parrott, seven 3-inch Rifles, six Napoleons, four 24-pdr and four 12-pdr howitzers); casualties killed 19, wounded 114, missing 6, 116 horses (monument); the tablet's line runs ~1.5 km Peach Orchard → Spangler's Woods — unit centered mid-sector at the sheet-8 read, frontage capped at the 500 m battalion-gun-line convention, the sector is the claim; NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 24-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        },
+        {
+          "t": 10800,
+          "x": 3170,
+          "z": 4150,
+          "facing": 78,
+          "formation": "line",
+          "strength": 576,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim: 'In the line on ridge from Peach Orchard to N. E. corner of Spangler's Woods. Aided in the cannonade and supported Longstreet's assault.' (https://gettysburg.stonesentinels.com/confederate-headquarters/alexanders-battalion/, fetched 2026-07-08) — the cannonade's core; Alexander's 'come quick' notes to Pickett (docs/research/2026-07-02-full-cast-sources.md §3.2); Col. E.P. Alexander directing the First Corps guns, Maj. Frank Huger the battalion (survey Cdr column: Alexander/Huger); 24 pieces (two 20-pdr Parrotts, one 10-pdr Parrott, seven 3-inch Rifles, six Napoleons, four 24-pdr and four 12-pdr howitzers); casualties killed 19, wounded 114, missing 6, 116 horses (monument); the tablet's line runs ~1.5 km Peach Orchard → Spangler's Woods — unit centered mid-sector at the sheet-8 read, frontage capped at the 500 m battalion-gun-line convention, the sector is the claim; NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 24-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-cabell",
+      "name": "Cabell's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 350,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3190,
+          "z": 3400,
+          "facing": 70,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim: 'July 2-3. Took an active part in the battle.' (https://gettysburg.stonesentinels.com/confederate-headquarters/cabells-artillery-battalion/, fetched 2026-07-08); Col. Henry C. Cabell; Fraser's, McCarthy's, Carlton's, Manly's batteries; position: Emmitsburg Rd at the Peach Orchard/Wheatfield Rd corner (docs/research/2026-07-02-full-cast-sources.md §3.2; survey §1 Peach Orchard 3208,3457; sheet 8 s8_peachorchard.jpg draws 'Cabell's Bat.'); 16 guns (four Napoleons, four 10-pdr Parrotts, six 3-inch Rifles, two 12-pdr howitzers); casualties killed 12, wounded 30, missing 4, 80 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 16-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        },
+        {
+          "t": 10800,
+          "x": 3190,
+          "z": 3400,
+          "facing": 70,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim: 'July 2-3. Took an active part in the battle.' (https://gettysburg.stonesentinels.com/confederate-headquarters/cabells-artillery-battalion/, fetched 2026-07-08); Col. Henry C. Cabell; Fraser's, McCarthy's, Carlton's, Manly's batteries; position: Emmitsburg Rd at the Peach Orchard/Wheatfield Rd corner (docs/research/2026-07-02-full-cast-sources.md §3.2; survey §1 Peach Orchard 3208,3457; sheet 8 s8_peachorchard.jpg draws 'Cabell's Bat.'); 16 guns (four Napoleons, four 10-pdr Parrotts, six 3-inch Rifles, two 12-pdr howitzers); casualties killed 12, wounded 30, missing 4, 80 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 16-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-dearing",
+      "name": "Dearing's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 400,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3140,
+          "z": 4600,
+          "facing": 85,
+          "formation": "line",
+          "strength": 432,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim: 'Advanced to the front about daybreak and took a conspicuous part in the battle. In the cannonade preceding Longstreet's assault it fired by battery and very effectively.' (https://gettysburg.stonesentinels.com/confederate-headquarters/dearings-battalion/, fetched 2026-07-08); Maj. James Dearing; Stribling's, Caskie's, Macon's, Blount's batteries — sheet 8 s8_peachorchard.jpg names Blount, Caskie, Macon on the Emmitsburg Rd ridge fronting Pickett (docs/research/2026-07-02-full-cast-sources.md §3.2); 18 pieces (two 20-pdr Parrotts, three 10-pdr Parrotts, one 3-inch Rifle, twelve Napoleons); casualties killed 8, wounded 17, 37 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 18-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        },
+        {
+          "t": 10800,
+          "x": 3140,
+          "z": 4600,
+          "facing": 85,
+          "formation": "line",
+          "strength": 432,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim: 'Advanced to the front about daybreak and took a conspicuous part in the battle. In the cannonade preceding Longstreet's assault it fired by battery and very effectively.' (https://gettysburg.stonesentinels.com/confederate-headquarters/dearings-battalion/, fetched 2026-07-08); Maj. James Dearing; Stribling's, Caskie's, Macon's, Blount's batteries — sheet 8 s8_peachorchard.jpg names Blount, Caskie, Macon on the Emmitsburg Rd ridge fronting Pickett (docs/research/2026-07-02-full-cast-sources.md §3.2); 18 pieces (two 20-pdr Parrotts, three 10-pdr Parrotts, one 3-inch Rifle, twelve Napoleons); casualties killed 8, wounded 17, 37 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 18-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-eshleman",
+      "name": "Eshleman's Battalion, Washington Artillery",
+      "side": "confederate",
+      "frontage_m": 250,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3220,
+          "z": 3550,
+          "facing": 55,
+          "formation": "line",
+          "strength": 240,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim: 'Arrived on the field before daylight and was engaged all day. Captured one 3 inch rifle.' (https://gettysburg.stonesentinels.com/confederate-headquarters/eshlemans-artillery-battalion/, fetched 2026-07-08); Maj. Benjamin F. Eshleman; Miller's, Squires's, Richardson's, Norcom's batteries (the Washington Louisiana Artillery); THE 13:07 SIGNAL GUNS ARE HIS — Miller's battery tablet: 'advanced before daylight into position about 100 yards north of the Peach Orchard… fired the signal guns for the cannonade preceding Longstreet's assault, took part therein, and supported the charge of the infantry by advancing 450 yards and keeping up a vigorous fire' (https://gettysburg.stonesentinels.com/confederate-batteries/millers-louisiana-battery/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.2 and §4 item 1); 10 guns (eight Napoleons, two 12-pdr howitzers); casualties killed 3, wounded 26, missing 16, 37 horses, 3 guns disabled (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 10-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        },
+        {
+          "t": 10800,
+          "x": 3220,
+          "z": 3550,
+          "facing": 55,
+          "formation": "line",
+          "strength": 240,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim: 'Arrived on the field before daylight and was engaged all day. Captured one 3 inch rifle.' (https://gettysburg.stonesentinels.com/confederate-headquarters/eshlemans-artillery-battalion/, fetched 2026-07-08); Maj. Benjamin F. Eshleman; Miller's, Squires's, Richardson's, Norcom's batteries (the Washington Louisiana Artillery); THE 13:07 SIGNAL GUNS ARE HIS — Miller's battery tablet: 'advanced before daylight into position about 100 yards north of the Peach Orchard… fired the signal guns for the cannonade preceding Longstreet's assault, took part therein, and supported the charge of the infantry by advancing 450 yards and keeping up a vigorous fire' (https://gettysburg.stonesentinels.com/confederate-batteries/millers-louisiana-battery/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.2 and §4 item 1); 10 guns (eight Napoleons, two 12-pdr howitzers); casualties killed 3, wounded 26, missing 16, 37 horses, 3 guns disabled (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 10-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-henry",
+      "name": "Henry's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 450,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2980,
+          "z": 2280,
+          "facing": 150,
+          "formation": "line",
+          "strength": 456,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim: 'July 2-3. Occupied this line and took active part in the battle as described on the tablets of the several batteries.' (https://gettysburg.stonesentinels.com/confederate-headquarters/henrys-artillery-battalion/, fetched 2026-07-08); Maj. Mathis W. Henry; Reilly's, Bachman's, Garden's, Latham's batteries; position: Warfield Ridge/Bushman knolls facing S/SE (survey §1 Warfield Ridge 2963,2231; docs/research/2026-07-02-full-cast-sources.md §3.2) — ⚠️ PARTIAL/CONTESTED cannonade weight: flank cover per Alexander rather than full participation in the bombardment; Bachman's & Reilly's southward swing vs Merritt ~15:00+ belongs to Wave 6 as his children (plan Task 8) — flag carried; 19 pieces (eleven Napoleons, four 10-pdr Parrotts, two 3-inch Rifles, one 12-pdr howitzer, one 6-pdr bronze gun); casualties killed 4, wounded 23 (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 19-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        },
+        {
+          "t": 10800,
+          "x": 2980,
+          "z": 2280,
+          "facing": 150,
+          "formation": "line",
+          "strength": 456,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim: 'July 2-3. Occupied this line and took active part in the battle as described on the tablets of the several batteries.' (https://gettysburg.stonesentinels.com/confederate-headquarters/henrys-artillery-battalion/, fetched 2026-07-08); Maj. Mathis W. Henry; Reilly's, Bachman's, Garden's, Latham's batteries; position: Warfield Ridge/Bushman knolls facing S/SE (survey §1 Warfield Ridge 2963,2231; docs/research/2026-07-02-full-cast-sources.md §3.2) — ⚠️ PARTIAL/CONTESTED cannonade weight: flank cover per Alexander rather than full participation in the bombardment; Bachman's & Reilly's southward swing vs Merritt ~15:00+ belongs to Wave 6 as his children (plan Task 8) — flag carried; 19 pieces (eleven Napoleons, four 10-pdr Parrotts, two 3-inch Rifles, one 12-pdr howitzer, one 6-pdr bronze gun); casualties killed 4, wounded 23 (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 19-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-pegram",
+      "name": "Pegram's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 450,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3580,
+          "z": 6400,
+          "facing": 105,
+          "formation": "line",
+          "strength": 480,
+          "confidence": "documented",
+          "citation": "monument verbatim: 'July 1 – 3. The Battalion was actively engaged on each of the three days'; ammunition expended 3,800 rounds (https://gettysburg.stonesentinels.com/confederate-headquarters/pegrams-artillery-battalion/, fetched 2026-07-08); Maj. William J. Pegram; Marye's, Crenshaw's, Zimmerman's, McGraw's, Brander's batteries — sheet 8 s8_semridge_n.jpg names Marye, Zimmerman, Brander on Seminary Ridge S of Fairfield Rd (docs/research/2026-07-02-full-cast-sources.md §3.2); 20 guns (ten Napoleons, four 10-pdr Parrotts, four 3-inch Rifles, two 12-pdr howitzers); casualties killed 10, wounded 37, 38 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 20-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        },
+        {
+          "t": 10800,
+          "x": 3580,
+          "z": 6400,
+          "facing": 105,
+          "formation": "line",
+          "strength": 480,
+          "confidence": "documented",
+          "citation": "monument verbatim: 'July 1 – 3. The Battalion was actively engaged on each of the three days'; ammunition expended 3,800 rounds (https://gettysburg.stonesentinels.com/confederate-headquarters/pegrams-artillery-battalion/, fetched 2026-07-08); Maj. William J. Pegram; Marye's, Crenshaw's, Zimmerman's, McGraw's, Brander's batteries — sheet 8 s8_semridge_n.jpg names Marye, Zimmerman, Brander on Seminary Ridge S of Fairfield Rd (docs/research/2026-07-02-full-cast-sources.md §3.2); 20 guns (ten Napoleons, four 10-pdr Parrotts, four 3-inch Rifles, two 12-pdr howitzers); casualties killed 10, wounded 37, 38 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 20-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-mcintosh",
+      "name": "McIntosh's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 400,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3530,
+          "z": 6180,
+          "facing": 105,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "documented",
+          "citation": "monument verbatim: 'July 1 – 4. The Battalion was actively engaged on each of the three days of the battle…' (https://gettysburg.stonesentinels.com/confederate-headquarters/mcintoshs-artillery-battalion/, fetched 2026-07-08); Maj. David Gregg McIntosh; Johnson's, Rice's, Hurt's, Wallace's batteries — sheet 8 s8_semridge_n.jpg names Johnson, Hurt, Wallace in the Schultz Woods sector (docs/research/2026-07-02-full-cast-sources.md §3.2); 16 guns (six Napoleons, two Whitworths, eight 3-inch Rifles); casualties 7 killed, 25 wounded of whom 16 captured, 38 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 16-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        },
+        {
+          "t": 10800,
+          "x": 3530,
+          "z": 6180,
+          "facing": 105,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "documented",
+          "citation": "monument verbatim: 'July 1 – 4. The Battalion was actively engaged on each of the three days of the battle…' (https://gettysburg.stonesentinels.com/confederate-headquarters/mcintoshs-artillery-battalion/, fetched 2026-07-08); Maj. David Gregg McIntosh; Johnson's, Rice's, Hurt's, Wallace's batteries — sheet 8 s8_semridge_n.jpg names Johnson, Hurt, Wallace in the Schultz Woods sector (docs/research/2026-07-02-full-cast-sources.md §3.2); 16 guns (six Napoleons, two Whitworths, eight 3-inch Rifles); casualties 7 killed, 25 wounded of whom 16 captured, 38 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 16-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-garnett",
+      "name": "Garnett's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 350,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3350,
+          "z": 5880,
+          "facing": 95,
+          "formation": "line",
+          "strength": 360,
+          "confidence": "documented",
+          "citation": "DOCUMENTED SILENCE, DISAGREEMENT CARRIED — War Dept tablet verbatim: 'The Parrotts and Rifles took part in the battle in different position on each of the three days their most active service being on the second day in this position. The Napoleons and Howitzers were in reserve and not actively engaged at any time.' (https://gettysburg.stonesentinels.com/confederate-headquarters/garnetts-artillery-battalion/, fetched 2026-07-08) — the July 3 credit is nonspecific (most active service July 2) and half the battalion is explicitly idle; secondaries credit his rifles in the July 3 cannonade — ⚠️ fired-or-not disagreement kept here, WEIGHT THE TABLET per the survey (docs/research/2026-07-02-full-cast-sources.md §3.2, §4 item 13): NO events, presence without fire IS the encoding; Lt. Col. John J. Garnett; Grandy's, Moore's, Lewis's, Maurin's batteries; position near McMillan Woods (monument ~160 ft N of the McMillan House); 15 guns (four Napoleons, two 10-pdr Parrotts, seven 3-inch Rifles, two 12-pdr howitzers); casualties wounded 5, missing 17, 13 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 15-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        },
+        {
+          "t": 10800,
+          "x": 3350,
+          "z": 5880,
+          "facing": 95,
+          "formation": "line",
+          "strength": 360,
+          "confidence": "documented",
+          "citation": "DOCUMENTED SILENCE, DISAGREEMENT CARRIED — War Dept tablet verbatim: 'The Parrotts and Rifles took part in the battle in different position on each of the three days their most active service being on the second day in this position. The Napoleons and Howitzers were in reserve and not actively engaged at any time.' (https://gettysburg.stonesentinels.com/confederate-headquarters/garnetts-artillery-battalion/, fetched 2026-07-08) — the July 3 credit is nonspecific (most active service July 2) and half the battalion is explicitly idle; secondaries credit his rifles in the July 3 cannonade — ⚠️ fired-or-not disagreement kept here, WEIGHT THE TABLET per the survey (docs/research/2026-07-02-full-cast-sources.md §3.2, §4 item 13): NO events, presence without fire IS the encoding; Lt. Col. John J. Garnett; Grandy's, Moore's, Lewis's, Maurin's batteries; position near McMillan Woods (monument ~160 ft N of the McMillan House); 15 guns (four Napoleons, two 10-pdr Parrotts, seven 3-inch Rifles, two 12-pdr howitzers); casualties wounded 5, missing 17, 13 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 15-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-poague",
+      "name": "Poague's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 350,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3290,
+          "z": 5300,
+          "facing": 92,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim, July 3: 'The ten guns were actively engaged.' — and the howitzer position marker: the six howitzers, sheltered, 'took no active part in the battle' — a DOCUMENTED INTERNAL SPLIT, both halves on one tablet pair (https://gettysburg.stonesentinels.com/confederate-headquarters/poagues-artillery-battalion/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.2); Lt. Col. William T. Poague; Ward's, Brooke's, Wyatt's, Graham's batteries; 657 rounds expended; position: behind Pettigrew, Spangler/McMillan Woods sector (docs/research/2026-07-02-full-cast-sources.md §3.2); 16 pieces (seven Napoleons, six 12-pdr howitzers, one 10-pdr Parrott, two 3-inch Rifles) — ten engaged; casualties killed 2, wounded 24, missing 6, 17 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 16-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        },
+        {
+          "t": 10800,
+          "x": 3290,
+          "z": 5300,
+          "facing": 92,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim, July 3: 'The ten guns were actively engaged.' — and the howitzer position marker: the six howitzers, sheltered, 'took no active part in the battle' — a DOCUMENTED INTERNAL SPLIT, both halves on one tablet pair (https://gettysburg.stonesentinels.com/confederate-headquarters/poagues-artillery-battalion/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.2); Lt. Col. William T. Poague; Ward's, Brooke's, Wyatt's, Graham's batteries; 657 rounds expended; position: behind Pettigrew, Spangler/McMillan Woods sector (docs/research/2026-07-02-full-cast-sources.md §3.2); 16 pieces (seven Napoleons, six 12-pdr howitzers, one 10-pdr Parrott, two 3-inch Rifles) — ten engaged; casualties killed 2, wounded 24, missing 6, 17 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 16-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-lane",
+      "name": "Lane's Sumter (Georgia) Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 400,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3160,
+          "z": 4870,
+          "facing": 88,
+          "formation": "line",
+          "strength": 408,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim: 'July 2 – 3. Took part in the battle.' (https://gettysburg.stonesentinels.com/confederate-headquarters/lanes-artillery-battalion/, fetched 2026-07-08); 1,082 rounds expended July 2–3 (docs/research/2026-07-02-full-cast-sources.md §3.2); Maj. John Lane; Patterson's, Wingfield's, Ross's batteries — sheet 8 s8_semridge_n.jpg names Ross, Wingfield on Anderson's front, Seminary Ridge (docs/research/2026-07-02-full-cast-sources.md §3.2); 17 pieces (three Napoleons, two 20-pdr Parrotts, three 10-pdr Parrotts, four 3-inch Navy Parrotts, five 12-pdr howitzers); casualties killed 3, wounded 21, missing 6 (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 17-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        },
+        {
+          "t": 10800,
+          "x": 3160,
+          "z": 4870,
+          "facing": 88,
+          "formation": "line",
+          "strength": 408,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim: 'July 2 – 3. Took part in the battle.' (https://gettysburg.stonesentinels.com/confederate-headquarters/lanes-artillery-battalion/, fetched 2026-07-08); 1,082 rounds expended July 2–3 (docs/research/2026-07-02-full-cast-sources.md §3.2); Maj. John Lane; Patterson's, Wingfield's, Ross's batteries — sheet 8 s8_semridge_n.jpg names Ross, Wingfield on Anderson's front, Seminary Ridge (docs/research/2026-07-02-full-cast-sources.md §3.2); 17 pieces (three Napoleons, two 20-pdr Parrotts, three 10-pdr Parrotts, four 3-inch Navy Parrotts, five 12-pdr howitzers); casualties killed 3, wounded 21, missing 6 (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 17-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-dance",
+      "name": "Dance's 1st Virginia Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 450,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3700,
+          "z": 6850,
+          "facing": 115,
+          "formation": "line",
+          "strength": 480,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim: 'July 2 & 3. The four first named batteries occupied positions at various points on this ridge. Graham's Battery of 20 Pounder Parrotts served east of Rock Creek. All were actively engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/dances-artillery-battalion/, fetched 2026-07-08); Griffin's battery 'took part in the cannonade' (docs/research/2026-07-02-full-cast-sources.md §3.2); Capt. Willis A. Dance; Cunningham's, Smith's, Watson's, Griffin's, Graham's batteries; position: Seminary Ridge near the Seminary/railroad cut (survey §1 Seminary 3722,6888) — the tablet disperses the four ridge batteries 'at various points'; unit centered at the position class, the sector is the claim; Graham's east-of-Rock-Creek service is a known coarseness kept at battalion grain (the survey attests no separate in-window position for it — noted, not authored); 20 guns (four 20-pdr Parrotts, four 10-pdr Parrotts, ten 3-inch Rifles, two Napoleons); casualties killed 3, wounded 1 (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 20-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent); EWELL'S-WING DISAGREEMENT CARRIED (survey §3.2 ⚠️): the popular picture has 'two dozen enfilading guns from the northeast'; the tablets attest only ~10–14 of the Second Corps' ~79 guns actually firing (Griffin's of Dance's, Carter's detached rifles, Raine's two 20-pdrs, Nelson's 20–25 rounds) — the near-silence of Ewell's arc is a documented feature, rendered as guns present and mostly dark, never paved over"
+        },
+        {
+          "t": 10800,
+          "x": 3700,
+          "z": 6850,
+          "facing": 115,
+          "formation": "line",
+          "strength": 480,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim: 'July 2 & 3. The four first named batteries occupied positions at various points on this ridge. Graham's Battery of 20 Pounder Parrotts served east of Rock Creek. All were actively engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/dances-artillery-battalion/, fetched 2026-07-08); Griffin's battery 'took part in the cannonade' (docs/research/2026-07-02-full-cast-sources.md §3.2); Capt. Willis A. Dance; Cunningham's, Smith's, Watson's, Griffin's, Graham's batteries; position: Seminary Ridge near the Seminary/railroad cut (survey §1 Seminary 3722,6888) — the tablet disperses the four ridge batteries 'at various points'; unit centered at the position class, the sector is the claim; Graham's east-of-Rock-Creek service is a known coarseness kept at battalion grain (the survey attests no separate in-window position for it — noted, not authored); 20 guns (four 20-pdr Parrotts, four 10-pdr Parrotts, ten 3-inch Rifles, two Napoleons); casualties killed 3, wounded 1 (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 20-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent); EWELL'S-WING DISAGREEMENT CARRIED (survey §3.2 ⚠️): the popular picture has 'two dozen enfilading guns from the northeast'; the tablets attest only ~10–14 of the Second Corps' ~79 guns actually firing (Griffin's of Dance's, Carter's detached rifles, Raine's two 20-pdrs, Nelson's 20–25 rounds) — the near-silence of Ewell's arc is a documented feature, rendered as guns present and mostly dark, never paved over"
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-nelson",
+      "name": "Nelson's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 280,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6560,
+          "z": 6420,
+          "facing": 240,
+          "formation": "line",
+          "strength": 264,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim: 'Ordered to the extreme left of the Confederate line to find a position to withdraw the fire from the Confederate infantry. Opened about 12 M. firing 20 to 25 rounds.' — then silent (https://gettysburg.stonesentinels.com/confederate-headquarters/nelsons-artillery-battalion/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.2: LIMITED, A−); Lt. Col. William Nelson; Kirkpatrick's, Massie's, Milledge's batteries; position class: Benner's Hill area (survey §1 Benner's Hill 6619,6305); 11 guns (one 10-pdr Parrott, four 3-inch Rifles, six Napoleons); 'Casualties not reported.' (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 11-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent); EWELL'S-WING DISAGREEMENT CARRIED (survey §3.2 ⚠️): the popular picture has 'two dozen enfilading guns from the northeast'; the tablets attest only ~10–14 of the Second Corps' ~79 guns actually firing (Griffin's of Dance's, Carter's detached rifles, Raine's two 20-pdrs, Nelson's 20–25 rounds) — the near-silence of Ewell's arc is a documented feature, rendered as guns present and mostly dark, never paved over"
+        },
+        {
+          "t": 10800,
+          "x": 6560,
+          "z": 6420,
+          "facing": 240,
+          "formation": "line",
+          "strength": 264,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim: 'Ordered to the extreme left of the Confederate line to find a position to withdraw the fire from the Confederate infantry. Opened about 12 M. firing 20 to 25 rounds.' — then silent (https://gettysburg.stonesentinels.com/confederate-headquarters/nelsons-artillery-battalion/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.2: LIMITED, A−); Lt. Col. William Nelson; Kirkpatrick's, Massie's, Milledge's batteries; position class: Benner's Hill area (survey §1 Benner's Hill 6619,6305); 11 guns (one 10-pdr Parrott, four 3-inch Rifles, six Napoleons); 'Casualties not reported.' (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 11-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent); EWELL'S-WING DISAGREEMENT CARRIED (survey §3.2 ⚠️): the popular picture has 'two dozen enfilading guns from the northeast'; the tablets attest only ~10–14 of the Second Corps' ~79 guns actually firing (Griffin's of Dance's, Carter's detached rifles, Raine's two 20-pdrs, Nelson's 20–25 rounds) — the near-silence of Ewell's arc is a documented feature, rendered as guns present and mostly dark, never paved over"
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-carter",
+      "name": "Carter's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 350,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4185,
+          "z": 8180,
+          "facing": 175,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim, July 3: 'The Parrotts and Rifled guns were placed on Seminary Ridge near the railroad cut and took part in the great cannonade preceding Longstreet's assault.' (https://gettysburg.stonesentinels.com/confederate-headquarters/carters-artillery-battalion/, fetched 2026-07-08) — a DOCUMENTED SPLIT (docs/research/2026-07-02-full-cast-sources.md §3.2: YES rifles / Oak Hill Napoleons largely silent): the battalion stands at its Oak Hill tablet position with the Napoleons SILENT, and the detached rifles' fire is a fixed-segment event at the railroad-cut position (the format doc's surviving segment use); Lt. Col. Thomas H. Carter; Carter's, Fry's, Page's, Reese's batteries; position: Oak Hill (survey §1: 4175,8209); 16 guns (four 10-pdr Parrotts, six 3-inch Rifles, six Napoleons); casualties 6 killed, 35 wounded, 24 missing; 1,898 rounds expended across the battle (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 16-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent); EWELL'S-WING DISAGREEMENT CARRIED (survey §3.2 ⚠️): the popular picture has 'two dozen enfilading guns from the northeast'; the tablets attest only ~10–14 of the Second Corps' ~79 guns actually firing (Griffin's of Dance's, Carter's detached rifles, Raine's two 20-pdrs, Nelson's 20–25 rounds) — the near-silence of Ewell's arc is a documented feature, rendered as guns present and mostly dark, never paved over"
+        },
+        {
+          "t": 10800,
+          "x": 4185,
+          "z": 8180,
+          "facing": 175,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim, July 3: 'The Parrotts and Rifled guns were placed on Seminary Ridge near the railroad cut and took part in the great cannonade preceding Longstreet's assault.' (https://gettysburg.stonesentinels.com/confederate-headquarters/carters-artillery-battalion/, fetched 2026-07-08) — a DOCUMENTED SPLIT (docs/research/2026-07-02-full-cast-sources.md §3.2: YES rifles / Oak Hill Napoleons largely silent): the battalion stands at its Oak Hill tablet position with the Napoleons SILENT, and the detached rifles' fire is a fixed-segment event at the railroad-cut position (the format doc's surviving segment use); Lt. Col. Thomas H. Carter; Carter's, Fry's, Page's, Reese's batteries; position: Oak Hill (survey §1: 4175,8209); 16 guns (four 10-pdr Parrotts, six 3-inch Rifles, six Napoleons); casualties 6 killed, 35 wounded, 24 missing; 1,898 rounds expended across the battle (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 16-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent); EWELL'S-WING DISAGREEMENT CARRIED (survey §3.2 ⚠️): the popular picture has 'two dozen enfilading guns from the northeast'; the tablets attest only ~10–14 of the Second Corps' ~79 guns actually firing (Griffin's of Dance's, Carter's detached rifles, Raine's two 20-pdrs, Nelson's 20–25 rounds) — the near-silence of Ewell's arc is a documented feature, rendered as guns present and mostly dark, never paved over"
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-jones",
+      "name": "Jones's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 350,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4950,
+          "z": 7480,
+          "facing": 195,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "documented",
+          "citation": "DOCUMENTED SILENCE — War Dept tablet verbatim, July 3: 'Occupied same position. Not actively engaged.' — sixteen guns north of the town, present and dark all window; NO events, the absence IS the encoding (battle-format.md 'Documented silence') (https://gettysburg.stonesentinels.com/confederate-headquarters/jones-artillery-battalion/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.2); Lt. Col. Hilary P. Jones; Carrington's, Tanner's, Green's, Garber's batteries; position class: N of town, where the battalion had stood since its July 1 enfilade (survey §1 town square 4864,6839); 16 guns (two 10-pdr Parrotts, six 3-inch guns, eight Napoleons); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 16-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent); EWELL'S-WING DISAGREEMENT CARRIED (survey §3.2 ⚠️): the popular picture has 'two dozen enfilading guns from the northeast'; the tablets attest only ~10–14 of the Second Corps' ~79 guns actually firing (Griffin's of Dance's, Carter's detached rifles, Raine's two 20-pdrs, Nelson's 20–25 rounds) — the near-silence of Ewell's arc is a documented feature, rendered as guns present and mostly dark, never paved over"
+        },
+        {
+          "t": 10800,
+          "x": 4950,
+          "z": 7480,
+          "facing": 195,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "documented",
+          "citation": "DOCUMENTED SILENCE — War Dept tablet verbatim, July 3: 'Occupied same position. Not actively engaged.' — sixteen guns north of the town, present and dark all window; NO events, the absence IS the encoding (battle-format.md 'Documented silence') (https://gettysburg.stonesentinels.com/confederate-headquarters/jones-artillery-battalion/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.2); Lt. Col. Hilary P. Jones; Carrington's, Tanner's, Green's, Garber's batteries; position class: N of town, where the battalion had stood since its July 1 enfilade (survey §1 town square 4864,6839); 16 guns (two 10-pdr Parrotts, six 3-inch guns, eight Napoleons); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 16-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent); EWELL'S-WING DISAGREEMENT CARRIED (survey §3.2 ⚠️): the popular picture has 'two dozen enfilading guns from the northeast'; the tablets attest only ~10–14 of the Second Corps' ~79 guns actually firing (Griffin's of Dance's, Carter's detached rifles, Raine's two 20-pdrs, Nelson's 20–25 rounds) — the near-silence of Ewell's arc is a documented feature, rendered as guns present and mostly dark, never paved over"
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-raine",
+      "name": "Andrews's (Latimer's) Artillery Battalion (Capt. Raine)",
+      "side": "confederate",
+      "frontage_m": 250,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6650,
+          "z": 6150,
+          "facing": 240,
+          "formation": "column",
+          "strength": 384,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim, July 3: 'The 20 pounder Parrotts took part in the great cannonade while the other batteries were in reserve.' (https://gettysburg.stonesentinels.com/confederate-headquarters/latimers-artillery-battalion/, fetched 2026-07-08) — a DOCUMENTED SPLIT (docs/research/2026-07-02-full-cast-sources.md §3.2: PARTIAL, A−): the battalion parks in reserve behind Benner's Hill (formation column) and the detached 20-pdr section's fire is a fixed-segment event ~1/2 mile north of Benner's Hill, the section's attested position (the format doc's surviving segment use); Maj. Joseph W. Latimer mortally wounded July 2 (died Aug 1) — Capt. Charles I. Raine commanding (acting-commander naming per the survey); Brown's, Carpenter's, Dement's, Raine's batteries; 16 guns (two 20-pdr Parrotts, five 10-pdr Parrotts, three 3-inch Rifles, six Napoleons); casualties 10 killed, 40 wounded, 30 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 16-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent); EWELL'S-WING DISAGREEMENT CARRIED (survey §3.2 ⚠️): the popular picture has 'two dozen enfilading guns from the northeast'; the tablets attest only ~10–14 of the Second Corps' ~79 guns actually firing (Griffin's of Dance's, Carter's detached rifles, Raine's two 20-pdrs, Nelson's 20–25 rounds) — the near-silence of Ewell's arc is a documented feature, rendered as guns present and mostly dark, never paved over"
+        },
+        {
+          "t": 10800,
+          "x": 6650,
+          "z": 6150,
+          "facing": 240,
+          "formation": "column",
+          "strength": 384,
+          "confidence": "documented",
+          "citation": "War Dept tablet verbatim, July 3: 'The 20 pounder Parrotts took part in the great cannonade while the other batteries were in reserve.' (https://gettysburg.stonesentinels.com/confederate-headquarters/latimers-artillery-battalion/, fetched 2026-07-08) — a DOCUMENTED SPLIT (docs/research/2026-07-02-full-cast-sources.md §3.2: PARTIAL, A−): the battalion parks in reserve behind Benner's Hill (formation column) and the detached 20-pdr section's fire is a fixed-segment event ~1/2 mile north of Benner's Hill, the section's attested position (the format doc's surviving segment use); Maj. Joseph W. Latimer mortally wounded July 2 (died Aug 1) — Capt. Charles I. Raine commanding (acting-commander naming per the survey); Brown's, Carpenter's, Dement's, Raine's batteries; 16 guns (two 20-pdr Parrotts, five 10-pdr Parrotts, three 3-inch Rifles, six Napoleons); casualties 10 killed, 40 wounded, 30 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 16-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent); EWELL'S-WING DISAGREEMENT CARRIED (survey §3.2 ⚠️): the popular picture has 'two dozen enfilading guns from the northeast'; the tablets attest only ~10–14 of the Second Corps' ~79 guns actually firing (Griffin's of Dance's, Carter's detached rifles, Raine's two 20-pdrs, Nelson's 20–25 rounds) — the near-silence of Ewell's arc is a documented feature, rendered as guns present and mostly dark, never paved over"
+        }
+      ]
+    },
+    {
       "id": "us-webb",
       "name": "Webb's Brigade (Philadelphia Brigade)",
       "side": "union",
@@ -6732,17 +7167,150 @@
   ],
   "events": [
     {
-      "id": "csa-seminary-bombardment",
+      "id": "csa-bn-alexander-cannonade",
       "kind": "artillery_fire",
       "t0": 420,
       "t1": 7500,
-      "x": 3240,
-      "z": 4150,
-      "x2": 3400,
-      "z2": 5950,
+      "unitId": "csa-bn-alexander",
       "confidence": "documented",
-      "citation": "Jacobs 1864 (Notes on the Rebel Invasion): 'At seven minutes past 1 p.m., the awful and portentous silence was broken' - 13:07, contemporaneous and habitually precise; Waitt 1906 pp.234-237 (19th MA history): the signal gun, then 'every rebel gun on Seminary Ridge opened in one grand salvo, with concentric fire on Gibbon's Division'; end: Haskell 1908, 'two mortal hours', cannonade ends 'at three o'clock almost precisely'",
-      "note": "Onset disagreement carried, never reconciled: Alexander 1907 'just 1 P.M. by my watch'; Haskell watch-checked ~13:00; Sawyer (8th OH) 'between twelve and one' - a 0-7 minute spread against Jacobs's 13:07 (t0=420). t1=7500 follows the authored track spine (step-off keyframes at t=7500); witnesses put the step-off anywhere 13:50-15:00 (Alexander ~13:50, Jacobs 14:30, Haskell ~15:00) - geometry follows the spine, the citation carries the spread. Segment position INFERRED: no CSA batteries are authored as units, so the gun line is a fixed segment traced ~120 m in front of the authored infantry start line, through the Virginia Memorial anchor (3176.8, 5016.5), ~1,800 m Spangler's Woods to Pettigrew's left; this event migrates to unitId form when CSA batteries are authored."
+      "citation": "tablet: 'Aided in the cannonade and supported Longstreet's assault.' (https://gettysburg.stonesentinels.com/confederate-headquarters/alexanders-battalion/, fetched 2026-07-08)",
+      "note": "window = the retired csa-seminary-bombardment segment's spine, kept exactly: t0=420 per Jacobs 1864 (Notes on the Rebel Invasion), 'At seven minutes past 1 p.m., the awful and portentous silence was broken' — 13:07, contemporaneous and habitually precise; onset disagreement carried, never reconciled (Alexander 1907 'just 1 P.M. by my watch'; Haskell watch-checked ~13:00; Sawyer (8th OH) 'between twelve and one' — a 0–7 minute spread); t1=7500 follows the authored track spine (step-off keyframes at t=7500); witnesses put the general fire's end anywhere 13:50–15:00 (Alexander ~13:50, Jacobs 14:30, Haskell 'two mortal hours… at three o'clock almost precisely') — geometry follows the spine, the citation carries the spread"
+    },
+    {
+      "id": "csa-bn-cabell-cannonade",
+      "kind": "artillery_fire",
+      "t0": 420,
+      "t1": 7500,
+      "unitId": "csa-bn-cabell",
+      "confidence": "documented",
+      "citation": "tablet: 'July 2-3. Took an active part in the battle.' (https://gettysburg.stonesentinels.com/confederate-headquarters/cabells-artillery-battalion/, fetched 2026-07-08)",
+      "note": "window = the retired csa-seminary-bombardment segment's spine, kept exactly: t0=420 per Jacobs 1864 (Notes on the Rebel Invasion), 'At seven minutes past 1 p.m., the awful and portentous silence was broken' — 13:07, contemporaneous and habitually precise; onset disagreement carried, never reconciled (Alexander 1907 'just 1 P.M. by my watch'; Haskell watch-checked ~13:00; Sawyer (8th OH) 'between twelve and one' — a 0–7 minute spread); t1=7500 follows the authored track spine (step-off keyframes at t=7500); witnesses put the general fire's end anywhere 13:50–15:00 (Alexander ~13:50, Jacobs 14:30, Haskell 'two mortal hours… at three o'clock almost precisely') — geometry follows the spine, the citation carries the spread"
+    },
+    {
+      "id": "csa-bn-carter-rifles-cannonade",
+      "kind": "artillery_fire",
+      "t0": 420,
+      "t1": 7500,
+      "x": 3660,
+      "z": 7030,
+      "x2": 3705,
+      "z2": 7170,
+      "confidence": "documented",
+      "citation": "War Dept tablet verbatim, July 3: 'The Parrotts and Rifled guns were placed on Seminary Ridge near the railroad cut and took part in the great cannonade preceding Longstreet's assault.' (https://gettysburg.stonesentinels.com/confederate-headquarters/carters-artillery-battalion/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.2)",
+      "note": "ATTESTED DETACHMENT AS FIXED SEGMENT (battle-format.md 'Segment-emitter migration and attested detachments'): the parent battalion csa-bn-carter stays one unit at its Oak Hill tablet position (Napoleons largely silent — the negative rides its keyframes); the ten rifled pieces fire from the railroad-cut position — segment traced on Seminary Ridge just N of the Seminary (survey §1: 3722,6888), coordinate inferred within the tablet's position class; window = the retired csa-seminary-bombardment segment's spine, kept exactly: t0=420 per Jacobs 1864 (Notes on the Rebel Invasion), 'At seven minutes past 1 p.m., the awful and portentous silence was broken' — 13:07, contemporaneous and habitually precise; onset disagreement carried, never reconciled (Alexander 1907 'just 1 P.M. by my watch'; Haskell watch-checked ~13:00; Sawyer (8th OH) 'between twelve and one' — a 0–7 minute spread); t1=7500 follows the authored track spine (step-off keyframes at t=7500); witnesses put the general fire's end anywhere 13:50–15:00 (Alexander ~13:50, Jacobs 14:30, Haskell 'two mortal hours… at three o'clock almost precisely') — geometry follows the spine, the citation carries the spread"
+    },
+    {
+      "id": "csa-bn-dance-cannonade",
+      "kind": "artillery_fire",
+      "t0": 420,
+      "t1": 7500,
+      "unitId": "csa-bn-dance",
+      "confidence": "documented",
+      "citation": "tablet: 'All were actively engaged.'; Griffin's battery 'took part in the cannonade' (https://gettysburg.stonesentinels.com/confederate-headquarters/dances-artillery-battalion/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.2)",
+      "note": "window = the retired csa-seminary-bombardment segment's spine, kept exactly: t0=420 per Jacobs 1864 (Notes on the Rebel Invasion), 'At seven minutes past 1 p.m., the awful and portentous silence was broken' — 13:07, contemporaneous and habitually precise; onset disagreement carried, never reconciled (Alexander 1907 'just 1 P.M. by my watch'; Haskell watch-checked ~13:00; Sawyer (8th OH) 'between twelve and one' — a 0–7 minute spread); t1=7500 follows the authored track spine (step-off keyframes at t=7500); witnesses put the general fire's end anywhere 13:50–15:00 (Alexander ~13:50, Jacobs 14:30, Haskell 'two mortal hours… at three o'clock almost precisely') — geometry follows the spine, the citation carries the spread"
+    },
+    {
+      "id": "csa-bn-dearing-cannonade",
+      "kind": "artillery_fire",
+      "t0": 420,
+      "t1": 7500,
+      "unitId": "csa-bn-dearing",
+      "confidence": "documented",
+      "citation": "tablet: 'In the cannonade preceding Longstreet's assault it fired by battery and very effectively.' (https://gettysburg.stonesentinels.com/confederate-headquarters/dearings-battalion/, fetched 2026-07-08)",
+      "note": "window = the retired csa-seminary-bombardment segment's spine, kept exactly: t0=420 per Jacobs 1864 (Notes on the Rebel Invasion), 'At seven minutes past 1 p.m., the awful and portentous silence was broken' — 13:07, contemporaneous and habitually precise; onset disagreement carried, never reconciled (Alexander 1907 'just 1 P.M. by my watch'; Haskell watch-checked ~13:00; Sawyer (8th OH) 'between twelve and one' — a 0–7 minute spread); t1=7500 follows the authored track spine (step-off keyframes at t=7500); witnesses put the general fire's end anywhere 13:50–15:00 (Alexander ~13:50, Jacobs 14:30, Haskell 'two mortal hours… at three o'clock almost precisely') — geometry follows the spine, the citation carries the spread"
+    },
+    {
+      "id": "csa-bn-eshleman-signal",
+      "kind": "artillery_fire",
+      "t0": 420,
+      "t1": 480,
+      "unitId": "csa-bn-eshleman",
+      "confidence": "documented",
+      "citation": "Miller's battery tablet verbatim: 'fired the signal guns for the cannonade preceding Longstreet's assault' — Miller's 3rd Company, Washington Artillery, ~100 yards north of the Peach Orchard (https://gettysburg.stonesentinels.com/confederate-batteries/millers-louisiana-battery/, fetched 2026-07-08); clock: Jacobs 1864, 'At seven minutes past 1 p.m., the awful and portentous silence was broken' — 13:07 = t 420 (docs/research/2026-07-02-full-cast-sources.md §3.2, §4 item 1)",
+      "note": "the two signal shots that opened the cannonade; the battalion's own cannonade window follows at t=480"
+    },
+    {
+      "id": "csa-bn-henry-flank-cover",
+      "kind": "artillery_fire",
+      "t0": 420,
+      "t1": 7200,
+      "unitId": "csa-bn-henry",
+      "confidence": "documented",
+      "citation": "tablet: 'July 2-3. Occupied this line and took active part in the battle as described on the tablets of the several batteries.' (https://gettysburg.stonesentinels.com/confederate-headquarters/henrys-artillery-battalion/, fetched 2026-07-08) — ⚠️ A− PARTIAL/CONTESTED (docs/research/2026-07-02-full-cast-sources.md §3.2): flank cover facing S/SE per Alexander, not full weight in the bombardment corridor",
+      "note": "window ends at t=7200 (~15:00) BY DESIGN: Bachman's & Reilly's attested southward swing vs Merritt (~15:00+) belongs to Wave 6 as csa-bn-henry's children — the battalion-level window must not overlap the children's (battle-format.md: never the same fire at two family levels); Wave 6 attaches the post-7200 fire to the batteries"
+    },
+    {
+      "id": "csa-bn-lane-cannonade",
+      "kind": "artillery_fire",
+      "t0": 420,
+      "t1": 7500,
+      "unitId": "csa-bn-lane",
+      "confidence": "documented",
+      "citation": "tablet: 'July 2 – 3. Took part in the battle.'; 1,082 rounds July 2–3 (https://gettysburg.stonesentinels.com/confederate-headquarters/lanes-artillery-battalion/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.2)",
+      "note": "window = the retired csa-seminary-bombardment segment's spine, kept exactly: t0=420 per Jacobs 1864 (Notes on the Rebel Invasion), 'At seven minutes past 1 p.m., the awful and portentous silence was broken' — 13:07, contemporaneous and habitually precise; onset disagreement carried, never reconciled (Alexander 1907 'just 1 P.M. by my watch'; Haskell watch-checked ~13:00; Sawyer (8th OH) 'between twelve and one' — a 0–7 minute spread); t1=7500 follows the authored track spine (step-off keyframes at t=7500); witnesses put the general fire's end anywhere 13:50–15:00 (Alexander ~13:50, Jacobs 14:30, Haskell 'two mortal hours… at three o'clock almost precisely') — geometry follows the spine, the citation carries the spread"
+    },
+    {
+      "id": "csa-bn-mcintosh-cannonade",
+      "kind": "artillery_fire",
+      "t0": 420,
+      "t1": 7500,
+      "unitId": "csa-bn-mcintosh",
+      "confidence": "documented",
+      "citation": "monument: 'The Battalion was actively engaged on each of the three days of the battle' (https://gettysburg.stonesentinels.com/confederate-headquarters/mcintoshs-artillery-battalion/, fetched 2026-07-08)",
+      "note": "window = the retired csa-seminary-bombardment segment's spine, kept exactly: t0=420 per Jacobs 1864 (Notes on the Rebel Invasion), 'At seven minutes past 1 p.m., the awful and portentous silence was broken' — 13:07, contemporaneous and habitually precise; onset disagreement carried, never reconciled (Alexander 1907 'just 1 P.M. by my watch'; Haskell watch-checked ~13:00; Sawyer (8th OH) 'between twelve and one' — a 0–7 minute spread); t1=7500 follows the authored track spine (step-off keyframes at t=7500); witnesses put the general fire's end anywhere 13:50–15:00 (Alexander ~13:50, Jacobs 14:30, Haskell 'two mortal hours… at three o'clock almost precisely') — geometry follows the spine, the citation carries the spread"
+    },
+    {
+      "id": "csa-bn-nelson-limited",
+      "kind": "artillery_fire",
+      "t0": 420,
+      "t1": 1500,
+      "unitId": "csa-bn-nelson",
+      "confidence": "documented",
+      "citation": "War Dept tablet verbatim: 'Opened about 12 M. firing 20 to 25 rounds.' — then silent for the rest of the battle (https://gettysburg.stonesentinels.com/confederate-headquarters/nelsons-artillery-battalion/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.2: LIMITED, A−)",
+      "note": "⚠️ the tablet's clock ('about 12 M.') sits BEFORE the slice; the survey and plan read the rounds as part of the Second Corps' thin share of the cannonade (§3.2 ⚠️: 'Nelson's 20–25 rounds' counted among Ewell's ~10–14 firing guns) — window placed at the cannonade onset, short (20–25 rounds ≈ minutes of fire, not hours); witness clock kept in the citation, disagreement carried, not reconciled"
+    },
+    {
+      "id": "csa-bn-pegram-cannonade",
+      "kind": "artillery_fire",
+      "t0": 420,
+      "t1": 7500,
+      "unitId": "csa-bn-pegram",
+      "confidence": "documented",
+      "citation": "monument: 'The Battalion was actively engaged on each of the three days'; 3,800 rounds expended (https://gettysburg.stonesentinels.com/confederate-headquarters/pegrams-artillery-battalion/, fetched 2026-07-08)",
+      "note": "window = the retired csa-seminary-bombardment segment's spine, kept exactly: t0=420 per Jacobs 1864 (Notes on the Rebel Invasion), 'At seven minutes past 1 p.m., the awful and portentous silence was broken' — 13:07, contemporaneous and habitually precise; onset disagreement carried, never reconciled (Alexander 1907 'just 1 P.M. by my watch'; Haskell watch-checked ~13:00; Sawyer (8th OH) 'between twelve and one' — a 0–7 minute spread); t1=7500 follows the authored track spine (step-off keyframes at t=7500); witnesses put the general fire's end anywhere 13:50–15:00 (Alexander ~13:50, Jacobs 14:30, Haskell 'two mortal hours… at three o'clock almost precisely') — geometry follows the spine, the citation carries the spread"
+    },
+    {
+      "id": "csa-bn-poague-cannonade",
+      "kind": "artillery_fire",
+      "t0": 420,
+      "t1": 7500,
+      "unitId": "csa-bn-poague",
+      "confidence": "documented",
+      "citation": "tablet, July 3: 'The ten guns were actively engaged.' — the six howitzers, sheltered, 'took no active part' (documented internal split; the window is the ten guns') (https://gettysburg.stonesentinels.com/confederate-headquarters/poagues-artillery-battalion/, fetched 2026-07-08)",
+      "note": "window = the retired csa-seminary-bombardment segment's spine, kept exactly: t0=420 per Jacobs 1864 (Notes on the Rebel Invasion), 'At seven minutes past 1 p.m., the awful and portentous silence was broken' — 13:07, contemporaneous and habitually precise; onset disagreement carried, never reconciled (Alexander 1907 'just 1 P.M. by my watch'; Haskell watch-checked ~13:00; Sawyer (8th OH) 'between twelve and one' — a 0–7 minute spread); t1=7500 follows the authored track spine (step-off keyframes at t=7500); witnesses put the general fire's end anywhere 13:50–15:00 (Alexander ~13:50, Jacobs 14:30, Haskell 'two mortal hours… at three o'clock almost precisely') — geometry follows the spine, the citation carries the spread"
+    },
+    {
+      "id": "csa-bn-raine-20pdr-cannonade",
+      "kind": "artillery_fire",
+      "t0": 420,
+      "t1": 7500,
+      "x": 6600,
+      "z": 7070,
+      "x2": 6640,
+      "z2": 7130,
+      "confidence": "documented",
+      "citation": "War Dept tablet verbatim, July 3: 'The 20 pounder Parrotts took part in the great cannonade while the other batteries were in reserve.' — the section positioned ~1/2 mile north of Benner's Hill (https://gettysburg.stonesentinels.com/confederate-headquarters/latimers-artillery-battalion/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.2: PARTIAL, A−)",
+      "note": "ATTESTED DETACHMENT AS FIXED SEGMENT: the parent battalion csa-bn-raine parks in reserve behind Benner's Hill (the silence of its other batteries rides its keyframes); the two 20-pdr Parrotts fire from ~800 m N of Benner's Hill (survey §1: 6619,6305), coordinate inferred within the tablet's position class; window = the retired csa-seminary-bombardment segment's spine, kept exactly: t0=420 per Jacobs 1864 (Notes on the Rebel Invasion), 'At seven minutes past 1 p.m., the awful and portentous silence was broken' — 13:07, contemporaneous and habitually precise; onset disagreement carried, never reconciled (Alexander 1907 'just 1 P.M. by my watch'; Haskell watch-checked ~13:00; Sawyer (8th OH) 'between twelve and one' — a 0–7 minute spread); t1=7500 follows the authored track spine (step-off keyframes at t=7500); witnesses put the general fire's end anywhere 13:50–15:00 (Alexander ~13:50, Jacobs 14:30, Haskell 'two mortal hours… at three o'clock almost precisely') — geometry follows the spine, the citation carries the spread"
+    },
+    {
+      "id": "csa-bn-eshleman-cannonade",
+      "kind": "artillery_fire",
+      "t0": 480,
+      "t1": 7500,
+      "unitId": "csa-bn-eshleman",
+      "confidence": "documented",
+      "citation": "tablet: 'engaged all day'; Miller's battery tablet: 'fired the signal guns for the cannonade preceding Longstreet's assault, took part therein, and supported the charge of the infantry' (https://gettysburg.stonesentinels.com/confederate-headquarters/eshlemans-artillery-battalion/ and https://gettysburg.stonesentinels.com/confederate-batteries/millers-louisiana-battery/, fetched 2026-07-08)",
+      "note": "window = the retired csa-seminary-bombardment segment's spine, kept exactly: t0=420 per Jacobs 1864 (Notes on the Rebel Invasion), 'At seven minutes past 1 p.m., the awful and portentous silence was broken' — 13:07, contemporaneous and habitually precise; onset disagreement carried, never reconciled (Alexander 1907 'just 1 P.M. by my watch'; Haskell watch-checked ~13:00; Sawyer (8th OH) 'between twelve and one' — a 0–7 minute spread); t1=7500 follows the authored track spine (step-off keyframes at t=7500); witnesses put the general fire's end anywhere 13:50–15:00 (Alexander ~13:50, Jacobs 14:30, Haskell 'two mortal hours… at three o'clock almost precisely') — geometry follows the spine, the citation carries the spread"
     },
     {
       "id": "us-btty-arnold-reply",
