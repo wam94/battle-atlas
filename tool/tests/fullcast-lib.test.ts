@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
-  addUnitsAfter, fireEvent, frontageHeuristic, moverUnit, staticUnit, WindowEndT,
+  addUnitsAfter, confidenceForGrade, exportValidated, fireEvent,
+  frontageHeuristic, moverUnit, staticUnit, WindowEndT,
 } from "../scripts/fullcast-lib";
 import { validateBattle } from "../src/validate";
 import type { Battle, Keyframe } from "../src/model";
@@ -152,8 +153,28 @@ describe("fullcast-lib", () => {
     const result = validateBattle(battle);
     expect(result.errors).toEqual([]);
     expect(result.ok).toBe(true);
-    // the lib never re-validates — bad anchors and duplicate ids throw loud
+    // bad anchors and duplicate ids throw loud
     expect(() => addUnitsAfter(base, "no-such-anchor", added)).toThrow(/no-such-anchor/);
     expect(() => addUnitsAfter(battle, "us-anchor", [anchor])).toThrow(/us-anchor/);
+
+    // exportValidated is the structural gate (review follow-up): a valid
+    // battle exports canonically; an invalid one throws with the validator's
+    // errors, never silently writing JSON
+    expect(JSON.parse(exportValidated(battle)).units).toHaveLength(3);
+    const broken = {
+      ...battle,
+      units: battle.units.map((u) =>
+        u.id === "csa-quiet"
+          ? { ...u, keyframes: u.keyframes.map((k) => ({ ...k, citation: undefined })) }
+          : u),
+    };
+    expect(() => exportValidated(broken as Battle)).toThrow(/failed validation/);
+  });
+
+  it("confidenceForGrade throws loud on a grade outside the vocabulary", () => {
+    // parsed-data tables bypass the TS union; malformed grades must never
+    // silently claim `documented`
+    expect(() => confidenceForGrade("D" as never)).toThrow(/unknown feasibility grade/);
+    expect(() => confidenceForGrade("c" as never)).toThrow(/no-faking gate/);
   });
 });

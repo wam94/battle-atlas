@@ -158,7 +158,7 @@ the `unitId` form"), the Seminary Ridge fixed-segment bombardment emitter
 retires in the full-cast phase: the Confederate artillery battalions become
 units, and their fire windows attach as per-battalion `unitId` events in the
 same commit that deletes the segment. The segment form itself remains valid —
-its surviving use is the attested DETACHMENT of a unit authored at coarser
+a surviving use is the attested DETACHMENT of a unit authored at coarser
 grain (e.g. a battalion's rifle section firing from its own attested position
 away from the battalion's tablet position): the parent stays one unit at its
 attested position, and the detachment's fire is a fixed-segment event at the

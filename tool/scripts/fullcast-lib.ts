@@ -2,9 +2,9 @@
 // Task 1). The position-table-driven builder the authoring waves share: each
 // wave script (author-w{N}-*.ts, the author-a5-regiments.ts pattern) holds a
 // hand-edited position table whose rows funnel through these helpers into
-// units and events, then through the EXISTING gates — `validateBattle` /
-// `exportBattle` (tool/src/validate.ts, io.ts). The lib builds structures; it
-// does not re-validate. No format surface is added or changed here.
+// units and events, then out through `exportValidated` (bottom of this file),
+// which makes the validateBattle gate structural rather than caller
+// discipline. No format surface is added or changed here.
 //
 // Grade → confidence mapping (survey docs/research/2026-07-02-full-cast-sources.md §3,
 // locked in the plan's design decisions):
@@ -18,6 +18,8 @@
 import type {
   Battle, Confidence, EngagementEvent, EventKind, Formation, Keyframe, Side, Unit,
 } from "../src/model";
+import { validateBattle } from "../src/validate";
+import { exportBattle } from "../src/io";
 
 export type Grade = "A" | "A-" | "B+" | "B" | "C";
 
@@ -25,6 +27,12 @@ export type Grade = "A" | "A-" | "B+" | "B" | "C";
 export const WindowEndT = 10800;
 
 export function confidenceForGrade(grade: Grade): Confidence {
+  // loud on anything outside the survey's grade vocabulary: the TS union
+  // catches typos at compile time, but authoring tables built from parsed
+  // data bypass that — a malformed grade must never silently claim
+  // `documented` (review follow-up)
+  if (!["A", "A-", "B+", "B", "C"].includes(grade))
+    throw new Error(`unknown feasibility grade '${grade}' (no-faking gate)`);
   return grade === "C" ? "inferred" : "documented";
 }
 
@@ -177,4 +185,16 @@ export function addUnitsAfter(battle: Battle, anchorId: string, units: Unit[]): 
     ...battle,
     units: [...battle.units.slice(0, i + 1), ...units, ...battle.units.slice(i + 1)],
   };
+}
+
+// The ONLY export path wave-authoring scripts should use: validation is
+// structural, not caller discipline (review follow-up). Throws with every
+// validator error listed; warnings (the ±15% strength advisories) print but
+// never block, matching the tool UI's posture.
+export function exportValidated(battle: Battle): string {
+  const result = validateBattle(battle);
+  for (const w of result.warnings ?? []) console.warn(`[advisory] ${w}`);
+  if (!result.ok)
+    throw new Error(`exportValidated: battle failed validation:\n${result.errors.join("\n")}`);
+  return exportBattle(battle);
 }

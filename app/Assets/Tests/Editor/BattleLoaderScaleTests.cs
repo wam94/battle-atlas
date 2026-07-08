@@ -163,6 +163,11 @@ public class BattleLoaderScaleTests
             // CPU marker loop alone; Start gets 5 s for 210 primitive spawns.
             Assert.Less(startMs, 5000.0, "Start cost scaled past the budget");
             Assert.Less(frameMs, 8.0, "per-frame marker loop scaled past the budget");
+            // measured 0 bytes/frame at landing; the loose ceiling catches a
+            // reintroduced steady leak that the frame budget would hide
+            // (review follow-up: assert the number, don't just log it)
+            Assert.LessOrEqual(allocated / 100, 1024,
+                "per-frame Update allocation crept in — the marker loop must stay allocation-free");
         }
         finally
         {
