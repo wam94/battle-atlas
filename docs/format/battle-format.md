@@ -142,6 +142,28 @@ later phase).
   re-authored, the event windows that cohere with that movement must move
   with it.
 
+**Documented silence.** The absence of events IS the encoding for a unit
+attested present-but-not-firing: the negative attestation ("Not actively
+engaged," "fired until 10:30 A.M. only," held fire under orders) rides in the
+unit's keyframe `citation` — one string on the `t: 0` keyframe is
+simultaneously the position attestation and the negative attestation, so
+"says who that they did NOT fire" is answerable from the unit itself. Never
+author a zero-length or zero-fire event, a silence flag, or invented fire to
+make a quiet sector "work" — the event model already expresses silence by
+absence, and a quiet unit with a cited negative is correct as it stands.
+
+**Segment-emitter migration and attested detachments.** Per the migration
+clause above ("when batteries are authored as units, their events migrate to
+the `unitId` form"), the Seminary Ridge fixed-segment bombardment emitter
+retires in the full-cast phase: the Confederate artillery battalions become
+units, and their fire windows attach as per-battalion `unitId` events in the
+same commit that deletes the segment. The segment form itself remains valid —
+its surviving use is the attested DETACHMENT of a unit authored at coarser
+grain (e.g. a battalion's rifle section firing from its own attested position
+away from the battalion's tablet position): the parent stays one unit at its
+attested position, and the detachment's fire is a fixed-segment event at the
+detachment's attested coordinates.
+
 ## Environment
 
 `environment` — optional top-level object carrying battlefield wind for the
