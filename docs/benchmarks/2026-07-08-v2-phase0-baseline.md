@@ -42,28 +42,35 @@ Recorded per plan §12 Phase 0 so later regressions are triaged correctly:
 - `app/unity-test-review.log` was present untracked in the owner's working
   tree at pause time (not part of the baseline).
 
-## Screenshots at t=0 / 8160 / 8700 / 9000
+## Measurements (captured 2026-07-08 via `scripts/p0-benchmark.sh`)
 
-See `docs/benchmarks/captures/` policy below. Capture was performed headlessly
-via the Phase 0 benchmark harness (development Mac standalone build run with
-`-benchmark`); PNGs are gitignored generated media — the capture run's summary
-(hashes, sizes, clock times) is recorded in this document's companion
-`2026-07-08-v2-phase0-measurements.json` once captured.
+Method: Development macOS standalone built headlessly from this branch
+(`BattleAtlas.EditorTools.BenchmarkBuild.Build`), run windowed 1440×900 with
+`-benchmark`. The Unity editor was open on the owner's checkout throughout
+this session, so all Unity CLI work (including this capture) ran from a git
+worktree copy of the project — the editor and its checkout were never
+touched (plan §16.1). Screenshots verified non-blank (t=8700 shows the Angle
+crisis at wall clock 15:25:00 with units, smoke, and HUD).
 
-Status: see "Measurements" section below (filled by the harness run; any item
-that could not be captured headlessly is packaged into the Gate P1 owner
-checklist instead).
+Screenshots + JSON live in `docs/benchmarks/captures/` (gitignored generated
+media; regenerate with one command). 10-second sample per timestamp, battle
+playing at 60×, vsync on (60 Hz cap):
 
-## Real-time frame rate and memory
+| t | screenshot | avg FPS | p95 frame | worst frame | allocated | reserved |
+| --- | --- | --- | --- | --- | --- | --- |
+| 0 | atlas-t0.png | 59.6 | 17.3 ms | 27.1 ms | 263.5 MB | 402.8 MB |
+| 8160 | atlas-t8160.png | 59.2 | 17.4 ms | 58.8 ms | 263.9 MB | 402.8 MB |
+| 8700 | atlas-t8700.png | 59.6 | 17.3 ms | 22.3 ms | 264.0 MB | 402.8 MB |
+| 9000 | atlas-t9000.png | 59.7 | 17.2 ms | 21.9 ms | 263.9 MB | 402.8 MB |
 
-Measured by the same harness (development standalone, windowed 1440×900,
-2-second warmup then 10-second sample per timestamp). The Unity editor was
-open on the owner's checkout during this session, so editor-based measurement
-was not attempted (plan §16.1: never disturb or kill the running editor). The
-standalone-build path avoids the editor entirely.
+Notes:
 
-Status: see "Measurements" section below.
-
-## Measurements
-
-(Filled in by `scripts/p0-benchmark.sh` output; blockers documented inline.)
+- Development-build overhead means these slightly understate release
+  performance; the vsync cap hides headroom. Good enough as the Phase 0
+  "before" record.
+- The worst frame (58.8 ms) lands at t=8160 — consistent with the known
+  pre-existing bombardment-peak/obscuration performance case noted above.
+- Numbers are from an M4/24 GB machine, not the base-M1 8 GB playback
+  floor (still owed before Phase 12).
+- Editor-grade capture (scene view, custom angles) remains interactive-only
+  and is packaged into the Gate P1 owner checklist as an optional item.
