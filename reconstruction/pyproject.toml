@@ -1,0 +1,17 @@
+[project]
+name = "reconstruction"
+version = "0.1.0"
+description = "Battle Atlas reconstruction data: schemas, validators, and (from Phase 5) the Angle V2 compiler"
+requires-python = ">=3.11"
+dependencies = [
+    "jsonschema>=4.21",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    # Bundles a static ffmpeg used by scripts/generate_dev_proxy.sh when no
+    # system ffmpeg is installed (none was present on the dev machine at
+    # Phase 1). The pinned encode command is identical either way.
+    "imageio-ffmpeg>=0.5",
+]
