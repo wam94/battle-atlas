@@ -55,7 +55,9 @@ describe("authored July 3 battle", () => {
     const units = (battle as any).units;
     // 22 + 11 A-grade children + 8th Ohio + Brown's B (A5)
     //    + 28 B-grade children + 2 Brockenbrough wings (A6)
-    expect(units).toHaveLength(65);
+    //    + 13 Wave-1 batteries: McGilvery's line (9) + the four reinforcing
+    //      batteries (full-cast Task 3)
+    expect(units).toHaveLength(78);
     const ohio = units.find((u: any) => u.id === "us-8oh");
     expect(ohio).toBeDefined();
     expect(ohio.parent).toBeUndefined(); // Carroll's brigade isn't modeled
@@ -99,6 +101,56 @@ describe("authored July 3 battle", () => {
           byId.get(b.unitId)?.parent === a.unitId;
         expect(parentAndChild).toBe(false);
       }
+  });
+  it("Wave 1: McGilvery's line + the four reinforcing batteries — presence, documented silence, mover tracks", () => {
+    const units = (battle as any).units;
+    const byId = (id: string) => units.find((u: any) => u.id === id);
+    // all 13 Wave-1 batteries present (full-cast plan Task 3; survey §3.3)
+    const wave1 = [
+      "us-btty-thomas", "us-btty-james", "us-btty-thompson", "us-btty-phillips",
+      "us-btty-hart", "us-btty-sterling", "us-btty-cooper", "us-btty-dow",
+      "us-btty-ames", "us-btty-fitzhugh", "us-btty-parsons", "us-btty-weir",
+      "us-btty-wheeler",
+    ];
+    for (const id of wave1) expect(byId(id), id).toBeDefined();
+    // Documented silence (battle-format.md "Engagement events"): every battery
+    // STANDING on McGilvery's line through the cannonade carries Hunt's
+    // hold-fire policy in its t=0 keyframe citation — the silence citation IS
+    // the encoding. Cooper and Wheeler arrive mid-window and go straight into
+    // attested fire; the reinforcements start in reserve — none of those five
+    // is a cannonade-silent line battery, so the policy rides the eight.
+    const lineAtT0 = [
+      "us-btty-thomas", "us-btty-james", "us-btty-thompson", "us-btty-phillips",
+      "us-btty-hart", "us-btty-sterling", "us-btty-dow", "us-btty-ames",
+    ];
+    for (const id of lineAtT0) {
+      const k0 = byId(id).keyframes[0];
+      expect(k0.confidence).toBe("documented");
+      expect(k0.citation, id).toMatch(/Hunt/);
+    }
+    // the sheet-vs-OOB adjudication (survey open item 2) is carried, not
+    // silently dropped: no Daniels/Rank unit, disagreement on Thompson's t=0
+    expect(units.some((u: any) => /daniels|rank/i.test(u.id))).toBe(false);
+    expect(byId("us-btty-thompson").keyframes[0].citation).toMatch(/Daniels/);
+    // the documented in-window movers actually move
+    for (const id of ["us-btty-cooper", "us-btty-wheeler", "us-btty-fitzhugh",
+      "us-btty-parsons", "us-btty-weir"]) {
+      const kfs = byId(id).keyframes;
+      expect(kfs.length, id).toBeGreaterThan(2);
+      expect(kfs[0].z, id).not.toBe(kfs[kfs.length - 1].z);
+    }
+    // attested fire windows exist and cohere with the slice
+    const events = (battle as any).events;
+    const evt = (id: string) => events.find((e: any) => e.id === id);
+    expect(evt("us-btty-phillips-counterbattery").confidence).toBe("documented");
+    expect(evt("us-btty-hart-counterbattery").confidence).toBe("documented");
+    expect(evt("us-btty-phillips-repulse-enfilade").confidence).toBe("documented");
+    const wheelerCanister = evt("us-btty-wheeler-canister");
+    expect(wheelerCanister.confidence).toBe("documented");
+    expect(wheelerCanister.t1).toBeLessThanOrEqual(10800); // tight against the window end
+    // the Florida/second-line follow-up rides the Wilcox/Lang spine window
+    expect(evt("us-btty-phillips-florida-repulse").t0).toBe(10200);
+    expect(evt("us-btty-hart-second-line").t1).toBe(10500);
   });
   it("B-grade Confederate children are valid; the four display-LOD brigades keep rosters and no children", () => {
     const units = (battle as any).units;
