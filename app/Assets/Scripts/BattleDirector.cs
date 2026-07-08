@@ -266,7 +266,12 @@ namespace BattleAtlas
                 var block = new MaterialPropertyBlock();
                 block.SetColor(BaseColorId, SideColor(u.side));
                 renderer.SetPropertyBlock(block);
-                Object.Destroy(marker.GetComponent<Collider>()); // not clickable yet
+                // not clickable yet. Destroy is illegal outside play mode —
+                // the EditMode scale test (BattleLoaderScaleTests) drives
+                // Start headlessly, so pick the mode-appropriate teardown.
+                var collider = marker.GetComponent<Collider>();
+                if (Application.isPlaying) Object.Destroy(collider);
+                else Object.DestroyImmediate(collider);
 
                 var formationRenderer = new UnitFormationRenderer(
                     u.id, u.frontage_m, u.depth_m, soldierPoseMeshes, soldierMaterial,
