@@ -14,6 +14,12 @@ see `docs/superpowers/plans/2026-07-08-angle-reconstruction-v2.md` and
 preserved at tag `v2-baseline`. The main scene is now
 `app/Assets/Scenes/Atlas.unity` (renamed from `SampleScene.unity`).
 
+**License:** [MIT](LICENSE). Third-party assets carry their own licenses,
+tracked per-asset in `app/Assets/ThirdParty/manifest.json` with generated
+attribution in `docs/assets/THIRD_PARTY_ASSETS.md` (where present).
+Bachelder-map research crops under `docs/research/assets/` reproduce
+public-domain 1870s maps; acquisition notes live in `docs/research/`.
+
 ## Layout
 
 - `pipeline/` — Python: USGS 1 m LiDAR → Unity heightmap (`data/heightmap/`)
