@@ -190,7 +190,7 @@ public class BattleDirectorTests
         // the glyph constants are a visual contract — pin them
         Assert.AreEqual(0.55f, BattleDirector.ArtilleryHeightMul);
         Assert.AreEqual(0.8f, BattleDirector.CavalryHeightMul);
-        Assert.AreEqual(0.75f, BattleDirector.ArtilleryShadeMul);
+        Assert.AreEqual(0.5f, BattleDirector.ArtilleryShadeMul);
         Assert.AreEqual(1f, BattleDirector.KindHeightMul(BattleDirector.UnitKind.Infantry));
         Assert.AreEqual(BattleDirector.ArtilleryHeightMul,
             BattleDirector.KindHeightMul(BattleDirector.UnitKind.Artillery));
@@ -205,9 +205,9 @@ public class BattleDirectorTests
 
         Color side = BattleDirector.SideColor("union");
         Color arty = BattleDirector.KindShade(side, BattleDirector.UnitKind.Artillery);
-        Assert.AreEqual(side.r * 0.75f, arty.r, 1e-5f); // uniformly darker
-        Assert.AreEqual(side.g * 0.75f, arty.g, 1e-5f);
-        Assert.AreEqual(side.b * 0.75f, arty.b, 1e-5f);
+        Assert.AreEqual(side.r * 0.5f, arty.r, 1e-5f); // uniformly darker
+        Assert.AreEqual(side.g * 0.5f, arty.g, 1e-5f);
+        Assert.AreEqual(side.b * 0.5f, arty.b, 1e-5f);
         Color cav = BattleDirector.KindShade(side, BattleDirector.UnitKind.Cavalry);
         Assert.AreEqual(side.r * BattleDirector.CavalryWarmR, cav.r, 1e-5f); // warmer: r up...
         Assert.AreEqual(side.g, cav.g, 1e-5f);

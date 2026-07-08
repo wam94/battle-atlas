@@ -285,7 +285,10 @@ const huntAccount = "https://www.historycentral.com/CivilWar/getty/Hunt3.html";
 const reservePark = moverUnit({
   id: "us-arty-reserve-park",
   name: "Artillery Reserve park + ammunition train (Tyler's)",
-  side: "union", frontage_m: 350, depth_m: 250,
+  // road-column footprint (presentation convention like the frontage
+  // heuristic): a ~100-carriage park moving by road reads long and narrow,
+  // not as a parade square — user session finding 2026-07-08
+  side: "union", frontage_m: 140, depth_m: 480,
   keyframes: [
     { t: 0, x: 5150, z: 4350, facing: 200, formation: "column", strength: 2375, confidence: "documented",
       citation: "parked between the Taneytown Rd and the Baltimore Pike behind the centre (" + survey + ", Artillery Reserve bullet); Brig. Gen. Robert O. Tyler commanding, 2,375 men and 114 guns nominal (" + tylerOrgPage + ", " + fetched + ") — the roster INCLUDES the reserve brigades deployed forward and authored as their own units (McGilvery's line, Huntington's and Taft's hill batteries, Fitzhugh's reinforcements): this unit renders the caisson park + ammunition train, strength kept at the command roster per the plan; coordinate inferred within the park position class" },

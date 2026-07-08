@@ -21,7 +21,12 @@ namespace BattleAtlas
         public float radius0; // meters at emission
         public float radius1; // meters at end of life
         public float jitterM; // hash-jitter envelope around the emit position
-        public float muzzleM; // meters IN FRONT of the unit (along facing)
+        public float muzzleM; // meters IN FRONT of the unit (along facing) —
+                              // sized to the muzzle-blast EJECTION, not the
+                              // barrel: black powder throws smoke 20-40m
+                              // toward the target before the breeze owns it,
+                              // so fresh (opaque) puffs read in FRONT of the
+                              // gun while aged ones stream downwind
                               // where smoke is born — black-powder muzzle
                               // smoke blooms toward the target before the
                               // wind takes it; without this, a west-facing
@@ -34,10 +39,10 @@ namespace BattleAtlas
             {
                 case "artillery_fire": // grey-white gun smoke, long-lived
                     return new PuffParams
-                    { cadence = 4f, life = 90f, radius0 = 4f, radius1 = 14f, jitterM = 12f, muzzleM = 10f };
+                    { cadence = 4f, life = 90f, radius0 = 4f, radius1 = 14f, jitterM = 12f, muzzleM = 28f };
                 case "musketry": // white, short-lived, along the firing line
                     return new PuffParams
-                    { cadence = 3f, life = 30f, radius0 = 2f, radius1 = 6f, jitterM = 8f, muzzleM = 3f };
+                    { cadence = 3f, life = 30f, radius0 = 2f, radius1 = 6f, jitterM = 8f, muzzleM = 8f };
                 // dust is DERIVED from unit velocity, never authored — not a
                 // loader kind (battle-format.md "Engagement events"); the
                 // params live here so all emission tuning shares one table

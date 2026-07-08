@@ -9338,8 +9338,8 @@
       "id": "us-arty-reserve-park",
       "name": "Artillery Reserve park + ammunition train (Tyler's)",
       "side": "union",
-      "frontage_m": 350,
-      "depth_m": 250,
+      "frontage_m": 140,
+      "depth_m": 480,
       "keyframes": [
         {
           "t": 0,

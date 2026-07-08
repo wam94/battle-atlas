@@ -61,9 +61,11 @@ namespace BattleAtlas
         // anti-clipping guarantees hold on relief. Public: tests pin them.
         public const float ArtilleryHeightMul = 0.55f;
         public const float CavalryHeightMul = 0.8f;
-        public const float ArtilleryShadeMul = 0.75f; // darker: gun lines, not battle lines
-        public const float CavalryWarmR = 1.1f;       // slight warm shift, r up...
-        public const float CavalryWarmB = 0.85f;      // ...b down; g untouched
+        public const float ArtilleryShadeMul = 0.5f;  // MUCH darker: at strategic zoom
+                                                      // color contrast is the only kind
+                                                      // cue that reads (height does not)
+        public const float CavalryWarmR = 1.25f;      // strong warm shift, r up...
+        public const float CavalryWarmB = 0.7f;       // ...b down; g untouched
         // activity salience: units neither moving nor named by a live battle
         // event fall this far toward terrain gray, so the corridor's actors
         // carry the frame over the attested-static ring. 0.55 keeps the side
