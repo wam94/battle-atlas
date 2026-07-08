@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using BattleAtlas;
@@ -114,5 +115,141 @@ public class BattleDirectorTests
             2, "routed", BattleDirector.LodTier.Regiments));
         Assert.IsFalse(BattleDirector.RendersRegimentSubBlocks(
             2, "line", BattleDirector.LodTier.Block));
+    }
+
+    // ---- field-legibility pass ----
+
+    // a track that moves east at 1 m/s for its first 100 s, then holds
+    static UnitTrack MovingTrack() => new UnitTrack(new UnitDto
+    {
+        id = "test-mover",
+        keyframes = new List<KeyframeDto>
+        {
+            new KeyframeDto { t = 0f, x = 0f, z = 0f, formation = "line", strength = 1f },
+            new KeyframeDto { t = 100f, x = 100f, z = 0f, formation = "line", strength = 1f },
+        },
+    });
+
+    // a track that never moves (single keyframe: StateAt clamps everywhere)
+    static UnitTrack StaticTrack() => new UnitTrack(new UnitDto
+    {
+        id = "test-static",
+        keyframes = new List<KeyframeDto>
+        {
+            new KeyframeDto { t = 0f, x = 500f, z = 500f, formation = "line", strength = 1f },
+        },
+    });
+
+    [Test]
+    public void BlockCenterAndHeight_FlatAndModerateReliefMatchTheOldStretch()
+    {
+        // flat ground: exactly the pre-clamp marker — MarkerHeight tall,
+        // sitting on the ground (center = ground + height/2)
+        var (centerY, height) = BattleDirector.BlockCenterAndHeight(12f, 12f, 6f);
+        Assert.AreEqual(6f, height, 1e-3f);
+        Assert.AreEqual(15f, centerY, 1e-3f);
+        // moderate relief, under the clamp: the old min-to-max stretch —
+        // bottom at the lowest ground, top clearance above the highest
+        (centerY, height) = BattleDirector.BlockCenterAndHeight(0f, 5f, 6f);
+        Assert.AreEqual(11f, height, 1e-3f);
+        Assert.AreEqual(0f, centerY - height / 2f, 1e-3f);  // bottom = minY
+        Assert.AreEqual(11f, centerY + height / 2f, 1e-3f); // top = maxY + clearance
+    }
+
+    [Test]
+    public void BlockCenterAndHeight_SteepReliefClampsWithTopAnchored()
+    {
+        // 30 m of relief: height clamps to MaxBlockHeight, and the TOP face
+        // keeps its clearance above the HIGHEST ground — the crest never
+        // pokes through; the low end lifts off minY into the hillside
+        var (centerY, height) = BattleDirector.BlockCenterAndHeight(0f, 30f, 6f);
+        Assert.AreEqual(14f, height, 1e-3f);
+        Assert.AreEqual(36f, centerY + height / 2f, 1e-3f); // top = maxY + clearance, always
+        Assert.AreEqual(22f, centerY - height / 2f, 1e-3f); // bottom sunk into the slope
+    }
+
+    [Test]
+    public void KindOf_LockedIdPrefixConvention()
+    {
+        // the full-cast plan's locked id convention, one case per rule
+        Assert.AreEqual(BattleDirector.UnitKind.Artillery, BattleDirector.KindOf("us-btty-cushing"));
+        Assert.AreEqual(BattleDirector.UnitKind.Artillery, BattleDirector.KindOf("csa-btty-reilly"));
+        Assert.AreEqual(BattleDirector.UnitKind.Artillery, BattleDirector.KindOf("csa-bn-alexander"));
+        Assert.AreEqual(BattleDirector.UnitKind.Artillery, BattleDirector.KindOf("us-arty-reserve-park"));
+        Assert.AreEqual(BattleDirector.UnitKind.Cavalry, BattleDirector.KindOf("us-cav-farnsworth"));
+        Assert.AreEqual(BattleDirector.UnitKind.Infantry, BattleDirector.KindOf("us-webb"));
+        // csa-bn- must not swallow the infantry brigade it was named to dodge
+        Assert.AreEqual(BattleDirector.UnitKind.Infantry, BattleDirector.KindOf("csa-garnett"));
+        // prefixes, never substrings: the 5th Alabama BATTALION is infantry
+        Assert.AreEqual(BattleDirector.UnitKind.Infantry, BattleDirector.KindOf("csa-5al-bn"));
+    }
+
+    [Test]
+    public void KindGlyph_HeightAndShadeMultipliersPinned()
+    {
+        // the glyph constants are a visual contract — pin them
+        Assert.AreEqual(0.55f, BattleDirector.ArtilleryHeightMul);
+        Assert.AreEqual(0.8f, BattleDirector.CavalryHeightMul);
+        Assert.AreEqual(0.75f, BattleDirector.ArtilleryShadeMul);
+        Assert.AreEqual(1f, BattleDirector.KindHeightMul(BattleDirector.UnitKind.Infantry));
+        Assert.AreEqual(BattleDirector.ArtilleryHeightMul,
+            BattleDirector.KindHeightMul(BattleDirector.UnitKind.Artillery));
+        Assert.AreEqual(BattleDirector.CavalryHeightMul,
+            BattleDirector.KindHeightMul(BattleDirector.UnitKind.Cavalry));
+        // on flat ground the multiplier IS the height ratio: artillery
+        // markers stand at 55% of the infantry block
+        var (_, infantry) = BattleDirector.BlockCenterAndHeight(0f, 0f, 6f);
+        var (_, artillery) = BattleDirector.BlockCenterAndHeight(
+            0f, 0f, 6f * BattleDirector.ArtilleryHeightMul);
+        Assert.AreEqual(0.55f, artillery / infantry, 1e-3f);
+
+        Color side = BattleDirector.SideColor("union");
+        Color arty = BattleDirector.KindShade(side, BattleDirector.UnitKind.Artillery);
+        Assert.AreEqual(side.r * 0.75f, arty.r, 1e-5f); // uniformly darker
+        Assert.AreEqual(side.g * 0.75f, arty.g, 1e-5f);
+        Assert.AreEqual(side.b * 0.75f, arty.b, 1e-5f);
+        Color cav = BattleDirector.KindShade(side, BattleDirector.UnitKind.Cavalry);
+        Assert.AreEqual(side.r * BattleDirector.CavalryWarmR, cav.r, 1e-5f); // warmer: r up...
+        Assert.AreEqual(side.g, cav.g, 1e-5f);
+        Assert.AreEqual(side.b * BattleDirector.CavalryWarmB, cav.b, 1e-5f); // ...b down
+        Assert.AreEqual(side, BattleDirector.KindShade(side, BattleDirector.UnitKind.Infantry));
+    }
+
+    [Test]
+    public void IsActiveAt_TruthTable()
+    {
+        var windows = new List<BattleDirector.EventWindow>
+        {
+            new BattleDirector.EventWindow(200f, 300f),
+        };
+        // moving-only: no events needed while the track position changes
+        Assert.IsTrue(BattleDirector.IsActiveAt(MovingTrack(), null, 50f));
+        // event-only: a static unit is active exactly while its window is live
+        Assert.IsTrue(BattleDirector.IsActiveAt(StaticTrack(), windows, 250f));
+        // neither: static, no live window (before, between-less, and after)
+        Assert.IsFalse(BattleDirector.IsActiveAt(StaticTrack(), windows, 100f));
+        Assert.IsFalse(BattleDirector.IsActiveAt(StaticTrack(), null, 250f));
+        // a mover that has ARRIVED (track clamped past its last keyframe)
+        // goes quiet like any static unit
+        Assert.IsFalse(BattleDirector.IsActiveAt(MovingTrack(), null, 500f));
+        // boundaries are INCLUSIVE — an event owns its own t0 and t1 instants
+        Assert.IsTrue(BattleDirector.IsActiveAt(StaticTrack(), windows, 200f));
+        Assert.IsTrue(BattleDirector.IsActiveAt(StaticTrack(), windows, 300f));
+        Assert.IsFalse(BattleDirector.IsActiveAt(StaticTrack(), windows, 199.5f));
+        Assert.IsFalse(BattleDirector.IsActiveAt(StaticTrack(), windows, 300.5f));
+    }
+
+    [Test]
+    public void InactiveColor_DesaturatesTowardFieldGrayByPinnedFactor()
+    {
+        Assert.AreEqual(0.55f, BattleDirector.InactiveDesat);
+        Color side = BattleDirector.SideColor("confederate");
+        Color inactive = BattleDirector.InactiveColor(side);
+        // exactly the documented lerp — deterministic, no time term
+        Assert.AreEqual(Color.Lerp(side, BattleDirector.FieldGray,
+            BattleDirector.InactiveDesat), inactive);
+        // recedes without vanishing: not the side color, not fully gray
+        Assert.AreNotEqual(side, inactive);
+        Assert.AreNotEqual(BattleDirector.FieldGray, inactive);
     }
 }
