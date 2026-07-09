@@ -152,6 +152,127 @@ compiled output depends on wind.
 
 ---
 
+## Phase 7 environment decisions (ED-11 … ED-18)
+
+Phase 7 stages the local crop's physical environment. Every staged feature
+traces to a claim (see the Phase 7 additions in `angle.claims.json`) or to a
+decision below. Geometry lives in `pipeline/terrain_pipeline/environment.py`
+(baked to `data/heightmap_angle/environment.json`) and is staged by
+`app/Assets/Editor/Phase7/AngleEnvironmentStage.cs`.
+
+### ED-11 — Emmitsburg Road profile
+
+Documented: unpaved packed earth (`claim-road-surface`, inferred period norm)
+in a sunken bed men sheltered in (`claim-road-sunken`); no measured depth and
+no documented ditches at this stretch.
+
+**Decision:** the roadbed is carved into the crop terrain as a 0.45 m
+depression at the corridor centerline, easing to zero at the traced fence
+lines; no ditches are modeled. The corridor and its width come from the span
+between the two traced fences (ED-6) — there is still no road-surface layer
+to trace. Wheel-path wear is painted as two disturbed-soil stripes at ±0.75 m
+from the centerline (period road use is documented generally; exact ruts are
+not — reconstruction).
+
+### ED-12 — Fence and wall construction profiles
+
+Documented: "high post and rail fences" climbed in order
+(`claim-fences-high-climb`); a low fieldstone wall ~2–3 ft patched with rails
+and earth, "breast-high" to the attacker (`claim-wall-profile`,
+`claim-wall-rails-on-top`). No primary measurement of either.
+
+**Decision:** road fences are modeled as five-rail post-and-rail at 1.5 m
+(NPS modern reconstructions along the road as physical reference); the
+interior post-and-rail fence west of the road uses the same form; the two
+traced worm fences are zigzag rail at 1.2 m. The wall is 0.75 m of
+double-faced fieldstone, ~0.6 m wide, with scattered rail lengths laid on top
+along the 69th PA front south of the inner angle (documented) and none north
+of it. No gaps or breaks are modeled (ED-6 stands).
+
+### ED-13 — Codori buildings massing
+
+Documented: two-story frame house, brick addition postwar
+(`claim-codori-house-structure`); wartime barn replaced 1882, form evidenced
+only by the period photograph (`claim-codori-barn-1863`); barn anchor at
+(4020.4, 4635.4) with replacement-barn caveat (`claim-codori-barn-position`);
+HABS has no Codori coverage — Trostle barn PA-1962 is the period analogue.
+
+**Decision:** the house is staged as a plain two-story gabled frame block,
+9.0 × 7.5 m, eaves 5.5 m, unpainted-light siding (color unknown), long side
+facing the road at (3996, 4652) — 15 m WNW of the barn anchor, beside the
+road's east fence. The barn is a Pennsylvania bank barn form after the
+Trostle HABS analogue scaled to the period photo's plain massing: 18 × 11 m,
+eaves 6.5 m, gable roof, no cupolas, long axis parallel to the road bearing.
+Both are explicit reconstruction-grade massing — documentary silhouettes, not
+replicas. No other farm outbuildings are staged (none sourced).
+
+### ED-14 — Copse representation
+
+Documented: sapling-scale scrub — 50+ oaks mostly ≤ 2 in diameter, sassafras
+and oak per Haskell, chestnut-oak photo reading carried, extent larger than
+the modern fenced copse, unfenced in 1863 (`claim-copse-form-1863`,
+`claim-copse-unfenced-1863`).
+
+**Decision:** the copse is planted across the full traced polygon with ~30
+small broadleaf trees at 3–6 m height (the CC0 `island_tree_02` derived
+asset standing in for scrub oak/sassafras — species-exact models do not
+exist in redistributable form), denser toward the polygon center, no fence.
+Ziegler's Grove (traced) uses the same asset scaled 7–9 m (mature grove).
+
+### ED-15 — Field cover assignment
+
+Documented: grass between road and wall (`claim-field-east-grass` — this
+retires the Phase 3 placeholder wheat band east of the road); a mixed
+patchwork west of the road — wheat nearly ripe, grass/pasture, corn,
+orchards (`claim-fields-west-mixed`); parcel-by-parcel identity undocumented
+(McElfresh's copyrighted map is the purchasable verification path, facts
+only, never traced).
+
+**Decision:** east of the road: pasture/dry-summer-grass blend, no crop
+geometry. West of the road: the traced `field-west-of-emmitsburg-codori-front`
+polygon is assigned wheat-stubble-with-standing-wheat patches (Haskell's
+"nearly ripe" wheat placed here as the most road-adjacent cultivated parcel);
+other traced fields in the crop render as dry summer grass; orchard floors
+as pasture. Corn is NOT staged (no parcel evidence at all inside the crop).
+
+### ED-16 — Cushing's battery layout at 15:20
+
+Documented: six 3-inch Ordnance rifles (`claim-cushing-armament`); two
+serviceable guns run to the wall pre-slice (`claim-cushing-guns-to-wall`);
+the rest disabled; battery traced at (4398, 4880) facing 262° with 80 m
+frontage (macro keyframes); "about 30 paces" wall-to-crest relation
+(`claim-wall-profile`, Peyton); per-piece limber + caisson organization
+(`claim-battery-organization`); wreckage vocabulary (`claim-corridor-trampled`).
+
+**Decision:** two intact guns at the wall at (4400, 4868) and (4401, 4890)
+facing 262°; four pieces staged as disabled at the crest line 28 m east of
+the wall (the 30-paces relation), two of them dismounted/wrecked; limbers
+6 yd and caissons a further 11 yd behind the crest line per drill-manual
+spacing (reconstruction — the manual gives the norm, not this hour's
+disorder); ammunition chests and scattered implements between wall guns and
+crest. Dead battery horses are Phase 8 casualty work, not staged here.
+
+### ED-17 — Trampling and ground disturbance in-slice
+
+Documented: the corridor's post-battle trampled state (`claim-corridor-trampled`).
+The in-slice progression is not witnessed hour-by-hour.
+
+**Decision:** a trampled-grass corridor is painted from the road crossing to
+the wall across the assault frontage (macro tracks' swept band, z≈4600–5000),
+blended dry-grass/disturbed-soil; wheel-path wear on the road per ED-11.
+This is a static Phase 7 approximation; **Phase 8 owes trampling driven by
+the compiled troop paths** (recorded as a carried item).
+
+### ED-18 — Atmosphere and grade
+
+Unchanged from the Phase 3/4 decisions: 15:20 LMT ephemeris sun (t=8400),
+physically based sky, fixed EV100 13.2, ACES tonemap, distance haze with
+900 m mean free path (historically supportable July haze; Fuger's dense
+smoke is combat smoke, Phase 8). No additional color grade is introduced in
+Phase 7; if one lands later it must be documented here.
+
+---
+
 ## Connective-reconstruction rules (named inference rules)
 
 Segments cite these rules by name in `inferenceRules`. A segment with no
@@ -211,7 +332,8 @@ description and here.
 - Per-regiment strength splits for the CSA brigades ("equal fifths" stays an
   inference in the macro child tracks; V2 segments stay at brigade grain for
   the Confederate side, per the plan's unit list).
-- Fence-gap locations, the road surface, and ditch geometry (no source yet;
+- Fence-gap locations (still no source; the road surface/profile is now the
+  ED-11 reconstruction, and ditch geometry remains unmodeled) (ED-6;
   ED-6).
 - Wind (ED-10), exact fire discipline, and casualty cause splits beyond the
   broad `causeMix` classes — the causeMix fractions are reconstruction

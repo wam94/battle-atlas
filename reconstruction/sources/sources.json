@@ -244,6 +244,118 @@
       "year": 1899,
       "url": "https://gettysburg.stonesentinels.com/union-monuments/vermont/13th-vermont/",
       "editionNote": "Inscription verbatim via Stone Sentinels: 'changed front forward on first company, advanced 200 yards, attacking the Confederate right flank... capturing 243 prisoners.' Monument text is veteran-committee testimony, Bachelder-era placement discipline."
+    },
+    {
+      "id": "peyton-or-1863",
+      "kind": "official_report",
+      "title": "Report of Maj. Charles S. Peyton, Nineteenth Virginia Infantry (Garnett's brigade), OR ser. 1 vol. 27 pt. 2 pp. 385-387",
+      "author": "Charles S. Peyton",
+      "year": 1863,
+      "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-major-charles-s-peyton.htm",
+      "note": "Written July 9, 1863; the primary Confederate account of the road fences, the grass slope, and the breast-high wall on Garnett's front. Public domain."
+    },
+    {
+      "id": "osm-gettysburg",
+      "kind": "dataset",
+      "title": "OpenStreetMap building footprints, Gettysburg NMP (Codori barn way 779833686)",
+      "year": 2026,
+      "url": "https://www.openstreetmap.org/way/779833686",
+      "note": "Positions measured into battlefield-local meters in docs/research/2026-06-13-landmark-anchors.md (barn anchor 4020.4, 4635.4). Facts/coordinates only; ODbL geometry is not redistributed as an asset. The mapped barn is the 1882 replacement on the same farmyard."
+    },
+    {
+      "id": "loc-picketts-charge-photo",
+      "kind": "government_record",
+      "title": "Gettysburg, battlefield of, scene of Pickett's charge (period photograph, Library of Congress P&P)",
+      "year": 1863,
+      "url": "https://www.loc.gov/item/2012647714/",
+      "note": "No known restrictions on publication; primary visual evidence for the wartime Codori barn massing."
+    },
+    {
+      "id": "habs-trostle-barn",
+      "kind": "government_record",
+      "title": "HABS PA-1962: Trostle Barn, Emmitsburg Road (U.S. 15), Gettysburg — 10 measured-drawing sheets + data pages",
+      "url": "https://www.loc.gov/item/pa1728/",
+      "note": "Public-domain measured drawings; the period-typical Pennsylvania bank-barn analogue for the Codori barn. Verified negative 2026-07-09: the HABS/HAER/HALS collection has NO Codori coverage (collection API query returns 0 results)."
+    },
+    {
+      "id": "ordnance-manual-1862",
+      "kind": "book",
+      "title": "The Ordnance Manual for the Use of the Officers of the United States Army, 3rd ed.",
+      "year": 1862,
+      "url": "https://archive.org/details/ordnancemanualfo00unitrich",
+      "editionNote": "Gun-dimension tables pp. 17-19 (OCR illegible; verify on page scans); field-carriage/limber/caisson dimensions p. 74, limber p. 45, caisson p. 47. Public domain."
+    },
+    {
+      "id": "instruction-field-artillery-1863",
+      "kind": "book",
+      "title": "Instruction for Field Artillery (U.S. War Department)",
+      "year": 1863,
+      "url": "https://archive.org/details/instructionforf01deptgoog",
+      "editionNote": "Battery organization pp. 2-3; dimensions/weights tables pp. 6, 15. Public domain."
+    },
+    {
+      "id": "nps-the-angle",
+      "kind": "article",
+      "title": "NPS: The Angle (Gettysburg place page)",
+      "url": "https://www.nps.gov/places/the-angle.htm"
+    },
+    {
+      "id": "hartwig-gmag-1",
+      "kind": "article",
+      "title": "It Struck Horror to Us All (Gettysburg Magazine no. 1)",
+      "author": "D. Scott Hartwig",
+      "year": 1989,
+      "url": "http://www.gdg.org/Gettysburg%20Magazine/scott1.html"
+    },
+    {
+      "id": "npsgnmp-blog-hwm",
+      "kind": "blog",
+      "title": "GNMP blog: The High Water Mark monument",
+      "year": 2013,
+      "url": "https://npsgnmp.wordpress.com/2013/07/20/the-high-water-mark-monument/"
+    },
+    {
+      "id": "gettysburg-witness-trees",
+      "kind": "reference_site",
+      "title": "Gettysburg Witness Trees: Copse of Trees",
+      "year": 2026,
+      "url": "https://www.gettysburgwitnesstrees.com/main-map/hancock-avenue/copse-of-trees-tree/"
+    },
+    {
+      "id": "priest-ecwc",
+      "kind": "article",
+      "title": "Pickett's Charge: Another Perspective (Essential Civil War Curriculum, Virginia Tech)",
+      "author": "John M. Priest",
+      "url": "https://www.essentialcivilwarcurriculum.com/picketts-charge.html"
+    },
+    {
+      "id": "gettysburg-network-1863",
+      "kind": "blog",
+      "title": "Gettysburg Network of 1863: Discover Gettysburg's Codori Farm",
+      "year": 2025,
+      "url": "https://gettysburgciviliannetwork.com/2025/08/13/discover-gettysburgs-codori-farm-history-memorialization/"
+    },
+    {
+      "id": "mayo-shsp34",
+      "kind": "article",
+      "title": "Col. Joseph Mayo (3rd Virginia Infantry), account in Southern Historical Society Papers vol. 34",
+      "author": "Joseph Mayo",
+      "year": 1906,
+      "note": "Public domain; quoted here via priest-ecwc and gettysburg-network-1863 (no free full text located)."
+    },
+    {
+      "id": "gettysburg-compiler-codori",
+      "kind": "blog",
+      "title": "Saved by the Land: The Codori Family (Gettysburg Compiler, Gettysburg College)",
+      "year": 2021,
+      "url": "https://gettysburgcompiler.org/2021/06/02/saved-by-the-land-the-codori-family/"
+    },
+    {
+      "id": "antietam-aotw",
+      "kind": "reference_site",
+      "title": "Antietam on the Web: 3-inch Ordnance Rifle",
+      "year": 2026,
+      "url": "https://antietam.aotw.org/weapons.php?weapon_id=3"
     }
   ]
 }

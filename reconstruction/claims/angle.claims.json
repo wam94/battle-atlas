@@ -1403,6 +1403,361 @@
           "interpretation": "The modern range against which the period figure is flagged."
         }
       ]
+    },
+    {
+      "id": "claim-wall-profile",
+      "subjectId": "wall-angle-webb-front",
+      "property": "structure",
+      "value": "The wall on Webb's front was a low fieldstone farm wall, roughly 2-3 ft (0.6-0.9 m), badly pulled down in places and patched by the men with fence rails and earth; Peyton, charging it, called it 'about breast-high' (competing reading carried here)",
+      "geometry": { "kind": "featureRef", "featureId": "wall-angle-webb-front", "uncertaintyM": 15 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "haskell-1908",
+          "locator": "Gutenberg #33121, printed p. 83",
+          "excerpt": "a stone fence, constructed of small, rough stones, a good deal of the way badly pulled down, but the men had improved it and patched it with rails from the neighboring fences, and with earth",
+          "interpretation": "Primary Union description of construction and height class (men knelt or lay to gain cover)."
+        },
+        {
+          "sourceId": "nps-the-angle",
+          "locator": "place page",
+          "excerpt": "(originally two to three feet high, built by local farmers before the battle)",
+          "interpretation": "Modern NPS synthesis of the wall's 1863 height."
+        },
+        {
+          "sourceId": "peyton-or-1863",
+          "locator": "OR 27/2:385-387",
+          "excerpt": "a stone wall about breast-high, running nearly parallel to and about 30 paces from the crest of the hill, which was lined with their artillery",
+          "interpretation": "Competing primary reading from the attacking side; kneeling defender vs charging attacker perspectives are not reconciled at the word level."
+        }
+      ],
+      "note": "Canonical modeled profile is in ED-12: ~0.75 m double-faced fieldstone. The 30-paces-to-crest relation also anchors the battery-line offset (ED-16)."
+    },
+    {
+      "id": "claim-wall-rails-on-top",
+      "subjectId": "wall-angle-webb-front",
+      "property": "structure",
+      "value": "Fence rails had been torn down and laid on top of the stone wall on the 69th Pennsylvania's front on the morning of July 2; nothing further was attempted",
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "hartwig-gmag-1",
+          "locator": "Gettysburg Magazine no. 1",
+          "excerpt": "Some fence rails had been torn down and placed upon the stone wall when the regiment first took position on the morning of the 2nd, but nothing further had been attempted since.",
+          "interpretation": "Documents rails on the wall along the 69th PA (south of the inner angle)."
+        }
+      ]
+    },
+    {
+      "id": "claim-fences-high-climb",
+      "subjectId": "assault-column",
+      "property": "obstacle_crossing",
+      "value": "Garnett's brigade climbed three high post-and-rail fences (the road fences among them) while keeping its line almost perfectly; the fences were standing and had to be climbed under fire",
+      "time": { "earliest": 8100, "preferred": 8200, "latest": 8340 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "peyton-or-1863",
+          "locator": "OR 27/2:385-387",
+          "excerpt": "The brigade moved in good order, keeping up its line almost perfectly, notwithstanding it had to climb three high post and rail fences, behind the last of which the enemy's skirmishers were first met",
+          "interpretation": "Primary: the fences stood, were high, and were climbed — no gaps documented (ED-6 stands)."
+        },
+        {
+          "sourceId": "hartwig-2012-nps",
+          "locator": "NPS blog 2012",
+          "excerpt": "(the Southern brigades lost their formation in crossing the road and fences)",
+          "interpretation": "Modern synthesis: crossing disorder."
+        }
+      ],
+      "note": "No primary measurement of fence height exists; ED-12 records the modeled ~1.5 m five-rail form (NPS modern reconstructions as physical reference)."
+    },
+    {
+      "id": "claim-road-sunken",
+      "subjectId": "emmitsburg-road",
+      "property": "structure",
+      "value": "At the Pickett's Charge crossing the Emmitsburg Road ran in a sunken bed below flanking grade — deep enough that men took shelter in it and a substantial share of Confederate prisoners were rounded up there",
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "priest-ecwc",
+          "locator": "ECWC essay, PDF pp. 7-8",
+          "excerpt": "a substantial number of men, who got into the Emmitsburg Road, never left the security of its sunken roadbed",
+          "interpretation": "Documents the sunken profile functionally; no measured depth exists (the ~2 ft figure is secondary synthesis)."
+        }
+      ],
+      "note": "Modeled depth is ED-11 (0.45 m at the bed center). Ditch geometry is undocumented — none is modeled."
+    },
+    {
+      "id": "claim-road-surface",
+      "subjectId": "emmitsburg-road",
+      "property": "structure",
+      "value": "The road surface was unpaved packed earth (period country road; no paving existed on the Emmitsburg Road in 1863)",
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "loc-picketts-charge-photo",
+          "locator": "LOC 2012647714",
+          "excerpt": "(period photograph of the Pickett's Charge ground; unpaved road)",
+          "interpretation": "Period-norm inference supported by period photography; no source describes the surface in words."
+        }
+      ]
+    },
+    {
+      "id": "claim-field-east-grass",
+      "subjectId": "field-angle-final-assault",
+      "property": "land_cover",
+      "value": "The slope between the Emmitsburg Road and the stone wall on Webb's/Cushing's front was in grass in July 1863",
+      "geometry": { "kind": "featureRef", "featureId": "field-angle-final-assault", "uncertaintyM": 30 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "peyton-or-1863",
+          "locator": "OR 27/2:385-387",
+          "excerpt": "we soon met the advance line of the enemy, lying concealed in the grass on the slope, about 100 yards in front of his second line, which consisted of a stone wall",
+          "interpretation": "Primary: grass on the assault slope."
+        },
+        {
+          "sourceId": "hartwig-gmag-1",
+          "locator": "Gettysburg Magazine no. 1",
+          "excerpt": "(Christopher Smith of Cushing's battery: concussion waves crossed 'the grass field in front of the 69th' like gusts of wind)",
+          "interpretation": "Second primary-derived witness placing grass immediately west of the wall."
+        }
+      ],
+      "note": "Therefore NO standing wheat is staged between road and wall (corrects the Phase 3 placeholder wheat band); ED-15."
+    },
+    {
+      "id": "claim-fields-west-mixed",
+      "subjectId": "field-west-of-emmitsburg-codori-front",
+      "property": "land_cover",
+      "value": "The cultivated ground west of the road on Pickett's approach was a mix of wheat nearly ripe, grass and pastures, peach orchards, corn, and farm buildings along the road",
+      "geometry": { "kind": "featureRef", "featureId": "field-west-of-emmitsburg-codori-front", "uncertaintyM": 50 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "haskell-1908",
+          "locator": "Gutenberg #33121, printed p. 27",
+          "excerpt": "the ground is cultivated, and is covered with fields of wheat, now nearly ripe, with grass and pastures, with some peach orchards, with fields of waving corn, and some farm houses, and their out buildings along the Emmetsburg road",
+          "interpretation": "Primary mix of crops; parcel-by-parcel assignment is not documented (ED-15)."
+        }
+      ]
+    },
+    {
+      "id": "claim-codori-orchard",
+      "subjectId": "orchard-codori",
+      "property": "land_cover",
+      "value": "An orchard stood by the Codori house ('on the left of the house' as approached from the west, i.e. to its north) and Kemper's regiments passed through it under artillery fire",
+      "geometry": { "kind": "featureRef", "featureId": "orchard-codori", "uncertaintyM": 30 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "mayo-shsp34",
+          "locator": "SHSP vol. 34",
+          "excerpt": "(Federal guns were 'literally riddling the orchard on the left of the... Codori house, through which my regiment and some of the others passed')",
+          "interpretation": "Primary account of the orchard and its use as a passage; north-side placement is an inference from 'left of the house'."
+        },
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3, traced 2026-07-02",
+          "excerpt": "(fruit-tree symbols in a band NE of the Codori buildings, east of the Emmitsburg Road)",
+          "interpretation": "Traced geometry agrees with the NE-of-house reading."
+        }
+      ]
+    },
+    {
+      "id": "claim-corridor-trampled",
+      "subjectId": "angle-slice",
+      "property": "land_cover",
+      "value": "The assault corridor was left trampled and torn: crops trodden into the mud, fences prostrate, ground plowed by shot, and battery wreckage (ammunition boxes, broken wheels, smashed limbers, shattered gun carriages) strewn across the field",
+      "time": { "earliest": 8040, "preferred": 9000, "latest": 10800 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "haskell-1908",
+          "locator": "Gutenberg #33121, printed pp. 59-60",
+          "excerpt": "trampled by the countless feet of the combatants, plowed and scored by the shot and shell, the orchards splintered, the fences prostrate, the harvest trodden in the mud",
+          "interpretation": "Primary post-battle state; the in-slice trampling progression is reconstruction (ED-17)."
+        },
+        {
+          "sourceId": "haskell-1908",
+          "locator": "Gutenberg #33121, closing pages",
+          "excerpt": "ammunition boxes, broken wheels, smashed limbers, shattered gun carriages... were scattered broadcast over miles of the field",
+          "interpretation": "Basis for battlefield-detritus set dressing near battery positions."
+        }
+      ]
+    },
+    {
+      "id": "claim-codori-house-structure",
+      "subjectId": "codori-farm",
+      "property": "structure",
+      "value": "The Codori house in 1863 was the two-story frame building Nicholas Codori built after 1854 (replacing a log house); the two-story brick rear addition dates to 1877 and is postwar",
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "battlefield-farms/codori-farm",
+          "excerpt": "(bought the 273 acre farm in 1854, replacing the original log house with today's two story frame building... two story brick addition was added to its rear in 1877)",
+          "interpretation": "Majority reading: frame house in 1863."
+        },
+        {
+          "sourceId": "gettysburg-compiler-codori",
+          "locator": "2021 post",
+          "excerpt": "(says Codori 'proceeded to build a brick house on the property between 1854 and 1863')",
+          "interpretation": "Competing reading (brick); less detailed, kept as the recorded conflict."
+        }
+      ],
+      "note": "1863 paint color: no source found. Massing/detail decisions are ED-13."
+    },
+    {
+      "id": "claim-codori-barn-1863",
+      "subjectId": "codori-farm",
+      "property": "structure",
+      "value": "The wartime Codori barn survived the battle and was torn down and replaced in 1882; the present brick barn is postwar. The 1863 barn's construction is not described in any consulted source; its massing is evidenced by the period photograph",
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "battlefield-farms/codori-farm",
+          "excerpt": "(the current barn is a replacement for the original that was torn down in 1882)",
+          "interpretation": "The modeled barn must NOT copy the present brick barn."
+        },
+        {
+          "sourceId": "loc-picketts-charge-photo",
+          "locator": "LOC 2012647714",
+          "excerpt": "(period photograph across the Pickett's Charge ground including the Codori farmyard)",
+          "interpretation": "Primary visual reference for wartime massing."
+        },
+        {
+          "sourceId": "habs-trostle-barn",
+          "locator": "HABS PA-1962 sheets",
+          "excerpt": "(public-domain measured drawings of a period Pennsylvania bank barn on the Emmitsburg Road; HABS has no Codori coverage — verified negative)",
+          "interpretation": "Period-typical dimensional analogue for ED-13 massing."
+        }
+      ]
+    },
+    {
+      "id": "claim-codori-barn-position",
+      "subjectId": "codori-farm",
+      "property": "position",
+      "value": "The Codori barn stands at battlefield-local (4020.4, 4635.4) per the OSM footprint anchor; the mapped barn is the 1882 replacement on the same farmyard, so the wartime barn's exact footprint is inferred from it. The house stands between barn and road, beside the road's east side",
+      "geometry": { "kind": "point", "x": 4020.4, "z": 4635.4, "uncertaintyM": 25 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "osm-gettysburg",
+          "locator": "way 779833686 via docs/research/2026-06-13-landmark-anchors.md",
+          "excerpt": "(barn anchor 4020.4, 4635.4 battlefield-local; the farmhouse is untagged, ~10-20 m away in the same farmyard)",
+          "interpretation": "Best available coordinate; replacement-barn caveat carried."
+        },
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3",
+          "excerpt": "(farm buildings drawn on the east side of the road at the Codori farm)",
+          "interpretation": "Period map corroborates the farmyard east of the road."
+        }
+      ],
+      "note": "House offset from the barn is ED-13."
+    },
+    {
+      "id": "claim-cushing-armament",
+      "subjectId": "us-btty-cushing",
+      "property": "structure",
+      "value": "Battery A, 4th U.S. Artillery was armed with six 3-inch Ordnance rifles; by the end of the repulse all guns but one and all horses but three were disabled",
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "4th-us-artillery-battery-a monument text",
+          "excerpt": "Six 3 inch Rifles... lost all its officers killed or wounded and all the guns but one and all its horses but three were disabled",
+          "interpretation": "Armament and end-state materiel."
+        },
+        {
+          "sourceId": "nps-cushing-article",
+          "locator": "nps.gov article",
+          "excerpt": "(after the cannonade only two guns serviceable; both run to the wall with Webb's permission)",
+          "interpretation": "Slice-start disposition: two guns at the wall, four disabled at the crest line (see claim-cushing-guns-to-wall)."
+        }
+      ]
+    },
+    {
+      "id": "claim-battery-organization",
+      "subjectId": "us-btty-cushing",
+      "property": "structure",
+      "value": "Standard organization gave each piece its own limber and one caisson (itself limbered): six gun-limbers, six caissons and six caisson-limbers for the battery, plus forge and battery wagon",
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "instruction-field-artillery-1863",
+          "locator": "pp. 2-3",
+          "excerpt": "Each caisson is permanently attached to a piece, and manoeuvres with it.",
+          "interpretation": "One caisson per piece for rifle batteries (the 12-pdr two-per-piece rule does not apply)."
+        },
+        {
+          "sourceId": "ordnance-manual-1862",
+          "locator": "p. 45",
+          "excerpt": "The same limber is used for all the field carriages, including caisson",
+          "interpretation": "Limber form shared by gun and caisson."
+        }
+      ],
+      "note": "On-field placement/spacing at 15:20 is reconstruction (ED-16); most battery horses were casualties by the slice."
+    },
+    {
+      "id": "claim-ordnance-rifle-dimensions",
+      "subjectId": "us-btty-cushing",
+      "property": "structure",
+      "value": "3-inch Ordnance rifle, Model 1861: bore 3.0 in, tube 69 in and ~820 lb wrought iron, on the No. 1 field carriage — wheel height 57.0 in, track 60.0 in, dish 1.5 in",
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "ordnance-manual-1862",
+          "locator": "pp. 9, 17-19 (tables; verify on page scans), p. 74",
+          "excerpt": "Track of the wheels... 60. Height of wheel... 57. Dish of finished wheel... 1.5",
+          "interpretation": "Public-domain dimensional basis for the project-owned gun model."
+        },
+        {
+          "sourceId": "antietam-aotw",
+          "locator": "weapon_id=3",
+          "excerpt": "(bore 3 inches; barrel length 69 inches; tube weight 820 lb; carriage 900 lb)",
+          "interpretation": "Clean secondary restatement of the manual's figures (the scan's table OCR is unusable)."
+        }
+      ]
+    },
+    {
+      "id": "claim-copse-form-1863",
+      "subjectId": "woodlot-copse-of-trees",
+      "property": "land_cover",
+      "value": "In 1863 the Copse was a clump of small trees and brush — Haskell: 'a group of small trees, sassafras and oak'; an October 1863 visitor counted 50+ oaks generally no larger than 2 inches in diameter, over a larger area than today's fenced copse; postwar photo analysis reads the oaks as chestnut oaks (competing species detail carried)",
+      "geometry": { "kind": "featureRef", "featureId": "woodlot-copse-of-trees", "uncertaintyM": 20 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "haskell-1908",
+          "locator": "Gutenberg #33121, printed p. 28",
+          "excerpt": "a group of small trees, sassafras and oak, in front of the right of the Second Division of this Corps",
+          "interpretation": "Contemporary species and scale."
+        },
+        {
+          "sourceId": "gettysburg-witness-trees",
+          "locator": "copse-of-trees page",
+          "excerpt": "(50+ oaks, generally not larger than 2 inches in diameter, October 1863; none of the trees inside the fence today date to 1863)",
+          "interpretation": "Sapling scale and extent; today's copse is not the 1863 copse."
+        }
+      ],
+      "note": "Rendering representation is ED-14 (3-6 m generic broadleaf standing in for scrub oak/sassafras)."
+    },
+    {
+      "id": "claim-copse-unfenced-1863",
+      "subjectId": "woodlot-copse-of-trees",
+      "property": "structure",
+      "value": "The Copse was not fenced in 1863; the iron enclosure fence came by Bachelder's motion to the GBMA, which failed in 1885 and 1886 and passed in 1887",
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "npsgnmp-blog-hwm",
+          "locator": "2013 post",
+          "excerpt": "In 1885 Bachelder recommended the Association erect an iron fence to enclose and protect the trees. The motion failed... In 1887 Bachelder submitted his motion in writing, and this time it passed unanimously.",
+          "interpretation": "No 1863 fence is staged."
+        }
+      ]
     }
   ]
 }
