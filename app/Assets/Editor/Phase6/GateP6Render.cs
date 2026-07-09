@@ -388,6 +388,7 @@ namespace BattleAtlas.EditorTools
                 var animator = go.GetComponent<Animator>();
                 if (animator != null) animator.enabled = false;
                 RemapMaterials(go);
+                ForcePerRenderSkinning(go);
                 troopers.Add(new Trooper { go = go, clips = clips });
             }
             return troopers;
@@ -416,7 +417,7 @@ namespace BattleAtlas.EditorTools
         // material-family smoothness. Cached by name so instances share.
         static readonly Dictionary<string, Material> RemappedMats = new();
 
-        static void RemapMaterials(GameObject go)
+        internal static void RemapMaterials(GameObject go)
         {
             foreach (var r in go.GetComponentsInChildren<Renderer>(true))
             {
@@ -451,13 +452,55 @@ namespace BattleAtlas.EditorTools
             }
         }
 
+        internal static Dictionary<string, AnimationClip> LoadClips(string variant)
+        {
+            string path = $"{KitDir}/{variant}.fbx";
+            if (AssetDatabase.LoadAssetAtPath<GameObject>(path) == null)
+                throw new InvalidOperationException($"{path} not imported");
+            return AssetDatabase.LoadAllAssetsAtPath(path)
+                .OfType<AnimationClip>()
+                .Where(c => !c.name.StartsWith("__preview"))
+                .GroupBy(c => c.name.Contains("|")
+                    ? c.name.Substring(c.name.LastIndexOf('|') + 1)
+                    : c.name)
+                .ToDictionary(g => g.Key, g => g.First());
+        }
+
+        internal static GameObject SpawnVariant(string variant)
+        {
+            string path = $"{KitDir}/{variant}.fbx";
+            var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+            if (prefab == null)
+                throw new InvalidOperationException($"{path} not imported");
+            var go = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
+            var animator = go.GetComponent<Animator>();
+            if (animator != null) animator.enabled = false;
+            RemapMaterials(go);
+            ForcePerRenderSkinning(go);
+            return go;
+        }
+
+        // In -batchmode the player loop (which normally re-computes GPU
+        // skinning once per frame) effectively never ticks between
+        // StandardRequest submissions, so SkinnedMeshRenderers render a
+        // STALE pose: SampleAnimation moves the bones, the mesh stays
+        // frozen until some editor tick happens to re-skin it. This was
+        // the Gate P6 "skirmisher never reloads / falls look rigid"
+        // defect. Forcing matrix recalculation per render makes every
+        // submitted render skin from the CURRENT skeleton pose.
+        internal static void ForcePerRenderSkinning(GameObject go)
+        {
+            foreach (var smr in go.GetComponentsInChildren<SkinnedMeshRenderer>(true))
+                smr.forceMatrixRecalculationPerRender = true;
+        }
+
         static string Sha(byte[] b)
         {
             using var sha = SHA256.Create();
             return BitConverter.ToString(sha.ComputeHash(b)).Replace("-", "").ToLowerInvariant();
         }
 
-        static void RenderOnce(Camera cam, RenderTexture rt, Texture2D readInto)
+        internal static void RenderOnce(Camera cam, RenderTexture rt, Texture2D readInto)
         {
             var request = new RenderPipeline.StandardRequest { destination = rt };
             if (!RenderPipeline.SupportsRenderRequest(cam, request))
@@ -474,14 +517,14 @@ namespace BattleAtlas.EditorTools
             }
         }
 
-        static System.Reflection.PropertyInfo CurrentGlobalSettingsProp =>
+        internal static System.Reflection.PropertyInfo CurrentGlobalSettingsProp =>
             typeof(GraphicsSettings).GetProperty(
                 "currentRenderPipelineGlobalSettings",
                 System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static)
             ?? throw new InvalidOperationException(
                 "GraphicsSettings.currentRenderPipelineGlobalSettings not found");
 
-        static void BindHdrpGlobalSettings()
+        internal static void BindHdrpGlobalSettings()
         {
             var gs = GraphicsSettings.GetSettingsForRenderPipeline<HDRenderPipeline>();
             if (gs == null)

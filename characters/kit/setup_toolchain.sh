@@ -49,7 +49,9 @@ fi
 
 # --- smoke test
 "$VENV/bin/python" - <<'EOF'
-import addon_utils, bpy  # noqa
+import bpy  # noqa  (bpy must be imported FIRST: it registers the bundled
+#                    script paths that make addon_utils importable)
+import addon_utils  # noqa
 addon_utils.enable("bl_ext.user_default.mpfb", default_set=True, persistent=True)
 from bl_ext.user_default.mpfb.services.humanservice import HumanService  # noqa
 print("== toolchain OK: bpy", bpy.app.version_string, "+ MPFB importable")
