@@ -14,24 +14,6 @@ public class BattleDirectorTests
     }
 
     [Test]
-    public void MarkerPose_PlacesBottomOnGroundAndConvertsFacing()
-    {
-        var state = new UnitState
-        {
-            posXZ = new Vector2(100f, 200f),
-            facingDeg = 90f,
-            strength = 1f,
-            formation = "line",
-        };
-        var (pos, rot) = BattleDirector.MarkerPose(state, groundY: 50f, markerHeight: 3f);
-        Assert.AreEqual(new Vector3(100f, 51.5f, 200f), pos);
-        // facing 90 = east: marker forward should be world +X
-        Vector3 fwd = rot * Vector3.forward;
-        Assert.AreEqual(1f, fwd.x, 1e-3f);
-        Assert.AreEqual(0f, fwd.z, 1e-3f);
-    }
-
-    [Test]
     public void FootprintSamplePoints_UnrotatedCornersSpanFrontageAndDepth()
     {
         var buffer = new Vector2[9];
@@ -103,17 +85,17 @@ public class BattleDirectorTests
     public void RosterlessChildRendersMonolithicAtRegimentsTier()
     {
         // a roster-less child renders at the middle tier — but as a single
-        // block marker, not sub-blocks
+        // monolithic symbol, not a roster partition
         Assert.IsTrue(BattleDirector.RendersAtTier(true, false, BattleDirector.LodTier.Regiments));
-        Assert.IsFalse(BattleDirector.RendersRegimentSubBlocks(
+        Assert.IsFalse(BattleDirector.RendersRosterSymbols(
             0, "line", BattleDirector.LodTier.Regiments));
-        // a child WITH a roster in ordered formation may sub-block
-        Assert.IsTrue(BattleDirector.RendersRegimentSubBlocks(
+        // a child WITH a roster in ordered formation may partition
+        Assert.IsTrue(BattleDirector.RendersRosterSymbols(
             2, "line", BattleDirector.LodTier.Regiments));
         // never in disordered formations, never at other tiers
-        Assert.IsFalse(BattleDirector.RendersRegimentSubBlocks(
+        Assert.IsFalse(BattleDirector.RendersRosterSymbols(
             2, "routed", BattleDirector.LodTier.Regiments));
-        Assert.IsFalse(BattleDirector.RendersRegimentSubBlocks(
+        Assert.IsFalse(BattleDirector.RendersRosterSymbols(
             2, "line", BattleDirector.LodTier.Block));
     }
 
@@ -141,34 +123,6 @@ public class BattleDirectorTests
     });
 
     [Test]
-    public void BlockCenterAndHeight_FlatAndModerateReliefMatchTheOldStretch()
-    {
-        // flat ground: exactly the pre-clamp marker — MarkerHeight tall,
-        // sitting on the ground (center = ground + height/2)
-        var (centerY, height) = BattleDirector.BlockCenterAndHeight(12f, 12f, 6f);
-        Assert.AreEqual(6f, height, 1e-3f);
-        Assert.AreEqual(15f, centerY, 1e-3f);
-        // moderate relief, under the clamp: the old min-to-max stretch —
-        // bottom at the lowest ground, top clearance above the highest
-        (centerY, height) = BattleDirector.BlockCenterAndHeight(0f, 5f, 6f);
-        Assert.AreEqual(11f, height, 1e-3f);
-        Assert.AreEqual(0f, centerY - height / 2f, 1e-3f);  // bottom = minY
-        Assert.AreEqual(11f, centerY + height / 2f, 1e-3f); // top = maxY + clearance
-    }
-
-    [Test]
-    public void BlockCenterAndHeight_SteepReliefClampsWithTopAnchored()
-    {
-        // 30 m of relief: height clamps to MaxBlockHeight, and the TOP face
-        // keeps its clearance above the HIGHEST ground — the crest never
-        // pokes through; the low end lifts off minY into the hillside
-        var (centerY, height) = BattleDirector.BlockCenterAndHeight(0f, 30f, 6f);
-        Assert.AreEqual(14f, height, 1e-3f);
-        Assert.AreEqual(36f, centerY + height / 2f, 1e-3f); // top = maxY + clearance, always
-        Assert.AreEqual(22f, centerY - height / 2f, 1e-3f); // bottom sunk into the slope
-    }
-
-    [Test]
     public void KindOf_LockedIdPrefixConvention()
     {
         // the full-cast plan's locked id convention, one case per rule
@@ -184,35 +138,163 @@ public class BattleDirectorTests
         Assert.AreEqual(BattleDirector.UnitKind.Infantry, BattleDirector.KindOf("csa-5al-bn"));
     }
 
-    [Test]
-    public void KindGlyph_HeightAndShadeMultipliersPinned()
-    {
-        // the glyph constants are a visual contract — pin them
-        Assert.AreEqual(0.55f, BattleDirector.ArtilleryHeightMul);
-        Assert.AreEqual(0.8f, BattleDirector.CavalryHeightMul);
-        Assert.AreEqual(0.5f, BattleDirector.ArtilleryShadeMul);
-        Assert.AreEqual(1f, BattleDirector.KindHeightMul(BattleDirector.UnitKind.Infantry));
-        Assert.AreEqual(BattleDirector.ArtilleryHeightMul,
-            BattleDirector.KindHeightMul(BattleDirector.UnitKind.Artillery));
-        Assert.AreEqual(BattleDirector.CavalryHeightMul,
-            BattleDirector.KindHeightMul(BattleDirector.UnitKind.Cavalry));
-        // on flat ground the multiplier IS the height ratio: artillery
-        // markers stand at 55% of the infantry block
-        var (_, infantry) = BattleDirector.BlockCenterAndHeight(0f, 0f, 6f);
-        var (_, artillery) = BattleDirector.BlockCenterAndHeight(
-            0f, 0f, 6f * BattleDirector.ArtilleryHeightMul);
-        Assert.AreEqual(0.55f, artillery / infantry, 1e-3f);
+    // ---- symbol integration (slabs out, symbols in) ----
 
-        Color side = BattleDirector.SideColor("union");
-        Color arty = BattleDirector.KindShade(side, BattleDirector.UnitKind.Artillery);
-        Assert.AreEqual(side.r * 0.5f, arty.r, 1e-5f); // uniformly darker
-        Assert.AreEqual(side.g * 0.5f, arty.g, 1e-5f);
-        Assert.AreEqual(side.b * 0.5f, arty.b, 1e-5f);
-        Color cav = BattleDirector.KindShade(side, BattleDirector.UnitKind.Cavalry);
-        Assert.AreEqual(side.r * BattleDirector.CavalryWarmR, cav.r, 1e-5f); // warmer: r up...
-        Assert.AreEqual(side.g, cav.g, 1e-5f);
-        Assert.AreEqual(side.b * BattleDirector.CavalryWarmB, cav.b, 1e-5f); // ...b down
-        Assert.AreEqual(side, BattleDirector.KindShade(side, BattleDirector.UnitKind.Infantry));
+    [Test]
+    public void SymbolStyle_MpbSelectionTruthTable()
+    {
+        // the shader contract: the FillStyle enum ints ARE the _FillStyle
+        // MPB floats — 0 solid, 1 hatched, 2 reserved cross-hatch
+        Assert.AreEqual(0f, (float)UnitSymbol.FillStyle.Solid);
+        Assert.AreEqual(1f, (float)UnitSymbol.FillStyle.Hatched);
+        Assert.AreEqual(2f, (float)UnitSymbol.FillStyle.Contested);
+        Assert.AreEqual(0f, (float)UnitSymbol.StyleOf("documented"));
+        Assert.AreEqual(1f, (float)UnitSymbol.StyleOf("inferred"));
+        Assert.AreEqual(1f, (float)UnitSymbol.StyleOf("unknown"));
+        // border weights: the brigade sits past the shader's double-line
+        // threshold (> 1 draws the double border), the regiment is the
+        // thin single line, and the battery baseline / park outline draw
+        // the full strip — their echelon mark is the symbol class itself
+        Assert.AreEqual(BattleDirector.BrigadeBorderWeight,
+            BattleDirector.SymbolBorderWeight(UnitSymbol.Echelon.Brigade));
+        Assert.Greater(BattleDirector.BrigadeBorderWeight, 1f);
+        Assert.AreEqual(BattleDirector.RegimentBorderWeight,
+            BattleDirector.SymbolBorderWeight(UnitSymbol.Echelon.Regiment));
+        Assert.Less(BattleDirector.RegimentBorderWeight, 1f);
+        Assert.Greater(BattleDirector.RegimentBorderWeight, 0f);
+        Assert.AreEqual(BattleDirector.FullBorderWeight,
+            BattleDirector.SymbolBorderWeight(UnitSymbol.Echelon.Battery));
+        Assert.AreEqual(BattleDirector.FullBorderWeight,
+            BattleDirector.SymbolBorderWeight(UnitSymbol.Echelon.Park));
+    }
+
+    [Test]
+    public void RosterSymbolSpecs_RegimentSpecsSplitStrengthAndSumToParent()
+    {
+        var s = new UnitState
+        {
+            posXZ = new Vector2(1000f, 2000f), facingDeg = 0f,
+            strength = 1700f, formation = "line",
+        };
+        var slots = new (Vector2 center, Vector2 size)[4];
+        var specs = new BattleDirector.RosterSymbolSpec[4];
+        int count = BattleDirector.RosterSymbolSpecs(s, 300f, 40f, 4, slots, specs);
+        Assert.AreEqual(4, count);
+        float shareSum = 0f;
+        float expectedWidth = (300f - 6f * 3) / 4f; // RegimentSlots' line partition
+        for (int i = 0; i < count; i++)
+        {
+            shareSum += specs[i].StrengthShare;
+            // slot frontage is the partition's width, thickness the share's
+            Assert.AreEqual(expectedWidth, specs[i].Frontage, 1e-3f);
+            Assert.AreEqual(
+                UnitSymbol.DisplayDepth(1700f / 4f, expectedWidth),
+                specs[i].DisplayDepth, 1e-4f);
+        }
+        // the even split is display-inferred, but it must never invent or
+        // lose men: shares sum exactly to the parent's keyframed strength
+        Assert.AreEqual(1700f, shareSum, 1e-3f);
+        // facing 0: slot centers ride the world X axis, right (+x) first
+        // per the roster's right-to-left convention, all on the unit line
+        Assert.Greater(specs[0].CenterXZ.x, specs[3].CenterXZ.x);
+        for (int i = 0; i < count; i++)
+            Assert.AreEqual(2000f, specs[i].CenterXZ.y, 1e-3f);
+    }
+
+    [Test]
+    public void RosterSymbolSpecs_CentersRotateWithFacing()
+    {
+        var s = new UnitState
+        {
+            posXZ = Vector2.zero, facingDeg = 90f,
+            strength = 800f, formation = "line",
+        };
+        var slots = new (Vector2 center, Vector2 size)[2];
+        var specs = new BattleDirector.RosterSymbolSpec[2];
+        BattleDirector.RosterSymbolSpecs(s, 200f, 40f, 2, slots, specs);
+        // facing east (90 deg): the frontage axis swings from east-west to
+        // north-south — local +x (right of the line) maps to world -z,
+        // exactly the FootprintSamplePoints rotation convention
+        float width = (200f - 6f) / 2f;
+        float localX = 200f / 2f - width / 2f; // slot 0 center, +x end
+        Assert.AreEqual(0f, specs[0].CenterXZ.x, 1e-3f);
+        Assert.AreEqual(-localX, specs[0].CenterXZ.y, 1e-3f);
+        Assert.AreEqual(localX, specs[1].CenterXZ.y, 1e-3f);
+    }
+
+    [Test]
+    public void SymbolNeedsRebuild_DelegatesToTheSharedDirtyPredicate()
+    {
+        UnitState a = new UnitState
+        {
+            posXZ = new Vector2(100f, 200f), facingDeg = 90f,
+            strength = 1000f, formation = "line",
+        };
+        UnitState moved = a;
+        moved.posXZ = new Vector2(100.5f, 200f);
+        // static twice at the same tier: keep last frame's mesh
+        Assert.IsFalse(BattleDirector.SymbolNeedsRebuild(a, a, 300f,
+            UnitSymbol.SymbolKind.Infantry,
+            BattleDirector.LodTier.Block, BattleDirector.LodTier.Block));
+        // moved past epsilon, or tier flip: rebuild
+        Assert.IsTrue(BattleDirector.SymbolNeedsRebuild(a, moved, 300f,
+            UnitSymbol.SymbolKind.Infantry,
+            BattleDirector.LodTier.Block, BattleDirector.LodTier.Block));
+        Assert.IsTrue(BattleDirector.SymbolNeedsRebuild(a, a, 300f,
+            UnitSymbol.SymbolKind.Infantry,
+            BattleDirector.LodTier.Block, BattleDirector.LodTier.Regiments));
+    }
+
+    [Test]
+    public void SymbolNeedsRebuild_ArtilleryGunDotStepDirtiesUnderTheDepthClamp()
+    {
+        // a battery encodes strength as gun-dot COUNT: its display depth
+        // sits pinned at the MinDepth clamp (120 men x 6 m² / 120 m = 6 m
+        // -> clamped to 8), so the shared thickness gate never fires — the
+        // dot step must dirty instead, or a bleeding battery never redraws
+        UnitState full = new UnitState
+        {
+            posXZ = new Vector2(100f, 200f), facingDeg = 0f,
+            strength = 120f, formation = "line",
+        };
+        UnitState bled = full;
+        bled.strength = 80f; // 6 dots -> 4 dots, same clamped depth
+        Assert.AreEqual(
+            UnitSymbol.DisplayDepth(full.strength, 120f),
+            UnitSymbol.DisplayDepth(bled.strength, 120f));
+        Assert.IsTrue(BattleDirector.SymbolNeedsRebuild(full, bled, 120f,
+            UnitSymbol.SymbolKind.Artillery,
+            BattleDirector.LodTier.Block, BattleDirector.LodTier.Block));
+        // the same strengths on an infantry bar stay clean — thickness is
+        // its strength channel and the clamp holds it still
+        Assert.IsFalse(BattleDirector.SymbolNeedsRebuild(full, bled, 120f,
+            UnitSymbol.SymbolKind.Infantry,
+            BattleDirector.LodTier.Block, BattleDirector.LodTier.Block));
+    }
+
+    [Test]
+    public void FamilyAndRoster_SymbolRepresentationTruthTable()
+    {
+        // family suppression holds with symbols: the parent's ribbon IS the
+        // family at Block tier, the children's ribbons are at Regiments —
+        // and the roster partition only ever augments the Regiments tier
+        Assert.IsTrue(BattleDirector.RendersAtTier(false, true, BattleDirector.LodTier.Block));
+        Assert.IsFalse(BattleDirector.RendersAtTier(false, true, BattleDirector.LodTier.Regiments));
+        Assert.IsFalse(BattleDirector.RendersAtTier(true, false, BattleDirector.LodTier.Block));
+        Assert.IsTrue(BattleDirector.RendersAtTier(true, false, BattleDirector.LodTier.Regiments));
+        // a roster brigade at Block renders ONE brigade-grain ribbon (no
+        // partition); at Regiments it partitions in ordered formations only
+        Assert.IsFalse(BattleDirector.RendersRosterSymbols(
+            5, "line", BattleDirector.LodTier.Block));
+        Assert.IsTrue(BattleDirector.RendersRosterSymbols(
+            5, "line", BattleDirector.LodTier.Regiments));
+        Assert.IsTrue(BattleDirector.RendersRosterSymbols(
+            5, "column", BattleDirector.LodTier.Regiments));
+        Assert.IsFalse(BattleDirector.RendersRosterSymbols(
+            5, "scattered", BattleDirector.LodTier.Regiments));
+        // and never at the Soldiers tier — figures are the close-zoom truth
+        Assert.IsFalse(BattleDirector.RendersRosterSymbols(
+            5, "line", BattleDirector.LodTier.Soldiers));
     }
 
     [Test]

@@ -275,18 +275,6 @@ namespace BattleAtlas
             return Build(verts, tris, "Puff");
         }
 
-        // unit box for regiment sub-blocks at the middle LOD tier: 1 x 1 x 1,
-        // base at y=0 (centered at y +0.5) so a TRS with position = ground and
-        // scale = (width, height, depth) stands the block on the terrain the
-        // same way the monolithic unit marker does. 8 verts.
-        public static Mesh BuildUnitBox()
-        {
-            var verts = new List<Vector3>();
-            var tris = new List<int>();
-            AddBox(verts, tris, new Vector3(0f, 0.5f, 0f), Vector3.one, 1f);
-            return Build(verts, tris, "UnitBox");
-        }
-
         // AddBox plus a uniform vertex color for the whole box and an
         // optional shear: topShiftZ pushes the top face along +Z, which is
         // how the pose meshes lean without any extra geometry

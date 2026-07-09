@@ -4,18 +4,24 @@ using UnityEngine.Rendering;
 
 namespace BattleAtlas
 {
-    // Loads the battle JSON, spawns a block marker per unit, and poses every
-    // marker each frame from the clock's current time. Three LOD tiers by
-    // camera distance: the brigade block beyond RegimentsInDist, instanced
-    // regiment sub-blocks (one per roster entry, laid out by RegimentSlots)
-    // in the middle band, and instanced soldier ranks inside SoldiersInDist
-    // (with a hysteresis band at each boundary to avoid flicker). Units
-    // without a regiments roster — or in scattered/routed formation, where
-    // ordered sub-blocks would be a lie — keep the monolithic block at the
-    // middle tier. Decomposed brigades (units with a `parent`) form a
-    // family: the tier is evaluated ONCE from the parent's center and the
-    // whole family swaps atomically — parent block far, children (own
-    // tracks) near — per battle-format.md "Parent / children".
+    // Loads the battle JSON and renders every unit each frame from the
+    // clock's current time. Three LOD tiers by camera distance: a draped
+    // map-symbol ribbon per unit (UnitSymbol grammar + SymbolMeshBuilder
+    // geometry — shape encodes arm, border encodes echelon, thickness
+    // encodes strength, fill encodes provenance) at the Block tier beyond
+    // RegimentsInDist and at the Regiments tier in the middle band — where
+    // a brigade with a regiments roster partitions into per-regiment
+    // ribbons via RegimentSlots — and instanced soldier ranks inside
+    // SoldiersInDist (with a hysteresis band at each boundary to avoid
+    // flicker). Units without a roster — or in scattered/routed formation,
+    // where an ordered partition would be a lie — keep the monolithic
+    // symbol at the middle tier. Decomposed brigades (units with a
+    // `parent`) form a family: the tier is evaluated ONCE from the
+    // parent's center and the whole family swaps atomically — parent
+    // symbol far, children (own tracks) near — per battle-format.md
+    // "Parent / children". Symbol meshes are persistent per unit and
+    // rebuilt only when SymbolNeedsRebuild says a viewer could tell —
+    // most of the 190 units are static most of the battle.
     public class BattleDirector : MonoBehaviour
     {
         public TextAsset battleJson;
@@ -48,38 +54,22 @@ namespace BattleAtlas
         public Material smokeMaterial;
         public Material dustMaterial;
 
-        // visible clearance of the block's top face above the highest ground in
-        // its footprint (the block extends down to the lowest ground, embedding
-        // in the hillside like a piece on a physical relief map)
-        const float MarkerHeight = 6f;
-        // field-legibility clamp: with 190 units the unbounded min-to-max
-        // stretch made block heights read "all over the place" — tall slabs
-        // wherever a footprint straddled relief. The stretch stays (the P2
-        // anti-clipping fix), but capped: the TOP face keeps its clearance
-        // above the highest ground (crests never poke through) and the block
-        // runs at most this far down the slope, sinking its low end into the
-        // hillside the way a sand-table piece does instead of towering
-        const float MaxBlockHeight = 14f;
-        // kind glyphs: relative marker heights and shades so batteries and
-        // cavalry read as different piece SHAPES at strategic zoom. The
-        // multipliers scale the block's ground clearance, so on flat ground
-        // an artillery marker is exactly 55% of an infantry marker while the
-        // anti-clipping guarantees hold on relief. Public: tests pin them.
-        public const float ArtilleryHeightMul = 0.55f;
-        public const float CavalryHeightMul = 0.8f;
-        public const float ArtilleryShadeMul = 0.5f;  // MUCH darker: at strategic zoom
-                                                      // color contrast is the only kind
-                                                      // cue that reads (height does not)
-        public const float CavalryWarmR = 1.25f;      // strong warm shift, r up...
-        public const float CavalryWarmB = 0.7f;       // ...b down; g untouched
         // activity salience: units neither moving nor named by a live battle
         // event fall this far toward terrain gray, so the corridor's actors
         // carry the frame over the attested-static ring. 0.55 keeps the side
         // hue readable — the ring recedes, it doesn't vanish.
         public const float InactiveDesat = 0.55f;
         public static readonly Color FieldGray = new Color(0.45f, 0.43f, 0.39f);
+        // echelon border weights the UnitSymbol shader reads from the MPB:
+        // > 1 draws the brigade DOUBLE line (ink at both strip edges),
+        // <= 1 draws a single centered line covering that fraction of the
+        // 2 m border strip — regiment thin, battery baseline / park outline
+        // full-width. Public: the MPB truth-table test pins them.
+        public const float BrigadeBorderWeight = 1.25f;
+        public const float RegimentBorderWeight = 0.4f;
+        public const float FullBorderWeight = 1f;
         // LOD hysteresis: soldiers resolve in below SoldiersInDist and hold
-        // until SoldiersOutDist; regiment sub-blocks resolve in below
+        // until SoldiersOutDist; regiment-grain symbols resolve in below
         // RegimentsInDist and hold until RegimentsOutDist. The band at each
         // boundary (150m / 400m) prevents flicker when the camera hovers there.
         const float SoldiersInDist = 1500f;
@@ -87,7 +77,7 @@ namespace BattleAtlas
         const float RegimentsInDist = 4000f;
         const float RegimentsOutDist = 4400f;
         // regiment rosters realistically run <= 10; sized with headroom so the
-        // per-unit matrix buffer never reallocates (over-long rosters clamp)
+        // per-unit mesh/spec buffers never reallocate (over-long rosters clamp)
         const int MaxRegiments = 16;
         // pose bias input (UnitFormationRenderer.PoseFor): a unit is
         // "moving" when its track position changes across a 1s window
@@ -95,10 +85,12 @@ namespace BattleAtlas
         // the answer at the same t
         const float MovingSampleHalfWindow = 0.5f;
         const float MovingEpsilonM = 0.05f;
-        // flag pivot above the unit-center ground: clears the 6m block
-        // marker and the figures, so the flag reads at every tier
+        // flag pivot above the unit-center ground: clears the draped symbol
+        // and the figures, so the flag reads at every tier
         const float FlagPoleHeight = 10f;
         static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
+        static readonly int FillStyleId = Shader.PropertyToID("_FillStyle");
+        static readonly int BorderWeightId = Shader.PropertyToID("_BorderWeight");
         // battle-clock seconds for the Flag shader's vertex wave — a global
         // driven from BattleClock, NOT _Time, so time-scrubbing replays the
         // identical wave (determinism even in the cloth)
@@ -114,7 +106,7 @@ namespace BattleAtlas
 
         public enum LodTier { Soldiers, Regiments, Block }
 
-        // arm-of-service glyph buckets — see KindOf for the id convention
+        // arm-of-service buckets — see KindOf for the id convention
         public enum UnitKind { Infantry, Artillery, Cavalry }
 
         // one live window of a battle event attached to a unit. IsActiveAt
@@ -127,14 +119,37 @@ namespace BattleAtlas
             public EventWindow(float t0, float t1) { T0 = t0; T1 = t1; }
         }
 
-        // per-unit runtime state: the block marker plus everything needed to
-        // switch it for regiment sub-blocks or soldier ranks at closer range.
-        // A small class beats a growing tuple once it carries a latch and a
-        // renderer.
+        // one roster-partition ribbon at the Regiments tier: where the
+        // regiment-grain symbol sits (world XZ), the slot frontage the
+        // RegimentSlots partition attests, and the DISPLAY-INFERRED
+        // strength share (parent strength / roster count — invented at
+        // display grain, which is why roster ribbons render hatched) with
+        // its resulting thickness. Pure data so the partition is testable
+        // without a scene.
+        public readonly struct RosterSymbolSpec
+        {
+            public readonly Vector2 CenterXZ;
+            public readonly float Frontage;
+            public readonly float StrengthShare;
+            public readonly float DisplayDepth;
+
+            public RosterSymbolSpec(
+                Vector2 centerXZ, float frontage, float strengthShare, float displayDepth)
+            {
+                CenterXZ = centerXZ;
+                Frontage = frontage;
+                StrengthShare = strengthShare;
+                DisplayDepth = displayDepth;
+            }
+        }
+
+        // per-unit runtime state: the persistent symbol mesh(es) plus
+        // everything needed to switch representation for soldier ranks at
+        // closer range. A small class beats a growing tuple once it carries
+        // latches and a renderer.
         class UnitEntry
         {
             public UnitTrack Track;
-            public Transform Marker;
             public UnitFormationRenderer FormationRenderer;
             public LodTier Tier;
             // family links, built once in Start from UnitDto.parent (the
@@ -142,19 +157,44 @@ namespace BattleAtlas
             // its parent, a parent holds its children, everyone else null
             public UnitEntry Parent;
             public List<UnitEntry> Children;
-            // middle-tier state, null/0 when the unit has no regiments roster
+            // middle-tier roster state, null/0 when the unit has no roster
             public int RegimentCount;
-            public Matrix4x4[] RegimentMatrices;
             public MaterialPropertyBlock ColorBlock;
             public bool IsUnion; // flag color bucket
-            // kind glyph state, fixed at Start (kind never changes): the
-            // marker's renderer (SetPropertyBlock COPIES, so color changes
-            // must re-set it — the instanced sub-blocks read ColorBlock live
-            // via RenderParams), the height multiplier, and the kind-shaded
-            // side color the MPB shows while the unit is active
-            public Renderer MarkerRenderer;
-            public float HeightMul;
+            // symbol grammar state, fixed at Start (kind never changes):
+            // KindOf's shape class and the SideColor the MPB shows while
+            // the unit is active (kind SHADES retired with the slabs —
+            // shape does that job now)
+            public UnitSymbol.SymbolKind Kind;
             public Color ActiveColor;
+            // the persistent draped symbol: one Mesh per unit (MarkDynamic,
+            // created lazily on first render at a symbol tier), rebuilt from
+            // the Director's scratch buffers only when SymbolNeedsRebuild
+            // fires; the two counts remember which submeshes are non-empty
+            // (a park has no body tris, a skirmish line no border)
+            public Mesh SymbolMesh;
+            public int BodyIndexCount;
+            public int BorderIndexCount;
+            // roster partition at the Regiments tier: one persistent mesh
+            // per roster slot (lazy, like SymbolMesh) drawn with the
+            // regiment-echelon MPB below
+            public Mesh[] RosterMeshes;
+            public int[] RosterBodyCounts;
+            public int[] RosterBorderCounts;
+            public MaterialPropertyBlock RosterBlock;
+            // rebuild bookkeeping: the state/tier the last build consumed
+            // (valid once HasPrev) and which representation that build fed —
+            // a rebuild invalidates the other one, so a formation or tier
+            // flip that swaps representations rebuilds exactly once
+            public UnitState PrevState;
+            public LodTier PrevTier;
+            public bool HasPrev;
+            public bool SymbolBuilt;
+            public bool RosterBuilt;
+            // provenance latch: the fill style the MPB currently shows —
+            // rewritten ONLY when the bracketing keyframe's confidence
+            // changes the style, never per frame
+            public UnitSymbol.FillStyle FillStyle;
             // activity salience: the Start-built event windows (null = no
             // authored event names this unit) and the latch — the MPB color
             // is rewritten ONLY when the active state flips, never per frame
@@ -163,12 +203,17 @@ namespace BattleAtlas
         }
 
         readonly List<UnitEntry> units = new();
-        readonly Vector2[] samplePoints = new Vector2[9];
-        // scratch for RegimentSlots, reused across units within one Update
+        // scratch for RegimentSlots + the roster specs, reused across units
+        // within one Update
         readonly (Vector2 center, Vector2 size)[] slotsBuffer =
             new (Vector2, Vector2)[MaxRegiments];
+        readonly RosterSymbolSpec[] rosterSpecsBuffer = new RosterSymbolSpec[MaxRegiments];
+        // symbol-geometry scratch, one set at the audited worst case —
+        // builds are sequential within Update, so every rebuild shares it
+        readonly Vector3[] symbolVerts = new Vector3[SymbolMeshBuilder.MaxSymbolVerts];
+        readonly Vector2[] symbolUvs = new Vector2[SymbolMeshBuilder.MaxSymbolVerts];
+        readonly int[] symbolTris = new int[SymbolMeshBuilder.MaxSymbolIndices];
         Mesh[] soldierPoseMeshes;
-        Mesh unitBoxMesh;
         Mesh flagMesh;
         // one flag per unit at every tier, ONE RenderMeshInstanced per side
         // across all units (side color rides the MPB, so union and
@@ -203,11 +248,10 @@ namespace BattleAtlas
         }
 
         // Arm of service from the unit id. The LOCKED id-prefix convention's
-        // ONE decoder now lives in UnitSymbol.KindOf (which additionally
-        // splits the `us-arty-` park out of Artillery for the symbol
-        // grammar); this delegates and collapses that split back into the
-        // three glyph buckets the slab renderer knows — the park has no
-        // separate slab treatment, only a separate symbol.
+        // ONE decoder lives in UnitSymbol.KindOf (which additionally splits
+        // the `us-arty-` park out of Artillery for the symbol grammar);
+        // this delegates and collapses that split back into three buckets
+        // for callers that don't draw the park distinction.
         public static UnitKind KindOf(string unitId)
         {
             switch (UnitSymbol.KindOf(unitId))
@@ -222,57 +266,63 @@ namespace BattleAtlas
             }
         }
 
-        // The kind's block-height multiplier (applied to the ground-clearance
-        // term, see BlockCenterAndHeight): squat batteries, mid cavalry,
-        // full-height infantry.
-        public static float KindHeightMul(UnitKind kind)
+        // The echelon's border weight, written once onto the per-unit MPB
+        // (echelon never changes at runtime). The battery baseline and the
+        // park outline draw the full strip — their echelon mark is the
+        // symbol class itself (gun-dot grammar, hollow outline), not a
+        // border pattern.
+        public static float SymbolBorderWeight(UnitSymbol.Echelon echelon)
         {
-            switch (kind)
+            switch (echelon)
             {
-                case UnitKind.Artillery: return ArtilleryHeightMul;
-                case UnitKind.Cavalry: return CavalryHeightMul;
-                default: return 1f;
+                case UnitSymbol.Echelon.Brigade: return BrigadeBorderWeight;
+                case UnitSymbol.Echelon.Regiment: return RegimentBorderWeight;
+                default: return FullBorderWeight;
             }
         }
 
-        // The kind's shade of the side color: artillery darker, cavalry a
-        // slight warm shift, infantry the side color untouched. Applied once
-        // in Start onto the per-unit MPB — kind never changes at runtime.
-        public static Color KindShade(Color sideColor, UnitKind kind)
+        // The symbol rebuild predicate: SymbolMeshBuilder.SymbolDirty (the
+        // shared thickness/pose/formation/tier gate; selection threads in
+        // with Task 6) PLUS the artillery correction — a battery encodes
+        // strength as its GUN-DOT COUNT, not thickness, and its clamped
+        // MinDepth never moves, so a strength fall must dirty on the dot
+        // step instead. Pure so the truth table is testable without a scene.
+        public static bool SymbolNeedsRebuild(
+            UnitState prev, UnitState cur, float frontage,
+            UnitSymbol.SymbolKind kind, LodTier prevTier, LodTier tier)
         {
-            switch (kind)
-            {
-                case UnitKind.Artillery:
-                    return new Color(sideColor.r * ArtilleryShadeMul,
-                        sideColor.g * ArtilleryShadeMul,
-                        sideColor.b * ArtilleryShadeMul, sideColor.a);
-                case UnitKind.Cavalry:
-                    // r up, b down — reads warmer without leaving the side's
-                    // hue family (both palette colors stay well below 1)
-                    return new Color(sideColor.r * CavalryWarmR, sideColor.g,
-                        sideColor.b * CavalryWarmB, sideColor.a);
-                default:
-                    return sideColor;
-            }
+            if (SymbolMeshBuilder.SymbolDirty(prev, cur, frontage,
+                    prevTier, tier, false, false))
+                return true;
+            return kind == UnitSymbol.SymbolKind.Artillery
+                && UnitSymbol.GunDotCount(prev.strength)
+                    != UnitSymbol.GunDotCount(cur.strength);
         }
 
-        // The clamped successor to the raw min-to-max stretch. Given the
-        // lowest/highest sampled ground under a footprint (terrain-local;
-        // caller adds the terrain object's Y), returns the block's center-Y
-        // and height. The TOP face is the anchor — always `clearance` above
-        // the highest ground, so crests never poke through — and the block
-        // extends downward at most MaxBlockHeight, so a long unit on steep
-        // relief sinks its low end into the hillside (what a sand-table
-        // piece does) instead of stretching into a tower. On flat ground
-        // this is exactly the pre-clamp math: height = clearance, block
-        // sitting on the ground. `clearance` is MarkerHeight scaled by the
-        // unit's kind multiplier.
-        public static (float centerY, float height) BlockCenterAndHeight(
-            float minY, float maxY, float clearance)
+        // The Regiments-tier roster partition as pure data: RegimentSlots
+        // carves the attested frontage, the parent strength splits evenly
+        // (DISPLAY-INFERRED — the format attests no per-regiment strengths,
+        // which is why the roster ribbons render hatched), and each share
+        // takes its thickness from the slot's own frontage. Slot centers
+        // rotate into world XZ by the unit facing.
+        public static int RosterSymbolSpecs(
+            UnitState s, float frontage, float depth, int regimentCount,
+            (Vector2 center, Vector2 size)[] slotsBuffer, RosterSymbolSpec[] results)
         {
-            float height = Mathf.Min((maxY - minY) + clearance, MaxBlockHeight);
-            float top = maxY + clearance;
-            return (top - height / 2f, height);
+            FormationLayout.RegimentSlots(
+                s.formation, regimentCount, frontage, depth, slotsBuffer);
+            var rot = Quaternion.Euler(0f, s.facingDeg, 0f);
+            float share = s.strength / regimentCount;
+            for (int i = 0; i < regimentCount; i++)
+            {
+                var (center, size) = slotsBuffer[i];
+                // local (x=right-of-line, y=forward) -> world via facing
+                Vector3 world = rot * new Vector3(center.x, 0f, center.y);
+                results[i] = new RosterSymbolSpec(
+                    new Vector2(s.posXZ.x + world.x, s.posXZ.y + world.z),
+                    size.x, share, UnitSymbol.DisplayDepth(share, size.x));
+            }
+            return regimentCount;
         }
 
         // Pose-bias and salience input: is the track position changing
@@ -305,18 +355,21 @@ namespace BattleAtlas
             return false;
         }
 
-        // Inactive units keep their kind-shaded side color but fall toward
-        // terrain gray, so the ring of attested-static brigades stops
-        // drowning the corridor's action. Figures (Soldiers tier) and flags
-        // NEVER take this: close zoom is deliberate attention, and the flag
-        // is the unit's identity.
+        // Inactive units keep their side color but fall toward terrain
+        // gray, so the ring of attested-static brigades stops drowning the
+        // corridor's action. The symbol border keeps the side hue (the
+        // shader darkens whatever _BaseColor shows, so the ring never
+        // vanishes); figures (Soldiers tier) and flags NEVER take this:
+        // close zoom is deliberate attention, and the flag is the unit's
+        // identity.
         public static Color InactiveColor(Color activeColor) =>
             Color.Lerp(activeColor, FieldGray, InactiveDesat);
 
-        // Fills the buffer with world-XZ sample points under a unit: center,
-        // footprint corners, and edge midpoints, rotated by facing. Update
-        // feeds the MIN and MAX ground height of these to BlockCenterAndHeight,
-        // embedding the block in the slope (clamped, top-anchored).
+        // Fills the buffer with world-XZ sample points under a unit
+        // footprint: center, corners, and edge midpoints, rotated by
+        // facing. The slab renderer's min/max ground consumer retired with
+        // the blocks; the ring stays as the footprint sampler for tests
+        // and the Task 6 picking math.
         public static void FootprintSamplePoints(
             Vector2 centerXZ, float facingDeg, float frontage, float depth, Vector2[] buffer)
         {
@@ -330,22 +383,12 @@ namespace BattleAtlas
             }
         }
 
-        // groundY: world-space terrain height under the unit. Marker pivot is
-        // its center, so lift by half its height to sit on the ground.
-        public static (Vector3 pos, Quaternion rot) MarkerPose(
-            UnitState state, float groundY, float markerHeight)
-        {
-            var pos = new Vector3(state.posXZ.x, groundY + markerHeight / 2f, state.posXZ.y);
-            // compass facing (0 = north = +Z) maps directly to Unity yaw
-            var rot = Quaternion.Euler(0f, state.facingDeg, 0f);
-            return (pos, rot);
-        }
-
         // The family suppression contract (battle-format.md "Parent /
-        // children"): at Block tier the parent's block IS the family; at the
-        // nearer tiers the children are, and the parent hides. Parentless,
-        // childless units render at every tier — the pre-family behavior.
-        // Pure static so the truth table is testable without a scene.
+        // children"): at Block tier the parent's symbol IS the family; at
+        // the nearer tiers the children are, and the parent hides.
+        // Parentless, childless units render at every tier — the pre-family
+        // behavior. Pure static so the truth table is testable without a
+        // scene.
         public static bool RendersAtTier(bool isChild, bool hasChildren, LodTier tier)
         {
             if (hasChildren) return tier == LodTier.Block;
@@ -368,10 +411,10 @@ namespace BattleAtlas
             return LodTier.Block;
         }
 
-        // Middle-tier sub-blocks only for units with a roster holding an
+        // Middle-tier roster ribbons only for units with a roster holding an
         // ordered formation; scattered/routed (and roster-less units) fall
-        // through to the monolithic block — honesty over uniformity.
-        public static bool RendersRegimentSubBlocks(
+        // through to the monolithic symbol — honesty over uniformity.
+        public static bool RendersRosterSymbols(
             int regimentCount, string formation, LodTier tier)
         {
             return tier == LodTier.Regiments && regimentCount > 0
@@ -401,16 +444,20 @@ namespace BattleAtlas
             // asset reference keeps the shader in device builds; the
             // instancing flag itself is not stripped, so it's safe to set here
             soldierMaterial.enableInstancing = true;
-            // unitMaterial also renders instanced at the regiment tier
-            unitMaterial.enableInstancing = true;
             if (flagMaterial != null) flagMaterial.enableInstancing = true;
+            if (symbolMaterial == null)
+            {
+                Debug.LogWarning(
+                    "BattleDirector.symbolMaterial is unset; wire Assets/Battle/UnitSymbol.mat " +
+                    "for the cartographic symbol styling — falling back to unitMaterial");
+                symbolMaterial = unitMaterial;
+            }
             // pose meshes indexed by UnitFormationRenderer.Pose* — shared
             // across every unit's renderer
             soldierPoseMeshes = new Mesh[UnitFormationRenderer.PoseCount];
             soldierPoseMeshes[UnitFormationRenderer.PoseStanding] = InstancedMeshes.BuildSoldier();
             soldierPoseMeshes[UnitFormationRenderer.PoseAdvancing] = InstancedMeshes.BuildSoldierAdvancing();
             soldierPoseMeshes[UnitFormationRenderer.PoseKneeling] = InstancedMeshes.BuildSoldierKneeling();
-            unitBoxMesh = InstancedMeshes.BuildUnitBox();
             flagMesh = InstancedMeshes.BuildFlag();
             unionFlagBlock = new MaterialPropertyBlock();
             unionFlagBlock.SetColor(BaseColorId, SideColor("union"));
@@ -427,33 +474,25 @@ namespace BattleAtlas
             var entriesById = new Dictionary<string, UnitEntry>(battle.units.Count);
             foreach (UnitDto u in battle.units)
             {
-                var marker = GameObject.CreatePrimitive(PrimitiveType.Cube).transform;
-                marker.name = $"unit {u.id} ({u.name})";
-                marker.localScale = new Vector3(u.frontage_m, MarkerHeight, u.depth_m); // y overwritten per-frame
-                var renderer = marker.GetComponent<Renderer>();
-                renderer.sharedMaterial = unitMaterial;
-                // the marker's resting color is the KIND-shaded side color;
-                // set once here (kind never changes), rewritten only when the
-                // activity latch flips in Update
-                UnitKind kind = KindOf(u.id);
-                Color activeColor = KindShade(SideColor(u.side), kind);
+                // the symbol's resting color is the plain side color — kind
+                // reads as SHAPE now, not as a shade of one box; rewritten
+                // only when the activity latch flips in Update
+                UnitSymbol.SymbolKind kind = UnitSymbol.KindOf(u.id);
+                Color activeColor = SideColor(u.side);
                 var block = new MaterialPropertyBlock();
                 block.SetColor(BaseColorId, activeColor);
-                renderer.SetPropertyBlock(block);
-                // not clickable yet. Destroy is illegal outside play mode —
-                // the EditMode scale test (BattleLoaderScaleTests) drives
-                // Start headlessly, so pick the mode-appropriate teardown.
-                var collider = marker.GetComponent<Collider>();
-                if (Application.isPlaying) Object.Destroy(collider);
-                else Object.DestroyImmediate(collider);
+                // documented-solid until the first confidence latch check;
+                // matches FillStyle below the same way Active matches the
+                // color set here
+                block.SetFloat(FillStyleId, (float)UnitSymbol.FillStyle.Solid);
 
                 var formationRenderer = new UnitFormationRenderer(
                     u.id, u.frontage_m, u.depth_m, soldierPoseMeshes, soldierMaterial,
                     SideColor(u.side));
                 // clamp defensively: the schema doesn't cap roster length, and
-                // the persistent matrix buffer must never grow at render time.
-                // Loud, like unknown sides: authored data the renderer refuses
-                // to fully show must never vanish silently.
+                // the per-unit mesh/spec buffers must never grow at render
+                // time. Loud, like unknown sides: authored data the renderer
+                // refuses to fully show must never vanish silently.
                 if (u.regiments != null && u.regiments.Count > MaxRegiments)
                     Debug.LogWarning(
                         $"unit '{u.id}' has {u.regiments.Count} regiments; rendering only the first {MaxRegiments}");
@@ -462,16 +501,17 @@ namespace BattleAtlas
                 var entry = new UnitEntry
                 {
                     Track = new UnitTrack(u),
-                    Marker = marker,
                     FormationRenderer = formationRenderer,
                     Tier = LodTier.Block,
                     RegimentCount = regimentCount,
-                    RegimentMatrices = regimentCount > 0 ? new Matrix4x4[MaxRegiments] : null,
+                    RosterMeshes = regimentCount > 0 ? new Mesh[MaxRegiments] : null,
+                    RosterBodyCounts = regimentCount > 0 ? new int[MaxRegiments] : null,
+                    RosterBorderCounts = regimentCount > 0 ? new int[MaxRegiments] : null,
                     ColorBlock = block,
                     IsUnion = u.side == "union",
-                    MarkerRenderer = renderer,
-                    HeightMul = KindHeightMul(kind),
+                    Kind = kind,
                     ActiveColor = activeColor,
+                    FillStyle = UnitSymbol.FillStyle.Solid,
                     // latch starts true to match the color set above; the
                     // first Update flips genuinely idle units to FieldGray
                     Active = true,
@@ -493,6 +533,29 @@ namespace BattleAtlas
                 parent.Children.Add(units[i]);
                 units[i].Parent = parent;
             }
+            // third pass, after the family links exist: echelon border
+            // weights (EchelonOf needs hasChildren/hasParent, which the
+            // second pass just built). Echelon never changes at runtime, so
+            // this is the ONE write; roster-carrying units also get their
+            // regiment-echelon MPB here — always hatched, because the
+            // partition's strength split is display-inferred.
+            foreach (UnitEntry entry in units)
+            {
+                UnitSymbol.Echelon echelon = UnitSymbol.EchelonOf(
+                    entry.RegimentCount > 0, entry.Children != null,
+                    entry.Parent != null, entry.Kind);
+                entry.ColorBlock.SetFloat(BorderWeightId, SymbolBorderWeight(echelon));
+                if (entry.RegimentCount > 0)
+                {
+                    var rosterBlock = new MaterialPropertyBlock();
+                    rosterBlock.SetColor(BaseColorId, entry.ActiveColor);
+                    rosterBlock.SetFloat(FillStyleId,
+                        (float)UnitSymbol.FillStyle.Hatched);
+                    rosterBlock.SetFloat(BorderWeightId,
+                        SymbolBorderWeight(UnitSymbol.Echelon.Regiment));
+                    entry.RosterBlock = rosterBlock;
+                }
+            }
             // one slot per unit — every unit flies a flag every frame
             unionFlagMatrices = new Matrix4x4[units.Count];
             csaFlagMatrices = new Matrix4x4[units.Count];
@@ -500,7 +563,7 @@ namespace BattleAtlas
             // activity salience: bucket each unit-attached event's window
             // onto its unit ONCE, so IsActiveAt scans a short per-unit list
             // instead of all of battle.events per frame. Segment-form events
-            // (empty unitId) light no unit — they have no marker to raise.
+            // (empty unitId) light no unit — they have no symbol to raise.
             // Parse already guaranteed every non-empty unitId resolves.
             if (battle.events != null)
             {
@@ -541,6 +604,28 @@ namespace BattleAtlas
                 battle, tracksById, clock, terrain);
         }
 
+        void OnDestroy()
+        {
+            // the per-unit symbol meshes are runtime objects, not assets —
+            // release them with the director (mode-appropriate, like the
+            // marker colliders before them)
+            foreach (UnitEntry entry in units)
+            {
+                DestroyMesh(entry.SymbolMesh);
+                if (entry.RosterMeshes == null)
+                    continue;
+                foreach (Mesh m in entry.RosterMeshes)
+                    DestroyMesh(m);
+            }
+        }
+
+        static void DestroyMesh(Mesh mesh)
+        {
+            if (mesh == null) return;
+            if (Application.isPlaying) Destroy(mesh);
+            else DestroyImmediate(mesh);
+        }
+
         void Update()
         {
             float baseY = terrain.transform.position.y;
@@ -556,13 +641,12 @@ namespace BattleAtlas
                 UnitState s = entry.Track.StateAt(clock.CurrentTime);
 
                 // one representative height sample (unit center) is enough to
-                // judge camera distance; the block path does its own denser
-                // footprint sampling only when it's actually the one rendering
+                // judge camera distance
                 float centerY = baseY + terrain.SampleHeight(new Vector3(s.posXZ.x, 0f, s.posXZ.y));
                 Vector3 worldPos = new Vector3(s.posXZ.x, centerY, s.posXZ.y);
 
                 // no camera (editor edge case): treat everything as far so the
-                // familiar block path keeps working
+                // familiar symbol path keeps working
                 float dist = lodCamera != null
                     ? Vector3.Distance(lodCamera.transform.position, worldPos)
                     : float.MaxValue;
@@ -603,7 +687,7 @@ namespace BattleAtlas
             var rp = new RenderParams(flagMaterial)
             {
                 // a waving flag's shadow would flicker across the whole
-                // block at strategic zoom; flags never cast (the B8 audit)
+                // symbol at strategic zoom; flags never cast (the B8 audit)
                 shadowCastingMode = ShadowCastingMode.Off,
             };
             if (unionFlagCount > 0)
@@ -620,17 +704,16 @@ namespace BattleAtlas
             }
         }
 
-        // Renders one unit at the given tier — or hides it when the family
+        // Renders one unit at the given tier — or skips it when the family
         // contract says another tier's representation owns the family right
-        // now. For parentless, childless units RendersAtTier is always true,
-        // so this is exactly the pre-family tier dispatch.
+        // now (symbols are drawn per frame, so a suppressed unit simply
+        // isn't submitted; there is no marker to hide). For parentless,
+        // childless units RendersAtTier is always true, so this is exactly
+        // the pre-family tier dispatch.
         void RenderMember(UnitEntry entry, UnitState s, LodTier tier, float baseY)
         {
             if (!RendersAtTier(entry.Parent != null, entry.Children != null, tier))
-            {
-                entry.Marker.gameObject.SetActive(false);
                 return;
-            }
 
             // a rendering member flies its flag — brigade colors at the block
             // tier resolve into regiment flags exactly when the tracks do;
@@ -642,26 +725,28 @@ namespace BattleAtlas
             if (entry.IsUnion) unionFlagMatrices[unionFlagCount++] = flagMatrix;
             else csaFlagMatrices[csaFlagCount++] = flagMatrix;
 
-            // activity salience: latch per entry, MPB rewritten only on a
-            // transition — 190 markers never see a per-frame SetColor. The
-            // flag blocks above and the figure color are untouched: flags
-            // keep full side color (identity), figures never desaturate.
-            // Hidden family members skip this (early return above) and
-            // reconcile through the same latch check when they reappear.
+            // activity salience: latch per entry, MPBs rewritten only on a
+            // transition — 190 symbols never see a per-frame SetColor
+            // (RenderParams reads the block live at draw time, so no re-set
+            // is needed). The flag blocks above and the figure color are
+            // untouched: flags keep full side color (identity), figures
+            // never desaturate. Suppressed family members skip this (early
+            // return above) and reconcile through the same latch check when
+            // they reappear.
             bool active = IsActiveAt(entry.Track, entry.EventWindows, clock.CurrentTime);
             if (active != entry.Active)
             {
                 entry.Active = active;
-                entry.ColorBlock.SetColor(BaseColorId,
-                    active ? entry.ActiveColor : InactiveColor(entry.ActiveColor));
-                // the renderer COPIES the MPB at set time, so re-set it; the
-                // regiment sub-blocks read entry.ColorBlock live and need no re-set
-                entry.MarkerRenderer.SetPropertyBlock(entry.ColorBlock);
+                Color color = active
+                    ? entry.ActiveColor : InactiveColor(entry.ActiveColor);
+                entry.ColorBlock.SetColor(BaseColorId, color);
+                // the roster ribbons dim with their brigade — one latch,
+                // two blocks
+                entry.RosterBlock?.SetColor(BaseColorId, color);
             }
 
             if (tier == LodTier.Soldiers)
             {
-                entry.Marker.gameObject.SetActive(false);
                 // pose bias input: the same symmetric moving window the
                 // salience latch uses (IsMovingAt), shared so the two can
                 // never disagree about "moving" at the same t
@@ -670,88 +755,149 @@ namespace BattleAtlas
                 return;
             }
 
-            if (RendersRegimentSubBlocks(entry.RegimentCount, s.formation, tier))
+            // provenance: the bracketing START keyframe's confidence drives
+            // the fill style (StyleOf carries the 2026-07-09 two-state
+            // ruling); latched like the color — most units never flip. The
+            // roster MPB stays permanently Hatched: its strength split is
+            // display-inferred whatever the parent's keyframes attest.
+            UnitSymbol.FillStyle style = UnitSymbol.StyleOf(s.confidence);
+            if (style != entry.FillStyle)
             {
-                entry.Marker.gameObject.SetActive(false);
-                RenderRegiments(entry, s, baseY);
-                return;
+                entry.FillStyle = style;
+                entry.ColorBlock.SetFloat(FillStyleId, (float)style);
             }
 
-            RenderBlock(entry, s, baseY);
+            if (RendersRosterSymbols(entry.RegimentCount, s.formation, tier))
+                RenderRosterSymbols(entry, s, tier);
+            else
+                RenderSymbol(entry, s, tier);
         }
 
-        // Far tier (and the middle-tier fallback): the monolithic block,
-        // stretched into the slope.
-        void RenderBlock(UnitEntry entry, UnitState s, float baseY)
+        // Has anything a viewer could see changed since the last build? The
+        // first render (no prev yet) always builds.
+        bool SymbolStale(UnitEntry entry, UnitState s, LodTier tier)
         {
-            Transform marker = entry.Marker;
-            marker.gameObject.SetActive(true);
-            FootprintSamplePoints(s.posXZ, s.facingDeg,
-                entry.Track.Unit.frontage_m, entry.Track.Unit.depth_m, samplePoints);
-            float minY = float.MaxValue, maxY = float.MinValue;
-            foreach (Vector2 p in samplePoints)
-            {
-                float y = terrain.SampleHeight(new Vector3(p.x, 0f, p.y));
-                if (y < minY) minY = y;
-                if (y > maxY) maxY = y;
-            }
-            // a rigid slab can't lie on ~20 m of relief: stretch the block
-            // down the slope from the kind-scaled clearance above the
-            // highest ground, clamped to MaxBlockHeight (see
-            // BlockCenterAndHeight) so it embeds without towering
-            var (centerY, blockHeight) = BlockCenterAndHeight(
-                minY, maxY, MarkerHeight * entry.HeightMul);
-            Vector3 scale = marker.localScale;
-            scale.y = blockHeight;
-            marker.localScale = scale;
-            // MarkerPose lifts from the bottom face; hand it centerY minus
-            // the half-height it will add back
-            var (pos, rot) = MarkerPose(s, baseY + centerY - blockHeight / 2f, blockHeight);
-            marker.SetPositionAndRotation(pos, rot);
+            return !entry.HasPrev || SymbolNeedsRebuild(
+                entry.PrevState, s, entry.Track.Unit.frontage_m,
+                entry.Kind, entry.PrevTier, tier);
         }
 
-        // Middle tier: one RenderMeshInstanced of the unit box per unit, one
-        // instance per roster regiment, laid out by RegimentSlots. Each
-        // sub-block reuses the monolithic marker's footprint logic at its own
-        // scale: sample the slot's footprint ring, stretch from the lowest
-        // ground to MarkerHeight above the highest, so every sub-block embeds
-        // in the slope independently. No per-frame allocations: slots and
-        // matrices fill persistent buffers, RenderParams is a struct.
-        void RenderRegiments(UnitEntry entry, UnitState s, float baseY)
+        // Records what a rebuild consumed; the caller marks which
+        // representation it fed.
+        void CommitBuild(UnitEntry entry, UnitState s, LodTier tier)
+        {
+            entry.PrevState = s;
+            entry.PrevTier = tier;
+            entry.HasPrev = true;
+        }
+
+        // Writes one BuildRibbon result from the shared scratch into a
+        // persistent mesh: two submeshes on one vertex stream — body (fill)
+        // and border band — so both draw with the same material and MPB.
+        // Normals stay untouched: the symbol shader is unlit map ink.
+        void ApplyScratchToMesh(Mesh mesh, SymbolMeshBuilder.SymbolCounts counts)
+        {
+            mesh.Clear();
+            mesh.SetVertices(symbolVerts, 0, counts.VertexCount);
+            mesh.SetUVs(0, symbolUvs, 0, counts.VertexCount);
+            mesh.subMeshCount = 2;
+            mesh.SetTriangles(symbolTris, 0, counts.BodyIndexCount, 0, false);
+            mesh.SetTriangles(symbolTris, counts.BodyIndexCount,
+                counts.BorderIndexCount, 1, false);
+            // vertices are world-space (the ribbon drapes the terrain in
+            // place, drawn with an identity matrix), so the recalculated
+            // bounds ARE the world-space culling bounds
+            mesh.RecalculateBounds();
+        }
+
+        // Block tier (and the middle-tier fallback): the unit's monolithic
+        // draped symbol — one persistent mesh, rebuilt only when stale.
+        void RenderSymbol(UnitEntry entry, UnitState s, LodTier tier)
+        {
+            if (!entry.SymbolBuilt || SymbolStale(entry, s, tier))
+            {
+                if (entry.SymbolMesh == null)
+                {
+                    entry.SymbolMesh = new Mesh { name = $"symbol {entry.Track.Unit.id}" };
+                    entry.SymbolMesh.MarkDynamic();
+                }
+                float frontage = entry.Track.Unit.frontage_m;
+                SymbolMeshBuilder.SymbolCounts counts = SymbolMeshBuilder.BuildRibbon(
+                    entry.Track.Unit.id, s.posXZ, s.facingDeg, frontage,
+                    UnitSymbol.DisplayDepth(s.strength, frontage),
+                    entry.Kind, s.formation, UnitSymbol.GunDotCount(s.strength),
+                    groundYFunc, SymbolMeshBuilder.DefaultLiftM,
+                    symbolVerts, symbolUvs, symbolTris);
+                ApplyScratchToMesh(entry.SymbolMesh, counts);
+                entry.BodyIndexCount = counts.BodyIndexCount;
+                entry.BorderIndexCount = counts.BorderIndexCount;
+                CommitBuild(entry, s, tier);
+                entry.SymbolBuilt = true;
+                entry.RosterBuilt = false;
+            }
+            var rp = new RenderParams(symbolMaterial)
+            {
+                matProps = entry.ColorBlock,
+                // map ink casts no shadow — a symbol's shadow on the relief
+                // would read as height it doesn't have
+                shadowCastingMode = ShadowCastingMode.Off,
+            };
+            // skip empty submeshes: a park has no body, a skirmish line no
+            // border — two RenderMesh calls at most per symbol
+            if (entry.BodyIndexCount > 0)
+                Graphics.RenderMesh(rp, entry.SymbolMesh, 0, Matrix4x4.identity);
+            if (entry.BorderIndexCount > 0)
+                Graphics.RenderMesh(rp, entry.SymbolMesh, 1, Matrix4x4.identity);
+        }
+
+        // Middle tier for roster-carrying brigades: the RegimentSlots
+        // partition as regiment-echelon ribbons, one persistent mesh per
+        // slot, all sharing the roster MPB (regiment border, hatched
+        // display-inferred fill, the brigade's salience color).
+        void RenderRosterSymbols(UnitEntry entry, UnitState s, LodTier tier)
         {
             int count = entry.RegimentCount;
-            FormationLayout.RegimentSlots(s.formation, count,
-                entry.Track.Unit.frontage_m, entry.Track.Unit.depth_m, slotsBuffer);
-            var rot = Quaternion.Euler(0f, s.facingDeg, 0f);
+            if (!entry.RosterBuilt || SymbolStale(entry, s, tier))
+            {
+                RosterSymbolSpecs(s, entry.Track.Unit.frontage_m,
+                    entry.Track.Unit.depth_m, count, slotsBuffer, rosterSpecsBuffer);
+                for (int i = 0; i < count; i++)
+                {
+                    if (entry.RosterMeshes[i] == null)
+                    {
+                        entry.RosterMeshes[i] = new Mesh
+                        {
+                            name = $"symbol {entry.Track.Unit.id} roster {i}",
+                        };
+                        entry.RosterMeshes[i].MarkDynamic();
+                    }
+                    RosterSymbolSpec spec = rosterSpecsBuffer[i];
+                    SymbolMeshBuilder.SymbolCounts counts = SymbolMeshBuilder.BuildRibbon(
+                        entry.Track.Unit.id, spec.CenterXZ, s.facingDeg, spec.Frontage,
+                        spec.DisplayDepth, entry.Kind, s.formation,
+                        UnitSymbol.GunDotCount(spec.StrengthShare),
+                        groundYFunc, SymbolMeshBuilder.DefaultLiftM,
+                        symbolVerts, symbolUvs, symbolTris);
+                    ApplyScratchToMesh(entry.RosterMeshes[i], counts);
+                    entry.RosterBodyCounts[i] = counts.BodyIndexCount;
+                    entry.RosterBorderCounts[i] = counts.BorderIndexCount;
+                }
+                CommitBuild(entry, s, tier);
+                entry.RosterBuilt = true;
+                entry.SymbolBuilt = false;
+            }
+            var rp = new RenderParams(symbolMaterial)
+            {
+                matProps = entry.RosterBlock,
+                shadowCastingMode = ShadowCastingMode.Off,
+            };
             for (int i = 0; i < count; i++)
             {
-                var (center, size) = slotsBuffer[i];
-                // local (x=right-of-line, y=forward) -> world via facing
-                Vector3 world = rot * new Vector3(center.x, 0f, center.y);
-                float wx = s.posXZ.x + world.x;
-                float wz = s.posXZ.y + world.z;
-                FootprintSamplePoints(new Vector2(wx, wz), s.facingDeg, size.x, size.y,
-                    samplePoints);
-                float minY = float.MaxValue, maxY = float.MinValue;
-                foreach (Vector2 p in samplePoints)
-                {
-                    float y = terrain.SampleHeight(new Vector3(p.x, 0f, p.y));
-                    if (y < minY) minY = y;
-                    if (y > maxY) maxY = y;
-                }
-                // same clamp + kind clearance as the monolithic block — the
-                // sub-blocks are the same piece at a finer grain. The unit
-                // box's base is at local y=0, so position = the block's
-                // BOTTOM face (centerY minus half-height) and scale.y = its
-                // height stands it on — or sinks it into — the terrain
-                var (centerY, h) = BlockCenterAndHeight(
-                    minY, maxY, MarkerHeight * entry.HeightMul);
-                entry.RegimentMatrices[i] = Matrix4x4.TRS(
-                    new Vector3(wx, baseY + centerY - h / 2f, wz), rot,
-                    new Vector3(size.x, h, size.y));
+                if (entry.RosterBodyCounts[i] > 0)
+                    Graphics.RenderMesh(rp, entry.RosterMeshes[i], 0, Matrix4x4.identity);
+                if (entry.RosterBorderCounts[i] > 0)
+                    Graphics.RenderMesh(rp, entry.RosterMeshes[i], 1, Matrix4x4.identity);
             }
-            var rp = new RenderParams(unitMaterial) { matProps = entry.ColorBlock };
-            Graphics.RenderMeshInstanced(rp, unitBoxMesh, 0, entry.RegimentMatrices, count);
         }
     }
 }
