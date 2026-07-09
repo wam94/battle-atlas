@@ -1,0 +1,38 @@
+{
+  "assets": [
+    {
+      "id": "polyhaven-dry-ground-01",
+      "path": "Assets/ThirdParty/Materials/PolyHavenDryGround01",
+      "title": "Dry Ground 01",
+      "author": "Rob Tuytel (Poly Haven)",
+      "sourceUrl": "https://polyhaven.com/a/dry_ground_01",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "acquired": "2026-07-08",
+      "redistributable": true,
+      "modified": false,
+      "modifications": "",
+      "sha256": "6488e4984b4e7a6280be8d7ab9758ac41dfb56355cbad4c1d66faed439be6e61",
+      "downloadUrl": "https://api.polyhaven.com/files/dry_ground_01",
+      "downloadSha256": "985822d862f38c7aa1423ffb59fa1c12a8ba3f2866d1c1b8efa93a562d89bcc5",
+      "licenseEvidence": "docs/assets/licenses/polyhaven-dry-ground-01/acquisition.json"
+    },
+    {
+      "id": "oga-wood-fence-exocet",
+      "path": "Assets/ThirdParty/Models/WoodFenceExocet",
+      "title": "3D Wood Fence",
+      "author": "exocet (OpenGameArt.org)",
+      "sourceUrl": "https://opengameart.org/content/3d-wood-fence",
+      "license": "CC-BY-3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "acquired": "2026-07-08",
+      "redistributable": true,
+      "modified": true,
+      "modifications": "imported Fence.obj and Fence.mtl only; removed map_Ka/map_Kd texture references from Fence.mtl and excluded wood_fence_background_texture_seamless.jpg (third-party 'Copyright 2011 ZingerBug.com' JPEG comment, unclear provenance) and the fence.png preview render from the zip",
+      "sha256": "d9265159b6088bcacb2ec8acaa85c43ace5c3f64ea51c745326033a3ceeaa175",
+      "downloadUrl": "https://opengameart.org/sites/default/files/Fence_0.zip",
+      "downloadSha256": "64784a2be4867ab02a156eee04036a79ec3d04eaee4906c43fdc95015fd5ca0d",
+      "licenseEvidence": "docs/assets/licenses/oga-wood-fence-exocet/acquisition.json"
+    }
+  ]
+}

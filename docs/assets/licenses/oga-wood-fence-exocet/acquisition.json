@@ -1,0 +1,25 @@
+{
+  "assetId": "oga-wood-fence-exocet",
+  "acquired": "2026-07-08",
+  "sourcePage": "https://opengameart.org/content/3d-wood-fence",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/Fence_0.zip",
+      "sha256": "64784a2be4867ab02a156eee04036a79ec3d04eaee4906c43fdc95015fd5ca0d",
+      "note": "Fence.zip, 528698 bytes, containing Fence.obj, Fence.mtl, fence.png (preview render), wood_fence_background_texture_seamless.jpg"
+    }
+  ],
+  "license": "CC-BY-3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "licenseStatementSeen": "opengameart-3d-wood-fence-page.html (full page as retrieved 2026-07-08); the page's License(s) field reads 'CC-BY 3.0'",
+  "author": "exocet (OpenGameArt.org user)",
+  "authorEvidence": "opengameart-3d-wood-fence-page.html, submission byline",
+  "datePosted": "2015-03-06",
+  "inspectionFindings": [
+    "Fence.obj: 76 vertices / 62 faces, exported from 3ds Max; the author's own geometry — imported.",
+    "Fence.mtl: referenced the texture below via an absolute local path; map_Ka/map_Kd lines removed on import — modification recorded in the manifest.",
+    "wood_fence_background_texture_seamless.jpg: JPEG comment reads 'Copyright 2011 ZingerBug.com' — a third-party texture of unclear provenance inside the CC-BY zip; EXCLUDED from the import (plan section 7.2 file-inspection rule).",
+    "fence.png: 640x480 preview render; not needed, excluded."
+  ],
+  "notes": "Process-test asset for plan section 12 Phase 2, not a production pick. Substituted for the plan section 18 Sketchfab CC-BY candidates (Springfield 1861, Civil War cannon), which require a Sketchfab account login to download; those remain assigned to their proper phases (6-7) for owner-decided acquisition."
+}

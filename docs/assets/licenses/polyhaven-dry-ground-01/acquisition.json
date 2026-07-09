@@ -1,0 +1,31 @@
+{
+  "assetId": "polyhaven-dry-ground-01",
+  "acquired": "2026-07-08",
+  "sourcePage": "https://polyhaven.com/a/dry_ground_01",
+  "downloadIndex": "https://api.polyhaven.com/files/dry_ground_01",
+  "downloads": [
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dry_ground_01/dry_ground_01_diff_1k.jpg",
+      "sha256": "75222fc97a82b635a09cf8f2891dd58bc42e49599b9fda920b2c50193fe85e9f"
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dry_ground_01/dry_ground_01_nor_gl_1k.jpg",
+      "sha256": "8faf30f0656721f861dba573006c3f90e38fcda8dad481d2369145b114c6b45e"
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dry_ground_01/dry_ground_01_rough_1k.jpg",
+      "sha256": "1e2587819279786a45b3a6b766cd75cd571e7e524b787ebd7e534bc7f9bd143e"
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dry_ground_01/dry_ground_01_ao_1k.jpg",
+      "sha256": "2d2ca6ed343dfc04d6e4b1e6177d8bd0fe8bc50edc84c40f615ebc10cdd97840"
+    }
+  ],
+  "downloadSha256Note": "manifest downloadSha256 is the sha256 of downloads.sha256 in this directory (sorted per-file digests), because the acquisition was four files",
+  "license": "CC0-1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenseStatementSeen": "polyhaven-license-page.txt (retrieved 2026-07-08 from https://polyhaven.com/license)",
+  "author": "Rob Tuytel",
+  "authorEvidence": "polyhaven-info-api.json, field authors ('Rob Tuytel': 'All'), retrieved 2026-07-08 from https://api.polyhaven.com/info/dry_ground_01",
+  "notes": "Process-test asset for plan section 12 Phase 2, not a production pick. 1k JPG maps only (diffuse, GL normal, roughness, AO); higher resolutions exist at the same source."
+}
