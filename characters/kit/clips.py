@@ -95,6 +95,11 @@ class Poser:
         for b in self.pb:
             b.rotation_euler = (0.0, 0.0, 0.0)
             b.location = (0.0, 0.0, 0.0)
+        # force the pose matrices to rebuild NOW: a stale pb.matrix read
+        # right after reset makes every matrix-composing primitive
+        # compound the PREVIOUS pose into the new one (this was the Gate
+        # P6 'falls accumulate root rotation across keys' bug)
+        self.rig.update_tag()
         self.upd()
 
     def upd(self):
@@ -140,9 +145,11 @@ class Poser:
         in order about world axes at the ROOT head (origin, at the feet —
         the right pivot for falls)."""
         pb = self.pb["Root"]
-        # compose in Python and assign ONCE: pb.matrix reads are cached by
-        # the depsgraph, so read-assign-read-assign loses the first write
-        m = pb.matrix.copy()
+        # compose from the REST matrix, never from pb.matrix: root() is
+        # only ever called on a freshly reset pose, and a stale depsgraph
+        # read here silently compounds the previous key's rotation into
+        # this one (assign ONCE at the end for the same reason)
+        m = self.rig.data.bones["Root"].matrix_local.copy()
         if rot:
             for axis, deg in rot:
                 ax = Vector({'X': (1, 0, 0), 'Y': (0, 1, 0),
@@ -762,63 +769,86 @@ def _drop_musket(P, root_before_key, world_loc, world_dir):
 
 
 def fall_back(P):
-    """Shot from the front — thrown onto the back. Body persists at the
-    final pose (last key held to the clip end)."""
+    """Shot from the front — thrown onto the back. Articulated per the
+    Gate P6 review (not a rigid rotation): the chest takes the ball and
+    the back ARCHES, the head whiplashes, the knees buckle as the hips
+    drop, the arms fling up asymmetrically, the body BOUNCES at ground
+    contact, then settles: one knee slumps aside, the arms flop to the
+    ground, the head lolls. Body persists at the final pose."""
     a = _new_action("Fall_Shot_Front_Back")
     rs = P.rs
     ank = P.lm.ankle_z
 
-    def pose(t, tip, root_y, root_z, kneebend, arms_up, musket_world=None):
+    def pose(t, tip, root_y, root_z, arch, head_pitch, head_tilt,
+             lf, rf, lh, rh, musket_world=None, curl=0.5):
         P.reset()
         P.root(loc=(0, root_y, root_z), rot=[('X', -tip)])
-        P.rot("spine_02", 'X', tip * 0.10)     # spine slightly curled vs rigid
-        P.look(pitch=-min(20.0, tip * 0.3))
-        if kneebend <= 1.0:
-            P.foot('l', (-rs * 0.11, -0.02, ank + 0.02))
-            P.foot('r', (rs * 0.11, 0.04, ank + 0.02))
-        else:
-            # released: knees up as the body lies back
-            P.foot('l', (-rs * 0.13, 0.42, 0.14))
-            P.foot('r', (rs * 0.16, 0.30, 0.22))
+        # arch: negative = back arches against the blow, positive = the
+        # crunch reflex curls the spine forward
+        for b in SPINE:
+            P.rot(b, 'X', arch / 3.0)
+        P.look(pitch=head_pitch, tilt=head_tilt)
+        P.foot('l', lf)
+        P.foot('r', rf)
         if musket_world is None:
-            M = P.musket_carry()
+            P.musket_carry()   # owns the right-hand IK
         else:
             _drop_musket(P, None, *musket_world)
-            up = arms_up
-            P.hand('r', (rs * (0.30 + 0.25 * up), 0.25 * up, 0.9 - 0.5 * up))
-        P.hand('l', (-rs * (0.28 + 0.3 * arms_up), 0.1 * arms_up, 0.85 - 0.4 * arms_up))
+            P.hand('r', rh)
+        P.hand('l', lh)
         P.apply_ik()
-        P.curl('r', 0.5)
-        P.curl('l', 0.4)
+        P.curl('r', curl)
+        P.curl('l', curl * 0.8)
         P.key(a, t)
 
-    pose(0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
-    pose(0.12, 8.0, 0.02, 0.0, 0.0, 0.4)                       # impact jerk
-    pose(0.35, 40.0, 0.10, -0.04, 0.5, 0.9,
-         musket_world=((rs * 0.5, -0.05, 0.65), (rs * 0.3, -0.9, 0.2)))
-    pose(0.6, 74.0, 0.16, -0.10, 1.2, 1.0,
-         musket_world=((rs * 0.55, -0.15, 0.25), (rs * 0.25, -0.95, 0.05)))
-    pose(0.85, 86.0, 0.20, -0.13, 1.5, 0.7,
-         musket_world=((rs * 0.60, -0.25, 0.035), (rs * 0.2, -0.98, 0.0)))
-    # settle; one knee drops, arm flops out
-    P.reset()
-    P.root(loc=(0, 0.20, -0.14), rot=[('X', -88.0)])
-    P.look(pitch=-12.0, tilt=rs * 14.0)
-    P.foot('l', (-rs * 0.15, 0.30, 0.10))
-    P.foot('r', (rs * 0.18, 0.24, 0.26))
-    _drop_musket(P, None, (rs * 0.62, -0.28, 0.035), (rs * 0.2, -0.98, 0.0))
-    P.hand('r', (rs * 0.70, 0.55, 0.04))
-    P.hand('l', (-rs * 0.45, 0.75, 0.05))
-    P.apply_ik()
-    P.curl('r', 0.3)
-    P.curl('l', 0.3)
-    P.key(a, 1.15)
+    musket_arc = (
+        ((rs * 0.50, -0.05, 0.65), (rs * 0.3, -0.9, 0.2)),
+        ((rs * 0.55, -0.15, 0.25), (rs * 0.25, -0.95, 0.05)),
+        ((rs * 0.60, -0.25, 0.035), (rs * 0.2, -0.98, 0.0)),
+    )
+    # upright carry
+    pose(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+         (-rs * 0.11, -0.02, ank), (rs * 0.11, 0.04, ank),
+         (-rs * 0.24, 0.0, P.lm.waist_z - 0.28), None, curl=0.75)
+    # 0.10 impact: chest caves, back arches, head snaps back, heels plant
+    pose(0.10, 9.0, 0.02, -0.01, -10.0, -22.0, -rs * 4.0,
+         (-rs * 0.11, -0.06, ank), (rs * 0.11, 0.10, ank + 0.01),
+         (-rs * 0.34, -0.15, 1.15), None, curl=0.6)
+    # 0.30 knees buckle, hips drop, arms fling up asymmetric, piece flies
+    pose(0.30, 38.0, 0.09, -0.09, 6.0, 14.0, rs * 6.0,
+         (-rs * 0.13, 0.10, ank + 0.06), (rs * 0.12, 0.16, ank + 0.10),
+         (-rs * 0.55, 0.05, 1.05), (rs * 0.42, 0.12, 0.85),
+         musket_world=musket_arc[0], curl=0.4)
+    # 0.55 falling through, knees high, whiplash forward
+    pose(0.55, 70.0, 0.15, -0.15, 10.0, 18.0, rs * 8.0,
+         (-rs * 0.14, 0.34, 0.20), (rs * 0.17, 0.26, 0.28),
+         (-rs * 0.62, 0.28, 0.60), (rs * 0.55, 0.30, 0.45),
+         musket_world=musket_arc[1], curl=0.35)
+    # 0.80 CONTACT: back slaps the ground, head knocked back, arms bounce
+    pose(0.80, 87.0, 0.19, -0.17, -6.0, -16.0, rs * 4.0,
+         (-rs * 0.14, 0.36, 0.16), (rs * 0.18, 0.28, 0.26),
+         (-rs * 0.55, 0.55, 0.30), (rs * 0.62, 0.45, 0.22),
+         musket_world=musket_arc[2], curl=0.3)
+    # 1.00 bounce dies: knees sag, arms drop toward the ground
+    pose(1.00, 84.0, 0.20, -0.15, -2.0, -10.0, rs * 8.0,
+         (-rs * 0.15, 0.33, 0.12), (rs * 0.18, 0.26, 0.24),
+         (-rs * 0.50, 0.68, 0.10), (rs * 0.66, 0.50, 0.08),
+         musket_world=musket_arc[2], curl=0.3)
+    # 1.30 settle: one knee slumps aside, arms flop out, head lolls
+    pose(1.30, 88.0, 0.20, -0.14, 0.0, -12.0, rs * 14.0,
+         (-rs * 0.15, 0.30, 0.10), (rs * 0.22, 0.24, 0.24),
+         (-rs * 0.45, 0.75, 0.05), (rs * 0.70, 0.55, 0.04),
+         musket_world=musket_arc[2], curl=0.22)
     P.key(a, 2.0)   # persistent body hold
     return a
 
 
 def fall_crumple(P):
-    """Shot from the front — legs give, sinks to knees, folds forward."""
+    """Shot from the front — the legs give. Articulated per the Gate P6
+    review: the RIGHT knee buckles first, hips sag onto the heels, the
+    torso folds progressively while the hands reach to catch, then the
+    elbows collapse and the body slides out flat, face down, rolled a
+    little onto the right side. Head drops last."""
     a = _new_action("Fall_Shot_Front_Crumple")
     rs = P.rs
     ank = P.lm.ankle_z
@@ -833,28 +863,43 @@ def fall_crumple(P):
     P.musket_carry()
     P.hand('l', (-rs * 0.24, 0.0, P.lm.waist_z - 0.28))
     key(0.0)
-    # hit: small buckle
+    # 0.15 hit: hips sag, right knee gives FIRST (asymmetric buckle)
     P.reset()
-    P.root(loc=(0, 0.02, -0.09))
-    P.lean(10.0)
-    P.foot('l', (-rs * 0.11, -0.02, ank))
-    P.foot('r', (rs * 0.11, 0.05, ank))
+    P.root(loc=(rs * 0.02, 0.02, -0.12))
+    P.lean(9.0)
+    P.rot("pelvis", 'Z', rs * 6.0)          # hips twist over the dead leg
+    P.look(pitch=8.0, tilt=rs * 4.0)
+    P.foot('l', (-rs * 0.11, -0.04, ank))
+    P.foot('r', (rs * 0.13, 0.14, ank + 0.03))   # right heel lifts
     M = P.musket((rs * 0.15, 0.02, 0.80), (0, 0.1, 0.99))
     P.hand('r', M @ Vector((0, 0.16, -0.04)))
     P.hand('l', (-rs * 0.26, 0.02, 0.8))
-    key(0.2)
-    # knees hit the ground (musket drops forward)
+    key(0.15)
+    # 0.35 half down: right knee nearly grounded, left still braces,
+    # musket let go, arms coming forward
+    P.reset()
+    P.root(loc=(rs * 0.03, 0.04, -0.30))
+    P.lean(13.0)
+    P.rot("pelvis", 'Z', rs * 4.0)
+    P.look(pitch=14.0, tilt=rs * 4.0)
+    P.foot('l', (-rs * 0.13, -0.06, ank + 0.01))
+    P.foot('r', (rs * 0.13, 0.30, 0.10))
+    _drop_musket(P, None, (-rs * 0.24, -0.50, 0.30), (-rs * 0.25, -0.92, 0.15))
+    P.hand('r', (rs * 0.28, -0.05, 0.70))
+    P.hand('l', (-rs * 0.28, -0.02, 0.72))
+    key(0.35)
+    # 0.60 both knees hit; torso folding, hands reaching for the ground
     P.reset()
     P.root(loc=(0, 0.06, -0.46))
-    P.lean(16.0)
+    P.lean(18.0)
     P.look(pitch=22.0)
     P.foot('l', (-rs * 0.12, 0.38, 0.08))
-    P.foot('r', (rs * 0.12, 0.40, 0.08))
+    P.foot('r', (rs * 0.12, 0.42, 0.08))
     _drop_musket(P, None, (-rs * 0.28, -0.55, 0.03), (-rs * 0.2, -0.96, 0.0))
-    P.hand('r', (rs * 0.30, -0.10, 0.55))
-    P.hand('l', (-rs * 0.30, -0.12, 0.55))
-    key(0.55)
-    # fold forward onto hands
+    P.hand('r', (rs * 0.30, -0.14, 0.50))
+    P.hand('l', (-rs * 0.30, -0.16, 0.50))
+    key(0.60)
+    # 0.95 fold onto the hands (they catch — for a moment)
     P.reset()
     P.root(loc=(0, 0.10, -0.52), rot=[('X', 38.0)])
     for b in SPINE:
@@ -866,7 +911,20 @@ def fall_crumple(P):
     P.hand('r', (rs * 0.26, -0.48, 0.05))
     P.hand('l', (-rs * 0.26, -0.50, 0.05))
     key(0.95)
-    # flat, face down, slightly on the right side
+    # 1.20 the elbows collapse: chest drops, head turns aside, right hand
+    # slides forward flat
+    P.reset()
+    P.root(loc=(0, 0.12, -0.58), rot=[('X', 54.0), ('Z', -rs * 5.0)])
+    for b in SPINE:
+        P.rot(b, 'X', 7.0)
+    P.look(pitch=16.0, tilt=rs * 12.0)
+    P.foot('l', (-rs * 0.14, 0.62, 0.09))
+    P.foot('r', (rs * 0.13, 0.68, 0.07))
+    _drop_musket(P, None, (-rs * 0.31, -0.59, 0.032), (-rs * 0.2, -0.96, 0.0))
+    P.hand('r', (rs * 0.30, -0.55, 0.03))
+    P.hand('l', (-rs * 0.28, -0.42, 0.04))
+    key(1.20)
+    # 1.55 flat, face down, rolled slightly onto the right side
     P.reset()
     P.root(loc=(0, 0.14, -0.62), rot=[('X', 66.0), ('Z', -rs * 10.0)])
     P.look(pitch=10.0, tilt=rs * 18.0)
@@ -875,63 +933,84 @@ def fall_crumple(P):
     _drop_musket(P, None, (-rs * 0.32, -0.60, 0.035), (-rs * 0.2, -0.96, 0.0))
     P.hand('r', (rs * 0.32, -0.42, 0.03))
     P.hand('l', (-rs * 0.38, -0.35, 0.03))
-    key(1.4)
+    P.curl('r', 0.2)
+    P.curl('l', 0.2)
+    key(1.55)
     P.key(a, 2.3)   # persistent hold
     return a
 
 
 def fall_side(P):
-    """Canister burst from the character's LEFT — knocked down rightward."""
+    """Canister burst from the character's LEFT — knocked down rightward.
+    Articulated per the Gate P6 review: the near shoulder takes the blow
+    (torso side-bends away), the right knee buckles inward while the left
+    leg is swept, the right arm shoots down to BRACE, holds for a beat,
+    then the elbow collapses and the body rocks once on the ground before
+    settling with the legs scissored and the far arm across the chest."""
     a = _new_action("Fall_Shot_Left_Side")
     rs = P.rs
     ank = P.lm.ankle_z
     tipdir = rs  # tip toward character-right
 
-    def pose(t, tip, root_z, brace, musket_world=None):
+    def pose(t, tip, root_x, root_z, bend, head_tilt, lf, rf, lh, rh,
+             musket_world=None, curl=0.5):
         P.reset()
-        P.root(loc=(tipdir * 0.06 * tip / 30.0, 0.0, root_z),
+        P.root(loc=(tipdir * root_x, 0.0, root_z),
                rot=[('Y', tipdir * tip)])
-        P.rot("spine_02", 'Z', -tipdir * min(14.0, tip * 0.35))
-        P.look(tilt=-tipdir * min(16.0, tip * 0.4), pitch=6.0)
-        if tip < 45.0:
-            P.foot('l', (-rs * 0.11, -0.02, ank))
-            P.foot('r', (rs * 0.42 * tip / 45.0 + rs * 0.11, 0.03, ank + 0.02))
-        else:
-            P.foot('l', (-rs * 0.02, 0.12, 0.14))
-            P.foot('r', (rs * 0.30, -0.10, 0.10))
+        P.rot("spine_02", 'Z', -tipdir * bend)
+        P.rot("spine_03", 'Z', -tipdir * bend * 0.6)
+        P.look(tilt=-tipdir * head_tilt, pitch=6.0)
+        P.foot('l', lf)
+        P.foot('r', rf)
         if musket_world is None:
-            M = P.musket_carry()
+            P.musket_carry()   # owns the right-hand IK
         else:
             _drop_musket(P, None, *musket_world)
-            P.hand('r', (rs * 0.55, 0.05, max(0.06, 0.8 - tip / 100.0)))
-        if brace:
-            P.hand('r', (rs * 0.78, 0.05, 0.06))
-        P.hand('l', (-rs * 0.20, -0.06, 0.9 - tip / 140.0))
+            P.hand('r', rh)
+        P.hand('l', lh)
         P.apply_ik()
-        P.curl('r', 0.5)
-        P.curl('l', 0.4)
+        P.curl('r', curl)
+        P.curl('l', curl * 0.8)
         P.key(a, t)
 
-    pose(0.0, 0.0, 0.0, False)
-    pose(0.10, 14.0, -0.01, False)
-    pose(0.32, 48.0, -0.06, False,
-         musket_world=((-rs * 0.35, -0.30, 0.55), (-rs * 0.6, -0.7, 0.3)))
-    pose(0.55, 78.0, -0.10, True,
-         musket_world=((-rs * 0.45, -0.40, 0.05), (-rs * 0.7, -0.7, 0.0)))
-    # down on the right side, legs scissored
-    P.reset()
-    P.root(loc=(tipdir * 0.22, 0.02, -0.16), rot=[('Y', tipdir * 86.0)])
-    P.rot("spine_02", 'Z', -tipdir * 10.0)
-    P.look(tilt=-tipdir * 10.0, pitch=12.0)
-    P.foot('l', (-rs * 0.02, -0.35, 0.16))   # top leg forward
-    P.foot('r', (rs * 0.14, 0.28, 0.12))
-    _drop_musket(P, None, (-rs * 0.50, -0.42, 0.035), (-rs * 0.7, -0.72, 0.0))
-    P.hand('r', (rs * 0.55, 0.15, 0.05))
-    P.hand('l', (-rs * 0.15, -0.30, 0.10))
-    P.apply_ik()
-    P.curl('r', 0.35)
-    P.curl('l', 0.35)
-    P.key(a, 0.85)
+    # upright
+    pose(0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+         (-rs * 0.11, -0.02, ank), (rs * 0.11, 0.04, ank),
+         (-rs * 0.24, 0.0, P.lm.waist_z - 0.28), None, curl=0.75)
+    # 0.10 impact: shoulder knocked, head snaps away, weight jumps right
+    pose(0.10, 13.0, 0.02, -0.01, 10.0, 18.0,
+         (-rs * 0.11, -0.02, ank), (rs * 0.20, 0.04, ank + 0.01),
+         (-rs * 0.26, -0.04, 1.00), None, curl=0.6)
+    # 0.30 right knee buckles inward, left leg swept, arm shoots to brace
+    pose(0.30, 44.0, 0.09, -0.07, 14.0, 17.0,
+         (-rs * 0.04, 0.06, ank + 0.10), (rs * 0.26, 0.00, ank + 0.04),
+         (-rs * 0.15, -0.10, 0.85), (rs * 0.62, 0.02, 0.35),
+         musket_world=((-rs * 0.35, -0.30, 0.55), (-rs * 0.6, -0.7, 0.3)),
+         curl=0.4)
+    # 0.50 the brace takes weight: palm planted, hips still dropping
+    pose(0.50, 72.0, 0.16, -0.11, 12.0, 14.0,
+         (-rs * 0.02, 0.12, 0.15), (rs * 0.30, -0.08, 0.10),
+         (-rs * 0.18, -0.08, 0.75), (rs * 0.80, 0.04, 0.05),
+         musket_world=((-rs * 0.45, -0.40, 0.05), (-rs * 0.7, -0.7, 0.0)),
+         curl=0.4)
+    # 0.70 the elbow collapses — flank hits, head knocked over
+    pose(0.70, 87.0, 0.21, -0.15, 10.0, 12.0,
+         (-rs * 0.02, -0.20, 0.16), (rs * 0.20, 0.20, 0.12),
+         (-rs * 0.16, -0.22, 0.45), (rs * 0.62, 0.10, 0.05),
+         musket_world=((-rs * 0.50, -0.42, 0.035), (-rs * 0.7, -0.72, 0.0)),
+         curl=0.35)
+    # 0.95 one rock back up the flank, legs scissoring
+    pose(0.95, 82.0, 0.20, -0.14, 9.0, 10.0,
+         (-rs * 0.02, -0.30, 0.16), (rs * 0.16, 0.26, 0.12),
+         (-rs * 0.15, -0.26, 0.25), (rs * 0.58, 0.13, 0.05),
+         musket_world=((-rs * 0.50, -0.42, 0.035), (-rs * 0.7, -0.72, 0.0)),
+         curl=0.3)
+    # 1.25 settled: legs scissored, far arm falls across to the ground
+    pose(1.25, 86.0, 0.22, -0.16, 10.0, 10.0,
+         (-rs * 0.02, -0.35, 0.16), (rs * 0.14, 0.28, 0.12),
+         (-rs * 0.15, -0.30, 0.10), (rs * 0.55, 0.15, 0.05),
+         musket_world=((-rs * 0.50, -0.42, 0.035), (-rs * 0.7, -0.72, 0.0)),
+         curl=0.22)
     P.key(a, 1.7)   # persistent hold
     return a
 

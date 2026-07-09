@@ -102,6 +102,10 @@ def build_variant(name, spec):
     if wants_roll:
         parts.append(g.blanket_roll(body, rig, lm, pal))
 
+    # all garments are extracted; now permanently delete the body faces
+    # they cover (defect-1 fix: covered skin can never poke through)
+    g.mask_covered_body(body, lm, style)
+
     # skin material on the body itself
     skin = sf.flat_mat("skin", (0.62, 0.45, 0.34, 1.0), 0.6)
     g.set_mat(body, skin)
@@ -171,8 +175,9 @@ def clip_previews(name, rig):
     scene.display.shading.color_type = 'MATERIAL'
     scene.render.resolution_x = 900
     scene.render.resolution_y = 900
-    cam.location = (2.6, -3.4, 1.7)
-    d = Vector((0.0, 0.0, 0.85)) - Vector(cam.location)
+    # wide enough that lying/settled fall poses stay in frame
+    cam.location = (3.1, -4.0, 1.8)
+    d = Vector((0.0, 0.1, 0.65)) - Vector(cam.location)
     cam.rotation_euler = d.to_track_quat('-Z', 'Y').to_euler()
     for act in bpy.data.actions:
         rig.animation_data.action = act

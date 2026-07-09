@@ -199,9 +199,9 @@ class Landmarks:
 
 
 # ---------------------------------------------------------------- garments
-def coat(body, rig, lm, pal, style, arm_limit):
-    """Sack coat (Union, skirt to mid-thigh) or shell jacket (CSA, ends at
-    the waist). arm_limit: fraction of arm covered (sleeves to wrists)."""
+# Garment coverage predicates are module-level so mask_covered_body can
+# re-evaluate EXACTLY the regions each garment was extracted from.
+def coat_pred(lm, style):
     hem_z = lm.hip_z - 0.16 if style == "sack" else lm.waist_z - 0.01
     collar_z = lm.neck_z + 0.012
 
@@ -221,7 +221,67 @@ def coat(body, rig, lm, pal, style, arm_limit):
         beyond_hand = ax > abs(lm.wrist_l.x) + 0.012
         return (on_torso or on_arm) and not beyond_hand
 
-    ob = extract_band(body, f"{body.name}_coat", pred)
+    return pred
+
+
+def trousers_pred(lm):
+    top_z = lm.waist_z + 0.03
+    bot_z = lm.ankle_z + 0.035
+
+    def pred(c):
+        return bot_z < c.z < top_z and abs(c.x) < 0.30
+
+    return pred
+
+
+def brogans_pred(lm):
+    def pred(c):
+        return c.z < lm.ankle_z + 0.055
+
+    return pred
+
+
+def mask_covered_body(body, lm, style, inset=0.022):
+    """Gate P6 defect-1 fix ('the nude is sticking through the uniform'):
+    permanently DELETE the body faces the coat/trousers/brogans cover.
+
+    Garment vertices inherit the deform weights of the body vertices they
+    were extracted from, so a garment tracks its source skin in every
+    pose; but at weight-blend joints (elbows, knees, shoulders — worst in
+    the reload arm raises) NEIGHBORING body vertices deform differently
+    and can poke through the offset shell. Faces that can never be seen
+    cannot poke. `inset` shrinks every region by sampling the predicate
+    at +-inset in x and z, keeping a safety strip of skin under each
+    garment opening (collar, cuffs, waist, ankles) so no hole shows."""
+    preds = (coat_pred(lm, style), trousers_pred(lm), brogans_pred(lm))
+    offs = [Vector((dx, 0.0, dz))
+            for dx in (-inset, 0.0, inset) for dz in (-inset, 0.0, inset)]
+
+    def covered(c):
+        return any(all(p(c + o) for o in offs) for p in preds)
+
+    doomed_idx = {p.index for p in body.data.polygons if covered(p.center)}
+    bm = bmesh.new()
+    bm.from_mesh(body.data)
+    bm.faces.ensure_lookup_table()
+    doomed = [f for f in bm.faces if f.index in doomed_idx]
+    bmesh.ops.delete(bm, geom=doomed, context='FACES')
+    # drop the verts orphaned by the face deletion
+    lone = [v for v in bm.verts if not v.link_faces]
+    if lone:
+        bmesh.ops.delete(bm, geom=lone, context='VERTS')
+    bm.to_mesh(body.data)
+    bm.free()
+    print(f"[garments] masked {len(doomed_idx)} covered body faces "
+          f"({len(body.data.polygons)} visible remain)")
+    return len(doomed_idx)
+
+
+def coat(body, rig, lm, pal, style, arm_limit):
+    """Sack coat (Union, skirt to mid-thigh) or shell jacket (CSA, ends at
+    the waist). arm_limit: fraction of arm covered (sleeves to wrists)."""
+    hem_z = lm.hip_z - 0.16 if style == "sack" else lm.waist_z - 0.01
+    ob = extract_band(body, f"{body.name}_coat", coat_pred(lm, style))
     drape(ob, 0.016, tangential_iters=3)
     push_off_body(ob, body, 0.009)
 
@@ -241,13 +301,7 @@ def coat(body, rig, lm, pal, style, arm_limit):
 
 
 def trousers(body, rig, lm, pal):
-    top_z = lm.waist_z + 0.03
-    bot_z = lm.ankle_z + 0.035
-
-    def pred(c):
-        return bot_z < c.z < top_z and abs(c.x) < 0.30
-
-    ob = extract_band(body, f"{body.name}_trousers", pred)
+    ob = extract_band(body, f"{body.name}_trousers", trousers_pred(lm))
     drape(ob, 0.010)
     solidify(ob, 0.005)
     add_armature(ob, rig)
@@ -256,10 +310,7 @@ def trousers(body, rig, lm, pal):
 
 
 def brogans(body, rig, lm, pal):
-    def pred(c):
-        return c.z < lm.ankle_z + 0.055
-
-    ob = extract_band(body, f"{body.name}_brogans", pred)
+    ob = extract_band(body, f"{body.name}_brogans", brogans_pred(lm))
     drape(ob, 0.007, tangential_iters=1)
     solidify(ob, 0.004)
     add_armature(ob, rig)
