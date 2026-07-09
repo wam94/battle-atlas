@@ -88,6 +88,9 @@ namespace BattleAtlas
         // flag pivot above the unit-center ground: clears the draped symbol
         // and the figures, so the flag reads at every tier
         const float FlagPoleHeight = 10f;
+        // label anchor above the unit-center ground (display meters, like
+        // the symbol lift): under the flag, over the ribbon
+        const float LabelLiftM = 2f;
         static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
         static readonly int FillStyleId = Shader.PropertyToID("_FillStyle");
         static readonly int BorderWeightId = Shader.PropertyToID("_BorderWeight");
@@ -166,7 +169,17 @@ namespace BattleAtlas
             // the unit is active (kind SHADES retired with the slabs —
             // shape does that job now)
             public UnitSymbol.SymbolKind Kind;
+            public UnitSymbol.Echelon Echelon;
             public Color ActiveColor;
+            // label state, fixed at Start: what the label says (unit name,
+            // id fallback), this unit's fixed candidate slot, and — for
+            // roster brigades — the first of its roster-name slots (fixed
+            // slots keep the declutter's sticky bonus keyed to the same
+            // unit across frames) and the roster names themselves
+            public string DisplayName;
+            public int LabelSlot;
+            public int RosterLabelBase;
+            public List<string> RosterNames;
             // the persistent draped symbol: one Mesh per unit (MarkDynamic,
             // created lazily on first render at a symbol tier), rebuilt from
             // the Director's scratch buffers only when SymbolNeedsRebuild
@@ -203,6 +216,19 @@ namespace BattleAtlas
         }
 
         readonly List<UnitEntry> units = new();
+        // selection (Task 6 wires the click picking; null = none). The
+        // label pass already honors it — a selected label always survives
+        // the declutter and is the only one shown at the Soldiers tier.
+        UnitEntry selectedEntry;
+        // label candidate slots, one FIXED slot per unit plus one per
+        // roster ribbon, sized in Start and refilled every Update: +inf
+        // priority = no candidate this frame. UnitLabelField reads these
+        // in LateUpdate — director-owned so the render pass fills them in
+        // place with zero allocation.
+        float[] labelPriorities;
+        Vector3[] labelPositions;
+        string[] labelTexts;
+        Color[] labelColors;
         // scratch for RegimentSlots + the roster specs, reused across units
         // within one Update
         readonly (Vector2 center, Vector2 size)[] slotsBuffer =
@@ -421,6 +447,15 @@ namespace BattleAtlas
                 && (formation == "line" || formation == "column");
         }
 
+        // The label pass (UnitLabelField.LateUpdate) reads the director's
+        // per-frame candidate buffers through these — internal wiring for
+        // the same assembly, not API. Valid once Start has run.
+        internal int LabelSlotCount => labelPriorities.Length;
+        internal float[] LabelPriorities => labelPriorities;
+        internal Vector3[] LabelPositions => labelPositions;
+        internal string[] LabelTexts => labelTexts;
+        internal Color[] LabelColors => labelColors;
+
         // World-space terrain height at (x, z), offset by groundYBase (the
         // terrain object's Y, refreshed once per Update). Instance method so
         // groundYFunc can be built once in Start instead of allocating a
@@ -472,6 +507,7 @@ namespace BattleAtlas
             clock.EndTime = battle.endTime;
             clock.StartTime = battle.startTime;
             var entriesById = new Dictionary<string, UnitEntry>(battle.units.Count);
+            int labelSlots = 0;
             foreach (UnitDto u in battle.units)
             {
                 // the symbol's resting color is the plain side color — kind
@@ -515,10 +551,23 @@ namespace BattleAtlas
                     // latch starts true to match the color set above; the
                     // first Update flips genuinely idle units to FieldGray
                     Active = true,
+                    // fixed label slots: the unit's own, then one per
+                    // roster ribbon — a name the data attests, id if not
+                    DisplayName = string.IsNullOrEmpty(u.name) ? u.id : u.name,
+                    LabelSlot = labelSlots,
+                    RosterLabelBase = regimentCount > 0 ? labelSlots + 1 : -1,
+                    RosterNames = regimentCount > 0 ? u.regiments : null,
                 };
+                labelSlots += 1 + regimentCount;
                 units.Add(entry);
                 entriesById[u.id] = entry;
             }
+            // label candidate buffers at the fixed slot capacity; +inf
+            // priority = absent, re-stamped at the top of every Update
+            labelPriorities = new float[labelSlots];
+            labelPositions = new Vector3[labelSlots];
+            labelTexts = new string[labelSlots];
+            labelColors = new Color[labelSlots];
             // second pass: link families. Built once here so Update never
             // searches or allocates; Parse already threw on unknown parents,
             // grandparents, and roster-carrying parents.
@@ -544,6 +593,7 @@ namespace BattleAtlas
                 UnitSymbol.Echelon echelon = UnitSymbol.EchelonOf(
                     entry.RegimentCount > 0, entry.Children != null,
                     entry.Parent != null, entry.Kind);
+                entry.Echelon = echelon; // label priority + tier rule input
                 entry.ColorBlock.SetFloat(BorderWeightId, SymbolBorderWeight(echelon));
                 if (entry.RegimentCount > 0)
                 {
@@ -602,6 +652,10 @@ namespace BattleAtlas
             // LOD ladder currently draws)
             gameObject.AddComponent<AcousticField>().Init(
                 battle, tracksById, clock, terrain);
+            // and the label layer: reads the candidate slots this director
+            // fills each Update; its TMP pool is created in ITS Start, so
+            // headless EditMode drives of this component never touch TMP
+            gameObject.AddComponent<UnitLabelField>().Init(this, lodCamera);
         }
 
         void OnDestroy()
@@ -634,6 +688,10 @@ namespace BattleAtlas
             Shader.SetGlobalFloat(BattleWaveTimeId, clock.CurrentTime);
             unionFlagCount = 0;
             csaFlagCount = 0;
+            // every label slot starts absent; rendering members re-stamp
+            // theirs below (fixed slots — see the field comment)
+            for (int i = 0; i < labelPriorities.Length; i++)
+                labelPriorities[i] = float.PositiveInfinity;
             foreach (UnitEntry entry in units)
             {
                 if (entry.Parent != null)
@@ -745,6 +803,26 @@ namespace BattleAtlas
                 entry.RosterBlock?.SetColor(BaseColorId, color);
             }
 
+            // label candidate (plan D3): the unit's own slot, gated by the
+            // tier rule. A roster partition labels through its roster-name
+            // slots instead (RenderRosterSymbols) — the brigade line only
+            // keeps its own name while selected. Inactive labels take the
+            // same desaturated tint as their symbol.
+            bool roster = RendersRosterSymbols(entry.RegimentCount, s.formation, tier);
+            bool selected = entry == selectedEntry;
+            if ((!roster || selected)
+                && LabelLayout.LabelsAtTier(tier, entry.Echelon, active, selected))
+            {
+                int slot = entry.LabelSlot;
+                labelPriorities[slot] = LabelLayout.Priority(
+                    entry.Echelon, active, selected, entry.Track.Unit.id);
+                labelPositions[slot] = new Vector3(
+                    s.posXZ.x, flagY + LabelLiftM, s.posXZ.y);
+                labelTexts[slot] = entry.DisplayName;
+                labelColors[slot] = active || selected
+                    ? entry.ActiveColor : InactiveColor(entry.ActiveColor);
+            }
+
             if (tier == LodTier.Soldiers)
             {
                 // pose bias input: the same symmetric moving window the
@@ -767,7 +845,7 @@ namespace BattleAtlas
                 entry.ColorBlock.SetFloat(FillStyleId, (float)style);
             }
 
-            if (RendersRosterSymbols(entry.RegimentCount, s.formation, tier))
+            if (roster)
                 RenderRosterSymbols(entry, s, tier);
             else
                 RenderSymbol(entry, s, tier);
@@ -857,10 +935,31 @@ namespace BattleAtlas
         void RenderRosterSymbols(UnitEntry entry, UnitState s, LodTier tier)
         {
             int count = entry.RegimentCount;
+            // specs every frame (cheap pure math into shared scratch): the
+            // roster LABEL anchors need current slot centers even on the
+            // many frames where no ribbon rebuild fires
+            RosterSymbolSpecs(s, entry.Track.Unit.frontage_m,
+                entry.Track.Unit.depth_m, count, slotsBuffer, rosterSpecsBuffer);
+            // roster-name labels, one fixed slot per ribbon (always at the
+            // Regiments tier here, where every member is a candidate);
+            // regiment priority, the roster name as the FNV tie-break key
+            for (int i = 0; i < count; i++)
+            {
+                RosterSymbolSpec spec = rosterSpecsBuffer[i];
+                int slot = entry.RosterLabelBase + i;
+                labelPriorities[slot] = LabelLayout.Priority(
+                    UnitSymbol.Echelon.Regiment, entry.Active, false,
+                    entry.RosterNames[i]);
+                labelPositions[slot] = new Vector3(
+                    spec.CenterXZ.x,
+                    GroundY(spec.CenterXZ.x, spec.CenterXZ.y) + LabelLiftM,
+                    spec.CenterXZ.y);
+                labelTexts[slot] = entry.RosterNames[i];
+                labelColors[slot] = entry.Active
+                    ? entry.ActiveColor : InactiveColor(entry.ActiveColor);
+            }
             if (!entry.RosterBuilt || SymbolStale(entry, s, tier))
             {
-                RosterSymbolSpecs(s, entry.Track.Unit.frontage_m,
-                    entry.Track.Unit.depth_m, count, slotsBuffer, rosterSpecsBuffer);
                 for (int i = 0; i < count; i++)
                 {
                     if (entry.RosterMeshes[i] == null)

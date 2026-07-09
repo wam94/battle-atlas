@@ -1,5 +1,5 @@
 {
     "name": "BattleAtlas.Runtime",
     "rootNamespace": "BattleAtlas",
-    "references": []
+    "references": ["Unity.TextMeshPro"]
 }
