@@ -174,12 +174,16 @@ namespace BattleAtlas.EditorTools
             var fog = GetOrAdd<UnityEngine.Rendering.HighDefinition.Fog>(profile);
             fog.enabled.overrideState = true;
             fog.enabled.value = true;
+            // volumetric-capable fog (§3.2) tuned so the MACRO Atlas frame
+            // stays readable: the Gate P3 eye-level density (900 m mean free
+            // path) whites out a 4 km orbit view. Phase 7/9 author their own
+            // eye-level volumes for the Angle slice per §8.3.
             fog.meanFreePath.overrideState = true;
-            fog.meanFreePath.value = 900f; // Gate P3 haze density
+            fog.meanFreePath.value = 8000f;
             fog.baseHeight.overrideState = true;
             fog.baseHeight.value = 0f;
             fog.maximumHeight.overrideState = true;
-            fog.maximumHeight.value = 120f;
+            fog.maximumHeight.value = 400f;
             fog.enableVolumetricFog.overrideState = true;
             fog.enableVolumetricFog.value = true;
 

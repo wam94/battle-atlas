@@ -104,6 +104,16 @@ namespace BattleAtlas.EditorTools
 
                 for (int i = 0; i < WarmupFrames; i++)
                     RenderOnce(ctx, rt, null);
+                // fail loudly if HDRP never actually constructed (e.g. the
+                // active build target does not support HDRP — the editor
+                // must run with -buildTarget OSXUniversal): a silently
+                // unrendered RT would otherwise "compare deterministic"
+                if (!(RenderPipelineManager.currentPipeline is HDRenderPipeline))
+                    throw new InvalidOperationException(
+                        "HDRP did not construct (currentPipeline is " +
+                        $"{RenderPipelineManager.currentPipeline?.GetType().Name ?? "null"}); " +
+                        "check the active build target supports HDRP " +
+                        "(run Unity with -buildTarget OSXUniversal)");
                 RenderOnce(ctx, rt, texA);
                 RenderOnce(ctx, rt, texB);
 
@@ -145,6 +155,7 @@ namespace BattleAtlas.EditorTools
         class AtlasContext
         {
             public Camera camera;
+            public OrbitCameraController orbit;
             public MonoBehaviour[] updateOrder;
         }
 
@@ -170,6 +181,12 @@ namespace BattleAtlas.EditorTools
             if (fence != null) Call(fence, "Start");
             if (crop != null) Call(crop, "Start");
 
+            // the player's camera pose comes from OrbitCameraController
+            // (Awake clip planes + LateUpdate orbit pose) — drive it too, so
+            // this frame matches the Phase 0 player captures' framing
+            var orbit = camera.GetComponent<OrbitCameraController>();
+            if (orbit != null) Call(orbit, "Awake");
+
             clock.Playing = false;
             clock.CurrentTime = t;
 
@@ -177,6 +194,7 @@ namespace BattleAtlas.EditorTools
             return new AtlasContext
             {
                 camera = camera,
+                orbit = orbit,
                 updateOrder = new MonoBehaviour[]
                 {
                     sunDirector, director, obscuration, veg, fence, crop,
@@ -190,6 +208,7 @@ namespace BattleAtlas.EditorTools
             // re-run the clock-driven Updates, then submit synchronously
             foreach (MonoBehaviour b in ctx.updateOrder)
                 if (b != null) Call(b, "Update");
+            if (ctx.orbit != null) Call(ctx.orbit, "LateUpdate");
             var request = new RenderPipeline.StandardRequest { destination = rt };
             if (!RenderPipeline.SupportsRenderRequest(ctx.camera, request))
                 throw new InvalidOperationException(
