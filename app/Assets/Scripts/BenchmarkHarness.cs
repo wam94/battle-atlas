@@ -25,6 +25,10 @@ namespace BattleAtlas
         const float SampleSeconds = 10f;
 
         string outDir;
+        // screenshot/report basename prefix (-benchmarkPrefix). Default keeps
+        // the Phase 0 names (atlas-t*.png / p0-benchmark.json); the Phase 4
+        // HDRP capture passes "hdrp-atlas" so before/after files coexist.
+        string prefix;
         BattleClock clock;
         readonly StringBuilder report = new StringBuilder();
 
@@ -52,11 +56,12 @@ namespace BattleAtlas
             Application.runInBackground = true;
             outDir = ArgValue("-benchmarkOut",
                 Path.Combine(Application.persistentDataPath, "p0-benchmark"));
+            prefix = ArgValue("-benchmarkPrefix", "atlas");
             Directory.CreateDirectory(outDir);
             clock = FindFirstObjectByType<BattleClock>();
             if (clock == null)
             {
-                File.WriteAllText(Path.Combine(outDir, "p0-benchmark.json"),
+                File.WriteAllText(Path.Combine(outDir, ReportFileName()),
                     "{\"error\":\"no BattleClock in scene\"}");
                 Quit(1);
                 return;
@@ -84,9 +89,14 @@ namespace BattleAtlas
             }
 
             report.Append("  ]\n}\n");
-            File.WriteAllText(Path.Combine(outDir, "p0-benchmark.json"), report.ToString());
+            File.WriteAllText(Path.Combine(outDir, ReportFileName()), report.ToString());
             Quit(0);
         }
+
+        // "atlas" (the Phase 0 default) keeps its original report name so
+        // scripts/p0-benchmark.sh output stays reproducible byte-for-name.
+        string ReportFileName() =>
+            prefix == "atlas" ? "p0-benchmark.json" : prefix + "-benchmark.json";
 
         IEnumerator CaptureAt(float t, bool last)
         {
@@ -95,7 +105,7 @@ namespace BattleAtlas
             yield return new WaitForSecondsRealtime(SettleSeconds);
 
             string shot = Path.Combine(outDir,
-                string.Format(CultureInfo.InvariantCulture, "atlas-t{0:0}.png", t));
+                string.Format(CultureInfo.InvariantCulture, "{0}-t{1:0}.png", prefix, t));
             ScreenCapture.CaptureScreenshot(shot);
             // CaptureScreenshot completes asynchronously a frame or two later.
             yield return null;
