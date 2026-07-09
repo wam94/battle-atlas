@@ -1,6 +1,14 @@
 # ADR 0003 — Render pipeline for the Angle visual target: HDRP
 
-**Status:** Proposed (owner decides at Gate P3)
+**Status:** Accepted (owner, 2026-07-08 — Gate P3 closed)
+
+**Gate P3 closure note:** closed by the owner on the technical evidence
+(HDRP viable headlessly on Apple Silicon, instancing intact, cost within
+budget). The eye-level frame's composition deficiencies are recorded as
+deferred work, owned by later phases: smoke puffs read as tents at ground
+level (Phase 8 VFX), stone wall and road not in the eye frame and shadows
+not legible at the honest 15:20 sun with an east-facing camera (Phase 7
+environment + Phase 9 camera blocking).
 **Date:** 2026-07-08
 **Context:** Angle Reconstruction V2 plan §12 Phase 3 (branch `v2-phase3`);
 evidence in `docs/benchmarks/2026-07-08-v2-phase3-bakeoff.md` and the
