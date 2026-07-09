@@ -1,17 +1,19 @@
 """CLI: `fetch` downloads DEM tiles, `build` produces the Unity heightmap,
 `landcover` bakes traced land-cover features into splats/trees/fences,
-`relief` bakes the DEM's sky-view/curvature modulation textures."""
+`relief` bakes the DEM's sky-view/curvature modulation textures,
+`crop` cuts a true-scale (1.0x) local tile from the cached 1 m DEM."""
 import argparse
 import json
 import math
 import sys
 from pathlib import Path
 
-from terrain_pipeline import config, export, fetch, landcover, process, relief
+from terrain_pipeline import config, crop, export, fetch, landcover, process, relief
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEM_CACHE = REPO_ROOT / "data" / "dem_cache"
 HEIGHTMAP_DIR = REPO_ROOT / "data" / "heightmap"
+CROP_DIR = REPO_ROOT / "data" / "heightmap_angle"
 LANDCOVER_DIR = REPO_ROOT / "data" / "landcover"
 LANDCOVER_JSON = LANDCOVER_DIR / "landcover.json"
 SPLATMAP_RESOLUTION = 1024
@@ -38,6 +40,24 @@ def make_parser():
         help="bake the heightmap's sky-view/curvature modulation into "
         "relief.png and relief_contours.png",
     )
+    crop_p = sub.add_parser(
+        "crop",
+        help="cut a true-scale local tile (default: the Angle, plan §8.1) "
+        "from the cached 1 m DEM into data/heightmap_angle/",
+    )
+    x0, z0, x1, z1 = crop.DEFAULT_CROP
+    crop_p.add_argument("--x0", type=float, default=x0,
+                        help="west edge, battlefield-local meters")
+    crop_p.add_argument("--z0", type=float, default=z0,
+                        help="south edge, battlefield-local meters")
+    crop_p.add_argument("--x1", type=float, default=x1,
+                        help="east edge, battlefield-local meters")
+    crop_p.add_argument("--z1", type=float, default=z1,
+                        help="north edge, battlefield-local meters")
+    crop_p.add_argument("--dem-cache", type=Path, default=DEM_CACHE,
+                        help="directory of cached DEM GeoTIFFs")
+    crop_p.add_argument("--out", type=Path, default=CROP_DIR,
+                        help="output directory for heightmap.raw/.json")
     return parser
 
 
@@ -139,6 +159,32 @@ def run_relief():
     )
 
 
+def run_crop(args):
+    tifs = sorted(Path(args.dem_cache).glob("*.tif"))
+    if not tifs:
+        sys.exit(f"no GeoTIFFs in {args.dem_cache}; run `fetch` first")
+    try:
+        macro_meta = crop.load_macro_meta(HEIGHTMAP_DIR)
+    except FileNotFoundError as e:
+        sys.exit(str(e))
+
+    try:
+        heights, spacing = crop.build_crop(
+            tifs, macro_meta, args.x0, args.z0, args.x1, args.z1)
+    except ValueError as e:
+        sys.exit(str(e))
+    raw_path, meta_path = crop.export_crop(
+        heights, macro_meta, args.x0, args.z0, args.x1, args.z1,
+        args.out, spacing)
+    print(
+        f"crop: local x={args.x0:.0f}..{args.x1:.0f} z={args.z0:.0f}..{args.z1:.0f} "
+        f"({args.x1 - args.x0:.0f} m square, {crop.CROP_RESOLUTION}px, "
+        f"{spacing:.3f} m/sample, exaggeration 1.0), "
+        f"elevation {heights.min():.1f}-{heights.max():.1f} m"
+    )
+    print(f"wrote {raw_path} and {meta_path}")
+
+
 def main(argv=None):
     args = make_parser().parse_args(argv)
     if args.command == "fetch":
@@ -147,6 +193,8 @@ def main(argv=None):
         run_build()
     elif args.command == "landcover":
         run_landcover()
+    elif args.command == "crop":
+        run_crop(args)
     else:
         run_relief()
 
