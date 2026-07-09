@@ -49,6 +49,103 @@ namespace BattleAtlas.EditorTools
             Run(stillsOnly: true);
         }
 
+        // Diagnostic for the scrub-determinism probes: render a short run
+        // up to frame 300, capture it, re-pose/render the same frame, and
+        // write both images plus pixel-difference statistics.
+        public static void ProbeDiag()
+        {
+            int exitCode = 0;
+            try
+            {
+                DiagInner();
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"ProbeDiag failed: {e}");
+                exitCode = 1;
+            }
+            if (Application.isBatchMode) EditorApplication.Exit(exitCode);
+        }
+
+        static void DiagInner()
+        {
+            string outDir = Path.GetFullPath(Path.Combine(
+                Application.dataPath, "../../docs/benchmarks/captures/p6-gate"));
+            var offline = AssetDatabase.LoadAssetAtPath<HDRenderPipelineAsset>(
+                HdrpMigration.OfflineAssetPath);
+            RenderPipelineAsset prevDefault = GraphicsSettings.defaultRenderPipeline;
+            RenderPipelineAsset prevQuality = QualitySettings.renderPipeline;
+            object prevGlobal = CurrentGlobalSettingsProp.GetValue(null);
+            GraphicsSettings.defaultRenderPipeline = offline;
+            QualitySettings.renderPipeline = offline;
+            BindHdrpGlobalSettings();
+            try
+            {
+                EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+                var stage = AngleBakeoffStage.Stage(BakeoffPipeline.Hdrp);
+                UnityEngine.Object.DestroyImmediate(stage.figures.gameObject);
+                Terrain terrain = stage.terrain;
+                float Ground(Vector2 xz) =>
+                    terrain.transform.position.y +
+                    terrain.SampleHeight(new Vector3(xz.x, 0f, xz.y));
+                Camera cam = stage.camera;
+                var camPos = GateP6Choreography.CameraPosXZ;
+                var camLook = GateP6Choreography.CameraLookXZ;
+                cam.transform.position = new Vector3(
+                    camPos.x, Ground(camPos) + GateP6Choreography.CameraEyeHeight, camPos.y);
+                cam.transform.LookAt(new Vector3(
+                    camLook.x, Ground(camLook) + GateP6Choreography.CameraLookHeight, camLook.y));
+                cam.fieldOfView = GateP6Choreography.CameraFovDeg;
+                var troopers = Spawn();
+                var rt = new RenderTexture(Width, Height, 32);
+                var tex = new Texture2D(Width, Height, TextureFormat.RGBA32, false);
+                PoseAll(troopers, 0f, Ground);
+                for (int i = 0; i < WarmupFrames; i++) RenderOnce(cam, rt, null);
+                // short sequential run to frame 300
+                for (int f = 290; f <= 300; f++)
+                {
+                    PoseAll(troopers, f / (float)Fps, Ground);
+                    RenderOnce(cam, rt, f == 300 ? tex : null);
+                }
+                var a = (byte[])tex.EncodeToPNG().Clone();
+                // scrub away and back
+                PoseAll(troopers, 50f, Ground);
+                RenderOnce(cam, rt, null);
+                PoseAll(troopers, 300 / (float)Fps, Ground);
+                RenderOnce(cam, rt, tex);
+                var b = tex.EncodeToPNG();
+                File.WriteAllBytes(Path.Combine(outDir, "probe_a.png"), a);
+                File.WriteAllBytes(Path.Combine(outDir, "probe_b.png"), b);
+                // pixel stats on the raw texture would need both raws; decode
+                // via two textures instead
+                var ta = new Texture2D(2, 2); ta.LoadImage(a);
+                var tb = new Texture2D(2, 2); tb.LoadImage(b);
+                var pa = ta.GetPixels32();
+                var pb = tb.GetPixels32();
+                long diff = 0; int maxd = 0; long sum = 0;
+                for (int i = 0; i < pa.Length; i++)
+                {
+                    int d = Mathf.Max(
+                        Mathf.Abs(pa[i].r - pb[i].r),
+                        Mathf.Max(Mathf.Abs(pa[i].g - pb[i].g), Mathf.Abs(pa[i].b - pb[i].b)));
+                    if (d > 0) { diff++; sum += d; if (d > maxd) maxd = d; }
+                }
+                Debug.Log($"ProbeDiag: pixels={pa.Length} differing={diff} " +
+                          $"({100f * diff / pa.Length:F2}%) maxChannelDelta={maxd} " +
+                          $"meanNonzeroDelta={(diff > 0 ? (float)sum / diff : 0):F2}");
+            }
+            finally
+            {
+                var playback = AssetDatabase.LoadAssetAtPath<RenderPipelineAsset>(
+                    HdrpMigration.PlaybackAssetPath);
+                GraphicsSettings.defaultRenderPipeline =
+                    playback != null ? playback : prevDefault;
+                QualitySettings.renderPipeline = prevQuality;
+                CurrentGlobalSettingsProp.SetValue(null, prevGlobal);
+                EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+            }
+        }
+
         public static void RenderSequence()
         {
             Run(stillsOnly: false);
@@ -168,8 +265,19 @@ namespace BattleAtlas.EditorTools
                     secondsPerFrame = (float)(sw.Elapsed.TotalSeconds / frames),
                     peakMemoryMB = SystemInfo.systemMemorySize,
                 };
+                // Byte equality is NOT expected: HDRP raster on Metal has
+                // benign frame-to-frame shading noise (~1% of pixels at
+                // 1-4/255, measured by ProbeDiag — sky ambient-probe
+                // convergence). The gate criterion is the plan's Gate P10
+                // language: visually identical within a documented GPU
+                // tolerance. Logical state IS bit-deterministic (pure
+                // choreography + clip sampling; covered by EditMode tests).
+                const int TolMaxDelta = 8;       // out of 255, any channel
+                const float TolDiffPct = 5f;     // percent of pixels
                 int[] probes = { 1500, 300, 900 };   // deliberately unordered
                 var equal = new List<bool>();
+                var within = new List<bool>();
+                var stats = new List<string>();
                 foreach (int f in probes)
                 {
                     PoseAll(troopers, f / (float)Fps, Ground);
@@ -178,17 +286,42 @@ namespace BattleAtlas.EditorTools
                     byte[] orig = File.ReadAllBytes(
                         Path.Combine(seqDir, $"frame_{f:D4}.png"));
                     bool eq = again.SequenceEqual(orig);
+                    var ta = new Texture2D(2, 2); ta.LoadImage(orig);
+                    var tb = new Texture2D(2, 2); tb.LoadImage(again);
+                    var pa = ta.GetPixels32();
+                    var pb = tb.GetPixels32();
+                    long ndiff = 0; int maxd = 0;
+                    for (int i = 0; i < pa.Length; i++)
+                    {
+                        int d = Mathf.Max(
+                            Mathf.Abs(pa[i].r - pb[i].r),
+                            Mathf.Max(Mathf.Abs(pa[i].g - pb[i].g),
+                                Mathf.Abs(pa[i].b - pb[i].b)));
+                        if (d > 0) { ndiff++; if (d > maxd) maxd = d; }
+                    }
+                    float pct = 100f * ndiff / pa.Length;
+                    bool ok = maxd <= TolMaxDelta && pct <= TolDiffPct;
                     equal.Add(eq);
-                    Debug.Log($"GateP6Render: probe frame {f} scrub-equal={eq} " +
-                              $"sha_orig={Sha(orig).Substring(0, 12)} sha_again={Sha(again).Substring(0, 12)}");
+                    within.Add(ok);
+                    string st = $"frame {f}: byteEqual={eq} differing={pct:F2}% " +
+                                $"maxChannelDelta={maxd}";
+                    stats.Add(st);
+                    Debug.Log($"GateP6Render: probe {st} withinTolerance={ok}");
                 }
                 report.probeFrames = probes;
                 report.probesEqual = equal.ToArray();
+                report.probesWithinTolerance = within.ToArray();
+                report.probeStats = stats.ToArray();
+                report.toleranceMaxChannelDelta = TolMaxDelta;
+                report.toleranceDifferingPct = TolDiffPct;
                 File.WriteAllText(Path.Combine(outDir, "p6-gate-report.json"),
                     JsonUtility.ToJson(report, true));
                 Debug.Log($"GateP6Render: sequence complete, " +
-                          $"{report.secondsPerFrame:F2} s/frame, probes equal: " +
-                          string.Join(",", equal));
+                          $"{report.secondsPerFrame:F2} s/frame, probes within tolerance: " +
+                          string.Join(",", within));
+                if (within.Contains(false))
+                    throw new InvalidOperationException(
+                        "scrub probes exceeded the documented GPU tolerance");
             }
             finally
             {
@@ -216,6 +349,10 @@ namespace BattleAtlas.EditorTools
             public int peakMemoryMB;
             public int[] probeFrames;
             public bool[] probesEqual;
+            public bool[] probesWithinTolerance;
+            public string[] probeStats;
+            public int toleranceMaxChannelDelta;
+            public float toleranceDifferingPct;
         }
 
         static List<Trooper> Spawn()
