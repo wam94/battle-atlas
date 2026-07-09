@@ -31,15 +31,29 @@ public class ObscurationMathTests
     public void LivePuffs_DriftsLinearlyDownwindAndGrows()
     {
         // one-puff event (single tick before t1) so the same emission is
-        // observed at two times; the position delta must be exactly wind * dt
+        // observed at three times. Each puff rides its OWN hash-jittered
+        // wind (±25°, ±30% speed — plumes read as weather, not a conveyor),
+        // so the delta is that puff's fixed drift vector: inside the jitter
+        // envelope of the authored wind, and exactly LINEAR in time.
         var e = UnitEvent("ev-drift", "artillery_fire", 0f, 4f);
         var wind = new Vector2(1.5f, -0.5f);
         var early = new Puff[4];
+        var mid = new Puff[4];
         var late = new Puff[4];
         Assert.AreEqual(1, ObscurationMath.LivePuffs(e, FixedEmitter, wind, 10f, early));
+        Assert.AreEqual(1, ObscurationMath.LivePuffs(e, FixedEmitter, wind, 25f, mid));
         Assert.AreEqual(1, ObscurationMath.LivePuffs(e, FixedEmitter, wind, 40f, late));
-        Assert.AreEqual(1.5f * 30f, late[0].posXZ.x - early[0].posXZ.x, 1e-3f);
-        Assert.AreEqual(-0.5f * 30f, late[0].posXZ.y - early[0].posXZ.y, 1e-3f);
+        Vector2 delta30 = late[0].posXZ - early[0].posXZ;  // 30s of drift
+        Vector2 delta15 = mid[0].posXZ - early[0].posXZ;   // 15s of drift
+        // envelope: speed within ±30% of authored, bearing within 25°
+        float speed = delta30.magnitude / 30f;
+        Assert.GreaterOrEqual(speed, wind.magnitude * (1f - ObscurationMath.DriftSpeedJitter) - 1e-3f);
+        Assert.LessOrEqual(speed, wind.magnitude * (1f + ObscurationMath.DriftSpeedJitter) + 1e-3f);
+        float angle = Vector2.Angle(delta30, wind) * Mathf.Deg2Rad;
+        Assert.LessOrEqual(angle, ObscurationMath.DriftJitterRad + 1e-3f);
+        // linear: twice the time, exactly twice the displacement
+        Assert.AreEqual(delta30.x, delta15.x * 2f, 1e-3f);
+        Assert.AreEqual(delta30.y, delta15.y * 2f, 1e-3f);
         Assert.Greater(late[0].radius, early[0].radius); // grows with age
         Assert.Greater(late[0].age01, early[0].age01);
     }
@@ -86,8 +100,11 @@ public class ObscurationMathTests
         {
             float age = buffer[i].age01 * p.life;
             float tEmit = 29f - age;
-            Assert.AreEqual(tEmit + wind.x * age, buffer[i].posXZ.x, p.jitterM + 1e-3f);
-            Assert.AreEqual(0f, buffer[i].posXZ.y, p.jitterM + 1e-3f);
+            // slack: positional hash jitter + the per-puff drift variation
+            // envelope (±30% speed and ±25° rotation < 0.75|w|·age combined)
+            float driftSlack = wind.magnitude * age * 0.75f;
+            Assert.AreEqual(tEmit + wind.x * age, buffer[i].posXZ.x, p.jitterM + driftSlack + 1e-3f);
+            Assert.AreEqual(0f, buffer[i].posXZ.y, p.jitterM + driftSlack + 1e-3f);
         }
     }
 

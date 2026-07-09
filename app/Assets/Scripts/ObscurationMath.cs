@@ -80,6 +80,11 @@ namespace BattleAtlas
         // Wind as an XZ drift velocity from the environment block:
         // windTowardDeg is the compass bearing smoke drifts TOWARD
         // (0 = north = +Z, 90 = east = +X); windMps 0 = calm = zero vector.
+        // per-puff drift variation envelope (see LivePuffs): ±25° of the
+        // authored bearing, ±30% of the authored speed
+        public const float DriftJitterRad = 25f * Mathf.Deg2Rad;
+        public const float DriftSpeedJitter = 0.3f;
+
         public static Vector2 WindVector(float windTowardDeg, float windMps)
         {
             float rad = windTowardDeg * Mathf.Deg2Rad;
@@ -174,9 +179,23 @@ namespace BattleAtlas
                     }
                     basePos.x += FormationLayout.Jitter(e.id, idx, 11) * p.jitterM;
                     basePos.y += FormationLayout.Jitter(e.id, idx, 23) * p.jitterM; // .y = Z/north (XZ Vector2, not altitude)
+                    // per-puff drift variation: rotate the shared wind by a
+                    // hash angle (±25°) and scale its speed (±30%) so plumes
+                    // read as weather, not a conveyor (Task 7 session
+                    // finding: uniform advection streamed every puff in
+                    // lockstep). Deterministic per (event, puff) — scrubbing
+                    // replays the identical turbulence; the authored wind
+                    // stays the MEAN drift, which is all the inference claims.
+                    float windAngle = FormationLayout.Jitter(e.id, idx, 31) * DriftJitterRad;
+                    float windScale = 1f + FormationLayout.Jitter(e.id, idx, 41) * DriftSpeedJitter;
+                    float cosA = Mathf.Cos(windAngle);
+                    float sinA = Mathf.Sin(windAngle);
+                    var drift = new Vector2(
+                        (windMps.x * cosA - windMps.y * sinA) * windScale,
+                        (windMps.x * sinA + windMps.y * cosA) * windScale);
                     buffer[count++] = new Puff
                     {
-                        posXZ = basePos + windMps * age, // linear downwind advection
+                        posXZ = basePos + drift * age,
                         age01 = age01,
                         radius = radius,
                     };
