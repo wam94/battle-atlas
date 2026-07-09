@@ -127,3 +127,15 @@ pipeline 48 · tool 108 · reconstruction 79 · Unity EditMode 181
 the generated terrain asset is absent) · PlayMode 10 (7 need the
 gitignored dev proxy — `reconstruction/scripts/generate_dev_proxy.sh`).
 Commands unchanged from the Phase 0 baseline doc.
+
+
+## Gate P6 verdict
+
+**PASSED — closed by the project owner 2026-07-09** after the review-fix
+round ("much better. pass"). First-round verdict had accepted overall
+crudeness and direction while blocking on three defects (skin clipping,
+skirmisher reload illegible, mannequin falls); all three fixed and
+re-rendered. Known cosmetic watch-item carried forward: the isolated
+reload-stage diagnostic renders showed a doubled hat (kepi + slouch brim)
+and bare feet not present in the gate-camera footage — if either appears
+in Phase 8/9 staging with the kit figures, treat it as a kit-build bug.
