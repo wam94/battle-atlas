@@ -1,0 +1,29 @@
+{
+  "assetId": "polyhaven-leafy-grass",
+  "acquired": "2026-07-09",
+  "sourcePage": "https://polyhaven.com/a/leafy_grass",
+  "filesIndexApi": "https://api.polyhaven.com/files/leafy_grass",
+  "downloads": [
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/leafy_grass/leafy_grass_diff_1k.jpg",
+      "sha256": "cfa40bc9d9417d1852db8753a8d5917f110c40101179f63543c382e39bc05e4a",
+      "bytes": 1195394
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/leafy_grass/leafy_grass_nor_gl_1k.jpg",
+      "sha256": "832328216adc0a7e1f70a31d5ee48c9ab7f2152d83816122736cf42ac4b2ebd6",
+      "bytes": 1466049
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/leafy_grass/leafy_grass_arm_1k.jpg",
+      "sha256": "95432451cb2693794459fe7ea339ea9ffdb5959c40373740f80a4aa1703f089d",
+      "bytes": 1010081
+    }
+  ],
+  "license": "CC0-1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenseStatementSeen": "polyhaven-license-page.txt (all Poly Haven assets are CC0)",
+  "author": "Charlotte Baglioni (All)",
+  "authorEvidence": "polyhaven-info-api.json (authors field)",
+  "notes": "Phase 7 material palette ingredient (1k JPG maps: diff, nor_gl, arm). downloadSha256 in the manifest is the sha256 OF downloads.sha256 because the acquisition is multiple files. Committed copies are byte-identical to the downloads. arm maps are AO(R)/Roughness(G)/Metallic(B) packed as published by Poly Haven."
+}

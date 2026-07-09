@@ -1,0 +1,29 @@
+{
+  "assetId": "polyhaven-sparse-grass",
+  "acquired": "2026-07-09",
+  "sourcePage": "https://polyhaven.com/a/sparse_grass",
+  "filesIndexApi": "https://api.polyhaven.com/files/sparse_grass",
+  "downloads": [
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sparse_grass/sparse_grass_diff_1k.jpg",
+      "sha256": "ae94f2b34597b9108eefd88217f55eccaec6d6b382e858a478ee92df90e66617",
+      "bytes": 955945
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sparse_grass/sparse_grass_nor_gl_1k.jpg",
+      "sha256": "1c840a24807346ddaaf94a5057aee4078fcec3a4cd84bfe45da7d3b480ef460b",
+      "bytes": 1440314
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sparse_grass/sparse_grass_arm_1k.jpg",
+      "sha256": "209f6793060a176272ace42cabab21fdf21fe963f79267988320614b374414a8",
+      "bytes": 978007
+    }
+  ],
+  "license": "CC0-1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenseStatementSeen": "polyhaven-license-page.txt (all Poly Haven assets are CC0)",
+  "author": "Amal Kumar (All)",
+  "authorEvidence": "polyhaven-info-api.json (authors field)",
+  "notes": "Phase 7 material palette ingredient (1k JPG maps: diff, nor_gl, arm). downloadSha256 in the manifest is the sha256 OF downloads.sha256 because the acquisition is multiple files. Committed copies are byte-identical to the downloads. arm maps are AO(R)/Roughness(G)/Metallic(B) packed as published by Poly Haven."
+}

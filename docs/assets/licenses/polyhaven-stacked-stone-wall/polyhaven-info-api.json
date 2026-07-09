@@ -1,0 +1,50 @@
+{
+  "type": 1,
+  "name": "Stacked Stone Wall",
+  "categories": [
+    "wall",
+    "rock"
+  ],
+  "tags": [
+    "rock",
+    "stonework",
+    "wall",
+    "exterior wall",
+    "stone wall",
+    "stone",
+    "layered rock",
+    "stacked stones"
+  ],
+  "description": "Free 8k texture of a stacked stone wall with layered, weathered brown stones, rough chisel marks, deep mortar crevices and subtle sheen from worn surfaces.",
+  "authors": {
+    "Dimitrios Savva": "All"
+  },
+  "reviewers": [
+    "Dario Barresi",
+    "Jenelle van Heerden",
+    "Rob Tuytel"
+  ],
+  "max_resolution": [
+    8192,
+    8192
+  ],
+  "dimensions": [
+    2000,
+    2000
+  ],
+  "files_hash": "388e24f6faec3bd8a7e78888c3c0cfead946fd4f",
+  "staging": null,
+  "date_published": 1764288000,
+  "category_id": "6b87bb89-210e-5f4c-a78b-3a4bdfac7fe0",
+  "attributes": {
+    "surface_use": "wall",
+    "man_made": true,
+    "outdoor": true,
+    "condition": [
+      "weathered"
+    ]
+  },
+  "category": "Stone/Walls & Rubble/Rubble & Random Stone",
+  "download_count": 7827,
+  "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/stacked_stone_wall.png?width=256&height=256"
+}

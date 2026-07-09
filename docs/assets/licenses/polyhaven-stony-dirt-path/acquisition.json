@@ -1,0 +1,29 @@
+{
+  "assetId": "polyhaven-stony-dirt-path",
+  "acquired": "2026-07-09",
+  "sourcePage": "https://polyhaven.com/a/stony_dirt_path",
+  "filesIndexApi": "https://api.polyhaven.com/files/stony_dirt_path",
+  "downloads": [
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/stony_dirt_path/stony_dirt_path_diff_2k.jpg",
+      "sha256": "9c35b98628c17382b3a494ae15f17f95410edcaaac2e5922e50e5878f98d4a20",
+      "bytes": 4722246
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/stony_dirt_path/stony_dirt_path_nor_gl_2k.jpg",
+      "sha256": "6e0ee32808d6ae091cbfb23f6024ab4c7148495d23ae0baf39d0e7ee1f3269d9",
+      "bytes": 5855159
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/stony_dirt_path/stony_dirt_path_arm_2k.jpg",
+      "sha256": "6b8dcf5c01623d83a0e4902e398367c0cd37193aba4593007d7201606959bd00",
+      "bytes": 3472069
+    }
+  ],
+  "license": "CC0-1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenseStatementSeen": "polyhaven-license-page.txt (all Poly Haven assets are CC0)",
+  "author": "eye-candy.xyz (All)",
+  "authorEvidence": "polyhaven-info-api.json (authors field)",
+  "notes": "Phase 7 material palette ingredient (2k JPG maps: diff, nor_gl, arm). downloadSha256 in the manifest is the sha256 OF downloads.sha256 because the acquisition is multiple files. Committed copies modified: stony_dirt_path_nor_gl_2k.jpg re-encoded (JPEG q88) to fit the ADR 0002 5 MB per-file commit limit. arm maps are AO(R)/Roughness(G)/Metallic(B) packed as published by Poly Haven."
+}

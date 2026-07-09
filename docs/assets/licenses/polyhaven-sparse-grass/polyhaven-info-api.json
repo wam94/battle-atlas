@@ -1,0 +1,52 @@
+{
+  "name": "Sparse Grass",
+  "categories": [
+    "floor",
+    "natural"
+  ],
+  "type": 1,
+  "reviewers": [
+    "Rob Tuytel",
+    "Dario Barresi"
+  ],
+  "tags": [
+    "grass",
+    "nature",
+    "sparse",
+    "roots",
+    "root",
+    "vegetation",
+    "greenery",
+    "landscape",
+    "soil",
+    "environment",
+    "dirt",
+    "plants",
+    "ground",
+    "growth",
+    "flora"
+  ],
+  "authors": {
+    "Amal Kumar": "All"
+  },
+  "max_resolution": [
+    8192,
+    8192
+  ],
+  "dimensions": [
+    2000,
+    2000
+  ],
+  "date_published": 1725926400,
+  "staging": null,
+  "files_hash": "1293431c7316b89282b883ff760be963802f9000",
+  "description": "Free 8K texture of sparse grass: thin green tufts and visible roots over rough, damp soil, with subtle height detail and organic, earthy brown-green tones.",
+  "category_id": "2b016db1-a760-53aa-89ac-54c30f13214a",
+  "attributes": {
+    "surface_use": "ground",
+    "outdoor": true
+  },
+  "category": "Ground & Terrain/Forest Floor/Forest Soil",
+  "download_count": 36062,
+  "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/sparse_grass.png?width=256&height=256"
+}
