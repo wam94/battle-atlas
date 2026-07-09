@@ -11,6 +11,14 @@ namespace BattleAtlas
     // aerial photo. It is presentation and says so on its HUD chip
     // ("Reading light (presentation)"), the same labeled-not-smuggled
     // doctrine as HeightmapImporter.VerticalExaggeration's 2.5×.
+    //
+    // HDRP (Phase 4): the Light itself carries physical units (lux; see the
+    // Atlas scene's HDAdditionalLightData) and the same elevation-keyed ramp
+    // scales it. Additionally, SunDirector publishes the deterministic sun
+    // GLOBALS the custom BattleAtlas shaders read (_BattleSunDirWS,
+    // _BattleSunColor): those shaders bypass HDRP's light loop/exposure and
+    // want the pre-HDRP normalized intensity (ShaderSunIntensity, the URP
+    // scene's authored 2.0), NOT lux — see SoldierFigure.shader's header.
     public class SunDirector : MonoBehaviour
     {
         public BattleClock clock;
@@ -18,6 +26,14 @@ namespace BattleAtlas
 
         // Presentation toggle, driven by the TimelineHud chip.
         public bool ReadingLight;
+
+        // Normalized sun intensity for the custom vertex-tint/flag shaders
+        // (the pre-HDRP Atlas light's authored value). Serialized so the
+        // scene stays the single source of the authored look.
+        public float ShaderSunIntensity = 2f;
+
+        static readonly int BattleSunDirWSId = Shader.PropertyToID("_BattleSunDirWS");
+        static readonly int BattleSunColorId = Shader.PropertyToID("_BattleSunColor");
 
         // NW raking light: azimuth 315°, elevation 32° (the ~30-35° band
         // hillshade cartography standardized on for relief legibility).
@@ -57,6 +73,7 @@ namespace BattleAtlas
                     ReadingElevationDeg, ReadingAzimuthDeg);
                 sun.color = NoonColor;
                 sun.intensity = baseIntensity;
+                PublishShaderGlobals(1f);
                 return;
             }
 
@@ -65,7 +82,19 @@ namespace BattleAtlas
             sun.transform.rotation = SunEphemeris.LightRotation(elevation, azimuth);
             float lateness = Mathf.InverseLerp(NoonElevationDeg, LateElevationDeg, elevation);
             sun.color = Color.Lerp(NoonColor, LateColor, lateness);
-            sun.intensity = baseIntensity * Mathf.Lerp(1f, LateIntensityFactor, lateness);
+            float rampFactor = Mathf.Lerp(1f, LateIntensityFactor, lateness);
+            sun.intensity = baseIntensity * rampFactor;
+            PublishShaderGlobals(rampFactor);
+        }
+
+        // The custom-shader sun contract: everything derives from the battle
+        // clock (via the light this component just posed), so scrubbing
+        // replays identical shading. Direction points TOWARD the sun.
+        void PublishShaderGlobals(float rampFactor)
+        {
+            Shader.SetGlobalVector(BattleSunDirWSId, -sun.transform.forward);
+            Color c = sun.color * (ShaderSunIntensity * rampFactor);
+            Shader.SetGlobalVector(BattleSunColorId, new Vector4(c.r, c.g, c.b, 1f));
         }
     }
 }
