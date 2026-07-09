@@ -1,0 +1,16 @@
+{
+  "assetId": "makehuman-mpfb-core",
+  "acquired": "2026-07-09",
+  "sourcePage": "https://extensions.blender.org/add-ons/mpfb/",
+  "downloads": [
+    {
+      "url": "https://extensions.blender.org/download/sha256:b5cdc8b08147e0c6463e4faa01147491b13a0b062f73415363f029debd11c934/add-on-mpfb-v2.0.16.zip",
+      "sha256": "b5cdc8b08147e0c6463e4faa01147491b13a0b062f73415363f029debd11c934"
+    }
+  ],
+  "license": "CC0-1.0 (core assets); GPL (MPFB source code, build-time tool only)",
+  "licenseUrl": "https://static.makehumancommunity.org/about/license.html",
+  "licenseStatementSeen": "makehuman-license-page-excerpt.txt: 'All core assets are shared under Creative Commons, CC0. The effective consequence ... free to do as you see fit with the asset or derivates of the assets.' MPFB source code is GPL.",
+  "author": "MakeHuman Community / MPFB project",
+  "notes": "MPFB is a BUILD-TIME tool (like Blender): it runs headlessly in the bpy wheel to generate project-owned character meshes. Neither MPFB code nor raw MakeHuman assets are committed to this repository or required by the Unity build; generated FBX derivatives under app/Assets/ProjectOwned/Characters are CC0-derived project-owned work. Community add-on assets (clothes packs etc.) are NOT covered by this record and remain unapproved. See ADR 0004."
+}

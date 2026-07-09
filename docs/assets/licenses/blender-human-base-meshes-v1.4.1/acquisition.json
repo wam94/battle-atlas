@@ -1,0 +1,17 @@
+{
+  "assetId": "blender-human-base-meshes-v1.4.1",
+  "acquired": "2026-07-09",
+  "sourcePage": "https://www.blender.org/download/demo-files/",
+  "downloads": [
+    {
+      "url": "https://download.blender.org/demo/asset-bundles/human-base-meshes/human-base-meshes-bundle-v1.4.1.zip",
+      "sha256": "811f43accbb31a88266d932f8f5563b2d13586fca0ba2693aad1f5fe582b3515"
+    }
+  ],
+  "license": "CC0-1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenseStatementSeen": "blender-demo-files-page-excerpt.txt (retrieved 2026-07-09 from https://www.blender.org/download/demo-files/): the Human Base Meshes v1.4.1 card reads 'by Blender Studio and community contributions. ... 49 MB – CC0', updated Jan 20 2025",
+  "author": "Blender Studio and community contributions",
+  "authorEvidence": "same demo-files page card; bundle contains no author metadata beyond blender_assets.cats.txt",
+  "notes": "NOT redistributed in this repository: the bundle's single .blend is 62 MB, over the ADR 0002 per-file limit, so the raw bundle is fetch-reproducible instead (characters/spike/fetch_base_meshes.sh pins URL + sha256). The committed app/Assets/ProjectOwned/Characters/Spike/SpikeSoldier.fbx is a project-owned derivative (GEO-body_male_realistic base mesh + scripted rig, garment, materials, and march animation added by characters/spike/spike_build.py); CC0 permits derivation without attribution, attribution given anyway in docs/assets/THIRD_PARTY_ASSETS.md scope note when the full kit lands. Phase 6 spike acquisition; the full character kit decision (MakeHuman/MPFB vs this bundle) happens after the spike verdict."
+}
