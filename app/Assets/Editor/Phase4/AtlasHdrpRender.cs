@@ -46,6 +46,72 @@ namespace BattleAtlas.EditorTools
             if (Application.isBatchMode) EditorApplication.Exit(exitCode);
         }
 
+        // One close-zoom frame at the Angle (soldier LOD tier resolves):
+        // proves the HDRP conversions of the figure vertex-color bands, the
+        // flag wave, and smoke transparency, which the 4 km benchmark
+        // captures are too far to show. PLAYBACK pipeline (the committed
+        // default), scene volume only.
+        public static void CaptureAngleCloseUp()
+        {
+            int exitCode = 0;
+            try
+            {
+                var playback = AssetDatabase.LoadAssetAtPath<HDRenderPipelineAsset>(
+                    HdrpMigration.PlaybackAssetPath);
+                if (playback == null)
+                    throw new InvalidOperationException(
+                        $"{HdrpMigration.PlaybackAssetPath} missing");
+                RenderPipelineAsset prevDefault = GraphicsSettings.defaultRenderPipeline;
+                RenderPipelineAsset prevQuality = QualitySettings.renderPipeline;
+                object prevGlobalSettings = CurrentGlobalSettingsProp.GetValue(null);
+                GraphicsSettings.defaultRenderPipeline = playback;
+                QualitySettings.renderPipeline = playback;
+                BindHdrpGlobalSettings();
+                try
+                {
+                    EditorSceneManager.OpenScene("Assets/Scenes/Atlas.unity");
+                    var ctx = StageAtlas(CaptureT);
+                    if (ctx.orbit != null)
+                    {
+                        // over the Angle (plan §6.2 wall-crossing geometry),
+                        // inside the soldiers-tier distance (< 1500 m)
+                        ctx.orbit.pivot = new Vector3(4415f, 0f, 4855f);
+                        ctx.orbit.distance = 700f;
+                        ctx.orbit.pitchDeg = 30f;
+                        ctx.orbit.yawDeg = 250f; // look ENE across the wall
+                    }
+                    var rt = new RenderTexture(Width, Height, 32);
+                    var tex = new Texture2D(Width, Height, TextureFormat.RGBA32, false);
+                    for (int i = 0; i < WarmupFrames; i++)
+                        RenderOnce(ctx, rt, null);
+                    if (!(RenderPipelineManager.currentPipeline is HDRenderPipeline))
+                        throw new InvalidOperationException(
+                            "HDRP did not construct; run with -buildTarget OSXUniversal");
+                    RenderOnce(ctx, rt, tex);
+                    string outDir = Path.GetFullPath(Path.Combine(
+                        Application.dataPath, "../../docs/benchmarks/captures"));
+                    Directory.CreateDirectory(outDir);
+                    string path = Path.Combine(outDir,
+                        $"hdrp-atlas-closeup-t{(int)CaptureT}.png");
+                    File.WriteAllBytes(path, tex.EncodeToPNG());
+                    Debug.Log($"AtlasHdrpRender: wrote {path}");
+                }
+                finally
+                {
+                    GraphicsSettings.defaultRenderPipeline = prevDefault;
+                    QualitySettings.renderPipeline = prevQuality;
+                    CurrentGlobalSettingsProp.SetValue(null, prevGlobalSettings);
+                    EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"AtlasHdrpRender.CaptureAngleCloseUp failed: {e}");
+                exitCode = 1;
+            }
+            if (Application.isBatchMode) EditorApplication.Exit(exitCode);
+        }
+
         [Serializable]
         class Report
         {
