@@ -204,7 +204,7 @@ def run_environment():
     doc = json.loads(out_path.read_text())
     print(
         f"environment: road {len(doc['road']['centerline'])} samples, "
-        f"{len(doc['fences'])} fence runs, wall {len(doc['wall']['polyline'])} pts, "
+        f"{len(doc['fences'])} fence runs, wall {len(doc['wall']['polylineFlat']) // 2} pts, "
         f"{sum(len(g['trees']) for g in doc['groves'])} grove trees, "
         f"{sum(len(o['trees']) for o in doc['orchards'])} orchard trees, "
         f"{len(doc['buildings'])} buildings, {len(doc['battery']['guns'])} guns"

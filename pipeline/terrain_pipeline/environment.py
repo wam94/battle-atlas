@@ -267,7 +267,9 @@ def build_fences(features, crop):
                 "style": style,
                 "heightM": FENCE_HEIGHT_M if style == "post_and_rail" else WORM_FENCE_HEIGHT_M,
                 "postSpacingM": FENCE_POST_SPACING_M,
-                "polyline": [[round(x, 2), round(z, 2)] for x, z in run],
+                # flat [x0, z0, x1, z1, ...] so Unity's JsonUtility (no
+                # nested-array support) can parse it directly
+                "polylineFlat": [round(v, 2) for x, z in run for v in (x, z)],
                 "claimIds": claims,
                 "editorialIds": ["ED-12"],
             })
@@ -284,7 +286,7 @@ def build_wall(features, battle_path):
     half_front = unit.get("frontage_m", 80) / 2.0
     return {
         "featureId": "wall-angle-webb-front",
-        "polyline": [[float(x), float(z)] for x, z in wall["points"]],
+        "polylineFlat": [float(v) for x, z in wall["points"] for v in (x, z)],
         "heightM": WALL_HEIGHT_M,
         "widthM": WALL_WIDTH_M,
         "railsZRange": [round(kf["z"] - half_front, 1), round(kf["z"] + half_front, 1)],
@@ -477,11 +479,11 @@ def build_wheat_region(features, crop):
     """Standing-wheat/stubble region west of the road (ED-15)."""
     x0, z0, x1, z1 = crop
     poly = features["field-west-of-emmitsburg-codori-front"]["points"]
-    clipped = [[round(max(x0, min(x1, x)), 1), round(max(z0, min(z1, z)), 1)]
-               for x, z in poly]
+    clipped = [round(v, 1) for x, z in poly
+               for v in (max(x0, min(x1, x)), max(z0, min(z1, z)))]
     return {
         "featureId": "field-west-of-emmitsburg-codori-front",
-        "polygon": clipped,
+        "polygonFlat": clipped,
         "clumpSpacingM": 2.4,
         "patchNoiseKey": "wheat-p7",
         "claimIds": ["claim-fields-west-mixed"],

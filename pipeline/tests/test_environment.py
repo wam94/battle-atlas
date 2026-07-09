@@ -66,9 +66,9 @@ def test_road_centerline_stays_between_the_traced_fences(baked, features):
 
 def test_wall_polyline_is_the_trace_verbatim(baked, features):
     env, _ = baked
-    traced = [[float(x), float(z)] for x, z in
-              features["wall-angle-webb-front"]["points"]]
-    assert env["wall"]["polyline"] == traced
+    traced = [float(v) for x, z in
+              features["wall-angle-webb-front"]["points"] for v in (x, z)]
+    assert env["wall"]["polylineFlat"] == traced
 
 
 def test_wall_rails_stay_south_of_the_inner_angle(baked):
@@ -87,7 +87,8 @@ def test_fence_runs_lie_on_their_traced_polylines(baked, features):
     assert "fence-emmitsburg-road-east" in ids
     for run in env["fences"]:
         traced = features[run["featureId"]]["points"]
-        for x, z in run["polyline"]:
+        flat = run["polylineFlat"]
+        for x, z in zip(flat[0::2], flat[1::2]):
             assert dist_to_polyline(x, z, traced) < 0.01, (run["featureId"], x, z)
             assert X0 - 0.01 <= x <= X1 + 0.01 and Z0 - 0.01 <= z <= Z1 + 0.01
 
