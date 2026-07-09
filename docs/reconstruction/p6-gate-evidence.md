@@ -98,7 +98,8 @@ cp /tmp/kit-out/*.fbx app/Assets/ProjectOwned/Characters/Kit/
 # 2. terrain crop input (gitignored)
 cd pipeline && uv run python -m terrain_pipeline.cli crop
 
-# 3. render (Unity closed on this checkout; ~40 min on M4)
+# 3. render (Unity closed on this checkout; ~5 min on M4 —
+#    0.16 s/frame with per-render skinning, see p6-gate-report.json)
 "$UNITY" -batchmode -projectPath app -buildTarget OSXUniversal \
   -executeMethod BattleAtlas.EditorTools.GateP6Render.RenderSequence \
   -logFile p6render.log
