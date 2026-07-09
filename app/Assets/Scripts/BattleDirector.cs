@@ -788,13 +788,35 @@ namespace BattleAtlas
             if (!UnitPicker.RaycastTerrain(ray.origin, ray.direction,
                     groundYFunc, PickMaxDistM, out Vector3 ground))
             {
-                SetSelected(null);
+                if (SelectedHasFootprint()) SetSelected(null);
                 return;
             }
             int picked = UnitPicker.PickUnit(
                 new Vector2(ground.x, ground.z), pickCount,
                 pickCenters, pickFacings, pickFrontages, pickDepths);
-            SetSelected(picked < 0 ? null : pickEntries[picked]);
+            if (picked >= 0)
+            {
+                SetSelected(pickEntries[picked]);
+                return;
+            }
+            // a miss clears only when the selected unit is itself on the
+            // board as a symbol. At the Soldiers tier its family registers
+            // no footprint, so every close-zoom click would read as a
+            // "miss" — clearing there would drop the citation line the
+            // moment you zoomed in to look at the unit it describes
+            // (review finding: enforce the persistence promised above).
+            if (SelectedHasFootprint()) SetSelected(null);
+        }
+
+        // Did the currently selected unit register a pick footprint this
+        // frame (i.e., is it on the board as a symbol rather than figures)?
+        // Linear scan of <= unit-count entries, and only on click frames.
+        bool SelectedHasFootprint()
+        {
+            if (selectedEntry == null) return false;
+            for (int i = 0; i < pickCount; i++)
+                if (pickEntries[i] == selectedEntry) return true;
+            return false;
         }
 
         // Selection state: rewrite the two entries' MPBs on the transition

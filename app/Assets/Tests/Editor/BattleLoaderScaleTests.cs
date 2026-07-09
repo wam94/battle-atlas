@@ -161,8 +161,13 @@ public class BattleLoaderScaleTests
                 $"alloc {allocated / 100} bytes/frame");
 
             // every unit rendered at Block tier, so every entry now owns a
-            // built persistent symbol mesh (the fixture has no families or
-            // rosters — all 210 are monolithic ribbons)
+            // built persistent symbol mesh. The fixture has no families or
+            // rosters — all 210 are monolithic ribbons. ACKNOWLEDGED GAP
+            // (review): the per-frame roster label-anchor path
+            // (RosterSymbolSpecs at the Regiments tier) is hand-verified
+            // allocation-free but not pinned by this guard; pinning it needs
+            // a roster family in the fixture AND a camera inside the
+            // Regiments band, both out of this headless test's reach.
             foreach (object entry in unitsList)
             {
                 var mesh = (Mesh)symbolMeshField.GetValue(entry);

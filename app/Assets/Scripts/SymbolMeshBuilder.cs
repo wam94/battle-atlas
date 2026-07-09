@@ -69,12 +69,12 @@ namespace BattleAtlas
         public const float DirtyFacingEpsilonDeg = 0.5f;
 
         // Buffer capacity, audited worst case: 64x4 fill grid (256) +
-        // border frame (2 long strips at 2x64 + 2 end strips at 2x4 = 288)
-        // + cavalry stroke (8) totals 552 verts; the park (528) and an
-        // 8-dot battalion (328) come in under it. Headroom to 1024 covers
-        // the Task 4 skirt without a resize. Indices worst case ~1962
-        // (cavalry); 6144 leaves the same headroom. Never grown at render
-        // time — BuildRibbon asserts.
+        // border frame (2 long strips at 2x64 + 2 end strips at 2x4 = 272)
+        // + cavalry stroke (8) totals 536 verts; the park and an 8-dot
+        // battalion come in under it. Headroom to 1024 covers the Task 4
+        // skirt without a resize. Indices worst case ~1944 (cavalry);
+        // 6144 leaves the same headroom. Never grown at render time —
+        // BuildRibbon asserts. (Arithmetic re-audited per review.)
         public const int MaxSymbolVerts = 1024;
         public const int MaxSymbolIndices = 6144;
 
