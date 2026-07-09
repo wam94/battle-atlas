@@ -271,10 +271,18 @@ namespace BattleAtlas.EditorTools
             return tex;
         }
 
-        // The default URP terrain material lives in the read-only package,
-        // so per-pixel normal needs our own material — created as an ASSET,
+        // The default terrain material lives in the read-only package, so
+        // per-pixel normal needs our own material — created as an ASSET,
         // because asset references keep their shader in device builds where
         // runtime-created materials render magenta (the stripping lesson).
+        //
+        // Phase 4 (HDRP migration): the material is HDRP/TerrainLit now. The
+        // two URP tricks this importer bakes survive verbatim: the relief
+        // modulation lives in the albedo TEXTURES (shader-independent), and
+        // the alpha=0 anti-gloss trick keeps working because HDRP TerrainLit
+        // also derives smoothness as albedo.a * _Smoothness{i} when a layer
+        // has no mask map (TerrainLit_Splatmap.hlsl, DefaultMask). The
+        // per-pixel-normal property/keyword names are identical in HDRP.
         //
         // Recorded decision — the diffuse-slot conflict (plan Task B4): the
         // whole-terrain-tiled relief albedo and a 4-8 m-tiled detail albedo
@@ -289,15 +297,21 @@ namespace BattleAtlas.EditorTools
         static Material CreateTerrainMaterial()
         {
             const string matPath = GeneratedDir + "/LandcoverTerrain.mat";
+            var shader = Shader.Find("HDRP/TerrainLit");
+            if (shader == null)
+                throw new System.InvalidOperationException(
+                    "LandcoverImporter: HDRP/TerrainLit shader not found.");
             var mat = AssetDatabase.LoadAssetAtPath<Material>(matPath);
             if (mat == null)
             {
-                var shader = Shader.Find("Universal Render Pipeline/Terrain/Lit");
-                if (shader == null)
-                    throw new System.InvalidOperationException(
-                        "LandcoverImporter: URP Terrain Lit shader not found.");
                 mat = new Material(shader);
                 AssetDatabase.CreateAsset(mat, matPath);
+            }
+            else if (mat.shader != shader)
+            {
+                // pre-Phase-4 generated material (URP): convert in place so
+                // the GUID the scene references survives
+                mat.shader = shader;
             }
             mat.SetFloat("_EnableInstancedPerPixelNormal", 1f);
             mat.EnableKeyword("_TERRAIN_INSTANCED_PERPIXEL_NORMAL");
