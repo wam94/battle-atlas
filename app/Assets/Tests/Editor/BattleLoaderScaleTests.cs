@@ -102,10 +102,11 @@ public class BattleLoaderScaleTests
             director.terrain = terrainGO.GetComponent<Terrain>();
             director.clock = clock;
             director.unitMaterial = material;
-            // flag/smoke/dust materials stay null: RenderFlags warns once and
-            // skips, obscuration never Updates in edit mode — the measured
-            // loop is exactly the marker path (StateAt + height samples +
-            // tier eval + block pose for every parentless unit)
+            // flag/smoke/dust/symbol materials stay null: RenderFlags warns
+            // once and skips, symbols warn once and fall back to
+            // unitMaterial, obscuration never Updates in edit mode — the
+            // measured loop is exactly the symbol path (StateAt + tier eval
+            // + dirty check + ribbon rebuild/draw for every parentless unit)
 
             const BindingFlags priv = BindingFlags.Instance | BindingFlags.NonPublic;
             var start = (System.Action)System.Delegate.CreateDelegate(typeof(System.Action),
@@ -118,15 +119,16 @@ public class BattleLoaderScaleTests
             sw.Stop();
             double startMs = sw.Elapsed.TotalMilliseconds;
 
-            // marker count == unit count: every unit spawned its block marker
+            // entry count == unit count; symbol meshes are LAZY (built on
+            // first render at a symbol tier), so none exist yet — the
+            // post-loop assertion below is the one that proves they appear
             var unitsList = (System.Collections.IList)
                 typeof(BattleDirector).GetField("units", priv).GetValue(director);
             Assert.AreEqual(FixtureUnits, unitsList.Count);
-            FieldInfo markerField = unitsList[0].GetType().GetField("Marker");
-            int markers = 0;
+            FieldInfo symbolMeshField = unitsList[0].GetType().GetField("SymbolMesh");
             foreach (object entry in unitsList)
-                if ((Transform)markerField.GetValue(entry) != null) markers++;
-            Assert.AreEqual(FixtureUnits, markers);
+                Assert.IsNull((Mesh)symbolMeshField.GetValue(entry),
+                    "symbol meshes must be lazy — Start builds none");
 
             // flag matrix capacity == unit count — the regression pin: the
             // buffers are sized from units.Count in Start and must keep
@@ -139,10 +141,11 @@ public class BattleLoaderScaleTests
             Assert.AreEqual(FixtureUnits, csaFlags.Length);
 
             // per-frame loop: 100 frames sweeping the whole window at Block
-            // tier (no camera => far tier — the 210-marker strategic-zoom
-            // worst case: ~10 SampleHeight calls per unit per frame)
+            // tier (no camera => far tier — the 210-symbol strategic-zoom
+            // worst case; every mover crosses the dirty epsilon each sweep
+            // step, so this measures REBUILD frames, not the static idle)
             clock.CurrentTime = 0f;
-            update(); // warmup frame (JIT, first-touch, the one-time flag warn)
+            update(); // warmup frame (JIT, lazy mesh creation, one-time warns)
             long allocBefore = System.GC.GetAllocatedBytesForCurrentThread();
             sw.Restart();
             for (int f = 0; f < 100; f++)
@@ -157,24 +160,46 @@ public class BattleLoaderScaleTests
                 $"Update avg over 100 frames: {frameMs:F3} ms/frame; " +
                 $"alloc {allocated / 100} bytes/frame");
 
+            // every unit rendered at Block tier, so every entry now owns a
+            // built persistent symbol mesh. The fixture has no families or
+            // rosters — all 210 are monolithic ribbons. ACKNOWLEDGED GAP
+            // (review): the per-frame roster label-anchor path
+            // (RosterSymbolSpecs at the Regiments tier) is hand-verified
+            // allocation-free but not pinned by this guard; pinning it needs
+            // a roster family in the fixture AND a camera inside the
+            // Regiments band, both out of this headless test's reach.
+            foreach (object entry in unitsList)
+            {
+                var mesh = (Mesh)symbolMeshField.GetValue(entry);
+                Assert.IsNotNull(mesh, "rendered unit never built its symbol mesh");
+                Assert.Greater(mesh.vertexCount, 0);
+            }
+
             // budgets, deliberately loose for CI machines: the point is
             // catching a scaling cliff (quadratic loop, per-frame allocation
             // storm), not benchmarking. 8 ms is half a 60 fps frame for the
-            // CPU marker loop alone; Start gets 5 s for 210 primitive spawns.
+            // CPU symbol loop alone — and this sweep is the REBUILD worst
+            // case (every mover redraws its draped ribbon every step), not
+            // the static battle the dirty predicate optimizes for.
             Assert.Less(startMs, 5000.0, "Start cost scaled past the budget");
-            Assert.Less(frameMs, 8.0, "per-frame marker loop scaled past the budget");
-            // measured 0 bytes/frame at landing; the loose ceiling catches a
-            // reintroduced steady leak that the frame budget would hide
-            // (review follow-up: assert the number, don't just log it)
+            Assert.Less(frameMs, 8.0, "per-frame symbol loop scaled past the budget");
+            // the rebuild path writes into preallocated scratch and persistent
+            // meshes; the loose ceiling catches a reintroduced steady leak
+            // that the frame budget would hide
             Assert.LessOrEqual(allocated / 100, 1024,
-                "per-frame Update allocation crept in — the marker loop must stay allocation-free");
+                "per-frame Update allocation crept in — the symbol loop must stay allocation-free");
         }
         finally
         {
-            // markers are unparented scene objects — sweep them by the name
-            // prefix Start gives them, then the rig itself
-            foreach (var go in Object.FindObjectsByType<GameObject>(FindObjectsSortMode.None))
-                if (go != null && go.name.StartsWith("unit sf-")) Object.DestroyImmediate(go);
+            // no marker GameObjects to sweep anymore — but the per-unit
+            // symbol meshes are runtime objects, and edit mode never runs
+            // the lifecycle callbacks, so invoke the director's OnDestroy
+            // cleanup by hand before tearing the rig down
+            var directorComponent = directorGO.GetComponent<BattleDirector>();
+            if (directorComponent != null)
+                typeof(BattleDirector).GetMethod("OnDestroy",
+                    BindingFlags.Instance | BindingFlags.NonPublic)
+                    .Invoke(directorComponent, null);
             Object.DestroyImmediate(directorGO);
             Object.DestroyImmediate(terrainGO);
             Object.DestroyImmediate(terrainData);

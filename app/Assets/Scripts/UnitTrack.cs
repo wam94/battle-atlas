@@ -9,6 +9,11 @@ namespace BattleAtlas
         public float facingDeg;    // compass degrees, 0 = north
         public float strength;
         public string formation;
+        // provenance of the bracketing START keyframe (exactly the
+        // formation carry rule); an empty/absent keyframe confidence reads
+        // as "unknown" per the format default — UnitSymbol.StyleOf renders
+        // that as inferred (hatched) per the 2026-07-09 user ruling
+        public string confidence;
     }
 
     // Deterministic interpolation over one unit's keyframes. Pure C# (no
@@ -40,6 +45,7 @@ namespace BattleAtlas
                 facingDeg = Mathf.LerpAngle(a.facing, b.facing, u),
                 strength = Mathf.Lerp(a.strength, b.strength, u),
                 formation = a.formation, // segment carries its start formation
+                confidence = ConfidenceOrDefault(a.confidence), // ...and its start confidence
             };
         }
 
@@ -49,7 +55,13 @@ namespace BattleAtlas
             facingDeg = k.facing,
             strength = k.strength,
             formation = k.formation,
+            confidence = ConfidenceOrDefault(k.confidence),
         };
+
+        // format default (battle-format.md): an absent/empty confidence is
+        // "unknown" — normalized here so every UnitState carries a word
+        static string ConfidenceOrDefault(string confidence) =>
+            string.IsNullOrEmpty(confidence) ? "unknown" : confidence;
 
         int UpperBound(float t)
         {

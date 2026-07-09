@@ -150,17 +150,4 @@ public class InstancedMeshesTests
         Object.DestroyImmediate(a);
         Object.DestroyImmediate(b);
     }
-
-    [Test]
-    public void UnitBoxMesh_IsUnitCubeWithBaseAtOrigin()
-    {
-        Mesh m = InstancedMeshes.BuildUnitBox();
-        Assert.AreEqual(8, m.vertexCount); // a plain box, nothing more
-        Assert.AreEqual(Vector3.one, m.bounds.size);
-        // base at y=0 (centered at y +0.5): TRS position = ground, scale = block
-        // size stands the sub-block on the terrain like the monolithic marker
-        Assert.AreEqual(0f, m.bounds.min.y, 1e-4f);
-        Assert.AreEqual(1f, m.bounds.max.y, 1e-4f);
-        Object.DestroyImmediate(m);
-    }
 }
