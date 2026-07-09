@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "battle-atlas/reconstruction.schema.json",
+  "title": "Canonical reconstruction: semantic segments and casualty profiles",
+  "description": "The single canonical reconstruction of a tactical slice (plan sections 6.3 and 6.4). Semantic segments replace unqualified straight-line interpolation; casualty profiles carry aggregate loss without inventing individual fates. Times are seconds on the canonical battle clock; geometry is battlefield-local meters (x east, z north, Unity world XZ). Cross-field rules (segment contiguity per unit, claim/obstacle/unit reference integrity, route/speed/obstacle discipline, strength reconciliation) are enforced by scripts/validate_reconstruction.py. Deviation from the plan's illustrative shape, recorded: segments carry obstacleIds (array) instead of a single obstacleId because the Emmitsburg Road is flanked by TWO traced fences that one historical crossing action traverses.",
+  "type": "object",
+  "required": ["id", "slice", "units", "segments", "casualtyProfiles"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "note": { "type": "string" },
+    "slice": {
+      "type": "object",
+      "required": ["t0", "t1"],
+      "additionalProperties": false,
+      "properties": {
+        "t0": { "type": "number", "minimum": 0 },
+        "t1": { "type": "number", "minimum": 0 }
+      }
+    },
+    "units": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/unit" }
+    },
+    "segments": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/segment" }
+    },
+    "casualtyProfiles": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/casualtyProfile" }
+    }
+  },
+  "$defs": {
+    "unit": {
+      "type": "object",
+      "required": ["unitId", "arm", "startStrength"],
+      "additionalProperties": false,
+      "properties": {
+        "unitId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Must exist in app/Assets/Battle/gettysburg-july3.json."
+        },
+        "arm": { "enum": ["infantry", "artillery"] },
+        "startStrength": {
+          "type": "object",
+          "required": ["value", "basis"],
+          "additionalProperties": false,
+          "properties": {
+            "value": { "type": "integer", "minimum": 0 },
+            "basis": {
+              "type": "string",
+              "minLength": 1,
+              "description": "How the slice-start strength was derived (e.g. macro track linear interpolation at t0, rounded)."
+            },
+            "claimIds": {
+              "type": "array",
+              "items": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        "note": { "type": "string" }
+      }
+    },
+    "segment": {
+      "type": "object",
+      "required": [
+        "id", "unitId", "t0", "t1", "action", "route",
+        "formationFrom", "formationTo", "paceProfile", "claimIds", "inferenceRules"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^seg-[a-z0-9][a-z0-9-]*$" },
+        "unitId": { "type": "string", "minLength": 1 },
+        "t0": { "type": "number", "minimum": 0 },
+        "t1": { "type": "number", "minimum": 0 },
+        "action": {
+          "enum": [
+            "hold",
+            "advance",
+            "double_quick",
+            "oblique",
+            "halt",
+            "dress_line",
+            "cross_obstacle",
+            "fire_by_rank",
+            "fire_independent",
+            "take_canister",
+            "waver",
+            "close_gap",
+            "breach",
+            "fall_back",
+            "rout"
+          ]
+        },
+        "route": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": { "type": "number" }
+          },
+          "description": "Unit-centroid polyline in battlefield-local meters. A single point means the unit holds that position for the whole segment."
+        },
+        "obstacleIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Landcover feature ids (stone_wall / rail_fence lines) this segment is authored to cross. Required whenever the route intersects a traced obstacle; validated geometrically."
+        },
+        "formationFrom": { "enum": ["column", "line", "line_disordered", "skirmish", "scattered", "routed"] },
+        "formationTo": { "enum": ["column", "line", "line_disordered", "skirmish", "scattered", "routed"] },
+        "paceProfile": {
+          "enum": ["static", "steady", "halt-compress-cross-redress", "surge", "slowing"]
+        },
+        "facingDeg": {
+          "type": "number",
+          "description": "Optional authored facing (compass degrees, 0 = north/+Z, 90 = east/+X). When absent the compiler derives facing from route bearing; static segments inherit the previous facing."
+        },
+        "facingToDeg": {
+          "type": "number",
+          "description": "Optional facing at segment end; the compiler interpolates shortest-arc from facingDeg (or inherited facing) across the segment. Used for authored wheels."
+        },
+        "claimIds": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "inferenceRules": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Named connective-reconstruction rules this segment relies on. A segment with no claimIds MUST name at least one rule (editorial connective reconstruction); enforced in code."
+        },
+        "note": { "type": "string" }
+      }
+    },
+    "casualtyProfile": {
+      "type": "object",
+      "required": ["id", "unitId", "t0", "t1", "count", "intensityCurve", "causeMix", "assessment", "claimIds"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^cas-[a-z0-9][a-z0-9-]*$" },
+        "unitId": { "type": "string", "minLength": 1 },
+        "t0": { "type": "number", "minimum": 0 },
+        "t1": { "type": "number", "minimum": 0 },
+        "count": { "type": "integer", "minimum": 0 },
+        "intensityCurve": { "enum": ["uniform", "rising", "falling", "spike"] },
+        "causeMix": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Fractions by broad cause class; must sum to 1.0 within 1e-6 (code rule). Never per-person, never named individuals.",
+          "properties": {
+            "musketry": { "type": "number", "minimum": 0, "maximum": 1 },
+            "canister": { "type": "number", "minimum": 0, "maximum": 1 },
+            "shell": { "type": "number", "minimum": 0, "maximum": 1 },
+            "unknown": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        },
+        "assessment": { "enum": ["documented", "reconstructed"] },
+        "claimIds": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}

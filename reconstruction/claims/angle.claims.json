@@ -1,0 +1,1408 @@
+{
+  "claims": [
+    {
+      "id": "claim-bombardment-opened",
+      "subjectId": "angle-slice",
+      "property": "time",
+      "value": "The bombardment opened at 1:00-1:07 PM (three watches, 0-7 minute spread)",
+      "time": { "earliest": 0, "preferred": 0, "latest": 420 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "alexander-1907",
+          "locator": "ch. 18",
+          "excerpt": "It was just 1 P.M. by my watch when the signal guns were fired",
+          "interpretation": "Watch-checked Confederate time for the opening; anchors the battle clock t=0 at 13:00."
+        },
+        {
+          "sourceId": "jacobs-1864",
+          "locator": "July 3 narrative",
+          "excerpt": "At seven minutes past 1 p.m., the awful and portentous silence was broken",
+          "interpretation": "Contemporaneous civilian watch time, 7 minutes later than Alexander; spread kept, not reconciled."
+        },
+        {
+          "sourceId": "martin-smith-shsp32-1904",
+          "locator": "pp. 184-189 (Martin)",
+          "excerpt": "About 1 o'clock two signal guns were fired by the Washington Artillery.",
+          "interpretation": "Corroborates the ~1:00 opening from inside the assault column."
+        }
+      ],
+      "note": "Pre-slice anchor; establishes the clock every slice time hangs from."
+    },
+    {
+      "id": "claim-stepoff-alexander",
+      "subjectId": "assault-column",
+      "property": "time",
+      "value": "Step-off shortly after ~1:50 PM (Alexander's reading)",
+      "time": { "earliest": 2940, "preferred": 3000, "latest": 3600 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "alexander-1907",
+          "locator": "ch. 18",
+          "excerpt": "doubtless 1.50 or later, but I did not look at my watch again",
+          "interpretation": "Supports an early step-off; self-hedged, not watch-checked at the moment."
+        }
+      ],
+      "note": "One of three witness step-off times spanning a full hour. Not the canonical choice; see ED-1."
+    },
+    {
+      "id": "claim-stepoff-jacobs",
+      "subjectId": "assault-column",
+      "property": "time",
+      "value": "Step-off at 2:30 PM (Jacobs's reading)",
+      "time": { "earliest": 5340, "preferred": 5400, "latest": 5460 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "jacobs-1864",
+          "locator": "July 3 narrative",
+          "excerpt": "When 2½ p.m. came… two long, dark, massive lines",
+          "interpretation": "Contemporaneous and habitually precise, but a distant civilian observer. Middle of the witness spread."
+        }
+      ],
+      "note": "Not the canonical choice; see ED-1."
+    },
+    {
+      "id": "claim-stepoff-haskell",
+      "subjectId": "assault-column",
+      "property": "time",
+      "value": "Cannonade ended ~3:00 PM and the column appeared thereafter (Haskell's frame)",
+      "time": { "earliest": 7080, "preferred": 7200, "latest": 7500 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "haskell-1908",
+          "locator": "Gutenberg #33121",
+          "excerpt": "At three o'clock almost precisely",
+          "interpretation": "Supports the late frame the canonical reconstruction adopts; his cannonade end, not a step-off watch time."
+        }
+      ],
+      "note": "Latest of the three witness frames. The canonical step-off (ED-1) sits inside it."
+    },
+    {
+      "id": "claim-stepoff-canonical",
+      "subjectId": "assault-column",
+      "property": "time",
+      "value": "Canonical step-off ~15:05 (t=7500), from which all slice arrival times are arithmetic",
+      "time": { "earliest": 7200, "preferred": 7500, "latest": 7800 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "abt-map-set",
+          "locator": "3:00-3:30 PM sheet",
+          "excerpt": "(map fact, geometry not traced)",
+          "interpretation": "The modern reconstruction frame places the advance around/after 3:00 PM; adopted as the canonical clock frame."
+        },
+        {
+          "sourceId": "haskell-1908",
+          "locator": "Gutenberg #33121",
+          "excerpt": "At three o'clock almost precisely",
+          "interpretation": "The canonical frame is anchored to Haskell's cannonade end."
+        }
+      ],
+      "note": "ED-1: witnesses disagree by over an hour (1:50 to ~3:00); the macro file and this reconstruction adopt the ~15:00 frame. Recorded, never averaged."
+    },
+    {
+      "id": "claim-repulse-clock-frames",
+      "subjectId": "angle-slice",
+      "property": "time",
+      "value": "The Angle climax sits at ~15:25 in the step-off-arithmetic frame but in the 3:45-4:15 slice of the ABT sheet frame; the frames differ by ~20-45 minutes and are never silently mixed",
+      "time": { "earliest": 8640, "preferred": 8700, "latest": 10500 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "abt-map-set",
+          "locator": "3:45-4:15 PM sheet",
+          "excerpt": "(map fact, geometry not traced)",
+          "interpretation": "Documents the later clock frame; the disagreement is data (ED-2)."
+        }
+      ],
+      "note": "ED-2. Every wall-crossing clock in this corpus is an inferred time on a documented event."
+    },
+    {
+      "id": "claim-column-organization",
+      "subjectId": "assault-column",
+      "property": "formation",
+      "value": "Assault organization: Pickett right (Kemper, Garnett, supported by Armistead); Pettigrew's division on Pickett's left with Fry's brigade the guide; Trimble in second line",
+      "time": { "earliest": 5400, "preferred": 7500, "latest": 8040 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "longstreet-1896",
+          "locator": "pp. 388-389",
+          "excerpt": "(assault organization passage, verified verbatim in the source library)",
+          "interpretation": "Names the brigade organization of the column."
+        },
+        {
+          "sourceId": "fry-shsp7-1879",
+          "locator": "pp. 91-93",
+          "excerpt": "in the assault both divisions should allign themselves by it",
+          "interpretation": "Fry's brigade was the guide of the whole assault; Garnett agreed to dress on his command."
+        }
+      ]
+    },
+    {
+      "id": "claim-two-lines",
+      "subjectId": "assault-column",
+      "property": "formation",
+      "value": "The assault advanced in two long lines of battle",
+      "time": { "earliest": 5400, "preferred": 7500, "latest": 8580 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "jacobs-1864",
+          "locator": "July 3 narrative",
+          "excerpt": "two long, dark, massive lines",
+          "interpretation": "Formation of the advance as seen from the town; Jacobs names Garnett, Kemper, Armistead."
+        }
+      ]
+    },
+    {
+      "id": "claim-garnett-start",
+      "subjectId": "csa-garnett",
+      "property": "position",
+      "value": "Garnett's brigade start line on Seminary Ridge, regiments drawn as numbered bars (56/28/19/18/8 Va)",
+      "time": { "earliest": 0, "preferred": 0, "latest": 7500 },
+      "geometry": { "kind": "point", "x": 3200, "z": 4930, "uncertaintyM": 60 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3, Seminary Ridge formation area",
+          "excerpt": "(regiment bars read at full resolution: 56'/28'/19'...)",
+          "interpretation": "Documented start geometry; position class, not a clock time."
+        }
+      ]
+    },
+    {
+      "id": "claim-kemper-start",
+      "subjectId": "csa-kemper",
+      "property": "position",
+      "value": "Kemper's brigade start line on Pickett's right near Spangler's Woods",
+      "time": { "earliest": 0, "preferred": 0, "latest": 7500 },
+      "geometry": { "kind": "point", "x": 3150, "z": 4680, "uncertaintyM": 60 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3, Seminary Ridge formation area",
+          "excerpt": "(regiment bars at the start positions)",
+          "interpretation": "Documented start geometry; position class, not a clock time."
+        },
+        {
+          "sourceId": "martin-smith-shsp32-1904",
+          "locator": "pp. 184-189",
+          "excerpt": "(regiment-by-regiment order: Kemper right 1st, 3rd, 7th, 11th, 24th VA)",
+          "interpretation": "Kemper on the division right."
+        }
+      ]
+    },
+    {
+      "id": "claim-armistead-start",
+      "subjectId": "csa-armistead",
+      "property": "position",
+      "value": "Armistead's brigade formed the second line behind Garnett/Kemper; Martin places it 'in rear and center', some modern accounts left-rear",
+      "time": { "earliest": 0, "preferred": 0, "latest": 7500 },
+      "geometry": { "kind": "point", "x": 3090, "z": 4830, "uncertaintyM": 80 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3 (38'/57'/53' bars verified)",
+          "excerpt": "(second-line regiment bars)",
+          "interpretation": "Documented start geometry."
+        },
+        {
+          "sourceId": "martin-smith-shsp32-1904",
+          "locator": "pp. 184-189",
+          "excerpt": "(Armistead 'in rear and center'; 9th, 14th, 38th, 53rd, 57th VA)",
+          "interpretation": "Supports rear-center placement; the left-rear reading is recorded, not reconciled."
+        }
+      ]
+    },
+    {
+      "id": "claim-webb-at-angle",
+      "subjectId": "us-webb",
+      "property": "position",
+      "value": "Webb's Philadelphia Brigade held the Angle and the ground by the Copse: 69th at the wall, 71st at the outer angle, 72nd in reserve at the crest",
+      "time": { "earliest": 0, "preferred": 8040, "latest": 9000 },
+      "geometry": { "kind": "point", "x": 4410, "z": 4850, "uncertaintyM": 25 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3, Angle crop (71'Pa, 72'Pa, 69'Pa legible)",
+          "excerpt": "(named regiment bars at the Angle)",
+          "interpretation": "Documented Union regiment geometry — Bachelder's best-sourced echelon."
+        },
+        {
+          "sourceId": "haskell-1908",
+          "locator": "Gutenberg #33121",
+          "excerpt": "(names the 69th, 71st, 72nd Pennsylvania at the Angle)",
+          "interpretation": "Corroborates the brigade's regiments at the position."
+        }
+      ]
+    },
+    {
+      "id": "claim-69pa-position",
+      "subjectId": "us-69pa",
+      "property": "position",
+      "value": "The 69th Pennsylvania held the stone wall between the Angle and the Copse and never left it",
+      "time": { "earliest": 8040, "preferred": 8580, "latest": 9000 },
+      "geometry": { "kind": "point", "x": 4402, "z": 4830, "uncertaintyM": 20 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3, Angle crop ('69'Pa' bar)",
+          "excerpt": "(regiment bar at the wall)",
+          "interpretation": "Documented position; class, not clock."
+        },
+        {
+          "sourceId": "mcdermott-1889",
+          "locator": "Angle narrative",
+          "excerpt": "(the regiment held the wall throughout the assault)",
+          "interpretation": "The regiment never leaves the wall; company-level detail rides claim-69pa-refused-flank."
+        }
+      ]
+    },
+    {
+      "id": "claim-71pa-position",
+      "subjectId": "us-71pa",
+      "property": "position",
+      "value": "The 71st Pennsylvania: 8 companies at the outer-angle wall, 2 companies fifty yards right-rear",
+      "time": { "earliest": 8040, "preferred": 8040, "latest": 8640 },
+      "geometry": { "kind": "point", "x": 4400, "z": 4868, "uncertaintyM": 20 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "smith-71pa-or",
+          "locator": "via Stone Sentinels reproduction",
+          "excerpt": "(8 companies at the wall, 2 fifty yards right-rear; no companies named)",
+          "interpretation": "Documented disposition at the outer angle."
+        },
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3, Angle crop ('71'Pa' bar)",
+          "excerpt": "(regiment bar at the outer angle)",
+          "interpretation": "Corroborating map position."
+        }
+      ]
+    },
+    {
+      "id": "claim-72pa-crest",
+      "subjectId": "us-72pa",
+      "property": "position",
+      "value": "CANONICAL READING: the 72nd Pennsylvania stood at the crest behind the Angle and fired from it, not advancing when Webb ordered the charge; it advanced to the wall only as the penetration collapsed",
+      "time": { "earliest": 8580, "preferred": 8700, "latest": 9300 },
+      "geometry": { "kind": "point", "x": 4452, "z": 4857, "uncertaintyM": 30 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "haskell-1908",
+          "locator": "Angle crisis narrative",
+          "excerpt": "(the line at the crest that would not move at Webb's order)",
+          "interpretation": "Supports the crest reading. Haskell is partisan here — the 72nd's veterans disputed his characterization."
+        }
+      ],
+      "note": "Genuinely contested; the counter-reading is claim-72pa-wall-counter. Canonical choice recorded in ED-4."
+    },
+    {
+      "id": "claim-72pa-wall-counter",
+      "subjectId": "us-72pa",
+      "property": "position",
+      "value": "COUNTER-READING (recorded, not adopted): the 72nd fought at the wall from the start — the regiment's monument-litigation position",
+      "time": { "earliest": 8400, "preferred": 8700, "latest": 9000 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "historynet-72pa",
+          "locator": "monument litigation summary",
+          "excerpt": "(the regiment sued to place its monument at the wall and won)",
+          "interpretation": "Attests that the counter-reading exists and prevailed in court; not adopted as geometry (ED-4)."
+        }
+      ]
+    },
+    {
+      "id": "claim-cushing-position",
+      "subjectId": "us-btty-cushing",
+      "property": "position",
+      "value": "Cushing's Battery A, 4th US, at the Angle wall corner",
+      "time": { "earliest": 7500, "preferred": 8040, "latest": 9000 },
+      "geometry": { "kind": "point", "x": 4398, "z": 4880, "uncertaintyM": 20 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3, Angle crop (CUSHING named)",
+          "excerpt": "(battery named at the Angle)",
+          "interpretation": "Documented battery position."
+        }
+      ]
+    },
+    {
+      "id": "claim-cushing-guns-to-wall",
+      "subjectId": "us-btty-cushing",
+      "property": "movement",
+      "value": "After the cannonade Cushing ran his two serviceable guns by hand down to the stone wall, canister piled beside; the other four guns remained as wrecks at the crest",
+      "time": { "earliest": 6300, "preferred": 7050, "latest": 7500 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "nps-cushing-article",
+          "locator": "nps.gov article",
+          "excerpt": "(two serviceable guns run by hand to the wall with Webb's permission)",
+          "interpretation": "Documented section displacement, pre-slice; sets the battery's slice-start disposition."
+        },
+        {
+          "sourceId": "fuger-jmsi-1907",
+          "locator": "JMSI v41 p. 408 via NPS",
+          "excerpt": "(corroborates the guns at the wall in the final phase)",
+          "interpretation": "Corroboration from the battery's first sergeant."
+        }
+      ]
+    },
+    {
+      "id": "claim-cushing-canister",
+      "subjectId": "us-btty-cushing",
+      "property": "firing",
+      "value": "The battery fired double and treble charges of canister as the assault closed",
+      "time": { "earliest": 8400, "preferred": 8550, "latest": 8700 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "fuger-jmsi-1907",
+          "locator": "JMSI v41 p. 408, quoted by hartwig-2012-nps",
+          "excerpt": "We continued to fire double and treble charges of our canister, but owing to the dense smoke, could not see very far to the front.",
+          "interpretation": "Documented firing behavior at the climax; also attests dense smoke (claim-smoke-visibility)."
+        }
+      ]
+    },
+    {
+      "id": "claim-cas-canister-gaps",
+      "subjectId": "assault-column",
+      "property": "casualty_timing",
+      "value": "Canister opened immense gaps in the assault lines inside ~200 yards of the wall",
+      "time": { "earliest": 8400, "preferred": 8580, "latest": 8700 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "fuger-1904",
+          "locator": "1904 manuscript transcription",
+          "excerpt": "When the enemy was within 200 yards, double and treble charges were fired, opening immense gaps in their lines",
+          "interpretation": "Concentrates the casualty timing of the approach into the final 200 yards; drives the rising intensity curves."
+        }
+      ]
+    },
+    {
+      "id": "claim-smoke-visibility",
+      "subjectId": "angle-slice",
+      "property": "weather",
+      "value": "Dense black-powder smoke limited visibility at the wall during the final canister moments",
+      "time": { "earliest": 8400, "preferred": 8640, "latest": 9000 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "fuger-jmsi-1907",
+          "locator": "JMSI v41 p. 408, quoted by hartwig-2012-nps",
+          "excerpt": "owing to the dense smoke, could not see very far to the front",
+          "interpretation": "Documented battlefield atmosphere at the Angle; supports progressive obscuration."
+        }
+      ]
+    },
+    {
+      "id": "claim-wind-unknown",
+      "subjectId": "angle-slice",
+      "property": "weather",
+      "value": "Wind speed and direction during the slice: no reliable record located in the corpus",
+      "assessment": "unknown",
+      "references": [],
+      "note": "The battle file's light-SW-breeze environment block is explicitly unattested by its own note. Likeliest upgrade path: Michael Jacobs's meteorological register (he kept regular thermometer/wind readings). Until fetched, wind stays unknown."
+    },
+    {
+      "id": "claim-wall-structure",
+      "subjectId": "wall-angle-webb-front",
+      "property": "structure",
+      "value": "The stone wall of Webb's front, with the ~75 m right-angle jog at the inner angle, as traced from the Bachelder sheet",
+      "geometry": { "kind": "featureRef", "featureId": "wall-angle-webb-front", "uncertaintyM": 15 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3 legend: line of continuous fine dots",
+          "excerpt": "(traced via georeferenced raster measurement 2026-07-02)",
+          "interpretation": "Documented obstacle geometry; the compiled routes must honor it."
+        }
+      ]
+    },
+    {
+      "id": "claim-fence-west-structure",
+      "subjectId": "fence-emmitsburg-road-west",
+      "property": "structure",
+      "value": "Post-and-rail fence on the west side of the Emmitsburg Road (dots-and-dashes per the sheet legend), traced from the Bachelder sheet",
+      "geometry": { "kind": "featureRef", "featureId": "fence-emmitsburg-road-west", "uncertaintyM": 20 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3 legend",
+          "excerpt": "(dots-and-dashes = post-and-rail; alignment N of Codori traced from the road corridor under battle overprint)",
+          "interpretation": "Documented obstacle geometry with legibility caveat north of Codori."
+        },
+        {
+          "sourceId": "warren-survey-1868",
+          "locator": "road corridor",
+          "excerpt": "(terrain/roads/fences base layer; positions of troops are not given)",
+          "interpretation": "Georeferencing base for the corridor alignment."
+        }
+      ]
+    },
+    {
+      "id": "claim-fence-east-structure",
+      "subjectId": "fence-emmitsburg-road-east",
+      "property": "structure",
+      "value": "Post-and-rail fence on the east side of the Emmitsburg Road, same span as the west fence, traced from the Bachelder sheet",
+      "geometry": { "kind": "featureRef", "featureId": "fence-emmitsburg-road-east", "uncertaintyM": 20 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3 legend",
+          "excerpt": "(style partly illegible under battle overprint N of Codori)",
+          "interpretation": "Documented obstacle geometry with legibility caveat."
+        }
+      ]
+    },
+    {
+      "id": "claim-fence-gaps-unknown",
+      "subjectId": "fence-emmitsburg-road-west",
+      "property": "obstacle_crossing",
+      "value": "Specific gap or breakage locations along the Emmitsburg Road fences: no source in the corpus locates them",
+      "assessment": "unknown",
+      "references": [],
+      "note": "ED-6: crossings are therefore modeled as climb-over along the unit frontage with drill-derived duration, not through invented gap geometry. The road itself has no traced surface layer; the corridor is the span between the two traced fences."
+    },
+    {
+      "id": "claim-road-crossing",
+      "subjectId": "assault-column",
+      "property": "obstacle_crossing",
+      "value": "Pickett's brigades climbed the post-and-rail fences flanking the Emmitsburg Road under fire during the advance",
+      "time": { "earliest": 8040, "preferred": 8200, "latest": 8460 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3 (start bars west of the road; forward brigade bars east of it)",
+          "excerpt": "(the traced geometry places the start line west and the wall east of the fenced road)",
+          "interpretation": "The crossing is entailed by documented start/end geometry; the act itself is not narrated by a corpus witness for these brigades."
+        },
+        {
+          "sourceId": "abt-map-set",
+          "locator": "3:30-3:45 PM sheet",
+          "excerpt": "(map fact, geometry not traced)",
+          "interpretation": "Modern reconstruction places the brigades at/beyond the road mid-advance."
+        }
+      ],
+      "note": "Crossing duration and the dress pause are connective reconstruction (ED-6)."
+    },
+    {
+      "id": "claim-copse-landcover",
+      "subjectId": "woodlot-copse-of-trees",
+      "property": "land_cover",
+      "value": "The Copse of Trees stood just west of the crest inside Webb's position, a small tree cluster",
+      "geometry": { "kind": "featureRef", "featureId": "woodlot-copse-of-trees", "uncertaintyM": 20 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3, Angle crop",
+          "excerpt": "(tree-scribble cluster partly obscured by unit labels, extent approximate)",
+          "interpretation": "Documented land cover; extent approximate."
+        }
+      ]
+    },
+    {
+      "id": "claim-field-angle-landcover",
+      "subjectId": "field-angle-final-assault",
+      "property": "land_cover",
+      "value": "The ground of the final assault between the Emmitsburg Road and the stone wall was open farmland; crop type not distinguished on the Bachelder sheet",
+      "geometry": { "kind": "featureRef", "featureId": "field-angle-final-assault", "uncertaintyM": 30 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3, traced 2026-07-02",
+          "excerpt": "(open field polygon between road and wall; N edge at the Bryan farm lane)",
+          "interpretation": "Documented open ground — no cover between road and wall."
+        }
+      ]
+    },
+    {
+      "id": "claim-strength-garnett",
+      "subjectId": "csa-garnett",
+      "property": "strength",
+      "value": "Garnett's brigade: 1,480 present",
+      "time": { "earliest": 0, "preferred": 0, "latest": 7500 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "confederate-headquarters/garnetts-brigade/",
+          "excerpt": "(Present 1,480; monument-compilation tier)",
+          "interpretation": "Modern monument-committee compilation, not a period return; Pickett's fresh division so 'present' approximates July 3 strength."
+        }
+      ]
+    },
+    {
+      "id": "claim-strength-kemper",
+      "subjectId": "csa-kemper",
+      "property": "strength",
+      "value": "Kemper's brigade: 1,575 present",
+      "time": { "earliest": 0, "preferred": 0, "latest": 7500 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "confederate-headquarters/kempers-brigade/",
+          "excerpt": "(Present 1,575)",
+          "interpretation": "Same compilation tier as claim-strength-garnett."
+        }
+      ]
+    },
+    {
+      "id": "claim-strength-armistead",
+      "subjectId": "csa-armistead",
+      "property": "strength",
+      "value": "Armistead's brigade: 1,650 present",
+      "time": { "earliest": 0, "preferred": 0, "latest": 7500 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "confederate-headquarters/armisteads-brigade/",
+          "excerpt": "(Present 1,650)",
+          "interpretation": "Direct-fetch figure; a '1,950' search-summary artifact was rejected in the OOB pass."
+        }
+      ]
+    },
+    {
+      "id": "claim-strength-fry",
+      "subjectId": "csa-fry",
+      "property": "strength",
+      "value": "Fry's (Archer's) brigade: 1,048 present; 'less than 400 men remained at the end of July 3rd'",
+      "time": { "earliest": 0, "preferred": 0, "latest": 7500 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "confederate-headquarters/archers-brigade/",
+          "excerpt": "(Present 1,048; K+W 160, Missing 517)",
+          "interpretation": "July 1 losses make Heth's-division 'present' figures overstate July 3 strength — systemic caveat kept."
+        }
+      ]
+    },
+    {
+      "id": "claim-strength-webb",
+      "subjectId": "us-webb",
+      "property": "strength",
+      "value": "Webb's brigade: 1,250 engaged",
+      "time": { "earliest": 0, "preferred": 0, "latest": 7500 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "battle-of-gettysburg-facts/strength-casualties-usa/",
+          "excerpt": "(Strength & Casualties table; site disclaimer: 'often in disagreement between regimental and brigade records')",
+          "interpretation": "Modern compilation from OR data."
+        }
+      ]
+    },
+    {
+      "id": "claim-strength-69pa",
+      "subjectId": "us-69pa",
+      "property": "strength",
+      "value": "69th Pennsylvania: 258 men at the Angle",
+      "time": { "earliest": 0, "preferred": 0, "latest": 7500 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "69th Pennsylvania monument page",
+          "excerpt": "(258 men at the Angle)",
+          "interpretation": "Monument-compilation figure."
+        }
+      ]
+    },
+    {
+      "id": "claim-strength-71pa",
+      "subjectId": "us-71pa",
+      "property": "strength",
+      "value": "71st Pennsylvania: 331 men brought to the field",
+      "time": { "earliest": 0, "preferred": 0, "latest": 7500 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "71st Pennsylvania monument page",
+          "excerpt": "(331 brought to the field)",
+          "interpretation": "Monument-compilation figure; 'brought to the field' scope."
+        }
+      ]
+    },
+    {
+      "id": "claim-strength-72pa",
+      "subjectId": "us-72pa",
+      "property": "strength",
+      "value": "72nd Pennsylvania: 458 'present at Gettysburg' vs 473 'present for duty' — two scoped figures on the same page, conflict kept",
+      "time": { "earliest": 0, "preferred": 0, "latest": 7500 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "72nd Pennsylvania monument page",
+          "excerpt": "(458 present at Gettysburg; 473 present for duty)",
+          "interpretation": "Strength figures are scope-dependent; both kept, macro file adopts 458."
+        }
+      ]
+    },
+    {
+      "id": "claim-strength-cushing",
+      "subjectId": "us-btty-cushing",
+      "property": "strength",
+      "value": "Cushing's battery: 126 men and six 3-inch Ordnance Rifles",
+      "time": { "earliest": 0, "preferred": 0, "latest": 7500 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "army-moh-cushing",
+          "locator": "army.mil Medal of Honor page",
+          "excerpt": "126 men and six cannons",
+          "interpretation": "Official commendation record — documented for the figure, with the caveat that MoH citations are administrative documents, not battlefield returns."
+        }
+      ]
+    },
+    {
+      "id": "claim-cas-garnett-total",
+      "subjectId": "csa-garnett",
+      "property": "casualty_total",
+      "value": "Garnett's brigade losses: 78 killed, 324 wounded, 539 missing — 941 total",
+      "time": { "earliest": 8040, "preferred": 9000, "latest": 10800 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "confederate-headquarters/garnetts-brigade/",
+          "excerpt": "(Killed 78, Wounded 324, Missing 539, Total 941)",
+          "interpretation": "Whole-battle compilation figure; effectively July 3 for this fresh brigade."
+        }
+      ]
+    },
+    {
+      "id": "claim-cas-kemper-total",
+      "subjectId": "csa-kemper",
+      "property": "casualty_total",
+      "value": "Kemper's brigade losses: 56 killed, 356 wounded, 317 missing — 731 total",
+      "time": { "earliest": 8040, "preferred": 9000, "latest": 10800 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "confederate-headquarters/kempers-brigade/",
+          "excerpt": "(Killed 56, Wounded 356, Missing 317, Total 731)",
+          "interpretation": "Whole-battle compilation figure; effectively July 3 for this fresh brigade."
+        }
+      ]
+    },
+    {
+      "id": "claim-cas-armistead-total",
+      "subjectId": "csa-armistead",
+      "property": "casualty_total",
+      "value": "Armistead's brigade losses: 1,191 total (88 killed, 460 wounded, 643 missing)",
+      "time": { "earliest": 8040, "preferred": 9000, "latest": 10800 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "aylett-1863",
+          "locator": "July 12, 1863 report via Encyclopedia Virginia",
+          "excerpt": "(1,191 total casualties)",
+          "interpretation": "Period after-action report (secondary-hop access flagged); matches the Stone Sentinels total exactly."
+        },
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "confederate-headquarters/armisteads-brigade/",
+          "excerpt": "(Killed 88, Wounded 460, Missing 643, Total 1,191)",
+          "interpretation": "Corroborating breakdown."
+        }
+      ]
+    },
+    {
+      "id": "claim-cas-webb-total",
+      "subjectId": "us-webb",
+      "property": "casualty_total",
+      "value": "Webb's brigade losses: 115 killed, 335 wounded, 40 missing — 490 total; not split by regiment in the corpus",
+      "time": { "earliest": 8040, "preferred": 9000, "latest": 10800 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "battle-of-gettysburg-facts/strength-casualties-usa/",
+          "excerpt": "(490 total, 39%)",
+          "interpretation": "Brigade-level only; per-regiment decay is reconstructed, never presented as documented."
+        }
+      ]
+    },
+    {
+      "id": "claim-cas-cushing-total",
+      "subjectId": "us-btty-cushing",
+      "property": "casualty_total",
+      "value": "Cushing's battery losses: 1 officer + 5 men killed, 1 officer + 31 men wounded — 38 total",
+      "time": { "earliest": 8040, "preferred": 9000, "latest": 10800 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "Cushing's battery page",
+          "excerpt": "(38 total casualties)",
+          "interpretation": "Monument-compilation figure; the page gives no strength number."
+        }
+      ]
+    },
+    {
+      "id": "claim-cas-pause-at-fences",
+      "subjectId": "csa-garnett",
+      "property": "casualty_timing",
+      "value": "Losses accrued during the halt-and-climb at the road fences under artillery fire",
+      "time": { "earliest": 8160, "preferred": 8220, "latest": 8340 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "abt-map-set",
+          "locator": "3:30-3:45 PM sheet",
+          "excerpt": "(map fact, geometry not traced)",
+          "interpretation": "The reconstruction places the brigades exposed at the road mid-advance; loss concentration there is modern synthesis, not witness-narrated for these brigades."
+        }
+      ]
+    },
+    {
+      "id": "claim-garnett-death",
+      "subjectId": "csa-garnett",
+      "property": "command_action",
+      "value": "Brig. Gen. Richard Garnett, too unwell to walk, rode against orders and was shot dead roughly 20 yards from the Angle",
+      "time": { "earliest": 8520, "preferred": 8580, "latest": 8700 },
+      "geometry": { "kind": "point", "x": 4380, "z": 4868, "uncertaintyM": 30 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "confederate-headquarters/garnetts-brigade/ narrative",
+          "excerpt": "(shot roughly 20 yards from the Angle, fell dead)",
+          "interpretation": "Documented death place relative to the Angle; the clock is inferred from the step-off arithmetic (ED-1)."
+        }
+      ]
+    },
+    {
+      "id": "claim-kemper-wounded",
+      "subjectId": "csa-kemper",
+      "property": "command_action",
+      "value": "Brig. Gen. James Kemper badly wounded near the Union line south of the Angle, briefly captured, rescued by Sgt. Leigh Blanton (1st VA)",
+      "time": { "earliest": 8580, "preferred": 8640, "latest": 8760 },
+      "geometry": { "kind": "point", "x": 4370, "z": 4790, "uncertaintyM": 50 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "confederate-headquarters/kempers-brigade/ narrative",
+          "excerpt": "(badly wounded, briefly captured, rescued; Col. Mayo assumed command)",
+          "interpretation": "Documented event; place approximate, clock inferred."
+        }
+      ]
+    },
+    {
+      "id": "claim-kemper-oblique",
+      "subjectId": "csa-kemper",
+      "property": "movement",
+      "value": "Kemper's front obliqued left toward the Angle while taking flank fire from Stannard's wheeled Vermont regiments",
+      "time": { "earliest": 8280, "preferred": 8400, "latest": 8640 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "martin-smith-shsp32-1904",
+          "locator": "pp. 189-195 (John Holmes Smith, 11th VA)",
+          "excerpt": "(the oblique under the flank fire, from inside Kemper's line)",
+          "interpretation": "Movement documented from a participant; the exact turn point is reconstruction."
+        },
+        {
+          "sourceId": "sturtevant-1910",
+          "locator": "pp. 304-305",
+          "excerpt": "saw in their immediate front not sixty yards away General Pickett's command",
+          "interpretation": "The flank relationship that forced/punished the oblique, from the Vermont side."
+        }
+      ]
+    },
+    {
+      "id": "claim-rorty-overrun",
+      "subjectId": "csa-kemper",
+      "property": "command_action",
+      "value": "Kemper's Virginians briefly overran Rorty's Battery B, 1st NY; Capt. Rorty killed in hand-to-hand fighting",
+      "time": { "earliest": 8580, "preferred": 8680, "latest": 8820 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "1st New York Battery B page",
+          "excerpt": "(Rorty killed alongside 9 other men when the battery was briefly overrun)",
+          "interpretation": "Documents the deepest reach of Kemper's right; clock inferred."
+        }
+      ]
+    },
+    {
+      "id": "claim-armistead-crossed-wall",
+      "subjectId": "csa-armistead",
+      "property": "obstacle_crossing",
+      "value": "Armistead scaled the stone wall at the Angle, hat on sword point, and his party landed among Cushing's guns",
+      "time": { "earliest": 8640, "preferred": 8700, "latest": 8760 },
+      "geometry": { "kind": "point", "x": 4415, "z": 4855, "uncertaintyM": 30 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "martin-smith-shsp32-1904",
+          "locator": "pp. 184-189 (Martin)",
+          "excerpt": "rushed forward, scaled the wall, and cried: 'Boys, give them the cold steel!'",
+          "interpretation": "Supports the wall crossing and the order, not an exact clock time; 34-year recollection."
+        },
+        {
+          "sourceId": "fuger-jmsi-1907",
+          "locator": "JMSI v41 p. 408, quoted by hartwig-2012-nps",
+          "excerpt": "I saw General Armistead leap over the stone wall with a number of his troops, landing right in the middle of our Battery.",
+          "interpretation": "Independent corroboration from the receiving side; also no clock."
+        }
+      ],
+      "note": "Preferred time t=8700 (~15:25) is the canonical reconstruction's step-off arithmetic; ~15:30 appears in other readings and the ABT frame runs later still (ED-2). The disagreement is recorded, not reconciled."
+    },
+    {
+      "id": "claim-armistead-party-strength",
+      "subjectId": "csa-armistead",
+      "property": "strength",
+      "value": "About 150 men followed Armistead over the wall",
+      "time": { "earliest": 8640, "preferred": 8700, "latest": 8820 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "martin-smith-shsp32-1904",
+          "locator": "pp. 184-189 (Martin)",
+          "excerpt": "(Armistead and about 150 men over the wall at the climax)",
+          "interpretation": "Bounds the penetration's size — the brigade as a body did not cross; drives the fall_back centroid choice (ED-8)."
+        }
+      ]
+    },
+    {
+      "id": "claim-armistead-fell",
+      "subjectId": "csa-armistead",
+      "property": "command_action",
+      "value": "Armistead fell mortally wounded under the captured guns; he died July 5",
+      "time": { "earliest": 8700, "preferred": 8720, "latest": 8820 },
+      "geometry": { "kind": "point", "x": 4412, "z": 4865, "uncertaintyM": 25 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "martin-smith-shsp32-1904",
+          "locator": "pp. 184-189 (Martin)",
+          "excerpt": "had fallen, mortally wounded, under the guns he had captured",
+          "interpretation": "Martin: 'I was disabled at Armistead's side a moment after he had fallen' — eyewitness at arm's length."
+        }
+      ]
+    },
+    {
+      "id": "claim-cushing-death",
+      "subjectId": "us-btty-cushing",
+      "property": "command_action",
+      "value": "Lt. Alonzo Cushing was killed at his guns as the assault closed; Fuger: shot in the mouth at ~100 yards; Haskell: shot through the head — competing details, not reconciled",
+      "time": { "earliest": 8580, "preferred": 8660, "latest": 8700 },
+      "geometry": { "kind": "point", "x": 4398, "z": 4880, "uncertaintyM": 20 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "fuger-1904",
+          "locator": "1904 manuscript transcription",
+          "excerpt": "When the enemy had approached within 100 yards, Lieutenant Cushing was shot in the mouth and instantly killed.",
+          "interpretation": "Eyewitness at Cushing's side, 41 years later, with a Medal-of-Honor personal stake; the mouth-wound detail also reached the 1907 JMSI account."
+        },
+        {
+          "sourceId": "haskell-1908",
+          "locator": "Gutenberg #33121",
+          "excerpt": "Cushing, firing almost his last canister, had dropped dead among his guns shot through the head by a bullet",
+          "interpretation": "Competing wound detail from a staff officer nearby; ED-3 records the canonical treatment."
+        },
+        {
+          "sourceId": "nps-cushing-article",
+          "locator": "nps.gov article",
+          "excerpt": "(three-wound sequence; the 'fired the last shot' legend is inaccurate)",
+          "interpretation": "Modern synthesis: multiple wounds, fatal shot through the mouth; both period accounts may describe different wounds in one sequence."
+        }
+      ]
+    },
+    {
+      "id": "claim-cushing-earlier-wounds",
+      "subjectId": "us-btty-cushing",
+      "property": "command_action",
+      "value": "Cushing was wounded earlier (shoulder/abdomen per Fuger; 'both thighs' much earlier per Webb's report) and refused the rear — witness sequence conflicts flagged",
+      "time": { "earliest": 3600, "preferred": 7200, "latest": 8580 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "fuger-1904",
+          "locator": "1904 manuscript transcription",
+          "excerpt": "Cushing was wounded in the right shoulder, and in a few seconds in the abdomen, a terribly severe and painful wound.",
+          "interpretation": "Fuger's sequence; late and dramatic."
+        },
+        {
+          "sourceId": "hartwig-2012-nps",
+          "locator": "blog post",
+          "excerpt": "(Webb's report: fought his guns an hour and a half after reporting wounds in both thighs; Cowan's 1885 letter conflicts with Fuger's held-up-at-the-wall image)",
+          "interpretation": "NPS historian documents that other testimony has Cushing wounded much earlier and functioning far longer than Fuger implies."
+        }
+      ]
+    },
+    {
+      "id": "claim-webb-wounded",
+      "subjectId": "us-webb",
+      "property": "command_action",
+      "value": "Brig. Gen. Alexander Webb was wounded (thigh/groin) at the Angle crisis and remained in command",
+      "time": { "earliest": 8640, "preferred": 8700, "latest": 8880 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "webb-moh",
+          "locator": "Medal of Honor citation",
+          "excerpt": "(wounded while leading at the Angle)",
+          "interpretation": "Administrative record confirms the wound; clock inferred."
+        }
+      ]
+    },
+    {
+      "id": "claim-webb-flag-over-gun",
+      "subjectId": "csa-armistead",
+      "property": "position",
+      "value": "A Confederate flag waved over one of Cushing's captured guns at the height of the penetration",
+      "time": { "earliest": 8700, "preferred": 8720, "latest": 8820 },
+      "geometry": { "kind": "point", "x": 4405, "z": 4872, "uncertaintyM": 25 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "haskell-1908",
+          "locator": "Gutenberg #33121",
+          "excerpt": "one was already waving over one of the guns of the dead Cushing",
+          "interpretation": "Marks the deepest documented point of the penetration inside the Angle."
+        }
+      ]
+    },
+    {
+      "id": "claim-69pa-refused-flank",
+      "subjectId": "us-69pa",
+      "property": "command_action",
+      "value": "As Armistead crossed, the 69th's Cos. I and A changed front against the flankers; Co. F's captain was killed before he could give the command and the company was enveloped; Co. D held on with clubbed muskets",
+      "time": { "earliest": 8640, "preferred": 8700, "latest": 8820 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "mcdermott-1889",
+          "locator": "Angle narrative",
+          "excerpt": "the first three companies, I, A and F, were ordered to change front and face these flankers",
+          "interpretation": "Gold-standard company-level fragment; the regiment itself never leaves the wall."
+        },
+        {
+          "sourceId": "mcdermott-1889",
+          "locator": "Angle narrative",
+          "excerpt": "held the enemy at bay, using their muskets as clubs",
+          "interpretation": "Co. D's melee at the wall during the penetration."
+        }
+      ]
+    },
+    {
+      "id": "claim-71pa-fallback",
+      "subjectId": "us-71pa",
+      "property": "movement",
+      "value": "The 71st fell back from the outer angle at the breakthrough rather than be overrun, then returned as the penetration was sealed",
+      "time": { "earliest": 8640, "preferred": 8700, "latest": 8880 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "smith-71pa-or",
+          "locator": "via Stone Sentinels reproduction",
+          "excerpt": "(partial withdrawal from the outer angle at the breakthrough; ~50 men helped serve Cushing's guns)",
+          "interpretation": "Documents the two-step; the crest-ward coordinate and the clock are reconstruction."
+        }
+      ]
+    },
+    {
+      "id": "claim-72pa-webb-order",
+      "subjectId": "us-72pa",
+      "property": "command_action",
+      "value": "Webb ordered the 72nd to charge at the crisis; the regiment did not advance at the order (not heard/refused — readings differ), and Webb was wounded trying to lead it",
+      "time": { "earliest": 8640, "preferred": 8700, "latest": 8880 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "haskell-1908",
+          "locator": "Angle crisis narrative",
+          "excerpt": "(the regiment stood and fired but would not follow Webb forward)",
+          "interpretation": "Haskell's partisan reading; the 72nd's veterans disputed it (ED-4)."
+        },
+        {
+          "sourceId": "webb-moh",
+          "locator": "Medal of Honor citation",
+          "excerpt": "(wounded leading at the Angle)",
+          "interpretation": "Corroborates Webb personally leading at the crisis."
+        }
+      ]
+    },
+    {
+      "id": "claim-cowan-position",
+      "subjectId": "us-btty-cowan",
+      "property": "position",
+      "value": "Cowan's 1st NY Independent Battery in Brown's vacated position by the Copse: five guns south of the trees ~100 ft from the wall, one gun (Sgt. Mullaly's) north beside the 69th PA",
+      "time": { "earliest": 6300, "preferred": 8040, "latest": 9000 },
+      "geometry": { "kind": "point", "x": 4450, "z": 4770, "uncertaintyM": 25 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "brown-1985-filson",
+          "locator": "pp. read page-by-page in the 2026-07-02 survey",
+          "excerpt": "(five guns south of the copse, one carried north of the trees)",
+          "interpretation": "Documented gun split — orientation corrected by the survey (five south / one north, NOT the reverse)."
+        },
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3, Angle crop (COWAN named)",
+          "excerpt": "(battery named south of the copse)",
+          "interpretation": "Corroborating map position."
+        }
+      ]
+    },
+    {
+      "id": "claim-cowan-double-canister",
+      "subjectId": "us-btty-cowan",
+      "property": "firing",
+      "value": "Cowan's battery fired double canister at ten yards into the front of the penetration after the 59th NY bolted",
+      "time": { "earliest": 8640, "preferred": 8700, "latest": 8790 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "brown-1985-filson",
+          "locator": "title event",
+          "excerpt": "(double canister at ten yards)",
+          "interpretation": "The signature firing event on Webb's/Hall's seam; clock inferred from the crisis sequence."
+        },
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "1st New York Independent Battery page",
+          "excerpt": "(the 'double canister at ten yards' repulse in front of the Copse)",
+          "interpretation": "Corroboration."
+        }
+      ]
+    },
+    {
+      "id": "claim-fry-colors-at-works",
+      "subjectId": "csa-fry",
+      "property": "position",
+      "value": "All five regimental colors of Fry's command reached the line of the Union works north of the inner angle",
+      "time": { "earliest": 8460, "preferred": 8580, "latest": 8760 },
+      "geometry": { "kind": "point", "x": 4385, "z": 4915, "uncertaintyM": 40 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "fry-shsp7-1879",
+          "locator": "p. 93",
+          "excerpt": "All of the five regimental colors of my command reached the line of the enemy's works",
+          "interpretation": "A rare all-regiments documented endpoint; conflicts with Virginia-centric accounts that stop Pettigrew's men short (ED-5). Fry was down wounded before the end."
+        }
+      ]
+    },
+    {
+      "id": "claim-fry-guide",
+      "subjectId": "assault-column",
+      "property": "movement",
+      "value": "Fry's brigade was the guide of the assault; Garnett agreed to dress on its command, so the two fronts converged at the wall together",
+      "time": { "earliest": 7500, "preferred": 8340, "latest": 8580 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "fry-shsp7-1879",
+          "locator": "pp. 91-93",
+          "excerpt": "in the assault both divisions should allign themselves by it",
+          "interpretation": "Documents the convergence geometry driver."
+        }
+      ]
+    },
+    {
+      "id": "claim-stannard-position",
+      "subjectId": "us-stannard",
+      "property": "position",
+      "value": "Stannard's Vermont brigade (13th/14th/16th engaged) held the advanced line south of the main position; drawn on the Bachelder sheet at the flank position",
+      "time": { "earliest": 0, "preferred": 8040, "latest": 8340 },
+      "geometry": { "kind": "point", "x": 4300, "z": 4470, "uncertaintyM": 50 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3 (13'Vt, 14'Vt, 16'Vt legible)",
+          "excerpt": "(regiment bars on the advanced line)",
+          "interpretation": "Documented position; class, not clock."
+        }
+      ]
+    },
+    {
+      "id": "claim-stannard-wheel",
+      "subjectId": "us-stannard",
+      "property": "movement",
+      "value": "Stannard's 13th (then 16th) Vermont changed front forward on first company and advanced ~200 yards against the right flank of Pickett's division",
+      "time": { "earliest": 8340, "preferred": 8400, "latest": 8520 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "sturtevant-1910",
+          "locator": "pp. 304-305",
+          "excerpt": "Change front, forward on first company",
+          "interpretation": "The order and the wheel, from the regiment's own history."
+        },
+        {
+          "sourceId": "vt13-monument",
+          "locator": "monument inscription",
+          "excerpt": "changed front forward on first company, advanced 200 yards, attacking the Confederate right flank",
+          "interpretation": "Independent monument attestation including the 200-yard advance."
+        }
+      ]
+    },
+    {
+      "id": "claim-stannard-flank-fire",
+      "subjectId": "us-stannard",
+      "property": "firing",
+      "value": "The wheeled Vermont regiments opened a deadly fire into the flank of Pickett's command at close range",
+      "time": { "earliest": 8400, "preferred": 8460, "latest": 9000 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "sturtevant-1910",
+          "locator": "pp. 304-305",
+          "excerpt": "saw in their immediate front not sixty yards away General Pickett's command… and at once opened a deadly fire on their flank",
+          "interpretation": "Documented flank fire at sixty yards."
+        },
+        {
+          "sourceId": "veazey-or",
+          "locator": "OR 27/1 (16th Vermont)",
+          "excerpt": "(the 16th on the 13th's left firing into the right flank)",
+          "interpretation": "Official-report corroboration for the 16th; access caveat on the source record."
+        }
+      ]
+    },
+    {
+      "id": "claim-hall-position",
+      "subjectId": "us-hall",
+      "property": "position",
+      "value": "Hall's brigade held the wall line immediately south of the Copse",
+      "time": { "earliest": 0, "preferred": 8040, "latest": 8640 },
+      "geometry": { "kind": "point", "x": 4420, "z": 4750, "uncertaintyM": 30 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3 (59'N.Y., 7'Mich, 20'Ms bars)",
+          "excerpt": "(regiment bars south of the copse)",
+          "interpretation": "Documented Union line geometry."
+        }
+      ]
+    },
+    {
+      "id": "claim-hall-shift",
+      "subjectId": "us-hall",
+      "property": "movement",
+      "value": "Hall shifted his regiments right/north toward the Copse during the break to seal the penetration",
+      "time": { "earliest": 8640, "preferred": 8760, "latest": 8940 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "or-27-1-hall",
+          "locator": "OR Series I Vol. 27 Part 1",
+          "excerpt": "(shifted regiments right toward the clump during the break)",
+          "interpretation": "Official report; access is browser-only, content attested via the 2026-07-02 survey."
+        }
+      ]
+    },
+    {
+      "id": "claim-hall-wall-fire",
+      "subjectId": "us-hall",
+      "property": "firing",
+      "value": "Hall's wall line engaged the approaching front from the wall, then fought at close quarters at the Copse",
+      "time": { "earliest": 8340, "preferred": 8460, "latest": 9000 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "or-27-1-hall",
+          "locator": "OR Series I Vol. 27 Part 1",
+          "excerpt": "(the line engages, then masses at the copse)",
+          "interpretation": "Fire behavior synthesized from the report's sequence; window edges are reconstruction."
+        },
+        {
+          "sourceId": "waitt-1906",
+          "locator": "ch. XXIX",
+          "excerpt": "(the 19th MA and 42nd NY thrown into the gap at the Copse)",
+          "interpretation": "Corroborates the close fight at the clump from a Hall regiment's history."
+        }
+      ]
+    },
+    {
+      "id": "claim-arnold-position",
+      "subjectId": "us-btty-arnold",
+      "property": "position",
+      "value": "Arnold's Battery A, 1st RI, on Hays's front at the wall north of the inner angle",
+      "time": { "earliest": 0, "preferred": 8040, "latest": 9000 },
+      "geometry": { "kind": "point", "x": 4425, "z": 4955, "uncertaintyM": 25 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "bachelder-third-day-1876",
+          "locator": "sheet 3, Angle crop (ARNOLD named)",
+          "excerpt": "(battery named north of the inner angle)",
+          "interpretation": "Documented battery position."
+        }
+      ]
+    },
+    {
+      "id": "claim-arnold-canister",
+      "subjectId": "us-btty-arnold",
+      "property": "firing",
+      "value": "One left-section gun of Arnold's battery fired from the wall as the front closed; its last round was double-shotted canister. The battery's withdrawal timing (before vs during the charge) is genuinely debated",
+      "time": { "earliest": 8400, "preferred": 8640, "latest": 9000 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "Rhode Island Battery A page",
+          "excerpt": "(one gun at the wall; last round double-shotted canister; four guns withdrawn — timing debated)",
+          "interpretation": "Documents the gun at the wall and the dispute; ED-7 records the canonical treatment (battery position held through the slice)."
+        }
+      ]
+    },
+    {
+      "id": "claim-webb-front-musketry",
+      "subjectId": "us-webb",
+      "property": "firing",
+      "value": "Webb's front delivered heavy musketry from the wall and crest as the column closed the final 200 yards",
+      "time": { "earliest": 8460, "preferred": 8580, "latest": 9000 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "haskell-1908",
+          "locator": "Angle crisis narrative",
+          "excerpt": "(the fire of the Angle line at the closing column)",
+          "interpretation": "Supports heavy musketry at the Angle; volley-vs-at-will discipline detail is not attested and stays reconstruction."
+        },
+        {
+          "sourceId": "mcdermott-1889",
+          "locator": "Angle narrative",
+          "excerpt": "(the 69th's fire from the wall)",
+          "interpretation": "Corroborates fire from the wall itself."
+        }
+      ]
+    },
+    {
+      "id": "claim-repulse-sealed",
+      "subjectId": "assault-column",
+      "property": "movement",
+      "value": "The penetration was sealed and the assault's survivors fell back toward Seminary Ridge or surrendered within roughly a quarter hour of the wall crossing",
+      "time": { "earliest": 8760, "preferred": 9000, "latest": 9600 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "haskell-1908",
+          "locator": "Angle crisis narrative",
+          "excerpt": "(the wall retaken, the field in front strewn with the repulsed)",
+          "interpretation": "Supports the seal and repulse; clock inferred."
+        },
+        {
+          "sourceId": "abt-map-set",
+          "locator": "3:45-4:15 PM sheet",
+          "excerpt": "(map fact, geometry not traced)",
+          "interpretation": "Modern frame for the repulse phase."
+        }
+      ]
+    },
+    {
+      "id": "claim-garnett-strength-decay-basis",
+      "subjectId": "csa-garnett",
+      "property": "casualty_timing",
+      "value": "Garnett's losses within the slice concentrate between the road fences and the wall (canister and converging musketry), peaking at the wall fight",
+      "time": { "earliest": 8280, "preferred": 8580, "latest": 9000 },
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "fuger-1904",
+          "locator": "1904 manuscript transcription",
+          "excerpt": "(immense gaps opened inside 200 yards)",
+          "interpretation": "The canister-gap attestation, applied to the brigade attacking Cushing's front."
+        },
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "confederate-headquarters/garnetts-brigade/",
+          "excerpt": "(941 total losses)",
+          "interpretation": "Aggregate total the timing distribution must integrate to; distribution itself is reconstruction."
+        }
+      ]
+    },
+    {
+      "id": "claim-71pa-cushing-crews",
+      "subjectId": "us-71pa",
+      "property": "command_action",
+      "value": "About 50 men of the 71st helped serve Cushing's guns as the column closed",
+      "time": { "earliest": 8400, "preferred": 8580, "latest": 8700 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "smith-71pa-or",
+          "locator": "via Stone Sentinels reproduction",
+          "excerpt": "(~50 men served the guns)",
+          "interpretation": "Documented infantry augmentation of the wrecked battery."
+        }
+      ]
+    },
+    {
+      "id": "claim-hall-59ny-bolt",
+      "subjectId": "us-hall",
+      "property": "command_action",
+      "value": "The 59th NY battalion bolted for the rear at the climax, uncovering Cowan's guns — the moment of the double canister",
+      "time": { "earliest": 8580, "preferred": 8680, "latest": 8760 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "stone-sentinels",
+          "locator": "59th New York page",
+          "excerpt": "(the battalion 'inexplicably bolted for the rear')",
+          "interpretation": "Sequences Hall's front's crisis; sets up claim-cowan-double-canister."
+        }
+      ]
+    },
+    {
+      "id": "claim-haskell-18000",
+      "subjectId": "assault-column",
+      "property": "strength",
+      "value": "Haskell's period estimate of 18,000 in the assault column — a flagged period overestimate; modern scholarship runs ~10,500-13,000",
+      "time": { "earliest": 7500, "preferred": 7500, "latest": 8400 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "haskell-1908",
+          "locator": "Gutenberg #33121",
+          "excerpt": "the arms of eighteen thousand men, barrel and bayonet, gleam in the sun, a sloping forest of flashing steel",
+          "interpretation": "Documented as what Haskell said, NOT as an engaged-strength estimate; encode-don't-adopt."
+        },
+        {
+          "sourceId": "encyclopedia-virginia",
+          "locator": "Numbers at Pickett's Charge",
+          "excerpt": "(total force between 12,000-13,000; consensus 'surprisingly hard to reach')",
+          "interpretation": "The modern range against which the period figure is flagged."
+        }
+      ]
+    }
+  ]
+}

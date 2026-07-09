@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "battle-atlas/claim.schema.json",
+  "title": "Atomic evidentiary claims",
+  "description": "One evidentiary proposition per claim (plan section 6.2). Times are seconds on the canonical battle clock (t=0 is 13:00 local; July 3 slice startTime 46800). Geometry is battlefield-local meters, x east / z north, identical to Unity world XZ. Cross-field rules (id uniqueness, earliest <= preferred <= latest, sourceId integrity, documented => at least one reference) are enforced by scripts/validate_reconstruction.py.",
+  "type": "object",
+  "required": ["claims"],
+  "additionalProperties": false,
+  "properties": {
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/claim" }
+    }
+  },
+  "$defs": {
+    "claim": {
+      "type": "object",
+      "required": ["id", "subjectId", "property", "value", "assessment", "references"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^claim-[a-z0-9][a-z0-9-]*$" },
+        "subjectId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A battle-file unit id, a landcover feature id, or a declared abstract subject (validated in code against the allowed list)."
+        },
+        "property": {
+          "enum": [
+            "position",
+            "time",
+            "strength",
+            "formation",
+            "movement",
+            "firing",
+            "obstacle_crossing",
+            "command_action",
+            "casualty_total",
+            "casualty_timing",
+            "land_cover",
+            "structure",
+            "weather"
+          ]
+        },
+        "value": { "type": "string", "minLength": 1 },
+        "time": {
+          "type": "object",
+          "required": ["earliest", "preferred", "latest"],
+          "additionalProperties": false,
+          "description": "Battle-clock envelope. earliest/latest bound the witness spread; preferred is the canonical reconstruction's choice (recorded, never a silent average).",
+          "properties": {
+            "earliest": { "type": "number", "minimum": 0 },
+            "preferred": { "type": "number", "minimum": 0 },
+            "latest": { "type": "number", "minimum": 0 }
+          }
+        },
+        "geometry": {
+          "type": "object",
+          "required": ["kind"],
+          "additionalProperties": false,
+          "properties": {
+            "kind": { "enum": ["point", "polyline", "featureRef"] },
+            "x": { "type": "number" },
+            "z": { "type": "number" },
+            "points": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": { "type": "number" }
+              }
+            },
+            "featureId": {
+              "type": "string",
+              "minLength": 1,
+              "description": "A data/landcover/landcover.json feature id; geometry lives in the traced feature."
+            },
+            "uncertaintyM": { "type": "number", "minimum": 0 }
+          },
+          "allOf": [
+            {
+              "if": { "properties": { "kind": { "const": "point" } } },
+              "then": { "required": ["x", "z", "uncertaintyM"] }
+            },
+            {
+              "if": { "properties": { "kind": { "const": "polyline" } } },
+              "then": { "required": ["points", "uncertaintyM"] }
+            },
+            {
+              "if": { "properties": { "kind": { "const": "featureRef" } } },
+              "then": { "required": ["featureId"] }
+            }
+          ]
+        },
+        "assessment": {
+          "enum": ["documented", "inferred", "unknown"],
+          "description": "documented = a named source attests this proposition; inferred = modern reconstruction/synthesis; unknown = no reliable record located (the claim records the gap)."
+        },
+        "references": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/reference" }
+        },
+        "note": { "type": "string", "minLength": 1 }
+      }
+    },
+    "reference": {
+      "type": "object",
+      "required": ["sourceId", "interpretation"],
+      "additionalProperties": false,
+      "properties": {
+        "sourceId": { "type": "string", "minLength": 1 },
+        "locator": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Page, plate, map region, URL path, or other pointer inside the source."
+        },
+        "excerpt": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300,
+          "description": "Short rights-compliant research excerpt; never a bulk quotation."
+        },
+        "interpretation": {
+          "type": "string",
+          "minLength": 1,
+          "description": "What this reference does and does not support (e.g. supports wall crossing, not exact clock time)."
+        }
+      }
+    }
+  }
+}
