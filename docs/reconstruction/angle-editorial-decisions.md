@@ -199,8 +199,9 @@ HABS has no Codori coverage — Trostle barn PA-1962 is the period analogue.
 
 **Decision:** the house is staged as a plain two-story gabled frame block,
 9.0 × 7.5 m, eaves 5.5 m, unpainted-light siding (color unknown), long side
-facing the road at (3996, 4652) — 15 m WNW of the barn anchor, beside the
-road's east fence. The barn is a Pennsylvania bank barn form after the
+facing the road at (4005, 4646) — 19 m WNW of the barn anchor, between
+barn and road (the landmark-anchor note places the untagged farmhouse
+10-20 m from the barn in the same farmyard). The barn is a Pennsylvania bank barn form after the
 Trostle HABS analogue scaled to the period photo's plain massing: 18 × 11 m,
 eaves 6.5 m, gable roof, no cupolas, long axis parallel to the road bearing.
 Both are explicit reconstruction-grade massing — documentary silhouettes, not
@@ -333,8 +334,7 @@ description and here.
   inference in the macro child tracks; V2 segments stay at brigade grain for
   the Confederate side, per the plan's unit list).
 - Fence-gap locations (still no source; the road surface/profile is now the
-  ED-11 reconstruction, and ditch geometry remains unmodeled) (ED-6;
-  ED-6).
+  ED-11 reconstruction, and ditch geometry remains unmodeled) (ED-6).
 - Wind (ED-10), exact fire discipline, and casualty cause splits beyond the
   broad `causeMix` classes — the causeMix fractions are reconstruction
   (`assessment: "reconstructed"`) informed by the canister/musketry claims,

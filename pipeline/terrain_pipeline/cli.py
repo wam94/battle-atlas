@@ -8,7 +8,8 @@ import math
 import sys
 from pathlib import Path
 
-from terrain_pipeline import config, crop, export, fetch, landcover, process, relief
+from terrain_pipeline import (
+    config, crop, environment, export, fetch, landcover, process, relief)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEM_CACHE = REPO_ROOT / "data" / "dem_cache"
@@ -58,6 +59,12 @@ def make_parser():
                         help="directory of cached DEM GeoTIFFs")
     crop_p.add_argument("--out", type=Path, default=CROP_DIR,
                         help="output directory for heightmap.raw/.json")
+    sub.add_parser(
+        "environment",
+        help="bake the Angle crop's sourced environment (plan §12 Phase 7): "
+        "road/fences/wall/trees/buildings/battery + ground-class splat into "
+        "data/heightmap_angle/environment.json (+_splat.raw)",
+    )
     return parser
 
 
@@ -185,6 +192,26 @@ def run_crop(args):
     print(f"wrote {raw_path} and {meta_path}")
 
 
+def run_environment():
+    crop_meta = CROP_DIR / "heightmap.json"
+    if not crop_meta.exists():
+        sys.exit(f"no {crop_meta}; run `crop` first")
+    if not LANDCOVER_JSON.exists():
+        sys.exit(f"no {LANDCOVER_JSON}; trace land cover in the tool and export it first")
+    battle = REPO_ROOT / "app" / "Assets" / "Battle" / "gettysburg-july3.json"
+    out_path, splat_path = environment.bake(
+        LANDCOVER_JSON, crop_meta, battle, CROP_DIR)
+    doc = json.loads(out_path.read_text())
+    print(
+        f"environment: road {len(doc['road']['centerline'])} samples, "
+        f"{len(doc['fences'])} fence runs, wall {len(doc['wall']['polyline'])} pts, "
+        f"{sum(len(g['trees']) for g in doc['groves'])} grove trees, "
+        f"{sum(len(o['trees']) for o in doc['orchards'])} orchard trees, "
+        f"{len(doc['buildings'])} buildings, {len(doc['battery']['guns'])} guns"
+    )
+    print(f"wrote {out_path} and {splat_path}")
+
+
 def main(argv=None):
     args = make_parser().parse_args(argv)
     if args.command == "fetch":
@@ -195,6 +222,8 @@ def main(argv=None):
         run_landcover()
     elif args.command == "crop":
         run_crop(args)
+    elif args.command == "environment":
+        run_environment()
     else:
         run_relief()
 
