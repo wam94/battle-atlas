@@ -1,7 +1,7 @@
 # ADR 0002 — Git LFS versus reproducible fetch, per asset class
 
 **Date:** 2026-07-08
-**Status:** Proposed (owner decides; nothing in Phase 2 enables LFS or restructures the repo)
+**Status:** Accepted (owner, 2026-07-08)
 **Plan of record:** `docs/superpowers/plans/2026-07-08-angle-reconstruction-v2.md` §12 Phase 2
 
 ## Context
@@ -12,13 +12,15 @@ see ADR 0001 decision 12 and plan §11), project-owned authored assets,
 gigabyte-scale offline render scratch, and encoded Soldier View media.
 Each class needs an explicit storage policy before the asset volume grows.
 
-**Checked fact:** this repository currently has **no git remote**
-(`git remote -v` is empty as of commit `702ad39`). Git LFS requires an
-LFS server (normally the hosting remote); with no remote, LFS-tracked
-files would live only in the local `.git/lfs` store and add tooling
-friction (`git lfs install` before clone/checkout) without providing any
-of its benefits today. A future GitHub remote would provide one, with
-quota limits (1 GB storage/bandwidth on the free tier).
+**Checked fact (amended at acceptance):** at proposal time this
+repository had no git remote (`git remote -v` empty as of `702ad39`).
+As of acceptance, a public GitHub remote exists
+(`github.com/wam94/battle-atlas`), so an LFS server is *available* —
+but both adoption thresholds below remain far from tripped (largest
+required asset ~600 KB vs the 10 MB trigger; `ThirdParty` ~1.7 MB vs
+100 MB), and GitHub LFS free-tier quotas (1 GB storage/bandwidth) argue
+for the same restraint. The recommendation is unchanged; only its
+"no remote" premise is superseded.
 
 The manifest validator (`reconstruction/scripts/validate_assets.py`)
 records a sha256 for every third-party download and for the imported
