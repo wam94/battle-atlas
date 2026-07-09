@@ -35,6 +35,12 @@ namespace BattleAtlas
         // its shader carries the deterministic vertex wave). Unset: flags
         // are skipped with a warning, everything else renders as before.
         public Material flagMaterial;
+        // material for the draped unit map-symbol ribbons (Assets/Battle/
+        // UnitSymbol.mat — its shader carries the provenance hatch and the
+        // echelon border band). Unset: warn once and fall back to
+        // unitMaterial — symbols keep rendering, minus the cartographic
+        // styling (the flagMaterial pattern).
+        public Material symbolMaterial;
         // transparent materials for the obscuration field (Assets/Battle/
         // Smoke.mat and Dust.mat, created + wired by the BattleAtlas/Setup
         // Obscuration menu item). Unset: ObscurationField warns once and
