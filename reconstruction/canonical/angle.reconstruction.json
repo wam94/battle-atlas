@@ -1,0 +1,932 @@
+{
+  "id": "angle-v2",
+  "note": "Canonical reconstruction of the Angle slice, t=8040..9000 (15:14-15:30). Segments cite claims (reconstruction/claims/angle.claims.json) and/or the named inference rules of docs/reconstruction/angle-editorial-decisions.md. Routes start from the existing macro track geometry (R-macro-track-geometry) and honor the traced obstacles in data/landcover/landcover.json.",
+  "slice": { "t0": 8040, "t1": 9000 },
+  "units": [
+    {
+      "unitId": "csa-garnett",
+      "arm": "infantry",
+      "startStrength": { "value": 1393, "basis": "macro track linear interpolation at t=8040 (1392.7), rounded (R-strength-interp-endpoints)", "claimIds": ["claim-strength-garnett"] }
+    },
+    {
+      "unitId": "csa-kemper",
+      "arm": "infantry",
+      "startStrength": { "value": 1492, "basis": "macro track linear interpolation at t=8040 (1491.8), rounded (R-strength-interp-endpoints)", "claimIds": ["claim-strength-kemper"] }
+    },
+    {
+      "unitId": "csa-armistead",
+      "arm": "infantry",
+      "startStrength": { "value": 1580, "basis": "macro track linear interpolation at t=8040, exact (R-strength-interp-endpoints)", "claimIds": ["claim-strength-armistead"] }
+    },
+    {
+      "unitId": "csa-fry",
+      "arm": "infantry",
+      "startStrength": { "value": 958, "basis": "macro track linear interpolation at t=8040 (957.5), rounded (R-strength-interp-endpoints)", "claimIds": ["claim-strength-fry"] }
+    },
+    {
+      "unitId": "us-webb",
+      "arm": "infantry",
+      "startStrength": { "value": 1162, "basis": "macro track linear interpolation at t=8040 (1161.7), rounded (R-strength-interp-endpoints)", "claimIds": ["claim-strength-webb"] }
+    },
+    {
+      "unitId": "us-69pa",
+      "arm": "infantry",
+      "startStrength": { "value": 242, "basis": "macro track linear interpolation at t=8040, exact (R-strength-interp-endpoints)", "claimIds": ["claim-strength-69pa"] }
+    },
+    {
+      "unitId": "us-71pa",
+      "arm": "infantry",
+      "startStrength": { "value": 313, "basis": "macro track linear interpolation at t=8040 (313.1), rounded (R-strength-interp-endpoints)", "claimIds": ["claim-strength-71pa"] }
+    },
+    {
+      "unitId": "us-72pa",
+      "arm": "infantry",
+      "startStrength": { "value": 418, "basis": "macro track linear interpolation at t=8040 (417.6), rounded (R-strength-interp-endpoints)", "claimIds": ["claim-strength-72pa"] }
+    },
+    {
+      "unitId": "us-btty-cushing",
+      "arm": "artillery",
+      "startStrength": { "value": 97, "basis": "macro track linear interpolation at t=8040 (97.1), rounded (R-strength-interp-endpoints)", "claimIds": ["claim-strength-cushing"] }
+    },
+    {
+      "unitId": "us-btty-cowan",
+      "arm": "artillery",
+      "startStrength": { "value": 105, "basis": "macro track linear interpolation at t=8040 (105.2), rounded (R-strength-interp-endpoints)", "claimIds": ["claim-cowan-position"] }
+    },
+    {
+      "unitId": "us-btty-arnold",
+      "arm": "artillery",
+      "startStrength": { "value": 119, "basis": "macro track linear interpolation at t=8040 (119.4), rounded (R-strength-interp-endpoints)", "claimIds": ["claim-arnold-position"] }
+    },
+    {
+      "unitId": "us-hall",
+      "arm": "infantry",
+      "startStrength": { "value": 807, "basis": "macro track linear interpolation at t=8040 (807.2), rounded (R-strength-interp-endpoints)", "claimIds": ["claim-hall-position"] }
+    },
+    {
+      "unitId": "us-stannard",
+      "arm": "infantry",
+      "startStrength": { "value": 1881, "basis": "macro track linear interpolation at t=8040 (1881.3), rounded (R-strength-interp-endpoints)", "claimIds": ["claim-stannard-position"] }
+    }
+  ],
+  "segments": [
+    {
+      "id": "seg-garnett-advance-to-road",
+      "unitId": "csa-garnett", "t0": 8040, "t1": 8150,
+      "action": "advance",
+      "route": [[3928.2, 4827.7], [4083, 4806.5]],
+      "formationFrom": "line", "formationTo": "line",
+      "paceProfile": "steady",
+      "claimIds": ["claim-stepoff-canonical", "claim-two-lines", "claim-road-crossing", "claim-fry-guide"],
+      "inferenceRules": ["R-macro-track-geometry", "R-linear-connective-motion"],
+      "note": "Final approach to the west road fence, dressing on Fry's command to the north."
+    },
+    {
+      "id": "seg-garnett-cross-west-fence",
+      "unitId": "csa-garnett", "t0": 8150, "t1": 8180,
+      "action": "cross_obstacle",
+      "route": [[4083, 4806.5], [4090, 4805]],
+      "obstacleIds": ["fence-emmitsburg-road-west"],
+      "formationFrom": "line", "formationTo": "line_disordered",
+      "paceProfile": "halt-compress-cross-redress",
+      "claimIds": ["claim-road-crossing", "claim-fence-west-structure", "claim-fence-gaps-unknown"],
+      "inferenceRules": ["R-route-fence-normal", "R-crossing-duration-drill"]
+    },
+    {
+      "id": "seg-garnett-dress-in-road",
+      "unitId": "csa-garnett", "t0": 8180, "t1": 8280,
+      "action": "dress_line",
+      "route": [[4090, 4805]],
+      "formationFrom": "line_disordered", "formationTo": "line",
+      "facingDeg": 95,
+      "claimIds": ["claim-road-crossing", "claim-cas-pause-at-fences"],
+      "inferenceRules": ["R-crossing-duration-drill"],
+      "paceProfile": "static",
+      "note": "The macro track holds the brigade at the road 8160-8280 (formation-dress pause, losses while halted)."
+    },
+    {
+      "id": "seg-garnett-cross-east-fences",
+      "unitId": "csa-garnett", "t0": 8280, "t1": 8340,
+      "action": "cross_obstacle",
+      "route": [[4090, 4805], [4110, 4809.3]],
+      "obstacleIds": ["fence-emmitsburg-road-east", "fence-post-and-rail-west-of-road"],
+      "formationFrom": "line", "formationTo": "line_disordered",
+      "paceProfile": "halt-compress-cross-redress",
+      "claimIds": ["claim-road-crossing", "claim-fence-east-structure", "claim-fence-gaps-unknown"],
+      "inferenceRules": ["R-route-fence-normal", "R-crossing-duration-drill"],
+      "note": "The traced post-and-rail line east of the road (fence-post-and-rail-west-of-road) lies immediately beyond the east road fence on this frontage; one authored passage crosses both."
+    },
+    {
+      "id": "seg-garnett-advance-to-wall",
+      "unitId": "csa-garnett", "t0": 8340, "t1": 8580,
+      "action": "advance",
+      "route": [[4110, 4809.3], [4380, 4868]],
+      "formationFrom": "line_disordered", "formationTo": "line",
+      "paceProfile": "steady",
+      "claimIds": ["claim-garnett-death", "claim-cas-canister-gaps", "claim-garnett-strength-decay-basis", "claim-field-angle-landcover"],
+      "inferenceRules": ["R-linear-connective-motion", "R-macro-track-geometry"],
+      "note": "Across the open final-assault field under canister; line redressed on the move. Ends ~20 yards from the Angle where Garnett fell."
+    },
+    {
+      "id": "seg-garnett-take-canister-at-wall",
+      "unitId": "csa-garnett", "t0": 8580, "t1": 8700,
+      "action": "take_canister",
+      "route": [[4380, 4868], [4390, 4870]],
+      "formationFrom": "line", "formationTo": "scattered",
+      "paceProfile": "slowing",
+      "claimIds": ["claim-garnett-death", "claim-cushing-canister", "claim-cas-canister-gaps", "claim-webb-front-musketry"],
+      "inferenceRules": ["R-macro-track-geometry"],
+      "note": "The brigade shatters in front of the wall, mixing with Armistead's arriving line; it never crosses as a body."
+    },
+    {
+      "id": "seg-garnett-fall-back",
+      "unitId": "csa-garnett", "t0": 8700, "t1": 9000,
+      "action": "fall_back",
+      "route": [[4390, 4870], [4200, 4850]],
+      "formationFrom": "scattered", "formationTo": "routed",
+      "paceProfile": "steady",
+      "claimIds": ["claim-repulse-sealed", "claim-cas-garnett-total"],
+      "inferenceRules": ["R-linear-connective-motion"],
+      "note": "Survivors stream back toward the road; the route stays east of the traced fences within the slice."
+    },
+    {
+      "id": "seg-kemper-advance-to-road",
+      "unitId": "csa-kemper", "t0": 8040, "t1": 8098,
+      "action": "advance",
+      "route": [[3853.6, 4626.8], [3926, 4621.3]],
+      "formationFrom": "line", "formationTo": "line",
+      "paceProfile": "steady",
+      "claimIds": ["claim-stepoff-canonical", "claim-two-lines", "claim-road-crossing"],
+      "inferenceRules": ["R-macro-track-geometry", "R-linear-connective-motion"]
+    },
+    {
+      "id": "seg-kemper-cross-road",
+      "unitId": "csa-kemper", "t0": 8098, "t1": 8160,
+      "action": "cross_obstacle",
+      "route": [[3926, 4621.3], [4010, 4615]],
+      "obstacleIds": ["fence-emmitsburg-road-west", "fence-emmitsburg-road-east"],
+      "formationFrom": "line", "formationTo": "line_disordered",
+      "paceProfile": "halt-compress-cross-redress",
+      "claimIds": ["claim-road-crossing", "claim-fence-west-structure", "claim-fence-east-structure", "claim-fence-gaps-unknown"],
+      "inferenceRules": ["R-route-fence-normal", "R-crossing-duration-drill"],
+      "note": "Passage of the fenced road just south of the Codori buildings, including the push to the macro track's east-side position."
+    },
+    {
+      "id": "seg-kemper-dress-at-road",
+      "unitId": "csa-kemper", "t0": 8160, "t1": 8280,
+      "action": "dress_line",
+      "route": [[4010, 4615]],
+      "formationFrom": "line_disordered", "formationTo": "line",
+      "facingDeg": 80,
+      "paceProfile": "static",
+      "claimIds": ["claim-road-crossing"],
+      "inferenceRules": ["R-crossing-duration-drill", "R-macro-track-geometry"],
+      "note": "Macro track holds the brigade east of the road 8160-8280 while the division redresses."
+    },
+    {
+      "id": "seg-kemper-oblique-left",
+      "unitId": "csa-kemper", "t0": 8280, "t1": 8400,
+      "action": "oblique",
+      "route": [[4010, 4615], [4130, 4670]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 60,
+      "claimIds": ["claim-kemper-oblique"],
+      "inferenceRules": ["R-linear-connective-motion", "R-macro-track-geometry"],
+      "paceProfile": "steady",
+      "note": "The left oblique toward the Angle, opening the brigade's right flank to Stannard's wheeled regiments."
+    },
+    {
+      "id": "seg-kemper-advance-on-angle",
+      "unitId": "csa-kemper", "t0": 8400, "t1": 8640,
+      "action": "advance",
+      "route": [[4130, 4670], [4370, 4790]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 60,
+      "paceProfile": "steady",
+      "claimIds": ["claim-kemper-oblique", "claim-kemper-wounded", "claim-cas-canister-gaps"],
+      "inferenceRules": ["R-linear-connective-motion", "R-macro-track-geometry"],
+      "note": "Closing on the Union line south of the Angle under front and flank fire; Kemper falls near the segment's end."
+    },
+    {
+      "id": "seg-kemper-waver",
+      "unitId": "csa-kemper", "t0": 8640, "t1": 8700,
+      "action": "waver",
+      "route": [[4370, 4790], [4375, 4795]],
+      "formationFrom": "line", "formationTo": "scattered",
+      "facingDeg": 60,
+      "paceProfile": "slowing",
+      "claimIds": ["claim-kemper-wounded", "claim-rorty-overrun"],
+      "inferenceRules": ["R-macro-track-geometry"],
+      "note": "Command down, crushed between front and flank fire; the deepest party briefly reaches Rorty's guns."
+    },
+    {
+      "id": "seg-kemper-fall-back",
+      "unitId": "csa-kemper", "t0": 8700, "t1": 9000,
+      "action": "fall_back",
+      "route": [[4375, 4795], [4150, 4720]],
+      "formationFrom": "scattered", "formationTo": "routed",
+      "paceProfile": "steady",
+      "claimIds": ["claim-repulse-sealed", "claim-cas-kemper-total"],
+      "inferenceRules": ["R-linear-connective-motion"]
+    },
+    {
+      "id": "seg-armistead-advance-support",
+      "unitId": "csa-armistead", "t0": 8040, "t1": 8280,
+      "action": "advance",
+      "route": [[3761.5, 4823.1], [4060, 4820]],
+      "formationFrom": "line", "formationTo": "line",
+      "paceProfile": "steady",
+      "claimIds": ["claim-stepoff-canonical", "claim-two-lines", "claim-armistead-start"],
+      "inferenceRules": ["R-macro-track-geometry", "R-linear-connective-motion"],
+      "note": "Second line, ~200 m behind Garnett."
+    },
+    {
+      "id": "seg-armistead-approach-road",
+      "unitId": "csa-armistead", "t0": 8280, "t1": 8312,
+      "action": "advance",
+      "route": [[4060, 4820], [4095, 4823.9]],
+      "formationFrom": "line", "formationTo": "line",
+      "paceProfile": "steady",
+      "claimIds": ["claim-road-crossing"],
+      "inferenceRules": ["R-macro-track-geometry", "R-linear-connective-motion"]
+    },
+    {
+      "id": "seg-armistead-cross-road",
+      "unitId": "csa-armistead", "t0": 8312, "t1": 8400,
+      "action": "cross_obstacle",
+      "route": [[4095, 4823.9], [4120, 4826.6]],
+      "obstacleIds": ["fence-emmitsburg-road-west", "fence-emmitsburg-road-east", "fence-post-and-rail-west-of-road"],
+      "formationFrom": "line", "formationTo": "line_disordered",
+      "paceProfile": "halt-compress-cross-redress",
+      "claimIds": ["claim-road-crossing", "claim-fence-west-structure", "claim-fence-east-structure", "claim-fence-gaps-unknown"],
+      "inferenceRules": ["R-route-fence-normal", "R-crossing-duration-drill"],
+      "note": "Second line passes the road without the first line's long dress pause; three traced lines crossed on this frontage."
+    },
+    {
+      "id": "seg-armistead-advance-through-wreck",
+      "unitId": "csa-armistead", "t0": 8400, "t1": 8640,
+      "action": "advance",
+      "route": [[4120, 4826.6], [4385, 4860]],
+      "formationFrom": "line_disordered", "formationTo": "line",
+      "paceProfile": "steady",
+      "claimIds": ["claim-cas-canister-gaps", "claim-armistead-crossed-wall", "claim-field-angle-landcover"],
+      "inferenceRules": ["R-linear-connective-motion", "R-macro-track-geometry"],
+      "note": "Closes on the wall through the wreck of Garnett's line; endpoint anchored by the documented crossing point."
+    },
+    {
+      "id": "seg-armistead-breach",
+      "unitId": "csa-armistead", "t0": 8640, "t1": 8700,
+      "action": "breach",
+      "route": [[4385, 4860], [4415, 4855]],
+      "obstacleIds": ["wall-angle-webb-front"],
+      "formationFrom": "line", "formationTo": "scattered",
+      "paceProfile": "surge",
+      "claimIds": ["claim-armistead-crossed-wall", "claim-armistead-cold-steel", "claim-armistead-party-strength", "claim-wall-structure"],
+      "inferenceRules": ["R-crossing-duration-drill"],
+      "note": "The documented crossing: hat on sword point, 'Boys, give them the cold steel!' — ~150 men over the wall into Cushing's battery."
+    },
+    {
+      "id": "seg-armistead-fall-back",
+      "unitId": "csa-armistead", "t0": 8700, "t1": 9000,
+      "action": "fall_back",
+      "route": [[4415, 4855], [4250, 4850]],
+      "obstacleIds": ["wall-angle-webb-front"],
+      "formationFrom": "scattered", "formationTo": "routed",
+      "paceProfile": "steady",
+      "claimIds": ["claim-armistead-fell", "claim-repulse-sealed", "claim-cas-armistead-total"],
+      "inferenceRules": ["R-retreat-recross", "R-linear-connective-motion"],
+      "note": "ED-8: the centroid follows the surviving unwounded body back west across the wall; the crossed party's fate (Armistead fallen under the guns, dead/wounded/captured) rides the casualty profile."
+    },
+    {
+      "id": "seg-fry-advance-to-road",
+      "unitId": "csa-fry", "t0": 8040, "t1": 8318,
+      "action": "advance",
+      "route": [[3860, 5049.3], [4184, 5012.9]],
+      "formationFrom": "line", "formationTo": "line",
+      "paceProfile": "steady",
+      "claimIds": ["claim-fry-guide", "claim-column-organization", "claim-two-lines"],
+      "inferenceRules": ["R-macro-track-geometry", "R-linear-connective-motion"],
+      "note": "The guide brigade converges from the north so both divisions arrive at the works together."
+    },
+    {
+      "id": "seg-fry-cross-road",
+      "unitId": "csa-fry", "t0": 8318, "t1": 8430,
+      "action": "cross_obstacle",
+      "route": [[4184, 5012.9], [4270, 4977]],
+      "obstacleIds": ["fence-post-and-rail-west-of-road", "fence-emmitsburg-road-west", "fence-emmitsburg-road-east"],
+      "formationFrom": "line", "formationTo": "line_disordered",
+      "paceProfile": "halt-compress-cross-redress",
+      "claimIds": ["claim-road-crossing", "claim-fence-west-structure", "claim-fence-east-structure", "claim-fence-gaps-unknown"],
+      "inferenceRules": ["R-route-fence-normal", "R-crossing-duration-drill"],
+      "note": "On this frontage the traced post-and-rail line lies WEST of the road fences; one authored passage crosses all three."
+    },
+    {
+      "id": "seg-fry-close-on-works",
+      "unitId": "csa-fry", "t0": 8430, "t1": 8580,
+      "action": "advance",
+      "route": [[4270, 4977], [4385, 4915]],
+      "formationFrom": "line_disordered", "formationTo": "line",
+      "paceProfile": "steady",
+      "claimIds": ["claim-fry-colors-at-works", "claim-cas-canister-gaps"],
+      "inferenceRules": ["R-linear-connective-motion", "R-macro-track-geometry"]
+    },
+    {
+      "id": "seg-fry-wall-fight",
+      "unitId": "csa-fry", "t0": 8580, "t1": 8700,
+      "action": "fire_independent",
+      "route": [[4385, 4915], [4390, 4918]],
+      "formationFrom": "line", "formationTo": "scattered",
+      "facingDeg": 100,
+      "paceProfile": "slowing",
+      "claimIds": ["claim-fry-colors-at-works"],
+      "inferenceRules": ["R-macro-track-geometry", "R-fire-window-from-events"],
+      "note": "All five colors at the works north of the inner angle (ED-5); no crossing east of the wall is authored for this brigade."
+    },
+    {
+      "id": "seg-fry-fall-back",
+      "unitId": "csa-fry", "t0": 8700, "t1": 9000,
+      "action": "fall_back",
+      "route": [[4390, 4918], [4200, 4950]],
+      "obstacleIds": ["fence-emmitsburg-road-east"],
+      "formationFrom": "scattered", "formationTo": "routed",
+      "paceProfile": "steady",
+      "claimIds": ["claim-repulse-sealed", "claim-strength-fry"],
+      "inferenceRules": ["R-retreat-recross", "R-linear-connective-motion"],
+      "note": "The repulse recrosses the east road fence within the slice (authored); the west fence is reached just after t=9000."
+    },
+    {
+      "id": "seg-webb-hold",
+      "unitId": "us-webb", "t0": 8040, "t1": 8460,
+      "action": "hold",
+      "route": [[4410, 4850]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-webb-at-angle", "claim-strength-webb"],
+      "inferenceRules": ["R-hold-position-drift"]
+    },
+    {
+      "id": "seg-webb-fire-at-approach",
+      "unitId": "us-webb", "t0": 8460, "t1": 8580,
+      "action": "fire_by_rank",
+      "route": [[4410, 4850]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-webb-front-musketry", "claim-webb-at-angle"],
+      "inferenceRules": ["R-fire-window-from-events"]
+    },
+    {
+      "id": "seg-webb-crisis",
+      "unitId": "us-webb", "t0": 8580, "t1": 8700,
+      "action": "fire_independent",
+      "route": [[4410, 4850], [4405, 4855]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "slowing",
+      "claimIds": ["claim-webb-front-musketry", "claim-webb-wounded"],
+      "inferenceRules": ["R-hold-position-drift", "R-fire-window-from-events"]
+    },
+    {
+      "id": "seg-webb-seal",
+      "unitId": "us-webb", "t0": 8700, "t1": 9000,
+      "action": "close_gap",
+      "route": [[4405, 4855], [4405, 4860]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "steady",
+      "claimIds": ["claim-webb-wounded", "claim-repulse-sealed", "claim-cas-webb-total"],
+      "inferenceRules": ["R-hold-position-drift"],
+      "note": "The brigade crowds into the penetration and retakes the wall line."
+    },
+    {
+      "id": "seg-69pa-hold",
+      "unitId": "us-69pa", "t0": 8040, "t1": 8460,
+      "action": "hold",
+      "route": [[4402, 4830]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-69pa-position", "claim-strength-69pa"],
+      "inferenceRules": ["R-hold-position-drift"]
+    },
+    {
+      "id": "seg-69pa-fire-at-approach",
+      "unitId": "us-69pa", "t0": 8460, "t1": 8580,
+      "action": "fire_by_rank",
+      "route": [[4402, 4830]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-69pa-position", "claim-webb-front-musketry"],
+      "inferenceRules": ["R-fire-window-from-events"],
+      "note": "claim-webb-front-musketry is the parent-brigade fire claim; the 69th is Webb's wall regiment."
+    },
+    {
+      "id": "seg-69pa-wall-crisis",
+      "unitId": "us-69pa", "t0": 8580, "t1": 8700,
+      "action": "fire_independent",
+      "route": [[4402, 4830]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-69pa-position", "claim-69pa-refused-flank"],
+      "inferenceRules": ["R-fire-window-from-events"]
+    },
+    {
+      "id": "seg-69pa-melee",
+      "unitId": "us-69pa", "t0": 8700, "t1": 9000,
+      "action": "fire_independent",
+      "route": [[4402, 4830]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-69pa-refused-flank", "claim-69pa-position"],
+      "inferenceRules": ["R-hold-position-drift"],
+      "note": "Cos. I/A refused, F enveloped, D at clubbed muskets — the regiment never leaves the wall."
+    },
+    {
+      "id": "seg-71pa-hold",
+      "unitId": "us-71pa", "t0": 8040, "t1": 8460,
+      "action": "hold",
+      "route": [[4400, 4868]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-71pa-position", "claim-strength-71pa"],
+      "inferenceRules": ["R-hold-position-drift"]
+    },
+    {
+      "id": "seg-71pa-fire-at-approach",
+      "unitId": "us-71pa", "t0": 8460, "t1": 8580,
+      "action": "fire_by_rank",
+      "route": [[4400, 4868]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-71pa-position", "claim-71pa-cushing-crews"],
+      "inferenceRules": ["R-fire-window-from-events"]
+    },
+    {
+      "id": "seg-71pa-fall-back",
+      "unitId": "us-71pa", "t0": 8580, "t1": 8700,
+      "action": "fall_back",
+      "route": [[4400, 4868], [4448, 4866]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "steady",
+      "claimIds": ["claim-71pa-fallback"],
+      "inferenceRules": ["R-macro-track-geometry"],
+      "note": "Step one of the documented two-step: back from the outer angle rather than be overrun. Facing stays toward the enemy."
+    },
+    {
+      "id": "seg-71pa-return",
+      "unitId": "us-71pa", "t0": 8700, "t1": 9000,
+      "action": "close_gap",
+      "route": [[4448, 4866], [4408, 4866]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "steady",
+      "claimIds": ["claim-71pa-fallback", "claim-repulse-sealed"],
+      "inferenceRules": ["R-macro-track-geometry"],
+      "note": "Step two: returns toward the wall as the penetration is sealed."
+    },
+    {
+      "id": "seg-72pa-hold-crest",
+      "unitId": "us-72pa", "t0": 8040, "t1": 8580,
+      "action": "hold",
+      "route": [[4457.7, 4856.1], [4454, 4856.7]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-72pa-crest", "claim-strength-72pa"],
+      "inferenceRules": ["R-hold-position-drift"],
+      "note": "In reserve behind the crest (canonical reading, ED-4)."
+    },
+    {
+      "id": "seg-72pa-crest-fire",
+      "unitId": "us-72pa", "t0": 8580, "t1": 8700,
+      "action": "fire_by_rank",
+      "route": [[4454, 4856.7], [4452, 4857]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-72pa-crest", "claim-72pa-webb-order"],
+      "inferenceRules": ["R-fire-window-from-events"],
+      "note": "CONTESTED: fires from the crest, does not advance at Webb's order (counter-reading recorded on claim-72pa-wall-counter, not adopted)."
+    },
+    {
+      "id": "seg-72pa-fire-and-edge-forward",
+      "unitId": "us-72pa", "t0": 8700, "t1": 9000,
+      "action": "fire_by_rank",
+      "route": [[4452, 4857], [4432, 4858.5]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "steady",
+      "claimIds": ["claim-72pa-crest", "claim-72pa-webb-order"],
+      "inferenceRules": ["R-macro-track-geometry"],
+      "note": "Edges toward the wall under fire; the final advance to the wall itself falls after the slice (t~9300)."
+    },
+    {
+      "id": "seg-cushing-hold",
+      "unitId": "us-btty-cushing", "t0": 8040, "t1": 8400,
+      "action": "hold",
+      "route": [[4398, 4880]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-cushing-position", "claim-cushing-guns-to-wall", "claim-cushing-earlier-wounds", "claim-strength-cushing"],
+      "inferenceRules": ["R-hold-position-drift"],
+      "note": "Two serviceable guns at the wall (displaced there before the slice), four wrecks at the crest; Cushing already wounded and refusing the rear."
+    },
+    {
+      "id": "seg-cushing-canister",
+      "unitId": "us-btty-cushing", "t0": 8400, "t1": 8700,
+      "action": "fire_independent",
+      "route": [[4398, 4880]],
+      "formationFrom": "line", "formationTo": "scattered",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-cushing-canister", "claim-cushing-death", "claim-smoke-visibility"],
+      "inferenceRules": ["R-fire-window-from-events"],
+      "note": "Double and treble canister into the closing column; Cushing killed near the window's end; Armistead's party lands among the guns at t~8700."
+    },
+    {
+      "id": "seg-cushing-overrun-and-retaken",
+      "unitId": "us-btty-cushing", "t0": 8700, "t1": 9000,
+      "action": "hold",
+      "route": [[4398, 4880]],
+      "formationFrom": "scattered", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-cushing-position", "claim-cas-cushing-total"],
+      "inferenceRules": ["R-hold-position-drift"],
+      "note": "Battery effectively destroyed; position briefly overrun (a Confederate flag over one gun per claim-webb-flag-over-gun) and retaken as the penetration is sealed."
+    },
+    {
+      "id": "seg-cowan-hold",
+      "unitId": "us-btty-cowan", "t0": 8040, "t1": 8400,
+      "action": "hold",
+      "route": [[4450, 4770]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-cowan-position"],
+      "inferenceRules": ["R-hold-position-drift"],
+      "note": "Five guns south of the Copse ~100 ft from the wall, one gun north beside the 69th (documented split; centroid authored at the five-gun position)."
+    },
+    {
+      "id": "seg-cowan-canister",
+      "unitId": "us-btty-cowan", "t0": 8400, "t1": 9000,
+      "action": "fire_independent",
+      "route": [[4450, 4770]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-cowan-double-canister", "claim-cowan-position"],
+      "inferenceRules": ["R-fire-window-from-events"],
+      "note": "Window culminates in the double canister at ten yards (~t=8700) after the 59th NY bolted."
+    },
+    {
+      "id": "seg-arnold-hold",
+      "unitId": "us-btty-arnold", "t0": 8040, "t1": 8400,
+      "action": "hold",
+      "route": [[4425, 4955]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 260,
+      "paceProfile": "static",
+      "claimIds": ["claim-arnold-position"],
+      "inferenceRules": ["R-hold-position-drift"]
+    },
+    {
+      "id": "seg-arnold-canister",
+      "unitId": "us-btty-arnold", "t0": 8400, "t1": 9000,
+      "action": "fire_independent",
+      "route": [[4425, 4955]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 260,
+      "paceProfile": "static",
+      "claimIds": ["claim-arnold-canister", "claim-arnold-position"],
+      "inferenceRules": ["R-fire-window-from-events"],
+      "note": "ED-7: the debated partial withdrawal is not authored; the battery holds its traced position with the wall gun's fire carrying the claim."
+    },
+    {
+      "id": "seg-hall-hold",
+      "unitId": "us-hall", "t0": 8040, "t1": 8340,
+      "action": "hold",
+      "route": [[4417.2, 4766.8], [4416.2, 4772.8]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-hall-position"],
+      "inferenceRules": ["R-hold-position-drift"]
+    },
+    {
+      "id": "seg-hall-wall-fire",
+      "unitId": "us-hall", "t0": 8340, "t1": 8700,
+      "action": "fire_by_rank",
+      "route": [[4416.2, 4772.8], [4415, 4780]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-hall-wall-fire", "claim-hall-59ny-bolt"],
+      "inferenceRules": ["R-fire-window-from-events", "R-hold-position-drift"],
+      "note": "The wall line engages the approach; the 59th NY's bolt near the window's end uncovers Cowan."
+    },
+    {
+      "id": "seg-hall-shift-to-copse",
+      "unitId": "us-hall", "t0": 8700, "t1": 9000,
+      "action": "close_gap",
+      "route": [[4415, 4780], [4415, 4775]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "steady",
+      "claimIds": ["claim-hall-shift", "claim-repulse-sealed"],
+      "inferenceRules": ["R-hold-position-drift"],
+      "note": "Regiments crowd right/north into the melee at the Copse and seal the penetration."
+    },
+    {
+      "id": "seg-stannard-hold",
+      "unitId": "us-stannard", "t0": 8040, "t1": 8100,
+      "action": "hold",
+      "route": [[4300, 4470]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 260,
+      "paceProfile": "static",
+      "claimIds": ["claim-stannard-position"],
+      "inferenceRules": ["R-hold-position-drift"]
+    },
+    {
+      "id": "seg-stannard-change-front",
+      "unitId": "us-stannard", "t0": 8100, "t1": 8400,
+      "action": "oblique",
+      "route": [[4300, 4470], [4250, 4560]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 260,
+      "facingToDeg": 15,
+      "paceProfile": "steady",
+      "claimIds": ["claim-stannard-wheel"],
+      "inferenceRules": ["R-facing-from-route", "R-macro-track-geometry"],
+      "note": "'Change front, forward on first company' — authored as the closest available action (oblique) with an explicit facing wheel 260->15."
+    },
+    {
+      "id": "seg-stannard-flank-fire",
+      "unitId": "us-stannard", "t0": 8400, "t1": 9000,
+      "action": "fire_independent",
+      "route": [[4250, 4560], [4270, 4530]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 15,
+      "paceProfile": "static",
+      "claimIds": ["claim-stannard-flank-fire", "claim-stannard-wheel"],
+      "inferenceRules": ["R-fire-window-from-events", "R-hold-position-drift"],
+      "note": "Deadly fire into Pickett's right flank at ~sixty yards; slow drift back toward the original front late in the window."
+    }
+  ],
+  "casualtyProfiles": [
+    {
+      "id": "cas-garnett-approach", "unitId": "csa-garnett", "t0": 8040, "t1": 8160, "count": 13,
+      "intensityCurve": "uniform", "causeMix": { "shell": 0.7, "unknown": 0.3 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-cas-garnett-total", "claim-garnett-strength-decay-basis"],
+      "note": "Long-range artillery on the advance to the road; count = macro keyframe delta (R-strength-interp-endpoints)."
+    },
+    {
+      "id": "cas-garnett-at-fences", "unitId": "csa-garnett", "t0": 8160, "t1": 8280, "count": 20,
+      "intensityCurve": "uniform", "causeMix": { "shell": 0.5, "canister": 0.3, "unknown": 0.2 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-cas-pause-at-fences", "claim-cas-garnett-total"]
+    },
+    {
+      "id": "cas-garnett-final-approach", "unitId": "csa-garnett", "t0": 8280, "t1": 8580, "count": 310,
+      "intensityCurve": "rising", "causeMix": { "musketry": 0.45, "canister": 0.45, "unknown": 0.1 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-cas-canister-gaps", "claim-garnett-strength-decay-basis", "claim-cas-garnett-total"],
+      "note": "Rising into canister range per claim-cas-canister-gaps."
+    },
+    {
+      "id": "cas-garnett-wall-fight", "unitId": "csa-garnett", "t0": 8580, "t1": 8700, "count": 200,
+      "intensityCurve": "spike", "causeMix": { "musketry": 0.5, "canister": 0.4, "unknown": 0.1 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-garnett-death", "claim-cas-canister-gaps", "claim-cas-garnett-total"]
+    },
+    {
+      "id": "cas-garnett-repulse", "unitId": "csa-garnett", "t0": 8700, "t1": 9000, "count": 150,
+      "intensityCurve": "falling", "causeMix": { "musketry": 0.4, "canister": 0.1, "unknown": 0.5 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-repulse-sealed", "claim-cas-garnett-total"],
+      "note": "Unknown-heavy: the brigade's 539 missing (mostly captured) concentrate in the repulse."
+    },
+    {
+      "id": "cas-kemper-approach", "unitId": "csa-kemper", "t0": 8040, "t1": 8160, "count": 12,
+      "intensityCurve": "uniform", "causeMix": { "shell": 0.7, "unknown": 0.3 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-cas-kemper-total"]
+    },
+    {
+      "id": "cas-kemper-at-road", "unitId": "csa-kemper", "t0": 8160, "t1": 8280, "count": 10,
+      "intensityCurve": "uniform", "causeMix": { "shell": 0.5, "canister": 0.3, "unknown": 0.2 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-cas-kemper-total"]
+    },
+    {
+      "id": "cas-kemper-oblique", "unitId": "csa-kemper", "t0": 8280, "t1": 8400, "count": 90,
+      "intensityCurve": "rising", "causeMix": { "musketry": 0.55, "canister": 0.25, "shell": 0.1, "unknown": 0.1 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-kemper-oblique", "claim-cas-kemper-total"],
+      "note": "Flank exposure begins during the oblique; Stannard's documented fire window opens at its end."
+    },
+    {
+      "id": "cas-kemper-flank-and-front", "unitId": "csa-kemper", "t0": 8400, "t1": 8640, "count": 230,
+      "intensityCurve": "rising", "causeMix": { "musketry": 0.6, "canister": 0.3, "unknown": 0.1 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-stannard-flank-fire", "claim-cas-canister-gaps", "claim-cas-kemper-total"]
+    },
+    {
+      "id": "cas-kemper-waver", "unitId": "csa-kemper", "t0": 8640, "t1": 8700, "count": 50,
+      "intensityCurve": "spike", "causeMix": { "musketry": 0.7, "canister": 0.2, "unknown": 0.1 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-kemper-wounded", "claim-cas-kemper-total"]
+    },
+    {
+      "id": "cas-kemper-repulse", "unitId": "csa-kemper", "t0": 8700, "t1": 9000, "count": 150,
+      "intensityCurve": "falling", "causeMix": { "musketry": 0.4, "unknown": 0.6 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-repulse-sealed", "claim-cas-kemper-total"],
+      "note": "Unknown-heavy: 317 missing concentrate in the repulse."
+    },
+    {
+      "id": "cas-armistead-support-advance", "unitId": "csa-armistead", "t0": 8040, "t1": 8280, "count": 20,
+      "intensityCurve": "uniform", "causeMix": { "shell": 0.7, "unknown": 0.3 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-cas-armistead-total"]
+    },
+    {
+      "id": "cas-armistead-closing", "unitId": "csa-armistead", "t0": 8280, "t1": 8640, "count": 310,
+      "intensityCurve": "rising", "causeMix": { "musketry": 0.45, "canister": 0.45, "unknown": 0.1 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-cas-canister-gaps", "claim-cas-armistead-total"]
+    },
+    {
+      "id": "cas-armistead-breach", "unitId": "csa-armistead", "t0": 8640, "t1": 8700, "count": 200,
+      "intensityCurve": "spike", "causeMix": { "musketry": 0.55, "canister": 0.35, "unknown": 0.1 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-armistead-crossed-wall", "claim-cushing-canister", "claim-cas-armistead-total"]
+    },
+    {
+      "id": "cas-armistead-repulse", "unitId": "csa-armistead", "t0": 8700, "t1": 9000, "count": 350,
+      "intensityCurve": "falling", "causeMix": { "musketry": 0.35, "unknown": 0.65 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-armistead-fell", "claim-armistead-party-strength", "claim-repulse-sealed", "claim-cas-armistead-total"],
+      "note": "Unknown-heaviest of the brigades: 643 missing — the crossed party and the men pinned at the wall are captured as the penetration is sealed (ED-8)."
+    },
+    {
+      "id": "cas-fry-approach", "unitId": "csa-fry", "t0": 8040, "t1": 8340, "count": 38,
+      "intensityCurve": "uniform", "causeMix": { "shell": 0.6, "musketry": 0.2, "unknown": 0.2 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-strength-fry"]
+    },
+    {
+      "id": "cas-fry-closing", "unitId": "csa-fry", "t0": 8340, "t1": 8580, "count": 220,
+      "intensityCurve": "rising", "causeMix": { "musketry": 0.5, "canister": 0.4, "unknown": 0.1 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-cas-canister-gaps", "claim-strength-fry"]
+    },
+    {
+      "id": "cas-fry-wall-fight", "unitId": "csa-fry", "t0": 8580, "t1": 8700, "count": 60,
+      "intensityCurve": "spike", "causeMix": { "musketry": 0.7, "canister": 0.2, "unknown": 0.1 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-fry-colors-at-works", "claim-strength-fry"]
+    },
+    {
+      "id": "cas-fry-repulse", "unitId": "csa-fry", "t0": 8700, "t1": 9000, "count": 160,
+      "intensityCurve": "falling", "causeMix": { "musketry": 0.4, "unknown": 0.6 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-repulse-sealed", "claim-strength-fry"],
+      "note": "517 missing across the day concentrate here for the slice."
+    },
+    {
+      "id": "cas-webb-under-approach-fire", "unitId": "us-webb", "t0": 8040, "t1": 8580, "count": 12,
+      "intensityCurve": "uniform", "causeMix": { "shell": 0.4, "musketry": 0.4, "unknown": 0.2 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-cas-webb-total"]
+    },
+    {
+      "id": "cas-webb-crisis", "unitId": "us-webb", "t0": 8580, "t1": 8700, "count": 150,
+      "intensityCurve": "spike", "causeMix": { "musketry": 0.85, "unknown": 0.15 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-webb-wounded", "claim-cas-webb-total"]
+    },
+    {
+      "id": "cas-webb-seal", "unitId": "us-webb", "t0": 8700, "t1": 9000, "count": 180,
+      "intensityCurve": "falling", "causeMix": { "musketry": 0.85, "unknown": 0.15 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-repulse-sealed", "claim-cas-webb-total"]
+    },
+    {
+      "id": "cas-69pa-approach", "unitId": "us-69pa", "t0": 8040, "t1": 8580, "count": 2,
+      "intensityCurve": "uniform", "causeMix": { "shell": 0.5, "musketry": 0.3, "unknown": 0.2 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-cas-webb-total"],
+      "note": "Brigade losses (490) are not split by regiment in the corpus; regimental decay is reconstructed from the macro child track."
+    },
+    {
+      "id": "cas-69pa-crisis", "unitId": "us-69pa", "t0": 8580, "t1": 8700, "count": 40,
+      "intensityCurve": "spike", "causeMix": { "musketry": 0.9, "unknown": 0.1 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-69pa-refused-flank", "claim-cas-webb-total"]
+    },
+    {
+      "id": "cas-69pa-melee", "unitId": "us-69pa", "t0": 8700, "t1": 9000, "count": 15,
+      "intensityCurve": "falling", "causeMix": { "musketry": 0.8, "unknown": 0.2 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-69pa-refused-flank", "claim-cas-webb-total"]
+    },
+    {
+      "id": "cas-71pa-approach", "unitId": "us-71pa", "t0": 8040, "t1": 8580, "count": 3,
+      "intensityCurve": "uniform", "causeMix": { "shell": 0.5, "musketry": 0.3, "unknown": 0.2 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-cas-webb-total"]
+    },
+    {
+      "id": "cas-71pa-fallback", "unitId": "us-71pa", "t0": 8580, "t1": 8700, "count": 30,
+      "intensityCurve": "spike", "causeMix": { "musketry": 0.9, "unknown": 0.1 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-71pa-fallback", "claim-cas-webb-total"]
+    },
+    {
+      "id": "cas-71pa-return", "unitId": "us-71pa", "t0": 8700, "t1": 9000, "count": 15,
+      "intensityCurve": "falling", "causeMix": { "musketry": 0.8, "unknown": 0.2 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-71pa-fallback", "claim-cas-webb-total"]
+    },
+    {
+      "id": "cas-72pa-crest", "unitId": "us-72pa", "t0": 8040, "t1": 8700, "count": 18,
+      "intensityCurve": "rising", "causeMix": { "shell": 0.3, "musketry": 0.5, "unknown": 0.2 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-72pa-crest", "claim-cas-webb-total"]
+    },
+    {
+      "id": "cas-72pa-crisis-fire", "unitId": "us-72pa", "t0": 8700, "t1": 9000, "count": 15,
+      "intensityCurve": "falling", "causeMix": { "musketry": 0.8, "unknown": 0.2 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-72pa-crest", "claim-cas-webb-total"]
+    },
+    {
+      "id": "cas-cushing-under-fire", "unitId": "us-btty-cushing", "t0": 8040, "t1": 8580, "count": 5,
+      "intensityCurve": "uniform", "causeMix": { "shell": 0.4, "musketry": 0.4, "unknown": 0.2 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-cas-cushing-total"]
+    },
+    {
+      "id": "cas-cushing-overrun", "unitId": "us-btty-cushing", "t0": 8580, "t1": 8700, "count": 4,
+      "intensityCurve": "spike", "causeMix": { "musketry": 0.75, "unknown": 0.25 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-cushing-death", "claim-cas-cushing-total"],
+      "note": "Includes Cushing himself (claim-cushing-death); no other individual identity is implied (plan 6.4)."
+    },
+    {
+      "id": "cas-cowan-slice", "unitId": "us-btty-cowan", "t0": 8040, "t1": 8700, "count": 2,
+      "intensityCurve": "rising", "causeMix": { "musketry": 0.6, "shell": 0.2, "unknown": 0.2 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-cowan-double-canister"],
+      "note": "Whole-battle losses were 12 (4 killed, 8 wounded); the macro track assigns 2 to this slice."
+    },
+    {
+      "id": "cas-arnold-crisis", "unitId": "us-btty-arnold", "t0": 8040, "t1": 8700, "count": 4,
+      "intensityCurve": "rising", "causeMix": { "musketry": 0.5, "shell": 0.3, "unknown": 0.2 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-arnold-canister"]
+    },
+    {
+      "id": "cas-arnold-seal", "unitId": "us-btty-arnold", "t0": 8700, "t1": 9000, "count": 1,
+      "intensityCurve": "uniform", "causeMix": { "musketry": 0.6, "unknown": 0.4 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-arnold-canister"]
+    },
+    {
+      "id": "cas-hall-wall-fire", "unitId": "us-hall", "t0": 8040, "t1": 8700, "count": 57,
+      "intensityCurve": "rising", "causeMix": { "musketry": 0.7, "shell": 0.15, "unknown": 0.15 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-hall-wall-fire"]
+    },
+    {
+      "id": "cas-hall-copse-melee", "unitId": "us-hall", "t0": 8700, "t1": 9000, "count": 130,
+      "intensityCurve": "spike", "causeMix": { "musketry": 0.85, "unknown": 0.15 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-hall-shift", "claim-repulse-sealed"],
+      "note": "The close fight at the Copse as Hall's regiments crowd into the penetration."
+    },
+    {
+      "id": "cas-stannard-before-wheel", "unitId": "us-stannard", "t0": 8040, "t1": 8400, "count": 31,
+      "intensityCurve": "uniform", "causeMix": { "shell": 0.5, "musketry": 0.3, "unknown": 0.2 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-stannard-wheel"]
+    },
+    {
+      "id": "cas-stannard-flank-fight", "unitId": "us-stannard", "t0": 8400, "t1": 9000, "count": 75,
+      "intensityCurve": "uniform", "causeMix": { "musketry": 0.75, "unknown": 0.25 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-stannard-flank-fire"]
+    }
+  ]
+}
