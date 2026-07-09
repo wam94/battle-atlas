@@ -40,9 +40,9 @@ namespace BattleAtlas.EditorTools
             new AngleBakeoffLayout.CameraDef
             {
                 name = "p7-tactical",
-                posXZ = new Vector2(290f, 290f), heightAboveGround = 45f,
-                lookXZ = new Vector2(515f, 415f), lookHeightAboveGround = 3f,
-                fovDeg = 45f,
+                posXZ = new Vector2(140f, 215f), heightAboveGround = 55f,
+                lookXZ = new Vector2(500f, 430f), lookHeightAboveGround = 3f,
+                fovDeg = 50f,
             },
             new AngleBakeoffLayout.CameraDef
             {
@@ -54,10 +54,11 @@ namespace BattleAtlas.EditorTools
             },
             new AngleBakeoffLayout.CameraDef
             {
-                // standing in the roadbed at the crossing (macro ~4114,4838)
+                // standing in the roadbed at the crossing (macro ~4074,4780;
+                // corridor center between the traced fences)
                 name = "p7-eye-road",
-                posXZ = new Vector2(214f, 388f), heightAboveGround = 1.66f,
-                lookXZ = new Vector2(500f, 440f), lookHeightAboveGround = 2f,
+                posXZ = new Vector2(174f, 330f), heightAboveGround = 1.66f,
+                lookXZ = new Vector2(496f, 478f), lookHeightAboveGround = 1.8f,
                 fovDeg = 68f,
             },
             new AngleBakeoffLayout.CameraDef

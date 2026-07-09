@@ -93,6 +93,29 @@ def test_fence_runs_lie_on_their_traced_polylines(baked, features):
             assert X0 - 0.01 <= x <= X1 + 0.01 and Z0 - 0.01 <= z <= Z1 + 0.01
 
 
+def test_interior_fence_stays_out_of_the_road_corridor(baked, features):
+    """ED-12: the traced west-of-road fence drifts into the corridor at its
+    south end (georeferencing drift); the staged run must terminate at it."""
+    env, _ = baked
+    west = features["fence-emmitsburg-road-west"]["points"]
+
+    def x_on(z):
+        for i in range(len(west) - 1):
+            (ax, az), (bx, bz) = west[i], west[i + 1]
+            if min(az, bz) <= z <= max(az, bz) and az != bz:
+                return ax + (z - az) / (bz - az) * (bx - ax)
+        return None
+
+    runs = [f for f in env["fences"]
+            if f["featureId"] == "fence-post-and-rail-west-of-road"]
+    assert runs, "the interior fence still stages (its northern run)"
+    for run in runs:
+        flat = run["polylineFlat"]
+        for x, z in zip(flat[0::2], flat[1::2]):
+            fx = x_on(z)
+            assert fx is None or x < fx, (x, z, fx)
+
+
 def test_copse_trees_fill_the_traced_polygon(baked, features):
     env, _ = baked
     copse = next(g for g in env["groves"]

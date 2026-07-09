@@ -231,18 +231,22 @@ namespace BattleAtlas.EditorTools
         static TerrainLayer[] BuildLayers()
         {
             // order pinned by AngleEnvironmentLayout.ClassWeights
+            // measured average albedos drove these remaps: leafy_grass
+            // averages tan (151,131,89), so the pasture remap pulls green;
+            // brown_mud_dry (115,91,62) is the lighter packed-road base and
+            // the darker stony_dirt_path becomes churned/disturbed ground.
             return new[]
             {
                 Layer("PolyHavenLeafyGrass", "leafy_grass", 5.5f,
-                    new Color(0.92f, 0.90f, 0.78f)),            // July-dried pasture
+                    new Color(0.72f, 1.0f, 0.58f)),             // July pasture, green pulled
                 Layer("PolyHavenSparseGrass", "sparse_grass", 6.5f,
-                    new Color(0.95f, 0.92f, 0.80f)),            // dry summer grass
+                    new Color(0.95f, 0.90f, 0.68f)),            // dry summer grass
                 Layer("PolyHavenWitheredGrass", "withered_grass", 5f,
-                    new Color(1.0f, 0.97f, 0.82f)),             // wheat stubble gold
-                Layer("PolyHavenStonyDirtPath", "stony_dirt_path", 4f,
-                    new Color(1.0f, 0.98f, 0.95f)),             // packed dirt road
-                Layer("PolyHavenBrownMudDry", "brown_mud_dry", 4.5f,
-                    new Color(1.0f, 0.98f, 0.96f)),             // disturbed soil
+                    new Color(1.0f, 0.95f, 0.74f)),             // wheat stubble gold
+                Layer("PolyHavenBrownMudDry", "brown_mud_dry", 4f,
+                    new Color(1.0f, 0.97f, 0.90f)),             // packed dirt road
+                Layer("PolyHavenStonyDirtPath", "stony_dirt_path", 4.5f,
+                    new Color(0.95f, 0.92f, 0.88f)),            // disturbed/churned soil
             };
         }
 
@@ -301,6 +305,11 @@ namespace BattleAtlas.EditorTools
                     imp.isReadable = true;
                     dirty = true;
                 }
+                if (name.Contains("stacked_stone_wall_diff") && !imp.isReadable)
+                {
+                    imp.isReadable = true;   // GrayShifted reads it
+                    dirty = true;
+                }
                 if (name.Contains("leaves_diff") && !imp.alphaIsTransparency)
                 {
                     imp.alphaIsTransparency = true;
@@ -341,9 +350,44 @@ namespace BattleAtlas.EditorTools
             return m;
         }
 
-        static Material StoneMaterial() => TexturedLit(
-            "PolyHavenStackedStoneWall", "stacked_stone_wall",
-            new Color(0.82f, 0.80f, 0.76f), 0.12f, new Vector2(0.9f, 0.9f));
+        static Material StoneMaterial()
+        {
+            var m = TexturedLit(
+                "PolyHavenStackedStoneWall", "stacked_stone_wall",
+                new Color(0.92f, 0.93f, 0.95f), 0.12f, new Vector2(1.3f, 1.3f));
+            // the source albedo averages warm brown (95,69,48); desaturate
+            // toward gray so the wall reads as fieldstone, not a dirt berm
+            // (deterministic transient texture, like the arm swizzle)
+            m.SetTexture("_BaseColorMap", GrayShifted(
+                $"{TexRoot}/PolyHavenStackedStoneWall/stacked_stone_wall_diff_2k.jpg",
+                0.75f, 1.5f));
+            return m;
+        }
+
+        static Texture2D GrayShifted(string path, float desat, float gain)
+        {
+            var srcTex = LoadTex(path);
+            var src = srcTex.GetPixels32();
+            var dst = new Color32[src.Length];
+            for (int i = 0; i < src.Length; i++)
+            {
+                float r = src[i].r, g = src[i].g, b = src[i].b;
+                float y = 0.299f * r + 0.587f * g + 0.114f * b;
+                dst[i] = new Color32(
+                    (byte)Mathf.Clamp(Mathf.RoundToInt(Mathf.Lerp(r, y, desat) * gain), 0, 255),
+                    (byte)Mathf.Clamp(Mathf.RoundToInt(Mathf.Lerp(g, y, desat) * gain), 0, 255),
+                    (byte)Mathf.Clamp(Mathf.RoundToInt(Mathf.Lerp(b, y, desat) * gain), 0, 255),
+                    255);
+            }
+            var tex = new Texture2D(srcTex.width, srcTex.height, TextureFormat.RGBA32, true)
+            {
+                name = srcTex.name + "_gray",
+                wrapMode = TextureWrapMode.Repeat,
+            };
+            tex.SetPixels32(dst);
+            tex.Apply(true);
+            return tex;
+        }
 
         static Material TimberMaterial(Color tint) => TexturedLit(
             "PolyHavenWeatheredPlanks", "weathered_planks",
@@ -491,6 +535,9 @@ namespace BattleAtlas.EditorTools
             var tris = new List<int>();
             foreach (var rail in rails)
             {
+                // zero-length rails would normalize to NaN and smear a
+                // garbage triangle across the sky
+                if (Vector2.Distance(rail.a, rail.b) < 0.05f) continue;
                 Vector2 d2 = (rail.b - rail.a).normalized;
                 Vector2 n2 = new Vector2(d2.y, -d2.x) * (w / 2f);
                 float ya = ground(rail.a) + rail.height;
@@ -594,8 +641,9 @@ namespace BattleAtlas.EditorTools
             leaves.SetTexture("_BaseColorMap",
                 LoadTex($"{dir}/island_tree_02_leaves_diff_1k.png"));
             leaves.SetFloat("_Smoothness", 0.2f);
+            leaves.SetColor("_BaseColor", new Color(0.66f, 0.74f, 0.55f));
             HDMaterial.SetAlphaClipping(leaves, true);
-            leaves.SetFloat("_AlphaCutoff", 0.35f);
+            leaves.SetFloat("_AlphaCutoff", 0.45f);
             leaves.SetFloat("_DoubleSidedEnable", 1f);
             HDMaterial.ValidateMaterial(leaves);
             return new Dictionary<string, Material>
@@ -621,7 +669,11 @@ namespace BattleAtlas.EditorTools
                 go.transform.SetParent(groveGo.transform, false);
                 float scale = tree.heightM / TreeBaseHeight;
                 go.transform.position = new Vector3(p.x, ground(p) - 0.03f, p.y);
-                go.transform.rotation = Quaternion.Euler(0f, tree.yawDeg, 0f);
+                // compose with the prefab's own rotation: the FBX importer's
+                // axis compensation lives there (clobbering it lays scanned
+                // trees flat on their sides)
+                go.transform.rotation =
+                    Quaternion.Euler(0f, tree.yawDeg, 0f) * prefab.transform.rotation;
                 go.transform.localScale = Vector3.one * scale;
                 foreach (var mr in go.GetComponentsInChildren<MeshRenderer>())
                 {
@@ -718,7 +770,8 @@ namespace BattleAtlas.EditorTools
             go.name = name;
             go.transform.SetParent(parent.transform, false);
             go.transform.position = new Vector3(p.x, ground(p), p.y);
-            go.transform.rotation = Quaternion.Euler(0f, yawDeg, 0f);
+            go.transform.rotation =
+                Quaternion.Euler(0f, yawDeg, 0f) * prefab.transform.rotation;
             var mats = PropMaterials();
             foreach (var mr in go.GetComponentsInChildren<MeshRenderer>())
             {
@@ -759,13 +812,14 @@ namespace BattleAtlas.EditorTools
             for (int i = 0; i < clumps.Count; i++)
             {
                 Vector2 p = AngleEnvironmentLayout.ToCropLocal(clumps[i].pos, env.crop);
+                float sc = 0.82f + 0.28f * AngleEnvironmentLayout.Hash01("p7-wheat-s", i);
                 combine[i] = new CombineInstance
                 {
                     mesh = src,
                     transform = Matrix4x4.TRS(
                         new Vector3(p.x, ground(p), p.y),
                         Quaternion.Euler(0f, clumps[i].yawDeg, 0f),
-                        Vector3.one),
+                        new Vector3(sc, sc, sc)),
                 };
             }
             var mesh = new Mesh
@@ -776,7 +830,7 @@ namespace BattleAtlas.EditorTools
             mesh.CombineMeshes(combine, true, true);
             mesh.RecalculateBounds();
             MeshGo(parent, "Standing Wheat (ED-15 patches)", mesh,
-                Lit(new Color(0.72f, 0.60f, 0.30f), 0.16f));
+                Lit(new Color(0.55f, 0.46f, 0.22f), 0.16f));
         }
 
         static GameObject MeshGo(GameObject parent, string name, Mesh mesh, Material mat)

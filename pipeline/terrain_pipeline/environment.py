@@ -246,9 +246,37 @@ def build_road(features, crop):
     }
 
 
+def _x_on_polyline_at_z(polyline, z):
+    """Interpolated x of the first segment spanning z (None if none does)."""
+    for i in range(len(polyline) - 1):
+        (ax, az), (bx, bz) = polyline[i], polyline[i + 1]
+        if min(az, bz) <= z <= max(az, bz) and az != bz:
+            return ax + (z - az) / (bz - az) * (bx - ax)
+    return None
+
+
+def _truncate_west_of_road(points, west_fence, margin=1.5):
+    """Keep only the run strictly west of the west road fence (ED-12).
+
+    The traced fence-post-and-rail-west-of-road converges into the road
+    corridor at its south end — georeferencing drift on a feature the sheet
+    note itself places WEST of the road. Staging the trace verbatim would
+    invent a fence across the corridor that the crossing claims exclude.
+    """
+    kept = []
+    for x, z in _resample_polyline(points, 2.0):
+        fx = _x_on_polyline_at_z(west_fence, z)
+        if fx is None or x < fx - margin:
+            kept.append([x, z])
+        elif kept:
+            break  # entered the corridor: terminate the run
+    return kept
+
+
 def build_fences(features, crop):
     """Traced fence polylines clipped to the crop, styled per ED-12."""
     x0, z0, x1, z1 = crop
+    west_fence = features["fence-emmitsburg-road-west"]["points"]
     styles = {
         "fence-emmitsburg-road-west": ("post_and_rail", ["claim-fence-west-structure", "claim-fences-high-climb"]),
         "fence-emmitsburg-road-east": ("post_and_rail", ["claim-fence-east-structure", "claim-fences-high-climb"]),
@@ -261,7 +289,12 @@ def build_fences(features, crop):
     for fid, (style, claims) in styles.items():
         if fid not in features:
             continue
-        for run in _clip_polyline_to_rect(features[fid]["points"], x0, z0, x1, z1):
+        pts = features[fid]["points"]
+        if fid == "fence-post-and-rail-west-of-road":
+            pts = _truncate_west_of_road(pts, west_fence)
+            if len(pts) < 2:
+                continue
+        for run in _clip_polyline_to_rect(pts, x0, z0, x1, z1):
             fences.append({
                 "featureId": fid,
                 "style": style,

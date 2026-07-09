@@ -184,7 +184,12 @@ and earth, "breast-high" to the attacker (`claim-wall-profile`,
 **Decision:** road fences are modeled as five-rail post-and-rail at 1.5 m
 (NPS modern reconstructions along the road as physical reference); the
 interior post-and-rail fence west of the road uses the same form; the two
-traced worm fences are zigzag rail at 1.2 m. The wall is 0.75 m of
+traced worm fences are zigzag rail at 1.2 m. One trace conflict is
+resolved here: `fence-post-and-rail-west-of-road` converges INTO the road
+corridor at its south end — georeferencing drift on a feature whose own
+trace note places it west of the road — so the staged run terminates at
+the corridor edge rather than inventing a fence across the road that the
+crossing claims exclude. The wall is 0.75 m of
 double-faced fieldstone, ~0.6 m wide, with scattered rail lengths laid on top
 along the 69th PA front south of the inner angle (documented) and none north
 of it. No gaps or breaks are modeled (ED-6 stands).

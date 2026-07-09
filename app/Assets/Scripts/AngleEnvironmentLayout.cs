@@ -49,6 +49,7 @@ namespace BattleAtlas
                     posts.Add(new Post { pos = p, bearingDeg = bearing });
                     if (i == panels) continue;
                     Vector2 q = Vector2.Lerp(a, b, Mathf.Min(1f, (i + 1) * postSpacing / len));
+                    if (Vector2.Distance(p, q) < 0.05f) continue; // degenerate panel
                     for (int r = 0; r < railCount; r++)
                     {
                         float h = height * (0.22f + 0.78f * r / (railCount - 1))
@@ -109,7 +110,7 @@ namespace BattleAtlas
             switch (cls)
             {
                 case 0: // pasture: leafy with dry patches
-                    w[0] = 0.72f + 0.18f * noise;
+                    w[0] = 0.80f + 0.15f * noise;
                     w[1] = 1f - w[0];
                     break;
                 case 1: // dry summer grass
@@ -128,9 +129,10 @@ namespace BattleAtlas
                     w[4] = 0.75f + 0.20f * noise;
                     w[3] = 1f - w[4];
                     break;
-                case 5: // trampled corridor: dry grass ground down to soil
-                    w[1] = 0.52f + 0.20f * noise;
-                    w[4] = 0.30f - 0.12f * noise;
+                case 5: // trampled corridor: dry grass ground down to soil,
+                        // still reading as abused GRASS, not desert (ED-17)
+                    w[1] = 0.42f + 0.18f * noise;
+                    w[4] = 0.18f - 0.08f * noise;
                     w[0] = 1f - w[1] - w[4];
                     break;
                 default:
