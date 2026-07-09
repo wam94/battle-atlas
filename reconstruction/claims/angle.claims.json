@@ -1121,7 +1121,7 @@
     },
     {
       "id": "claim-fry-guide",
-      "subjectId": "csa-fry",
+      "subjectId": "assault-column",
       "property": "movement",
       "value": "Fry's brigade was the guide of the assault; Garnett agreed to dress on its command, so the two fronts converged at the wall together",
       "time": { "earliest": 7500, "preferred": 8340, "latest": 8580 },

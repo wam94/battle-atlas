@@ -134,7 +134,7 @@
       "route": [[4380, 4868], [4390, 4870]],
       "formationFrom": "line", "formationTo": "scattered",
       "paceProfile": "slowing",
-      "claimIds": ["claim-garnett-death", "claim-cushing-canister", "claim-cas-canister-gaps", "claim-webb-front-musketry"],
+      "claimIds": ["claim-garnett-death", "claim-cas-canister-gaps"],
       "inferenceRules": ["R-macro-track-geometry"],
       "note": "The brigade shatters in front of the wall, mixing with Armistead's arriving line; it never crosses as a body."
     },
@@ -281,7 +281,7 @@
       "obstacleIds": ["wall-angle-webb-front"],
       "formationFrom": "line", "formationTo": "scattered",
       "paceProfile": "surge",
-      "claimIds": ["claim-armistead-crossed-wall", "claim-armistead-cold-steel", "claim-armistead-party-strength", "claim-wall-structure"],
+      "claimIds": ["claim-armistead-crossed-wall", "claim-armistead-party-strength", "claim-wall-structure"],
       "inferenceRules": ["R-crossing-duration-drill"],
       "note": "The documented crossing: hat on sword point, 'Boys, give them the cold steel!' — ~150 men over the wall into Cushing's battery."
     },
@@ -917,7 +917,13 @@
       "note": "The close fight at the Copse as Hall's regiments crowd into the penetration."
     },
     {
-      "id": "cas-stannard-before-wheel", "unitId": "us-stannard", "t0": 8040, "t1": 8400, "count": 31,
+      "id": "cas-stannard-hold", "unitId": "us-stannard", "t0": 8040, "t1": 8100, "count": 1,
+      "intensityCurve": "uniform", "causeMix": { "shell": 0.5, "musketry": 0.3, "unknown": 0.2 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-stannard-position"]
+    },
+    {
+      "id": "cas-stannard-wheel", "unitId": "us-stannard", "t0": 8100, "t1": 8400, "count": 30,
       "intensityCurve": "uniform", "causeMix": { "shell": 0.5, "musketry": 0.3, "unknown": 0.2 },
       "assessment": "reconstructed",
       "claimIds": ["claim-stannard-wheel"]
