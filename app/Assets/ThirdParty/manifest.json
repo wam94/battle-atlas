@@ -152,6 +152,23 @@
       "downloadUrl": "https://api.polyhaven.com/files/weathered_planks",
       "downloadSha256": "5cc87718d9bdad5612708b77d697af76464c133802a85c4a7f8cc3f1e35116de",
       "licenseEvidence": "docs/assets/licenses/polyhaven-weathered-planks/acquisition.json"
+    },
+    {
+      "id": "polyhaven-island-tree-02",
+      "path": "Assets/ThirdParty/Models/PolyHavenIslandTree02",
+      "title": "Island Tree 02",
+      "author": "Rob Tuytel (scanning, processing); Rico Cilliers (cleanup, processing)",
+      "sourceUrl": "https://polyhaven.com/a/island_tree_02",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "acquired": "2026-07-09",
+      "redistributable": true,
+      "modified": true,
+      "modifications": "decimated from ~1.07 M to 60 k tris (bpy Decimate collapse) and re-exported as FBX (meshes only); branches diffuse re-encoded PNG->JPEG q90; leaves/trunk 1k diffuse kept; normal/rough/AO maps and the 32 MB raw scan FBX omitted per ADR 0002 (fetch-reproducible, sha256 in evidence)",
+      "sha256": "ced74ec5a5d97914bd3b9a7d955987f740ba1633efd7af89cc3a9876c82c0ff1",
+      "downloadUrl": "https://api.polyhaven.com/files/island_tree_02",
+      "downloadSha256": "ef21cf9809de1158ea6832ecaef1b681bc616fbbeab617ccbb048e7b75b1b3f4",
+      "licenseEvidence": "docs/assets/licenses/polyhaven-island-tree-02/acquisition.json"
     }
   ]
 }

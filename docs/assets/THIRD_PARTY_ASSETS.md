@@ -38,6 +38,15 @@ validator and is never a required build input.
 - Imported content sha256: `6488e4984b4e7a6280be8d7ab9758ac41dfb56355cbad4c1d66faed439be6e61`
 - License evidence as archived on acquisition day: [`docs/assets/licenses/polyhaven-dry-ground-01/acquisition.json`](../../docs/assets/licenses/polyhaven-dry-ground-01/acquisition.json)
 
+## Island Tree 02 (`polyhaven-island-tree-02`)
+**“Island Tree 02”** by **Rob Tuytel (scanning, processing); Rico Cilliers (cleanup, processing)**, licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/). Source: <https://polyhaven.com/a/island_tree_02>. Modified by the Battle Atlas project: decimated from ~1.07 M to 60 k tris (bpy Decimate collapse) and re-exported as FBX (meshes only); branches diffuse re-encoded PNG->JPEG q90; leaves/trunk 1k diffuse kept; normal/rough/AO maps and the 32 MB raw scan FBX omitted per ADR 0002 (fetch-reproducible, sha256 in evidence).
+
+- Path: `app/Assets/ThirdParty/Models/PolyHavenIslandTree02`
+- Acquired: 2026-07-09 from <https://api.polyhaven.com/files/island_tree_02>
+- Download sha256: `ef21cf9809de1158ea6832ecaef1b681bc616fbbeab617ccbb048e7b75b1b3f4`
+- Imported content sha256: `ced74ec5a5d97914bd3b9a7d955987f740ba1633efd7af89cc3a9876c82c0ff1`
+- License evidence as archived on acquisition day: [`docs/assets/licenses/polyhaven-island-tree-02/acquisition.json`](../../docs/assets/licenses/polyhaven-island-tree-02/acquisition.json)
+
 ## Leafy Grass (`polyhaven-leafy-grass`)
 **“Leafy Grass”** by **Charlotte Baglioni (All)**, licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/). Source: <https://polyhaven.com/a/leafy_grass>.
 
