@@ -68,6 +68,14 @@ namespace BattleAtlas
         public const float BrigadeBorderWeight = 1.25f;
         public const float RegimentBorderWeight = 0.4f;
         public const float FullBorderWeight = 1f;
+        // selection highlight: added onto the echelon's border weight (a
+        // selected regiment thickens, a selected brigade/battery crosses
+        // into the heavier double line) — selection is deliberate
+        // attention, same rule as the full-saturation fill below
+        public const float SelectedBorderBoost = 0.5f;
+        // click raymarch reach: past the far corner of the 8.5 km field
+        // from any orbit the camera controller allows
+        const float PickMaxDistM = 30000f;
         // LOD hysteresis: soldiers resolve in below SoldiersInDist and hold
         // until SoldiersOutDist; regiment-grain symbols resolve in below
         // RegimentsInDist and hold until RegimentsOutDist. The band at each
@@ -201,6 +209,7 @@ namespace BattleAtlas
             // flip that swaps representations rebuilds exactly once
             public UnitState PrevState;
             public LodTier PrevTier;
+            public bool PrevSelected;
             public bool HasPrev;
             public bool SymbolBuilt;
             public bool RosterBuilt;
@@ -229,6 +238,17 @@ namespace BattleAtlas
         Vector3[] labelPositions;
         string[] labelTexts;
         Color[] labelColors;
+        // pick footprints, refilled alongside the render pass: one oriented
+        // rectangle per rendered SYMBOL (a roster partition registers its
+        // brigade once — roster ribbons have no track or citation of their
+        // own; the Soldiers figure tier registers nothing, symbols are what
+        // the picker picks). Preallocated at unit count in Start.
+        Vector2[] pickCenters;
+        float[] pickFacings;
+        float[] pickFrontages;
+        float[] pickDepths;
+        UnitEntry[] pickEntries;
+        int pickCount;
         // scratch for RegimentSlots + the roster specs, reused across units
         // within one Update
         readonly (Vector2 center, Vector2 size)[] slotsBuffer =
@@ -308,21 +328,32 @@ namespace BattleAtlas
         }
 
         // The symbol rebuild predicate: SymbolMeshBuilder.SymbolDirty (the
-        // shared thickness/pose/formation/tier gate; selection threads in
-        // with Task 6) PLUS the artillery correction — a battery encodes
-        // strength as its GUN-DOT COUNT, not thickness, and its clamped
-        // MinDepth never moves, so a strength fall must dirty on the dot
-        // step instead. Pure so the truth table is testable without a scene.
+        // shared thickness/pose/formation/tier/selection gate) PLUS the
+        // artillery correction — a battery encodes strength as its GUN-DOT
+        // COUNT, not thickness, and its clamped MinDepth never moves, so a
+        // strength fall must dirty on the dot step instead. Pure so the
+        // truth table is testable without a scene.
         public static bool SymbolNeedsRebuild(
             UnitState prev, UnitState cur, float frontage,
-            UnitSymbol.SymbolKind kind, LodTier prevTier, LodTier tier)
+            UnitSymbol.SymbolKind kind, LodTier prevTier, LodTier tier,
+            bool prevSelected, bool selected)
         {
             if (SymbolMeshBuilder.SymbolDirty(prev, cur, frontage,
-                    prevTier, tier, false, false))
+                    prevTier, tier, prevSelected, selected))
                 return true;
             return kind == UnitSymbol.SymbolKind.Artillery
                 && UnitSymbol.GunDotCount(prev.strength)
                     != UnitSymbol.GunDotCount(cur.strength);
+        }
+
+        // Selection-blind arity, kept for callers (and pinned tests) that
+        // predate the Task 6 picking: both sides unselected.
+        public static bool SymbolNeedsRebuild(
+            UnitState prev, UnitState cur, float frontage,
+            UnitSymbol.SymbolKind kind, LodTier prevTier, LodTier tier)
+        {
+            return SymbolNeedsRebuild(
+                prev, cur, frontage, kind, prevTier, tier, false, false);
         }
 
         // The Regiments-tier roster partition as pure data: RegimentSlots
@@ -609,6 +640,12 @@ namespace BattleAtlas
             // one slot per unit — every unit flies a flag every frame
             unionFlagMatrices = new Matrix4x4[units.Count];
             csaFlagMatrices = new Matrix4x4[units.Count];
+            // pick footprints: at most one per unit per frame
+            pickCenters = new Vector2[units.Count];
+            pickFacings = new float[units.Count];
+            pickFrontages = new float[units.Count];
+            pickDepths = new float[units.Count];
+            pickEntries = new UnitEntry[units.Count];
 
             // activity salience: bucket each unit-attached event's window
             // onto its unit ONCE, so IsActiveAt scans a short per-unit list
@@ -692,6 +729,7 @@ namespace BattleAtlas
             // theirs below (fixed slots — see the field comment)
             for (int i = 0; i < labelPriorities.Length; i++)
                 labelPriorities[i] = float.PositiveInfinity;
+            pickCount = 0;
             foreach (UnitEntry entry in units)
             {
                 if (entry.Parent != null)
@@ -723,6 +761,86 @@ namespace BattleAtlas
                 }
             }
             RenderFlags();
+            // after the render pass: the pick buffer now holds exactly this
+            // frame's rendered symbol footprints
+            HandleSelectionClick();
+        }
+
+        // Left-click pick (plan Task 6): raymarch the cursor ray to the
+        // displayed terrain, then point-in-oriented-footprint over the
+        // rendered symbols — smallest area wins, so a regiment beats its
+        // overlapping brigade ribbon. Empty ground (or sky) clears. No
+        // physics, no colliders — the same pure math the tests pin. Clicks
+        // over the HUD strip or a live IMGUI control never pick; at the
+        // Soldiers tier there is no symbol footprint to hit, so close-zoom
+        // clicks on figures fall through to the ground (selection is a
+        // symbol-tier gesture, and the current selection persists).
+        void HandleSelectionClick()
+        {
+            if (lodCamera == null || !Input.GetMouseButtonDown(0))
+                return;
+            if (GUIUtility.hotControl != 0)
+                return; // the scrubber (or another IMGUI control) owns this press
+            if (TimelineHud.IsTouchOverHud(
+                    Input.mousePosition, TimelineHud.CurrentHudHeightPx))
+                return;
+            Ray ray = lodCamera.ScreenPointToRay(Input.mousePosition);
+            if (!UnitPicker.RaycastTerrain(ray.origin, ray.direction,
+                    groundYFunc, PickMaxDistM, out Vector3 ground))
+            {
+                SetSelected(null);
+                return;
+            }
+            int picked = UnitPicker.PickUnit(
+                new Vector2(ground.x, ground.z), pickCount,
+                pickCenters, pickFacings, pickFrontages, pickDepths);
+            SetSelected(picked < 0 ? null : pickEntries[picked]);
+        }
+
+        // Selection state: rewrite the two entries' MPBs on the transition
+        // only (the latch discipline — never per frame). The selected
+        // symbol reads at full saturation regardless of salience and wears
+        // the boosted border; its next SymbolStale check also fires (the
+        // selection input of the dirty predicate), keeping mesh-state
+        // bookkeeping honest.
+        void SetSelected(UnitEntry next)
+        {
+            if (next == selectedEntry)
+                return;
+            UnitEntry prev = selectedEntry;
+            selectedEntry = next;
+            if (prev != null) RefreshSelectionMpb(prev);
+            if (next != null) RefreshSelectionMpb(next);
+        }
+
+        void RefreshSelectionMpb(UnitEntry entry)
+        {
+            bool selected = entry == selectedEntry;
+            Color color = entry.Active || selected
+                ? entry.ActiveColor : InactiveColor(entry.ActiveColor);
+            float boost = selected ? SelectedBorderBoost : 0f;
+            entry.ColorBlock.SetColor(BaseColorId, color);
+            entry.ColorBlock.SetFloat(BorderWeightId,
+                SymbolBorderWeight(entry.Echelon) + boost);
+            if (entry.RosterBlock != null)
+            {
+                // the roster ribbons highlight with their brigade — one
+                // selection, two blocks (same shape as the salience latch)
+                entry.RosterBlock.SetColor(BaseColorId, color);
+                entry.RosterBlock.SetFloat(BorderWeightId,
+                    SymbolBorderWeight(UnitSymbol.Echelon.Regiment) + boost);
+            }
+        }
+
+        // The TimelineHud citation line's data feed: the selected unit's
+        // track (name, keyframes, StateAt) and its echelon. False = nothing
+        // selected, draw no line.
+        public bool TryGetSelected(out UnitTrack track, out UnitSymbol.Echelon echelon)
+        {
+            track = selectedEntry?.Track;
+            echelon = selectedEntry != null
+                ? selectedEntry.Echelon : UnitSymbol.Echelon.Brigade;
+            return selectedEntry != null;
         }
 
         // Two RenderMeshInstanced calls total — one per side across ALL
@@ -795,7 +913,9 @@ namespace BattleAtlas
             if (active != entry.Active)
             {
                 entry.Active = active;
-                Color color = active
+                // a selected symbol holds full saturation whatever the
+                // salience says — selection is deliberate attention
+                Color color = active || entry == selectedEntry
                     ? entry.ActiveColor : InactiveColor(entry.ActiveColor);
                 entry.ColorBlock.SetColor(BaseColorId, color);
                 // the roster ribbons dim with their brigade — one latch,
@@ -857,7 +977,8 @@ namespace BattleAtlas
         {
             return !entry.HasPrev || SymbolNeedsRebuild(
                 entry.PrevState, s, entry.Track.Unit.frontage_m,
-                entry.Kind, entry.PrevTier, tier);
+                entry.Kind, entry.PrevTier, tier,
+                entry.PrevSelected, entry == selectedEntry);
         }
 
         // Records what a rebuild consumed; the caller marks which
@@ -866,7 +987,23 @@ namespace BattleAtlas
         {
             entry.PrevState = s;
             entry.PrevTier = tier;
+            entry.PrevSelected = entry == selectedEntry;
             entry.HasPrev = true;
+        }
+
+        // Registers this frame's rendered symbol footprint for the click
+        // picker (the cavalry shear and roster partition are picked by
+        // their bounding rectangle — footprint grain, deliberately).
+        void RegisterPickFootprint(
+            UnitEntry entry, Vector2 centerXZ, float facingDeg,
+            float frontage, float depth)
+        {
+            pickCenters[pickCount] = centerXZ;
+            pickFacings[pickCount] = facingDeg;
+            pickFrontages[pickCount] = frontage;
+            pickDepths[pickCount] = depth;
+            pickEntries[pickCount] = entry;
+            pickCount++;
         }
 
         // Writes one BuildRibbon result from the shared scratch into a
@@ -913,6 +1050,10 @@ namespace BattleAtlas
                 entry.SymbolBuilt = true;
                 entry.RosterBuilt = false;
             }
+            RegisterPickFootprint(entry, s.posXZ, s.facingDeg,
+                entry.Track.Unit.frontage_m,
+                UnitPicker.PickDepth(entry.Kind, UnitSymbol.DisplayDepth(
+                    s.strength, entry.Track.Unit.frontage_m)));
             var rp = new RenderParams(symbolMaterial)
             {
                 matProps = entry.ColorBlock,
@@ -985,6 +1126,11 @@ namespace BattleAtlas
                 entry.RosterBuilt = true;
                 entry.SymbolBuilt = false;
             }
+            // the partition picks as ONE brigade rectangle — roster ribbons
+            // have no tracks or citations of their own to select
+            RegisterPickFootprint(entry, s.posXZ, s.facingDeg,
+                entry.Track.Unit.frontage_m,
+                UnitSymbol.DisplayDepth(s.strength, entry.Track.Unit.frontage_m));
             var rp = new RenderParams(symbolMaterial)
             {
                 matProps = entry.RosterBlock,
