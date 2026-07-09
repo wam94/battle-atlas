@@ -196,26 +196,24 @@ namespace BattleAtlas
             }
         }
 
-        // Arm of service from the unit id. This is the LOCKED id convention
-        // from the full-cast plan (docs/superpowers/plans/2026-07-02-full-cast.md
-        // "Id conventions"): batteries `us-btty-*` / `csa-btty-*`, CSA
-        // artillery battalions `csa-bn-*` (the bn- prefix exists precisely to
-        // dodge the csa-garnett INFANTRY brigade), the Artillery Reserve park
-        // `us-arty-*`, cavalry `us-cav-*` — everything else is infantry.
-        // Prefixes, never substrings: csa-5al-bn (5th Alabama Battalion) is
-        // an infantry battalion and must stay infantry. A format-level `kind`
-        // field is a DEFERRED format decision — until it lands, the ids are
-        // the contract and this is its one decoder.
+        // Arm of service from the unit id. The LOCKED id-prefix convention's
+        // ONE decoder now lives in UnitSymbol.KindOf (which additionally
+        // splits the `us-arty-` park out of Artillery for the symbol
+        // grammar); this delegates and collapses that split back into the
+        // three glyph buckets the slab renderer knows — the park has no
+        // separate slab treatment, only a separate symbol.
         public static UnitKind KindOf(string unitId)
         {
-            if (unitId.StartsWith("us-btty-", System.StringComparison.Ordinal)
-                || unitId.StartsWith("csa-btty-", System.StringComparison.Ordinal)
-                || unitId.StartsWith("csa-bn-", System.StringComparison.Ordinal)
-                || unitId.StartsWith("us-arty-", System.StringComparison.Ordinal))
-                return UnitKind.Artillery;
-            if (unitId.StartsWith("us-cav-", System.StringComparison.Ordinal))
-                return UnitKind.Cavalry;
-            return UnitKind.Infantry;
+            switch (UnitSymbol.KindOf(unitId))
+            {
+                case UnitSymbol.SymbolKind.Artillery:
+                case UnitSymbol.SymbolKind.ArtilleryPark:
+                    return UnitKind.Artillery;
+                case UnitSymbol.SymbolKind.Cavalry:
+                    return UnitKind.Cavalry;
+                default:
+                    return UnitKind.Infantry;
+            }
         }
 
         // The kind's block-height multiplier (applied to the ground-clearance

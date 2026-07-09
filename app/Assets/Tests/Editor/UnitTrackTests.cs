@@ -69,6 +69,28 @@ public class UnitTrackTests
     }
 
     [Test]
+    public void StateAt_ConfidenceComesFromSegmentStart()
+    {
+        var u = MakeUnit((0, 0, 0, 0, 1), (10, 10, 0, 0, 1));
+        u.keyframes[0].confidence = "documented";
+        u.keyframes[1].confidence = "inferred";
+        var track = new UnitTrack(u);
+        // exactly the formation rule: a segment carries its START keyframe
+        Assert.AreEqual("documented", track.StateAt(5f).confidence);
+        Assert.AreEqual("inferred", track.StateAt(10f).confidence);
+    }
+
+    [Test]
+    public void StateAt_EmptyConfidenceDefaultsToUnknown()
+    {
+        // MakeUnit leaves confidence unset — the format default is "unknown"
+        // (which StyleOf renders as inferred per the 2026-07-09 user ruling)
+        var track = new UnitTrack(MakeUnit((0, 0, 0, 0, 1), (10, 10, 0, 0, 1)));
+        Assert.AreEqual("unknown", track.StateAt(5f).confidence);
+        Assert.AreEqual("unknown", track.StateAt(10f).confidence);
+    }
+
+    [Test]
     public void StateAt_ExactInteriorKeyframeStartsNewSegment()
     {
         var u = MakeUnit((0, 0, 0, 0, 1), (10, 10, 0, 0, 1), (20, 30, 0, 0, 1));
