@@ -53,6 +53,9 @@ def _new_obj(name, mat_name):
 
 
 def _bm_to(ob, bm):
+    # consistent outward winding: hand-built prisms/slabs otherwise ship
+    # inverted faces that render black/culled in Unity
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
     for f in bm.faces:
         f.material_index = 0
     bm.to_mesh(ob.data)
