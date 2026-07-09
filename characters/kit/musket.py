@@ -26,6 +26,15 @@ TOTAL_LEN = 1.422
 BARREL_LEN = 1.016
 BREECH_Y = TOTAL_LEN - BARREL_LEN   # barrel starts here
 
+# Ramrod geometry (shared with clips.py so the reload's draw/ram/return
+# strokes key the rod exactly where the mesh puts it). The rod lives in a
+# channel under the barrel and is a SEPARATE object skinned to its own
+# prop bone (child of prop_musket) so the reload can slide/flip it.
+ROD_Y0 = 0.32                # rear end of rod in musket space
+ROD_Y1 = TOTAL_LEN - 0.012   # head end, just short of the muzzle
+ROD_Z = -0.0205              # channel depth under the barrel
+ROD_LEN = ROD_Y1 - ROD_Y0
+
 
 def _cyl(bm, r1, r2, y0, y1, z=0.0, segments=10):
     ret = bmesh.ops.create_cone(bm, cap_ends=True, segments=segments,
@@ -69,8 +78,8 @@ def build_musket(name="Springfield1861"):
     _boxat(bm_metal, (0.006, 0.055, 0.004), (0, 0.30, -0.040))
     _boxat(bm_metal, (0.006, 0.004, 0.012), (0, 0.272, -0.032))
     _boxat(bm_metal, (0.006, 0.004, 0.012), (0, 0.328, -0.032))
-    # ramrod under the barrel, head just short of the muzzle
-    _cyl(bm_metal, 0.0038, 0.0038, 0.32, TOTAL_LEN - 0.012, z=-0.0205, segments=6)
+    # (ramrod is a separate object — see build_ramrod — so the reload clip
+    # can slide/flip it on its own prop bone)
     # front sight
     _boxat(bm_metal, (0.002, 0.006, 0.004), (0, TOTAL_LEN - 0.02, 0.024))
     # butt plate
@@ -99,26 +108,49 @@ def build_musket(name="Springfield1861"):
     bpy.ops.object.join()
     musket = bpy.context.view_layer.objects.active
     musket.name = name
-    return musket
+
+    ramrod = build_ramrod(f"{name}_ramrod", steel)
+    return musket, ramrod
 
 
-def attach_musket_to_rig(musket, rig, bone_name="prop_musket"):
-    """Add a prop bone to the rig (child of Root) and skin the musket 100%
-    to it. Clips key this bone directly."""
+def build_ramrod(name, steel_mat):
+    """Steel rammer with a tulip head, seated in the channel at rest."""
+    bm = bmesh.new()
+    _cyl(bm, 0.0038, 0.0038, ROD_Y0, ROD_Y1 - 0.03, z=ROD_Z, segments=6)
+    _cyl(bm, 0.0060, 0.0048, ROD_Y1 - 0.03, ROD_Y1, z=ROD_Z, segments=6)
+    me = bpy.data.meshes.new(name)
+    bm.to_mesh(me)
+    bm.free()
+    ob = bpy.data.objects.new(name, me)
+    bpy.context.scene.collection.objects.link(ob)
+    ob.data.materials.append(steel_mat)
+    return ob
+
+
+def attach_musket_to_rig(musket, ramrod, rig):
+    """Add prop bones to the rig (prop_musket under Root; prop_ramrod under
+    prop_musket, head at the rod's rear channel seat) and rigid-skin each
+    prop to its bone. Clips key these bones directly."""
     bpy.ops.object.select_all(action='DESELECT')
     rig.select_set(True)
     bpy.context.view_layer.objects.active = rig
     bpy.ops.object.mode_set(mode='EDIT')
     eb = rig.data.edit_bones
-    if bone_name not in eb:
-        b = eb.new(bone_name)
+    if "prop_musket" not in eb:
+        b = eb.new("prop_musket")
         b.head = Vector((0, 0, 0))
         b.tail = Vector((0, 0.25, 0))   # +Y like the musket's long axis
         b.parent = eb["Root"]
+    if "prop_ramrod" not in eb:
+        b = eb.new("prop_ramrod")
+        b.head = Vector((0, ROD_Y0, ROD_Z))
+        b.tail = Vector((0, ROD_Y0 + 0.25, ROD_Z))
+        b.parent = eb["prop_musket"]
     bpy.ops.object.mode_set(mode='OBJECT')
-    vg = musket.vertex_groups.new(name=bone_name)
-    vg.add(range(len(musket.data.vertices)), 1.0, 'REPLACE')
-    mod = musket.modifiers.new("rig", 'ARMATURE')
-    mod.object = rig
-    musket.parent = rig
+    for ob, bone in ((musket, "prop_musket"), (ramrod, "prop_ramrod")):
+        vg = ob.vertex_groups.new(name=bone)
+        vg.add(range(len(ob.data.vertices)), 1.0, 'REPLACE')
+        mod = ob.modifiers.new("rig", 'ARMATURE')
+        mod.object = rig
+        ob.parent = rig
     return musket

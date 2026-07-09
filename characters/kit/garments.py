@@ -167,6 +167,9 @@ class Landmarks:
         self.body = body
         self.rig = rig
         b = rig.data.bones
+        # character-right sign along X (MPFB game_engine: right hand is at
+        # NEGATIVE x — measured, not assumed; equipment sides depend on it)
+        self.rs = 1.0 if b["hand_r"].head_local.x > 0 else -1.0
         self.hip_z = b["pelvis"].head_local.z
         self.waist_z = b["spine_01"].head_local.z + 0.06
         self.chest_z = b["spine_03"].head_local.z
@@ -368,16 +371,19 @@ def place(ob, loc, rot_euler_deg=(0, 0, 0)):
 
 
 def cartridge_box(body, rig, lm, pal):
+    # worn on the RIGHT hip, rear (sling from the left shoulder)
     ob = _box(f"{body.name}_cartbox", (0.09, 0.035, 0.065), "leather", pal)
-    place(ob, (lm.waist_halfwidth * 0.55, lm.waist_back + 0.02, lm.waist_z - 0.02),
-          (0, 0, -15))
+    place(ob, (lm.rs * lm.waist_halfwidth * 0.55, lm.waist_back + 0.02,
+               lm.waist_z - 0.02), (0, 0, -15))
     rigid_skin(ob, rig, "pelvis")
     return ob
 
 
 def cap_pouch(body, rig, lm, pal):
+    # on the belt, right of the plate
     ob = _box(f"{body.name}_cappouch", (0.028, 0.02, 0.028), "leather", pal)
-    place(ob, (lm.waist_halfwidth * 0.55, lm.waist_front - 0.005, lm.waist_z))
+    place(ob, (lm.rs * lm.waist_halfwidth * 0.55, lm.waist_front - 0.005,
+               lm.waist_z))
     rigid_skin(ob, rig, "pelvis")
     return ob
 
@@ -404,31 +410,36 @@ def belt(body, rig, lm, pal):
 
 
 def haversack(body, rig, lm, pal):
+    # LEFT hip
     ob = _box(f"{body.name}_haversack", (0.055, 0.11, 0.11), "canvas", pal)
-    place(ob, (-(lm.waist_halfwidth + 0.045), 0.02, lm.waist_z - 0.10), (0, 8, 0))
+    place(ob, (-lm.rs * (lm.waist_halfwidth + 0.045), 0.02, lm.waist_z - 0.10),
+          (0, 8, 0))
     rigid_skin(ob, rig, "pelvis")
     return ob
 
 
 def canteen(body, rig, lm, pal):
+    # LEFT hip, over the haversack
     bm = bmesh.new()
     bmesh.ops.create_uvsphere(bm, u_segments=14, v_segments=8, radius=0.085)
     for v in bm.verts:
         v.co.x *= 0.35
     ob = _primitive_to_object(bm, f"{body.name}_canteen")
-    place(ob, (-(lm.waist_halfwidth + 0.085), 0.055, lm.waist_z - 0.06), (0, 6, 0))
+    place(ob, (-lm.rs * (lm.waist_halfwidth + 0.085), 0.055, lm.waist_z - 0.06),
+          (0, 6, 0))
     set_mat(ob, flat_mat(f"{pal['id']}_eq_canteen", pal["canteen"], 0.8))
     rigid_skin(ob, rig, "pelvis")
     return ob
 
 
 def bayonet_scabbard(body, rig, lm, pal):
+    # LEFT hip, rear
     bm = bmesh.new()
     bmesh.ops.create_cone(bm, cap_ends=True, segments=8,
                           radius1=0.013, radius2=0.006, depth=0.50)
     ob = _primitive_to_object(bm, f"{body.name}_scabbard")
-    place(ob, (-(lm.waist_halfwidth * 0.7), lm.waist_back - 0.01, lm.waist_z - 0.28),
-          (12, 0, 8))
+    place(ob, (-lm.rs * (lm.waist_halfwidth * 0.7), lm.waist_back - 0.01,
+               lm.waist_z - 0.28), (12, 0, 8))
     set_mat(ob, flat_mat(f"{pal['id']}_eq_leather", pal["leather"], 0.55))
     rigid_skin(ob, rig, "pelvis")
     return ob
@@ -437,7 +448,7 @@ def bayonet_scabbard(body, rig, lm, pal):
 def strap(body, rig, lm, pal, name, from_shoulder, pal_key="leather", width=0.055):
     """Cross-body sling ribbon from one shoulder to the opposite hip.
     from_shoulder: 'l' or 'r'."""
-    s = 1.0 if from_shoulder == 'l' else -1.0
+    s = -lm.rs if from_shoulder == 'l' else lm.rs
     sh = Vector((s * 0.062, -0.01, lm.shoulder_z + 0.045))
     hip = Vector((-s * (lm.waist_halfwidth * 0.8), 0.0, lm.waist_z - 0.05))
     # waypoints hug the torso: front panel down across the chest
@@ -477,8 +488,9 @@ def blanket_roll(body, rig, lm, pal):
     bmesh.ops.subdivide_edges(bm, edges=long_edges, cuts=8)
     ob = _primitive_to_object(bm, f"{body.name}_bedroll")
     me = ob.data
-    p0 = Vector((0.085, -0.005, lm.shoulder_z + 0.055))
-    p2 = Vector((-(lm.waist_halfwidth + 0.02), 0.01, lm.waist_z - 0.06))
+    # left shoulder -> right hip
+    p0 = Vector((-lm.rs * 0.085, -0.005, lm.shoulder_z + 0.055))
+    p2 = Vector((lm.rs * (lm.waist_halfwidth + 0.02), 0.01, lm.waist_z - 0.06))
     mid_z = (p0.z + p2.z) / 2
     # the bezier midpoint gets only half of p1's pull: solve p1.y so the
     # curve midpoint sits a roll-radius clear of the chest surface
