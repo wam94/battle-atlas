@@ -343,6 +343,14 @@ class Poser:
             b.keyframe_insert("rotation_euler", frame=f)
             if b.name in LOC_BONES:
                 b.keyframe_insert("location", frame=f)
+        # CRITICAL: unassign the action while posing continues. Any
+        # depsgraph relations rebuild (adding the next pose's IK empties
+        # does one) re-applies the ASSIGNED action at the current scene
+        # frame, silently overwriting the pose being built — this leaked
+        # Fire's bladed twist into every reload key (the Gate P6
+        # 'skirmisher bent sideways' content defect) and each clip's
+        # frame-1 pose into later keys.
+        self.rig.animation_data.action = None
 
 
 # ======================================================================
