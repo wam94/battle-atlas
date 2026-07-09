@@ -522,10 +522,11 @@ def fire(P):
 
 def _reload_musket_frame(P):
     """Musket in the LOAD position: butt on the ground ahead of the right
-    foot, barrel canted back toward the soldier, left hand steadying."""
+    foot, barrel to the FRONT (muzzle canted slightly away from the face,
+    per the drill and so the muzzle-work poses read), left hand steadying."""
     rs = P.rs
-    butt = (rs * 0.07, -0.30, 0.005)
-    mdir = Vector((-rs * 0.02, 0.16, 0.99)).normalized()
+    butt = (rs * 0.07, -0.34, 0.005)
+    mdir = Vector((-rs * 0.02, -0.07, 0.997)).normalized()
     return P.musket(butt, mdir), Vector(butt), mdir
 
 
@@ -539,7 +540,7 @@ def reload_musket(P):
     pouch = Vector((rs * 0.10, -0.17, lm.waist_z + 0.01))     # cap pouch
     mouth = Vector((0.0, -0.135, lm.neck_z + 0.14))
 
-    def base(lean=10.0, look_dn=18.0):
+    def base(lean=7.0, look_dn=10.0):
         P.reset()
         _stand_legs(P, stance=0.16)
         P.lean(lean)
@@ -552,9 +553,14 @@ def reload_musket(P):
         return M, butt, mdir, muzzle
 
     def key_at(t, rh_target, rod=None, flipped=False, look=None,
-               lean=10.0, rh_pole=None, curl_r=0.55):
+               lean=7.0, rh_pole=None, curl_r=0.55):
+        # default right elbow pole: out to the right, forward and high —
+        # the rear-down default wraps the arm behind the neck for
+        # muzzle-height work (seen in the first Unity stills)
+        if rh_pole is None:
+            rh_pole = (rs * 0.75, -0.55, 1.25)
         M, butt, mdir, muzzle = base(lean=lean,
-                                     look_dn=look if look is not None else 18.0)
+                                     look_dn=look if look is not None else 10.0)
         P.ramrod(rod, flipped=flipped)
         P.hand('r', rh_target(M, butt, mdir, muzzle), pole=rh_pole)
         P.apply_ik()
@@ -576,23 +582,23 @@ def reload_musket(P):
            look=10.0, curl_r=0.3)
     key_at(2.9, lambda M, b, d, mz: box, rh_pole=(rs * 0.6, 0.55, 0.9),
            curl_r=0.85)                                   # grasp round
-    key_at(4.1, lambda M, b, d, mz: mouth, look=26.0, curl_r=0.85)
+    key_at(4.1, lambda M, b, d, mz: mouth, look=16.0, curl_r=0.85)
 
     # --- 4.5 TEAR: head bites, sharp little jerk aside
     key_at(S["tear_cartridge"] + 0.3,
            lambda M, b, d, mz: mouth + Vector((0, 0, -0.01)),
-           look=30.0, curl_r=0.9)
+           look=18.0, curl_r=0.9)
     key_at(5.4, lambda M, b, d, mz: mouth + Vector((rs * 0.09, -0.02, 0.02)),
-           look=24.0, curl_r=0.9)
+           look=14.0, curl_r=0.9)
 
     # --- 6.0 CHARGE: pour at the muzzle, press the ball
     key_at(S["charge_cartridge"] + 0.5,
            lambda M, b, d, mz: mz + Vector((0, 0.015, 0.06)),
-           look=22.0, curl_r=0.7)
+           look=12.0, curl_r=0.7)
     key_at(7.4, lambda M, b, d, mz: mz + Vector((0, 0.015, 0.025)),
-           look=22.0, curl_r=0.5)                          # pour/press
+           look=12.0, curl_r=0.5)                          # pour/press
     key_at(8.2, lambda M, b, d, mz: mz + Vector((0, 0.02, 0.05)),
-           look=20.0, curl_r=0.4)
+           look=12.0, curl_r=0.4)
 
     # --- 8.5 DRAW RAMMER: hand to rod head, long pull, flip over muzzle
     rodC = Vector((0, mk.ROD_Y0, mk.ROD_Z))               # channel (rest)
@@ -650,9 +656,9 @@ def reload_musket(P):
         P.key(a, t)
 
     lock = Vector((rs * 0.02, mk.BREECH_Y - 0.03, 0.03))
-    prime_key(S["prime"] + 0.25, lambda M: M @ lock, 20.0, curl_r=0.5)  # half-cock
-    prime_key(16.9, lambda M: pouch, 16.0, curl_r=0.4)                  # to pouch
-    prime_key(17.5, lambda M: M @ lock, 20.0, curl_r=0.35)              # cap on
+    prime_key(S["prime"] + 0.25, lambda M: M @ lock, 12.0, curl_r=0.5)  # half-cock
+    prime_key(16.9, lambda M: pouch, 10.0, curl_r=0.4)                  # to pouch
+    prime_key(17.5, lambda M: M @ lock, 12.0, curl_r=0.35)              # cap on
 
     # --- 18.0 SHOULDER: back to the carry
     P.reset()

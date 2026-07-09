@@ -192,7 +192,13 @@ namespace BattleAtlas.EditorTools
             }
             finally
             {
-                GraphicsSettings.defaultRenderPipeline = prevDefault;
+                // restore the COMMITTED playback profile explicitly (16c7dbc
+                // regression class: a captured prevDefault can already be
+                // stale/null and batch exit persists ProjectSettings)
+                var playback = AssetDatabase.LoadAssetAtPath<RenderPipelineAsset>(
+                    HdrpMigration.PlaybackAssetPath);
+                GraphicsSettings.defaultRenderPipeline =
+                    playback != null ? playback : prevDefault;
                 QualitySettings.renderPipeline = prevQuality;
                 CurrentGlobalSettingsProp.SetValue(null, prevGlobal);
                 EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
