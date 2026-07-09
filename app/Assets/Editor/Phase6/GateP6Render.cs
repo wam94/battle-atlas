@@ -35,11 +35,16 @@ namespace BattleAtlas.EditorTools
         const int WarmupFrames = 3;
         const string KitDir = "Assets/ProjectOwned/Characters/Kit";
 
-        // The kit figures import facing Unity -Z at identity (Blender -Y
-        // forward through the default exporter axes); choreography facing 0
-        // means +Z north, so +180 yaw — verified in the stills pass (faces
-        // showed toward a camera that should have seen backs at fixup 0).
-        const float FacingFixup = 180f;
+        // The kit figures import facing Unity +Z at identity — measured,
+        // not assumed: sampling Reload_Musket at t=0 puts the grounded
+        // musket butt at local (0.07, 0.005, +0.34), i.e. 34 cm in FRONT
+        // of the figure along +Z (authoring space: MPFB faces -Y, butt at
+        // y=-0.34; the importer maps -Y(fwd) to +Z). Choreography facing 0
+        // means +Z north, so NO fixup. The first render shipped +180 —
+        // every soldier faced away from his motion; the frozen batch
+        // skinning (see ForcePerRenderSkinning) hid it, and the default
+        // pose read as "faces toward camera" during that verification.
+        const float FacingFixup = 0f;
 
         static readonly string[] CsaVariants = { "csa_a", "csa_b", "csa_c" };
         static readonly string[] UnionVariants = { "union_a", "union_b", "union_c" };

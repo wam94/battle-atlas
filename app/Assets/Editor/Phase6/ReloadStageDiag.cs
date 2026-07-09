@@ -105,6 +105,16 @@ namespace BattleAtlas.EditorTools
                                   $"hand_r={Fmt(handR)} musket={Fmt(musket)} root={Fmt(root)}");
                     }
                 }
+                // head-vs-pelvis check against the Blender ground truth
+                var head = FindDeep(go.transform, "head");
+                var pelvis = FindDeep(go.transform, "pelvis");
+                var reload2 = clips["Reload_Musket"];
+                foreach (float tt in new[] { 1.67f, 10.6f })
+                {
+                    reload2.SampleAnimation(go, tt);
+                    Debug.Log($"DumpClips: reload@{tt:F2} head={Fmt(head)} " +
+                              $"pelvis={Fmt(pelvis)} hand_r={Fmt(handR)}");
+                }
                 // hierarchy root children for path comparison
                 Debug.Log("DumpClips: instance children: " + string.Join(", ",
                     System.Linq.Enumerable.Select(
@@ -211,9 +221,9 @@ namespace BattleAtlas.EditorTools
                 void Render(GameObject go, string path)
                 {
                     go.transform.position = origin;
-                    // same fixup the gate render uses; face the figure
-                    // roughly toward the camera side
-                    go.transform.rotation = Quaternion.Euler(0f, 90f + 180f, 0f);
+                    // face the figure toward the camera (kit front is +Z
+                    // at identity; camera sits at +X/-Z of the figure)
+                    go.transform.rotation = Quaternion.Euler(0f, 130f, 0f);
                     // 3/4 front view from ~3.4 m, chest height
                     cam.transform.position = origin + new Vector3(2.6f, 1.35f, -2.1f);
                     cam.transform.LookAt(origin + new Vector3(0f, 0.95f, 0f));

@@ -371,7 +371,10 @@ namespace BattleAtlas
             var pose = new SoldierPose
             {
                 posLocal = SkirmisherPos,
-                facingDeg = 90f,
+                // oblique toward the wall (ESE): still faces the enemy,
+                // but shows the camera his right side — cartridge box,
+                // lock and priming, the drill's readable side
+                facingDeg = 115f,
                 usa = false,
             };
             int idx = 0;
