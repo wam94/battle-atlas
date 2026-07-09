@@ -291,7 +291,7 @@ namespace BattleAtlas.EditorTools
 
                 var exposure = profile.Add<UnityEngine.Rendering.HighDefinition.Exposure>(true);
                 exposure.mode.value = ExposureMode.Fixed;
-                exposure.fixedExposure.value = 13.6f; // sunny-afternoon EV100
+                exposure.fixedExposure.value = 13.2f; // sunny-afternoon EV100
 
                 var fog = profile.Add<UnityEngine.Rendering.HighDefinition.Fog>(true);
                 fog.enabled.value = true;

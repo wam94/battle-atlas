@@ -91,6 +91,12 @@ namespace BattleAtlas.EditorTools
             // assets, which would destroy the pipeline asset created below
             EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
 
+            // ensure HDRP global settings BEFORE the swap: Ensure() may call
+            // AssetDatabase.SaveAssets, and saving while an in-memory
+            // pipeline asset is the default would persist a null
+            // m_CustomRenderPipeline into ProjectSettings
+            if (p == BakeoffPipeline.Hdrp) EnsureHdrpGlobalSettings();
+
             RenderPipelineAsset prevDefault = GraphicsSettings.defaultRenderPipeline;
             RenderPipelineAsset prevQuality = QualitySettings.renderPipeline;
             object prevGlobalSettings = CurrentGlobalSettingsProp.GetValue(null);
