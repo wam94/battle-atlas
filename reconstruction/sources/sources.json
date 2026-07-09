@@ -1,0 +1,249 @@
+{
+  "sources": [
+    {
+      "id": "bachelder-third-day-1876",
+      "kind": "map",
+      "title": "Map of the battlefield of Gettysburg. July 3rd, 1863 (Third Day's Battle — Positions of Troops)",
+      "author": "John B. Bachelder",
+      "year": 1876,
+      "url": "https://www.loc.gov/item/99447492/",
+      "editionNote": "Positions compiled by John B. Bachelder, 1876; new edition 1883 (LC Civil War Maps 2nd ed. no. 326). Drawn on the Warren survey base at 1:12,000; PD-traceable. Encodes position CLASSES (first/intermediate/evening/all day), not clock times — every clock attached to a Bachelder position is an inferred time on a documented position. Union regiment geometry best-sourced; Confederate at-the-wall positions are brigade-level and the most interpretation-laden (Hartwig, GNMP Seminar 12).",
+      "note": "Primary July 3 position source. Landcover features (stone wall, road fences, copse, fields) traced from the georeferenced sheet 2026-07-02 into data/landcover/landcover.json."
+    },
+    {
+      "id": "warren-survey-1868",
+      "kind": "map",
+      "title": "Battle field of Gettysburg (surveyed 1868-69 under Bvt. Maj. Gen. G.K. Warren)",
+      "author": "G. K. Warren (survey); P. M. Blake (field revision 1873)",
+      "year": 1873,
+      "url": "https://www.loc.gov/item/99448794/",
+      "editionNote": "1:12,000 reduction of the 200-ft-to-the-inch original (NARA RG 77:E 81). LOC verbatim: 'Positions of troops are not given.' Terrain/roads/fences/vegetation base layer only.",
+      "note": "Georeferencing base for the Bachelder sheets and the traced landcover."
+    },
+    {
+      "id": "haskell-1908",
+      "kind": "memoir",
+      "title": "The Battle of Gettysburg",
+      "author": "Frank Aretas Haskell",
+      "year": 1908,
+      "url": "https://www.gutenberg.org/cache/epub/33121/pg33121.txt",
+      "editionNote": "Wisconsin History Commission Reprints No. 1 (1908); written as a letter weeks after the battle. Famously partisan — 72nd PA veterans disputed his Angle characterization. Union 1st Lt., aide to Gen. Gibbon, on Cemetery Ridge."
+    },
+    {
+      "id": "alexander-1907",
+      "kind": "memoir",
+      "title": "Military Memoirs of a Confederate, ch. 18 (Gettysburg: Third Day)",
+      "author": "Edward Porter Alexander",
+      "year": 1907,
+      "url": "https://archive.org/details/militarymemoirso00alex",
+      "editionNote": "44-year retrospective; times self-reported from his own watch. Confederate colonel directing the assault artillery on Longstreet's front (not Lee's artillery chief — Pendleton held that post)."
+    },
+    {
+      "id": "jacobs-1864",
+      "kind": "book",
+      "title": "Notes on the Rebel Invasion of Maryland and Pennsylvania",
+      "author": "Michael Jacobs",
+      "year": 1864,
+      "url": "https://archive.org/details/notesonrebelinva00jaco",
+      "editionNote": "The most contemporaneous source (1864). Civilian professor at Pennsylvania College, Gettysburg; habitually precise but a distant observer."
+    },
+    {
+      "id": "martin-smith-shsp32-1904",
+      "kind": "article",
+      "title": "Battle of Gettysburg, and the Charge of Pickett's Division (SHSP Vol. 32, pp. 183-195)",
+      "author": "Rawley W. Martin and John Holmes Smith",
+      "year": 1904,
+      "url": "https://archive.org/details/southernhistoricv32sout",
+      "editionNote": "Martin (Lt. Col., 53rd VA, Armistead's brigade) pp. ~184-189; Smith (Capt., 11th VA, Kemper's) pp. ~189-195. Martin's letter dated Aug. 11, 1897 — 34-year recollection; twice misnames the Union position 'Seminary Ridge'. Page span verified against the archive.org scan 2026-07-02."
+    },
+    {
+      "id": "fry-shsp7-1879",
+      "kind": "article",
+      "title": "Pettigrew's Charge at Gettysburg (SHSP Vol. 7, pp. 91-93)",
+      "author": "Birkett D. Fry",
+      "year": 1879,
+      "url": "https://archive.org/details/sim_southern-historical-society-papers_1879-02_7_2",
+      "editionNote": "Fry commanded Archer's brigade, the guide of the whole assault. Down wounded before the end; misdates Heth's wounding. Page span verified against the archive.org scan 2026-07-02."
+    },
+    {
+      "id": "longstreet-1896",
+      "kind": "memoir",
+      "title": "From Manassas to Appomattox",
+      "author": "James Longstreet",
+      "year": 1896,
+      "url": "https://archive.org/details/manassasappomatt00longrich",
+      "editionNote": "The fifteen-thousand protest at pp. 386-387 is indirect discourse in this memoir; the direct-speech version is his earlier 1877 account — do not conflate. Assault organization at pp. 388-389; strength figures at p. 315."
+    },
+    {
+      "id": "sturtevant-1910",
+      "kind": "regimental_history",
+      "title": "Pictorial History Thirteenth Regiment Vermont Volunteers",
+      "author": "Ralph Orson Sturtevant",
+      "year": 1910,
+      "url": "https://archive.org/details/cu31924030916187",
+      "editionNote": "Ignores the known Stannard-vs-Doubleday/Hancock credit dispute. Flank-attack passage pp. 304-305."
+    },
+    {
+      "id": "fuger-1904",
+      "kind": "memoir",
+      "title": "Lieut.-Colonel Frederick Fuger, U.S. Army and his Descendants (eyewitness account of July 3, 1863)",
+      "author": "Frederick Fuger",
+      "year": 1904,
+      "url": "https://storiesfrommimi.wordpress.com/descendants-of-lt-col-frederick-fuger/frederick-fuger-eyewitness-account-of-the-battle-of-the-bloody-angle-july-3-1863-gettysburg-pa/",
+      "editionNote": "Family-published manuscript (Winn & Hammond, Detroit, 1904). Written ~41 years after the event during Fuger's Medal of Honor pursuit — a contested, self-interested retelling (Hartwig: 'Fuger's embellishments... gained traction'). His hand-to-hand claim is directly disputed by Anthony McDermott (69th PA, 1891). Wound/death sequence for Cushing comes from this variant."
+    },
+    {
+      "id": "fuger-jmsi-1907",
+      "kind": "article",
+      "title": "Cushing's Battery at Gettysburg (Journal of the Military Service Institution, Vol. 41, p. 408)",
+      "author": "Frederick Fuger",
+      "year": 1907,
+      "url": "https://catalog.hathitrust.org/Record/008898037",
+      "editionNote": "JMSI Vol. 41 has no verified free-and-scriptable full text (archive.org run stops at Vol. 39); the final-canister/Armistead passage is verified verbatim via the NPS GNMP citation (hartwig-2012-nps). Same 41-44-year retrospective caveats as fuger-1904."
+    },
+    {
+      "id": "hartwig-2012-nps",
+      "kind": "blog",
+      "title": "Lieutenant Cushing (From the Fields of Gettysburg, NPS GNMP blog, June 21, 2012)",
+      "author": "D. Scott Hartwig",
+      "year": 2012,
+      "url": "https://npsgnmp.wordpress.com/2012/06/21/lieutenant-cushing/",
+      "editionNote": "NPS staff historian. Quotes the JMSI 1907 Fuger passage directly and documents the conflicts between Fuger, Cowan's 1885 Bachelder letter, and Webb's official report. Contains no clock times at all (fetch-verified 2026-07-02)."
+    },
+    {
+      "id": "mcdermott-1889",
+      "kind": "regimental_history",
+      "title": "A Brief History of the 69th Regiment Pennsylvania Veteran Volunteers",
+      "author": "Anthony W. McDermott",
+      "year": 1889,
+      "url": "https://archive.org/details/briefhistoryof00mcde",
+      "editionNote": "Full text verified. The gold-standard company-level fragment for the Angle (Cos. I, A, F, D)."
+    },
+    {
+      "id": "waitt-1906",
+      "kind": "regimental_history",
+      "title": "History of the Nineteenth Regiment, Massachusetts Volunteer Infantry, 1861-1865 (ch. XXIX, pp. 234-237)",
+      "author": "Ernest Linden Waitt (compiler)",
+      "year": 1906,
+      "url": "https://archive.org/details/04390879.3094.emory.edu",
+      "editionNote": "Compiled regimental history — 43-years-later literary polish over veterans' testimony; composite enlisted-ranks voice for the Cemetery Ridge bombardment."
+    },
+    {
+      "id": "smith-71pa-or",
+      "kind": "official_report",
+      "title": "Official report on the 71st Pennsylvania at Gettysburg (Lt. Col. C. Kochersperger / Col. R. Penn Smith)",
+      "author": "R. Penn Smith",
+      "year": 1863,
+      "url": "https://gettysburg.stonesentinels.com/union-monuments/pennsylvania/pennsylvania-infantry/71st-pennsylvania/official-report-on-the-71st-pennsylvania/",
+      "editionNote": "Accessed via the Stone Sentinels reproduction. The report names no companies."
+    },
+    {
+      "id": "or-27-1-hall",
+      "kind": "official_report",
+      "title": "Col. Norman J. Hall's report, OR Series I Vol. 27 Part 1",
+      "author": "Norman J. Hall",
+      "year": 1863,
+      "url": "https://collections.library.cornell.edu/moa_new/waro.html",
+      "editionNote": "OR Part 1 (Union reports) has no verified script-friendly URL (HathiTrust bot-blocks; Cornell MOA browser-only). Content attested via the 2026-07-02 regiment-track survey: describes shifting his regiments right toward the clump during the break."
+    },
+    {
+      "id": "stone-sentinels",
+      "kind": "reference_site",
+      "title": "Gettysburg Stone Sentinels (monument and unit pages)",
+      "author": "Steve Hawks",
+      "year": 2026,
+      "url": "https://gettysburg.stonesentinels.com/",
+      "editionNote": "Monument-inscription and modern-compilation figures derived from GNMP tablets and OR data; the site's own disclaimer: 'often in disagreement between regimental and brigade records.' Two separate fetches of the same page have returned different numbers for some brigades (extraction caution). Strength figures are inferred-tier, not period documents."
+    },
+    {
+      "id": "encyclopedia-virginia",
+      "kind": "reference_site",
+      "title": "Encyclopedia Virginia (Pickett's Charge entries)",
+      "author": "Virginia Humanities",
+      "year": 2026,
+      "url": "https://encyclopediavirginia.org/entries/numbers-at-picketts-charge/",
+      "editionNote": "Historiographic synthesis; frames scholarly consensus on assault strength as 'surprisingly hard to reach' (12,000-13,000 total; Pickett's division 5,800-6,200 depending on source)."
+    },
+    {
+      "id": "aylett-1863",
+      "kind": "official_report",
+      "title": "Col. W. R. Aylett's report on Armistead's brigade, July 12, 1863 (Museum of the Confederacy)",
+      "author": "William R. Aylett",
+      "year": 1863,
+      "url": "https://encyclopediavirginia.org/1117hpr-5342776bbcb9068/",
+      "editionNote": "Period after-action report, accessed via the Encyclopedia Virginia reproduction (secondary hop flagged). 1,191 total casualties for Armistead's brigade."
+    },
+    {
+      "id": "army-moh-cushing",
+      "kind": "government_record",
+      "title": "U.S. Army Medal of Honor page for 1st Lt. Alonzo Cushing",
+      "author": "U.S. Army",
+      "year": 2014,
+      "url": "https://www.army.mil/medalofhonor/cushing/",
+      "editionNote": "Administrative commendation record compiled long after 1863, not a battlefield return. '126 men and six cannons.'"
+    },
+    {
+      "id": "webb-moh",
+      "kind": "government_record",
+      "title": "Medal of Honor citation for Brig. Gen. Alexander S. Webb",
+      "author": "U.S. War Department",
+      "year": 1891,
+      "url": "https://gettysburg.stonesentinels.com/monuments-to-individuals/alexander-webb/",
+      "editionNote": "Administrative record; confirms Webb wounded while leading at the Angle."
+    },
+    {
+      "id": "nps-cushing-article",
+      "kind": "article",
+      "title": "Alonzo Cushing at Gettysburg (NPS article)",
+      "author": "National Park Service",
+      "year": 2014,
+      "url": "https://www.nps.gov/articles/000/alonzo-cushing-gettysburg.htm",
+      "editionNote": "Modern NPS synthesis: the two-serviceable-guns displacement to the wall, the three-wound sequence, and the 'fired the last shot' legend correction."
+    },
+    {
+      "id": "brown-1985-filson",
+      "kind": "article",
+      "title": "Double Canister at Ten Yards: Captain Andrew Cowan at Gettysburg (Filson Club History Quarterly 59:3)",
+      "author": "Kent Masterson Brown",
+      "year": 1985,
+      "url": "https://filsonhistorical.org/wp-content/uploads/publicationpdfs/59-3-2_-Double-Canister-at-Ten-Yards-Captain-Andrew-Cowan-at-Gettysburg_Brown-Kent-Masterson.pdf",
+      "editionNote": "Read page-by-page in the 2026-07-02 survey. Cowan's arrival replacing Brown's B, the 5-guns-south/1-gun-north split (orientation corrected there), the 106th PA Cos. A/B skirmish detail (fn. 75)."
+    },
+    {
+      "id": "abt-map-set",
+      "kind": "map",
+      "title": "American Battlefield Trust timed map sheets, Pickett's Charge (3:00-3:30 / 3:30-3:45 / 3:45-4:15 PM)",
+      "author": "Steven Stanley / American Battlefield Trust",
+      "year": 2020,
+      "url": "https://www.battlefields.org/learn/maps/gettysburg-picketts-charge-july-3-1863",
+      "editionNote": "Copyrighted, look-don't-touch (ToS prohibits derivative/AI use of the maps themselves); brigade/time FACTS cited under Feist, geometry never traced. Brigade-level, its own clock frame — never silently mixed with witness clocks."
+    },
+    {
+      "id": "historynet-72pa",
+      "kind": "article",
+      "title": "Monumental Lie? — the 72nd Pennsylvania monument litigation",
+      "author": "HistoryNet",
+      "year": 2017,
+      "url": "https://www.historynet.com/monumental-lie-statue-bloody-angle/",
+      "editionNote": "Survey-grade lead (SNIPPET tier) for the 72nd PA's contested position; used only to attest that the counter-reading exists, not for geometry."
+    },
+    {
+      "id": "veazey-or",
+      "kind": "official_report",
+      "title": "Col. Wheelock G. Veazey's report (16th Vermont), OR Series I Vol. 27 Part 1",
+      "author": "Wheelock G. Veazey",
+      "year": 1863,
+      "url": "https://collections.library.cornell.edu/moa_new/waro.html",
+      "editionNote": "Same OR Part 1 access caveat as or-27-1-hall; content attested via the 2026-07-02 survey (the 16th VT on the 13th's left firing into Pickett's right flank, then reversing against Wilcox/Lang)."
+    },
+    {
+      "id": "vt13-monument",
+      "kind": "monument",
+      "title": "13th Vermont monument inscription, Gettysburg",
+      "author": "Gettysburg Battlefield Memorial Association / State of Vermont",
+      "year": 1899,
+      "url": "https://gettysburg.stonesentinels.com/union-monuments/vermont/13th-vermont/",
+      "editionNote": "Inscription verbatim via Stone Sentinels: 'changed front forward on first company, advanced 200 yards, attacking the Confederate right flank... capturing 243 prisoners.' Monument text is veteran-committee testimony, Bachelder-era placement discipline."
+    }
+  ]
+}
