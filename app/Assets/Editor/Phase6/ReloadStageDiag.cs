@@ -138,19 +138,23 @@ namespace BattleAtlas.EditorTools
         {
             RunIsolated((render, outDir) =>
             {
-                var go = GateP6Render.SpawnVariant("csa_a");
-                var clips = GateP6Render.LoadClips("csa_a");
-                foreach (var kv in clips)
+                foreach (string variant in new[] { "csa_a", "union_a" })
                 {
-                    var clip = kv.Value;
-                    float[] phases = { 0f, 0.33f, 0.66f, 0.999f };
-                    for (int i = 0; i < phases.Length; i++)
+                    var go = GateP6Render.SpawnVariant(variant);
+                    var clips = GateP6Render.LoadClips(variant);
+                    foreach (var kv in clips)
                     {
-                        float t = clip.length * phases[i];
-                        clip.SampleAnimation(go, t);
-                        render(go, Path.Combine(
-                            outDir, $"sweep_{kv.Key}_{i}_t{t:00.00}.png"));
+                        var clip = kv.Value;
+                        float[] phases = { 0f, 0.33f, 0.66f, 0.999f };
+                        for (int i = 0; i < phases.Length; i++)
+                        {
+                            float t = clip.length * phases[i];
+                            clip.SampleAnimation(go, t);
+                            render(go, Path.Combine(
+                                outDir, $"sweep_{variant}_{kv.Key}_{i}_t{t:00.00}.png"));
+                        }
                     }
+                    UnityEngine.Object.DestroyImmediate(go);
                 }
             }, "clip-sweep");
         }

@@ -106,9 +106,10 @@ def build_variant(name, spec):
     # they cover (defect-1 fix: covered skin can never poke through)
     g.mask_covered_body(body, lm, style)
 
-    # skin material on the body itself
+    # skin material on the body itself; the collar plug reads as shirt
     skin = sf.flat_mat("skin", (0.62, 0.45, 0.34, 1.0), 0.6)
     g.set_mat(body, skin)
+    g.collar_shirt(body, lm, pal)
 
     musket, ramrod = mk.build_musket(f"{name}_musket")
     mk.attach_musket_to_rig(musket, ramrod, rig)

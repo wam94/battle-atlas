@@ -256,8 +256,15 @@ def mask_covered_body(body, lm, style, inset=0.022):
     preds = (coat_pred(lm, style), trousers_pred(lm), brogans_pred(lm))
     offs = [Vector((dx, 0.0, dz))
             for dx in (-inset, 0.0, inset) for dz in (-inset, 0.0, inset)]
+    collar_z = lm.neck_z + 0.012
 
     def covered(c):
+        # keep a chest/upper-back plug under the coat's neck opening:
+        # in deep bends (fence crossing, reload) the camera sees down
+        # the collar, and without this the deleted skin reads as a
+        # black void inside the coat
+        if c.z > collar_z - 0.09 and abs(c.x) < 0.13:
+            return False
         return any(all(p(c + o) for o in offs) for p in preds)
 
     doomed_idx = {p.index for p in body.data.polygons if covered(p.center)}
@@ -275,6 +282,22 @@ def mask_covered_body(body, lm, style, inset=0.022):
     print(f"[garments] masked {len(doomed_idx)} covered body faces "
           f"({len(body.data.polygons)} visible remain)")
     return len(doomed_idx)
+
+
+def collar_shirt(body, lm, pal):
+    """Color the kept chest/upper-back plug as shirt cloth: the V under
+    the coat's neck opening reads as the period shirt, not bare skin.
+    Call AFTER the skin material is assigned (slot 0)."""
+    mat = flat_mat(f"{pal['id']}_shirt", pal["shirt"], 0.9)
+    body.data.materials.append(mat)
+    collar_z = lm.neck_z + 0.012
+    n = 0
+    for p in body.data.polygons:
+        c = p.center
+        if collar_z - 0.10 < c.z <= collar_z + 0.005 and abs(c.x) < 0.135:
+            p.material_index = 1
+            n += 1
+    print(f"[garments] collar plug: {n} faces dressed as shirt")
 
 
 def coat(body, rig, lm, pal, style, arm_limit):

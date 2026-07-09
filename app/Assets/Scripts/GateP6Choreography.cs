@@ -63,6 +63,8 @@ namespace BattleAtlas
                                                   // of the wall and wavers
         public const float RetreatStopX = 481.5f; // routed men bunch at the
                                                   // fence rather than clip it
+        public const float FallRateJitter = 0.10f;   // +-10% playback rate
+        public const float FallYawJitterDeg = 9f;    // +- facing variation
 
         const float LineX0Front = 462f;
         const float LineZ0 = 388f;
@@ -277,7 +279,16 @@ namespace BattleAtlas
                         : fallClip == FallCrumple ? FallCrumpleDur : FallSideDur;
                     pose.posLocal = new Vector2(at.x, z);
                     pose.clip = fallClip;
-                    pose.clipTime = Mathf.Min(t - fallT, dur - 1f / 48f);
+                    // deterministic per-soldier variation from the shared
+                    // FNV hash so near-simultaneous falls never run in
+                    // lockstep: playback rate +-10%, facing +-9 degrees
+                    // (small enough to keep the by-incoming-direction
+                    // clip choice legible)
+                    float rate = 1f + FallRateJitter *
+                        FormationLayout.Jitter("p6-fall-rate", slot, 17);
+                    pose.facingDeg += FallYawJitterDeg *
+                        FormationLayout.Jitter("p6-fall-yaw", slot, 29);
+                    pose.clipTime = Mathf.Min((t - fallT) * rate, dur - 1f / 48f);
                     pose.dead = true;
                     return pose;
                 }

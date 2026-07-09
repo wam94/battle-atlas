@@ -65,6 +65,39 @@ namespace BattleAtlas.Tests
         }
 
         [Test]
+        public void Falls_VaryPerSoldier_Deterministically()
+        {
+            // Gate P6 review: simultaneous falls must not run in lockstep.
+            // Slots 2 and 55 both use Fall_Shot_Front_Back; the shared-hash
+            // jitter must give them different playback rates and facings,
+            // and the SAME values on every call (scrub invariance).
+            float FirstFall(int slot)
+            {
+                for (float t = 0f; t <= 60f; t += 1f / 96f)
+                    if (GateP6Choreography.Resolve(slot, t).dead) return t;
+                Assert.Fail($"slot {slot} never falls");
+                return -1f;
+            }
+            float f2 = FirstFall(2), f55 = FirstFall(55);
+            var a = GateP6Choreography.Resolve(2, f2 + 0.5f);
+            var b = GateP6Choreography.Resolve(55, f55 + 0.5f);
+            // rate jitter: same elapsed time, different clip time
+            Assert.Greater(Mathf.Abs(a.clipTime - b.clipTime), 0.02f,
+                "fall playback rates must differ per soldier");
+            // yaw jitter: facing varies around the by-direction default
+            Assert.Greater(Mathf.Abs(a.facingDeg - b.facingDeg), 0.5f,
+                "fall facings must differ per soldier");
+            Assert.Less(Mathf.Abs(a.facingDeg - 90f),
+                GateP6Choreography.FallYawJitterDeg + 0.01f,
+                "yaw jitter must stay small enough to keep the "
+                + "by-incoming-direction differentiation legible");
+            // deterministic: identical on re-resolve
+            var again = GateP6Choreography.Resolve(2, f2 + 0.5f);
+            Assert.AreEqual(a.clipTime, again.clipTime);
+            Assert.AreEqual(a.facingDeg, again.facingDeg);
+        }
+
+        [Test]
         public void EveryLineSoldier_CrossesTheFence_OrDiesFirst()
         {
             for (int slot = 0; slot < 64; slot++)
