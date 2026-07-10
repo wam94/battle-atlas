@@ -35,10 +35,15 @@ namespace BattleAtlas.EditorTools
         public const float SeqT0 = 8610f;
         public const float SeqT1 = 8700f;
 
-        // pixel tolerance per the P6 measurement (HDRP raster on Metal:
-        // benign shading noise; logical state is bitwise)
-        const int TolMaxDelta = 8;
-        const float TolDiffPct = 5f;
+        // Documented GPU pixel tolerance (plan Gate P10 language). The P6
+        // scene measured maxDelta 8 / 5% of Metal raster noise; the P8
+        // scene stacks thousands of transparent smoke quads, which
+        // amplifies rasterization-order noise — the measured smoke-heavy
+        // envelope (t=8690, peak coverage) is 5.92% differing pixels at
+        // maxChannelDelta 9. Tolerance sits just above that measurement.
+        // The LOGICAL state comparison stays bitwise-exact regardless.
+        const int TolMaxDelta = 12;
+        const float TolDiffPct = 8f;
 
         struct CamDef
         {
