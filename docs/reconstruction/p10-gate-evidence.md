@@ -172,3 +172,15 @@ sha256, provenance, and the exact `gh release create` command).
 Judge, per the gate: identical logical metadata + tolerance-bounded
 pixels for the determinism pair (§2), and acceptable seeking on the
 real media (§5). The owner's teleport is gone (§1 before/after).
+
+
+## Gate P10 verdict
+
+**PASSED — closed by the project owner 2026-07-10** ("looks good...
+good to move on"). Praised: the field of vision, the sense of scale, the
+depth of the sound mix, the bodies. Deferred polish, owner's words: the
+fence crossings "look ridiculous" (crossing-animation read — future kit/
+clip work), and "we'll enrich the sound further later" (joins ED-23's
+recorded gaps: friendly musketry/reload foley, distant-artillery layer,
+worded commands, lossless source re-acquisition). Machine criteria all
+passed; the 107 ms worst-case seek remains a Phase 11 watch item.
