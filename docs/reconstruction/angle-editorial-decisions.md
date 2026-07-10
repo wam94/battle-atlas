@@ -279,6 +279,52 @@ Phase 7; if one lands later it must be documented here.
 
 ---
 
+## Phase 8 action decisions (ED-19 … ED-21)
+
+### ED-19 — Wind for smoke drift
+
+Documented: nothing (`claim-wind-unknown`; ED-10 stands — no compiled unit
+output depends on wind). Fuger attests dense smoke hanging at the wall
+(`claim-smoke-visibility`).
+
+**Decision:** the Phase 8 smoke field needs SOME drift vector to avoid
+reading as fixed set dressing. The reconstruction uses a deliberately weak
+southwest breeze, 1.1 m/s toward the NE (`BlackPowderVfx.WindMps`) —
+consistent with the macro file's unattested light-SW-breeze block and weak
+enough that firing-line smoke accumulates and hangs, matching Fuger. This
+is reconstruction, not evidence; if a sourced wind observation for the
+charge hour ever surfaces, it replaces this constant.
+
+### ED-20 — Fire discipline cadence
+
+Documented: which units fired and how (`fire_by_rank` / `fire_independent`
+segments trace to the OR/Haskell/Fuger claims). Not documented: any unit's
+exact per-man cadence.
+
+**Decision:** the resolved fire/reload cycle is aim (1.4 s) + fire (0.9 s)
++ the kit's nine-stage reload (20 s) + ready pause (2 s) ≈ 2.5 rounds/min —
+the drill-manual rate for trained infantry under stress. `fire_by_rank`
+staggers ranks half a cycle apart (rolling rank volleys, ±0.45 s raggedness
+inside a rank); `fire_independent` staggers each man by slot hash across
+the whole cycle. Cushing-sector guns cycle 16–21 s between discharges
+(canister at close range, reduced crews). All cadence constants live in
+`FireCycles` and are reconstruction.
+
+### ED-21 — Casualty distribution to individual figures
+
+Documented: aggregate profile counts, windows, curves, cause mixes (the
+Phase 5 corpus). Not documented: which man fell when.
+
+**Decision:** victim k of a profile falls at the inverse-CDF midpoint
+quantile of the profile's pinned intensity curve, so the on-field alive
+count tracks the compiled per-second strength exactly at profile boundaries
+(within one man mid-window; rounding-tie artifact, tested). Victims,
+causes, fall directions, and the wounded-crawl minority (~22% of fallen)
+are hash-selected — never named, never re-rolled. Full rules and the
+wound-vocabulary limits: `docs/reconstruction/violence-and-representation.md`.
+
+---
+
 ## Connective-reconstruction rules (named inference rules)
 
 Segments cite these rules by name in `inferenceRules`. A segment with no
