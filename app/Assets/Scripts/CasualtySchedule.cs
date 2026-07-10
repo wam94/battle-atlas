@@ -18,7 +18,10 @@ namespace BattleAtlas
     //     exact rounding ties);
     //   * cause classes are apportioned exactly per causeMix (largest
     //     remainder), and drive the wound-category vocabulary (§9.2);
-    //   * scrubbing to any T reconstructs the same living/falling/dead.
+    //   * scrubbing to any T reconstructs the same living/falling/dead;
+    //   * Phase 9: committed Soldier View observer slots
+    //     (ViewpointObservers, policy ED-22) are exempt from victim
+    //     selection — totals are unchanged, another slot draws the fate.
     public static class CasualtySchedule
     {
         public enum Cause : byte { Musketry = 0, Canister = 1, Shell = 2, Unknown = 3 }
@@ -74,10 +77,14 @@ namespace BattleAtlas
                 var p = unit.casualtyProfiles[pi];
                 if (p.count <= 0) continue;
 
-                // hash-ranked eligible slots (untaken)
+                // hash-ranked eligible slots (untaken, not a protected
+                // Soldier View observer — plan §6.5 representative-observer
+                // policy, ED-22)
                 string key = seed + "|" + unit.unitId + "|" + p.id;
                 var cand = new List<int>();
-                for (int s = 0; s < n; s++) if (!taken[s]) cand.Add(s);
+                for (int s = 0; s < n; s++)
+                    if (!taken[s] && !ViewpointObservers.IsProtected(unit.unitId, s))
+                        cand.Add(s);
                 if (cand.Count < p.count)
                     throw new InvalidOperationException(
                         $"{unit.unitId}: profile {p.id} needs {p.count} victims, " +

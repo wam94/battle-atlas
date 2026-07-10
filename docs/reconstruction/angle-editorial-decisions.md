@@ -323,6 +323,52 @@ causes, fall directions, and the wounded-crawl minority (~22% of fallen)
 are hash-selected — never named, never re-rolled. Full rules and the
 wound-vocabulary limits: `docs/reconstruction/violence-and-representation.md`.
 
+### ED-22 — The Soldier View observer is exempt from the casualty draw
+
+Documented: nothing about any individual man at the viewpoint's position
+(the observer is representative by design, plan §6.5). Problem: ED-21's
+hash-based victim selection could deterministically assign one of the
+unit's reconstructed fates to the observer slot itself, which would (a)
+implicitly assert "the man HERE fell at THIS second," a per-person claim
+the aggregate evidence never makes, and (b) leave the camera lying in the
+wheat for the remainder of a fixed, unskippable viewpoint window.
+
+**Decision:** the observer slot of every committed viewpoint
+(`ViewpointObservers.ProtectedSlots`, pinned against `viewpoints.json` by
+test) is excluded from victim selection in `CasualtySchedule.Compile`.
+The unit's casualty totals, windows, curves, and reconciliation with
+compiled strength are unchanged — another slot draws the fate the
+observer would have drawn. Nothing else about the slot is special: same
+drill, same formation position, same reactions to nearby fire. The
+exemption is disclosed to the user in the viewpoint's editorial note and
+in the representative-observer text
+(`docs/reconstruction/soldier-view-content-warning.md`). Synthetic `dev-`
+fixtures are not observers and are not protected.
+
+### ED-23 — What the viewpoint's soundscape may and may not contain
+
+Documented: the engagement's weapon types, the units firing and when (the
+compiled fire segments), the bombardment before the slice, wounded men on
+the field. Not documented: any specific utterance, order wording, or
+per-man sound.
+
+**Decision:** the audio stems are driven ONLY by the compiled event
+streams the visuals already render from — every musket report is one
+resolved discharge, every cannon report one scheduled shot, delayed by
+distance at 343 m/s and attenuated with range. Consequences accepted for
+fidelity: Garnett's brigade has no compiled fire segment in this window
+(`take_canister` at the wall), so the viewpoint carries NO friendly
+musketry or reload foley — the observer's line takes fire without
+returning it, which is what the reconstruction says. Shouted orders are
+generic period drill commands from unattributed voices keyed to segment
+transitions (no invented named-person dialogue, §9.3); wounded voices are
+sparse, sober, and tied to scheduled nearby casualties (§9.2). No
+pre-slice bombardment residue is synthesized (the P8 "no pre-slice smoke"
+limitation applies to audio equally); ambient wind/insect beds are the
+only unmodeled-continuous layers. Smoke-based muffling is NOT applied —
+at these ranges black-powder smoke has no acoustically justifiable
+attenuation (§9.3 "only where acoustically justifiable").
+
 ---
 
 ## Connective-reconstruction rules (named inference rules)

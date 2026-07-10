@@ -1,6 +1,39 @@
 {
   "viewpoints": [
     {
+      "id": "garnett-road-to-angle",
+      "title": "With Garnett's Line",
+      "unitId": "csa-garnett",
+      "slotId": 184,
+      "viewKind": "first_person",
+      "t0": 8160,
+      "t1": 8820,
+      "camera": {
+        "eyeHeightM": 1.66,
+        "fovDeg": 68,
+        "lookOffsetDeg": [0, 0],
+        "stabilization": 0.35
+      },
+      "media": {
+        "proxy": "SoldierView/garnett-road-to-angle.proxy.mp4",
+        "full": null,
+        "fps": 30,
+        "width": 2560,
+        "height": 1440
+      },
+      "claimIds": [
+        "claim-garnett-start",
+        "claim-strength-garnett",
+        "claim-road-crossing",
+        "claim-fence-west-structure",
+        "claim-fence-east-structure",
+        "claim-cas-pause-at-fences",
+        "claim-cas-garnett-total",
+        "claim-garnett-strength-decay-basis"
+      ],
+      "editorialNote": "Representative unnamed soldier viewpoint; not an identified witness. The observer rides formation slot 184 of Garnett's brigade through the same deterministic reconstruction as every rendered figure. Editorial exemption ED-22: this slot is excluded from procedural victim selection so the viewpoint can witness its full window; the unit's casualty totals are unchanged. viewKind records the Gate P9 camera-style choice (first_person is the executor's recommendation until the owner picks between the rendered candidates)."
+    },
+    {
       "id": "dev-timecode",
       "title": "Dev: timecode proxy (Phase 1 media contract)",
       "unitId": "csa-garnett",
