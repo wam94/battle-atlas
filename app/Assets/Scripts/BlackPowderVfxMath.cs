@@ -46,8 +46,8 @@ namespace BattleAtlas
         // ED-19 canonical wind (reconstructed; claim-wind-unknown)
         public static readonly Vector2 WindMps = new Vector2(0.78f, 0.78f);
 
-        public const float MusketLife = 36f;
-        public const float CannonLife = 70f;
+        public const float MusketLife = 24f;
+        public const float CannonLife = 55f;
         public const float StrikeDustLife = 3.5f;
         public const float MarchDustLife = 7f;
         public const float FlashDur = 0.09f;
@@ -108,7 +108,7 @@ namespace BattleAtlas
                             radius = 0.45f + 3.1f * grow * (0.75f + 0.5f * h4),
                             alpha = Fade(age, life, 0.35f, 7f) * 0.62f,
                             shade = Mathf.Lerp(0.98f, 0.80f, Mathf.Min(age / life, 1f)),
-                            texVariant = (byte)(h * 971 % 3),
+                            texVariant = (byte)(AngleEnvironmentLayout.Hash01(key, h * 7 + 4) * 2.999f),
                             rollDeg = 360f * h2 + age * (h3 > 0.5f ? 2.6f : -2.6f),
                         };
                         break;
@@ -126,7 +126,7 @@ namespace BattleAtlas
                             radius = 1.1f + 6.5f * grow * (0.7f + 0.6f * h4),
                             alpha = Fade(age, life, 0.25f, 14f) * 0.72f,
                             shade = Mathf.Lerp(1f, 0.78f, Mathf.Min(age / life, 1f)),
-                            texVariant = (byte)(h * 971 % 3),
+                            texVariant = (byte)(AngleEnvironmentLayout.Hash01(key, h * 7 + 4) * 2.999f),
                             rollDeg = 360f * h2 + age * (h3 > 0.5f ? 1.8f : -1.8f),
                         };
                         break;
@@ -143,7 +143,7 @@ namespace BattleAtlas
                                 * (0.7f + 0.6f * h4),
                             alpha = 0.62f * (1f - age / StrikeDustLife),
                             shade = 0.12f,      // thrown earth
-                            texVariant = (byte)(h * 971 % 3),
+                            texVariant = (byte)(AngleEnvironmentLayout.Hash01(key, h * 7 + 4) * 2.999f),
                             rollDeg = 360f * h2,
                         };
                         break;
@@ -158,7 +158,7 @@ namespace BattleAtlas
                             radius = 1.3f + 2.4f * (age / MarchDustLife),
                             alpha = 0.16f * Fade(age, MarchDustLife, 0.8f, 2.5f),
                             shade = 0.18f,
-                            texVariant = (byte)(h * 971 % 3),
+                            texVariant = (byte)(AngleEnvironmentLayout.Hash01(key, h * 7 + 4) * 2.999f),
                             rollDeg = 360f * h2,
                         };
                         break;
@@ -184,14 +184,16 @@ namespace BattleAtlas
             t >= eventT && t < eventT + FlashDur;
 
         // Progressive visibility loss (§9.1): the volumetric fog mean free
-        // path collapses as smoke mass accumulates. `activeAlphaSum` is the
-        // sum of live musket+cannon puff alphas (a pure function of t).
+        // path shortens as smoke mass accumulates. The billboard banks
+        // carry the LOCAL density; the global fog term is deliberately
+        // gentle so the scene degrades without drowning (a climax-scale
+        // alpha sum of ~2500 puts the mean free path near 280 m).
         public const float ClearMeanFreePathM = 900f;
-        public const float MinMeanFreePathM = 110f;
+        public const float MinMeanFreePathM = 240f;
 
         public static float FogMeanFreePath(float activeAlphaSum)
         {
-            float mfp = ClearMeanFreePathM / (1f + activeAlphaSum / 320f);
+            float mfp = ClearMeanFreePathM / (1f + activeAlphaSum / 1100f);
             return Mathf.Max(MinMeanFreePathM, mfp);
         }
 
