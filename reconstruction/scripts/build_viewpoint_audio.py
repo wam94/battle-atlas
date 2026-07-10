@@ -83,6 +83,11 @@ WHIZ_RANGE_M = 320.0
 GROAN_FRACTION = 0.3    # of nearby scheduled casualties voiced (sober)
 GROAN_RANGE_M = 32.0
 
+# observer-segment actions that carry a shout burst (voices_unit); shared
+# with generate_captions.py so a caption exists exactly where a shout does
+NOISY_ACTIONS = {"cross_obstacle", "take_canister", "waver",
+                 "fall_back", "rout", "breach"}
+
 
 def h01(seed: str, stem: str, i: int, salt: int = 0) -> float:
     digest = hashlib.sha256(f"{seed}|{stem}|{i}|{salt}".encode()).digest()
@@ -363,10 +368,8 @@ def build(events: dict, pack_root: Path, out_dir: Path,
     vu = stem("voices_unit")
     shout_bursts = pack.variants("Voice", prefix="fs-shout-")
     mob_bed = pack.variants("Voice", prefix="fs-mob-")[0]
-    noisy_actions = {"cross_obstacle", "take_canister", "waver",
-                     "fall_back", "rout", "breach"}
     for i, seg in enumerate(events["observerSegments"]):
-        if seg["action"] not in noisy_actions:
+        if seg["action"] not in NOISY_ACTIONS:
             continue
         at = seg["t0"] + 0.8
         if not in_window(at):

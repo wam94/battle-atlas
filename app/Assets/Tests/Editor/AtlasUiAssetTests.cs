@@ -44,6 +44,11 @@ public class AtlasUiAssetTests
             "warning-title", "warning-body", "observer-title", "observer-body",
             "warning-acknowledge", "warning-decline", "credits-modal",
             "credits-note", "credits-list", "credits-close", "fade-overlay",
+            // Phase 12 accessibility surface (§12 P12)
+            "chip-options", "options-modal", "opt-master", "opt-sv-volume",
+            "opt-captions", "opt-reduced-motion", "opt-motion-note",
+            "options-close", "sv-captions-toggle", "sv-captions",
+            "sv-motion-note",
         };
         foreach (string name in required)
             Assert.IsNotNull(root.Q(name), $"AtlasHud.uxml missing '{name}'");
@@ -56,6 +61,24 @@ public class AtlasUiAssetTests
             "Assets/Resources/UI/AtlasHud.uss"), "AtlasHud.uss missing");
         Assert.IsNotNull(AssetDatabase.LoadAssetAtPath<ThemeStyleSheet>(
             "Assets/Resources/UI/BattleAtlasTheme.tss"), "theme tss missing");
+    }
+
+    [Test]
+    public void StyleSheet_HonorsTheReadableTextFloor()
+    {
+        // Phase 12 accessibility (§12 P12 "readable text"): no HUD text
+        // below 12px at the panel's ConstantPhysicalSize/160dpi scale.
+        // Pinned on the source text so a future style tweak cannot quietly
+        // reintroduce 10-11px labels.
+        string uss = System.IO.File.ReadAllText(
+            UnityEngine.Application.dataPath + "/Resources/UI/AtlasHud.uss");
+        foreach (System.Text.RegularExpressions.Match m in
+            System.Text.RegularExpressions.Regex.Matches(
+                uss, @"font-size:\s*(\d+)px"))
+        {
+            Assert.GreaterOrEqual(int.Parse(m.Groups[1].Value), 12,
+                $"'{m.Value}' is below the 12px readability floor");
+        }
     }
 
     [Test]

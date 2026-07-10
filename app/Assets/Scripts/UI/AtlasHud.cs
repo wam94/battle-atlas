@@ -46,16 +46,18 @@ namespace BattleAtlas
         VisualElement root;
         Label contextTitle, contextPhase, contextConditions, clockLabel, markerTip;
         Label drawerTitle, drawerIdentity, drawerStrength, drawerActivity, drawerConfidence;
-        Button playButton, chipContours, chipReadingLight, chipCredits;
+        Button playButton, chipContours, chipReadingLight, chipCredits, chipOptions;
         Button drawerClose, drawerFollow;
         VisualElement atlasBar, svBar, unitDrawer, entryMarkers, speedGroup;
         VisualElement timelineMarkers, windowBand, modalLayer, warningModal, creditsModal;
+        VisualElement optionsModal;
         VisualElement fadeOverlay, masthead, chips;
         ScrollView drawerSources, creditsList;
-        Slider timelineSlider, svSlider;
-        Button svPlay, svExit, svSources;
+        Slider timelineSlider, svSlider, optMaster, optSvVolume;
+        Button svPlay, svExit, svSources, svCaptionsToggle;
+        Button optCaptions, optReducedMotion;
         Label svClock, svTitle, svProxyBadge, svSettling, svObserverLine;
-        Label svSpeed;
+        Label svSpeed, svCaptions, svMotionNote, optMotionNote;
         readonly List<Button> speedButtons = new List<Button>();
 
         MomentSet moments;
@@ -63,9 +65,14 @@ namespace BattleAtlas
         ContentWarningGate gate;
         CreditsManifest credits;
         bool creditsBuilt;
+        // Phase 12 accessibility (plan §12 P12): persisted options and the
+        // deterministic caption track for the Soldier View voice layers
+        AccessibilityOptions options;
+        CaptionTrack captionTrack;
 
         bool warningOpen;
         bool creditsOpen;
+        bool optionsOpen;
         ViewpointDefinition pendingEntry;
         UnitTrack drawerTrack;          // unit currently in the drawer
         ViewpointDefinition drawerViewpoint; // non-null when opened from Soldier View
@@ -104,7 +111,7 @@ namespace BattleAtlas
 
         bool InputLockedInstance =>
             (player != null && player.InSoldierView) || transitioning
-            || warningOpen || creditsOpen;
+            || warningOpen || creditsOpen || optionsOpen;
 
         bool PointerBusyInstance(Vector2 screenPos)
         {
@@ -154,6 +161,7 @@ namespace BattleAtlas
             chips = root.Q("chips");
             chipContours = root.Q<Button>("chip-contours");
             chipReadingLight = root.Q<Button>("chip-reading-light");
+            chipOptions = root.Q<Button>("chip-options");
             chipCredits = root.Q<Button>("chip-credits");
             entryMarkers = root.Q("entry-markers");
             unitDrawer = root.Q("unit-drawer");
@@ -180,14 +188,23 @@ namespace BattleAtlas
             svTitle = root.Q<Label>("sv-title");
             svProxyBadge = root.Q<Label>("sv-proxy-badge");
             svSettling = root.Q<Label>("sv-settling");
+            svCaptionsToggle = root.Q<Button>("sv-captions-toggle");
             svSources = root.Q<Button>("sv-sources");
             svExit = root.Q<Button>("sv-exit");
             svSlider = root.Q<Slider>("sv-slider");
             svObserverLine = root.Q<Label>("sv-observer-line");
+            svMotionNote = root.Q<Label>("sv-motion-note");
+            svCaptions = root.Q<Label>("sv-captions");
             modalLayer = root.Q("modal-layer");
             warningModal = root.Q("warning-modal");
             creditsModal = root.Q("credits-modal");
             creditsList = root.Q<ScrollView>("credits-list");
+            optionsModal = root.Q("options-modal");
+            optMaster = root.Q<Slider>("opt-master");
+            optSvVolume = root.Q<Slider>("opt-sv-volume");
+            optCaptions = root.Q<Button>("opt-captions");
+            optReducedMotion = root.Q<Button>("opt-reduced-motion");
+            optMotionNote = root.Q<Label>("opt-motion-note");
             fadeOverlay = root.Q("fade-overlay");
         }
 
@@ -199,6 +216,9 @@ namespace BattleAtlas
             if (warningDoc != null)
                 gate = new ContentWarningGate(new PlayerPrefsStore(), warningDoc.version);
             credits = LoadStreamingJson("credits.json", CreditsManifest.FromJson);
+            options = new AccessibilityOptions(new PlayerPrefsStore());
+            captionTrack = LoadStreamingJson(
+                "SoldierView/captions.json", CaptionTrack.FromJson);
         }
 
         static T LoadStreamingJson<T>(string relative, System.Func<string, T> parse)
@@ -246,6 +266,7 @@ namespace BattleAtlas
                 { if (sun != null) sun.ReadingLight = !sun.ReadingLight; };
             chipCredits.clicked += OpenCredits;
             root.Q<Button>("credits-close").clicked += CloseCredits;
+            BuildOptionsUi();
             drawerClose.clicked += CloseDrawer;
             drawerFollow.clicked += ToggleFollow;
             root.Q<Button>("warning-acknowledge").clicked += AcknowledgeWarning;
@@ -380,6 +401,7 @@ namespace BattleAtlas
                 var labels = FindFirstObjectByType<UnitLabelField>();
                 if (labels != null) labels.Hidden = inSv;
                 if (!inSv && drawerViewpoint != null) CloseDrawer();
+                if (!inSv) svCaptions.style.display = DisplayStyle.None;
             }
 
             if (inSv) UpdateSoldierViewBar();
@@ -438,6 +460,7 @@ namespace BattleAtlas
             // the forced-1× designator (P11 punchlist): the player locked
             // the clock to 1× on entry; say so, and carry the paused state
             svSpeed.text = HudModel.SoldierViewSpeedLabel(clock.Playing);
+            UpdateCaptions();
             svClock.text = ClockMath.FormatClockTime(clock.StartTime, clock.CurrentTime)
                 + $"  (t={clock.CurrentTime:0})";
             svTitle.text = vp.title;
@@ -569,7 +592,7 @@ namespace BattleAtlas
         {
             warningOpen = false;
             warningModal.style.display = DisplayStyle.None;
-            if (!creditsOpen)
+            if (!creditsOpen && !optionsOpen)
                 modalLayer.style.display = DisplayStyle.None;
         }
 
@@ -784,6 +807,103 @@ namespace BattleAtlas
             drawerFollow.text = following ? "Following (click to stop)" : "Follow unit";
         }
 
+        // ---------------------------------------- options (Phase 12, §12 P12)
+
+        // The reduced-motion honesty text: the setting is real and persisted,
+        // but the SHIPPED media was rendered with the standard profile — a
+        // reduced-motion cut is a separate offline render (render runbook).
+        const string MotionNoteText =
+            "Reduced motion minimizes camera bob, sway, and shake. The current "
+            + "Soldier View release media was rendered with the standard motion "
+            + "profile; this setting takes full effect with a reduced-motion "
+            + "media render (see docs/reconstruction/render-runbook.md).";
+
+        void BuildOptionsUi()
+        {
+            chipOptions.clicked += OpenOptions;
+            root.Q<Button>("options-close").clicked += CloseOptions;
+            optMotionNote.text = MotionNoteText;
+            optMaster.SetValueWithoutNotify(options.MasterVolume01 * 100f);
+            optSvVolume.SetValueWithoutNotify(options.SoldierViewVolume01 * 100f);
+            optMaster.RegisterValueChangedCallback(e =>
+            {
+                options.MasterVolume01 = e.newValue / 100f;
+                ApplyAudioLevels();
+            });
+            optSvVolume.RegisterValueChangedCallback(e =>
+            {
+                options.SoldierViewVolume01 = e.newValue / 100f;
+                ApplyAudioLevels();
+            });
+            optCaptions.clicked += ToggleCaptions;
+            svCaptionsToggle.clicked += ToggleCaptions;
+            optReducedMotion.clicked += () =>
+            {
+                options.ReducedMotion = !options.ReducedMotion;
+                RefreshOptionToggles();
+            };
+            RefreshOptionToggles();
+            ApplyAudioLevels();
+        }
+
+        void ToggleCaptions()
+        {
+            options.CaptionsEnabled = !options.CaptionsEnabled;
+            RefreshOptionToggles();
+        }
+
+        void RefreshOptionToggles()
+        {
+            optCaptions.text = options.CaptionsEnabled ? "On" : "Off";
+            optCaptions.EnableInClassList("chip-on", options.CaptionsEnabled);
+            svCaptionsToggle.EnableInClassList("chip-on", options.CaptionsEnabled);
+            optReducedMotion.text = options.ReducedMotion ? "On" : "Off";
+            optReducedMotion.EnableInClassList("chip-on", options.ReducedMotion);
+            // honesty note in the Soldier View bar while reduced motion is on
+            svMotionNote.text = options.ReducedMotion
+                ? "Reduced motion is on — this media was rendered with the "
+                  + "standard motion profile (reduced-motion render pending)."
+                : "";
+            svMotionNote.style.display = options.ReducedMotion
+                ? DisplayStyle.Flex : DisplayStyle.None;
+        }
+
+        // Master rides the AudioListener (the Atlas synth soundscape);
+        // the Soldier View media plays on the VideoPlayer's DIRECT path,
+        // which bypasses the listener, so it gets master × mix explicitly.
+        void ApplyAudioLevels()
+        {
+            AudioListener.volume = options.MasterVolume01;
+            if (player != null)
+                player.SetMixVolume(options.EffectiveSoldierViewVolume01);
+        }
+
+        void UpdateCaptions()
+        {
+            string text = options.CaptionsEnabled && captionTrack != null
+                ? captionTrack.TextAt(clock.CurrentTime) : "";
+            svCaptions.text = text;
+            svCaptions.style.display = text.Length > 0
+                ? DisplayStyle.Flex : DisplayStyle.None;
+        }
+
+        public void OpenOptions()
+        {
+            optionsOpen = true;
+            modalLayer.style.display = DisplayStyle.Flex;
+            optionsModal.style.display = DisplayStyle.Flex;
+        }
+
+        public void CloseOptions()
+        {
+            optionsOpen = false;
+            optionsModal.style.display = DisplayStyle.None;
+            if (!warningOpen && !creditsOpen)
+                modalLayer.style.display = DisplayStyle.None;
+        }
+
+        public bool OptionsVisible => optionsOpen;
+
         // -------------------------------------------------------- credits
 
         public void OpenCredits()
@@ -823,7 +943,7 @@ namespace BattleAtlas
         {
             creditsOpen = false;
             creditsModal.style.display = DisplayStyle.None;
-            if (!warningOpen)
+            if (!warningOpen && !optionsOpen)
                 modalLayer.style.display = DisplayStyle.None;
         }
 

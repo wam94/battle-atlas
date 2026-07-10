@@ -21,6 +21,8 @@ namespace BattleAtlas
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void Init()
         {
+            // statics survive scene loads; nobody starts inside Soldier View
+            AcousticField.SoldierViewActive = false;
             if (Array.IndexOf(Environment.GetCommandLineArgs(), "-benchmark") >= 0)
                 return;
             var clock = UnityEngine.Object.FindFirstObjectByType<BattleClock>();
