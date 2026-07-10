@@ -87,7 +87,7 @@ namespace BattleAtlas.EditorTools
         }
 
         // ------------------------------------------------------------------
-        static ViewpointDefinition LoadHeroViewpoint()
+        internal static ViewpointDefinition LoadHeroViewpoint()
         {
             string path = Path.Combine(
                 Application.streamingAssetsPath, "SoldierView/viewpoints.json");
@@ -98,7 +98,7 @@ namespace BattleAtlas.EditorTools
                 "viewpoints.json has no garnett-road-to-angle");
         }
 
-        static (AngleActionScene scene, RenderTexture rt, Texture2D tex)
+        internal static (AngleActionScene scene, RenderTexture rt, Texture2D tex)
             Boot(out RenderPipelineAsset prevDefault,
                  out RenderPipelineAsset prevQuality, out object prevGlobal)
         {
@@ -122,10 +122,12 @@ namespace BattleAtlas.EditorTools
             var rt = new RenderTexture(Width, Height, 32);
             var tex = new Texture2D(Width, Height, TextureFormat.RGBA32, false);
             scene.camera.nearClipPlane = 0.05f;
+            // P10 must-fix: no figure may sweep through the hero camera
+            scene.lensGuardRadiusM = LensGuard.DefaultRadiusM;
             return (scene, rt, tex);
         }
 
-        static void Restore(RenderPipelineAsset prevDefault,
+        internal static void Restore(RenderPipelineAsset prevDefault,
             RenderPipelineAsset prevQuality, object prevGlobal)
         {
             var playback = AssetDatabase.LoadAssetAtPath<RenderPipelineAsset>(
@@ -140,7 +142,7 @@ namespace BattleAtlas.EditorTools
         // Apply a HeroCameraPose to the scene camera. Ground is sampled at
         // the observer's smoothed position (±0.75 m along heading averaged,
         // so a 1 m DEM texel edge cannot pop the eye line).
-        static void ApplyHeroPose(AngleActionScene scene, HeroCameraPose pose)
+        internal static void ApplyHeroPose(AngleActionScene scene, HeroCameraPose pose)
         {
             float x0 = scene.cropX0, z0 = scene.cropZ0;
             var terrain = scene.terrain;
@@ -159,7 +161,7 @@ namespace BattleAtlas.EditorTools
             scene.camera.fieldOfView = pose.fovDeg;
         }
 
-        static HeroCameraSettings Settings(
+        internal static HeroCameraSettings Settings(
             ViewpointDefinition vp, bool thirdPerson) =>
             HeroCameraSettings.FromViewpoint(
                 vp, thirdPerson, HeroMotionProfile.Standard);
