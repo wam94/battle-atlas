@@ -121,4 +121,10 @@ claims), and the ED-11..ED-18 decisions in
 
 ## Gate P7 verdict
 
-*(owner)*
+**PASSED — closed by the project owner 2026-07-09**, with the guide's
+listed limitations logged as deferred polish (tile-edge haze wall and
+tactical-height banding → Phase 10/11 composition work). Owner also named
+a future detail pass beyond this plan's gates: species-accurate
+vegetation for Gettysburg, PA (the current copse/orchard/grove tree is a
+single CC0 model at documented scales) — "we can get into detail later
+... this looks good to move forward." 
