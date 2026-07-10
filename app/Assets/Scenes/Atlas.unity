@@ -382,7 +382,6 @@ GameObject:
   - component: {fileID: 408470590}
   - component: {fileID: 408470589}
   - component: {fileID: 408470588}
-  - component: {fileID: 408470587}
   m_Layer: 0
   m_Name: Battle
   m_TagString: Untagged
@@ -390,21 +389,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &408470587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408470586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0658dbf396caa49998abc6ddc0842f8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.TimelineHud
-  clock: {fileID: 408470589}
-  sun: {fileID: 410087043}
-  contours: {fileID: 0}
 --- !u!114 &408470588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,6 +407,7 @@ MonoBehaviour:
   unitMaterial: {fileID: 2100000, guid: 02781c7757a964eb39207b14a1eb3fa6, type: 2}
   soldierMaterial: {fileID: 2100000, guid: 73dc016a55e04420a5253297629d4eb7, type: 2}
   flagMaterial: {fileID: 2100000, guid: 582fd2d2541b4dd597112a6ad0aeaf78, type: 2}
+  symbolMaterial: {fileID: 2100000, guid: 0a09886002354eb9baad6671cf5f2949, type: 2}
   smokeMaterial: {fileID: 2100000, guid: a3fdcdfbd68b40a18204a324b5a41802, type: 2}
   dustMaterial: {fileID: 2100000, guid: c17624da49574c268d89074cf69ff046, type: 2}
 --- !u!114 &408470589

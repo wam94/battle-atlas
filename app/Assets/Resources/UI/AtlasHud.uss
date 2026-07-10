@@ -1,0 +1,368 @@
+/* Phase 11 Atlas HUD — sober documentary chrome. Dark slate panels,
+   parchment text, one accent per side of the war kept OUT of the chrome
+   (side color belongs to the map symbols, not the UI). */
+
+.hud-root {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+}
+
+/* ---------------------------------------------------------- masthead */
+
+.masthead {
+    position: absolute;
+    left: 12px; top: 10px;
+    padding: 8px 12px;
+    background-color: rgba(24, 26, 29, 0.78);
+    border-radius: 6px;
+    max-width: 520px;
+}
+
+.context-title {
+    color: rgb(235, 228, 213);
+    font-size: 16px;
+    -unity-font-style: bold;
+}
+
+.context-phase {
+    color: rgb(210, 196, 165);
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.context-conditions {
+    color: rgb(150, 150, 148);
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+/* -------------------------------------------------------------- chips */
+
+.chips {
+    position: absolute;
+    right: 12px; top: 10px;
+    flex-direction: row;
+}
+
+.chip {
+    background-color: rgba(24, 26, 29, 0.78);
+    color: rgb(214, 208, 194);
+    border-width: 1px;
+    border-color: rgba(120, 116, 104, 0.6);
+    border-radius: 4px;
+    padding: 6px 10px;
+    margin-left: 6px;
+    font-size: 12px;
+}
+
+.chip:hover { background-color: rgba(52, 56, 61, 0.9); }
+
+.chip-on {
+    background-color: rgba(92, 86, 66, 0.95);
+    color: rgb(245, 240, 226);
+    border-color: rgb(180, 170, 140);
+}
+
+/* ------------------------------------------------------ entry markers */
+
+.entry-markers {
+    position: absolute;
+    left: 0; right: 0; bottom: 120px;
+    align-items: center;
+}
+
+.entry-btn {
+    background-color: rgba(58, 42, 38, 0.92);
+    color: rgb(240, 230, 212);
+    border-width: 1px;
+    border-color: rgb(178, 132, 110);
+    border-radius: 6px;
+    padding: 10px 18px;
+    margin-top: 6px;
+    font-size: 14px;
+    -unity-font-style: bold;
+}
+
+.entry-btn:hover { background-color: rgba(84, 58, 50, 0.96); }
+
+/* -------------------------------------------------------- unit drawer */
+
+.unit-drawer {
+    position: absolute;
+    left: 12px; top: 96px; bottom: 128px;
+    width: 340px;
+    background-color: rgba(24, 26, 29, 0.86);
+    border-radius: 6px;
+    padding: 10px 12px;
+    display: none;
+}
+
+.drawer-header-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.drawer-title {
+    color: rgb(235, 228, 213);
+    font-size: 15px;
+    -unity-font-style: bold;
+    white-space: normal;
+    flex-shrink: 1;
+}
+
+.drawer-close {
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    color: rgb(180, 176, 166);
+    font-size: 14px;
+    padding: 2px 6px;
+}
+
+.drawer-line {
+    color: rgb(206, 200, 188);
+    font-size: 12px;
+    margin-top: 3px;
+    white-space: normal;
+}
+
+.drawer-follow { margin-top: 8px; margin-left: 0; align-self: flex-start; }
+
+.drawer-sources-heading {
+    color: rgb(210, 196, 165);
+    font-size: 12px;
+    -unity-font-style: bold;
+    margin-top: 10px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(120, 116, 104, 0.5);
+    padding-bottom: 3px;
+}
+
+.drawer-sources { flex-grow: 1; margin-top: 4px; }
+
+.source-heading {
+    color: rgb(196, 184, 156);
+    font-size: 11px;
+    -unity-font-style: bold;
+    margin-top: 8px;
+    white-space: normal;
+}
+
+.source-heading-live { color: rgb(226, 210, 172); }
+
+.source-citation {
+    color: rgb(178, 174, 166);
+    font-size: 11px;
+    margin-top: 2px;
+    white-space: normal;
+}
+
+.source-silent { -unity-font-style: italic; color: rgb(150, 146, 138); }
+
+/* --------------------------------------------------------- bottom bar */
+
+.bottom-bar {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    background-color: rgba(20, 22, 25, 0.88);
+    border-top-width: 1px;
+    border-top-color: rgba(120, 116, 104, 0.4);
+    padding: 8px 14px 10px 14px;
+}
+
+.transport-row {
+    flex-direction: row;
+    align-items: center;
+}
+
+.transport-btn {
+    width: 44px; height: 32px;
+    font-size: 14px;
+    background-color: rgba(52, 56, 61, 0.9);
+    color: rgb(235, 228, 213);
+    border-width: 1px;
+    border-color: rgba(120, 116, 104, 0.6);
+    border-radius: 4px;
+}
+
+.speed-group { flex-direction: row; margin-left: 10px; }
+
+.speed-btn {
+    width: 44px; height: 28px;
+    font-size: 12px;
+    background-color: rgba(36, 39, 43, 0.9);
+    color: rgb(196, 192, 182);
+    border-width: 1px;
+    border-color: rgba(120, 116, 104, 0.5);
+    border-radius: 3px;
+    margin-left: 4px;
+}
+
+.speed-on {
+    background-color: rgba(92, 86, 66, 0.95);
+    color: rgb(245, 240, 226);
+    border-color: rgb(180, 170, 140);
+}
+
+.clock-label {
+    color: rgb(235, 228, 213);
+    font-size: 16px;
+    margin-left: 16px;
+    -unity-font-style: bold;
+    min-width: 84px;
+}
+
+.marker-tip {
+    color: rgb(210, 196, 165);
+    font-size: 12px;
+    margin-left: 14px;
+    white-space: normal;
+    flex-shrink: 1;
+}
+
+/* ----------------------------------------------------------- timeline */
+
+.timeline { margin-top: 6px; height: 40px; }
+
+.timeline-slider { margin: 0; }
+
+.window-band {
+    position: absolute;
+    top: 2px; height: 12px;
+    background-color: rgba(178, 132, 110, 0.30);
+    border-width: 1px;
+    border-color: rgba(178, 132, 110, 0.75);
+    border-radius: 3px;
+}
+
+.markers { position: absolute; left: 0; right: 0; top: 16px; height: 22px; }
+
+.marker {
+    position: absolute;
+    top: 0;
+    width: 10px; height: 18px;
+    margin-left: -5px;           /* center on the fraction */
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.marker-line {
+    position: absolute;
+    left: 4px; top: 0;
+    width: 2px; height: 10px;
+    background-color: rgb(196, 184, 156);
+}
+
+.marker:hover .marker-line { background-color: rgb(245, 236, 214); }
+
+/* ---------------------------------------------------- soldier view bar */
+
+.sv-bar { display: none; }
+
+.sv-title {
+    color: rgb(235, 228, 213);
+    font-size: 14px;
+    margin-left: 14px;
+    -unity-font-style: bold;
+}
+
+.badge {
+    background-color: rgba(92, 66, 50, 0.9);
+    color: rgb(240, 226, 206);
+    border-radius: 3px;
+    padding: 2px 8px;
+    margin-left: 10px;
+    font-size: 11px;
+    display: none;
+}
+
+.sv-exit { margin-left: auto; }
+
+.observer-line {
+    color: rgb(168, 162, 150);
+    font-size: 11px;
+    margin-top: 4px;
+    -unity-font-style: italic;
+}
+
+/* -------------------------------------------------------------- modals */
+
+.modal-layer {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-color: rgba(8, 9, 10, 0.66);
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.modal {
+    width: 640px;
+    max-height: 78%;
+    background-color: rgb(28, 30, 33);
+    border-width: 1px;
+    border-color: rgba(150, 142, 120, 0.7);
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: none;
+}
+
+.modal-title {
+    color: rgb(240, 232, 216);
+    font-size: 18px;
+    -unity-font-style: bold;
+    margin-bottom: 8px;
+    white-space: normal;
+}
+
+.modal-subtitle {
+    color: rgb(220, 208, 184);
+    font-size: 14px;
+    -unity-font-style: bold;
+    margin-top: 14px;
+    white-space: normal;
+}
+
+.modal-note {
+    color: rgb(168, 162, 150);
+    font-size: 11px;
+    margin-bottom: 6px;
+    white-space: normal;
+}
+
+.modal-body { flex-grow: 1; }
+
+.modal-text {
+    color: rgb(208, 202, 190);
+    font-size: 13px;
+    margin-top: 6px;
+    white-space: normal;
+}
+
+.modal-buttons {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 14px;
+}
+
+.warning-ack {
+    background-color: rgba(92, 50, 42, 0.95);
+    border-color: rgb(190, 120, 96);
+    color: rgb(245, 236, 226);
+}
+
+.credit-entry {
+    color: rgb(200, 194, 182);
+    font-size: 12px;
+    margin-top: 8px;
+    white-space: normal;
+}
+
+/* --------------------------------------------------------------- fade */
+
+.fade-overlay {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-color: rgb(0, 0, 0);
+    opacity: 0;
+    display: none;
+}
