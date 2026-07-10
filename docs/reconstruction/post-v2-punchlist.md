@@ -5,6 +5,31 @@ candidate for its own focused slice (research → plan → execute → gate),
 per the owner's direction at Gate P11: "for things like this… worth
 taking as individual slices to get right on a deep dive."
 
+## FIRST PRIORITY after Phase 12 (owner directive, 2026-07-10)
+
+**0. The tabletop unit-activity audit.** Owner: "it's not ready for an
+audience. i think the first order of work is getting the table top set
+right when p12 is done. it looks to me like most of the blocks arent
+involved in the action as of right now, so we'll want to break out all
+the units into a spreadsheet and summarize their actions, and try to
+put them at different points at different times."
+
+Shape: a unit-by-unit audit spreadsheet over the full macro cast
+(190 units): identity/echelon/strength; current keyframe count and
+provenance mix; what the sources say the unit actually DID in the
+window (mine docs/research/2026-07-02-full-cast-sources.md, the
+Bachelder 1–5 PM sheet, regiment-track sources); classification of its
+current stillness — *static-because-attested* (in reserve, holding a
+line — the honest record for many units; do not invent motion to
+enliven the table) vs *static-because-unauthored* (recorded movement
+missing from the battle file: skirmishing, battery displacements and
+counter-battery, reserve shifts, ammunition trains, off-map actions);
+then candidate keyframes/events per unit with citations, feeding
+scripted authoring waves (the author-w1..w6 pattern). Consider widening
+the slice window if the sources support motion outside 13:00–16:00.
+The audit doubles as the per-unit action summary the provenance drawer
+can surface.
+
 ## Deep-dive slices (each warrants its own plan)
 
 1. **Theater label legibility** (P11: "the labels are there but not easy
