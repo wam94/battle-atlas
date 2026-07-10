@@ -242,3 +242,18 @@ under scrub; casualty totals unchanged by the observer exemption
 (tested); every audio source license-verified CC0 with archived
 evidence. Owner judgment on the candidates, the proof, and the
 representative-observer text closes the gate.
+
+
+## Gate P9 verdict
+
+**PASSED — closed by the project owner 2026-07-10.** Camera style chosen:
+**first_person**. Comprehension confirmed in the owner's own words: "this
+is a soldier approaching the firing line, which is clear and sort of not
+something people would find obvious" — the gate's core test. Audio and
+smoke explicitly praised. Deferred (owner: "not terribly concerned right
+now, but we'll want to fix at some point"): crowd-figure messiness at
+close range (interpenetration/pose overlap in the packed line).
+**MUST-FIX carried to Phase 10, before the production render:** a visible
+teleport at ~25 s into `p9-proof-60s-av-fp-1440p.mp4` (battle time
+~t=8635) — root-cause (camera slot path, neighbor placement, or tier
+hand-off), fix, and re-verify that window before committing render hours.
