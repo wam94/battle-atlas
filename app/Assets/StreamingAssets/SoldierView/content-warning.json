@@ -1,0 +1,16 @@
+{
+  "id": "soldier-view-content-warning",
+  "version": 1,
+  "warning": {
+    "title": "Before you enter Soldier View",
+    "body": "You are about to watch a reconstruction of infantry combat at the Angle on July 3, 1863, from inside a Confederate line of battle. It depicts, explicitly and without relief: men shot at close range, artillery fire striking a formation, blood, the dying and the dead — who remain where they fall — and the sounds of battle, including the wounded.\n\nNothing here is dramatized for effect. Casualties occur where and when the reconstruction's evidence places them, and the depiction is held deliberately sober. It is still a depiction of mass violence, and it is meant to be difficult.\n\nIf you prefer not to watch this, the Atlas view presents the same events at map scale.",
+    "acknowledgeLabel": "I understand — enter Soldier View",
+    "declineLabel": "Stay in the Atlas"
+  },
+  "representativeObserver": {
+    "title": "Whose eyes are these?",
+    "body": "No one's, and everyone's in that line. The viewpoint walks with formation slot 881 of Garnett's Virginia brigade — a rear-rank man on the brigade's left — a representative, unnamed soldier, not an identified person. No diary, letter, or service record places a specific man at this spot; the reconstruction does not pretend otherwise.\n\nThe men around the camera march, fire, fall, and die according to the same aggregate evidence that drives the whole reconstruction — unit strengths, loss totals, timing windows — distributed to individual figures deterministically. None of them is an identified casualty.\n\nOne editorial liberty is disclosed here: the observer himself is exempt from the casualty draw, so that the viewpoint can witness its full eleven minutes. Garnett's brigade lost roughly half its men in that hour; the odds this particular man walked away unhurt were real, but they were not good. His survival is a choice we made so you could see — not a claim about what happened to anyone.",
+    "shortLine": "A representative, unnamed soldier — not an identified person."
+  },
+  "docPath": "docs/reconstruction/soldier-view-content-warning.md"
+}

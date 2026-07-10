@@ -1,0 +1,24 @@
+{
+  "assetId": "fs-cannon-vishwajay-252281",
+  "acquired": "2026-07-10",
+  "sourcePage": "https://freesound.org/people/VishwaJay/sounds/252281/",
+  "downloads": [
+    {
+      "url": "https://cdn.freesound.org/previews/252/252281_3364694-hq.mp3",
+      "sha256": "207bedb1dd06add00c949d9e1e47a45c23f28000a00eea30e6204a6d40e1520d",
+      "note": "Freesound public '-hq' preview transcode (128 kbit/s MP3) of the CC0 work; original upload requires account login (recorded barrier, same as the Phase 2 Sketchfab note)."
+    }
+  ],
+  "license": "CC0-1.0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "licenseStatementSeen": "freesound-page.html (full page as retrieved 2026-07-10); the page's license link points to creativecommons.org/publicdomain/zero/1.0/",
+  "author": "VishwaJay",
+  "authorEvidence": "freesound-page.html, sound byline",
+  "title": "Tribute-Cannon.mp3",
+  "processing": {
+    "kind": "one_shot",
+    "pre": 0.06,
+    "post": 3.5
+  },
+  "notes": "Processed deterministically by reconstruction/scripts/fetch_audio_pack.py (decode via pinned imageio-ffmpeg, mono 44.1 kHz, transient cut / bed trim, normalize)."
+}

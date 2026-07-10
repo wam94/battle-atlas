@@ -85,6 +85,14 @@ namespace BattleAtlas.EditorTools
         public SoldierState[][] states;   // [unitIndex][slot]
         public CrowdTier[] tiers;
 
+        // Phase 9: first-person hero viewpoint — the observer's own figure
+        // is not rendered (the camera IS his eyes; his body would clip the
+        // near plane). Presentation-only: the slot's logical state, VFX,
+        // and casualty bookkeeping are untouched. -1 = render everyone
+        // (close-third-person renders the observer).
+        public int hiddenUnitIndex = -1;
+        public int hiddenSlot = -1;
+
         public const string KitDir = "Assets/ProjectOwned/Characters/Kit";
 
         float Ground(Vector2 macro) =>
@@ -726,6 +734,7 @@ namespace BattleAtlas.EditorTools
                 string side = usa ? "union" : "csa";
                 for (int s = 0; s < ur.slotCount; s++, flat++)
                 {
+                    if (u == hiddenUnitIndex && s == hiddenSlot) continue;
                     var st = states[u][s];
                     var tier = tiers[flat];
                     var pos = new Vector2(st.posX, st.posZ);

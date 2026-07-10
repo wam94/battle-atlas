@@ -1,0 +1,26 @@
+{
+  "assetId": "fs-groan-vmgraw-257706",
+  "acquired": "2026-07-10",
+  "sourcePage": "https://freesound.org/people/vmgraw/sounds/257706/",
+  "downloads": [
+    {
+      "url": "https://cdn.freesound.org/previews/257/257706_4028838-hq.mp3",
+      "sha256": "c6b41e83b3fac532f9615bb5a081409b5a5e25b30b7f8b10f50e1673daf9b096",
+      "note": "Freesound public '-hq' preview transcode (128 kbit/s MP3) of the CC0 work; original upload requires account login (recorded barrier, same as the Phase 2 Sketchfab note)."
+    }
+  ],
+  "license": "CC0-1.0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "licenseStatementSeen": "freesound-page.html (full page as retrieved 2026-07-10); the page's license link points to creativecommons.org/publicdomain/zero/1.0/",
+  "author": "vmgraw",
+  "authorEvidence": "freesound-page.html, sound byline",
+  "title": "GROANING.wav",
+  "processing": {
+    "kind": "variants",
+    "n": 2,
+    "pre": 0.2,
+    "post": 2.5,
+    "min_sep": 3.0
+  },
+  "notes": "Processed deterministically by reconstruction/scripts/fetch_audio_pack.py (decode via pinned imageio-ffmpeg, mono 44.1 kHz, transient cut / bed trim, normalize)."
+}

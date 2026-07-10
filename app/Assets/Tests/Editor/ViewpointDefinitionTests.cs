@@ -12,8 +12,24 @@ public class ViewpointDefinitionTests
     public void CommittedViewpointsFile_ParsesAndValidates()
     {
         var set = ViewpointSet.FromJson(File.ReadAllText(CommittedJsonPath));
-        Assert.AreEqual(1, set.viewpoints.Length);
-        var vp = set.viewpoints[0];
+        // Phase 9: the required hero viewpoint (plan §3.4) joins the
+        // Phase 1 dev fixture.
+        Assert.AreEqual(2, set.viewpoints.Length);
+
+        var hero = set.viewpoints[0];
+        Assert.AreEqual("garnett-road-to-angle", hero.id);
+        Assert.AreEqual("csa-garnett", hero.unitId);
+        Assert.AreEqual(881, hero.slotId);
+        Assert.AreEqual(8160.0, hero.t0, 1e-9);
+        Assert.AreEqual(8820.0, hero.t1, 1e-9);
+        Assert.AreEqual(1.66f, hero.camera.eyeHeightM);
+        Assert.AreEqual(68f, hero.camera.fovDeg);
+        Assert.AreEqual(0.35f, hero.camera.stabilization);
+        Assert.IsFalse(hero.media.HasFull, "full media is a Phase 10 artifact");
+        StringAssert.Contains("Representative unnamed soldier", hero.editorialNote);
+        Assert.IsNull(hero.Validate());
+
+        var vp = set.viewpoints[1];
         Assert.AreEqual("dev-timecode", vp.id);
         Assert.AreEqual(8160.0, vp.t0, 1e-9);
         Assert.AreEqual(8170.0, vp.t1, 1e-9);

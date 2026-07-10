@@ -1,0 +1,24 @@
+{
+  "assetId": "fs-step-ali6868-384869",
+  "acquired": "2026-07-10",
+  "sourcePage": "https://freesound.org/people/Ali_6868/sounds/384869/",
+  "downloads": [
+    {
+      "url": "https://cdn.freesound.org/previews/384/384869_984733-hq.mp3",
+      "sha256": "d972e17d7e4f8ac44193f3c0062b539f8165bfbe0c5c6ce1d557c658e8fb240b",
+      "note": "Freesound public '-hq' preview transcode (128 kbit/s MP3) of the CC0 work; original upload requires account login (recorded barrier, same as the Phase 2 Sketchfab note)."
+    }
+  ],
+  "license": "CC0-1.0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "licenseStatementSeen": "freesound-page.html (full page as retrieved 2026-07-10); the page's license link points to creativecommons.org/publicdomain/zero/1.0/",
+  "author": "Ali_6868",
+  "authorEvidence": "freesound-page.html, sound byline",
+  "title": "Right Grass/Grassy Footstep 4",
+  "processing": {
+    "kind": "one_shot",
+    "pre": 0.03,
+    "post": 0.5
+  },
+  "notes": "Processed deterministically by reconstruction/scripts/fetch_audio_pack.py (decode via pinned imageio-ffmpeg, mono 44.1 kHz, transient cut / bed trim, normalize)."
+}
