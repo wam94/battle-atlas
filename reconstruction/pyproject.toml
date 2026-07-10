@@ -14,4 +14,8 @@ dev = [
     # system ffmpeg is installed (none was present on the dev machine at
     # Phase 1). The pinned encode command is identical either way.
     "imageio-ffmpeg>=0.5",
+    # Phase 9 audio: deterministic stem synthesis from compiled event
+    # streams (scripts/build_viewpoint_audio.py) and source-clip
+    # processing (scripts/fetch_audio_pack.py).
+    "numpy>=1.26",
 ]

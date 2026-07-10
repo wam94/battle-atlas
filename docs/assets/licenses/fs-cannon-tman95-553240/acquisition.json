@@ -1,0 +1,26 @@
+{
+  "assetId": "fs-cannon-tman95-553240",
+  "acquired": "2026-07-10",
+  "sourcePage": "https://freesound.org/people/t-man95/sounds/553240/",
+  "downloads": [
+    {
+      "url": "https://cdn.freesound.org/previews/553/553240_11107968-hq.mp3",
+      "sha256": "431e2d2a7e11e0eaa1ffa2545cb9c4f74880b6cc118ad74bd7ee1189432b7b9b",
+      "note": "Freesound public '-hq' preview transcode (128 kbit/s MP3) of the CC0 work; original upload requires account login (recorded barrier, same as the Phase 2 Sketchfab note)."
+    }
+  ],
+  "license": "CC0-1.0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
+  "licenseStatementSeen": "freesound-page.html (full page as retrieved 2026-07-10); the page's license link points to creativecommons.org/publicdomain/zero/1.0/",
+  "author": "t-man95",
+  "authorEvidence": "freesound-page.html, sound byline",
+  "title": "Cannon fire.WAV",
+  "processing": {
+    "kind": "variants",
+    "n": 2,
+    "pre": 0.06,
+    "post": 3.5,
+    "min_sep": 4.0
+  },
+  "notes": "Processed deterministically by reconstruction/scripts/fetch_audio_pack.py (decode via pinned imageio-ffmpeg, mono 44.1 kHz, transient cut / bed trim, normalize)."
+}

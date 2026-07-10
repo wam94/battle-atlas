@@ -1,0 +1,202 @@
+{
+  "fs-breath-noxsound-554907": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Voice/fs-breath-noxsound-554907/fs-breath-noxsound-554907.wav": "1b54688c88d3719d51732c06414d104d63fb7c7ecbbb89805b9a050deae9a89b"
+    },
+    "previewSha256": "5098d4674a7be61d24165c94151579312206845ddad55fa938c0c43d49c16225"
+  },
+  "fs-cannon-andykub-415293": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Cannon/fs-cannon-andykub-415293/fs-cannon-andykub-415293_a.wav": "4247775be9c6e54944010e297db07836d69d467485a14fc02a6fa783d53f7505",
+      "app/Assets/ThirdParty/Audio/Cannon/fs-cannon-andykub-415293/fs-cannon-andykub-415293_b.wav": "b42007509d60ad37b8b7648f5ec1f481c39ea9ea5226016c882c5f6fccf82fdc"
+    },
+    "previewSha256": "0f8791da454ba47946ca1b2a417fd52ce27c79b32dbbdab3ee44fa816578258c"
+  },
+  "fs-cannon-distant-craigsmith-675613": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Cannon/fs-cannon-distant-craigsmith-675613/fs-cannon-distant-craigsmith-675613_a.wav": "ecc3fbbb6901f9585fe9acb0141e6748d85afddac88d41473d906d850e816114",
+      "app/Assets/ThirdParty/Audio/Cannon/fs-cannon-distant-craigsmith-675613/fs-cannon-distant-craigsmith-675613_b.wav": "11a4855b73673e5df9d87eb1599aef4071001b9b4d665af06a6e7029904537ce",
+      "app/Assets/ThirdParty/Audio/Cannon/fs-cannon-distant-craigsmith-675613/fs-cannon-distant-craigsmith-675613_c.wav": "2afd9db47f4ce4b203ade71fa49badf86e774dcfe815b4ec6fecb525e0482992"
+    },
+    "previewSha256": "d16c0557ca9973de3a07f6a7e3d6b2fe3ff06cd035a86d4483c4edac8fabd541"
+  },
+  "fs-cannon-qubodup-187767": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Cannon/fs-cannon-qubodup-187767/fs-cannon-qubodup-187767.wav": "908b4ef66ad5251f3ef1f15c6a6988dfb5edf1b48894a9c631ffb01e4753dc03"
+    },
+    "previewSha256": "4710f7fe566f3367f5630544daceb18a1216dd9c359ccb87fe940bd0c97ee858"
+  },
+  "fs-cannon-tman95-553240": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Cannon/fs-cannon-tman95-553240/fs-cannon-tman95-553240_a.wav": "4e36d1db4a13a8e64aa038cf8990151ef546651539705dddbb98d4b2a5c43b44",
+      "app/Assets/ThirdParty/Audio/Cannon/fs-cannon-tman95-553240/fs-cannon-tman95-553240_b.wav": "b1209bf54a98a0fce138907cb579d6f223a1ada58862d1963c1bf6dcb2f9faed"
+    },
+    "previewSha256": "431e2d2a7e11e0eaa1ffa2545cb9c4f74880b6cc118ad74bd7ee1189432b7b9b"
+  },
+  "fs-cannon-vishwajay-252281": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Cannon/fs-cannon-vishwajay-252281/fs-cannon-vishwajay-252281.wav": "6bc126eeb7f1ce998886c95aeb4b4edfd53bd418788943cc9d739b8f6c156b77"
+    },
+    "previewSha256": "207bedb1dd06add00c949d9e1e47a45c23f28000a00eea30e6204a6d40e1520d"
+  },
+  "fs-dirt-designerschoice-852797": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Strike/fs-dirt-designerschoice-852797/fs-dirt-designerschoice-852797_a.wav": "75fa3473854469e0458833df35a32b74224a2489eb5f147c81ea006fb198ddfa",
+      "app/Assets/ThirdParty/Audio/Strike/fs-dirt-designerschoice-852797/fs-dirt-designerschoice-852797_b.wav": "1461b2fe248b4c1be6f20bba464326918a2ec850d30aa140ddc9e1d4e7fe2339"
+    },
+    "previewSha256": "b649090504d9e46f2d946a2f68b988c38583090ea4cae83eeb8a887d7169e1b5"
+  },
+  "fs-dirt-krystianpawlowski-584894": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Strike/fs-dirt-krystianpawlowski-584894/fs-dirt-krystianpawlowski-584894_a.wav": "471ba9da3a02fcde0f6d2dc7d30f1ca3b6084843442bf2facdd37abfe9d4e62d",
+      "app/Assets/ThirdParty/Audio/Strike/fs-dirt-krystianpawlowski-584894/fs-dirt-krystianpawlowski-584894_b.wav": "95dab6bbdfba71fe9f5464517fb64ddd45ce0552fe61ec1a4c1a88e790617327",
+      "app/Assets/ThirdParty/Audio/Strike/fs-dirt-krystianpawlowski-584894/fs-dirt-krystianpawlowski-584894_c.wav": "11811a21e76613a04c103b5b05059742b5e801e29f32bd762047e8c533efb8ed"
+    },
+    "previewSha256": "0e350337b9e01db5b9ee76689b4e93ec47ddecc19d7242ded141b70da82db587"
+  },
+  "fs-groan-kentspublicdomain-344682": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Voice/fs-groan-kentspublicdomain-344682/fs-groan-kentspublicdomain-344682_a.wav": "2bb2fed93ac3ec4b68ac369d8f8db0ca79e5c90cc7042bad83c74b517e717718",
+      "app/Assets/ThirdParty/Audio/Voice/fs-groan-kentspublicdomain-344682/fs-groan-kentspublicdomain-344682_b.wav": "1d3665759274cc9b1337dc3fbbfe10f8ddf349e6d8d2cdcc78e015edc852de28"
+    },
+    "previewSha256": "532214d61d6c5b5f3862b51f77e5219773bf1c7751321422f384e4b1f523a82b"
+  },
+  "fs-groan-vmgraw-257706": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Voice/fs-groan-vmgraw-257706/fs-groan-vmgraw-257706_a.wav": "ea43c6a37954f76c2c6a2a3e5d9c28d199de7f954a2175d2c4f5c45c02b2d975"
+    },
+    "previewSha256": "c6b41e83b3fac532f9615bb5a081409b5a5e25b30b7f8b10f50e1673daf9b096"
+  },
+  "fs-meadow-trp-576367": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Ambience/fs-meadow-trp-576367/fs-meadow-trp-576367.wav": "358f17f6e1b0239ae7e61a32813be7d4c4083f5f03f49aa23bcb62ead66c46f4"
+    },
+    "previewSha256": "f34d30e2d5b98d3f37c104907cee1d07722506fde59dae56f1887c2085012a04"
+  },
+  "fs-meadow-wind-garuda1982-639459": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Ambience/fs-meadow-wind-garuda1982-639459/fs-meadow-wind-garuda1982-639459.wav": "1d7ccbec97674b1306777b0d48abe98096fdb5937d3b2f4f87e6ecf06cbb3855"
+    },
+    "previewSha256": "487d80453e75619c5ec34fc450f92ef167f4fd1803a0b50729d69e055c77949a"
+  },
+  "fs-mob-fillmat-384401": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Voice/fs-mob-fillmat-384401/fs-mob-fillmat-384401.wav": "509a63af9dc475f52078c717181589086e09004ea8c5c15348b883095f0fe04e"
+    },
+    "previewSha256": "a908a2686aacec311a12bae7d782043d4633857a3bae7d3a7ebbe1d323ede44c"
+  },
+  "fs-musket-brunoauzet-538795": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Musket/fs-musket-brunoauzet-538795/fs-musket-brunoauzet-538795.wav": "c3c29c187e4803b6fd82a9e7f50eda12dc1fc571547f78b855bbcb0860026265"
+    },
+    "previewSha256": "0e0a8dbb7fa9af47c3b62195686284d7202ed6f0baad7b9206331754a13fb8be"
+  },
+  "fs-musket-craigsmith-675622": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Musket/fs-musket-craigsmith-675622/fs-musket-craigsmith-675622_a.wav": "3d98425f9aea2d39dc613f995a5548c8b9465372f2ca81f1f369fd6bf8b4e378"
+    },
+    "previewSha256": "6cb5dea404054f5597e90d32b8ef693a00bb8a5983fab26abf5183359223ad12"
+  },
+  "fs-musket-fennelliott-347647": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Musket/fs-musket-fennelliott-347647/fs-musket-fennelliott-347647.wav": "e8dc21943600c39099dddec8aa4e0d979a7a5dad396165949c4699b8b2e7d132"
+    },
+    "previewSha256": "1454effdf8aaef9b59029c2d1588c585353f3ea0cb774eb545efbb45044cff05"
+  },
+  "fs-musket-mlsulli-234869": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Musket/fs-musket-mlsulli-234869/fs-musket-mlsulli-234869.wav": "3546cee675fa8ee058b3cb3fd13311a3ca827da2ae4b6165f8b486417f14454b"
+    },
+    "previewSha256": "40ea0d8457f45c94064ada0f7d6faf1ca2ebaa084ec656f6f2343e58755250fb"
+  },
+  "fs-musket-willlewis-244345": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Musket/fs-musket-willlewis-244345/fs-musket-willlewis-244345.wav": "9c484a8c327dcb9b9d2fd7c392ef11c975d8a2b6428b61564513c5f3a2956d11"
+    },
+    "previewSha256": "441ff07c6c7d067eb7dfec6fc494bcf1c2b1fb65692285e62d272944eaaef7e0"
+  },
+  "fs-rail-profispiesser-583057": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Movement/fs-rail-profispiesser-583057/fs-rail-profispiesser-583057_a.wav": "4dc9162a38b7d721c857691068f1924537d143bc661067ef5e8ee0a843c05934",
+      "app/Assets/ThirdParty/Audio/Movement/fs-rail-profispiesser-583057/fs-rail-profispiesser-583057_b.wav": "213068528d37b0f8357575621e3755eac8f5b29e2e245d542ea25e00b0490e8b"
+    },
+    "previewSha256": "582d44160c3509e7a173c08259f84ecb8337bc82a075620a1b1b084ecc6e962f"
+  },
+  "fs-ricochet-cedarstudios-148840": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Projectile/fs-ricochet-cedarstudios-148840/fs-ricochet-cedarstudios-148840_a.wav": "06c9d0375c9f1263e2258d1a069be95f816ed2d5a35ea3b3d4aff86fefe75372"
+    },
+    "previewSha256": "d96d9ed22ca8c125795746d13344fc6b8592b779fff269805345330bceb37018"
+  },
+  "fs-ricochet-cv-523403": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Projectile/fs-ricochet-cv-523403/fs-ricochet-cv-523403_a.wav": "b6bda6733c0232199233e21e2fa35ead253d9dc5a09004928221699d373c9987"
+    },
+    "previewSha256": "1c20919e6714948af24d46463bd940b4e1442f117f19357bd332f5f12cced25f"
+  },
+  "fs-run-worthahep88-319206": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Movement/fs-run-worthahep88-319206/fs-run-worthahep88-319206_a.wav": "093b77e34d652a44e8acb90d0a74150c6a712d060993f94492dd6b7811c1aa7d",
+      "app/Assets/ThirdParty/Audio/Movement/fs-run-worthahep88-319206/fs-run-worthahep88-319206_b.wav": "70d05ff2394cdd10da762ce0e5608f78eff88114353af009e922a2817c6bf354",
+      "app/Assets/ThirdParty/Audio/Movement/fs-run-worthahep88-319206/fs-run-worthahep88-319206_c.wav": "4734e93743f545ad88ff7c6cc8327f16f6c04ec233dae8223f350f08b3d9e004",
+      "app/Assets/ThirdParty/Audio/Movement/fs-run-worthahep88-319206/fs-run-worthahep88-319206_d.wav": "b6b71e702b84a58ee52b934f0c6f776ab7408988bca3feacff398e04e6b8602e"
+    },
+    "previewSha256": "a4e53596dda459e9b8414355e3e1de13a12176557ff3c241e589e4e6230031c4"
+  },
+  "fs-shout-craigsmith-480805": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Voice/fs-shout-craigsmith-480805/fs-shout-craigsmith-480805_a.wav": "77ffc69179fa656120a24a1909ba73a75e7853877ef123eae4134476d302ce4d",
+      "app/Assets/ThirdParty/Audio/Voice/fs-shout-craigsmith-480805/fs-shout-craigsmith-480805_b.wav": "6671a3ee22179fe67d927375f6b9b524ea9f0a4a3953d5d52f8924f2f30d32b4",
+      "app/Assets/ThirdParty/Audio/Voice/fs-shout-craigsmith-480805/fs-shout-craigsmith-480805_c.wav": "d053407561221056e8797f5029f99398dae57d25945324c0a3fe52de7d6dad1c"
+    },
+    "previewSha256": "165fb68bb93abb0320b75f7519d1148327ece0d1b1771c75f5d34074ba228f37"
+  },
+  "fs-step-ali6868-384869": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Movement/fs-step-ali6868-384869/fs-step-ali6868-384869.wav": "e10b28dd5efddad05df8a6ab9cfab42597d17286e673222cfd0a40f76bc5d080"
+    },
+    "previewSha256": "d972e17d7e4f8ac44193f3c0062b539f8165bfbe0c5c6ce1d557c658e8fb240b"
+  },
+  "fs-step-michelefalleri-578459": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Movement/fs-step-michelefalleri-578459/fs-step-michelefalleri-578459_a.wav": "0181883f01b338498875e71ac117f3cb87510c3ebc2bd0fb336e4f1af92fe4a5",
+      "app/Assets/ThirdParty/Audio/Movement/fs-step-michelefalleri-578459/fs-step-michelefalleri-578459_b.wav": "c72c974bd67335301728e3f8aa65924619ca0c8f0547b91c6c493b60bdeefee1"
+    },
+    "previewSha256": "06533a25991bc3afd60aae1c698ba60fdfa656d6f7deba45fa9cfd12c63898de"
+  },
+  "fs-walk-michelefalleri-578453": {
+    "acquired": "2026-07-10",
+    "outputs": {
+      "app/Assets/ThirdParty/Audio/Movement/fs-walk-michelefalleri-578453/fs-walk-michelefalleri-578453_a.wav": "5bb8151ce635ff7844c64ce15bb222b32a6e69e5017aa84cf092c205cd7acfd8",
+      "app/Assets/ThirdParty/Audio/Movement/fs-walk-michelefalleri-578453/fs-walk-michelefalleri-578453_b.wav": "82328f34fda10f8e292982e6b1a84e71923b997c64ec88d00a33a98c9cbf6f65",
+      "app/Assets/ThirdParty/Audio/Movement/fs-walk-michelefalleri-578453/fs-walk-michelefalleri-578453_c.wav": "faee5acb36c97fa580b9e93f2ca72255c583bae880e26eec83f2d5734585d1f9",
+      "app/Assets/ThirdParty/Audio/Movement/fs-walk-michelefalleri-578453/fs-walk-michelefalleri-578453_d.wav": "b17906da94c617d72cf043effe820e55dcd3cbf100a26081459c068df71d457b"
+    },
+    "previewSha256": "2d90659f7e7b944f78301ff1c27f1f53965ca9d557086f9ba9bbc115c5c9bfeb"
+  }
+}
