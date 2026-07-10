@@ -42,7 +42,11 @@ LANDCOVER_PATH = REPO / "data/landcover/landcover.json"
 BATTLE_PATH = REPO / "app/Assets/Battle/gettysburg-july3.json"
 
 # Abstract claim subjects that are neither battle units nor landcover features.
-ABSTRACT_SUBJECTS = {"assault-column", "angle-slice"}
+# Phase 7 adds the Codori farmyard (buildings have no traced landcover feature;
+# position claims carry point geometry) and the Emmitsburg Road itself (no
+# traced road-surface layer exists -- ED-6/ED-11; the corridor is the span
+# between the two traced fences).
+ABSTRACT_SUBJECTS = {"assault-column", "angle-slice", "codori-farm", "emmitsburg-road"}
 
 # Battlefield-local frame extent in meters (data/heightmap/heightmap.json
 # width_m/depth_m = 8507.17; that file is gitignored, so the constant is

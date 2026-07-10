@@ -1,0 +1,49 @@
+{
+  "name": "Withered Grass",
+  "categories": [
+    "natural",
+    "outdoor",
+    "floor"
+  ],
+  "type": 1,
+  "reviewers": [
+    "Rob Tuytel",
+    "Dario Barresi"
+  ],
+  "tags": [
+    "old",
+    "weathered",
+    "grass",
+    "dead grass",
+    "discolored",
+    "driedup",
+    "dry"
+  ],
+  "authors": {
+    "Charlotte Baglioni": "All"
+  },
+  "info": null,
+  "dimensions": [
+    1999.9996423721313,
+    1999.9996423721313
+  ],
+  "date_published": 1694044800,
+  "staging": null,
+  "max_resolution": [
+    8192,
+    8192
+  ],
+  "files_hash": "eb88811d5af353e86750f73f412bf5aea3f7c8ab",
+  "description": "Free 8K texture of withered grass: brittle, fibrous, sun-bleached blades in muted brown and tan with scattered debris and compacted earth tones.",
+  "category_id": "2b016db1-a760-53aa-89ac-54c30f13214a",
+  "attributes": {
+    "surface_use": "ground",
+    "outdoor": true,
+    "condition": [
+      "weathered"
+    ]
+  },
+  "category": "Ground & Terrain/Forest Floor/Forest Soil",
+  "download_count": 7456,
+  "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/withered_grass.png?width=256&height=256"
+}

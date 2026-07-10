@@ -1,0 +1,29 @@
+{
+  "assetId": "polyhaven-stacked-stone-wall",
+  "acquired": "2026-07-09",
+  "sourcePage": "https://polyhaven.com/a/stacked_stone_wall",
+  "filesIndexApi": "https://api.polyhaven.com/files/stacked_stone_wall",
+  "downloads": [
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/stacked_stone_wall/stacked_stone_wall_diff_2k.jpg",
+      "sha256": "90735b540339cbc273807755e6b2359fd0328fcd84fe96c50e9ce02ffe921b00",
+      "bytes": 2812965
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/stacked_stone_wall/stacked_stone_wall_nor_gl_2k.jpg",
+      "sha256": "d51530d724bc510796301f6bede9692b19793bbd35cbb07bb50bc80c7ca3db9b",
+      "bytes": 4072631
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/stacked_stone_wall/stacked_stone_wall_arm_2k.jpg",
+      "sha256": "cce3bdf749d8e54a96a982586fff52f0c901b2994ee17ad51842cd2cbe595b60",
+      "bytes": 2983412
+    }
+  ],
+  "license": "CC0-1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenseStatementSeen": "polyhaven-license-page.txt (all Poly Haven assets are CC0)",
+  "author": "Dimitrios Savva (All)",
+  "authorEvidence": "polyhaven-info-api.json (authors field)",
+  "notes": "Phase 7 material palette ingredient (2k JPG maps: diff, nor_gl, arm). downloadSha256 in the manifest is the sha256 OF downloads.sha256 because the acquisition is multiple files. Committed copies are byte-identical to the downloads. arm maps are AO(R)/Roughness(G)/Metallic(B) packed as published by Poly Haven."
+}

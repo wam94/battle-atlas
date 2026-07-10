@@ -1,0 +1,29 @@
+{
+  "assetId": "polyhaven-weathered-planks",
+  "acquired": "2026-07-09",
+  "sourcePage": "https://polyhaven.com/a/weathered_planks",
+  "filesIndexApi": "https://api.polyhaven.com/files/weathered_planks",
+  "downloads": [
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/weathered_planks/weathered_planks_diff_2k.jpg",
+      "sha256": "e763f1257acdfdbb31764c9ec9d480fd4efa5cc008f8b63d73a916d53d938942",
+      "bytes": 2385451
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/weathered_planks/weathered_planks_nor_gl_2k.jpg",
+      "sha256": "d851c42bb0dbcf21012e9ca1ac308b04bc9071a4e87118ccd79eec762fd030dc",
+      "bytes": 3184832
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/weathered_planks/weathered_planks_arm_2k.jpg",
+      "sha256": "379c785034a890844ac6a88497680a6d8a972d1fe489a8031fab432e007361c4",
+      "bytes": 2296561
+    }
+  ],
+  "license": "CC0-1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenseStatementSeen": "polyhaven-license-page.txt (all Poly Haven assets are CC0)",
+  "author": "Dario Barresi (Processing); Dimitrios Savva (Photography)",
+  "authorEvidence": "polyhaven-info-api.json (authors field)",
+  "notes": "Phase 7 material palette ingredient (2k JPG maps: diff, nor_gl, arm). downloadSha256 in the manifest is the sha256 OF downloads.sha256 because the acquisition is multiple files. Committed copies are byte-identical to the downloads. arm maps are AO(R)/Roughness(G)/Metallic(B) packed as published by Poly Haven."
+}

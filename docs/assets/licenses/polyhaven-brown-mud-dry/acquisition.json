@@ -1,0 +1,29 @@
+{
+  "assetId": "polyhaven-brown-mud-dry",
+  "acquired": "2026-07-09",
+  "sourcePage": "https://polyhaven.com/a/brown_mud_dry",
+  "filesIndexApi": "https://api.polyhaven.com/files/brown_mud_dry",
+  "downloads": [
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/brown_mud_dry/brown_mud_dry_diff_2k.jpg",
+      "sha256": "5f567f61a7e139101441a1209e9c174a4f92dce489b28bb168f6bfd0ca07e411",
+      "bytes": 3519711
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/brown_mud_dry/brown_mud_dry_nor_gl_2k.jpg",
+      "sha256": "b2cc46b8497f1c4a1e9cd51883175b1ae1c4eb8862c553573efb41ca0a4088bc",
+      "bytes": 5092913
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/brown_mud_dry/brown_mud_dry_arm_2k.jpg",
+      "sha256": "ad7a0128cb0adb06116802b502f9bb47f6e231efb571cbc9331db76327eabac3",
+      "bytes": 971719
+    }
+  ],
+  "license": "CC0-1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenseStatementSeen": "polyhaven-license-page.txt (all Poly Haven assets are CC0)",
+  "author": "Rob Tuytel (All)",
+  "authorEvidence": "polyhaven-info-api.json (authors field)",
+  "notes": "Phase 7 material palette ingredient (2k JPG maps: diff, nor_gl, arm). downloadSha256 in the manifest is the sha256 OF downloads.sha256 because the acquisition is multiple files. Committed copies are byte-identical to the downloads. arm maps are AO(R)/Roughness(G)/Metallic(B) packed as published by Poly Haven."
+}

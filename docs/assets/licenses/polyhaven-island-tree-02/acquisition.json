@@ -1,0 +1,34 @@
+{
+  "assetId": "polyhaven-island-tree-02",
+  "acquired": "2026-07-09",
+  "sourcePage": "https://polyhaven.com/a/island_tree_02",
+  "filesIndexApi": "https://api.polyhaven.com/files/island_tree_02",
+  "downloads": [
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/fbx/2k/island_tree_02/island_tree_02_2k.fbx",
+      "sha256": "b80ee7416b5ca9bcadd0ef21f105a42619b9a48c861681b58e8b59a368d673b9",
+      "bytes": 32258924
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/island_tree_02/island_tree_02_diff_1k.jpg",
+      "sha256": "8fc20397ab5d514c119d7a025868414d78e436138d3867a4b7ba12334a72ec3a",
+      "bytes": 738738
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/island_tree_02/island_tree_02_branches_diff_1k.png",
+      "sha256": "4485125d88b9dcce618220e8850f8b3ec586d9cdebe08e28aca777206eef56e2",
+      "bytes": 5300342
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/island_tree_02/island_tree_02_leaves_diff_1k.png",
+      "sha256": "63d3563a22a62151f338ceb4e992de7c31b62e8e3582e2762d5071f02d286349",
+      "bytes": 1638916
+    }
+  ],
+  "license": "CC0-1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "licenseStatementSeen": "polyhaven-license-page.txt (all Poly Haven assets are CC0)",
+  "author": "Rob Tuytel (scanning, processing); Rico Cilliers (cleanup, processing)",
+  "authorEvidence": "polyhaven-info-api.json (authors field)",
+  "notes": "Phase 7 copse/orchard tree. ADR 0002: the raw 2k FBX scan source (32 MB, ~1.07 M tris) is NOT committed \u2014 it is fetch-reproducible from the recorded URL+sha256. The committed asset is a project-derived optimization: bpy Decimate(collapse) to 60,000 tris exported as island_tree_02_decimated.fbx (deterministic script, scratchpad decimate_trees.py pattern recorded here), plus 1k diffuse maps only (trunk atlas jpg unmodified; branches png re-encoded to JPEG q90 \u2014 no alpha needed; leaves RGBA png unmodified, alpha in A channel). Normal/rough/AO maps intentionally dropped: the tree renders at >=80 m in the gate frames. downloadSha256 is the sha256 OF downloads.sha256 (multi-file acquisition)."
+}
