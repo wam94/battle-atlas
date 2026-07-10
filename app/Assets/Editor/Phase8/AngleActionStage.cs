@@ -542,7 +542,7 @@ namespace BattleAtlas.EditorTools
                     float nse = 0.6f * Noise(u, v)
                         + 0.3f * Noise(u * 2.7f % 1f, v * 2.7f % 1f)
                         + 0.1f * Noise(u * 6.1f % 1f, v * 6.1f % 1f);
-                    float a = falloff * (0.45f + 0.55f * nse);
+                    float a = falloff * (0.22f + 0.78f * nse);
                     px[y * n + x] = new Color32(255, 255, 255,
                         (byte)Mathf.Clamp(Mathf.RoundToInt(a * 255f), 0, 255));
                 }

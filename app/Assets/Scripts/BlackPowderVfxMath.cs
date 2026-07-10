@@ -46,9 +46,9 @@ namespace BattleAtlas
         // ED-19 canonical wind (reconstructed; claim-wind-unknown)
         public static readonly Vector2 WindMps = new Vector2(0.78f, 0.78f);
 
-        public const float MusketLife = 24f;
-        public const float CannonLife = 55f;
-        public const float StrikeDustLife = 3.5f;
+        public const float MusketLife = 16f;
+        public const float CannonLife = 45f;
+        public const float StrikeDustLife = 4.5f;
         public const float MarchDustLife = 7f;
         public const float FlashDur = 0.09f;
 
@@ -105,8 +105,8 @@ namespace BattleAtlas
                                 + new Vector2(h1 - 0.5f, h2 - 0.5f) * (0.5f + age * 0.10f),
                             heightM = e.heightM + 0.3f + 1.9f *
                                 (1f - Mathf.Exp(-age / 11f)) + 0.5f * (h3 - 0.5f),
-                            radius = 0.45f + 3.1f * grow * (0.75f + 0.5f * h4),
-                            alpha = Fade(age, life, 0.35f, 7f) * 0.62f,
+                            radius = 0.45f + 2.2f * grow * (0.75f + 0.5f * h4),
+                            alpha = Fade(age, life, 0.35f, 5f) * 0.42f,
                             shade = Mathf.Lerp(0.98f, 0.80f, Mathf.Min(age / life, 1f)),
                             texVariant = (byte)(AngleEnvironmentLayout.Hash01(key, h * 7 + 4) * 2.999f),
                             rollDeg = 360f * h2 + age * (h3 > 0.5f ? 2.6f : -2.6f),
@@ -123,8 +123,8 @@ namespace BattleAtlas
                                 + new Vector2(h1 - 0.5f, h2 - 0.5f) * (1.2f + age * 0.12f),
                             heightM = e.heightM + 0.4f + 3.2f *
                                 (1f - Mathf.Exp(-age / 14f)) + 1.2f * (h3 - 0.5f),
-                            radius = 1.1f + 6.5f * grow * (0.7f + 0.6f * h4),
-                            alpha = Fade(age, life, 0.25f, 14f) * 0.72f,
+                            radius = 1.1f + 5.2f * grow * (0.7f + 0.6f * h4),
+                            alpha = Fade(age, life, 0.25f, 11f) * 0.58f,
                             shade = Mathf.Lerp(1f, 0.78f, Mathf.Min(age / life, 1f)),
                             texVariant = (byte)(AngleEnvironmentLayout.Hash01(key, h * 7 + 4) * 2.999f),
                             rollDeg = 360f * h2 + age * (h3 > 0.5f ? 1.8f : -1.8f),
@@ -139,7 +139,7 @@ namespace BattleAtlas
                                 + new Vector2(h1 - 0.5f, h2 - 0.5f) * 1.1f,
                             heightM = 0.4f + 2.6f * (age / StrikeDustLife)
                                 * (0.6f + 0.6f * h3),
-                            radius = 0.6f + 1.6f * (age / StrikeDustLife)
+                            radius = 0.7f + 2.0f * (age / StrikeDustLife)
                                 * (0.7f + 0.6f * h4),
                             alpha = 0.62f * (1f - age / StrikeDustLife),
                             shade = 0.12f,      // thrown earth

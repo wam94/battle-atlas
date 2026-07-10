@@ -60,13 +60,13 @@ public class BlackPowderVfxTests
         var young = new List<PuffInstance>();
         var old = new List<PuffInstance>();
         BlackPowderVfx.Emit(e, e.t + 2f, Seed, young);
-        BlackPowderVfx.Emit(e, e.t + 25f, Seed, old);
+        BlackPowderVfx.Emit(e, e.t + 13f, Seed, old);
         Assert.Greater(old[0].radius, young[0].radius, "smoke expands");
         Vector2 driftDir = BlackPowderVfx.WindMps.normalized;
         float youngAlong = Vector2.Dot(young[0].pos - e.pos, driftDir);
         float oldAlong = Vector2.Dot(old[0].pos - e.pos, driftDir);
-        Assert.Greater(oldAlong, youngAlong + 10f,
-            "23 s of ED-19 wind carries the bank well downwind");
+        Assert.Greater(oldAlong, youngAlong + 8f,
+            "11 s of ED-19 wind carries the bank well downwind");
     }
 
     [Test]

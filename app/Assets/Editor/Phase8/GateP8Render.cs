@@ -66,24 +66,24 @@ namespace BattleAtlas.EditorTools
             {
                 // closing under canister, mid-field
                 name = "p8-still-8400-canister", t = 8400f,
-                posMacro = new Vector2(4237f, 4838f), eyeM = 1.66f,
-                lookMacro = new Vector2(4175f, 4822f), lookM = 1.6f,
+                posMacro = new Vector2(4262f, 4842f), eyeM = 1.66f,
+                lookMacro = new Vector2(4195f, 4824f), lookM = 1.6f,
                 fovDeg = 68f,
             },
             new CamDef
             {
                 // wall approach from behind the 69th PA
                 name = "p8-still-8580-wall", t = 8580f,
-                posMacro = new Vector2(4418f, 4838f), eyeM = 1.66f,
-                lookMacro = new Vector2(4365f, 4872f), lookM = 1.5f,
+                posMacro = new Vector2(4412f, 4884f), eyeM = 1.66f,
+                lookMacro = new Vector2(4380f, 4858f), lookM = 1.5f,
                 fovDeg = 68f,
             },
             new CamDef
             {
                 // the Angle crisis: Armistead's breach over the wall
                 name = "p8-still-8700-crisis", t = 8700f,
-                posMacro = new Vector2(4428f, 4830f), eyeM = 1.66f,
-                lookMacro = new Vector2(4404f, 4864f), lookM = 1.4f,
+                posMacro = new Vector2(4419f, 4874f), eyeM = 1.66f,
+                lookMacro = new Vector2(4404f, 4854f), lookM = 1.4f,
                 fovDeg = 68f,
             },
         };
@@ -91,8 +91,8 @@ namespace BattleAtlas.EditorTools
         static readonly CamDef SequenceCam = new CamDef
         {
             name = "p8-seq-wall",
-            posMacro = new Vector2(4418f, 4838f), eyeM = 1.66f,
-            lookMacro = new Vector2(4365f, 4872f), lookM = 1.5f,
+            posMacro = new Vector2(4412f, 4884f), eyeM = 1.66f,
+            lookMacro = new Vector2(4383f, 4856f), lookM = 1.5f,
             fovDeg = 68f,
         };
 
@@ -215,17 +215,31 @@ namespace BattleAtlas.EditorTools
                 out var prevDefault, out var prevQuality, out var prevGlobal);
             try
             {
+                var diagShots = new[]
+                {
+                    (SequenceCam, 8330f, "p8-diag-8330-wall-clear"),
+                    (Stills[0], 8200f, "p8-diag-8200-road"),
+                    (Stills[1], 8450f, "p8-diag-8450-canister"),
+                    (SequenceCam, 8620f, "p8-diag-8620-wall"),
+                };
                 ApplyCam(scene, SequenceCam);
                 var sw = System.Diagnostics.Stopwatch.StartNew();
                 scene.Pose(8620f);
                 Debug.Log($"GateP8Render: pose in {sw.Elapsed.TotalSeconds:F2} s");
                 for (int i = 0; i < WarmupFrames; i++)
                     GateP6Render.RenderOnce(scene.camera, rt, null);
-                sw.Restart();
-                GateP6Render.RenderOnce(scene.camera, rt, tex);
-                Debug.Log($"GateP8Render: render in {sw.Elapsed.TotalSeconds:F2} s");
-                File.WriteAllBytes(Path.Combine(OutDir, "p8-diag.png"),
-                    tex.EncodeToPNG());
+                foreach (var (cam, t, name) in diagShots)
+                {
+                    ApplyCam(scene, cam);
+                    scene.Pose(t);
+                    sw.Restart();
+                    GateP6Render.RenderOnce(scene.camera, rt, null);
+                    GateP6Render.RenderOnce(scene.camera, rt, tex);
+                    Debug.Log($"GateP8Render: {name} render in " +
+                              $"{sw.Elapsed.TotalSeconds:F2} s");
+                    File.WriteAllBytes(Path.Combine(OutDir, $"{name}.png"),
+                        tex.EncodeToPNG());
+                }
 
                 int[] tierCounts = new int[4];
                 foreach (var tier in scene.tiers) tierCounts[(int)tier]++;
