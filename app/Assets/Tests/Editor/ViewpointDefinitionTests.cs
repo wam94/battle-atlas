@@ -19,7 +19,7 @@ public class ViewpointDefinitionTests
         var hero = set.viewpoints[0];
         Assert.AreEqual("garnett-road-to-angle", hero.id);
         Assert.AreEqual("csa-garnett", hero.unitId);
-        Assert.AreEqual(184, hero.slotId);
+        Assert.AreEqual(881, hero.slotId);
         Assert.AreEqual(8160.0, hero.t0, 1e-9);
         Assert.AreEqual(8820.0, hero.t1, 1e-9);
         Assert.AreEqual(1.66f, hero.camera.eyeHeightM);

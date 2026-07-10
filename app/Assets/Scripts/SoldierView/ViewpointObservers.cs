@@ -35,8 +35,12 @@ namespace BattleAtlas
         public static readonly IReadOnlyDictionary<string, int[]> ProtectedSlots =
             new Dictionary<string, int[]>
             {
-                // garnett-road-to-angle (§3.4 required hero viewpoint)
-                { "csa-garnett", new[] { 184 } },
+                // garnett-road-to-angle (§3.4 required hero viewpoint):
+                // slot 881 = rear rank of file 184 (documented deviation
+                // from §6.5's illustrative slotId 184: the front-rank slot
+                // shows an empty road in first person; from the rear rank
+                // the whole front rank reads 1.3 m ahead)
+                { "csa-garnett", new[] { 881 } },
             };
 
         public static bool IsProtected(string unitId, int slot)

@@ -44,14 +44,14 @@ namespace BattleAtlas.EditorTools
         const int WarmupFrames = 3;
 
         // 30 s camera-style candidate window (§3.4: owner chooses style):
-        // the observer's OWN road crossing. Slot 184 rides Garnett's left
-        // flank, which trails the centroid — his resolved path meets the
-        // traced west fence at t≈8391 and the east fence at t≈8404
-        // (episode-window crossing fix), so this take carries marching,
+        // the observer's OWN road crossing. Slot 881 (rear rank, file 184) rides Garnett's left
+        // flank, which trails the centroid — his resolved crossings are
+        // west fence 8385.2, east fence 8403.5 (episode-window crossing
+        // fix), so this take carries seven seconds of approach march,
         // two fence climbs, the road surface between them, and the
         // redress — the regimes a camera style must survive.
-        public const float CandT0 = 8385f;
-        public const float CandT1 = 8415f;
+        public const float CandT0 = 8378f;
+        public const float CandT1 = 8408f;
 
         // 60 s audio-visual proof window (gate suggestion): Garnett's
         // line under canister at the wall.
@@ -387,12 +387,12 @@ namespace BattleAtlas.EditorTools
                 var shots = new (string name, float t, bool thirdPerson, bool reduced)[]
                 {
                     ("p9-still-8165-advance-fp", 8165f, false, false),
-                    ("p9-still-8393-west-fence-fp", 8393f, false, false),
-                    ("p9-still-8406-east-fence-fp", 8406f, false, false),
+                    ("p9-still-8387-west-fence-fp", 8387f, false, false),
+                    ("p9-still-8405-east-fence-fp", 8405f, false, false),
                     ("p9-still-8500-advance-fp", 8500f, false, false),
                     ("p9-still-8620-canister-fp", 8620f, false, false),
                     ("p9-still-8760-repulse-fp", 8760f, false, false),
-                    ("p9-still-8406-east-fence-c3p", 8406f, true, false),
+                    ("p9-still-8405-east-fence-c3p", 8405f, true, false),
                     ("p9-still-8620-canister-c3p", 8620f, true, false),
                     ("p9-still-8620-canister-fp-reduced", 8620f, false, true),
                 };
@@ -528,10 +528,14 @@ namespace BattleAtlas.EditorTools
                 int sameRank = vp.slotId + d;
                 if (sameRank >= 0 && sameRank < obs.slotCount)
                     neighborSlots.Add(sameRank);
-                int rearRank = vp.slotId + files + d;
-                if (rearRank >= 0 && rearRank < obs.slotCount)
-                    neighborSlots.Add(rearRank);
+                foreach (int other in new[]
+                    { vp.slotId + files + d, vp.slotId - files + d })
+                    if (other >= 0 && other < obs.slotCount)
+                        neighborSlots.Add(other);
             }
+            neighborSlots.Sort();
+            // a slot can appear twice if slotId±files overlap same-rank ids
+            neighborSlots = new List<int>(new SortedSet<int>(neighborSlots));
             foreach (int slot in neighborSlots)
             {
                 foreach (float ct in obs.slotCrossings[slot])

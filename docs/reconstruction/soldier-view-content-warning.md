@@ -31,8 +31,8 @@ either file must keep them consistent.
 > **Whose eyes are these?**
 >
 > No one's, and everyone's in that line. The viewpoint walks with
-> formation slot 184 of Garnett's Virginia brigade — a *representative,
-> unnamed* soldier, not an identified person. No diary, letter, or
+> formation slot 881 of Garnett's Virginia brigade — a rear-rank man on
+> the brigade's left, a *representative, unnamed* soldier, not an identified person. No diary, letter, or
 > service record places a specific man at this spot; the reconstruction
 > does not pretend otherwise.
 >

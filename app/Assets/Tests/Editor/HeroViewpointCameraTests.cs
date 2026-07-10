@@ -25,7 +25,7 @@ public class HeroViewpointCameraTests
         new HeroCameraSettings
         {
             unitId = "csa-garnett",
-            slot = 184,
+            slot = 881,
             eyeHeightM = 1.66f,
             fovDeg = 68f,
             stabilization = stabilization,
@@ -85,7 +85,7 @@ public class HeroViewpointCameraTests
                 float dx = p.camX - prev.camX;
                 float dz = p.camZ - prev.camZ;
                 // 8 m/s ceiling. Measured peak: ~6.8 m/s for ~2 s at the
-                // east-fence redress wheel — slot 184 rides ~82 m out on
+                // east-fence redress wheel — the observer file rides ~82 m out on
                 // Garnett's left flank, so a small compiled line wheel
                 // translates the flank fast (the whole file moves
                 // TOGETHER, so relative on-screen motion stays small).
@@ -173,7 +173,9 @@ public class HeroViewpointCameraTests
         {
             var p = HeroViewpointCamera.Pose(Ctx, settings, t);
             float d = new Vector2(p.camX - p.obsX, p.camZ - p.obsZ).magnitude;
-            Assert.LessOrEqual(d, HeroMotionProfile.Standard.swayAmpM + 1e-4f,
+            // gait sway scales up to 1.6x at a routed run (pace scale)
+            Assert.LessOrEqual(d,
+                HeroMotionProfile.Standard.swayAmpM * 1.6f + 1e-4f,
                 $"first-person camera must sit on the observer (t={t})");
         }
     }
@@ -252,8 +254,8 @@ public class ViewpointObserversTests
             { "p8-test-seed", "p9-test-seed", Bundle.checksum })
         {
             var entries = CasualtySchedule.Compile(garnett, seed);
-            Assert.IsTrue(float.IsPositiveInfinity(entries[184].fallT),
-                $"observer slot 184 must survive the slice (seed {seed})");
+            Assert.IsTrue(float.IsPositiveInfinity(entries[881].fallT),
+                $"observer slot 881 must survive the slice (seed {seed})");
         }
     }
 
@@ -307,7 +309,7 @@ public class ViewpointObserversTests
     public void UnprotectedUnits_AreUntouchedByThePolicy()
     {
         Assert.IsFalse(ViewpointObservers.IsProtected("us-69pa", 0));
-        Assert.IsFalse(ViewpointObservers.IsProtected("csa-garnett", 183));
-        Assert.IsTrue(ViewpointObservers.IsProtected("csa-garnett", 184));
+        Assert.IsFalse(ViewpointObservers.IsProtected("csa-garnett", 184));
+        Assert.IsTrue(ViewpointObservers.IsProtected("csa-garnett", 881));
     }
 }
