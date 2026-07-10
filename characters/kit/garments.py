@@ -25,6 +25,7 @@ UNION = {
     "hat":       (0.050, 0.058, 0.105, 1.0),   # navy kepi
     "visor":     (0.022, 0.020, 0.020, 1.0),
     "leather":   (0.030, 0.026, 0.024, 1.0),   # blackened leather
+    "brogan":    (0.032, 0.028, 0.025, 1.0),   # blackened brogan leather
     "canvas":    (0.055, 0.052, 0.048, 1.0),   # tarred haversack
     "canteen":   (0.180, 0.210, 0.260, 1.0),   # sky-blue wool cover
     "brass":     (0.520, 0.400, 0.130, 1.0),
@@ -39,6 +40,7 @@ CSA = {
     "hat":       (0.280, 0.240, 0.190, 1.0),   # brown felt slouch
     "visor":     (0.120, 0.100, 0.080, 1.0),
     "leather":   (0.280, 0.170, 0.090, 1.0),   # russet leather
+    "brogan":    (0.150, 0.095, 0.050, 1.0),   # dark russet brogan (NOT flesh)
     "canvas":    (0.560, 0.530, 0.460, 1.0),   # plain canvas
     "canteen":   (0.340, 0.270, 0.180, 1.0),   # wood drum canteen
     "brass":     (0.500, 0.390, 0.140, 1.0),
@@ -134,6 +136,37 @@ def drape(ob, offset, tangential_iters=2):
     bm.free()
 
 
+def smooth_region(ob, pred, radius=0.018, passes=2, weight=1.0):
+    """Spatial low-pass over the vertices satisfying pred: each vertex
+    moves toward the mean of ALL region vertices within `radius`
+    (connectivity-independent, so it erases anatomical features smaller
+    than the radius — toes — regardless of mesh density). `weight` may
+    be a callable(co)->0..1 to taper toward the region boundary."""
+    me = ob.data
+    idx = [v.index for v in me.vertices if pred(v.co)]
+    if not idx:
+        return
+    wfun = weight if callable(weight) else (lambda co: weight)
+    pos = {i: me.vertices[i].co.copy() for i in idx}
+    r2 = radius * radius
+    for _ in range(passes):
+        items = list(pos.items())
+        nxt = {}
+        for i, p in items:
+            acc = Vector((0.0, 0.0, 0.0))
+            wsum = 0.0
+            for j, q in items:
+                d2 = (p - q).length_squared
+                if d2 < r2:
+                    w = 1.0 - (d2 / r2) ** 0.5
+                    acc += q * w
+                    wsum += w
+            nxt[i] = p.lerp(acc / wsum, wfun(p)) if wsum > 1e-8 else p
+        pos = nxt
+    for i in idx:
+        me.vertices[i].co = pos[i]
+
+
 def solidify(ob, thickness):
     mod = ob.modifiers.new("shell", 'SOLIDIFY')
     mod.thickness = thickness
@@ -190,6 +223,22 @@ class Landmarks:
         crown = [v.co.z for v in body.data.vertices
                  if abs(v.co.x) < 0.07 and v.co.z > self.neck_z]
         self.head_top = max(crown) if crown else self.head_top
+        # measured skull ellipse at the hat-band line (Gate P8 review fix:
+        # hats were sized by CONSTANTS, so wider/deeper heads poked through
+        # the dome and the brim read as a detached halo ring at hero
+        # distance). zb is the brim plane, just above brow/ears; the
+        # ellipse is measured over everything the hat must enclose.
+        zb = self.head_top - 0.058
+        skull = [v.co for v in body.data.vertices
+                 if zb - 0.004 < v.co.z <= self.head_top + 0.001
+                 and abs(v.co.x) < 0.12]
+        if skull:
+            hx = max(abs(c.x) for c in skull)
+            ymin = min(c.y for c in skull)
+            ymax = max(c.y for c in skull)
+        else:  # defensive fallback, never expected on the MPFB body
+            hx, ymin, ymax = 0.085, -0.115, 0.095
+        self.head_ellipse = (hx, ymin, ymax, zb)
 
     def surface_front_y(self, x, z, fallback=-0.12):
         """Front (min y) of the body surface near column (x, z)."""
@@ -236,7 +285,7 @@ def trousers_pred(lm):
 
 def brogans_pred(lm):
     def pred(c):
-        return c.z < lm.ankle_z + 0.055
+        return c.z < lm.ankle_z + 0.075
 
     return pred
 
@@ -333,11 +382,74 @@ def trousers(body, rig, lm, pal):
 
 
 def brogans(body, rig, lm, pal):
+    """Ankle boot with an actual BOOT silhouette (P8 review fix — the old
+    skin-tight extraction read as bare feet at hero distance): leather
+    bulk over an ankle-height shaft, a flared sole rim, and a welted
+    sole slab + heel block per foot, in a leather tone distinct from
+    flesh (pal['brogan'])."""
     ob = extract_band(body, f"{body.name}_brogans", brogans_pred(lm))
-    drape(ob, 0.007, tangential_iters=1)
+    drape(ob, 0.011, tangential_iters=4)
+    me = ob.data
+    floor = min(v.co.z for v in me.vertices)
+    sole_top = floor + 0.014
+
+    # melt the toes into a smooth leather toe box (front 55% of each
+    # foot, below the ankle line)
+    ys = [v.co.y for v in me.vertices if v.co.z < lm.ankle_z]
+    toe_y = min(ys) + 0.56 * (max(ys) - min(ys))
+    smooth_region(
+        ob, lambda c: c.z < lm.ankle_z and c.y < toe_y,
+        radius=0.020, passes=2,
+        weight=lambda co: min(1.0, (toe_y - co.y) / 0.02))
+
+    # per-foot horizontal centers (feet are the two x-sign clusters)
+    def foot_bounds(sign):
+        vs = [v.co for v in me.vertices if (v.co.x > 0) == (sign > 0)]
+        xs = [c.x for c in vs]
+        ys = [c.y for c in vs]
+        return (min(xs), max(xs), min(ys), max(ys))
+
+    # flare the lowest band outward into a sole rim
+    for v in me.vertices:
+        if v.co.z < sole_top:
+            x0, x1, y0, y1 = foot_bounds(1.0 if v.co.x > 0 else -1.0)
+            center = Vector(((x0 + x1) / 2, (y0 + y1) / 2, 0.0))
+            out = Vector((v.co.x, v.co.y, 0.0)) - center
+            if out.length > 1e-5:
+                k = 1.0 - (v.co.z - floor) / 0.014
+                v.co += out.normalized() * (0.007 * k)
+
+    # sole slab + heel block boxes, rigid to each foot bone
+    b = lm.rig.data.bones
+    boxes = []
+    for bone in ("foot_l", "foot_r"):
+        sign = 1.0 if b[bone].head_local.x > 0 else -1.0
+        x0, x1, y0, y1 = foot_bounds(sign)
+        cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
+        hx, hy = (x1 - x0) / 2, (y1 - y0) / 2
+        sole = _box(f"{body.name}_sole_{bone}",
+                    (hx + 0.011, hy + 0.013, 0.008), "brogan", pal)
+        place(sole, (cx, cy, floor + 0.006))
+        # heel block under the rear of the foot (toes point -y)
+        heel = _box(f"{body.name}_heel_{bone}",
+                    (hx + 0.009, hy * 0.34, 0.012), "brogan", pal)
+        place(heel, (cx, y1 - hy * 0.30, floor + 0.012))
+        for bx in (sole, heel):
+            vg = bx.vertex_groups.new(name=bone)
+            vg.add(range(len(bx.data.vertices)), 1.0, 'REPLACE')
+            boxes.append(bx)
+
     solidify(ob, 0.004)
     add_armature(ob, rig)
-    set_mat(ob, flat_mat(f"{pal['id']}_brogan_leather", pal["leather"], 0.55))
+    set_mat(ob, flat_mat(f"{pal['id']}_brogan_leather", pal["brogan"], 0.55))
+    # merge the sole/heel boxes (join unifies vertex groups by name and
+    # keeps the active object's armature modifier)
+    bpy.ops.object.select_all(action='DESELECT')
+    ob.select_set(True)
+    for bx in boxes:
+        bx.select_set(True)
+    bpy.context.view_layer.objects.active = ob
+    bpy.ops.object.join()
     return ob
 
 
@@ -352,36 +464,62 @@ def _primitive_to_object(bm, name):
 
 
 def kepi(body, rig, lm, pal):
-    """Forage cap: short tilted cylinder + shifted crown disk + visor."""
-    top = Vector((0.0, -0.032, lm.head_top))
-    r = 0.101
+    """Forage cap: elliptical band fit to the MEASURED skull (P8 review
+    fix — the old constant-radius band was narrower than most heads, so
+    the skull swallowed it and the crown read as a floating disk), with a
+    forward-tilted crown disk and a leather visor."""
+    hx, ymin, ymax, zb = lm.head_ellipse
+    yc = (ymin + ymax) / 2
+    rx = hx + 0.012
+    ry = (ymax - ymin) / 2 + 0.012
+    crown_z = lm.head_top + 0.022          # crown clears the scalp
+    band_h = crown_z - zb
     bm = bmesh.new()
-    # band (slightly conical, leaning forward)
-    ret = bmesh.ops.create_cone(bm, cap_ends=False, segments=16,
-                                radius1=r, radius2=r * 0.92, depth=0.075)
-    bmesh.ops.translate(bm, verts=ret["verts"], vec=(0, 0, 0.0375))
+    # band: elliptical cone, slightly narrower at the crown
+    ret = bmesh.ops.create_cone(bm, cap_ends=False, segments=18,
+                                radius1=1.0, radius2=0.93, depth=1.0)
+    for v in bm.verts:
+        t = v.co.z + 0.5                   # 0 bottom .. 1 top
+        v.co = Vector((v.co.x * rx, yc + v.co.y * ry - 0.014 * t,
+                       zb + t * band_h - 0.008 * t))  # lean/tilt forward
     # crown disk shifted forward (kepi slouch)
-    ret2 = bmesh.ops.create_circle(bm, cap_ends=True, segments=16, radius=r * 0.95)
-    bmesh.ops.translate(bm, verts=ret2["verts"], vec=(0, -0.018, 0.075))
-    bm.transform(Matrix.Translation(top - Vector((0, 0, 0.072))))
+    ret2 = bmesh.ops.create_circle(bm, cap_ends=True, segments=18, radius=1.0)
+    for v in ret2["verts"]:
+        v.co = Vector((v.co.x * rx * 0.93, yc + v.co.y * ry * 0.93 - 0.014,
+                       crown_z - 0.008))
     ob = _primitive_to_object(bm, f"{body.name}_kepi")
     set_mat(ob, flat_mat(f"{pal['id']}_kepi_wool", pal["hat"], 0.92))
-    _visor(ob, top, r, pal)
+    _visor(ob, lm, pal)
     rigid_skin(ob, rig, "head")
     return ob
 
 
-def _visor(hat_ob, top, r, pal):
+def _visor(hat_ob, lm, pal):
+    """Leather visor as an explicit quad-strip arc across the band's
+    front (P8 review fix: the old delete-half-the-circle trick destroyed
+    the single n-gon face, so kepis shipped with NO visor at all)."""
+    hx, ymin, ymax, zb = lm.head_ellipse
+    yc = (ymin + ymax) / 2
+    rx = hx + 0.012
+    ry = (ymax - ymin) / 2 + 0.012
     bm = bmesh.new()
-    ret = bmesh.ops.create_circle(bm, cap_ends=True, segments=12, radius=r * 0.98)
-    # keep the front half, squash into a visor arc
-    doomed = [v for v in bm.verts if v.co.y > 0.01]
-    bmesh.ops.delete(bm, geom=doomed, context='VERTS')
-    for v in bm.verts:
-        v.co.y *= 1.9             # extend forward
-        v.co.z = -0.014 * (abs(v.co.y) / (r * 1.9))  # slight droop
-    bmesh.ops.translate(bm, verts=list(bm.verts),
-                        vec=top + Vector((0, -0.018, -0.062)))
+    n = 10
+    prev = None
+    for i in range(n + 1):
+        k = 2.0 * i / n - 1.0              # -1 .. 1 across the arc
+        t = math.radians(-90.0 + 72.0 * k) # front = -y
+        reach = math.cos(k * math.pi / 2)  # peaks at the front center
+        ext = 0.055 * reach
+        inner = Vector((rx * 0.99 * math.cos(t),
+                        yc + ry * 0.99 * math.sin(t), zb + 0.004))
+        outer = Vector(((rx + ext) * math.cos(t),
+                        yc + (ry + ext) * math.sin(t),
+                        zb + 0.004 - 0.018 * reach))
+        v1 = bm.verts.new(inner)
+        v2 = bm.verts.new(outer)
+        if prev:
+            bm.faces.new((prev[0], prev[1], v2, v1))
+        prev = (v1, v2)
     me = bpy.data.meshes.new("visor")
     bm.to_mesh(me)
     bm.free()
@@ -397,27 +535,37 @@ def _visor(hat_ob, top, r, pal):
 
 
 def slouch_hat(body, rig, lm, pal):
-    """CSA slouch: wide brim + low dome."""
-    top = Vector((0.0, -0.005, lm.head_top))
+    """Slouch: wide drooping brim + felt dome, both fit to the MEASURED
+    skull ellipse (P8 review fix — the old constant-radius sphere was
+    smaller than most skulls; the scalp poked through it and the brim
+    read as a detached halo ring at hero distance)."""
+    hx, ymin, ymax, zb = lm.head_ellipse
+    yc = (ymin + ymax) / 2
+    rx = hx + 0.013
+    ry = (ymax - ymin) / 2 + 0.013
+    rmax = max(rx, ry)
+    dome_h = (lm.head_top - zb) + 0.026
     bm = bmesh.new()
-    # brim: flat ring
-    brim = bmesh.ops.create_circle(bm, cap_ends=True, segments=20, radius=0.158)
-    for v in bm.verts:
+    # brim: disc drooping outside the skull line
+    brim_outer = rmax + 0.048
+    brim = bmesh.ops.create_circle(bm, cap_ends=True, segments=20, radius=brim_outer)
+    for v in brim["verts"]:
         d = Vector((v.co.x, v.co.y, 0)).length
-        if d > 0.095:
-            v.co.z -= 0.030 * ((d - 0.095) / 0.063)  # drooping brim
-    # dome
-    dome = bmesh.ops.create_uvsphere(bm, u_segments=14, v_segments=8, radius=0.100)
+        if d > rmax + 0.002:
+            v.co.z -= 0.034 * ((d - rmax - 0.002) /
+                               max(0.001, brim_outer - rmax - 0.002))
+    # dome: measured-ellipse felt crown; the squashed lower hemisphere is
+    # a short skirt below the brim plane so no scalp strip can show
+    dome = bmesh.ops.create_uvsphere(bm, u_segments=16, v_segments=9, radius=1.0)
     for v in dome["verts"]:
-        if v.co.z < 0:
-            v.co.z *= 0.10
-        else:
-            v.co.z *= 0.85
-    bmesh.ops.translate(bm, verts=dome["verts"], vec=(0, 0, 0.008))
-    # brim rides the forehead line, not the crown
-    bm.transform(Matrix.Translation(top - Vector((0, 0, 0.055))))
+        v.co.x *= rx
+        v.co.y *= ry
+        v.co.z = v.co.z * dome_h if v.co.z > 0 else v.co.z * 0.014
+    bmesh.ops.translate(bm, verts=dome["verts"], vec=(0, 0, 0.004))
+    bm.transform(Matrix.Translation(Vector((0.0, yc, zb))))
     ob = _primitive_to_object(bm, f"{body.name}_slouch")
     set_mat(ob, flat_mat(f"{pal['id']}_slouch_felt", pal["hat"], 0.95))
+    solidify(ob, 0.004)
     rigid_skin(ob, rig, "head")
     return ob
 
