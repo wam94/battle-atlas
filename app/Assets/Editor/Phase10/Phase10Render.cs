@@ -638,7 +638,7 @@ namespace BattleAtlas.EditorTools
                     int count = Math.Min(framesPerChunk, totalFrames - frame0);
                     string manifestPath = Path.Combine(
                         ManifestDir, $"chunk_{c:D3}.json");
-                    if (ChunkComplete(manifestPath, frame0, count))
+                    if (ChunkComplete(manifestPath, c, frame0, count))
                     {
                         skipped += count;
                         Debug.Log($"Phase10Render: chunk {c} complete, skipping");
@@ -663,9 +663,18 @@ namespace BattleAtlas.EditorTools
             }
         }
 
-        static bool ChunkComplete(string manifestPath, int frame0, int count)
+        // A chunk is complete when its manifest exists AND its frames are
+        // still on disk — OR the rolling chunk harvester
+        // (scripts/p10-chunk-harvester.sh) has already encoded it and
+        // reclaimed the PNGs (the render machine's free disk cannot hold
+        // the full ~63 GB sequence; measured ~3.2 MB/frame).
+        static bool ChunkComplete(string manifestPath, int chunk,
+            int frame0, int count)
         {
             if (!File.Exists(manifestPath)) return false;
+            if (File.Exists(Path.Combine(
+                    OutRoot, "chunks", $"chunk_{chunk:D3}.mp4")))
+                return true;
             for (int i = 0; i < count; i++)
                 if (!File.Exists(Path.Combine(
                         SeqDir, $"frame_{frame0 + i:D6}.png")))

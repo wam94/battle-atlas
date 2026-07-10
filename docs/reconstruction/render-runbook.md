@@ -15,9 +15,13 @@ rendering wants 16 GB+.
 - Unity 6000.4.11f1 (`"$UNITY"` below), **editor closed** for this
   project path — batch CLI is the only Unity owner (plan §16.1).
 - `uv` for the Python pipelines.
-- ~65 GB free disk for the full-resolution PNG scratch (measured:
-  see `docs/benchmarks/captures/p10-gate/p10-gate-evidence.md`) plus
-  ~3 GB for encodes.
+- Disk: the full-resolution PNG scratch is ~63 GB (measured
+  ~3.2 MB/frame). If that fits, nothing else is needed. If it does not
+  (the Phase 10 production machine had ~58 GB free), run the **rolling
+  chunk harvester** (step 3b) alongside the render: it encodes each
+  completed 60 s chunk with the final delivery codec settings, verifies
+  the decoded frame count, and reclaims the PNGs — steady-state disk
+  use stays around ~12 GB plus ~3 GB of chunk encodes.
 - No system ffmpeg is required: encoding falls back to the pinned
   **imageio-ffmpeg 7.1** static build from `reconstruction/`'s dev
   dependencies and fails clearly if neither is available.
@@ -79,6 +83,27 @@ before any render hours are committed (see
   is a thin marker per project convention — content comes from code +
   data at render time). First-person: the observer's own figure is
   hidden; the lens guard (0.6 m) is active.
+
+### 3b. The rolling chunk harvester (disk-constrained machines)
+
+In a second terminal, for the whole duration of the render:
+
+```sh
+scripts/p10-chunk-harvester.sh
+# when RenderProduction exits cleanly:
+touch app/RenderOutput/p10/render-done   # lets the harvester finish + exit
+```
+
+Each completed chunk is encoded to
+`app/RenderOutput/p10/chunks/chunk_NNN.mp4` with the exact final
+delivery codec settings (libx264 preset slow CRF 18 yuv420p, 1
+keyframe/s, closed GOP), its decoded frame count is verified against
+the chunk manifest, and only then are its PNGs deleted. Chunk encodes
+concat losslessly (`-c copy`) into the same stream a single-pass encode
+of the same frames would produce; `p10-encode.sh` picks this "mode B"
+automatically and re-verifies the total decoded frame count. Resume
+still works: `Phase10Render.ChunkComplete` accepts an encoded chunk in
+place of its PNGs.
 
 **Harness decision (recorded):** the render uses the project's proven
 `RenderPipeline.SubmitRenderRequest` loop (`GateP6Render.RenderOnce`)

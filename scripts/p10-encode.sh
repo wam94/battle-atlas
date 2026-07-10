@@ -2,29 +2,37 @@
 # Phase 10 production encode (plan §12 Phase 10, §10.1; media contract
 # docs/reconstruction/p1-media-contract.md).
 #
-#   1. verifies the rendered image sequence is complete (no missing or
-#      duplicate frames — HARD FAIL with the frame list otherwise);
-#   2. encodes the 2560x1440p30 H.264 full deliverable (short GOP:
-#      1 keyframe per second) and muxes the deterministic full-length
-#      audio mix (build_viewpoint_audio.py stems);
-#   3. encodes the 1280x720p30 proxy from the same source frames;
-#   4. writes sha256 checksums and measured sizes/bitrates.
+# Two source modes:
+#   A. seq-full holds the complete PNG sequence -> single-pass encode.
+#   B. the rolling harvester (scripts/p10-chunk-harvester.sh) already
+#      encoded per-chunk mp4s with the FINAL codec settings and
+#      reclaimed the PNGs (disk constraint) -> verify + lossless concat.
+# Either way the sequence is verified complete (missing/duplicate
+# frames HARD FAIL with the list) before any deliverable is written,
+# and the final decoded frame count is re-verified.
+#
+# Deliverables:
+#   garnett-road-to-angle.full.mp4   2560x1440p30 H.264 CRF18,
+#                                    1 keyframe/s, +faststart, AAC 192k
+#                                    deterministic full mix
+#   garnett-road-to-angle.proxy.mp4  1280x720p30 CRF20, same audio
+#   p10-media.sha256                 checksums + measured sizes/bitrates
 #
 # ffmpeg resolution follows the project convention (Phase 1): system
-# ffmpeg if present, else the pinned imageio-ffmpeg 7.1 static build from
-# the reconstruction dev dependencies. Fails clearly if neither exists.
+# ffmpeg if present, else the pinned imageio-ffmpeg 7.1 static build
+# from the reconstruction dev dependencies. Fails clearly otherwise.
 #
-# Usage: scripts/p10-encode.sh   (from the repo root, after
-#   Phase10Render.RenderProduction and the stem build; see
-#   docs/reconstruction/render-runbook.md)
+# Usage: scripts/p10-encode.sh   (repo root, after RenderProduction
+#   [+ harvester] and the stem build; see render-runbook.md)
 set -eu
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-SEQ="$ROOT/app/RenderOutput/p10/seq-full"
 OUT="$ROOT/app/RenderOutput/p10"
+SEQ="$OUT/seq-full"
+CHUNKS="$OUT/chunks"
+MANIFESTS="$OUT/manifests"
 STEMS="$OUT/stems-full"
 VP="garnett-road-to-angle"
 
-# frame count must match Phase10Render: (t1 - t0 + PadPastT1) * fps
 T0=8160
 T1=8820
 PAD=0.5
@@ -42,40 +50,12 @@ fi
 echo "== ffmpeg: $FFMPEG"
 "$FFMPEG" -version | head -1
 
-# --- 1. frame continuity: missing/duplicate detection (hard fail) ------
-echo "== verifying $EXPECTED frames in $SEQ"
-python3 - "$SEQ" "$EXPECTED" <<'EOF'
-import os, re, sys
-seq, expected = sys.argv[1], int(sys.argv[2])
-pat = re.compile(r"^frame_(\d{6})\.png$")
-seen = {}
-extra = []
-for name in os.listdir(seq):
-    m = pat.match(name)
-    if not m:
-        extra.append(name)
-        continue
-    n = int(m.group(1))
-    seen[n] = seen.get(n, 0) + 1
-missing = [n for n in range(expected) if n not in seen]
-dupes = sorted(n for n, c in seen.items() if c > 1)
-out_of_range = sorted(n for n in seen if n >= expected)
-ok = not missing and not dupes and not out_of_range and not extra
-if not ok:
-    if missing:
-        print(f"MISSING {len(missing)} frames: {missing[:50]}"
-              + (" ..." if len(missing) > 50 else ""))
-    if dupes:
-        print(f"DUPLICATE frame numbers: {dupes[:50]}")
-    if out_of_range:
-        print(f"OUT-OF-RANGE frames (>= {expected}): {out_of_range[:50]}")
-    if extra:
-        print(f"UNEXPECTED files: {extra[:50]}")
-    sys.exit(1)
-print(f"frame sequence complete: {expected} frames, no gaps, no duplicates")
-EOF
+decoded_frames() { # $1 = video file
+  "$FFMPEG" -loglevel info -i "$1" -map 0:v -f null - 2>&1 \
+    | sed -n 's/.*frame=[[:space:]]*\([0-9][0-9]*\).*/\1/p' | tail -1
+}
 
-# --- 2. audio mix must exist and cover the padded window ---------------
+# --- audio mix must exist and cover the padded window -------------------
 [ -f "$STEMS/mix.wav" ] || {
   echo "FATAL: no $STEMS/mix.wav — build stems first:" >&2
   echo "  cd reconstruction && uv run python scripts/build_viewpoint_audio.py \\" >&2
@@ -84,16 +64,90 @@ EOF
   exit 1
 }
 
-# --- 3. encodes ----------------------------------------------------------
-# Full: H.264 CRF 18 preset slow, 1 keyframe/s (short GOP for seeking),
-# +faststart for instant open. AAC 192k from the deterministic mix;
-# -shortest trims the audio tail to the video.
-echo "== encoding 1440p full"
-"$FFMPEG" -y -framerate $FPS -i "$SEQ/frame_%06d.png" -i "$STEMS/mix.wav" \
-  -map 0:v -map 1:a \
-  -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p \
-  -g $FPS -keyint_min $FPS -movflags +faststart \
-  -c:a aac -b:a 192k -shortest \
+# --- source mode ---------------------------------------------------------
+NPNG=$(ls "$SEQ" 2>/dev/null | grep -c '^frame_[0-9]\{6\}\.png$' || true)
+VIDEO_ONLY="$OUT/$VP.video.mp4"
+
+if [ "$NPNG" -eq "$EXPECTED" ]; then
+  echo "== mode A: full PNG sequence ($NPNG frames)"
+  python3 - "$SEQ" "$EXPECTED" <<'EOF'
+import os, re, sys
+seq, expected = sys.argv[1], int(sys.argv[2])
+seen = {}
+for name in os.listdir(seq):
+    m = re.match(r"^frame_(\d{6})\.png$", name)
+    if m:
+        n = int(m.group(1))
+        seen[n] = seen.get(n, 0) + 1
+missing = [n for n in range(expected) if n not in seen]
+dupes = sorted(n for n, c in seen.items() if c > 1)
+if missing or dupes:
+    if missing:
+        print(f"MISSING {len(missing)} frames: {missing[:50]}"
+              + (" ..." if len(missing) > 50 else ""))
+    if dupes:
+        print(f"DUPLICATE frames: {dupes[:50]}")
+    sys.exit(1)
+print(f"frame sequence complete: {expected} frames")
+EOF
+  "$FFMPEG" -y -framerate $FPS -i "$SEQ/frame_%06d.png" \
+    -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p \
+    -g $FPS -keyint_min $FPS \
+    "$VIDEO_ONLY"
+else
+  echo "== mode B: harvested chunk mp4s (seq has $NPNG loose frames)"
+  # every chunk manifest must have its encoded mp4; manifests are the
+  # ground truth for coverage (frame0/frameCount per chunk)
+  python3 - "$MANIFESTS" "$CHUNKS" "$EXPECTED" <<'EOF'
+import json, os, sys
+manifests, chunks, expected = sys.argv[1], sys.argv[2], int(sys.argv[3])
+covered = {}
+missing_mp4 = []
+for name in sorted(os.listdir(manifests)):
+    if not name.startswith("chunk_") or not name.endswith(".json"):
+        continue
+    m = json.load(open(os.path.join(manifests, name)))
+    mp4 = os.path.join(chunks, name.replace(".json", ".mp4"))
+    if not os.path.exists(mp4):
+        missing_mp4.append(os.path.basename(mp4))
+    for f in range(m["frame0"], m["frame0"] + m["frameCount"]):
+        covered[f] = covered.get(f, 0) + 1
+missing = [f for f in range(expected) if f not in covered]
+dupes = sorted(f for f, c in covered.items() if c > 1)
+if missing_mp4 or missing or dupes:
+    if missing_mp4:
+        print(f"MISSING chunk encodes: {missing_mp4}")
+    if missing:
+        print(f"MISSING {len(missing)} frames: {missing[:50]}"
+              + (" ..." if len(missing) > 50 else ""))
+    if dupes:
+        print(f"DUPLICATE frames: {dupes[:50]}")
+    sys.exit(1)
+print(f"chunk coverage complete: {expected} frames across "
+      f"{len(os.listdir(chunks))} chunk encodes")
+EOF
+  CONCAT="$OUT/concat.txt"
+  : > "$CONCAT"
+  for f in "$CHUNKS"/chunk_*.mp4; do
+    echo "file '$f'" >> "$CONCAT"
+  done
+  "$FFMPEG" -y -f concat -safe 0 -i "$CONCAT" -c copy "$VIDEO_ONLY"
+  rm -f "$CONCAT"
+fi
+
+# --- final decoded-frame-count verification (both modes) ----------------
+DECODED=$(decoded_frames "$VIDEO_ONLY")
+[ "$DECODED" = "$EXPECTED" ] || {
+  echo "FATAL: deliverable decodes $DECODED frames, expected $EXPECTED" >&2
+  exit 1
+}
+echo "== video stream verified: $DECODED frames"
+
+# --- mux audio + faststart, then proxy -----------------------------------
+echo "== muxing 1440p full"
+"$FFMPEG" -y -i "$VIDEO_ONLY" -i "$STEMS/mix.wav" \
+  -map 0:v -map 1:a -c:v copy \
+  -c:a aac -b:a 192k -shortest -movflags +faststart \
   "$OUT/$VP.full.mp4"
 
 echo "== encoding 720p proxy"
@@ -104,11 +158,11 @@ echo "== encoding 720p proxy"
   -c:a copy \
   "$OUT/$VP.proxy.mp4"
 
-# --- 4. checksums + measured stats --------------------------------------
+# --- checksums + measured stats ------------------------------------------
 echo "== measured media"
+DUR=$(python3 -c "print($T1 - $T0 + $PAD)")
 for f in "$OUT/$VP.full.mp4" "$OUT/$VP.proxy.mp4"; do
   SZ=$(stat -f%z "$f")
-  DUR=$(python3 -c "print(($T1 - $T0 + $PAD))")
   MBIT=$(python3 -c "print(f'{$SZ*8/$DUR/1e6:.2f}')")
   echo "$(basename "$f"): $SZ bytes, ~${MBIT} Mbit/s over ${DUR}s"
 done
