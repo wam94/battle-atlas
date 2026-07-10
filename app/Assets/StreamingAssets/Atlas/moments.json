@@ -1,0 +1,47 @@
+{
+  "_comment": "Atlas timeline moment markers (V2 plan §10). Times are canonical battle-clock seconds (t=0 = 13:00 local, clock.startTime 46800). Every marker cites the claim or editorial decision that places it — reconstruction/claims/angle.claims.json and docs/reconstruction/angle-editorial-decisions.md; a marker without provenance is an invented time and MomentSet.FromJson rejects it.",
+  "moments": [
+    {
+      "t": 0,
+      "label": "Bombardment opens",
+      "detail": "The Confederate cannonade opens along Seminary Ridge — 13:00 by Alexander's watch, 13:07 by Jacobs's; the spread is kept, not reconciled.",
+      "citation": "claim-bombardment-opened (Alexander 1907 ch. 18; Jacobs 1864)"
+    },
+    {
+      "t": 7500,
+      "label": "The charge steps off",
+      "detail": "Pickett's division steps off from Seminary Ridge — the canonical ~15:05 framing from which the slice arithmetic runs; witness step-off readings disagree by over an hour.",
+      "citation": "claim-stepoff-canonical (editorial decision ED — docs/reconstruction/angle-editorial-decisions.md §step-off; counter-readings claim-stepoff-alexander/-jacobs/-haskell)"
+    },
+    {
+      "t": 8160,
+      "label": "Crossing the Emmitsburg Road",
+      "detail": "Garnett's line reaches the road and its rail fences under fire — the hero Soldier View window opens here (15:16).",
+      "citation": "claim-road-crossing; claim-fence-west-structure; claim-fence-east-structure"
+    },
+    {
+      "t": 8400,
+      "label": "Closing under canister",
+      "detail": "The final 400 meters: Union batteries convert to canister as the division closes on the wall (~15:20).",
+      "citation": "step-off-arithmetic frame (docs/reconstruction/angle-editorial-decisions.md; ephemeris anchor 15:20 = t=8400); casualty intensity claim-cas-garnett-total distribution"
+    },
+    {
+      "t": 8580,
+      "label": "At the stone wall",
+      "detail": "The approach reaches the wall held by Webb's Philadelphia Brigade; the 69th Pennsylvania stands at the wall south of the Angle (~15:23).",
+      "citation": "claim-69pa-position; claim-webb-at-angle"
+    },
+    {
+      "t": 8700,
+      "label": "The Angle crisis",
+      "detail": "Armistead crosses the wall at the Angle (~15:25); the canonical crossing envelope is 8640–8760.",
+      "citation": "claim-armistead-crossed-wall (envelope 8640–8760, canonical t=8700)"
+    },
+    {
+      "t": 8820,
+      "label": "Repulse",
+      "detail": "The breach collapses; survivors fall back toward Seminary Ridge (~15:27). The hero Soldier View window closes here.",
+      "citation": "claim-repulse-clock-frames (step-off-arithmetic frame, ~15:25 climax; collapse transition per angle-editorial-decisions.md)"
+    }
+  ]
+}

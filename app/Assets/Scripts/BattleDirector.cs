@@ -221,10 +221,19 @@ namespace BattleAtlas
             // authored event names this unit) and the latch — the MPB color
             // is rewritten ONLY when the active state flips, never per frame
             public List<EventWindow> EventWindows;
+            // the same events as DTOs (kind/citation/confidence) for the
+            // Phase 11 provenance drawer — built in the same Start pass
+            public List<EventDto> EventRefs;
             public bool Active;
         }
 
         readonly List<UnitEntry> units = new();
+        // id -> entry, retained for the Phase 11 drawer lookups (built in
+        // Start alongside the family links)
+        readonly Dictionary<string, UnitEntry> unitsById = new();
+        // battle metadata the Phase 11 HUD masthead shows (name, wind)
+        public string BattleName { get; private set; }
+        public EnvironmentDto Environment { get; private set; }
         // selection (Task 6 wires the click picking; null = none). The
         // label pass already honors it — a selected label always survives
         // the declutter and is the only one shown at the Soldiers tier.
@@ -494,6 +503,10 @@ namespace BattleAtlas
         float GroundY(float x, float z) =>
             terrain.SampleHeight(new Vector3(x, 0f, z)) + groundYBase;
 
+        // Displayed-terrain height for the HUD's follow pivot — the same
+        // sample the symbols drape onto.
+        public float GroundHeightAt(float x, float z) => GroundY(x, z);
+
         void Start()
         {
             if (terrain == null)
@@ -537,7 +550,9 @@ namespace BattleAtlas
             BattleDto battle = BattleLoader.Parse(battleJson.text);
             clock.EndTime = battle.endTime;
             clock.StartTime = battle.startTime;
-            var entriesById = new Dictionary<string, UnitEntry>(battle.units.Count);
+            BattleName = battle.name;
+            Environment = battle.environment;
+            Dictionary<string, UnitEntry> entriesById = unitsById;
             int labelSlots = 0;
             foreach (UnitDto u in battle.units)
             {
@@ -660,8 +675,12 @@ namespace BattleAtlas
                         continue;
                     UnitEntry target = entriesById[ev.unitId];
                     if (target.EventWindows == null)
+                    {
                         target.EventWindows = new List<EventWindow>();
+                        target.EventRefs = new List<EventDto>();
+                    }
                     target.EventWindows.Add(new EventWindow(ev.t0, ev.t1));
+                    target.EventRefs.Add(ev);
                 }
             }
 
@@ -771,18 +790,16 @@ namespace BattleAtlas
         // rendered symbols — smallest area wins, so a regiment beats its
         // overlapping brigade ribbon. Empty ground (or sky) clears. No
         // physics, no colliders — the same pure math the tests pin. Clicks
-        // over the HUD strip or a live IMGUI control never pick; at the
-        // Soldiers tier there is no symbol footprint to hit, so close-zoom
-        // clicks on figures fall through to the ground (selection is a
-        // symbol-tier gesture, and the current selection persists).
+        // the retained-mode HUD claims (over a control, a captured slider
+        // drag, Soldier View, a modal) never pick; at the Soldiers tier
+        // there is no symbol footprint to hit, so close-zoom clicks on
+        // figures fall through to the ground (selection is a symbol-tier
+        // gesture, and the current selection persists).
         void HandleSelectionClick()
         {
             if (lodCamera == null || !Input.GetMouseButtonDown(0))
                 return;
-            if (GUIUtility.hotControl != 0)
-                return; // the scrubber (or another IMGUI control) owns this press
-            if (TimelineHud.IsTouchOverHud(
-                    Input.mousePosition, TimelineHud.CurrentHudHeightPx))
+            if (AtlasHud.PointerBusy(Input.mousePosition))
                 return;
             Ray ray = lodCamera.ScreenPointToRay(Input.mousePosition);
             if (!UnitPicker.RaycastTerrain(ray.origin, ray.direction,
@@ -854,15 +871,75 @@ namespace BattleAtlas
             }
         }
 
-        // The TimelineHud citation line's data feed: the selected unit's
-        // track (name, keyframes, StateAt) and its echelon. False = nothing
-        // selected, draw no line.
+        // The selection data feed (kept for the tests that pinned it): the
+        // selected unit's track and echelon. False = nothing selected.
         public bool TryGetSelected(out UnitTrack track, out UnitSymbol.Echelon echelon)
         {
             track = selectedEntry?.Track;
             echelon = selectedEntry != null
                 ? selectedEntry.Echelon : UnitSymbol.Echelon.Brigade;
             return selectedEntry != null;
+        }
+
+        // Everything the Phase 11 source/provenance drawer shows about one
+        // unit: identity words come from these fields, the citations from
+        // Track.Unit.keyframes and Events (the authored engagement events
+        // naming this unit, in file order; null = none).
+        public struct SelectedUnitInfo
+        {
+            public UnitTrack Track;
+            public UnitSymbol.Echelon Echelon;
+            public UnitKind Kind;
+            public bool IsUnion;
+            public string DisplayName;
+            public List<EventDto> Events;
+        }
+
+        public bool TryGetSelectedInfo(out SelectedUnitInfo info)
+        {
+            return TryFillInfo(selectedEntry, out info);
+        }
+
+        // Drawer lookup by unit id (the Soldier View sources surface: the
+        // active viewpoint's unit is not necessarily click-selected).
+        public bool TryGetUnitInfo(string unitId, out SelectedUnitInfo info)
+        {
+            unitsById.TryGetValue(unitId ?? "", out UnitEntry entry);
+            return TryFillInfo(entry, out info);
+        }
+
+        static bool TryFillInfo(UnitEntry entry, out SelectedUnitInfo info)
+        {
+            if (entry == null)
+            {
+                info = default;
+                return false;
+            }
+            info = new SelectedUnitInfo
+            {
+                Track = entry.Track,
+                Echelon = entry.Echelon,
+                Kind = KindOf(entry.Track.Unit.id),
+                IsUnion = entry.IsUnion,
+                DisplayName = entry.DisplayName,
+                Events = entry.EventRefs,
+            };
+            return true;
+        }
+
+        // The drawer's close button (Phase 11): deselect without a click on
+        // empty ground.
+        public void ClearSelection() => SetSelected(null);
+
+        // Programmatic selection by unit id (Phase 11: the screenshot
+        // harness and any future search/jump surface) — the same path as a
+        // click pick, so the MPB highlight and drawer follow.
+        public bool TrySelectUnit(string unitId)
+        {
+            if (!unitsById.TryGetValue(unitId ?? "", out UnitEntry entry))
+                return false;
+            SetSelected(entry);
+            return true;
         }
 
         // Two RenderMeshInstanced calls total — one per side across ALL

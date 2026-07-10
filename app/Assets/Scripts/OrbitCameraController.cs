@@ -12,6 +12,12 @@ namespace BattleAtlas
         public float panSpeed = 1.0f;
         public float tiltSpeed = 0.1f;
 
+        // Phase 11 unit follow: when set, the pivot tracks this provider
+        // every frame (the HUD supplies the selected unit's ground anchor).
+        // A null RESULT means the target is gone — follow drops. Manual
+        // panning is deliberate camera intent and also drops it.
+        public System.Func<Vector3?> followPivot;
+
         void Awake()
         {
             Application.targetFrameRate = 60;
@@ -30,8 +36,7 @@ namespace BattleAtlas
             bool anyTouchOverHud = false;
             for (int i = 0; i < Input.touchCount; i++)
             {
-                if (TimelineHud.IsTouchOverHud(
-                        Input.GetTouch(i).position, TimelineHud.CurrentHudHeightPx))
+                if (AtlasHud.PointerBusy(Input.GetTouch(i).position))
                 {
                     anyTouchOverHud = true;
                     break;
@@ -44,8 +49,10 @@ namespace BattleAtlas
             }
             else if (Input.touchCount == 1)
             {
-                // one finger: pan (drag the map)
+                // one finger: pan (drag the map) — deliberate camera intent,
+                // so a follow target is released
                 Vector2 d = Input.GetTouch(0).deltaPosition;
+                if (d.sqrMagnitude > 0f) followPivot = null;
                 pivot += OrbitMath.PanWorldDelta(yawDeg, d, distance, panSpeed);
             }
             else if (Input.touchCount == 2)
@@ -77,16 +84,29 @@ namespace BattleAtlas
             }
 
 #if UNITY_EDITOR
-            // mouse fallback so the editor Play button is usable
-            // hotControl != 0 means IMGUI (the HUD slider) owns the drag
-            if (Input.GetMouseButton(0) && GUIUtility.hotControl == 0)
+            // mouse fallback so the editor Play button is usable.
+            // PointerBusy replaces the IMGUI hotControl guard: a drag that
+            // started on (or is captured by) the retained-mode HUD — or any
+            // pointer while Soldier View / a modal owns the screen — must
+            // not fly the camera.
+            if (!AtlasHud.PointerBusy(Input.mousePosition))
             {
-                yawDeg += Input.GetAxis("Mouse X") * 3f;
-                pitchDeg = OrbitMath.ClampPitch(pitchDeg - Input.GetAxis("Mouse Y") * 3f);
+                if (Input.GetMouseButton(0))
+                {
+                    yawDeg += Input.GetAxis("Mouse X") * 3f;
+                    pitchDeg = OrbitMath.ClampPitch(pitchDeg - Input.GetAxis("Mouse Y") * 3f);
+                }
+                distance = OrbitMath.ClampDistance(
+                    distance * (1f - Input.mouseScrollDelta.y * 0.05f));
             }
-            distance = OrbitMath.ClampDistance(
-                distance * (1f - Input.mouseScrollDelta.y * 0.05f));
 #endif
+
+            if (followPivot != null)
+            {
+                Vector3? target = followPivot();
+                if (target.HasValue) pivot = target.Value;
+                else followPivot = null; // target gone; hold the last pivot
+            }
 
             transform.position = OrbitMath.CameraPosition(pivot, yawDeg, pitchDeg, distance);
             transform.LookAt(pivot);

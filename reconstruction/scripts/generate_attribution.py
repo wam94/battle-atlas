@@ -1,7 +1,13 @@
-"""Generate docs/assets/THIRD_PARTY_ASSETS.md from the third-party asset
-manifest (Angle Reconstruction V2 plan section 11). The document is always
-generated, never hand-maintained; the reconstruction test suite fails when
-the committed document is stale.
+"""Generate the third-party attribution outputs from the asset manifest
+(Angle Reconstruction V2 plan section 11):
+
+  - docs/assets/THIRD_PARTY_ASSETS.md — the repository document;
+  - app/Assets/StreamingAssets/credits.json — the in-app credits view's
+    data (V2 Phase 11 "attribution/credits view generated from the asset
+    manifest"; read by CreditsManifest.cs at runtime).
+
+Both are always generated, never hand-maintained; the reconstruction test
+suite fails when either committed output is stale.
 
 Usage:
   uv run python scripts/generate_attribution.py [<repo-root>]          # write
@@ -10,6 +16,7 @@ Usage:
 
 from __future__ import annotations
 
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -17,6 +24,7 @@ from pathlib import Path
 DEFAULT_REPO = Path(__file__).resolve().parent.parent.parent
 MANIFEST_RELPATH = "app/Assets/ThirdParty/manifest.json"
 DOC_RELPATH = "docs/assets/THIRD_PARTY_ASSETS.md"
+CREDITS_RELPATH = "app/Assets/StreamingAssets/credits.json"
 
 HEADER = """\
 # Third-party assets
@@ -63,6 +71,32 @@ def render(manifest: dict) -> str:
     return "".join(parts)
 
 
+def render_credits(manifest: dict, manifest_text: str) -> str:
+    """The in-app credits payload: identity, license, source, and
+    modification note per asset (paths/checksums stay in the .md — the
+    credits view is attribution, not an inventory), stamped with the
+    manifest checksum so staleness is mechanically checkable."""
+    entries = [
+        {
+            "id": a["id"],
+            "title": a["title"],
+            "author": a["author"],
+            "license": a["license"],
+            "licenseUrl": a["licenseUrl"],
+            "sourceUrl": a["sourceUrl"],
+            "modified": a["modified"],
+            "modifications": a["modifications"] if a["modified"] else "",
+        }
+        for a in sorted(manifest["assets"], key=lambda a: a["id"])
+    ]
+    payload = {
+        "generatedFrom": MANIFEST_RELPATH,
+        "manifestSha256": hashlib.sha256(manifest_text.encode()).hexdigest(),
+        "assets": entries,
+    }
+    return json.dumps(payload, indent=2, ensure_ascii=False) + "\n"
+
+
 def main(argv: list[str]) -> int:
     args = [a for a in argv[1:] if a != "--check"]
     check = "--check" in argv[1:]
@@ -71,24 +105,30 @@ def main(argv: list[str]) -> int:
         return 2
     repo_root = Path(args[0]).resolve() if args else DEFAULT_REPO
 
-    manifest = json.loads((repo_root / MANIFEST_RELPATH).read_text())
-    doc_path = repo_root / DOC_RELPATH
-    expected = render(manifest)
+    manifest_text = (repo_root / MANIFEST_RELPATH).read_text()
+    manifest = json.loads(manifest_text)
+    outputs = [
+        (repo_root / DOC_RELPATH, DOC_RELPATH, render(manifest)),
+        (repo_root / CREDITS_RELPATH, CREDITS_RELPATH,
+         render_credits(manifest, manifest_text)),
+    ]
 
     if check:
-        if not doc_path.exists():
-            print(f"{DOC_RELPATH} is missing; regenerate it", file=sys.stderr)
-            return 1
-        if doc_path.read_text() != expected:
-            print(f"{DOC_RELPATH} is stale; regenerate it "
-                  "(never hand-edit, plan section 11)", file=sys.stderr)
-            return 1
-        print(f"OK: {DOC_RELPATH} is current")
+        for path, relpath, expected in outputs:
+            if not path.exists():
+                print(f"{relpath} is missing; regenerate it", file=sys.stderr)
+                return 1
+            if path.read_text() != expected:
+                print(f"{relpath} is stale; regenerate it "
+                      "(never hand-edit, plan section 11)", file=sys.stderr)
+                return 1
+            print(f"OK: {relpath} is current")
         return 0
 
-    doc_path.parent.mkdir(parents=True, exist_ok=True)
-    doc_path.write_text(expected)
-    print(f"wrote {DOC_RELPATH} ({len(manifest['assets'])} asset(s))")
+    for path, relpath, expected in outputs:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(expected)
+        print(f"wrote {relpath} ({len(manifest['assets'])} asset(s))")
     return 0
 
 

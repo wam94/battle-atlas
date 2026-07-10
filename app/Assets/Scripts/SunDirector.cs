@@ -24,7 +24,7 @@ namespace BattleAtlas
         public BattleClock clock;
         public Light sun;
 
-        // Presentation toggle, driven by the TimelineHud chip.
+        // Presentation toggle, driven by the AtlasHud chip (Phase 11).
         public bool ReadingLight;
 
         // Normalized sun intensity for the custom vertex-tint/flag shaders

@@ -1,0 +1,366 @@
+{
+  "generatedFrom": "app/Assets/ThirdParty/manifest.json",
+  "manifestSha256": "eb814014186d0d05e35d64190bad482ec8c4595514aa599f5d49ad8a33ad56af",
+  "assets": [
+    {
+      "id": "fs-breath-noxsound-554907",
+      "title": "Male_Breath_Fast_Loop_Stereo.wav",
+      "author": "Nox_Sound",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/Nox_Sound/sounds/554907/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-cannon-andykub-415293",
+      "title": "Cannon shots.wav",
+      "author": "Andykub",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/Andykub/sounds/415293/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-cannon-distant-craigsmith-675613",
+      "title": "S20-12 Distant cannon fire.wav",
+      "author": "craigsmith",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/craigsmith/sounds/675613/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-cannon-qubodup-187767",
+      "title": "Cannon Shot",
+      "author": "qubodup",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/qubodup/sounds/187767/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-cannon-tman95-553240",
+      "title": "Cannon fire.WAV",
+      "author": "t-man95",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/t-man95/sounds/553240/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-cannon-vishwajay-252281",
+      "title": "Tribute-Cannon.mp3",
+      "author": "VishwaJay",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/VishwaJay/sounds/252281/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-dirt-designerschoice-852797",
+      "title": "CU_Shovel, Into Dirt, Throw on Ground",
+      "author": "designerschoice (Nicholas Judy/TDC)",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/designerschoice/sounds/852797/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-dirt-krystianpawlowski-584894",
+      "title": "throwing logs on dirt.wav",
+      "author": "KrystianPawlowski",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/KrystianPawlowski/sounds/584894/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-groan-kentspublicdomain-344682",
+      "title": "Pain part 1: groan, torture, suffering, despair, man, male",
+      "author": "kentspublicdomain",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/kentspublicdomain/sounds/344682/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-groan-vmgraw-257706",
+      "title": "GROANING.wav",
+      "author": "vmgraw",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/vmgraw/sounds/257706/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-meadow-trp-576367",
+      "title": "Field, meadow, insects, crickets, summer day, NOTL, 10",
+      "author": "TRP",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/TRP/sounds/576367/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-meadow-wind-garuda1982-639459",
+      "title": "summer meadow with wind",
+      "author": "Garuda1982",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/Garuda1982/sounds/639459/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-mob-fillmat-384401",
+      "title": "Crowd/Mob/Riot Noise (Voices Only)",
+      "author": "FillMat",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/FillMat/sounds/384401/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-musket-brunoauzet-538795",
+      "title": "old musket bang.wav",
+      "author": "bruno.auzet",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/bruno.auzet/sounds/538795/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-musket-craigsmith-675622",
+      "title": "S21-01 Musket shots.wav",
+      "author": "craigsmith",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/craigsmith/sounds/675622/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-musket-fennelliott-347647",
+      "title": "musket.wav",
+      "author": "fennelliott",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/fennelliott/sounds/347647/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-musket-mlsulli-234869",
+      "title": "Musket Shot.wav",
+      "author": "mlsulli",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/mlsulli/sounds/234869/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-musket-willlewis-244345",
+      "title": "Musket Explosion",
+      "author": "Willlewis",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/Willlewis/sounds/244345/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-rail-profispiesser-583057",
+      "title": "FX SaSc Wood Window Door Rattle Small Impact Hit Wind Close 01",
+      "author": "Profispiesser",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/Profispiesser/sounds/583057/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-ricochet-cedarstudios-148840",
+      "title": "ricochet.mp3",
+      "author": "cedarstudios",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/cedarstudios/sounds/148840/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-ricochet-cv-523403",
+      "title": "22 caliber with ricochet.wav",
+      "author": "C-V",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/C-V/sounds/523403/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-run-worthahep88-319206",
+      "title": "Dry Grass Crunch.wav",
+      "author": "worthahep88",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/worthahep88/sounds/319206/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-shout-craigsmith-480805",
+      "title": "R15-73-Small Group of Men Shouting.wav",
+      "author": "craigsmith",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/craigsmith/sounds/480805/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-step-ali6868-384869",
+      "title": "Right Grass/Grassy Footstep 4",
+      "author": "Ali_6868",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/Ali_6868/sounds/384869/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-step-michelefalleri-578459",
+      "title": "Stepping on dry grass",
+      "author": "MicheleFalleri",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/MicheleFalleri/sounds/578459/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "fs-walk-michelefalleri-578453",
+      "title": "Walking on dry grass",
+      "author": "MicheleFalleri",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://freesound.org/people/MicheleFalleri/sounds/578453/",
+      "modified": true,
+      "modifications": "preview transcode (Freesound public -hq MP3); decoded to mono 44.1 kHz WAV; deterministic transient cut/bed trim + normalize by reconstruction/scripts/fetch_audio_pack.py (settings in the script's PACK spec)"
+    },
+    {
+      "id": "oga-wood-fence-exocet",
+      "title": "3D Wood Fence",
+      "author": "exocet (OpenGameArt.org)",
+      "license": "CC-BY-3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "sourceUrl": "https://opengameart.org/content/3d-wood-fence",
+      "modified": true,
+      "modifications": "imported Fence.obj and Fence.mtl only; removed map_Ka/map_Kd texture references from Fence.mtl and excluded wood_fence_background_texture_seamless.jpg (third-party 'Copyright 2011 ZingerBug.com' JPEG comment, unclear provenance) and the fence.png preview render from the zip"
+    },
+    {
+      "id": "polyhaven-brown-mud-dry",
+      "title": "Brown Mud Dry",
+      "author": "Rob Tuytel (All)",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://polyhaven.com/a/brown_mud_dry",
+      "modified": false,
+      "modifications": ""
+    },
+    {
+      "id": "polyhaven-dry-ground-01",
+      "title": "Dry Ground 01",
+      "author": "Rob Tuytel (Poly Haven)",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://polyhaven.com/a/dry_ground_01",
+      "modified": false,
+      "modifications": ""
+    },
+    {
+      "id": "polyhaven-island-tree-02",
+      "title": "Island Tree 02",
+      "author": "Rob Tuytel (scanning, processing); Rico Cilliers (cleanup, processing)",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://polyhaven.com/a/island_tree_02",
+      "modified": true,
+      "modifications": "decimated from ~1.07 M to 60 k tris (bpy Decimate collapse) and re-exported as FBX (meshes only); branches diffuse re-encoded PNG->JPEG q90; leaves/trunk 1k diffuse kept; normal/rough/AO maps and the 32 MB raw scan FBX omitted per ADR 0002 (fetch-reproducible, sha256 in evidence)"
+    },
+    {
+      "id": "polyhaven-leafy-grass",
+      "title": "Leafy Grass",
+      "author": "Charlotte Baglioni (All)",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://polyhaven.com/a/leafy_grass",
+      "modified": false,
+      "modifications": ""
+    },
+    {
+      "id": "polyhaven-sparse-grass",
+      "title": "Sparse Grass",
+      "author": "Amal Kumar (All)",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://polyhaven.com/a/sparse_grass",
+      "modified": false,
+      "modifications": ""
+    },
+    {
+      "id": "polyhaven-stacked-stone-wall",
+      "title": "Stacked Stone Wall",
+      "author": "Dimitrios Savva (All)",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://polyhaven.com/a/stacked_stone_wall",
+      "modified": false,
+      "modifications": ""
+    },
+    {
+      "id": "polyhaven-stony-dirt-path",
+      "title": "Stony Dirt Path",
+      "author": "eye-candy.xyz (All)",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://polyhaven.com/a/stony_dirt_path",
+      "modified": true,
+      "modifications": "stony_dirt_path_nor_gl_2k.jpg re-encoded (JPEG q88) to fit the ADR 0002 5 MB per-file commit limit"
+    },
+    {
+      "id": "polyhaven-weathered-planks",
+      "title": "Weathered Planks",
+      "author": "Dario Barresi (Processing); Dimitrios Savva (Photography)",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://polyhaven.com/a/weathered_planks",
+      "modified": false,
+      "modifications": ""
+    },
+    {
+      "id": "polyhaven-withered-grass",
+      "title": "Withered Grass",
+      "author": "Charlotte Baglioni (All)",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "https://polyhaven.com/a/withered_grass",
+      "modified": false,
+      "modifications": ""
+    }
+  ]
+}

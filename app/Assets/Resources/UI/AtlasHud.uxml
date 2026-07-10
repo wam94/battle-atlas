@@ -1,0 +1,99 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+  <Style src="AtlasHud.uss" />
+  <!-- Phase 11 retained-mode Atlas HUD (plan §10). Structure only; all
+       text and dynamic children are bound by AtlasHud.cs. Containers use
+       picking-mode="Ignore" so empty screen areas never swallow the
+       orbit-camera and unit-pick input underneath. -->
+  <ui:VisualElement name="hud-root" class="hud-root" picking-mode="Ignore">
+
+    <!-- masthead: day/slice context + phase + conditions (top-left) -->
+    <ui:VisualElement name="masthead" class="masthead" picking-mode="Ignore">
+      <ui:Label name="context-title" class="context-title" picking-mode="Ignore"/>
+      <ui:Label name="context-phase" class="context-phase" picking-mode="Ignore"/>
+      <ui:Label name="context-conditions" class="context-conditions" picking-mode="Ignore"/>
+    </ui:VisualElement>
+
+    <!-- display chips + credits (top-right) -->
+    <ui:VisualElement name="chips" class="chips" picking-mode="Ignore">
+      <ui:Button name="chip-contours" text="Contours" class="chip"/>
+      <ui:Button name="chip-reading-light" text="Reading light (presentation)" class="chip"/>
+      <ui:Button name="chip-credits" text="Credits" class="chip"/>
+    </ui:VisualElement>
+
+    <!-- Soldier View entry markers: populated only while the battle clock
+         sits inside a viewpoint's window -->
+    <ui:VisualElement name="entry-markers" class="entry-markers" picking-mode="Ignore"/>
+
+    <!-- unit source/provenance drawer (left; hidden without a selection) -->
+    <ui:VisualElement name="unit-drawer" class="unit-drawer">
+      <ui:VisualElement class="drawer-header-row">
+        <ui:Label name="drawer-title" class="drawer-title"/>
+        <ui:Button name="drawer-close" text="✕" class="drawer-close"/>
+      </ui:VisualElement>
+      <ui:Label name="drawer-identity" class="drawer-line"/>
+      <ui:Label name="drawer-strength" class="drawer-line"/>
+      <ui:Label name="drawer-activity" class="drawer-line"/>
+      <ui:Label name="drawer-confidence" class="drawer-line"/>
+      <ui:Button name="drawer-follow" text="Follow unit" class="chip drawer-follow"/>
+      <ui:Label text="Sources" class="drawer-sources-heading"/>
+      <ui:ScrollView name="drawer-sources" class="drawer-sources"/>
+    </ui:VisualElement>
+
+    <!-- Atlas transport + timeline (bottom) -->
+    <ui:VisualElement name="atlas-bar" class="bottom-bar">
+      <ui:VisualElement class="transport-row" picking-mode="Ignore">
+        <ui:Button name="play-button" text="►" class="transport-btn"/>
+        <ui:VisualElement name="speed-group" class="speed-group" picking-mode="Ignore"/>
+        <ui:Label name="clock-label" class="clock-label" picking-mode="Ignore"/>
+        <ui:Label name="marker-tip" class="marker-tip" picking-mode="Ignore"/>
+      </ui:VisualElement>
+      <ui:VisualElement name="timeline" class="timeline" picking-mode="Ignore">
+        <ui:VisualElement name="timeline-window-band" class="window-band" picking-mode="Ignore"/>
+        <ui:Slider name="timeline-slider" low-value="0" high-value="1" class="timeline-slider"/>
+        <ui:VisualElement name="timeline-markers" class="markers" picking-mode="Ignore"/>
+      </ui:VisualElement>
+    </ui:VisualElement>
+
+    <!-- Soldier View transport (replaces the Atlas bar while entered) -->
+    <ui:VisualElement name="sv-bar" class="bottom-bar sv-bar">
+      <ui:VisualElement class="transport-row" picking-mode="Ignore">
+        <ui:Button name="sv-play" text="❚❚" class="transport-btn"/>
+        <ui:Label name="sv-clock" class="clock-label" picking-mode="Ignore"/>
+        <ui:Label name="sv-title" class="sv-title" picking-mode="Ignore"/>
+        <ui:Label name="sv-proxy-badge" text="proxy resolution" class="badge"/>
+        <ui:Label name="sv-settling" text="settling…" class="badge"/>
+        <ui:Button name="sv-sources" text="Sources" class="chip"/>
+        <ui:Button name="sv-exit" text="Exit to Atlas" class="chip sv-exit"/>
+      </ui:VisualElement>
+      <ui:Slider name="sv-slider" low-value="0" high-value="1" class="timeline-slider"/>
+      <ui:Label name="sv-observer-line" class="observer-line" picking-mode="Ignore"/>
+    </ui:VisualElement>
+
+    <!-- modal layer: content warning + credits -->
+    <ui:VisualElement name="modal-layer" class="modal-layer">
+      <ui:VisualElement name="warning-modal" class="modal">
+        <ui:Label name="warning-title" class="modal-title"/>
+        <ui:ScrollView name="warning-scroll" class="modal-body">
+          <ui:Label name="warning-body" class="modal-text"/>
+          <ui:Label name="observer-title" class="modal-subtitle"/>
+          <ui:Label name="observer-body" class="modal-text"/>
+        </ui:ScrollView>
+        <ui:VisualElement class="modal-buttons">
+          <ui:Button name="warning-decline" class="chip"/>
+          <ui:Button name="warning-acknowledge" class="chip warning-ack"/>
+        </ui:VisualElement>
+      </ui:VisualElement>
+      <ui:VisualElement name="credits-modal" class="modal">
+        <ui:Label text="Third-party assets" class="modal-title"/>
+        <ui:Label name="credits-note" class="modal-note"/>
+        <ui:ScrollView name="credits-list" class="modal-body"/>
+        <ui:VisualElement class="modal-buttons">
+          <ui:Button name="credits-close" text="Close" class="chip"/>
+        </ui:VisualElement>
+      </ui:VisualElement>
+    </ui:VisualElement>
+
+    <!-- entry/exit fade (authored cut, plan §3.3) -->
+    <ui:VisualElement name="fade-overlay" class="fade-overlay" picking-mode="Ignore"/>
+  </ui:VisualElement>
+</ui:UXML>

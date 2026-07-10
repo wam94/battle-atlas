@@ -6,6 +6,7 @@ tests validate the real manifest, tree, and generated attribution document
 so a clean checkout fails on any manifest violation ("CI enforcement").
 """
 
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -232,6 +233,27 @@ def test_attribution_doc_generation_and_check(repo):
     assert "CC-BY-4.0" in text
     # hand-editing the generated doc must fail the check
     doc.write_text(text + "\nhand edit\n")
+    assert generate_attribution.main(["prog", "--check", str(root)]) == 1
+
+
+def test_credits_json_generation_and_check(repo):
+    """The in-app credits payload (V2 Phase 11) is generated beside the
+    document, carries the attribution identity fields, and staleness fails
+    the same check."""
+    root, _ = repo
+    assert generate_attribution.main(["prog", str(root)]) == 0
+    credits_path = root / "app/Assets/StreamingAssets/credits.json"
+    credits = json.loads(credits_path.read_text())
+    assert credits["generatedFrom"] == "app/Assets/ThirdParty/manifest.json"
+    manifest_text = (root / "app/Assets/ThirdParty/manifest.json").read_text()
+    assert credits["manifestSha256"] == hashlib.sha256(
+        manifest_text.encode()).hexdigest()
+    by_id = {a["id"]: a for a in credits["assets"]}
+    cart = next(a for a in by_id.values() if a["title"] == "Test Cart")
+    for field in ("author", "license", "licenseUrl", "sourceUrl"):
+        assert cart[field]
+    # hand-editing the generated payload must fail the check
+    credits_path.write_text(credits_path.read_text() + "\n")
     assert generate_attribution.main(["prog", "--check", str(root)]) == 1
 
 
