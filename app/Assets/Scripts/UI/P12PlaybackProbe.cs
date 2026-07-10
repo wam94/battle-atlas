@@ -129,7 +129,13 @@ namespace BattleAtlas
             yield return Shot("p12-sv-playing.png");
             yield return Sample("soldierViewPlayback", SvSampleSeconds);
 
-            // ---- 4. Deterministic seek battery
+            // ---- 4. Deterministic seek battery. The sync contract is the
+            // CORRECTED steady state (P11 evidence: play-through-seek can
+            // freeze Video.time up to half a frame past the target; the
+            // paused-drift corrector re-seeks one Update later — the frame
+            // a viewer actually holds on is what must be within one frame).
+            // Waiting for steadiness between targets also keeps the next
+            // seek from overlapping a corrective seek.
             player.SetPlaying(false);
             player.SeekLatenciesMs.Clear();
             var seekLines = new List<string>();
@@ -138,15 +144,16 @@ namespace BattleAtlas
                 player.Seek(target);
                 yield return WaitUntil(() => !player.SeekInProgress, 10f,
                     $"seek {target}");
-                // one settled frame so the paused-drift corrector runs
-                yield return null;
-                yield return null;
+                double latency = player.LastSeekLatencyMs;
+                yield return WaitUntil(() => !player.SeekInProgress
+                        && Math.Abs(player.CurrentDriftFrames) <= 1.0,
+                    5f, $"steady after seek {target}");
                 seekLines.Add(string.Format(CultureInfo.InvariantCulture,
                     "    {{\"target\": {0}, \"latencyMs\": {1:0.0}, " +
-                    "\"driftFrames\": {2:0.000}}}",
-                    target, player.LastSeekLatencyMs, player.CurrentDriftFrames));
+                    "\"steadyDriftFrames\": {2:0.000}}}",
+                    target, latency, player.CurrentDriftFrames));
                 if (Mathf.Abs((float)player.CurrentDriftFrames) > 1f)
-                    Fail($"seek to {target} settled {player.CurrentDriftFrames} frames off");
+                    Fail($"seek to {target} held {player.CurrentDriftFrames} frames off");
             }
             yield return Shot("p12-sv-after-seek.png");
             report.Append("  \"seeks\": [\n");
