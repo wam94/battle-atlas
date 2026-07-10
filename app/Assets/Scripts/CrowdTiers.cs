@@ -119,14 +119,20 @@ namespace BattleAtlas
                 case ClipId.RouteStep:
                 case ClipId.DoubleQuick:
                 case ClipId.RoutedRun:
+                {
+                    // two-frame flipbook keyed to the resolver's DISTANCE-
+                    // driven stride phase (clipTime), so distant lines step
+                    // at exactly the rate the ground passes underneath
+                    float cycle = KitClips.Duration(clip);
+                    float phase = (clipTime / cycle +
+                        AngleEnvironmentLayout.Hash01("mid-step", slot)) % 1f;
+                    return phase < 0.5f ? "pose_march_a" : "pose_march_b";
+                }
                 case ClipId.Cross:
                 case ClipId.TurnRetreat:
                 {
-                    // two-frame flipbook keyed to gait phase: distant lines
-                    // visibly step instead of gliding
-                    float cycle = KitClips.Duration(
-                        clip == ClipId.Cross || clip == ClipId.TurnRetreat
-                            ? ClipId.March : clip);
+                    // fixed-duration transition clips keep a time flipbook
+                    float cycle = KitClips.Duration(ClipId.March);
                     float phase = (t / cycle +
                         AngleEnvironmentLayout.Hash01("mid-step", slot)) % 1f;
                     return phase < 0.5f ? "pose_march_a" : "pose_march_b";

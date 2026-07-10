@@ -117,10 +117,19 @@ public class CrowdTiersTests
     [Test]
     public void MidMarch_AlternatesTheFlipbook()
     {
-        // over one gait cycle the pose must change at least once
+        // over one gait cycle of the resolver's distance-driven stride
+        // phase (clipTime) the pose must change at least once — and a
+        // figure whose stride phase is frozen must NOT step in place
         var seen = new HashSet<string>();
-        for (float t = 8100f; t < 8101.2f; t += 0.1f)
-            seen.Add(CrowdTiers.MidPose(ClipId.March, 0f, 3, t));
+        float cycle = KitClips.Duration(ClipId.March);
+        for (float ct = 0f; ct < cycle; ct += cycle / 12f)
+            seen.Add(CrowdTiers.MidPose(ClipId.March, ct, 3, 8100f));
         Assert.AreEqual(2, seen.Count, "distant marchers must step");
+
+        seen.Clear();
+        for (float t = 8100f; t < 8101.2f; t += 0.1f)
+            seen.Add(CrowdTiers.MidPose(ClipId.March, 0.4f, 3, t));
+        Assert.AreEqual(1, seen.Count,
+            "frozen stride phase must not flip poses (no treadmill)");
     }
 }

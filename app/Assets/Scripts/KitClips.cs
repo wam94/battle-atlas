@@ -93,5 +93,30 @@ namespace BattleAtlas
                 return sinceStart - d * (float)Math.Floor(sinceStart / d);
             return Math.Min(Math.Max(sinceStart, 0f), d - 1f / 48f);
         }
+
+        // Ground meters one loop of a locomotion clip covers (drill-manual
+        // paces: quick time 110 x 28 in, double-quick 165 x 33 in). The P8
+        // locomotion review fix keys stride PHASE to track DISTANCE through
+        // these, so stride rate always matches ground speed (no skating,
+        // no treadmill marching).
+        public static float MetersPerCycle(ClipId id) => id switch
+        {
+            ClipId.March => 1.42f,
+            ClipId.RouteStep => 1.30f,
+            ClipId.DoubleQuick => 1.68f,
+            ClipId.RoutedRun => 1.90f,
+            _ => 0f,
+        };
+
+        // Distance-driven loop phase: clip time as a function of meters
+        // traveled along the track (pure in its inputs).
+        public static float DistancePhase(ClipId id, float meters)
+        {
+            float mpc = MetersPerCycle(id);
+            if (mpc <= 0f) return 0f;
+            float cycles = meters / mpc;
+            float frac = cycles - (float)Math.Floor(cycles);
+            return frac * Durations[(int)id];
+        }
     }
 }

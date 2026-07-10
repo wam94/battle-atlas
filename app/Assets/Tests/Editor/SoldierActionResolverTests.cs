@@ -319,6 +319,93 @@ public class SoldierActionResolverTests
         Assert.Greater(living, 5);
     }
 
+    static bool IsLocomotion(ClipId c) =>
+        c == ClipId.March || c == ClipId.RouteStep ||
+        c == ClipId.DoubleQuick || c == ClipId.RoutedRun;
+
+    // P8 locomotion review fix: any figure whose resolved track position
+    // moves plays a locomotion clip (march / route step / double-quick per
+    // paceProfile) — never a stationary clip gliding across the ground.
+    [Test]
+    public void MovingFigures_PlayLocomotionClips()
+    {
+        var ur = Ctx.Unit("csa-armistead");
+        int checkedCount = 0;
+        foreach (float t in new[] { 8100f, 8250f, 8670f, 8685f })
+        {
+            for (int slot = 0; slot < ur.slotCount; slot += 37)
+            {
+                var a = SoldierActionResolver.Resolve(Ctx, ur.unitIndex, slot, t);
+                if (a.Fallen) continue;
+                var b = SoldierActionResolver.Resolve(
+                    Ctx, ur.unitIndex, slot, t + 0.5f);
+                float speed = new Vector2(b.posX - a.posX, b.posZ - a.posZ)
+                    .magnitude / 0.5f;
+                if (speed < SoldierActionResolver.MoveThresholdMps + 0.15f)
+                    continue;   // clearly above threshold only
+                checkedCount++;
+                bool ok = IsLocomotion(a.clip) || a.clip == ClipId.Cross ||
+                          a.clip == ClipId.Flinch || a.clip == ClipId.Brace ||
+                          a.clip == ClipId.TurnRetreat;
+                Assert.IsTrue(ok,
+                    $"slot {slot}@{t}: moving at {speed:F2} m/s but plays " +
+                    $"{a.clip} — the Gate P8 'floating' defect");
+            }
+        }
+        Assert.Greater(checkedCount, 15, "test must catch moving men");
+    }
+
+    // ... and the converse: a stalled line does not treadmill-march.
+    [Test]
+    public void StalledFigures_DoNotMarchInPlace()
+    {
+        var ur = Ctx.Unit("csa-garnett");   // take_canister, track stalled
+        foreach (float t in new[] { 8655f, 8675f, 8695f })
+        {
+            for (int slot = 0; slot < ur.slotCount; slot += 41)
+            {
+                var a = SoldierActionResolver.Resolve(Ctx, ur.unitIndex, slot, t);
+                if (a.Fallen) continue;
+                var b = SoldierActionResolver.Resolve(
+                    Ctx, ur.unitIndex, slot, t + 0.5f);
+                float speed = new Vector2(b.posX - a.posX, b.posZ - a.posZ)
+                    .magnitude / 0.5f;
+                if (speed > SoldierActionResolver.MoveThresholdMps - 0.1f)
+                    continue;   // clearly below threshold only
+                Assert.IsFalse(IsLocomotion(a.clip),
+                    $"slot {slot}@{t}: stalled ({speed:F2} m/s) but plays " +
+                    $"{a.clip} — treadmill marching");
+            }
+        }
+    }
+
+    // Stride rate is keyed to ground DISTANCE: over a steady advance the
+    // clip phase advances by (meters traveled / meters-per-cycle) cycles.
+    [Test]
+    public void StridePhase_ConsistentWithGroundSpeed()
+    {
+        var ur = Ctx.Unit("csa-garnett");   // steady advance 8340..8580
+        int tested = 0;
+        for (int slot = 0; slot < ur.slotCount && tested < 12; slot += 53)
+        {
+            if (ur.casualties[slot].fallT < 8520f) continue;
+            const float t = 8480f, dt = 0.4f;
+            var a = SoldierActionResolver.Resolve(Ctx, ur.unitIndex, slot, t);
+            var b = SoldierActionResolver.Resolve(Ctx, ur.unitIndex, slot, t + dt);
+            if (a.clip != b.clip || !IsLocomotion(a.clip)) continue;
+            tested++;
+            float meters = new Vector2(b.posX - a.posX, b.posZ - a.posZ).magnitude;
+            float dur = KitClips.Duration(a.clip);
+            float expected = meters / KitClips.MetersPerCycle(a.clip) * dur;
+            float actual = b.clipTime - a.clipTime;
+            if (actual < 0f) actual += dur;   // loop wrap
+            Assert.AreEqual(expected, actual, 0.075f,
+                $"slot {slot}: stride phase must track ground distance " +
+                $"(clip {a.clip}, {meters:F2} m)");
+        }
+        Assert.Greater(tested, 5);
+    }
+
     [Test]
     public void ClipTimes_AlwaysWithinClipDuration()
     {

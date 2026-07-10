@@ -72,6 +72,12 @@ namespace BattleAtlas
         // road corridor and re-cross during the repulse.
         public float[][] slotCrossings;
 
+        // cumulative centroid arc length at 1 Hz (meters walked along the
+        // compiled track since slice start) — locomotion stride phase is a
+        // pure function of this distance, so stride rate always matches
+        // ground speed (P8 locomotion review fix).
+        public float[] arc;
+
         // precomputed hash keys (avoid per-call string churn)
         public string keyVariant, keyStep, keyYaw, keyWaver, keyHit,
             keyRetreat, keyFall, keyCrawl;
@@ -193,6 +199,14 @@ namespace BattleAtlas
                 if (ur.isArtillery)
                     ur.cannonShots = FireCycles.CompileCannon(
                         seed, u, FormationRoster.GunsPerBattery);
+                var ps = u.perSecond;
+                ur.arc = new float[ps.x.Count];
+                for (int i = 1; i < ps.x.Count; i++)
+                {
+                    float dx = ps.x[i] - ps.x[i - 1];
+                    float dz = ps.z[i] - ps.z[i - 1];
+                    ur.arc[i] = ur.arc[i - 1] + Mathf.Sqrt(dx * dx + dz * dz);
+                }
                 ctx.units.Add(ur);
             }
 
@@ -364,6 +378,13 @@ namespace BattleAtlas
         public const float BraceRadiusM = 18f;
         public const float CrawlDelay = 5f;        // fall end -> first crawl
 
+        // P8 locomotion review fix ("floating from position to position"):
+        // below this ground speed a man is STANDING (whatever the segment
+        // action nominally is); at or above it he MUST play a locomotion
+        // clip whose stride phase is keyed to track distance.
+        public const float MoveThresholdMps = 0.25f;
+        const float SpeedProbeDt = 0.6f;
+
         // ------------------------------------------------------------------
         public static SoldierState Resolve(
             AngleActionContext ctx, int unitIndex, int slot, float t)
@@ -486,6 +507,42 @@ namespace BattleAtlas
             return crossStart;
         }
 
+        // Meters the unit centroid has walked since slice start (1 Hz
+        // compiled table, linear between samples). Pure in t.
+        static float ArcAt(UnitRuntime ur, float t)
+        {
+            int n = ur.arc.Length;
+            float ft = Mathf.Clamp(t - ur.unit.perSecond.t0, 0f, n - 1);
+            int i = Mathf.Min((int)ft, n - 2);
+            return Mathf.Lerp(ur.arc[i], ur.arc[i + 1], ft - i);
+        }
+
+        // The slot's own ground speed through the FULL position pipeline
+        // (formation blend + crossing hold + catch-up), so a man gliding
+        // for any reason is detected. Pure in t.
+        static float SlotSpeed(
+            AngleActionContext ctx, UnitRuntime ur, int slot, float t)
+        {
+            float ta = Mathf.Max(t - SpeedProbeDt, ctx.bundle.slice.t0);
+            float tb = Mathf.Min(t + SpeedProbeDt, ctx.bundle.slice.t1);
+            if (tb - ta < 1e-3f) return 0f;
+            Vector2 a = PositionAt(ctx, ur, slot, ta,
+                SegIndexAt(ur, ta), out _, out _);
+            Vector2 b = PositionAt(ctx, ur, slot, tb,
+                SegIndexAt(ur, tb), out _, out _);
+            return (b - a).magnitude / (tb - ta);
+        }
+
+        // Stride phase from track DISTANCE (plus a per-slot desync of up
+        // to one full cycle) — feet advance exactly as fast as the ground
+        // passes underneath, however slow the compiled track is.
+        static float GaitTime(UnitRuntime ur, int slot, ClipId gait, float t)
+        {
+            float jitterM = KitClips.MetersPerCycle(gait) *
+                AngleEnvironmentLayout.Hash01(ur.keyStep, slot);
+            return KitClips.DistancePhase(gait, ArcAt(ur, t) + jitterM);
+        }
+
         // Bearing of unit motion (fall-back/rout facing).
         static float MotionBearing(UnitRuntime ur, float t)
         {
@@ -534,17 +591,25 @@ namespace BattleAtlas
             bool reacting = StrikeReaction(ur, slot, t, pos, out var reactClip,
                 out float reactTime);
 
+            // P8 locomotion review fix: whether this man's RESOLVED position
+            // is actually moving decides walk-vs-stand, and stride phase is
+            // keyed to track distance — never to the segment label alone.
+            float speed = SlotSpeed(ctx, ur, slot, t);
+            bool moving = speed >= MoveThresholdMps;
+
             switch (seg.action)
             {
                 case "hold":
                 case "halt":
                     if (reacting) { Set(ref s, reactClip, reactTime); return; }
+                    if (moving) { SetGait(ref s, ur, slot, GaitClip(seg), t); return; }
                     Set(ref s, ClipId.StandReady,
                         KitClips.Phase(ClipId.StandReady, t + stepJit * 5f));
                     return;
 
                 case "dress_line":
                 {
+                    if (moving) { SetGait(ref s, ur, slot, GaitClip(seg), t); return; }
                     float start = seg.t0 + 1.5f *
                         AngleEnvironmentLayout.Hash01(ur.keyStep, slot * 3 + 1);
                     if (t < start + KitClips.Duration(ClipId.HaltDress))
@@ -562,19 +627,28 @@ namespace BattleAtlas
                 case "cross_obstacle":
                 {
                     if (reacting) { Set(ref s, reactClip, reactTime); return; }
-                    var gait = GaitClip(seg);
-                    Set(ref s, gait, KitClips.Phase(gait, t + stepJit));
+                    if (!moving)
+                    {
+                        Set(ref s, ClipId.StandReady,
+                            KitClips.Phase(ClipId.StandReady, t + stepJit * 5f));
+                        return;
+                    }
+                    SetGait(ref s, ur, slot, GaitClip(seg), t);
                     return;
                 }
 
                 case "double_quick":
-                    Set(ref s, ClipId.DoubleQuick,
-                        KitClips.Phase(ClipId.DoubleQuick, t + stepJit));
+                    if (moving) SetGait(ref s, ur, slot, ClipId.DoubleQuick, t);
+                    else Set(ref s, ClipId.StandReady,
+                        KitClips.Phase(ClipId.StandReady, t + stepJit * 5f));
                     return;
 
                 case "fire_by_rank":
                 case "fire_independent":
                 {
+                    // a unit whose track is moving cannot work the piece:
+                    // locomotion wins (fire cycles resume where it halts)
+                    if (moving) { SetGait(ref s, ur, slot, GaitClip(seg), t); return; }
                     float offset = FireCycles.Offset(
                         ctx.seed, ur.unit.unitId, seg, slot, ur.slotCount);
                     var (phase, phaseTime) = FireCycles.PhaseAt(seg, offset, t);
@@ -597,22 +671,29 @@ namespace BattleAtlas
                 case "take_canister":
                 {
                     if (reacting) { Set(ref s, reactClip, reactTime); return; }
-                    // hash minority wavers in place through the storm
+                    if (moving) { SetGait(ref s, ur, slot, GaitClip(seg), t); return; }
+                    // stalled under the storm: a hash minority wavers, the
+                    // rest stand at the ready
                     float w = AngleEnvironmentLayout.Hash01(ur.keyWaver, slot);
                     if (w < 0.30f && seg.Progress(t) > 0.35f)
-                    {
                         Set(ref s, ClipId.Waver,
                             KitClips.Phase(ClipId.Waver, t + stepJit * 3f));
-                        return;
-                    }
-                    var gait = GaitClip(seg);
-                    Set(ref s, gait, KitClips.Phase(gait, t + stepJit));
+                    else
+                        Set(ref s, ClipId.StandReady,
+                            KitClips.Phase(ClipId.StandReady, t + stepJit * 5f));
                     return;
                 }
 
                 case "waver":
                 {
                     if (reacting) { Set(ref s, reactClip, reactTime); return; }
+                    if (moving)
+                    {
+                        // wavering men drifting with the line pick their
+                        // way, they do not march in step
+                        SetGait(ref s, ur, slot, ClipId.RouteStep, t);
+                        return;
+                    }
                     float k = AngleEnvironmentLayout.Hash01(ur.keyWaver, slot * 7 + 3);
                     if (k < 0.2f)
                         Set(ref s, ClipId.KneelReady, KitClips.Duration(ClipId.KneelReady) - 1f / 48f);
@@ -624,8 +705,9 @@ namespace BattleAtlas
 
                 case "breach":
                 {
-                    // beyond the wall the survivors fight at the guns
-                    if (hasCrossed)
+                    // beyond the wall the survivors surge for the guns while
+                    // the track carries them; they fight where it stalls
+                    if (hasCrossed && !moving)
                     {
                         float offset = FireCycles.Offset(
                             ctx.seed, ur.unit.unitId, seg, slot, ur.slotCount);
@@ -643,8 +725,9 @@ namespace BattleAtlas
                                     KitClips.Phase(ClipId.StandReady, t)); return;
                         }
                     }
-                    Set(ref s, ClipId.DoubleQuick,
-                        KitClips.Phase(ClipId.DoubleQuick, t + stepJit));
+                    if (moving) SetGait(ref s, ur, slot, ClipId.DoubleQuick, t);
+                    else Set(ref s, ClipId.StandReady,
+                        KitClips.Phase(ClipId.StandReady, t + stepJit * 5f));
                     return;
                 }
 
@@ -667,7 +750,9 @@ namespace BattleAtlas
                     }
                     var gait = seg.formationTo == "routed"
                         ? ClipId.RoutedRun : ClipId.RouteStep;
-                    Set(ref s, gait, KitClips.Phase(gait, t + stepJit));
+                    if (moving) SetGait(ref s, ur, slot, gait, t);
+                    else Set(ref s, ClipId.Waver,
+                        KitClips.Phase(ClipId.Waver, t + stepJit * 3f));
                     return;
                 }
 
@@ -676,6 +761,13 @@ namespace BattleAtlas
                         $"{ur.unit.unitId}: segment {seg.id} has unsupported " +
                         $"action '{seg.action}'");
             }
+        }
+
+        static void SetGait(
+            ref SoldierState s, UnitRuntime ur, int slot, ClipId gait, float t)
+        {
+            s.clip = gait;
+            s.clipTime = GaitTime(ur, slot, gait, t);
         }
 
         static ClipId GaitClip(AngleBundleSegment seg)
