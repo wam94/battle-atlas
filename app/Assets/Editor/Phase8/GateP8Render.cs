@@ -107,6 +107,65 @@ namespace BattleAtlas.EditorTools
         public static void RenderStills() => Run(() => StillsInner());
         public static void RenderSequence() => Run(() => SequenceInner());
         public static void StageDiag() => Run(() => DiagInner());
+        public static void LocoDiag() => Run(() => LocoDiagInner());
+
+        // P8 locomotion review-fix verification: close tracking shots of
+        // moving ranks — an advancing line head-on (march cadence) and the
+        // breach surge at the guns (the figures that previously glid).
+        static void LocoDiagInner()
+        {
+            var (scene, rt, tex) = Boot(
+                out var prevDefault, out var prevQuality, out var prevGlobal);
+            try
+            {
+                var shots = new[]
+                {
+                    // Garnett's line coming on, camera 20 m ahead of the
+                    // centroid at eye height looking back WSW
+                    (name: "adv", t0: 8478f,
+                     cam: new CamDef
+                     {
+                         posMacro = new Vector2(4288f, 4850f), eyeM = 1.6f,
+                         lookMacro = new Vector2(4267f, 4843f), lookM = 1.4f,
+                         fovDeg = 55f,
+                     }),
+                    // Armistead's breach flowing into the battery
+                    (name: "breach", t0: 8672f,
+                     cam: new CamDef
+                     {
+                         posMacro = new Vector2(4419f, 4874f), eyeM = 1.66f,
+                         lookMacro = new Vector2(4404f, 4854f), lookM = 1.4f,
+                         fovDeg = 68f,
+                     }),
+                };
+                bool first = true;
+                foreach (var shot in shots)
+                {
+                    ApplyCam(scene, shot.cam);
+                    scene.Pose(shot.t0);
+                    if (first)
+                    {
+                        for (int i = 0; i < WarmupFrames; i++)
+                            GateP6Render.RenderOnce(scene.camera, rt, null);
+                        first = false;
+                    }
+                    for (int f = 0; f < 8; f++)
+                    {
+                        scene.Pose(shot.t0 + f * 0.2f);
+                        GateP6Render.RenderOnce(scene.camera, rt, null);
+                        GateP6Render.RenderOnce(scene.camera, rt, tex);
+                        File.WriteAllBytes(Path.Combine(OutDir,
+                            $"p8-diag-loco-{shot.name}-{f}.png"),
+                            tex.EncodeToPNG());
+                    }
+                    Debug.Log($"GateP8Render: loco diag '{shot.name}' written");
+                }
+            }
+            finally
+            {
+                Restore(prevDefault, prevQuality, prevGlobal);
+            }
+        }
 
         static void Run(Action inner)
         {

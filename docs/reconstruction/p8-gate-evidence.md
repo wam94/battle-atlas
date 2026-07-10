@@ -1,5 +1,41 @@
 # Gate P8 evidence — deterministic action, casualty, and VFX scene (plan §12 Phase 8)
 
+## Review-fix round 2 (owner gate feedback, 2026-07-10)
+
+The owner approved the direction ("a big step up") and blocked the gate
+on four defects. All four are fixed and the evidence below is fully
+re-rendered (same choreography, cameras, and probes). Per-defect
+BEFORE/AFTER pairs: `docs/benchmarks/captures/p8-gate/review-fixes/`.
+
+1. **Hat halo ("odd hat behavior")** — kit-build bug: hats were sized by
+   CONSTANTS while the MPFB body macros vary skull size, so larger heads
+   swallowed the kepi band and poked through the slouch dome; the brim
+   read as a detached halo ring at hero distance. Both hats are now fit
+   to a per-body MEASURED skull ellipse. A second latent bug surfaced:
+   the kepi visor had never shipped (deleting half of a `create_circle`
+   n-gon deleted its only face) — rebuilt as an explicit quad strip.
+   Verified by `p8-figure-lineup.png` + `p8-figure-lineup-side.png`.
+2. **Locomotion ("floating from position to position")** — the resolver
+   picked clips from the segment LABEL alone; any figure whose compiled
+   track moved during a non-locomotion segment glid (worst: Armistead's
+   men in the breach played stationary fire cycles while the track
+   carried them through the battery at 0.2–0.9 m/s), and Garnett's
+   stalled line treadmill-marched at 0.1 m/s. The resolver now derives
+   walk-vs-stand from the slot's own resolved ground speed and keys
+   stride phase to track ARC LENGTH (drill-manual meters per cycle), so
+   stride rate matches ground speed under scrub in any direction.
+   Verified by `p8-diag-loco-adv-*.png` / `p8-diag-loco-breach-*.png`.
+3. **Smoke color (§9.1 "dense white/gray")** — the per-frame billboard
+   meshes carried NO normals, so the HDRP Lit BSDF saw a zero normal and
+   the sun term vanished: near-white albedo rendered as a charcoal storm
+   front. Billboards now carry explicit up normals (sunlit-from-above)
+   and the shade ramp eases powder buckets toward neutral white (~0.9).
+   Emission timing, banking, and progressive visibility are unchanged.
+4. **Brogans (bare feet)** — the P6 skin-tight foot extraction now gets
+   a real boot silhouette: ankle shaft, smoothed leather toe box, flared
+   sole rim, welted sole slab + heel block, and a leather tone distinct
+   from flesh on both palettes.
+
 **Gate criterion:** "seeking to any tested time reconstructs bitwise-identical
 logical soldier states and visually equivalent deterministic frames; casualty
 totals match compiled profiles; no double-count occurs between parent and
@@ -59,8 +95,9 @@ sector, and the breach all in frame.)
    muzzle at that instant; banks accumulate along the firing line, hang in
    the ED-19 light breeze, and progressively eat visibility (fog mean free
    path is a pure function of active smoke mass). Fuger: "the smoke was so
-   dense we could hardly see" — the frame should feel like that WITHOUT
-   becoming a gray wall.
+   dense we could hardly see" — the frame should feel like that. Since the
+   review-fix round the banks are SUNLIT WHITE to pale gray (§9.1), not
+   the earlier charcoal storm front.
 3. **Cannon** — Cushing's two intact pieces at the wall fire canister with
    muzzle blast, big smoke plumes, deterministic recoil-and-return, and
    crew braces synced to each discharge.
@@ -134,12 +171,10 @@ sector, and the breach all in frame.)
   the formation path (bounded by the catch-up blend).
 - 71st PA's compiled fall-back keeps unit facing per track motion; a few
   men read as walking backward briefly during the hand-off.
-- The kit's brogans are foot-shaped leather extractions of the body mesh
-  (P6-accepted); at hero distance in shadow they can read as bare feet.
-  Boot-silhouette brogans are a kit polish item, not a staging defect
-  (the Gate P6 watch-item was checked: all garment meshes present and
-  correctly materialed through the Phase 8 spawn path —
-  `P8FigureDiag.Render` lineup).
+- At compiled track speeds well below the drill cadence (0.25–0.6 m/s,
+  e.g. the breach flowing through the battery) the distance-keyed
+  stride reads as deliberate slow steps — correct foot planting, no
+  skating; re-timing the compiled tracks themselves is out of scope.
 - The stone wall reads clearly from the west (the attacker's side) and at
   the breach; from directly east of the defending line it hides behind
   the men and the crest line — a viewpoint reality, not missing geometry.
@@ -161,8 +196,8 @@ scripts/p8-encode.sh
 - pipeline **59**
 - reconstruction **79**
 - tool **108**
-- Unity EditMode **295** = 293 passed + 2 known conditional skips
-  (56 new Phase 8 tests)
+- Unity EditMode **298** = 296 passed + 2 known conditional skips
+  (56 Phase 8 tests + 3 locomotion review-fix tests)
 - Unity PlayMode **10/10**
 
 ## Measured results (p8-gate-report.json)
