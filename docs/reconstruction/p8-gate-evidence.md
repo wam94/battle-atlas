@@ -228,3 +228,17 @@ Machine criteria: **PASS** (bitwise logical determinism under scrub, exact
 casualty reconciliation, parent/child double-count excluded by
 construction, pixel probes within the documented GPU tolerance).
 Owner judgment on the visual evidence closes the gate.
+
+
+## Gate P8 verdict
+
+**PASSED — closed by the project owner 2026-07-10** ("looks pretty good!")
+after the review-fix round (per-body-fitted hats + shipped kepi visor,
+motion-derived locomotion with distance-keyed stride, sunlit white/pale-
+gray smoke via the missing-normals root cause, real brogan boots).
+Machine criteria: bitwise logical state 3/3 probes across independent
+renders; casualty reconciliation exact for all 12 units; GPU pixel
+tolerance 12%/max Δ8 documented (measured 5.4%/Δ7). Carried forward:
+breach-pace read is governed by compiled track speeds (re-timing is a
+data question, not animation); smoke density at climax accepted as the
+attested effect.
