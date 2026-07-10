@@ -28,6 +28,11 @@ for f in garnett-road-to-angle.full.mp4 garnett-road-to-angle.proxy.mp4; do
     { echo "ERROR: $f not staged — run scripts/p11-demo.sh first." >&2; exit 2; }
 done
 
+echo "== Preparing the Atlas scene (terrain import; saves the scene) =="
+"$UNITY" -batchmode -quit -projectPath "$REPO/app" -buildTarget OSXUniversal \
+  -executeMethod BattleAtlas.EditorTools.Phase12Review.PrepareStandaloneScene \
+  -logFile "$OUT/p12-prepare.log"
+
 echo "== Building Development standalone (a few minutes; copies media) =="
 "$UNITY" -batchmode -quit -projectPath "$REPO/app" -buildTarget OSXUniversal \
   -executeMethod BattleAtlas.EditorTools.BenchmarkBuild.Build \

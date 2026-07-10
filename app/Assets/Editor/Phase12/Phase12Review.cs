@@ -58,6 +58,26 @@ namespace BattleAtlas.EditorTools
 
         public static void RenderGoldenFrames() => Run(GoldenFramesInner);
 
+        // Headless equivalent of the README fresh-checkout step "run
+        // BattleAtlas ▸ Import Heightmap and save the scene": the committed
+        // Atlas.unity references the GITIGNORED generated terrain asset, so
+        // a fresh checkout (or CI/worktree) has a dangling TerrainData until
+        // the import runs INSIDE the Atlas scene and the scene is saved —
+        // found by the P12 standalone probe ("Terrain has no valid
+        // TerrainData!" spam, no macro ground). Leaves the scene modified on
+        // disk (local GUID), exactly like the interactive flow; do not
+        // commit the churn.
+        public static void PrepareStandaloneScene() => Run(() =>
+        {
+            var scene = UnityEditor.SceneManagement.EditorSceneManager.OpenScene(
+                "Assets/Scenes/Atlas.unity",
+                UnityEditor.SceneManagement.OpenSceneMode.Single);
+            HeightmapImporter.Import();
+            if (!UnityEditor.SceneManagement.EditorSceneManager.SaveScene(scene))
+                throw new InvalidOperationException("could not save Atlas.unity");
+            Debug.Log("Phase12Review: terrain imported into Atlas.unity and saved");
+        });
+
         static void Run(Action inner)
         {
             int exitCode = 0;
