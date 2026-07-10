@@ -227,7 +227,7 @@ namespace BattleAtlas.EditorTools
 
         // Start once, then per-frame Updates in dependency order — the same
         // headless-lifecycle pattern the EditMode suite uses. AcousticField
-        // and TimelineHud are skipped (audio/IMGUI: nothing to render).
+        // and the HUD (AtlasHud since Phase 11) are skipped: nothing to render.
         static AtlasContext StageAtlas(float t)
         {
             var clock = UnityEngine.Object.FindAnyObjectByType<BattleClock>();

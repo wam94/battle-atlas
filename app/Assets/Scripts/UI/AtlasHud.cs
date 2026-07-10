@@ -77,6 +77,11 @@ namespace BattleAtlas
         bool wasSeeking;
         bool wasInSoldierView;
         bool transitioning;
+        // guards the slider callbacks against PROGRAMMATIC range/value
+        // writes: setting lowValue/highValue clamps a stale value and fires
+        // the change event — without this, entering Soldier View at 15:20
+        // seeked to the window start (observed in the P11 screenshot run)
+        bool suppressSliderEvents;
         readonly List<string> visibleMarkerIds = new List<string>();
 
         // ------------------------------------------------------ static gate
@@ -180,6 +185,7 @@ namespace BattleAtlas
             modalLayer = root.Q("modal-layer");
             warningModal = root.Q("warning-modal");
             creditsModal = root.Q("credits-modal");
+            creditsList = root.Q<ScrollView>("credits-list");
             fadeOverlay = root.Q("fade-overlay");
         }
 
@@ -226,6 +232,7 @@ namespace BattleAtlas
             }
             timelineSlider.RegisterValueChangedCallback(e =>
             {
+                if (suppressSliderEvents) return;
                 // user scrub (programmatic writes use SetValueWithoutNotify):
                 // grabbing the timeline pauses playback, as it always has
                 clock.CurrentTime = e.newValue;
@@ -246,6 +253,7 @@ namespace BattleAtlas
             svSources.clicked += OpenDrawerForActiveViewpoint;
             svSlider.RegisterValueChangedCallback(e =>
             {
+                if (suppressSliderEvents) return;
                 if (player.InSoldierView && !player.SeekInProgress
                     && Mathf.Abs(e.newValue - clock.CurrentTime)
                         * player.Active.media.fps > 1f)
@@ -268,9 +276,9 @@ namespace BattleAtlas
                 root.Q<Label>("warning-title").text = warningDoc.warning.title;
                 root.Q<Label>("warning-body").text = warningDoc.warning.body;
                 root.Q<Label>("observer-title").text =
-                    warningDoc.representativeObserver.title;
+                    warningDoc.representativeObserver?.title ?? "";
                 root.Q<Label>("observer-body").text =
-                    warningDoc.representativeObserver.body;
+                    warningDoc.representativeObserver?.body ?? "";
                 root.Q<Button>("warning-acknowledge").text =
                     warningDoc.warning.acknowledgeLabel;
                 root.Q<Button>("warning-decline").text = warningDoc.warning.declineLabel;
@@ -314,7 +322,11 @@ namespace BattleAtlas
             int end = Mathf.RoundToInt(clock.EndTime);
             if (end == lastEndTime) return;
             lastEndTime = end;
+            suppressSliderEvents = true;
             timelineSlider.highValue = clock.EndTime;
+            timelineSlider.SetValueWithoutNotify(
+                Mathf.Clamp(clock.CurrentTime, 0f, clock.EndTime));
+            suppressSliderEvents = false;
             if (moments != null)
             {
                 for (int i = 0; i < timelineMarkers.childCount; i++)
@@ -361,6 +373,10 @@ namespace BattleAtlas
                 SetAtlasChromeVisible(!inSv);
                 svBar.style.display = inSv ? DisplayStyle.Flex : DisplayStyle.None;
                 if (orbit != null) orbit.enabled = !inSv;
+                // world-space unit labels would bleed into the video's
+                // letterbox bands; the label layer hides with the chrome
+                var labels = FindFirstObjectByType<UnitLabelField>();
+                if (labels != null) labels.Hidden = inSv;
                 if (!inSv && drawerViewpoint != null) CloseDrawer();
             }
 
@@ -387,6 +403,15 @@ namespace BattleAtlas
 
         void UpdateAtlasBar()
         {
+            // masthead binds lazily: BattleDirector.Start (which parses the
+            // battle JSON) may run after this component's Start
+            if (director != null && string.IsNullOrEmpty(contextTitle.text)
+                && !string.IsNullOrEmpty(director.BattleName))
+            {
+                contextTitle.text = HudModel.DayContext(director.BattleName);
+                contextConditions.text =
+                    "conditions: " + HudModel.ConditionsLine(director.Environment);
+            }
             playButton.text = clock.Playing ? "❚❚" : "►";
             for (int i = 0; i < speedButtons.Count; i++)
                 speedButtons[i].EnableInClassList(
@@ -419,12 +444,15 @@ namespace BattleAtlas
             svSettling.style.display = HudModel.ShowSettleIndicator(
                 player.SeekInProgress, Time.unscaledTime - seekStartedAt)
                 ? DisplayStyle.Flex : DisplayStyle.None;
+            suppressSliderEvents = true;
             svSlider.lowValue = (float)vp.t0;
             svSlider.highValue = (float)player.LastSeekableBattleTime;
+            suppressSliderEvents = false;
             if (!SliderCaptured(svSlider))
                 svSlider.SetValueWithoutNotify(clock.CurrentTime);
             if (warningDoc != null)
-                svObserverLine.text = warningDoc.representativeObserver.shortLine;
+                svObserverLine.text =
+                    warningDoc.representativeObserver?.shortLine ?? "";
         }
 
         bool SliderCaptured(Slider slider)
@@ -554,6 +582,10 @@ namespace BattleAtlas
         IEnumerator EnterRoutine(ViewpointDefinition vp)
         {
             transitioning = true;
+            // the authored cut lands on the second the user chose — a
+            // clock running at 60x must not drift (possibly out of the
+            // window) during the fade
+            clock.Playing = false;
             yield return Fade(0f, 1f);
             if (!player.TryEnter(vp))
                 ShowStatus($"Soldier View refused: {player.LastWarning}",

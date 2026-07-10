@@ -108,6 +108,9 @@ bottom.
   not as floating tooltips.
 - Entering with media absent shows the on-screen refusal — that is the
   P1 contract's graceful degradation, not a bug.
+- On a non-16:9 window the video letterboxes and the slivers show the
+  Atlas behind it (unit labels are hidden there); a black backing is
+  Phase 12 polish if it bothers you.
 
 ## Verdict
 

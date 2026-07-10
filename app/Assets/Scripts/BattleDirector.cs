@@ -931,6 +931,17 @@ namespace BattleAtlas
         // empty ground.
         public void ClearSelection() => SetSelected(null);
 
+        // Programmatic selection by unit id (Phase 11: the screenshot
+        // harness and any future search/jump surface) — the same path as a
+        // click pick, so the MPB highlight and drawer follow.
+        public bool TrySelectUnit(string unitId)
+        {
+            if (!unitsById.TryGetValue(unitId ?? "", out UnitEntry entry))
+                return false;
+            SetSelected(entry);
+            return true;
+        }
+
         // Two RenderMeshInstanced calls total — one per side across ALL
         // units (the class-homogeneous MPB pattern, like FenceField). The
         // flag material must be an ASSET (the magenta/stripping lesson);

@@ -15,3 +15,7 @@ app/Assets/StreamingAssets/SoldierView/*.mp4.meta
 app/p1-seek-latency.json
 app/RenderOutput/
 app/p10-seek-latency.json
+# emitted into Resources by the performance-testing package during player
+# builds (scripts/p0-benchmark.sh, scripts/p11-screenshots.sh); never source
+app/Assets/Resources/PerformanceTestRunInfo.json*
+app/Assets/Resources/PerformanceTestRunSettings.json*

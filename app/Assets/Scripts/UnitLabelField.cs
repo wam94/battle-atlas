@@ -27,6 +27,9 @@ namespace BattleAtlas
 
         BattleDirector director;
         Camera cam;
+        // Phase 11: the HUD hides the label layer while Soldier View owns
+        // the screen (labels would bleed into the video's letterbox bands)
+        public bool Hidden;
         TextMeshPro[] pool;
         // caller-owned LabelLayout.Declutter buffers, sized once to the
         // director's fixed slot capacity; `shown` doubles as last frame's
@@ -81,7 +84,7 @@ namespace BattleAtlas
         void LateUpdate()
         {
             if (pool == null) return;
-            if (cam == null)
+            if (cam == null || Hidden)
             {
                 HideAll();
                 return;

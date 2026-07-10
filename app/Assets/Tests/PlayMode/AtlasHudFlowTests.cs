@@ -272,6 +272,13 @@ public class AtlasHudFlowTests
         yield return WaitUntil(
             () => player.InSoldierView && !hud.Transitioning, "enter");
         Assert.AreEqual(1f, clock.Speed, 1e-3f, "media is real time");
+        // let the in-view bar sync once: its slider range writes must NOT
+        // seek the clock (the lowValue-clamp regression the screenshot run
+        // caught — entry at 8163 snapped to the window start)
+        yield return null;
+        yield return WaitUntil(() => !player.SeekInProgress, "entry seek settle");
+        Assert.AreEqual(8163f, clock.CurrentTime, 0.5f,
+            "entering must land on the second the user chose");
 
         // hold somewhere else in the window, then leave
         player.Seek(8166.0);

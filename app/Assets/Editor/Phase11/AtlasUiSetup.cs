@@ -43,6 +43,43 @@ namespace BattleAtlas.EditorTools
             Debug.Log($"AtlasUiSetup: wrote {PanelPath}");
         }
 
+        // The world-space unit labels (UnitLabelField, cartography slice)
+        // are TextMeshPro components; TMP requires its Essential Resources
+        // (TMP Settings + default font) imported into Assets/ or every
+        // label NREs at runtime — observed in the Phase 11 standalone
+        // screenshot run, and the same would happen in the owner's editor.
+        // One-shot (editor menu). NOTE: AssetDatabase.ImportPackage is
+        // asynchronous — under -batchmode -quit the editor exits before the
+        // import lands, so the committed Assets/TextMesh Pro tree was
+        // extracted directly from the .unitypackage (tar.gz) instead; this
+        // menu item remains for interactive editor use.
+        // Licensing: the package is Unity Companion License content; the
+        // bundled LiberationSans font is SIL OFL 1.1 (license text ships
+        // inside the imported folder). Flagged in the P11 gate evidence
+        // for the Phase 12 license review.
+        [MenuItem("BattleAtlas/Import TMP Essential Resources")]
+        public static void ImportTmpEssentials()
+        {
+            const string dst = "Assets/TextMesh Pro";
+            if (System.IO.Directory.Exists(dst))
+            {
+                Debug.Log("AtlasUiSetup: TMP essentials already imported");
+                return;
+            }
+            string pkg = System.IO.Path.GetFullPath(
+                "Packages/com.unity.ugui/Package Resources/TMP Essential Resources.unitypackage");
+            if (!System.IO.File.Exists(pkg))
+            {
+                Debug.LogError($"AtlasUiSetup: package not found at {pkg}");
+                if (Application.isBatchMode) EditorApplication.Exit(1);
+                return;
+            }
+            AssetDatabase.ImportPackage(pkg, false);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+            Debug.Log($"AtlasUiSetup: imported TMP essentials from {pkg}");
+        }
+
         // (A one-shot RemoveTimelineHudFromAtlas surgery method lived here
         // until it ran on 2026-07-10: it deleted the retired IMGUI
         // TimelineHud component from Atlas.unity, and was removed together
