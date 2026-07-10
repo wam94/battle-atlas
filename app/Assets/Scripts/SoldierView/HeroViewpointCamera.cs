@@ -244,8 +244,13 @@ namespace BattleAtlas
             //    within arm's reach (deterministic, sober; no slow motion)
             float glanceYaw = 0f;
             {
+                // envelope-weighted BLEND over all nearby falls: a best-pick
+                // here snapped the head ~600 deg/s when two falls' envelopes
+                // crossed (found by the comfort-bound test); the blend is
+                // continuous in t because each envelope ramps from and
+                // returns to zero.
                 var cas = ur.casualties;
-                float best = 0f;
+                float num = 0f, den = 0f;
                 for (int slot = 0; slot < cas.Length; slot++)
                 {
                     float fallT = cas[slot].fallT;
@@ -259,13 +264,23 @@ namespace BattleAtlas
                     // ramp 0.3 s, hold, release
                     float env = Mathf.Clamp01(age / 0.3f) *
                         Mathf.Clamp01((FallGlanceWindowS - age) / 1.2f);
-                    if (env <= best) continue;
-                    best = env;
+                    if (env <= 0f) continue;
                     float toward = Mathf.Atan2(d.x, d.y) * Mathf.Rad2Deg;
                     float rel = Mathf.DeltaAngle(heading, toward);
-                    glanceYaw = Mathf.Clamp(rel, -60f, 60f) / 60f *
-                        s.profile.headTurnDeg * env;
+                    // never glance at what is behind: DeltaAngle is
+                    // discontinuous at ±180°, and a man does not snap his
+                    // head to a fall he cannot see — fade the weight to
+                    // zero well before the wraparound (this was a real
+                    // ~600 deg/s snap caught by the comfort-bound test)
+                    float ang = Mathf.Abs(rel);
+                    if (ang > 120f) continue;
+                    float wAng = Mathf.Clamp01((120f - ang) / 30f);
+                    num += Mathf.Clamp(rel, -60f, 60f) / 60f * env * wAng;
+                    den += env * wAng;
                 }
+                if (den > 1e-5f)
+                    glanceYaw = num / den * Mathf.Min(1f, den) *
+                        s.profile.headTurnDeg;
             }
 
             // 6) chaos level: local casualty + strike density (the climax

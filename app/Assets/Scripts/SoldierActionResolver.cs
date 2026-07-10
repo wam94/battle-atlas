@@ -78,6 +78,23 @@ namespace BattleAtlas
         // ground speed (P8 locomotion review fix).
         public float[] arc;
 
+        // FORMATION-FRAME facing at 1 Hz: the compiled facing with
+        // half-turn steps unwrapped (each inter-second delta reduced to
+        // (-90°, 90°] mod 180°). Placement must use this, never the raw
+        // facing: rotating slot offsets through a compiled about-face
+        // (e.g. Garnett's fall_back at t=8700 steps 78.7°->264.0°)
+        // point-reflects the formation about its centroid and teleports a
+        // flank man ~134 m in one second. In drill terms an about-face
+        // leaves every man standing where he stood — the frame changes
+        // handedness, the men do not run around the colors. Placing with
+        // the unwrapped frame yaw realizes exactly that (front rank
+        // becomes rear rank relative to the new facing), and only the
+        // residual wheel (5.3° in the Garnett case) moves anybody.
+        // Body facing (SoldierState.facingDeg) still uses the raw
+        // compiled facing + MotionBearing. Found by the Phase 9 hero
+        // camera comfort bound; fixes figures and camera alike.
+        public float[] frameFacing;
+
         // precomputed hash keys (avoid per-call string churn)
         public string keyVariant, keyStep, keyYaw, keyWaver, keyHit,
             keyRetreat, keyFall, keyCrawl;
@@ -206,6 +223,16 @@ namespace BattleAtlas
                     float dx = ps.x[i] - ps.x[i - 1];
                     float dz = ps.z[i] - ps.z[i - 1];
                     ur.arc[i] = ur.arc[i - 1] + Mathf.Sqrt(dx * dx + dz * dz);
+                }
+                ur.frameFacing = new float[ps.facingDeg.Count];
+                ur.frameFacing[0] = ps.facingDeg[0];
+                for (int i = 1; i < ps.facingDeg.Count; i++)
+                {
+                    float d = Mathf.DeltaAngle(
+                        ps.facingDeg[i - 1], ps.facingDeg[i]);
+                    while (d > 90f) d -= 180f;
+                    while (d <= -90f) d += 180f;
+                    ur.frameFacing[i] = ur.frameFacing[i - 1] + d;
                 }
                 ctx.units.Add(ur);
             }
@@ -434,7 +461,10 @@ namespace BattleAtlas
             AngleBundleSegment seg)
         {
             Vector2 centroid = ur.unit.PositionAt(t);
-            float facing = ur.unit.FacingAt(t);
+            // placement uses the UNWRAPPED formation-frame facing (see
+            // UnitRuntime.frameFacing): an about-face must not point-
+            // reflect the formation
+            float facing = FrameFacingAt(ur, t);
             Vector2 offset = ur.isArtillery
                 ? FormationRoster.ArtilleryOffset(
                     ur.unit.unitId, slot, ur.slotCount)
@@ -442,6 +472,16 @@ namespace BattleAtlas
                     ur.unit.unitId, slot, ur.slotCount,
                     seg.formationFrom, seg.formationTo, seg.Progress(t));
             return FormationRoster.ToWorld(centroid, facing, offset);
+        }
+
+        // Unwrapped formation-frame facing (linear lerp on the compiled
+        // 1 Hz frame table; continuous by construction). Pure in t.
+        internal static float FrameFacingAt(UnitRuntime ur, float t)
+        {
+            int n = ur.frameFacing.Length;
+            float ft = Mathf.Clamp(t - ur.unit.perSecond.t0, 0f, n - 1);
+            int i = Mathf.Min((int)ft, n - 2);
+            return Mathf.Lerp(ur.frameFacing[i], ur.frameFacing[i + 1], ft - i);
         }
 
         internal static int SegIndexAt(UnitRuntime ur, float t)
@@ -477,7 +517,7 @@ namespace BattleAtlas
             if (float.IsNegativeInfinity(crossStart)) return basePos;
             hasCrossed = t >= crossStart + CrossDur;
 
-            float facing = ur.unit.FacingAt(crossStart);
+            float facing = FrameFacingAt(ur, crossStart);
             float r = facing * Mathf.Deg2Rad;
             var fwd = new Vector2(Mathf.Sin(r), Mathf.Cos(r));
             int holdSegIdx = SegIndexAt(ur, crossStart);
