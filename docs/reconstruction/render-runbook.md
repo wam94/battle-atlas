@@ -195,6 +195,31 @@ gh release create soldier-view-media-v1 \
   --notes-file docs/benchmarks/captures/p10-gate/p10-release-notes.md
 ```
 
+## The reduced-motion cut (Phase 12 accessibility — not yet rendered)
+
+The app ships a persisted **Reduced motion** setting (Options modal;
+`AccessibilityOptions`) selecting `HeroMotionProfile.ReducedMotion` —
+no roll, no handheld noise, minimal bob/sway; path and events identical
+(`HeroViewpointCamera`). Because Soldier View is pre-rendered, the
+setting cannot change the SHIPPED pixels: the v1 release media was
+rendered with `HeroMotionProfile.Standard`, and the HUD says so while
+the setting is on. Producing the reduced-motion media variant is a
+separate full render of this pipeline:
+
+1. Point the render harness at the reduced profile —
+   `GateP9Render.Settings` is the single seam (it passes
+   `HeroMotionProfile.Standard` today); a reduced-motion render entry
+   must pass `HeroMotionProfile.ReducedMotion` instead and use a
+   distinct output name (e.g. `garnett-road-to-angle.reduced.*`).
+2. Re-run §§2–6 of this runbook (~2 h render + encode on the P10
+   machine). The settings hash WILL differ from the v1 freeze — the
+   profile is part of the camera math, not the freeze record; record
+   the new manifest beside it.
+3. The audio mix is unchanged (the mix does not depend on the motion
+   profile) — reuse the stems.
+4. Ship as additional release artifacts; a Phase 12+ player can then
+   select media by the setting.
+
 ## Cost controls (plan §3.5)
 
 Measured Phase 10 actuals live in the gate evidence. If a future
