@@ -15,6 +15,16 @@ public class AtlasHudModelTests
     }
 
     [Test]
+    public void SoldierViewSpeedLabel_SaysForcedSpeedAndPausedState()
+    {
+        // P11 punchlist (assigned to Phase 12): the forced 1× must be
+        // legible inside Soldier View, including while paused
+        Assert.AreEqual("1× real time", HudModel.SoldierViewSpeedLabel(true));
+        Assert.AreEqual("1× real time — paused",
+            HudModel.SoldierViewSpeedLabel(false));
+    }
+
+    [Test]
     public void TimelineFraction_ClampsAndScales()
     {
         Assert.AreEqual(0f, HudModel.TimelineFraction(-5f, 100f));

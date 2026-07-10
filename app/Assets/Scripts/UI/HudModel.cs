@@ -75,6 +75,15 @@ namespace BattleAtlas
             return (a, Mathf.Max(0f, b - a));
         }
 
+        // Soldier View play-speed designator (Gate P11 punchlist, assigned
+        // to Phase 12): entering Soldier View forces 1× — the media is
+        // pre-rendered real time — but the Atlas bar's speed buttons are
+        // hidden inside, so the forced state was invisible. The designator
+        // says the speed AND why it cannot change, and carries the paused
+        // state so a still frame reads as "paused", not "broken".
+        public static string SoldierViewSpeedLabel(bool playing)
+            => playing ? "1× real time" : "1× real time — paused";
+
         // Seek-settle indicator policy (Gate P10 measurement: median 33.9 ms,
         // worst 107 ms on this hardware): a hold this short reads as a held
         // frame, not a defect, so the UI shows nothing for it. Only a stall

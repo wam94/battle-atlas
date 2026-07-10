@@ -258,6 +258,22 @@
 
 .sv-bar { display: none; }
 
+/* the forced-1× designator (P11 punchlist): styled like an active speed
+   button so it reads as the same control family as the Atlas bar's
+   1×/10×/60× group, but it is a label — the speed is locked inside */
+.sv-speed {
+    height: 28px;
+    font-size: 12px;
+    background-color: rgba(92, 86, 66, 0.95);
+    color: rgb(245, 240, 226);
+    border-width: 1px;
+    border-color: rgb(180, 170, 140);
+    border-radius: 3px;
+    margin-left: 8px;
+    padding: 4px 10px;
+    -unity-text-align: middle-center;
+}
+
 .sv-title {
     color: rgb(235, 228, 213);
     font-size: 14px;

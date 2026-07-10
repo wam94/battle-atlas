@@ -58,6 +58,7 @@
     <ui:VisualElement name="sv-bar" class="bottom-bar sv-bar">
       <ui:VisualElement class="transport-row" picking-mode="Ignore">
         <ui:Button name="sv-play" text="❚❚" class="transport-btn"/>
+        <ui:Label name="sv-speed" class="sv-speed" picking-mode="Ignore"/>
         <ui:Label name="sv-clock" class="clock-label" picking-mode="Ignore"/>
         <ui:Label name="sv-title" class="sv-title" picking-mode="Ignore"/>
         <ui:Label name="sv-proxy-badge" text="proxy resolution" class="badge"/>

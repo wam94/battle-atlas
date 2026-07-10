@@ -55,6 +55,7 @@ namespace BattleAtlas
         Slider timelineSlider, svSlider;
         Button svPlay, svExit, svSources;
         Label svClock, svTitle, svProxyBadge, svSettling, svObserverLine;
+        Label svSpeed;
         readonly List<Button> speedButtons = new List<Button>();
 
         MomentSet moments;
@@ -174,6 +175,7 @@ namespace BattleAtlas
             windowBand = root.Q("timeline-window-band");
             svBar = root.Q("sv-bar");
             svPlay = root.Q<Button>("sv-play");
+            svSpeed = root.Q<Label>("sv-speed");
             svClock = root.Q<Label>("sv-clock");
             svTitle = root.Q<Label>("sv-title");
             svProxyBadge = root.Q<Label>("sv-proxy-badge");
@@ -433,6 +435,9 @@ namespace BattleAtlas
         {
             ViewpointDefinition vp = player.Active;
             svPlay.text = clock.Playing ? "❚❚" : "►";
+            // the forced-1× designator (P11 punchlist): the player locked
+            // the clock to 1× on entry; say so, and carry the paused state
+            svSpeed.text = HudModel.SoldierViewSpeedLabel(clock.Playing);
             svClock.text = ClockMath.FormatClockTime(clock.StartTime, clock.CurrentTime)
                 + $"  (t={clock.CurrentTime:0})";
             svTitle.text = vp.title;
