@@ -25,7 +25,11 @@ public class ViewpointDefinitionTests
         Assert.AreEqual(1.66f, hero.camera.eyeHeightM);
         Assert.AreEqual(68f, hero.camera.fovDeg);
         Assert.AreEqual(0.35f, hero.camera.stabilization);
-        Assert.IsFalse(hero.media.HasFull, "full media is a Phase 10 artifact");
+        // Phase 10 delivered the production encode; the media FILE stays
+        // gitignored (GitHub Releases artifact), only the path is metadata.
+        Assert.IsTrue(hero.media.HasFull, "Phase 10 sets the full media path");
+        Assert.AreEqual("SoldierView/garnett-road-to-angle.full.mp4",
+            hero.media.full);
         StringAssert.Contains("Representative unnamed soldier", hero.editorialNote);
         Assert.IsNull(hero.Validate());
 

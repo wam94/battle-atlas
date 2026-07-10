@@ -93,6 +93,12 @@ namespace BattleAtlas.EditorTools
         public int hiddenUnitIndex = -1;
         public int hiddenSlot = -1;
 
+        // P10 must-fix (Gate P9 teleport): when > 0, rendered hero-tier
+        // figures that enter this radius around the camera's plan position
+        // are deflected around it (see LensGuard). Presentation-only, like
+        // the hidden observer figure; first-person hero renders enable it.
+        public float lensGuardRadiusM = 0f;
+
         public const string KitDir = "Assets/ProjectOwned/Characters/Kit";
 
         float Ground(Vector2 macro) =>
@@ -743,6 +749,9 @@ namespace BattleAtlas.EditorTools
                         case CrowdTier.Hero:
                         case CrowdTier.Near:
                         {
+                            if (lensGuardRadiusM > 0f && tier == CrowdTier.Hero)
+                                pos = LensGuard.Guarded(ctx, u, s, t, pos,
+                                    camMacro, lensGuardRadiusM);
                             var go = RentFigure(PoolKey(usa, st.variant, tier));
                             go.transform.position = World(pos, 0f);
                             go.transform.rotation =

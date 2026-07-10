@@ -234,12 +234,64 @@ namespace BattleAtlas
                     while (d <= -90f) d += 180f;
                     ur.frameFacing[i] = ur.frameFacing[i - 1] + d;
                 }
+                SmoothFormationFrame(ur);
                 ctx.units.Add(ur);
             }
 
             ctx.CompileEngagements();
             foreach (var ur in ctx.units) ctx.CompileCrossings(ur);
             return ctx;
+        }
+
+        // P10 must-fix (the Gate P9 "teleport" class): the compiled
+        // per-second facing table can STEP at segment boundaries — e.g.
+        // Armistead's advance->breach boundary steps 82.8° -> 99.5° in the
+        // single second t=8639..8640, and every CSA brigade carries a
+        // 17-20°/s wheel at some boundary. Placement rotates slot offsets
+        // by this frame, so a one-second step wheels the whole line at
+        // once: a flank man on a ~370 m frontage sweeps at up to ~65 m/s
+        // (measured; the P9 evidence's "flank translation" limitation is
+        // the same defect seen through the ±2.6 s camera smoother). Men
+        // cannot outrun the frame. Spread each unit's placement frame with
+        // a symmetric triangular kernel sized from ITS OWN worst step and
+        // widest offset so no wheel moves any man faster than
+        // MaxWheelFlankSpeedMps. Body facing (SoldierState.facingDeg)
+        // still reads the raw compiled table — a man may snap his own
+        // shoulders in a second; the LINE may not. Symmetric, precomputed,
+        // pure -> scrub-invariant. Units without fast wheels (all Union
+        // units here) are untouched.
+        public const float MaxWheelFlankSpeedMps = 3.0f;
+
+        static void SmoothFormationFrame(UnitRuntime ur)
+        {
+            var ff = ur.frameFacing;
+            if (ff.Length < 3) return;
+            // widest plan offset a slot can carry in any formation
+            float radius = ur.isArtillery
+                ? FormationRoster.GunsPerBattery * FormationRoster.GunSpacingM / 2f
+                : FormationRoster.Frontage(ur.slotCount) / 2f;
+            float need = 0f;
+            for (int i = 1; i < ff.Length; i++)
+                need = Mathf.Max(need, Mathf.Abs(ff[i] - ff[i - 1])
+                    * Mathf.Deg2Rad * radius / MaxWheelFlankSpeedMps);
+            // triangular kernel of half-width W turns a step S into a ramp
+            // with peak slope S/(W+1) per second
+            int w = Mathf.CeilToInt(Mathf.Min(need, 30f));
+            if (w <= 1) return;
+            var smoothed = new float[ff.Length];
+            for (int i = 0; i < ff.Length; i++)
+            {
+                float sum = 0f, wSum = 0f;
+                for (int k = -w; k <= w; k++)
+                {
+                    int j = Mathf.Clamp(i + k, 0, ff.Length - 1);
+                    float weight = w + 1 - Mathf.Abs(k);
+                    sum += ff[j] * weight;
+                    wSum += weight;
+                }
+                smoothed[i] = sum / wSum;
+            }
+            ur.frameFacing = smoothed;
         }
 
         void CompileEngagements()
@@ -528,30 +580,52 @@ namespace BattleAtlas
             AngleActionContext ctx, UnitRuntime ur, int slot, float t,
             int segIdx, out bool crossingNow, out bool hasCrossed)
         {
-            var seg = ur.unit.segments[segIdx];
+            return PositionUpTo(ctx, ur, slot, t, int.MaxValue,
+                out crossingNow, out hasCrossed);
+        }
+
+        // P10 must-fix (preflight catch): consecutive crossings can start
+        // closer together (CrossDur + 1 s spacing floor) than a full
+        // hold + catch-up lasts (CrossDur + CatchupDur), so a man could
+        // still be mid-catch-up from fence 1 when his fence-2 crossing
+        // began. The old hold snapped him to the RAW formation position at
+        // that instant — a pop of several meters (garnett slot 241 moved
+        // 2.44 m in 0.1 s at t=8374, at the paired east road fences). The
+        // hold must be the position computed THROUGH the pipeline with all
+        // strictly-earlier crossings applied: at the moment crossing i
+        // activates that value equals the position an instant before, so
+        // the switch is continuous by construction. Recursion depth is the
+        // slot's prior crossing count (a handful at most).
+        static Vector2 PositionUpTo(
+            AngleActionContext ctx, UnitRuntime ur, int slot, float t,
+            int maxCrossIndex, out bool crossingNow, out bool hasCrossed)
+        {
             crossingNow = false;
             hasCrossed = false;
 
-            Vector2 basePos = BasePosition(ctx, ur, slot, t, seg);
+            int segIdx = SegIndexAt(ur, t);
+            Vector2 basePos = BasePosition(
+                ctx, ur, slot, t, ur.unit.segments[segIdx]);
             var times = ur.slotCrossings != null ? ur.slotCrossings[slot] : null;
             if (times == null || times.Length == 0) return basePos;
 
-            // latest crossing that started at or before t
-            float crossStart = float.NegativeInfinity;
-            foreach (float c in times)
+            // latest crossing (below maxCrossIndex) that started at or
+            // before t
+            int ci = -1;
+            for (int i = 0; i < times.Length && i < maxCrossIndex; i++)
             {
-                if (c > t) break;
-                crossStart = c;
+                if (times[i] > t) break;
+                ci = i;
             }
-            if (float.IsNegativeInfinity(crossStart)) return basePos;
+            if (ci < 0) return basePos;
+            float crossStart = times[ci];
             hasCrossed = t >= crossStart + CrossDur;
 
             float facing = FrameFacingAt(ur, crossStart);
             float r = facing * Mathf.Deg2Rad;
             var fwd = new Vector2(Mathf.Sin(r), Mathf.Cos(r));
-            int holdSegIdx = SegIndexAt(ur, crossStart);
-            Vector2 hold = BasePosition(
-                ctx, ur, slot, crossStart, ur.unit.segments[holdSegIdx]);
+            Vector2 hold = PositionUpTo(
+                ctx, ur, slot, crossStart, ci, out _, out _);
             if (!hasCrossed)
             {
                 crossingNow = true;
