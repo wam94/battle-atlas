@@ -739,7 +739,12 @@ namespace BattleAtlas.EditorTools
 
         static Dictionary<string, Material> PropMaterials()
         {
-            if (propMats != null) return propMats;
+            // P10 fix: the cache is static but the materials are
+            // scene-lifetime — a NewScene between two stagings (the Gate
+            // P10 determinism pair) destroys them and destroyed materials
+            // render magenta. Rebuild when the cache holds corpses.
+            if (propMats != null && propMats["gun_iron"] != null)
+                return propMats;
             // US carriages were painted olive drab; ironwork black
             // (Ordnance Manual finish norms); timber families reuse the
             // weathered-planks palette ingredient.

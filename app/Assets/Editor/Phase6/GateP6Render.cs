@@ -431,7 +431,13 @@ namespace BattleAtlas.EditorTools
                 {
                     if (mats[i] == null) continue;
                     string key = mats[i].name;
-                    if (!RemappedMats.TryGetValue(key, out var m))
+                    // P10 fix: the cache is static but the materials are
+                    // scene-lifetime — a NewScene (e.g. between the two
+                    // independent stagings of the Gate P10 determinism
+                    // pair) destroys them, and a destroyed material
+                    // renders MAGENTA. Unity's overloaded == catches the
+                    // destroyed wrapper; rebuild on such a hit.
+                    if (!RemappedMats.TryGetValue(key, out var m) || m == null)
                     {
                         Color c = mats[i].HasProperty("_BaseColor")
                             ? mats[i].GetColor("_BaseColor")
