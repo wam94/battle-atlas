@@ -86,42 +86,46 @@ public class NoTeleportTests
         }
     }
 
-    // The exact defect window the owner flagged (t~8634..8641 covers the
-    // lens pass AND the breach wheel), every unit, every slot, at render
-    // rate. Runs in a focused window to stay suite-friendly; the render
-    // pipeline sweeps the FULL viewpoint window with the same bound
-    // before committing render hours (Phase10Render preflight).
+    // The known defect windows, every unit, every slot, at render rate:
+    // t~8634..8641 covers the lens pass AND the breach wheel the owner's
+    // teleport report led to; t~8365..8385 covers the road-corridor
+    // crossing chains (the preflight-caught mid-catch-up hold pop,
+    // garnett slot 241 at t=8374). Focused windows keep the suite fast;
+    // the render pipeline sweeps the FULL viewpoint window with the same
+    // bounds before committing render hours (Phase10Render.Preflight).
     [Test]
-    public void DefectWindow_NoSlotTeleports_AtRenderRate()
+    public void DefectWindows_NoSlotTeleports_AtRenderRate()
     {
-        const float t0 = 8630f, t1 = 8645f;
-        int frames = (int)((t1 - t0) * Fps) + 1;
-        var prev = new Vector2[Ctx.TotalSlots];
-        var prevClip = new ClipId[Ctx.TotalSlots];
-        for (int f = 0; f < frames; f++)
+        foreach (var (t0, t1) in new[] { (8630f, 8645f), (8365f, 8385f) })
         {
-            float t = t0 + f / Fps;
-            int flat = 0;
-            foreach (var ur in Ctx.units)
+            int frames = (int)((t1 - t0) * Fps) + 1;
+            var prev = new Vector2[Ctx.TotalSlots];
+            var prevClip = new ClipId[Ctx.TotalSlots];
+            for (int f = 0; f < frames; f++)
             {
-                for (int s = 0; s < ur.slotCount; s++, flat++)
+                float t = t0 + f / Fps;
+                int flat = 0;
+                foreach (var ur in Ctx.units)
                 {
-                    var st = SoldierActionResolver.Resolve(
-                        Ctx, ur.unitIndex, s, t);
-                    var p = new Vector2(st.posX, st.posZ);
-                    if (f > 0)
+                    for (int s = 0; s < ur.slotCount; s++, flat++)
                     {
-                        float d = (p - prev[flat]).magnitude;
-                        float bound = prevClip[flat] == ClipId.Cross &&
-                            st.clip != ClipId.Cross
-                            ? MaxCrossExitDeltaM : MaxDeltaM;
-                        if (d > bound)
-                            Assert.Fail(
-                                $"{ur.unit.unitId} slot {s} moved {d:F2} m " +
-                                $"in one frame at t={t:F2} (clip {st.clip})");
+                        var st = SoldierActionResolver.Resolve(
+                            Ctx, ur.unitIndex, s, t);
+                        var p = new Vector2(st.posX, st.posZ);
+                        if (f > 0)
+                        {
+                            float d = (p - prev[flat]).magnitude;
+                            float bound = prevClip[flat] == ClipId.Cross &&
+                                st.clip != ClipId.Cross
+                                ? MaxCrossExitDeltaM : MaxDeltaM;
+                            if (d > bound)
+                                Assert.Fail(
+                                    $"{ur.unit.unitId} slot {s} moved {d:F2} m " +
+                                    $"in one frame at t={t:F2} (clip {st.clip})");
+                        }
+                        prev[flat] = p;
+                        prevClip[flat] = st.clip;
                     }
-                    prev[flat] = p;
-                    prevClip[flat] = st.clip;
                 }
             }
         }

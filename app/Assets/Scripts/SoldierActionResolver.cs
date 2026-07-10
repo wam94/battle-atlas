@@ -580,30 +580,52 @@ namespace BattleAtlas
             AngleActionContext ctx, UnitRuntime ur, int slot, float t,
             int segIdx, out bool crossingNow, out bool hasCrossed)
         {
-            var seg = ur.unit.segments[segIdx];
+            return PositionUpTo(ctx, ur, slot, t, int.MaxValue,
+                out crossingNow, out hasCrossed);
+        }
+
+        // P10 must-fix (preflight catch): consecutive crossings can start
+        // closer together (CrossDur + 1 s spacing floor) than a full
+        // hold + catch-up lasts (CrossDur + CatchupDur), so a man could
+        // still be mid-catch-up from fence 1 when his fence-2 crossing
+        // began. The old hold snapped him to the RAW formation position at
+        // that instant — a pop of several meters (garnett slot 241 moved
+        // 2.44 m in 0.1 s at t=8374, at the paired east road fences). The
+        // hold must be the position computed THROUGH the pipeline with all
+        // strictly-earlier crossings applied: at the moment crossing i
+        // activates that value equals the position an instant before, so
+        // the switch is continuous by construction. Recursion depth is the
+        // slot's prior crossing count (a handful at most).
+        static Vector2 PositionUpTo(
+            AngleActionContext ctx, UnitRuntime ur, int slot, float t,
+            int maxCrossIndex, out bool crossingNow, out bool hasCrossed)
+        {
             crossingNow = false;
             hasCrossed = false;
 
-            Vector2 basePos = BasePosition(ctx, ur, slot, t, seg);
+            int segIdx = SegIndexAt(ur, t);
+            Vector2 basePos = BasePosition(
+                ctx, ur, slot, t, ur.unit.segments[segIdx]);
             var times = ur.slotCrossings != null ? ur.slotCrossings[slot] : null;
             if (times == null || times.Length == 0) return basePos;
 
-            // latest crossing that started at or before t
-            float crossStart = float.NegativeInfinity;
-            foreach (float c in times)
+            // latest crossing (below maxCrossIndex) that started at or
+            // before t
+            int ci = -1;
+            for (int i = 0; i < times.Length && i < maxCrossIndex; i++)
             {
-                if (c > t) break;
-                crossStart = c;
+                if (times[i] > t) break;
+                ci = i;
             }
-            if (float.IsNegativeInfinity(crossStart)) return basePos;
+            if (ci < 0) return basePos;
+            float crossStart = times[ci];
             hasCrossed = t >= crossStart + CrossDur;
 
             float facing = FrameFacingAt(ur, crossStart);
             float r = facing * Mathf.Deg2Rad;
             var fwd = new Vector2(Mathf.Sin(r), Mathf.Cos(r));
-            int holdSegIdx = SegIndexAt(ur, crossStart);
-            Vector2 hold = BasePosition(
-                ctx, ur, slot, crossStart, ur.unit.segments[holdSegIdx]);
+            Vector2 hold = PositionUpTo(
+                ctx, ur, slot, crossStart, ci, out _, out _);
             if (!hasCrossed)
             {
                 crossingNow = true;

@@ -13,3 +13,5 @@ docs/benchmarks/captures/
 app/Assets/StreamingAssets/SoldierView/*.mp4
 app/Assets/StreamingAssets/SoldierView/*.mp4.meta
 app/p1-seek-latency.json
+app/RenderOutput/
+app/p10-seek-latency.json
