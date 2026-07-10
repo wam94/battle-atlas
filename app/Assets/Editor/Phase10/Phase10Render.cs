@@ -677,6 +677,15 @@ namespace BattleAtlas.EditorTools
                         t0, freeze, spf, peak);
                     Debug.Log($"Phase10Render: chunk {c}/{chunkCount - 1} done " +
                         $"({spf:F2} s/frame, peak {peak} MB managed)");
+                    // Long batch renders leak NATIVE memory (~both
+                    // production attempts were jetsam-SIGKILLed after
+                    // ~4,800 frames with managed memory flat at ~1 GB).
+                    // Release what can be released at every chunk
+                    // boundary; the outer runner loop
+                    // (scripts/p10-render-loop.sh) resumes a killed
+                    // process from the next incomplete chunk regardless.
+                    EditorUtility.UnloadUnusedAssetsImmediate();
+                    GC.Collect();
                 }
                 Debug.Log($"Phase10Render: production render complete — " +
                     $"{rendered} rendered, {skipped} resumed-skipped, " +
