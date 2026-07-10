@@ -145,7 +145,7 @@ lines with license/source; the modal points at the full inventory doc.
 \* skips are gitignored-generated-input dependent (the four Angle
 bake-fixture tests); the `symbolMaterial` scene skip and the generated-
 terrain-material skip both converted to PASSES this phase. Net EditMode
-delta: +34 new tests, −6 retired with the IMGUI placeholders.
+delta: +32 new tests, −4 retired with the IMGUI placeholders.
 
 ## Known conditions / owed to Phase 12
 
