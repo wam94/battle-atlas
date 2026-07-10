@@ -60,6 +60,12 @@ copied to the main checkout's same path (gitignored generated media).
   battle t=8610..8700 (15:23:30–15:25), 30 fps, the climax of the assault
 - `p8-gate-report.json` — machine evidence: logical digests, pixel probes,
   casualty reconciliation, timing/memory
+- `p8-figure-lineup.png` / `p8-figure-lineup-side.png` — six kit variants
+  close up, front and profile (hat fit, visor, boot silhouette)
+- `p8-diag-loco-adv-*.png` / `p8-diag-loco-breach-*.png` — close tracking
+  shots of moving ranks, 0.2 s apart (stride-vs-ground verification)
+- `review-fixes/` — per-defect BEFORE/AFTER pairs for the four owner
+  review fixes (hat, locomotion, smoke color, brogans)
 
 ## What the scene IS
 
@@ -200,18 +206,19 @@ scripts/p8-encode.sh
   (56 Phase 8 tests + 3 locomotion review-fix tests)
 - Unity PlayMode **10/10**
 
-## Measured results (p8-gate-report.json)
+## Measured results (p8-gate-report.json, review-fix re-render)
 
-- 2,700/2,700 frames, 0.37 s/frame offline HDRP at 2560x1440,
-  1.2 GB peak managed memory.
+- 2,700/2,700 frames, 0.39 s/frame offline HDRP at 2560x1440,
+  1.1 GB peak managed memory.
 - Probe frames 300/1500/2400 (re-posed OUT OF ORDER after scrubbing away):
   logical digests **bitwise identical, 3/3**; pixels within the documented
-  GPU tolerance, 3/3 (worst probe 5.92% differing at max delta 9).
+  GPU tolerance, 3/3 (worst probe 5.40% differing at max delta 7 —
+  tighter than the previous round's 5.92% at 9).
 - Casualty reconciliation, all 12 staged units: scheduled == profile
   totals **exactly**, and alive-at-end == compiled strength **exactly**
   (e.g. csa-garnett 693/693 scheduled, 700/700 alive; csa-armistead
   880/880, 700/700).
-- Media: `p8-gate-90s-1440p.mp4` (133 MB) + 720p proxy (28 MB), H.264,
+- Media: `p8-gate-90s-1440p.mp4` (117 MB) + 720p proxy (26 MB), H.264,
   1 keyframe/s GOP, sha256 in `p8-gate-media.sha256`; frame-continuity
   check enforced before encode (`scripts/p8-encode.sh`).
 
