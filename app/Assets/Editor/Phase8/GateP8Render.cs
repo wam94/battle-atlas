@@ -58,16 +58,16 @@ namespace BattleAtlas.EditorTools
             {
                 // Emmitsburg Road crossing: Garnett's line over the fences
                 name = "p8-still-8160-road", t = 8160f,
-                posMacro = new Vector2(4125f, 4818f), eyeM = 1.66f,
-                lookMacro = new Vector2(4078f, 4800f), lookM = 1.5f,
+                posMacro = new Vector2(4098f, 4834f), eyeM = 1.66f,
+                lookMacro = new Vector2(4072f, 4798f), lookM = 1.3f,
                 fovDeg = 68f,
             },
             new CamDef
             {
                 // closing under canister, mid-field
                 name = "p8-still-8400-canister", t = 8400f,
-                posMacro = new Vector2(4262f, 4842f), eyeM = 1.66f,
-                lookMacro = new Vector2(4195f, 4824f), lookM = 1.6f,
+                posMacro = new Vector2(4212f, 4838f), eyeM = 1.66f,
+                lookMacro = new Vector2(4174f, 4820f), lookM = 1.6f,
                 fovDeg = 68f,
             },
             new CamDef

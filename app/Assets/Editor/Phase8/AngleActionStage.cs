@@ -456,15 +456,20 @@ namespace BattleAtlas.EditorTools
                 }
             }
 
+            var disc = SoftDisc();
+
             flashMat = new Material(Shader.Find("HDRP/Unlit"));
-            flashMat.SetColor("_UnlitColor", new Color(1f, 0.86f, 0.5f, 0.9f));
+            flashMat.SetColor("_UnlitColor", new Color(1f, 0.78f, 0.42f, 0.85f));
+            flashMat.SetTexture("_UnlitColorMap", disc);
             flashMat.SetFloat("_SurfaceType", 1f);
             flashMat.SetFloat("_BlendMode", 1f);   // additive
             HDMaterial.ValidateMaterial(flashMat);
 
-            bloodMat = TransparentLit(new Color(0.26f, 0.03f, 0.03f, 0.82f));
+            bloodMat = TransparentLit(new Color(0.26f, 0.03f, 0.03f, 0.85f));
+            bloodMat.SetTexture("_BaseColorMap", disc);
             bloodMat.name = "p8_blood";
-            woundMat = TransparentLit(new Color(0.22f, 0.02f, 0.02f, 0.88f));
+            woundMat = TransparentLit(new Color(0.20f, 0.02f, 0.02f, 0.9f));
+            woundMat.SetTexture("_BaseColorMap", disc);
             woundMat.name = "p8_wound";
 
             musketDropMat = new Material(Shader.Find("HDRP/Lit"));
@@ -545,6 +550,40 @@ namespace BattleAtlas.EditorTools
                     float a = falloff * (0.22f + 0.78f * nse);
                     px[y * n + x] = new Color32(255, 255, 255,
                         (byte)Mathf.Clamp(Mathf.RoundToInt(a * 255f), 0, 255));
+                }
+            }
+            tex.SetPixels32(px);
+            tex.Apply(true);
+            return tex;
+        }
+
+        // soft-edged irregular disc (blood pooling, wound stains, flashes)
+        static Texture2D SoftDisc()
+        {
+            const int n = 128;
+            var tex = new Texture2D(n, n, TextureFormat.RGBA32, true)
+            {
+                name = "p8_soft_disc",
+                wrapMode = TextureWrapMode.Clamp,
+            };
+            var px = new Color32[n * n];
+            for (int y = 0; y < n; y++)
+            {
+                for (int x = 0; x < n; x++)
+                {
+                    float dx = x / (float)(n - 1) - 0.5f;
+                    float dy = y / (float)(n - 1) - 0.5f;
+                    float ang = Mathf.Atan2(dy, dx);
+                    // deterministic lobed edge so pools read organic
+                    float wobble = 0.86f
+                        + 0.10f * Mathf.Sin(ang * 3f + 1.3f)
+                        + 0.06f * Mathf.Sin(ang * 7f + 0.4f);
+                    float r = Mathf.Sqrt(dx * dx + dy * dy) * 2f / wobble;
+                    float a = Mathf.Clamp01(1f - r);
+                    a = a * a * (3f - 2f * a);
+                    px[y * n + x] = new Color32(255, 255, 255,
+                        (byte)Mathf.Clamp(Mathf.RoundToInt(
+                            Mathf.Pow(a, 0.8f) * 255f), 0, 255));
                 }
             }
             tex.SetPixels32(px);
@@ -947,20 +986,28 @@ namespace BattleAtlas.EditorTools
                 tris.Add(i0); tris.Add(i0 + 2); tris.Add(i0 + 1);
                 tris.Add(i0); tris.Add(i0 + 3); tris.Add(i0 + 2);
             }
+            // flashes only read near the camera; distant white cards are
+            // artifacts, not evidence
+            var camPos = camTr.position;
+            bool NearCam(Vector2 pos, float range)
+            {
+                var w = World(pos, 1f);
+                return (w - camPos).sqrMagnitude < range * range;
+            }
             int lo = LowerBound(smokeEvents, t - BlackPowderVfx.FlashDur);
             for (int i = lo; i < smokeEvents.Count; i++)
             {
                 var e = smokeEvents[i];
                 if (e.t > t) break;
                 if (e.kind != SmokeKind.Musket) continue;
-                if (BlackPowderVfx.FlashActive(e.t, t))
-                    Flash(e.pos, e.heightM, 0.22f);
+                if (BlackPowderVfx.FlashActive(e.t, t) && NearCam(e.pos, 130f))
+                    Flash(e.pos, e.heightM, 0.16f);
             }
             foreach (var shot in cannonShots)
             {
                 if (shot.t > t) break;
-                if (BlackPowderVfx.FlashActive(shot.t, t))
-                    Flash(shot.pos, 1.1f, 1.1f);
+                if (BlackPowderVfx.FlashActive(shot.t, t) && NearCam(shot.pos, 400f))
+                    Flash(shot.pos, 1.1f, 0.8f);
             }
             SetBuiltMesh("muzzle_flashes", verts, uvs, tris, flashMat);
         }
@@ -1072,9 +1119,9 @@ namespace BattleAtlas.EditorTools
                             (CasualtySchedule.WoundCategory)st.wound);
                         if (size > 0f)
                         {
-                            var c = World(pos, 0.35f);
-                            var r = camTr.right * size;
-                            var uv = camTr.up * size;
+                            var c = World(pos, 0.24f);
+                            var r = camTr.right * (size * 0.55f);
+                            var uv = camTr.up * (size * 0.55f);
                             int i0 = woundVerts.Count;
                             woundVerts.Add(c - r - uv);
                             woundVerts.Add(c + r - uv);
