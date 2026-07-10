@@ -68,8 +68,9 @@ can surface.
 
 ## Smaller fixes (batchable)
 
-- Soldier View: no play-speed designator visible (P11) — display the
-  forced 1× state. **(Assigned to Phase 12.)**
+- ~~Soldier View: no play-speed designator visible (P11) — display the
+  forced 1× state.~~ **Shipped in Phase 12** (sv-bar designator:
+  "1× real time" / "1× real time — paused").
 - Crowd interpenetration at close range in packed lines (P9: "messy
   behavior by the models").
 - Tile-edge haze wall + tactical-height banding (P7; Phase 10/11
@@ -77,7 +78,11 @@ can surface.
 - Editor Game-view UI scaling at simulated QHD (P11 session note) —
   consider ScaleWithScreenSize or a documented editor workflow.
 - Seek worst-case ~101–107 ms vs the ~100 ms revisit trigger (P10/P11)
-  — proxy-frame transition go/no-go from feel.
+  — proxy-frame transition go/no-go from feel. P12 standalone probe
+  adds one data point: a backward sub-second nudge missed its
+  event-side settle and rode the player's designed 3 s wedge-escape
+  before converging exactly (sync never wrong on the held frame, but a
+  ~3 s hold is a feel defect if it reproduces interactively).
 - Letterbox slivers need black backing on non-16:9 windows (P11 report).
 - Contested styling still dataless at macro grain (shader slot + drawer
   word ready; needs contested-flagged data).

@@ -31,8 +31,8 @@
 }
 
 .context-conditions {
-    color: rgb(150, 150, 148);
-    font-size: 11px;
+    color: rgb(178, 178, 174);
+    font-size: 12px;
     margin-top: 2px;
 }
 
@@ -142,7 +142,7 @@
 
 .source-heading {
     color: rgb(196, 184, 156);
-    font-size: 11px;
+    font-size: 12px;
     -unity-font-style: bold;
     margin-top: 8px;
     white-space: normal;
@@ -152,12 +152,12 @@
 
 .source-citation {
     color: rgb(178, 174, 166);
-    font-size: 11px;
+    font-size: 12px;
     margin-top: 2px;
     white-space: normal;
 }
 
-.source-silent { -unity-font-style: italic; color: rgb(150, 146, 138); }
+.source-silent { -unity-font-style: italic; color: rgb(172, 168, 158); }
 
 /* --------------------------------------------------------- bottom bar */
 
@@ -258,6 +258,22 @@
 
 .sv-bar { display: none; }
 
+/* the forced-1× designator (P11 punchlist): styled like an active speed
+   button so it reads as the same control family as the Atlas bar's
+   1×/10×/60× group, but it is a label — the speed is locked inside */
+.sv-speed {
+    height: 28px;
+    font-size: 12px;
+    background-color: rgba(92, 86, 66, 0.95);
+    color: rgb(245, 240, 226);
+    border-width: 1px;
+    border-color: rgb(180, 170, 140);
+    border-radius: 3px;
+    margin-left: 8px;
+    padding: 4px 10px;
+    -unity-text-align: middle-center;
+}
+
 .sv-title {
     color: rgb(235, 228, 213);
     font-size: 14px;
@@ -271,18 +287,59 @@
     border-radius: 3px;
     padding: 2px 8px;
     margin-left: 10px;
-    font-size: 11px;
+    font-size: 12px;
     display: none;
 }
 
 .sv-exit { margin-left: auto; }
 
 .observer-line {
-    color: rgb(168, 162, 150);
-    font-size: 11px;
+    color: rgb(186, 180, 168);
+    font-size: 12px;
     margin-top: 4px;
     -unity-font-style: italic;
 }
+
+/* reduced-motion honesty note (Phase 12): visible while the setting is
+   on — the shipped media was rendered with the standard profile */
+.motion-note {
+    color: rgb(214, 186, 148);
+    font-size: 12px;
+    margin-top: 2px;
+    white-space: normal;
+    display: none;
+}
+
+/* Soldier View captions (Phase 12 accessibility): high-contrast band
+   above the transport bar, hidden unless enabled and a caption is live */
+.sv-captions {
+    position: absolute;
+    left: 15%; right: 15%; bottom: 130px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    -unity-text-align: middle-center;
+    background-color: rgba(0, 0, 0, 0.72);
+    border-radius: 4px;
+    padding: 6px 14px;
+    white-space: normal;
+    display: none;
+}
+
+/* options modal rows (Phase 12 accessibility) */
+.opt-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.opt-label {
+    color: rgb(208, 202, 190);
+    font-size: 13px;
+    white-space: normal;
+}
+
+.opt-slider { width: 280px; margin: 0; }
 
 /* -------------------------------------------------------------- modals */
 
@@ -323,8 +380,8 @@
 }
 
 .modal-note {
-    color: rgb(168, 162, 150);
-    font-size: 11px;
+    color: rgb(186, 180, 168);
+    font-size: 12px;
     margin-bottom: 6px;
     white-space: normal;
 }

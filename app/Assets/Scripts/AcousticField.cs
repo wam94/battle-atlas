@@ -17,6 +17,13 @@ namespace BattleAtlas
     // paused; only the sound treats pause as "not now."
     public class AcousticField : MonoBehaviour
     {
+        // Phase 12: while Soldier View is entered, its media carries the
+        // authored full mix (same compiled events, tactical grain) — the
+        // macro synth field yields rather than doubling the battle. Set by
+        // SoldierViewPlayer on enter/exit; rides the same anti-click slew
+        // as pause-silence.
+        public static bool SoldierViewActive;
+
         // 1 ambient 2D source always on + up to 7 spatialized event sources
         public const int SpatialSourceCount = 7;
         // per-kind audibility tiers: rumble carries across the theater,
@@ -237,8 +244,9 @@ namespace BattleAtlas
             // covered by the slew and nothing pops
             float maxDelta = Time.unscaledDeltaTime / SlewSeconds;
             // pause-silence master: rides the same slew, so pausing fades
-            // rather than cuts (and un-pausing swells rather than pops)
-            float master = clock.Playing ? 1f : 0f;
+            // rather than cuts (and un-pausing swells rather than pops).
+            // Soldier View silence rides the same path (Phase 12).
+            float master = clock.Playing && !SoldierViewActive ? 1f : 0f;
             ambientSource.volume = Mathf.MoveTowards(
                 ambientSource.volume, AmbientGain * master, maxDelta);
             for (int i = 0; i < SpatialSourceCount; i++)

@@ -17,6 +17,7 @@
     <ui:VisualElement name="chips" class="chips" picking-mode="Ignore">
       <ui:Button name="chip-contours" text="Contours" class="chip"/>
       <ui:Button name="chip-reading-light" text="Reading light (presentation)" class="chip"/>
+      <ui:Button name="chip-options" text="Options" class="chip"/>
       <ui:Button name="chip-credits" text="Credits" class="chip"/>
     </ui:VisualElement>
 
@@ -58,16 +59,24 @@
     <ui:VisualElement name="sv-bar" class="bottom-bar sv-bar">
       <ui:VisualElement class="transport-row" picking-mode="Ignore">
         <ui:Button name="sv-play" text="❚❚" class="transport-btn"/>
+        <ui:Label name="sv-speed" class="sv-speed" picking-mode="Ignore"/>
         <ui:Label name="sv-clock" class="clock-label" picking-mode="Ignore"/>
         <ui:Label name="sv-title" class="sv-title" picking-mode="Ignore"/>
         <ui:Label name="sv-proxy-badge" text="proxy resolution" class="badge"/>
         <ui:Label name="sv-settling" text="settling…" class="badge"/>
+        <ui:Button name="sv-captions-toggle" text="CC" class="chip"/>
         <ui:Button name="sv-sources" text="Sources" class="chip"/>
         <ui:Button name="sv-exit" text="Exit to Atlas" class="chip sv-exit"/>
       </ui:VisualElement>
       <ui:Slider name="sv-slider" low-value="0" high-value="1" class="timeline-slider"/>
       <ui:Label name="sv-observer-line" class="observer-line" picking-mode="Ignore"/>
+      <ui:Label name="sv-motion-note" class="motion-note" picking-mode="Ignore"/>
     </ui:VisualElement>
+
+    <!-- Soldier View captions (Phase 12 accessibility): the voice layers
+         of the deterministic mix, time-coded from the same event data;
+         toggleable, default off -->
+    <ui:Label name="sv-captions" class="sv-captions" picking-mode="Ignore"/>
 
     <!-- modal layer: content warning + credits -->
     <ui:VisualElement name="modal-layer" class="modal-layer">
@@ -81,6 +90,29 @@
         <ui:VisualElement class="modal-buttons">
           <ui:Button name="warning-decline" class="chip"/>
           <ui:Button name="warning-acknowledge" class="chip warning-ack"/>
+        </ui:VisualElement>
+      </ui:VisualElement>
+      <ui:VisualElement name="options-modal" class="modal">
+        <ui:Label text="Options" class="modal-title"/>
+        <ui:VisualElement class="opt-row">
+          <ui:Label text="Master volume" class="opt-label"/>
+          <ui:Slider name="opt-master" low-value="0" high-value="100" class="opt-slider"/>
+        </ui:VisualElement>
+        <ui:VisualElement class="opt-row">
+          <ui:Label text="Soldier View volume" class="opt-label"/>
+          <ui:Slider name="opt-sv-volume" low-value="0" high-value="100" class="opt-slider"/>
+        </ui:VisualElement>
+        <ui:VisualElement class="opt-row">
+          <ui:Label text="Captions — Soldier View voices" class="opt-label"/>
+          <ui:Button name="opt-captions" class="chip"/>
+        </ui:VisualElement>
+        <ui:VisualElement class="opt-row">
+          <ui:Label text="Reduced camera motion" class="opt-label"/>
+          <ui:Button name="opt-reduced-motion" class="chip"/>
+        </ui:VisualElement>
+        <ui:Label name="opt-motion-note" class="modal-note"/>
+        <ui:VisualElement class="modal-buttons">
+          <ui:Button name="options-close" text="Close" class="chip"/>
         </ui:VisualElement>
       </ui:VisualElement>
       <ui:VisualElement name="credits-modal" class="modal">

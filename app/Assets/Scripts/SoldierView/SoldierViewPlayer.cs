@@ -35,6 +35,33 @@ namespace BattleAtlas
         public bool UsingProxyFallback { get; private set; }
         public VideoPlayer Video { get; private set; }
 
+        // Soldier View media gain (Phase 12 accessibility: volume controls).
+        // The production encodes carry the authored deterministic mix as an
+        // AAC track; it plays through the DIRECT audio path, which bypasses
+        // the AudioListener — so the caller passes the EFFECTIVE gain
+        // (master × Soldier View mix, AccessibilityOptions). Persisted
+        // between entries; applied on prepare and on every change.
+        public float MixVolume01 { get; private set; } = 1f;
+
+        // Play-through-seek would scrub the audio audibly (SeekVideo plays
+        // the decoder through the settle); the mix mutes for the settle
+        // window and returns with the settled frame.
+        bool seekMuted;
+
+        public void SetMixVolume(float volume01)
+        {
+            MixVolume01 = Mathf.Clamp01(volume01);
+            ApplyVolume();
+        }
+
+        void ApplyVolume()
+        {
+            if (Video == null || !Video.isPrepared) return;
+            float gain = seekMuted ? 0f : MixVolume01;
+            for (ushort track = 0; track < Video.audioTrackCount; track++)
+                Video.SetDirectAudioVolume(track, gain);
+        }
+
         float savedSpeed;
         readonly System.Diagnostics.Stopwatch seekWatch = new System.Diagnostics.Stopwatch();
 
@@ -103,7 +130,13 @@ namespace BattleAtlas
             Video.renderMode = VideoRenderMode.CameraNearPlane;
             Video.targetCamera = Camera.main;
             Video.aspectRatio = VideoAspectRatio.FitInside;
-            Video.audioOutputMode = VideoAudioOutputMode.None;
+            // The authored mix muxed in the media plays via the direct
+            // path (macOS/AVFoundation decodes AAC natively). The Phase 1
+            // dev proxy has no audio track — audioTrackCount 0 is fine.
+            Video.audioOutputMode = VideoAudioOutputMode.Direct;
+            // While inside, the Soldier View mix is the soundscape; the
+            // Atlas synth field (same events, macro grain) yields to it.
+            AcousticField.SoldierViewActive = true;
             Video.skipOnDrop = true;
             Video.isLooping = false;
             // Settle detection: a paused decoder that has never played does
@@ -135,6 +168,8 @@ namespace BattleAtlas
             }
             Active = null;
             SeekInProgress = false;
+            seekMuted = false;
+            AcousticField.SoldierViewActive = false;
             // clock.CurrentTime is untouched: Atlas returns to this exact second.
         }
 
@@ -162,6 +197,7 @@ namespace BattleAtlas
 
         void OnPrepared(VideoPlayer vp)
         {
+            ApplyVolume();
             Seek(clock.CurrentTime);
         }
 
@@ -177,6 +213,8 @@ namespace BattleAtlas
             double fps = Active != null ? Active.media.fps : 30.0;
             videoTime = (System.Math.Floor(videoTime * fps) + 0.5) / fps;
             SeekInProgress = true;
+            seekMuted = true;   // no audible scrubbing while settling
+            ApplyVolume();
             pendingSeekTime = videoTime;
             seekWatch.Restart();
             Video.time = videoTime;
@@ -216,6 +254,8 @@ namespace BattleAtlas
             if (!SeekInProgress) return;
             seekWatch.Stop();
             SeekInProgress = false;
+            seekMuted = false;
+            ApplyVolume();
             LastSeekLatencyMs = seekWatch.Elapsed.TotalMilliseconds;
             SeekLatenciesMs.Add(LastSeekLatencyMs);
             if (clock == null || !clock.Playing) Video.Pause();
