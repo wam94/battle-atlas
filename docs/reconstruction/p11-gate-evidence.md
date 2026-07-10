@@ -167,3 +167,15 @@ delta: +32 new tests, −4 retired with the IMGUI placeholders.
   license review alongside the CC0/CC-BY manifest discipline.
 - P7 deferred polish (haze wall, banding, species-accurate trees)
   unchanged.
+
+
+## Gate P11 verdict
+
+**PASSED — closed by the project owner 2026-07-10** ("unless otherwise
+mentioned the 12 points pass"; Soldier View entry/exit "works well").
+Owner feedback routed to `docs/reconstruction/post-v2-punchlist.md`:
+theater label legibility (own slice), unit-type differentiation in the
+ribbon language, macro movement/orientation crudeness, the missing
+speed designator inside Soldier View (assigned to Phase 12), and the
+charge-phase intensity/carnage depth question (research-first slice:
+casualty pacing per phase, behavior under fire, observer placement).
