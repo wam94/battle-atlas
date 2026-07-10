@@ -87,11 +87,25 @@ reproduction).
 - Chunking: 12 × 60 s resumable chunks with per-chunk manifests (git
   SHA, bundle checksum, viewpoint, battle-time range, frame formula,
   settings hash); freeze record `p10-freeze.json`.
-- Measured: **FILL_SPF s/frame** steady state, **FILL_WALL h** wall
-  time, peak managed memory **FILL_MEM MB**, PNG scratch ~3.2 MB/frame
-  (~63 GB full sequence — harvested into chunk encodes because the
-  machine had ~58 GB free; chunk mp4s total FILL_CHUNK_GB GB and concat
-  losslessly into the deliverable stream).
+- Measured: **0.280 s/frame** weighted (0.217 in the open fields to
+  0.349 in the smoke-heavy wall chunks) = **1.54 h pure render**;
+  **1.83 h wall** including every crash/restart; peak managed memory
+  **1,209 MB**; PNG scratch ~3.2 MB/frame (~63 GB full sequence —
+  rolling-harvested into chunk encodes because the machine had ~58 GB
+  free; the 12 chunk mp4s total **1.6 GB** and concat losslessly into
+  the deliverable stream).
+- **The crash story this pipeline was built for happened**: macOS
+  SIGKILLed the Unity batch process EIGHT times across the render
+  (exit 137, jetsam; managed memory flat ~1 GB — a native leak under
+  long batch rendering, worst after my mid-run asset-unload mitigation
+  which is why `scripts/p10-render-loop.sh` exists). Every kill
+  resumed losslessly from the chunk manifests; zero frames were lost
+  or re-encoded incorrectly (final decoded count re-verified 19,815).
+- Chunk manifests carry three gitShas (documentation/pipeline-infra
+  commits landed mid-render between resume attempts); the render-
+  relevant code and the **settingsHash are identical across all 12
+  chunks** (verified), and the deterministic scene code is unchanged
+  since the fixes commit.
 
 ## 4. Encodes and measured media
 
@@ -101,8 +115,8 @@ with the list; final decoded frame count re-verified = 19,815).
 
 | file | size | avg bitrate | notes |
 | --- | --- | --- | --- |
-| `garnett-road-to-angle.full.mp4` | FILL | FILL Mbit/s | 2560×1440p30 H.264 CRF18, GOP 30 (1 keyframe/s), +faststart, AAC 192k full mix |
-| `garnett-road-to-angle.proxy.mp4` | FILL | FILL Mbit/s | 1280×720p30 CRF20, same audio |
+| `garnett-road-to-angle.full.mp4` | 1.67 GB | 20.18 Mbit/s | 2560×1440p30 H.264 CRF18, GOP 30 (1 keyframe/s), +faststart, AAC 192k full mix; 19,815 frames decode-verified; duration 11:00.50 |
+| `garnett-road-to-angle.proxy.mp4` | 331 MB | 4.01 Mbit/s | 1280×720p30 CRF20, same audio |
 
 Audio: the full-length deterministic mix (t=8160..8820.5) built from
 the Phase 9 stem pipeline (`build_viewpoint_audio.py`); stems retained
@@ -115,10 +129,16 @@ PlayMode `SeekLatency_Full1440pProductionMedia` (12 deterministic
 seeks: long jumps across hundreds of GOPs, near jumps, sub-second
 nudges, both directions), report `app/p10-seek-latency.json`:
 
-- median **FILL ms**, worst **FILL ms** (P1 proxy-only numbers were
-  10.2/19.0 ms; the media contract required re-measuring on the real
-  1440p stream).
-- Every settle landed within one video frame of the battle clock.
+- median **33.9 ms**, worst **107.3 ms** (P1 proxy-only numbers were
+  10.2/19.0 ms; the media contract predicted the real 1440p stream
+  needed its own measurement).
+- Every settle landed within one video frame of the battle clock
+  (asserted per seek).
+- Judgment: the median is one video frame — seek-and-hold remains the
+  right transition. The single worst seek (107.3 ms ≈ 3.2 frames)
+  grazes the P1 revisit trigger (~100 ms): if the owner feels long
+  jumps at 1440p, Phase 11 can enable the proxy-frame seek-settle
+  transition the player already has the plumbing for.
 - End-guard: media padded 0.5 s past t1, so the unreachable last-frames
   window sits entirely in padding.
 
@@ -134,7 +154,8 @@ sha256, provenance, and the exact `gh release create` command).
 - tool **108**
 - Unity EditMode **319** = 317 passed + 2 known conditional skips
   (313 baseline + 6 new NoTeleportTests)
-- Unity PlayMode **FILL** (10 baseline + the 1440p seek measurement)
+- Unity PlayMode **11/11** (10 baseline + the 1440p production-media
+  seek measurement; no skips — media staged)
 
 ## Viewing guide (the full 11-minute film)
 

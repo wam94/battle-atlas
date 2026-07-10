@@ -60,10 +60,16 @@ before any render hours are committed (see
 ## 3. The production render (chunked, resumable)
 
 ```sh
-"$UNITY" -batchmode -projectPath app -buildTarget OSXUniversal \
-  -executeMethod BattleAtlas.EditorTools.Phase10Render.RenderProduction \
-  -logFile p10-production.log
+scripts/p10-render-loop.sh    # loops Unity until all 12 chunks exist
 ```
+
+Use the loop, not a bare Unity invocation: this machine's OS SIGKILLs
+long Unity batch processes (observed after ~1,800–4,800 frames; exit
+137 with managed memory flat — a native leak under long batch renders
+meeting jetsam). Each invocation resumes at the first incomplete chunk;
+the production render survived eight such kills with zero lost frames.
+Measured production actuals (Apple M4 24 GB): 0.280 s/frame weighted,
+1.54 h pure render, 1.83 h wall including kills, peak managed 1.2 GB.
 
 - Output: `app/RenderOutput/p10/seq-full/frame_%06d.png` (gitignored),
   19,815 frames = (8820 − 8160 + 0.5 s pad) × 30 fps at 2560×1440.
