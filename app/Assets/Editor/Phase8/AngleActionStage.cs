@@ -443,10 +443,14 @@ namespace BattleAtlas.EditorTools
                     {
                         float alpha = (a + 0.5f) / 8f;
                         float shade = (sh + 0.5f) / 3f;
-                        // shade blends thrown-earth brown into powder white
+                        // shade blends thrown-earth brown into powder white;
+                        // the ease pulls the powder buckets toward neutral
+                        // white (~0.9) so musket/cannon smoke reads WHITE
+                        // under the ephemeris sun (§9.1, P8 review fix)
                         Color c = Color.Lerp(
                             new Color(0.42f, 0.36f, 0.28f),
-                            new Color(0.94f, 0.94f, 0.92f), shade);
+                            new Color(0.96f, 0.96f, 0.94f),
+                            Mathf.Pow(shade, 0.65f));
                         c.a = alpha;
                         var m = TransparentLit(c);
                         m.SetTexture("_BaseColorMap", texes[tv]);
@@ -845,6 +849,8 @@ namespace BattleAtlas.EditorTools
             tris.Add(i0); tris.Add(i0 + 2); tris.Add(i0 + 3);
         }
 
+        readonly List<Vector3> normalBuf = new();
+
         void SetBuiltMesh(string name, List<Vector3> verts, List<Vector2> uvs,
             List<int> tris, Material mat, bool castShadows = false)
         {
@@ -870,7 +876,22 @@ namespace BattleAtlas.EditorTools
             built.mesh.SetVertices(verts);
             if (uvs != null) built.mesh.SetUVs(0, uvs);
             built.mesh.SetTriangles(tris, 0);
-            if (uvs == null) built.mesh.RecalculateNormals();
+            if (uvs == null)
+            {
+                built.mesh.RecalculateNormals();
+            }
+            else
+            {
+                // billboard quads (smoke banks, pools, patches) carry
+                // explicit UP normals: without any normals the HDRP Lit
+                // BSDF got a zero normal, the sun term vanished, and the
+                // white powder smoke rendered as a charcoal storm front
+                // (P8 review fix — smoke must read sunlit white/pale gray)
+                normalBuf.Clear();
+                for (int i = 0; i < verts.Count; i++)
+                    normalBuf.Add(Vector3.up);
+                built.mesh.SetNormals(normalBuf);
+            }
             built.mesh.RecalculateBounds();
             built.go.GetComponent<MeshRenderer>().sharedMaterial = mat;
         }
