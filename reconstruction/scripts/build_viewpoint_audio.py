@@ -228,15 +228,23 @@ class StemWriter:
         self.buf[:, 0] += out * gain * 0.7071
         self.buf[:, 1] += out * gain * 0.7071
 
-    def write(self, path: Path):
+    def write(self, path: Path) -> float:
+        """Write 16-bit stereo; returns the fileGain the buffer was
+        scaled by (dense musketry can exceed 0 dBFS in-buffer; the mix
+        path uses the unclipped float buffer, and stems.json records
+        each stem's fileGain so `mix = Σ stem/fileGain × STEM_GAIN`
+        reconstructs the authoritative mix exactly from the files)."""
         path.parent.mkdir(parents=True, exist_ok=True)
-        x = np.clip(self.buf, -1.0, 1.0)
+        peak = float(np.max(np.abs(self.buf))) if self.buf.size else 0.0
+        file_gain = 1.0 if peak <= 0.99 else 0.99 / peak
+        x = np.clip(self.buf * file_gain, -1.0, 1.0)
         xi = np.round(x * 32767.0).astype(np.int16)
         with wave.open(str(path), "wb") as w:
             w.setnchannels(2)
             w.setsampwidth(2)
             w.setframerate(SR)
             w.writeframes(xi.tobytes())
+        return file_gain
 
 
 def distance_gain(r: float, ref: float) -> float:
@@ -407,11 +415,12 @@ def build(events: dict, pack_root: Path, out_dir: Path,
     # --- write stems + mix -----------------------------------------------------
     out_dir.mkdir(parents=True, exist_ok=True)
     digests: dict[str, str] = {}
+    file_gains: dict[str, float] = {}
     mix = np.zeros_like(stem("ambience").buf)
     for name in sorted(STEM_GAIN):
         s = stems.get(name) or StemWriter(w0, w1)
         path = out_dir / f"{name}.wav"
-        s.write(path)
+        file_gains[name] = s.write(path)
         digests[name] = hashlib.sha256(path.read_bytes()).hexdigest()
         mix += s.buf * STEM_GAIN[name]
     mix = np.tanh(mix * MASTER_GAIN)  # deterministic soft limiter
@@ -421,6 +430,16 @@ def build(events: dict, pack_root: Path, out_dir: Path,
     mw.write(mix_path)
     digests["mix"] = hashlib.sha256(mix_path.read_bytes()).hexdigest()
 
+    (out_dir / "stems.json").write_text(json.dumps({
+        "window": {"t0": w0, "t1": w1},
+        "seed": seed,
+        "stemGains": STEM_GAIN,
+        "masterGain": MASTER_GAIN,
+        "fileGains": file_gains,
+        "note": "mix.wav = tanh(masterGain * Σ stem/fileGain × stemGain); "
+                "soft limiter tanh; stems stored 16-bit with fileGain "
+                "normalization so the mix is exactly regenerable from them.",
+    }, indent=2) + "\n")
     sha_lines = "".join(f"{v}  {k}.wav\n" for k, v in sorted(digests.items()))
     (out_dir / "stems.sha256").write_text(sha_lines)
     return digests

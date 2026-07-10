@@ -311,13 +311,24 @@ namespace BattleAtlas
 
         // Per-slot obstacle-crossing times: a slot crosses when its OWN
         // resolved path crosses a traced obstacle line, detected in a
-        // widened window around each obstacle-declaring segment (a man 30 m
-        // ahead of the centroid reaches the fence before the segment's
-        // nominal start). Windows are clamped so they never reach into a
-        // neighboring crossing segment's core.
+        // widened window around each obstacle-declaring EPISODE.
+        //
+        // P9 fix (found by the hero viewpoint): consecutive crossing
+        // segments (Garnett's two road-fence segments, 8120..8180 and
+        // 8280..8340) are one corridor EPISODE for a 348 m-wide line —
+        // the far flank trails the centroid so much that it reaches the
+        // traced fences ~50 s after the LAST crossing segment ends, and
+        // the old per-segment ±30 s windows (clamped at the neighboring
+        // segment) missed it entirely: flank men walked THROUGH the
+        // rails. Episodes merge crossing segments separated by <120 s,
+        // pool their obstacle tables, and pad the episode window by
+        // 120 s each side (still clamped against the neighboring
+        // episode), so every man crosses where and WHEN his own path
+        // meets the traced line.
         void CompileCrossings(UnitRuntime ur)
         {
-            const float WindowPad = 30f;
+            const float WindowPad = 120f;
+            const float EpisodeGap = 120f;
             const float SampleStep = 0.5f;
 
             ur.slotCrossings = new float[ur.slotCount][];
@@ -337,20 +348,38 @@ namespace BattleAtlas
                     crossingSegs.Add(si);
             }
 
-            for (int ci = 0; ci < crossingSegs.Count; ci++)
+            // group consecutive crossing segments into episodes
+            var episodes = new List<(float t0, float t1, List<CrossingTable> tables)>();
+            foreach (int si in crossingSegs)
             {
-                int si = crossingSegs[ci];
                 var seg = segs[si];
                 var tables = new List<CrossingTable>();
                 foreach (var oid in seg.obstacleIds)
                     if (crossings.TryGetValue(oid, out var tab)) tables.Add(tab);
                 if (tables.Count == 0) continue;
+                if (episodes.Count > 0 &&
+                    seg.t0 - episodes[^1].t1 < EpisodeGap)
+                {
+                    var last = episodes[^1];
+                    foreach (var tab in tables)
+                        if (!last.tables.Contains(tab)) last.tables.Add(tab);
+                    episodes[^1] = (last.t0, Mathf.Max(last.t1, seg.t1), last.tables);
+                }
+                else
+                {
+                    episodes.Add((seg.t0, seg.t1, tables));
+                }
+            }
 
-                float lo = seg.t0 - WindowPad;
-                float hi = seg.t1 + WindowPad;
-                if (ci > 0) lo = Mathf.Max(lo, segs[crossingSegs[ci - 1]].t1);
-                if (ci < crossingSegs.Count - 1)
-                    hi = Mathf.Min(hi, segs[crossingSegs[ci + 1]].t0);
+            for (int ci = 0; ci < episodes.Count; ci++)
+            {
+                var (et0, et1, tables) = episodes[ci];
+
+                float lo = et0 - WindowPad;
+                float hi = et1 + WindowPad;
+                if (ci > 0) lo = Mathf.Max(lo, episodes[ci - 1].t1);
+                if (ci < episodes.Count - 1)
+                    hi = Mathf.Min(hi, episodes[ci + 1].t0);
                 lo = Mathf.Max(lo, bundle.slice.t0);
                 hi = Mathf.Min(hi, bundle.slice.t1);
 

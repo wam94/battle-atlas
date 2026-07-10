@@ -44,12 +44,14 @@ namespace BattleAtlas.EditorTools
         const int WarmupFrames = 3;
 
         // 30 s camera-style candidate window (§3.4: owner chooses style):
-        // end of dress-in-road, the east fence crossings, and the
-        // disordered advance — stationary drill, an obstacle crossing,
-        // and marching in one take, the three regimes a camera style
-        // must survive.
-        public const float CandT0 = 8270f;
-        public const float CandT1 = 8300f;
+        // the observer's OWN road crossing. Slot 184 rides Garnett's left
+        // flank, which trails the centroid — his resolved path meets the
+        // traced west fence at t≈8391 and the east fence at t≈8404
+        // (episode-window crossing fix), so this take carries marching,
+        // two fence climbs, the road surface between them, and the
+        // redress — the regimes a camera style must survive.
+        public const float CandT0 = 8385f;
+        public const float CandT1 = 8415f;
 
         // 60 s audio-visual proof window (gate suggestion): Garnett's
         // line under canister at the wall.
@@ -384,12 +386,13 @@ namespace BattleAtlas.EditorTools
                 var obs = scene.ctx.Unit(vp.unitId);
                 var shots = new (string name, float t, bool thirdPerson, bool reduced)[]
                 {
-                    ("p9-still-8165-road-fp", 8165f, false, false),
-                    ("p9-still-8300-east-fence-fp", 8300f, false, false),
-                    ("p9-still-8450-advance-fp", 8450f, false, false),
+                    ("p9-still-8165-advance-fp", 8165f, false, false),
+                    ("p9-still-8393-west-fence-fp", 8393f, false, false),
+                    ("p9-still-8406-east-fence-fp", 8406f, false, false),
+                    ("p9-still-8500-advance-fp", 8500f, false, false),
                     ("p9-still-8620-canister-fp", 8620f, false, false),
                     ("p9-still-8760-repulse-fp", 8760f, false, false),
-                    ("p9-still-8300-east-fence-c3p", 8300f, true, false),
+                    ("p9-still-8406-east-fence-c3p", 8406f, true, false),
                     ("p9-still-8620-canister-c3p", 8620f, true, false),
                     ("p9-still-8620-canister-fp-reduced", 8620f, false, true),
                 };

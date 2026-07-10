@@ -38,7 +38,12 @@ public class SoldierViewPlayerSyncTests
     {
         var set = ViewpointSet.FromJson(File.ReadAllText(
             SoldierViewPlayer.MediaPath("SoldierView/viewpoints.json")));
-        return set.viewpoints[0];
+        // select by id: Phase 9 added the hero viewpoint ahead of the
+        // Phase 1 dev fixture these sync tests run against
+        foreach (var vp in set.viewpoints)
+            if (vp.id == "dev-timecode") return vp;
+        throw new System.InvalidOperationException(
+            "viewpoints.json has no dev-timecode fixture");
     }
 
     [SetUp]
