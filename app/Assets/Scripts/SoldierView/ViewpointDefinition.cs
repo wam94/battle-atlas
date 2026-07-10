@@ -41,6 +41,10 @@ namespace BattleAtlas
         public ViewpointMedia media;
         public string[] claimIds;
         public string editorialNote;
+        // Development fixtures (the Phase 1 timecode proxy) stay playable
+        // for tests but never surface an Atlas entry marker (Phase 11);
+        // JsonUtility defaults an absent field to false = product viewpoint.
+        public bool development;
 
         // Null when playable; otherwise a human-readable reason.
         public string Validate()

@@ -4,63 +4,152 @@
   "title": "Soldier View viewpoint set",
   "description": "Runtime metadata for pre-rendered Soldier View viewpoints (Angle Reconstruction V2 plan section 6.5). Times are seconds on the canonical battle clock (July 3 slice: startTime 46800, endTime 10800). Media paths are relative to Unity StreamingAssets. Cross-field rules (t1 > t0, id uniqueness) are enforced by scripts/validate_viewpoints.py because JSON Schema cannot express them portably.",
   "type": "object",
-  "required": ["viewpoints"],
+  "required": [
+    "viewpoints"
+  ],
   "additionalProperties": false,
   "properties": {
     "viewpoints": {
       "type": "array",
-      "items": { "$ref": "#/$defs/viewpoint" }
+      "items": {
+        "$ref": "#/$defs/viewpoint"
+      }
     }
   },
   "$defs": {
     "viewpoint": {
       "type": "object",
       "required": [
-        "id", "title", "unitId", "slotId", "viewKind",
-        "t0", "t1", "camera", "media", "claimIds", "editorialNote"
+        "id",
+        "title",
+        "unitId",
+        "slotId",
+        "viewKind",
+        "t0",
+        "t1",
+        "camera",
+        "media",
+        "claimIds",
+        "editorialNote"
       ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
-        "title": { "type": "string", "minLength": 1 },
-        "unitId": { "type": "string", "minLength": 1 },
-        "slotId": { "type": "integer", "minimum": 0 },
-        "viewKind": { "enum": ["first_person", "close_third_person"] },
-        "t0": { "type": "number", "minimum": 0 },
-        "t1": { "type": "number", "minimum": 0 },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unitId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "slotId": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "viewKind": {
+          "enum": [
+            "first_person",
+            "close_third_person"
+          ]
+        },
+        "t0": {
+          "type": "number",
+          "minimum": 0
+        },
+        "t1": {
+          "type": "number",
+          "minimum": 0
+        },
         "camera": {
           "type": "object",
-          "required": ["eyeHeightM", "fovDeg", "lookOffsetDeg", "stabilization"],
+          "required": [
+            "eyeHeightM",
+            "fovDeg",
+            "lookOffsetDeg",
+            "stabilization"
+          ],
           "additionalProperties": false,
           "properties": {
-            "eyeHeightM": { "type": "number", "minimum": 0.5, "maximum": 3.0 },
-            "fovDeg": { "type": "number", "minimum": 20, "maximum": 120 },
+            "eyeHeightM": {
+              "type": "number",
+              "minimum": 0.5,
+              "maximum": 3.0
+            },
+            "fovDeg": {
+              "type": "number",
+              "minimum": 20,
+              "maximum": 120
+            },
             "lookOffsetDeg": {
               "type": "array",
-              "items": { "type": "number" },
+              "items": {
+                "type": "number"
+              },
               "minItems": 2,
               "maxItems": 2
             },
-            "stabilization": { "type": "number", "minimum": 0, "maximum": 1 }
+            "stabilization": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
           }
         },
         "media": {
           "type": "object",
-          "required": ["proxy", "full", "fps", "width", "height"],
+          "required": [
+            "proxy",
+            "full",
+            "fps",
+            "width",
+            "height"
+          ],
           "additionalProperties": false,
           "properties": {
-            "proxy": { "type": "string", "minLength": 1 },
-            "full": { "type": ["string", "null"], "minLength": 1 },
-            "fps": { "type": "number", "exclusiveMinimum": 0 },
-            "width": { "type": "integer", "exclusiveMinimum": 0 },
-            "height": { "type": "integer", "exclusiveMinimum": 0 }
+            "proxy": {
+              "type": "string",
+              "minLength": 1
+            },
+            "full": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            },
+            "fps": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "width": {
+              "type": "integer",
+              "exclusiveMinimum": 0
+            },
+            "height": {
+              "type": "integer",
+              "exclusiveMinimum": 0
+            }
           }
         },
         "claimIds": {
           "type": "array",
-          "items": { "type": "string", "minLength": 1 }
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
-        "editorialNote": { "type": "string", "minLength": 1 }
+        "editorialNote": {
+          "type": "string",
+          "minLength": 1
+        },
+        "development": {
+          "type": "boolean",
+          "description": "Development fixture (e.g. the Phase 1 timecode proxy): playable in tests, never shown as an Atlas entry marker. Absent = false = product viewpoint."
+        }
       }
     }
   }
