@@ -69,10 +69,12 @@ namespace BattleAtlas.EditorTools
                                       "union_a", "union_b", "union_c",
                                       "csa_a_near", "union_a_near" };
                 string[] clips = { "March_ShoulderArms", "Fire_Recoil" };
+                var figures = new System.Collections.Generic.List<GameObject>();
                 for (int i = 0; i < variants.Length; i++)
                 {
                     string v = variants[i];
                     var go = GateP6Render.SpawnVariant(v);
+                    figures.Add(go);
                     go.transform.position = new Vector3(i * 1.4f, 0f, 0f);
                     go.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
                     string clipVariant = v.EndsWith("_near")
@@ -157,6 +159,18 @@ namespace BattleAtlas.EditorTools
                 File.WriteAllBytes(Path.Combine(outDir, "p8-figure-lineup.png"),
                     tex.EncodeToPNG());
                 Debug.Log("P8FigureDiag: wrote p8-figure-lineup.png");
+
+                // side profile of the same lineup (hat brim/visor and boot
+                // silhouette read best in profile — the P8 review-fix
+                // verification wants front AND side)
+                foreach (var go in figures)
+                    go.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+                GateP6Render.RenderOnce(cam, rt, null);
+                GateP6Render.RenderOnce(cam, rt, tex);
+                File.WriteAllBytes(
+                    Path.Combine(outDir, "p8-figure-lineup-side.png"),
+                    tex.EncodeToPNG());
+                Debug.Log("P8FigureDiag: wrote p8-figure-lineup-side.png");
             }
             finally
             {
