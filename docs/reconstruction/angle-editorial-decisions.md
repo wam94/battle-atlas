@@ -364,8 +364,12 @@ generic period drill commands from unattributed voices keyed to segment
 transitions (no invented named-person dialogue, §9.3); wounded voices are
 sparse, sober, and tied to scheduled nearby casualties (§9.2). No
 pre-slice bombardment residue is synthesized (the P8 "no pre-slice smoke"
-limitation applies to audio equally); ambient wind/insect beds are the
-only unmodeled-continuous layers. Smoke-based muffling is NOT applied —
+limitation applies to audio equally), and the long-range guns that cause
+the approach-phase shell casualties sit OUTSIDE the staged bundle — the
+soundscape's first artillery is the staged wall batteries opening, so
+the approach reads artillery-silent (recorded gap; a Phase 10 distant
+layer would need its own sourced event basis). Ambient wind/insect beds
+are the only unmodeled-continuous layers. Smoke-based muffling is NOT applied —
 at these ranges black-powder smoke has no acoustically justifiable
 attenuation (§9.3 "only where acoustically justifiable").
 
