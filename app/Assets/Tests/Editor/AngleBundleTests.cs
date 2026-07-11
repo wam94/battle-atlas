@@ -25,6 +25,7 @@ public class AngleBundleTests
         public string format;
         public BundleSlice slice;
         public string checksum;
+        public string stagingSeed;
     }
 
     static string BundlePath =>
@@ -44,6 +45,20 @@ public class AngleBundleTests
         Assert.AreEqual(8040f, header.slice.t0);
         Assert.AreEqual(9000f, header.slice.t1);
         Assert.AreEqual(64, header.checksum.Length, "sha256 hex checksum expected");
+    }
+
+    [Test]
+    public void Bundle_StagingSeed_IsPinnedAtTheShippedValue()
+    {
+        // ED-21: provenance-only recompiles must never re-roll the film.
+        // The seed is pinned at the checksum of the bundle the shipped
+        // Phase 8-10 media and committed captions were generated from;
+        // changing it is a deliberate editorial decision, not a side
+        // effect of recompiling.
+        var header = JsonUtility.FromJson<BundleHeader>(File.ReadAllText(BundlePath));
+        Assert.AreEqual(
+            "d470c4691d0de414534c4ecce93efd3a2fac74373d472899af8465df7e2f7ac1",
+            header.stagingSeed);
     }
 
     [Test]

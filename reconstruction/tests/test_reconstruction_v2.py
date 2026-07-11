@@ -99,6 +99,35 @@ def test_documented_claim_without_reference_rejected(mutable):
     assert any("documented claims require" in e for e in validate_corpus(mutable))
 
 
+def test_clock_profile_offset_outside_envelope_rejected(mutable):
+    for s in mutable.sources["sources"]:
+        if s["id"] == "haskell-1908":
+            s["clockProfile"]["offsetMinutes"] = 99
+            break
+    assert any("outside offsetEnvelope" in e for e in validate_corpus(mutable))
+
+
+def test_clock_profile_requires_offset_and_assessment(mutable):
+    for s in mutable.sources["sources"]:
+        if s["id"] == "jacobs-1864":
+            s["clockProfile"] = {"kind": "watch-checked"}
+            break
+    errs = validate_corpus(mutable)
+    assert any("requires offsetMinutes" in e for e in errs)
+    assert any("requires an assessment" in e for e in errs)
+
+
+def test_committed_clock_profiles_present(corpus):
+    """ED-25: the five worked profile classes are on the source records."""
+    by = {s["id"]: s.get("clockProfile") for s in corpus.sources["sources"]}
+    assert by["jacobs-1864"]["kind"] == "contemporaneous-civilian"
+    assert by["haskell-1908"]["kind"] == "watch-checked"
+    assert by["haskell-1908"]["offsetMinutes"] == 7
+    assert by["alexander-1907"]["kind"] == "retrospective-watch"
+    assert by["or-27-2-longstreet"]["kind"] == "report-nominal"
+    assert by["stone-sentinels"]["kind"] == "tablet-adjudicated"
+
+
 def test_time_envelope_ordering_enforced(mutable):
     for c in mutable.claims["claims"]:
         if "time" in c:
@@ -273,6 +302,16 @@ def test_committed_bundle_matches_recompilation(corpus):
 
 def test_committed_audit_matches_regeneration(corpus, bundle):
     assert AUDIT.read_text() == compile_angle.build_audit(corpus, bundle)
+
+
+def test_staging_seed_pinned_and_provenance_stable(bundle, corpus):
+    """ED-21: the staging seed is the pinned shipped value, and recompiling
+    with provenance-only differences cannot move it (it is a compiler
+    constant, independent of every input hash)."""
+    assert bundle["stagingSeed"] == compile_angle.STAGING_SEED
+    assert len(bundle["stagingSeed"]) == 64
+    assert bundle["stagingSeed"] != bundle["checksum"] or \
+        bundle["inputs"] == {}  # seed stays put while the checksum drifts
 
 
 def test_bundle_checksum_self_consistent(bundle):

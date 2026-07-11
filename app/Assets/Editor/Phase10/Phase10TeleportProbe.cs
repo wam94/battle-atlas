@@ -56,7 +56,7 @@ namespace BattleAtlas.EditorTools
                     AngleEnvironmentData.Points(fence.polylineFlat);
             obstacles[env.env.wall.featureId] =
                 AngleEnvironmentData.Points(env.env.wall.polylineFlat);
-            return AngleActionContext.Compile(bundle, bundle.checksum, obstacles);
+            return AngleActionContext.Compile(bundle, bundle.StagingSeed, obstacles);
         }
 
         internal static ViewpointDefinition LoadHeroViewpoint()

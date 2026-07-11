@@ -443,7 +443,7 @@ namespace BattleAtlas.EditorTools
             float t0 = (float)vp.t0 - 6f, t1 = (float)vp.t1 + 1f;
 
             // no rendering needed: compile the context exactly as the
-            // stage does (same seed = bundle checksum, same obstacles)
+            // stage does (same pinned staging seed, same obstacles)
             EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
             var env = AngleEnvironmentStage.StageAll();
             var bundle = AngleBundleLoader.Load();
@@ -454,7 +454,7 @@ namespace BattleAtlas.EditorTools
             obstacles[env.env.wall.featureId] =
                 AngleEnvironmentData.Points(env.env.wall.polylineFlat);
             var ctx = AngleActionContext.Compile(
-                bundle, bundle.checksum, obstacles);
+                bundle, bundle.StagingSeed, obstacles);
 
             var obs = ctx.Unit(vp.unitId);
             var settings = Settings(vp, thirdPerson: false);

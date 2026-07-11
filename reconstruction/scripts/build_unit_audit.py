@@ -6,6 +6,11 @@ casualty metrics computed from the keyframes, research-coverage signals
 mined from docs/research and the V2 claims corpus, and empty
 owner-consultation columns to be layered in.
 
+Per the unit-truth-spec scope ruling, the table also carries one row per
+NOT-YET-CAST entry of the full three-day OOB register
+(docs/reconstruction/audit/oob-register.json) — cast-status column on every
+row; computed columns blank where no build data exists.
+
 Regenerable: computed columns are overwritten on rebuild; consultation
 columns (owner-edited) are PRESERVED by re-reading the existing workbook
 before writing, keyed by unit id.
@@ -30,6 +35,7 @@ RESEARCH_DIRS = [ROOT / "docs/research"]
 OUT_DIR = ROOT / "docs/reconstruction/audit"
 XLSX = OUT_DIR / "unit-master-table.xlsx"
 CSV_OUT = OUT_DIR / "unit-master-table.csv"
+REGISTER = OUT_DIR / "oob-register.json"
 
 MOVE_THRESHOLD_M = 100.0  # path length below this ≈ dressing/jitter, not movement
 
@@ -161,6 +167,49 @@ def main():
             }
         )
 
+    # --- full-OOB register overlay (scope ruling: full-battle grain) ---
+    register = json.loads(REGISTER.read_text())["entries"] if REGISTER.exists() else []
+    cast_to_register = {e["castStatus"]: e["id"] for e in register
+                        if e["castStatus"] != "not-yet-cast"}
+    for r in rows:
+        r["Cast status"] = "in-build"
+        r["Register entry"] = cast_to_register.get(r["Unit ID"], "")
+
+    for e in register:
+        if e["castStatus"] != "not-yet-cast":
+            continue
+        token = research_token(e["name"])
+        mention_docs = [fn for fn, txt in research_texts.items()
+                        if token and token in txt]
+        rows.append({
+            "Unit ID": e["id"],
+            "Name": e["name"],
+            "Side": e["side"],
+            "Echelon": e["echelon"],
+            "Arm": e["arm"],
+            "Start strength": "",
+            "End strength": "",
+            "In-build casualties (n)": "",
+            "Keyframes": "",
+            "KF documented": "",
+            "KF inferred": "",
+            "KF unknown": "",
+            "KF cited": "",
+            "Path length (m)": "",
+            "Net displacement (m)": "",
+            "Moves in build?": "",
+            "Formations seen": "",
+            "Fire events": "",
+            "V2 claims": "",
+            "Research docs mentioning": len(mention_docs),
+            "Research token": token,
+            "Movement info available?": "yes" if mention_docs else "VERIFY",
+            "T-level (computed floor)": "",
+            "T-level target (suggested)": "T2",
+            "Cast status": "not-yet-cast",
+            "Register entry": e["id"],
+        })
+
     rows.sort(key=lambda r: (r["Side"], r["Arm"], r["Echelon"], r["Name"]))
 
     # preserve owner consultation columns from an existing workbook
@@ -288,6 +337,9 @@ def main():
         w.writeheader()
         w.writerows(rows)
 
+    in_build = sum(1 for r in rows if r["Cast status"] == "in-build")
+    not_cast = len(rows) - in_build
+    print(f"rows: {len(rows)} | in-build: {in_build} | not-yet-cast (register): {not_cast}")
     movers = sum(1 for r in rows if r["Moves in build?"] == "yes")
     verify = [r["Unit ID"] for r in rows if r["Movement info available?"] == "VERIFY"]
     print(f"units: {len(rows)} | move in build: {movers} | static: {len(rows)-movers}")

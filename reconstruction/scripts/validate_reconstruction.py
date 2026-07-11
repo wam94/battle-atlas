@@ -231,6 +231,25 @@ def validate_corpus(corpus: Corpus) -> list[str]:
         errors.append(f"sources: duplicate source id {sid!r}")
     source_id_set = set(source_ids)
 
+    # 2b. Clock profiles (ED-25) --------------------------------------------
+    for s in sources:
+        cp = s.get("clockProfile")
+        if cp is None:
+            continue
+        where = f"sources[{s['id']}].clockProfile"
+        if cp["kind"] != "none":
+            if "offsetMinutes" not in cp:
+                errors.append(f"{where}: kind {cp['kind']!r} requires offsetMinutes")
+            if "assessment" not in cp:
+                errors.append(f"{where}: kind {cp['kind']!r} requires an assessment note")
+        env = cp.get("offsetEnvelope")
+        if env is not None:
+            if env[0] > env[1]:
+                errors.append(f"{where}: offsetEnvelope must be [min, max]")
+            off = cp.get("offsetMinutes")
+            if off is not None and not (env[0] <= off <= env[1]):
+                errors.append(f"{where}: offsetMinutes {off} outside offsetEnvelope {env}")
+
     # 3. Claims ------------------------------------------------------------
     claim_ids = [c["id"] for c in claims]
     for cid in sorted({c for c in claim_ids if claim_ids.count(c) > 1}):

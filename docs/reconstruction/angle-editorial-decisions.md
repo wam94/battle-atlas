@@ -31,6 +31,47 @@ o'clock almost precisely") and matches the modern reconstruction frame; and it
 keeps V2 consistent with the shipped macro file rather than silently re-timing
 the whole battle.
 
+**Revisited 2026-07-10 (audit R1 adoption) — ED-1 STANDS.** The R1 pass had
+seen, one hop removed at the Wikipedia-citation layer, a possible
+14:00–14:30 modern center of gravity (Coddington, Hess, Sears, Wert cited
+together for "about 2:00 p.m."). The owner's adoption of the R1 proposals
+was evidence-contingent ("adjust the step-off to match our research"), so
+the four scholars were verified at the page level and the primary spine
+re-verified from full texts
+(`docs/reconstruction/audit/verification-2026-07-10.md`). Findings:
+
+- The four-scholar consensus **does not exist**: Coddington p. 502 reads
+  "At 3:00 p.m. officers and men of Hancock's Second Corps looking west
+  saw a long gray line suddenly emerge…" — the Wikipedia footnote
+  misreports him. Hess (step-off ~14:00, repulse "between 2:30 and 2:45
+  P.M.") and Wert (one-hour cannonade from ~13:05, on ammunition
+  arithmetic) verify as the genuine short-cannonade school. Sears could
+  not be page-verified through any anonymous channel and is recorded
+  attributed-only.
+- New primary evidence fetched this pass **supports the shipped frame**:
+  Hancock's OR report (cannonade "About 1 o'clock … After an hour and
+  forty-five minutes, the fire of the enemy became less furious, and
+  immediately their infantry was seen"), McGilvery's OR report (fire
+  "about one hour and a half"; attacking lines crossing "at about
+  3 p. m."), Haskell's full-text "two mortal hours" ending "at three
+  o'clock, almost precisely", and the NPS/ABT ~15:00 institutional frame.
+- The honest counter-evidence is likewise recorded: Jacobs — the chain's
+  own precision standard — puts the step-off at **14:30** ("When 2½ p. m.
+  came… two long, dark, massive lines"), and Alexander's 13:25/13:40 note
+  chain plus "doubtless 1.50 or later" rides an early clock the
+  short-cannonade school follows.
+
+**Ruling:** the literature is a genuine two-school split, not an earlier
+consensus; the shipped 15:05 sits at the late-but-occupied pole (with
+Coddington, Haskell, Hancock, McGilvery, NPS, ABT), and re-timing the
+entire shipped reconstruction on a split this even would violate the
+never-silently-re-time doctrine ED-1 was built on. Step-off stays
+**15:05 (t=7500)**; the envelope stays wide (13:50–15:10) and now carries
+the page-verified counter-readings (Hess ~14:00; Wert ~14:05–14:15; Jacobs
+14:30) as first-class conflict records on CA-J3A-6 (ED-24). Preconditions
+for ever revisiting again: a page-verified Sears, and Stewart's 1959
+microhistory (both listed in the verification dossier's honesty ledger).
+
 ### ED-2 — Armistead's wall-crossing time
 
 No witness gives a clock for the crossing (verified negative: the Hartwig/NPS
@@ -323,6 +364,23 @@ causes, fall directions, and the wounded-crawl minority (~22% of fallen)
 are hash-selected — never named, never re-rolled. Full rules and the
 wound-vocabulary limits: `docs/reconstruction/violence-and-representation.md`.
 
+**Addendum 2026-07-10 (audit R1 adoption): the staging seed is pinned.**
+The battle seed for every hash-drawn staging decision was previously the
+bundle's content checksum — which meant a recompile that only touched
+provenance metadata (source edition notes, ED-25 clock profiles) silently
+re-rolled every victim draw, step phase, and yaw, desynchronizing the
+committed captions from the audio baked into the shipped media (caught by
+`test_committed_captions_match_the_event_export` during the ED-25
+implementation). That violates this decision's "never re-rolled" rule.
+The compiler now emits `stagingSeed`, **pinned at the checksum of the
+bundle the owner reviewed and shipped**
+(`d470c469…`, the Phase 8–10 media / P12 release input), and all staging
+entry points seed from it (`AngleActionStage`, the P9 audio-event export,
+the P10 teleport probe). The pin is enforced by an EditMode test and a
+corpus test; moving it is a deliberate editorial decision to be made only
+when choreography content actually changes — never a recompile side
+effect.
+
 ### ED-22 — The Soldier View observer is exempt from the casualty draw
 
 Documented: nothing about any individual man at the viewpoint's position
@@ -372,6 +430,140 @@ layer would need its own sourced event basis). Ambient wind/insect beds
 are the only unmodeled-continuous layers. Smoke-based muffling is NOT applied —
 at these ranges black-powder smoke has no acoustically justifiable
 attenuation (§9.3 "only where acoustically justifiable").
+
+---
+
+## Audit R1 adoption rulings (ED-24 … ED-31) — 2026-07-10
+
+Owner ruling: the R1 proposals
+(`docs/reconstruction/audit/anchor-chain-proposal.md`, drafted on branch
+audit-research-1) are ADOPTED under an adopt-and-adjust doctrine, with the
+step-off question gated on page-level verification. The verification
+record is `docs/reconstruction/audit/verification-2026-07-10.md`; the
+step-off gate resolved as **ED-1 STANDS** (see the ED-1 revisit above).
+Anchor ids `CA-<phase>-<n>` used below are defined in the proposal.
+
+### ED-24 — The canonical anchor chain; July 3 afternoon adopted
+
+The `CA-<phase>-<n>` anchor-chain structure and the July 3 afternoon chain
+(proposal §1.1) are adopted as ruled, with these verification-pass updates:
+
+- **CA-J3A-1 (signal guns) adopted 13:07** — Jacobs's clock reading
+  (re-verified from the 1864 full text) beats the three round-number
+  "one o'clock" watches; Longstreet's report-nominal "about 2 p.m." stays
+  the recorded outlier (ED-25 rule 4).
+- **Shipped-skew handling (the 13:00-vs-13:07 label question):** the
+  proposal's recommendation is adopted — the shipped slice clock keeps
+  `startTime 46800` as a *nominal* 13:00 and CA-J3A-1 records
+  `shippedT: 0`, `shippedSkewMinutes: -7`. Nothing in the shipped slice
+  (t=8040..9000) depends on the first seven minutes; **no metadata
+  relabel** (relabeling would re-time every derived wall clock in the
+  captions for zero evidentiary gain).
+- **CA-J3A-4 (Union fire slackens) ~14:30, envelope 14:00–15:00** — now
+  corroborated by Hancock's OR "After an hour and forty-five minutes, the
+  fire of the enemy became less furious" (~14:45 nominal) and McGilvery's
+  "about one hour and a half"; the Hess/Wert short-cannonade pages ride
+  the envelope's early edge as verified counter-readings.
+- **CA-J3A-5 (cannonade ends) 15:00** — Haskell's watch-checked end,
+  re-verified from the full text ("At three o'clock, almost precisely");
+  counter-readings recorded (Hess ~14:00 page-verified; Sears 14:30
+  attributed-only; Smyth report-nominal).
+- **CA-J3A-6 (step-off) = ED-1, 15:05 (t=7500)** — reaffirmed after the
+  gate verification; the page-verified counter-evidence (Hess ~14:00, Wert
+  ~14:05–14:15, Jacobs 14:30) is carried on the anchor as first-class
+  conflict records. Downstream anchors CA-J3A-7..10 remain expressed
+  relative to CA-J3A-6.
+- **CA-J3A-9/10** — unchanged (= ED-2/ED-8 frames); McGilvery's verified
+  "at about 3 p. m." advancing-lines quote joins CA-J3A-7/10's evidence.
+
+### ED-25 — Per-source clock profiles (`clockProfile`)
+
+The schema, assessment method, and worked profiles of proposal §3 are
+adopted and implemented: optional `clockProfile` object on
+`reconstruction/sources/` records (schema-enforced, validator-checked:
+envelope must bracket the offset, anchors must be `CA-` ids, non-`none`
+kinds require offset + assessment). Semantics: `canonical time = stated
+time + offsetMinutes`; tier C for claims riding a corrected clock;
+**rule 4: report-nominal clocks never define or move an anchor** — their
+profiles exist so provenance UI can display the skew, not to promote the
+source. Profiles landed with this ruling: Jacobs
+(contemporaneous-civilian, 0, [−2,+2], strong), Haskell (watch-checked,
++7, [+2,+12], medium), Alexander (retrospective-watch, +7, [0,+15],
+medium capped by 44-year distance), Longstreet's report (report-nominal,
+−53 raw, never corrects), Hays's report (report-nominal, ~0 — the
+agreeing example), Stone Sentinels tablets (tablet-adjudicated, 0, ±30,
+with the **McLaws-wing ±60 early-skew exception** per ED-28), and the
+four OR 27/1 Union reports verified this pass (Hancock, Howard, Greene,
+McGilvery — report-nominal; Hancock's July 3 clock demonstrably sits
+within ~7 min of the chain). Timestamped dispatches (Buford 10:10,
+Hancock 17:25) are **document pins, not witness clocks** — they carry no
+profile and anchor at ±0 by document class.
+
+### ED-26 — July 1 morning chain (PROVISIONAL)
+
+Proposal §2.1 adopted as provisional. Upgrade from this pass: **CA-J1M-3
+(Buford's 10:10 dispatch) is now VERIFIED as printed** (OR 27/1 p. 924,
+with the gdg.org transcription and Coddington's endnote concurring) —
+tier: timestamped document, ±0; the morning's hardest clock. Carried
+preconditions: Heth's deploy-vs-attack split (his report verified
+time-silent on the attack), the Howard-assumes-command sub-anchor —
+note Howard's own report (verified) says "about 11.30 a. m.", vs Pfanz's
+10:30; rule at adoption.
+
+### ED-27 — July 1 afternoon chain (PROVISIONAL)
+
+Proposal §2.2 adopted as provisional, with three verification upgrades:
+
+- **CA-J1P-3:** the Early-tablet "about noon" suspicion is RESOLVED — the
+  tablet reads "arrived about noon within two miles of Gettysburg by
+  Harrisburg Road" (vicinity, not the field); the ~15:00–15:30 attack
+  window stands untouched.
+- **CA-J1P-4:** the XI Corps tablet's "About 4 P. M. the Corps was forced
+  back" is verified verbatim, and its "10.30 A. M." attaches to Schurz's
+  division specifically (vs Howard's report "Schurz joined me before
+  12 m." — conflict recorded). Howard's report adds the verified ladder
+  16:00 order → 16:10 positive order → 16:30 columns on Cemetery Hill.
+- **CA-J1P-7/8:** the Hancock-arrival controversy is now primary-verified
+  at both poles (his report "At 3 p. m. I arrived" vs his own 17:25
+  dispatch "When I arrived here an hour since" ⇒ ~16:25, and Howard's
+  "At 4.30 p. m. … General Hancock came to me about this time"); the
+  proposal's ~16:15 adoption with full envelope and partisan-dispute note
+  stands, strengthened. **CA-J1P-8 (Hancock's dispatch) VERIFIED as
+  printed "5.25 [P. M. …]"** (OR 27/1 p. 366; bracket caveat recorded:
+  the P.M./date are the OR editors') — tier: timestamped document.
+
+### ED-28 — July 2 afternoon chain (PROVISIONAL)
+
+Proposal §2.3 adopted as provisional, including the Longstreet step-off
+ruling (16:00–16:30; the dawn-attack-order claim documented as polemic,
+not clock) and the **McLaws-wing tablet-skew rule** (tablet clocks on that
+wing run ~1 h early; treated as their own clock-offset class, ED-25).
+Carried precondition: the Little Round Top verification pass
+(Pfanz/Norton/Oates; Chamberlain's OR).
+
+### ED-29 — July 2 evening chain (PROVISIONAL)
+
+Proposal §2.4 adopted as provisional. Upgrade: **Greene's OR report is now
+verified** — "we were attacked on the whole of our front by a large force
+a few minutes before 7 p. m." (OR 27/1 p. 856) — a primary Union clock
+agreeing with the Johnson-tablet "dusk" and Pfanz ~19:00; CA-J2E-2's 19:00
+start is the best-corroborated evening anchor alongside Hays's "A little
+before 8 p.m." (CA-J2E-3).
+
+### ED-30 — July 3 morning chain (PROVISIONAL)
+
+Proposal §2.5 adopted as provisional, including the Spangler's Meadow
+~10:00 ruling direction. Carried precondition: Pfanz *Culp's Hill* pp.
+~340–355 before CA-J3M-3 hardens.
+
+### ED-31 — Time-frame convention
+
+Adopted as proposed: the battle clock is **Gettysburg local mean time**
+(~9 min ahead of modern EST); astronomical pins sunset July 2 19:29 LMT
+and sunrise July 3 ~04:38 LMT; all imported modern-frame times (EST/EDT
+artifacts like "19:41" / "05:45") are converted on entry and flagged.
+Follow-up carried: USNO-grade ephemeris recomputation for 39.82°N 77.23°W,
+July 1–3 1863 (cheap script; removes a whole class of frame bugs).
 
 ---
 

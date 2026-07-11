@@ -121,9 +121,10 @@ namespace BattleAtlas.EditorTools
             scene.cropZ0 = scene.env.env.crop.z0;
 
             var bundle = AngleBundleLoader.Load();
-            // battle seed: tied to the compiled input (plan §6.4 — victim
-            // selection deterministic from battle seed + unit + slot)
-            string seed = bundle.checksum;
+            // battle seed: pinned by the compiler (plan §6.4 — victim
+            // selection deterministic from battle seed + unit + slot;
+            // ED-21: provenance-only recompiles never re-roll)
+            string seed = bundle.StagingSeed;
             scene.ctx = AngleActionContext.Compile(
                 bundle, seed, ObstaclePolylines(scene.env.env));
 

@@ -27,7 +27,21 @@
       "author": "Frank Aretas Haskell",
       "year": 1908,
       "url": "https://www.gutenberg.org/cache/epub/33121/pg33121.txt",
-      "editionNote": "Wisconsin History Commission Reprints No. 1 (1908); written as a letter weeks after the battle. Famously partisan — 72nd PA veterans disputed his Angle characterization. Union 1st Lt., aide to Gen. Gibbon, on Cemetery Ridge."
+      "editionNote": "Wisconsin History Commission Reprints No. 1 (1908); written as a letter weeks after the battle. Famously partisan — 72nd PA veterans disputed his Angle characterization. Union 1st Lt., aide to Gen. Gibbon, on Cemetery Ridge.",
+      "clockProfile": {
+        "kind": "watch-checked",
+        "offsetMinutes": 7,
+        "offsetEnvelope": [
+          2,
+          12
+        ],
+        "anchorsUsed": [
+          "CA-J3A-1",
+          "CA-J3A-5"
+        ],
+        "assessment": "Two anchor statements, both re-verified from the full text 2026-07-10: watch check 'five minutes before one o'clock' immediately before the first gun (stated ~13:00 vs chain 13:07 -> +7) and cannonade end 'at three o'clock, almost precisely' (stated 15:00; corrected 15:07, inside CA-J3A-5's envelope; ED-1's arithmetic was built on his stated time). His 'Half past two o'clock, an hour and a half since the commencement' is internally consistent on his own watch. Envelope reflects one-source derivation. Partisanship (72nd PA) affects his facts, not his watch.",
+        "confidence": "medium"
+      }
     },
     {
       "id": "alexander-1907",
@@ -36,7 +50,20 @@
       "author": "Edward Porter Alexander",
       "year": 1907,
       "url": "https://archive.org/details/militarymemoirso00alex",
-      "editionNote": "44-year retrospective; times self-reported from his own watch. Confederate colonel directing the assault artillery on Longstreet's front (not Lee's artillery chief — Pendleton held that post)."
+      "editionNote": "44-year retrospective; times self-reported from his own watch. Confederate colonel directing the assault artillery on Longstreet's front (not Lee's artillery chief — Pendleton held that post).",
+      "clockProfile": {
+        "kind": "retrospective-watch",
+        "offsetMinutes": 7,
+        "offsetEnvelope": [
+          0,
+          15
+        ],
+        "anchorsUsed": [
+          "CA-J3A-1"
+        ],
+        "assessment": "One anchor statement, re-verified from the full text 2026-07-10: 'It was just 1 P.M. by my watch when the signal guns were fired' (stated 13:00 vs chain 13:07 -> +7). His 1:25 and 1:40 note times correct to 13:32/13:47 (CA-J3A-2/3). His step-off statement 'doubtless 1.50 or later, but I did not look at my watch again' is self-hedged and excluded from anchor statements. Confidence capped by the 44-year retrospective distance regardless of arithmetic; envelope held wide.",
+        "confidence": "medium"
+      }
     },
     {
       "id": "jacobs-1864",
@@ -45,7 +72,20 @@
       "author": "Michael Jacobs",
       "year": 1864,
       "url": "https://archive.org/details/notesonrebelinva00jaco",
-      "editionNote": "The most contemporaneous source (1864). Civilian professor at Pennsylvania College, Gettysburg; habitually precise but a distant observer."
+      "editionNote": "The most contemporaneous source (1864). Civilian professor at Pennsylvania College, Gettysburg; habitually precise but a distant observer.",
+      "clockProfile": {
+        "kind": "contemporaneous-civilian",
+        "offsetMinutes": 0,
+        "offsetEnvelope": [
+          -2,
+          2
+        ],
+        "anchorsUsed": [
+          "CA-J3A-1"
+        ],
+        "assessment": "The chain's precision standard: CA-J3A-1 (13:07) is defined on his 'at seven minutes past 1 p. m.' reading, so his offset is 0 by construction. Cross-checks: July 2 artillery opening 'at twenty minutes past 4 P.M.' sits at the late edge of that event's envelope (tablets say 'about 4'); July 3 morning 'From 4 1/2 to 10 1/2 A.M.' agrees with the tablet 04:30/10:30 pair. Full text re-verified 2026-07-10. Caveat riding the source record: his 'When 2 1/2 p. m. came' step-off (14:30) is the strongest counter-reading to ED-1 and is carried as a conflict record on CA-J3A-6, not as an offset datum.",
+        "confidence": "strong"
+      }
     },
     {
       "id": "martin-smith-shsp32-1904",
@@ -153,7 +193,22 @@
       "author": "Steve Hawks",
       "year": 2026,
       "url": "https://gettysburg.stonesentinels.com/",
-      "editionNote": "Monument-inscription and modern-compilation figures derived from GNMP tablets and OR data; the site's own disclaimer: 'often in disagreement between regimental and brigade records.' Two separate fetches of the same page have returned different numbers for some brigades (extraction caution). Strength figures are inferred-tier, not period documents."
+      "editionNote": "Monument-inscription and modern-compilation figures derived from GNMP tablets and OR data; the site's own disclaimer: 'often in disagreement between regimental and brigade records.' Two separate fetches of the same page have returned different numbers for some brigades (extraction caution). Strength figures are inferred-tier, not period documents.",
+      "clockProfile": {
+        "kind": "tablet-adjudicated",
+        "offsetMinutes": 0,
+        "offsetEnvelope": [
+          -30,
+          30
+        ],
+        "anchorsUsed": [
+          "CA-J2E-2",
+          "CA-J2E-3",
+          "CA-J3M-4"
+        ],
+        "assessment": "The War Department tablets are ~35-year-retrospective adjudications, not witnesses. On Ewell's front they match modern scholarship well (Hoke 20:00; Johnson 'dusk'; retired 10:30). EXCEPTION (ED-28 skew rule): McLaws-wing tablets run systematically ~1 hour EARLY (Kershaw 'advanced about 4.30' vs modern ~17:30; Barksdale 'Advanced at 5 P.M.' vs modern ~18:15) - envelope [-60,0] on that wing, i.e. tablet-stated times there read up to an hour early. Site-extraction hygiene caveat rides the source record; the two 2026-07-10 re-fetches (Early 'about noon' = two miles out on the Harrisburg Road; XI Corps '10.30 A. M.' = Schurz's division specifically) are recorded in the verification dossier.",
+        "confidence": "medium"
+      }
     },
     {
       "id": "encyclopedia-virginia",
@@ -356,6 +411,200 @@
       "title": "Antietam on the Web: 3-inch Ordnance Rifle",
       "year": 2026,
       "url": "https://antietam.aotw.org/weapons.php?weapon_id=3"
+    },
+    {
+      "id": "or-27-oob",
+      "kind": "official_report",
+      "title": "Official Records Series I Vol. 27, order-of-battle returns (Part 1 Union pp. ~155-168; Part 2 Confederate pp. ~283-291)",
+      "author": "U.S. War Department (GPO 1889)",
+      "year": 1863,
+      "url": "https://texashistory.unt.edu/ark:/67531/metapth154598/",
+      "editionNote": "The OOB register's structural authority. Part 2 (Confederate) scriptable via the Texas ARK; Part 1 (Union) still has no verified script-friendly URL (standing open item) — Union structure verified via the OR-derived Wikipedia OOB articles at this pass."
+    },
+    {
+      "id": "wikipedia-oob-union",
+      "kind": "reference_site",
+      "title": "Battle of Gettysburg order of battle: Union (Wikipedia)",
+      "author": "Wikipedia editors",
+      "year": 2026,
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Gettysburg_order_of_battle:_Union",
+      "editionNote": "OR-derived compilation with per-regiment commanders and casualty annotations; wikitext fetched 2026-07-10 and used as the register's Union verification corpus. Secondary; the 2026-06-13 OOB pass confirmed it does NOT cite Busey & Martin page-level figures."
+    },
+    {
+      "id": "wikipedia-oob-csa",
+      "kind": "reference_site",
+      "title": "Battle of Gettysburg order of battle: Confederate (Wikipedia)",
+      "author": "Wikipedia editors",
+      "year": 2026,
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Gettysburg_order_of_battle:_Confederate",
+      "editionNote": "OR-derived compilation; wikitext fetched 2026-07-10 and used as the register's Confederate verification corpus. Same caveats as wikipedia-oob-union."
+    },
+    {
+      "id": "busey-martin-2005",
+      "kind": "book",
+      "title": "Regimental Strengths and Losses at Gettysburg (4th ed.)",
+      "author": "John W. Busey and David G. Martin",
+      "year": 2005,
+      "editionNote": "The standard modern strength reconstruction. NOT freely available online; no direct page-level citation has been obtainable in any research pass (2026-06-13 finding stands). Figures attributed to it in the corpus are via verified secondary reproductions only — flag the hop whenever cited."
+    },
+    {
+      "id": "or-27-2-longstreet",
+      "kind": "official_report",
+      "title": "Lt. Gen. James Longstreet's report, OR Series I Vol. 27 Part 2 (NPS reproduction)",
+      "author": "James Longstreet",
+      "year": 1863,
+      "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-lieut-general-james-longstreet.htm",
+      "editionNote": "Fetch-verified 2026-07-10. Report-nominal clock: gives 'About 2 p.m.' for the July 3 signal guns (~53 min late vs the proposed chain) and 'about 4 p.m.' for McLaws in position July 2. Never anchor-defining (ED-25 rule 4).",
+      "clockProfile": {
+        "kind": "report-nominal",
+        "offsetMinutes": -53,
+        "offsetEnvelope": [
+          -60,
+          -45
+        ],
+        "anchorsUsed": [
+          "CA-J3A-1"
+        ],
+        "assessment": "'About 2 p.m. ... The signal guns were fired' vs chain 13:07 -> raw offset -53 min. Per ED-25 rule 4 this NEVER corrects into the chain; the profile records the raw skew so provenance UI can show 'Longstreet's report clock runs ~50 min late against the chain', and his July 2 'about 4 p.m. (in position)' is read with the same caution. Smyth's report shares the ~14:00 cannonade start (corpus pass-1) - a possible 'camp clock' cluster, recorded in the conflict record rather than silently corrected.",
+        "confidence": "weak"
+      }
+    },
+    {
+      "id": "or-27-2-hays",
+      "kind": "official_report",
+      "title": "Brig. Gen. Harry T. Hays's report, OR Series I Vol. 27 Part 2 (NPS reproduction)",
+      "author": "Harry T. Hays",
+      "year": 1863,
+      "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-brig-general-harry-hays.htm",
+      "editionNote": "Fetch-verified 2026-07-10. 'A little before 8 p.m. I was ordered to advance with my own and Hoke's brigade' — the best single clock for the July 2 East Cemetery Hill assault (CA-J2E-3); withdrawal complete 'about 10 o'clock.'",
+      "clockProfile": {
+        "kind": "report-nominal",
+        "offsetMinutes": 0,
+        "offsetEnvelope": [
+          -15,
+          15
+        ],
+        "anchorsUsed": [
+          "CA-J2E-3"
+        ],
+        "assessment": "'A little before 8 p.m. I was ordered to advance' agrees with its phase chain (CA-J2E-3 adopted 19:45-20:00, provisional ED-29): offset ~0. Kind still caps his claims at tier C (rule 4) - an agreeing report clock is corroboration, not an anchor definition.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "or-27-2-heth",
+      "kind": "official_report",
+      "title": "Maj. Gen. Henry Heth's report, OR Series I Vol. 27 Part 2 (NPS reproduction)",
+      "author": "Henry Heth",
+      "year": 1863,
+      "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-maj-general-henry-heth.htm",
+      "editionNote": "Fetch-verified 2026-07-10. Division ordered forward 5 A.M. July 1; 'at this time-9 o'clock ... I was ignorant what force was at or near Gettysburg.' No clock for the attack itself; his July 1 narrative is noted in the literature as error-prone — sequence evidence, weak clock."
+    },
+    {
+      "id": "or-27-2-wright",
+      "kind": "official_report",
+      "title": "Brig. Gen. Ambrose R. Wright's report, OR Series I Vol. 27 Part 2 (NPS reproduction)",
+      "author": "Ambrose R. Wright",
+      "year": 1863,
+      "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-brig-general-ambrose-wright.htm",
+      "editionNote": "Fetch-verified 2026-07-10. Gives 'about 5 p.m.' for the July 2 general-advance signal — ~1.5-2 h early against the modern clock for his own breakthrough; notoriously self-serving on depth of penetration. Report-nominal exemplar."
+    },
+    {
+      "id": "or-27-1-buford",
+      "kind": "official_report",
+      "title": "Brig. Gen. John Buford's report, OR Series I Vol. 27 Part 1 (secondary reproduction)",
+      "author": "John Buford",
+      "year": 1863,
+      "url": "https://the-american-catholic.com/2013/07/01/general-buford-and-the-first-day-of-gettysburg/",
+      "editionNote": "Report quote verified against a blog reproduction 2026-07-10 ('between 8 and 9 a.m., reports came in ... that the enemy was coming down from toward Cashtown in force'). His timestamped dispatch to Meade, 'Gettysburg, July 1, 1863-10.10 a.m.' ('The enemy's force (A. P. Hill's) are advancing on me at this point, and driving my pickets and skirmishers very rapidly... General Reynolds is advancing, and is within 3 miles of this point'), is VERIFIED as printed in OR 27/1 p. 924 (ehistory reproduction via Wayback; gdg.org transcription concurs; Coddington p. 682 endnote concurs) - a document pin at +/-0, the July 1 morning's hardest clock (CA-J1M-3). See docs/reconstruction/audit/verification-2026-07-10.md."
+    },
+    {
+      "id": "or-27-1-hancock",
+      "kind": "official_report",
+      "title": "Maj. Gen. Winfield S. Hancock's reports and 5:25 p.m. dispatch, OR Series I Vol. 27 Part 1, pp. 366-378 (ehistory reproduction)",
+      "author": "Winfield S. Hancock",
+      "year": 1863,
+      "url": "https://ehistory.osu.edu/books/official-records/043/0366",
+      "editionNote": "Fetch-verified 2026-07-10 via Wayback captures of the ehistory pages (ehistory blocks direct automated access; OCR caveat recorded - 'cannot will be taken' for 'cannot well be taken'). July 1: 'At 3 p. m. I arrived at Gettysburg and assumed the command' (p. 368) vs his own timestamped dispatch '5.25 [P. M., JULY 1, 1863.]' saying 'When I arrived here an hour since...' and 'we can fight here, as the ground appears not unfavorable' (p. 366; the P.M./date are OR editors' brackets) - both poles of the arrival controversy (CA-J1P-7/8). July 3: cannonade opened 'About 1 o'clock, apparently by a given signal'; 'After an hour and forty-five minutes, the fire of the enemy became less furious, and immediately their infantry was seen in the woods beyond the Emmitsburg road, preparing for the assault' (pp. 372-373); repulse p. 374.",
+      "clockProfile": {
+        "kind": "report-nominal",
+        "offsetMinutes": 7,
+        "offsetEnvelope": [
+          0,
+          20
+        ],
+        "anchorsUsed": [
+          "CA-J3A-1",
+          "CA-J3A-4"
+        ],
+        "assessment": "His July 3 'About 1 o'clock' at the signal (chain 13:07) puts his report clock within ~7 min of the chain, and his 'hour and forty-five minutes' to the slackening lands ~14:45-15:00 corrected - corroborating CA-J3A-4/5. Report-nominal kind still applies (rule 4): his clocks corroborate, never define. The dispatch timestamp (17:25) is a document pin, outside this profile.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "or-27-1-howard",
+      "kind": "official_report",
+      "title": "Maj. Gen. Oliver O. Howard's report, OR Series I Vol. 27 Part 1, pp. 696-712 (ehistory reproduction)",
+      "author": "Oliver O. Howard",
+      "year": 1863,
+      "url": "https://ehistory.osu.edu/books/official-records/043/0701",
+      "editionNote": "Fetch-verified 2026-07-10 via Wayback captures. July 1 ladder: orders 3:30 a.m.; march order 8 a.m.; Reynolds's death 'about 11.30 a. m.' with assumption of command; 'Schurz joined me before 12 m.'; 'About 4 p. m.' fall-back word to Doubleday; 'At 4.10 p. m.' positive fall-back order; 'At 4.30 p. m. the columns reached Cemetery Hill... General Hancock came to me about this time' (pp. 701-704). Party to the Hancock-arrival feud - partisan-dispute note rides CA-J1P-7.",
+      "clockProfile": {
+        "kind": "report-nominal",
+        "offsetMinutes": 0,
+        "offsetEnvelope": [
+          -45,
+          45
+        ],
+        "anchorsUsed": [],
+        "assessment": "No statement about a ruled anchor exists yet (the July 1 chains are provisional, ED-26/27), so the kind-default envelope stands. His 'About 4 P. M.' agrees with the XI Corps tablet verbatim; his 11:30 command time conflicts with Pfanz's 10:30 (open item, ED-26).",
+        "confidence": "weak"
+      }
+    },
+    {
+      "id": "or-27-1-greene",
+      "kind": "official_report",
+      "title": "Brig. Gen. George S. Greene's report, OR Series I Vol. 27 Part 1, pp. 855-860 (ehistory reproduction)",
+      "author": "George S. Greene",
+      "year": 1863,
+      "url": "https://ehistory.osu.edu/books/official-records/043/0856",
+      "editionNote": "Fetch-verified 2026-07-10 via Wayback captures. July 2: 'By 12 o'clock we had a good cover for the men'; 'we were attacked on the whole of our front by a large force a few minutes before 7 p. m.' (p. 856); 'About 10 o'clock... General Kane, with his brigade, was returning' (p. 857). Primary Union clock for CA-J2E-2's 19:00 assault start.",
+      "clockProfile": {
+        "kind": "report-nominal",
+        "offsetMinutes": 0,
+        "offsetEnvelope": [
+          -20,
+          20
+        ],
+        "anchorsUsed": [
+          "CA-J2E-2"
+        ],
+        "assessment": "'A few minutes before 7 p. m.' agrees with CA-J2E-2's adopted ~19:00 start (provisional ED-29) and with the Johnson tablet's 'dusk': offset ~0, envelope narrowed below the kind default on the strength of the tablet/modern agreement. Rule 4 applies.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "id": "or-27-1-mcgilvery",
+      "kind": "official_report",
+      "title": "Lt. Col. Freeman McGilvery's report, OR Series I Vol. 27 Part 1, pp. 881-884 (ehistory reproduction)",
+      "author": "Freeman McGilvery",
+      "year": 1863,
+      "url": "https://ehistory.osu.edu/books/official-records/043/0881",
+      "editionNote": "Fetch-verified 2026-07-10 via Wayback captures (pp. 881, 884; pp. 882-883 have no capture - his July 3 cannonade START clock is UNVERIFIED). July 2: ordered to Sickles 'at about 3.30 p. m.' with Phillips's 5th and Bigelow's 9th Massachusetts; Hart placed 'in a peach orchard' (p. 881). July 3: enemy 'fired about one hour and a half, and expended at least 10,000 rounds'; 'At about 3 p. m. a line of battle of about 3,000 or 4,000 men appeared, advancing directly upon our front, which was completely broken up and scattered by our fire'; then 'three extended lines of battle' raked obliquely (p. 884) - primary corroboration for CA-J3A-4 (duration) and the CA-J3A-6..10 window, and the source basis for the Wilcox/Lang repulse (CA-J3A-10).",
+      "clockProfile": {
+        "kind": "report-nominal",
+        "offsetMinutes": 0,
+        "offsetEnvelope": [
+          -30,
+          15
+        ],
+        "anchorsUsed": [
+          "CA-J3A-4",
+          "CA-J3A-6"
+        ],
+        "assessment": "His 1.5-hour bombardment duration and 'at about 3 p. m.' advancing lines sit consistently ~0 to -15 min against the adopted chain (slackening 14:30-15:00; assault crossing the field 15:05-15:25). His '35,000 men' strength is a known wild overstatement - strength claims from this report are not clock evidence. Rule 4 applies.",
+        "confidence": "medium"
+      }
     }
   ]
 }
