@@ -304,6 +304,16 @@ def test_committed_audit_matches_regeneration(corpus, bundle):
     assert AUDIT.read_text() == compile_angle.build_audit(corpus, bundle)
 
 
+def test_staging_seed_pinned_and_provenance_stable(bundle, corpus):
+    """ED-21: the staging seed is the pinned shipped value, and recompiling
+    with provenance-only differences cannot move it (it is a compiler
+    constant, independent of every input hash)."""
+    assert bundle["stagingSeed"] == compile_angle.STAGING_SEED
+    assert len(bundle["stagingSeed"]) == 64
+    assert bundle["stagingSeed"] != bundle["checksum"] or \
+        bundle["inputs"] == {}  # seed stays put while the checksum drifts
+
+
 def test_bundle_checksum_self_consistent(bundle):
     assert compile_angle.bundle_checksum(bundle) == bundle["checksum"]
 

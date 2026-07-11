@@ -48,6 +48,15 @@ AUDIT_PATH = REPO / "docs/reconstruction/angle-bundle-audit.md"
 
 BUNDLE_FORMAT = "angle-bundle/1"
 
+# ED-21 (never re-rolled): the battle seed for every hash-drawn staging
+# decision (victim draws, step phase, yaw, waver) is PINNED at the checksum
+# of the bundle the owner reviewed and shipped (Phases 8-10 media, P12
+# release), so recompiles that only touch provenance metadata (sources /
+# claims edition notes, clock profiles) cannot re-roll the film or desync
+# the committed captions from the baked audio mix. Bump DELIBERATELY, with
+# an editorial decision, only when choreography content changes.
+STAGING_SEED = "d470c4691d0de414534c4ecce93efd3a2fac74373d472899af8465df7e2f7ac1"
+
 
 # ---------------------------------------------------------------------------
 # Deterministic kinematics
@@ -245,6 +254,7 @@ def compile_bundle(corpus: Corpus) -> dict:
 
     payload = {
         "format": BUNDLE_FORMAT,
+        "stagingSeed": STAGING_SEED,
         "note": "Compiled tactical artifact for the Angle slice (Reconstruction V2 "
                 "Phase 5). Per-second state traces to semantic segments; segments "
                 "trace to atomic claims and/or named inference rules "

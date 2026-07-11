@@ -19,9 +19,19 @@ namespace BattleAtlas
     {
         public string format;
         public string checksum;
+        // ED-21 (never re-rolled): the battle seed for all hash-drawn
+        // staging noise (victim draws, step phase, yaw, waver). Pinned by
+        // the compiler at the reviewed-and-shipped bundle's checksum so
+        // provenance-only recompiles (sources/claims metadata) cannot
+        // re-roll the film; bumped deliberately, with owner sign-off,
+        // only when choreography content actually changes.
+        public string stagingSeed;
         public AngleBundleSlice slice;
         public AngleBundleClock clock;
         public List<AngleBundleUnit> units;
+
+        public string StagingSeed =>
+            string.IsNullOrEmpty(stagingSeed) ? checksum : stagingSeed;
 
         public AngleBundleUnit Unit(string unitId)
         {

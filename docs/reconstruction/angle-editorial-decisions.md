@@ -364,6 +364,23 @@ causes, fall directions, and the wounded-crawl minority (~22% of fallen)
 are hash-selected — never named, never re-rolled. Full rules and the
 wound-vocabulary limits: `docs/reconstruction/violence-and-representation.md`.
 
+**Addendum 2026-07-10 (audit R1 adoption): the staging seed is pinned.**
+The battle seed for every hash-drawn staging decision was previously the
+bundle's content checksum — which meant a recompile that only touched
+provenance metadata (source edition notes, ED-25 clock profiles) silently
+re-rolled every victim draw, step phase, and yaw, desynchronizing the
+committed captions from the audio baked into the shipped media (caught by
+`test_committed_captions_match_the_event_export` during the ED-25
+implementation). That violates this decision's "never re-rolled" rule.
+The compiler now emits `stagingSeed`, **pinned at the checksum of the
+bundle the owner reviewed and shipped**
+(`d470c469…`, the Phase 8–10 media / P12 release input), and all staging
+entry points seed from it (`AngleActionStage`, the P9 audio-event export,
+the P10 teleport probe). The pin is enforced by an EditMode test and a
+corpus test; moving it is a deliberate editorial decision to be made only
+when choreography content actually changes — never a recompile side
+effect.
+
 ### ED-22 — The Soldier View observer is exempt from the casualty draw
 
 Documented: nothing about any individual man at the viewpoint's position
