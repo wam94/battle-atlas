@@ -1,0 +1,1027 @@
+{
+ "title": "Monument and marker register — spatial verification layer",
+ "status": "PROPOSAL — audit-spatial-1 branch; reliability profile is an ED candidate (see docs/reconstruction/audit/spatial-evidence.md), not self-adopted",
+ "generated": "2026-07-10",
+ "frame": "battlefield-local meters: local_x = UTM 18N (EPSG:26918) easting - 304208.0216360274, local_z = northing - 4404534.271124143 (data/heightmap/heightmap.json origin; identical to the landmark-anchors convention)",
+ "coverage": {
+  "included": "July 3 afternoon assault sector: full II Corps front (Webb, Hall, Harrow, Smyth, Willard/Sherrill brigades + Hazard's batteries + Cowan), Stannard's brigade, 8th Ohio, CSA state memorials on the Pickett's Charge start line, 11th MS / 26th NC advance markers, Armistead marker",
+  "notIncluded": "right/left flank marker stones (see flankMarkerGap), McGilvery's line, Cemetery Hill/Culp's Hill fronts, July 1 field, cavalry fields — future passes",
+  "flankMarkerGap": "GNMP flank-marker stones (R.F./L.F.) physically exist for most Union regiments here, but no license-clean machine-readable coordinate source was found this pass: Stone Sentinels does not publish their coordinates, HMDB is bot-walled (Cloudflare) and catalogs few of the small stones, OpenStreetMap has essentially none mapped in this sector (2 flank-named objects park-wide), and the NPS 'Monumentation' ArcGIS layer is survey benchmarks, not war monuments. Honest coverage: 0 flank-marker entries. Recommended fill: manual HMDB browser pass or field GPS; the secondary/advance/position markers captured here partially serve the same line-extent purpose."
+ },
+ "sources": {
+  "stone-sentinels": "gettysburg.stonesentinels.com unit pages, accessed 2026-07-10; coordinates from published DMS text (dms-text), Google-Maps embed payloads (gmaps-embed-b64), or map query links (gmaps-q); DMS text granularity 0.1 arc-second (~3 m)",
+  "openstreetmap": "Overpass API extract of historic=memorial/monument in the battlefield bbox, accessed 2026-07-10, ODbL; used as an independent cross-check only"
+ },
+ "entries": [
+  {
+   "id": "mon-69pa",
+   "registerId": "reg-us-ii-2-2",
+   "unitLabel": "69th Pennsylvania",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 defense line at the wall west of the Copse (climax position)",
+   "lat": 39.812611,
+   "lon": -77.236278,
+   "local_x": 4374.3,
+   "local_z": 4817.4,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/pennsylvania/pennsylvania-infantry/69th-pennsylvania/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "69th PA O’Kane+ / Tschudy+ / Duffy(w) / Davis",
+    "osmType": "node",
+    "osmId": 5689244633,
+    "lat": 39.8126493,
+    "lon": -77.2362645,
+    "deltaMeters": 4.4,
+    "flagged": false
+   }
+  },
+  {
+   "id": "mon-71pa",
+   "registerId": "reg-us-ii-2-2",
+   "unitLabel": "71st Pennsylvania",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position at the inner Angle wall (initial line, before fall-back and return)",
+   "lat": 39.813,
+   "lon": -77.236278,
+   "local_x": 4375.4,
+   "local_z": 4860.6,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/pennsylvania/pennsylvania-infantry/71st-pennsylvania/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "71st PA “California Regiment” Smith",
+    "osmType": "node",
+    "osmId": 6681533892,
+    "lat": 39.8133729,
+    "lon": -77.2362959,
+    "deltaMeters": 41.5,
+    "flagged": true
+   },
+   "dataQuality": "SUSPECT: Stone Sentinels publishes the identical DMS string for the 71st PA and 72nd PA main monuments (39°48'46.8\"N 77°14'10.6\"W) with near-identical location sentences — likely a copy-paste on the source page. The OSM cross-check (delta 41.5 m, flagged) supports the 71st monument standing NE of this point, nearer the Angle corner. Do not use this entry as an EC3 anchor without independent confirmation."
+  },
+  {
+   "id": "mon-72pa",
+   "registerId": "reg-us-ii-2-2",
+   "unitLabel": "72nd Pennsylvania",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "final countercharge position at the wall at The Angle (climax, ~15:25-15:30); site of the ED-4 litigation",
+   "lat": 39.813,
+   "lon": -77.236278,
+   "local_x": 4375.4,
+   "local_z": 4860.6,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/pennsylvania/pennsylvania-infantry/72nd-pennsylvania/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "72nd PA \"Fire Zouave\" Baxter(w) / Hesser",
+    "osmType": "node",
+    "osmId": 5689247087,
+    "lat": 39.8130196,
+    "lon": -77.2362387,
+    "deltaMeters": 4.0,
+    "flagged": false
+   },
+   "dataQuality": "Shares its DMS string with the Stone Sentinels 71st PA page (see mon-71pa); the 72nd PA reading is the one consistent with OSM (delta 4.0 m), so this entry is retained as primary."
+  },
+  {
+   "id": "mon-72pa-1",
+   "registerId": "reg-us-ii-2-2",
+   "unitLabel": "72nd Pennsylvania",
+   "side": "US",
+   "markerType": "position-marker",
+   "positionSemantics": "initial July 3 reserve position on the crest, 70 yards east of the main monument",
+   "lat": 39.813028,
+   "lon": -77.235694,
+   "local_x": 4425.5,
+   "local_z": 4862.4,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/pennsylvania/pennsylvania-infantry/72nd-pennsylvania/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-106pa",
+   "registerId": "reg-us-ii-2-2",
+   "unitLabel": "106th Pennsylvania",
+   "side": "US",
+   "markerType": "advance-marker",
+   "positionSemantics": "July 2 evening counterattack to the Emmitsburg Road at the Codori House (not a July 3 position)",
+   "lat": 39.811694,
+   "lon": -77.239917,
+   "local_x": 4060.3,
+   "local_z": 4723.4,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/pennsylvania/pennsylvania-infantry/106th-pennsylvania/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-106pa-1",
+   "registerId": "reg-us-ii-2-2",
+   "unitLabel": "106th Pennsylvania",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "brigade position at the Copse of Trees (main monument; regiment mostly detached July 3)",
+   "lat": 39.812583,
+   "lon": -77.235639,
+   "local_x": 4429.0,
+   "local_z": 4812.9,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/pennsylvania/pennsylvania-infantry/106th-pennsylvania/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-106pa-2",
+   "registerId": "reg-us-ii-2-2",
+   "unitLabel": "106th Pennsylvania",
+   "side": "US",
+   "markerType": "position-marker",
+   "positionSemantics": "July 2-3 detachment position on East Cemetery Hill (Cos. A and B with XI Corps)",
+   "lat": 39.822333,
+   "lon": -77.229444,
+   "local_x": 4986.3,
+   "local_z": 5882.0,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/pennsylvania/pennsylvania-infantry/106th-pennsylvania/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-19ma",
+   "registerId": "reg-us-ii-2-3",
+   "unitLabel": "19th Massachusetts",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "main monument on Hancock Avenue (reserve position)",
+   "lat": 39.8115,
+   "lon": -77.235417,
+   "local_x": 4445.0,
+   "local_z": 4692.2,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/massachusetts/19th-massachusetts/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-19ma-1",
+   "registerId": "reg-us-ii-2-3",
+   "unitLabel": "19th Massachusetts",
+   "side": "US",
+   "markerType": "position-marker",
+   "positionSemantics": "July 3 advance into the Copse melee (south edge of the Copse)",
+   "lat": 39.812306,
+   "lon": -77.235861,
+   "local_x": 4409.2,
+   "local_z": 4782.7,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/massachusetts/19th-massachusetts/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-20ma",
+   "registerId": "reg-us-ii-2-3",
+   "unitLabel": "20th Massachusetts",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 reserve/support position before advancing into the Copse melee",
+   "lat": 39.811444,
+   "lon": -77.236167,
+   "local_x": 4380.6,
+   "local_z": 4687.6,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/massachusetts/20th-massachusetts/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "20th MA Revere+ / Macy(w) / Abbott",
+    "osmType": "node",
+    "osmId": 5689244630,
+    "lat": 39.8114729,
+    "lon": -77.2361216,
+    "deltaMeters": 5.0,
+    "flagged": false
+   }
+  },
+  {
+   "id": "mon-7mi",
+   "registerId": "reg-us-ii-2-3",
+   "unitLabel": "7th Michigan",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position southwest of the Copse",
+   "lat": 39.811806,
+   "lon": -77.236194,
+   "local_x": 4379.3,
+   "local_z": 4727.9,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/michigan/7th-michigan/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-42ny",
+   "registerId": "reg-us-ii-2-3",
+   "unitLabel": "42nd New York",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position (rear of the Copse; advanced into the melee)",
+   "lat": 39.812016,
+   "lon": -77.235411,
+   "local_x": 4446.9,
+   "local_z": 4749.5,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/new-york/new-york-infantry/42nd-new-york/",
+    "accessDate": "2026-07-10",
+    "extraction": "gmaps-q"
+   }
+  },
+  {
+   "id": "mon-59ny",
+   "registerId": "reg-us-ii-2-3",
+   "unitLabel": "59th New York (4 cos)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position at the wall southwest of the Copse",
+   "lat": 39.812056,
+   "lon": -77.23625,
+   "local_x": 4375.2,
+   "local_z": 4755.7,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/new-york/new-york-infantry/59th-new-york/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-19me",
+   "registerId": "reg-us-ii-2-1",
+   "unitLabel": "19th Maine",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position (right of Harrow, near US Regulars monument)",
+   "lat": 39.811056,
+   "lon": -77.236111,
+   "local_x": 4384.3,
+   "local_z": 4644.4,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/maine/19th-maine/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-15ma",
+   "registerId": "reg-us-ii-2-1",
+   "unitLabel": "15th Massachusetts",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position on Hall-Harrow front",
+   "lat": 39.81075,
+   "lon": -77.236111,
+   "local_x": 4383.5,
+   "local_z": 4610.5,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/massachusetts/15th-massachusetts/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-1mn",
+   "registerId": "reg-us-ii-2-1",
+   "unitLabel": "1st Minnesota",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 2 charge site (Colvill; NOT the July 3 position)",
+   "lat": 39.806639,
+   "lon": -77.235056,
+   "local_x": 4462.4,
+   "local_z": 4151.9,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/minnesota/1st-minnesota/",
+    "accessDate": "2026-07-10",
+    "extraction": "gmaps-embed-b64"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "1st MN Colvill",
+    "osmType": "way",
+    "osmId": 710690088,
+    "lat": 39.806632,
+    "lon": -77.2350192,
+    "deltaMeters": 3.2,
+    "flagged": false
+   }
+  },
+  {
+   "id": "mon-1mn-1",
+   "registerId": "reg-us-ii-2-1",
+   "unitLabel": "1st Minnesota",
+   "side": "US",
+   "markerType": "position-marker",
+   "positionSemantics": "July 3 position marker (helped seal the penetration; north of main monument)",
+   "lat": 39.810361,
+   "lon": -77.236083,
+   "local_x": 4384.8,
+   "local_z": 4567.2,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/minnesota/1st-minnesota/",
+    "accessDate": "2026-07-10",
+    "extraction": "gmaps-embed-b64"
+   }
+  },
+  {
+   "id": "mon-1mn-2",
+   "registerId": "reg-us-ii-2-1",
+   "unitLabel": "1st Minnesota",
+   "side": "US",
+   "markerType": "urn",
+   "positionSemantics": "1867 memorial urn, Soldiers National Cemetery (oldest monument on the field; not a position)",
+   "lat": 39.819611,
+   "lon": -77.231694,
+   "local_x": 4786.1,
+   "local_z": 5584.6,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/minnesota/1st-minnesota/",
+    "accessDate": "2026-07-10",
+    "extraction": "gmaps-embed-b64"
+   }
+  },
+  {
+   "id": "mon-82ny",
+   "registerId": "reg-us-ii-2-1",
+   "unitLabel": "82nd New York (2nd Militia)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position on Harrow front (also marks July 2 fighting at the Codori farm)",
+   "lat": 39.810333,
+   "lon": -77.236083,
+   "local_x": 4384.7,
+   "local_z": 4564.1,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/new-york/new-york-infantry/82nd-new-york/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-14ct",
+   "registerId": "reg-us-ii-3-2",
+   "unitLabel": "14th Connecticut",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position on the wall just north of the Angle",
+   "lat": 39.813833,
+   "lon": -77.235444,
+   "local_x": 4449.1,
+   "local_z": 4951.3,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/connecticut/14th-connecticut/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "14th CT Ellis",
+    "osmType": "node",
+    "osmId": 6689582512,
+    "lat": 39.8139413,
+    "lon": -77.2354397,
+    "deltaMeters": 12.0,
+    "flagged": false
+   }
+  },
+  {
+   "id": "mon-1de",
+   "registerId": "reg-us-ii-3-2",
+   "unitLabel": "1st Delaware",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position on the wall south of the Bryan farm",
+   "lat": 39.814611,
+   "lon": -77.235444,
+   "local_x": 4451.3,
+   "local_z": 5037.6,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/delaware/1st-delaware/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-1de-1",
+   "registerId": "reg-us-ii-3-2",
+   "unitLabel": "1st Delaware",
+   "side": "US",
+   "markerType": "advance-marker",
+   "positionSemantics": "skirmish/advance position toward Long Lane (Bliss farm axis)",
+   "lat": 39.816417,
+   "lon": -77.242056,
+   "local_x": 3890.3,
+   "local_z": 5252.3,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/delaware/1st-delaware/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-12nj",
+   "registerId": "reg-us-ii-3-2",
+   "unitLabel": "12th New Jersey",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position on the wall south of the Bryan barn",
+   "lat": 39.815139,
+   "lon": -77.235444,
+   "local_x": 4452.7,
+   "local_z": 5096.2,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/new-jersey/12th-new-jersey/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-10nybn",
+   "registerId": "reg-us-ii-3-2",
+   "unitLabel": "10th New York Battalion",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 provost/battalion position east of Hancock Ave",
+   "lat": 39.81428,
+   "lon": -77.23442,
+   "local_x": 4538.0,
+   "local_z": 4998.7,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/new-york/new-york-infantry/10th-new-york/",
+    "accessDate": "2026-07-10",
+    "extraction": "gmaps-q"
+   }
+  },
+  {
+   "id": "mon-108ny",
+   "registerId": "reg-us-ii-3-2",
+   "unitLabel": "108th New York",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position supporting Woodruff at Ziegler’s Grove",
+   "lat": 39.81625,
+   "lon": -77.234611,
+   "local_x": 4527.1,
+   "local_z": 5217.8,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/new-york/new-york-infantry/108th-new-york/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-39ny",
+   "registerId": "reg-us-ii-3-3",
+   "unitLabel": "39th New York (4 cos)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position south of the Bryan barn",
+   "lat": 39.814167,
+   "lon": -77.23525,
+   "local_x": 4466.7,
+   "local_z": 4987.9,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/new-york/new-york-infantry/39th-new-york/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-39ny-1",
+   "registerId": "reg-us-ii-3-3",
+   "unitLabel": "39th New York (4 cos)",
+   "side": "US",
+   "markerType": "position-marker",
+   "positionSemantics": "July 2 position near Trostle farm (recapture of Watson’s battery; not July 3)",
+   "lat": 39.802861,
+   "lon": -77.237861,
+   "local_x": 4211.7,
+   "local_z": 3738.5,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/new-york/new-york-infantry/39th-new-york/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-111ny",
+   "registerId": "reg-us-ii-3-3",
+   "unitLabel": "111th New York",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position just south of the Bryan barn",
+   "lat": 39.815417,
+   "lon": -77.235389,
+   "local_x": 4458.2,
+   "local_z": 5127.0,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/new-york/new-york-infantry/111th-new-york/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-125ny",
+   "registerId": "reg-us-ii-3-3",
+   "unitLabel": "125th New York",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position east of Hancock Avenue",
+   "lat": 39.81475,
+   "lon": -77.23525,
+   "local_x": 4468.3,
+   "local_z": 5052.6,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/new-york/new-york-infantry/125th-new-york/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-126ny",
+   "registerId": "reg-us-ii-3-3",
+   "unitLabel": "126th New York",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position at the north end of Hancock Avenue",
+   "lat": 39.816694,
+   "lon": -77.234444,
+   "local_x": 4542.7,
+   "local_z": 5266.7,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/new-york/new-york-infantry/126th-new-york/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-8oh",
+   "registerId": "reg-us-ii-3-1",
+   "unitLabel": "8th Ohio",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 advanced skirmish line west of the Emmitsburg Road (flanked Davis’s brigade)",
+   "lat": 39.816056,
+   "lon": -77.237056,
+   "local_x": 4317.3,
+   "local_z": 5201.5,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/ohio/8th-ohio/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-13vt",
+   "registerId": "reg-us-i-3-3",
+   "unitLabel": "13th Vermont",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position before the flank wheel (Stannard front)",
+   "lat": 39.809667,
+   "lon": -77.236278,
+   "local_x": 4366.2,
+   "local_z": 4490.6,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/vermont/13th-vermont/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "13th VT Randall",
+    "osmType": "node",
+    "osmId": 2902183222,
+    "lat": 39.809665,
+    "lon": -77.2362256,
+    "deltaMeters": 4.5,
+    "flagged": false
+   }
+  },
+  {
+   "id": "mon-14vt",
+   "registerId": "reg-us-i-3-3",
+   "unitLabel": "14th Vermont",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position on the Stannard front",
+   "lat": 39.808833,
+   "lon": -77.236583,
+   "local_x": 4337.7,
+   "local_z": 4398.7,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/vermont/14th-vermont/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-16vt",
+   "registerId": "reg-us-i-3-3",
+   "unitLabel": "16th Vermont",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 3 position before the double flank movement",
+   "lat": 39.809139,
+   "lon": -77.236556,
+   "local_x": 4340.9,
+   "local_z": 4432.6,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/vermont/16th-vermont/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-cushing",
+   "registerId": "reg-us-ii-b5",
+   "unitLabel": "Battery A, 4th US (Cushing)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Battery A 4th US position at The Angle (climax; Cushing killed at the wall)",
+   "lat": 39.813167,
+   "lon": -77.235806,
+   "local_x": 4416.3,
+   "local_z": 4878.1,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/us-regulars/us-artillery/4th-us-artillery-battery-a/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "4th US “Cushing’s Battery A” Cushing+ / Fuger",
+    "osmType": "node",
+    "osmId": 6689582526,
+    "lat": 39.8132926,
+    "lon": -77.2358274,
+    "deltaMeters": 14.1,
+    "flagged": false
+   }
+  },
+  {
+   "id": "mon-woodruff",
+   "registerId": "reg-us-ii-b4",
+   "unitLabel": "Battery I, 1st US (Woodruff)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Battery I 1st US position at Ziegler’s Grove (Woodruff mortally wounded)",
+   "lat": 39.816,
+   "lon": -77.234889,
+   "local_x": 4502.6,
+   "local_z": 5190.6,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/us-regulars/us-artillery/1st-us-artillery-battery-i/",
+    "accessDate": "2026-07-10",
+    "extraction": "gmaps-embed-b64"
+   }
+  },
+  {
+   "id": "mon-arnold",
+   "registerId": "reg-us-ii-b2",
+   "unitLabel": "Battery A, 1st Rhode Island (Arnold)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Battery A 1st RI position at the wall north of the Angle",
+   "lat": 39.813556,
+   "lon": -77.235444,
+   "local_x": 4448.4,
+   "local_z": 4920.5,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/rhode-island/rhode-island-battery-a/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-brown",
+   "registerId": "reg-us-ii-b3",
+   "unitLabel": "Battery B, 1st Rhode Island (Brown)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Battery B 1st RI position (July 3 marker east of Hancock Ave; battery withdrawn after July 2 losses, section under Perrin present)",
+   "lat": 39.812306,
+   "lon": -77.235417,
+   "local_x": 4447.2,
+   "local_z": 4781.7,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/rhode-island/rhode-island-battery-b/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-rorty",
+   "registerId": "reg-us-ii-b1",
+   "unitLabel": "Battery B, 1st New York (Rorty)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Battery B 1st NY position south of the US Regulars monument (Rorty killed)",
+   "lat": 39.810639,
+   "lon": -77.235778,
+   "local_x": 4411.7,
+   "local_z": 4597.4,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/new-york/new-york-artillery-and-engineers/1st-new-york-battery-b/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-cowan",
+   "registerId": "reg-us-vi-b2",
+   "unitLabel": "1st New York Independent Battery (Cowan)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "1st NY Independent Battery position at the Copse (replaced Brown July 3)",
+   "lat": 39.812361,
+   "lon": -77.235639,
+   "local_x": 4428.3,
+   "local_z": 4788.3,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-monuments/new-york/new-york-artillery-and-engineers/1st-new-york-independent-battery/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-va-mem",
+   "registerId": "reg-csa-1c-pk",
+   "unitLabel": "Virginia Memorial (state)",
+   "side": "CSA",
+   "markerType": "state-memorial",
+   "positionSemantics": "Seminary Ridge start line of Pickett’s division (Lee statue; dedication point, not a unit position)",
+   "lat": 39.814167,
+   "lon": -77.250333,
+   "local_x": 3175.5,
+   "local_z": 5020.3,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/confederate-monuments/confederate-state-monuments/virginia/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-nc-mem",
+   "registerId": "reg-csa-3c-he-pettigrew",
+   "unitLabel": "North Carolina Memorial (state)",
+   "side": "CSA",
+   "markerType": "state-memorial",
+   "positionSemantics": "Seminary Ridge start line of Pettigrew’s command (dedication point)",
+   "lat": 39.818361,
+   "lon": -77.247222,
+   "local_x": 3453.5,
+   "local_z": 5479.1,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/confederate-monuments/confederate-state-monuments/north-carolina/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-tn-mem",
+   "registerId": "reg-csa-3c-he-archer",
+   "unitLabel": "Tennessee Memorial (state)",
+   "side": "CSA",
+   "markerType": "state-memorial",
+   "positionSemantics": "Seminary Ridge start line, Archer’s brigade front",
+   "lat": 39.817694,
+   "lon": -77.247889,
+   "local_x": 3394.6,
+   "local_z": 5406.5,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/confederate-monuments/confederate-state-monuments/tennessee/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-ms-mem",
+   "registerId": "reg-csa-3c-he-davis",
+   "unitLabel": "Mississippi Memorial (state)",
+   "side": "CSA",
+   "markerType": "state-memorial",
+   "positionSemantics": "Seminary Ridge, Barksdale’s July 2 axis (division context; south of Pickett’s Charge frontage)",
+   "lat": 39.802417,
+   "lon": -77.255861,
+   "local_x": 2669.4,
+   "local_z": 3727.9,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/confederate-monuments/mississippi/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-fl-mem",
+   "registerId": "reg-csa-1c-an-lang",
+   "unitLabel": "Florida Memorial (state)",
+   "side": "CSA",
+   "markerType": "state-memorial",
+   "positionSemantics": "Seminary Ridge start line, Lang’s Florida brigade",
+   "lat": 39.810111,
+   "lon": -77.254056,
+   "local_x": 2845.5,
+   "local_z": 4578.1,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/confederate-monuments/confederate-state-monuments/florida/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-11ms",
+   "registerId": "reg-csa-3c-he-davis",
+   "unitLabel": "11th Mississippi",
+   "side": "CSA",
+   "markerType": "monument",
+   "positionSemantics": "Seminary Ridge start-line monument (2000s era)",
+   "lat": 39.819639,
+   "lon": -77.247056,
+   "local_x": 3471.3,
+   "local_z": 5620.7,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/confederate-monuments/confederate-unit-monuments/11th-mississippi/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-11ms-1",
+   "registerId": "reg-csa-3c-he-davis",
+   "unitLabel": "11th Mississippi",
+   "side": "CSA",
+   "markerType": "advance-marker",
+   "positionSemantics": "farthest-advance marker at the Brian barn (July 3 climax)",
+   "lat": 39.815306,
+   "lon": -77.2355,
+   "local_x": 4448.4,
+   "local_z": 5114.9,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/confederate-monuments/confederate-unit-monuments/11th-mississippi/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-26nc",
+   "registerId": "reg-csa-3c-he-pettigrew",
+   "unitLabel": "26th North Carolina",
+   "side": "CSA",
+   "markerType": "monument",
+   "positionSemantics": "July 1 monument on Meredith Avenue (McPherson’s Ridge; not July 3)",
+   "lat": 39.834722,
+   "lon": -77.254611,
+   "local_x": 2866.8,
+   "local_z": 7311.2,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/confederate-monuments/confederate-unit-monuments/26th-north-carolina/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-26nc-1",
+   "registerId": "reg-csa-3c-he-pettigrew",
+   "unitLabel": "26th North Carolina",
+   "side": "CSA",
+   "markerType": "advance-marker",
+   "positionSemantics": "farthest-advance marker at the wall north of the Copse (July 3 climax)",
+   "lat": 39.813583,
+   "lon": -77.235639,
+   "local_x": 4431.7,
+   "local_z": 4923.9,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/confederate-monuments/confederate-unit-monuments/26th-north-carolina/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-armistead",
+   "registerId": "reg-csa-1c-pk-armistead",
+   "unitLabel": "Armistead wounding marker",
+   "side": "CSA",
+   "markerType": "individual-marker",
+   "positionSemantics": "where Armistead fell inside the Angle (mortal wounding, ~15:25-15:30)",
+   "lat": 39.813194,
+   "lon": -77.235833,
+   "local_x": 4414.0,
+   "local_z": 4881.2,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/monuments-to-individuals/lewis-armistead/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "CS Armistead KIA",
+    "osmType": "node",
+    "osmId": 4485288317,
+    "lat": 39.8131149,
+    "lon": -77.2359606,
+    "deltaMeters": 14.0,
+    "flagged": false
+   }
+  },
+  {
+   "id": "mon-webb-statue",
+   "registerId": "reg-us-ii-2-2",
+   "unitLabel": "Webb statue (brigade front)",
+   "side": "US",
+   "markerType": "individual-marker",
+   "positionSemantics": "Webb statue east of Hancock Avenue opposite the Copse (portrait statue, not a line position)",
+   "lat": 39.812972,
+   "lon": -77.235361,
+   "local_x": 4453.8,
+   "local_z": 4855.5,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/monuments-to-individuals/alexander-webb/",
+    "accessDate": "2026-07-10",
+    "extraction": "dms-text"
+   }
+  }
+ ]
+}
