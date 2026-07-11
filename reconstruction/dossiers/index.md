@@ -60,3 +60,36 @@ brigades) is already T5 via the V2 claim corpus and is not re-dossier'd here.
 Companion documents: `docs/reconstruction/audit/dossier-pass-1.md` (pass
 report), `docs/reconstruction/audit/dossier-overlay.json` (master-table
 consultation layer, applied by `reconstruction/scripts/build_unit_audit.py`).
+
+## Pass 2 — the reference-frame layer (ED-36 grain; spatial apparatus first use)
+
+Sequencing doctrine layer 2: the units other units' position/timing
+statements cite. First pass with the spatial program (EC3 anchors read off
+the georeferenced Bachelder sheets per `docs/reconstruction/audit/
+spatial-evidence.md`; monuments per ED-39). Ordnance-returns hunt opened:
+nine rounds-expended figures found (pass 1's uniform gap closed for this
+layer).
+
+| Dossier | Register id | Frame role | Achieved T |
+|---|---|---|---|
+| [us-ii-3-2-smyth.md](us-ii-3-2-smyth.md) | reg-us-ii-3-2 | Hays-front wall line (Angle → Bryan barn) | T4 |
+| [us-ii-3-3-willard.md](us-ii-3-3-willard.md) | reg-us-ii-3-3 | second line / interleaved wall right | T4 |
+| [us-ii-2-3-hall.md](us-ii-2-3-hall.md) | reg-us-ii-2-3 | wall south of the Copse; the crisis rush | T4 |
+| [us-ii-2-1-harrow.md](us-ii-2-1-harrow.md) | reg-us-ii-2-1 | Gibbon-front left; division frame July 3 | T4 |
+| [us-btty-cowan.md](us-btty-cowan.md) | reg-us-vi-b2 | the Brown-slot crisis geometry | T4 (T5 window in-build) |
+| [us-btty-weir.md](us-btty-weir.md) | reg-us-ar-1r-4 | crisis reinforcement; Stannard's July 2 object; 280-round return | T4 |
+| [us-btty-fitzhugh.md](us-btty-fitzhugh.md) | reg-us-ar-4v-5 | crisis pair at Webb's fence; 89-round return | T4 |
+| [us-btty-parsons.md](us-btty-parsons.md) | reg-us-ar-4v-3 | crisis pair, the clean 15:00 Hunt clock; ~240 rounds | T4 |
+| [us-btty-wheeler.md](us-btty-wheeler.md) | reg-us-xi-b2 | Osborn-group crisis detachment; 850-round return | T4 |
+| [us-btty-cooper.md](us-btty-cooper.md) | reg-us-i-b4 | the during-cannonade transfer; 1,050 rounds per-day | T4 |
+| [us-ar-hq-tyler-park.md](us-ar-hq-tyler-park.md) | reg-us-ar-hq | the park + Gillett ammunition ledger (19,189/4,694) | T3 |
+| [us-i-arty-wainwright.md](us-i-arty-wainwright.md) | reg-us-i-arty | East Cemetery Hill group, layout verbatim | T4 (group grain) |
+| [us-btty-rittenhouse.md](us-btty-rittenhouse.md) | reg-us-v-b4 | Little Round Top ring-closer | T2 (MOLLUS access-failed) |
+| [csa-1c-bn-dearing.md](csa-1c-bn-dearing.md) | reg-csa-1c-bn-dearing | fronting Pickett; the battalion-relations quote | T4 |
+| [csa-1c-bn-cabell.md](csa-1c-bn-cabell.md) | reg-csa-1c-bn-cabell | Peach Orchard arc's 4th battalion; ~3,300 rounds | T4 |
+| [csa-3c-bn-pegram.md](csa-3c-bn-pegram.md) | reg-csa-3c-bn-pegram | Third Corps arc; per-day casualty split; 3,800 rounds | T4 |
+| [csa-3c-bn-mcintosh.md](csa-3c-bn-mcintosh.md) | reg-csa-3c-bn-mcintosh | Third Corps arc; 1,395 rounds itemized | T4 |
+| [csa-3c-bn-garnett.md](csa-3c-bn-garnett.md) | reg-csa-3c-bn-garnett | THE attested silence ("did not fire a single shot") | T2 (negative-evidence) |
+| [csa-2c-arty-ewell-wing.md](csa-2c-arty-ewell-wing.md) | reg-csa-2c-bn-dance/-nelson/-carter/-latimer/-jones | partial-participation record (corrects "near-silence") | T2 (group grain) |
+
+Companion: `docs/reconstruction/audit/dossier-pass-2.md`.
