@@ -52,12 +52,19 @@ dispute) is this battery's standing ruling.
   ammunition run down like the rest of Hazard's line (or-27-1-hazard).
 - **~15:16–15:30 — canister into Fry/Marshall** [D between CA-J3A-7 and
   CA-J3A-10]: canister into the Pettigrew-front's right as it closed on
-  the wall; the left-section gun's last double-shotted round is
-  traditionally placed into the 26th North Carolina (claim-arnold-
-  canister; stone-sentinels RI Battery A page; cross-anchor csa-26nc
-  t=8700 documented keyframe).
-- Rounds expended: no battery-level figure located (flagged; brigade basis
-  in us-ii-arty-hazard).
+  the wall; "final shots were double-shotted canister" (stone-sentinels
+  RI Battery A page, re-fetched this pass; claim-arnold-canister;
+  cross-anchor csa-26nc t=8700 documented keyframe); the battery
+  "expended every round, and the lines of the enemy still advanced"
+  (or-27-1-hazard, verified this pass).
+- **After the crisis**: Arnold, "after gallantly fighting his own battery
+  and saving it, also withdrew the battery of A, Fourth U. S. …, Cushing
+  and Milne having fallen" (or-27-1-hazard) — Arnold's crews pulled
+  Cushing's wrecks out as well; Hunt's OR has Arnold's among the
+  batteries "withdrawn" toward the close and replaced by fresh ones
+  (or-27-1-hunt).
+- Rounds expended: no numeric figure (negative); Hazard's "expended every
+  round" is the qualitative record.
 
 ## EC6 — Casualty apportionment
 
@@ -69,13 +76,17 @@ dispute) is this battery's standing ruling.
 
 ## Conflicts & negative evidence
 
-1. **ED-7 stands** — before-vs-during withdrawal debate (survey
-  disagreement 4; civilwartalk thread flagged in the vignette survey as
-  discussion-grade, not evidence). Any future primary attestation (a
-  battery-man's letter with a sequence statement) upgrades this; none in
-  corpus.
-2. Strength/casualty figures single-source (see EC2).
-3. No rounds-expended record (negative).
+1. **ED-7 stands, with new bracketing evidence**: Hunt's OR puts
+  Arnold's withdrawal "[t]oward the close of this struggle" (with
+  Rorty's and Cushing's) — i.e. DURING/at the end of the charge, not
+  before it — while the one-gun-at-the-wall record and the
+  before-the-charge reading persist in the secondary layer. The
+  civilwartalk thread stays discussion-grade. ED-7's no-authored-
+  withdrawal choice is unchanged; the Hunt sentence joins the claim's
+  references at the "during" pole.
+2. Strength/casualty figures single-source (see EC2); no battery OR
+  report exists (index-verified negative, this pass).
+3. No numeric rounds-expended record (negative).
 
 ## Chain anchors substantiated
 

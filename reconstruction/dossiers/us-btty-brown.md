@@ -11,8 +11,10 @@ as seen from the Confederate side).
 
 - Battery B, 1st Rhode Island Light Artillery; II Corps Artillery Brigade
   (Hazard) (or-27-oob).
-- Lt. T. Fred Brown, **wounded July 2** (in the advanced position fight);
-  Lt. William S. Perrin commanded July 3 (or-27-oob; or-27-1-hazard).
+- Lt. T. Fred Brown, **wounded July 2** — now verbatim: "First Lieutenant
+  T. Fred. Brown was severely wounded in the neck by a musket-shot … and
+  the command devolved upon First Lieutenant W. S. Perrin"
+  (or-27-1-hazard, read at live ehistory this pass, pp. 477-481).
 - Lt. Joseph S. Milne **detached to Cushing's Battery A** before July 3;
   mortally wounded at the wall — he died on Cushing's rolls, not Brown's
   (company-vignette survey item 4, brown-1985-filson; stone-sentinels
@@ -80,12 +82,17 @@ as seen from the Confederate side).
 
 ## EC6 — Casualty apportionment
 
-- Whole-battle: **28** (build/end-strength citation from stone-sentinels
-  RI Battery B; killed/wounded split not carried in the corpus extraction
-  — flagged thin; upgrade via OR return in pass 2).
-- Episode distribution [D]: predominantly July 2 (the advanced-position
-  fight: Brown w, two guns disabled, heavy horse/crew loss); July 3 share
-  limited to the cannonade window (in position only ~90 min of it).
+- Whole-battle: **7 k / 19 w / 2 m = 28** (stone-sentinels RI Battery B,
+  re-fetched this pass — the K/W/M split closes the corpus layer's flag;
+  the 28 total stands).
+- **July 2 share now primary** (or-27-1-hazard, verbatim): "1 man killed,
+  7 men wounded, and 2 missing … 24 horses were killed and 6 disabled,
+  and it became necessary to send two guns to the rear" — so ~10 of the
+  28 fell July 2; the July 3 remainder (~18) belongs to the cannonade
+  window before the ~14:40 withdrawal. One of the few Union batteries
+  with a PRIMARY two-day apportionment.
+- Episode distribution [D→C upgraded]: July 2 advanced-position fight +
+  July 3 cannonade only (silent/parked thereafter).
 - Officer pins: Lt. Brown w July 2 [D during Wright's attack]; Lt. Milne
   mw July 3 [A vs CA-J3A-9 window, at Cushing's wall guns — carried on
   the Cushing dossier/us-btty-cushing t=8700].
@@ -102,7 +109,14 @@ as seen from the Confederate side).
   13:40+7 note) sits ~1 h earlier than the build's withdrawal time — the
   two cannot both time this battery's exit; recorded, not resolved
   (feeds tension ED-24 §1.2(2)).
-3. Strength/casualty figures are single-source (Stone Sentinels) — flagged.
+3. Strength figure single-source (Stone Sentinels); casualty split now
+  corroborated across the monument figures and Hazard's July 2 numbers.
+4. The withdrawal's ORDERING authority: the Stone Sentinels page
+  narrative has Hunt ordering the battery to the rear and Alexander
+  reading the withdrawal as suppression — fetch-model summary grade
+  only (SNIPPET); the primary wording of the order remains unfound.
+  The "Gettysburg gun" (a shell-jammed muzzle, the relic gun now in
+  Providence) rides the same page at the same grade.
 
 ## Chain anchors substantiated
 

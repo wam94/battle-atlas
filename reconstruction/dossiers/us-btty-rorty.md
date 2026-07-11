@@ -40,8 +40,11 @@ with canister and handspikes.
 
 ## EC4 — Movement legs
 
-- None on July 3 (attested-static). July 2 posting leg not researched this
-  pass (reference-frame layer).
+- None on July 3 until the close: the wrecked battery was withdrawn
+  "[t]oward the close of this struggle" with Arnold's and Cushing's, its
+  place filled by fresh Reserve batteries (or-27-1-hunt, verified this
+  pass); post-battle it was consolidated away (us-ii-arty-hazard EC4).
+  July 2 posting leg not researched this pass (reference-frame layer).
 
 ## EC5 — Activity record
 
@@ -73,15 +76,33 @@ with canister and handspikes.
   the inverse of most Union units' bombardment-light pattern and should
   shape any authored casualty curve (rising through the cannonade, spike
   at the melee).
-- Officer pins: Capt. Rorty **k** [D at the overrun, ~15:20–15:30]; Lt.
-  Sheldon **w** in the same action [D] (stone-sentinels).
+- **July 2 share now primary**: "1 man killed, 8 men wounded, and 13
+  horses disabled" (or-27-1-hazard, verbatim) — so ~9 of the 26 fell
+  July 2; the July 3 remainder splits between the cannonade attrition
+  and the overrun.
+- Officer pins: Capt. Rorty **k** [D at the overrun/crisis window] —
+  "had enjoyed his new position but one day, having assumed command …
+  on July 2" (or-27-1-hazard); Lt. Sheldon **w** same action [D]; both
+  confirmed at army grain in Hunt's July 3 officer-loss list
+  (or-27-1-hunt).
 
 ## Conflicts & negative evidence
 
-1. Strength (114) and casualties (10/16) are single-source Stone
-  Sentinels monument-committee figures (inferred tier per the OOB
-  doctrine) — no OR return located this pass.
-2. No battery-level rounds-expended record found (negative, honest gap).
+1. Strength (114) and battle-total casualties (10/16) remain
+  monument-committee figures (inferred tier), but Hazard's verified
+  report now corroborates the state ("entirely exhausted; its
+  ammunition expended; its horses and men killed and disabled") and
+  supplies the July 2 split; no battery OR return EXISTS — the
+  civilwarcycling OR index lists none for any of the five II Corps
+  batteries (verified negative, this pass).
+2. No battery-level rounds-expended record (negative; Hazard gives the
+  qualitative "ammunition expended" only).
+2a. Gun-attrition variant: Stone Sentinels reads "bombardment disabled
+  three cannons before the assault … Rorty personally worked the
+  remaining gun and enlisted approximately twenty men from the 19th
+  Massachusetts" — one gun left BEFORE the assault, vs Waitt's
+  two-then-one sequence continuing into it; carried, and the 19th MA
+  crew-relief detail joins Waitt's account as corroborated context.
 3. The overrun is attested (Rorty's death in hand-to-hand fighting), but
   its depth (did Kemper's men cross the crest line?) is not narrated in
   the corpus — the build models the position held/retaken within ~5 min;
