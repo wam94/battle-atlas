@@ -1,9 +1,10 @@
 # Spatial evidence program — the cartographic substrate for EC3
 
-**Status:** PROPOSAL (audit-spatial-1 branch, 2026-07-11). Adopted
-practice is described as such where it already is (the LiDAR/UTM frame);
-everything new here is proposed, and the monument reliability profile is
-an ED candidate (proposed ED-32, `monument-register.md`).
+**Status:** ADOPTED practice as of 2026-07-11 — the monument reliability
+profile is **ED-39** (adopted in the dossier-pass-2 batch ruling;
+renumbered from this branch's provisional "ED-32"; see
+`monument-register.md` and
+`docs/reconstruction/angle-editorial-decisions.md`).
 
 This is the source layer every dossier's **EC3 (position anchors)** is
 judged against: what each cartographic source *is*, what uncertainty it

@@ -129,7 +129,7 @@ explicitly declines, McGilvery gives the ENEMY's 10,000) — the spec's
 rounds÷rate duration method needs ordnance returns (OR ordnance series /
 Busey & Martin page access), carried as the pass-2/3 standing item.
 
-## 4. New ED candidates (proposed, NOT adopted)
+## 4. New ED candidates (proposed by this pass; ADOPTED 2026-07-11 as ED-32…ED-38 in the pass-2 batch ruling, angle-editorial-decisions.md)
 
 - **ED-32 — Stannard strength basis.** Adopt regiment-grain 480/647/661
   (= 1,788) as the engaged basis; the 1,950 figure failed

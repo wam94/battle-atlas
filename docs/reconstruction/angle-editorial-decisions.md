@@ -567,6 +567,180 @@ July 1–3 1863 (cheap script; removes a whole class of frame bugs).
 
 ---
 
+## Dossier pass 1 + spatial program adoption rulings (ED-32 … ED-39) — 2026-07-11
+
+Owner ruling (standing adopt-and-adjust doctrine): the ED candidates
+proposed by dossier pass 1 (`docs/reconstruction/audit/dossier-pass-1.md`
+§4, drafted on branch audit-dossiers-1) and the spatial program's monument
+reliability profile (branch audit-spatial-1) are ADOPTED as recorded
+below. One renumber: the spatial program had provisionally used "ED-32"
+for the monument profile, colliding with pass 1's Stannard ruling — the
+monument profile is adopted as **ED-39** and renumbered in
+`monument-register.md` / `spatial-evidence.md`.
+
+### ED-32 — Stannard's brigade engaged-strength basis: 1,788
+
+Readings: 1,950 brigade aggregate (stone-sentinels brigade page — failed
+re-verification in pass 1: the figure could not be found again on the
+cited page) vs the regiment-grain sum of the three engaged regiments,
+13th VT 480 + 14th VT 647 + 16th VT 661 = **1,788** (stone-sentinels
+regiment pages, re-fetched; 12th/15th VT detached as train guard per
+or-27-oob).
+
+**Canonical choice:** 1,788 as the engaged basis, regiment-grain.
+**Rationale:** the 1,950 reading failed re-verification while the
+regiment figures verified; the official p. 174 casualty return (351,
+full K/W/M by regiment) reads plausibly against 1,788 (19.6%); and
+regiment grain matches the authored 13th/16th VT flank actions. The
+1,950 figure stays in the record as a failed re-verification, per the
+OOB doctrine (never silently dropped). Consequence: master-table EC2 for
+`us-stannard` adopts 1,788; reconciling the macro file's strength decay
+is an authoring-pass item, not a silent edit here.
+
+### ED-33 — The Union slackening is MIXED, and "the 18 guns are gone" gets an adopted identification
+
+The question: what physically constituted CA-J3A-4 (~14:30, the Union
+fire slackening), and what did Alexander's second note observe?
+
+**Canonical choice — the mixed reading, with the contemporary-vs-postwar
+motive split explicit:**
+
+1. **Ordered economy** — Hunt's contemporary report: "About 2.30 p. m.,
+   finding our ammunition running low … I directed that the fire should
+   be gradually stopped" (or-27-1-hunt).
+2. **Ordered cease on Cemetery Hill** — Osborn's contemporary motive:
+   "as no satisfactory results were obtained, I ordered all our guns to
+   cease firing" (or-27-1-osborn p. 750). The postwar "lure them in"
+   ruse framing (osborn-weeklytimes-1879 as-quoted; Hunt B&L) is carried
+   as retrospective reinterpretation, NOT adopted as the contemporary
+   motive — the 1863 report says results, not ruse.
+3. **Genuine damage and withdrawals** — Brown's B/1st RI ordered out
+   ~14:40; Cushing's battery wrecked in place; Arnold/Rorty ammunition
+   exhaustion (the Hazard-sector reality that made the "slackening"
+   partially true damage, not only policy).
+
+**Adopted identification for Alexander's "the 18 guns are gone"
+(CA-J3A-3):** the cemetery-crest group falling silent under Osborn's
+cease order — Alexander's first note counts "at least 18 guns … firing
+from the Cemetery itself" (alexander-shsp4-1877), and he later recorded
+being "incorrectly told it was the cemetery" (alexander-1907) about the
+battery movement he saw; Osborn's is the only ordered, observable,
+sector-wide silence on that frontage in the window. Brown's ~14:40
+withdrawal (the one ordered II Corps battery withdrawal) rides the
+ruling as the documented contributing event most plausibly conflated in
+the smoke — us-btty-brown.md's options resolve as "(b) primary, (a)
+contributing." **Rationale:** the only reading consistent with all three
+sectors' executor dossiers at once; every component is verbatim-cited in
+pass-1 dossiers.
+
+### ED-34 — Artillery activity classes (authored-track vocabulary)
+
+Three documented July 3 afternoon behaviors become named activity
+classes for authored artillery tracks, each with a matching
+casualty-curve class:
+
+- **ordered-silence-then-fire** (exemplar: McGilvery's line) — held
+  silent by pre-arranged order under the cannonade, then deliberate
+  battery-by-battery reply and repulse fire. Casualty curve: light
+  silent phase, spike at the reply/repulse.
+- **ordered-cease** (exemplar: Osborn's Cemetery Hill group) — fired
+  deliberately through the cannonade, ceased by order before its end,
+  resumed at the assault. Curve: distributed under the duel, second
+  spike at the repulse.
+- **fought-to-exhaustion** (exemplar: Hazard's brigade) — fired until
+  long-range ammunition was gone, wrecked in place, canister at the
+  charge. Curve: flat-then-spike into the crisis.
+
+**Rationale:** the macro file currently renders all three as
+undifferentiated "firing"; the distinction is exactly what CA-J3A-4's
+wording depends on, and each class now has a fully-dossiered exemplar.
+Authoring consumes these classes; this ruling does not itself move any
+track.
+
+### ED-35 — McGilvery's July 3 composite line is cast as a command unit
+
+**Canonical choice:** the 39-gun low-ground line enters the cast as a
+command unit (`reg-us-ar-1v`, July 3 line), with McGilvery's own OR
+roster (p. 883, verbatim, ordered left→right: Ames · Dow · "a New Jersey
+battery" · Rank's section · 2nd Connecticut · Hart · Phillips ·
+Thompson) as its structure. **Rationale:** the roster is primary and
+ordered; Hunt posted and directed the line as a unit; battery-grain rows
+hang off it as dossiers reach them (pass 2+). Hunt's B&L "forty-one
+guns" stays the carried counter-reading on the gun total.
+
+### ED-36 — Battalion-grain CSA July 3 artillery geometry (the Confederate reference frame)
+
+**Canonical choice:** the Confederate artillery reference frame for the
+July 3 reconstruction is the BATTALION line (Alexander / Eshleman /
+Dearing / Cabell on the First Corps arc; Pegram / McIntosh / Lane /
+Poague / Garnett on the Third Corps arc), anchored on the War Department
+tablet lines + Bachelder sheet geometry, with per-battery points
+authored only where a battery-grain anchor exists (e.g. Miller ~100 yd
+left of the Peach Orchard; Taylor at the Smith house). **Rationale:**
+CSA per-battery positions/casualties are mostly attested-unreported
+(pass-1 finding); monuments are absent on that side (ED-39 §4);
+battalion grain is the finest level the evidence carries army-wide, and
+matches the OOB register's battalion rows. Pass-2 dossiers are
+commissioned at this grain.
+
+### ED-37 — Rank's section and "a New Jersey battery" on McGilvery's line: the conflict is ADOPTED AS RECORDED; resolution stays OPEN
+
+McGilvery's OR roster (p. 883) places "a New Jersey battery" and "one
+section New York [Pennsylvania] Artillery, Lieutenant Rock [Captain
+Rank]" (OR editors' brackets) on his July 3 line; Bachelder sheet 8
+labels "Rank" there too; the OOB/cavalry record places Rank's Battery H,
+3rd PA Heavy at East Cavalry Field the same afternoon.
+
+**Canonical choice:** the conflict itself is adopted as a first-class
+record (OR-vs-OOB grade, upgraded from the old sheet-vs-OOB grade); NO
+placement ruling is made — the register keeps Rank at East Cavalry
+Field, the McGilvery-line dossier carries the roster verbatim, and any
+cast of the line under ED-35 carries the two disputed slots as
+conflict-flagged. **Resolution stays open** pending cavalry-side sources
+(split-section hypothesis unresolved). The NJ battery's identity
+(candidate: Parsons's A/1st NJ, 4th Volunteer Brigade — six guns, on
+the left-center that afternoon) is a pass-2 research item, not a ruling.
+
+### ED-38 — CSA artillery battalion strengths: adopt the reproduction readings, with hops cited
+
+**Canonical choice:** engaged-strength readings for the First Corps
+reserve battalions are adopted from the B&M-type reproduction
+(addressing-gettysburg-oob), with the secondary hop cited on every use:
+Eshleman's Washington Artillery **338** (the build's 240 is retired as
+unsourced-below-the-reproduction; the "340" snippet variant stays a
+recorded variant), Alexander's **576** (the build already matches). Any
+figure from this reproduction is flagged B&M-type/hop in the master
+table and claims until a primary return surfaces. **Rationale:** pass 1
+found no primary strength return for either battalion; the reproduction
+is internally consistent per-battery and matches the tablet armament
+counts; citing the hop preserves honesty without leaving the slot empty.
+
+### ED-39 — Monument reliability profile (what a monument position *is*)
+
+Adopted as proposed by the spatial program (RENUMBERED from its
+provisional "ED-32"; full text and calibration table:
+`docs/reconstruction/audit/monument-register.md`). Summary of the
+adopted profile, recorded once and inherited by every claim citing a
+marker:
+
+1. Monument positions are **veteran-adjudicated, 20+ year latency**
+   evidence (GBMA committee process, Bachelder arbiter of position
+   disputes from 1883) — sworn memory filtered through committee
+   politics, never survey of battle-time positions.
+2. Every marker binds to a **positionSemantics moment** (climax/defense
+   position, farthest advance, line extent at the marked moment), never
+   to "the battle" at large.
+3. Litigated memory (exemplar: the 72nd PA suit = ED-4, its 82 m
+   monument-vs-build delta) is encoded as conflict, never averaged.
+4. The verification layer is **asymmetric by side** (CSA unit monuments
+   nearly absent; War Department tablets/Bachelder carry that side).
+5. Radius guidance: ±5–15 m as a check on document-fixed anchors;
+   **±50 m as sole anchor**; the 5-unit calibration table (18–31 m
+   deltas for defensively-static units, both outliers explained by the
+   register's own quality flags) is the adopted empirical basis.
+
+---
+
 ## Connective-reconstruction rules (named inference rules)
 
 Segments cite these rules by name in `inferenceRules`. A segment with no
