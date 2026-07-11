@@ -25,3 +25,7 @@ editmode*.log
 playmode*.log
 *-results*.xml
 p10-audio-events-regen*.log
+
+# full-res map masters (Bachelder set + Elliott) are fetch-reproducible:
+# reconstruction/scripts/fetch_bachelder_maps.sh (manifest: reconstruction/spatial/bachelder-manifest.json)
+# (covered by the data/* rule above)

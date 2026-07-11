@@ -1,0 +1,1176 @@
+{
+ "title": "Bachelder timed troop-position map set + Elliott burial map: acquisition + georeference manifest",
+ "generated": "2026-07-11",
+ "status": "PROPOSAL - audit-spatial-1 branch",
+ "frame": "battlefield-local meters: local_x = EPSG:26918 easting - 304208.0216360274, local_z = northing - 4404534.271124143 (data/heightmap/heightmap.json origin)",
+ "transformConvention": "local = [a -b; b a] * (img_x, -img_y) + (tx, ty)  -- tool/src/overlay.ts similarity; apply via reconstruction/scripts/georef_maps.py",
+ "acquisition": "reconstruction/scripts/fetch_bachelder_maps.sh reproduces data/maps/ from the pinned URLs + sha256 below",
+ "referenceSheet": "12440022",
+ "referenceTiePoints": [
+  {
+   "name": "peach-orchard-crossroads",
+   "img": [
+    4022,
+    7642
+   ],
+   "local": [
+    3164.4,
+    3633.8
+   ],
+   "role": "tie",
+   "basis": "OSM node 4856642708 (Emmitsburg Rd x Wheatfield Rd), historic crossroads",
+   "pinNote": "crossing of Emmitsburg Rd and the Wheatfield Rd at the Peach Orchard NW corner, Wentz house NE quadrant"
+  },
+  {
+   "name": "taneytown-x-wheatfield",
+   "img": [
+    5762,
+    8424
+   ],
+   "local": [
+    4764.9,
+    2763.0
+   ],
+   "role": "tie",
+   "basis": "OSM node (Taneytown Rd x Wheatfield Rd)",
+   "pinNote": "N-S Taneytown Rd meets the E-W cross road, L. Bricker farm SE"
+  },
+  {
+   "name": "town-diamond",
+   "img": [
+    5678,
+    4138
+   ],
+   "local": [
+    4875.8,
+    6835.9
+   ],
+   "role": "tie",
+   "basis": "landmark-anchors doc #4 (Lincoln Square centroid; AREA, +/-25 m)",
+   "pinNote": "Baltimore/Carlisle x Chambersburg/York crossing at the '412' benchmark"
+  },
+  {
+   "name": "fairfield-x-blackhorsetavern",
+   "img": [
+    888,
+    5750
+   ],
+   "local": [
+    337.5,
+    5582.8
+   ],
+   "role": "tie",
+   "basis": "OSM node 105711642 (Fairfield Rd x Black Horse Tavern Rd)",
+   "pinNote": "junction SE of the Marsh Creek bridge at Black Horse Tavern"
+  },
+  {
+   "name": "mummasburg-x-herrsridge",
+   "img": [
+    3533,
+    1370
+   ],
+   "local": [
+    2979.1,
+    9513.1
+   ],
+   "role": "tie",
+   "basis": "OSM node 105767786 (Mummasburg Rd x Herrs Ridge Rd)",
+   "pinNote": "crossing E of the S. Hertzel farm"
+  },
+  {
+   "name": "codori-barn",
+   "img": [
+    4889,
+    6496
+   ],
+   "local": [
+    4020.4,
+    4635.4
+   ],
+   "role": "check",
+   "basis": "landmark-anchors doc #7 (OSM Codori Barn building)",
+   "pinNote": "SW large building of the N. Codori farmstead; which 1873 square = the modern barn is ambiguous (+/-20 m)"
+  },
+  {
+   "name": "bryan-farm",
+   "img": [
+    5321,
+    5969
+   ],
+   "local": [
+    4477.8,
+    5145.8
+   ],
+   "role": "check",
+   "basis": "landmark-anchors doc #10 (OSM Bryan House building)",
+   "pinNote": "centroid of the two-building BRYAN cluster (+/-20 m)"
+  }
+ ],
+ "referenceFit": {
+  "a": 0.9374024881561279,
+  "b": -0.04833118380960817,
+  "tx": -239.21448111891158,
+  "ty": 10980.630902812896,
+  "metersPerPixel": 0.93865,
+  "rotationDeg": -2.951,
+  "rmsResidualM": 31.0,
+  "perPointResidualM": {
+   "peach-orchard-crossroads": 11.5,
+   "taneytown-x-wheatfield": 43.6,
+   "town-diamond": 11.5,
+   "fairfield-x-blackhorsetavern": 41.6,
+   "mummasburg-x-herrsridge": 30.1,
+   "codori-barn (check)": 21.7,
+   "bryan-farm (check)": 24.9
+  },
+  "note": "rotation includes UTM 18N grid convergence at Gettysburg (about -1.4 deg) plus print/scan orientation; residuals mix pin error, 1863-vs-modern road-junction drift, and paper distortion. Affine experiments reduced road-junction residuals but were not adopted (overlay.ts similarity parity; see spatial-evidence doc)."
+ },
+ "uncertaintyGuidance": {
+  "absolutePositionFloorM": 62.0,
+  "relativeOnSheetM": "10-20 (patch registration residuals; use for unit-to-unit offsets read off one sheet)",
+  "note": "EC3 anchors read off any main-field sheet should carry an uncertainty radius >= max(estAbsUncertaintyM, feature legibility); 2x rms ~ 60 m is the recommended default for absolute placements."
+ },
+ "sheets": [
+  {
+   "id": "j1-01",
+   "file": "12440001.jp2",
+   "day": "1863-07-01",
+   "window": "pre-battle (a)",
+   "sheetNo": "No. 1 (Pre-Battle)",
+   "rumseyListNo": "12440.001",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-1-pre-battle-july-1-1863-12440001",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-1-pre-battle-july-1-1863-12440001/12440001.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-1-pre-battle-july-1-1863-12440001"
+   },
+   "sha256": "5f05f32f75f093e1818f05e41112b7affdba5f357cdccb13f26f09552388af8a",
+   "sizeBytes": 15432924,
+   "widthPx": 9561,
+   "heightPx": 10591,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.950253991111541,
+    "b": -0.050095452911099285,
+    "tx": -392.41365278812475,
+    "ty": 10979.304977894495,
+    "metersPerPixel": 0.95157,
+    "rotationDeg": -3.018,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 7.58,
+    "estAbsUncertaintyM": 31.8
+   }
+  },
+  {
+   "id": "j1-02",
+   "file": "12440002.jp2",
+   "day": "1863-07-01",
+   "window": "pre-battle (b)",
+   "sheetNo": "No. 2 (Pre-Battle)",
+   "rumseyListNo": "12440.002",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-2-pre-battle-july-1-1863-12440002",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-2-pre-battle-july-1-1863-12440002/12440002.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-2-pre-battle-july-1-1863-12440002"
+   },
+   "sha256": "99019849a4341c0162f3e1b5ba942e5db53a9d7247f8a4f1a09fee53a3729faf",
+   "sizeBytes": 15659979,
+   "widthPx": 9504,
+   "heightPx": 10810,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9326664987685721,
+    "b": -0.04829876248990162,
+    "tx": -234.27524225954937,
+    "ty": 10971.765860673122,
+    "metersPerPixel": 0.93392,
+    "rotationDeg": -2.964,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 11.43,
+    "estAbsUncertaintyM": 32.8
+   }
+  },
+  {
+   "id": "j1-03",
+   "file": "12440003.jp2",
+   "day": "1863-07-01",
+   "window": "start of battle",
+   "sheetNo": "No. 3 (Start of Battle)",
+   "rumseyListNo": "12440.003",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-3-start-of-battle-july-1-1863-12440003",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-3-start-of-battle-july-1-1863-12440003/12440003.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-3-start-of-battle-july-1-1863-12440003"
+   },
+   "sha256": "9f139aad6fc6a23e94a9045559dd70666b9bb820eac36ef24752e4c3521c9cbf",
+   "sizeBytes": 15552832,
+   "widthPx": 9519,
+   "heightPx": 10721,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9298622562503814,
+    "b": -0.04862020329763931,
+    "tx": -207.55370591904816,
+    "ty": 10938.632633928763,
+    "metersPerPixel": 0.93113,
+    "rotationDeg": -2.993,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 5.38,
+    "estAbsUncertaintyM": 31.4
+   }
+  },
+  {
+   "id": "j1-04",
+   "file": "12440004.jp2",
+   "day": "1863-07-01",
+   "window": "11:30",
+   "sheetNo": "No. 4 (11:30 a.m.)",
+   "rumseyListNo": "12440.004",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-4-1130-am-july-1-1863-12440004",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-4-1130-am-july-1-1863-12440004/12440004.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-4-1130-am-july-1-1863-12440004"
+   },
+   "sha256": "08561cd05c4a7aef6e25a275cf826c7394e39da1b79b289be51d5bc4eb9abefe",
+   "sizeBytes": 15441417,
+   "widthPx": 9491,
+   "heightPx": 10675,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9357453586304291,
+    "b": -0.045430655666294124,
+    "tx": -243.99708566674025,
+    "ty": 10904.488681899977,
+    "metersPerPixel": 0.93685,
+    "rotationDeg": -2.78,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 8.54,
+    "estAbsUncertaintyM": 32.0
+   }
+  },
+  {
+   "id": "j1-05",
+   "file": "12440005.jp2",
+   "day": "1863-07-01",
+   "window": "12:00",
+   "sheetNo": "No. 5 (12 noon)",
+   "rumseyListNo": "12440.005",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-5-12-noon-july-1-1863-12440005",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-5-12-noon-july-1-1863-12440005/12440005.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-5-12-noon-july-1-1863-12440005"
+   },
+   "sha256": "eb954bd8f5ef52c77cbfd5e77006ed27b7e7503ef2d8e5de1fd9c3d38955c0a5",
+   "sizeBytes": 15608390,
+   "widthPx": 9536,
+   "heightPx": 10741,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9345984443276651,
+    "b": -0.04859714759372998,
+    "tx": -232.66314717921983,
+    "ty": 10972.047782734471,
+    "metersPerPixel": 0.93586,
+    "rotationDeg": -2.977,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 6.81,
+    "estAbsUncertaintyM": 31.6
+   }
+  },
+  {
+   "id": "j1-06",
+   "file": "12440006.jp2",
+   "day": "1863-07-01",
+   "window": "12:30",
+   "sheetNo": "No. 6 (12:30 p.m.)",
+   "rumseyListNo": "12440.006",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-6-1230-pm-july-1-1863-12440006",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-6-1230-pm-july-1-1863-12440006/12440006.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-6-1230-pm-july-1-1863-12440006"
+   },
+   "sha256": "04318d7558070a1b27210e9f767aecdb73d811f4a7040c5239933e10d81ade2d",
+   "sizeBytes": 15578035,
+   "widthPx": 9531,
+   "heightPx": 10726,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9327165257960659,
+    "b": -0.04606598443184617,
+    "tx": -253.3568695466124,
+    "ty": 10932.810355069043,
+    "metersPerPixel": 0.93385,
+    "rotationDeg": -2.827,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 10.28,
+    "estAbsUncertaintyM": 32.4
+   }
+  },
+  {
+   "id": "j1-07",
+   "file": "12440007.jp2",
+   "day": "1863-07-01",
+   "window": "13:00",
+   "sheetNo": "No. 7 (1 p.m.)",
+   "rumseyListNo": "12440.007",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-7-1-pm-july-1-1863-12440007",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-7-1-pm-july-1-1863-12440007/12440007.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-7-1-pm-july-1-1863-12440007"
+   },
+   "sha256": "6322bf1cd546292c8810678ae8a31aa2f197818a0f5b1f638291e1380b16f6a9",
+   "sizeBytes": 15278411,
+   "widthPx": 9506,
+   "heightPx": 10544,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9540956668788556,
+    "b": -0.048489908600097414,
+    "tx": -289.1845769018396,
+    "ty": 11011.25111896332,
+    "metersPerPixel": 0.95533,
+    "rotationDeg": -2.909,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 9.44,
+    "estAbsUncertaintyM": 32.3
+   }
+  },
+  {
+   "id": "j1-08",
+   "file": "12440008.jp2",
+   "day": "1863-07-01",
+   "window": "13:30",
+   "sheetNo": "No. 8 (1:30 p.m.)",
+   "rumseyListNo": "12440.008",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-8-130-pm-july-1-1863-12440008",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-8-130-pm-july-1-1863-12440008/12440008.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-8-130-pm-july-1-1863-12440008"
+   },
+   "sha256": "4cef1c27d247e5cfc55b89ee9f8a11d6b01915d10481f3184dc7ee4858dd3391",
+   "sizeBytes": 15413195,
+   "widthPx": 9584,
+   "heightPx": 10552,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.960370077318514,
+    "b": -0.0488893741082875,
+    "tx": -371.61999377807354,
+    "ty": 11010.165549959389,
+    "metersPerPixel": 0.96161,
+    "rotationDeg": -2.914,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 11.79,
+    "estAbsUncertaintyM": 33.0
+   }
+  },
+  {
+   "id": "j1-09",
+   "file": "12440009.jp2",
+   "day": "1863-07-01",
+   "window": "14:00",
+   "sheetNo": "No. 9 (2 p.m.)",
+   "rumseyListNo": "12440.009",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-9-2-pm-july-1-1863-12440009",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-9-2-pm-july-1-1863-12440009/12440009.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-9-2-pm-july-1-1863-12440009"
+   },
+   "sha256": "85db4fd718ea466ccd0e604854c51f25e908a49c7d66db9687267e8558422db4",
+   "sizeBytes": 15153701,
+   "widthPx": 9559,
+   "heightPx": 10401,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9688468839897636,
+    "b": -0.045332065726665094,
+    "tx": -512.0813768767571,
+    "ty": 10971.075889679405,
+    "metersPerPixel": 0.96991,
+    "rotationDeg": -2.679,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 8.99,
+    "estAbsUncertaintyM": 32.2
+   }
+  },
+  {
+   "id": "j1-10",
+   "file": "12440010.jp2",
+   "day": "1863-07-01",
+   "window": "14:30",
+   "sheetNo": "No. 10 (2:30 p.m.)",
+   "rumseyListNo": "12440.010",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-10-230-pm-july-1-1863-12440010",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-10-230-pm-july-1-1863-12440010/12440010.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-10-230-pm-july-1-1863-12440010"
+   },
+   "sha256": "8a0324c6f9d10fd4fa14c7a8b776d42a29832efb3f9f3b0b93247847ae43f9ae",
+   "sizeBytes": 15108247,
+   "widthPx": 9544,
+   "heightPx": 10385,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9580729017386858,
+    "b": -0.04568278762255934,
+    "tx": -387.89078950334317,
+    "ty": 10955.38629893122,
+    "metersPerPixel": 0.95916,
+    "rotationDeg": -2.73,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 13.54,
+    "estAbsUncertaintyM": 33.6
+   }
+  },
+  {
+   "id": "j1-11",
+   "file": "12440011.jp2",
+   "day": "1863-07-01",
+   "window": "15:00",
+   "sheetNo": "No. 11 (3 p.m.)",
+   "rumseyListNo": "12440.011",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-11-3-pm-july-1-1863-12440011",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-11-3-pm-july-1-1863-12440011/12440011.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-11-3-pm-july-1-1863-12440011"
+   },
+   "sha256": "6ec26f84785b0b38d0d17f2a6dd70e2bfa13f6348c4a437a3f251fa79e060bf4",
+   "sizeBytes": 15287965,
+   "widthPx": 9533,
+   "heightPx": 10521,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9554010434916678,
+    "b": -0.052256334248223166,
+    "tx": -301.3374815909418,
+    "ty": 11018.352261070051,
+    "metersPerPixel": 0.95683,
+    "rotationDeg": -3.131,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 14.67,
+    "estAbsUncertaintyM": 34.0
+   }
+  },
+  {
+   "id": "j1-12",
+   "file": "12440012.jp2",
+   "day": "1863-07-01",
+   "window": "15:30",
+   "sheetNo": "No. 12 (3:30 p.m.)",
+   "rumseyListNo": "12440.012",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-12-330-pm-july-1-1863-12440012",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-12-330-pm-july-1-1863-12440012/12440012.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-12-330-pm-july-1-1863-12440012"
+   },
+   "sha256": "a3fbb5a398bb827d222e7f6d7f602a85f44a3cbe2d0b40c389511d6baec3340e",
+   "sizeBytes": 15546849,
+   "widthPx": 9532,
+   "heightPx": 10702,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.936111619104157,
+    "b": -0.04490538338822769,
+    "tx": -276.4054551370178,
+    "ty": 10946.559761703624,
+    "metersPerPixel": 0.93719,
+    "rotationDeg": -2.746,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 14.04,
+    "estAbsUncertaintyM": 33.7
+   }
+  },
+  {
+   "id": "j1-13",
+   "file": "12440013.jp2",
+   "day": "1863-07-01",
+   "window": "16:00",
+   "sheetNo": "No. 13 (4 p.m.)",
+   "rumseyListNo": "12440.013",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-13-4-pm-july-1-1863-12440013",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-13-4-pm-july-1-1863-12440013/12440013.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-13-4-pm-july-1-1863-12440013"
+   },
+   "sha256": "3c434b00e018f0fd8de77c3a767eeabdf2881cf569922fcca9ce12c7b3a5da13",
+   "sizeBytes": 15288718,
+   "widthPx": 9518,
+   "heightPx": 10538,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9436083443825296,
+    "b": -0.04624127639906997,
+    "tx": -304.80698313614283,
+    "ty": 10930.455534559149,
+    "metersPerPixel": 0.94474,
+    "rotationDeg": -2.806,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 12.4,
+    "estAbsUncertaintyM": 33.1
+   }
+  },
+  {
+   "id": "j1-14",
+   "file": "12440014.jp2",
+   "day": "1863-07-01",
+   "window": "16:30",
+   "sheetNo": "No. 14 (4:30 p.m.)",
+   "rumseyListNo": "12440.014",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-14-430-pm-july-1-1863-12440014",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-14-430-pm-july-1-1863-12440014/12440014.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-14-430-pm-july-1-1863-12440014"
+   },
+   "sha256": "61157c5528f53f81d8cf5813b1236b2626792df6692f68394424675dfe9eeb9f",
+   "sizeBytes": 15353706,
+   "widthPx": 9502,
+   "heightPx": 10601,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9383668272964184,
+    "b": -0.0480504817736373,
+    "tx": -268.2780201242483,
+    "ty": 10850.303431735836,
+    "metersPerPixel": 0.9396,
+    "rotationDeg": -2.931,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 18.88,
+    "estAbsUncertaintyM": 35.7
+   }
+  },
+  {
+   "id": "j2-01",
+   "file": "12440015.jp2",
+   "day": "1863-07-02",
+   "window": "09:00",
+   "sheetNo": "No. 1 (9 a.m.)",
+   "rumseyListNo": "12440.015",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-1-9-am-july-2-1863-12440015",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-1-9-am-july-2-1863-12440015/12440015.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-1-9-am-july-2-1863-12440015"
+   },
+   "sha256": "83e7a3c435fe1b45475cf3128f8280a16a69b45bb524f0507d605fd370d2d1a9",
+   "sizeBytes": 15572301,
+   "widthPx": 9496,
+   "heightPx": 10758,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9386832454483311,
+    "b": -0.04452043191365417,
+    "tx": -269.80233933721735,
+    "ty": 10986.104484257927,
+    "metersPerPixel": 0.93974,
+    "rotationDeg": -2.715,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 7.61,
+    "estAbsUncertaintyM": 31.8
+   }
+  },
+  {
+   "id": "j2-02",
+   "file": "12440016.jp2",
+   "day": "1863-07-02",
+   "window": "16:00",
+   "sheetNo": "No. 2 (4 p.m.)",
+   "rumseyListNo": "12440.016",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-2-4-pm-july-2-1863-12440016",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-2-4-pm-july-2-1863-12440016/12440016.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-2-4-pm-july-2-1863-12440016"
+   },
+   "sha256": "df88b4e31be90533f63836502fa24c1b43745e8c551e9c7db46029a51443f24c",
+   "sizeBytes": 15515046,
+   "widthPx": 9495,
+   "heightPx": 10722,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9386155014591877,
+    "b": -0.047109913157798756,
+    "tx": -243.73548804239647,
+    "ty": 11009.2743937807,
+    "metersPerPixel": 0.9398,
+    "rotationDeg": -2.873,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 1.56,
+    "estAbsUncertaintyM": 31.0
+   }
+  },
+  {
+   "id": "j2-03",
+   "file": "12440017.jp2",
+   "day": "1863-07-02",
+   "window": "17:00",
+   "sheetNo": "No. 3 (5 p.m.)",
+   "rumseyListNo": "12440.017",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-3-5-pm-july-2-1863-12440017",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-3-5-pm-july-2-1863-12440017/12440017.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-3-5-pm-july-2-1863-12440017"
+   },
+   "sha256": "96570d8be5908d45ab5840c1ace22398510e95765ed0ed651e081d6345a763b4",
+   "sizeBytes": 15570889,
+   "widthPx": 9490,
+   "heightPx": 10763,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9399816537365623,
+    "b": -0.05089050020559324,
+    "tx": -239.1501658871727,
+    "ty": 11031.671855354147,
+    "metersPerPixel": 0.94136,
+    "rotationDeg": -3.099,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 7.37,
+    "estAbsUncertaintyM": 31.7
+   }
+  },
+  {
+   "id": "j2-04",
+   "file": "12440018.jp2",
+   "day": "1863-07-02",
+   "window": "19:00",
+   "sheetNo": "No. 4 (7 p.m.)",
+   "rumseyListNo": "12440.018",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-4-7-pm-july-2-1863-12440018",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-4-7-pm-july-2-1863-12440018/12440018.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-4-7-pm-july-2-1863-12440018"
+   },
+   "sha256": "c6cfbb642d4eb252ee84a8b98d093ff6b0f0de45cf282b28090e5e8a6b5039c3",
+   "sizeBytes": 15548008,
+   "widthPx": 9515,
+   "heightPx": 10723,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9380627487415326,
+    "b": -0.053467027302286,
+    "tx": -221.0645402839924,
+    "ty": 10997.017939240903,
+    "metersPerPixel": 0.93959,
+    "rotationDeg": -3.262,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 3.38,
+    "estAbsUncertaintyM": 31.1
+   }
+  },
+  {
+   "id": "j2-05",
+   "file": "12440019.jp2",
+   "day": "1863-07-02",
+   "window": "20:00-21:00",
+   "sheetNo": "No. 5 (8-9 p.m.)",
+   "rumseyListNo": "12440.019",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-5-8-9-pm-july-2-1863-12440019",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-5-8-9-pm-july-2-1863-12440019/12440019.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-5-8-9-pm-july-2-1863-12440019"
+   },
+   "sha256": "af0ad433c955e69d0207d0f0a33330fa2d26893184a4aea9f65b6928bdcc0d85",
+   "sizeBytes": 15485608,
+   "widthPx": 9512,
+   "heightPx": 10682,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9403587621728993,
+    "b": -0.049708238760432684,
+    "tx": -248.6965318592531,
+    "ty": 10985.107298383136,
+    "metersPerPixel": 0.94167,
+    "rotationDeg": -3.026,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 4.96,
+    "estAbsUncertaintyM": 31.3
+   }
+  },
+  {
+   "id": "j3-01",
+   "file": "12440020.jp2",
+   "day": "1863-07-03",
+   "window": "04:00-08:00",
+   "sheetNo": "No. 1 (No. 6), 4-8 a.m.",
+   "rumseyListNo": "12440.020",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-1-no-6-4-8-am-july-3-1863-12440020",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-1-no-6-4-8-am-july-3-1863-12440020/12440020.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-1-no-6-4-8-am-july-3-1863-12440020"
+   },
+   "sha256": "45035c19d3aca50c8a8ca143753fd6d818afcfa13f7739a2a96f6e9c39a90e88",
+   "sizeBytes": 15567464,
+   "widthPx": 9513,
+   "heightPx": 10739,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9387281671471561,
+    "b": -0.051797019851675785,
+    "tx": -224.90595539299363,
+    "ty": 10989.524622986506,
+    "metersPerPixel": 0.94016,
+    "rotationDeg": -3.158,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 3.23,
+    "estAbsUncertaintyM": 31.1
+   }
+  },
+  {
+   "id": "j3-02",
+   "file": "12440021.jp2",
+   "day": "1863-07-03",
+   "window": "08:00-11:00",
+   "sheetNo": "No. 2 (No. 7), 8-11 a.m.",
+   "rumseyListNo": "12440.021",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-2-no-7-8-11-am-july-3-1863-12440021",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-2-no-7-8-11-am-july-3-1863-12440021/12440021.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-2-no-7-8-11-am-july-3-1863-12440021"
+   },
+   "sha256": "7cf9dd373fde0f94ce9bc001f0318a5814861ee09e0e2bb38961e6e31d91cb2a",
+   "sizeBytes": 15393243,
+   "widthPx": 9480,
+   "heightPx": 10654,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9370441971825981,
+    "b": -0.046215865297452634,
+    "tx": -248.56242945691454,
+    "ty": 10936.114445507788,
+    "metersPerPixel": 0.93818,
+    "rotationDeg": -2.824,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 4.15,
+    "estAbsUncertaintyM": 31.2
+   }
+  },
+  {
+   "id": "j3-03",
+   "file": "12440022.jp2",
+   "day": "1863-07-03",
+   "window": "13:00-17:00",
+   "sheetNo": "No. 3 (No. 8), 1-5 p.m.",
+   "rumseyListNo": "12440.022",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022/12440022.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022"
+   },
+   "sha256": "747fef56b7ebab92deab7a6dff309587996d3c12766aa665a138c0c53dd4ed38",
+   "sizeBytes": 15514271,
+   "widthPx": 9471,
+   "heightPx": 10752,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9374024881561279,
+    "b": -0.04833118380960817,
+    "tx": -239.21448111891158,
+    "ty": 10980.630902812896,
+    "metersPerPixel": 0.93865,
+    "rotationDeg": -2.951,
+    "method": "reference tie-point fit",
+    "patchResidualPx": 0.0,
+    "estAbsUncertaintyM": 31.0
+   }
+  },
+  {
+   "id": "j3-04",
+   "file": "12440023.jp2",
+   "day": "1863-07-03",
+   "window": "17:00",
+   "sheetNo": "No. 4 (No. 9), 5 p.m.",
+   "rumseyListNo": "12440.023",
+   "iaIdentifier": "dr_battle-field-of-gettysburg-no-4-no-9-5-pm-july-3-1863-12440023",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_battle-field-of-gettysburg-no-4-no-9-5-pm-july-3-1863-12440023/12440023.jp2",
+    "itemPage": "https://archive.org/details/dr_battle-field-of-gettysburg-no-4-no-9-5-pm-july-3-1863-12440023"
+   },
+   "sha256": "46717b99e594e40d7e160c97c45f30cee2a5073ad6e48a80b1f14fe039eb9576",
+   "sizeBytes": 15646522,
+   "widthPx": 9502,
+   "heightPx": 10803,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 0.9377794186553002,
+    "b": -0.046157143242385255,
+    "tx": -242.57715620203132,
+    "ty": 10991.91636093528,
+    "metersPerPixel": 0.93891,
+    "rotationDeg": -2.818,
+    "method": "patch phase-correlation to reference sheet, composed with reference fit",
+    "patchResidualPx": 3.41,
+    "estAbsUncertaintyM": 31.1
+   }
+  },
+  {
+   "id": "ecf-base",
+   "file": "12441001.jp2",
+   "day": "1863-07-03",
+   "window": "base (untimed)",
+   "sheetNo": "ECF base sheet",
+   "rumseyListNo": "12441.001",
+   "iaIdentifier": "dr_map-of-the-field-of-operations-of-greggs-union--stuarts-confederate-12441001",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_map-of-the-field-of-operations-of-greggs-union--stuarts-confederate-12441001/12441001.jp2",
+    "itemPage": "https://archive.org/details/dr_map-of-the-field-of-operations-of-greggs-union--stuarts-confederate-12441001"
+   },
+   "sha256": "fb271861f46388b76ae38db75dafe381976e13a36ffe845c9b03115627660ac5",
+   "sizeBytes": 6496047,
+   "widthPx": 4703,
+   "heightPx": 9048,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 1.2727479411745126,
+    "b": -0.07756762334644748,
+    "tx": 6532.815388763502,
+    "ty": 11603.225407271297,
+    "metersPerPixel": 1.27511,
+    "rotationDeg": -3.488,
+    "estAbsUncertaintyM": 75.0,
+    "method": "two-point tie solve on the Maxson 1880 base (overlay.ts workflow)",
+    "checkResidualM": 20.0,
+    "tiePoints": [
+     {
+      "name": "hanover-x-lowdutch",
+      "img": [
+       3352,
+       4865
+      ],
+      "local": [
+       10421.7,
+       5151.3
+      ],
+      "role": "tie",
+      "basis": "OSM nodes 105726224/105726226 midpoint (Hanover Rd x Low Dutch Rd)"
+     },
+     {
+      "name": "rummel-farm",
+      "img": [
+       2980,
+       3575
+      ],
+      "local": [
+       10048.3,
+       6822.0
+      ],
+      "role": "tie",
+      "basis": "OSM way 'Rummel Farm' centroid vs 1880 farmstead cluster centroid (+/-20 m)"
+     },
+     {
+      "name": "hoffman-x-hanover",
+      "img": [
+       1933,
+       4533
+      ],
+      "local": [
+       8623.3,
+       5694.2
+      ],
+      "role": "check",
+      "basis": "OSM node 105678067; check residual ~20 m"
+     }
+    ],
+    "note": "East Cavalry Field is off the heightmap square (local_x > 8507); the frame extends by the same UTM offset. PROVISIONAL: two ties + one check; scan is coarser (~1.28 m/px)."
+   }
+  },
+  {
+   "id": "ecf-j2",
+   "file": "12441002.jp2",
+   "day": "1863-07-02",
+   "window": "18:00-20:00",
+   "sheetNo": "No. 4a, 6-8 p.m. July 2",
+   "rumseyListNo": "12441.002",
+   "iaIdentifier": "dr_map-of-the-field-of-operations-of-greggs-union--stuarts-confederate-12441002",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_map-of-the-field-of-operations-of-greggs-union--stuarts-confederate-12441002/12441002.jp2",
+    "itemPage": "https://archive.org/details/dr_map-of-the-field-of-operations-of-greggs-union--stuarts-confederate-12441002"
+   },
+   "sha256": "eec9f56695bc0fd004274664d572ef732cef4341f215c89db5e244e37327d2c0",
+   "sizeBytes": 6625722,
+   "widthPx": 4718,
+   "heightPx": 9201,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 1.268165443818137,
+    "b": -0.07665486631891995,
+    "tx": 6990.974743275227,
+    "ty": 11574.419077736165,
+    "metersPerPixel": 1.27048,
+    "rotationDeg": -3.459,
+    "estAbsUncertaintyM": 76.9,
+    "method": "patch phase-correlation to ECF base sheet, composed",
+    "patchResidualPx": 13.21,
+    "registrationNote": "low correlation peaks (resp 0.024); lighter linework than the main-field set"
+   }
+  },
+  {
+   "id": "ecf-j3-am",
+   "file": "12441003.jp2",
+   "day": "1863-07-03",
+   "window": "04:00-11:00",
+   "sheetNo": "No. 10, 4-11 a.m.",
+   "rumseyListNo": "12441.003",
+   "iaIdentifier": "dr_map-of-the-field-of-operations-of-greggs-union--stuarts-confederate-12441003",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_map-of-the-field-of-operations-of-greggs-union--stuarts-confederate-12441003/12441003.jp2",
+    "itemPage": "https://archive.org/details/dr_map-of-the-field-of-operations-of-greggs-union--stuarts-confederate-12441003"
+   },
+   "sha256": "5b3ab483a9377fa5ce3c2ff1601b35d09176d7e2795523e4e1c37f1e37826e70",
+   "sizeBytes": 6463017,
+   "widthPx": 4703,
+   "heightPx": 8999,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 1.2680284213188584,
+    "b": -0.07985934776653246,
+    "tx": 7020.867330149467,
+    "ty": 11574.621858049351,
+    "metersPerPixel": 1.27054,
+    "rotationDeg": -3.604,
+    "estAbsUncertaintyM": 76.4,
+    "method": "patch phase-correlation to ECF base sheet, composed",
+    "patchResidualPx": 11.58,
+    "registrationNote": "low correlation peaks (resp 0.024); lighter linework than the main-field set"
+   }
+  },
+  {
+   "id": "ecf-j3-mid",
+   "file": "12441004.jp2",
+   "day": "1863-07-03",
+   "window": "11:00-14:00",
+   "sheetNo": "No. 11, 11 a.m.-2 p.m.",
+   "rumseyListNo": "12441.004",
+   "iaIdentifier": "dr_map-of-the-field-of-operations-of-greggs-union--stuarts-confederate-12441004",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_map-of-the-field-of-operations-of-greggs-union--stuarts-confederate-12441004/12441004.jp2",
+    "itemPage": "https://archive.org/details/dr_map-of-the-field-of-operations-of-greggs-union--stuarts-confederate-12441004"
+   },
+   "sha256": "70f95831ce48322b8eb1ed01a9845e1291ca0fe8488e770c72e04abaa86ec62e",
+   "sizeBytes": 6401321,
+   "widthPx": 4673,
+   "heightPx": 8971,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 1.2667577051185306,
+    "b": -0.08168081164768112,
+    "tx": 7030.592359698448,
+    "ty": 11547.815922217384,
+    "metersPerPixel": 1.26939,
+    "rotationDeg": -3.689,
+    "estAbsUncertaintyM": 76.6,
+    "method": "patch phase-correlation to ECF base sheet, composed",
+    "patchResidualPx": 12.46,
+    "registrationNote": "low correlation peaks (resp 0.034); lighter linework than the main-field set"
+   }
+  },
+  {
+   "id": "ecf-j3-pm",
+   "file": "12441005.jp2",
+   "day": "1863-07-03",
+   "window": "14:00-17:00",
+   "sheetNo": "No. 12, 2-5 p.m.",
+   "rumseyListNo": "12441.005",
+   "iaIdentifier": "dr_map-of-the-field-of-operations-of-greggs-union--stuarts-confederate-12441005",
+   "urls": {
+    "jp2": "https://archive.org/download/dr_map-of-the-field-of-operations-of-greggs-union--stuarts-confederate-12441005/12441005.jp2",
+    "itemPage": "https://archive.org/details/dr_map-of-the-field-of-operations-of-greggs-union--stuarts-confederate-12441005"
+   },
+   "sha256": "a2969e76d1b9b16d2d40f2b52a4374db7a4561b7d3310405cea8d8a66fe902a7",
+   "sizeBytes": 6732729,
+   "widthPx": 4785,
+   "heightPx": 9218,
+   "license": {
+    "basis": "underlying work: US government-commissioned survey map, 1873 base printed pre-1930 (public domain); Bachelder manuscript overlay delivered to the War Department 1886, first published 1995 (see 17 USC 303(a) discussion in docs/research/2026-07-02-bachelder-timed-set-acquisition.md section 3.2). Scan: David Rumsey Map Collection, formal license CC BY-NC-SA 3.0; Rumsey permissions page additionally grants publication use with credit.",
+    "credit": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+    "repoPosture": "full-res rasters gitignored + fetch-reproducible; positions read off the sheets are uncopyrightable facts (Feist framing, README licensing section); low-res documentation crops only (sheet8-crops precedent)."
+   },
+   "georef": {
+    "a": 1.2668963903491568,
+    "b": -0.07751953354567721,
+    "tx": 6960.022968655432,
+    "ty": 11651.87117549782,
+    "metersPerPixel": 1.26927,
+    "rotationDeg": -3.501,
+    "estAbsUncertaintyM": 76.6,
+    "method": "patch phase-correlation to ECF base sheet, composed",
+    "patchResidualPx": 12.1,
+    "registrationNote": "low correlation peaks (resp 0.027); lighter linework than the main-field set"
+   }
+  }
+ ],
+ "elliott": {
+  "id": "elliott-1864",
+  "file": "cw0332000.jp2",
+  "title": "Elliott's map of the battlefield of Gettysburg (S.G. Elliott, surveyed ~spring 1864)",
+  "urls": {
+   "jp2": "https://tile.loc.gov/storage-services/service/gmd/gmd382/g3824/g3824g/cw0332000.jp2",
+   "itemPage": "https://www.loc.gov/item/99447500/",
+   "iiifInfo": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd382:g3824:g3824g:cw0332000/info.json"
+  },
+  "sha256": "6d4275a35b839b405aab54f62b584ce77ff18cdc68bb2d175bc5e1c21d1fa717",
+  "sizeBytes": 13413061,
+  "widthPx": 7114,
+  "heightPx": 10164,
+  "license": {
+   "basis": "published 1864, US public domain; Library of Congress scan, no known restrictions",
+   "credit": "Library of Congress, Geography and Map Division (LC Civil War Maps 332)"
+  },
+  "tiePoints": [
+   {
+    "name": "town-diamond",
+    "img": [
+     4250,
+     3045
+    ],
+    "local": [
+     4875.8,
+     6835.9
+    ],
+    "role": "tie",
+    "basis": "landmark-anchors doc #4"
+   },
+   {
+    "name": "peach-orchard-crossroads",
+    "img": [
+     2073,
+     7487
+    ],
+    "local": [
+     3164.4,
+     3633.8
+    ],
+    "role": "tie",
+    "basis": "OSM node 4856642708"
+   },
+   {
+    "name": "codori-barn",
+    "img": [
+     3190,
+     6187
+    ],
+    "local": [
+     4020.4,
+     4635.4
+    ],
+    "role": "check",
+    "basis": "landmark-anchors doc #7"
+   }
+  ],
+  "georef": {
+   "a": 0.7335078740924909,
+   "b": -0.025788689351789157,
+   "tx": 1836.9180941831119,
+   "ty": 9179.033406356739,
+   "metersPerPixel": 0.73396,
+   "rotationDeg": -2.014,
+   "method": "two-point exact solve (overlay.ts workflow); Codori check residual below",
+   "codoriCheckResidualM": 76.9,
+   "estAbsUncertaintyM": 100.0,
+   "note": "Elliott's planimetry is loose away from the town-PO tie line (Codori check ~77 m); treat burial-feature positions as +/-100 m class evidence."
+  }
+ }
+}
