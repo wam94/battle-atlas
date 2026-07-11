@@ -46,7 +46,45 @@
           "minLength": 1,
           "description": "Edition, access route, and reliability caveats (e.g. 44-year retrospective; access browser-only; secondary-hop reproduction)."
         },
-        "note": { "type": "string", "minLength": 1 }
+        "note": { "type": "string", "minLength": 1 },
+        "clockProfile": { "$ref": "#/$defs/clockProfile" }
+      }
+    },
+    "clockProfile": {
+      "type": "object",
+      "description": "Per-source clock-offset assessment (ED-25). Semantics: canonical time = source's stated time + offsetMinutes. Recorded once on the source, inherited by its claims (tier C). Rule 4: report-nominal clocks never define or move an anchor — the profile exists so provenance UI can display the skew. Timestamped dispatches are document pins, not witness clocks, and carry no profile. Cross-field rules (envelope brackets offset; anchor id shape) are enforced by scripts/validate_reconstruction.py.",
+      "required": ["kind"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "watch-checked",
+            "retrospective-watch",
+            "contemporaneous-civilian",
+            "report-nominal",
+            "tablet-adjudicated",
+            "none"
+          ]
+        },
+        "offsetMinutes": { "type": "integer", "minimum": -120, "maximum": 120 },
+        "offsetEnvelope": {
+          "type": "array",
+          "items": { "type": "integer", "minimum": -120, "maximum": 120 },
+          "minItems": 2,
+          "maxItems": 2,
+          "description": "[min, max] honest spread of (chain adopted − source stated) differences, widened to the kind default when fewer than two anchor statements exist (watch-checked ±5; contemporaneous-civilian ±5; retrospective-watch ±15; tablet-adjudicated ±30, ±60 on the McLaws wing; report-nominal ±45)."
+        },
+        "anchorsUsed": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^CA-[A-Z0-9]+-[0-9]+$" },
+          "description": "Canonical anchors the offset derivation compared against (reproducibility)."
+        },
+        "assessment": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Method note: which anchor statements were compared and how."
+        },
+        "confidence": { "enum": ["strong", "medium", "weak"] }
       }
     }
   }
