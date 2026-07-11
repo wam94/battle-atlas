@@ -1,4 +1,7 @@
-# Dossier: Gibbon's command record (2nd Division, II Corps) (no register row — flagged)
+# Dossier: Gibbon's command record (2nd Division, II Corps) (reg-us-ii-2-hq)
+
+Register row added at pass-5 start (register-maintenance batch; was
+'no register row — flagged' at passes 3-4).
 
 Pass 4 (Union center command batch) · Cast status: the division's
 brigades are in-build (`us-harrow`, `us-webb`, `us-hall` fronts); no

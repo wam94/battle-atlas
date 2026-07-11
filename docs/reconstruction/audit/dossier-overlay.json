@@ -573,6 +573,94 @@
    "EC6 casualty apportionment": "return 2/24/6 = 32, batteries '*Not reported in detail' (ED-49 gap); tablet prints the same 32 - ED-43 corroboration SATISFIED; episode split: morning affair + cannonade window, Jul 1-2 zero",
    "Achieved T-level (audited)": "T4 full-arc",
    "Notes": "Dossier: reconstruction/dossiers/csa-3c-bn-poague.md; ED-36 Third Corps frame COMPLETE (Lowrance's anchor closed); memoir (Gunner with Stonewall) print-only acquisition item"
+  },
+  "reg-csa-1c-pic-hq": {
+   "Class (attested-static / unauthored / authored-ok)": "unauthored (command record)",
+   "EC1 identity/command": "Maj. Gen. George E. Pickett; division command node of the assault column's right wing; all three brigadiers lost July 3 (Garnett k, Armistead mw, Kemper w/c)",
+   "EC2 engaged strength": "no division-level primary return; brigade grain carried on brigade rows (ED-46 Peyton basis for Garnett)",
+   "EC3 position anchors": "[D] Spangler's Woods frame July 3; his own station during the charge is the famous unresolved question - carried as open, no pin invented",
+   "EC4 movement legs": "n/a (command entry); brigade legs on brigade rows",
+   "EC5 activity record": "[D] step-off order chain: Longstreet-Pickett exchange (CA-J3A-0, bow, unclocked); the suppressed report (Lee's return-for-destruction order) is the record's defining negative",
+   "EC6 casualty apportionment": "division official return 232 k / 1,157 w / 1,490 m = 2,879 (ED-49 scope: missing dominated by captures; 'many of the missing were killed or wounded. Especially ... Pickett's division')",
+   "Achieved T-level (audited)": "T2 (command record)",
+   "Notes": "Dossier: reconstruction/dossiers/csa-1c-pic-hq-pickett.md; register row added pass 5 (maintenance batch)"
+  },
+  "reg-csa-3c-het-hq": {
+   "Class (attested-static / unauthored / authored-ok)": "unauthored (command record)",
+   "EC1 identity/command": "Heth (w July 1) -> Pettigrew (July 2-3, w July 3 hand); the assault left wing's division command",
+   "EC2 engaged strength": "division decay primary: July-4 report basis; regiment grain on brigade rows",
+   "EC3 position anchors": "[E] Seminary Ridge frame July 2-3 (drawn, j3 sheets); [D] Pettigrew mounted near the column center during the advance",
+   "EC4 movement legs": "n/a (command entry)",
+   "EC5 activity record": "[D] July 3 command succession + the wing's order relay (Longstreet to Pettigrew per Trimble's SHSP account)",
+   "EC6 casualty apportionment": "division official return 411 k / 1,905 w / 534 m (ED-49: missing columns absent from Marshall/Davis/Brockenbrough rows - the pass-4 sized gap, ~1,500-2,500 hidden)",
+   "Achieved T-level (audited)": "T3 (command record)",
+   "Notes": "Dossier: reconstruction/dossiers/csa-3c-het-hq-pettigrew.md; register row added pass 5"
+  },
+  "reg-csa-3c-pen-hq": {
+   "Class (attested-static / unauthored / authored-ok)": "unauthored (command record)",
+   "EC1 identity/command": "Pender (mw July 2) -> Lane (evening July 2) -> Trimble (July 3, w+c at the road fence) -> Lane; two-brigade demi-division command July 3",
+   "EC2 engaged strength": "Lane 1,355 (primary) + Lowrance ~500; command grain n/a",
+   "EC3 position anchors": "[D] behind the Heth line at 200 yd (Trimble's own interval statement, SHSP 26); wounding pin at the Emmitsburg road fence (his first person) vs Engelhard 'near the enemy's works' - CONFLICT carried",
+   "EC4 movement legs": "n/a (command entry); brigade legs on brigade rows",
+   "EC5 activity record": "[C retrospective +5] Trimble's chain-agreeing clock (ready 13:00; charge 'about three ... by four it was over'; cannonade 1.5 h); Lee's verbatim July 3 order of battle as read to him",
+   "EC6 casualty apportionment": "carried at brigade grain (Lane 660 basis per ED-47)",
+   "Achieved T-level (audited)": "T3 (command record)",
+   "Notes": "Dossier: reconstruction/dossiers/csa-3c-pen-hq-trimble.md; register row added pass 5"
+  },
+  "reg-csa-2c-arty-cmd": {
+   "Class (attested-static / unauthored / authored-ok)": "unauthored (command record)",
+   "EC1 identity/command": "Col. J. Thompson Brown, Chief of Artillery Second Corps; four-class wing participation per ED-45",
+   "EC2 engaged strength": "n/a (command entry); battalion rows per ED-38",
+   "EC3 position anchors": "command position unstated (open at primary grade)",
+   "EC4 movement legs": "n/a (command entry)",
+   "EC5 activity record": "[E] the corps report's four-class breakdown (Dance engaged / Carter+Nelson portions / Jones off-field / Latimer wrecked-prior)",
+   "EC6 casualty apportionment": "return rows for the wing's battalions (Brown's/Dance's row read pass 4); Latimer-bn July 2 ledger open -> pass-5 standing fetch pp. 341-342",
+   "Achieved T-level (audited)": "T2 (command record)",
+   "Notes": "Dossier: reconstruction/dossiers/csa-2c-arty-hq-brown.md; register row added pass 5 (double-flagged passes 2+4)"
+  },
+  "reg-us-ii-hq": {
+   "Class (attested-static / unauthored / authored-ok)": "unauthored (command record)",
+   "EC1 identity/command": "Maj. Gen. W. S. Hancock (w July 3, 'toward the close'); corps + left-center wing command; July 1 arrival is ruled CA-J1P-7 (~16:15, partisan-dispute note)",
+   "EC2 engaged strength": "n/a (command entry); corps regiment grain in or-27-1-union-return",
+   "EC3 position anchors": "[D] the mounted ride along the line under the cannonade; wounding position near Stannard's front (Vermont accounts)",
+   "EC4 movement legs": "n/a (command entry)",
+   "EC5 activity record": "[C report ~+7] his OR cannonade ladder ('About 1 o'clock ... After an hour and forty-five minutes') corroborates CA-J3A-1/4; the wounding TIME is a CONFLICT RECORD by design (no clock invented)",
+   "EC6 casualty apportionment": "wounding pin sequenced after Gibbon's ('A short time afterward I was myself wounded'); corps losses at regiment grain per ED-52",
+   "Achieved T-level (audited)": "T3 (command record)",
+   "Notes": "Dossier: reconstruction/dossiers/us-ii-hq-hancock.md; register row added pass 5"
+  },
+  "reg-us-ii-2-hq": {
+   "Class (attested-static / unauthored / authored-ok)": "unauthored (command record)",
+   "EC1 identity/command": "Brig. Gen. John Gibbon (w July 3 shoulder) -> Harrow; division command over the Angle front",
+   "EC2 engaged strength": "~3,800 engaged July 3 (division primary via Gibbon/Harrow reports; brigade-sum 3,580 vs 3,773 gap recorded)",
+   "EC3 position anchors": "[D] division HQ behind the crest; wounding while walking the line during the infantry fight",
+   "EC4 movement legs": "n/a (command entry)",
+   "EC5 activity record": "[C +7] or-27-1-gibbon chain-agreeing clock (the Haskell/Hancock pole); the famous pre-battle mess-and-council record",
+   "EC6 casualty apportionment": "division >1,600 of ~3,800; his wounding is the FIRST pin of the climax pair (Hancock's sequencing)",
+   "Achieved T-level (audited)": "T3 (command record)",
+   "Notes": "Dossier: reconstruction/dossiers/us-ii-2-hq-gibbon.md; register row added pass 5"
+  },
+  "reg-us-ii-3-hq": {
+   "Class (attested-static / unauthored / authored-ok)": "unauthored (command record)",
+   "EC1 identity/command": "Brig. Gen. Alexander Hays; division command over the Pettigrew-front wall",
+   "EC2 engaged strength": "division strength unstated in the report (open at primary grade)",
+   "EC3 position anchors": "[E] the Ziegler's Grove-Bryan barn front; [D] his mounted presence along the wall through the repulse",
+   "EC4 movement legs": "n/a (command entry)",
+   "EC5 activity record": "[C report -55] the four-lines repulse record ('Four lines rose from behind our stone wall'); Bliss barn burning order ~10:00-10:30; late-stated clock cluster member; the flag-drag ride NOT in his report (not asserted)",
+   "EC6 casualty apportionment": "division two-day 1,285 k+w+m (report) vs return grain per ED-52",
+   "Achieved T-level (audited)": "T3 (command record)",
+   "Notes": "Dossier: reconstruction/dossiers/us-ii-3-hq-hays.md; register row added pass 5"
+  },
+  "reg-us-i-3-hq": {
+   "Class (attested-static / unauthored / authored-ok)": "unauthored (command record)",
+   "EC1 identity/command": "Maj. Gen. Abner Doubleday (I Corps command July 1 after Reynolds; superseded by Newton July 2; division command July 2-3)",
+   "EC2 engaged strength": "not stated for July 3 (open); division regiment grain in or-27-1-union-return (2,103 battle aggregate)",
+   "EC3 position anchors": "[E] second line behind the left-center; his own July 3 station OPEN (no primary pin)",
+   "EC4 movement legs": "n/a (command entry)",
+   "EC5 activity record": "[C report -53] late litigious report (the Meade feud shapes it); late-stated clock cluster member",
+   "EC6 casualty apportionment": "division 2,103 (return, p. 174); apportionment at brigade rows",
+   "Achieved T-level (audited)": "T2 (command record)",
+   "Notes": "Dossier: reconstruction/dossiers/us-i-3-hq-doubleday.md; register row added pass 5"
   }
  }
 }

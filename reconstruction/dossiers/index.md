@@ -107,16 +107,16 @@ grain, plus five primary engaged-strength statements.
 
 | Dossier | Register id | Arc role | Achieved T |
 |---|---|---|---|
-| [csa-1c-pic-hq-pickett.md](csa-1c-pic-hq-pickett.md) | (no register row — flagged) | division command record; the suppressed report | T2 (command record) |
+| [csa-1c-pic-hq-pickett.md](csa-1c-pic-hq-pickett.md) | reg-csa-1c-pic-hq (added pass 5) | division command record; the suppressed report | T2 (command record) |
 | [csa-1c-pic-1-garnett.md](csa-1c-pic-1-garnett.md) | reg-csa-1c-pic-1 | first line right-center; the Soldier View brigade | T4 full-arc (T5 window) |
 | [csa-1c-pic-2-kemper.md](csa-1c-pic-2-kemper.md) | reg-csa-1c-pic-2 | first line right flank; Stannard/LRT object | T4 full-arc (T5 window) |
 | [csa-1c-pic-3-armistead.md](csa-1c-pic-3-armistead.md) | reg-csa-1c-pic-3 | second line; the crossing (CA-J3A-9) | T4 full-arc (T5 window) |
-| [csa-3c-het-hq-pettigrew.md](csa-3c-het-hq-pettigrew.md) | (no register row — flagged) | left-wing division command record | T3 (command record) |
+| [csa-3c-het-hq-pettigrew.md](csa-3c-het-hq-pettigrew.md) | reg-csa-3c-het-hq (added pass 5) | left-wing division command record | T3 (command record) |
 | [csa-3c-het-3-fry.md](csa-3c-het-3-fry.md) | reg-csa-3c-het-3 | the column's guide; the color record | T4 full-arc |
 | [csa-3c-het-1-marshall.md](csa-3c-het-1-marshall.md) | reg-csa-3c-het-1 | left-wing right-center; the 26th NC arc | T4 full-arc |
 | [csa-3c-het-4-davis.md](csa-3c-het-4-davis.md) | reg-csa-3c-het-4 | left-wing left-center; Bryan-barn front | T4 full-arc |
 | [csa-3c-het-2-brockenbrough.md](csa-3c-het-2-brockenbrough.md) | reg-csa-3c-het-2 | extreme left; the corrupted-strength unit, now bounded | T3 full-arc |
-| [csa-3c-pen-hq-trimble.md](csa-3c-pen-hq-trimble.md) | (no register row — flagged) | third-line command record (Pender→Lane→Trimble→Lane) | T3 (command record) |
+| [csa-3c-pen-hq-trimble.md](csa-3c-pen-hq-trimble.md) | reg-csa-3c-pen-hq (added pass 5) | third-line command record (Pender→Lane→Trimble→Lane) | T3 (command record) |
 | [csa-3c-pen-2-lane.md](csa-3c-pen-2-lane.md) | reg-csa-3c-pen-2 | third line left; 1,355/660 primaries | T4 full-arc |
 | [csa-3c-pen-4-lowrance.md](csa-3c-pen-4-lowrance.md) | reg-csa-3c-pen-4 | third line right; the ~500-man brigade | T4 full-arc |
 | [csa-3c-and-1-wilcox.md](csa-3c-and-1-wilcox.md) | reg-csa-3c-and-1 | late echelon right (CA-J3A-10); 1,200/204 primaries | T4 full-arc |
@@ -139,15 +139,15 @@ burial ledger / Hartwig's 12,227).
 | Dossier | Register id | Arc role | Achieved T |
 |---|---|---|---|
 | [us-ii-2-2-webb.md](us-ii-2-2-webb.md) | reg-us-ii-2-2 | the Angle's receiving brigade, full arc | T4 full-arc (T5 window held) |
-| [us-ii-2-hq-gibbon.md](us-ii-2-hq-gibbon.md) | (no register row — flagged) | division command record; the first wounding pin | T3 (command record) |
-| [us-ii-hq-hancock.md](us-ii-hq-hancock.md) | (no register row — flagged) | corps command record; the wounding CONFLICT record | T3 (command record) |
-| [us-ii-3-hq-hays.md](us-ii-3-hq-hays.md) | (no register row — flagged) | division command record; the four-lines repulse | T3 (command record) |
+| [us-ii-2-hq-gibbon.md](us-ii-2-hq-gibbon.md) | reg-us-ii-2-hq (added pass 5) | division command record; the first wounding pin | T3 (command record) |
+| [us-ii-hq-hancock.md](us-ii-hq-hancock.md) | reg-us-ii-hq (added pass 5) | corps command record; the wounding CONFLICT record | T3 (command record) |
+| [us-ii-3-hq-hays.md](us-ii-3-hq-hays.md) | reg-us-ii-3-hq (added pass 5) | division command record; the four-lines repulse | T3 (command record) |
 | [us-ii-3-1-carroll.md](us-ii-3-1-carroll.md) | reg-us-ii-3-1 | split-brigade arc (East Cemetery Hill night fight; the 8th Ohio flank action FIRST-CLASS) | T4 full-arc |
 | [us-i-3-1-biddle.md](us-i-3-1-biddle.md) | reg-us-i-3-1 | Gates's demi-brigade at the Copse's south shoulder | T3 full-arc |
 | [us-i-3-2-stone.md](us-i-3-2-stone.md) | reg-us-i-3-2 | second/third-line frame (honestly thin) | T3 full-arc |
-| [us-i-3-hq-doubleday.md](us-i-3-hq-doubleday.md) | (no register row — flagged) | division command record; late-clock counter-profile | T2 (command record) |
+| [us-i-3-hq-doubleday.md](us-i-3-hq-doubleday.md) | reg-us-i-3-hq (added pass 5) | division command record; late-clock counter-profile | T2 (command record) |
 | [csa-3c-bn-poague.md](csa-3c-bn-poague.md) | reg-csa-3c-bn-poague | ED-36 frame COMPLETED; the howitzer negative; 657-round return | T4 full-arc |
-| [csa-2c-arty-hq-brown.md](csa-2c-arty-hq-brown.md) | (no register row — flagged ×2) | Second Corps artillery command record | T2 (command record) |
+| [csa-2c-arty-hq-brown.md](csa-2c-arty-hq-brown.md) | reg-csa-2c-arty-cmd (added pass 5) | Second Corps artillery command record | T2 (command record) |
 
 Pass-4 upgrades to existing dossiers: csa-3c-pen-hq-trimble.md (SHSP 26
 closed — the road-fence wounding conflict), us-btty-rittenhouse.md

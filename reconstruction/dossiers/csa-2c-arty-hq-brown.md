@@ -1,4 +1,7 @@
-# Dossier: Second Corps artillery command record (Col. J. Thompson Brown) (no register row — flagged, second pass)
+# Dossier: Second Corps artillery command record (Col. J. Thompson Brown) (reg-csa-2c-arty-cmd)
+
+Register row added at pass-5 start (register-maintenance batch; was
+'no register row — flagged' at passes 3-4).
 
 Pass 4 (CSA frame completion) · Cast status: the wing's battalions are
 in-build (`csa-bn-dance`, `csa-bn-nelson`, `csa-bn-carter`,

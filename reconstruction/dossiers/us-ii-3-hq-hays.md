@@ -1,4 +1,7 @@
-# Dossier: Alexander Hays's command record (3rd Division, II Corps) (no register row — flagged)
+# Dossier: Alexander Hays's command record (3rd Division, II Corps) (reg-us-ii-3-hq)
+
+Register row added at pass-5 start (register-maintenance batch; was
+'no register row — flagged' at passes 3-4).
 
 Pass 4 (Union center command batch) · Cast status: the division's
 brigades are in-build (`us-carroll` [minus the 8th Ohio], `us-8oh`,
