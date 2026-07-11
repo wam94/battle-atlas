@@ -356,6 +356,86 @@
       "title": "Antietam on the Web: 3-inch Ordnance Rifle",
       "year": 2026,
       "url": "https://antietam.aotw.org/weapons.php?weapon_id=3"
+    },
+    {
+      "id": "or-27-oob",
+      "kind": "official_report",
+      "title": "Official Records Series I Vol. 27, order-of-battle returns (Part 1 Union pp. ~155-168; Part 2 Confederate pp. ~283-291)",
+      "author": "U.S. War Department (GPO 1889)",
+      "year": 1863,
+      "url": "https://texashistory.unt.edu/ark:/67531/metapth154598/",
+      "editionNote": "The OOB register's structural authority. Part 2 (Confederate) scriptable via the Texas ARK; Part 1 (Union) still has no verified script-friendly URL (standing open item) — Union structure verified via the OR-derived Wikipedia OOB articles at this pass."
+    },
+    {
+      "id": "wikipedia-oob-union",
+      "kind": "reference_site",
+      "title": "Battle of Gettysburg order of battle: Union (Wikipedia)",
+      "author": "Wikipedia editors",
+      "year": 2026,
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Gettysburg_order_of_battle:_Union",
+      "editionNote": "OR-derived compilation with per-regiment commanders and casualty annotations; wikitext fetched 2026-07-10 and used as the register's Union verification corpus. Secondary; the 2026-06-13 OOB pass confirmed it does NOT cite Busey & Martin page-level figures."
+    },
+    {
+      "id": "wikipedia-oob-csa",
+      "kind": "reference_site",
+      "title": "Battle of Gettysburg order of battle: Confederate (Wikipedia)",
+      "author": "Wikipedia editors",
+      "year": 2026,
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Gettysburg_order_of_battle:_Confederate",
+      "editionNote": "OR-derived compilation; wikitext fetched 2026-07-10 and used as the register's Confederate verification corpus. Same caveats as wikipedia-oob-union."
+    },
+    {
+      "id": "busey-martin-2005",
+      "kind": "book",
+      "title": "Regimental Strengths and Losses at Gettysburg (4th ed.)",
+      "author": "John W. Busey and David G. Martin",
+      "year": 2005,
+      "editionNote": "The standard modern strength reconstruction. NOT freely available online; no direct page-level citation has been obtainable in any research pass (2026-06-13 finding stands). Figures attributed to it in the corpus are via verified secondary reproductions only — flag the hop whenever cited."
+    },
+    {
+      "id": "or-27-2-longstreet",
+      "kind": "official_report",
+      "title": "Lt. Gen. James Longstreet's report, OR Series I Vol. 27 Part 2 (NPS reproduction)",
+      "author": "James Longstreet",
+      "year": 1863,
+      "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-lieut-general-james-longstreet.htm",
+      "editionNote": "Fetch-verified 2026-07-10. Report-nominal clock: gives 'About 2 p.m.' for the July 3 signal guns (~53 min late vs the proposed chain) and 'about 4 p.m.' for McLaws in position July 2. Never anchor-defining (ED-25 rule 4)."
+    },
+    {
+      "id": "or-27-2-hays",
+      "kind": "official_report",
+      "title": "Brig. Gen. Harry T. Hays's report, OR Series I Vol. 27 Part 2 (NPS reproduction)",
+      "author": "Harry T. Hays",
+      "year": 1863,
+      "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-brig-general-harry-hays.htm",
+      "editionNote": "Fetch-verified 2026-07-10. 'A little before 8 p.m. I was ordered to advance with my own and Hoke's brigade' — the best single clock for the July 2 East Cemetery Hill assault (CA-J2E-3); withdrawal complete 'about 10 o'clock.'"
+    },
+    {
+      "id": "or-27-2-heth",
+      "kind": "official_report",
+      "title": "Maj. Gen. Henry Heth's report, OR Series I Vol. 27 Part 2 (NPS reproduction)",
+      "author": "Henry Heth",
+      "year": 1863,
+      "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-maj-general-henry-heth.htm",
+      "editionNote": "Fetch-verified 2026-07-10. Division ordered forward 5 A.M. July 1; 'at this time-9 o'clock ... I was ignorant what force was at or near Gettysburg.' No clock for the attack itself; his July 1 narrative is noted in the literature as error-prone — sequence evidence, weak clock."
+    },
+    {
+      "id": "or-27-2-wright",
+      "kind": "official_report",
+      "title": "Brig. Gen. Ambrose R. Wright's report, OR Series I Vol. 27 Part 2 (NPS reproduction)",
+      "author": "Ambrose R. Wright",
+      "year": 1863,
+      "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-brig-general-ambrose-wright.htm",
+      "editionNote": "Fetch-verified 2026-07-10. Gives 'about 5 p.m.' for the July 2 general-advance signal — ~1.5-2 h early against the modern clock for his own breakthrough; notoriously self-serving on depth of penetration. Report-nominal exemplar."
+    },
+    {
+      "id": "or-27-1-buford",
+      "kind": "official_report",
+      "title": "Brig. Gen. John Buford's report, OR Series I Vol. 27 Part 1 (secondary reproduction)",
+      "author": "John Buford",
+      "year": 1863,
+      "url": "https://the-american-catholic.com/2013/07/01/general-buford-and-the-first-day-of-gettysburg/",
+      "editionNote": "Quote verified against a blog reproduction 2026-07-10 ('between 8 and 9 a.m., reports came in ... that the enemy was coming down from toward Cashtown in force') — cross-check against OR 27/1 pp. 926-928 before final ruling. His timestamped 10:10 A.M. dispatch to Meade (the morning's hardest clock) is still snippet-grade pending an OR correspondence fetch."
     }
   ]
 }
