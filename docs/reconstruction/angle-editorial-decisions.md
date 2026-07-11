@@ -865,6 +865,96 @@ would misdescribe Dance's documented participation.
 
 ---
 
+## Dossier pass 3 adoption rulings (ED-46 … ED-49) — 2026-07-11
+
+Owner ruling (standing adopt-and-adjust doctrine): the ED candidates
+proposed by dossier pass 3 (`docs/reconstruction/audit/dossier-pass-3.md`
+§5, drafted on branch audit-dossiers-3) are ADOPTED as recorded below,
+executed at the start of dossier pass 4 (branch audit-dossiers-4). No
+renumbers were needed this batch.
+
+### ED-46 — Garnett's engaged basis: Peyton's previous-evening report (1,287 men + ~140 officers)
+
+Readings: 1,480 "present" (stone-sentinels monument compilation, the
+ED-9/macro value, tier inferred) vs Peyton's own report — "The brigade
+went into action with 1,287 men and about 140 officers, as shown by the
+report of the previous evening" (peyton-or-1863) ≈ 1,427 all ranks.
+
+**Canonical choice:** the Peyton figure is the EC2 engaged basis —
+1,287 men + ~140 officers, a July-2-evening morning-report basis, the
+best strength evidence any CSA brigade in the assault column has. The
+1,480 compilation stays as the recorded ED-9 macro value; reconciling
+the shipped strength decay is an authoring-pass item, not a silent edit
+(the ED-32 pattern exactly). **Rationale:** a primary morning-report
+statement in the brigade's own after-action report beats a
+monument-committee compilation on every axis the OOB doctrine scores;
+adopting it at the dossier/master-table layer while deferring the build
+reconciliation is the established discipline between the evidence layer
+and the shipped product.
+
+### ED-47 — Lane's brigade loss basis: 660 of 1,355; the return's 389 is a component measure
+
+The ANV casualty return prints 41 k / 348 w / — = 389 for Lane's
+brigade WITH its own footnote "+General Lane reports his entire loss at
+660" (or-27-2-anv-return p. 344); Lane's report gives "660 out of an
+effective total of 1,355", with July 1–2 loss "but slight"
+(or-27-2-lane-jh).
+
+**Canonical choice:** 660 is the battle-total EC6 basis; the return's
+389 is carried as the k+w COMPONENT measure per the return's own
+footnote — different measures, not competing counts (an ED-49
+exemplar). Consequences: the build's 660 decay is CONFIRMED as
+primary-sourced, and master-table EC6 notes stop treating 389 as a
+competing total. **Rationale:** the return's compiler already flagged
+the difference; treating scope differences as conflicts manufactures
+disagreement the sources do not contain.
+
+### ED-48 — Brockenbrough's evidence basis (the honestly-bounded unit)
+
+The brigade has no OR report, no officer pins, and a corrupted
+compilation record (the Stone Sentinels page duplicates Davis's figures
+byte-for-byte — 2026-06-13 finding, standing DO-NOT-USE flag).
+
+**Canonical choice:** (a) EC2 adopts the Mayo-hop **~880** (R. M.
+Mayo's Aug. 13, 1863 "800 muskets" via the secondary NPS-essay hop, the
+build's figure) as the working basis, with the **800–1,100 range
+carried** and no promotion to a clean number; the duplication artifact
+is permanently unusable. (b) EC6 adopts the ANV return's regiment-grain
+**148 k+w as the loss FLOOR** (missing unreported; or-27-2-anv-return
+p. 344) — the build's 100-casualty decay is BELOW the documented floor
+and is superseded for authoring purposes (reconciliation flagged, not
+silently edited). (c) The build's two-wing rendering (Mayo's left wing)
+is declared **reconstruction-grade** until a primary surfaces — carried
+as build-inherited reconstruction on both wing rows. **Rationale:**
+every slot is bounded by the best evidence that exists while refusing
+both invention and the corrupted record; the unit stays T3-honest.
+
+### ED-49 — The casualty-return scope rule (ANV return consumption)
+
+The ANV casualty compilation (OR 27/2 pp. 338-346) was consumed at
+regiment grain in pass 3, and its own apparatus demands a standing
+consumption rule: per-regiment aggregate rows are **killed + wounded
+only**; captured/missing is pooled at brigade level or absent entirely;
+the totals are "approximative" and "many of the 'missing' were killed
+or wounded. Especially … Pickett's division" (p. 338 headnote,
+verbatim).
+
+**Canonical choice:** every EC6 use of the return carries the scope
+note: (1) regiment rows are k+w only, never battle totals; (2) a
+missing column absent from a brigade's rows is a GAP, not a zero; (3)
+return totals are floors wherever the missing column is absent, and
+approximative everywhere per the compilation's own headnote; (4) where
+a unit's own report gives a larger total including missing, the report
+figure is the battle-total basis and the return the component measure
+(ED-47 is the exemplar ruling). Exemplars recorded: Fry's 517 pooled
+captures, Marshall's missing-less 1,105, Scales's July-1 table larger
+than the three-day compiled total. **Rationale:** two passes produced
+three independent cases where reading the return naively inverts the
+evidence (floor read as total, gap read as zero); the scope rule is the
+return's own headnote, promoted to discipline.
+
+---
+
 ## Connective-reconstruction rules (named inference rules)
 
 Segments cite these rules by name in `inferenceRules`. A segment with no

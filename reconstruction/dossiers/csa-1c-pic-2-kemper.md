@@ -33,6 +33,14 @@ Wilcox's flank observation, and the T5 corpus.
   claim-strength-kemper `inferred`). No primary return found for this
   brigade (negative — Peyton-style morning-report survives only for
   Garnett's).
+- **PASS-4 SWEEP CLOSED (verified-negative for primaries)**: one more
+  sweep across OR pages fetched in passes 1-4 found no Kemper morning
+  report (consistent with the division's suppressed-records aftermath,
+  or-27-3-lee-pickett). The B&M-type reproduction's per-regiment
+  readings recorded as the second compilation (hop flagged, ED-38
+  pattern): **1,634** — 1Va 209, 3Va 322, 7Va 335, 11Va 359, 24Va 395
+  (addressing-gettysburg-oob) vs stone-sentinels' 1,575. Two
+  compilations, no primary; neither promoted.
 
 ## EC3 — Position anchors
 

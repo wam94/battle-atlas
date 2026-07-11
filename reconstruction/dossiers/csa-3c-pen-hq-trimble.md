@@ -10,6 +10,23 @@ demi-division under a major general who had held command for a few hours.
 The succession chain Pender → Lane → Trimble → Lane (twice in 36 hours) is
 fully documented in the fetched primaries.
 
+**PASS-4 UPGRADE (2026-07-11): Trimble's own account CLOSED** — the
+pass-3 standing fetch (SHSP 26, archive.org 503s) landed via the
+southernhistoricv26sout mirror (trimble-shsp26-1898, pp. 116-128, "from
+the original MS ... never been in print"). It adds: Lee's July 3 order
+of battle VERBATIM AS TRIMBLE READ IT ("General Longstreet will make a
+vigorous attack on his front; General Ewell will threaten the enemy on
+the left, or make a vigorous attack, should circumstances justify it:
+General Hill will hold the centre at all hazards"); a chain-agreeing
+retrospective clock ("ready by one o'clock"; charge "about three
+o'clock, and by four it was over"); a ~1.5-hour cannonade duration
+statement; the 200-yards interval ("Heth's Division marched ... about
+200 yards in advance of Pender's two brigades"); and HIS OWN
+WOUNDING-POSITION statement — at the Emmitsburg road fence ("our men
+stopped and began firing, instead of mounting the fence; while making
+efforts to get them over the fence I was wounded") — which CONFLICTS
+with Engelhard's "near the enemy's works" (see Conflicts §4/§5).
+
 ## EC1 — Identity & command
 
 - **The succession chain (all primary)**: Maj. Gen. W. D. Pender mw
@@ -107,14 +124,35 @@ fully documented in the fetched primaries.
 1. **Trimble left no OR report** (verified: Pender's-division reports
    run Engelhard No. 556 → Perrin No. 557 → Lane No. 558 …
    Lowrance No. 561; Trimble was a prisoner). His postwar SHSP account
-   was NOT fetched this pass (archive.org download endpoint 503s on
-   repeated tries — recorded access failure; standing fetch item for
-   pass 4).
+   is now FETCHED (pass 4: trimble-shsp26-1898 — the pass-3 access
+   failure closed via mirror).
 2. No register row for the July 3 Trimble command (flagged; the
    Pender-division row structure carries only brigades).
 3. Whether Trimble's command included authority over Thomas/Perrin
    (he did not exercise it) — structurally clear in Engelhard; no
    conflict.
+4. **The wounding-position conflict (new)**: Engelhard "severely
+   wounded near the enemy's works" vs Trimble's own "at the fence [of
+   the Emmitsburg road] ... while making efforts to get them over the
+   fence I was wounded" (trimble-shsp26-1898) — first-person beats
+   secondhand here for HIS position (the road-fence reading carried as
+   preferred, ~250 m west of the works; Engelhard's phrase reads as
+   the column's climax position, not the general's). Both recorded;
+   no ED needed (command pin, no track moved).
+5. **The how-far-did-the-third-line-get conflict (new)**: Trimble has
+   the men STOPPING AT THE ROAD FENCE ("stopped and began firing,
+   instead of mounting the fence") where Lane reports his line
+   "advanced to within a few yards of the stone wall"
+   (or-27-2-lane-jh) and Lowrance's right "reached the works" —
+   reconcilable as sectoral (Trimble saw the left/center front near
+   his own position before his wounding; the right lapped further),
+   but carried as a genuine reach-envelope conflict on the third
+   line's climax geometry.
+6. **Retreat-order conflict (new, minor)**: Trimble's "began to move
+   back slowly and in good order, not breaking ranks even" +
+   "the last troops to leave the field" AGREES with the pass-3
+   ordered-class retreat reading (Engelhard's under-direct-orders
+   fall-back) — cross-corroboration, recorded as agreement.
 
 ## Chain anchors substantiated
 
@@ -129,9 +167,10 @@ fully documented in the fetched primaries.
 
 ## Source register
 
-or-27-2-engelhard (No. 556, fetched this pass — the division report and
-THE Trimble record) · or-27-2-lane-jh (No. 558, the succession's other
-witness) · or-27-2-lowrance (No. 561, the Poague anchor + 800-guns pin)
-· or-27-2-anv-return (p. 344-345) · csa-3c-bn-poague context (ED-36
-frame; no pass-2 dossier — Poague's battalion remains not-yet-dossier'd,
-noted) · or-27-oob.
+or-27-2-engelhard (No. 556, fetched pass 3 — the division report and
+THE Trimble record) · trimble-shsp26-1898 (pp. 116-128, fetched pass 4
+— his own account, clockProfile retrospective +5 [−5,+15] weak) ·
+or-27-2-lane-jh (No. 558, the succession's other witness) ·
+or-27-2-lowrance (No. 561, the Poague anchor + 800-guns pin) ·
+or-27-2-anv-return (p. 344-345) · csa-3c-bn-poague.md (ED-36 frame —
+dossier'd pass 4, the not-yet-dossier'd note retired) · or-27-oob.

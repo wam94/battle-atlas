@@ -45,8 +45,9 @@ plus Engelhard give the batch's most complete wrecked-formation arc.
 3. **July 3 morning** [D]: with Lane to the right, under Trimble,
    "formed on the second line, in rear of Major Poague's battalion of
    artillery" (or-27-2-lowrance) — the Poague-frame anchor (ED-36 line;
-   Poague's battalion itself remains un-dossier'd, noted on the Trimble
-   record). Sheet j3-02 note: a "SCALES N.C." label reads at ~local
+   CLOSED pass 4: csa-3c-bn-poague.md — the battalion's own report
+   places its two gun groups at (3427,5220)/(3467,4894) sheet-read,
+   bracketing this brigade's start slot). Sheet j3-02 note: a "SCALES N.C." label reads at ~local
    (3300, 6150) ±150 — the pre-move left-sector state (drawn-state
    caution; the 08:00–11:00 window brackets the move right).
 4. Farthest advance: "the right of the brigade touched the enemy's line

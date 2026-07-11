@@ -31,7 +31,18 @@ return, and the morning sheet read.
 - **1,650** (ED-9 build basis; stone-sentinels compilation,
   claim-strength-armistead `inferred`). No primary morning report
   survives (negative). The crossing party is separately attested at
-  **~150 men** (claim-armistead-party-strength, T5).
+  **~150 men** (claim-armistead-party-strength, T5; Webb's report-side
+  count "probably over 100", or-27-1-webb, pass 4 — rides the claim).
+- **PASS-4 SWEEP CLOSED (verified-negative for primaries)**: no
+  Armistead morning report in any OR page fetched across passes 1-4
+  (the suppressed-records aftermath, or-27-3-lee-pickett). The
+  B&M-type reproduction's readings recorded as the second compilation
+  (hop flagged, ED-38 pattern): **2,055** — 9Va 318, 14Va 422, 38Va
+  400, 53Va 435, 57Va 476 (addressing-gettysburg-oob) vs
+  stone-sentinels' 1,650 — a 400-man disagreement between
+  compilations, the widest in the division; carried, neither promoted
+  (authoring note: the return's 1,191 casualties read 58% against
+  2,055 but 72% against 1,650).
 
 ## EC3 — Position anchors
 

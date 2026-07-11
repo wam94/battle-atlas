@@ -62,6 +62,18 @@ Bachelder j3-03. The Rittenhouse MOLLUS paper ACCESS FAILED this pass.
   fire-by-fire account (ranges, shell types, the famous
   down-the-line shots) lives in the access-failed MOLLUS paper —
   EC5 is deliberately thin rather than secondhand.
+  **PASS-4 UPGRADE — two flanking witnesses landed**: (a) the
+  receiving side (pass 3): Peyton's mountain-battery enfilade, "about
+  1 mile to our right ... sometimes as many as 10 men being killed
+  and wounded by the bursting of a single shell" (peyton-or-1863);
+  (b) the same-hill side (pass 4, new): the 146th NY Garrard-staff
+  account — "a terrible raking fire on the rebel line, which was made
+  with great effect. This caused a concentration of the fire of many
+  rebel batteries upon Hazlett's position, their shell and shot
+  crashing among the rocks" (norton-1913 pp. ~300-302) — the July 3
+  fire window now has independent witnesses on both ends of the
+  trajectory, PLUS a return-fire (under-counter-battery) window for
+  the battery itself that no prior record carried.
 3. Rounds expended: no figure fetched (Martin's brigade report gives
   none for D; negative, standing item with the MOLLUS fetch).
 
@@ -80,9 +92,12 @@ Bachelder j3-03. The Rittenhouse MOLLUS paper ACCESS FAILED this pass.
 
 ## Conflicts & negative evidence
 
-1. **rittenhouse-mollus-1887 ACCESS FAILED** (gdg.org expired TLS
-  certificate, 2026-07-11; recorded on the source) — the dossier's
-  T-ceiling until fetched.
+1. **rittenhouse-mollus-1887 ACCESS FAILED** (three attempts across
+  passes 2-4: gdg.org misattribution, no anonymous Google Books text
+  channel, archive.org/Gutenberg negative — pass-4 disposition on the
+  source record) — still the dossier's T-ceiling; library/CDL
+  acquisition recommendation stands. The Norton witness (EC5.2) is a
+  substitute, not the paper.
 2. No separate OR report by Rittenhouse (verified negative at
   p. 661: Battery D appears only as a position datum in Martin's
   report).
@@ -108,6 +123,8 @@ Bachelder j3-03. The Rittenhouse MOLLUS paper ACCESS FAILED this pass.
 
 stone-sentinels (Battery D 5th US tablet, verified) · or-27-1-martin-v
 (p. 661, the no-report negative + brigade casualties) ·
-rittenhouse-mollus-1887 (ACCESS FAILED, recorded) · hunt-bl-3 (the
-drift statement) · us-ar-1v-mcgilvery.md (the paired enfilade) ·
-bachelder-manifest j3-03 (read 2026-07-11) · or-27-oob.
+rittenhouse-mollus-1887 (ACCESS FAILED ×3, recorded) · norton-1913
+(the 146th NY same-hill witness, added pass 4) · peyton-or-1863 (the
+receiving-side enfilade, pass 3) · hunt-bl-3 (the drift statement) ·
+us-ar-1v-mcgilvery.md (the paired enfilade) · bachelder-manifest j3-03
+(read 2026-07-11) · or-27-oob.

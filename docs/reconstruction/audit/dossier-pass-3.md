@@ -172,7 +172,7 @@ orders") — a rendering-relevant distinction the build does not yet make.
   carried over unchanged (the committed-tool recommendation from pass 2
   §4.1 stands).
 
-## 5. New ED candidates (proposed, NOT adopted)
+## 5. New ED candidates (proposed by this pass; ADOPTED 2026-07-11 as ED-46…ED-49 in the pass-4 batch ruling, angle-editorial-decisions.md)
 
 - **ED-46 — Garnett's engaged basis.** Adopt Peyton's previous-evening
   report figure (1,287 men + ~140 officers ≈ 1,427) as the EC2 basis
