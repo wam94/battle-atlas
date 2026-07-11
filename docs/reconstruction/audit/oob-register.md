@@ -16,11 +16,15 @@ ruling (full-battle research upfront, phased authoring).
 | Cavalry brigades | 8 | 7 (incl. Imboden's command) |
 | Batteries (first-class entries) | 67 | 69 (incl. McClanahan's with Imboden) |
 | Artillery brigade/battalion parents | 14 | 16 (15 army battalions + Stuart horse artillery) |
-| Command entries | 2 (Artillery Reserve park; Provost) | — |
-| **Total register entries** | **142** | **129** (271 overall) |
+| Command entries | 7 (Artillery Reserve park; Provost; Chief of Artillery [pass 1]; II Corps HQ, 2nd Div II Corps, 3rd Div II Corps, 3rd Div I Corps [pass 5]) | 5 (First Corps artillery command [pass 1]; Pickett's Div, Heth's Div, Pender's Div, Second Corps artillery command [pass 5]) |
+| **Total register entries** | **147** | **134** (281 overall) |
 
 Regiments enumerated: 478. Cast status: **148 entries matched to in-build
-unit ids** in `app/Assets/Battle/gettysburg-july3.json`; **123 not-yet-cast**.
+unit ids** in `app/Assets/Battle/gettysburg-july3.json`; **133 not-yet-cast**
+(the eight command rows flagged by dossier passes 3-4 — Pickett, Heth,
+Pender/Trimble, Gibbon, Hancock, Hays, Doubleday, Second Corps artillery —
+were added as an explicit register-maintenance batch at pass-5 start,
+unblocking command-record overlay entries for the HQ dossiers).
 The build's 42 child-regiment units (Pickett/Pettigrew regiments, Webb/Hall/
 Stannard regiments, Brockenbrough's wings, us-8oh) are represented inside
 their brigade entries' regiment lists, not as separate register entries — so

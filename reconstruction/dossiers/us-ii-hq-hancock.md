@@ -1,4 +1,7 @@
-# Dossier: Hancock's command record (II Corps / left-center wing) (no register row — flagged)
+# Dossier: Hancock's command record (II Corps / left-center wing) (reg-us-ii-hq)
+
+Register row added at pass-5 start (register-maintenance batch; was
+'no register row — flagged' at passes 3-4).
 
 Pass 4 (Union center command batch) · Cast status: command record over
 in-build corps front; no corps-command row in the OOB register

@@ -1,4 +1,7 @@
-# Dossier: Doubleday's command record (3rd Division, I Corps, July 2-3) (no register row — flagged)
+# Dossier: Doubleday's command record (3rd Division, I Corps, July 2-3) (reg-us-i-3-hq)
+
+Register row added at pass-5 start (register-maintenance batch; was
+'no register row — flagged' at passes 3-4).
 
 Pass 4 (Union center command batch — the deferred Doubleday pieces) ·
 Cast status: the division's brigades are in-build (`us-biddle`,

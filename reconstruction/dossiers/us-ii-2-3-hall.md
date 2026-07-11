@@ -2,8 +2,9 @@
 
 Pass 2 (reference frame) · Cast status: in-build (`us-hall`, computed
 floor T5 via the Angle cast's child regiments) · Achieved T-level:
-**T4** (brigade grain; the Angle-window regimental layer is already
-claim-compiled) · 2026-07-11
+**T4 full-arc** (brigade grain; the Angle-window regimental layer is
+already claim-compiled; July 2 arc audited full-arc at pass 5) ·
+2026-07-11 (pass-5 upgrade)
 
 Frame role: the wall/crest immediately SOUTH of the Copse — the front
 Cowan's, Brown's and Rorty's positions are stated against, and the
@@ -77,6 +78,16 @@ UPGRADED from stub), brigade tablet, monument row, Bachelder j3-03.
   within 20 yards of the line of the Seventh Michigan" (or-27-1-hall
   p. 436) — NOTE: the Barksdale attribution is Hall's own (Barksdale
   fell on the Plum Run axis; identity conflict carried).
+  **PASS-5 UPGRADE (the July 2 arc closed both-sided)**: the attacker
+  now has its own dossier (csa-1c-mcl-3-barksdale.md) — the j2-04
+  drawn state puts Barksdale's main body at Plum Run (4053, 4080)
+  with Hall's front several hundred meters northeast, and the
+  tablet's Plum-Run fall statement and Hall's 20-yards statement are
+  COMPATIBLE at ~100 m grain (adjoining fronts, one running fight);
+  Hall's July 2 evening fire is the brigade's second engaged window
+  in its own right. The exact brigade-front attribution (Barksdale's
+  left regiments vs Wright's/Wilcox's echelon on that frontage)
+  stays a recorded conflict per the pass-2 Willard record.
 2. **July 3 cannonade** [C +5]: "At 1 o'clock the enemy opened with
   artillery" — ~150 pieces on the line "between the cemetery and
   Fifth Corps"; his praise of Cushing's battery riding the same page

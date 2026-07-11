@@ -1,4 +1,7 @@
-# Dossier: Trimble's command record (Pender's Division, July 3 detachment) (no register row — flagged)
+# Dossier: Trimble's command record (Pender's Division, July 3 detachment) (reg-csa-3c-pen-hq)
+
+Register row added at pass-5 start (register-maintenance batch; was
+'no register row — flagged' at passes 3-4).
 
 Pass 3 (first command batch) · Cast status: the command's two brigades are
 in-build (`csa-lane`, `csa-lowrance`); no division/detachment command row

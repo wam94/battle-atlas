@@ -1,8 +1,9 @@
 # Dossier: 1st Brigade, 2nd Division, II Corps — Harrow's (reg-us-ii-2-1)
 
 Pass 2 (reference frame) · Cast status: in-build (`us-harrow`) ·
-Achieved T-level: **T4** (brigade grain; division-report primary) ·
-2026-07-11
+Achieved T-level: **T4 full-arc** (brigade grain; division-report
+primary; July 2 arc audited full-arc at pass 5) · 2026-07-11
+(pass-5 upgrade)
 
 Frame role: the left of Gibbon's front — the line Rorty's battery and
 the 19th ME/15th MA/1st MN/82nd NY stones fix, and the southern jaw of
@@ -66,6 +67,18 @@ Bachelder j3-03.
 2. **July 2 evening** [D]: 1st MN's charge (Colvill; mon-1mn at
   (4462,4152) marks it — "NOT the July 3 position", register
   semantics).
+   **PASS-5 UPGRADE (the II Corps evening counterattack leg,
+  both-sided)**: the charge's object was the head of the CSA echelon
+  reaching the run after the Peach Orchard collapse — the sequence
+  now reads against the pass-5 southern-field chain (Barksdale
+  smashed ~18:15-19:00, CA-J2A-9; the follow-on echelon at the low
+  ground 19:00-19:15, CA-J2A-10); the 1st MN leg is bracketed
+  [D after CA-J2A-9, before sunset 19:29 LMT (ED-31)] with the
+  ~300 m down-slope charge [B: 3-4 min at 1.4-1.5 m/s]. The j2-04
+  (19:00) sheet draws the II Corps front's counter-line forming
+  north of the "WILLARD's Brig"-vs-Barksdale collision (read
+  2026-07-11); the 15th MA + 82nd NY Emmitsburg-road detachment's
+  fighting retirement (EC4.1) is the same window's right-hand leg.
 3. **July 3, crisis** [A vs CA-J3A-9]: the incline-right into the
   Copse fight, ~100-250 m by regiment [B: 2-5 min].
 

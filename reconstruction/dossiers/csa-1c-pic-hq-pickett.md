@@ -1,4 +1,7 @@
-# Dossier: Pickett's Division HQ / command record (no register row — flagged)
+# Dossier: Pickett's Division HQ / command record (reg-csa-1c-pic-hq)
+
+Register row added at pass-5 start (register-maintenance batch; was
+'no register row — flagged' at passes 3-4).
 
 Pass 3 (first command batch) · Cast status: division rendered via its three
 brigade units (`csa-garnett`, `csa-kemper`, `csa-armistead`); no division

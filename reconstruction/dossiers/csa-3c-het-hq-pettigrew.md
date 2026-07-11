@@ -1,4 +1,7 @@
-# Dossier: Heth's Division HQ / Pettigrew command record (no register row — flagged)
+# Dossier: Heth's Division HQ / Pettigrew command record (reg-csa-3c-het-hq)
+
+Register row added at pass-5 start (register-maintenance batch; was
+'no register row — flagged' at passes 3-4).
 
 Pass 3 (first command batch) · Cast status: division rendered via its four
 brigade units (`csa-fry`, `csa-marshall`, `csa-davis`, `csa-brockenbrough`);

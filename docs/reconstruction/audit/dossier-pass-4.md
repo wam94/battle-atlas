@@ -188,7 +188,7 @@ column order, and both drawn end-states).
   pillow` provides it (workflow note for the eventual
   `reconstruction/scripts/crop_sheet.py`).
 
-## 5. New ED candidates (proposed, NOT adopted)
+## 5. New ED candidates (proposed by this pass; ADOPTED 2026-07-11 as ED-50…ED-52 in the pass-5 batch ruling, angle-editorial-decisions.md)
 
 - **ED-50 — the 8th Ohio casualty shape.** Adopt the picket-line-
   dominant split (≈45 of 102 before the charge window; flat-attrition-

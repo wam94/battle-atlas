@@ -955,6 +955,73 @@ return's own headnote, promoted to discipline.
 
 ---
 
+## Dossier pass 4 adoption rulings (ED-50 … ED-52) — 2026-07-11
+
+Owner ruling (standing adopt-and-adjust doctrine): the ED candidates
+proposed by dossier pass 4 (`docs/reconstruction/audit/dossier-pass-4.md`
+§5, drafted on branch audit-dossiers-4) are ADOPTED as recorded below,
+executed at the start of dossier pass 5 (branch audit-dossiers-5). No
+renumbers were needed this batch.
+
+### ED-50 — The 8th Ohio casualty shape (picket-line-dominant split)
+
+Sawyer's report contains a noon statement — 4 killed + 41 wounded on the
+picket line BEFORE the charge window — against his battle total of 102,
+an EXACT match to the regiment's Return of Casualties row (or-27-1-return
+pp. 155-187; the pass-4 agreement exemplar). The famous July 3 flank
+action therefore cost the regiment LESS than its 40-hour picket tour.
+
+**Canonical choice:** us-8oh's casualty decay adopts the
+picket-line-dominant split — ≈45 of 102 before the charge window, a
+flat-attrition-then-moderate-spike curve — superseding any climax-spike
+default for this unit. **Rationale:** the split is stated by the
+commander mid-battle and reconciles exactly with the official return;
+rendering the flank action as the regiment's bleeding hour would invert
+a primary-attested shape. Consequence: the build's us-8oh decay is
+flagged for reconciliation at the next authoring pass (never a silent
+edit), and the shape joins R-casualty-curve-shape's cited-shape
+exemplars.
+
+### ED-51 — Carroll's July 3 placement rule (East Cemetery Hill, not the center)
+
+Carroll's report has the three regiments (4th OH, 14th IN, 7th WV) sent
+to East Cemetery Hill the night of July 2 and holding there "until the
+5th"; the j2-05 drawn state concurs ("Carroll's Brig 2d Corps" drawn ON
+East Cemetery Hill at (5100, 5624)), and no primary returns them to the
+II Corps front on July 3. Only the 8th Ohio (detached) fought on the
+center's flank.
+
+**Canonical choice:** us-carroll renders on East Cemetery Hill for the
+whole of July 3 — under the cannonade cross-fire without reply (ED-44
+class); any build track placing the three-regiment body on the II Corps
+front July 3 is contradicted by the primary and flagged for
+reconciliation. us-8oh renders independently per its own dossier.
+**Rationale:** report + drawn state agree; the famous brigade is two
+units with two different July 3s, and rendering must follow the split,
+not the fame.
+
+### ED-52 — The Union report-vs-return EC6 rule (ED-49's mirror)
+
+Pass 4 consumed the Union Return of Casualties (OR 27/1 pp. 155-187) at
+regiment grain — full k/w/captured-missing columns — and surfaced one
+clean conflict: Webb's report states 525, the return compiles 491 (with
+two exact report=return agreements beside it: 8th Ohio 102; Gates's 170
+= the 80th NY row).
+
+**Canonical choice:** where a Union commander's stated loss disagrees
+with the official Return of Casualties, the RETURN is the adopted
+battle-total EC6 basis and the report figure is carried as the
+commander's count (first-class conflict record, never averaged).
+Exemplar: Webb 491 adopted / 525 carried. The rule is ED-49's mirror
+with the asymmetry explicit: the Union return's full missing columns
+make it a compilation of record, where the ANV return's absent missing
+columns make it a floor (ED-49 rule 3 still governs that side).
+**Rationale:** the return is the army's own reconciled compilation
+against the commander's in-the-smoke count; adopting it while carrying
+the report figure preserves both without manufacturing precision.
+
+---
+
 ## Connective-reconstruction rules (named inference rules)
 
 Segments cite these rules by name in `inferenceRules`. A segment with no

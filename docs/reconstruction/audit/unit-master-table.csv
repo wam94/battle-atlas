@@ -70,6 +70,7 @@ reg-csa-1c-alx-5,Virginia (Richmond) Battery,confederate,battery,artillery,,,,,,
 csa-btty-bachman,"Bachman's Battery, Henry's Battalion (German Artillery, SC)",confederate,child-regiment,artillery,71,71,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,Bachman,yes,T1,T4,in-build,reg-csa-1c-hen-2
 csa-btty-reilly,"Reilly's Battery, Henry's Battalion (Rowan Artillery, NC)",confederate,child-regiment,artillery,144,144,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,Reilly,yes,T1,T4,in-build,reg-csa-1c-hen-4
 reg-csa-1c-arty-cmd,"First Corps artillery command (Chief of Artillery, Longstreet's corps)",confederate,command,artillery,,,,,,,,,,,,,,,4,Longstreet,yes,,T2,not-yet-cast,reg-csa-1c-arty-cmd
+reg-csa-2c-arty-cmd,"Second Corps artillery command (Chief of Artillery, Ewell's corps)",confederate,command,artillery,,,,,,,,,,,,,,,1,Ewell,yes,,T2,not-yet-cast,reg-csa-2c-arty-cmd
 csa-bn-henry,Henry's Artillery Battalion,confederate,parent-brigade,artillery,456,456,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,Henry,yes,T1,T4,in-build,reg-csa-1c-bn-henry
 csa-bn-alexander,Alexander's Artillery Battalion (Maj. Huger),confederate,standalone,artillery,576,576,0,2,2,0,0,2,0.0,0.0,no,line,1,0,5,Alexander,yes,T1,T4,in-build,reg-csa-1c-bn-alexander
 csa-bn-raine,Andrews's (Latimer's) Artillery Battalion (Capt. Raine),confederate,standalone,artillery,384,384,0,2,2,0,0,2,0.0,0.0,no,column,0,0,1,Andrews,yes,T1,T2,in-build,reg-csa-2c-bn-latimer
@@ -122,6 +123,9 @@ csa-8va,8th Virginia,confederate,child-regiment,infantry,296,108,188,10,1,9,0,10
 csa-9va,9th Virginia,confederate,child-regiment,infantry,330,92,238,9,0,9,0,9,2852.1,416.9,yes,line/routed/scattered,0,0,0,9th Virginia,VERIFY,T0,T4,in-build,
 csa-brock-left,Brockenbrough's left wing,confederate,child-regiment,infantry,440,390,50,7,1,6,0,7,735.6,5.4,yes,line/routed/scattered,0,0,3,Brockenbrough,yes,T0,T4,in-build,
 csa-brock-right,Brockenbrough's right wing,confederate,child-regiment,infantry,440,390,50,7,1,6,0,7,877.5,5.4,yes,line/routed/scattered,0,0,3,Brockenbrough,yes,T0,T4,in-build,
+reg-csa-3c-het-hq,Heth's Division headquarters (division command),confederate,command,infantry,,,,,,,,,,,,,,,3,Heth,yes,,T2,not-yet-cast,reg-csa-3c-het-hq
+reg-csa-3c-pen-hq,Pender's Division headquarters (division command),confederate,command,infantry,,,,,,,,,,,,,,,2,Pender,yes,,T2,not-yet-cast,reg-csa-3c-pen-hq
+reg-csa-1c-pic-hq,Pickett's Division headquarters (division command),confederate,command,infantry,,,,,,,,,,,,,,,7,Pickett,yes,,T2,not-yet-cast,reg-csa-1c-pic-hq
 csa-armistead,Armistead's Brigade,confederate,parent-brigade,infantry,1650,459,1191,9,2,7,0,9,2593.7,84.9,yes,line/routed/scattered,0,7,4,Armistead,yes,T5,T4,in-build,reg-csa-1c-pic-3
 csa-brockenbrough,Brockenbrough's Brigade,confederate,parent-brigade,infantry,880,780,100,7,2,5,0,7,821.4,5.4,yes,line/routed/scattered,0,0,3,Brockenbrough,yes,T0,T4,in-build,reg-csa-3c-het-2
 csa-davis,Davis's Brigade,confederate,parent-brigade,infantry,2000,603,1397,8,1,7,0,8,2223.2,22.4,yes,line/routed/scattered,0,0,3,Davis,yes,T0,T4,in-build,reg-csa-3c-het-4
@@ -261,6 +265,10 @@ us-69pa,69th Pennsylvania,union,child-regiment,infantry,258,180,78,6,2,4,0,6,0.0
 us-71pa,71st Pennsylvania,union,child-regiment,infantry,331,260,71,6,2,4,0,6,96.3,0.0,no,line,1,4,0,71st Pennsylvania,yes,T5,T4,in-build,
 us-72pa,72nd Pennsylvania,union,child-regiment,infantry,458,360,98,5,2,3,0,5,53.3,53.2,no,line,1,4,1,72nd Pennsylvania,yes,T5,T4,in-build,
 us-7mi,7th Michigan,union,child-regiment,infantry,165,130,35,5,1,4,0,5,70.0,0.0,no,line,1,0,2,7th Michigan,yes,T0,T4,in-build,
+reg-us-ii-2-hq,"2nd Division, II Corps headquarters (division command)",union,command,infantry,,,,,,,,,,,,,,,1,2nd Division,yes,,T2,not-yet-cast,reg-us-ii-2-hq
+reg-us-i-3-hq,"3rd Division, I Corps headquarters (division command)",union,command,infantry,,,,,,,,,,,,,,,1,3rd Division,yes,,T2,not-yet-cast,reg-us-i-3-hq
+reg-us-ii-3-hq,"3rd Division, II Corps headquarters (division command)",union,command,infantry,,,,,,,,,,,,,,,1,3rd Division,yes,,T2,not-yet-cast,reg-us-ii-3-hq
+reg-us-ii-hq,II Corps headquarters (corps command),union,command,infantry,,,,,,,,,,,,,,,0,II Corps headquarters,VERIFY,,T2,not-yet-cast,reg-us-ii-hq
 reg-us-hq-provost,Provost Guard and army headquarters detachments (Brig. Gen. Marsena R. Patrick),union,command,infantry,,,,,,,,,,,,,,,0,Provost Guard and army headquarters detachments,VERIFY,,T2,not-yet-cast,reg-us-hq-provost
 us-hall,Hall's Brigade,union,parent-brigade,infantry,920,555,365,5,1,4,0,5,60.9,0.0,no,line,0,4,4,Hall,yes,T5,T4,in-build,reg-us-ii-2-3
 us-stannard,Stannard's Vermont Brigade,union,parent-brigade,infantry,1950,1600,350,7,1,6,0,7,297.9,0.0,yes,line,0,3,6,Stannard,yes,T5,T4,in-build,reg-us-i-3-3

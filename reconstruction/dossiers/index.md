@@ -15,10 +15,10 @@ Citations are `(source-id, locator)`; source ids resolve in
 `reconstruction/sources/sources.json`. Facts with **no tier bracket are
 untimed** (identity, strength, materiel). Negative evidence and conflicts are
 first-class and live in their own section. New editorial calls are PROPOSED
-as ED candidates (ED-50+ as of pass 4 — the pass-1 candidates ED-32…ED-38,
-the monument profile ED-39, the pass-2 candidates ED-40…ED-45, and the
-pass-3 candidates ED-46…ED-49 were all adopted 2026-07-11), never
-self-adopted.
+as ED candidates (ED-53+ as of pass 5 — the pass-1 candidates ED-32…ED-38,
+the monument profile ED-39, the pass-2 candidates ED-40…ED-45, the
+pass-3 candidates ED-46…ED-49, and the pass-4 candidates ED-50…ED-52
+were all adopted 2026-07-11), never self-adopted.
 
 ## Fixed heading schema
 
@@ -107,16 +107,16 @@ grain, plus five primary engaged-strength statements.
 
 | Dossier | Register id | Arc role | Achieved T |
 |---|---|---|---|
-| [csa-1c-pic-hq-pickett.md](csa-1c-pic-hq-pickett.md) | (no register row — flagged) | division command record; the suppressed report | T2 (command record) |
+| [csa-1c-pic-hq-pickett.md](csa-1c-pic-hq-pickett.md) | reg-csa-1c-pic-hq (added pass 5) | division command record; the suppressed report | T2 (command record) |
 | [csa-1c-pic-1-garnett.md](csa-1c-pic-1-garnett.md) | reg-csa-1c-pic-1 | first line right-center; the Soldier View brigade | T4 full-arc (T5 window) |
 | [csa-1c-pic-2-kemper.md](csa-1c-pic-2-kemper.md) | reg-csa-1c-pic-2 | first line right flank; Stannard/LRT object | T4 full-arc (T5 window) |
 | [csa-1c-pic-3-armistead.md](csa-1c-pic-3-armistead.md) | reg-csa-1c-pic-3 | second line; the crossing (CA-J3A-9) | T4 full-arc (T5 window) |
-| [csa-3c-het-hq-pettigrew.md](csa-3c-het-hq-pettigrew.md) | (no register row — flagged) | left-wing division command record | T3 (command record) |
+| [csa-3c-het-hq-pettigrew.md](csa-3c-het-hq-pettigrew.md) | reg-csa-3c-het-hq (added pass 5) | left-wing division command record | T3 (command record) |
 | [csa-3c-het-3-fry.md](csa-3c-het-3-fry.md) | reg-csa-3c-het-3 | the column's guide; the color record | T4 full-arc |
 | [csa-3c-het-1-marshall.md](csa-3c-het-1-marshall.md) | reg-csa-3c-het-1 | left-wing right-center; the 26th NC arc | T4 full-arc |
 | [csa-3c-het-4-davis.md](csa-3c-het-4-davis.md) | reg-csa-3c-het-4 | left-wing left-center; Bryan-barn front | T4 full-arc |
 | [csa-3c-het-2-brockenbrough.md](csa-3c-het-2-brockenbrough.md) | reg-csa-3c-het-2 | extreme left; the corrupted-strength unit, now bounded | T3 full-arc |
-| [csa-3c-pen-hq-trimble.md](csa-3c-pen-hq-trimble.md) | (no register row — flagged) | third-line command record (Pender→Lane→Trimble→Lane) | T3 (command record) |
+| [csa-3c-pen-hq-trimble.md](csa-3c-pen-hq-trimble.md) | reg-csa-3c-pen-hq (added pass 5) | third-line command record (Pender→Lane→Trimble→Lane) | T3 (command record) |
 | [csa-3c-pen-2-lane.md](csa-3c-pen-2-lane.md) | reg-csa-3c-pen-2 | third line left; 1,355/660 primaries | T4 full-arc |
 | [csa-3c-pen-4-lowrance.md](csa-3c-pen-4-lowrance.md) | reg-csa-3c-pen-4 | third line right; the ~500-man brigade | T4 full-arc |
 | [csa-3c-and-1-wilcox.md](csa-3c-and-1-wilcox.md) | reg-csa-3c-and-1 | late echelon right (CA-J3A-10); 1,200/204 primaries | T4 full-arc |
@@ -139,15 +139,15 @@ burial ledger / Hartwig's 12,227).
 | Dossier | Register id | Arc role | Achieved T |
 |---|---|---|---|
 | [us-ii-2-2-webb.md](us-ii-2-2-webb.md) | reg-us-ii-2-2 | the Angle's receiving brigade, full arc | T4 full-arc (T5 window held) |
-| [us-ii-2-hq-gibbon.md](us-ii-2-hq-gibbon.md) | (no register row — flagged) | division command record; the first wounding pin | T3 (command record) |
-| [us-ii-hq-hancock.md](us-ii-hq-hancock.md) | (no register row — flagged) | corps command record; the wounding CONFLICT record | T3 (command record) |
-| [us-ii-3-hq-hays.md](us-ii-3-hq-hays.md) | (no register row — flagged) | division command record; the four-lines repulse | T3 (command record) |
+| [us-ii-2-hq-gibbon.md](us-ii-2-hq-gibbon.md) | reg-us-ii-2-hq (added pass 5) | division command record; the first wounding pin | T3 (command record) |
+| [us-ii-hq-hancock.md](us-ii-hq-hancock.md) | reg-us-ii-hq (added pass 5) | corps command record; the wounding CONFLICT record | T3 (command record) |
+| [us-ii-3-hq-hays.md](us-ii-3-hq-hays.md) | reg-us-ii-3-hq (added pass 5) | division command record; the four-lines repulse | T3 (command record) |
 | [us-ii-3-1-carroll.md](us-ii-3-1-carroll.md) | reg-us-ii-3-1 | split-brigade arc (East Cemetery Hill night fight; the 8th Ohio flank action FIRST-CLASS) | T4 full-arc |
 | [us-i-3-1-biddle.md](us-i-3-1-biddle.md) | reg-us-i-3-1 | Gates's demi-brigade at the Copse's south shoulder | T3 full-arc |
 | [us-i-3-2-stone.md](us-i-3-2-stone.md) | reg-us-i-3-2 | second/third-line frame (honestly thin) | T3 full-arc |
-| [us-i-3-hq-doubleday.md](us-i-3-hq-doubleday.md) | (no register row — flagged) | division command record; late-clock counter-profile | T2 (command record) |
+| [us-i-3-hq-doubleday.md](us-i-3-hq-doubleday.md) | reg-us-i-3-hq (added pass 5) | division command record; late-clock counter-profile | T2 (command record) |
 | [csa-3c-bn-poague.md](csa-3c-bn-poague.md) | reg-csa-3c-bn-poague | ED-36 frame COMPLETED; the howitzer negative; 657-round return | T4 full-arc |
-| [csa-2c-arty-hq-brown.md](csa-2c-arty-hq-brown.md) | (no register row — flagged ×2) | Second Corps artillery command record | T2 (command record) |
+| [csa-2c-arty-hq-brown.md](csa-2c-arty-hq-brown.md) | reg-csa-2c-arty-cmd (added pass 5) | Second Corps artillery command record | T2 (command record) |
 
 Pass-4 upgrades to existing dossiers: csa-3c-pen-hq-trimble.md (SHSP 26
 closed — the road-fence wounding conflict), us-btty-rittenhouse.md
@@ -157,3 +157,38 @@ closed verified-negative; B&M-type compilation readings carried),
 csa-3c-pen-4-lowrance.md (Poague-frame note closed).
 
 Companion: `docs/reconstruction/audit/dossier-pass-4.md`.
+
+## Pass 5 — the July 2 southern-field batch (CA-J2P/ED-28 chain hardening)
+
+The audit's first move into a new battle phase: the provisional July 2
+afternoon chain's executors, both sides of each anchor, per pass 4 §8.
+Batch adoption of ED-50…ED-52 executed at pass start; the EIGHT flagged
+command register rows added (register-maintenance batch, 273 → 281
+entries). Headline evidence classes: the executor step-off clocks
+(Law's 16:00 signal-dispatch document pin; Alexander's four-attack
+ladder; Kershaw's report clock sourced as the McLaws-wing skew's
+ORIGIN), the LRT defense's compiled primaries (Norton's Warren
+letters + Rice/Chamberlain/Garrard OR reports), and the return blocks
+for both wings (pooled-missing pattern; the Barksdale tablet=return
+exact match).
+
+| Dossier | Register id | Arc role | Achieved T |
+|---|---|---|---|
+| [csa-1c-hood-1-law.md](csa-1c-hood-1-law.md) | reg-csa-1c-hood-1 | en-echelon lead; LRT attack right wing; the water-detail ledger | T4 full-arc |
+| [csa-1c-hood-2-robertson.md](csa-1c-hood-2-robertson.md) | reg-csa-1c-hood-2 | Devil's Den executor; the pike-abandonment decision | T4 full-arc |
+| [us-v-1-3-vincent.md](us-v-1-3-vincent.md) | reg-us-v-1-3 | the LRT defense; 1,000-muskets primary; 20:00 repulse clock | T4 full-arc |
+| [us-v-2-3-weed.md](us-v-2-3-weed.md) | reg-us-v-2-3 | the second wave; Weed/O'Rorke/Hazlett paired pins | T4 full-arc |
+| [csa-1c-mcl-1-kershaw.md](csa-1c-mcl-1-kershaw.md) | reg-csa-1c-mcl-1 | CA-J2A-7 executor; the skew exemplar; the three-gun signal | T4 full-arc |
+| [csa-1c-mcl-3-barksdale.md](csa-1c-mcl-3-barksdale.md) | reg-csa-1c-mcl-3 | CA-J2A-9 executor; the no-report brigade; tablet=return 747 | T4 full-arc |
+
+Pass-5 upgrades to existing dossiers: us-ii-2-1-harrow.md +
+us-ii-2-3-hall.md (July 2 arcs closed both-sided — **T4 full-arc**),
+us-btty-rittenhouse.md (**T3**; MOLLUS round 4 TERMINAL — library/CDL;
+return row 13 landed; summit anchor refined), us-i-3-2-stone.md
+(**T4 full-arc**; the 150th Pa history standing fetch LANDED).
+Register maintenance: the eight pass-3/4 command rows added
+(reg-csa-1c-pic-hq, reg-csa-3c-het-hq, reg-csa-3c-pen-hq,
+reg-csa-2c-arty-cmd, reg-us-ii-hq, reg-us-ii-2-hq, reg-us-ii-3-hq,
+reg-us-i-3-hq) with overlay entries.
+
+Companion: `docs/reconstruction/audit/dossier-pass-5.md`.
