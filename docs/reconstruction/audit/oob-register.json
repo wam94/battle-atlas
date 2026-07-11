@@ -1,7 +1,7 @@
 {
   "title": "Gettysburg full three-day order-of-battle register (audit working grain)",
   "generated": "2026-07-10",
-  "status": "PROPOSAL \u2014 audit-research-1 branch; nothing canonical until the owner rules",
+  "status": "PROPOSAL — audit-research-1 branch; nothing canonical until the owner rules",
   "grain": "brigade + battery/battalion base grain; regiments enumerated as name-only strings inside brigade entries (per the unit-truth-spec scope ruling)",
   "conventions": {
     "castStatus": "in-build unit id from app/Assets/Battle/gettysburg-july3.json where a register entry matches a build unit; else 'not-yet-cast'. In-build child regiments (e.g. csa-8va, us-13vt, us-8oh) are represented inside their brigade entry's regiments list, not as separate register entries.",
@@ -11,22 +11,23 @@
     "sources": "ids resolve in reconstruction/sources/sources.json. Structure and successions: or-27-oob + wikipedia-oob-union/-csa (verified 2026-07-10); activity notes: stone-sentinels War Department tablets via the 2026-07-02 full-cast survey."
   },
   "stats": {
-    "totalEntries": 271,
+    "totalEntries": 273,
     "union": {
       "infantryBrigades": 51,
       "cavalryBrigades": 8,
       "batteries": 67,
       "artilleryBrigades": 14,
-      "commandEntries": 2
+      "commandEntries": 3
     },
     "confederate": {
       "infantryBrigades": 37,
       "cavalryBrigades": 7,
       "batteries": 69,
-      "artilleryBattalions": 16
+      "artilleryBattalions": 16,
+      "commandEntries": 1
     },
     "inBuild": 148,
-    "notYetCast": 123,
+    "notYetCast": 125,
     "regimentsEnumerated": 478
   },
   "entries": [
@@ -260,7 +261,7 @@
           "source": "Stone Sentinels strength-casualties-usa table",
           "tier": "inferred",
           "doc": "oob-strengths-2026-06-13",
-          "note": "Sum of the three engaged regiments (13th VT 480 + 14th VT 647 + 16th VT 661 = 1,788) does not match \u2014 ~160-man gap flagged, not reconciled."
+          "note": "Sum of the three engaged regiments (13th VT 480 + 14th VT 647 + 16th VT 661 = 1,788) does not match — ~160-man gap flagged, not reconciled."
         }
       ]
     },
@@ -310,7 +311,7 @@
         "wikipedia-oob-union",
         "stone-sentinels"
       ],
-      "notes": "July 1 Chambersburg Pike; July 3 relieved by Edgell, sent to the rear \u2014 'no action July 3' (documented negative, full-cast survey)."
+      "notes": "July 1 Chambersburg Pike; July 3 relieved by Edgell, sent to the rear — 'no action July 3' (documented negative, full-cast survey)."
     },
     {
       "id": "reg-us-i-b2",
@@ -384,7 +385,7 @@
         "wikipedia-oob-union",
         "stone-sentinels"
       ],
-      "notes": "July 3: East Cemetery Hill to Hancock Ave at 3 P.M. 'during a heavy cannonade' \u2014 documented in-window battery track (monument)."
+      "notes": "July 3: East Cemetery Hill to Hancock Ave at 3 P.M. 'during a heavy cannonade' — documented in-window battery track (monument)."
     },
     {
       "id": "reg-us-i-b5",
@@ -905,7 +906,7 @@
           "source": "Stone Sentinels (1st US Battery I)",
           "tier": "inferred",
           "doc": "oob-strengths-2026-06-13",
-          "note": "Casualty readings conflict between fetches: 30 total vs 25 total \u2014 both kept."
+          "note": "Casualty readings conflict between fetches: 30 total vs 25 total — both kept."
         }
       ]
     },
@@ -2791,7 +2792,7 @@
         "3rd Indiana Cavalry (6 cos)",
         "8th New York Cavalry"
       ],
-      "arrivalNote": "Buford's July 1 delaying fight; withdrew toward Taneytown/Westminster July 2 \u2014 not on the field July 3."
+      "arrivalNote": "Buford's July 1 delaying fight; withdrew toward Taneytown/Westminster July 2 — not on the field July 3."
     },
     {
       "id": "reg-us-cav-1-2",
@@ -2821,7 +2822,7 @@
         "17th Pennsylvania Cavalry",
         "3rd West Virginia Cavalry (2 cos)"
       ],
-      "arrivalNote": "With Gamble July 1; withdrew July 2 \u2014 not on the field July 3."
+      "arrivalNote": "With Gamble July 1; withdrew July 2 — not on the field July 3."
     },
     {
       "id": "reg-us-cav-1-3",
@@ -2851,7 +2852,7 @@
         "5th US Cavalry",
         "6th US Cavalry (detached to Fairfield July 3)"
       ],
-      "arrivalNote": "Arrived from Emmitsburg July 3 (arrival stated 11:00/13:00/15:00 across sources \u2014 disagreement encoded in the full-cast survey).",
+      "arrivalNote": "Arrived from Emmitsburg July 3 (arrival stated 11:00/13:00/15:00 across sources — disagreement encoded in the full-cast survey).",
       "notes": "South Cavalry Field, astride the Emmitsburg Road at the map's south edge."
     },
     {
@@ -2912,7 +2913,7 @@
         "6th Ohio Cavalry (10 cos)",
         "8th Pennsylvania Cavalry"
       ],
-      "arrivalNote": "Detached at Westminster guarding trains \u2014 never on the field."
+      "arrivalNote": "Detached at Westminster guarding trains — never on the field."
     },
     {
       "id": "reg-us-cav-2-3",
@@ -3059,7 +3060,7 @@
         "wikipedia-oob-union",
         "stone-sentinels"
       ],
-      "notes": "East Cavalry Field July 3 per the OOB; Bachelder sheet 8 labels a 'Daniels' on McGilvery's line \u2014 sheet-vs-OOB conflict, encoded in the full-cast survey."
+      "notes": "East Cavalry Field July 3 per the OOB; Bachelder sheet 8 labels a 'Daniels' on McGilvery's line — sheet-vs-OOB conflict, encoded in the full-cast survey."
     },
     {
       "id": "reg-us-ha-1-2",
@@ -3280,7 +3281,7 @@
         "wikipedia-oob-union",
         "stone-sentinels"
       ],
-      "notes": "With Huey at Westminster \u2014 never on the field."
+      "notes": "With Huey at Westminster — never on the field."
     },
     {
       "id": "reg-us-ar-hq",
@@ -3304,6 +3305,29 @@
         "stone-sentinels"
       ],
       "notes": "2,375 men, 114 guns nominal (full-cast survey); park displaced south behind Little Round Top under the July 3 overshoots (Hunt). Train guard: 4th New Jersey (7 cos)."
+    },
+    {
+      "id": "reg-us-arty-hq",
+      "castStatus": "not-yet-cast",
+      "name": "Artillery command, Army of the Potomac (Chief of Artillery)",
+      "side": "union",
+      "arm": "artillery",
+      "echelon": "command",
+      "parentChain": [
+        "Army of the Potomac",
+        "Army headquarters"
+      ],
+      "commander": "Brig. Gen. Henry J. Hunt",
+      "daysPresent": [
+        1,
+        2,
+        3
+      ],
+      "sources": [
+        "or-27-oob",
+        "wikipedia-oob-union"
+      ],
+      "notes": "Added dossier pass 1 (anchor-executor layer): Hunt's July 3 ammunition-conservation order IS the executor of chain anchors CA-J3A-4/5 and needed a command row to carry its dossier; previously the register had no army-level artillery command entry. Dossier: reconstruction/dossiers/us-arty-hq-hunt.md."
     },
     {
       "id": "reg-us-ar-1r",
@@ -3927,7 +3951,7 @@
         "wikipedia-oob-union",
         "stone-sentinels"
       ],
-      "notes": "93rd New York, 8th US (8 cos), 2nd Pennsylvania Cavalry, 6th Pennsylvania Cavalry Cos. E & I, detachments of 1st/6th US Cavalry; 93rd NY and 8th US 'stationed at Taneytown and not engaged' (Stone Sentinels). The Engineer Brigade (Benham) left for Washington July 1 and was NOT at Gettysburg \u2014 do not model."
+      "notes": "93rd New York, 8th US (8 cos), 2nd Pennsylvania Cavalry, 6th Pennsylvania Cavalry Cos. E & I, detachments of 1st/6th US Cavalry; 93rd NY and 8th US 'stationed at Taneytown and not engaged' (Stone Sentinels). The Engineer Brigade (Benham) left for Washington July 1 and was NOT at Gettysburg — do not model."
     },
     {
       "id": "reg-csa-1c-mcl-1",
@@ -4175,7 +4199,7 @@
           "source": "Col. W. R. Aylett report, July 12 1863, via Encyclopedia Virginia",
           "tier": "documented",
           "doc": "oob-strengths-2026-06-13",
-          "note": "Casualty cross-check, not a strength figure. A '1,950 strength' surfaced only in a search summary \u2014 flagged unreliable, do not cite."
+          "note": "Casualty cross-check, not a strength figure. A '1,950 strength' surfaced only in a search summary — flagged unreliable, do not cite."
         }
       ]
     },
@@ -4223,7 +4247,7 @@
         "First Corps",
         "Hood's Division"
       ],
-      "commander": "Brig. Gen. Jerome B. Robertson (w July 2; command July 3 disputed \u2014 Robertson vs Lt. Col. P. A. Work, flag per full-cast survey)",
+      "commander": "Brig. Gen. Jerome B. Robertson (w July 2; command July 3 disputed — Robertson vs Lt. Col. P. A. Work, flag per full-cast survey)",
       "daysPresent": [
         2,
         3
@@ -4648,6 +4672,28 @@
         "stone-sentinels"
       ],
       "notes": "Swung south vs Merritt ~15:00+ July 3 (in-build)."
+    },
+    {
+      "id": "reg-csa-1c-arty-cmd",
+      "castStatus": "not-yet-cast",
+      "name": "First Corps artillery command (Chief of Artillery, Longstreet's corps)",
+      "side": "confederate",
+      "arm": "artillery",
+      "echelon": "command",
+      "parentChain": [
+        "Army of Northern Virginia",
+        "First Corps"
+      ],
+      "commander": "Col. James B. Walton (nominal chief); Col. E. Porter Alexander (directing the corps artillery July 3 by Longstreet's order)",
+      "daysPresent": [
+        2,
+        3
+      ],
+      "sources": [
+        "or-27-oob",
+        "wikipedia-oob-csa"
+      ],
+      "notes": "Added dossier pass 1: the CA-J3A-1 signal order ran Longstreet -> Walton -> Miller's 3rd Co.; the Walton/Alexander divided-command arrangement is first-class context for the order chain and is carried in the Eshleman and Miller dossiers (reconstruction/dossiers/)."
     },
     {
       "id": "reg-csa-1c-bn-alexander",
@@ -5360,7 +5406,7 @@
         "wikipedia-oob-csa",
         "stone-sentinels"
       ],
-      "notes": "16 guns; north of town July 3 \u2014 'Not actively engaged' (tablet, documented negative)."
+      "notes": "16 guns; north of town July 3 — 'Not actively engaged' (tablet, documented negative)."
     },
     {
       "id": "reg-csa-2c-jon-1",
@@ -5865,7 +5911,7 @@
         "wikipedia-oob-csa",
         "stone-sentinels"
       ],
-      "notes": "11 guns; Benner's Hill area July 3 \u2014 'opened about 12 M., firing 20 to 25 rounds' then silent (tablet, A-)."
+      "notes": "11 guns; Benner's Hill area July 3 — 'opened about 12 M., firing 20 to 25 rounds' then silent (tablet, A-)."
     },
     {
       "id": "reg-csa-2c-nel-1",
@@ -6212,7 +6258,7 @@
           "source": "Stone Sentinels (brockenbroughs-brigade)",
           "tier": "unknown",
           "doc": "oob-strengths-2026-06-13",
-          "note": "Confirmed duplication artifact on two fetches \u2014 do not encode."
+          "note": "Confirmed duplication artifact on two fetches — do not encode."
         }
       ]
     },
@@ -6253,7 +6299,7 @@
           "source": "Stone Sentinels (archers-brigade)",
           "tier": "inferred",
           "doc": "oob-strengths-2026-06-13",
-          "note": "Same page narrative: 'less than 400 men remained at the end of July 3rd.' A '~1,200 (Busey & Martin)' figure surfaced only in an unverified search snippet \u2014 not citable."
+          "note": "Same page narrative: 'less than 400 men remained at the end of July 3rd.' A '~1,200 (Busey & Martin)' figure surfaced only in an unverified search snippet — not citable."
         }
       ]
     },
@@ -6328,7 +6374,7 @@
         "13th South Carolina",
         "14th South Carolina"
       ],
-      "notes": "Broke the Seminary Ridge line July 1; Long Lane July 2-3 \u2014 'constantly engaged in skirmishing' (tablet, in-window emitter)."
+      "notes": "Broke the Seminary Ridge line July 1; Long Lane July 2-3 — 'constantly engaged in skirmishing' (tablet, in-window emitter)."
     },
     {
       "id": "reg-csa-3c-pen-2",
@@ -6406,7 +6452,7 @@
         "45th Georgia",
         "49th Georgia"
       ],
-      "notes": "Long Lane July 2-3 \u2014 'engaged most of the day in severe skirmishing and exposed to heavy artillery fire' (tablet, in-window emitter)."
+      "notes": "Long Lane July 2-3 — 'engaged most of the day in severe skirmishing and exposed to heavy artillery fire' (tablet, in-window emitter)."
     },
     {
       "id": "reg-csa-3c-pen-4",
@@ -6567,7 +6613,7 @@
         "wikipedia-oob-csa",
         "stone-sentinels"
       ],
-      "notes": "15 guns; near McMillan Woods July 3 \u2014 tablet: 'in reserve, not actively engaged' vs secondaries crediting his rifles (flagged conflict, full-cast survey)."
+      "notes": "15 guns; near McMillan Woods July 3 — tablet: 'in reserve, not actively engaged' vs secondaries crediting his rifles (flagged conflict, full-cast survey)."
     },
     {
       "id": "reg-csa-3c-gar-1",
@@ -6687,7 +6733,7 @@
         "wikipedia-oob-csa",
         "stone-sentinels"
       ],
-      "notes": "16 guns; behind Pettigrew, Spangler/McMillan Woods July 3 \u2014 10 guns engaged, 6 howitzers sheltered 'no active part' (documented internal split, tablet)."
+      "notes": "16 guns; behind Pettigrew, Spangler/McMillan Woods July 3 — 10 guns engaged, 6 howitzers sheltered 'no active part' (documented internal split, tablet)."
     },
     {
       "id": "reg-csa-3c-poa-1",
@@ -6942,7 +6988,7 @@
         "Third Corps",
         "Pegram's Artillery Battalion (Third Corps reserve artillery)"
       ],
-      "commander": "Capt. William G. Crenshaw (Wikipedia OOB) \u2014 some modern compilations give Lt. Andrew B. Johnston at Gettysburg; disagreement kept",
+      "commander": "Capt. William G. Crenshaw (Wikipedia OOB) — some modern compilations give Lt. Andrew B. Johnston at Gettysburg; disagreement kept",
       "daysPresent": [
         1,
         2,
@@ -7080,7 +7126,7 @@
         "Jeff Davis (Mississippi) Legion",
         "Phillips (Georgia) Legion Cavalry"
       ],
-      "arrivalNote": "Arrived July 2 (Hunterstown fight); East Cavalry Field July 3 \u2014 off the terrain square."
+      "arrivalNote": "Arrived July 2 (Hunterstown fight); East Cavalry Field July 3 — off the terrain square."
     },
     {
       "id": "reg-csa-cav-fitz",
@@ -7111,7 +7157,7 @@
         "5th Virginia Cavalry",
         "1st Maryland Battalion Cavalry (attached)"
       ],
-      "arrivalNote": "Arrived July 2 evening; East Cavalry Field July 3 \u2014 off the terrain square."
+      "arrivalNote": "Arrived July 2 evening; East Cavalry Field July 3 — off the terrain square."
     },
     {
       "id": "reg-csa-cav-chambliss",
@@ -7140,7 +7186,7 @@
         "10th Virginia Cavalry",
         "13th Virginia Cavalry"
       ],
-      "arrivalNote": "East Cavalry Field July 3 \u2014 off the terrain square."
+      "arrivalNote": "East Cavalry Field July 3 — off the terrain square."
     },
     {
       "id": "reg-csa-cav-jenkins",
@@ -7171,7 +7217,7 @@
         "34th Virginia Cavalry Battalion",
         "36th Virginia Cavalry Battalion"
       ],
-      "arrivalNote": "Advanced with Ewell (mounted infantry role); East Cavalry Field July 3 \u2014 off the terrain square."
+      "arrivalNote": "Advanced with Ewell (mounted infantry role); East Cavalry Field July 3 — off the terrain square."
     },
     {
       "id": "reg-csa-cav-robertson",
@@ -7197,7 +7243,7 @@
         "4th North Carolina Cavalry",
         "5th North Carolina Cavalry"
       ],
-      "arrivalNote": "Arrived July 3 (rear-guard duty); Fairfield corridor \u2014 off the terrain square."
+      "arrivalNote": "Arrived July 3 (rear-guard duty); Fairfield corridor — off the terrain square."
     },
     {
       "id": "reg-csa-cav-jones",
@@ -7224,7 +7270,7 @@
         "7th Virginia Cavalry",
         "11th Virginia Cavalry"
       ],
-      "arrivalNote": "Arrived July 3; fought the 6th US Cavalry at Fairfield (~13 km SW) \u2014 off the terrain square."
+      "arrivalNote": "Arrived July 3; fought the 6th US Cavalry at Fairfield (~13 km SW) — off the terrain square."
     },
     {
       "id": "reg-csa-cav-imboden",
@@ -7251,7 +7297,7 @@
         "62nd Virginia Mounted Infantry",
         "Virginia Partisan Rangers (McNeill's)"
       ],
-      "arrivalNote": "Reached the army's rear ~noon July 3; assigned the trains \u2014 Cashtown corridor, off the terrain square."
+      "arrivalNote": "Reached the army's rear ~noon July 3; assigned the trains — Cashtown corridor, off the terrain square."
     },
     {
       "id": "reg-csa-cav-bn-ha",
