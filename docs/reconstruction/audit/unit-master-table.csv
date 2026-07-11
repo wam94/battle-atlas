@@ -69,6 +69,7 @@ reg-csa-1c-dea-4,Virginia (Lynchburg) Battery,confederate,battery,artillery,,,,,
 reg-csa-1c-alx-5,Virginia (Richmond) Battery,confederate,battery,artillery,,,,,,,,,,,,,,,5,Virginia,yes,,T2,not-yet-cast,reg-csa-1c-alx-5
 csa-btty-bachman,"Bachman's Battery, Henry's Battalion (German Artillery, SC)",confederate,child-regiment,artillery,71,71,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,Bachman,yes,T1,T4,in-build,reg-csa-1c-hen-2
 csa-btty-reilly,"Reilly's Battery, Henry's Battalion (Rowan Artillery, NC)",confederate,child-regiment,artillery,144,144,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,Reilly,yes,T1,T4,in-build,reg-csa-1c-hen-4
+reg-csa-1c-arty-cmd,"First Corps artillery command (Chief of Artillery, Longstreet's corps)",confederate,command,artillery,,,,,,,,,,,,,,,4,Longstreet,yes,,T2,not-yet-cast,reg-csa-1c-arty-cmd
 csa-bn-henry,Henry's Artillery Battalion,confederate,parent-brigade,artillery,456,456,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,Henry,yes,T1,T4,in-build,reg-csa-1c-bn-henry
 csa-bn-alexander,Alexander's Artillery Battalion (Maj. Huger),confederate,standalone,artillery,576,576,0,2,2,0,0,2,0.0,0.0,no,line,1,0,5,Alexander,yes,T1,T4,in-build,reg-csa-1c-bn-alexander
 csa-bn-raine,Andrews's (Latimer's) Artillery Battalion (Capt. Raine),confederate,standalone,artillery,384,384,0,2,2,0,0,2,0.0,0.0,no,column,0,0,1,Andrews,yes,T1,T2,in-build,reg-csa-2c-bn-latimer
@@ -199,6 +200,7 @@ reg-us-xi-b4,"Battery K, 1st Ohio Light",union,battery,artillery,,,,,,,,,,,,,,,1
 reg-us-v-b3,"Battery L, 1st Ohio Light",union,battery,artillery,,,,,,,,,,,,,,,0,Battery L,VERIFY,,T2,not-yet-cast,reg-us-v-b3
 reg-us-ar-2v-2,"Battery M, 1st Connecticut Heavy",union,battery,artillery,,,,,,,,,,,,,,,0,Battery M,VERIFY,,T2,not-yet-cast,reg-us-ar-2v-2
 reg-us-ha-1-4,"Battery M, 2nd US",union,battery,artillery,,,,,,,,,,,,,,,0,Battery M,VERIFY,,T2,not-yet-cast,reg-us-ha-1-4
+reg-us-arty-hq,"Artillery command, Army of the Potomac (Chief of Artillery)",union,command,artillery,,,,,,,,,,,,,,,0,Artillery command,VERIFY,,T2,not-yet-cast,reg-us-arty-hq
 us-btty-ames,"Ames's Battery G, 1st New York Light Artillery",union,standalone,artillery,132,132,0,2,2,0,0,2,0.0,0.0,no,line,1,0,2,Ames,yes,T1,T4,in-build,reg-us-ar-4v-4
 us-btty-arnold,"Arnold's Battery A, 1st Rhode Island Light Artillery",union,standalone,artillery,139,111,28,4,2,2,0,4,0.0,0.0,no,line,2,2,3,Arnold,yes,T5,T4,in-build,reg-us-ii-b2
 us-arty-reserve-park,Artillery Reserve park + ammunition train (Tyler's),union,standalone,artillery,2375,2375,0,4,2,2,0,4,1486.6,1486.6,yes,column,0,0,1,(Tyler,yes,T0,T3,in-build,reg-us-ar-hq

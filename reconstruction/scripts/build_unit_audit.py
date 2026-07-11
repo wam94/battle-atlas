@@ -36,6 +36,12 @@ OUT_DIR = ROOT / "docs/reconstruction/audit"
 XLSX = OUT_DIR / "unit-master-table.xlsx"
 CSV_OUT = OUT_DIR / "unit-master-table.csv"
 REGISTER = OUT_DIR / "oob-register.json"
+# Dossier overlay: dossier passes commit consultation-layer values here,
+# keyed by master-table Unit ID (= build id for in-build rows, register id
+# otherwise). Overlay values win over values preserved from the existing
+# workbook, so the consultation layer for audited units regenerates
+# deterministically from a committed input instead of from workbook state.
+OVERLAY = OUT_DIR / "dossier-overlay.json"
 
 MOVE_THRESHOLD_M = 100.0  # path length below this ≈ dressing/jitter, not movement
 
@@ -225,6 +231,18 @@ def main():
             uid = rec.get("Unit ID")
             if uid:
                 preserved[uid] = {c: rec.get(c) for c in CONSULT_COLS if c in rec}
+
+    # dossier overlay wins over workbook-preserved values (see OVERLAY note)
+    if OVERLAY.exists():
+        overlay = json.loads(OVERLAY.read_text())
+        for uid, cols in overlay.get("units", {}).items():
+            unknown = set(cols) - set(CONSULT_COLS)
+            if unknown:
+                raise SystemExit(
+                    f"dossier-overlay.json: unknown consultation column(s) "
+                    f"{sorted(unknown)} on unit {uid}"
+                )
+            preserved.setdefault(uid, {}).update(cols)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 

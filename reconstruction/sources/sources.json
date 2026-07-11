@@ -1,610 +1,931 @@
 {
-  "sources": [
-    {
-      "id": "bachelder-third-day-1876",
-      "kind": "map",
-      "title": "Map of the battlefield of Gettysburg. July 3rd, 1863 (Third Day's Battle — Positions of Troops)",
-      "author": "John B. Bachelder",
-      "year": 1876,
-      "url": "https://www.loc.gov/item/99447492/",
-      "editionNote": "Positions compiled by John B. Bachelder, 1876; new edition 1883 (LC Civil War Maps 2nd ed. no. 326). Drawn on the Warren survey base at 1:12,000; PD-traceable. Encodes position CLASSES (first/intermediate/evening/all day), not clock times — every clock attached to a Bachelder position is an inferred time on a documented position. Union regiment geometry best-sourced; Confederate at-the-wall positions are brigade-level and the most interpretation-laden (Hartwig, GNMP Seminar 12).",
-      "note": "Primary July 3 position source. Landcover features (stone wall, road fences, copse, fields) traced from the georeferenced sheet 2026-07-02 into data/landcover/landcover.json."
-    },
-    {
-      "id": "warren-survey-1868",
-      "kind": "map",
-      "title": "Battle field of Gettysburg (surveyed 1868-69 under Bvt. Maj. Gen. G.K. Warren)",
-      "author": "G. K. Warren (survey); P. M. Blake (field revision 1873)",
-      "year": 1873,
-      "url": "https://www.loc.gov/item/99448794/",
-      "editionNote": "1:12,000 reduction of the 200-ft-to-the-inch original (NARA RG 77:E 81). LOC verbatim: 'Positions of troops are not given.' Terrain/roads/fences/vegetation base layer only.",
-      "note": "Georeferencing base for the Bachelder sheets and the traced landcover."
-    },
-    {
-      "id": "haskell-1908",
-      "kind": "memoir",
-      "title": "The Battle of Gettysburg",
-      "author": "Frank Aretas Haskell",
-      "year": 1908,
-      "url": "https://www.gutenberg.org/cache/epub/33121/pg33121.txt",
-      "editionNote": "Wisconsin History Commission Reprints No. 1 (1908); written as a letter weeks after the battle. Famously partisan — 72nd PA veterans disputed his Angle characterization. Union 1st Lt., aide to Gen. Gibbon, on Cemetery Ridge.",
-      "clockProfile": {
-        "kind": "watch-checked",
-        "offsetMinutes": 7,
-        "offsetEnvelope": [
-          2,
-          12
-        ],
-        "anchorsUsed": [
-          "CA-J3A-1",
-          "CA-J3A-5"
-        ],
-        "assessment": "Two anchor statements, both re-verified from the full text 2026-07-10: watch check 'five minutes before one o'clock' immediately before the first gun (stated ~13:00 vs chain 13:07 -> +7) and cannonade end 'at three o'clock, almost precisely' (stated 15:00; corrected 15:07, inside CA-J3A-5's envelope; ED-1's arithmetic was built on his stated time). His 'Half past two o'clock, an hour and a half since the commencement' is internally consistent on his own watch. Envelope reflects one-source derivation. Partisanship (72nd PA) affects his facts, not his watch.",
-        "confidence": "medium"
-      }
-    },
-    {
-      "id": "alexander-1907",
-      "kind": "memoir",
-      "title": "Military Memoirs of a Confederate, ch. 18 (Gettysburg: Third Day)",
-      "author": "Edward Porter Alexander",
-      "year": 1907,
-      "url": "https://archive.org/details/militarymemoirso00alex",
-      "editionNote": "44-year retrospective; times self-reported from his own watch. Confederate colonel directing the assault artillery on Longstreet's front (not Lee's artillery chief — Pendleton held that post).",
-      "clockProfile": {
-        "kind": "retrospective-watch",
-        "offsetMinutes": 7,
-        "offsetEnvelope": [
-          0,
-          15
-        ],
-        "anchorsUsed": [
-          "CA-J3A-1"
-        ],
-        "assessment": "One anchor statement, re-verified from the full text 2026-07-10: 'It was just 1 P.M. by my watch when the signal guns were fired' (stated 13:00 vs chain 13:07 -> +7). His 1:25 and 1:40 note times correct to 13:32/13:47 (CA-J3A-2/3). His step-off statement 'doubtless 1.50 or later, but I did not look at my watch again' is self-hedged and excluded from anchor statements. Confidence capped by the 44-year retrospective distance regardless of arithmetic; envelope held wide.",
-        "confidence": "medium"
-      }
-    },
-    {
-      "id": "jacobs-1864",
-      "kind": "book",
-      "title": "Notes on the Rebel Invasion of Maryland and Pennsylvania",
-      "author": "Michael Jacobs",
-      "year": 1864,
-      "url": "https://archive.org/details/notesonrebelinva00jaco",
-      "editionNote": "The most contemporaneous source (1864). Civilian professor at Pennsylvania College, Gettysburg; habitually precise but a distant observer.",
-      "clockProfile": {
-        "kind": "contemporaneous-civilian",
-        "offsetMinutes": 0,
-        "offsetEnvelope": [
-          -2,
-          2
-        ],
-        "anchorsUsed": [
-          "CA-J3A-1"
-        ],
-        "assessment": "The chain's precision standard: CA-J3A-1 (13:07) is defined on his 'at seven minutes past 1 p. m.' reading, so his offset is 0 by construction. Cross-checks: July 2 artillery opening 'at twenty minutes past 4 P.M.' sits at the late edge of that event's envelope (tablets say 'about 4'); July 3 morning 'From 4 1/2 to 10 1/2 A.M.' agrees with the tablet 04:30/10:30 pair. Full text re-verified 2026-07-10. Caveat riding the source record: his 'When 2 1/2 p. m. came' step-off (14:30) is the strongest counter-reading to ED-1 and is carried as a conflict record on CA-J3A-6, not as an offset datum.",
-        "confidence": "strong"
-      }
-    },
-    {
-      "id": "martin-smith-shsp32-1904",
-      "kind": "article",
-      "title": "Battle of Gettysburg, and the Charge of Pickett's Division (SHSP Vol. 32, pp. 183-195)",
-      "author": "Rawley W. Martin and John Holmes Smith",
-      "year": 1904,
-      "url": "https://archive.org/details/southernhistoricv32sout",
-      "editionNote": "Martin (Lt. Col., 53rd VA, Armistead's brigade) pp. ~184-189; Smith (Capt., 11th VA, Kemper's) pp. ~189-195. Martin's letter dated Aug. 11, 1897 — 34-year recollection; twice misnames the Union position 'Seminary Ridge'. Page span verified against the archive.org scan 2026-07-02."
-    },
-    {
-      "id": "fry-shsp7-1879",
-      "kind": "article",
-      "title": "Pettigrew's Charge at Gettysburg (SHSP Vol. 7, pp. 91-93)",
-      "author": "Birkett D. Fry",
-      "year": 1879,
-      "url": "https://archive.org/details/sim_southern-historical-society-papers_1879-02_7_2",
-      "editionNote": "Fry commanded Archer's brigade, the guide of the whole assault. Down wounded before the end; misdates Heth's wounding. Page span verified against the archive.org scan 2026-07-02."
-    },
-    {
-      "id": "longstreet-1896",
-      "kind": "memoir",
-      "title": "From Manassas to Appomattox",
-      "author": "James Longstreet",
-      "year": 1896,
-      "url": "https://archive.org/details/manassasappomatt00longrich",
-      "editionNote": "The fifteen-thousand protest at pp. 386-387 is indirect discourse in this memoir; the direct-speech version is his earlier 1877 account — do not conflate. Assault organization at pp. 388-389; strength figures at p. 315."
-    },
-    {
-      "id": "sturtevant-1910",
-      "kind": "regimental_history",
-      "title": "Pictorial History Thirteenth Regiment Vermont Volunteers",
-      "author": "Ralph Orson Sturtevant",
-      "year": 1910,
-      "url": "https://archive.org/details/cu31924030916187",
-      "editionNote": "Ignores the known Stannard-vs-Doubleday/Hancock credit dispute. Flank-attack passage pp. 304-305."
-    },
-    {
-      "id": "fuger-1904",
-      "kind": "memoir",
-      "title": "Lieut.-Colonel Frederick Fuger, U.S. Army and his Descendants (eyewitness account of July 3, 1863)",
-      "author": "Frederick Fuger",
-      "year": 1904,
-      "url": "https://storiesfrommimi.wordpress.com/descendants-of-lt-col-frederick-fuger/frederick-fuger-eyewitness-account-of-the-battle-of-the-bloody-angle-july-3-1863-gettysburg-pa/",
-      "editionNote": "Family-published manuscript (Winn & Hammond, Detroit, 1904). Written ~41 years after the event during Fuger's Medal of Honor pursuit — a contested, self-interested retelling (Hartwig: 'Fuger's embellishments... gained traction'). His hand-to-hand claim is directly disputed by Anthony McDermott (69th PA, 1891). Wound/death sequence for Cushing comes from this variant."
-    },
-    {
-      "id": "fuger-jmsi-1907",
-      "kind": "article",
-      "title": "Cushing's Battery at Gettysburg (Journal of the Military Service Institution, Vol. 41, p. 408)",
-      "author": "Frederick Fuger",
-      "year": 1907,
-      "url": "https://catalog.hathitrust.org/Record/008898037",
-      "editionNote": "JMSI Vol. 41 has no verified free-and-scriptable full text (archive.org run stops at Vol. 39); the final-canister/Armistead passage is verified verbatim via the NPS GNMP citation (hartwig-2012-nps). Same 41-44-year retrospective caveats as fuger-1904."
-    },
-    {
-      "id": "hartwig-2012-nps",
-      "kind": "blog",
-      "title": "Lieutenant Cushing (From the Fields of Gettysburg, NPS GNMP blog, June 21, 2012)",
-      "author": "D. Scott Hartwig",
-      "year": 2012,
-      "url": "https://npsgnmp.wordpress.com/2012/06/21/lieutenant-cushing/",
-      "editionNote": "NPS staff historian. Quotes the JMSI 1907 Fuger passage directly and documents the conflicts between Fuger, Cowan's 1885 Bachelder letter, and Webb's official report. Contains no clock times at all (fetch-verified 2026-07-02)."
-    },
-    {
-      "id": "mcdermott-1889",
-      "kind": "regimental_history",
-      "title": "A Brief History of the 69th Regiment Pennsylvania Veteran Volunteers",
-      "author": "Anthony W. McDermott",
-      "year": 1889,
-      "url": "https://archive.org/details/briefhistoryof00mcde",
-      "editionNote": "Full text verified. The gold-standard company-level fragment for the Angle (Cos. I, A, F, D)."
-    },
-    {
-      "id": "waitt-1906",
-      "kind": "regimental_history",
-      "title": "History of the Nineteenth Regiment, Massachusetts Volunteer Infantry, 1861-1865 (ch. XXIX, pp. 234-237)",
-      "author": "Ernest Linden Waitt (compiler)",
-      "year": 1906,
-      "url": "https://archive.org/details/04390879.3094.emory.edu",
-      "editionNote": "Compiled regimental history — 43-years-later literary polish over veterans' testimony; composite enlisted-ranks voice for the Cemetery Ridge bombardment."
-    },
-    {
-      "id": "smith-71pa-or",
-      "kind": "official_report",
-      "title": "Official report on the 71st Pennsylvania at Gettysburg (Lt. Col. C. Kochersperger / Col. R. Penn Smith)",
-      "author": "R. Penn Smith",
-      "year": 1863,
-      "url": "https://gettysburg.stonesentinels.com/union-monuments/pennsylvania/pennsylvania-infantry/71st-pennsylvania/official-report-on-the-71st-pennsylvania/",
-      "editionNote": "Accessed via the Stone Sentinels reproduction. The report names no companies."
-    },
-    {
-      "id": "or-27-1-hall",
-      "kind": "official_report",
-      "title": "Col. Norman J. Hall's report, OR Series I Vol. 27 Part 1",
-      "author": "Norman J. Hall",
-      "year": 1863,
-      "url": "https://collections.library.cornell.edu/moa_new/waro.html",
-      "editionNote": "OR Part 1 (Union reports) has no verified script-friendly URL (HathiTrust bot-blocks; Cornell MOA browser-only). Content attested via the 2026-07-02 regiment-track survey: describes shifting his regiments right toward the clump during the break."
-    },
-    {
-      "id": "stone-sentinels",
-      "kind": "reference_site",
-      "title": "Gettysburg Stone Sentinels (monument and unit pages)",
-      "author": "Steve Hawks",
-      "year": 2026,
-      "url": "https://gettysburg.stonesentinels.com/",
-      "editionNote": "Monument-inscription and modern-compilation figures derived from GNMP tablets and OR data; the site's own disclaimer: 'often in disagreement between regimental and brigade records.' Two separate fetches of the same page have returned different numbers for some brigades (extraction caution). Strength figures are inferred-tier, not period documents.",
-      "clockProfile": {
-        "kind": "tablet-adjudicated",
-        "offsetMinutes": 0,
-        "offsetEnvelope": [
-          -30,
-          30
-        ],
-        "anchorsUsed": [
-          "CA-J2E-2",
-          "CA-J2E-3",
-          "CA-J3M-4"
-        ],
-        "assessment": "The War Department tablets are ~35-year-retrospective adjudications, not witnesses. On Ewell's front they match modern scholarship well (Hoke 20:00; Johnson 'dusk'; retired 10:30). EXCEPTION (ED-28 skew rule): McLaws-wing tablets run systematically ~1 hour EARLY (Kershaw 'advanced about 4.30' vs modern ~17:30; Barksdale 'Advanced at 5 P.M.' vs modern ~18:15) - envelope [-60,0] on that wing, i.e. tablet-stated times there read up to an hour early. Site-extraction hygiene caveat rides the source record; the two 2026-07-10 re-fetches (Early 'about noon' = two miles out on the Harrisburg Road; XI Corps '10.30 A. M.' = Schurz's division specifically) are recorded in the verification dossier.",
-        "confidence": "medium"
-      }
-    },
-    {
-      "id": "encyclopedia-virginia",
-      "kind": "reference_site",
-      "title": "Encyclopedia Virginia (Pickett's Charge entries)",
-      "author": "Virginia Humanities",
-      "year": 2026,
-      "url": "https://encyclopediavirginia.org/entries/numbers-at-picketts-charge/",
-      "editionNote": "Historiographic synthesis; frames scholarly consensus on assault strength as 'surprisingly hard to reach' (12,000-13,000 total; Pickett's division 5,800-6,200 depending on source)."
-    },
-    {
-      "id": "aylett-1863",
-      "kind": "official_report",
-      "title": "Col. W. R. Aylett's report on Armistead's brigade, July 12, 1863 (Museum of the Confederacy)",
-      "author": "William R. Aylett",
-      "year": 1863,
-      "url": "https://encyclopediavirginia.org/1117hpr-5342776bbcb9068/",
-      "editionNote": "Period after-action report, accessed via the Encyclopedia Virginia reproduction (secondary hop flagged). 1,191 total casualties for Armistead's brigade."
-    },
-    {
-      "id": "army-moh-cushing",
-      "kind": "government_record",
-      "title": "U.S. Army Medal of Honor page for 1st Lt. Alonzo Cushing",
-      "author": "U.S. Army",
-      "year": 2014,
-      "url": "https://www.army.mil/medalofhonor/cushing/",
-      "editionNote": "Administrative commendation record compiled long after 1863, not a battlefield return. '126 men and six cannons.'"
-    },
-    {
-      "id": "webb-moh",
-      "kind": "government_record",
-      "title": "Medal of Honor citation for Brig. Gen. Alexander S. Webb",
-      "author": "U.S. War Department",
-      "year": 1891,
-      "url": "https://gettysburg.stonesentinels.com/monuments-to-individuals/alexander-webb/",
-      "editionNote": "Administrative record; confirms Webb wounded while leading at the Angle."
-    },
-    {
-      "id": "nps-cushing-article",
-      "kind": "article",
-      "title": "Alonzo Cushing at Gettysburg (NPS article)",
-      "author": "National Park Service",
-      "year": 2014,
-      "url": "https://www.nps.gov/articles/000/alonzo-cushing-gettysburg.htm",
-      "editionNote": "Modern NPS synthesis: the two-serviceable-guns displacement to the wall, the three-wound sequence, and the 'fired the last shot' legend correction."
-    },
-    {
-      "id": "brown-1985-filson",
-      "kind": "article",
-      "title": "Double Canister at Ten Yards: Captain Andrew Cowan at Gettysburg (Filson Club History Quarterly 59:3)",
-      "author": "Kent Masterson Brown",
-      "year": 1985,
-      "url": "https://filsonhistorical.org/wp-content/uploads/publicationpdfs/59-3-2_-Double-Canister-at-Ten-Yards-Captain-Andrew-Cowan-at-Gettysburg_Brown-Kent-Masterson.pdf",
-      "editionNote": "Read page-by-page in the 2026-07-02 survey. Cowan's arrival replacing Brown's B, the 5-guns-south/1-gun-north split (orientation corrected there), the 106th PA Cos. A/B skirmish detail (fn. 75)."
-    },
-    {
-      "id": "abt-map-set",
-      "kind": "map",
-      "title": "American Battlefield Trust timed map sheets, Pickett's Charge (3:00-3:30 / 3:30-3:45 / 3:45-4:15 PM)",
-      "author": "Steven Stanley / American Battlefield Trust",
-      "year": 2020,
-      "url": "https://www.battlefields.org/learn/maps/gettysburg-picketts-charge-july-3-1863",
-      "editionNote": "Copyrighted, look-don't-touch (ToS prohibits derivative/AI use of the maps themselves); brigade/time FACTS cited under Feist, geometry never traced. Brigade-level, its own clock frame — never silently mixed with witness clocks."
-    },
-    {
-      "id": "historynet-72pa",
-      "kind": "article",
-      "title": "Monumental Lie? — the 72nd Pennsylvania monument litigation",
-      "author": "HistoryNet",
-      "year": 2017,
-      "url": "https://www.historynet.com/monumental-lie-statue-bloody-angle/",
-      "editionNote": "Survey-grade lead (SNIPPET tier) for the 72nd PA's contested position; used only to attest that the counter-reading exists, not for geometry."
-    },
-    {
-      "id": "veazey-or",
-      "kind": "official_report",
-      "title": "Col. Wheelock G. Veazey's report (16th Vermont), OR Series I Vol. 27 Part 1",
-      "author": "Wheelock G. Veazey",
-      "year": 1863,
-      "url": "https://collections.library.cornell.edu/moa_new/waro.html",
-      "editionNote": "Same OR Part 1 access caveat as or-27-1-hall; content attested via the 2026-07-02 survey (the 16th VT on the 13th's left firing into Pickett's right flank, then reversing against Wilcox/Lang)."
-    },
-    {
-      "id": "vt13-monument",
-      "kind": "monument",
-      "title": "13th Vermont monument inscription, Gettysburg",
-      "author": "Gettysburg Battlefield Memorial Association / State of Vermont",
-      "year": 1899,
-      "url": "https://gettysburg.stonesentinels.com/union-monuments/vermont/13th-vermont/",
-      "editionNote": "Inscription verbatim via Stone Sentinels: 'changed front forward on first company, advanced 200 yards, attacking the Confederate right flank... capturing 243 prisoners.' Monument text is veteran-committee testimony, Bachelder-era placement discipline."
-    },
-    {
-      "id": "peyton-or-1863",
-      "kind": "official_report",
-      "title": "Report of Maj. Charles S. Peyton, Nineteenth Virginia Infantry (Garnett's brigade), OR ser. 1 vol. 27 pt. 2 pp. 385-387",
-      "author": "Charles S. Peyton",
-      "year": 1863,
-      "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-major-charles-s-peyton.htm",
-      "note": "Written July 9, 1863; the primary Confederate account of the road fences, the grass slope, and the breast-high wall on Garnett's front. Public domain."
-    },
-    {
-      "id": "osm-gettysburg",
-      "kind": "dataset",
-      "title": "OpenStreetMap building footprints, Gettysburg NMP (Codori barn way 779833686)",
-      "year": 2026,
-      "url": "https://www.openstreetmap.org/way/779833686",
-      "note": "Positions measured into battlefield-local meters in docs/research/2026-06-13-landmark-anchors.md (barn anchor 4020.4, 4635.4). Facts/coordinates only; ODbL geometry is not redistributed as an asset. The mapped barn is the 1882 replacement on the same farmyard."
-    },
-    {
-      "id": "loc-picketts-charge-photo",
-      "kind": "government_record",
-      "title": "Gettysburg, battlefield of, scene of Pickett's charge (period photograph, Library of Congress P&P)",
-      "year": 1863,
-      "url": "https://www.loc.gov/item/2012647714/",
-      "note": "No known restrictions on publication; primary visual evidence for the wartime Codori barn massing."
-    },
-    {
-      "id": "habs-trostle-barn",
-      "kind": "government_record",
-      "title": "HABS PA-1962: Trostle Barn, Emmitsburg Road (U.S. 15), Gettysburg — 10 measured-drawing sheets + data pages",
-      "url": "https://www.loc.gov/item/pa1728/",
-      "note": "Public-domain measured drawings; the period-typical Pennsylvania bank-barn analogue for the Codori barn. Verified negative 2026-07-09: the HABS/HAER/HALS collection has NO Codori coverage (collection API query returns 0 results)."
-    },
-    {
-      "id": "ordnance-manual-1862",
-      "kind": "book",
-      "title": "The Ordnance Manual for the Use of the Officers of the United States Army, 3rd ed.",
-      "year": 1862,
-      "url": "https://archive.org/details/ordnancemanualfo00unitrich",
-      "editionNote": "Gun-dimension tables pp. 17-19 (OCR illegible; verify on page scans); field-carriage/limber/caisson dimensions p. 74, limber p. 45, caisson p. 47. Public domain."
-    },
-    {
-      "id": "instruction-field-artillery-1863",
-      "kind": "book",
-      "title": "Instruction for Field Artillery (U.S. War Department)",
-      "year": 1863,
-      "url": "https://archive.org/details/instructionforf01deptgoog",
-      "editionNote": "Battery organization pp. 2-3; dimensions/weights tables pp. 6, 15. Public domain."
-    },
-    {
-      "id": "nps-the-angle",
-      "kind": "article",
-      "title": "NPS: The Angle (Gettysburg place page)",
-      "url": "https://www.nps.gov/places/the-angle.htm"
-    },
-    {
-      "id": "hartwig-gmag-1",
-      "kind": "article",
-      "title": "It Struck Horror to Us All (Gettysburg Magazine no. 1)",
-      "author": "D. Scott Hartwig",
-      "year": 1989,
-      "url": "http://www.gdg.org/Gettysburg%20Magazine/scott1.html"
-    },
-    {
-      "id": "npsgnmp-blog-hwm",
-      "kind": "blog",
-      "title": "GNMP blog: The High Water Mark monument",
-      "year": 2013,
-      "url": "https://npsgnmp.wordpress.com/2013/07/20/the-high-water-mark-monument/"
-    },
-    {
-      "id": "gettysburg-witness-trees",
-      "kind": "reference_site",
-      "title": "Gettysburg Witness Trees: Copse of Trees",
-      "year": 2026,
-      "url": "https://www.gettysburgwitnesstrees.com/main-map/hancock-avenue/copse-of-trees-tree/"
-    },
-    {
-      "id": "priest-ecwc",
-      "kind": "article",
-      "title": "Pickett's Charge: Another Perspective (Essential Civil War Curriculum, Virginia Tech)",
-      "author": "John M. Priest",
-      "url": "https://www.essentialcivilwarcurriculum.com/picketts-charge.html"
-    },
-    {
-      "id": "gettysburg-network-1863",
-      "kind": "blog",
-      "title": "Gettysburg Network of 1863: Discover Gettysburg's Codori Farm",
-      "year": 2025,
-      "url": "https://gettysburgciviliannetwork.com/2025/08/13/discover-gettysburgs-codori-farm-history-memorialization/"
-    },
-    {
-      "id": "mayo-shsp34",
-      "kind": "article",
-      "title": "Col. Joseph Mayo (3rd Virginia Infantry), account in Southern Historical Society Papers vol. 34",
-      "author": "Joseph Mayo",
-      "year": 1906,
-      "note": "Public domain; quoted here via priest-ecwc and gettysburg-network-1863 (no free full text located)."
-    },
-    {
-      "id": "gettysburg-compiler-codori",
-      "kind": "blog",
-      "title": "Saved by the Land: The Codori Family (Gettysburg Compiler, Gettysburg College)",
-      "year": 2021,
-      "url": "https://gettysburgcompiler.org/2021/06/02/saved-by-the-land-the-codori-family/"
-    },
-    {
-      "id": "antietam-aotw",
-      "kind": "reference_site",
-      "title": "Antietam on the Web: 3-inch Ordnance Rifle",
-      "year": 2026,
-      "url": "https://antietam.aotw.org/weapons.php?weapon_id=3"
-    },
-    {
-      "id": "or-27-oob",
-      "kind": "official_report",
-      "title": "Official Records Series I Vol. 27, order-of-battle returns (Part 1 Union pp. ~155-168; Part 2 Confederate pp. ~283-291)",
-      "author": "U.S. War Department (GPO 1889)",
-      "year": 1863,
-      "url": "https://texashistory.unt.edu/ark:/67531/metapth154598/",
-      "editionNote": "The OOB register's structural authority. Part 2 (Confederate) scriptable via the Texas ARK; Part 1 (Union) still has no verified script-friendly URL (standing open item) — Union structure verified via the OR-derived Wikipedia OOB articles at this pass."
-    },
-    {
-      "id": "wikipedia-oob-union",
-      "kind": "reference_site",
-      "title": "Battle of Gettysburg order of battle: Union (Wikipedia)",
-      "author": "Wikipedia editors",
-      "year": 2026,
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Gettysburg_order_of_battle:_Union",
-      "editionNote": "OR-derived compilation with per-regiment commanders and casualty annotations; wikitext fetched 2026-07-10 and used as the register's Union verification corpus. Secondary; the 2026-06-13 OOB pass confirmed it does NOT cite Busey & Martin page-level figures."
-    },
-    {
-      "id": "wikipedia-oob-csa",
-      "kind": "reference_site",
-      "title": "Battle of Gettysburg order of battle: Confederate (Wikipedia)",
-      "author": "Wikipedia editors",
-      "year": 2026,
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Gettysburg_order_of_battle:_Confederate",
-      "editionNote": "OR-derived compilation; wikitext fetched 2026-07-10 and used as the register's Confederate verification corpus. Same caveats as wikipedia-oob-union."
-    },
-    {
-      "id": "busey-martin-2005",
-      "kind": "book",
-      "title": "Regimental Strengths and Losses at Gettysburg (4th ed.)",
-      "author": "John W. Busey and David G. Martin",
-      "year": 2005,
-      "editionNote": "The standard modern strength reconstruction. NOT freely available online; no direct page-level citation has been obtainable in any research pass (2026-06-13 finding stands). Figures attributed to it in the corpus are via verified secondary reproductions only — flag the hop whenever cited."
-    },
-    {
-      "id": "or-27-2-longstreet",
-      "kind": "official_report",
-      "title": "Lt. Gen. James Longstreet's report, OR Series I Vol. 27 Part 2 (NPS reproduction)",
-      "author": "James Longstreet",
-      "year": 1863,
-      "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-lieut-general-james-longstreet.htm",
-      "editionNote": "Fetch-verified 2026-07-10. Report-nominal clock: gives 'About 2 p.m.' for the July 3 signal guns (~53 min late vs the proposed chain) and 'about 4 p.m.' for McLaws in position July 2. Never anchor-defining (ED-25 rule 4).",
-      "clockProfile": {
-        "kind": "report-nominal",
-        "offsetMinutes": -53,
-        "offsetEnvelope": [
-          -60,
-          -45
-        ],
-        "anchorsUsed": [
-          "CA-J3A-1"
-        ],
-        "assessment": "'About 2 p.m. ... The signal guns were fired' vs chain 13:07 -> raw offset -53 min. Per ED-25 rule 4 this NEVER corrects into the chain; the profile records the raw skew so provenance UI can show 'Longstreet's report clock runs ~50 min late against the chain', and his July 2 'about 4 p.m. (in position)' is read with the same caution. Smyth's report shares the ~14:00 cannonade start (corpus pass-1) - a possible 'camp clock' cluster, recorded in the conflict record rather than silently corrected.",
-        "confidence": "weak"
-      }
-    },
-    {
-      "id": "or-27-2-hays",
-      "kind": "official_report",
-      "title": "Brig. Gen. Harry T. Hays's report, OR Series I Vol. 27 Part 2 (NPS reproduction)",
-      "author": "Harry T. Hays",
-      "year": 1863,
-      "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-brig-general-harry-hays.htm",
-      "editionNote": "Fetch-verified 2026-07-10. 'A little before 8 p.m. I was ordered to advance with my own and Hoke's brigade' — the best single clock for the July 2 East Cemetery Hill assault (CA-J2E-3); withdrawal complete 'about 10 o'clock.'",
-      "clockProfile": {
-        "kind": "report-nominal",
-        "offsetMinutes": 0,
-        "offsetEnvelope": [
-          -15,
-          15
-        ],
-        "anchorsUsed": [
-          "CA-J2E-3"
-        ],
-        "assessment": "'A little before 8 p.m. I was ordered to advance' agrees with its phase chain (CA-J2E-3 adopted 19:45-20:00, provisional ED-29): offset ~0. Kind still caps his claims at tier C (rule 4) - an agreeing report clock is corroboration, not an anchor definition.",
-        "confidence": "medium"
-      }
-    },
-    {
-      "id": "or-27-2-heth",
-      "kind": "official_report",
-      "title": "Maj. Gen. Henry Heth's report, OR Series I Vol. 27 Part 2 (NPS reproduction)",
-      "author": "Henry Heth",
-      "year": 1863,
-      "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-maj-general-henry-heth.htm",
-      "editionNote": "Fetch-verified 2026-07-10. Division ordered forward 5 A.M. July 1; 'at this time-9 o'clock ... I was ignorant what force was at or near Gettysburg.' No clock for the attack itself; his July 1 narrative is noted in the literature as error-prone — sequence evidence, weak clock."
-    },
-    {
-      "id": "or-27-2-wright",
-      "kind": "official_report",
-      "title": "Brig. Gen. Ambrose R. Wright's report, OR Series I Vol. 27 Part 2 (NPS reproduction)",
-      "author": "Ambrose R. Wright",
-      "year": 1863,
-      "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-brig-general-ambrose-wright.htm",
-      "editionNote": "Fetch-verified 2026-07-10. Gives 'about 5 p.m.' for the July 2 general-advance signal — ~1.5-2 h early against the modern clock for his own breakthrough; notoriously self-serving on depth of penetration. Report-nominal exemplar."
-    },
-    {
-      "id": "or-27-1-buford",
-      "kind": "official_report",
-      "title": "Brig. Gen. John Buford's report, OR Series I Vol. 27 Part 1 (secondary reproduction)",
-      "author": "John Buford",
-      "year": 1863,
-      "url": "https://the-american-catholic.com/2013/07/01/general-buford-and-the-first-day-of-gettysburg/",
-      "editionNote": "Report quote verified against a blog reproduction 2026-07-10 ('between 8 and 9 a.m., reports came in ... that the enemy was coming down from toward Cashtown in force'). His timestamped dispatch to Meade, 'Gettysburg, July 1, 1863-10.10 a.m.' ('The enemy's force (A. P. Hill's) are advancing on me at this point, and driving my pickets and skirmishers very rapidly... General Reynolds is advancing, and is within 3 miles of this point'), is VERIFIED as printed in OR 27/1 p. 924 (ehistory reproduction via Wayback; gdg.org transcription concurs; Coddington p. 682 endnote concurs) - a document pin at +/-0, the July 1 morning's hardest clock (CA-J1M-3). See docs/reconstruction/audit/verification-2026-07-10.md."
-    },
-    {
-      "id": "or-27-1-hancock",
-      "kind": "official_report",
-      "title": "Maj. Gen. Winfield S. Hancock's reports and 5:25 p.m. dispatch, OR Series I Vol. 27 Part 1, pp. 366-378 (ehistory reproduction)",
-      "author": "Winfield S. Hancock",
-      "year": 1863,
-      "url": "https://ehistory.osu.edu/books/official-records/043/0366",
-      "editionNote": "Fetch-verified 2026-07-10 via Wayback captures of the ehistory pages (ehistory blocks direct automated access; OCR caveat recorded - 'cannot will be taken' for 'cannot well be taken'). July 1: 'At 3 p. m. I arrived at Gettysburg and assumed the command' (p. 368) vs his own timestamped dispatch '5.25 [P. M., JULY 1, 1863.]' saying 'When I arrived here an hour since...' and 'we can fight here, as the ground appears not unfavorable' (p. 366; the P.M./date are OR editors' brackets) - both poles of the arrival controversy (CA-J1P-7/8). July 3: cannonade opened 'About 1 o'clock, apparently by a given signal'; 'After an hour and forty-five minutes, the fire of the enemy became less furious, and immediately their infantry was seen in the woods beyond the Emmitsburg road, preparing for the assault' (pp. 372-373); repulse p. 374.",
-      "clockProfile": {
-        "kind": "report-nominal",
-        "offsetMinutes": 7,
-        "offsetEnvelope": [
-          0,
-          20
-        ],
-        "anchorsUsed": [
-          "CA-J3A-1",
-          "CA-J3A-4"
-        ],
-        "assessment": "His July 3 'About 1 o'clock' at the signal (chain 13:07) puts his report clock within ~7 min of the chain, and his 'hour and forty-five minutes' to the slackening lands ~14:45-15:00 corrected - corroborating CA-J3A-4/5. Report-nominal kind still applies (rule 4): his clocks corroborate, never define. The dispatch timestamp (17:25) is a document pin, outside this profile.",
-        "confidence": "medium"
-      }
-    },
-    {
-      "id": "or-27-1-howard",
-      "kind": "official_report",
-      "title": "Maj. Gen. Oliver O. Howard's report, OR Series I Vol. 27 Part 1, pp. 696-712 (ehistory reproduction)",
-      "author": "Oliver O. Howard",
-      "year": 1863,
-      "url": "https://ehistory.osu.edu/books/official-records/043/0701",
-      "editionNote": "Fetch-verified 2026-07-10 via Wayback captures. July 1 ladder: orders 3:30 a.m.; march order 8 a.m.; Reynolds's death 'about 11.30 a. m.' with assumption of command; 'Schurz joined me before 12 m.'; 'About 4 p. m.' fall-back word to Doubleday; 'At 4.10 p. m.' positive fall-back order; 'At 4.30 p. m. the columns reached Cemetery Hill... General Hancock came to me about this time' (pp. 701-704). Party to the Hancock-arrival feud - partisan-dispute note rides CA-J1P-7.",
-      "clockProfile": {
-        "kind": "report-nominal",
-        "offsetMinutes": 0,
-        "offsetEnvelope": [
-          -45,
-          45
-        ],
-        "anchorsUsed": [],
-        "assessment": "No statement about a ruled anchor exists yet (the July 1 chains are provisional, ED-26/27), so the kind-default envelope stands. His 'About 4 P. M.' agrees with the XI Corps tablet verbatim; his 11:30 command time conflicts with Pfanz's 10:30 (open item, ED-26).",
-        "confidence": "weak"
-      }
-    },
-    {
-      "id": "or-27-1-greene",
-      "kind": "official_report",
-      "title": "Brig. Gen. George S. Greene's report, OR Series I Vol. 27 Part 1, pp. 855-860 (ehistory reproduction)",
-      "author": "George S. Greene",
-      "year": 1863,
-      "url": "https://ehistory.osu.edu/books/official-records/043/0856",
-      "editionNote": "Fetch-verified 2026-07-10 via Wayback captures. July 2: 'By 12 o'clock we had a good cover for the men'; 'we were attacked on the whole of our front by a large force a few minutes before 7 p. m.' (p. 856); 'About 10 o'clock... General Kane, with his brigade, was returning' (p. 857). Primary Union clock for CA-J2E-2's 19:00 assault start.",
-      "clockProfile": {
-        "kind": "report-nominal",
-        "offsetMinutes": 0,
-        "offsetEnvelope": [
-          -20,
-          20
-        ],
-        "anchorsUsed": [
-          "CA-J2E-2"
-        ],
-        "assessment": "'A few minutes before 7 p. m.' agrees with CA-J2E-2's adopted ~19:00 start (provisional ED-29) and with the Johnson tablet's 'dusk': offset ~0, envelope narrowed below the kind default on the strength of the tablet/modern agreement. Rule 4 applies.",
-        "confidence": "medium"
-      }
-    },
-    {
-      "id": "or-27-1-mcgilvery",
-      "kind": "official_report",
-      "title": "Lt. Col. Freeman McGilvery's report, OR Series I Vol. 27 Part 1, pp. 881-884 (ehistory reproduction)",
-      "author": "Freeman McGilvery",
-      "year": 1863,
-      "url": "https://ehistory.osu.edu/books/official-records/043/0881",
-      "editionNote": "Fetch-verified 2026-07-10 via Wayback captures (pp. 881, 884; pp. 882-883 have no capture - his July 3 cannonade START clock is UNVERIFIED). July 2: ordered to Sickles 'at about 3.30 p. m.' with Phillips's 5th and Bigelow's 9th Massachusetts; Hart placed 'in a peach orchard' (p. 881). July 3: enemy 'fired about one hour and a half, and expended at least 10,000 rounds'; 'At about 3 p. m. a line of battle of about 3,000 or 4,000 men appeared, advancing directly upon our front, which was completely broken up and scattered by our fire'; then 'three extended lines of battle' raked obliquely (p. 884) - primary corroboration for CA-J3A-4 (duration) and the CA-J3A-6..10 window, and the source basis for the Wilcox/Lang repulse (CA-J3A-10).",
-      "clockProfile": {
-        "kind": "report-nominal",
-        "offsetMinutes": 0,
-        "offsetEnvelope": [
-          -30,
-          15
-        ],
-        "anchorsUsed": [
-          "CA-J3A-4",
-          "CA-J3A-6"
-        ],
-        "assessment": "His 1.5-hour bombardment duration and 'at about 3 p. m.' advancing lines sit consistently ~0 to -15 min against the adopted chain (slackening 14:30-15:00; assault crossing the field 15:05-15:25). His '35,000 men' strength is a known wild overstatement - strength claims from this report are not clock evidence. Rule 4 applies.",
-        "confidence": "medium"
-      }
-    }
-  ]
+ "sources": [
+  {
+   "id": "bachelder-third-day-1876",
+   "kind": "map",
+   "title": "Map of the battlefield of Gettysburg. July 3rd, 1863 (Third Day's Battle — Positions of Troops)",
+   "author": "John B. Bachelder",
+   "year": 1876,
+   "url": "https://www.loc.gov/item/99447492/",
+   "editionNote": "Positions compiled by John B. Bachelder, 1876; new edition 1883 (LC Civil War Maps 2nd ed. no. 326). Drawn on the Warren survey base at 1:12,000; PD-traceable. Encodes position CLASSES (first/intermediate/evening/all day), not clock times — every clock attached to a Bachelder position is an inferred time on a documented position. Union regiment geometry best-sourced; Confederate at-the-wall positions are brigade-level and the most interpretation-laden (Hartwig, GNMP Seminar 12).",
+   "note": "Primary July 3 position source. Landcover features (stone wall, road fences, copse, fields) traced from the georeferenced sheet 2026-07-02 into data/landcover/landcover.json."
+  },
+  {
+   "id": "warren-survey-1868",
+   "kind": "map",
+   "title": "Battle field of Gettysburg (surveyed 1868-69 under Bvt. Maj. Gen. G.K. Warren)",
+   "author": "G. K. Warren (survey); P. M. Blake (field revision 1873)",
+   "year": 1873,
+   "url": "https://www.loc.gov/item/99448794/",
+   "editionNote": "1:12,000 reduction of the 200-ft-to-the-inch original (NARA RG 77:E 81). LOC verbatim: 'Positions of troops are not given.' Terrain/roads/fences/vegetation base layer only.",
+   "note": "Georeferencing base for the Bachelder sheets and the traced landcover."
+  },
+  {
+   "id": "haskell-1908",
+   "kind": "memoir",
+   "title": "The Battle of Gettysburg",
+   "author": "Frank Aretas Haskell",
+   "year": 1908,
+   "url": "https://www.gutenberg.org/cache/epub/33121/pg33121.txt",
+   "editionNote": "Wisconsin History Commission Reprints No. 1 (1908); written as a letter weeks after the battle. Famously partisan — 72nd PA veterans disputed his Angle characterization. Union 1st Lt., aide to Gen. Gibbon, on Cemetery Ridge.",
+   "clockProfile": {
+    "kind": "watch-checked",
+    "offsetMinutes": 7,
+    "offsetEnvelope": [
+     2,
+     12
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1",
+     "CA-J3A-5"
+    ],
+    "assessment": "Two anchor statements, both re-verified from the full text 2026-07-10: watch check 'five minutes before one o'clock' immediately before the first gun (stated ~13:00 vs chain 13:07 -> +7) and cannonade end 'at three o'clock, almost precisely' (stated 15:00; corrected 15:07, inside CA-J3A-5's envelope; ED-1's arithmetic was built on his stated time). His 'Half past two o'clock, an hour and a half since the commencement' is internally consistent on his own watch. Envelope reflects one-source derivation. Partisanship (72nd PA) affects his facts, not his watch.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "id": "alexander-1907",
+   "kind": "memoir",
+   "title": "Military Memoirs of a Confederate, ch. 18 (Gettysburg: Third Day)",
+   "author": "Edward Porter Alexander",
+   "year": 1907,
+   "url": "https://archive.org/details/militarymemoirso00alex",
+   "editionNote": "44-year retrospective; times self-reported from his own watch. Confederate colonel directing the assault artillery on Longstreet's front (not Lee's artillery chief — Pendleton held that post).",
+   "clockProfile": {
+    "kind": "retrospective-watch",
+    "offsetMinutes": 7,
+    "offsetEnvelope": [
+     0,
+     15
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1"
+    ],
+    "assessment": "One anchor statement, re-verified from the full text 2026-07-10: 'It was just 1 P.M. by my watch when the signal guns were fired' (stated 13:00 vs chain 13:07 -> +7). His 1:25 and 1:40 note times correct to 13:32/13:47 (CA-J3A-2/3). His step-off statement 'doubtless 1.50 or later, but I did not look at my watch again' is self-hedged and excluded from anchor statements. Confidence capped by the 44-year retrospective distance regardless of arithmetic; envelope held wide.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "id": "jacobs-1864",
+   "kind": "book",
+   "title": "Notes on the Rebel Invasion of Maryland and Pennsylvania",
+   "author": "Michael Jacobs",
+   "year": 1864,
+   "url": "https://archive.org/details/notesonrebelinva00jaco",
+   "editionNote": "The most contemporaneous source (1864). Civilian professor at Pennsylvania College, Gettysburg; habitually precise but a distant observer.",
+   "clockProfile": {
+    "kind": "contemporaneous-civilian",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -2,
+     2
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1"
+    ],
+    "assessment": "The chain's precision standard: CA-J3A-1 (13:07) is defined on his 'at seven minutes past 1 p. m.' reading, so his offset is 0 by construction. Cross-checks: July 2 artillery opening 'at twenty minutes past 4 P.M.' sits at the late edge of that event's envelope (tablets say 'about 4'); July 3 morning 'From 4 1/2 to 10 1/2 A.M.' agrees with the tablet 04:30/10:30 pair. Full text re-verified 2026-07-10. Caveat riding the source record: his 'When 2 1/2 p. m. came' step-off (14:30) is the strongest counter-reading to ED-1 and is carried as a conflict record on CA-J3A-6, not as an offset datum.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "id": "martin-smith-shsp32-1904",
+   "kind": "article",
+   "title": "Battle of Gettysburg, and the Charge of Pickett's Division (SHSP Vol. 32, pp. 183-195)",
+   "author": "Rawley W. Martin and John Holmes Smith",
+   "year": 1904,
+   "url": "https://archive.org/details/southernhistoricv32sout",
+   "editionNote": "Martin (Lt. Col., 53rd VA, Armistead's brigade) pp. ~184-189; Smith (Capt., 11th VA, Kemper's) pp. ~189-195. Martin's letter dated Aug. 11, 1897 — 34-year recollection; twice misnames the Union position 'Seminary Ridge'. Page span verified against the archive.org scan 2026-07-02."
+  },
+  {
+   "id": "fry-shsp7-1879",
+   "kind": "article",
+   "title": "Pettigrew's Charge at Gettysburg (SHSP Vol. 7, pp. 91-93)",
+   "author": "Birkett D. Fry",
+   "year": 1879,
+   "url": "https://archive.org/details/sim_southern-historical-society-papers_1879-02_7_2",
+   "editionNote": "Fry commanded Archer's brigade, the guide of the whole assault. Down wounded before the end; misdates Heth's wounding. Page span verified against the archive.org scan 2026-07-02."
+  },
+  {
+   "id": "longstreet-1896",
+   "kind": "memoir",
+   "title": "From Manassas to Appomattox",
+   "author": "James Longstreet",
+   "year": 1896,
+   "url": "https://archive.org/details/manassasappomatt00longrich",
+   "editionNote": "The fifteen-thousand protest at pp. 386-387 is indirect discourse in this memoir; the direct-speech version is his earlier 1877 account — do not conflate. Assault organization at pp. 388-389; strength figures at p. 315."
+  },
+  {
+   "id": "sturtevant-1910",
+   "kind": "regimental_history",
+   "title": "Pictorial History Thirteenth Regiment Vermont Volunteers",
+   "author": "Ralph Orson Sturtevant",
+   "year": 1910,
+   "url": "https://archive.org/details/cu31924030916187",
+   "editionNote": "Ignores the known Stannard-vs-Doubleday/Hancock credit dispute. Flank-attack passage pp. 304-305."
+  },
+  {
+   "id": "fuger-1904",
+   "kind": "memoir",
+   "title": "Lieut.-Colonel Frederick Fuger, U.S. Army and his Descendants (eyewitness account of July 3, 1863)",
+   "author": "Frederick Fuger",
+   "year": 1904,
+   "url": "https://storiesfrommimi.wordpress.com/descendants-of-lt-col-frederick-fuger/frederick-fuger-eyewitness-account-of-the-battle-of-the-bloody-angle-july-3-1863-gettysburg-pa/",
+   "editionNote": "Family-published manuscript (Winn & Hammond, Detroit, 1904). Written ~41 years after the event during Fuger's Medal of Honor pursuit — a contested, self-interested retelling (Hartwig: 'Fuger's embellishments... gained traction'). His hand-to-hand claim is directly disputed by Anthony McDermott (69th PA, 1891). Wound/death sequence for Cushing comes from this variant."
+  },
+  {
+   "id": "fuger-jmsi-1907",
+   "kind": "article",
+   "title": "Cushing's Battery at Gettysburg (Journal of the Military Service Institution, Vol. 41, p. 408)",
+   "author": "Frederick Fuger",
+   "year": 1907,
+   "url": "https://catalog.hathitrust.org/Record/008898037",
+   "editionNote": "JMSI Vol. 41 has no verified free-and-scriptable full text (archive.org run stops at Vol. 39); the final-canister/Armistead passage is verified verbatim via the NPS GNMP citation (hartwig-2012-nps). Same 41-44-year retrospective caveats as fuger-1904."
+  },
+  {
+   "id": "hartwig-2012-nps",
+   "kind": "blog",
+   "title": "Lieutenant Cushing (From the Fields of Gettysburg, NPS GNMP blog, June 21, 2012)",
+   "author": "D. Scott Hartwig",
+   "year": 2012,
+   "url": "https://npsgnmp.wordpress.com/2012/06/21/lieutenant-cushing/",
+   "editionNote": "NPS staff historian. Quotes the JMSI 1907 Fuger passage directly and documents the conflicts between Fuger, Cowan's 1885 Bachelder letter, and Webb's official report. Contains no clock times at all (fetch-verified 2026-07-02)."
+  },
+  {
+   "id": "mcdermott-1889",
+   "kind": "regimental_history",
+   "title": "A Brief History of the 69th Regiment Pennsylvania Veteran Volunteers",
+   "author": "Anthony W. McDermott",
+   "year": 1889,
+   "url": "https://archive.org/details/briefhistoryof00mcde",
+   "editionNote": "Full text verified. The gold-standard company-level fragment for the Angle (Cos. I, A, F, D)."
+  },
+  {
+   "id": "waitt-1906",
+   "kind": "regimental_history",
+   "title": "History of the Nineteenth Regiment, Massachusetts Volunteer Infantry, 1861-1865 (ch. XXIX, pp. 234-237)",
+   "author": "Ernest Linden Waitt (compiler)",
+   "year": 1906,
+   "url": "https://archive.org/details/04390879.3094.emory.edu",
+   "editionNote": "Compiled regimental history — 43-years-later literary polish over veterans' testimony; composite enlisted-ranks voice for the Cemetery Ridge bombardment."
+  },
+  {
+   "id": "smith-71pa-or",
+   "kind": "official_report",
+   "title": "Official report on the 71st Pennsylvania at Gettysburg (Lt. Col. C. Kochersperger / Col. R. Penn Smith)",
+   "author": "R. Penn Smith",
+   "year": 1863,
+   "url": "https://gettysburg.stonesentinels.com/union-monuments/pennsylvania/pennsylvania-infantry/71st-pennsylvania/official-report-on-the-71st-pennsylvania/",
+   "editionNote": "Accessed via the Stone Sentinels reproduction. The report names no companies."
+  },
+  {
+   "id": "or-27-1-hall",
+   "kind": "official_report",
+   "title": "Col. Norman J. Hall's report, OR Series I Vol. 27 Part 1",
+   "author": "Norman J. Hall",
+   "year": 1863,
+   "url": "https://collections.library.cornell.edu/moa_new/waro.html",
+   "editionNote": "OR Part 1 (Union reports) has no verified script-friendly URL (HathiTrust bot-blocks; Cornell MOA browser-only). Content attested via the 2026-07-02 regiment-track survey: describes shifting his regiments right toward the clump during the break."
+  },
+  {
+   "id": "stone-sentinels",
+   "kind": "reference_site",
+   "title": "Gettysburg Stone Sentinels (monument and unit pages)",
+   "author": "Steve Hawks",
+   "year": 2026,
+   "url": "https://gettysburg.stonesentinels.com/",
+   "editionNote": "Monument-inscription and modern-compilation figures derived from GNMP tablets and OR data; the site's own disclaimer: 'often in disagreement between regimental and brigade records.' Two separate fetches of the same page have returned different numbers for some brigades (extraction caution). Strength figures are inferred-tier, not period documents.",
+   "clockProfile": {
+    "kind": "tablet-adjudicated",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -30,
+     30
+    ],
+    "anchorsUsed": [
+     "CA-J2E-2",
+     "CA-J2E-3",
+     "CA-J3M-4"
+    ],
+    "assessment": "The War Department tablets are ~35-year-retrospective adjudications, not witnesses. On Ewell's front they match modern scholarship well (Hoke 20:00; Johnson 'dusk'; retired 10:30). EXCEPTION (ED-28 skew rule): McLaws-wing tablets run systematically ~1 hour EARLY (Kershaw 'advanced about 4.30' vs modern ~17:30; Barksdale 'Advanced at 5 P.M.' vs modern ~18:15) - envelope [-60,0] on that wing, i.e. tablet-stated times there read up to an hour early. Site-extraction hygiene caveat rides the source record; the two 2026-07-10 re-fetches (Early 'about noon' = two miles out on the Harrisburg Road; XI Corps '10.30 A. M.' = Schurz's division specifically) are recorded in the verification dossier.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "id": "encyclopedia-virginia",
+   "kind": "reference_site",
+   "title": "Encyclopedia Virginia (Pickett's Charge entries)",
+   "author": "Virginia Humanities",
+   "year": 2026,
+   "url": "https://encyclopediavirginia.org/entries/numbers-at-picketts-charge/",
+   "editionNote": "Historiographic synthesis; frames scholarly consensus on assault strength as 'surprisingly hard to reach' (12,000-13,000 total; Pickett's division 5,800-6,200 depending on source)."
+  },
+  {
+   "id": "aylett-1863",
+   "kind": "official_report",
+   "title": "Col. W. R. Aylett's report on Armistead's brigade, July 12, 1863 (Museum of the Confederacy)",
+   "author": "William R. Aylett",
+   "year": 1863,
+   "url": "https://encyclopediavirginia.org/1117hpr-5342776bbcb9068/",
+   "editionNote": "Period after-action report, accessed via the Encyclopedia Virginia reproduction (secondary hop flagged). 1,191 total casualties for Armistead's brigade."
+  },
+  {
+   "id": "army-moh-cushing",
+   "kind": "government_record",
+   "title": "U.S. Army Medal of Honor page for 1st Lt. Alonzo Cushing",
+   "author": "U.S. Army",
+   "year": 2014,
+   "url": "https://www.army.mil/medalofhonor/cushing/",
+   "editionNote": "Administrative commendation record compiled long after 1863, not a battlefield return. '126 men and six cannons.'"
+  },
+  {
+   "id": "webb-moh",
+   "kind": "government_record",
+   "title": "Medal of Honor citation for Brig. Gen. Alexander S. Webb",
+   "author": "U.S. War Department",
+   "year": 1891,
+   "url": "https://gettysburg.stonesentinels.com/monuments-to-individuals/alexander-webb/",
+   "editionNote": "Administrative record; confirms Webb wounded while leading at the Angle."
+  },
+  {
+   "id": "nps-cushing-article",
+   "kind": "article",
+   "title": "Alonzo Cushing at Gettysburg (NPS article)",
+   "author": "National Park Service",
+   "year": 2014,
+   "url": "https://www.nps.gov/articles/000/alonzo-cushing-gettysburg.htm",
+   "editionNote": "Modern NPS synthesis: the two-serviceable-guns displacement to the wall, the three-wound sequence, and the 'fired the last shot' legend correction."
+  },
+  {
+   "id": "brown-1985-filson",
+   "kind": "article",
+   "title": "Double Canister at Ten Yards: Captain Andrew Cowan at Gettysburg (Filson Club History Quarterly 59:3)",
+   "author": "Kent Masterson Brown",
+   "year": 1985,
+   "url": "https://filsonhistorical.org/wp-content/uploads/publicationpdfs/59-3-2_-Double-Canister-at-Ten-Yards-Captain-Andrew-Cowan-at-Gettysburg_Brown-Kent-Masterson.pdf",
+   "editionNote": "Read page-by-page in the 2026-07-02 survey. Cowan's arrival replacing Brown's B, the 5-guns-south/1-gun-north split (orientation corrected there), the 106th PA Cos. A/B skirmish detail (fn. 75)."
+  },
+  {
+   "id": "abt-map-set",
+   "kind": "map",
+   "title": "American Battlefield Trust timed map sheets, Pickett's Charge (3:00-3:30 / 3:30-3:45 / 3:45-4:15 PM)",
+   "author": "Steven Stanley / American Battlefield Trust",
+   "year": 2020,
+   "url": "https://www.battlefields.org/learn/maps/gettysburg-picketts-charge-july-3-1863",
+   "editionNote": "Copyrighted, look-don't-touch (ToS prohibits derivative/AI use of the maps themselves); brigade/time FACTS cited under Feist, geometry never traced. Brigade-level, its own clock frame — never silently mixed with witness clocks."
+  },
+  {
+   "id": "historynet-72pa",
+   "kind": "article",
+   "title": "Monumental Lie? — the 72nd Pennsylvania monument litigation",
+   "author": "HistoryNet",
+   "year": 2017,
+   "url": "https://www.historynet.com/monumental-lie-statue-bloody-angle/",
+   "editionNote": "Survey-grade lead (SNIPPET tier) for the 72nd PA's contested position; used only to attest that the counter-reading exists, not for geometry."
+  },
+  {
+   "id": "veazey-or",
+   "kind": "official_report",
+   "title": "Col. Wheelock G. Veazey's report (16th Vermont), OR Series I Vol. 27 Part 1, pp. 1041-1042 (appendix)",
+   "author": "Wheelock G. Veazey",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189663-1041-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "UPGRADED 2026-07-10: full text fetch-verified via the civilwar.com OR transcription - the report sits in the appendix ('Documents received too late for proper sequence'), pp. 1041-1042, dated Camp at Berlin, Md., July 17, 1863 (NOT among the brigade reports at pp. 348-354; No. 71 there is Wainwright). Key verbatim: July 2 ~5 p.m. advance in support of the batteries, whole regiment on picket after dark; July 3 'AT A QUARTER BEFORE 4 O'CLOCK, THE ENEMY ENGAGED THE LEFT OF THE PICKET LINE'; 'AT ABOUT 2 P. M. THE ENEMY AGAIN OPENED WITH THEIR ARTILLERY SEVERELY'; 'AT ABOUT 4 P. M. THE ENEMY ADVANCED A LINE OF BATTLE'; the 16th passing 'BACK AND ALONG BY THE REAR OF THE FOURTEENTH' to the 13th's left for the first flank charge; the ordered march back and 'I RECEIVED PERMISSION TO CHARGE' against the second line; colors 'THE SECOND FLORIDA AND THE EIGHTH VIRGINIA'; Lt. Lawton mortally wounded 'NEAR THE CLOSE OF THE BATTLE'.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": -55,
+    "offsetEnvelope": [
+     -70,
+     -30
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1",
+     "CA-J3A-6"
+    ],
+    "assessment": "Two anchor statements: cannonade resumption 'AT ABOUT 2 P. M.' (vs chain 13:07 -> raw -53) and the infantry advance 'AT ABOUT 4 P. M.' (vs chain step-off 15:05 -> raw -55, or -65 vs the assault reaching his front ~15:15). A consistent ~1-h-late nominal clock, later even than Stannard's on the same events. Rule 4: never anchor-defining; his sequence statements (picket engaged 03:45, the two flank charges) are the evidentiary content.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "vt13-monument",
+   "kind": "monument",
+   "title": "13th Vermont monument inscription, Gettysburg",
+   "author": "Gettysburg Battlefield Memorial Association / State of Vermont",
+   "year": 1899,
+   "url": "https://gettysburg.stonesentinels.com/union-monuments/vermont/13th-vermont/",
+   "editionNote": "Inscription verbatim via Stone Sentinels: 'changed front forward on first company, advanced 200 yards, attacking the Confederate right flank... capturing 243 prisoners.' Monument text is veteran-committee testimony, Bachelder-era placement discipline."
+  },
+  {
+   "id": "peyton-or-1863",
+   "kind": "official_report",
+   "title": "Report of Maj. Charles S. Peyton, Nineteenth Virginia Infantry (Garnett's brigade), OR ser. 1 vol. 27 pt. 2 pp. 385-387",
+   "author": "Charles S. Peyton",
+   "year": 1863,
+   "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-major-charles-s-peyton.htm",
+   "note": "Written July 9, 1863; the primary Confederate account of the road fences, the grass slope, and the breast-high wall on Garnett's front. Public domain."
+  },
+  {
+   "id": "osm-gettysburg",
+   "kind": "dataset",
+   "title": "OpenStreetMap building footprints, Gettysburg NMP (Codori barn way 779833686)",
+   "year": 2026,
+   "url": "https://www.openstreetmap.org/way/779833686",
+   "note": "Positions measured into battlefield-local meters in docs/research/2026-06-13-landmark-anchors.md (barn anchor 4020.4, 4635.4). Facts/coordinates only; ODbL geometry is not redistributed as an asset. The mapped barn is the 1882 replacement on the same farmyard."
+  },
+  {
+   "id": "loc-picketts-charge-photo",
+   "kind": "government_record",
+   "title": "Gettysburg, battlefield of, scene of Pickett's charge (period photograph, Library of Congress P&P)",
+   "year": 1863,
+   "url": "https://www.loc.gov/item/2012647714/",
+   "note": "No known restrictions on publication; primary visual evidence for the wartime Codori barn massing."
+  },
+  {
+   "id": "habs-trostle-barn",
+   "kind": "government_record",
+   "title": "HABS PA-1962: Trostle Barn, Emmitsburg Road (U.S. 15), Gettysburg — 10 measured-drawing sheets + data pages",
+   "url": "https://www.loc.gov/item/pa1728/",
+   "note": "Public-domain measured drawings; the period-typical Pennsylvania bank-barn analogue for the Codori barn. Verified negative 2026-07-09: the HABS/HAER/HALS collection has NO Codori coverage (collection API query returns 0 results)."
+  },
+  {
+   "id": "ordnance-manual-1862",
+   "kind": "book",
+   "title": "The Ordnance Manual for the Use of the Officers of the United States Army, 3rd ed.",
+   "year": 1862,
+   "url": "https://archive.org/details/ordnancemanualfo00unitrich",
+   "editionNote": "Gun-dimension tables pp. 17-19 (OCR illegible; verify on page scans); field-carriage/limber/caisson dimensions p. 74, limber p. 45, caisson p. 47. Public domain."
+  },
+  {
+   "id": "instruction-field-artillery-1863",
+   "kind": "book",
+   "title": "Instruction for Field Artillery (U.S. War Department)",
+   "year": 1863,
+   "url": "https://archive.org/details/instructionforf01deptgoog",
+   "editionNote": "Battery organization pp. 2-3; dimensions/weights tables pp. 6, 15. Public domain."
+  },
+  {
+   "id": "nps-the-angle",
+   "kind": "article",
+   "title": "NPS: The Angle (Gettysburg place page)",
+   "url": "https://www.nps.gov/places/the-angle.htm"
+  },
+  {
+   "id": "hartwig-gmag-1",
+   "kind": "article",
+   "title": "It Struck Horror to Us All (Gettysburg Magazine no. 1)",
+   "author": "D. Scott Hartwig",
+   "year": 1989,
+   "url": "http://www.gdg.org/Gettysburg%20Magazine/scott1.html"
+  },
+  {
+   "id": "npsgnmp-blog-hwm",
+   "kind": "blog",
+   "title": "GNMP blog: The High Water Mark monument",
+   "year": 2013,
+   "url": "https://npsgnmp.wordpress.com/2013/07/20/the-high-water-mark-monument/"
+  },
+  {
+   "id": "gettysburg-witness-trees",
+   "kind": "reference_site",
+   "title": "Gettysburg Witness Trees: Copse of Trees",
+   "year": 2026,
+   "url": "https://www.gettysburgwitnesstrees.com/main-map/hancock-avenue/copse-of-trees-tree/"
+  },
+  {
+   "id": "priest-ecwc",
+   "kind": "article",
+   "title": "Pickett's Charge: Another Perspective (Essential Civil War Curriculum, Virginia Tech)",
+   "author": "John M. Priest",
+   "url": "https://www.essentialcivilwarcurriculum.com/picketts-charge.html"
+  },
+  {
+   "id": "gettysburg-network-1863",
+   "kind": "blog",
+   "title": "Gettysburg Network of 1863: Discover Gettysburg's Codori Farm",
+   "year": 2025,
+   "url": "https://gettysburgciviliannetwork.com/2025/08/13/discover-gettysburgs-codori-farm-history-memorialization/"
+  },
+  {
+   "id": "mayo-shsp34",
+   "kind": "article",
+   "title": "Col. Joseph Mayo (3rd Virginia Infantry), account in Southern Historical Society Papers vol. 34",
+   "author": "Joseph Mayo",
+   "year": 1906,
+   "note": "Public domain; quoted here via priest-ecwc and gettysburg-network-1863 (no free full text located)."
+  },
+  {
+   "id": "gettysburg-compiler-codori",
+   "kind": "blog",
+   "title": "Saved by the Land: The Codori Family (Gettysburg Compiler, Gettysburg College)",
+   "year": 2021,
+   "url": "https://gettysburgcompiler.org/2021/06/02/saved-by-the-land-the-codori-family/"
+  },
+  {
+   "id": "antietam-aotw",
+   "kind": "reference_site",
+   "title": "Antietam on the Web: 3-inch Ordnance Rifle",
+   "year": 2026,
+   "url": "https://antietam.aotw.org/weapons.php?weapon_id=3"
+  },
+  {
+   "id": "or-27-oob",
+   "kind": "official_report",
+   "title": "Official Records Series I Vol. 27, order-of-battle returns (Part 1 Union pp. ~155-168; Part 2 Confederate pp. ~283-291)",
+   "author": "U.S. War Department (GPO 1889)",
+   "year": 1863,
+   "url": "https://texashistory.unt.edu/ark:/67531/metapth154598/",
+   "editionNote": "The OOB register's structural authority. Part 2 (Confederate) scriptable via the Texas ARK; Part 1 (Union) still has no verified script-friendly URL (standing open item) — Union structure verified via the OR-derived Wikipedia OOB articles at this pass."
+  },
+  {
+   "id": "wikipedia-oob-union",
+   "kind": "reference_site",
+   "title": "Battle of Gettysburg order of battle: Union (Wikipedia)",
+   "author": "Wikipedia editors",
+   "year": 2026,
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Gettysburg_order_of_battle:_Union",
+   "editionNote": "OR-derived compilation with per-regiment commanders and casualty annotations; wikitext fetched 2026-07-10 and used as the register's Union verification corpus. Secondary; the 2026-06-13 OOB pass confirmed it does NOT cite Busey & Martin page-level figures."
+  },
+  {
+   "id": "wikipedia-oob-csa",
+   "kind": "reference_site",
+   "title": "Battle of Gettysburg order of battle: Confederate (Wikipedia)",
+   "author": "Wikipedia editors",
+   "year": 2026,
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Gettysburg_order_of_battle:_Confederate",
+   "editionNote": "OR-derived compilation; wikitext fetched 2026-07-10 and used as the register's Confederate verification corpus. Same caveats as wikipedia-oob-union."
+  },
+  {
+   "id": "busey-martin-2005",
+   "kind": "book",
+   "title": "Regimental Strengths and Losses at Gettysburg (4th ed.)",
+   "author": "John W. Busey and David G. Martin",
+   "year": 2005,
+   "editionNote": "The standard modern strength reconstruction. NOT freely available online; no direct page-level citation has been obtainable in any research pass (2026-06-13 finding stands). Figures attributed to it in the corpus are via verified secondary reproductions only — flag the hop whenever cited."
+  },
+  {
+   "id": "or-27-2-longstreet",
+   "kind": "official_report",
+   "title": "Lt. Gen. James Longstreet's report, OR Series I Vol. 27 Part 2 (NPS reproduction)",
+   "author": "James Longstreet",
+   "year": 1863,
+   "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-lieut-general-james-longstreet.htm",
+   "editionNote": "Fetch-verified 2026-07-10. Report-nominal clock: gives 'About 2 p.m.' for the July 3 signal guns (~53 min late vs the proposed chain) and 'about 4 p.m.' for McLaws in position July 2. Never anchor-defining (ED-25 rule 4).",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": -53,
+    "offsetEnvelope": [
+     -60,
+     -45
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1"
+    ],
+    "assessment": "'About 2 p.m. ... The signal guns were fired' vs chain 13:07 -> raw offset -53 min. Per ED-25 rule 4 this NEVER corrects into the chain; the profile records the raw skew so provenance UI can show 'Longstreet's report clock runs ~50 min late against the chain', and his July 2 'about 4 p.m. (in position)' is read with the same caution. Smyth's report shares the ~14:00 cannonade start (corpus pass-1) - a possible 'camp clock' cluster, recorded in the conflict record rather than silently corrected.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-2-hays",
+   "kind": "official_report",
+   "title": "Brig. Gen. Harry T. Hays's report, OR Series I Vol. 27 Part 2 (NPS reproduction)",
+   "author": "Harry T. Hays",
+   "year": 1863,
+   "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-brig-general-harry-hays.htm",
+   "editionNote": "Fetch-verified 2026-07-10. 'A little before 8 p.m. I was ordered to advance with my own and Hoke's brigade' — the best single clock for the July 2 East Cemetery Hill assault (CA-J2E-3); withdrawal complete 'about 10 o'clock.'",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -15,
+     15
+    ],
+    "anchorsUsed": [
+     "CA-J2E-3"
+    ],
+    "assessment": "'A little before 8 p.m. I was ordered to advance' agrees with its phase chain (CA-J2E-3 adopted 19:45-20:00, provisional ED-29): offset ~0. Kind still caps his claims at tier C (rule 4) - an agreeing report clock is corroboration, not an anchor definition.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "id": "or-27-2-heth",
+   "kind": "official_report",
+   "title": "Maj. Gen. Henry Heth's report, OR Series I Vol. 27 Part 2 (NPS reproduction)",
+   "author": "Henry Heth",
+   "year": 1863,
+   "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-maj-general-henry-heth.htm",
+   "editionNote": "Fetch-verified 2026-07-10. Division ordered forward 5 A.M. July 1; 'at this time-9 o'clock ... I was ignorant what force was at or near Gettysburg.' No clock for the attack itself; his July 1 narrative is noted in the literature as error-prone — sequence evidence, weak clock."
+  },
+  {
+   "id": "or-27-2-wright",
+   "kind": "official_report",
+   "title": "Brig. Gen. Ambrose R. Wright's report, OR Series I Vol. 27 Part 2 (NPS reproduction)",
+   "author": "Ambrose R. Wright",
+   "year": 1863,
+   "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-brig-general-ambrose-wright.htm",
+   "editionNote": "Fetch-verified 2026-07-10. Gives 'about 5 p.m.' for the July 2 general-advance signal — ~1.5-2 h early against the modern clock for his own breakthrough; notoriously self-serving on depth of penetration. Report-nominal exemplar."
+  },
+  {
+   "id": "or-27-1-buford",
+   "kind": "official_report",
+   "title": "Brig. Gen. John Buford's report, OR Series I Vol. 27 Part 1 (secondary reproduction)",
+   "author": "John Buford",
+   "year": 1863,
+   "url": "https://the-american-catholic.com/2013/07/01/general-buford-and-the-first-day-of-gettysburg/",
+   "editionNote": "Report quote verified against a blog reproduction 2026-07-10 ('between 8 and 9 a.m., reports came in ... that the enemy was coming down from toward Cashtown in force'). His timestamped dispatch to Meade, 'Gettysburg, July 1, 1863-10.10 a.m.' ('The enemy's force (A. P. Hill's) are advancing on me at this point, and driving my pickets and skirmishers very rapidly... General Reynolds is advancing, and is within 3 miles of this point'), is VERIFIED as printed in OR 27/1 p. 924 (ehistory reproduction via Wayback; gdg.org transcription concurs; Coddington p. 682 endnote concurs) - a document pin at +/-0, the July 1 morning's hardest clock (CA-J1M-3). See docs/reconstruction/audit/verification-2026-07-10.md."
+  },
+  {
+   "id": "or-27-1-hancock",
+   "kind": "official_report",
+   "title": "Maj. Gen. Winfield S. Hancock's reports and 5:25 p.m. dispatch, OR Series I Vol. 27 Part 1, pp. 366-378 (ehistory reproduction)",
+   "author": "Winfield S. Hancock",
+   "year": 1863,
+   "url": "https://ehistory.osu.edu/books/official-records/043/0366",
+   "editionNote": "Fetch-verified 2026-07-10 via Wayback captures of the ehistory pages (ehistory blocks direct automated access; OCR caveat recorded - 'cannot will be taken' for 'cannot well be taken'). July 1: 'At 3 p. m. I arrived at Gettysburg and assumed the command' (p. 368) vs his own timestamped dispatch '5.25 [P. M., JULY 1, 1863.]' saying 'When I arrived here an hour since...' and 'we can fight here, as the ground appears not unfavorable' (p. 366; the P.M./date are OR editors' brackets) - both poles of the arrival controversy (CA-J1P-7/8). July 3: cannonade opened 'About 1 o'clock, apparently by a given signal'; 'After an hour and forty-five minutes, the fire of the enemy became less furious, and immediately their infantry was seen in the woods beyond the Emmitsburg road, preparing for the assault' (pp. 372-373); repulse p. 374.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 7,
+    "offsetEnvelope": [
+     0,
+     20
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1",
+     "CA-J3A-4"
+    ],
+    "assessment": "His July 3 'About 1 o'clock' at the signal (chain 13:07) puts his report clock within ~7 min of the chain, and his 'hour and forty-five minutes' to the slackening lands ~14:45-15:00 corrected - corroborating CA-J3A-4/5. Report-nominal kind still applies (rule 4): his clocks corroborate, never define. The dispatch timestamp (17:25) is a document pin, outside this profile.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "id": "or-27-1-howard",
+   "kind": "official_report",
+   "title": "Maj. Gen. Oliver O. Howard's report, OR Series I Vol. 27 Part 1, pp. 696-712 (ehistory reproduction)",
+   "author": "Oliver O. Howard",
+   "year": 1863,
+   "url": "https://ehistory.osu.edu/books/official-records/043/0701",
+   "editionNote": "Fetch-verified 2026-07-10 via Wayback captures. July 1 ladder: orders 3:30 a.m.; march order 8 a.m.; Reynolds's death 'about 11.30 a. m.' with assumption of command; 'Schurz joined me before 12 m.'; 'About 4 p. m.' fall-back word to Doubleday; 'At 4.10 p. m.' positive fall-back order; 'At 4.30 p. m. the columns reached Cemetery Hill... General Hancock came to me about this time' (pp. 701-704). Party to the Hancock-arrival feud - partisan-dispute note rides CA-J1P-7.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -45,
+     45
+    ],
+    "anchorsUsed": [],
+    "assessment": "No statement about a ruled anchor exists yet (the July 1 chains are provisional, ED-26/27), so the kind-default envelope stands. His 'About 4 P. M.' agrees with the XI Corps tablet verbatim; his 11:30 command time conflicts with Pfanz's 10:30 (open item, ED-26).",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-1-greene",
+   "kind": "official_report",
+   "title": "Brig. Gen. George S. Greene's report, OR Series I Vol. 27 Part 1, pp. 855-860 (ehistory reproduction)",
+   "author": "George S. Greene",
+   "year": 1863,
+   "url": "https://ehistory.osu.edu/books/official-records/043/0856",
+   "editionNote": "Fetch-verified 2026-07-10 via Wayback captures. July 2: 'By 12 o'clock we had a good cover for the men'; 'we were attacked on the whole of our front by a large force a few minutes before 7 p. m.' (p. 856); 'About 10 o'clock... General Kane, with his brigade, was returning' (p. 857). Primary Union clock for CA-J2E-2's 19:00 assault start.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -20,
+     20
+    ],
+    "anchorsUsed": [
+     "CA-J2E-2"
+    ],
+    "assessment": "'A few minutes before 7 p. m.' agrees with CA-J2E-2's adopted ~19:00 start (provisional ED-29) and with the Johnson tablet's 'dusk': offset ~0, envelope narrowed below the kind default on the strength of the tablet/modern agreement. Rule 4 applies.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "id": "or-27-1-mcgilvery",
+   "kind": "official_report",
+   "title": "Lt. Col. Freeman McGilvery's report, OR Series I Vol. 27 Part 1, pp. 881-884 (ehistory reproduction)",
+   "author": "Freeman McGilvery",
+   "year": 1863,
+   "url": "https://ehistory.osu.edu/books/official-records/043/0881",
+   "editionNote": "Fetch-verified 2026-07-10 in two passes: pp. 881/884 via Wayback captures (verification pass), then pp. 882-883 READ AT LIVE EHISTORY in the browser pane (the earlier 'no capture' gap is CLOSED). Full-report keys: July 2 (p. 881-883): ordered to Sickles 'at about 3.30 p. m.'; the Wheatfield Rd line; the retire-by-stages fight ('At about a quarter to 6 o'clock... I ordered them to retire 250 yards and renew their fire'); Bigelow ordered to 'hold his position as long as possible at all hazards'; four guns left, recovered 'at 8 p. m.'. July 3 (pp. 883-884): 'early on the morning of July 3 brought them into line on the low ground on our left center'; the line roster VERBATIM ending 'total, thirty-nine guns' (the 39-gun figure is now PRIMARY, not secondary) including 'a New Jersey battery' and 'one section New York [Pennsylvania] Artillery, Lieutenant Rock [Captain Rank]' (OR editors' brackets - conflicts with the OOB's Rank-at-East-Cavalry-Field placement; ED-37 candidate); 'a slight earth work thrown up'; hold-fire orders 'not return the fire until ordered'; opening 'At about 12.30 o'clock the enemy opened a terrific fire upon our lines with at least one hundred and forty guns... most of the projectiles passing from 20 to 100 feet over our lines'; 'About one-half hour after the commencement, some general commanding the infantry line ordered three of the batteries to return the fire. After the discharge of a few rounds, I ordered the fire to cease'; enemy 'fired about one hour and a half, and expended at least 10,000 rounds'; his deliberate reply battery-by-battery; 'At about 3 p. m. a line of battle of about 3,000 or 4,000 men appeared... completely broken up and scattered by our fire'; the oblique raking fire through 'three extended lines'. Strength footnote p. 884: brigade took into action 15 officers + 368 men (organic four batteries). His '35,000' assault estimate remains a known overstatement.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 5,
+    "offsetEnvelope": [
+     -30,
+     37
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1",
+     "CA-J3A-4",
+     "CA-J3A-6"
+    ],
+    "assessment": "Three anchor statements now that pp. 882-883 are read: opening 'At about 12.30 o'clock' (+37 vs 13:07 - his one EARLY clock), duration 'about one hour and a half' to his reply (consistent with CA-J3A-4's envelope as a duration), and 'at about 3 p. m.' for the advancing lines (+5 vs the 15:05 frame). Median +5; the +37 opening outlier keeps the envelope wide. His '35,000 men' strength claim is not clock evidence. Rule 4 applies.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "id": "or-27-1-stannard",
+   "kind": "official_report",
+   "title": "Brig. Gen. George J. Stannard's report (2nd Vermont Brigade), OR Series I Vol. 27 Part 1, pp. 348-351 (No. 69)",
+   "author": "George J. Stannard",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/188970-348-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-10 via the civilwar.com page-by-page OR transcription (Serial 43; URL pattern id=188622+page). OCR carries visible slips (quoted as printed, flagged inline in the dossier). Dated Gettysburg July 4, 1863. Key verbatim: arrival 'on the evening of July 1'; 'I selected a position to occupy... some distance in front of the main line'; 'The front thus established was held by my brigade for twenty-six hours'; 'At about 4 o'clock on the morning of the 3d, the enemy commenced a vigorous artillery attack'; 'At about 2 p. m. the enemy again commenced a vigorous attack'; 'After subjecting us for one and one-half hours to the severest cannonade of the whole battle, from one hundred guns or more'; 'the Thirteenth changed front forward on first company; the Sixteenth, after deploying, performed the same, and formed on the left of the Thirteenth, at right angles to the main line'; 'There were 350 killed, wounded, and missing from my three regiments engaged'. Wayback route to ehistory (used in the 2026-07-10 verification pass) was NOT reachable from this session's fetcher - access-route note recorded honestly.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": -53,
+    "offsetEnvelope": [
+     -60,
+     -30
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1",
+     "CA-J3A-4"
+    ],
+    "assessment": "Two anchor statements: cannonade start 'At about 2 p. m.' (stated 14:00 vs chain 13:07 -> raw -53; joins the Longstreet/Smyth ~14:00 'camp clock' cluster already flagged on or-27-2-longstreet) and duration 'one and one-half hours' to the infantry attack (agrees with McGilvery's 1.5 h and the CA-J3A-4 envelope as a duration, whatever the absolute clock). Rule 4: never anchor-defining.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-1-randall",
+   "kind": "official_report",
+   "title": "Col. Francis V. Randall's report (13th Vermont), OR Series I Vol. 27 Part 1, pp. 351-353 (No. 70)",
+   "author": "Francis V. Randall",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/188973-351-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-10 (civilwar.com OR transcription, OCR slips flagged: 'mu regiment', 'mew danger', 'Cantreville'). Dated Camp near Middletown, Md., July 10, 1863. Key verbatim: arrival 'on July 1, at about 5 p. m.'; the July 2 charge to the Rogers House ('we continued our pursuit of the guns... These guns, as I am told, belong to the Fifth U. S. Regulars, Lieutenant Weir. There were four of them'); July 3 fire discipline ('Our men were directed to withhold their fire' until 'about half way from the Emmitsburg road to our position'); 'I changed front forward on my right company' (vs Stannard's 'on first company' - wording conflict carried); 'We had fired about 10 rounds per man'; Doubleday ordering the regiments on his right to cease firing as the 13th passed their front; Hancock's wound then 'General Stannard was also wounded soon after'; casualties 'as near as I can now ascertain... 8 killed, 89 wounded and 26 missing' (vs the p. 174 return's 123 aggregate). Possible missing sentence(s) at the p. 352/353 transcription join; signature block not visible - recorded.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -45,
+     45
+    ],
+    "anchorsUsed": [],
+    "assessment": "No statement about a chain anchor event (his only clocks are the July 1 arrival ~5 p.m. and a July 2 ~2 p.m. battery-support order). Kind-default envelope; profile exists to mark the report as nominal-clock class only.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "benedict-1888",
+   "kind": "book",
+   "title": "Vermont in the Civil War, vol. 2 (Gettysburg chapters)",
+   "author": "George Grenville Benedict",
+   "year": 1888,
+   "url": "https://archive.org/details/vermontincivilwa02bene",
+   "editionNote": "Participant-author: Benedict was Stannard's aide-de-camp at Gettysburg (named in Stannard's report p. 350). Accessed 2026-07-10 via the archive.org search-inside API (full djvu.txt too large to fetch whole); page-pinned snippets: p. 470 (arrival 'nearly sunset... across Willoughby Run'), p. 483 ('nearly 2,000 muskets'), p. 484 (Weir's battery rescue), pp. 495-497 (flank-attack geometry in rods), p. 501 (Wilcox/Perry identification), p. 502 (second attack at 'thirty or forty rods'), p. 503 (2nd Florida colors), p. 505 (Stannard's wound: shrapnel ball 'three inches into the muscles on the inside of the thigh'; refused to leave the field), p. 515 (mortally wounded lieutenants Sinnott/Hamilton/Lawton), pp. 518-521 (departure and muster-out dates). 25-year retrospective compiled from records; partisan for the brigade in the credit dispute (pp. 510-513, not page-verified this pass). No clock statements beyond 'nearly sunset' - no clockProfile assigned."
+  },
+  {
+   "id": "or-27-2-eshleman",
+   "kind": "official_report",
+   "title": "Maj. B. F. Eshleman's report (Washington Artillery Battalion), OR Series I Vol. 27 Part 2 (NPS transcription)",
+   "author": "Benjamin F. Eshleman",
+   "year": 1863,
+   "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-major-benjamin-f-eshleman.htm",
+   "editionNote": "Accessed 2026-07-10. NPS transcription carries visible errors (quoted as printed, corrections bracketed in the dossiers: 'your ordered me'=you, 'Campaign Miller'=Captain, 'Fist Company'=First, 'Norcon'=Norcom, 'axe'=axle). Dated Aug. 11, 1863, addressed 'Colonel J. B. WALTON, Chief of Artillery, First Corps'. Key verbatim: midnight orders from Alexander, in position before daylight; per-company gun layout ~100 yards left of the peach orchard; 'Between 1 and 2 p. m. [you] ordered me to give the signal for opening along the entire line. Two guns in quick succession were fired from Captain Miller's battery'; 'About thirty minutes after the signal guns had been fired, our infantry moved forward over the plateau in our front' (AMBIGUOUS - charge vs infantry moving up; conflict-flagged in the dossier); Miller advanced '400 or 500 yards to the front' after the cannonade; the captured Union 3-inch rifle served by Richardson's company until disabled; casualties 'Wounded, 3 officers. Killed, 3; wounded, 23, and missing, 16... 37 horses killed and disabled; 3 guns disabled; 1 limber blown up.' OR print itself NOT reachable this pass (ehistory 403, Wayback blocked) - print check carried.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -53,
+     7
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1"
+    ],
+    "assessment": "One anchor statement, itself an interval: signal order 'Between 1 and 2 p. m.' brackets the chain's 13:07; offset 0 adopted with the envelope spanning the stated interval's edges against the chain. His '[a]bout thirty minutes after the signal guns... our infantry moved forward' would put an infantry advance ~13:40 - it rides the ED-24 tension (2) short-cannonade side IF read as the charge, and is conflict-recorded, never anchor-defining (rule 4).",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-2-alexander",
+   "kind": "official_report",
+   "title": "Col. E. P. Alexander's report (battalion Reserve Artillery, First Corps), OR Series I Vol. 27 Part 2 (NPS transcription)",
+   "author": "Edward Porter Alexander",
+   "year": 1863,
+   "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-e-porter-alexander.htm",
+   "editionNote": "Accessed 2026-07-10. Dated Aug. 3, 1863. Key verbatim: arrival 'at 9 a. m. on July 2'; July 2 'about 4 p. m. I placed four batteries... the whole commanded by Major Frank Huger' against the Peach Orchard ~500 yards off, 'a spirited engagement of a half hour', then occupied 'the enemy's original position'; July 3 'at dawn I again placed the whole battalion in position'; 'During the afternoon, the batteries all maintained their respective positions... driving off the enemy's sharpshooters with canister' (CONFLICTS with his SHSP 1877 'limber up and follow Pickett' - both carried); casualties 'killed, 19; wounded, 114; missing, 6; total, 139 men... Horses killed and disabled in action, 116.' No rounds-expended figures (verified negative). NPS transcription; OR print unreached this pass.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -45,
+     45
+    ],
+    "anchorsUsed": [],
+    "assessment": "His report states no July 3 afternoon clock bearing on a chain anchor (the July 2 'about 4 p. m.' belongs to the ED-28 chain). Kind-default envelope; his 1877/1907 retrospectives carry the watch statements (see alexander-shsp4-1877, alexander-1907).",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "alexander-shsp4-1877",
+   "kind": "article",
+   "title": "Letter from General E. P. Alexander, late Chief of Artillery First Corps, A.N.V. (SHSP vol. 4 no. 3, Sept. 1877)",
+   "author": "Edward Porter Alexander",
+   "year": 1877,
+   "url": "https://archive.org/stream/sim_southern-historical-society-papers_1877-09_4_3/sim_southern-historical-society-papers_1877-09_4_3_djvu.txt",
+   "editionNote": "Accessed 2026-07-10. Single-issue scan (the full-volume djvu.txt truncates; the sim_ issue worked). 14-year retrospective - closer to the event than the 1907 memoir. Key verbatim: 'about 75 guns which I then had in line'; 'It was 1 P. M. by my watch when the signal guns were fired'; the Longstreet-Alexander pre-cannonade note exchange; first note to Pickett timed 1:30 P.M. here vs 1:25 in the 1907 memoir (internal variant, flagged); 'If you are coming at all you must come immediately... at least 18 guns are still firing from the Cemetery itself'; 'For God's sake come quick; the 18 guns are gone'; ammunition: ordnance train 'about 100 rounds per gun additional' doubted, 'not over 20 rounds to the gun were left'; at the advance 'I galloped along my line of guns, ordering those that had over 20 rounds left to limber up and follow Pickett'. OCR flag: 'Hooker's corps at the Peach Orchard' is suspect OCR (Sickles's III Corps was the enemy there).",
+   "clockProfile": {
+    "kind": "retrospective-watch",
+    "offsetMinutes": 7,
+    "offsetEnvelope": [
+     0,
+     15
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1"
+    ],
+    "assessment": "Same watch basis as alexander-1907 (ED-25 profile 3): '1 P. M. by my watch' at the 13:07 signal -> +7. His note times here (1:30) vs the memoir (1:25) differ by 5 min - inside the envelope; the profile is shared. 14-year vs 44-year distance argues slightly higher confidence than the memoir, capped by the same retrospection class.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "id": "walton-shsp5-1877",
+   "kind": "article",
+   "title": "Letter of Col. J. B. Walton on the signal guns (SHSP vol. 5, pp. 47-53)",
+   "author": "James B. Walton",
+   "year": 1877,
+   "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A2001.05.0040%3Achapter%3D1.2%3Asection%3Dc.1.2.9%3Apage%3D50",
+   "editionNote": "Accessed 2026-07-10. Perseus page-by-page (pp. 47-53). Walton's defense of his command status in the Walton-Alexander controversy - parti pris on the command question, first-class on the order chain. Key verbatim: 'I had been for more than a year before, was during the battle and after the battle of Gettysburg, Chief of Artillery of the First Army Corps' (p. 47); Longstreet's order text 'Let the batteries open. Order great care and precision in firing...' (p. 50; Helen Longstreet's 1904 book prints the same note with slightly different wording - carried on longstreet-hightide-1904); 'fired the signal guns, as agreed with General Longstreet, to commence the bombardment' (pp. 50-51); reproduces Sorrel's July 1 '5:30 P. M.' march order to the battalions (p. 49) and Adjutant Owen's night-march account.",
+   "clockProfile": {
+    "kind": "retrospective-watch",
+    "offsetMinutes": 7,
+    "offsetEnvelope": [
+     -8,
+     22
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1"
+    ],
+    "assessment": "One anchor statement at fetch-model paraphrase grade (received Longstreet's note 'at approximately 1:00 P.M.') -> +7 vs the 13:07 signal, envelope widened for the paraphrase risk. 14-year retrospective in a command polemic; his sequence facts (order chain) are the evidentiary content, not his clock.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-2-pendleton",
+   "kind": "official_report",
+   "title": "Brig. Gen. W. N. Pendleton's report (Chief of Artillery, ANV), OR Series I Vol. 27 Part 2 (NPS transcription)",
+   "author": "William N. Pendleton",
+   "year": 1863,
+   "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-brig-general-william-n-pendleton.htm",
+   "editionNote": "Accessed 2026-07-10. Key verbatim: the First Corps July 3 gun line order 'Henry's battalion held about its original position on the flank. Alexander's was next, in front of the peach orchard. Then came the Washington Artillery Battalion, under Major Eshleman, and Dearing's battalion on his left, these two having arrived since dusk of the day before... making nearly sixty guns for that wing'; opening 'At length, about 1 p. m., on the concerted signal, our guns in position, nearly one hundred and fifty, opened fire along the entire line'.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 7,
+    "offsetEnvelope": [
+     -38,
+     52
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1"
+    ],
+    "assessment": "One anchor statement: 'about 1 p. m.' at the signal -> +7 vs 13:07. Report-nominal class (rule 4); envelope kind-default around the derived offset.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "owen-1885",
+   "kind": "memoir",
+   "title": "In Camp and Battle with the Washington Artillery of New Orleans (and the United Service Magazine Aug. 1885 account)",
+   "author": "William Miller Owen",
+   "year": 1885,
+   "url": "https://archive.org/details/incampbattlewith00owen",
+   "editionNote": "Accessed 2026-07-10. ACCESS FAILED for the Gettysburg chapter verbatim: every full-text route truncated before ch. XI (archive.org djvu.txt truncation; /download 403; B&L vol. 3 p. 362 footnote reproduction 403 at ehistory). The famous signal passage (courier at 1:30 P.M.; 'the report of the first gun rang out upon the still summer air'; the second gun) is carried at SNIPPET grade only and is NOT quotable as verified. What IS verified: Owen's night-march account as quoted inside Walton's SHSP 5 letter (walton-shsp5-1877, Perseus p. 49). Battalion adjutant; 22-year retrospective compiled from his war diary. Highest-value future fetch for the CA-J3A-1 executor detail (which gun, the delay).",
+   "clockProfile": {
+    "kind": "none"
+   }
+  },
+  {
+   "id": "longstreet-hightide-1904",
+   "kind": "book",
+   "title": "Lee and Longstreet at High Tide (Helen D. Longstreet), Longstreet's account of the 1:30 order to Walton",
+   "author": "Helen Dortch Longstreet (quoting James Longstreet)",
+   "year": 1904,
+   "url": "https://www.gutenberg.org/files/44459/44459-h/44459-h.htm",
+   "editionNote": "Accessed 2026-07-10. Gutenberg full text. Longstreet quoted: 'I wrote this note to Colonel Walton at exactly 1.30 P.M.: \"Let the batteries open. Order great precision in firing...\"' - a retrospective 13:30 claim for the order that his own 1863 report places 'About 2 p.m.' and the chain's signal evidence places ~13:07 (order necessarily earlier). Three mutually inconsistent Longstreet-side clocks for one event - carried as the order-chain's conflict record, never anchor-defining.",
+   "clockProfile": {
+    "kind": "retrospective-watch",
+    "offsetMinutes": -23,
+    "offsetEnvelope": [
+     -38,
+     -8
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1"
+    ],
+    "assessment": "One anchor statement: the order to Walton 'at exactly 1.30 P.M.' must precede the 13:07 signal, so the stated clock runs at least ~23 min late against the chain -> -23 with a kind-widened envelope. 40-year retrospective contradicting his own report-nominal 'about 2 p.m.' (or-27-2-longstreet); the disagreement is the point.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "addressing-gettysburg-oob",
+   "kind": "reference_site",
+   "title": "Addressing Gettysburg: Confederate order of battle (strengths/armament reproduction)",
+   "author": "Addressing Gettysburg",
+   "year": 2024,
+   "url": "https://www.addressinggettysburg.com/confederate-order-of-battle/",
+   "editionNote": "Accessed 2026-07-10. Busey & Martin-type engaged strengths and armament as reproduced (the book itself remains unreachable - the standing busey-martin-2005 caveat applies; SECONDARY HOP flagged wherever cited). Used for: Eshleman's battalion 338 men/10 guns (1st Co. 77 men/1 Napoleon; 2nd 80/2 Napoleons+1 howitzer; 3rd 92/3 Napoleons; 4th 80/2 Napoleons+1 howitzer); Alexander's battalion 576 men/24 guns with per-battery figures (Moody 135, Woolfolk 103, Taylor 90, Parker 90, Jordan 78, Gilbert 71). Ashland armament discrepancy vs the park tablet (10-pdr vs 20-pdr Parrotts) recorded in the dossier."
+  },
+  {
+   "id": "or-27-1-hunt",
+   "kind": "official_report",
+   "title": "Brig. Gen. Henry J. Hunt's report (Chief of Artillery, AoP), OR Series I Vol. 27 Part 1, pp. 228-243 (encyc.org full-text reproduction)",
+   "author": "Henry J. Hunt",
+   "year": 1863,
+   "url": "https://encyc.org/wiki/Hunt's_Report_on_the_Battle_of_Gettysburg",
+   "editionNote": "Accessed 2026-07-10. Full report text read at encyc.org (ehistory's serial 043 has a page gap over pp. ~228-244 - 'Page not found' - so the OR print pagination is via the civilwarcycling index). Dated Sept. 27, 1863. Key verbatim: the 10 a.m. July 3 instruction ('to fire deliberately, and to husband their ammunition as much as possible'); 'the enemy opened, at about 1 p. m.... from one hundred to one hundred and twenty' guns vs 'more than eighty to reply effectively'; 'About 2.30 p. m., finding our ammunition running low... I directed that the fire should be gradually stopped, which was done, and the enemy soon slackened his fire also'; 'About 3 p. m., and soon after the enemy's fire had ceased, he formed a column of attack'; II Corps batteries 'having nearly exhausted their supply of ammunition, except canister'; Rorty's/Arnold's/Cushing's batteries withdrawn 'toward the close'; army expenditure '32,781 rounds, averaging over 100 rounds per gun' of 270 carried; the army artillery casualty table (total 320 guns; 7+98 killed, 33+532 wounded, 67 missing, 881 horses) and the July 3 officer-loss list (Rorty, Cushing killed; Woodruff, Milne mortally wounded).",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 5,
+    "offsetEnvelope": [
+     0,
+     10
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1",
+     "CA-J3A-4",
+     "CA-J3A-6"
+    ],
+    "assessment": "Three anchor statements: opening 'about 1 p. m.' (+7 vs 13:07), cease order 'About 2.30 p. m.' (0 vs the adopted ~14:30 slackening HE caused), assault forming 'About 3 p. m.' (+5 vs the 15:05 step-off frame). Median +5, remarkably consistent - but the CA-J3A-4 comparison is partially circular (his order defines the event), so kind stays report-nominal and rule 4 applies.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "id": "hunt-bl-3",
+   "kind": "article",
+   "title": "The Third Day at Gettysburg (Battles & Leaders vol. 3, pp. 369-385)",
+   "author": "Henry J. Hunt",
+   "year": 1887,
+   "url": "https://www.historycentral.com/CivilWar/getty/Hunt3.html",
+   "editionNote": "Accessed 2026-07-10. TWO reproductions used, and the difference matters: the historycentral text is ABRIDGED (it omits the cease-fire ride); the full text was read from the archive.org B&L vol. 3 raw OCR (https://ia800502.us.archive.org/8/items/battlesleadersof03john/battlesleadersof03john_djvu.txt, pp. 374-375). Key verbatim: 'Between 10 and 11 A.M.... I crossed over to Cemetery Ridge'; the withhold order 'to withhold their fire for fifteen or twenty minutes after the cannonade commenced... I had just given these orders to the last battery on Little Round Top, when the signal-gun was fired'; the cease-fire ride (Meade sought, Howard concurring, 'I rode back along the ridge, ordering the fire to cease. This was followed by a cessation of that of the enemy, under the mistaken impression that he had silenced our guns'); Meade's aides independently carrying cease-firing orders (Bingham); the dozen exploded caissons on the Taneytown pike; the Hazard-sector indictment ('They had unfortunately exhausted their long range projectiles during the cannonade, under the orders of their corps commander' - Hancock unnamed); gun counts (77 on the II Corps mile; McGilvery 'forty-one guns'; II Corps batteries reduced to four guns each). 24-year retrospective, parti pris in the Hunt-Hancock dispute - flagged.",
+   "clockProfile": {
+    "kind": "retrospective-watch",
+    "offsetMinutes": 7,
+    "offsetEnvelope": [
+     -8,
+     22
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1"
+    ],
+    "assessment": "His B&L narrative hangs on the signal gun firing as he finished the Little Round Top order (~13:07 chain) with his ride starting 'between 10 and 11'; no independent clock reading beyond the OR report's. Offset inherited from the OR profile's +5~+7 with a retrospection-widened envelope.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-1-osborn",
+   "kind": "official_report",
+   "title": "Maj. Thomas W. Osborn's report (Artillery Brigade, XI Corps), OR Series I Vol. 27 Part 1, pp. 747-751 (No. 264)",
+   "author": "Thomas W. Osborn",
+   "year": 1863,
+   "url": "https://ehistory.osu.edu/books/official-records/043/0747",
+   "editionNote": "Accessed 2026-07-10. Read page-by-page at live ehistory (pp. 747-751; ehistory 403s WebFetch but loaded in the browser pane - access route recorded; OCR slips reproduced: 'Artilelry', 'shoved', 'charage', 'whetever'). Dated July 29, 1863, to Hunt. Key verbatim: July 1 roster 'Total, 26 guns' (Wilkeson mw July 1, 'the command of the battery now devolved upon Lieutenant Bancroft'); July 2 morning 52 guns on the hill with the six Reserve batteries; the hill layout (Dilger right resting on the Baltimore road... Taft and Huntington perpendicular across the road); July 3 'About 2 p. m. they opened along our whole front with an unbroken line of artillery'; HIS OWN cease order with its contemporary motive: 'but as no satisfactory results were obtained, I ordered all our guns to cease firing, and the men to lie down to await developments. At the same time the artillery of our entire front ceased firing, and a few moments later the infantry of the enemy broke over the crest'; the repulse fire ('the havoc produced upon their ranks was truly surprising'); rounds expended: 'I am unable to give any definite estimate' (verified negative - the circulating ~1,600 figure is NOT in his OR); materiel table (98 horses; guns disabled/dismounted per battery). The postwar ruse framing (Weekly Times 1879) vs this report's no-satisfactory-results motive is a first-class conflict, carried in the dossier.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": -53,
+    "offsetEnvelope": [
+     -68,
+     -38
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1"
+    ],
+    "assessment": "One anchor statement: opening 'About 2 p. m.' -> raw -53 vs the 13:07 chain. Joins the ~14:00 nominal-opening cluster (Longstreet's report, Smyth's report, Stannard's report) - four reports across both armies now share the ~2 p.m. opening, strengthening the 'camp clock' cluster note on or-27-2-longstreet. Rule 4: never anchor-defining.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "osborn-weeklytimes-1879",
+   "kind": "article",
+   "title": "Osborn, 'The Artillery at Gettysburg' (Philadelphia Weekly Times, May 31, 1879; repr. Crumb ed., The Eleventh Corps Artillery at Gettysburg)",
+   "author": "Thomas W. Osborn",
+   "year": 1879,
+   "url": "https://npshistory.com/series/symposia/gettysburg_seminars/4/essay1.htm",
+   "editionNote": "Accessed 2026-07-10. NOT directly accessible - carried AS-QUOTED in the GNMP Seminar 4 essay (URL above, read in full) and Seminar 16 essay 4 PDF (Barnett, fn 25). Verified-as-quoted verbatim: the hill 'the best target for artillery practice the enemy had during the war'; 'the shells must have reached us at the rate of one hundred and upwards a minute'; Meade on the hill mid-cannonade ('He said the result of the fight depended on our holding the hill'); the Howard/Wainwright/Osborn command split on the hill. His cease-to-lure-the-assault conversation with Hunt (the 'ruse') could NOT be verbatim-verified through any reachable channel (verified absence in the reachable reproductions) - it rests on secondary paraphrase plus Hunt's B&L parallel (Howard concurrence). 16-year retrospective; the Crumb reprint is print-only.",
+   "clockProfile": {
+    "kind": "none"
+   }
+  },
+  {
+   "id": "or-27-1-hazard",
+   "kind": "official_report",
+   "title": "Capt. John G. Hazard's report (Artillery Brigade, II Corps), OR Series I Vol. 27 Part 1, pp. 477-481 (No. 132)",
+   "author": "John G. Hazard",
+   "year": 1863,
+   "url": "https://ehistory.osu.edu/books/official-records/043/0477",
+   "editionNote": "Accessed 2026-07-10. Read page-by-page at live ehistory (pp. 477-478, 480-481; p. 479 is a map page) and cross-checked verbatim-identical against the Iron Brigader reproduction (https://ironbrigader.com/2021/06/26/captain-john-g-hazards-report-on-the-union-2nd-corps-artillery-brigade-at-gettysburg/, first verified 2026-06-13). Dated Aug. 1, 1863. Key verbatim: the July 2 line ('On the right, in a grove, Light Company I; 150 yards to the left, Battery A, First Rhode Island... Battery A, Fourth U. S....'); July 2 losses (Brown's B: 1 k, 7 w, 2 m, 24 horses killed, two guns to the rear, Brown 'severely wounded in the neck by a musket-shot'; Rorty's 1 k, 8 w, 13 horses); July 3 ~8 a.m. exchange ('exploding three limbers of Battery A, Fourth U. S.'; Woodruff's battery 'during the forenoon had eight separate engagements'); the cannonade: 'At 1 p. m. the artillery of the enemy opened along the whole line, and for an hour and a quarter we were subjected to a very warm artillery fire. The batteries did not at first reply, till the fire of the enemy becoming too terrible, they returned it till all their ammunition, excepting canister, had been expended'; the assault ('half the valley had been passed over by them before the guns dared expend a round of the precious ammunition remaining'; canister 'with terrible effect'); withdrawals and the battery consolidation to three; officer fates (Rorty k after one day in command; Cushing 'mortally wounded by a musket-shot' k; Woodruff mw d. July 4 'at his own request, was buried on the field'; Milne 'musket-shot through the lungs' d. July 10; Sheldon w; 'Every officer in this battery [A/4th US] was either killed or wounded'); Fuger's field promotion recommendation; brigade loss 'one-third'.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 7,
+    "offsetEnvelope": [
+     -8,
+     22
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1",
+     "CA-J3A-4"
+    ],
+    "assessment": "Two anchor statements: opening 'At 1 p. m.' (+7 vs 13:07) and duration 'an hour and a quarter' of heavy fire -> slackening ~14:15 nominal, inside CA-J3A-4's 14:00-15:00 envelope. Rule 4 applies.",
+    "confidence": "medium"
+   }
+  }
+ ]
 }
