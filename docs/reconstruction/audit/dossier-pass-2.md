@@ -187,7 +187,7 @@ with radii per the spatial-evidence guidance. Friction found:
    battery LIST on the sheet was legible enough to advance an open ED
    — the "cartographic authority" role the program claimed is real.
 
-## 5. New ED candidates (proposed, NOT adopted)
+## 5. New ED candidates (proposed by this pass; ADOPTED 2026-07-11 as ED-40…ED-45 in the pass-3 batch ruling, angle-editorial-decisions.md)
 
 - **ED-40 — the crisis battery-slot naming.** Adopt Cowan's battery as
   the occupant of the Brown-vacated slot at the crisis; record Hall's
