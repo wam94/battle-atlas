@@ -1,9 +1,10 @@
 # Monument & marker register — summary and reliability profile
 
-**Status:** PROPOSAL (audit-spatial-1). The register is
-`reconstruction/spatial/monuments.json`; the reliability profile below is
-an **ED candidate (proposed ED-32)** — not self-adopted, per the Phase 5
-pattern.
+**Status:** ADOPTED 2026-07-11 (owner batch adoption, dossier pass 2).
+The register is `reconstruction/spatial/monuments.json`; the reliability
+profile below is **ED-39** (renumbered from this branch's provisional
+"ED-32", which collided with pass 1's Stannard ruling; see
+`docs/reconstruction/angle-editorial-decisions.md`).
 
 ## What was built
 
@@ -45,7 +46,7 @@ turned out to be survey benchmarks. Recommended fill: a manual HMDB
 browser pass or field GPS. The secondary/advance/position markers
 captured here partially serve the same line-extent purpose.
 
-## Reliability profile (proposed ED-32) — what a monument position *is*
+## Reliability profile (ED-39, adopted) — what a monument position *is*
 
 The spatial analogue of the tablets' clock-offset assessment: a
 per-source-class statement, recorded once, inherited by every claim that

@@ -5,13 +5,13 @@
   "us-stannard": {
    "Class (attested-static / unauthored / authored-ok)": "authored-ok",
    "EC1 identity/command": "Stannard (w July 3 thigh, during 2nd flank move) -> Randall; 13/14/16 VT engaged, 12/15 VT train guard (or-27-oob; stone-sentinels)",
-   "EC2 engaged strength": "1,950 brigade (stone-sentinels) vs 1,788 sum of engaged rgts (480+647+661) - ~160-man gap, both carried (oob-strengths #3)",
+   "EC2 engaged strength": "ADOPTED ED-32: 1,788 engaged = sum of engaged rgts (480+647+661); the 1,950 brigade figure failed re-verification and is kept only as a recorded failed reading (oob-strengths #3)",
    "EC3 position anchors": "[E] advanced line fwd of main position, ctr (4300,4470) f260 +-50m (Bachelder sheet 3); [A vs CA-J3A-8] 13VT wheeled anchor (4326,4764) f15 (200-yd monument statement, coord inferred +-40m)",
    "EC4 movement legs": "[A vs CA-J3A-8 ~15:20] change front fwd on 1st co., 13th then 16th, ~180m [B: 3-4 min at 1.4 m/s]; [D after CA-J3A-9] 16th reversal S vs Wilcox/Lang ~300m",
    "EC5 activity record": "[D 15:16-20] front fire punishing Kemper's oblique; [A vs CA-J3A-8] flank fire at ~60 yd (Sturtevant pp.304-305), 243 prisoners (13VT monument); [D] 2nd flank fire, 2nd FL colors taken (veazey-or)",
    "EC6 casualty apportionment": "45/275/30=350 of 1,950, 18% (stone-sentinels); episode split unattested - build decay is reconstruction; pin: Stannard w [D during 2nd flank move]",
    "Achieved T-level (audited)": "T4 (T5-grade inside Angle window via V2 claims)",
-   "Notes": "Dossier: reconstruction/dossiers/us-i-3-3-stannard.md; wheel clock verified-negative (no witness clock exists)"
+   "Notes": "Dossier: reconstruction/dossiers/us-i-3-3-stannard.md; ED-32 adopted 2026-07-11; wheel clock verified-negative (no witness clock exists)"
   },
   "us-btty-brown": {
    "Class (attested-static / unauthored / authored-ok)": "authored-ok",
@@ -22,7 +22,7 @@
    "EC5 activity record": "[A window] counter-battery 13:07-~14:40 until long-range ammo out; then SILENT (withdrawn) - one of two real events behind Alexander's 'guns have gone' reading (CA-J3A-4)",
    "EC6 casualty apportionment": "7k/19w/2m = 28 whole battle (tablet split closes the flag); July 2 PRIMARY: 1k/7w/2m + 24 horses killed 6 disabled, 2 guns to rear (or-27-1-hazard); Brown w neck by musket-shot; Milne mw on Cushing's rolls",
    "Achieved T-level (audited)": "T4",
-   "Notes": "Dossier: reconstruction/dossiers/us-btty-brown.md; ED-33 candidate on what 'the 18 guns have gone' observed"
+   "Notes": "Dossier: reconstruction/dossiers/us-btty-brown.md; ED-33 ADOPTED: his ~14:40 withdrawal = the contributing event behind Alexander's '18 guns' reading (Osborn's cease primary)"
   },
   "us-btty-rorty": {
    "Class (attested-static / unauthored / authored-ok)": "authored-ok",
@@ -61,12 +61,12 @@
    "Class (attested-static / unauthored / authored-ok)": "unauthored (only Phillips in build)",
    "EC1 identity/command": "Lt. Col. McGilvery; July 3 line = composite command of 3 Reserve brigades + III Corps battery under Hunt's direct control; Bigelow w July 2 -> Milton",
    "EC2 engaged strength": "PRIMARY now: 15 officers + 368 men taken into action (organic 4 batteries, OR p. 884 footnote); line gun count 'total, thirty-nine guns' (his OR) vs Hunt B&L 41 - carried",
-   "EC3 position anchors": "[C ~15:30 Jul 2] Wheatfield Rd line; [C 17:45] retire 250 yd by stages; Trostle stand; 400-yd-rear line; [E Jul 3] low-ground line w/ earthwork, roster VERBATIM left->right incl. 'a New Jersey battery' + Rank's section (OR-vs-OOB conflict -> ED-37); ref point Phillips (4212,4080)",
+   "EC3 position anchors": "[C ~15:30 Jul 2] Wheatfield Rd line; [C 17:45] retire 250 yd by stages; Trostle stand; 400-yd-rear line; [E Jul 3] low-ground line w/ earthwork, roster VERBATIM left->right incl. 'a New Jersey battery' + Rank's section (OR-vs-OOB conflict, ED-37 adopted-as-recorded); ref point Phillips (4212,4080)",
    "EC4 movement legs": "[C ~15:30 Jul 2] march to Sickles; [D] fighting retreat by prolonge; [C tablet ~15:00 Jul 3] Cooper's B/1st PA joins line from E Cemetery Hill [B: ~15-20 min leg]",
    "EC5 activity record": "[C 12:30 stated] opening '140 guns', overshoots 20-100 ft; [A window] pre-arranged hold-fire verbatim; the 'some general' breach put down; [C] 1.5h then deliberate battery-by-battery reply; [C ~15:00] first line 'completely broken up and scattered'; oblique raking fire through all three lines; Wilcox/Lang smashed",
    "EC6 casualty apportionment": "tablet verbatim: 1 off + 16 men k, 10 off + 61 w, 5 m = 93 (~24% of 383); July 2 dominates (Bigelow w at the Trostle stand; horse pins); July 3 light per his own overshoot statement",
    "Achieved T-level (audited)": "T4 (brigade/line grain)",
-   "Notes": "Dossier: reconstruction/dossiers/us-ar-1v-mcgilvery.md; his July 3 opening clock (OR pp.882-883) still unverified; ED-35 candidate: cast the line as a command unit"
+   "Notes": "Dossier: reconstruction/dossiers/us-ar-1v-mcgilvery.md; ED-35 ADOPTED (cast the line as a command unit); ED-37 ADOPTED as recorded conflict (resolution open)"
   },
   "reg-csa-1c-wsh-3": {
    "Class (attested-static / unauthored / authored-ok)": "unauthored (documented in-window mover - battalion in-build only)",
@@ -82,7 +82,7 @@
   "csa-bn-eshleman": {
    "Class (attested-static / unauthored / authored-ok)": "authored-ok (static line)",
    "EC1 identity/command": "Maj. B.F. Eshleman; 4 cos (Squires/Richardson/Miller/Norcom-w-Jul3); Walton nominal chief with the battalion (divided command vs Alexander recorded)",
-   "EC2 engaged strength": "CONFLICT: build 240 vs 338 (B&M-type, hop flagged; '340' SNIPPET variant); 8 Napoleons + 2 12-pdr howitzers (tablet + OR concur) -> ED-38 candidate",
+   "EC2 engaged strength": "ADOPTED ED-38: 338 (B&M-type, hop cited; build's 240 retired; '340' SNIPPET variant recorded); 8 Napoleons + 2 12-pdr howitzers (tablet + OR concur)",
    "EC3 position anchors": "[D before daylight] per-company layout verbatim (or-27-2-eshleman): 3rd Co ~100yd left of Peach Orchard on Taylor's left, 4th on Miller's left, 2nd on Norcom's left, 2 howitzers reserve; Pendleton: 'nearly sixty guns for that wing'; centroid (3220,3550) f55; [E] park near old school-house at dark; [C 09:00 Jul 4] Cashtown (tablet-only)",
    "EC4 movement legs": "[D] night march (Sorrel's July 1 5:30 PM order verbatim, walton-shsp5-1877; Owen-as-quoted: started ~10:30-11 PM, wagon-train delay); in-window: Miller+Battles advance 400-500yd; Norcom's Napoleons moved several hundred yd left then disabled; howitzers brought forward",
    "EC5 activity record": "[A = CA-J3A-1] the signal guns verbatim; bombardment; captured Union 3-in rifle served by Richardson's co. until axle-struck (marker + OR); 'About thirty minutes after the signal guns... our infantry moved forward' AMBIGUOUS - conflict-flagged, rule 4; rounds: attested-absent",
@@ -121,7 +121,7 @@
    "EC5 activity record": "[A window] deliberate counter-battery under the crossfire; [D] HIS OWN cease verbatim: 'as no satisfactory results were obtained, I ordered all our guns to cease firing... a few moments later the infantry of the enemy broke over the crest' - tightest Union cease-to-step-off coupling; [D] repulse fire 'havoc... truly surprising', artillery ignored by his order",
    "EC6 casualty apportionment": "tablet verbatim: 1 off + 6 men k, 3 off + 50 w, 9 m = 69; 98 horses (OR materiel table concurs); 1 gun captured/1 disabled/2 dismounted; pin: Wilkeson mw Jul 1 at the first fire -> Bancroft",
    "Achieved T-level (audited)": "T4 (group grain)",
-   "Notes": "Dossier: reconstruction/dossiers/us-xi-arty-osborn.md; HEADLINE: contemporary motive ('no satisfactory results') vs postwar ruse - ED-33's sharpest evidence; ruse verbatim unreachable (verified absence)"
+   "Notes": "Dossier: reconstruction/dossiers/us-xi-arty-osborn.md; HEADLINE: contemporary motive ('no satisfactory results') vs postwar ruse - ED-33 adopted on this evidence; ruse verbatim unreachable (verified absence)"
   },
   "reg-us-ii-arty": {
    "Class (attested-static / unauthored / authored-ok)": "command record (batteries in-build individually)",
@@ -132,7 +132,260 @@
    "EC5 activity record": "[C ~08:00] morning exchanges (3 of Cushing's limbers exploded; Woodruff 8 forenoon engagements); [A window] 'did not at first reply, till the fire of the enemy becoming too terrible' then fired ALL long-range ammo in 'an hour and a quarter'; [D] 'half the valley had been passed over... before the guns dared expend a round'; canister 'with terrible effect'; consolidation 5->3 batteries after (all or-27-1-hazard, read live pp. 477-481)",
    "EC6 casualty apportionment": "'one-third' of the brigade; 28k/119w/3m (report note) vs tablet 3+24k/5+114w/3m = 149; July 2 splits primary for Brown's (1k/7w/2m+24 horses) and Rorty's (1k/8w); 5 officer pins verbatim",
    "Achieved T-level (audited)": "T4 (brigade grain)",
-   "Notes": "Dossier: reconstruction/dossiers/us-ii-arty-hazard.md; ED-34 candidate (activity classes)"
+   "Notes": "Dossier: reconstruction/dossiers/us-ii-arty-hazard.md; ED-34 ADOPTED (fought-to-exhaustion class exemplar)"
+  },
+  "us-smyth": {
+   "Class (attested-static / unauthored / authored-ok)": "attested-static (July 2-4 wall line)",
+   "EC1 identity/command": "Col. Smyth w July 3 during cannonade -> Lt. Col. Pierce; 14CT/1DE/12NJ/10NYbn/108NY (or-27-1-smyth)",
+   "EC2 engaged strength": "1,190 (build compilation, hop flagged; no primary)",
+   "EC3 position anchors": "[C] wall S of Bryan barn from 04:00 Jul 2; monument row 14CT(4449,4951) 1DE(4451,5038) 12NJ(4453,5096) 108NY(4527,5218); Bachelder j3-03 concurs (20-30m)",
+   "EC4 movement legs": "[C] Jul 1 march (06:30 order); [C] 04:00 Jul 2 posting; static after",
+   "EC5 activity record": "[C] 1DE skirmish + 108NY supports Woodruff 08:00 Jul 2; Bliss barn burned Jul 3 (14CT); [C -53] 'At 2 p.m.' cannonade (cluster member); [A] 3-line repulse, 12NJ fire at 20 yd, 1,200-1,500 prisoners, 9 flags",
+   "EC6 casualty apportionment": "352 (his OR recap) vs 366 (tablet) - both carried; 108NY 'about half' lost; pins Smyth w (cannonade), Lt. Smith k (flag in hand)",
+   "Achieved T-level (audited)": "T4",
+   "Notes": "Dossier: reconstruction/dossiers/us-ii-3-2-smyth.md"
+  },
+  "us-sherrill": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (one in-window leg)",
+   "EC1 identity/command": "Willard k Jul 2 -> Sherrill mw Jul 3 ('about 4 p.m.' stated) -> Bull; 39/111/125/126 NY",
+   "EC2 engaged strength": "1,510 (build compilation, hop flagged)",
+   "EC3 position anchors": "[C] Jul 2 massed near Bryan barn; Jul 2 evening Plum Run charge ground; [E Jul 3] slope east of wall, monuments interleave Smyth's row (39NY 4467,4988; 125NY 4468,5053; 111NY 4458,5127; 126NY 4543,5267)",
+   "EC4 movement legs": "[C ~15:00 Jul 2] quarter-mile left; [D] Plum Run charge; [A vs CA-J3A-5 tablet 15:00] moved up to Smyth's line [B: 2-4 min]",
+   "EC5 activity record": "[C] 39NY skirmish (28 lost, exact); [C +7] 'About 1 p.m....about two hours' cannonade; [A] 4-line advance repulsed 'after an engagement of about an hour'",
+   "EC6 casualty apportionment": "report: attested-unreported ('unable to report'); tablet 714; episode pins: 39NY 28 (Jul 2 skirmish), Willard k, Sherrill mw",
+   "Achieved T-level (audited)": "T4",
+   "Notes": "Dossier: reconstruction/dossiers/us-ii-3-3-willard.md; 4-lines vs Smyth's 3-lines carried"
+  },
+  "us-hall": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (crisis rush authored in Angle cast)",
+   "EC1 identity/command": "Col. Hall unwounded; Revere (20MA) mw Jul 2, Steele (7MI) k, Thoman (59NY) k Jul 3 (or-27-1-hall pp.435-440, stub UPGRADED)",
+   "EC2 engaged strength": "920 (build compilation, hop flagged; division 3,773 primary via Harrow)",
+   "EC3 position anchors": "[E] two-line layout: wall row 59NY(4375,4756) 7MI(4379,4728) 20MA(4381,4688) + support row 42NY(4447,4750) 19MA(4445,4692); rails-shelter verbatim; Bachelder j3-03 concurs",
+   "EC4 movement legs": "[D Jul 2] 42NY+19MA to Humphreys; [A vs CA-J3A-9] by-the-flank rush to Webb ~150-250m [B: 3-5 min]; 10-min melee duration stated",
+   "EC5 activity record": "[C +5] 'At 1 o'clock' opening; 'At 3 o'clock exactly the fire slackened, and his first line advanced'; fire ladder 200 yd -> 50 paces; 20 flags in 100 yd square",
+   "EC6 casualty apportionment": "tablet 377 (6+75k/29+253w/14m); Jul 2 share attested; pins Revere mw Jul 2, Steele/Thoman k Jul 3 crisis",
+   "Achieved T-level (audited)": "T4",
+   "Notes": "Dossier: reconstruction/dossiers/us-ii-2-3-hall.md; p.438 extraction gap + 'Should be Arnold's' footnote -> ED-40 candidate"
+  },
+  "us-harrow": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (crisis incline-right)",
+   "EC1 identity/command": "Harrow to division (Gibbon w) -> Heath (19ME) took brigade; Ward (15MA)/Huston (82NY) mw Jul 2; Colvill/Adams/Downie (1MN) w",
+   "EC2 engaged strength": "1,410 (build, hop); division primary 3,773 in / 1,657 lost (or-27-1-harrow)",
+   "EC3 position anchors": "[E] single-line axis x~4384, z 4560-4645: 19ME(4384,4644) 15MA(4384,4610) 1MN(4385,4567) 82NY(4385,4564); Rorty's guns inside the span (4412,4597)",
+   "EC4 movement legs": "[C Jul 2] 15MA+82NY to Emmitsburg Rd + retire; [D] 1MN charge; [A vs CA-J3A-9] incline-right to the Copse [B: 2-5 min]",
+   "EC5 activity record": "[C +7] 'At 1 p.m....until nearly 3 p.m.' cannonade; enemy 'from the woods, 1,000 yards in front'; melee 'nearly an hour'; convergence-target statement (Hall's right/Webb's left)",
+   "EC6 casualty apportionment": "722 two-day (148k/574w, report) vs 768 (tablet) - carried; Jul 2 pins Ward/Huston mw; Jul 3 Blinn mw",
+   "Achieved T-level (audited)": "T4",
+   "Notes": "Dossier: reconstruction/dossiers/us-ii-2-1-harrow.md; division-sum gap 3,580 vs 3,773 recorded"
+  },
+  "us-btty-cowan": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (T5 window in Angle cast)",
+   "EC1 identity/command": "Capt. Cowan unwounded; 6x 3-in rifles; VI Corps battery detached to II Corps front; Hunt at the guns at climax",
+   "EC2 engaged strength": "113 (stone-sentinels, single-source; build concurs)",
+   "EC3 position anchors": "[C] VI Corps march arrival 22:00 Jul 2; [C ~10:00] to Newton, park <100 yd rear; [A vs CA-J3A-7..9] the Brown slot: mon-cowan (4428,4788), 17m from build hold; j3-03 'COWAN' between CUSHING and BROWN",
+   "EC4 movement legs": "[C] march legs; [A] slot-fill move at a gallop ~150m [B: ~1 min]",
+   "EC5 activity record": "[C +67] opening 'about noon' (early pole, rule 4); [A] canister 200 yd -> <20 yd ('DOUBLE CANISTER AT TEN YARDS' monument); [D] exploded 4 limbers of one CSA battery; rounds attested-absent",
+   "EC6 casualty apportionment": "5k/6w + 14 horses (report; monument + SS page variants carried); single-episode Jul 3 profile",
+   "Achieved T-level (audited)": "T4 (full arc; T5 window in-build)",
+   "Notes": "Dossier: reconstruction/dossiers/us-btty-cowan.md; ED-40 candidate (crisis slot naming)"
+  },
+  "us-btty-weir": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+   "EC1 identity/command": "Lt. Weir (w Jul 3 per register; report silent - carried); 6 Napoleons; 1st Regular Bde (Ransom w), Artillery Reserve",
+   "EC2 engaged strength": "123 = 2 off + 121 men (tablet verbatim)",
+   "EC3 position anchors": "[C] Jul 2 park then 16:00 forward position ~500 yd (Hancock order); 3 guns lost/recaptured by 13th VT (tablet verbatim); [D] Jul 3 fell back, then 'conducted to General Webb's position...under a heavy musketry fire' (crisis window)",
+   "EC4 movement legs": "[C 16:00 Jul 2] park->front [B: 15-20 min]; [D] Jul 2 overrun scramble; [D] Jul 3 crisis move to Webb",
+   "EC5 activity record": "[C] Jul 2 shot/case, canister out; [D] Jul 3 canister at short range; ROUNDS PRIMARY: 50 shot + 160 case + 70 canister = 280 (or-27-1-weir) [B: ~23-31 min cumulative battery fire]",
+   "EC6 casualty apportionment": "16 = 2k + 2 off/12 men w (tablet); Jul 2 dominates [D]; Baldwin w pin",
+   "Achieved T-level (audited)": "T4",
+   "Notes": "Dossier: reconstruction/dossiers/us-btty-weir.md; Tyler's 'no report received' vs the printed report - OR artifact recorded"
+  },
+  "us-btty-fitzhugh": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+   "EC1 identity/command": "Capt. Fitzhugh (also cmdg 4th Vol Bde); K/1st NY + 11th NY attached; 6x 3-in rifles",
+   "EC2 engaged strength": "149 (stone-sentinels; build concurs)",
+   "EC3 position anchors": "[C] Jul 2-3 Baltimore pike near Slocum; [crisis] 'near the stone fence in front of General Webb's division', enemy at 75 yd; monument on Cemetery Hill = pre-crisis semantics",
+   "EC4 movement legs": "13:00-vs-15:00 move-clock CONFLICT (his 1 p.m. vs Parsons's 3 p.m. + SS at-the-gallop); 89-round expenditure is the physical tiebreaker toward 15:00",
+   "EC5 activity record": "[A window] first attack collapsed in 30-45 min of his fire; second (Wilcox/Lang) broken by enfilade; ROUNDS ITEMIZED: 57 percussion + 15 shrapnel + 17 time = 89 [B: ~8-10 min full-battery fire]",
+   "EC6 casualty apportionment": "K+11NY: 7w + 5 horses; brigade 36 (2k/34w tablet); single-episode",
+   "Achieved T-level (audited)": "T4",
+   "Notes": "Dossier: reconstruction/dossiers/us-btty-fitzhugh.md; ED-41 candidate (crisis-reinforcement class)"
+  },
+  "us-btty-parsons": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+   "EC1 identity/command": "Lt. Parsons; A/1st NJ; 4th Vol Bde; 6 guns (armament single-source, flagged)",
+   "EC2 engaged strength": "116 (build compilation, hop flagged)",
+   "EC3 position anchors": "[C] Baltimore pike Jul 2-3; [C +10] 'about one-fourth of a mile south of Gettysburg Cemetery and near the Second Division' - vs Fitzhugh's in-front-of-Webb (tension carried); pair order: Parsons left, Fitzhugh right",
+   "EC4 movement legs": "[C ~15:00] Hunt's order, pike->ridge at speed [B: 5-8 min]",
+   "EC5 activity record": "[A] case into the advancing infantry (~40 rds per Fitzhugh); [D] then ~120 shot + ~80 shell counter-battery until Hunt's cease = ~240 rounds total [B: 20-30 min]",
+   "EC6 casualty apportionment": "2k/7w + 5 horses; single-episode",
+   "Achieved T-level (audited)": "T4",
+   "Notes": "Dossier: reconstruction/dossiers/us-btty-parsons.md; ED-37 file: Parsons ELIMINATED as McGilvery's 'New Jersey battery' (was at the pike all morning); Clark's B/1st NJ the surviving candidate"
+  },
+  "us-btty-wheeler": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+   "EC1 identity/command": "Lt. Wheeler; 13th NY Indep; XI Corps bde (Osborn); 4x 3-in rifles",
+   "EC2 engaged strength": "118 (stone-sentinels; build concurs)",
+   "EC3 position anchors": "[C] Jul 1 Dilger's right then wheat field; [E] Jul 2-3 Cemetery Hill (Osborn group); [C stated 16:00, profile -35] crisis position by Hancock, enemy column 400 yd off",
+   "EC4 movement legs": "[C] Jul 1 double-quick legs + retreat; [C] crisis move hill->II Corps front [B: 3-5 min; build path 668m matches]",
+   "EC5 activity record": "[C] Jul 1 counter-battery; [E] hill group fire; [A] crisis canister enfilade - column 'brought to a halt three times'; ROUNDS: 850 whole battle [B: ~212/gun, needs per-day split - none stated]",
+   "EC6 casualty apportionment": "10w/3m + 12 horses (report; monument 8w variant); Jul 1 vs Jul 3 split bracketed only",
+   "Achieved T-level (audited)": "T4",
+   "Notes": "Dossier: reconstruction/dossiers/us-btty-wheeler.md; three-halt rhythm = pass-3 approach-leg pacing input"
+  },
+  "us-btty-cooper": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+   "EC1 identity/command": "Capt. Cooper; B/1st PA; I Corps bde (Wainwright); 4x 3-in rifles",
+   "EC2 engaged strength": "114 (monument verbatim; build concurs)",
+   "EC3 position anchors": "[C] Jul 1 noon left of 3rd Div then Seminary (Reynolds Ave mon (3172,7044)); [C] E Cemetery Hill Jul 1 dusk - Jul 3 (Wainwright layout verbatim; main mon (5050,5776)); [A tablet 15:00] Hancock Ave tablet (4473,4096) = ridge crest at I/II Corps boundary - RESOLVES pass-1 'joins McGilvery' slot (sheet-vs-tablet conflict carried)",
+   "EC4 movement legs": "[C] Jul 1 legs; [C ~19:00 Jul 2] out to refit (Ricketts in); [A vs CA-J3A-5; B: 8-12 min] the 15:00 during-cannonade transfer",
+   "EC5 activity record": "[C] Jul 1 25-shot opening + Seminary fight; [C] Jul 2 2.5-h silencing duel; [C] Jul 3 case->canister rout; ROUNDS PER DAY: ~400/500/150 = 1,050 (report + monument concur) [B: Jul 3 ~20-25 min fire]",
+   "EC6 casualty apportionment": "12 total (3k/9w); PER-DAY PINS: Jul 2 2k/6w, Jul 3 1w (report) - monument's July-3 heading wrong by the battery's own report",
+   "Achieved T-level (audited)": "T4",
+   "Notes": "Dossier: reconstruction/dossiers/us-btty-cooper.md; best tier-B rounds basis in the set"
+  },
+  "us-arty-reserve-park": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (park track)",
+   "EC1 identity/command": "Tyler -> Robertson after Jul 3 incapacitation (register; report silent - carried); 5 brigades + ammunition train; Gillett ordnance officer",
+   "EC2 engaged strength": "2,375 / 114 guns nominal (hop) minus B+M 1st CT Heavy (to Westminster, verbatim)",
+   "EC3 position anchors": "[C] June 29-Jul 1 march (Frederick->Taneytown; 22:30 Jul 1 report to Gibbon); [C] park ~1.5 mi from town; [C] 70 wagons sent rear morning Jul 3",
+   "EC4 movement legs": "[C] march legs; [C] Jul 2 six batteries/34 guns to Sickles (moves by detachment); [A window] crisis battery legs originate here",
+   "EC5 activity record": "AMMUNITION LEDGER PRIMARY: 19,189 rounds ISSUED + 4,694 left (Gillett annex) - the supply-side physics of Hunt's economy order; wagon-doctrine caution verbatim",
+   "EC6 casualty apportionment": "distributed to component returns (Turnbull's 1+8k/14w/45 horses worst); consolidated tables pp. 874-877 unfetched (open)",
+   "Achieved T-level (audited)": "T3 (park/command grain)",
+   "Notes": "Dossier: reconstruction/dossiers/us-ar-hq-tyler-park.md; ED-42 candidate (issues-vs-expenditures two-ledger rule)"
+  },
+  "reg-us-i-arty": {
+   "Class (attested-static / unauthored / authored-ok)": "unauthored (components partially in-build)",
+   "EC1 identity/command": "Col. Wainwright; Hall/Stevens/Reynolds-Wilber/Cooper/Stewart batteries; Davison w Jul 1 -> Sgt. Mitchell commended",
+   "EC2 engaged strength": "no brigade figure (negative); component strengths on battery rows",
+   "EC3 position anchors": "[C] Jul 1 Seminary Ridge; [C] E Cemetery Hill layout VERBATIM (B/4US across the road, I/1NY, Cooper, Reynolds = 13 three-inch guns; 5th ME 50 yd forward on the knoll) - the East-Hill left-to-right frame",
+   "EC4 movement legs": "[C] Jul 1 fighting withdrawal (peremptory order); [C] Jul 2 Cooper-out/Ricketts-in rotation; [A 15:00] Cooper detached to left centre Jul 3",
+   "EC5 activity record": "[C] Jul 1 fight (83 men + 80 horses day-1 loss); [C] Jul 2 wheat-field battery silenced in ~90 min (28 dead horses = Latimer's ground); dusk assault 'almost entirely repelled by the artillery'; Jul 3 occasional + general; rounds via components (Cooper 1,050; Breck 1,290 itemized; Ricketts 1,200; Hill WV 1,120)",
+   "EC6 casualty apportionment": "Jul 1 primary 83+80 horses; Jul 2-3 on component returns (no roll-up fetched)",
+   "Achieved T-level (audited)": "T4 (group grain)",
+   "Notes": "Dossier: reconstruction/dossiers/us-i-arty-wainwright.md; p. 356 fetch gap recorded"
+  },
+  "us-btty-rittenhouse": {
+   "Class (attested-static / unauthored / authored-ok)": "attested-static (Jul 3)",
+   "EC1 identity/command": "Hazlett k Jul 2 on the summit -> Rittenhouse; D/5th US; 6x 10-pdr Parrotts; V Corps bde (Martin)",
+   "EC2 engaged strength": "73 = 2 off + 71 men (tablet)",
+   "EC3 position anchors": "[C tablet 17:45 Jul 2] LRT summit, hand-hauled; ~(4430,2600) +-50m (j3-03 HAZLETT'S bar; NO register marker - gap flagged); attested-static Jul 3",
+   "EC4 movement legs": "[C 16:30-17:45 Jul 2] march + summit haul [B: haul is the constraint]; none after",
+   "EC5 activity record": "[C] Jul 2 evening fire into the Devil's Den flank; [E + cross-cited] Jul 3 enfilade on the assault (Hunt's 'McGilvery and Rittenhouse...drift' statement); OWN ACCOUNT ACCESS-FAILED (gdg.org TLS) - EC5 deliberately thin; rounds unfetched",
+   "EC6 casualty apportionment": "14 (1 off + 8 men k, 5 w, tablet; ~19% of 73); Jul 2 dominates [D]; brigade frame 44 total (Martin)",
+   "Achieved T-level (audited)": "T2",
+   "Notes": "Dossier: reconstruction/dossiers/us-btty-rittenhouse.md; rittenhouse-mollus-1887 = the T-ceiling item"
+  },
+  "csa-bn-dearing": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (static line; daybreak advance attested)",
+   "EC1 identity/command": "Maj. Dearing; Stribling/Caskie/Macon/Blount; 18 guns (tablet verbatim); Maj. Read w Jul 3 morning; HIS OWN OR REPORT FOUND (pass 1 assumed none)",
+   "EC2 engaged strength": "432 (B&M-type hop per ED-38)",
+   "EC3 position anchors": "[C] arrived dusk Jul 2 (Pendleton chain); [C/D] daybreak Jul 3 to 'the crest of the hill immediately in front of the enemy's position'; RELATIONS PRIMARY: Cabell left+rear, Washington Arty right+rear; j3-03 labels CASKIE(3610,4480) BLOUNT(3670,4550) MACON(3620,4310) on the road-crest line",
+   "EC4 movement legs": "[D] night march chain; [C/D] daybreak advance; withdrawal CONFLICT: tablet 'about 4 P.M.' vs his own 18:00 repulse fire - carried",
+   "EC5 activity record": "[D] daybreak skirmish (Stribling ~12 rounds); [A vs CA-J3A-1] deliberate by-battery fire at the signal; ammunition 'completely exhausted, excepting a few round in my rifled guns'; silent-under-fire 'upward of an hour'; rounds total attested-absent",
+   "EC6 casualty apportionment": "per-battery PRIMARY (3 of 4): Stribling 3w+10h, Macon 3k/3w+8h, Blount 5kw+12h; Caskie = extraction gap (flagged); all Jul 3",
+   "Achieved T-level (audited)": "T4 (battalion grain)",
+   "Notes": "Dossier: reconstruction/dossiers/csa-1c-bn-dearing.md"
+  },
+  "csa-bn-cabell": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (consolidated line + post-assault forward move)",
+   "EC1 identity/command": "Col. Cabell; Manly/Fraser/McCarthy/Carlton; 16 guns (tablet); Fraser w Jul 2 (dangerous), Carlton w Jul 3, Couper/Jennings w",
+   "EC2 engaged strength": "384 (build) vs 380 (SS compilation) - both hops carried (ED-38)",
+   "EC3 position anchors": "[C] Jul 2 wood-edge line, right near the Emmitsburg road, 600-700 yd from the Peach Orchard guns; [C/D] Jul 3 six guns near a brick house on the road + Carlton/McCarthy en echelon BEFORE Pickett; [C ~16:00] post-assault line on the road ~700 yd from Cemetery Hill, held till night; j3-03 McCARTY label ~(3500,4670)",
+   "EC4 movement legs": "[D] Jul 3 pre-dawn consolidation move north; [C ~16:00] forward onto the road; [D] withdrawal after dark",
+   "EC5 activity record": "[C] Jul 2 duel; [C +7] 'about 1 p.m....over two hours' cannonade (chain-agreeing CSA clock); McCarthy morning probe fired 20 rounds; ROUNDS: ~3,300 Jul 2-3 (tablet) [B: ~206/gun]",
+   "EC6 casualty apportionment": "tablet 12k/30w/4m + 80 horses vs SS 15k/57w - carried (report table unfetched); Jul 2 pins Fraser; Jul 3 pins Carlton/Jennings",
+   "Achieved T-level (audited)": "T4 (battalion grain)",
+   "Notes": "Dossier: reconstruction/dossiers/csa-1c-bn-cabell.md"
+  },
+  "csa-bn-pegram": {
+   "Class (attested-static / unauthored / authored-ok)": "attested-static (Jul 2-3 line)",
+   "EC1 identity/command": "Maj. Pegram / report by Capt. Brunson; Crenshaw/Marye/Brander/Zimmerman/McGraw; 20 guns (tablet); ordnance officer mw Jul 1",
+   "EC2 engaged strength": "480 (hop, ED-38)",
+   "EC3 position anchors": "[C] Jul 1 eminence ~1 mi west (Marye's section fired the arc's opening 8-10 rounds); [C] Jul 2-3 right of Fairfield pike, ~1,400 yd from the Union guns; j3-03 labels BRANDER(3900,5900) ZIMMERMAN(3820,5720) MARYE(3720,5620)",
+   "EC4 movement legs": "[C] Jul 1 approach; [D] one-mile-forward repost Jul 1->2; static after; retreat losses recorded",
+   "EC5 activity record": "[C] Jul 1 line forced Union guns back 'three distinct times'; [C] Jul 2 opportunistic enfilade; [A window] Jul 3 cannonade; ROUNDS: 3,800 three days (report verbatim; tablet concurs)",
+   "EC6 casualty apportionment": "PER-DAY PRIMARY (only one in set): Jul 1 2k/8w/6h; Jul 2 2k/7w/25h; Jul 3 10k/37w/38h; tablet's 47 = Jul 3 row misread as total (conflict carried)",
+   "Achieved T-level (audited)": "T4 (battalion grain)",
+   "Notes": "Dossier: reconstruction/dossiers/csa-3c-bn-pegram.md; ED-43 candidate (tablet casualty scope rule)"
+  },
+  "csa-bn-mcintosh": {
+   "Class (attested-static / unauthored / authored-ok)": "attested-static (Jul 2-3 line)",
+   "EC1 identity/command": "Maj. McIntosh; Rice/Hurt/Wallace/Johnson; 16 guns incl. 2 Whitworths (tablet)",
+   "EC2 engaged strength": "384 (hop, ED-38)",
+   "EC3 position anchors": "[C] Jul 1 Cashtown pike flank (railroad-cut enfilade); [C] Jul 2-3 'behind a stone wall, on the range of hills to the left of the town' (wall segment unresolved - radius 150m band; pass-3 crop item)",
+   "EC4 movement legs": "[C] Jul 1 in with Pender; [D] one-mile advance Jul 1->2; [C] Jul 4 afternoon withdrawal to Marsh Creek",
+   "EC5 activity record": "[C] railroad-cut enfilade Jul 1; [A window] Jul 3 sustained fire; ROUNDS ITEMIZED: 213 Napoleon + 1,049 rifle + 133 Whitworth = 1,395 (verbatim) [B: Napoleon 36/gun = range-limited signature]",
+   "EC6 casualty apportionment": "24 k&w + 16 captured + 38 horses (report) vs tablet 7k/25w(16 captured) - k+w totals disagree, carried; no per-day split",
+   "Achieved T-level (audited)": "T4 (battalion grain)",
+   "Notes": "Dossier: reconstruction/dossiers/csa-3c-bn-mcintosh.md"
+  },
+  "csa-bn-garnett": {
+   "Class (attested-static / unauthored / authored-ok)": "attested-static + ATTESTED SILENT Jul 3",
+   "EC1 identity/command": "Lt. Col. J.J. Garnett / Maj. Richardson (rifle group); Maurin/Moore/Lewis/Grandy; 9 rifles + 6 smoothbores",
+   "EC2 engaged strength": "360 (hop, ED-38)",
+   "EC3 position anchors": "[C] Jul 1 pike support; [C] Jul 2 rifles opposite Cemetery Hill; [C/D] Jul 3 rifles right of Pegram on Anderson's front; smoothbores in reserve (park class, 200m)",
+   "EC4 movement legs": "[C] Jul 1/2/3 postings; [C] Jul 4 reoccupation; Richardson + 5 rifles to Imboden's train",
+   "EC5 activity record": "[C] Jul 2 fire 15:00 -> ~30 min before sunset (the one fire episode); JUL 3 NEGATIVE VERBATIM: 'did not fire a single shot, having received orders to that effect'; smoothbores 'bore no part in these actions'; tablet concurs",
+   "EC6 casualty apportionment": "UNFETCHED (p. 654 gap - open slot, not attested-absent)",
+   "Achieved T-level (audited)": "T2 (negative-evidence)",
+   "Notes": "Dossier: reconstruction/dossiers/csa-3c-bn-garnett.md; ED-44 candidate (attested-silence rendering rule); subtracts 15 tubes from every cannonade gun-count claim"
+  },
+  "csa-bn-dance": {
+   "Class (attested-static / unauthored / authored-ok)": "attested-static",
+   "EC1 identity/command": "Capt. Dance; 2nd Corps reserve (Brown)",
+   "EC2 engaged strength": "480 (hop)",
+   "EC3 position anchors": "[C] Seminary/Oak ridge north sector, covered by Carter's ten rifles at the railroad cut",
+   "EC4 movement legs": "none Jul 3 (static)",
+   "EC5 activity record": "[C] JUL 3 ENGAGED: 'The First Virginia Artillery...engaged the enemy's batteries, in order to divert their fire' (or-27-2-jtbrown) - the wing's firing battalion; Jul 2 Watson's/Smith's batteries aided Latimer's duel",
+   "EC6 casualty apportionment": "unfetched (open)",
+   "Achieved T-level (audited)": "T2 (group grain)",
+   "Notes": "Group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md - Brown's corps report corrects 'near-silence' to structured partial participation (ED-45 candidate)"
+  },
+  "csa-bn-nelson": {
+   "Class (attested-static / unauthored / authored-ok)": "attested-static",
+   "EC1 identity/command": "Lt. Col. Nelson",
+   "EC2 engaged strength": "264 (hop)",
+   "EC3 position anchors": "[D] Oak Hill sector, position unstated in fetched pages (radius 300m, flagged)",
+   "EC4 movement legs": "none stated",
+   "EC5 activity record": "[C] Jul 3 'a portion' engaged (diversion mission, or-27-2-jtbrown); remainder = absence-of-record, NOT attested-silent",
+   "EC6 casualty apportionment": "unfetched (open)",
+   "Achieved T-level (audited)": "T2 (group grain)",
+   "Notes": "Group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md - Brown's corps report corrects 'near-silence' to structured partial participation (ED-45 candidate)"
+  },
+  "csa-bn-carter": {
+   "Class (attested-static / unauthored / authored-ok)": "attested-static",
+   "EC1 identity/command": "Lt. Col. Carter (Rodes); Reese/W.Carter/Page/Fry",
+   "EC2 engaged strength": "384 (hop)",
+   "EC3 position anchors": "[C] Jul 1 foot of the high ridge (Page vs O'Neal front); [C] Jul 3 ten rifled guns 'on the high ridge on the right and left of the railroad cut'",
+   "EC4 movement legs": "[C] Jul 1 legs; [C] Jul 2 ATTESTED IDLE ('held in readiness...not engaged')",
+   "EC5 activity record": "[C] Jul 1 fights; [C] Jul 3 diversion fire on Cemetery Hill covering Dance; observation 'Their fire slackened, and finally ceased' = CSA-side CA-J3A-4->5 sequence witness [D]",
+   "EC6 casualty apportionment": "Jul 1 PRIMARY per-battery: Page 2k/2mw/26w + 17 horses; rest unfetched",
+   "Achieved T-level (audited)": "T2 (group grain)",
+   "Notes": "Group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md - Brown's corps report corrects 'near-silence' to structured partial participation (ED-45 candidate)"
+  },
+  "csa-bn-raine": {
+   "Class (attested-static / unauthored / authored-ok)": "unauthored",
+   "EC1 identity/command": "Latimer mw Jul 2 (Benner's Hill) -> Capt. Raine",
+   "EC2 engaged strength": "356 (hop)",
+   "EC3 position anchors": "[C] Jul 2 Benner's Hill (the Wainwright-group duel's other side); Jul 3 position unstated (open)",
+   "EC4 movement legs": "[C] Jul 2 withdrawal of three batteries under fire",
+   "EC5 activity record": "[C] Jul 2 duel; Jul 3 ABSENT-FROM-RECORD in Brown's report (probably-limited, NOT attested-silent)",
+   "EC6 casualty apportionment": "Latimer mw = the pin; figures unfetched",
+   "Achieved T-level (audited)": "T2 (group grain)",
+   "Notes": "Group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md - Brown's corps report corrects 'near-silence' to structured partial participation (ED-45 candidate)"
+  },
+  "csa-bn-jones": {
+   "Class (attested-static / unauthored / authored-ok)": "unauthored",
+   "EC1 identity/command": "Lt. Col. H.P. Jones (Early)",
+   "EC2 engaged strength": "290 (hop)",
+   "EC3 position anchors": "[C] Jul 3 ATTESTED-ELSEWHERE: 'operated with the cavalry'; Tanner's battery with the wagon train (Williamsport)",
+   "EC4 movement legs": "off-field legs (not researched this pass)",
+   "EC5 activity record": "[C] off the main field Jul 3 - subtracts ~16 tubes from cannonade census",
+   "EC6 casualty apportionment": "unfetched (open)",
+   "Achieved T-level (audited)": "T2 (group grain)",
+   "Notes": "Group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md - Brown's corps report corrects 'near-silence' to structured partial participation (ED-45 candidate)"
   }
  }
 }

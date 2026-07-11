@@ -180,11 +180,26 @@
   {
    "id": "or-27-1-hall",
    "kind": "official_report",
-   "title": "Col. Norman J. Hall's report, OR Series I Vol. 27 Part 1",
+   "title": "Col. Norman J. Hall's report (3rd Brigade, 2nd Division, II Corps), OR Series I Vol. 27 Part 1 pp. 435-440",
    "author": "Norman J. Hall",
    "year": 1863,
-   "url": "https://collections.library.cornell.edu/moa_new/waro.html",
-   "editionNote": "OR Part 1 (Union reports) has no verified script-friendly URL (HathiTrust bot-blocks; Cornell MOA browser-only). Content attested via the 2026-07-02 regiment-track survey: describes shifting his regiments right toward the clump during the break."
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189057-435-series-i-volume-xxvii-i-ser",
+   "editionNote": "UPGRADED from the unverified stub (previous URL: https://collections.library.cornell.edu/moa_new/waro.html). Fetch-verified 2026-07-11 via the civilwar.com page-by-page OR transcription (id = 188622 + page; OCR noise). Dated July 17, 1863, Pleasant Valley Md. Keys: brigade of five regiments, ~190 miles marched before arriving July 2; 'A few rails were disposed in front of the line, to form a slight shelter'; July 2 42nd NY + 19th MA sent to Humphreys, Barksdale 'mortally wounded and two colors left on the ground within 20 yards of the line of the Seventh Michigan'; July 3 'At 1 o'clock the enemy opened with artillery' ~150 pieces, 'At 3 o'clock exactly the fire of the enemy slackened, and his first line of battle advanced from the woods', second line 'About 100 yards in rear', the by-the-flank column movement; 7th MI/20th MA 'open fire at about 200 yards', some regiments 'waiting even until but 50 paces'; his own brigade moved by the flank to Webb's support, 'rather giving way than advancing' ~10 min; 'Between 1,500 and 2,000 prisoners were captured at the point of attack', 'Twenty battle-flags were captured in a space of 100 yards square'; commanders lost: Revere (20th MA) mw, Thoman (59th NY) k, Steele (7th MI) k. PAGE GAP: p. 438 body text did not extract (only the OR editors' footnote '*Should be Arnold's', correcting Hall's naming of the battery on his right) - the Webb-support movement details on that page are carried from pp. 437/439; re-fetch route: ehistory serial 043/0438.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 5,
+    "offsetEnvelope": [
+     0,
+     10
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1",
+     "CA-J3A-5",
+     "CA-J3A-6"
+    ],
+    "assessment": "Two anchor statements: opening 'At 1 o'clock' (chain 13:07 -> +7) and 'At 3 o'clock exactly the fire of the enemy slackened, and his first line of battle advanced' - conflating CA-J3A-5 (15:00) and CA-J3A-6 (15:05) at a stated 15:00, i.e. +0..+5. The 'exactly' is watch-adjacent language but the report never says a watch was checked. Rule 4: never moves anchors.",
+    "confidence": "medium"
+   }
   },
   {
    "id": "stone-sentinels",
@@ -925,6 +940,437 @@
     ],
     "assessment": "Two anchor statements: opening 'At 1 p. m.' (+7 vs 13:07) and duration 'an hour and a quarter' of heavy fire -> slackening ~14:15 nominal, inside CA-J3A-4's 14:00-15:00 envelope. Rule 4 applies.",
     "confidence": "medium"
+   }
+  },
+  {
+   "id": "or-27-1-harrow",
+   "kind": "official_report",
+   "title": "Brig. Gen. William Harrow's report (2nd Division + 1st Brigade, II Corps), OR Series I Vol. 27 Part 1 pp. 419-421",
+   "author": "William Harrow",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189041-419-series-i-volume-xxvii-i-ser",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com route). Dated July 16, 1863; written as division report (Harrow succeeded Gibbon July 3). Keys: 'At 1 p. m. the enemy opened a fierce cannonade upon the line from a hundred or more guns, which was continued until nearly 3 p. m.'; 'the enemy moved from the woods, 1,000 yards in front'; 'the crest of the hill occupied by the right of Colonel Hall and the left of General Webb seemed to be the point to which their main attack was directed'; 'the Third and First Brigades, of this division, inclined to the right, engaging the enemy as they moved'; 'the contest raged with almost unparalleled ferocity for nearly an hour'; division 'took into action 3,773 men, and lost 1,657'; 1st Brigade two-day loss 722 (148 k / 574 w); officer pins Col. Ward (15th MA) and Col. Huston (82nd NY) mw July 2, Colvill/Adams/Downie (1st MN) shot down July 3.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 7,
+    "offsetEnvelope": [
+     0,
+     12
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1",
+     "CA-J3A-5"
+    ],
+    "assessment": "Opening 'At 1 p. m.' vs chain 13:07 (+7); cannonade 'continued until nearly 3 p. m.' vs CA-J3A-5 15:00 (consistent, +0..+7). Rule 4 applies.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "id": "or-27-1-smyth",
+   "kind": "official_report",
+   "title": "Col. Thomas A. Smyth's report (2nd Brigade, 3rd Division, II Corps), OR Series I Vol. 27 Part 1 pp. 464-466",
+   "author": "Thomas A. Smyth",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189086-464-series-i-volume-xxvii-i-ser",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com route; OCR renders the name 'Smith'). Keys: July 1 'order to march at 6.30 a. m.' from Uniontown; July 2 'At 4 a. m. ... placed in position on the hills overlooking the town', 'At 8 a. m. the First Delaware Volunteers were sent out as skirmishers, and the One hundred and eighth New York Volunteers were assigned to the support of Woodruff's battery', 'At 2 p. m. the enemy opened upon us with a severe fire of artillery, accompanied by an advance of infantry' (the Bliss farm axis); July 3 'Artillery firing from both sides began at 4 a. m.', 'Skirmishing ... until 10.30 a. m.', 'At 2 p. m. a most terrific cannonading was opened upon our front' 'continued without intermission until 5 p. m.', 'As the fire of the enemy's batteries slackened, their infantry moved upon our position in three lines'; 12th NJ held fire 'until they were within 20 yards'; prisoners 'estimated at from 1,200 to 1,500', 9 battle-flags; 108th NY casualties 'about half of the regiment in action'; Smyth wounded during the cannonading, 'surrendered the command to Lieutenant Colonel Francis E. Pierce'; Lt. William Smith (1st DE) killed 'with one of the enemy's captured flags in his hand'; brigade casualty recapitulation totaling 352.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": -53,
+    "offsetEnvelope": [
+     -53,
+     0
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1",
+     "CA-J3A-5"
+    ],
+    "assessment": "Joins the ~14:00 nominal cluster (Longstreet, Osborn, Stannard): cannonade 'At 2 p. m.' vs chain 13:07 -> -53. His 'until 5 p. m.' end is 2h late against CA-J3A-5 and appears to fold the assault and after-fire into the cannonade window; envelope kept one-sided. Rule 4: display-only.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "id": "or-27-1-bull",
+   "kind": "official_report",
+   "title": "Lt. Col. James M. Bull's report (3rd Brigade [Willard's/Sherrill's], 3rd Division, II Corps), OR Series I Vol. 27 Part 1 pp. 472-474",
+   "author": "James M. Bull",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189094-472-series-i-volume-xxvii-i-ser",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com route). Keys: July 2 'first took its position, by direction of the division general, by battalion in mass near a barn a little south of ... Cemetery Hill'; 39th NY (Hildebrandt) skirmish, 'lost 26 enlisted men killed and wounded, and 2 commissioned officers wounded'; 'At about 3 p. m. ... the brigade moved from its position by the left flank about a quarter of a mile toward the left of the line' (July 2, then the Plum Run charge under Willard, 'pursuant to the order of Colonel Willard, given just before his death'); July 3 'About 1 p. m. the enemy opened from his batteries ... a terrific cannonade ensued, which continued about two hours'; 'The enemy, advancing in four lines across the flat, were subjected to a murderous fire of musketry and artillery, and were driven back in confusion, after an engagement of about an hour'; regiments 'so placed as supports to the artillery' on 'the slope of the hill occupied by us'; 'the brigade was commanded by Colonel Sherrill until his death, about 4 p. m., when the command devolved upon Lieutenant Colonel James M. Bull'; brigade loss 'severe ... the precise number of which I am unable to report' (attested-unreported at brigade grain).",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 7,
+    "offsetEnvelope": [
+     -15,
+     22
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1",
+     "CA-J3A-4"
+    ],
+    "assessment": "Opening 'About 1 p. m.' (+7 vs 13:07); 'continued about two hours' spans to ~15:00 nominal, consistent with CA-J3A-4/5. His 'Sherrill ... death, about 4 p. m.' sits ~30-40 min after the repulse window on the corrected clock - either a late-window casualty or clock drift; envelope widened, conflict carried on the dossier. Rule 4 applies.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "id": "or-27-1-cowan",
+   "kind": "official_report",
+   "title": "Capt. Andrew Cowan's report (1st New York Independent Battery), OR Series I Vol. 27 Part 1 pp. 689-691",
+   "author": "Andrew Cowan",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189312-690-series-i-volume-xxvii-i-ser",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com route). Dated Aug. 15, 1863, Warrenton Va. Keys: left Manchester 21:00 July 1, arrived near the field '10 p. m. the 2d' (VI Corps march); July 3 'reported to General Newton ... about 10 a. m.'; heavy engagement 'about noon' (his opening clock - the corpus's second early pole after McGilvery's 12:30); parked 'less than 100 yards distant' behind the front line; moved at the crisis to the 'crest farther to my right, with General Webb's brigade' (the Brown-slot geometry); 'I commenced firing canister at 200 yards ... My last charge literally swept the enemy from my front, being fired at less than 20 yards'; counter-battery: 'concentrated my fire on a single battery, and exploded four of its limbers in rapid succession'; casualties '4 privates killed instantly, and 1 soon after died of wounds; 4 enlisted men and 2 officers wounded', 14 horses, 8 wheels disabled. No rounds-expended figure in the report (negative).",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 67,
+    "offsetEnvelope": [
+     0,
+     75
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1"
+    ],
+    "assessment": "Single anchor statement: cannonade opened 'about noon' vs chain 13:07 -> +67 (his stated clock runs very early, the McGilvery pattern). One-source, one-statement; envelope reaches 0 because 'about noon' may loosely cover the pre-cannonade exchanges. Rule 4: display-only, never corrects.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-1-weir",
+   "kind": "official_report",
+   "title": "Lt. Gulian V. Weir's report (Battery C, 5th US), OR Series I Vol. 27 Part 1 pp. 879-880",
+   "author": "Gulian V. Weir",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189502-880-series-i-volume-xxvii-i-ser",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com route). Keys: July 2 'About 4 o'clock was ordered by Major-General Hancock to take up a position' forward; 'I opened with solid shot and spherical case'; 'Soon it was reported to me that we were out of canister' (the gun-loss fight; three guns temporarily lost, recaptured by the 13th VT per the battery tablet); July 3 'the enemy opened fire along the whole line, and it became so hot that we fell back'; 'I was conducted to General Webb's position, and came into battery under a heavy musketry fire'; ROUNDS EXPENDED VERBATIM: '50 rounds of solid shot, 160 rounds of spherical case, and 70 rounds of canister; total, 280 rounds'; Lt. Baldwin wounded by shell fragment, one caisson lost.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -15,
+     15
+    ],
+    "anchorsUsed": [],
+    "assessment": "No July 3 afternoon anchor clock stated (his only clock is July 2 'about 4 o'clock'). Profile recorded as unanchored nominal; timing of his July 3 movement is carried tier-D against the crisis sequence.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-1-fitzhugh",
+   "kind": "official_report",
+   "title": "Capt. Robert H. Fitzhugh's report (4th Volunteer Brigade + Battery K 1st NY), OR Series I Vol. 27 Part 1 pp. 895-897",
+   "author": "Robert H. Fitzhugh",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189518-896-series-i-volume-xxvii-i-ser",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com route). Keys: ordered by Tyler to post K/1st NY and A/1st NJ on the Baltimore turnpike near Slocum's line (July 2-3); 'At 1 p. m.' Friday July 3, by Hunt's direction, both batteries deployed 'near the stone fence in front of General Webb's division of the Second Corps'; enemy infantry reached the stone fence 'approximately 75 yards' from his position; Parsons delivered 'about 40 rounds of shrapnel into the flank of the rebel infantry charging the Second corps'; attack collapsed 'within thirty to forty-five minutes'; second assault (Wilcox/Lang axis) broken mid-field by 'an enfilading fire'; ROUNDS (K + attached 11th NY): '57 percussion shells, 15 shrapnel rounds, 17 time shells (89 total)'; casualties K: 7 wounded, 5 horses; A/1st NJ: 2 killed.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 7,
+    "offsetEnvelope": [
+     -120,
+     22
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1",
+     "CA-J3A-7"
+    ],
+    "assessment": "His 'At 1 p. m.' for the move to Webb's front is irreconcilable with the crisis sequence (the charge reached the wall ~15:20-25; Stone Sentinels' narrative has the batteries 'ordered into line at the gallop' at the height of the charge, and Parsons's own report says the order came 'about 3 p. m.'). Read as either the initial ORDER clock at the cannonade's opening (+7) or a plain misstatement; the huge negative envelope records the conflict. Rule 4: never moves anchors; the dossier carries the conflict. (Envelope floor clipped to the schema's -120 min bound; the raw conflict is larger and lives in the editionNote.)",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-1-parsons",
+   "kind": "official_report",
+   "title": "Lt. Augustin N. Parsons's report (Battery A, 1st New Jersey), OR Series I Vol. 27 Part 1 pp. 899-900",
+   "author": "Augustin N. Parsons",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189521-899-series-i-volume-xxvii-i-ser",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com route). Dated July 17, 1863. Keys: 'On the 3rd instant, about 3 p. m., I received orders from General Hunt to move the battery'; placed 'about one-fourth of a mile south of Gettysburg Cemetery and near the Second Division, Second Corps'; 'At this time the enemy's infantry were advancing very rapidly. I at once opened fire upon them with case'; Fitzhugh's battery took position immediately on his right; then counter-battery: 'fired about 120 rounds with good effect' (shot) at one battery and 'used 80 rounds' (shell) at another before Hunt ordered cease; casualties 2 killed, 7 wounded; 3 horses killed + 2 mortally.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 10,
+    "offsetEnvelope": [
+     0,
+     25
+    ],
+    "anchorsUsed": [
+     "CA-J3A-6",
+     "CA-J3A-7"
+    ],
+    "assessment": "His 'about 3 p. m.' order-to-move with infantry 'advancing very rapidly' on arrival maps to ~15:10-15:20 canonical (between step-off and the wall) -> +10..+20. Consistent with the crisis sequence; rule 4 applies.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "id": "or-27-1-wheeler",
+   "kind": "official_report",
+   "title": "Lt. William Wheeler's report (13th New York Independent Battery), OR Series I Vol. 27 Part 1 pp. 752-753",
+   "author": "William Wheeler",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189374-752-series-i-volume-xxvii-i-ser",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com route). Dated July 29, 1863, Warrenton Junction. Keys: July 1 'orders to move forward at double-quick' through the town to Dilger's right, two caisson bodies broke down, 'very heavy fire ... both in front and upon the right flank'; July 3 'At approximately 4 p.m. ... orders to go assist the Second Corps, upon which a very heavy attack was being made'; Hancock assigned the position; found the enemy 'not more than 400 yards off, marching in heavy column by a flank'; 'enfilade their column with canister, which threw them into great disorder, and brought them to a halt three times'; ROUNDS EXPENDED: 850 total (whole battle); casualties 4 severely + 6 slightly wounded, 3 missing, 12 horses killed.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": -35,
+    "offsetEnvelope": [
+     -55,
+     0
+    ],
+    "anchorsUsed": [
+     "CA-J3A-7"
+    ],
+    "assessment": "His 'about 4 p. m.' for the II Corps crisis move sits ~35-45 min after the canonical crisis (wall fighting 15:20-15:30); either his clock runs late or the battery arrived at the tail of the repulse (his canister enfilade on a column halting three times reads mid-fight, favoring clock error). Rule 4: display-only.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-1-cooper",
+   "kind": "official_report",
+   "title": "Capt. James H. Cooper's report (Battery B, 1st Pennsylvania Light), OR Series I Vol. 27 Part 1 pp. 364-365",
+   "author": "James H. Cooper",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/188986-364-series-i-volume-xxvii-i-ser",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com route). Keys: July 1 arrived ~noon, posted by Wainwright left of 3rd Div I Corps, 'fired about twenty-five shots at a battery in front', relocated near the Seminary, case/shell 'until canister range was obtained'; July 2 on Cemetery Hill crest 'fronting to the northeast', 16:00 duel at 1,400-2,000 yards, 'the enemy's guns were silenced in about two and a half hours' firing', relieved by Ricketts ~19:00, to the Artillery Reserve to refit; July 2 casualties 2 k (McCleary, Hoagland), 6 w, ~500 rounds; July 3 'Around 3 p. m., the battery moved to Second Corps front' engaging a damaged enemy battery then 'case shot until they reached canister range, when a few charges were fired into them, completely routing them'; July 3: 1 slightly wounded, 150 rounds. ROUNDS EXPENDED, PER DAY: ~400 (Jul 1, implied by total) / ~500 (Jul 2) / 150 (Jul 3); 'Total: 1,050 rounds fired across three days' (monument concurs at 1050).",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 7,
+    "offsetEnvelope": [
+     -10,
+     20
+    ],
+    "anchorsUsed": [
+     "CA-J3A-5",
+     "CA-J3A-6"
+    ],
+    "assessment": "July 3 'about 3 p. m.' move to the Second Corps front during the cannonade's last phase / opening of the assault (~15:00-15:10 canonical) -> ~+7; the War Dept tablet independently adjudicates the move 'at 3 P. M. ... during a heavy cannonade'. Rule 4 applies.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "id": "or-27-1-wainwright",
+   "kind": "official_report",
+   "title": "Col. Charles S. Wainwright's report (Artillery Brigade, I Corps), OR Series I Vol. 27 Part 1 pp. 354-359",
+   "author": "Charles S. Wainwright",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/188977-355-series-i-volume-xxvii-i-ser",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com route; pp. 355, 357-359 read; p. 356 not fetched this pass). Keys: July 1 Seminary Ridge fight and the retirement under Wadsworth's 'peremptory order'; East Cemetery Hill layout verbatim: 'Four guns of Battery B, Fourth U. S. Artillery, across the road so as to command the approaches from the town ... four guns of Battery I, First New York Artillery ... on the left; next Cooper's battery and then Reynolds'' (13 three-inch guns on the north front); 'The Fifth Maine battery was posted to the right and some 50 yards in front of this line, on a small knoll'; July 1 loss 'amounting in all to 83 officers and men and about 80 horses'; July 2 evening: CSA battery '(four 20-pounders and six 10-pounder Parrotts) in a wheat-field ... at about 1,300 yards' silenced in ~90 min leaving 'twenty-eight dead horses'; the dusk assault on the hill: 'fifteen guns in their front and six on their left flank', cannoneers of Wiedrich's and Ricketts' repelling attackers 'with fence-rails and stones'; his judgment 'this attack was almost entirely repelled by the artillery'; July 3: 'fired occasional shots at bodies of the enemy's troops' in the morning and participated in the afternoon's general engagement (no brigade rounds total in the report; component battery reports carry the figures: Cooper 1,050, Breck L/1st NY 1,290 itemized, Stevens 5th ME etc.); 1st Sgt Mitchell commanding B/4th US after Lt. Davison wounded.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -15,
+     15
+    ],
+    "anchorsUsed": [],
+    "assessment": "No July 3 afternoon anchor clock in the fetched pages; July 1-2 clocks internally consistent with the provisional chains. Unanchored nominal.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-1-tyler-ar",
+   "kind": "official_report",
+   "title": "Brig. Gen. Robert O. Tyler's report (Artillery Reserve) with Lt. Gillett's ordnance annex, OR Series I Vol. 27 Part 1 pp. 871-879",
+   "author": "Robert O. Tyler",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189494-872-series-i-volume-xxvii-i-ser",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com route; pp. 871-873, 878-879 read). Dated Aug. 30, 1863. Keys: June 29-30 Frederick -> Bruceville -> Taneytown; July 1 reported to Gibbon '10.30 p. m.' with eight batteries; July 2 parked 'about 1 1/2 miles from Gettysburg'; 'six batteries of thirty-four guns' sent to Sickles, 'under Major McGilvery ... doing terrible execution upon the successive columns attacking our left until about 6 p. m.'; B and M 1st CT Heavy ordered to Westminster (guns short two batteries); guns left on the field July 2 recovered after dark 'all but one gun' (Thompson's); Turnbull's battery July 3: '1 officer and 8 men killed, 14 men wounded, and 45 horses killed', four guns retaken; Ransom's regular brigade 'formed on hill crest near General Meade's headquarters'; 'No report has yet been received from Captain Ransom's ... or Captain Sterling's ... batteries'. GILLETT ORDNANCE ANNEX (2nd Lt. C. Gillett, ordnance officer, pp. 878-879) VERBATIM KEYS: ammunition ISSUED at Gettysburg '19,189' rounds across calibers; '4,694 rounds' remaining 'nearly all of which, though not in the best possible condition, could have been used'; 'Seventy wagons were unloaded, which were sent to the rear on the morning of the 3d'; caution that 'sending wagons loaded with ammunition to batteries in action often causes a loss of material'. This annex is the army-side ordnance-return class evidence behind Hunt's ~270 rounds/gun arithmetic.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -15,
+     15
+    ],
+    "anchorsUsed": [],
+    "assessment": "No July 3 afternoon anchor clocks in the fetched pages (his July 2 'until about 6 p. m.' is a July 2 statement). Unanchored nominal.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-1-martin-v",
+   "kind": "official_report",
+   "title": "Capt. A. P. Martin's report (Artillery Brigade, V Corps), OR Series I Vol. 27 Part 1 pp. 659-661",
+   "author": "Augustus P. Martin",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189283-661-series-i-volume-xxvii-i-ser",
+   "editionNote": "Fetch-verified 2026-07-11 (p. 661 read; brigade-level only). Rittenhouse's D/5th US filed NO separate report (verified negative this pass: p. 661 references Battery D only as a position datum for other units, 'to the right of Battery D, Fifth U. S. Artillery'). Brigade casualties 'Killed, 9; wounded, 33, and missing, 2. Total, 44.'"
+  },
+  {
+   "id": "rittenhouse-mollus-1887",
+   "kind": "article",
+   "title": "The Battle of Gettysburg as Seen from Little Round Top (MOLLUS DC Commandery war paper, read May 4, 1887)",
+   "author": "Benjamin F. Rittenhouse",
+   "year": 1887,
+   "url": "http://www.gdg.org/Research/MOLLUS/mollus16.html",
+   "editionNote": "ACCESS FAILED 2026-07-11: gdg.org serves an expired TLS certificate and the fetcher refuses the connection; no archive.org capture pursued this pass. The paper (Judd & Detweiler, Washington 1887) is the battery commander's own account of D/5th US's July 3 enfilade fire from Little Round Top down Pickett's lines; it is the primary the Rittenhouse dossier's EC5 upgrade is gated on. Carried as the standing pass-3 fetch item; the dossier rests meanwhile on the War Dept tablet, Martin's brigade report, and Hunt's B&L corroboration ('The steady fire from McGilvery and Rittenhouse ... caused Pickett's men to drift')."
+  },
+  {
+   "id": "or-27-2-dearing",
+   "kind": "official_report",
+   "title": "Maj. James Dearing's report (Dearing's Artillery Battalion, Pickett's Division), OR Series I Vol. 27 Part 2 pp. 387-391",
+   "author": "James Dearing",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/931-gettysburg-campaign-part-ii/190071-388-series-i-volume-xxvii-ii-serial-44-gettysburg-campaign-part-ii.html",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com part-ii route, id = 189683 + page; pp. 387-390 read). Dated Aug. 16, 1863. A REPORT PASS 1 DID NOT KNOW EXISTED (the battalion had been assumed Pendleton/tablet-only). Keys: arrived near the field July 2 (the Pendleton 'arrived since dusk' march chain with Eshleman); early July 3 'marched to the field of battle' into position 'on the crest of the hill immediately in front of the enemy's position'; THE ARC'S BEST UNIT-TO-UNIT SPACING STATEMENT: 'On my left and rear was Colonel Cabell's Artillery Battalion, and on my right and rear was the Washington Artillery Battalion'; daybreak sharpshooter fight, Stribling 'firing about a dozen rounds'; Maj. J. P. W. Read 'wounded in the head by a fragment of shell'; at the signal guns 'commencing firing slowly and deliberately' by battery 'at the batteries immediately in my front'; ammunition 'became completely exhausted, excepting a few round in my rifled guns'; batteries under 'a very heavy fire for upward of an hour without being able to fire a single shot'; 'about 6 p. m.' drove back an advancing infantry column (late-clock conflict, see profile); July 4 with McLaws, withdrew near sundown to Black Horse Tavern. Per-battery casualties: Stribling 3 w + 10 horses; Macon 3 k, 3 w + 8 horses; Blount 5 k&w + 12 horses; Caskie's figure NOT located in the fetched extraction (flagged, not attested-absent). Tablet conflict: the War Dept tablet has the battalion 'withdrawn from the field about 4 P. M.' vs his own 18:00 infantry-repulse statement - carried.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -120,
+     15
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1"
+    ],
+    "assessment": "His signal-gun sequence is stated relative to the signal itself (tier A structurally, no clock given). The one stated clock, 'about 6 p. m.' for repulsing advancing infantry, sits ~2.5 h after the canonical repulse; either a genuinely later Union probe/skirmish advance or a very late clock - unresolved, envelope records it. Rule 4: display-only. (Envelope floor clipped to the schema's -120 min bound; the raw conflict is larger and lives in the editionNote.)",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-2-cabell",
+   "kind": "official_report",
+   "title": "Col. Henry C. Cabell's report (Cabell's Artillery Battalion, McLaws's Division), OR Series I Vol. 27 Part 2 pp. 374-378",
+   "author": "Henry C. Cabell",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/931-gettysburg-campaign-part-ii/190058-375-series-i-volume-xxvii-ii-serial-44-gettysburg-campaign-part-ii.html",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com part-ii route; pp. 375-377 read). Keys: July 2 position 'on the edge of the wood, the right resting near the road leading from Gettysburg to Emmitsburg', dueling across ~600-700 yards at the Peach Orchard; Capt. Fraser 'dangerously wounded by the bursting of a shell' which killed two sergeants and one man; July 3 morning: McCarthy advanced 300-400 yards ahead of the skirmishers, fired twenty rounds; consolidation (Fraser's depleted command), six guns near a brick house on the Gettysburg-Emmitsburg road, Carlton + a McCarthy section 'slightly en echelon' before Pickett's division; cannonade 'about 1 p. m.' - 'For over two hours the cannonading on both sides was almost continuous and incessant, far, very far, exceeding any cannonading I have ever before witnessed'; Lt. Jennings w, Capt. Carlton w; post-assault forward move 'immediately on the road', one of Furlong's guns 'ordered to the rear' (ammunition exhausted); ~16:00 held ground 'about 700 yards from the Cemetery Hill' with orders 'to hold it till night'; withdrawn after dark. Casualty totals not in the fetched pages (tablet carries 12 k / 30 w / 4 m + 80 horses; the SS compilation page's 15 k / 57 w is the carried variant). Tablet ordnance figure: 'expended about 3300 rounds' July 2-3.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 7,
+    "offsetEnvelope": [
+     0,
+     15
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1",
+     "CA-J3A-5"
+    ],
+    "assessment": "Cannonade 'about 1 p. m.' (+7 vs 13:07) with 'over two hours' duration reaching ~15:10, bracketing CA-J3A-5 cleanly. His '4 p. m.' forward-hold statement is post-assault, consistent at +7. Rule 4 applies.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "id": "or-27-2-garnett-bn",
+   "kind": "official_report",
+   "title": "Lt. Col. John J. Garnett's report (Garnett's Artillery Battalion, Heth's Division), OR Series I Vol. 27 Part 2 pp. 652-654",
+   "author": "John J. Garnett",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/931-gettysburg-campaign-part-ii/190335-652-series-i-volume-xxvii-ii-serial-44-gettysburg-campaign-part-ii.html",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com part-ii route; pp. 652-653 read). Keys: July 1 'About 11 a. m. ... orders to bring up my command to within supporting distance on the Gettysburg pike'; one battery's ammunition exhausted July 1, relieved by his rifles; July 2 'dispatched Major Richardson with the nine rifled pieces of the battalion to the hill ... opposite Cemetery Hill'; 15:00 July 2 'these pieces opened fire upon the enemy's batteries opposite, which they kept up without cessation until about thirty minutes before sunset'; JULY 3, THE ATTESTED SILENCE VERBATIM: Richardson's rifles ordered to Anderson's front 'to the right of Major Pegram's battalion' and 'placed his guns in position under fire at this point, but did not fire a single shot, having received orders to that effect'; the other six guns (four Napoleons + two howitzers) 'bore no part in these actions, although they were upon the field in readiness whenever they should be called upon'; July 4 morning reoccupied the July 2 rifle positions until night; Richardson + five rifled pieces detached to Imboden (the train guard). Tablet concurs: 'The Napoleons and Howitzers were in reserve and not actively engaged at any time.'",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -15,
+     15
+    ],
+    "anchorsUsed": [],
+    "assessment": "No July 3 afternoon clock statements (the day's record is a sequence of orders and an attested silence). Unanchored nominal.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-2-mcintosh",
+   "kind": "official_report",
+   "title": "Maj. D. G. McIntosh's report (McIntosh's Artillery Battalion, Third Corps reserve), OR Series I Vol. 27 Part 2 pp. 674-677",
+   "author": "David Gregg McIntosh",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/931-gettysburg-campaign-part-ii/190358-675-series-i-volume-xxvii-ii-serial-44-gettysburg-campaign-part-ii.html",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com part-ii route; pp. 675-676 read). Keys: July 1 flank fire near the Cashtown pike, guns 'enfiladed a heavy column of the enemy's infantry, formed in the railroad cut'; July 2-3 'behind a stone wall, on the range of hills to the left of the town of Gettysburg' (Seminary Ridge); July 3 sustained firing, 'not a single case' of flinching observed; July 4 'the same position was maintained with but little firing', withdrew to the stone bridge under Hill's orders that afternoon. ROUNDS EXPENDED, ITEMIZED VERBATIM: Napoleon 213 + 3-inch rifle 1,049 + Whitworth 133 = 1,395 total; casualties 24 killed and wounded, 16 captured, 38 horses disabled/killed (tablet variant: 7 k, 25 w 'of whom 16 were captured' - two accountings carried); horses 'received no corn, subsisting entirely upon grass' on the retreat.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -15,
+     15
+    ],
+    "anchorsUsed": [],
+    "assessment": "No stated July 3 clocks in the fetched pages. Unanchored nominal.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-2-brunson",
+   "kind": "official_report",
+   "title": "Capt. Ervin B. Brunson's report (Pegram's Artillery Battalion, Third Corps reserve), OR Series I Vol. 27 Part 2 pp. 677-679",
+   "author": "Ervin B. Brunson",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/931-gettysburg-campaign-part-ii/190361-678-series-i-volume-xxvii-ii-serial-44-gettysburg-campaign-part-ii.html",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com part-ii route; pp. 677-679 read). Keys: July 1 approach - 'When within 2 miles of Gettysburg, Captain Marye's section of rifled guns was run forward' and 'opened on a piece of woods to the left of the pike', 'After firing some eight or ten rounds, the pieces were limbered up' (the arc's opening-shots record); July 1 line 'ten Napoleons and seven rifled guns' forcing Union artillery 'to limber up and retire their pieces three distinct times'; July 2 repositioned 'approximately one mile right of the pike, roughly 1,400 yards from' the Union artillery, 'enfilading their batteries whenever they opened upon the batteries on our right'; July 3 'never did men behave more heroically', 'one of the most terrific' artillery fights; 'The infantry failed to dislodge the enemy from his position.' ROUNDS EXPENDED VERBATIM: 'The battalion expended in the three days' fight 3,800 rounds of ammunition' (tablet concurs). PER-DAY CASUALTIES (EC6 episode split, primary): July 1: 2 k, 8 w, 6 horses; July 2: 2 k, 7 w, 25 horses; July 3: 10 k, 37 w, 38 horses; ordnance officer mw July 1 by solid shot; retreat: ~6-8 men taken prisoner, one howitzer caisson abandoned, ~20 horses abandoned for want of shoes. Tablet casualty line (10 k / 37 w = 47) matches only the July 3 row - the tablet-vs-report accounting conflict is carried.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -15,
+     15
+    ],
+    "anchorsUsed": [],
+    "assessment": "No stated July 3 clocks in the fetched pages. Unanchored nominal.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-2-walker",
+   "kind": "official_report",
+   "title": "Col. R. Lindsay Walker's report (Chief of Artillery, Third Corps), OR Series I Vol. 27 Part 2 pp. 609-612",
+   "author": "R. Lindsay Walker",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/931-gettysburg-campaign-part-ii/190293-610-series-i-volume-xxvii-ii-serial-44-gettysburg-campaign-part-ii.html",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com part-ii route; pp. 610-611 read). Keys: assumed command of the corps artillery morning of July 1; July 1: Pegram and McIntosh forward with Heth and Pender, 'in position for action on an eminence about 1 mile west of Gettysburg'; July 2: Pegram, McIntosh, Lane and part of Garnett's 'put in position, on the right of the Fairfield turnpike, about 1 mile in advance of the position of the previous day', Poague 'still farther to the right'; July 3: the batteries 'kept up an incessant fire from about 1 p. m. to the time of the advance of the infantry', nearly exhausting ammunition; Lt. Chamberlayne + four Crenshaw men captured foraging.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 7,
+    "offsetEnvelope": [
+     0,
+     15
+    ],
+    "anchorsUsed": [
+     "CA-J3A-1",
+     "CA-J3A-6"
+    ],
+    "assessment": "'From about 1 p. m. to the time of the advance of the infantry' brackets the cannonade between +7-corrected 13:07 and the step-off - structurally consistent with CA-J3A-1..6. Rule 4 applies.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "id": "or-27-2-jtbrown",
+   "kind": "official_report",
+   "title": "Col. J. Thompson Brown's report (Chief of Artillery, Second Corps ANV), OR Series I Vol. 27 Part 2 pp. 455-457",
+   "author": "J. Thompson Brown",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/931-gettysburg-campaign-part-ii/190139-456-series-i-volume-xxvii-ii-serial-44-gettysburg-campaign-part-ii.html",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com part-ii route; p. 456 read). THE EWELL-WING JULY 3 PARTICIPATION RECORD: 'The First Virginia Artillery [Dance's battalion] and a portion of Carter's and Nelson's battalions engaged the enemy's batteries, in order to divert their fire from our infantry' - fire 'was well directed, and its fine effect was very noticeable', temporarily silencing Cemetery Hill artillery. July 2: Latimer's (Andrews's) battalion fire from the extreme left (Benner's Hill) 'aided by Graham's battery ... and from Dance's Watson's and Smith's jr., batteries ... on the right of our line'; Latimer withdrew three batteries against superior positioning and was mortally wounded - 'no heavier loss could have befallen the artillery of this corps.' Jones's battalion operated with the cavalry; Tanner's battery sent with the wagon train (Williamsport). This report converts the pass-1 'Ewell-wing near-silence' framing into a documented PARTIAL, diversionary participation: Dance engaged, parts of Carter/Nelson engaged, Jones detached, Latimer's battalion wrecked the evening before.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -15,
+     15
+    ],
+    "anchorsUsed": [],
+    "assessment": "No stated clocks in the fetched page. Unanchored nominal.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-2-carter",
+   "kind": "official_report",
+   "title": "Lt. Col. Thomas H. Carter's report (Carter's Artillery Battalion, Rodes's Division), OR Series I Vol. 27 Part 2 pp. 602-604",
+   "author": "Thomas H. Carter",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/931-gettysburg-campaign-part-ii/190286-603-series-i-volume-xxvii-ii-serial-44-gettysburg-campaign-part-ii.html",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com part-ii route; p. 603 read). Keys: July 1 with Rodes - Page's battery fired on the infantry advancing on O'Neal from 'the foot of the high ridge'; Page's counter-battery punishment: '2 men killed, 2 mortally wounded, 26 more or less badly wounded, and 17 horses killed and disabled'; July 2: 'held in readiness to move into position, but was not engaged' (attested idle day); July 3: 'Ten rifled guns were posted on the high ridge on the right and left of the railroad cut' to 'divert the fire of the enemy's guns from Hill's and Pickett's troops' and cover Dance's three batteries; his observation of the Union guns: 'Their fire slackened, and finally ceased' - a Confederate-side sequence witness to CA-J3A-4/5 from the Oak Hill axis.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -15,
+     15
+    ],
+    "anchorsUsed": [
+     "CA-J3A-4",
+     "CA-J3A-5"
+    ],
+    "assessment": "No stated clocks; his slacken-then-cease observation is sequence-only (tier D) corroboration of the CA-J3A-4 -> 5 ordering from the CSA side. Unanchored nominal.",
+    "confidence": "weak"
    }
   }
  ]
