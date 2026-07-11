@@ -123,3 +123,37 @@ grain, plus five primary engaged-strength statements.
 | [csa-3c-and-4-lang.md](csa-3c-and-4-lang.md) | reg-csa-3c-and-4 | late echelon left; the 2d Fla capture pocket | T4 full-arc |
 
 Companion: `docs/reconstruction/audit/dossier-pass-3.md`.
+
+## Pass 4 — the Union center command batch + CSA frame completion
+
+Sequencing doctrine layer 3, second command batch: the Union units that
+RECEIVED the assault column (closing the loop pass 3 opened), the two
+wounded command records whose pins bracket the climax, the deferred
+Doubleday pieces, and the CSA arc's two completion items. Batch adoption
+of ED-46…ED-49 executed at pass start. Headline evidence classes: the
+Union Return of Casualties consumed at regiment grain (the ANV return's
+counterpart, full k/w/m columns); Trimble's SHSP 26 account (standing
+fetch CLOSED); the prisoner-records cross-check layer (Meade's 13,621 /
+burial ledger / Hartwig's 12,227).
+
+| Dossier | Register id | Arc role | Achieved T |
+|---|---|---|---|
+| [us-ii-2-2-webb.md](us-ii-2-2-webb.md) | reg-us-ii-2-2 | the Angle's receiving brigade, full arc | T4 full-arc (T5 window held) |
+| [us-ii-2-hq-gibbon.md](us-ii-2-hq-gibbon.md) | (no register row — flagged) | division command record; the first wounding pin | T3 (command record) |
+| [us-ii-hq-hancock.md](us-ii-hq-hancock.md) | (no register row — flagged) | corps command record; the wounding CONFLICT record | T3 (command record) |
+| [us-ii-3-hq-hays.md](us-ii-3-hq-hays.md) | (no register row — flagged) | division command record; the four-lines repulse | T3 (command record) |
+| [us-ii-3-1-carroll.md](us-ii-3-1-carroll.md) | reg-us-ii-3-1 | split-brigade arc (East Cemetery Hill night fight; the 8th Ohio flank action FIRST-CLASS) | T4 full-arc |
+| [us-i-3-1-biddle.md](us-i-3-1-biddle.md) | reg-us-i-3-1 | Gates's demi-brigade at the Copse's south shoulder | T3 full-arc |
+| [us-i-3-2-stone.md](us-i-3-2-stone.md) | reg-us-i-3-2 | second/third-line frame (honestly thin) | T3 full-arc |
+| [us-i-3-hq-doubleday.md](us-i-3-hq-doubleday.md) | (no register row — flagged) | division command record; late-clock counter-profile | T2 (command record) |
+| [csa-3c-bn-poague.md](csa-3c-bn-poague.md) | reg-csa-3c-bn-poague | ED-36 frame COMPLETED; the howitzer negative; 657-round return | T4 full-arc |
+| [csa-2c-arty-hq-brown.md](csa-2c-arty-hq-brown.md) | (no register row — flagged ×2) | Second Corps artillery command record | T2 (command record) |
+
+Pass-4 upgrades to existing dossiers: csa-3c-pen-hq-trimble.md (SHSP 26
+closed — the road-fence wounding conflict), us-btty-rittenhouse.md
+(Norton same-hill witness; MOLLUS still access-failed ×3),
+csa-1c-pic-2-kemper.md + csa-1c-pic-3-armistead.md (morning-report sweep
+closed verified-negative; B&M-type compilation readings carried),
+csa-3c-pen-4-lowrance.md (Poague-frame note closed).
+
+Companion: `docs/reconstruction/audit/dossier-pass-4.md`.

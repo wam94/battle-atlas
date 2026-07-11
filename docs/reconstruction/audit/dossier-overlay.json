@@ -507,6 +507,72 @@
    "EC6 casualty apportionment": "455 = 33/217/205 (return = lang's own 455 of ~700 EXACT; regt k+w 81/75/94) - 65% loss rate, highest documented in batch; day split [B]: Jul 2 ~300 (his figure) -> Jul 3 ~155 concentrated in the capture pocket + retreat",
    "Achieved T-level (audited)": "T4 full-arc",
    "Notes": "Dossier: reconstruction/dossiers/csa-3c-and-4-lang.md"
+  },
+  "us-webb": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+   "EC1 identity/command": "Webb w Jul 3 (MoH); O'Kane (69th) k Jul 3, Baxter (72nd) w Jul 2; 106th PA detached to Howard Jul 2 'a little before dark' - brigade fights Jul 3 three-regiment (or-27-1-webb)",
+   "EC2 engaged strength": "ED-9 1,250 held; NO primary; Jul 3 subtraction of the 106th is primary (or-27-1-webb); division context 3,800 engaged (or-27-1-gibbon)",
+   "EC3 position anchors": "[C] Jul 2 06:30 Granite Ridge, 69th at fence in advance; [E/T5] wall/clump geometry held via V2 claims; j3-02 WEBB bar (4391,4827) +-100m",
+   "EC4 movement legs": "[C] Jul 2 ~18:30 counterattack vs Wright (beyond one Brown gun, ~250 prisoners); [E] Jul 3 morning 71st to the wall, 72nd reserve under crest; [T5] the crisis window held",
+   "EC5 activity record": "[A vs CA-J3A-1/4] 'About 1 p.m. more than twenty batteries'; 'By 2.45 silenced the Rhode Island battery' (ED-33 timed by the brigade CO); 3 Cushing guns to the fence (vs V2's 2 - conflict on claim); captures ~1,000 prisoners/6 flags/1,400 arms",
+   "EC6 casualty apportionment": "CONFLICT: report 525 (43 off + 482 men) vs return 491 (69th 137, 71st 98, 72nd 192, 106th 64); build decay 490 = return; pins Webb w, O'Kane k, Baxter w Jul 2",
+   "Achieved T-level (audited)": "T4 full-arc (T5 window held)",
+   "Notes": "Dossier: reconstruction/dossiers/us-ii-2-2-webb.md; CA-J3A-9: Armistead 'passed over the fence with probably over 100' - report twin of the ~150 party claim"
+  },
+  "us-carroll": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (WITH CAUTION: three regiments are NOT on the II Corps front July 3)",
+   "EC1 identity/command": "Col. S.S. Carroll; 14th Ind (Coons), 4th Oh (Carpenter), 7th WV (Lockwood); report written July 5 AT Two Taverns (earliest-dated Union brigade report fetched)",
+   "EC2 engaged strength": "no primary; build 640 (compilation, flagged)",
+   "EC3 position anchors": "[C] Jul 2 ~08:00 between Woodruff and Taneytown road; [D vs CA-J2E-3] Jul 2 ~20:00 -> East Cemetery Hill, HELD THROUGH JULY 5 (j2-05 script label (5100,5624) +-150m; residual bars (4671,5265))",
+   "EC4 movement legs": "[D vs CA-J2E-3] the night rush, 3 regiments, 14th Ind leading, guided by Howard's aide; no return leg Jul 3",
+   "EC5 activity record": "[D] ECH night fight among Wiedrich/Ricketts guns (or-27-2-hays opposite); [A window] Jul 3 'exposed to a great deal of cross-firing' on the hill (ED-44-class under-fire state); ledger 252 prisoners/113 wounded/37 buried/349 arms",
+   "EC6 casualty apportionment": "return 211: 14th Ind 31, 4th Oh 31, 8th Oh 102 (own row), 7th WV 47; episode split Jul-2-night + Jul-3-crossfire dominant (no per-day primary)",
+   "Achieved T-level (audited)": "T4 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/us-ii-3-1-carroll.md; AUTHORING FLAG: any July 3 render placing these three regiments at the II Corps front contradicts the primary"
+  },
+  "us-8oh": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+   "EC1 identity/command": "Lt. Col. Franklin Sawyer; detached from Carroll on the advanced picket line from Jul 2 evening, 24+ hours (or-27-1-sawyer; or-27-1-carroll)",
+   "EC2 engaged strength": "no primary; build 209 (compilation, flagged)",
+   "EC3 position anchors": "[C/E] advanced picket line W of the corridor + reserve knoll: j3-02 draws TWO '8 ohio' bars (4255,5308)/(4390,5273) +-120m; j3-03 bars not redrawn (cartographic omission - presence attested through the action)",
+   "EC4 movement legs": "[D] Jul 2 evening forward to the picket line; [D] THE FLANK ACTION: 'changed front forward on the left company ... front to the left flank of the advancing rebel column' (Brockenbrough's documented counterpart)",
+   "EC5 activity record": "[C -55] 'Soon after 2 p.m. ... sixty-four pieces ... in a semicircle which inclosed my position'; [D] flank fire BEFORE Smyth's front volley (sequence bracket); ~200 prisoners, 3 flags (34th NC, 38th Va - pocket mixing)",
+   "EC6 casualty apportionment": "return 102 = report 102 EXACT; SPLIT IS PRIMARY: ~45 of 102 fell on the picket line BY NOON Jul 3 - flat-attrition-then-moderate-spike shape (ED-50 candidate), NOT a climax spike",
+   "Achieved T-level (audited)": "T4 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/us-ii-3-1-carroll.md (first-class element); clockProfile or-27-1-sawyer -55 [-70,-40] weak (late-stated cluster)"
+  },
+  "us-biddle": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+   "EC1 identity/command": "Biddle w Jul 1; Rowley register commander; Col. T.B. Gates (20th NYSM) commanded the 2-regiment front element Jul 3, reporting direct to Doubleday (or-27-1-gates)",
+   "EC2 engaged strength": "no Jul 3 primary; build 460 remnant (compilation, flagged); Jul 1 wreck 898 of ~1,350-1,500 explains scale",
+   "EC3 position anchors": "[C] Jul 2 ~17:00 'last and lowest of the ridges' between the roads; [C/E] Jul 3 front line = 80th NY + 151st Pa with the Vermonters (or-27-1-doubleday p.258); j3-02 bars (4482,4569)+(4625,4515); j3-03 (4591,4559) +-120m",
+   "EC4 movement legs": "[D] THE CLIMAX LEG: 'by the right flank up to the foot of the bluff, delivering our fire as we marched' then two regiments to the fence - a firing flank-march toward the Copse (~200-400m)",
+   "EC5 activity record": "[D] fire on the march; volley 'at very short range, who now completely broke'; large prisoner haul; 2 colors left on the ground (or-27-1-gates)",
+   "EC6 casualty apportionment": "return 898 (80NY 170, 121Pa 179, 142Pa 211, 151Pa 337); DAY SPLIT NOT PRIMARY-SEPARABLE (Gates's 170 = the 80th's battle total, not a Jul 3 figure) - the T4 blocker, recorded honestly",
+   "Achieved T-level (audited)": "T3 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/us-i-3-1-biddle.md; 121st/142nd Pa Jul 3 slots sheet-only (flagged)"
+  },
+  "us-dana": {
+   "Class (attested-static / unauthored / authored-ok)": "attested-static (sheet grain)",
+   "EC1 identity/command": "Stone w Jul 1 -> Wister w Jul 1 -> Col. E.L. Dana (143rd Pa) through the battle's end; 143rd/149th/150th Pa",
+   "EC2 engaged strength": "no primary; build 465 remnant (compilation, flagged)",
+   "EC3 position anchors": "[C/E] Jul 3 second/third lines behind the Vermont/Gates front (or-27-1-doubleday p.258); j3-02 STONE. (4636,4453); j3-03 STONE'S BRIG. (4755,4466) +-120m, SHALER adjacent - static across both drawn states",
+   "EC4 movement legs": "none attested Jul 2-3 (sheet states agree; no report-level stillness statement - negative at sheet grain only)",
+   "EC5 activity record": "[E] present under the cannonade's overs; NO fire window attested Jul 3 (consistent negative)",
+   "EC6 casualty apportionment": "return 853 (143Pa 253, 149Pa 336, 150Pa 264); Jul 1 overwhelmingly dominant [D]; build 0 in-window decay consistent",
+   "Achieved T-level (audited)": "T3 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/us-i-3-2-stone.md; NO brigade/regimental report fetched for Jul 2-3 - 150th Pa regimental history is the upgrade route (standing list)"
+  },
+  "csa-bn-poague": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+   "EC1 identity/command": "Maj. W.T. Poague; Wyatt (Albemarle Va), Graham (Charlotte NC), Ward (Madison Miss), Brooke (Va); 16 guns: 7 Nap + 6 how + 1 Parrott + 2 3-in (tablet); Jul 3 split command Wyatt/Ward; Ward-mw tradition NOT in corpus (open pin)",
+   "EC2 engaged strength": "build 384 (B&M-type hop, ED-38 class); no personnel primary",
+   "EC3 position anchors": "[C] Jul 1-2 OFF THE LINE (Cashtown detach, attested non-participation); [C] Jul 2 late evening two-position line: 5 guns left of Anderson's division near Pegram + 5 Napoleons 400 yd right, ~1,400 yd from the Union batteries; j3-03 WYATT (3427,5220), GRAHAM (3489,5325), POAGUE'S BATT. bar (3467,4894) +-120m",
+   "EC4 movement legs": "[C/D] Jul 2 night effortful emplacement ('at last succeeded'); [D] post-repulse howitzers ordered up (no fire); [C] Jul 4 dusk withdrawal to Hagerstown",
+   "EC5 activity record": "[C] Jul 3 ~07:00 unordered affair (Hill's order; Poague ceased it; 8 Wyatt horses; enemy caisson exploded) - do NOT smooth into the cannonade; [A window] participated in the 13:07 general engagement; HOWITZER NEGATIVE: 6 tubes present-never-firing all battle (ED-44); tablet expenditure 657 rounds / 17 horses (ED-42 battery-side) [B: ~60-90 min deliberate fire for 10 guns]",
+   "EC6 casualty apportionment": "return 2/24/6 = 32, batteries '*Not reported in detail' (ED-49 gap); tablet prints the same 32 - ED-43 corroboration SATISFIED; episode split: morning affair + cannonade window, Jul 1-2 zero",
+   "Achieved T-level (audited)": "T4 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/csa-3c-bn-poague.md; ED-36 Third Corps frame COMPLETE (Lowrance's anchor closed); memoir (Gunner with Stonewall) print-only acquisition item"
   }
  }
 }
