@@ -93,3 +93,32 @@ layer).
 | [csa-2c-arty-ewell-wing.md](csa-2c-arty-ewell-wing.md) | reg-csa-2c-bn-dance/-nelson/-carter/-latimer/-jones | partial-participation record (corrects "near-silence") | T2 (group grain) |
 
 Companion: `docs/reconstruction/audit/dossier-pass-2.md`.
+
+## Pass 3 — the first command batch (the assault column, full arcs)
+
+Sequencing doctrine layer 3: everything else in command batches, placed
+against the frame. The assault column at brigade grain — the units every
+pass-2 fire statement targets — researched across the full battle arc.
+The Angle-cast T5 window (15:05–15:30) is EXTENDED, never re-litigated.
+Batch adoption of ED-40…ED-45 executed at pass start. Headline evidence
+class: the ANV casualty return (OR 27/2 pp. 338-346) consumed at regiment
+grain, plus five primary engaged-strength statements.
+
+| Dossier | Register id | Arc role | Achieved T |
+|---|---|---|---|
+| [csa-1c-pic-hq-pickett.md](csa-1c-pic-hq-pickett.md) | (no register row — flagged) | division command record; the suppressed report | T2 (command record) |
+| [csa-1c-pic-1-garnett.md](csa-1c-pic-1-garnett.md) | reg-csa-1c-pic-1 | first line right-center; the Soldier View brigade | T4 full-arc (T5 window) |
+| [csa-1c-pic-2-kemper.md](csa-1c-pic-2-kemper.md) | reg-csa-1c-pic-2 | first line right flank; Stannard/LRT object | T4 full-arc (T5 window) |
+| [csa-1c-pic-3-armistead.md](csa-1c-pic-3-armistead.md) | reg-csa-1c-pic-3 | second line; the crossing (CA-J3A-9) | T4 full-arc (T5 window) |
+| [csa-3c-het-hq-pettigrew.md](csa-3c-het-hq-pettigrew.md) | (no register row — flagged) | left-wing division command record | T3 (command record) |
+| [csa-3c-het-3-fry.md](csa-3c-het-3-fry.md) | reg-csa-3c-het-3 | the column's guide; the color record | T4 full-arc |
+| [csa-3c-het-1-marshall.md](csa-3c-het-1-marshall.md) | reg-csa-3c-het-1 | left-wing right-center; the 26th NC arc | T4 full-arc |
+| [csa-3c-het-4-davis.md](csa-3c-het-4-davis.md) | reg-csa-3c-het-4 | left-wing left-center; Bryan-barn front | T4 full-arc |
+| [csa-3c-het-2-brockenbrough.md](csa-3c-het-2-brockenbrough.md) | reg-csa-3c-het-2 | extreme left; the corrupted-strength unit, now bounded | T3 full-arc |
+| [csa-3c-pen-hq-trimble.md](csa-3c-pen-hq-trimble.md) | (no register row — flagged) | third-line command record (Pender→Lane→Trimble→Lane) | T3 (command record) |
+| [csa-3c-pen-2-lane.md](csa-3c-pen-2-lane.md) | reg-csa-3c-pen-2 | third line left; 1,355/660 primaries | T4 full-arc |
+| [csa-3c-pen-4-lowrance.md](csa-3c-pen-4-lowrance.md) | reg-csa-3c-pen-4 | third line right; the ~500-man brigade | T4 full-arc |
+| [csa-3c-and-1-wilcox.md](csa-3c-and-1-wilcox.md) | reg-csa-3c-and-1 | late echelon right (CA-J3A-10); 1,200/204 primaries | T4 full-arc |
+| [csa-3c-and-4-lang.md](csa-3c-and-4-lang.md) | reg-csa-3c-and-4 | late echelon left; the 2d Fla capture pocket | T4 full-arc |
+
+Companion: `docs/reconstruction/audit/dossier-pass-3.md`.

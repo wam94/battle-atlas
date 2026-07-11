@@ -386,6 +386,127 @@
    "EC6 casualty apportionment": "unfetched (open)",
    "Achieved T-level (audited)": "T2 (group grain)",
    "Notes": "Group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md - Brown's corps report corrects 'near-silence' to structured partial participation (ED-45 candidate)"
+  },
+  "csa-garnett": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (T5 window)",
+   "EC1 identity/command": "Garnett k ~25 paces from wall (peyton) -> Maj. Peyton; pins: Ellis (19VA) k in bombardment, every rgt cdr k/w",
+   "EC2 engaged strength": "PRIMARY 1,287 men + ~140 officers (peyton, previous-evening report; ED-46 candidate) vs 1,480 ED-9 build basis - conflict carried",
+   "EC3 position anchors": "[C ~09:00] reached field; [C/E ~12:00] behind Alexander's gun crest; build start (3200,4930)+-60 (j3-03 bars); 800-1,000 yd to the line (peyton)",
+   "EC4 movement legs": "[A vs CA-J3A-6] Pickett-in-person order, quick time; three-fence climb w/ skirmishers at last fence; recoil at 20 paces then three-line rush; dissolution-class retreat (~300 came off)",
+   "EC5 activity record": "[A window] under cannonade overs 'one hour' (duration conflict carried); LRT enfilade received (10 men/shell, peyton); loading-and-firing advance; hand-to-hand at works",
+   "EC6 casualty apportionment": "941 = 78/324/539 (anv-return regt-grain: 54/87/44/77/62 + staff; ED-49 scope); bombardment ~20 k&w PRIMARY; >half fallen by wall fight; missing mostly k/w (report+headnote)",
+   "Achieved T-level (audited)": "T4 full-arc (T5 in Angle window)",
+   "Notes": "Dossier: reconstruction/dossiers/csa-1c-pic-1-garnett.md; Peyton page-verified this pass"
+  },
+  "csa-kemper": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (T5 window)",
+   "EC1 identity/command": "Kemper w&c (rescued; T5 t~8640, Peyton brackets earlier) -> Col. Mayo; Williams/Patton mw, Otey w; staff 1k/3w (return)",
+   "EC2 engaged strength": "1,575 (ED-9/stone-sentinels, no primary; negative - no morning report survives)",
+   "EC3 position anchors": "[E] right of Garnett behind gun line; oblique/lapping convergence (peyton); wounding point (4370,4790)+-50 (T5)",
+   "EC4 movement legs": "[A vs CA-J3A-6] step-off w/ division; convergence leg 50-60 yd behind-right of Garnett; flank crisis vs Stannard wheel (CA-J3A-8)",
+   "EC5 activity record": "[A window] bombardment: 'suffered severely' (Wilcox cross-brigade comparison - worse than Garnett's ~20); LRT enfilade on right; Rorty canister + Stannard front/flank fire received",
+   "EC6 casualty apportionment": "731 = 58/356/317 (anv-return regt-grain: 64/67/94/109/128; 58k vs stone-sentinels 56k conflict carried); 317 missing concentrate at flank collapse (Stannard's 243 prisoners = Union pin)",
+   "Achieved T-level (audited)": "T4 full-arc (T5 in Angle window)",
+   "Notes": "Dossier: reconstruction/dossiers/csa-1c-pic-2-kemper.md; NO brigade OR report (verified negative)"
+  },
+  "csa-armistead": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (T5 window)",
+   "EC1 identity/command": "Armistead mw&c under captured guns (T5 t~8720; mon-armistead 16m agreement) -> Col. Aylett (w); Hodges k, Edmonds k at wall",
+   "EC2 engaged strength": "1,650 (ED-9, no primary); crossing party ~150 (T5)",
+   "EC3 position anchors": "[E +-120m] j3-02 morning label ~(3150,4780) behind Spangler's Woods (2nd line west of crest); fall point (4412,4865)+-25 (T5)",
+   "EC4 movement legs": "[A vs CA-J3A-6] second-line step-off; closed onto first line BEFORE wall (peyton 75-paces relation); ED-8 recross 8700-9000",
+   "EC5 activity record": "[A window] bombardment share UNQUANTIFIED (open); activity concentrates at wall - crossing, Cushing's guns, ~10-min penetration (T5)",
+   "EC6 casualty apportionment": "1,191 = 88/460/643 (anv-return = aylett-1863 EXACT match; regt k+w 71/108/170/104/121); 643 missing at/east of wall; headnote missing-scope at full force",
+   "Achieved T-level (audited)": "T4 full-arc (T5 in Angle window)",
+   "Notes": "Dossier: reconstruction/dossiers/csa-1c-pic-3-armistead.md; NO brigade OR report (verified negative)"
+  },
+  "csa-fry": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+   "EC1 identity/command": "Archer c Jul 1 -> Fry (w&c Jul 3 at works) -> Shepard; 7 field officers in, 2 out; order 1TN-13AL-14TN-7TN-5ALbn",
+   "EC2 engaged strength": "PRIMARY 1,048 (shepard, =build); Jul 3 basis = 1,048 - Jul 1 losses (open); NOT engaged Jul 2 (attested negative)",
+   "EC3 position anchors": "[D] division right in front of works from night Jul 2; j3-02 label ~(3400,5100)+-100; lane w/ two stout fences at 180-200 yd from works",
+   "EC4 movement legs": "[A vs CA-J3A-5/6] step-off at cease-fire trigger; the CONVERGENCE executed ('Guide right', touched Pickett's left at half-way); lane crossing; fell back to start",
+   "EC5 activity record": "[D] enemy held fire until 'fine range'; at works 'as long as any other troops'; color record: 4 of 5 flags captured AT/WITHIN works (13 color-bearers down) - ED-5 substance",
+   "EC6 casualty apportionment": "677 = 16/144/517 (anv-return; =shepard's own 677 of 1,048 EXACT); 76% capture share (Jul 1 creek pocket ~75 + Jul 3 works); ED-49 exemplar",
+   "Achieved T-level (audited)": "T4 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/csa-3c-het-3-fry.md; claim-fry-guide now executor-documented"
+  },
+  "csa-marshall": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+   "EC1 identity/command": "Pettigrew (to division) -> Marshall k Jul 3 (CONFLICT: Davis rpt 'w&c' vs Young 'supposed killed' vs register k - k adopted) -> Maj. Jones; Jul 1: Burgwyn k, Lane w; 1 field officer left after Jul 3",
+   "EC2 engaged strength": "2,000 'present on the first day' (stone-sentinels, Jul-1 scope caveat); 26NC regt primary: 800+ -> 216 unhurt (Jul 1) -> ~80 (Jul 4) (young-26nc); Jul 3 basis ~900 [B subtraction, open for primary]",
+   "EC3 position anchors": "[D] Jul 2 eve: 1 mi right, rear of batteries; [C +5] 9am quarter-mile shift behind Pegram; j3-02 label ~(3550,5360)+-100; farthest advance mon-26nc-1 (4431.7,4923.9) at the wall",
+   "EC4 movement legs": "[C +65 via jones] 'About 2 o'clock' step-off w/ launch confusion (close-right vs give-way-left, corrected); ~3/4 mi advance; deadly volley from left at wall; retreat to morning line by ~16:00",
+   "EC5 activity record": "[A window] two-hour bombardment (division); canister from half-way, musketry hail at 250-300 yd (range ladder cross vs Woodruff/Arnold/Smyth)",
+   "EC6 casualty apportionment": "1,105 = 190/915/NO-missing-column (anv-return; 26NC 588 = 86k/502w); ED-49 cleanest exemplar (Jul 3 capture mass absent); 26NC day split ~584 Jul 1 / ~136 Jul 3 [B]; 11 color-bearers down Jul 1, colors lost Jul 3",
+   "Achieved T-level (audited)": "T4 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/csa-3c-het-1-marshall.md"
+  },
+  "csa-davis": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+   "EC1 identity/command": "Davis (unwounded, wrote brigade + division reports); Jul 1: 7 of 9 field officers hit; Jul 3: ALL field officers k/w",
+   "EC2 engaged strength": "2,000 'present first day' (stone-sentinels, scope caveat); 11th Miss DETACHED Jul 1 (division train guard, primary) - fresh regiment atop Jul 1 survivors on Jul 3",
+   "EC3 position anchors": "[C +5] 9am shift behind Pegram's bn; j3-02 label ~(3330,5760)+-100; mon-11ms start (3471,5621) corroborates (modern-era caution); farthest advance mon-11ms-1 Bryan barn (4448,5115)",
+   "EC4 movement legs": "[A vs CA-J3A-5/6] cease-fire trigger, dressed right, oblique left; fences deranging/rectified; fall-back to morning line ~16:00 [C +5]",
+   "EC5 activity record": "[A window] 2-hr bombardment 'no time to prepare means for protection'; no fire until 3/4-mi fence then grape/canister/shell; musket-range 'suffered severely'",
+   "EC6 casualty apportionment": "897 = 180/717/NO-missing (anv-return: 232/202/265/198); BOMBARDMENT PRIMARY 2k/21w (best in batch, pairs w/ Garnett's ~20); 11th Miss 202 k+w = Jul 3 only (day-split anchor)",
+   "Achieved T-level (audited)": "T4 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/csa-3c-het-4-davis.md; division report clock +5 (CSA twin of Hall)"
+  },
+  "csa-brockenbrough": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (wings flagged reconstruction)",
+   "EC1 identity/command": "Col. Brockenbrough (unwounded; replaced after battle); NO officer pins located (open); two-wing split (Mayo) has NO primary in corpus - build-inherited, flagged",
+   "EC2 engaged strength": "CORRUPTED record bounded: stone-sentinels page = Davis duplicate (DO-NOT-USE stands); range 800-1,100, Mayo-hop ~880 = build basis (ED-48 candidate)",
+   "EC3 position anchors": "[D] division LEFT (davis-jr order); j3-02 label ~(3320,5980)+-120 (northernmost of column); advance axis toward Bliss/Bryan north front (+-150m)",
+   "EC4 movement legs": "[A vs CA-J3A-5/6] step-off w/ division; THE EARLY BREAK - documented from outside (Jones 'whole line on the left had given way'; Engelhard/Lane enfilade column)",
+   "EC5 activity record": "[A window] bombardment w/ division (no figure, open); received 8th Ohio flank + Osborn arc; no brigade-authored fire statement (negative)",
+   "EC6 casualty apportionment": "PRIMARY FLOOR (new): 148 = 25/123/no-missing (anv-return regt-grain 42/48/34/24); build's 100 decay is BELOW the documented k+w floor (ED-48 consequence); no episode split exists (open)",
+   "Achieved T-level (audited)": "T3 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/csa-3c-het-2-brockenbrough.md; NO OR report (verified negative)"
+  },
+  "csa-lane": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+   "EC1 identity/command": "Lane (cdr; division command Jul 2 eve + after Trimble fell) -> Col. Avery in intervals; Avery/Barry brought left rgts out under orders",
+   "EC2 engaged strength": "PRIMARY 1,355 effective incl. ambulance/rear guard (lane-jh, =build); Jul 1-2 loss 'but slight' - serviceable Jul 3 basis",
+   "EC3 position anchors": "[D] Jul 2 by Garnett's bn (frame); Jul 3 rear of Heth's right, Lowrance on right, behind Poague/Pegram line; j3-02 pre-move label ~(3050,5750)+-120; 'no second line in rear of [Heth's] left' (structural primary)",
+   "EC4 movement legs": "[D] morning lateral ~1.2km [B 15-20 min]; advance ~1 mi, left checked by Trimble; passed through collapsing front WITHOUT halting; withdrew when enfiladed from left; reformed in rear of artillery",
+   "EC5 activity record": "[A window] two-hour bombardment exposure (no figure); fire reserved to 'good range' then silenced guns on front (reads vs Woodruff/Arnold wreckage - corroborated); raking artillery from right",
+   "EC6 casualty apportionment": "ED-47 candidate: Lane's 660 of 1,355 (total) vs return 389 (k+w only; return's own footnote carries the 660); regt k+w 89/45/104/63/88; mass falls Jul 3 (crest fire window + flank collapse)",
+   "Achieved T-level (audited)": "T4 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/csa-3c-pen-2-lane.md"
+  },
+  "csa-lowrance": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+   "EC1 identity/command": "Scales w Jul 1 -> Lowrance (w Jul 1, again Jul 3 per register - report silent, flag); Jul 1: every field officer save one disabled",
+   "EC2 engaged strength": "PRIMARY ~500 from Jul 1 evening ('depressed, dilapidated, almost unorganized') = Jul 3 basis; build 1,250 = pre-Jul-1 (decay must cross the 500 waypoint)",
+   "EC3 position anchors": "[D] Jul 2: extreme right on line w/ artillery (its only guard); Jul 3: second line in rear of POAGUE's bn (primary frame anchor); right of Lane; works touched on right at climax",
+   "EC4 movement legs": "[D] morning lateral right; advance 1 mi over 'wide, hot, already crimson plain'; at 2/3 way front-line troops 'came tearing through our ranks'; retreat without orders, rallied on start line",
+   "EC5 activity record": "[A window + B] '>= one hour under a most galling fire' (his duration) / 'two hours' (Engelhard) - both carried; climax: '800 guns' combined two-brigade strength pin at the works",
+   "EC6 casualty apportionment": "535 = 102/323/110 (anv-return regt k+w 126/66/89/64/79) vs SCALES'S OWN Jul-1 table 545 (48/381/116) - July-1-scoped table LARGER than 3-day return (ED-49 starkest exemplar); build decay 599 flagged for reconciliation",
+   "Achieved T-level (audited)": "T4 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/csa-3c-pen-4-lowrance.md"
+  },
+  "csa-wilcox": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+   "EC1 identity/command": "Wilcox (unwounded); 4 of 5 rgt cdrs w JUL 2 (Forney, Pinckard, Sanders, Fletcher); no rgt-cdr losses Jul 3",
+   "EC2 engaged strength": "PRIMARY Jul 3: 'about 1,200' (wilcox) - closes exactly vs build 1,777 start - 577 Jul 2 loss; order R-L 9-10-11-8-14 Ala",
+   "EC3 position anchors": "[D] before sunrise: line parallel to Emmitsburg pike ~200 yd W, Alexander's guns in front; j3-01 label ~(3100,4400)+-120 (04:00-08:00 window = exact bracket); farthest advance = ravine below McGilvery crest (build displacement understates - flag)",
+   "EC4 movement legs": "[A vs CA-J3A-6 +20-30 min] the DELAYED LAUNCH (three staff officers in succession; Alexander concurs; Lang sequences after repulse - one envelope); halt at ravine awaiting artillery that had no ammunition; withdrew on own judgment",
+   "EC5 activity record": "[A window] bombardment: '<a dozen k&w' + Kemper-severity contrast + Anderson's 'suffered most seriously' of his division (compatible); advance under three-sided artillery, no musketry phase; 'Not a man of the division ... could I see'",
+   "EC6 casualty apportionment": "PER-DAY PRIMARY: Jul 2 577 / Jul 3 204 / total 777 = return 51/469/257 EXACT; 257 missing 'nearly all killed or wounded, few unwounded prisoners'; Jul 3 cause mix artillery-dominated (distinct from every front-line brigade)",
+   "Achieved T-level (audited)": "T4 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/csa-3c-and-1-wilcox.md; CA-J3A-10 executor"
+  },
+  "csa-lang": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+   "EC1 identity/command": "Col. Lang (Perry absent typhoid); pins: McCaslan (AAAG) k in Jul 3 retreat; Moore (2FL) w&c, Gardner (5FL) w; 8FL colors lost Jul 2",
+   "EC2 engaged strength": "PRIMARY 'near 700 strong' (lang, =build) - smallest brigade in the assault's orbit",
+   "EC3 position anchors": "[C/D ~07:00] up with Wilcox's left to foot of gun hill, skirmishers one crest fwd; j3-01 label ~(3230,4820)+-120; reform on old line, night withdrawal to woods",
+   "EC4 movement legs": "[D] standing conform-to-Wilcox order ('I would receive no further orders'); advanced after Pickett's troops retired; left flanked in the woods, retreat order inaudible in the din; 2FL colors + pocket captured (16th VT object, veazey cross)",
+   "EC5 activity record": "[C -53] bombardment 'nearly 2 p.m. ... till nearly 4 p.m.' (late-stated pole, joins Longstreet/Smyth cluster); no formed fire window Jul 3 (movement and reception only)",
+   "EC6 casualty apportionment": "455 = 33/217/205 (return = lang's own 455 of ~700 EXACT; regt k+w 81/75/94) - 65% loss rate, highest documented in batch; day split [B]: Jul 2 ~300 (his figure) -> Jul 3 ~155 concentrated in the capture pocket + retreat",
+   "Achieved T-level (audited)": "T4 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/csa-3c-and-4-lang.md"
   }
  }
 }
