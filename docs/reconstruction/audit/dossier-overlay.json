@@ -1,0 +1,5 @@
+{
+ "title": "Dossier overlay for the unit master table (consultation layer)",
+ "note": "Applied by reconstruction/scripts/build_unit_audit.py after workbook preservation; overlay values win over workbook-preserved consultation cells. Keys are master-table Unit IDs (build id for in-build rows, register id otherwise).",
+ "units": {}
+}
