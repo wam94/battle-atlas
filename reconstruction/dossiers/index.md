@@ -15,9 +15,10 @@ Citations are `(source-id, locator)`; source ids resolve in
 `reconstruction/sources/sources.json`. Facts with **no tier bracket are
 untimed** (identity, strength, materiel). Negative evidence and conflicts are
 first-class and live in their own section. New editorial calls are PROPOSED
-as ED candidates (ED-46+ as of pass 3 — the pass-1 candidates ED-32…ED-38,
-the monument profile ED-39, and the pass-2 candidates ED-40…ED-45 were all
-adopted 2026-07-11), never self-adopted.
+as ED candidates (ED-50+ as of pass 4 — the pass-1 candidates ED-32…ED-38,
+the monument profile ED-39, the pass-2 candidates ED-40…ED-45, and the
+pass-3 candidates ED-46…ED-49 were all adopted 2026-07-11), never
+self-adopted.
 
 ## Fixed heading schema
 
