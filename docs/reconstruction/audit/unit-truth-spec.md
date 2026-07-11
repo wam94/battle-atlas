@@ -95,3 +95,19 @@ anchor they hang from (tier A) or the physics inputs (tier B).
   batch lands).
 - Rulings: `docs/reconstruction/angle-editorial-decisions.md`
   (ED-numbered, continuing the existing series).
+
+
+## Scope ruling (owner, 2026-07-10)
+
+**Research window: the full battle, upfront.** Dossiers cover each
+unit's complete arc (arrival on the field → departure), captured in one
+pass through its sources — windowed research would be redundant, and
+all three days are the destination. **Authoring stays phased**: July 3
+afternoon first (the current tabletop), then expansion, each wave
+consuming already-complete dossiers.
+
+Consequences: the master table expands to the full three-day order of
+battle of both armies with a cast-status column (in-build /
+not-yet-cast); the canonical anchor chain is structured per battle
+phase (July 1 morning + afternoon; July 2 afternoon en echelon +
+evening; July 3 morning + afternoon), July 3 afternoon drafted first.
