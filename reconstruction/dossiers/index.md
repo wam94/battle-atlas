@@ -157,3 +157,38 @@ closed verified-negative; B&M-type compilation readings carried),
 csa-3c-pen-4-lowrance.md (Poague-frame note closed).
 
 Companion: `docs/reconstruction/audit/dossier-pass-4.md`.
+
+## Pass 5 — the July 2 southern-field batch (CA-J2P/ED-28 chain hardening)
+
+The audit's first move into a new battle phase: the provisional July 2
+afternoon chain's executors, both sides of each anchor, per pass 4 §8.
+Batch adoption of ED-50…ED-52 executed at pass start; the EIGHT flagged
+command register rows added (register-maintenance batch, 273 → 281
+entries). Headline evidence classes: the executor step-off clocks
+(Law's 16:00 signal-dispatch document pin; Alexander's four-attack
+ladder; Kershaw's report clock sourced as the McLaws-wing skew's
+ORIGIN), the LRT defense's compiled primaries (Norton's Warren
+letters + Rice/Chamberlain/Garrard OR reports), and the return blocks
+for both wings (pooled-missing pattern; the Barksdale tablet=return
+exact match).
+
+| Dossier | Register id | Arc role | Achieved T |
+|---|---|---|---|
+| [csa-1c-hood-1-law.md](csa-1c-hood-1-law.md) | reg-csa-1c-hood-1 | en-echelon lead; LRT attack right wing; the water-detail ledger | T4 full-arc |
+| [csa-1c-hood-2-robertson.md](csa-1c-hood-2-robertson.md) | reg-csa-1c-hood-2 | Devil's Den executor; the pike-abandonment decision | T4 full-arc |
+| [us-v-1-3-vincent.md](us-v-1-3-vincent.md) | reg-us-v-1-3 | the LRT defense; 1,000-muskets primary; 20:00 repulse clock | T4 full-arc |
+| [us-v-2-3-weed.md](us-v-2-3-weed.md) | reg-us-v-2-3 | the second wave; Weed/O'Rorke/Hazlett paired pins | T4 full-arc |
+| [csa-1c-mcl-1-kershaw.md](csa-1c-mcl-1-kershaw.md) | reg-csa-1c-mcl-1 | CA-J2A-7 executor; the skew exemplar; the three-gun signal | T4 full-arc |
+| [csa-1c-mcl-3-barksdale.md](csa-1c-mcl-3-barksdale.md) | reg-csa-1c-mcl-3 | CA-J2A-9 executor; the no-report brigade; tablet=return 747 | T4 full-arc |
+
+Pass-5 upgrades to existing dossiers: us-ii-2-1-harrow.md +
+us-ii-2-3-hall.md (July 2 arcs closed both-sided — **T4 full-arc**),
+us-btty-rittenhouse.md (**T3**; MOLLUS round 4 TERMINAL — library/CDL;
+return row 13 landed; summit anchor refined), us-i-3-2-stone.md
+(**T4 full-arc**; the 150th Pa history standing fetch LANDED).
+Register maintenance: the eight pass-3/4 command rows added
+(reg-csa-1c-pic-hq, reg-csa-3c-het-hq, reg-csa-3c-pen-hq,
+reg-csa-2c-arty-cmd, reg-us-ii-hq, reg-us-ii-2-hq, reg-us-ii-3-hq,
+reg-us-i-3-hq) with overlay entries.
+
+Companion: `docs/reconstruction/audit/dossier-pass-5.md`.

@@ -1,8 +1,11 @@
 # Dossier: Battery D, 5th US Artillery — Hazlett's/Rittenhouse's (reg-us-v-b4)
 
 Pass 2 (reference frame) · Cast status: in-build
-(`us-btty-rittenhouse`) · Achieved T-level: **T2** (position + cited
-activity; the commander's own account access-failed) · 2026-07-11
+(`us-btty-rittenhouse`) · Achieved T-level: **T3** (position + cited
+activity + the July 2 haul-leg physics; the commander's own account
+access-failed ×4 — TERMINAL, library/CDL) · 2026-07-11 (pass-5
+upgrade: EC3 sheet-read refined, EC6 return row landed, Weed/Hazlett
+pins both-sided via the pass-5 brigade dossiers)
 
 Frame role: the Union gun ring's SOUTHERN closer — Little Round Top's
 summit battery, cited across the lines (Hunt: "The steady fire from
@@ -35,7 +38,17 @@ Bachelder j3-03. The Rittenhouse MOLLUS paper ACCESS FAILED this pass.
   (4430,2600) ±50 m (Bachelder j3-03 read 2026-07-11: "HAZLETT'S"
   bar on the summit contours; the sheet's LITTLE ROUND TOP label
   centers (4310,2530); no marker coordinate in the register —
-  register gap recorded).
+  register gap recorded). **PASS-5 REFINEMENT**: the j2-03 (17:00)
+  read puts the drawn summit bar ("WEED") at (4169, 2640) ±62 m with
+  the signal-station circle beside it, and the tie-point geometry
+  (Taneytown-x-Wheatfield at (4765, 2763), summit ~700 m SW) supports
+  the ~(4170-4250, 2500-2650) class — the pass-2 (4430,2600) eyeball
+  reads ~200-260 m east of the drawn summit; the battery anchor is
+  revised to **(4200, 2600) ±80 m** pending a register marker.
+  Officer-pin pairing: Weed mw "on the summit, near the battery" and
+  Hazlett mw over him (or-27-1-garrard, one primary; Warren w while
+  talking with Hazlett, norton-1913 ch. VII) — see
+  us-v-2-3-weed.md.
 2. **Attested-static July 3** (tablet: "remained in position"; the
   battery fired from the same rocks all day — negative evidence,
   no movement narrated anywhere).
@@ -92,20 +105,25 @@ Bachelder j3-03. The Rittenhouse MOLLUS paper ACCESS FAILED this pass.
 
 ## Conflicts & negative evidence
 
-1. **rittenhouse-mollus-1887 ACCESS FAILED** (three attempts across
-  passes 2-4: gdg.org misattribution, no anonymous Google Books text
-  channel, archive.org/Gutenberg negative — pass-4 disposition on the
-  source record) — still the dossier's T-ceiling; library/CDL
-  acquisition recommendation stands. The Norton witness (EC5.2) is a
-  substitute, not the paper.
+1. **rittenhouse-mollus-1887 ACCESS FAILED ×4 — TERMINAL** (passes
+  2-5: gdg.org misattribution, no anonymous Google Books text
+  channel, archive.org/Gutenberg negative, and the pass-5
+  advancedsearch sweep for the DC-commandery War Papers series
+  negative) — web-anonymous channels are exhausted; **the terminal
+  recommendation is library/CDL acquisition** (Google Books full-view
+  record DyRLAQAAMAAJ). Still the dossier's T5-ceiling; the Norton
+  witness (EC5.2) is a substitute, not the paper.
 2. No separate OR report by Rittenhouse (verified negative at
   p. 661: Battery D appears only as a position datum in Martin's
   report).
 3. No register marker for the battery (monuments.json gap — the
   summit monument exists physically; flagged for the register's next
   update).
-4. Tablet casualty figure (14) unreconciled to any OR return
-  (Martin's 44 is brigade-level) — single-source, flagged.
+4. **PASS-5 CLOSED — the return row exists**: Battery D 5th US
+  prints 7 k / 6 w / 0 m = **13** on the Union Return of Casualties
+  (or-27-1-union-return p. 180) vs the tablet's 14 — per ED-52 the
+  return (13) is the adopted EC6 basis and the tablet figure carried;
+  the old single-source flag is retired.
 
 ## Chain anchors substantiated
 
