@@ -50,7 +50,7 @@
    "author": "Edward Porter Alexander",
    "year": 1907,
    "url": "https://archive.org/details/militarymemoirso00alex",
-   "editionNote": "44-year retrospective; times self-reported from his own watch. Confederate colonel directing the assault artillery on Longstreet's front (not Lee's artillery chief — Pendleton held that post). PASS-3 NOTE (archive.org full text militarymemoirso00alex greppable): ch. 19 verbatim anchors re-confirmed ('It was just 1 P.M. by my watch when the signal guns were fired'; the 1:25/1:40 notes; 'doubtless 1.50 or later'). Assault-column structure p. 419-420: the nine Richardson howitzers intended to advance with the column (see or-27-2-garnett-bn); the column diagram misprints 'McGowan' for Pettigrew's (Marshall's) brigade - flagged; Wilcox 'ordered forward 20 minutes or more later, was much too late to be of any assistance whatever'; the noon Bliss-farm cannonade that wasted Hill's ammunition; Federal guns 166 at the cannonade's start, 220 engaged in all, vs 172 CSA. His Wilcox/Perry epilogue: 'It was at once both absurd and tragic ... Wilcox moved by his right flank and making a circuit regained our lines at the Peach Orchard. His loss in this charge was 204 killed and wounded. Perry's loss was about proportional, with some prisoners in addition.'",
+   "editionNote": "44-year retrospective; times self-reported from his own watch. Confederate colonel directing the assault artillery on Longstreet's front (not Lee's artillery chief — Pendleton held that post). PASS-3 NOTE (archive.org full text militarymemoirso00alex greppable): ch. 19 verbatim anchors re-confirmed ('It was just 1 P.M. by my watch when the signal guns were fired'; the 1:25/1:40 notes; 'doubtless 1.50 or later'). Assault-column structure p. 419-420: the nine Richardson howitzers intended to advance with the column (see or-27-2-garnett-bn); the column diagram misprints 'McGowan' for Pettigrew's (Marshall's) brigade - flagged; Wilcox 'ordered forward 20 minutes or more later, was much too late to be of any assistance whatever'; the noon Bliss-farm cannonade that wasted Hill's ammunition; Federal guns 166 at the cannonade's start, 220 engaged in all, vs 172 CSA. His Wilcox/Perry epilogue: 'It was at once both absurd and tragic ... Wilcox moved by his right flank and making a circuit regained our lines at the Peach Orchard. His loss in this charge was 204 killed and wounded. Perry's loss was about proportional, with some prisoners in addition.' PASS-5 (July 2 chapter, full text): 'Thus, about 3.45 P.M., 36 guns were in action against the Peach Orchard' (Cabell 18 + his own 18; Henry's 10 across the road; his other 8 held to follow the infantry; Washington Arty 10 in reserve - the gun ledger); ranges 500-700 yards; 'After this cannonade had continued for perhaps 30 minutes, Hood received the order to advance' (step-off ~16:15 by his arithmetic); THE FOUR-PARTIAL-ATTACKS LADDER - Hood's first line, second line sent in during McLaws's ~1-hour hold, then Kershaw+Semmes, 'after a further interval of at least 20 minutes' Barksdale+Wofford, 'requiring at least an hour and a half'; formation geometry (Hood two lines, Robertson+Law front, Anderson+Benning 200 yards rear; Kershaw/Semmes right, Barksdale/Wofford left); Cabell's THREE-GUN SIGNAL for Kershaw's step-off; Kershaw's B&L quote (Barksdale's drums beating assembly heard at the Emmitsburg road); Law's B&L Devil's Den under-an-hour quote.",
    "clockProfile": {
     "kind": "retrospective-watch",
     "offsetMinutes": 7,
@@ -112,7 +112,7 @@
    "author": "James Longstreet",
    "year": 1896,
    "url": "https://archive.org/details/manassasappomatt00longrich",
-   "editionNote": "The fifteen-thousand protest at pp. 386-387 is indirect discourse in this memoir; the direct-speech version is his earlier 1877 account — do not conflate. Assault organization at pp. 388-389; strength figures at p. 315."
+   "editionNote": "The fifteen-thousand protest at pp. 386-387 is indirect discourse in this memoir; the direct-speech version is his earlier 1877 account — do not conflate. Assault organization at pp. 388-389; strength figures at p. 315. PASS-5 (July 2 chapter): 'At three o'clock the artillery was ordered to open practice' and 'the battle of the right at three o'clock' - his memoir clock runs ~45-60 min EARLY against the adopted July 2 window (where his July 3 report clock ran ~53 min LATE): the report-nominal class's noise is bidirectional, reinforcing ED-25 rule 4. Also: Hood 'was not prompt, and the order was repeated before he would strike down' (the delay in the ordering node's own words)."
   },
   {
    "id": "sturtevant-1910",
@@ -1215,7 +1215,7 @@
    "author": "Benjamin F. Rittenhouse",
    "year": 1887,
    "url": "http://www.gdg.org/Research/MOLLUS/mollus16.html",
-   "editionNote": "ACCESS FAILED AGAIN 2026-07-11 (pass 3 alternate-route hunt): (1) the recorded gdg.org URL is a MISATTRIBUTION - mollus16.html serves 'THE NINETEENTH MAINE AT GETTYSBURG' by Capt. Silas Adams, and the gdg MOLLUS index has no Rittenhouse paper at all (fetched with TLS check disabled, so the pass-2 certificate diagnosis is superseded by a harder failure: the paper was never there); (2) Google Books has a full-view record (id DyRLAQAAMAAJ, Judd & Detweiler 1887, War Paper 3) but no anonymous text channel (Books API quota-refused); (3) archive.org, Project Gutenberg, and HathiTrust searches negative. Substitute evidence found this pass: the RECEIVING-side primary - Peyton's report describes the LRT enfilade on Garnett's line ('one [battery] posted on the mountain, about 1 mile to our right ... sometimes as many as 10 men being killed and wounded by the bursting of a single shell'), and the Gettysburg Magazine 'Measuring Pickett's Charge' terrain study (gdg.org reproduction) adds that only the battery's north-facing Parrotts bore past the Codori farm. The paper remains the EC5 upgrade gate for the battery's own account; recommend a library/CDL acquisition item. PASS-4 DISPOSITION (2026-07-11): third access attempt - archive.org and Gutenberg searches negative for the DC-commandery War Papers no. 3; Google Books DyRLAQAAMAAJ full-view still has no anonymous text channel. SUBSTITUTE WITNESS LANDED: the 146th NY Garrard-staff account in Norton 1913 (norton-1913) attests the July 3 raking fire and the counter-concentration on the hill from the same crest. Library/CDL acquisition recommendation STANDS."
+   "editionNote": "ACCESS FAILED AGAIN 2026-07-11 (pass 3 alternate-route hunt): (1) the recorded gdg.org URL is a MISATTRIBUTION - mollus16.html serves 'THE NINETEENTH MAINE AT GETTYSBURG' by Capt. Silas Adams, and the gdg MOLLUS index has no Rittenhouse paper at all (fetched with TLS check disabled, so the pass-2 certificate diagnosis is superseded by a harder failure: the paper was never there); (2) Google Books has a full-view record (id DyRLAQAAMAAJ, Judd & Detweiler 1887, War Paper 3) but no anonymous text channel (Books API quota-refused); (3) archive.org, Project Gutenberg, and HathiTrust searches negative. Substitute evidence found this pass: the RECEIVING-side primary - Peyton's report describes the LRT enfilade on Garnett's line ('one [battery] posted on the mountain, about 1 mile to our right ... sometimes as many as 10 men being killed and wounded by the bursting of a single shell'), and the Gettysburg Magazine 'Measuring Pickett's Charge' terrain study (gdg.org reproduction) adds that only the battery's north-facing Parrotts bore past the Codori farm. The paper remains the EC5 upgrade gate for the battery's own account; recommend a library/CDL acquisition item. PASS-4 DISPOSITION (2026-07-11): third access attempt - archive.org and Gutenberg searches negative for the DC-commandery War Papers no. 3; Google Books DyRLAQAAMAAJ full-view still has no anonymous text channel. SUBSTITUTE WITNESS LANDED: the 146th NY Garrard-staff account in Norton 1913 (norton-1913) attests the July 3 raking fire and the counter-concentration on the hill from the same crest. Library/CDL acquisition recommendation STANDS. ROUND 4 (pass 5): archive.org advancedsearch negative for the DC-commandery War Papers series and for any Rittenhouse/Gettysburg text item; no new anonymous route exists. TERMINAL RECOMMENDATION per the pass-5 commission: library/CDL acquisition (Google Books full-view record DyRLAQAAMAAJ, Judd & Detweiler 1887, War Paper 3) - web-anonymous channels are exhausted after four rounds."
   },
   {
    "id": "or-27-2-dearing",
@@ -1395,7 +1395,7 @@
    "author": "U.S. War Department compilation (Guild medical-director statement + commanders' figures)",
    "year": 1863,
    "url": "https://www.civilwar.com/official-record/931-gettysburg-campaign-part-ii/190022-339-series-i-volume-xxvii-ii-serial-44-gettysburg-campaign-part-ii.html",
-   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com part-ii route, pp. 338-346 read in full). THE regiment-grain casualty primary for the assault column. Editorial headnote (p. 338, verbatim): where regimental sums disagree with brigade totals 'the discrepancy is due to disagreements between the detailed statement furnished by Surg. L. Guild ... and the numbers reported by brigade and other superior commanders'; 'the compilation can only be regarded as approximative. Several of the reports indicate that many of the \"missing\" were killed or wounded. Especially is this the case with Pickett's division.' Scope caution: per-regiment aggregates are k+w only for most infantry brigades (captured/missing pooled at brigade grain or absent). Key rows: Garnett 78/324/539=941 (regt k+w: 8Va 54, 18Va 87, 19Va 44, 28Va 77, 56Va 62; staff 1k); Armistead 88/460/643=1,191 (9Va 71, 14Va 108, 38Va 170, 53Va 104, 57Va 121; staff 1k); Kemper 58/356/317=731 (1Va 64, 3Va 67, 7Va 94, 11Va 109, 24Va 128; staff 1k/3w); Dearing bn 8/17/-=25 '*Not reported in detail'; TOTAL Pickett's division 232/1,157/1,490=2,888. Pettigrew's/Marshall's 190/915/-=1,105 (11NC 209, 26NC 588 [86k/502w], 47NC 161, 52NC 147; NO missing reported); Brockenbrough 25/123/-=148 (40Va 42, 47Va 48, 55Va 34, 22Va Bn 24); Archer's/Fry's 16/144/517=677 (13Ala 42, 5Ala Bn 26, 1Tenn 42, 7Tenn 23, 14Tenn 27); Davis 180/717/-=897 (2Miss 232, 11Miss 202, 42Miss 265, 55NC 198); Heth's division 411/1,905/534=2,850; Garnett's (arty) bn -/5/17=22 '*Not reported in detail' (cross-noted by the OR editors against the report's p. 654 figures); Lane 41/348/-=389 with footnote '+General Lane reports his entire loss at 660'; Scales 102/323/110=535 (13NC 126, 16NC 66, 22NC 89, 34NC 64, 38NC 79); Pender's division 262/1,312/116=1,690; McIntosh bn 7/25/-=32; Pegram bn 10/37/1=48; Wilcox 51/469/257=777 (8Ala 161*, 9Ala 58, 10Ala 104, 11Ala 75, 14Ala 48; *8Ala row rides the corps header line in the reproduction, read with care); Perry's/Lang's 33/217/205=455 (2Fla 81, 5Fla 75, 8Fla 94); Cabell bn PER-BATTERY (p. 338): Carlton 1/6=7, Fraser 4/14=18, McCarthy 2/3=5, Manly 1/6=7, total 8/29/-=37. Grand total 2,592/12,709/5,150=20,451 with the U.S. prisoner-record counter-note (12,227 names). PASS-4 ADDITIONS (pp. 342-345 re-read 2026-07-11): Poague's battalion row - batteries '*Not reported in detail', battalion TOTAL 2/24/6 = 32 (the tablet's figure matches exactly, ED-43 corroborated scope); Scales's brigade regiment rows (13th NC 126, 16th NC 66, 22nd NC 89, 34th NC 64, 38th NC 79; total row 102/323/110 = 535); Pender division total 262/1,312/116 = 1,690; Third Corps reserve artillery McIntosh 7/25/- = 32, Pegram 10/37/1 = 48; Second Corps reserve 'Brown's Battalion' (Dance's 1st Va Arty; batteries dashed) total 3/19/- = 22; Third Army Corps total 837/4,407/1,491 = 6,735."
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com part-ii route, pp. 338-346 read in full). THE regiment-grain casualty primary for the assault column. Editorial headnote (p. 338, verbatim): where regimental sums disagree with brigade totals 'the discrepancy is due to disagreements between the detailed statement furnished by Surg. L. Guild ... and the numbers reported by brigade and other superior commanders'; 'the compilation can only be regarded as approximative. Several of the reports indicate that many of the \"missing\" were killed or wounded. Especially is this the case with Pickett's division.' Scope caution: per-regiment aggregates are k+w only for most infantry brigades (captured/missing pooled at brigade grain or absent). Key rows: Garnett 78/324/539=941 (regt k+w: 8Va 54, 18Va 87, 19Va 44, 28Va 77, 56Va 62; staff 1k); Armistead 88/460/643=1,191 (9Va 71, 14Va 108, 38Va 170, 53Va 104, 57Va 121; staff 1k); Kemper 58/356/317=731 (1Va 64, 3Va 67, 7Va 94, 11Va 109, 24Va 128; staff 1k/3w); Dearing bn 8/17/-=25 '*Not reported in detail'; TOTAL Pickett's division 232/1,157/1,490=2,888. Pettigrew's/Marshall's 190/915/-=1,105 (11NC 209, 26NC 588 [86k/502w], 47NC 161, 52NC 147; NO missing reported); Brockenbrough 25/123/-=148 (40Va 42, 47Va 48, 55Va 34, 22Va Bn 24); Archer's/Fry's 16/144/517=677 (13Ala 42, 5Ala Bn 26, 1Tenn 42, 7Tenn 23, 14Tenn 27); Davis 180/717/-=897 (2Miss 232, 11Miss 202, 42Miss 265, 55NC 198); Heth's division 411/1,905/534=2,850; Garnett's (arty) bn -/5/17=22 '*Not reported in detail' (cross-noted by the OR editors against the report's p. 654 figures); Lane 41/348/-=389 with footnote '+General Lane reports his entire loss at 660'; Scales 102/323/110=535 (13NC 126, 16NC 66, 22NC 89, 34NC 64, 38NC 79); Pender's division 262/1,312/116=1,690; McIntosh bn 7/25/-=32; Pegram bn 10/37/1=48; Wilcox 51/469/257=777 (8Ala 161*, 9Ala 58, 10Ala 104, 11Ala 75, 14Ala 48; *8Ala row rides the corps header line in the reproduction, read with care); Perry's/Lang's 33/217/205=455 (2Fla 81, 5Fla 75, 8Fla 94); Cabell bn PER-BATTERY (p. 338): Carlton 1/6=7, Fraser 4/14=18, McCarthy 2/3=5, Manly 1/6=7, total 8/29/-=37. Grand total 2,592/12,709/5,150=20,451 with the U.S. prisoner-record counter-note (12,227 names). PASS-4 ADDITIONS (pp. 342-345 re-read 2026-07-11): Poague's battalion row - batteries '*Not reported in detail', battalion TOTAL 2/24/6 = 32 (the tablet's figure matches exactly, ED-43 corroborated scope); Scales's brigade regiment rows (13th NC 126, 16th NC 66, 22nd NC 89, 34th NC 64, 38th NC 79; total row 102/323/110 = 535); Pender division total 262/1,312/116 = 1,690; Third Corps reserve artillery McIntosh 7/25/- = 32, Pegram 10/37/1 = 48; Second Corps reserve 'Brown's Battalion' (Dance's 1st Va Arty; batteries dashed) total 3/19/- = 22; Third Army Corps total 837/4,407/1,491 = 6,735. PASS-5 EXTRACTION (pp. 338-343): McLaws's division rows - Kershaw 115/483/32=630 (missing itemized, the wing's clean case), Semmes 55/284/[91 pooled]=430, Barksdale 105/550/[92 pooled]=747 (pooled figure confirmed EXACTLY by the brigade tablet's 105/550/92), Wofford 30/192/[112 pooled]=334; Hood's division rows - Law 74/276/[146 pooled]=496 (regiment rows k+w only: 4th AL 66, 15th AL 83, 44th AL 88, 47th AL 40, 48th AL 75), Robertson 84/393/[120 pooled]=597 (1st TX row transcribed inconsistently - 24k/54w vs aggregate 178, likely w=130 or 154; flagged), Anderson 105/512/[54 pooled]=671, Benning 76/299/[122 pooled]=497, Henry's bn 4/23/-=27, division 343/1,504/442=2,289; First Corps total 910/4,339/2,290=7,539. Second Corps artillery (the pass-4 standing item, CLOSED): Latimer's [Andrews's] battalion BY BATTERY - Brown's Chesapeake 4/12/0=16, Carpenter's Alleghany 5/19/0=24, Dement 1st MD 1/4/0=5, Raine Lee Battery 0/4/0=4, battalion 10/40/0=50; reserve: Brown's [Dance's 1st VA] 3/19/0=22, NELSON'S ROW PRINTS DASHES (an ED-49 rule-2 gap, not a zero); corps total 809/3,823/1,305=5,937."
   },
   {
    "id": "or-27-2-wilcox",
@@ -1768,7 +1768,7 @@
    "author": "U.S. War Department compilation",
    "year": 1863,
    "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/188796-174-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
-   "editionNote": "Fetch-verified 2026-07-11 (pp. 174-176 read at regiment grain - the Union counterpart of the ANV return, THREE-DAY battle totals with a full k/w/captured-missing column set (unlike the ANV return's pooled/absent missing, ED-49's asymmetry runs the other way here). Key rows this pass: I Corps 3rd Div - Biddle's brigade 898 (80th NY 170, 121st Pa 179, 142nd Pa 211, 151st Pa 337), Stone's brigade 853 (143rd Pa 253, 149th Pa 336, 150th Pa 264), Stannard's 351 (13th Vt 123, 14th Vt 107, 16th Vt 119; the pass-1 figure re-verified), division aggregate 2,103. II Corps 2nd Div - Harrow 768 (19th Me 202?, 15th Ma 148, 1st Minn 224, 82nd NY 192 - brigade sums verbatim '10 off 137 men k; 46 off 527 men w; 1 off 47 men c/m'), WEBB 491 (69th Pa 137, 71st Pa 98, 72nd Pa 192, 106th Pa 64), Hall 377. II Corps 3rd Div - CARROLL 211 (14th Ind 31, 4th Oh 31, 8TH OHIO 102, 7th WV 47), Smyth 366. Scope note: three-day totals; day/episode splits require the unit reports (e.g. Webb's report 525 vs the return's 491 - conflict carried; 8th Ohio report 102 = return 102 exact). Public domain."
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 174-176 read at regiment grain - the Union counterpart of the ANV return, THREE-DAY battle totals with a full k/w/captured-missing column set (unlike the ANV return's pooled/absent missing, ED-49's asymmetry runs the other way here). Key rows this pass: I Corps 3rd Div - Biddle's brigade 898 (80th NY 170, 121st Pa 179, 142nd Pa 211, 151st Pa 337), Stone's brigade 853 (143rd Pa 253, 149th Pa 336, 150th Pa 264), Stannard's 351 (13th Vt 123, 14th Vt 107, 16th Vt 119; the pass-1 figure re-verified), division aggregate 2,103. II Corps 2nd Div - Harrow 768 (19th Me 202?, 15th Ma 148, 1st Minn 224, 82nd NY 192 - brigade sums verbatim '10 off 137 men k; 46 off 527 men w; 1 off 47 men c/m'), WEBB 491 (69th Pa 137, 71st Pa 98, 72nd Pa 192, 106th Pa 64), Hall 377. II Corps 3rd Div - CARROLL 211 (14th Ind 31, 4th Oh 31, 8TH OHIO 102, 7th WV 47), Smyth 366. Scope note: three-day totals; day/episode splits require the unit reports (e.g. Webb's report 525 vs the return's 491 - conflict carried; 8th Ohio report 102 = return 102 exact). Public domain. PASS-5 EXTRACTION (pp. 179-180, V Corps rows): Vincent's brigade - 20th ME 29/91/5=125, 16th MI 23/34/3=60, 44th NY 26/82/3=111, 83rd PA 10/45/0=55, brigade 352; Weed's brigade - 140th NY 26/89/18=133 (aggregate reconciles exactly), 91st PA/146th NY/155th PA rows read with column-alignment noise (aggregates ~19/28/19 class; brigade total 200, 2nd Division total 1,029 - both canonical); Martin's artillery brigade - Battery D 5th US 7/6/0=13 (vs the tablet's 14: a return-vs-tablet conflict, ED-52 adopts the return)."
   },
   {
    "id": "or-27-1-meade",
@@ -1818,7 +1818,7 @@
    "author": "Oliver W. Norton (compiler)",
    "year": 1913,
    "url": "https://archive.org/download/attackdefenseofl00nort/attackdefenseofl00nort_djvu.txt",
-   "editionNote": "Fetch-verified 2026-07-11 (full text). Fetched as the Rittenhouse-paper substitute route (the MOLLUS paper itself is STILL unfetched - see rittenhouse-mollus-1887); Norton does not reprint it, but the compiled 146th NY account (a Garrard staff officer, pp. ~300-302) is a same-hill witness to the battery's July 3 fire: 'During Lee's great charge on the afternoon of July 3, Hazlett's battery (commanded by Lieutenant Rittenhouse after Hazlett was killed) had a terrible raking fire on the rebel line, which was made with great effect. This caused a concentration of the fire of many rebel batteries upon Hazlett's position, their shell and shot crashing among the rocks as if the world was coming to an end' - the receiving-and-return record for us-btty-rittenhouse.md EC5 (pairs with Peyton's 10-men-to-a-shell enfilade from the target side). Also: Weed's brigade loss table (staff 1, 140th NY 133, 146th NY 28, 91st Pa 19, 155th Pa 19 = 200); July 3 V Corps hospital displaced from the Weikert house by overshooting shells; Meade/Warren on the summit July 3. Public domain."
+   "editionNote": "Fetch-verified 2026-07-11 (full text). Fetched as the Rittenhouse-paper substitute route (the MOLLUS paper itself is STILL unfetched - see rittenhouse-mollus-1887); Norton does not reprint it, but the compiled 146th NY account (a Garrard staff officer, pp. ~300-302) is a same-hill witness to the battery's July 3 fire: 'During Lee's great charge on the afternoon of July 3, Hazlett's battery (commanded by Lieutenant Rittenhouse after Hazlett was killed) had a terrible raking fire on the rebel line, which was made with great effect. This caused a concentration of the fire of many rebel batteries upon Hazlett's position, their shell and shot crashing among the rocks as if the world was coming to an end' - the receiving-and-return record for us-btty-rittenhouse.md EC5 (pairs with Peyton's 10-men-to-a-shell enfilade from the target side). Also: Weed's brigade loss table (staff 1, 140th NY 133, 146th NY 28, 91st Pa 19, 155th Pa 19 = 200); July 3 V Corps hospital displaced from the Weikert house by overshooting shells; Meade/Warren on the summit July 3. Public domain. PASS-5 PROMOTION: from Rittenhouse-substitute to the CA-J2P compiled-primary base (the ED-28 precondition source, now read in full): ch. VII the WARREN LETTERS (July 13 + 24, 1872, to Farley, from the original MSS) - Meade sent Warren to the left from Sickles's position; the signal-station shot into the woods; Hazlett up (Warren + stragglers lifting a gun over the rocks); O'Rorke detached personally by Warren; Warren w by musket ball while talking with Hazlett; the second letter's honest hedges ('I will not be sure that Hazlett's battery got up before I went down to Colonel O'Rorke'; 'If I detached Vincent's brigade I don't recollect it'); ch. IV Norton's compiled ruling - Meade rode left ~15:00, Warren on the hill 'a little before half past three', cannonade opened ~15:30, Hood's infantry after ~30 min, 'The attack on Vincent's brigade must have commenced at some time between 4:30 and 5 P.M.', with Woodward's (83rd PA) 1912 letter ADMITTING his published time error - veteran-clock fallibility documented by the veteran; Farley's 140th NY account (Weed's dying requests, 'I'm as dead a man as Julius Caesar', died 'at about nine o'clock that evening'); Law's B&L reprint incl. the 16:00 signal dispatch; Stine's Law-arrival 'a little before twelve'; Rice sent Chamberlain up Great Round Top 'about nine o'clock'."
   },
   {
    "id": "hartwig-prisoners-2012",
@@ -1828,6 +1828,202 @@
    "year": 2012,
    "url": "https://npsgnmp.wordpress.com/2012/11/10/i-threw-down-my-gun-and-held-up-both-my-hands-prisoners-of-war-part-i/",
    "editionNote": "Fetch-verified 2026-07-11 (parts 1-3 sampled). The institutional-secondary compilation for the pass-4 prisoner cross-check (ED-49's missing-column problem): 'Of the estimated 51,000 casualties ... approximately 17,500 were prisoners of war. Of this number 5,365 were Union and 12,227 (6,802 wounded and 5,425 unwounded) were Confederates' (part 1; NO page-cited source given for the split - carried as attributed-institutional, not return-grade). Part 3 documents the processing pipeline at unit grain for one case (20th NC: ~200 reported captured, 123 in the prisoner records; Fort Delaware/Point Lookout destinations) - the record-vs-report attrition pattern that cautions any per-unit reconciliation. Per-regiment prisoner-record compilations (Busey, Nothing But Glory) remain print-only: acquisition item."
+  },
+  {
+   "id": "or-27-2-kershaw",
+   "kind": "official_report",
+   "title": "Report of Brig. Gen. J. B. Kershaw, CSA, commanding brigade, McLaws's division (OR Series I Vol. XXVII Part 2, pp. 366-371)",
+   "author": "Joseph B. Kershaw",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/931-gettysburg-campaign-part-ii/190049-366-series-i-volume-xxvii-ii-serial-44-gettysburg-campaign-part-ii.html",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com part-ii route, id = 189683 + page; pp. 366-370 read). Dated October 1, 1863, near Chattanooga (3-month retrospective report). July 2 keys: 'About 3 p.m. the head of my column came into the open field in front of a stone wall'; filed right along the wall and formed under skirmish cover; the tactical-exposure worry (attacking the Peach Orchard would expose his right); 'about 4 o'clock' received the order to advance (the McLaws-wing EARLY clock in the commander's own report - the tablet's 4.30 is a partial correction, modern ~17:30); the 3-gun Cabell signal is in his B&L account (via alexander-1907 quote); obstacle catalogue for the advance (fences, stone building and barn, morass, raking grape/canister); 2nd SC ordered to charge the battery; 7th+3rd to the stony hill; 'Barksdale's brigade subsequently cleared the orchard'; the Wheatfield two-line counterattack lapping his line at 30 paces; Semmes brought up; 'Wofford coming in in splendid style' swept the field 'up to the foot of the mountain'; withdrawal 'near nightfall'; officer losses (De Saussure k, McLeod mw, Kennedy w, Bland w); July 3: after dark July 2 to the Peach Orchard, held to noon July 3, then the stone wall, right connecting Hood; casualty statement 115 k / 483 w / 32 m = 630 (EXACT match to both the ANV return brigade row and the tablet - the wing's clean agreement case).",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 90,
+    "offsetEnvelope": [
+     45,
+     105
+    ],
+    "anchorsUsed": [
+     "CA-J2A-7"
+    ],
+    "assessment": "Two stated clocks: column into the open field 'about 3 p.m.' and the advance order 'about 4 o'clock'. Against the ED-28 provisional Kershaw step-off ~17:30 (CA-J2A-7) the stated 16:00 gives a raw offset of ~+90; the tablet's '4.30' (tablet-adjudicated, McLaws-wing -60 class per ED-25/ED-28) sits between them. Pass-5 finding: the McLaws-wing early skew ORIGINATES in the reports - the tablets partially corrected it. Per ED-25 rule 4 the report clock never defines or moves an anchor.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-2-robertson",
+   "kind": "official_report",
+   "title": "Report of Brig. Gen. J. B. Robertson, CSA, commanding Texas Brigade, Hood's division (OR Series I Vol. XXVII Part 2, pp. 404-406)",
+   "author": "Jerome B. Robertson",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/931-gettysburg-campaign-part-ii/190087-404-series-i-volume-xxvii-ii-serial-44-gettysburg-campaign-part-ii.html",
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 404-406 read). Dated July 17, 1863, near Bunker Hill, Va. July 2 keys: the division arrived 'but a few minutes before we were ordered to advance' (no reconnaissance time - a first-person negative on the arrival-to-step-off interval); ordered to keep right on Law and left on the Emmitsburg Pike, found the line too narrow and ABANDONED THE PIKE to close on Law (the order-conflict decision that shaped the brigade's split); half a mile of open ground under 'a heavy and destructive fire of canister, grape, and shell from six pieces' (Smith's 4th NY); 1st TX took the battery hill (3 of 6 guns); 4th/5th TX drifted right to Law against Little Round Top; 'one of the hottest contests, against five or six times their number' lasting over an hour with positions retaken repeatedly; courier to Hood for left support brought Anderson and Benning; officer casualties (Key w, Powell w, Manning w, Carter w, Bryan w, Woodward w); Robertson himself struck above the knee 'late in the evening', retired ~200 yards, command to Lt. Col. Work; July 3 continuous sharpshooter skirmishing, 'a number of our men severely wounded'; Capt. F. L. Price AAG lost the morning of July 3 examining positions ('never seen again'); withdrew about dark July 3 to a new line. No stated clocks anywhere (kind none - sequence evidence throughout)."
+  },
+  {
+   "id": "or-27-2-oates-15al",
+   "kind": "official_report",
+   "title": "Report of Col. William C. Oates, Fifteenth Alabama Infantry, Law's brigade (OR Series I Vol. XXVII Part 2, pp. 392-393)",
+   "author": "William C. Oates",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/931-gettysburg-campaign-part-ii/190075-392-series-i-volume-xxvii-ii-serial-44-gettysburg-campaign-part-ii.html",
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 392-393 read). Dated August 8, 1863. The Little Round Top attacker's contemporary report (his 1905 book is the retrospective pair, oates-1905): the left-wheel order he declined to obey (justified by 'tactical confusion and enemy positioning'); Lt. Col. Feagin w (lost a leg); the enemy behind rocks with a 300-yard depression between; the very-large-rock left-wheel to face Chamberlain's flank fire ('in less than five minutes caused him to change front'); 'Receiving re-enforcements, he charged me five times, and was as often repulsed' (the five charges FROM THE ATTACKER'S SIDE - Chamberlain's report mirrors it); the withdrawal trigger ('flanked me on the right, and two regiments were moving rapidly upon my rear and not 200 yards distant'); command passed to Capt. B. A. Hill for the withdrawal; casualty statement 17 k / 54 w / 90 m = 161. ED-49 rule-4 exemplar: the ANV return's 15th AL row prints 17/66 = 83 k+w only (missing pooled at brigade grain as 146) - the report total is the battle-total basis, the return row the component measure. No stated clocks."
+  },
+  {
+   "id": "or-27-2-scruggs-4al",
+   "kind": "official_report",
+   "title": "Report of Lieut. Col. L. H. Scruggs, Fourth Alabama Infantry, Law's brigade (OR Series I Vol. XXVII Part 2, pp. 391-392)",
+   "author": "L. H. Scruggs",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/931-gettysburg-campaign-part-ii/190074-391-series-i-volume-xxvii-ii-serial-44-gettysburg-campaign-part-ii.html",
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 391-392 read). Dated August 8, 1863, addressed to Col. James L. Sheffield commanding Law's brigade (the address line is the verified-negative that LAW FILED NO BRIGADE REPORT - the brigade's OR base is its five regimental reports). Keys: marched ~24 miles from New Guilford, 'arriving at 3:30 p.m.' July 2 (a stated regimental arrival clock - reads as arrival at the deployment area after the approach, consistent with the Kershaw-tablet 3:30 arrival and Alexander's 3:45 guns-in-action); advanced across a plowed field, overran a stone-fence position, up the mountainside; could not carry the second position ('exhausted troops and difficult terrain'); July 3 breastworks of rock, defensive posture; 87 total casualties stated vs the return row 17/49 = 66 k+w (missing hidden in the brigade pool - ED-49 rule-4 case)."
+  },
+  {
+   "id": "or-27-1-rice-vincent",
+   "kind": "official_report",
+   "title": "Report of Col. James C. Rice, 44th New York, commanding 3rd Brigade, 1st Division, V Corps after Vincent fell (OR Series I Vol. XXVII Part 1, pp. 616-619)",
+   "author": "James C. Rice",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189238-616-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 616-618 read; p. 619 fetch returned menu-only, retry open). Dated July 31, 1863. THE Vincent-brigade primary: occupied 'the extreme left of our line of battle' at about 4 p.m. July 2 (report-nominal; modern ~16:45); order of the line 20th ME left / 83rd PA + 44th NY center / 16th MI right; 'about 1,000 muskets' engaged (the brigade's own strength statement - primary); the ledge-of-rocks + smooth-ravine ground description; Hood's division attacking 'along the entire line' in three columns without skirmishers; the 16th MI right breaking and the 140th NY's supporting arrival; Vincent mw in that crisis; Chamberlain's half-hour struggle and the right-angle refuse + charge (brigade-report corroboration of the 20th ME record); the ammunition crisis (multiple commanders out, every rear officer/man pressed into cartridge supply); Fisher's five 3rd-Division regiments arriving; Chamberlain ordered to take the mountain - 'It was now 8 o clock in the evening' (the LRT repulse-complete evening clock, primary); complete possession before 9 p.m.; 500+ prisoners incl. 2 colonels + 15 officers, 1,000+ muskets collected; July 3 relieved during the forenoon by the 1st Brigade and moved to the center as reserve under 'severe cannonading' without loss.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 45,
+    "offsetEnvelope": [
+     15,
+     75
+    ],
+    "anchorsUsed": [
+     "CA-J2A-4",
+     "CA-J2A-6"
+    ],
+    "assessment": "One stated clock pair: in position 'about 4 p.m.' (vs Norton's compiled ruling that first contact on Vincent came 16:30-17:00 and the diversion ~16:00-16:30; raw +45) and 'now 8 o'clock in the evening' for the repulse complete (inside CA-J2A-6's fight 16:45-19:00 window - roughly chain-agreeing at the evening end). Per ED-25 rule 4 the report clock never defines an anchor; the 20:00 statement is carried as the best Union primary clock for the LRT fight's end.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-1-chamberlain",
+   "kind": "official_report",
+   "title": "Report of Col. Joshua L. Chamberlain, Twentieth Maine Infantry (OR Series I Vol. XXVII Part 1, pp. 622-626)",
+   "author": "Joshua L. Chamberlain",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189244-622-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 622-625 read; the ED-28 precondition fetch, closing the CA-J2P verification item). Dated July 6, 1863, 'Field near Emmitsburg'. Keys: reached 'the heights southeasterly of Gettysburg at about 7 a.m., July 2'; 'about 4 p.m.' a cannonade signaled the rapid movement left (his artillery-opening clock, chain-agreeing with CA-J2A-2's window); the move to Little Round Top under artillery fire; Company B deployed as skirmishers; the left-flank refuse when the enemy's extension threatened; 'brisk fire at close range' opening within a dozen yards; 'One-half of my left wing had fallen, and a third of my regiment lay just behind us, dead or badly wounded'; the ammunition crisis and the order - 'the word was enough. It ran like fire along the line'; the extended right wheel; first-line surrenders; ~400 prisoners (15th + 47th AL chiefly, some 4th/5th TX) with ~150 k+w counted in front; at 9 p.m. ordered by Rice to seize the western slope of Great Round Top, done with ~200 men, fixed bayonets, without firing; Lt. Linscott mw there; 25 more prisoners incl. a staff officer; 83rd PA + 44th NY reinforced the crest; night picket rotation. Return row (or-27-1-union-return p. 179): 29 k / 91 w / 5 m = 125 - carried per ED-52 as the EC6 basis against any larger narrative figure.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 10,
+    "offsetEnvelope": [
+     -15,
+     35
+    ],
+    "anchorsUsed": [
+     "CA-J2A-2"
+    ],
+    "assessment": "Stated clocks: 07:00 arrival on the heights, ~16:00 cannonade opening (vs CA-J2A-2 adopted 15:45-16:00 and Jacobs's 16:20 reading - roughly chain-agreeing, raw +10 against the window center), 21:00 Great Round Top order (agrees with Rice's before-9 framing). A rare V Corps report whose clock does not ride the early pole.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-1-garrard",
+   "kind": "official_report",
+   "title": "Report of Col. Kenner Garrard, 146th New York, commanding 3rd Brigade, 2nd Division, V Corps after Weed fell (OR Series I Vol. XXVII Part 1, pp. 651-652)",
+   "author": "Kenner Garrard",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189273-651-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 651-652 read). Dated July 16, 1863, camp near Berlin, Md. THE Weed-brigade primary: the brigade advanced ~1.5 miles under fire; the leading regiment (140th NY, Col. O'Rorke) 'was directed by General Warren to Round Top ridge' (the detachment order in the brigade's own report, naming Warren); close-range combat; 'Colonel O'Rorke was mortally wounded at the head of his regiment while leading it into action'; other regiments deployed supporting Third Corps and artillery; then the 91st + 155th PA positioned on the ridge; the night stone wall 'about half way down the slope, wherever the rocks offered no protection' (the fortification record); 'General Weed ... was mortally wounded on the summit, near the battery'; 'Lieutenant Hazlett, commanding the battery, while offering his assistance to General Weed, fell, mortally wounded' (the paired summit pins in one primary). No stated clocks (kind none)."
+  },
+  {
+   "id": "or-27-1-sykes",
+   "kind": "official_report",
+   "title": "Report of Maj. Gen. George Sykes, commanding V Corps (OR Series I Vol. XXVII Part 1, pp. 592-595)",
+   "author": "George Sykes",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189214-592-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 592-593 read). Corps frame for the July 2 southern field: reached the field 'about 8 a.m.' July 2 after the night march; first posted on the right near Rock Creek; 'At 3 p.m.' Meade ordered the whole corps to the left 'and hold it at all hazards' (report-nominal); the Little Round Top reconnaissance ('a rocky ridge, commanding almost an entire view of the plateau'); Vincent 'had seized the rocky height, closely followed by Weed's brigade'; the WEED VACATED incident - Weed's brigade found moving off toward the Peach Orchard 'By order of General Sickles', Sykes ordered it back 'at the double-quick step' (the cross-order conflict that explains why only O'Rorke's regiment made the crisis); Vincent and O'Rorke 'sorely pressed' and fallen, 'Weed again in position, Hazlett working his guns superbly', Ayres's regulars arriving; Crawford's evening advance; 'the key of the battle-field was in our possession intact'.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 15,
+    "offsetEnvelope": [
+     -15,
+     45
+    ],
+    "anchorsUsed": [
+     "CA-J2A-4"
+    ],
+    "assessment": "One stated clock: Meade's order to move the corps left 'At 3 p.m.' - just before/around Warren's arrival on Little Round Top (CA-J2A-4 adopted 15:30-16:00 for Warren; Norton rules Meade's ride to the left ~15:00-15:25). Raw offset ~+15 against the window center; roughly chain-agreeing. Rule 4 applies.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "law-bl-1884",
+   "kind": "article",
+   "title": "Evander M. Law, 'The Struggle for Round Top' (Battles and Leaders of the Civil War, vol. 3)",
+   "author": "Evander M. Law",
+   "year": 1884,
+   "url": "https://archive.org/download/attackdefenseofl00nort/attackdefenseofl00nort_djvu.txt",
+   "editionNote": "Read 2026-07-11 via two independent reprint routes: Norton 1913 ch. II reprints the Round Top sections (pp. ~115-119 of Norton) and alexander-1907 quotes the Devil's Den passage - carried as reprint-verified, direct B&L pagination open. ~20-year retrospective by the commander who led Law's brigade and succeeded to Hood's division mid-attack. Keys: quotes the Union SIGNAL DISPATCH verbatim - 'To General Meade - four o'clock p.m. The only infantry of the enemy visible is on the extreme (Federal) left; it has been moving toward Emmitsburg' - a timestamped document (16:00) showing the column still deploying at 16:00 ('It was now past four o'clock in the afternoon, and our troops were in position for the attack'); Hood's protest sequence (twice through Hamilton; 'General Longstreet orders that you begin the attack at once'; 'You hear the order?'); the en-echelon order ('the movement should begin on the right, my brigade on that flank leading'); 'It was near 5 o'clock p.m. when we advanced to the attack. The artillery on both sides had been warmly engaged for about fifteen minutes' (his step-off clock - the LATE pole of the July 2 step-off spread, vs Alexander's ~16:15 arithmetic); Hood w by artillery 'as we moved into action'; 'In less than an hour from the time we advanced ... the hill by Devil's Den ... was taken with three pieces' (duration statement, tier-B input); the rough-ground advance description.",
+   "clockProfile": {
+    "kind": "retrospective-watch",
+    "offsetMinutes": -30,
+    "offsetEnvelope": [
+     -60,
+     0
+    ],
+    "anchorsUsed": [
+     "CA-J2A-3"
+    ],
+    "assessment": "One stated clock: step-off 'near 5 o'clock p.m.' vs ED-28's provisional CA-J2A-3 window 16:00-16:30 (raw -30 against the window's late edge). CONTINGENT: pass 5 proposes revising CA-J2A-3 toward ~16:30-16:45 (ED-53 candidate) - under that reading Law's offset shrinks to ~-15. His quoted 16:00 signal dispatch is a document pin, not a witness clock (carries no profile, anchors at +-0 by document class, per the ED-25 dispatch rule).",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "oates-1905",
+   "kind": "memoir",
+   "title": "The War Between the Union and the Confederacy, and Its Lost Opportunities (ch. on Gettysburg second day)",
+   "author": "William C. Oates",
+   "year": 1905,
+   "url": "https://archive.org/details/01897724.3053.emory.edu",
+   "editionNote": "Full text fetched 2026-07-11 (Emory scan djvu text; the advancedsearch mirror-hunt lesson from pass 4 applied - title/creator queries failed, the Emory item id served). 42-year retrospective by the 15th AL's colonel; polemical throughout (Longstreet-hostile), facts used with the standard memoir caution. Keys: ordered ready at 3 a.m., 'near 4 o'clock when the brigade was put in motion'; 25 miles; 'arrived on the field within sight of Gettysburg at about 2 o'clock P.M.' (vs Stine's 'a little before twelve' and Scruggs's 3:30 deployment-area clock - the three-way arrival spread carried); Lee and Longstreet observed together on Seminary Ridge; the concealed circuitous flank march; Law's brigade single-line order 44th+48th right of the 15th, 47th+4th left; 'about 3.30 o'clock P.M. both battalions of artillery' [opened]; THE WATER DETAIL - 2 men per company (22 men) sent with all canteens to a well 100 yards rear, the advance ordered before they returned, the detail walked into Union lines and was captured entire (a primary detachment-loss record feeding EC2/EC6); his sharpshooter-pursuit ascent of Great Round Top and the argument with Terrell about holding it; effectives 'about five hundred officers and men' going in, 223 enlisted + 19 officers at the after-dark roll (with stragglers returning through the night - the roll is not a casualty count); 'When the battle commenced, four hours previously' from the dark bivouac (~20:00 - 4h = ~16:00, a retrospective arithmetic consistent with the mid window); the five-charges fight and the withdrawal 'like a herd of wild cattle' (his phrase); Vincent's-brigade-was-there-first framing.",
+   "clockProfile": {
+    "kind": "retrospective-watch",
+    "offsetMinutes": 15,
+    "offsetEnvelope": [
+     -30,
+     60
+    ],
+    "anchorsUsed": [
+     "CA-J2A-2"
+    ],
+    "assessment": "Two usable statements: artillery opening 'about 3.30 P.M.' (vs CA-J2A-2 15:45-16:00 adopted, Jacobs 16:20 counter-reading: raw +15 to +50) and the dark-minus-four-hours commencement arithmetic (~16:00, agreeing). 42-year distance caps confidence regardless; envelope held wide.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "mclaws-shsp7-1878",
+   "kind": "article",
+   "title": "Lafayette McLaws, 'Gettysburg' (address before the Georgia Historical Society; Southern Historical Society Papers vol. 7, pp. 64-90)",
+   "author": "Lafayette McLaws",
+   "year": 1878,
+   "url": "https://archive.org/download/southernhistoric7187sout/southernhistoric7187sout_djvu.txt",
+   "editionNote": "Full text fetched 2026-07-11 (the southernhistoric7187sout mirror - the pass-4 Trimble advancedsearch lesson applied). The DIVISION commander's only substantial account (McLaws filed no OR report for Gettysburg - standing verified-negative). Keys: July 1 - in march order by 8 a.m., held for Ewell's 14-mile train (he timed it over a known distance - a rare quantified logistics datum), 'not until after four o'clock that it had passed'; heard the guns about five o'clock rising the hills; met Longstreet ~10 p.m.; camped a little after midnight; the sunrise countermand of the 4 a.m. march order. July 2 - Lee's map order verbatim ('General, I wish you to place your division across this road ... perpendicular to the Emmettsburg road ... without being seen'); the deployment under short-range artillery fire cutting tree limbs (killed/wounded in line BEFORE the advance - an EC6 pre-step-off window); BARKSDALE'S IMPATIENCE verbatim ('General, let me go; General, let me charge!' two or three times; told to wait on Longstreet's will); Hood's guides/scouts confusion blamed for the incomplete envelopment; the charge order via Capt. G. B. Lamar Jr.; Kershaw leading, Semmes, then Barksdale, Wofford last; Barksdale and Wofford 'mixed up with the batteries ... temporarily delayed in extricating themselves' (the interval Alexander's ladder times at 20+ minutes); 'one Brigadier-General (Barksdale) killed'. No July 2 clock statements (July 1 clocks only)."
+  },
+  {
+   "id": "chamberlin-150pa-1895",
+   "kind": "regimental_history",
+   "title": "History of the One Hundred and Fiftieth Regiment Pennsylvania Volunteers, Second Regiment, Bucktail Brigade (ch. XV, 'Gettysburg, To a Finish')",
+   "author": "Thomas Chamberlin",
+   "year": 1895,
+   "url": "https://archive.org/details/historyofonehund00cham",
+   "editionNote": "Full text fetched 2026-07-11 (the pass-4 standing fetch item - the Stone/Dana upgrade route, CLOSED). Keys for the July 2-3 record the OR lacks (no July 2-3 report exists for Stone's brigade): morning of the 2d 'the aggregate for duty was increased to one hundred and nine' (a stated regimental strength after July 1's wreck - primary); posted supporting batteries on Cemetery Hill, men passing ammunition for the short-handed artillery; 'About six p.m. the brigade was double-quicked to the left, down the Taneytown road' to the right of Third Corps during the Humphreys collapse; line formed in rear of Humphreys, bayonets fixed, charge withheld; the 149th+150th evening advance to the Emmitsburg road recovering TWO GUNS (Doubleday's report quoted concurring: 'sent in two additional guns taken from the enemy, after a short and spirited engagement'); the night picket at the road 'a little to the left of the Codori House'; dawn July 3 shelled by two guns in an orchard left-front; relieved 'between seven and eight o'clock' with Company A losing 2 k + 1 mw to artillery on the way in; the cannonade ridden out 'back of the brow of the hill'; Adjutant Ashhurst at the Bushman farmhouse; compiled 1895 from participant materials (regimental-history tier)."
+  },
+  {
+   "id": "pfanz-culpshill-1993",
+   "kind": "book",
+   "title": "Harry W. Pfanz, Gettysburg: Culp's Hill and Cemetery Hill (UNC Press)",
+   "author": "Harry W. Pfanz",
+   "year": 1993,
+   "url": "https://archive.org/details/gettysburgculpsh0000pfan",
+   "editionNote": "ACCESS FAILED 2026-07-11 (pass 5, one-attempt item per the pass commission): the archive.org item exists but is lending-restricted (in-copyright, no anonymous text channel) and the fulltext inside-search endpoint returns 'Item not available' anonymously. The CA-J3M-3 precondition (pp. ~340-355, the Spangler's Meadow ~10:00 ruling) therefore STANDS OPEN; ED-30 remains provisional with the precondition carried. Acquisition routes: archive.org controlled digital lending (account), or library copy."
   }
  ]
 }
