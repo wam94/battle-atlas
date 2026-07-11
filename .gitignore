@@ -19,3 +19,9 @@ app/p10-seek-latency.json
 # builds (scripts/p0-benchmark.sh, scripts/p11-screenshots.sh); never source
 app/Assets/Resources/PerformanceTestRunInfo.json*
 app/Assets/Resources/PerformanceTestRunSettings.json*
+
+# local CLI test artifacts (worktree suite runs)
+editmode.log
+playmode.log
+*-results.xml
+p10-audio-events-regen.log
