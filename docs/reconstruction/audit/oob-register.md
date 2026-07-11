@@ -1,6 +1,8 @@
 # OOB register — summary (companion to oob-register.json)
 
-**Status: PROPOSAL (audit-research-1, 2026-07-10).** The machine-readable
+**Status: ADOPTED (owner ruling 2026-07-10, adopt-and-adjust; rulings
+ED-24…ED-31 in `docs/reconstruction/angle-editorial-decisions.md`).**
+The machine-readable
 register is `docs/reconstruction/audit/oob-register.json`: every unit of both
 armies at the audit's working grain (brigade + battery/battalion; regiments
 enumerated name-only inside brigade entries), per the unit-truth-spec scope

@@ -1,7 +1,16 @@
 # Canonical anchor-chain proposal — all six battle phases
 
-**Status: PROPOSAL (audit-research-1 branch, 2026-07-10). Nothing here is
-canonical until the owner rules.** Implements the unit-truth-spec's master-clock
+**Status: ADOPTED 2026-07-10 (owner ruling, adopt-and-adjust).** The chains
+are canonical as ruled in `docs/reconstruction/angle-editorial-decisions.md`:
+ED-24 (July 3 afternoon, with verification updates), ED-25 (clock profiles,
+implemented on `reconstruction/sources/` + validator), ED-26…ED-30 (the five
+skeleton chains, PROVISIONAL with preconditions carried), ED-31 (LMT frame).
+**The step-off gate resolved: ED-1 STANDS** — the one-hop 14:00–14:30 center
+did not survive page-level verification (Coddington p. 502 reads 3:00 P.M.;
+Hess/Wert verified as the genuine short-cannonade school; Sears unreachable;
+new OR evidence supports ~15:00). Full record:
+`docs/reconstruction/audit/verification-2026-07-10.md`. Historical draft text
+below is preserved as proposed; where it conflicts with the EDs, the EDs win. Implements the unit-truth-spec's master-clock
 resolution: a per-phase canonical anchor chain plus a per-source clock-offset
 assessment. July 3 afternoon is drafted in full (it must reconcile with the
 shipped reconstruction); the five other phases are skeletons seeded from
