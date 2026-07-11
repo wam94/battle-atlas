@@ -1972,7 +1972,7 @@
     "anchorsUsed": [
      "CA-J2A-3"
     ],
-    "assessment": "One stated clock: step-off 'near 5 o'clock p.m.' vs ED-28's provisional CA-J2A-3 window 16:00-16:30 (raw -30 against the window's late edge). CONTINGENT: pass 5 proposes revising CA-J2A-3 toward ~16:30-16:45 (ED-53 candidate) - under that reading Law's offset shrinks to ~-15. His quoted 16:00 signal dispatch is a document pin, not a witness clock (carries no profile, anchors at +-0 by document class, per the ED-25 dispatch rule).",
+    "assessment": "One stated clock: step-off 'near 5 o'clock p.m.' vs CA-J2A-3. RESOLVED 2026-07-11: ED-53 ADOPTED the pass-5 chain revision (CA-J2A-3 ~16:30, envelope 16:15-17:00); against the adopted preferred the raw offset is ~-30, inside the profile envelope, and Law's stated clock sits at the revised envelope's late edge as the ladder's late pole. His quoted 16:00 signal dispatch is a document pin, not a witness clock (carries no profile, anchors at +-0 by document class, per the ED-25 dispatch rule).",
     "confidence": "weak"
    }
   },

@@ -296,7 +296,7 @@ a Union command node is needed; Heth deploy-vs-attack conflation (9:00 vs
 | CA-J1P-8 | Hancock's "we can fight here" dispatch to Meade | 17:25 | ±0 if verified | Stone Sentinels timeline "5:25 p.m." (VERIFIED at the page level) — a timestamped document if confirmed in OR 27/1; second hard clock of the day |
 | CA-J1P-9 | Ewell declines Cemetery/Culp's Hill ("if practicable") | unclocked | sequence: after CA-J1P-7, before dark | Lee's report wording via VERIFIED secondary ("Carry the hill occupied by the enemy, if he found it practicable…"); Ewell's report "jaded by twelve hours' marching and fighting" — correctly scoped sequence-only, no clock assigned |
 
-### 2.3 July 2 afternoon — the en-echelon assault (proposed ED-28)
+### 2.3 July 2 afternoon — the en-echelon assault (adopted ED-28; CA-J2A-2/3 REVISED by ED-53, 2026-07-11)
 
 **Frame note (VERIFIED):** sunset July 2 was 19:29 local mean time (Stone
 Sentinels timeline states "7:29 p.m."); the familiar "19:41" is the same event
@@ -307,18 +307,34 @@ systematically ~1 hour EARLY against modern scholarship (Kershaw tablet
 "advanced about 4.30" vs modern ~17:30; Barksdale tablet "Advanced at 5 P.M."
 vs modern ~18:15), while the Ewell-front tablets match modern times well.
 Treat McLaws-wing tablet clocks as a clock-offset class of their own.
+*(Extended by ED-55, 2026-07-11: the skew ORIGINATES in the wing's OR
+reports — report-nominal +45..+105 early, exemplar or-27-2-kershaw +90;
+the tablets are partial corrections of the same house clock.)*
+
+**ED-53 revision (2026-07-11):** CA-J2A-2/3 were revised on dossier
+pass 5's executor evidence and upgraded from provisional to ruled —
+CA-J2A-2 to a recorded two-pole structure ~15:45–16:20 (Alexander
+15:45 + Scruggs/Oates arrivals vs Jacobs's 16:20 clock reading);
+CA-J2A-3 to **~16:30, envelope 16:15–17:00** (the 16:00 signal-dispatch
+document pin excludes the old window's front edge; Alexander's 30-min
+arithmetic; Law's "near 5 o'clock"; Oates's dark arithmetic;
+Robertson's few-minutes-before; Norton's compiled 16:30–17:00 first
+contact). Downstream anchors CA-J2A-5/6/7/9 are CONFIRMED by the same
+executor ladder, not moved. The rows below carry the revised values;
+the superseded pre-revision values are preserved in this note and in
+ED-53's full text (angle-editorial-decisions.md).
 
 | id | Event | Adopted | Envelope | Principal sources |
 |---|---|---|---|---|
 | CA-J2A-1 | Sickles's salient complete (Peach Orchard line occupied) | ~15:30 | 14:00–15:30 | Stone Sentinels timeline "Noon" conflates the Pitzer Woods recon with the corps advance (VERIFIED); Pfanz 14:00–15:30 (attributed). Anchor the *completed* salient |
-| CA-J2A-2 | Longstreet's artillery opens | **15:45–16:00** | 15:30–16:20 | McLaws tablet "About 4 P.M. the batteries opened" (VERIFIED); Hood tablet same (VERIFIED); **Jacobs: "at twenty minutes past 4 P.M. the enemy began the battle of the 2d" — 16:20, the only clock reading, LATER than the standard adoption (VERIFIED)**; Alexander ~15:45 (attributed, unfetched) |
-| CA-J2A-3 | Hood's division steps off | **16:00–16:30** | 16:00–16:30 | Hood tablet "soon after" 16:00 (VERIFIED); Law's Brigade tablet: "Left New Guilford 25 miles distant at 3 A.M. Arrived and formed line … about 4 P.M." (VERIFIED); Longstreet's OR "got into position … about 4 p.m." = in-position not step-off (VERIFIED). The dawn-attack-order claim is Lost Cause polemic — document the controversy separately from the clock |
+| CA-J2A-2 | Longstreet's artillery opens | **~15:45–16:20 two-pole (ED-53)** | 15:30–16:20 | REVISED ED-53: Alexander 15:45 arithmetic + Scruggs/Oates 15:30–15:45 arrivals (early pole) vs **Jacobs "at twenty minutes past 4 P.M. the enemy began the battle of the 2d" — 16:20, the chain's precision standard at the late pole (VERIFIED)**; McLaws/Hood tablets "About 4 P.M." (VERIFIED) sit between |
+| CA-J2A-3 | Hood's division steps off | **~16:30 (ED-53)** | 16:15–17:00 | REVISED ED-53 (was 16:00–16:30): the 16:00 Union signal dispatch quoted by Law — a timestamped DOCUMENT excluding the old front edge; Alexander's 30-min arithmetic ⇒ ~16:15–16:25; Law "near 5 o'clock" (late pole); Oates dark-minus-four-hours; Robertson "but a few minutes before"; Norton compiled 16:30–17:00 first contact. Hood tablet "soon after" 16:00 (VERIFIED) carried as tablet-class reading. The dawn-attack-order claim is Lost Cause polemic — documented separately from the clock |
 | CA-J2A-4 | Warren on Little Round Top; Vincent diverted | 15:30–16:00 | 15:30–16:00 | Stone Sentinels timeline 16:00 (VERIFIED); Warren's 1872 Farley letter and Pfanz ~15:40 unfetched — follow-up |
-| CA-J2A-5 | Devil's Den falls | ~17:30 | 17:15–18:00 | Stone Sentinels timeline: attack 16:30, "fierce fighting lasting over an hour" (VERIFIED); Law tablet credits 44th/48th AL + 3 guns of the 4th NY (VERIFIED, no clock) |
-| CA-J2A-6 | Little Round Top climax (Vincent mw; O'Rorke; 20th Maine charge) | fight 16:45–19:00; charge **~18:30** | 17:30–18:45 | Stone Sentinels timeline puts the whole climax at 17:30 — an hour earlier than the modern ~18:15–18:45 (VERIFIED, flagged); Chamberlain's OR "reaching the field at about 4 p.m." (SNIPPET, 403 on the CSI reprint — re-fetch); dedicated verification pass needed (Pfanz, Norton, Oates) |
-| CA-J2A-7 | Kershaw steps off (McLaws wing engages) | **~17:30** | 16:30 (tablet)–17:45 | Kershaw tablet "Advanced about 4.30 to battle" (VERIFIED — the skew exemplar); Stone Sentinels timeline 17:30 (VERIFIED); Wikipedia "By 5:30 p.m. … Kershaw's regiments neared the Rose farmhouse" (VERIFIED); Kershaw's OR unfetched |
+| CA-J2A-5 | Devil's Den falls | ~17:30 (downstream-CONFIRMED, ED-53) | 17:15–18:00 | Stone Sentinels timeline: attack 16:30, "fierce fighting lasting over an hour" (VERIFIED); Law tablet credits 44th/48th AL + 3 guns of the 4th NY (VERIFIED, no clock) |
+| CA-J2A-6 | Little Round Top climax (Vincent mw; O'Rorke; 20th Maine charge) | fight 16:45–19:00; charge **~18:30** (downstream-CONFIRMED, ED-53; evening end triple-anchored: Rice 20:00 + Chamberlain 21:00 + j2-05 drawn state) | 17:30–18:45 | Stone Sentinels timeline puts the whole climax at 17:30 — an hour earlier than the modern ~18:15–18:45 (VERIFIED, flagged); Chamberlain's OR "reaching the field at about 4 p.m." (SNIPPET, 403 on the CSI reprint — re-fetch); dedicated verification pass needed (Pfanz, Norton, Oates) |
+| CA-J2A-7 | Kershaw steps off (McLaws wing engages) | **~17:30** (downstream-CONFIRMED, ED-53; executor trigger record + ladder arithmetic, pass 5) | 16:30 (tablet)–17:45 | Kershaw tablet "Advanced about 4.30 to battle" (VERIFIED — the skew exemplar); Stone Sentinels timeline 17:30 (VERIFIED); Wikipedia "By 5:30 p.m. … Kershaw's regiments neared the Rose farmhouse" (VERIFIED); Kershaw's OR unfetched |
 | CA-J2A-8 | Caldwell's counterattack into the Wheatfield | 18:00–18:15 | 17:45–18:30 | Stone Sentinels timeline 18:00 (VERIFIED); ABT map-sheet slicing 17:45–18:30 (titles as the Trust's adopted clock) |
-| CA-J2A-9 | Barksdale smashes the Peach Orchard; Sickles wounded | **18:00–18:30** | 17:00 (tablet)–18:30 | Barksdale tablet "Advanced at 5 P.M." (VERIFIED, skewed early); Stone Sentinels timeline 18:00 (VERIFIED); Pfanz ~18:15 (attributed) |
+| CA-J2A-9 | Barksdale smashes the Peach Orchard; Sickles wounded | **18:00–18:30, ~18:15 preferred** (downstream-CONFIRMED, ED-53; drums pin + 20-min ladder interval) | 17:00 (tablet)–18:30 | Barksdale tablet "Advanced at 5 P.M." (VERIFIED, skewed early); Stone Sentinels timeline 18:00 (VERIFIED); Pfanz ~18:15 (attributed) |
 | CA-J2A-10 | Wright reaches Cemetery Ridge; 1st Minnesota's charge | **19:00–19:15** ("shortly before sunset") | 18:00–19:15 | Wright's OR: general advance signal "at about 5 p.m." (VERIFIED — notoriously self-serving report); Wright tablet "Advanced at 6 P.M." (VERIFIED); Stone Sentinels timeline 18:30–19:00 for both events (VERIFIED); 1st MN monument has no clock (VERIFIED). A 2-hour spread on one brigade — pin to sunset-adjacency |
 | CA-J2A-11 | Astronomical pin: sunset | **19:29 LMT** | ±1 min | Stone Sentinels "7:29 p.m. Sunset" (VERIFIED); = 19:41 EST. Frame per ED-31 |
 
@@ -453,7 +469,7 @@ a per-wing note on the source record.
 | **ED-25** | Adopt the `clockProfile` schema, assessment method, and the five worked profiles (§3) | drafted here, ready for ruling |
 | **ED-26** | July 1 morning chain (§2.1) | skeleton; precondition: OR 27/1 fetches (Buford 10:10 dispatch) |
 | **ED-27** | July 1 afternoon chain (§2.2), incl. the Hancock-arrival ruling (~16:15, envelope 15:00–16:30, partisan-dispute note) | skeleton; precondition: Hancock/Howard OR texts |
-| **ED-28** | July 2 afternoon chain (§2.3), incl. the Longstreet step-off ruling (16:00–16:30; the dawn-order claim documented as polemic, not clock) and the McLaws-wing tablet-skew rule | skeleton; precondition: Little Round Top verification pass |
+| **ED-28** | July 2 afternoon chain (§2.3), incl. the Longstreet step-off ruling (16:00–16:30; the dawn-order claim documented as polemic, not clock) and the McLaws-wing tablet-skew rule | ADOPTED provisional 2026-07-10; precondition (LRT verification pass) CLOSED by dossier pass 5; CA-J2A-2/3 REVISED & upgraded to ruled by ED-53 (2026-07-11); skew rule extended to report clocks by ED-55 |
 | **ED-29** | July 2 evening chain (§2.4) | skeleton; strongest of the five (Hays's OR clock) |
 | **ED-30** | July 3 morning chain (§2.5), incl. the Spangler's Meadow ruling (~10:00 vs the 06:00 outlier) | skeleton; precondition: Pfanz Culp's Hill pp. ~340–355 |
 | **ED-31** | Time-frame convention: the battle clock is Gettysburg local mean time (~9 min ahead of modern EST); astronomical pins adopted as sunset July 2 19:29 LMT, sunrise July 3 ~04:38 LMT, with a USNO-grade recomputation as a follow-up; all imported modern-frame times (EST/EDT artifacts like "19:41" / "05:45") converted on entry | drafted here, ready for ruling |

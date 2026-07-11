@@ -1022,6 +1022,112 @@ the report figure preserves both without manufacturing precision.
 
 ---
 
+## Dossier pass 5 adoption rulings (ED-53 … ED-55) — 2026-07-11
+
+Owner ruling (standing adopt-and-adjust doctrine): the ED candidates
+proposed by dossier pass 5 (`docs/reconstruction/audit/dossier-pass-5.md`
+§5, drafted on branch audit-dossiers-5) are ADOPTED as recorded below,
+executed at the start of dossier pass 6 (branch audit-dossiers-6). No
+renumbers were needed this batch. ED-53 is the audit's first CHAIN
+REVISION ruling — it moves an adopted anchor's preferred time on
+executor evidence, per the sequencing doctrine's design (anchors
+substantiated by executors' dossiers beat anchors resting on event
+quotes alone).
+
+### ED-53 — CA-J2A-2/3 revision (the July 2 artillery opening and Hood's step-off)
+
+The July 2 afternoon chain (ED-28, provisional) carried CA-J2A-2
+(Longstreet's artillery opens) at 15:45–16:00 and CA-J2A-3 (Hood's
+division steps off) at 16:00–16:30. Pass 5's executor dossiers (Law,
+Robertson, Vincent, Weed + the closed ED-28 precondition fetches:
+Chamberlain's OR, Oates, Norton) assembled a step-off ladder no prior
+pass had.
+
+**Canonical choice:**
+
+- **CA-J2A-2 adopts ~15:45–16:20 as a recorded two-pole structure** —
+  Alexander's 15:45 (36 guns in action, his own arithmetic) plus the
+  Scruggs/Oates 15:30–15:45 arrival window at the early pole, vs
+  Jacobs's "twenty minutes past 4 P.M." clock READING at the late pole.
+  The chain's precision standard (Jacobs, contemporaneous-civilian,
+  ±2 min) sits at the late pole again, exactly the CA-J3A-1 situation;
+  neither pole is discarded.
+- **CA-J2A-3 is REVISED to ~16:30, envelope 16:15–17:00** (was
+  16:00–16:30), on the executor ladder: (a) **the 16:00 Union signal
+  dispatch quoted verbatim by Law** — "To General Meade — four o'clock
+  P.M. The only infantry of the enemy visible is on the extreme
+  (Federal) left; it has been moving toward Emmitsburg" — a timestamped
+  DOCUMENT (±0 by class, the Buford-10:10 pattern) showing the column
+  still deploying at 16:00, which EXCLUDES the old window's front edge;
+  (b) Alexander's arithmetic (36 guns ~15:45, "perhaps 30 minutes" of
+  cannonade, then Hood's order) ⇒ ~16:15–16:25; (c) Law's own "near
+  5 o'clock" with only ~15 min of prior artillery (the late pole);
+  (d) Oates's dark-minus-"four hours previously" ⇒ ~16:00–16:30;
+  (e) Robertson's "but a few minutes before we were ordered to advance"
+  (no long in-position wait); (f) Norton's compiled ruling (cannonade
+  ~15:30, infantry after ~30 min, first contact on Vincent 16:30–17:00).
+
+**Downstream anchors are CONFIRMED, not moved:** CA-J2A-5 (Devil's Den
+~17:30), CA-J2A-6 (LRT climax; the Rice 20:00 / Chamberlain 21:00
+evening end now triple-anchored), CA-J2A-7 (Kershaw ~17:30, hardened by
+the executor's own trigger record and ladder arithmetic against his own
+stated clock), CA-J2A-9 (Barksdale ~18:15) — the revision tightens one
+node and hardens the rest. **Consequences:** CA-J2A-2/3 upgrade from
+provisional to ruled (ED-28's named precondition — the Little Round Top
+verification pass — was CLOSED in pass 5, so the chain's precondition
+list is now empty); the anchor-chain table (`anchor-chain-proposal.md`
+§2.3) is revised in place with this ruling cited; law-bl-1884's
+CONTINGENT clock profile resolves against the revised anchor (offset
+~−30 against the adopted preferred, inside envelope). **Rationale:**
+a document pin plus four independent witness arithmetics against one
+tablet-class "soon after 4" reading; the never-silently-re-time
+doctrine is satisfied because the revision is recorded here, moves no
+shipped geometry, and the July 2 afternoon has no shipped slice clock
+to re-time.
+
+### ED-54 — Vincent-brigade July 3 placement rule
+
+Rice's report has the brigade "relieved during the forenoon … ordered
+to the center of the line" on July 3 — the II Corps-rear center as
+reserve, under the cannonade cross-fire without reply (ED-44 class) —
+and no primary returns it to Little Round Top that day; the hill's
+July 3 garrison is the Weed-brigade/Fisher ground.
+
+**Canonical choice:** us-rice renders at the II Corps-rear center for
+July 3, present-but-not-firing through the cannonade; any build track
+holding the brigade on Little Round Top through July 3 is contradicted
+by the primary and flagged for reconciliation (never a silent edit).
+**Rationale:** the ED-51 pattern applied to the other famous brigade —
+report + relief record agree, and rendering must follow the evidence,
+not the fame. The 20th Maine's Great Round Top night position (j2-05
+drawn state + Chamberlain) governs only the night of July 2–3; the
+forenoon relief supersedes it for the July 3 afternoon window.
+
+### ED-55 — The McLaws-wing REPORT-clock skew class (ED-28's rule extended to its origin)
+
+Pass 5's commissioned executor test established that the McLaws-wing
+early skew ORIGINATES in the reports, not the tablets: Kershaw's own
+report states arrival "about 3 p.m." and the advance order "about
+4 o'clock" — ~90 min early against the adopted ~17:30 — and the
+tablet's 3:30/4:30 is a PARTIAL CORRECTION of the report clock, not an
+independent error.
+
+**Canonical choice:** the wing's OR-report clocks are a named
+clock-offset class, **report-nominal +45..+105 min early** against the
+chain, profiled per source on fetch (exemplar: or-27-2-kershaw,
+profiled +90 [+45,+105] weak). The tablet class keeps its ED-25 ±60
+McLaws-wing exception, now understood as partial correction of the
+same house clock. ED-25 rule 4 unchanged: these clocks never define or
+move an anchor. The V Corps counterpart (Rice +45, Sykes +15 — the
+early skew is BILATERAL on this field, unlike July 3's late-stated
+cluster) is recorded as a finding on the profiles, not promoted to a
+rule. **Rationale:** the skew rule adopted with ED-28 was scoped to
+tablets because tablets were the evidence then in hand; the executor
+pass traced the phenomenon to its source, and the profile mechanism
+(ED-25) is the correct carrier for a per-source, per-wing offset class.
+
+---
+
 ## Connective-reconstruction rules (named inference rules)
 
 Segments cite these rules by name in `inferenceRules`. A segment with no
