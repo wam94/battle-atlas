@@ -40,6 +40,15 @@ CONSULT_COLS = [
     "Proposed changes (keyframes/events to author)",
     "Priority (1-3)",
     "Notes",
+    # unit-truth-spec.md layers (owner-consultation, tier-prefixed facts)
+    "EC1 identity/command",
+    "EC2 engaged strength",
+    "EC3 position anchors",
+    "EC4 movement legs",
+    "EC5 activity record",
+    "EC6 casualty apportionment",
+    "Target T-level",
+    "Achieved T-level (audited)",
 ]
 
 
@@ -111,6 +120,18 @@ def main():
         )
         formations = "/".join(sorted({k["formation"] for k in kfs}))
         has_info = bool(mention_docs) or documented > 0 or u["id"] in claim_subjects
+        # computed T-level floor from build data alone (audit raises it):
+        # T5 = Angle cast (has V2 claims); T1 = documented endpoint anchors;
+        # T0 = everything else. T2-T4 are only reachable via the audit.
+        if u["id"] in claim_subjects:
+            t_computed = "T5"
+        elif kfs and conf and conf[0] == "documented" and conf[-1] == "documented":
+            t_computed = "T1"
+        else:
+            t_computed = "T0"
+        # suggested target per spec: >=T2 all, >=T3 movers, >=T4 engaged
+        engaged = len(unit_events) > 0 or (s0 - s1) > 0
+        t_target = "T4" if engaged else ("T3" if moves else "T2")
         rows.append(
             {
                 "Unit ID": u["id"],
@@ -135,6 +156,8 @@ def main():
                 "Research docs mentioning": len(mention_docs),
                 "Research token": token,
                 "Movement info available?": "yes" if has_info else "VERIFY",
+                "T-level (computed floor)": t_computed,
+                "T-level target (suggested)": t_target,
             }
         )
 
