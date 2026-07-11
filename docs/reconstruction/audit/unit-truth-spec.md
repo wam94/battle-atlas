@@ -111,3 +111,30 @@ battle of both armies with a cast-status column (in-build /
 not-yet-cast); the canonical anchor chain is structured per battle
 phase (July 1 morning + afternoon; July 2 afternoon en echelon +
 evening; July 3 morning + afternoon), July 3 afternoon drafted first.
+
+
+## Sequencing doctrine (owner, 2026-07-10)
+
+Dossier research proceeds by evidence dependency, not by theme:
+
+1. **Anchor-executor units** — for each adopted chain anchor, the units
+   that enacted it get dossiers first; an anchor substantiated by its
+   executors' full six-class dossiers is stronger than one resting on
+   event quotes alone. (July 3 PM: Miller's 3rd Co. Washington Arty,
+   Alexander's battalion line, the Union batteries whose slackening is
+   CA-J3A-4/5, Hunt/Osborn command decisions; the Angle cast is already
+   T5.)
+2. **Reference-frame units** — the units other units' position/timing
+   statements cite ("on Woodruff's right", "supporting Cushing"): the
+   Union gun line + II Corps front, the CSA artillery battalions.
+   Their dossiers raise the achievable tier of everyone placed
+   relative to them.
+3. **Everything else in command batches** (division/brigade groups),
+   placed against the frame — sources cluster by command, so batching
+   matches the source pool.
+
+Rationale recorded from owner consultation: research → anchor → place,
+compounding confidence outward from the chain; thematic/impact-driven
+ordering (e.g. "artillery first because it's the biggest visual gap")
+was considered and rejected as optimizing the product layer before the
+evidence layer.
