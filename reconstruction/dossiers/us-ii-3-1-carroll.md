@@ -153,6 +153,13 @@ documented counterpart of Brockenbrough's collapse
   flat-then-moderate-spike curve) for us-8oh's decay, superseding any
   climax-spike default (basis: or-27-1-sawyer's noon statement + exact
   return match).
+- **ED-51 candidate — Carroll's July 3 placement rule**: the three
+  regiments (us-carroll) render ON EAST CEMETERY HILL for the whole of
+  July 3 (under-fire-without-reply state per ED-44), NOT on the II
+  Corps front; basis: or-27-1-carroll's held-until-the-5th statement +
+  the j2-05 drawn state; consequence: any build track holding
+  us-carroll at the Ziegler's reserve slot through July 3 is
+  contradicted by the primary.
 
 ## Source register
 

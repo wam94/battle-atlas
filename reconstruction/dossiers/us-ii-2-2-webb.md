@@ -137,8 +137,16 @@ own report (fetched this pass), and the official-return casualty basis.
 
 ## ED candidates proposed
 
-- None new (the Cushing gun-count conflict is carried on the existing
-  claim; an authoring-pass ruling can decide if staging must change).
+- **ED-52 candidate — the Union report-vs-return EC6 rule** (the ANV
+  ED-49's mirror): where a Union commander's stated loss disagrees
+  with the official Return of Casualties (exemplar: Webb 525 vs return
+  491), the RETURN is the adopted battle-total EC6 basis and the
+  report figure is carried as the commander's count — the return's
+  full k/w/m column set makes it the compiled measure on this side
+  (the 8th Ohio's exact report=return match shows the agreement case).
+- Otherwise none new (the Cushing gun-count conflict is carried on the
+  existing claim; an authoring-pass ruling can decide if staging must
+  change).
 
 ## Source register
 
