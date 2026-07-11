@@ -741,6 +741,130 @@ marker:
 
 ---
 
+## Dossier pass 2 adoption rulings (ED-40 … ED-45) — 2026-07-11
+
+Owner ruling (standing adopt-and-adjust doctrine): the ED candidates
+proposed by dossier pass 2 (`docs/reconstruction/audit/dossier-pass-2.md`
+§5, drafted on branch audit-dossiers-2) are ADOPTED as recorded below,
+executed at the start of dossier pass 3 (branch audit-dossiers-3). No
+renumbers were needed this batch.
+
+### ED-40 — The crisis battery-slot naming: Cowan occupies the Brown-vacated slot
+
+The question: which battery stood in the slot immediately south of the
+Copse — the position Brown's B/1st RI vacated mid-cannonade (~14:40,
+ED-33) — when the assault crested? Hall's report calls it "Cushing's
+battery"; the OR editors' footnote corrects him to "Should be
+Arnold's"; both are wrong on the pass-2 evidence.
+
+**Canonical choice:** Cowan's 1st NY Independent Battery is the
+occupant. Cowan's own report has him brought at a gallop into the
+position Battery B, 1st Rhode Island had occupied; his monument
+(verified in-slot, ~20 m agreement between sheet label and build hold)
+and Bachelder j3-03 concur; Cushing's traced position is ~200 m north
+at the Angle and Arnold's a further ~80 m north (both pass-1 closed).
+Hall's "Cushing's" and the OR editors' "Should be Arnold's" are adopted
+as recorded MISIDENTIFICATIONS riding the claim — first-class conflict
+records, not placement evidence. **Rationale:** the only reading in
+which every executor dossier (Cowan, Brown, Hall, Arnold, Cushing via
+the V2 corpus) is consistent at once; Hall wrote under the smoke of a
+melee on his own front, and the OR editors corrected a name without
+geometry. Consequence: any cast of the crisis window names Cowan in the
+slot; provenance UI must be able to surface both misidentifications.
+
+### ED-41 — The crisis-reinforcement activity class (fourth ED-34 class)
+
+Pass 2 documented five batteries with in-window arrival records at the
+threatened center: Cowan (gallop into the Brown slot), Weir ("conducted
+to General Webb's position … under a heavy musketry fire"), Fitzhugh
+and Parsons (the pair run to the fence at ~75 yards), Wheeler (detached
+from the Osborn group, enfilading a column 400 yards off, halting it
+"three times"), plus Cooper as the during-cannonade variant (his ~15:00
+transfer to the crest under fire).
+
+**Canonical choice:** a fourth named artillery activity class joins
+ED-34, **crisis-reinforcement**: silent/parked or engaged-elsewhere →
+displacement leg at speed (limbered gallop — the one activity class
+whose movement leg is fast) → short violent fire window at close range.
+Matching casualty-curve class: near-zero before arrival, single spike
+across the fire window (Cooper's variant: the spike begins on the leg
+itself, under the cannonade). **Rationale:** the macro file renders
+reinforcing batteries as either absent or statically present; the
+documented class is exactly the Union line getting STRONGER during the
+assault, from the Reserve node — a rendering-relevant, fully-exemplared
+behavior. Authoring consumes the class; this ruling moves no track by
+itself.
+
+### ED-42 — The two-ledger rule (issues vs expenditures)
+
+Pass 2 landed both train-side and battery-side ammunition figures:
+Gillett's Artillery Reserve ordnance annex (19,189 rounds ISSUED, 4,694
+on hand, 70 wagons displaced on the morning of the 3d) and nine
+battery/battalion EXPENDITURE returns.
+
+**Canonical choice:** issues and expenditures are distinct evidence
+classes and are never conflated. EC5 rounds→duration derivations
+(rounds expended ÷ rate of fire) cite battery-side expenditure returns
+ONLY; train-side issue figures serve as upper-bound corroboration and
+supply-side context (e.g. the physical substance behind Hunt's economy
+order, CA-J3A-4). A unit's dossier may carry both, labeled by ledger.
+**Rationale:** an issue figure includes rounds still in chests, lost,
+or transferred; deriving a firing duration from it inflates the window
+— the error class the spec's EC5 method exists to avoid.
+
+### ED-43 — Tablet casualty lines are day-scoped until corroborated
+
+Pass 2 caught the War Department tablets mis-scoping casualty lines in
+BOTH directions: Pegram's tablet prints the July 3 row (47) where it
+reads as the battle total (the report's battle total is larger), while
+Cooper's Hancock-Avenue tablet prints the battle total under a
+July-3-only heading.
+
+**Canonical choice:** a corollary to ED-39 §1 — a tablet casualty
+figure is adopted ONLY when its scope (which day(s), which engagement)
+is corroborated by an OR return or the unit's own report; otherwise it
+is carried as a scope-unresolved reading. **Rationale:** two
+independent counterexamples in one pass establish that tablet casualty
+scope is unreliable as a class; the tablets remain excellent for
+armament, structure, and movement statements (ED-39 stands).
+
+### ED-44 — Attested-silence rendering rule
+
+Units with first-class silence or partial-participation records —
+Garnett's battalion ("did not fire a single shot, having received
+orders to that effect"; the smoothbores "bore no part in these
+actions"), and the Ewell-wing partials per ED-45 — have their silence
+as EVIDENCE, not absence of evidence.
+
+**Canonical choice:** such units must render **present-but-not-firing**
+through the attested window — deployed, under fire where attested,
+muzzles cold. The authoring-side counterpart of ED-34: silence with a
+primary citation is an activity state, never a rendering omission, and
+never smoothed into ambient "firing" for visual effect. **Rationale:**
+every cannonade gun-count claim now has a documented subtraction ledger
+(pass-2 finding); rendering silent battalions as firing would falsify
+the very records that closed that ledger.
+
+### ED-45 — Retire the "Ewell-wing silence" phrasing; adopt the four-class breakdown
+
+Pass 1 carried the Second Corps artillery as "near-silent" during the
+July 3 cannonade. Brown's corps report (or-27-2-jtbrown) documents a
+structured reality: Dance's battalion ENGAGED; portions of Carter's and
+Nelson's battalions PORTION-ENGAGED (diversionary fire); Jones's
+battalion OFF-FIELD (with the cavalry); Latimer's battalion
+WRECKED-PRIOR (July 2, Benner's Hill).
+
+**Canonical choice:** the wing is described and rendered by the
+four-class breakdown — engaged / portion-engaged / off-field /
+wrecked-prior — and the phrase "Ewell-wing silence" is retired from
+audit prose (historical uses in committed pass reports stand as
+records). Each battalion row carries its own class; ED-44 governs the
+rendering of the non-firing classes. **Rationale:** the corrected
+record is primary and battalion-grained; keeping the blanket phrase
+would misdescribe Dance's documented participation.
+
+---
+
 ## Connective-reconstruction rules (named inference rules)
 
 Segments cite these rules by name in `inferenceRules`. A segment with no
