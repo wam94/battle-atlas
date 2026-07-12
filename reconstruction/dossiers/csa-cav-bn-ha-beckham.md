@@ -27,6 +27,24 @@ East Cavalry Field as a body.
 - **NOT one position.** The battalion's own marker states its
   batteries were distributed, not massed (below, EC1/EC4) — the
   "position" fact IS the distribution table, not a single point.
+- **PASS-13 SHEET-CROP PATCH (ED-73 class), the pass's best single
+  upgrade to this dossier:** sheet `ecf-j3-pm` draws "McGREGOR" at
+  local (10,186, 7,207) and, immediately adjacent, "BREATHED" at local
+  (10,090, 7,099) — BOTH batteries drawn in position on Cress Ridge
+  near the Confederate brigade blocks, ~110 m apart. This UPGRADES the
+  Conflicts §1 "possibly Breathed's" hedge to a drawn, sheet-cited
+  confirmation: TWO of the battalion's six batteries (not one) are
+  positively placed at East Cavalry Field by this pass's evidence,
+  matching the marker's own distribution note (Breathed's "with
+  Brig. General W. H. F. Lee's Brigade" = Chambliss's command).
+  A THIRD, unresolved feature — "Section of GREEN'S BATY" — is drawn
+  at local (10,321, 7,300) on `ecf-j3-mid` and (10,324, 7,377) on
+  `ecf-j3-pm`, positioned east of McGregor's/Breathed's, between the
+  Hampton and Fitzhugh Lee brigade blocks; **no battery named "Green"
+  exists in the battalion's six-battery roster or any fetched OOB
+  source** — recorded as an open identification question (possibly a
+  Bachelder mislabeling of Griffin's, or a genuinely undocumented
+  attachment), not resolved this pass. Radius ~77 m.
 
 ## EC4 — Movement legs
 
@@ -72,16 +90,17 @@ East Cavalry Field as a body.
 ## Conflicts & negative evidence
 
 1. **The battalion was NOT a single East-Cavalry-Field unit.** Of six
-   batteries, at most TWO (McGregor's with Hampton, and possibly
-   Breathed's with Chambliss/W.H.F. Lee's brigade) were actually
-   positioned to fight at Rummel farm; Chew's was off with Jones's
-   brigade (itself off-field per the standing ED-66-precondition
-   record), Griffin's was detached to infantry-corps service, Hart's
-   was guarding trains, and Moorman's has no report at all. This
-   pass's EC5 distribution table is the corrective to any
+   batteries, TWO (McGregor's with Hampton, and Breathed's with
+   Chambliss/W.H.F. Lee's brigade — CONFIRMED by the pass-13 sheet
+   crop, EC3) were actually positioned to fight at Rummel farm; Chew's
+   was off with Jones's brigade (itself off-field per the standing
+   ED-66-precondition record), Griffin's was detached to
+   infantry-corps service, Hart's was guarding trains, and Moorman's
+   has no report at all. This pass's EC5 distribution table plus the
+   pass-13 drawn confirmation is the corrective to any
    undifferentiated "Stuart's horse artillery duels at the Angle of
    East Cavalry Field" rendering — the honest picture is TWO batteries
-   present, at most, with four elsewhere.
+   confirmed present, with four elsewhere.
 2. Beckham's own OR report (No. 588, OR 27/2 pp. 772-773) was fetched
    this pass at the page-772 boundary and found — like Chambliss's,
    the adjacent report — to open with June 1863 (Brandy Station)
@@ -91,15 +110,22 @@ East Cavalry Field as a body.
 
 ## Chain anchors substantiated
 
-- Frame context only for CA-ECF-2/3 (ED-72 candidate) — no
-  battery-grain anchor executor claimed this pass.
+- Frame context for CA-ECF-2/3 (ED-72 ADOPTED, pass 13) — McGregor's
+  and Breathed's drawn positions (EC3) are the battalion's first
+  battery-grain anchor evidence, though still short of a dedicated
+  battery dossier.
 
 ## ED candidates proposed
 
-- Feeds **ED-72 (candidate, this pass)**; the distribution table also
-  feeds the register triage (pass-12 report §4): five of six horse-
-  artillery batteries are OFF the East Cavalry Field ground and should
-  NOT be marked "needs-own-ECF-dossier" in the battery triage.
+- Fed **ED-72**, ADOPTED at the start of pass 13; the distribution
+  table also feeds the register triage (pass-12 report §4): five of
+  six horse-artillery batteries are OFF the East Cavalry Field ground
+  and should NOT be marked "needs-own-ECF-dossier" in the battery
+  triage. The pass-13 sheet crop upgrades Breathed's from "possibly"
+  to confirmed-present, without changing the triage disposition
+  (still inherited-coverage under this battalion dossier, not
+  individually dossiered).
+- Fed **ED-73**, ADOPTED at the start of pass 13.
 
 ## Source register
 
@@ -107,4 +133,7 @@ gettysburg-stonesentinels-stuart-horse-artillery (marker page,
 fetched 2026-07-12) · or-27-2-beckham (No. 588, pp. 772-773, fetched
 this pass; verified thin at the fetched boundary — see Conflicts) ·
 or-27-1-custer (p. 998, Battery M cross-reference) ·
-addressing-gettysburg-oob (B&M-repro hop) · or-27-oob.
+addressing-gettysburg-oob (B&M-repro hop) · bachelder-12441-sheets
+(PASS 13: `ecf-j3-mid`/`ecf-j3-pm`, sha256-verified, crop-read this
+pass — the McGregor/Breathed confirmation and the unidentified
+"Green's Battery" question) · or-27-oob.

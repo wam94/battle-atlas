@@ -33,9 +33,16 @@ primary, an ED-39-§3-class conflict).
    gettysburg.stonesentinels.com, "1st Brigade, 3rd Division, Cavalry
    Corps," fetched this pass) — this ground is on-map (south of Big
    Round Top, within the main heightmap square, unlike East Cavalry
-   Field), so no ±75 m ECF-class caveat applies here; no dedicated
-   spatial exercise was run this pass either way (EC3 honesty, §4).
-2. **The charge ground**: "through woods and across stone walls" (both
+   Field), so no ±75 m ECF-class caveat applies here.
+2. **PASS-13 EC3 HONESTY NOTE:** the sheet-crop exercise this pass
+   was scoped to the Bachelder 12441 (East Cavalry Field) set only
+   (per the task's own scope discipline); South Cavalry Field's
+   sheets (`12440022`/`12440023`, main-field, manifest ids
+   `j3-03`/`j3-04`) were NOT fetched this pass — still no dedicated
+   spatial exercise for this dossier. Recorded as a standing gap for
+   pass 14 (see `anchor-chain-proposal.md` §2.6.1's closing note),
+   not silently carried forward as "done."
+3. **The charge ground**: "through woods and across stone walls" (both
    the 3rd Division and 1st Brigade tablets agree on this terrain
    class) against "superior forces of Confederate infantry and
    artillery" — the charge crossed terrain held by INFANTRY (Law's and
@@ -116,20 +123,29 @@ primary, an ED-39-§3-class conflict).
 
 ## Chain anchors substantiated
 
-- **CA-SCF-1 (ED-72 candidate)**: ~13:00 arrival/movement onto South
-  Cavalry Field.
-- **CA-SCF-2 (ED-72 candidate)**: ~17:30 the charge and Farnsworth's
-  death — the theater's strongest tablet-class agreement (three
-  independent markers).
+- **CA-SCF-1 (ED-72 ADOPTED, pass 13)**: ~13:00 arrival/movement onto
+  South Cavalry Field.
+- **CA-SCF-2 (ED-72 ADOPTED, pass 13)**: ~17:30 the charge and
+  Farnsworth's death — the theater's strongest tablet-class agreement
+  (three independent markers).
 
 ## ED candidates proposed
 
-- Feeds **ED-72 (candidate, this pass)**.
-- Feeds **ED-73 (candidate, this pass)** — the marker-provenance note
-  applies equally to Union GNMP-era interpretive markers, though the
-  Union side ALSO has the classic War Department tablet class (ED-39)
-  layered in; this pass did not disentangle which fetched pages are
-  which class (flagged for pass-13).
+- Fed **ED-72**, ADOPTED at the start of pass 13. EC3's honesty note
+  (above) records that the SCF-side sheet crop remains undone.
+- Fed **ED-73**, ADOPTED at the start of pass 13. **PASS-13
+  DISENTANGLE (the pass-12 flag closed):** the two fetched
+  gettysburg.stonesentinels.com pages used by this dossier
+  ("1st Brigade, 3rd Division, Cavalry Corps" and "3rd Division,
+  Cavalry Corps") are Union GNMP War Department tablets (ED-39 class)
+  — Union brigade/division markers on this site consistently carry
+  the tablet numbering and casualty-table format the CSA
+  "confederate-headquarters" pages (ED-73 class) lack; no erection-
+  date text was found on either page this pass either, so the
+  distinction rests on the site's own URL-path/template convention
+  (`/union-monuments/...` vs `/confederate-headquarters/...`), not a
+  directly read adjudication date — a real but page-format-level
+  basis, recorded as such rather than overclaimed.
 
 ## Source register
 

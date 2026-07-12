@@ -38,6 +38,19 @@ of legend (not separately clocked this pass — see Conflicts).
 2. **The Rummel farm ground**, same ±75 m ECF georeference class as
    McIntosh's dossier (EC3.1) — no separate tie point authored for
    Custer's brigade this pass; the frame is shared with the division.
+3. **PASS-13 SHEET-CROP PATCH (ED-73 class):** sheet `ecf-j3-mid`
+   draws "CUSTER'S BRIG. 2' Brig. 3' Div." at local (9,570, 5,333),
+   with the 5th/6th/7th/1st Michigan regiments drawn as separate
+   sub-blocks stretching south along the Low Dutch Road (6th MI:
+   "all day"). The `ecf-j3-am` sheet (4–11 a.m.) draws "9 A.M.–12 M.
+   6th MICH. CAPT. WEBBER Two companies" (local 10,451, 7,533) and a
+   "Skirmish Line CAPT. MAXWELL 1' MICH." running south toward local
+   (10,267, 6,437) — a picket/skirmish presence pushed well forward of
+   the brigade's main block BEFORE the ~14:00 CA-ECF-2 engagement,
+   read for the first time this pass. Radius ~77 m (sheet
+   `estAbsUncertaintyM`); Pennington's battery (Battery M, 2nd US) is
+   drawn immediately south of Custer's block at local (10,072, 5,237)
+   — see `us-ha-1-4-pennington.md`.
 
 ## EC4 — Movement legs
 
@@ -127,18 +140,17 @@ of legend (not separately clocked this pass — see Conflicts).
 
 ## Chain anchors substantiated
 
-- **CA-ECF-2 (ED-72 candidate)**: the ~14:00 engagement trigger,
+- **CA-ECF-2 (ED-72 ADOPTED, pass 13)**: the ~14:00 engagement trigger,
   co-executed with McIntosh's brigade; ALSO the Gregg-retains-Custer
   command decision (a distinct, unclocked fact worth its own note in
   any future chain revision).
-- **CA-ECF-3 (ED-72 candidate)**: the ~15:00 mounted charge/repulse,
-  co-executed with McIntosh's brigade.
+- **CA-ECF-3 (ED-72 ADOPTED, pass 13)**: the ~15:00 mounted
+  charge/repulse, co-executed with McIntosh's brigade.
 
 ## ED candidates proposed
 
-- Feeds **ED-72 (candidate, this pass)**; see
-  `docs/reconstruction/audit/dossier-pass-12.md` §3. Nothing
-  self-adopted.
+- Fed **ED-72**, ADOPTED at the start of pass 13; this dossier's EC3
+  gained the pass-13 sheet-crop patch above. Nothing new proposed.
 
 ## Source register
 
@@ -149,4 +161,5 @@ or-27-1-gregg-dmm (No. 344, p. 957, fetched this pass) ·
 or-27-1-union-return (p. 958, the July-3-only Custer-brigade killed
 row, fetched this pass) · gettysburg-stonesentinels-2bde3div-cav
 (marker page, fetched 2026-07-12) · addressing-gettysburg-oob
-(B&M-repro hop) · or-27-oob.
+(B&M-repro hop) · bachelder-12441-sheets (PASS 13: `ecf-j3-am`/
+`ecf-j3-mid`, sha256-verified, crop-read this pass) · or-27-oob.

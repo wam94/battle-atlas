@@ -38,6 +38,23 @@ again (present, minimal fire, cited).
 2. **July 3, the Baltimore Pike / reserve** [D]: the brigade was held
    at or near the Baltimore Pike through the day's main action,
    per the same secondary survey.
+3. **PASS-13 SHEET-CROP CHECK (negative result, recorded):** the
+   brigade does NOT appear at brigade-block grain on any of the five
+   fetched East Cavalry Field sheets (`ecf-base`/`ecf-j2`/`ecf-j3-am`/
+   `ecf-j3-mid`/`ecf-j3-pm`) — consistent with, and a small positive
+   confirmation of, the reserve/Baltimore-Pike framing above (an
+   honest negative from the crop exercise, not a missed read; see
+   `anchor-chain-proposal.md` §2.6.1).
+4. **PASS-13 RE-FETCH (upgrade from web-research to fetch-verified):**
+   the "2nd Division, Cavalry Corps" headquarters page
+   (gettysburg.stonesentinels.com, fetch-verified 2026-07-13, where
+   pass 12's direct "3rd Brigade" page URL 404'd) confirms the July 2
+   Brinkerhoff's Ridge narrative independently: "connecting with the
+   infantry pickets… a sharp skirmish with the 2d Virginia
+   Infantry… taking and holding Brinkerhoff Ridge… withdrew eastward
+   and bivouacked for the night on the Baltimore Pike a mile East of
+   Rock Creek Bridge" — verbatim match to pass 12's web-research
+   paraphrase, now traced to the tablet page itself.
 
 ## EC4 — Movement legs
 
@@ -63,30 +80,44 @@ again (present, minimal fire, cited).
   fetched from the tablet page itself — flagged for pass-13
   re-verification). The lightest of the theater's engaged-adjacent
   units by a wide margin, consistent with the reserve posture.
+- **PASS-13 CROSS-CHECK FINDING:** the "2nd Division, Cavalry Corps"
+  tablet (fetch-verified this pass) gives a division-aggregate total
+  of **56** (not broken out by brigade on that page). McIntosh's
+  brigade tablet total is 35 (`us-cav-2-1-mcintosh.md` EC6) and this
+  brigade's 21 SUMS EXACTLY to 56 — an independent digit-exact
+  cross-check between the division tablet and the sum of its two
+  fetched brigade tablets (2nd Division = McIntosh's 1st Brigade + J.
+  I. Gregg's 3rd Brigade; Custer's brigade belongs to the 3rd Division
+  and is excluded from this division total, consistent with its own,
+  separately tracked casualty figures).
 
 ## Conflicts & negative evidence
 
-1. **This entire dossier's EC3/EC5/EC6 rest on web-research summaries
-   of the division tablet, not on a directly fetched primary or
-   tablet page this pass.** Recorded honestly as the pass's thinnest
-   sourcing tier among the new cavalry dossiers — a pass-13 fetch
-   target (`gettysburg.stonesentinels.com`'s 2nd/3rd Brigade page
-   404'd on this pass's direct fetch attempt; a working URL was not
-   located before the pass's research window closed).
+1. **PASS-13 UPDATE:** this dossier's EC3/EC5 July-2 narrative was
+   fetch-verified this pass via the "2nd Division, Cavalry Corps"
+   headquarters page — the pass-12 web-research paraphrase is now
+   traced to a tablet page. The dedicated "3rd Brigade" tablet page
+   still 404s (re-confirmed this pass); the July 3 activity record
+   and the per-brigade casualty breakdown remain division-tablet-level
+   only (no 3rd-Brigade-specific tablet page located), and EC6's
+   6/12/3/21 figure is still carried at attributed grade pending a
+   working brigade-page URL — but the digit-exact division-total
+   cross-check (EC6, above) is independent corroboration of the same
+   number from a different direction.
 2. J. Irvin Gregg's own OR report (No. 355, OR 27/1 pp. 974-979) was
    identified via the civilwarcycling.com index but NOT fetched this
    pass — a standing gap.
 
 ## Chain anchors substantiated
 
-- None claimed this pass — the brigade is context for CA-ECF-1/2/3
-  (ED-72 candidate) as the division's reserve, not an executor of any
-  proposed anchor.
+- None claimed — the brigade is context for CA-ECF-1/2/3 (ED-72,
+  ADOPTED pass 13) as the division's reserve, not an executor of any
+  chain anchor. The pass-13 sheet-crop exercise's negative result
+  (EC3.3) is additional context, not a new anchor.
 
 ## ED candidates proposed
 
-- None. Feeds the pass-12 report's honesty ledger (§4) as the
-  weakest-sourced new dossier.
+- None. Fed ED-72 as context only (division reserve).
 
 ## Source register
 
@@ -94,4 +125,9 @@ civilwarcycling-oob-index-1 (report No. 355 identified, page range
 974-979, NOT fetched this pass) · web research (attributed grade
 only, division-tablet paraphrase, accessed 2026-07-12 — NOT a cited
 primary; every fact above using it is marked [D]/attributed) ·
-addressing-gettysburg-oob (B&M-repro hop) · or-27-oob.
+gettysburg-stonesentinels-2div-cav-hq (PASS 13: "2nd Division, Cavalry
+Corps" headquarters tablet page, fetch-verified 2026-07-13 — upgrades
+the July 2 narrative and the division-total cross-check from
+web-research to fetch-verified) · addressing-gettysburg-oob (B&M-repro
+hop) · bachelder-12441-sheets (PASS 13: all five ECF sheets checked,
+negative result) · or-27-oob.

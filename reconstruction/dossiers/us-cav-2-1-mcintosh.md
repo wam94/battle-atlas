@@ -40,9 +40,22 @@ executor (ED-72 candidate).
    solve, Hanover×Low Dutch + Rummel farm centroid, local coords
    (10048.3, 6822.0); East Cavalry Field sits off the main heightmap
    square, `reconstruction/spatial/bachelder-manifest.json` id
-   `ecf-base`). No sheet-crop exercise was run this pass (see EC3
-   honesty, pass-12 report §4) — the geometry basis is the tie point
-   and the tablet text, not a drawn-bar read.
+   `ecf-base`).
+2. **PASS-13 SHEET-CROP PATCH (ED-73 class):** sheet `ecf-j3-mid`
+   (11 a.m.–2 p.m.) draws "McINTOSH BRIGADE 1' BRIG. 2' DIV." at local
+   (10,809, 5,419) — a full ~1,400 m EAST of the Rummel farm tie point,
+   NOT overlapping Jenkins's/Hampton's ground on the same sheet. Two
+   named sub-blocks carry their OWN drawn clock range: "1' MD… 1 to
+   1.30" and "1' PA… (Anthony Howard) 1 to 1.45 PM" — both narrower
+   than, and sitting inside, the tablet-adopted CA-ECF-2 envelope
+   (13:30–14:45). Read via `crop_sheet.py`/`georef_maps.py`, radius
+   ~77 m (sheet `estAbsUncertaintyM`). This is the first drawn-bar read
+   for this dossier (pass 12 flagged none was run); it corrects the
+   working mental picture from "co-located with Custer at Rummel farm"
+   to "a separate, more easterly sector astride the Low Dutch/Hanover
+   Road crossing," with Custer's brigade block ~1,240 m to the west
+   (local 9,570, 5,333) — the two brigades are drawn as ADJACENT
+   sectors of one line, not stacked on the same ground.
 2. **The dismounted skirmish advance** [D]: the brigade's carbine line
    pushed toward the Rummel farm buildings and the fence lines ahead
    of the woods on Cress Ridge (Stuart's division tablet: "a ridge
@@ -115,20 +128,20 @@ executor (ED-72 candidate).
 
 ## Chain anchors substantiated
 
-- **CA-ECF-2 (ED-72 candidate, proposed this pass)**: the ~14:00
+- **CA-ECF-2 (ED-72 ADOPTED, pass 13)**: the ~14:00
   general-engagement trigger — McIntosh's and Custer's tablets agree
   independently on the ~2 P.M. hour for the recall/engagement.
-- **CA-ECF-3 (ED-72 candidate)**: the ~15:00 mounted charge and
+- **CA-ECF-3 (ED-72 ADOPTED, pass 13)**: the ~15:00 mounted charge and
   repulse — McIntosh's tablet is the fullest single-source account
   (Stallsmith Farm concealment; artillery-aided repulse), agreeing
   with the 2nd Division tablet's independent ~3 P.M. reading.
 
 ## ED candidates proposed
 
-- Feeds **ED-72 (candidate, this pass)** — the East Cavalry Field /
-  South Cavalry Field cavalry-theater chain; see
-  `docs/reconstruction/audit/dossier-pass-12.md` §3. Nothing
-  self-adopted.
+- Fed **ED-72**, ADOPTED at the start of pass 13 (see
+  `docs/reconstruction/angle-editorial-decisions.md` §"Dossier pass 12
+  adoption rulings"); this dossier's EC3 gained the pass-13 sheet-crop
+  patch above. Nothing new proposed this pass.
 
 ## Source register
 
@@ -141,4 +154,6 @@ gettysburg-stonesentinels-1bde2div-cav (marker page, "1st Brigade,
 gettysburg-stonesentinels-2div-cav (marker page, "2nd Division,
 Cavalry Corps," fetched 2026-07-12) · addressing-gettysburg-oob
 (B&M-repro hop, per-regiment table) · reconstruction/spatial/
-bachelder-manifest.json (`ecf-base` tie point) · or-27-oob.
+bachelder-manifest.json (`ecf-base` tie point) · bachelder-12441-sheets
+(PASS 13: `ecf-j3-am`/`ecf-j3-mid`/`ecf-j3-pm`, sha256-verified,
+crop-read this pass) · or-27-oob.
