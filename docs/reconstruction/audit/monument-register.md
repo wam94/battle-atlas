@@ -8,7 +8,27 @@ profile below is **ED-39** (renumbered from this branch's provisional
 
 ## What was built
 
-51 marker entries for the July 3 afternoon assault sector: the full
+**Extended 2026-07-11 (dossier pass 6): +40 southern-field entries
+(91 total).** The July 2 southern field: Caldwell's four brigade
+tablets + the Wheatfield monument cluster (5th NH, Irish Brigade, 4th
+MI, 17th ME, 124th NY, Zook statue), de Trobriand/Ward/Tilton/Sweitzer
+brigade tablets, Smith's 4th NY two-position pair (Devil's Den + the
+Plum Run rear section), the four CSA en-echelon brigade tablets
+(Semmes/Wofford/G.T. Anderson/Benning, W/S Confederate Ave —
+formation-line semantics, never battle positions) + the
+Semmes-mw/Anderson-w/Benning/Robertson/Law advance-and-wounding
+markers, the Little Round Top summit cluster (Vincent-mw, Weed+Hazlett,
+140th NY, 20th ME, 44th NY, 16th MI, 83rd PA, 91st PA, 146th NY,
+155th PA, both brigade tablets — the pass-5 officer pins now have
+±5–15 m document-fixed check points per ED-39 §5), and the 1st
+Minnesota pair + Willard-KIA marker. **Channel note:** Stone Sentinels
+brigade-tablet pages still print DMS text; its regiment/monument pages
+served no machine-readable coordinates through the 2026-07-11 channel,
+so those entries carry OSM (ODbL) as PRIMARY coordinates — a recorded
+deviation (per-entry notes; SS-vs-OSM deltas where both exist run
+1–27 m, two flagged >50 m).
+
+The original build — 51 marker entries for the July 3 afternoon assault sector: the full
 II Corps front (Webb, Hall, Harrow, Smyth, Willard/Sherrill brigades),
 Hazard's five batteries + Cowan, Stannard's brigade, the 8th Ohio, the
 Confederate state memorials on the Seminary Ridge start line, the

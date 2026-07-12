@@ -175,7 +175,7 @@ claim the same three guns) is carried on both dossiers unresolved;
 Vincent's July 3 at the CENTER (not LRT) is a placement-rule candidate
 (ED-54) because the primary contradicts any static-hill rendering.
 
-## 5. New ED candidates (proposed, NOT adopted)
+## 5. New ED candidates (proposed by this pass; ADOPTED 2026-07-11 as ED-53…ED-55 in the pass-6 batch ruling, angle-editorial-decisions.md — ED-53 executed as the CA-J2A-2/3 chain revision)
 
 - **ED-53 — CA-J2A-2/3 revision (the July 2 artillery opening and
   Hood's step-off).** Adopt: artillery opening ~15:45-16:20 as a

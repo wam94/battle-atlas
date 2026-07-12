@@ -15,9 +15,10 @@ Citations are `(source-id, locator)`; source ids resolve in
 `reconstruction/sources/sources.json`. Facts with **no tier bracket are
 untimed** (identity, strength, materiel). Negative evidence and conflicts are
 first-class and live in their own section. New editorial calls are PROPOSED
-as ED candidates (ED-53+ as of pass 5 — the pass-1 candidates ED-32…ED-38,
+as ED candidates (ED-56+ as of pass 6 — the pass-1 candidates ED-32…ED-38,
 the monument profile ED-39, the pass-2 candidates ED-40…ED-45, the
-pass-3 candidates ED-46…ED-49, and the pass-4 candidates ED-50…ED-52
+pass-3 candidates ED-46…ED-49, the pass-4 candidates ED-50…ED-52, and
+the pass-5 candidates ED-53…ED-55 (incl. the CA-J2A-2/3 chain revision)
 were all adopted 2026-07-11), never self-adopted.
 
 ## Fixed heading schema
@@ -192,3 +193,43 @@ reg-csa-2c-arty-cmd, reg-us-ii-hq, reg-us-ii-2-hq, reg-us-ii-3-hq,
 reg-us-i-3-hq) with overlay entries.
 
 Companion: `docs/reconstruction/audit/dossier-pass-5.md`.
+
+## Pass 6 — the Wheatfield middle + the CSA en-echelon ladder's completion
+
+The July 2 southern field's executor mass finished per pass 5 §9:
+the Wheatfield's multi-occupation sequence treated as THE test of the
+conflict-record discipline (five occupation waves, each both-sided —
+pass-6 report §3), the Smith's-guns cross-credit closed both-sided
+(ED-56 candidate), and the CA-J2A-10 legs. Batch adoption of
+ED-53…ED-55 executed at pass start — **ED-53 is the audit's first
+CHAIN REVISION** (CA-J2A-3 → ~16:30 [16:15–17:00]; CA-J2A-2 two-pole;
+downstream anchors confirmed; anchor-chain table revised in place).
+Headline evidence classes: three report=return exact agreements
+(Cross 330, de Trobriand 490, and the tablet=return pair Semmes 430 /
+Anderson 671), the two-sided 90-minute duration agreement on Houck's
+Ridge, and the field-wide report-clock early skew (ED-58 candidate).
+Monument register extended +40 southern-field entries (91 total).
+
+| Dossier | Register id | Arc role | Achieved T |
+|---|---|---|---|
+| [us-ii-1-1-cross.md](us-ii-1-1-cross.md) | reg-us-ii-1-1 | wave-3 lead; Cross mw; 330=330 exact | T4 full-arc |
+| [us-ii-1-2-kelly.md](us-ii-1-2-kelly.md) | reg-us-ii-1-2 | stony-hill prong; 530-primary; named-opponent tablet | T4 full-arc |
+| [us-ii-1-3-zook.md](us-ii-1-3-zook.md) | reg-us-ii-1-3 | right prong; Zook mw; the 140th-PA shape | T4 full-arc |
+| [us-ii-1-4-brooke.md](us-ii-1-4-brooke.md) | reg-us-ii-1-4 | the farthest advance (Rose ravine); wave-4 victim | T4 full-arc |
+| [us-iii-1-3-detrobriand.md](us-iii-1-3-detrobriand.md) | reg-us-iii-1-3 | wave-1 garrison; 490=490 exact; the ED-59 accusation | T4 full-arc |
+| [us-iii-1-2-ward.md](us-iii-1-2-ward.md) | reg-us-iii-1-2 | Houck's Ridge defense; two-sided 90-min agreement | T4 full-arc |
+| [us-btty-smith.md](us-btty-smith.md) | reg-us-iii-b3 | the guns cross-credit closed; 140-round return | T4 |
+| [us-v-1-1-tilton.md](us-v-1-1-tilton.md) | reg-us-v-1-1 | stony-hill wave 2; the ED-59 subject | T4 full-arc |
+| [us-v-1-2-sweitzer.md](us-v-1-2-sweitzer.md) | reg-us-v-1-2 | twice-committed; the fence crisis (Jeffords pin) | T4 full-arc |
+| [csa-1c-mcl-2-semmes.md](csa-1c-mcl-2-semmes.md) | reg-csa-1c-mcl-2 | ladder step 3 second echelon; Semmes mw; 430=430 | T4 full-arc |
+| [csa-1c-mcl-4-wofford.md](csa-1c-mcl-4-wofford.md) | reg-csa-1c-mcl-4 | the wave-4 road sweep; sunset-pinned recall | T3 full-arc |
+| [csa-1c-hood-3-anderson.md](csa-1c-hood-3-anderson.md) | reg-csa-1c-hood-3 | wave-1 opener; three-advance structure; 671=671 | T4 full-arc |
+| [csa-1c-hood-4-benning.md](csa-1c-hood-4-benning.md) | reg-csa-1c-hood-4 | Devil's Den taker-and-holder; the third gun claimant | T4 full-arc |
+
+Pass-6 upgrades to existing dossiers: csa-3c-and-1-wilcox.md
+(**July 2 arc extended backward** — the CA-J2A-10 executor leg, the
+thirty-minute stand, the 1st-MN receiving side), us-ii-2-1-harrow.md
+(**the 1st Minnesota moment both-sided at regiment grain** — Coates
+primary + Wilcox p. 618 + the j2-04 drawn pair).
+
+Companion: `docs/reconstruction/audit/dossier-pass-6.md`.
