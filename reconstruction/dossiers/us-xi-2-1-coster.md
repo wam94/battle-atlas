@@ -1,6 +1,6 @@
 # Dossier: Coster's Brigade, 2nd Division, XI Corps (reg-us-xi-2-1)
 
-Pass 11 (residual sweep) · Cast status: not-yet-cast · Achieved
+Pass 11 (residual sweep) · Cast status: in-build · Achieved
 T-level: **T2 (honestly thin; the brickyard fight itself T3 via the
 both-sided record)** · 2026-07-12
 

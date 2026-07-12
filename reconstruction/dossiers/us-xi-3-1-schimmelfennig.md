@@ -1,6 +1,6 @@
 # Dossier: Schimmelfennig's Brigade (von Amsberg), 3rd Division, XI Corps (reg-us-xi-3-1)
 
-Pass 11 (residual sweep) · Cast status: not-yet-cast · Achieved
+Pass 11 (residual sweep) · Cast status: in-build · Achieved
 T-level: **T3 (July 1 grain; full arc T2)** · 2026-07-12
 
 Chain role: the XI Corps' left-most brigade north of town — the seam

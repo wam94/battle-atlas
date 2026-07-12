@@ -1,6 +1,6 @@
 # Dossier: Baxter's Brigade, 2nd Division, I Corps (reg-us-i-2-2)
 
-Pass 11 (residual sweep) · Cast status: not-yet-cast · Achieved
+Pass 11 (residual sweep) · Cast status: in-build · Achieved
 T-level: **T4 (July 1 grain; full arc T3)** · 2026-07-12
 
 Chain role: **the Oak Ridge receiving line** — the Union half of the

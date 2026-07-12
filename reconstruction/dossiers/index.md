@@ -434,3 +434,44 @@ conflict pair; the 8 a.m. wave-2 receiving clock),
 csa-2c-joh-1/-2/-3/-4 (EC2 tablet hops).
 
 Companion: `docs/reconstruction/audit/dossier-pass-10.md`.
+
+## Pass 11 — the residual sweep (toward full executor coverage)
+
+Pass-10's recommendation executed: the July 1 residual brigades at
+judgment grain, the cheap cell re-reads banked across passes, the CSA
+EC2 systematic sweep (one B&M-class pass + THE RODES JUNE-30 DIVISION
+RETURN, OR 27/2 p. 564 — the only division-grain CSA strength return
+printed in the volume's reports run), and the command records folded
+in where chain-relevant (Hill No. 534, Ewell No. 467). The pass-10
+candidates ED-66…ED-68 + the ED-65 addendum were batch-adopted at
+pass open. The cavalry theater was assessed and DEFERRED to pass 12
+(capacity honesty; the recommendation stands in the pass report).
+
+| Dossier | Register id | Role | Achieved T |
+|---|---|---|---|
+| [csa-2c-rod-3-doles.md](csa-2c-rod-3-doles.md) | reg-csa-2c-rod-3 (csa-doles) | strength primary 1,369; the friendly-fire appendix; report=return EXACT 179; the 157th NY both-sided | T4 full-arc |
+| [us-i-2-2-baxter.md](us-i-2-2-baxter.md) | reg-us-i-2-2 (us-baxter) | CA-J1P-2's Union receiving executor — the surrender mass at the direct echelon; Coulter's 12:30 pin | T4 (July 1 grain) |
+| [us-i-2-1-paul.md](us-i-2-1-paul.md) | reg-us-i-2-1 (us-coulter) | the five-commander cascade; the 16th Maine sacrifice order verbatim; THE DAY-SPLIT TABLE 776/28/14/3 | T3 (July 1 grain) |
+| [csa-3c-pen-1-perrin.md](csa-3c-pen-1-perrin.md) | reg-csa-3c-pen-1 (csa-perrin) | THE CA-J1P-5 EXECUTOR — after-4:00 assault clock vs the receiving cluster (ED-70 candidate) | T4 (July 1 grain) |
+| [us-xi-3-1-schimmelfennig.md](us-xi-3-1-schimmelfennig.md) | reg-us-xi-3-1 (us-vonamsberg) | the command cascade up; the alley-trap town leg; p. 183 rows digit-exact 807 | T3 (July 1 grain) |
+| [us-xi-3-2-krzyzanowski.md](us-xi-3-2-krzyzanowski.md) | reg-us-xi-3-2 (us-krzyzanowski) | the knoll seam's Union center; 82nd OH 312-PFD primary, report=return 181 EXACT | T3 (July 1 grain) |
+| [us-xi-2-1-coster.md](us-xi-2-1-coster.md) | reg-us-xi-2-1 (us-coster) | the brickyard; no-report class (the third XI Corps case), both-sided via Hays/Avery | T2 (honestly thin) |
+
+Pass-11 upgrades to existing dossiers: us-i-3-1-biddle.md (**T3 →
+T4 July 1 grain** — the 1,287/897/390 next-day primary),
+us-i-3-2-stone.md (Roy Stone's report in full — the 11:00 / 12–1
+Oak Hill / **1.30 grand-advance** clock ladder → ED-69 candidate),
+csa-3c-pen-4-lowrance.md (Scales's July 1 narrative — the 75-yard
+halt, the ten-minutes pin), us-xi-1-2-harris.md (**the structured
+Barlow-Gordon record** — contemporary layer adopted, the 1903
+memoir NO status), us-cav-1-1-gamble.md (the afternoon stand's CSA
+half CLOSED via Lane + Perrin), csa-2c-rod-2-iverson.md (EC2 closed
+at return grade 1,464; the wounded cell re-read → the
+printed-arithmetic conflict class, ED-71 candidate),
+csa-2c-ear-4-gordon.md (the 13th Ga row closed at arithmetic grade;
+the Guild second ledger), csa-2c-ear-3-avery.md (57th NC = 62,
+quadruple-arithmetic), us-v-2-3-weed.md (p. 180 re-read — the total
+row digit-exact), us-iii-1-3-detrobriand.md (the garbled clock
+resolved: "About 2 p. m." = the tablet pair).
+
+Companion: `docs/reconstruction/audit/dossier-pass-11.md`.

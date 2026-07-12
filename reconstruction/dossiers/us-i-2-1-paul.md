@@ -1,6 +1,6 @@
 # Dossier: Paul's Brigade, 2nd Division, I Corps (reg-us-i-2-1)
 
-Pass 11 (residual sweep) · Cast status: not-yet-cast · Achieved
+Pass 11 (residual sweep) · Cast status: in-build · Achieved
 T-level: **T3 (July 1 grain; full arc T2)** · 2026-07-12
 
 Chain role: the Oak Ridge relief brigade (the second wave of the

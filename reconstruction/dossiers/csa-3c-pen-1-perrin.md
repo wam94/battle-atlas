@@ -1,6 +1,6 @@
 # Dossier: Perrin's (McGowan's) Brigade, Pender's Division (reg-csa-3c-pen-1)
 
-Pass 11 (residual sweep) · Cast status: not-yet-cast · Achieved
+Pass 11 (residual sweep) · Cast status: in-build · Achieved
 T-level: **T4 (July 1 grain; full arc T3)** · 2026-07-12
 
 Chain role: **the CA-J1P-5 executor** — the brigade whose assault

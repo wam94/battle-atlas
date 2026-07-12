@@ -1,6 +1,6 @@
 # Dossier: Doles's Brigade, Rodes's Division (reg-csa-2c-rod-3)
 
-Pass 11 (residual sweep) · Cast status: not-yet-cast · Achieved T-level:
+Pass 11 (residual sweep) · Cast status: in-build · Achieved T-level:
 **T4 (full arc)** · 2026-07-12
 
 Chain role: Rodes's left-flank brigade in the plain — the CA-J1P-1
