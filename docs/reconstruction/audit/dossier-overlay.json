@@ -1431,6 +1431,127 @@
       "EC6 casualty apportionment": "Return p. 183: 252/200/111/34 = 597 aggregate-exact (m column row-forced 313, noisy); the minutes-scale single-spike wreck second only to Iverson's",
       "Achieved T-level (audited)": "T2 (honestly thin; the fight T3 via the attackers)",
       "Notes": "Dossier: reconstruction/dossiers/us-xi-2-1-coster.md"
+    },
+    "reg-us-cav-2-1": {
+      "Class (attested-static / unauthored / authored-ok)": "unauthored",
+      "EC1 identity/command": "Col. John B. McIntosh throughout; no officer pin found this pass",
+      "EC2 engaged strength": "B&M-repro sum ~1,206 (a roster ambiguity — a '1st PA Cavalry 355' row — carried unresolved, not summed in); no report primary",
+      "EC3 position anchors": "[C tablet] Hanover Road right, the ECF ±75 m georef class (ecf-base tie point)",
+      "EC4 movement legs": "[C ~14:00] the Custer-recall trigger (McIntosh tablet = Custer tablet agreement)",
+      "EC5 activity record": "The general engagement ~14:00; the ~15:00 Hampton/Fitz Lee charge repulsed 'with the aid of Artillery' (Stallsmith Farm concealment detail)",
+      "EC6 casualty apportionment": "Tablet: W 7 off/19 men, CM 9 men, Total 35 (killed not on the fetched marker text — gap, not zero)",
+      "Achieved T-level (audited)": "T3 (ECF grain)",
+      "Notes": "Dossier: reconstruction/dossiers/us-cav-2-1-mcintosh.md; CA-ECF-2/3 (ED-72 candidate); McIntosh's own OR report verified post-battle-itinerary grade, not a battle narrative"
+    },
+    "reg-us-cav-2-3": {
+      "Class (attested-static / unauthored / authored-ok)": "unauthored",
+      "EC1 identity/command": "Col. J. Irvin Gregg throughout (D. McM. Gregg's cousin)",
+      "EC2 engaged strength": "B&M-repro sum 1,255 (agrees with an independently-surveyed 1,265, attributed grade)",
+      "EC3 position anchors": "[D] July 2 Brinkerhoff's Ridge (vs 2nd Va. Infantry); July 3 Baltimore Pike reserve — all attributed grade, not directly fetched this pass",
+      "EC4 movement legs": "Not authored this pass",
+      "EC5 activity record": "[D] July 2 skirmish; July 3 reserve with SOME casualties (ED-44 class)",
+      "EC6 casualty apportionment": "6 k / 12 w / 3 m = 21 (attributed grade, not independently fetched — pass-13 re-verification flagged)",
+      "Achieved T-level (audited)": "T2 (honestly thin)",
+      "Notes": "Dossier: reconstruction/dossiers/us-cav-2-3-jigregg.md; the pass's weakest-sourced new dossier (tablet page 404'd; own OR report identified, not fetched)"
+    },
+    "reg-us-cav-3-2": {
+      "Class (attested-static / unauthored / authored-ok)": "unauthored",
+      "EC1 identity/command": "Brig. Gen. George A. Custer throughout (first brigade command); Maj. Noah Ferry (5th Mich.) k per the report's own itinerary line",
+      "EC2 engaged strength": "B&M-repro sum 1,933; no report-stated brigade total (report is diary/itinerary form)",
+      "EC3 position anchors": "[C ~08:00] Two Taverns to the Hanover Road right (own tablet clock); the shared ECF ±75 m frame",
+      "EC4 movement legs": "[C ~08:00] the march; [C ~14:00] the Gregg-retains-Custer command decision overriding Kilpatrick's recall",
+      "EC5 activity record": "7th Michigan's charge checked ('but not successfully', Gregg's report) then the 1st Michigan's advance; Battery M/2nd US 'engaged all day'",
+      "EC6 casualty apportionment": "Tablet total 257 (K1/31, W13/134, CM 78) vs the July-3-ONLY return row '1 and 28 killed' — an ED-43-class day-scope conflict, not resolved",
+      "Achieved T-level (audited)": "T3 (ECF grain)",
+      "Notes": "Dossier: reconstruction/dossiers/us-cav-3-2-custer.md; CA-ECF-2/3 (ED-72 candidate); own OR report verified diary-form, thin"
+    },
+    "reg-csa-cav-ham": {
+      "Class (attested-static / unauthored / authored-ok)": "unauthored",
+      "EC1 identity/command": "Brig. Gen. Wade Hampton through his wounding; Col. L. S. Baker after — the theater's clearest CSA officer pin, unclocked",
+      "EC2 engaged strength": "B&M-repro 1,751 (brigade total, not itemized)",
+      "EC3 position anchors": "[C ~12:00, marker] Cress Ridge — one of FOUR independent CSA noon-arrival agreements (CA-ECF-1 candidate); July 2 Hunterstown contact",
+      "EC4 movement legs": "[D] the relief-and-melee: the 1st NC + Jeff Davis Legion advance, pinned, Hampton commits the brigade",
+      "EC5 activity record": "The hand-to-hand fight in which Hampton was 'severely wounded' (marker verbatim); wound-mechanism detail (saber cuts + shrapnel) carried at attributed grade only",
+      "EC6 casualty apportionment": "Marker: K17/W58/M16=91; no report-side figure (Hampton's own report not located this pass)",
+      "Achieved T-level (audited)": "T3 (ECF grain)",
+      "Notes": "Dossier: reconstruction/dossiers/csa-cav-ham-hampton.md; CA-ECF-1/3 (ED-72 candidate); the marker-provenance caveat (ED-73 candidate) applies"
+    },
+    "reg-csa-cav-fitz": {
+      "Class (attested-static / unauthored / authored-ok)": "unauthored",
+      "EC1 identity/command": "Brig. Gen. Fitzhugh Lee throughout; NEGATIVE: the 1st Md. Battalion detached with Ewell's corps, NOT present",
+      "EC2 engaged strength": "B&M-repro 1,913 (unclear if this already excludes the detached battalion)",
+      "EC3 position anchors": "[C ~12:00-13:00, marker] Cress Ridge woods, left of Hampton's brigade — one of four independent noon-arrival agreements",
+      "EC4 movement legs": "[C] march and deployment left of Hampton's; the charge leg itself not separately described",
+      "EC5 activity record": "'Participated actively in the conflict which ensued' (marker); co-credited with Hampton on the Union-side (McIntosh) tablet for the ~15:00 charge",
+      "EC6 casualty apportionment": "Marker: K5/W16/M29=50 — the lowest of the four engaged CSA brigades",
+      "Achieved T-level (audited)": "T3 (ECF grain)",
+      "Notes": "Dossier: reconstruction/dossiers/csa-cav-fitz-lee.md; CA-ECF-1/3 (ED-72 candidate); OR report index attributes pp.737-741 to Munford — an unresolved index mismap, pass-13 item"
+    },
+    "reg-csa-cav-chambliss": {
+      "Class (attested-static / unauthored / authored-ok)": "unauthored",
+      "EC1 identity/command": "Col. John R. Chambliss Jr. (W. H. F. Lee wounded at Brandy Station)",
+      "EC2 engaged strength": "B&M-repro 1,173 (brigade total)",
+      "EC3 position anchors": "[C ~12:00, marker] arrival — the third of four independent noon-arrival agreements",
+      "EC4 movement legs": "[D] the opening advance the theater's own account has Hampton's brigade relieving — attributed grade only, not report-verified",
+      "EC5 activity record": "'Took an active part in the fight until it ended' (marker); own OR report verified THIN for Gettysburg (both fetched pages read as Brandy Station content + a closing casualty transmittal)",
+      "EC6 casualty apportionment": "Marker: K8/W41/M25=74; no report-side figure",
+      "Achieved T-level (audited)": "T2 (honestly thin)",
+      "Notes": "Dossier: reconstruction/dossiers/csa-cav-chambliss.md; the pass's thinnest CSA-side OR-report coverage; CA-ECF-1 (ED-72 candidate)"
+    },
+    "reg-csa-cav-jenkins": {
+      "Class (attested-static / unauthored / authored-ok)": "unauthored",
+      "EC1 identity/command": "Brig. Gen. A. G. Jenkins w July 2 (approach march); Lt. Col. Vincent Witcher commanding at ECF",
+      "EC2 engaged strength": "B&M-repro '2 guns, 1,126 men' (the '2 guns' clause unresolved — brigade ordnance or an attached section)",
+      "EC3 position anchors": "[C ~12:00, marker] rejoined the division from Ewell's corps assignment — the fourth independent noon-arrival agreement; around/in front of the Rummel barn specifically",
+      "EC4 movement legs": "[C ~12:00] rejoining; [D] dismounting to fight on foot",
+      "EC5 activity record": "THE AMMUNITION NEGATIVE: Enfield rifles, ~10 rounds per man ('an oversight'), engaged dismounted as sharpshooters 'while this lasted' — first-class attested-silence-adjacent record (ED-44 class)",
+      "EC6 casualty apportionment": "'Losses not reported' (marker, verbatim) — explicit negative, not a gap",
+      "Achieved T-level (audited)": "T2 (honestly thin, negative-evidence class)",
+      "Notes": "Dossier: reconstruction/dossiers/csa-cav-jenkins.md; CA-ECF-1 (ED-72 candidate); no OR report exists (verified via the civilwarcycling index)"
+    },
+    "reg-csa-cav-bn-ha": {
+      "Class (attested-static / unauthored / authored-ok)": "unauthored",
+      "EC1 identity/command": "Maj. Robert F. Beckham commanding six batteries (Breathed, Chew, Griffin, Hart, McGregor, Moorman)",
+      "EC2 engaged strength": "B&M-repro '15 guns, 406 men' (battalion total)",
+      "EC3 position anchors": "NOT one position — the battalion was DISTRIBUTED, not massed (see EC5 table)",
+      "EC4 movement legs": "Not authored this pass (battalion-grain frame dossier)",
+      "EC5 activity record": "THE DISTRIBUTION TABLE (marker verbatim): Breathed w/ W.H.F. Lee's; Chew w/ Jones's (OFF-FIELD); Griffin w/ Second [infantry] Corps; Hart w/ the Army Trains (off-ground); McGregor w/ Hampton's (the one confident ECF placement); Moorman 'no report' — at most TWO of six batteries actually fought at Rummel farm",
+      "EC6 casualty apportionment": "'Casualties not reported' (marker, verbatim)",
+      "Achieved T-level (audited)": "T2 (command/frame grain)",
+      "Notes": "Dossier: reconstruction/dossiers/csa-cav-bn-ha-beckham.md; feeds the battery-triage pass (5 of 6 batteries marked off-ECF-ground); Beckham's own OR report verified thin at the fetched boundary"
+    },
+    "us-cav-farnsworth": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+      "EC1 identity/command": "Brig. Gen. Elon J. Farnsworth k in the July 3 charge; Col. N. P. Richmond succeeding",
+      "EC2 engaged strength": "B&M-repro sum 1,924",
+      "EC3 position anchors": "[C ~13:00, marker] arrival on South Cavalry Field ('about 1 P.M.'); the charge ground crosses stone walls held by CSA infantry",
+      "EC4 movement legs": "[C ~13:00] arrival; [C ~17:30, TRIPLE tablet agreement] the charge — the theater's strongest single clock",
+      "EC5 activity record": "The charge and repulse 'with heavy loss and Gen. Farnsworth killed'; Parsons's B&L primary (retrospective, attributed grade) — the protest quote, shot five times, refused surrender; the Oates-suicide counter-account carried UNRESOLVED (ED-39 §3 litigated-memory class)",
+      "EC6 casualty apportionment": "Brigade tablet: K3/18, W6/28, CM1/42 = 98; the division tablet's 355 total is NOT directly additive with Merritt's total — an open EC6 reconciliation item",
+      "Achieved T-level (audited)": "T3 (South Cavalry Field grain)",
+      "Notes": "Dossier: reconstruction/dossiers/us-cav-3-1-farnsworth.md; CA-SCF-1/2 (ED-72 candidate); Kilpatrick's own report identified, not fetched — the ordered-a-futile-charge question left open deliberately"
+    },
+    "us-cav-merritt": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+      "EC1 identity/command": "Brig. Gen. Wesley Merritt throughout; Maj. Samuel H. Starr (6th US) w, lost an arm, at Fairfield — PRIMARY pin",
+      "EC2 engaged strength": "B&M-repro sum 1,792",
+      "EC3 position anchors": "[C ~12:00, PRIMARY — Merritt's own report] march start; South Cavalry Field 4 miles out; the 6th US's Fairfield detachment is OFF-MAP (the standing off-square ruling)",
+      "EC4 movement legs": "[C ~12:00] the march (report=tablet near-exact agreement); [C ~17:30] 'about four hours... brought to a close by a heavy rain' — independently corroborates the triple tablet agreement",
+      "EC5 activity record": "The stone-fence advance, report=tablet near-exact; the 6th US's separate Fairfield fight ('not without success')",
+      "EC6 casualty apportionment": "THE FAIRFIELD-POOLING FINDING: tablet total 418 (K1/27, W12/104, CM6/268) pools TWO fields — the 268 missing is explained by the isolated, overmatched Fairfield action, not South Cavalry Field alone; no per-regiment split authored",
+      "Achieved T-level (audited)": "T4 (July 3 grain — the EC6 composition finding)",
+      "Notes": "Dossier: reconstruction/dossiers/us-cav-1-3-merritt.md; CA-SCF-1/2 (ED-72 candidate); the pass's best EC6 finding on the cavalry side"
+    },
+    "reg-us-vi-hq": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+      "EC1 identity/command": "Maj. Gen. John Sedgwick; the army's largest corps at Gettysburg (~16,000, attributed)",
+      "EC2 engaged strength": "Not authored at corps grain (would require summing seven brigades + arty brigade, none re-verified this pass)",
+      "EC3 position anchors": "[D] the ~30-mile July 2 forced march (Manchester to the field); reserve posture ('operations were mostly by Brigades independent', tablet verbatim)",
+      "EC4 movement legs": "Not authored at corps grain",
+      "EC5 activity record": "Attested-static majority; TWO named exceptions — Nevin's brigade (already T4 full-arc, pass 7) and Shaler's brigade (to Culp's Hill ~08:45 July 3, attributed grade, NOT primary-verified this pass)",
+      "EC6 casualty apportionment": "Corps tablet: K2/25, W14/171, CM30 = 242 (not apportioned by brigade here)",
+      "Achieved T-level (audited)": "T2 (command record, attested-static-with-exceptions)",
+      "Notes": "Dossier: reconstruction/dossiers/us-vi-hq-sedgwick.md; the VI Corps cheap batch; register row reg-us-vi-hq added this pass"
     }
   }
 }
