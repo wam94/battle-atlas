@@ -180,9 +180,17 @@ namespace BattleAtlas
         }
 
         // ---- letterbox backing state (see TryEnter/Exit) ----
+        // The world yields the frame by FAR-PLANE CLAMP, not culling mask:
+        // the near-plane video quad is part of the camera's own render, and
+        // a zeroed culling mask was observed (p11 screenshot rerun) to kill
+        // the video along with the world. Pulling the far plane to just
+        // past the near plane culls every world object while the near-plane
+        // video survives by construction; the HDRP clear turns whatever is
+        // left — the letterbox slivers — black.
+        const float LetterboxFarClipM = 12f; // near plane is 10 (orbit rig)
         Camera letterboxCamera;
         UnityEngine.Rendering.HighDefinition.HDAdditionalCameraData letterboxHd;
-        int savedCullingMask;
+        float savedFarClip;
         UnityEngine.Rendering.HighDefinition.HDAdditionalCameraData.ClearColorMode
             savedClearMode;
         Color savedBackgroundColor;
@@ -191,8 +199,9 @@ namespace BattleAtlas
         {
             letterboxCamera = cam;
             if (cam == null) return; // headless test rigs: nothing to back
-            savedCullingMask = cam.cullingMask;
-            cam.cullingMask = 0; // the world yields the frame to the media
+            savedFarClip = cam.farClipPlane;
+            cam.farClipPlane = Mathf.Max(
+                cam.nearClipPlane * 1.05f, LetterboxFarClipM);
             letterboxHd = cam.GetComponent<
                 UnityEngine.Rendering.HighDefinition.HDAdditionalCameraData>();
             if (letterboxHd != null)
@@ -208,7 +217,7 @@ namespace BattleAtlas
         void RestoreLetterboxBacking()
         {
             if (letterboxCamera == null) return;
-            letterboxCamera.cullingMask = savedCullingMask;
+            letterboxCamera.farClipPlane = savedFarClip;
             if (letterboxHd != null)
             {
                 letterboxHd.clearColorMode = savedClearMode;
