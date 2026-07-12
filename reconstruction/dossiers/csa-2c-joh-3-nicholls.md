@@ -95,8 +95,19 @@ geometry and duration.
   "a few minutes before 7 p. m." (US) on the same works — the
   evening chain's cleanest cross-line agreement, and the ED-62
   candidate's core exhibit.
+- **PASS-9 NOTE (July 3 morning)**: the brigade's morning-fire arc
+  now sits inside the hardened frame (Muhlenberg's 4.30 program;
+  Kane's seven hours; the Daniel/O'Neal wave on its left) — the
+  j3-01 red "NICHOLLS"-sector bars ride the same east-slope band as
+  the pass-8 j2-05 reads (drawn-static across the night).
 
 ## ED candidates proposed
+
+> **Adoption note (2026-07-11, pass 9):** ED-62 (the CA-J2E
+> chain-hardening ruling) and ED-63 (the ECH battery-possession
+> convergent ruling) were ADOPTED at the start of dossier pass 9
+> (angle-editorial-decisions.md §"Dossier pass 8 adoption rulings").
+> No anchor moves; envelopes unchanged.
 
 - Core evidence for **ED-62**. Nothing self-adopted.
 

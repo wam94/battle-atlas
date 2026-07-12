@@ -104,9 +104,22 @@ combat arc (five hours + two renewals supporting Steuart).
 
 - CA-J2E-2 by NEGATIVE (the assault went in three-brigades-strong —
   the anchor's force composition is now attested, not assumed).
-- The July 3 morning frame (CA-J3M context) carried for pass 9+.
+- The July 3 morning frame — **pass-9 note**: Johnson's division
+  primary opens the morning with THIS brigade ("Early next morning,
+  the Stonewall Brigade was ordered to the support of the others,
+  and the assault was renewed with great determination",
+  or-27-2-johnson pass-9 verbatim) — the wave-1 composition pin;
+  the j3-01/j3-02 red "WALKER" labels read (6176, 5267)/(6118, 5252)
+  hold the east-slope ground across both morning sheets
+  (drawn-static, matching the five-hours-firing record).
 
 ## ED candidates proposed
+
+> **Adoption note (2026-07-11, pass 9):** ED-62 (the CA-J2E
+> chain-hardening ruling) and ED-63 (the ECH battery-possession
+> convergent ruling) were ADOPTED at the start of dossier pass 9
+> (angle-editorial-decisions.md §"Dossier pass 8 adoption rulings").
+> No anchor moves; envelopes unchanged.
 
 - Evidence contributed to **ED-62**. Nothing self-adopted.
 

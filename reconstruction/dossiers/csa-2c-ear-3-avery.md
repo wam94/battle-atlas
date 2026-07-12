@@ -115,6 +115,12 @@ pin).
 
 ## ED candidates proposed
 
+> **Adoption note (2026-07-11, pass 9):** ED-62 (the CA-J2E
+> chain-hardening ruling) and ED-63 (the ECH battery-possession
+> convergent ruling) were ADOPTED at the start of dossier pass 9
+> (angle-editorial-decisions.md §"Dossier pass 8 adoption rulings").
+> No anchor moves; envelopes unchanged.
+
 - Evidence contributed to **ED-62** and **ED-63**. Nothing
   self-adopted.
 

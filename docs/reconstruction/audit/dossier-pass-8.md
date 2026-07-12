@@ -208,6 +208,14 @@ carried in full.
 
 ## 5. New ED candidates (proposed, NOT adopted)
 
+> **Adoption note (2026-07-11, pass 9):** ED-62 and ED-63 were ADOPTED
+> at the start of dossier pass 9 (angle-editorial-decisions.md
+> §"Dossier pass 8 adoption rulings"). No preconditions were attached;
+> no anchor moves — ED-62 executed as a basis upgrade (envelope
+> arithmetic unchanged at every CA-J2E anchor), ED-63 as the
+> convergent-event pattern's third application. Validators green after
+> adoption; the ED-21 stagingSeed pin held.
+
 - **ED-62 — the CA-J2E chain-hardening ruling (anchor upgrades, no
   moves).** Adopt: CA-J2E-1 upgraded to a PRIMARY basis (Greene's
   6.30; Geary's 7.00 as propagation reading; the drawn j2-04

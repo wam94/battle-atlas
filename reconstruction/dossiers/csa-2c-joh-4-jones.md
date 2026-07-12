@@ -77,6 +77,15 @@ the evening's artillery preamble to its infantry climax.
 4. July 3 [E]: in the division's renewed assaults under Dungan
    (named at division grain; the brigade report is Jones's own and
    thin on July 3 — his absence stated).
+5. **PASS-9 UPGRADE**: Daniel's brigade ordered at ~4 a.m. "to the
+   support of Jones' brigade, Colonel [R. H.] Dungan commanding"
+   (or-27-2-daniel — the succession NAMED by the supporting
+   brigade's primary); Daniel "found its skirmishers engaging the
+   enemy at long range" — the lane's early-morning activity from
+   the second line; the j3-01 drawn pair ("DANIEL" (5754, 5842)
+   immediately behind "JONES VA." (5721, 5780)) is the arrival
+   state drawn; Colgrove's prisoner intelligence names "Jones' and
+   Steuart's brigades" in the captured works (or-27-1-colgrove).
 
 ## EC6 — Casualty apportionment
 
@@ -113,6 +122,12 @@ the evening's artillery preamble to its infantry climax.
 - The 16:00 Latimer preamble both-sided (with Geary's counter-duel).
 
 ## ED candidates proposed
+
+> **Adoption note (2026-07-11, pass 9):** ED-62 (the CA-J2E
+> chain-hardening ruling) and ED-63 (the ECH battery-possession
+> convergent ruling) were ADOPTED at the start of dossier pass 9
+> (angle-editorial-decisions.md §"Dossier pass 8 adoption rulings").
+> No anchor moves; envelopes unchanged.
 
 - Evidence contributed to **ED-62** and to the **ED-63 twilight-class
   candidate** (dossier-pass-8.md §5). Nothing self-adopted.
