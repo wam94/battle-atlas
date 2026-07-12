@@ -1,6 +1,6 @@
 # Dossier: 2nd Brigade, 1st Division, XII Corps — Lockwood's (reg-us-xii-1-2)
 
-Pass 9 (July 3 morning Culp's Hill batch) · Cast status: in-build
+Pass 9 (July 3 morning Culp's Hill batch) · **Maulsby continuation + EC2/EC6 closers landed pass 10** · Cast status: in-build
 (`us-lockwood`) · Achieved T-level: **T3 full-arc** · 2026-07-11
 
 Chain role: the unattached late-arriving brigade — July 2's
@@ -24,6 +24,12 @@ woods deployment (the 1st MD PHB's costly morning).
 - No strength primary in the fetched pages (open; the two-regiment
   arrival state July 2 vs three-regiment July 3 is the composition
   fact that matters — the 1st MD ES joined July 3).
+
+**Pass-10 EC2 close**: Geary — "At 7.30 o'clock Lockwood's brigade,
+of the First Division, **1,700 strong**, reported to me as a
+support" (or-27-1-geary pp. 828-830 read) — the brigade's engaged
+strength landed in the neighboring commander's report ("composed
+almost entirely of untried troops... rendered efficient service").
 
 ## EC3 — Position anchors
 
@@ -84,13 +90,28 @@ woods deployment (the 1st MD PHB's costly morning).
   episodes (July 2 evening advance + July 3 support). No per-day
   primary (flagged).
 
+**Pass-10 EC6 close (p. 184 rows)**: Lockwood brigade **174** —
+1st MD PHB 104, 1st MD Eastern Shore 25, 150th NY 45
+(or-27-1-union-return); Maulsby's own table 24 k / 72 w (+1 m)
+against his regiment's 104 row (coherent with the officers' pins:
+Lts. Smith, Willman k at the stone wall; Lt. Eader k at the
+rifle-pits — or-27-1-maulsby, pp. 805-807 now read IN FULL).
+**The July 3 Maulsby ladder (new)**: the ~4 a.m. stone-wall attack
+(bayonets fixed, ceased fire for the flanking "brigade of National
+troops" — the ED-65 escalation preamble gains a Lockwood member);
+"About 9 o'clock... hold the front of the rifle-pits... until the
+enemy's fire wholly ceased, about 12 m." (late-edge close reading
+vs CA-J3M-4's 10:30-11:00 — recorded); the white-flag scene with
+his own no-single-claimant caution; the countermanded afternoon
+support march (the CA-J3A-10-hour non-commitment record).
+
 ## Conflicts & negative evidence
 
 1. Ruger's "one brigade (the First)" sent at 2 p.m. — his own
    report's brigade-numbering slip (Lockwood's was the Second);
    carried sic-flagged (context makes the identity certain).
 2. No strength primary; no per-day loss split.
-3. Maulsby's No. 283 (p. 805-806) only partially read this pass (the
+3. ~~Maulsby's No. 283 (p. 805-806) only partially read~~ — **CLOSED pass 10** (pp. 805-807 in full; the
    double-quick leg captured; the rest open — cheap continuation).
 
 ## Chain anchors substantiated
@@ -108,7 +129,7 @@ woods deployment (the 1st MD PHB's costly morning).
 
 ## Source register
 
-or-27-1-lockwood (No. 282, pp. 804-805) · or-27-1-ruger ·
+or-27-1-lockwood (No. 282, pp. 804-805) · or-27-1-maulsby (No. 283, pp. 805-807 IN FULL, pass 10) · or-27-1-union-return (p. 184 rows, pass 10) · or-27-1-ruger ·
 or-27-1-williams-aw (the ED-61 command grain, pass-8 capture) ·
 or-27-1-union-return p. 184 · OSM/Overpass (tab-us-xii-1-2-hq,
 mon-1mdphb, mon-1mdes, mon-150ny) · bachelder-manifest j2-05 (the

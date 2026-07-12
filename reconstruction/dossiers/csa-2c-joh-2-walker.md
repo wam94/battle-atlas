@@ -27,6 +27,11 @@ combat arc (five hours + two renewals supporting Steuart).
   a scope flag (reads as the engaged fraction at the breastworks;
   vs the return's 4th VA 86 total).
 
+
+**Pass-10 EC2 hop (the tablet strength class)**: the WD brigade
+tablet reads "Present about 1450 Killed 35 Wounded 208 Missing 87 Total 330" — "Present about" ~1,450 carried at
+tablet-adjudicated grade (stone-sentinels fetch 2026-07-12); the 330 = the pass-8 exact figure.
+
 ## EC3 — Position anchors
 
 1. July 2 all day [E]: "on Culp's farm" near the Hanover road, the

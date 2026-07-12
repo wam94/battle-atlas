@@ -22,6 +22,11 @@ and Ricketts (whose "about 8 p. m." clocks agree across the lines).
   flagged). July 1 loss 1+6 k / 4+37 w / 15 m (his own figure)
   pre-shrinks the July 2 line.
 
+
+**Pass-10 EC2 hop (the tablet strength class)**: the WD brigade
+tablet reads "Present about 1200 Killed 36 Wounded 201 Missing 95 Total 332" — "Present about" ~1,200 carried at
+tablet-adjudicated grade (stone-sentinels fetch 2026-07-12); the tablet k/w cells MATCH the return EXACTLY (36/201) while the missing differ (95 vs 76) — the k/w agreement + missing variance recorded.
+
 ## EC3 — Position anchors
 
 1. July 1 night [E]: "one of the upper southern streets" of the town,

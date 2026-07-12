@@ -34,6 +34,11 @@ pin).
   structure is itself the operative strength fact (the division's
   smallest assault frontage).
 
+
+**Pass-10 EC2 hop (the tablet strength class)**: the WD brigade
+tablet reads "Present about 900 Killed 35 Wounded 216 Missing 94 Total 345" — "Present about" ~900 carried at
+tablet-adjudicated grade (stone-sentinels fetch 2026-07-12).
+
 ## EC3 — Position anchors
 
 1. **July 1 (extended pass 10)** [D/E]: with Hays on Gordon's left

@@ -103,6 +103,17 @@ column-of-regiments last effort = Steuart/Daniel received).
   absent for the July 2 evening assault; its July 2 cost was the
   return-march fire) — the inverse of the 137th NY's shape.
 
+**Pass-10 closers**: **p. 184 regiment rows landed**: brigade
+98 — 29th Pa 66, 109th Pa 10, 111th Pa 22 (rows sum exactly;
+or-27-1-union-return). **The relief clocks** (or-27-1-geary
+pp. 828-830): ~8.35 a.m. the 14th Brooklyn + 147th NY ("both
+together about 150 strong") sent in to reinforce Kane's right;
+"At 9 a.m. the One hundred and twenty-second New York... relieved
+the One hundred and eleventh Pennsylvania, of Kane's, which had
+been engaged in the front line all the morning, and whose
+ammunition was failing" — the brigade's morning arc now closes on
+a division-primary relief clock.
+
 ## Conflicts & negative evidence
 
 1. Kane 96 vs Cobham 98 (see EC6) — same-brigade component conflict.
