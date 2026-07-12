@@ -600,3 +600,68 @@ guarding trains), `us-vi-3-3-nevin.md` + `us-vi-hq-sedgwick.md`
 explanation).
 
 Companion: `docs/reconstruction/audit/dossier-pass-14.md`.
+
+## Pass 15 — the register clearance (THE FULL CENSUS CLEARED to zero needs-dossier)
+
+The pass-14 census's complete remainder in one pass: the 3 remaining
+non-battery rows (VI Corps Artillery Brigade, Fisher's brigade, Smith's
+brigade — identity verified as Col. Orland Smith, XI Corps, not W.
+"Extra Billy" Smith, CSA), the 20 needs-own-dossier batteries (III
+Corps, V Corps, VI Corps, and Horse Artillery brigades' remaining
+batteries), and a full verification sweep over the 13 static-park
+Artillery Reserve batteries. No new ED candidates proposed (none
+required — all findings are dossier-level or register-triage
+corrections, not doctrine rulings). Thirty-seven new dossiers; no new
+register rows (all were existing register entries, including a bonus
+38th closer, McClanahan's CSA battery, outside the task's core 23-unit
+scope, to leave the register's `needs-own-dossier` triage disposition
+at true zero). Headline finding: direct verification of the 13
+"static-park" batteries found only 2 of 13 (Brooker's and Pratt's, both
+held at Westminster, Md.) were genuinely never-engaged — the other 11
+were detached and fought, several with real casualties and named
+deaths, misclassified by the pass-12 triage batch pass; all 13 (plus
+the 20 needs-own-dossier and the bonus McClanahan closer) had their
+register `triage.disposition` corrected to `attached-to-dossiered-
+battalion` with a `coveredBy` link to their own new dossier.
+
+| Dossier | Register id | Role | Achieved T |
+|---|---|---|---|
+| [us-vi-arty-tompkins.md](us-vi-arty-tompkins.md) | reg-us-vi-arty | closes the last Union corps-artillery command row; no brigade report exists; the Ziegler's Grove 4-battery convergence | T2 (command record) |
+| [us-v-3-2-fisher.md](us-v-3-2-fisher.md) | reg-us-v-3-2 | Big Round Top's own-report primary; the 10 p.m. occupation in the commander's own words | T4 full-arc |
+| [us-xi-2-2-smith.md](us-xi-2-2-smith.md) | reg-us-xi-2-2 | closes the XI Corps; identity verified (Orland Smith); report-vs-tablet casualty conflict recorded | T4 full-arc |
+| [us-btty-clark.md](us-btty-clark.md) | reg-us-iii-b1 | III Corps salient early-fire battery; 1300 rds | T4 |
+| [us-btty-bucklyn.md](us-btty-bucklyn.md) | reg-us-iii-b4 | Freeborn's own succession report fetched this pass; exact 3 p.m. trigger | T4 |
+| [us-btty-seeley.md](us-btty-seeley.md) | reg-us-iii-b5 | apple-orchard flank; Seeley's ~17:30 wounding | T3 |
+| [us-btty-walcott.md](us-btty-walcott.md) | reg-us-v-b1 | the "not to be found" command-confusion negative | T2 |
+| [us-btty-barnes.md](us-btty-barnes.md) | reg-us-v-b2 | attested-static reserve, 4-gun battery | T2 |
+| [us-btty-gibbs.md](us-btty-gibbs.md) | reg-us-v-b3 | LRT north-slope duel; rejects a bad "43-casualty" search figure | T3 |
+| [us-btty-mccartney.md](us-btty-mccartney.md) | reg-us-vi-b1 | own-report; arrived after the repulse | T3 |
+| [us-btty-harn.md](us-btty-harn.md) | reg-us-vi-b3 | Ziegler's Grove convergence witness #4 | T3 |
+| [us-btty-waterman.md](us-btty-waterman.md) | reg-us-vi-b4 | Webb's-division support tie | T3 |
+| [us-btty-adams.md](us-btty-adams.md) | reg-us-vi-b5 | proves no consolidated Tompkins report exists | T3 |
+| [us-btty-williston.md](us-btty-williston.md) | reg-us-vi-b6 | Ziegler's Grove #1; gun-count/position conflict unresolved | T2 |
+| [us-btty-butler.md](us-btty-butler.md) | reg-us-vi-b7 | Ziegler's Grove #2, the clearest statement | T2 |
+| [us-btty-martin-5us.md](us-btty-martin-5us.md) | reg-us-vi-b8 | Ziegler's Grove #3; Kinzie name-collision resolved | T2 |
+| [us-btty-daniels.md](us-btty-daniels.md) | reg-us-ha-1-1 | 12:30p-7a precise window; report=tablet exact | T3 |
+| [us-btty-martin-6ny.md](us-btty-martin-6ny.md) | reg-us-ha-1-2 | "flying battery"; in-reserve w/ 1 wounded tension | T2 |
+| [us-btty-heaton.md](us-btty-heaton.md) | reg-us-ha-1-3 | UPGRADES the pass-14 brigade dossier's "In Reserve only" claim | T3 |
+| [us-btty-elder.md](us-btty-elder.md) | reg-us-ha-1-5 | packages the ADOPTED CA-SCF-2 corroboration at battery grain | T3 |
+| [us-btty-graham.md](us-btty-graham.md) | reg-us-ha-2-2 | South Cavalry Field, search-summary grade | T2 |
+| [us-btty-calef.md](us-btty-calef.md) | reg-us-ha-2-3 | the opening-gun battery, verbatim tablet claim | T3 |
+| [us-btty-fuller.md](us-btty-fuller.md) | reg-us-ha-2-4 | confirms the off-map/never-engaged classification | T2 |
+| [us-btty-eakin.md](us-btty-eakin.md) | reg-us-ar-1r-1 | static-park CORRECTED: engaged 2 days, 10 casualties | T2 |
+| [us-btty-turnbull.md](us-btty-turnbull.md) | reg-us-ar-1r-2 | static-park CORRECTED: lost/recaptured 4 guns | T3 |
+| [us-btty-evanthomas.md](us-btty-evanthomas.md) | reg-us-ar-1r-3 | static-park CORRECTED: direct-hit caisson series drew a CSA cheer | T4 |
+| [us-btty-brooker.md](us-btty-brooker.md) | reg-us-ar-2v-1 | static-park CONFIRMED: never left Westminster | T2 |
+| [us-btty-pratt.md](us-btty-pratt.md) | reg-us-ar-2v-2 | static-park CONFIRMED: never left Westminster | T2 |
+| [us-btty-sterling.md](us-btty-sterling.md) | reg-us-ar-2v-3 | static-park CORRECTED: unique ordnance, McGilvery-line member | T3 |
+| [us-btty-taft.md](us-btty-taft.md) | reg-us-ar-2v-4 | static-park CORRECTED: the pass's largest triage/research mismatch | T4 |
+| [us-btty-edgell.md](us-btty-edgell.md) | reg-us-ar-3v-1 | static-park CORRECTED: matches Taft's mismatch pattern exactly | T4 |
+| [us-btty-norton-1oh.md](us-btty-norton-1oh.md) | reg-us-ar-3v-2 | static-park CORRECTED: relieved a "badly shot up" battery in place | T3 |
+| [us-btty-hill.md](us-btty-hill.md) | reg-us-ar-3v-4 | static-park CORRECTED: per-day-dated casualties | T3 |
+| [us-btty-dow.md](us-btty-dow.md) | reg-us-ar-4v-1 | static-park CORRECTED: 13 casualties in the pre-charge cannonade | T3 |
+| [us-btty-rigby.md](us-btty-rigby.md) | reg-us-ar-4v-2 | static-park CORRECTED: 211 rds at Culp's/Benner's Hill | T3 |
+| [us-btty-ames.md](us-btty-ames.md) | reg-us-ar-4v-4 | static-park CORRECTED: precisely-timed Peach Orchard action | T3 |
+| [csa-cav-ha-mcclanahan.md](csa-cav-ha-mcclanahan.md) | reg-csa-cav-ha-7 | bonus closer; present-but-non-combatant train guard | T2 |
+
+Companion: `docs/reconstruction/audit/dossier-pass-15.md`.
