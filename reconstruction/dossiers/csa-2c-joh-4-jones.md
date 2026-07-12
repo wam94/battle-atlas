@@ -28,6 +28,11 @@ the evening's artillery preamble to its infantry climax.
 - OPEN — no strength primary in the fetched record; no hop taken this
   pass (the B&M-class figure is a cheap future fetch; flagged).
 
+
+**Pass-10 EC2 hop (the tablet strength class)**: the WD brigade
+tablet reads "Present 1600 Killed 58 Wounded 302 Missing 61 Total 421" — "Present about" 1,600 carried at
+tablet-adjudicated grade (stone-sentinels fetch 2026-07-12); the 421 = the pass-8 exact figure.
+
 ## EC3 — Position anchors
 
 1. July 1 night → July 2 16:00 [E]: "a ravine in an open field

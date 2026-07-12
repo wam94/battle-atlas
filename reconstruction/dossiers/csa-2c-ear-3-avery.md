@@ -34,11 +34,23 @@ pin).
   structure is itself the operative strength fact (the division's
   smallest assault frontage).
 
+
+**Pass-10 EC2 hop (the tablet strength class)**: the WD brigade
+tablet reads "Present about 900 Killed 35 Wounded 216 Missing 94 Total 345" — "Present about" ~900 carried at
+tablet-adjudicated grade (stone-sentinels fetch 2026-07-12).
+
 ## EC3 — Position anchors
 
-1. July 1 [E]: advanced "to the left of it {the town} across the
-   railroad... in the fields on the left, and facing Cemetery Hill",
-   sheltered "under the cover of a low ridge" (Early p. 469).
+1. **July 1 (extended pass 10)** [D/E]: with Hays on Gordon's left
+   in the division's second effort — Early: "Hays and Avery advanced
+   on Gordon's left, driving back into the town in great confusion
+   the second line" (or-27-2-early; the Coster front, both-sided
+   with Schurz's pass-10 record); shared credit in the two-Napoleon
+   capture (the convergent ruling on the Hays row); then advanced
+   "to the left of it {the town} across the railroad... in the
+   fields on the left, and facing Cemetery Hill", sheltered "under
+   the cover of a low ridge" (Early p. 469). The Harrisburg-Road
+   approach tablet registered pass 10 (mon-hoke-tablet-j1).
 2. **The jump-off** [E, all day July 2]: left of Hays's field. Hoke
    brigade tablet **(5334.0, 6497.0)** (tab-csa-2c-ear-3), 30 m from
    the Hays tablet — the two assault brigades' tablets stand as the

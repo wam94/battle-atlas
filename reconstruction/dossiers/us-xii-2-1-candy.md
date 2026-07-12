@@ -1,6 +1,6 @@
 # Dossier: 1st Brigade, 2nd Division, XII Corps — Candy's (reg-us-xii-2-1)
 
-Pass 9 (July 3 morning Culp's Hill batch) · Cast status: in-build
+Pass 9 (July 3 morning Culp's Hill batch) · **return rows + the Geary ladder landed pass 10** · Cast status: in-build
 (`us-candy`) · Achieved T-level: **T3 full-arc** · 2026-07-11
 
 Chain role: Geary's reserve brigade — the wrong-road column's third
@@ -79,11 +79,29 @@ most distinctive Union small-unit action).
 - **Return brigade total: 139** (or-27-1-union-return p. 184 — the
   row banked at corps grain in pass 8 on us-xii-hq-slocum-williams.md
   EC6; the per-regiment numerics were not re-captured this pass —
-  regiment rows flagged as the one cheap residual). Division
+  regiment rows CLOSED pass 10 — see the pass-10 closers block). Division
   arithmetic closes: 540 = Greene 303 + Candy 139 + Kane/Cobham 98.
 - Episode split [D]: July 2's cost ≈ the return-march fire (small);
   the mass is July 3 morning — rotation service + the 66th OH's
   exposed episode (its row is the flagged residual's key cell).
+
+**Pass-10 closers**: (a) **p. 184 regiment rows landed**: brigade
+139 — 5th OH 18, 7th OH 18, 29th OH 38, 66th OH 17, 28th Pa 28,
+147th Pa 20 (rows sum exactly; the 66th OH's 17 is the flagged
+key cell — the exposed perpendicular sortie cost 17 of the
+brigade's 139; or-27-1-union-return). (b) **The Geary ladder**
+(pp. 828-830, or-27-1-geary): "At 5 a.m. the One hundred and
+forty-seventh Pennsylvania... was ordered to charge and carry the
+stone wall... They did in handsome style"; "At 5.45 a.m. the
+Sixty-sixth Ohio was ordered to advance outside of Greene's
+intrenchments and perpendicular to them... recalled by an order at
+11 a.m." (the sortie now CLOCKED both ends, with Geary's own
+friendly-fire note "a few of their men advanced too far, and fell
+by our own artillery fire"); "At 6 a.m. the Twenty-eighth
+Pennsylvania, and Fifth, Seventh, and Twenty-ninth Ohio... were
+ordered into the intrenchments, to relieve some of Greene's
+regiments... between the files" — the rotation-pool mechanics in
+the division primary.
 
 ## Conflicts & negative evidence
 

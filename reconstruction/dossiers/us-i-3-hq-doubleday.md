@@ -4,10 +4,12 @@ Register row added at pass-5 start (register-maintenance batch; was
 'no register row — flagged' at passes 3-4).
 
 Pass 4 (Union center command batch — the deferred Doubleday pieces) ·
+**July 1 corps-command narrative read pass 10** (pp. 244-252; his
+July 1 corps command record lives on the NEW reg-us-i-hq row,
+us-i-hq-reynolds.md — this row stays the July 2-3 division record) ·
 Cast status: the division's brigades are in-build (`us-biddle`,
-`us-dana`, `us-stannard` fronts); no division-command row in the OOB
-register (register-maintenance item) · Achieved T-level: **T2 (command
-record)** · 2026-07-11
+`us-dana`, `us-stannard` fronts) · Achieved T-level: **T2 (command
+record)** · 2026-07-12
 
 Command-batch role: the I Corps division holding the second line behind
 the Union center's left — the corps-command-for-a-day whose January 1864

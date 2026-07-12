@@ -8,6 +8,27 @@ profile below is **ED-39** (renumbered from this branch's provisional
 
 ## What was built
 
+**Extended 2026-07-12 (dossier pass 10): +27 July 1 entries (202
+total).** The July 1 field's first register coverage: the Reynolds
+cluster (KIA marker — the CA-J1M-5 pin ground — corps-HQ marker,
+equestrian, Wadsworth pair), the Buford/Gamble/Devin/Calef morning-line
+markers (the Gamble HQ marker reads 115 m from the j1-03 drawn 8th Ill
+Cav bar — HQ-on-the-line), the Iron Brigade/Cutler/84th NY (14th
+Brooklyn) grounds, the Heth-division CSA pair layer (Archer-captured
+marker + Willoughby-Run front markers vs the W Conf Ave July 3
+formation tablets — TWO-SEMANTICS pairs recorded per entry), the Oak
+Hill tablets (Iverson/Ramseur/Rodes-division; the j1-09 drawn Iverson
+attack bar reads 408 m SE of his formation tablet along the advance
+axis), the Barlow Knoll both-sided cluster (Barlow statue + Ames/Harris
++ division HQ vs the Gordon tablet ON the knoll, 19 m-class from the
+statue ground; j1-11 drawn Ames crest bar 57 m / Gordon contact bar
+82 m), the Howard/Schurz command nodes (town + Cemetery Hill pair),
+the von Gilsa ECH marker (July 2-3 semantics recorded — his July 1
+knoll ground has no located brigade marker through this channel), and
+the Hays/Hoke Harrisburg-Road approach tablets (the Early-front
+backward-extension grounds). Channel: OSM/Overpass PRIMARY for all 27
+(standing deviation continues).
+
 **Extended 2026-07-11 (dossier pass 6): +40 southern-field entries
 (91 total).** The July 2 southern field: Caldwell's four brigade
 tablets + the Wheatfield monument cluster (5th NH, Irish Brigade, 4th

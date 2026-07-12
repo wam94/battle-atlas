@@ -11,13 +11,13 @@
   "sources": "ids resolve in reconstruction/sources/sources.json. Structure and successions: or-27-oob + wikipedia-oob-union/-csa (verified 2026-07-10); activity notes: stone-sentinels War Department tablets via the 2026-07-02 full-cast survey."
  },
  "stats": {
-  "totalEntries": 285,
+  "totalEntries": 287,
   "union": {
    "infantryBrigades": 51,
    "cavalryBrigades": 8,
    "batteries": 67,
    "artilleryBrigades": 14,
-   "commandEntries": 10
+   "commandEntries": 12
   },
   "confederate": {
    "infantryBrigades": 37,
@@ -7772,6 +7772,57 @@
     "or-27-2-johnson"
    ],
    "notes": "Added dossier pass 8 (register maintenance): the division command record of the Culp's Hill assault (the 16:00 Latimer order, the Walker detention discretion, the dark-at-Rock-Creek pin, the October 7 divisional casualty table) is carried on the four brigade dossiers; division tablet tab-csa-2c-joh-hq. No standalone dossier this pass."
+  },
+  {
+   "id": "reg-us-i-hq",
+   "castStatus": "not-yet-cast",
+   "name": "I Corps headquarters (corps command)",
+   "side": "union",
+   "arm": "infantry",
+   "echelon": "command",
+   "parentChain": [
+    "Army of the Potomac",
+    "I Corps"
+   ],
+   "commander": "Maj. Gen. John F. Reynolds (also commanding the left wing; k July 1 ~10:15); Maj. Gen. Abner Doubleday (July 1); Maj. Gen. John Newton (July 2-3)",
+   "daysPresent": [
+    1,
+    2,
+    3
+   ],
+   "sources": [
+    "or-27-oob",
+    "or-27-1-doubleday",
+    "or-27-1-wadsworth",
+    "or-27-1-howard",
+    "or-27-1-buford"
+   ],
+   "notes": "Added dossier pass 10 (the ED-26 morning chain's command node): the Reynolds 10:15 death pin (tablet = Wadsworth = Doubleday, three-primary agreement), the wing-command succession ladder (Reynolds -> Doubleday corps / Howard field), and the corps' 8,200 -> ~2,450 July 1 arc. Dossier: reconstruction/dossiers/us-i-hq-reynolds.md."
+  },
+  {
+   "id": "reg-us-xi-hq",
+   "castStatus": "not-yet-cast",
+   "name": "XI Corps headquarters (corps command)",
+   "side": "union",
+   "arm": "infantry",
+   "echelon": "command",
+   "parentChain": [
+    "Army of the Potomac",
+    "XI Corps"
+   ],
+   "commander": "Maj. Gen. Oliver O. Howard (commanding the field ~11:30 July 1 until Hancock/Slocum; corps to Schurz in that interval, resumed evening July 1)",
+   "daysPresent": [
+    1,
+    2,
+    3
+   ],
+   "sources": [
+    "or-27-oob",
+    "or-27-1-howard",
+    "or-27-1-schurz",
+    "or-27-1-hancock"
+   ],
+   "notes": "Added dossier pass 10 (the ED-26/27 Howard-assumes-command sub-anchor + the CA-J1P-7 dual-command record): Howard's 11.30 = Schurz's 11.30 two-primary agreement; the 16:00/16:10/16:30 fall-back ladder; the Cemetery Hill rally frame. Dossier: reconstruction/dossiers/us-xi-hq-howard.md."
   }
  ]
 }

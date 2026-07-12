@@ -42,10 +42,25 @@ regiment-grain return.
 
 ## EC3 — Position anchors
 
-1. July 1: the McPherson's Ridge fight (the branch, the wheat-field, the
-   wooded hill on the 26th's front) — the July 1 monument mon-26nc
-   (2866.8, 7311.2) carries that day's semantics (or-27-2-jones-26nc;
-   ED-39).
+1. **July 1 (extended pass 10)** [D + drawn]: the McPherson's Ridge
+   fight, regimental order R-to-L 52d—47th—11th—26th NC; the branch,
+   the wheat-field, and the wooded hill on the 26th's front
+   (or-27-2-jones-26nc) — **the wooded hill IS Herbst/McPherson's
+   woods, both-sided this pass with the Iron Brigade's line** (24th
+   Mich directly opposite the 26th NC: Morrow's step-by-step
+   contested retreat vs the 26th's "lost more than half its men
+   killed and wounded", Burgwyn k / Lane w "both with the colors" —
+   the two color ledgers face each other: 24th Mich nine carriers /
+   four k, 26th NC's fourteen-carrier tradition carried at
+   compilation grade only). The July 1 monument mon-26nc (2866.8,
+   7311.2) carries that day's semantics (ED-39); j1-03 drawn shows
+   the Meredith front it struck (label 2971, 7100); the brigade's
+   July 1 attack fell in Heth's AFTERNOON renewal (the division's
+   second effort with Pender behind — after Davis's 1 p.m.
+   retirement clock, before the 3.45-4 p.m. Union retirement; [D]
+   bracketed, no CSA clock).
+   The W Conf Ave tablet mon-pettigrew-tablet (formation-line
+   semantics) registered pass 10.
 2. **July 2 evening** [D]: "moved about a mile to our right, and took
    position in rear of our batteries, facing the works of the enemy on
    Cemetery Hill" (or-27-2-jones-26nc).

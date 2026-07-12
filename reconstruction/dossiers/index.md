@@ -15,7 +15,7 @@ Citations are `(source-id, locator)`; source ids resolve in
 `reconstruction/sources/sources.json`. Facts with **no tier bracket are
 untimed** (identity, strength, materiel). Negative evidence and conflicts are
 first-class and live in their own section. New editorial calls are PROPOSED
-as ED candidates (ED-64+ as of pass 9 — the pass-1 candidates ED-32…ED-38,
+as ED candidates (ED-66+ as of pass 10 — the pass-1 candidates ED-32…ED-38,
 the monument profile ED-39, the pass-2 candidates ED-40…ED-45, the
 pass-3 candidates ED-46…ED-49, the pass-4 candidates ED-50…ED-52, the
 pass-5 candidates ED-53…ED-55 (incl. the CA-J2A-2/3 chain revision), and
@@ -27,7 +27,11 @@ Trostle gun-recovery cross-credit rule, its Bigelow/Watson
 precondition satisfied first) were adopted 2026-07-11 at pass-8
 start, and the pass-8 candidates ED-62/ED-63 (the CA-J2E
 chain-hardening basis upgrade; the ECH battery-possession convergent
-ruling) were adopted 2026-07-11 at pass-9 start), never self-adopted.
+ruling) were adopted 2026-07-11 at pass-9 start, and the pass-9
+candidates ED-64/ED-65 (the CA-J3M-3 two-pole conflict-record upgrade
+— record adopted, ~10:00 direction provisional behind the standing
+Pfanz gate; the CA-J3M-1 opening-cluster annotation) were adopted
+2026-07-11 at pass-10 start), never self-adopted.
 
 ## Fixed heading schema
 
@@ -370,3 +374,58 @@ pin), us-xii-2-hq-geary.md (the night-return clock pair at
 brigade/regiment grain).
 
 Companion: `docs/reconstruction/audit/dossier-pass-9.md`.
+
+## Pass 10 — July 1 (the last uncovered major phase; ED-26/ED-27 executor-hardened)
+
+Both July 1 chains taken off their R1 event-quote basis per pass 9
+§9: the CA-J1M morning executors both-sided (Buford's brigades vs
+Heth's four — the deploy-vs-attack split now executor-clocked:
+Davis's **"About 10.30 o'clock a line of battle was formed... and
+the brigade moved forward to the attack"** vs the Union receiving
+cluster at 10:00-10:15 → **ED-66 candidate**), the Reynolds 10:15
+death pin raised to THREE-primary agreement (tablet = Wadsworth =
+Doubleday), and the CA-J1P afternoon pairs (Iverson's destruction —
+the EC6 single-spike exemplar; Gordon's "About 3 p.m." order clock
+pairing Schurz's "about 3 o'clock" receiving clock ACROSS THE LINES
+→ **ED-67 candidate**; the Howard-assumes-command sub-anchor
+two-primary at 11:30 and the Hancock-arrival controversy FORMALIZED
+→ **ED-68 candidate**). Batch adoption of ED-64/ED-65 executed at
+pass start (record-only; the CA-J3M-3 Pfanz gate STANDS). New
+channel: the OR 27/1-27/2 IA full-text layer (page-verified against
+civilwar.com where both serve) — it OVERTURNED the pass-9 Hoffman
+negative (Smith's-brigade report No. 476 located). Spatial: first
+j1-sheet exercise (4 masters, 7 crops, 23 reads; Ames crest bar
+57 m from the Barlow statue); monument register +27 (202); register
++2 command rows (287); sources 186 → 199.
+
+| Dossier | Register id | Arc role | Achieved T |
+|---|---|---|---|
+| [us-cav-1-1-gamble.md](us-cav-1-1-gamble.md) | reg-us-cav-1-1 | THE CA-J1M-2 executor; the delay line geometry primary; 1,600 + Calef | T4 (July 1 grain) |
+| [us-cav-1-2-devin.md](us-cav-1-2-devin.md) | reg-us-cav-1-2 | the four-road screen; the friendly-fire record | T3 (July 1 grain) |
+| [us-i-1-1-meredith.md](us-i-1-1-meredith.md) | reg-us-i-1-1 (us-meredith) | the Archer capture both-sided; 1,153 (heaviest Union brigade) | T4 full-arc |
+| [us-i-1-2-cutler.md](us-i-1-2-cutler.md) | reg-us-i-1-2 (us-cutler) | first infantry engaged; the 147th NY rate-class primaries; "10 a.m. until 4 p.m." | T4 full-arc |
+| [us-i-hq-reynolds.md](us-i-hq-reynolds.md) | reg-us-i-hq (added pass 10) | THE 10:15 PIN three-primary; the succession spine | T3 (command record) |
+| [csa-2c-rod-2-iverson.md](csa-2c-rod-2-iverson.md) | reg-csa-2c-rod-2 (csa-iverson) | CA-J1P-2 — the destruction; the single-spike EC6 exemplar | T4 full-arc |
+| [csa-2c-rod-4-ramseur.md](csa-2c-rod-4-ramseur.md) | reg-csa-2c-rod-4 (csa-ramseur) | the counter-stroke; report=return exact ×4; the 200-yard reconnaissance | T4 full-arc |
+| [csa-2c-ear-4-gordon.md](csa-2c-ear-4-gordon.md) | reg-csa-2c-ear-4 (csa-gordon) | CA-J1P-3 executor; the 3 p.m. cross-line pair; 1,200-engaged primary | T4 full-arc |
+| [us-xi-hq-howard.md](us-xi-hq-howard.md) | reg-us-xi-hq (added pass 10) | the assumes-command sub-anchor (11:30 two-primary); the 16:00 ladder | T3 (command record) |
+| [us-xi-1-1-vongilsa.md](us-xi-1-1-vongilsa.md) | reg-us-xi-1-1 (us-vongilsa) | the knoll's receiving right; no-report class, honest | T2 (honestly thin) |
+
+Pass-10 upgrades to existing dossiers: csa-3c-het-3-fry.md,
+csa-3c-het-4-davis.md, csa-3c-het-1-marshall.md,
+csa-3c-het-2-brockenbrough.md (**Heth's four backward-extended to
+July 1** — the creek pocket / the 10.30 clock / the facing color
+ledgers / the honest thin), csa-2c-ear-1-hays.md +
+csa-2c-ear-3-avery.md (July 1 Coster-front extension + EC2 tablet
+hops; the Gordon-non-advance conflict CLOSED by his own silence),
+us-xi-1-2-harris.md (the knoll drawn both-sided),
+us-ii-hq-hancock.md (**the CA-J1P-7 conflict record FORMALIZED**),
+**csa-2c-ear-2-smith.md (THE HOFFMAN HUNT LANDED — T2 → T3;
+report=tablet 142 exact)**, us-xii-1-2-lockwood.md (Maulsby in
+full; Geary's 1,700-strong EC2 primary), us-xii-2-1-candy.md +
+us-xii-2-2-kane.md (p. 184 rows, sums exact; the Geary ladder),
+us-xii-2-hq-geary.md (pp. 826-830; the 3.30-vs-4.30 CA-J3M-1
+conflict pair; the 8 a.m. wave-2 receiving clock),
+csa-2c-joh-1/-2/-3/-4 (EC2 tablet hops).
+
+Companion: `docs/reconstruction/audit/dossier-pass-10.md`.

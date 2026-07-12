@@ -175,7 +175,10 @@ meadow (csa-2c-joh-1-steuart.md, csa-2c-ear-2-smith.md).
 ## ED candidates proposed
 
 - **ED-64 (see dossier-pass-9.md §5)** — the CA-J3M-3 two-pole
-  conflict-record upgrade. Nothing self-adopted.
+  conflict-record upgrade. Nothing self-adopted. **ADOPTED 2026-07-11
+  at pass-10 start** (angle-editorial-decisions.md §"Dossier pass 9
+  adoption rulings") — the RECORD adopted; the ~10:00 direction stays
+  provisional behind the standing Pfanz gate.
 
 ## Source register
 

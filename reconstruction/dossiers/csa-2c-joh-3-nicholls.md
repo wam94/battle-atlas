@@ -23,6 +23,11 @@ geometry and duration.
 - OPEN — no strength primary in the fetched record; no hop taken
   (flagged, with Jones's, as the cheap B&M-class future fetch).
 
+
+**Pass-10 EC2 hop (the tablet strength class)**: the WD brigade
+tablet reads "Present about 1100 Killed 43 Wounded 309 Missing 36 Total 388" — "Present about" ~1,100 carried at
+tablet-adjudicated grade (stone-sentinels fetch 2026-07-12); the 388 = the pass-8 exact figure.
+
 ## EC3 — Position anchors
 
 1. July 1 night → July 2 [E]: line "about 600 yards from and

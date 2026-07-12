@@ -1,6 +1,6 @@
 # Dossier: 2nd Division, XII Corps headquarters — Geary (reg-us-xii-2-hq)
 
-Pass 8 (July 2 evening chain batch) · Cast status: not-yet-cast ·
+Pass 8 (July 2 evening chain batch; **pp. 826-830 read pass 10 — the wrong-road own-version + the July 3 ladder**) · Cast status: not-yet-cast ·
 Achieved T-level: **T3 (command record)** · 2026-07-11
 
 Chain role: the division command record OVER Greene — the 16:00
@@ -101,6 +101,35 @@ and the July 3 seven-hour defense frame.
   division-grain episode split follows the brigade rows by
   construction.
 
+**Pass-10 additions (pp. 826-830 read; the pp. 828+ flag CLOSED)**:
+1. **His own wrong-road version** [D]: "The First Division having
+   gone out of sight or hearing, I directed the head of my column
+   by the course of some of the men of that division who appeared
+   to be following it" — the astray legs now commander-authored
+   (Candy's confession corroborated from above); Rock Creek Bridge
+   halt; "At 7.30 o'clock I received an order to hold the position
+   down to the creek at all hazards."
+2. **The July 3 command ladder** [C via or-27-1-geary]: 3.30 a.m.
+   "(early dawn) a simultaneous attack... by artillery and the
+   infantry"; artillery "by previous arrangement, for ten minutes";
+   the 20-minute pause; the second 15-minute artillery lay he
+   sighted himself; 5 / 5.45 / 6 / 7.30 / 8 / 8.45 / 9 / 9.20 a.m.
+   rungs; Shaler's brigade (8.45, casualties 45); "About 2 o'clock
+   the brigade was ordered to rejoin its corps."
+3. **THE 3.30-vs-4.30 OPENING CONFLICT** [recorded, NOT resolved]:
+   Geary's 3.30 a.m. + ten minutes vs Muhlenberg's author-primary
+   4.30 + ~15 minutes (CA-J3M-1, ED-65's adopted conflict set
+   gains a second within-command pair — the division commander vs
+   the artillery author on both the hour AND the duration; the
+   03:00-04:00 infantry-escalation preamble of ED-65 makes a 3.30
+   infantry-plus-guns reading coherent, but NOTHING is adopted —
+   flagged to the owner with the pass-10 report).
+4. **The 8 a.m. wave-2 receiving clock**: "About 8 a.m. the enemy
+   redoubled their efforts, and, massing all the force against us
+   that the ground would admit" — agreeing with O'Neal's 8 a.m.
+   executor clock ACROSS THE LINES (CA-J3M-2 wave 2 now
+   both-sided at the commanding echelons).
+
 ## Conflicts & negative evidence
 
 1. Geary's own wrong-road narrative unfetched (pp. 828+) — the astray
@@ -129,7 +158,7 @@ and the July 3 seven-hour defense frame.
 
 ## Source register
 
-or-27-1-geary (pp. 825-828 read, the spine; pp. 828+ flagged) ·
+or-27-1-geary (pp. 825-830 read — the pp. 828+ flag CLOSED pass 10) ·
 or-27-1-williams-aw (the discovery record) · or-27-1-greene ·
 or-27-2-johnson (the duel's other side) · or-27-1-union-return
 pp. 184-185 · OSM/Overpass (tab-us-xii-2-hq-geary, mon-kinzie-culps,

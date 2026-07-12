@@ -101,6 +101,8 @@ morning woods fight and the CA-J3M-4 works reoccupation.
 ## ED candidates proposed
 
 - None (contributes context to ED-64's frame). Nothing self-adopted.
+  (ED-64 ADOPTED 2026-07-11 at pass-10 start — record-only; the
+  Pfanz gate stands.)
 
 ## Source register
 

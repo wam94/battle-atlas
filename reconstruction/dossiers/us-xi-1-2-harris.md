@@ -1,7 +1,8 @@
 # Dossier: Ames's / Harris's Brigade, 1st Division, XI Corps (reg-us-xi-1-2)
 
-Pass 8 (July 2 evening chain batch) · Cast status: standalone
-(`us-harris`) · Achieved T-level: **T4 full-arc** · 2026-07-11
+Pass 8 (July 2 evening chain batch) · **July 1 arc extended pass 10
+(the knoll, both-sided)** · Cast status: standalone (`us-harris`) ·
+Achieved T-level: **T4 full-arc** · 2026-07-12
 
 Chain role: the ECH base-wall infantry Hays's ascent broke through —
 the brigade whose own commander documents the GAP the assault came
@@ -34,6 +35,22 @@ closer).
 
 ## EC3 — Position anchors
 
+0. **July 1 — the knoll (extended pass 10)** [D + drawn]: with the
+   division's forward tilt to Barlow's Knoll — the brigade's crest
+   line is DRAWN on j1-11 (the "17 Ct / 25 Ohio" bar read (5366,
+   8448), **57 m from the Barlow statue ground**; "75 Ohio" bar
+   (5117, 8457); "107 Ohio" (5891-class, second line)), under
+   Gordon's assault line (contact bar 82 m down the north slope) —
+   the both-sided knoll geometry inside one crop. The break: Ames
+   "From this position we were driven, the men of the First
+   Brigade... running through lines of the regiments of my brigade
+   ... creating considerable confusion. At this time General Barlow
+   was wounded, and the command of the division devolved upon me"
+   (or-27-1-ames — the Barlow pin + succession in the brigade's own
+   echelon record; Gordon's side: "a division commander... severely
+   wounded", or-27-2-gordon); the through-town retreat ("many of
+   our men were taken prisoners") to the hill. Knoll cluster
+   registered pass 10 (mon-barlow-statue row).
 1. **The base wall** [E, July 1 night → July 2 ~20:00]: "a stone
    wall on the right, and nearly at right angles with the Baltimore
    road" (Harris), skirmishers into the town edge; monuments

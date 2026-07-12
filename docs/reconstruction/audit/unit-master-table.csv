@@ -271,8 +271,10 @@ reg-us-iii-2-hq,"2nd Division, III Corps headquarters (division command)",union,
 reg-us-xii-2-hq,"2nd Division, XII Corps headquarters (division command)",union,command,infantry,,,,,,,,,,,,,,,1,2nd Division,yes,,T2,not-yet-cast,reg-us-xii-2-hq
 reg-us-i-3-hq,"3rd Division, I Corps headquarters (division command)",union,command,infantry,,,,,,,,,,,,,,,1,3rd Division,yes,,T2,not-yet-cast,reg-us-i-3-hq
 reg-us-ii-3-hq,"3rd Division, II Corps headquarters (division command)",union,command,infantry,,,,,,,,,,,,,,,1,3rd Division,yes,,T2,not-yet-cast,reg-us-ii-3-hq
+reg-us-i-hq,I Corps headquarters (corps command),union,command,infantry,,,,,,,,,,,,,,,0,I Corps headquarters,VERIFY,,T2,not-yet-cast,reg-us-i-hq
 reg-us-ii-hq,II Corps headquarters (corps command),union,command,infantry,,,,,,,,,,,,,,,0,II Corps headquarters,VERIFY,,T2,not-yet-cast,reg-us-ii-hq
 reg-us-hq-provost,Provost Guard and army headquarters detachments (Brig. Gen. Marsena R. Patrick),union,command,infantry,,,,,,,,,,,,,,,0,Provost Guard and army headquarters detachments,VERIFY,,T2,not-yet-cast,reg-us-hq-provost
+reg-us-xi-hq,XI Corps headquarters (corps command),union,command,infantry,,,,,,,,,,,,,,,0,XI Corps headquarters,VERIFY,,T2,not-yet-cast,reg-us-xi-hq
 reg-us-xii-hq,XII Corps headquarters (corps command),union,command,infantry,,,,,,,,,,,,,,,0,XII Corps headquarters,VERIFY,,T2,not-yet-cast,reg-us-xii-hq
 us-hall,Hall's Brigade,union,parent-brigade,infantry,920,555,365,5,1,4,0,5,60.9,0.0,no,line,0,4,4,Hall,yes,T5,T4,in-build,reg-us-ii-2-3
 us-stannard,Stannard's Vermont Brigade,union,parent-brigade,infantry,1950,1600,350,7,1,6,0,7,297.9,0.0,yes,line,0,3,6,Stannard,yes,T5,T4,in-build,reg-us-i-3-3

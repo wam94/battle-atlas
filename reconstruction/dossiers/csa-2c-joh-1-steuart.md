@@ -30,6 +30,11 @@ hardening is pass 9+ business).
 - OPEN — no strength primary fetched; no hop taken (flagged with its
   division mates).
 
+
+**Pass-10 EC2 hop (the tablet strength class)**: the WD brigade
+tablet reads "Present about 1700 Killed 83 Wounded 409 Missing 190 Total 682" — "Present about" ~1,700 carried at
+tablet-adjudicated grade (stone-sentinels fetch 2026-07-12); the 682 = the Johnson-table/ANV-return exact figure (pass 8).
+
 ## EC3 — Position anchors
 
 1. July 1 night [E]: division left, "our front facing the south and
