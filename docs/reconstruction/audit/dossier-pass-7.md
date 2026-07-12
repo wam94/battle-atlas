@@ -183,6 +183,14 @@ averaged anywhere in the pass.
 
 ## 5. New ED candidates (proposed, NOT adopted)
 
+> **Adoption note (2026-07-11, pass 8):** ED-60 and ED-61 were ADOPTED
+> at the start of dossier pass 8 (angle-editorial-decisions.md §"Dossier
+> pass 7 adoption rulings"). ED-61's precondition (the Bigelow/Watson
+> battery records) was satisfied FIRST: McGilvery pp. 881-884 +
+> Milton No. 320 + Martin p. 660 fixed the object counts (4 + 4 guns)
+> and the same-night recovery spine; the ledger closed with one named
+> residue (the Crawford July 3 Napoleon attribution).
+
 - **ED-60 — the Wright high-water ruling.** Adopt: farthest advance =
   the Emmitsburg-road-to-west-slope gun line fixed by the advance
   marker (4330.6, 4746.9), the j2-04 drawn state (28 m agreement),

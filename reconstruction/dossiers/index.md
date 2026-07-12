@@ -15,14 +15,17 @@ Citations are `(source-id, locator)`; source ids resolve in
 `reconstruction/sources/sources.json`. Facts with **no tier bracket are
 untimed** (identity, strength, materiel). Negative evidence and conflicts are
 first-class and live in their own section. New editorial calls are PROPOSED
-as ED candidates (ED-60+ as of pass 7 — the pass-1 candidates ED-32…ED-38,
+as ED candidates (ED-62+ as of pass 8 — the pass-1 candidates ED-32…ED-38,
 the monument profile ED-39, the pass-2 candidates ED-40…ED-45, the
 pass-3 candidates ED-46…ED-49, the pass-4 candidates ED-50…ED-52, the
 pass-5 candidates ED-53…ED-55 (incl. the CA-J2A-2/3 chain revision), and
 the pass-6 candidates ED-56…ED-59 (the guns convergent-capture, the
 occupation-wave record, the field-wide early-skew class, the
-withdrawal-conflict ruling) were all adopted 2026-07-11), never
-self-adopted.
+withdrawal-conflict ruling) were all adopted 2026-07-11, and the
+pass-7 candidates ED-60/ED-61 (the Wright high-water ruling; the
+Trostle gun-recovery cross-credit rule, its Bigelow/Watson
+precondition satisfied first) were adopted 2026-07-11 at pass-8
+start), never self-adopted.
 
 ## Fixed heading schema
 
@@ -273,3 +276,47 @@ arc extended backward** — the advanced Emmitsburg-Rd tablet, the 8th
 Fla colors both-sided, the opposite-direction clock heterogeneity).
 
 Companion: `docs/reconstruction/audit/dossier-pass-7.md`.
+
+## Pass 8 — the July 2 evening chain (ED-29 opened) + the ED-61-gate closers
+
+The evening phase opened per pass 7 §9 and the sequencing doctrine:
+Culp's Hill both-sided (Greene's spine vs Johnson's division at
+brigade grain, the XII Corps absent-then-returning frame as command
+records), East Cemetery Hill both-sided (Hays/Avery vs Harris + the
+Wiedrich/Ricketts hand-to-hand), and the pass-7 cheap closers
+(Bigelow/Watson — ED-61's gate, satisfied BEFORE the batch adoption of
+ED-60/61 executed at pass start — plus Winslow and the two return
+rows). Headline evidence classes: the CA-J2E-2 cross-line minute-class
+agreement (Greene "a few minutes before 7 p. m." vs Nicholls "7
+p. m."); the CA-J2E-3 three-source both-armies 8-p.m. agreement
+(Hays/Wiedrich/Ricketts); Johnson's divisional casualty table = the
+ANV return EXACT at all four brigades (682/388/330/421); Hays's
+per-day loss table (the evening's only per-day brigade split); the
+twilight/darkness physics class (sunset 19:29 LMT, ED-31). Monument
+register +32 (143); register +3 command rows (285) + the Jones
+wounding-date correction.
+
+| Dossier | Register id | Arc role | Achieved T |
+|---|---|---|---|
+| [us-xii-2-3-greene.md](us-xii-2-3-greene.md) | reg-us-xii-2-3 (us-greene) | the chain's Union spine; 1,350 strength table; four-clock ladder | T4 full-arc |
+| [us-xii-hq-slocum-williams.md](us-xii-hq-slocum-williams.md) | reg-us-xii-hq (added pass 8) | CA-J2E-1's issuing echelon; the ED-61 Lockwood claim | T3 (command record) |
+| [us-xii-2-hq-geary.md](us-xii-2-hq-geary.md) | reg-us-xii-2-hq (added pass 8) | division over Greene; the wrong-road negative; Kane's two-volley return | T3 (command record) |
+| [csa-2c-joh-4-jones.md](csa-2c-joh-4-jones.md) | reg-csa-2c-joh-4 (csa-dungan) | the lead assault lane; Jones w July 2 (register corrected) | T4 full-arc |
+| [csa-2c-joh-3-nicholls.md](csa-2c-joh-3-nicholls.md) | reg-csa-2c-joh-3 (csa-williams) | center lane; the 19:00 agreeing CSA clock | T4 full-arc |
+| [csa-2c-joh-1-steuart.md](csa-2c-joh-1-steuart.md) | reg-csa-2c-joh-1 (csa-steuart) | left wing; the lodgment both-sided w/ the 137th NY; Betterton colors | T4 full-arc |
+| [csa-2c-joh-2-walker.md](csa-2c-joh-2-walker.md) | reg-csa-2c-joh-2 (csa-walker) | the discretionary evening negative (Brinkerhoff's Ridge) | T3 full-arc |
+| [csa-2c-ear-1-hays.md](csa-2c-ear-1-hays.md) | reg-csa-2c-ear-1 (csa-hays) | CA-J2E-3 executor/clock-bearer; per-day EC6 primary | T4 full-arc |
+| [csa-2c-ear-3-avery.md](csa-2c-ear-3-avery.md) | reg-csa-2c-ear-3 (csa-godwin) | the left lane; Avery mw pin + the archival note | T4 (no-report class) |
+| [us-xi-1-2-harris.md](us-xi-1-2-harris.md) | reg-us-xi-1-2 (us-harris) | the breached base wall; the gap confession | T4 full-arc |
+| [us-btty-wiedrich.md](us-btty-wiedrich.md) | reg-us-xi-b1 (us-btty-wiedrich) | the intrenchments hand-to-hand; 21-m drawn-bar check | T4 full-arc |
+| [us-btty-ricketts.md](us-btty-ricketts.md) | reg-us-ar-3v-3 (us-btty-ricketts) | the spiked piece; 23 report=return exact; CA-J2E-4 pin | T4 full-arc |
+| [us-btty-bigelow.md](us-btty-bigelow.md) | reg-us-ar-1v-2 | the Trostle stand; ED-61 object 1; 28 arithmetic-exact | T4 |
+| [us-btty-watson.md](us-btty-watson.md) | reg-us-v-b5 | ED-61 object 2; the Peeples recapture primary | T3 (brigade-carried) |
+| [us-btty-winslow.md](us-btty-winslow.md) | reg-us-iii-b2 | the Wheatfield battery; blind-fire method primary | T4 |
+
+Pass-8 upgrades to existing dossiers: us-vi-3-3-nevin.md (**EC6
+CLOSED — tablet=return 53 exact**, the pass-7 flag), us-iii-1-2-ward.md
+(the 4th ME 144 row clean re-read), us-ii-3-1-carroll.md (ECH 27-m
+label repeatability + the HQ-marker-to-Ricketts 34-m pin).
+
+Companion: `docs/reconstruction/audit/dossier-pass-8.md`.

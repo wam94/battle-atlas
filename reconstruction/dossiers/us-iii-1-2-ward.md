@@ -73,11 +73,12 @@ us-btty-smith.md), and the division's heaviest brigade (781).
 ## EC6 — Casualty apportionment
 
 - **Return block: 129 k / 482 w / 170 m = 781** (20th IN 156, 3rd ME
-  122, 4th ME 144-class*, 86th NY 66, 124th NY 90, 99th PA 110,
+  122, 4th ME **144 CLEAN RE-READ (pass 8): 2+9 k / 3+56 w /
+  4+70 m** — the pass-5 column noise closed; the heavy missing
+  column (74) is the Den's cut-off pocket, now component-certain;
+  86th NY 66, 124th NY 90, 99th PA 110,
   1st USSS 49, 2nd USSS 43; or-27-1-union-return p. 177; tablet
-  concurs 781). *The 4th ME row read with column noise (k+w 70 +
-  pooled captured ~74 ≈ 144, the Den's cut-off regiment) — flagged
-  for a clean re-read, aggregate class certain. **Ward's own "nearly
+  concurs 781). **Ward's own "nearly
   800"** is the commander's round figure, return adopted (ED-52).
 - Episode split [D, strong]: essentially ALL July 2, inside the
   ~90-minute ridge fight and the withdrawal; the two colonel deaths
@@ -92,8 +93,8 @@ us-btty-smith.md), and the division's heaviest brigade (781).
   UNION brigade tablet inside the southern-field early-clock class
   (ED-58 candidate; the McLaws tablet exception is not a CSA
   peculiarity on this field).
-3. No stated clocks in Ward's report (kind none); the 4th ME return
-  row noise (EC6) carried open.
+3. No stated clocks in Ward's report (kind none). The 4th ME return
+  row noise CLOSED by the pass-8 clean re-read (EC6).
 
 ## Chain anchors substantiated
 

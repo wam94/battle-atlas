@@ -1236,6 +1236,88 @@ the evidence carries) applies to report-vs-report conflicts equally.
 
 ---
 
+## Dossier pass 7 adoption rulings (ED-60 … ED-61) — 2026-07-11
+
+Owner ruling (standing adopt-and-adjust doctrine): the ED candidates
+proposed by dossier pass 7 (`docs/reconstruction/audit/dossier-pass-7.md`
+§5, drafted on branch audit-dossiers-7) are ADOPTED as recorded below,
+executed at the start of dossier pass 8 (branch audit-dossiers-8). No
+renumbers. No anchor moves. **Sequencing note:** ED-61 was adopted
+CONDITIONALLY on its named precondition — the Bigelow/9th MA and
+Watson/I-5th US battery records — and the precondition was SATISFIED
+FIRST (pass-8 batch-1 fetches, committed before this ruling): the
+object counts and the recovery disposition are now fixed by primaries,
+and the ruling below records the ledger as gated-then-closed.
+
+### ED-60 — The Wright high-water ruling
+
+**Canonical choice:** Wright's brigade's farthest advance on July 2 is
+the Emmitsburg-road-to-west-slope gun line fixed by the advance marker
+(4330.6, 4746.9), the j2-04 drawn state (red bars ON Brown's battery
+ground, 28 m agreement), and the receiving-side dossiers (Brown's and
+Weir's temporary gun losses; the Hall/Harrow/Webb ridge fronts
+unbroken). The report's "complete masters of the field" / "key of the
+enemy's whole line" / "over twenty pieces" claims and the WD tablet's
+"reached the crest" are carried verbatim as the commander's account
+THAT THE TABLET INHERITED (a tablet-inherits-report case for the
+ED-39/43 jurisprudence — the tablet is not an independent witness for
+the crest). EC6 basis: the return's 668 (report 688 and tablet 873
+carried as named conflict components; the missing column agrees
+exactly, 333 = 333 — the conflict is confined to k/w composition).
+**Consequences:** casts render the brigade at the gun line at the
+climax, never on the crest; the build's `csa-wright` track is checked
+against the marker geometry at the next authoring pass (never a silent
+edit here). **Alternative rejected:** adopting the tablet's crest —
+every independent evidence class contradicts it. **Rationale:** the
+one reading consistent with the marker, the drawn state, and the
+receiving side at once; fame is not an evidence class.
+
+### ED-61 — The Plum Run / Trostle gun-recovery cross-credit rule
+
+The ED-56 convergent-event pattern, mirrored for RECOVERIES, adopted
+for the Trostle/Plum Run ground — with the precondition fetches landed
+first and the ledger accordingly CLOSED rather than merely carried:
+
+- **Objects fixed (the gate):** the 9th Massachusetts left FOUR of its
+  six light 12-pounders at the Trostle angle (Milton: "silenced the
+  four pieces on my right, and prevented their withdrawal"; Milton's
+  own section of two retired); Watson's I/5th US had its FOUR guns
+  abandoned on the same ground ("the guns of Battery I, Fifth
+  Regulars, were abandoned", McGilvery).
+- **The recovery spine (same night):** McGilvery's 20:00 disposition
+  record — a detail from the 6th Maine + Seeley's battery hauled off
+  Battery I's guns, and Dow's procured infantry detail the four 9th MA
+  guns: "The guns of the two batteries, numbering eight, were brought
+  safely to the rear." Milton concurs ("Our four guns were recovered
+  the same day"). ALL EIGHT guns were off the field by ~21:00 July 2.
+- **The claimant ledger (each an honest view of one convergent
+  sequence, no exclusive credit encodable):** Peeples + the Garibaldi
+  Guards' recapture charge of Watson's guns (Martin, the one
+  named-actor recapture primary); Lockwood's brigade "recapturing
+  three pieces of artillery abandoned by the enemy" at "quite dark"
+  (A. S. Williams — the XII Corps left-wing detachment, McGilvery
+  in-person context); Nevin's "two light 12-pounder brass pieces" in
+  the W5 charge; Brewster's after-sunset "recaptured guns that had
+  been left on the field"; the loss-side state (Barksdale's 21st MS
+  "captured but were unable to bring off").
+- **Named residue (carried, not resolved):** Crawford/McCandless's
+  July 3 Napoleon + three caissons (tablet-attributed to the 9th MA
+  Battery) conflicts with the all-eight-off-the-field-July-2 spine —
+  recorded as an unreconciled recovery-ledger residue (most plausibly
+  materiel other than the four guns, e.g. caissons/limbers; not
+  adjudicated).
+
+**Consequences:** the Trostle-ground battery casts render ONE loss per
+battery and a recovery ledger — never per-claimant duplicate guns; the
+recovery renders as ground-retaken (infantry claimants) followed by
+haul-off (artillery details), per the sequence the primaries carry.
+**Rationale:** exactly ED-56's logic — the Union disposition record
+(McGilvery, as Smith's report was for ED-56) fixes count and type, and
+the multiple claimants converge on one event chain the sources decline
+to apportion.
+
+---
+
 ## Connective-reconstruction rules (named inference rules)
 
 Segments cite these rules by name in `inferenceRules`. A segment with no
