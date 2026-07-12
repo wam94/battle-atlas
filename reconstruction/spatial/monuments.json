@@ -2269,6 +2269,614 @@
     "extraction": "osm-node",
     "note": "OSM as PRIMARY coordinate source for this entry (the register's pass-6 channel deviation: Stone Sentinels served no machine-readable coordinates for this page through the 2026-07-11 fetch channel). OSM name string: CS Perry's Brigade"
    }
+  },
+  {
+   "id": "mon-greene-statue",
+   "registerId": "reg-us-xii-2-3",
+   "unitLabel": "Greene statue, Culp's Hill summit",
+   "side": "US",
+   "markerType": "statue",
+   "positionSemantics": "Summit of the upper hill — the brigade's crest line (July 2-3 works); the pass-8 anchor for the Greene works reads",
+   "lat": 39.819822,
+   "lon": -77.220177,
+   "local_x": 5772.5,
+   "local_z": 5583.5,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7244933704",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "tab-us-xii-2-3-hq",
+   "registerId": "reg-us-xii-2-3",
+   "unitLabel": "Greene brigade HQ marker",
+   "side": "US",
+   "markerType": "hq-marker",
+   "positionSemantics": "Brigade HQ just behind the crest line, between the 78th/102nd and 149th NY monuments",
+   "lat": 39.818425,
+   "lon": -77.219687,
+   "local_x": 5810.6,
+   "local_z": 5427.4,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7244933724",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "mon-60ny",
+   "registerId": "reg-us-xii-2-3",
+   "unitLabel": "60th New York (Godard)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Left of Greene's line at the summit crest (connected to Wadsworth's right)",
+   "lat": 39.819767,
+   "lon": -77.21994,
+   "local_x": 5792.7,
+   "local_z": 5576.9,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7244933718",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "mon-78-102ny",
+   "registerId": "reg-us-xii-2-3",
+   "unitLabel": "78th & 102nd New York",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Center of Greene's works on the east crest (Lane w night July 2 -> Stegman named on the stone)",
+   "lat": 39.818781,
+   "lon": -77.219435,
+   "local_x": 5833.2,
+   "local_z": 5466.4,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7244933723",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "mon-149ny",
+   "registerId": "reg-us-xii-2-3",
+   "unitLabel": "149th New York (Barnum)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Right-center of Greene's works",
+   "lat": 39.818427,
+   "lon": -77.21935,
+   "local_x": 5839.5,
+   "local_z": 5426.9,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7244933726",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "mon-137ny",
+   "registerId": "reg-us-xii-2-3",
+   "unitLabel": "137th New York (Ireland)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "The refused right — Ireland's regiment in/behind Kane's vacated works, the CA-J2E-2 flank crisis ground",
+   "lat": 39.817324,
+   "lon": -77.219611,
+   "local_x": 5814.1,
+   "local_z": 5305.0,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7244958795",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "tab-us-xii-2-hq-geary",
+   "registerId": "reg-us-xii-2-hq",
+   "unitLabel": "Geary division HQ marker",
+   "side": "US",
+   "markerType": "hq-marker",
+   "positionSemantics": "2nd Division HQ behind the Greene line (the division command record's pin)",
+   "lat": 39.817476,
+   "lon": -77.219929,
+   "local_x": 5787.3,
+   "local_z": 5322.6,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7244958793",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "tab-us-xii-1-hq-williams",
+   "registerId": "reg-us-xii-hq",
+   "unitLabel": "1st Division XII Corps HQ marker (Williams)",
+   "side": "US",
+   "markerType": "hq-marker",
+   "positionSemantics": "Division HQ marker naming Williams — used as the corps command record's pin (Williams commanded the corps July 1-3, Slocum the right wing)",
+   "lat": 39.816182,
+   "lon": -77.218224,
+   "local_x": 5929.7,
+   "local_z": 5175.3,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7244993069",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "mon-kinzie-culps",
+   "registerId": "reg-us-xii-b4",
+   "unitLabel": "Battery K, 5th US (Kinzie) — Culp's Hill section marker",
+   "side": "US",
+   "markerType": "battery-marker",
+   "positionSemantics": "The Geary-ordered section on the eminence left of Greene (the ~16:00 thirty-minute Benner's Hill duel, both-sided with Latimer)",
+   "lat": 39.82003,
+   "lon": -77.220318,
+   "local_x": 5761.0,
+   "local_z": 5606.9,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "mon-knap-culps",
+   "registerId": "reg-us-xii-b2",
+   "unitLabel": "Knap's Pennsylvania Battery E (Atwell) — Culp's Hill section marker",
+   "side": "US",
+   "markerType": "battery-marker",
+   "positionSemantics": "The other Geary-ordered section in the same duel; main battery ground Powers Hill",
+   "lat": 39.820052,
+   "lon": -77.219912,
+   "local_x": 5795.8,
+   "local_z": 5608.5,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "tab-csa-2c-joh-hq",
+   "registerId": "reg-csa-2c-joh-hq",
+   "unitLabel": "Johnson's Division tablet (East Confederate Ave)",
+   "side": "CSA",
+   "markerType": "division-tablet",
+   "positionSemantics": "Division tablet on the Rock Creek approach ground east of the hill",
+   "lat": 39.820537,
+   "lon": -77.21683,
+   "local_x": 6061.0,
+   "local_z": 5655.8,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7270960794",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "tab-csa-2c-joh-1",
+   "registerId": "reg-csa-2c-joh-1",
+   "unitLabel": "Steuart's Brigade tablet",
+   "side": "CSA",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "South end of East Confederate Ave — the left-wing approach to the lower-hill works (the half-wheel leg's ground)",
+   "lat": 39.817242,
+   "lon": -77.215178,
+   "local_x": 6193.3,
+   "local_z": 5286.5,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7270937910",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "tab-csa-2c-joh-2",
+   "registerId": "reg-csa-2c-joh-2",
+   "unitLabel": "Stonewall Brigade tablet (Walker)",
+   "side": "CSA",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "East Confederate Ave south — the brigade's July 3 ground; its July 2 evening was NE at Brinkerhoff's Ridge (the tablet stands where the brigade fought July 3, not the evening negative's ground)",
+   "lat": 39.816337,
+   "lon": -77.215545,
+   "local_x": 6159.4,
+   "local_z": 5186.8,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7270937909",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "tab-csa-2c-joh-3",
+   "registerId": "reg-csa-2c-joh-3",
+   "unitLabel": "Nicholls' Brigade tablet (Williams)",
+   "side": "CSA",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "East Confederate Ave center — the center assault lane against Greene's works",
+   "lat": 39.821349,
+   "lon": -77.217936,
+   "local_x": 5968.5,
+   "local_z": 5748.2,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7270951110",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "tab-csa-2c-joh-4",
+   "registerId": "reg-csa-2c-joh-4",
+   "unitLabel": "Jones' Brigade tablet",
+   "side": "CSA",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "North end of East Confederate Ave — the right assault lane (lead brigade) against Greene's left",
+   "lat": 39.822371,
+   "lon": -77.219935,
+   "local_x": 5800.3,
+   "local_z": 5865.9,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7271546595",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "tab-csa-2c-bn-latimer",
+   "registerId": "reg-csa-2c-bn-latimer",
+   "unitLabel": "Latimer (Andrews') Artillery Battalion tablet + Latimer mw",
+   "side": "CSA",
+   "markerType": "battalion-tablet",
+   "positionSemantics": "Benner's Hill — the ~16:00-18:00 duel position; Latimer mw here (the 'boy major' pin)",
+   "lat": 39.827267,
+   "lon": -77.213915,
+   "local_x": 6329.0,
+   "local_z": 6396.6,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "tab-csa-dement-benner",
+   "registerId": "reg-csa-2c-bn-latimer",
+   "unitLabel": "Dement's 1st MD battery tablet, Benner's Hill",
+   "side": "CSA",
+   "markerType": "battery-tablet",
+   "positionSemantics": "Battalion right on Benner's Hill",
+   "lat": 39.826811,
+   "lon": -77.214128,
+   "local_x": 6309.5,
+   "local_z": 6346.5,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "mon-wiedrich",
+   "registerId": "reg-us-xi-b1",
+   "unitLabel": "Battery I, 1st New York Light (Wiedrich)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "East Cemetery Hill, north front right of the Baltimore pike — the hand-to-hand intrenchments ground ('got into the intrenchments of my battery')",
+   "lat": 39.822049,
+   "lon": -77.229074,
+   "local_x": 5017.1,
+   "local_z": 5849.6,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7271295149",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "mon-ricketts",
+   "registerId": "reg-us-ar-3v-3",
+   "unitLabel": "Batteries F & G, 1st Pennsylvania Light (Ricketts)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "East Cemetery Hill east front, right of the pike — the left-piece capture/spiking and handspike fight ground",
+   "lat": 39.82169,
+   "lon": -77.228654,
+   "local_x": 5052.1,
+   "local_z": 5808.9,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "mon-cooper-ech",
+   "registerId": "reg-us-i-b4",
+   "unitLabel": "Battery B, 1st Pennsylvania (Cooper) — ECH marker",
+   "side": "US",
+   "markerType": "battery-marker",
+   "positionSemantics": "Wainwright's north-front line (the pass-2 dossier's ECH slot corroborated)",
+   "lat": 39.821383,
+   "lon": -77.22854,
+   "local_x": 5061.0,
+   "local_z": 5774.6,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "mon-5me-stevens",
+   "registerId": "reg-us-i-b2",
+   "unitLabel": "5th Maine Battery (Stevens) — Stevens Knoll",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "The knoll 'to the right and some 50 yards in front' of Wainwright's line (his report verbatim) — the flank fire into Avery's left during the CA-J2E-3 ascent",
+   "lat": 39.819374,
+   "lon": -77.224104,
+   "local_x": 5435.2,
+   "local_z": 5542.1,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "mon-41ny",
+   "registerId": "reg-us-xi-1-1",
+   "unitLabel": "41st New York (von Einsiedel)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Von Gilsa's brigade right-front at the ECH base wall (the 6.30-stated attack reception)",
+   "lat": 39.821306,
+   "lon": -77.227216,
+   "local_x": 5174.1,
+   "local_z": 5763.2,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "tab-us-xi-1-1-hq",
+   "registerId": "reg-us-xi-1-1",
+   "unitLabel": "Von Gilsa brigade HQ marker",
+   "side": "US",
+   "markerType": "hq-marker",
+   "positionSemantics": "Brigade HQ at the ECH base line",
+   "lat": 39.82161,
+   "lon": -77.227427,
+   "local_x": 5156.9,
+   "local_z": 5797.4,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7246022682",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "mon-17ct",
+   "registerId": "reg-us-xi-1-2",
+   "unitLabel": "17th Connecticut (Fowler k / Brady)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "The brigade's moved-right slot whose vacated wall space the assault came through (Harris's gap confession, both-sided with Hays's ascent)",
+   "lat": 39.82261,
+   "lon": -77.228133,
+   "local_x": 5099.2,
+   "local_z": 5909.9,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "mon-25-75oh",
+   "registerId": "reg-us-xi-1-2",
+   "unitLabel": "25th & 75th Ohio",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Harris's wall line south of the vacated space ('From this attack but few escaped')",
+   "lat": 39.823209,
+   "lon": -77.228542,
+   "local_x": 5065.9,
+   "local_z": 5977.3,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7246012068",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "tab-us-ii-3-1-hq-carroll",
+   "registerId": "reg-us-ii-3-1",
+   "unitLabel": "Carroll brigade HQ marker (East Cemetery Hill)",
+   "side": "US",
+   "markerType": "hq-marker",
+   "positionSemantics": "The night-of-July-2 relief position among the ECH batteries (CA-J2E-4's executor pin; upgrades the pass-4 dossier's EC3)",
+   "lat": 39.821543,
+   "lon": -77.228976,
+   "local_x": 5024.1,
+   "local_z": 5793.3,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "tab-csa-2c-ear-1",
+   "registerId": "reg-csa-2c-ear-1",
+   "unitLabel": "Hays' Louisiana Brigade tablet",
+   "side": "CSA",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "NE of town on the assault's start ground (a second Hays tablet stands 80 m NW, recorded as a pair)",
+   "lat": 39.828182,
+   "lon": -77.225754,
+   "local_x": 5318.3,
+   "local_z": 6523.3,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "tab-csa-2c-ear-3",
+   "registerId": "reg-csa-2c-ear-3",
+   "unitLabel": "Hoke's Brigade tablet (Avery)",
+   "side": "CSA",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "NE of town, left of Hays — Avery's start ground for the CA-J2E-3 left wheel; Avery mw on the ascent (no OSM/SS-served field marker for the mw point through this pass's channels — negative recorded)",
+   "lat": 39.827948,
+   "lon": -77.225563,
+   "local_x": 5334.0,
+   "local_z": 6497.0,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "mon-9ma-trostle",
+   "registerId": "reg-us-ar-1v-2",
+   "unitLabel": "9th Massachusetts Battery monument, Trostle farm",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "THE Trostle-angle final stand ('two stone walls met at an obtuse angle', Milton) — where the four guns were lost; ED-61 ground",
+   "lat": 39.80179,
+   "lon": -77.242565,
+   "local_x": 3806.0,
+   "local_z": 3629.7,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "mon-9ma-first",
+   "registerId": "reg-us-ar-1v-2",
+   "unitLabel": "9th Massachusetts Battery first-position marker, Wheatfield Rd",
+   "side": "US",
+   "markerType": "position-marker",
+   "positionSemantics": "The Wheatfield Rd line position before the prolonge retirement",
+   "lat": 39.800077,
+   "lon": -77.245613,
+   "local_x": 3540.3,
+   "local_z": 3446.1,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "mon-watson",
+   "registerId": "reg-us-v-b5",
+   "unitLabel": "Battery I, 5th US (Watson) marker",
+   "side": "US",
+   "markerType": "battery-marker",
+   "positionSemantics": "The Plum Run knoll where the four guns were abandoned and retaken (Peeples/39th NY charge; McGilvery's 20:00 haul-off) — ED-61 ground",
+   "lat": 39.802911,
+   "lon": -77.237906,
+   "local_x": 4208.0,
+   "local_z": 3744.2,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
+  },
+  {
+   "id": "mon-winslow",
+   "registerId": "reg-us-iii-b2",
+   "unitLabel": "Battery D, 1st New York Light (Winslow) monument, Wheatfield",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "The Wheatfield interior position ('a small wheat-field near the base of Round Top hill') — the blind-fire episode; withdrawal by piece from the left",
+   "lat": 39.797419,
+   "lon": -77.2428,
+   "local_x": 3773.7,
+   "local_z": 3145.0,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-6/7/8 channel deviation: Stone Sentinels served no machine-readable coordinates through the current fetch channel). Pass-8 Culp's Hill / East Cemetery Hill / closer-battery batch."
+   }
   }
  ]
 }
