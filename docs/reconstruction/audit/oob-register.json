@@ -1385,9 +1385,9 @@
       ],
       "notes": "Wheatfield July 2.",
       "triage": {
-        "disposition": "needs-own-dossier",
-        "coveredBy": null,
-        "reason": "III Corps artillery brigade -- no battalion/group dossier exists; the corps' infantry front (Peach Orchard/Wheatfield salient) is dossier'd (passes 6-7) but its guns are unresearched at battery grain"
+        "disposition": "attached-to-dossiered-battalion",
+        "coveredBy": "own dossier: reconstruction/dossiers/us-btty-winslow.md",
+        "reason": "individually dossiered at battery grain (earlier pass) -- STALE TRIAGE CORRECTED pass 13: the pass-12 register-grain triage sweep left this entry's disposition as needs-own-dossier despite an existing dossier; found and fixed while building pass-13's coverage census"
       }
     },
     {
@@ -1414,9 +1414,9 @@
       ],
       "notes": "Devil's Den July 2; guns overrun.",
       "triage": {
-        "disposition": "needs-own-dossier",
-        "coveredBy": null,
-        "reason": "III Corps artillery brigade -- no battalion/group dossier exists; the corps' infantry front (Peach Orchard/Wheatfield salient) is dossier'd (passes 6-7) but its guns are unresearched at battery grain"
+        "disposition": "attached-to-dossiered-battalion",
+        "coveredBy": "own dossier: reconstruction/dossiers/us-btty-smith.md",
+        "reason": "individually dossiered at battery grain (earlier pass) -- STALE TRIAGE CORRECTED pass 13: the pass-12 register-grain triage sweep left this entry's disposition as needs-own-dossier despite an existing dossier; found and fixed while building pass-13's coverage census"
       }
     },
     {
@@ -1881,9 +1881,9 @@
       ],
       "notes": "Wrecked July 2; out of action July 3.",
       "triage": {
-        "disposition": "needs-own-dossier",
-        "coveredBy": null,
-        "reason": "V Corps artillery brigade -- only Rittenhouse (Little Round Top summit) individually dossiered; the other four batteries unresearched"
+        "disposition": "attached-to-dossiered-battalion",
+        "coveredBy": "own dossier: reconstruction/dossiers/us-btty-watson.md",
+        "reason": "individually dossiered at battery grain (earlier pass) -- STALE TRIAGE CORRECTED pass 13: the pass-12 register-grain triage sweep left this entry's disposition as needs-own-dossier despite an existing dossier; found and fixed while building pass-13's coverage census"
       }
     },
     {
