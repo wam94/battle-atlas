@@ -124,6 +124,7 @@ csa-9va,9th Virginia,confederate,child-regiment,infantry,330,92,238,9,0,9,0,9,28
 csa-brock-left,Brockenbrough's left wing,confederate,child-regiment,infantry,440,390,50,7,1,6,0,7,735.6,5.4,yes,line/routed/scattered,0,0,3,Brockenbrough,yes,T0,T4,in-build,
 csa-brock-right,Brockenbrough's right wing,confederate,child-regiment,infantry,440,390,50,7,1,6,0,7,877.5,5.4,yes,line/routed/scattered,0,0,3,Brockenbrough,yes,T0,T4,in-build,
 reg-csa-3c-het-hq,Heth's Division headquarters (division command),confederate,command,infantry,,,,,,,,,,,,,,,3,Heth,yes,,T2,not-yet-cast,reg-csa-3c-het-hq
+reg-csa-2c-joh-hq,Johnson's Division headquarters (division command),confederate,command,infantry,,,,,,,,,,,,,,,1,Johnson,yes,,T2,not-yet-cast,reg-csa-2c-joh-hq
 reg-csa-3c-pen-hq,Pender's Division headquarters (division command),confederate,command,infantry,,,,,,,,,,,,,,,2,Pender,yes,,T2,not-yet-cast,reg-csa-3c-pen-hq
 reg-csa-1c-pic-hq,Pickett's Division headquarters (division command),confederate,command,infantry,,,,,,,,,,,,,,,7,Pickett,yes,,T2,not-yet-cast,reg-csa-1c-pic-hq
 csa-armistead,Armistead's Brigade,confederate,parent-brigade,infantry,1650,459,1191,9,2,7,0,9,2593.7,84.9,yes,line/routed/scattered,0,7,4,Armistead,yes,T5,T4,in-build,reg-csa-1c-pic-3
@@ -267,10 +268,12 @@ us-72pa,72nd Pennsylvania,union,child-regiment,infantry,458,360,98,5,2,3,0,5,53.
 us-7mi,7th Michigan,union,child-regiment,infantry,165,130,35,5,1,4,0,5,70.0,0.0,no,line,1,0,2,7th Michigan,yes,T0,T4,in-build,
 reg-us-ii-2-hq,"2nd Division, II Corps headquarters (division command)",union,command,infantry,,,,,,,,,,,,,,,1,2nd Division,yes,,T2,not-yet-cast,reg-us-ii-2-hq
 reg-us-iii-2-hq,"2nd Division, III Corps headquarters (division command)",union,command,infantry,,,,,,,,,,,,,,,1,2nd Division,yes,,T2,not-yet-cast,reg-us-iii-2-hq
+reg-us-xii-2-hq,"2nd Division, XII Corps headquarters (division command)",union,command,infantry,,,,,,,,,,,,,,,1,2nd Division,yes,,T2,not-yet-cast,reg-us-xii-2-hq
 reg-us-i-3-hq,"3rd Division, I Corps headquarters (division command)",union,command,infantry,,,,,,,,,,,,,,,1,3rd Division,yes,,T2,not-yet-cast,reg-us-i-3-hq
 reg-us-ii-3-hq,"3rd Division, II Corps headquarters (division command)",union,command,infantry,,,,,,,,,,,,,,,1,3rd Division,yes,,T2,not-yet-cast,reg-us-ii-3-hq
 reg-us-ii-hq,II Corps headquarters (corps command),union,command,infantry,,,,,,,,,,,,,,,0,II Corps headquarters,VERIFY,,T2,not-yet-cast,reg-us-ii-hq
 reg-us-hq-provost,Provost Guard and army headquarters detachments (Brig. Gen. Marsena R. Patrick),union,command,infantry,,,,,,,,,,,,,,,0,Provost Guard and army headquarters detachments,VERIFY,,T2,not-yet-cast,reg-us-hq-provost
+reg-us-xii-hq,XII Corps headquarters (corps command),union,command,infantry,,,,,,,,,,,,,,,0,XII Corps headquarters,VERIFY,,T2,not-yet-cast,reg-us-xii-hq
 us-hall,Hall's Brigade,union,parent-brigade,infantry,920,555,365,5,1,4,0,5,60.9,0.0,no,line,0,4,4,Hall,yes,T5,T4,in-build,reg-us-ii-2-3
 us-stannard,Stannard's Vermont Brigade,union,parent-brigade,infantry,1950,1600,350,7,1,6,0,7,297.9,0.0,yes,line,0,3,6,Stannard,yes,T5,T4,in-build,reg-us-i-3-3
 us-webb,Webb's Brigade (Philadelphia Brigade),union,parent-brigade,infantry,1250,760,490,6,2,4,0,6,23.3,0.0,no,line,0,5,5,Webb,yes,T5,T4,in-build,reg-us-ii-2-2
