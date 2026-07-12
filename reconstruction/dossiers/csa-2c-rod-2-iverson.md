@@ -96,12 +96,24 @@ commander, its rescuer, and its receiving side.
 
 ## EC6 — Casualty apportionment
 
-- **ANV return (p. 342): 820 aggregate = 130 k / 382 w / 308 m**
-  (the wounded cell carries a single-cell OCR flag — one fetch read
-  328; 382 is aggregate-consistent and the 820 matches the tablet);
-  regiment k+w rows: 5th NC 143, 12th NC 56, 20th NC 122, 23rd NC
-  134, **missing POOLED at brigade line** (ED-49 pattern — the 308 m
-  IS the dress-parade line's capture mass).
+- **ANV return (p. 342), the wounded cell RE-READ pass 11 (both
+  channels)**: the PRINTED total row is **130 k / 328 w / 308 m /
+  820 aggregate** — 328 confirmed in the IA full-text AND the
+  civilwar.com page read; the pass-9/10 "382" was the
+  aggregate-consistent reconstruction, NOT a print reading. **The
+  printed row fails its own arithmetic** (130+328+308 = 766 ≠ 820)
+  — a printed-arithmetic conflict, not an OCR artifact: 382 w (or
+  a compensating m/k shift) is required by the aggregate, which
+  itself matches the tablet's 820. Disposition: the printed 328
+  carried as the cell's reading; 382 carried as the
+  reconciliation-only value; adoption question filed as the ED-71
+  candidate (the failed-row-arithmetic rule). Regiment rows (now
+  digit-read): **5th NC 31 k + 112 w = 143 · 12th NC 10+46 = 56 ·
+  20th NC 29+93 = 122 · 23rd NC 41+93 = 134**, **missing POOLED at
+  brigade line** (ED-49 pattern — the 308 m IS the dress-parade
+  line's capture mass). Note the regiment k-sum (111) also
+  disagrees with the total row's 130 — the row's internal noise is
+  systemic, strengthening the pooled-reconstruction reading.
 - **THE SHAPE (the exemplar)** [D]: effectively ALL loss in ONE
   episode — the Forney-field line, inside the 14:00–15:00 window;
   the 12th NC's 56 (the intact regiment) bounds the non-episode
@@ -119,7 +131,15 @@ commander, its rescuer, and its receiving side.
 
 1. Iverson's casualty list "Not found" (OR editors' note) — the
    return + tablet carry the numbers.
-2. The 382-vs-328 wounded cell (single-cell OCR flag, above).
+2. The 382-vs-328 wounded cell — RE-READ pass 11: now a
+   printed-arithmetic conflict (EC6 above; feeds the ED-71
+   candidate), no longer an OCR flag.
+2b. **EC2 CLOSED pass 11**: the Rodes division June 30 return
+   (Carlisle) — Iverson **114 officers + 1,350 men PFD = 1,464**
+   (or-27-2-rodes-return-jun30, p. 564) — vs the tablet's 1,470
+   "present about" (6 apart: near-exact, different measures) and
+   B&M-repro 1,384 (hop); all three carried, the return is the
+   primary.
 3. The surrender characterization: his own two-stage record
    (disgraceful → exonerated) is carried WHOLE — the audit adopts
    neither pole, both being the same primary's self-correction.

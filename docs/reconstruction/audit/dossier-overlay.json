@@ -401,7 +401,7 @@
     "csa-kemper": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok (T5 window)",
       "EC1 identity/command": "Kemper w&c (rescued; T5 t~8640, Peyton brackets earlier) -> Col. Mayo; Williams/Patton mw, Otey w; staff 1k/3w (return)",
-      "EC2 engaged strength": "1,575 (ED-9/stone-sentinels, no primary; negative - no morning report survives)",
+      "EC2 engaged strength": "1,575 (ED-9/stone-sentinels, no primary; negative - no morning report survives) ; p11 sweep: B&M-repro 1,634 (hop) beside ED-9 1,575",
       "EC3 position anchors": "[E] right of Garnett behind gun line; oblique/lapping convergence (peyton); wounding point (4370,4790)+-50 (T5)",
       "EC4 movement legs": "[A vs CA-J3A-6] step-off w/ division; convergence leg 50-60 yd behind-right of Garnett; flank crisis vs Stannard wheel (CA-J3A-8)",
       "EC5 activity record": "[A window] bombardment: 'suffered severely' (Wilcox cross-brigade comparison - worse than Garnett's ~20); LRT enfilade on right; Rorty canister + Stannard front/flank fire received",
@@ -412,7 +412,7 @@
     "csa-armistead": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok (T5 window)",
       "EC1 identity/command": "Armistead mw&c under captured guns (T5 t~8720; mon-armistead 16m agreement) -> Col. Aylett (w); Hodges k, Edmonds k at wall",
-      "EC2 engaged strength": "1,650 (ED-9, no primary); crossing party ~150 (T5)",
+      "EC2 engaged strength": "1,650 (ED-9, no primary); crossing party ~150 (T5) ; p11 sweep: B&M-repro 2,055 (hop) beside ED-9 1,650 - divergent, both carried, no primary",
       "EC3 position anchors": "[E +-120m] j3-02 morning label ~(3150,4780) behind Spangler's Woods (2nd line west of crest); fall point (4412,4865)+-25 (T5)",
       "EC4 movement legs": "[A vs CA-J3A-6] second-line step-off; closed onto first line BEFORE wall (peyton 75-paces relation); ED-8 recross 8700-9000",
       "EC5 activity record": "[A window] bombardment share UNQUANTIFIED (open); activity concentrates at wall - crossing, Cushing's guns, ~10-min penetration (T5)",
@@ -481,7 +481,7 @@
       "EC2 engaged strength": "PRIMARY ~500 from Jul 1 evening ('depressed, dilapidated, almost unorganized') = Jul 3 basis; build 1,250 = pre-Jul-1 (decay must cross the 500 waypoint)",
       "EC3 position anchors": "[D] Jul 2: extreme right on line w/ artillery (its only guard); Jul 3: second line in rear of POAGUE's bn (primary frame anchor); right of Lane; works touched on right at climax",
       "EC4 movement legs": "[D] morning lateral right; advance 1 mi over 'wide, hot, already crimson plain'; at 2/3 way front-line troops 'came tearing through our ranks'; retreat without orders, rallied on start line",
-      "EC5 activity record": "[A window + B] '>= one hour under a most galling fire' (his duration) / 'two hours' (Engelhard) - both carried; climax: '800 guns' combined two-brigade strength pin at the works",
+      "EC5 activity record": "[A window + B] '>= one hour under a most galling fire' (his duration) / 'two hours' (Engelhard) - both carried; climax: '800 guns' combined two-brigade strength pin at the works ; p11 back-extension: Scales's July 1 narrative in full - the Davis rescue, the pass-through of the ammunition-exhausted first line, the 75-yd halt, the ten-minutes-to-breakthrough pin, Perrin both-siding",
       "EC6 casualty apportionment": "535 = 102/323/110 (anv-return regt k+w 126/66/89/64/79) vs SCALES'S OWN Jul-1 table 545 (48/381/116) - July-1-scoped table LARGER than 3-day return (ED-49 starkest exemplar); build decay 599 flagged for reconciliation",
       "Achieved T-level (audited)": "T4 full-arc",
       "Notes": "Dossier: reconstruction/dossiers/csa-3c-pen-4-lowrance.md"
@@ -544,12 +544,12 @@
     "us-biddle": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok",
       "EC1 identity/command": "Biddle w Jul 1; Rowley register commander; Col. T.B. Gates (20th NYSM) commanded the 2-regiment front element Jul 3, reporting direct to Doubleday (or-27-1-gates)",
-      "EC2 engaged strength": "no Jul 3 primary; build 460 remnant (compilation, flagged); Jul 1 wreck 898 of ~1,350-1,500 explains scale",
+      "EC2 engaged strength": "no Jul 3 primary; build 460 remnant (compilation, flagged); Jul 1 wreck 898 of ~1,350-1,500 explains scale ; p11 back-extension: July 1 PRIMARY 1,287 in / 440 k&w + 457 m / 390 left (dated July 2) - the day split lands; B&M-repro 1,361 (hop)",
       "EC3 position anchors": "[C] Jul 2 ~17:00 'last and lowest of the ridges' between the roads; [C/E] Jul 3 front line = 80th NY + 151st Pa with the Vermonters (or-27-1-doubleday p.258); j3-02 bars (4482,4569)+(4625,4515); j3-03 (4591,4559) +-120m",
       "EC4 movement legs": "[D] THE CLIMAX LEG: 'by the right flank up to the foot of the bluff, delivering our fire as we marched' then two regiments to the fence - a firing flank-march toward the Copse (~200-400m)",
       "EC5 activity record": "[D] fire on the march; volley 'at very short range, who now completely broke'; large prisoner haul; 2 colors left on the ground (or-27-1-gates)",
       "EC6 casualty apportionment": "return 898 (80NY 170, 121Pa 179, 142Pa 211, 151Pa 337); DAY SPLIT NOT PRIMARY-SEPARABLE (Gates's 170 = the 80th's battle total, not a Jul 3 figure) - the T4 blocker, recorded honestly",
-      "Achieved T-level (audited)": "T3 full-arc",
+      "Achieved T-level (audited)": "T4 (July 1 grain; July 3 T3) - p11 upgrade",
       "Notes": "Dossier: reconstruction/dossiers/us-i-3-1-biddle.md; 121st/142nd Pa Jul 3 slots sheet-only (flagged)"
     },
     "us-dana": {
@@ -558,7 +558,7 @@
       "EC2 engaged strength": "150th Pa 'aggregate for duty ... one hundred and nine' July 2 morning (chamberlin-150pa-1895, primary-adjacent); build 465 brigade remnant consistent",
       "EC3 position anchors": "[C/E] Jul 3 second/third lines behind the Vermont/Gates front (or-27-1-doubleday p.258); j3-02 STONE. (4636,4453); j3-03 STONE'S BRIG. (4755,4466) +-120m, SHALER adjacent - static across both drawn states",
       "EC4 movement legs": "[C ~18:00] July 2 double-quick down the Taneytown road to Humphreys's rear; 149th+150th to the Emmitsburg road recovering TWO GUNS (Doubleday concurring); night picket left of Codori; [C 07:00-08:00] July 3 relief under fire",
-      "EC5 activity record": "[E] present under the cannonade's overs; NO fire window attested Jul 3 (consistent negative)",
+      "EC5 activity record": "[E] present under the cannonade's overs; NO fire window attested Jul 3 (consistent negative) ; p11 back-extension: Roy Stone's report in full - the 11:00 / 12-1 Oak Hill enfilade / 1.30 grand-advance clock ladder (ED-69 candidate primary); the RR-cut episode; the cascade in action; 'nearly two-thirds... fell'",
       "EC6 casualty apportionment": "return 853 (143Pa 253, 149Pa 336, 150Pa 264); Jul 1 overwhelmingly dominant [D]; build 0 in-window decay consistent",
       "Achieved T-level (audited)": "T4 full-arc",
       "Notes": "Dossier: reconstruction/dossiers/us-i-3-2-stone.md; NO brigade/regimental report fetched for Jul 2-3 - 150th Pa regimental history is the upgrade route (standing list); pass-5: 150th Pa history standing fetch LANDED - static July 2 reading corrected, named July 3 morning losses"
@@ -702,14 +702,14 @@
       "EC3 position anchors": "[D] the Sickles-diversion + Sykes double-quick recall (or-27-1-sykes); [E drawn j2-03] WEED bar at the summit (4169,2640) +-62 m with the signal station; night stone wall half-way down the slope (primary)",
       "EC4 movement legs": "[B] 140th's summit rush 300-400 m at the double, in by companies without loading (Farley); brigade following under Weed",
       "EC5 activity record": "[D] the 17:30-18:30 crisis fire on the 16th MI right; summit hold under Devil's Den sharpshooter fire; July 3 held (battery window on the paired dossier)",
-      "EC6 casualty apportionment": "return: 140th NY 133 exact; brigade 200, division 1,029; three regiment rows digit-noisy (flagged); pins O'Rorke early / Weed late / Hazlett after Weed",
+      "EC6 casualty apportionment": "return: 140th NY 133 exact; brigade 200, division 1,029; three regiment rows digit-noisy (flagged); pins O'Rorke early / Weed late / Hazlett after Weed ; p11 re-read: 140th NY digit-exact 1+25/5+84/18=133; brigade total row internally perfect 40/142/18=200; small rows off-by-one open (199 vs 200)",
       "Achieved T-level (audited)": "T4 full-arc",
       "Notes": "Dossier: reconstruction/dossiers/us-v-2-3-weed.md; paired battery us-btty-rittenhouse.md"
     },
     "csa-kershaw": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok (July 2 mover)",
       "EC1 identity/command": "Kershaw's bde (2/3/7/8/15 SC + 3d SC Bn); Kershaw unwounded; De Saussure k, McLeod mw, Kennedy/Bland/Miller w (all July 2)",
-      "EC2 engaged strength": "tablet 'Present about 1800' (compilation); no report statement",
+      "EC2 engaged strength": "tablet 'Present about 1800' (compilation); no report statement ; p11 sweep: B&M-repro 2,183 (hop) beside tablet ~1,800 - divergent hops, both carried",
       "EC3 position anchors": "[C report +90] the stone wall 'about 3 p.m.' stated; [E drawn] KERSHAW advance line (3941,3263) at 17:00 j2-03; stony-hill W edge (3308,3336) at 19:00 j2-04; July 2 dark Peach Orchard -> July 3 13:00 original wall (tablet+report)",
       "EC4 movement legs": "[trigger first-class] CABELL'S THREE-GUN SIGNAL step-off; Longstreet on foot to the road; [D] Barksdale's drums heard at the road (the ladder interval, Alexander: 20+ min); Wheatfield oscillation; nightfall withdrawal",
       "EC5 activity record": "[D] stony hill fight at 30 paces; Caldwell's two-line counterattack; the Wofford resweep to the mountain's foot; July 3 Peach Orchard skirmish only",
@@ -720,7 +720,7 @@
     "csa-humphreys": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok (July 2 mover)",
       "EC1 identity/command": "Barksdale's bde (13/17/18/21 MS); Barksdale mw at Plum Run ~19:00 (tablet + Hall's 20-yards receiving-side pin, compatible ~100 m grain), d. July 3 Hummelbaugh farm -> Humphreys. NO OR REPORT at any echelon (verified-negative class)",
-      "EC2 engaged strength": "tablet 'Present 1,598' (compilation, hop flagged); no primary",
+      "EC2 engaged strength": "tablet 'Present 1,598' (compilation, hop flagged); no primary ; p11 sweep: B&M-repro 1,620 (Barksdale; hop) beside tablet 1,598",
       "EC3 position anchors": "[C tablet] Warfield line from ~15:00; [E drawn j2-03 17:00] rgt numbers with advance arrows POISED not advanced (2923,3865) - drawn state contradicts the tablet's 'Advanced at 5 P.M.'; [E drawn j2-04 19:00] TWO ELEMENTS: main body vs Willard at Plum Run (4053,4080), 21st MS at Trostle/Bigelow (3617,3643) with WATSON (4093,3607)",
       "EC4 movement legs": "[A vs CA-J2A-9 ~18:15] step-off via Lamar order + drums pin + Alexander's 20-min ladder interval; the battery-extraction delay (McLaws); [B] ~600 m to the orchard then divergent axes; Plum Run collapse 19:00-19:15",
       "EC5 activity record": "[D] the salient breach with Kershaw's 8th SC flank fire; 21st MS took Bigelow's 9th MA + Watson's I/5th US 'unable to bring off'; July 3 artillery support at the orchard (ED-44 adjacent)",
@@ -775,10 +775,10 @@
     "us-detrobriand": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok (July 2 mover)",
       "EC1 identity/command": "de Trobriand's bde (17ME/3MI/5MI/40NY/110PA); Pierce (3MI) w-amp, Pulford (5MI) w, Jones (110PA) w",
-      "EC2 engaged strength": "no primary (negative); ~1,387 compilation hop-flagged",
+      "EC2 engaged strength": "no primary (negative); ~1,387 compilation hop-flagged ; p11: the 1,387 hop CONFIRMED at the sweep source",
       "EC3 position anchors": "[C tablet 'between 2 and 3 P.M.'] the apex-of-the-angle deployment; tablet (3659,3049) OSM delta 0.9m - the register's cleanest agreement; 17th ME wall (3633,2965); [E drawn j2-03] Winslow in the field NE (3734,3141), line bar (3604,2997)",
       "EC4 movement legs": "[D] contraction onto the ravine-wall line; [D trigger] 'our ammunition was just exhausted' when Caldwell relieved (wave-2/3 seam)",
-      "EC5 activity record": "[D] wave-1 defense vs Anderson (5th MI half-loss stand, both-sided with White's three advances)",
+      "EC5 activity record": "[D] wave-1 defense vs Anderson (5th MI half-loss stand, both-sided with White's three advances) ; p11 clock re-read: 'About 2 p. m.' line-of-battle formation = the tablet's 2-3 P.M. (report=tablet pair; profile upgraded)",
       "EC6 casualty apportionment": "report=return EXACT 490 (40th NY's 150 tactically belongs to Ward's front - cross-charge noted); split: waves 1-2 dominate",
       "Achieved T-level (audited)": "T4 full-arc",
       "Notes": "Dossier: reconstruction/dossiers/us-iii-1-3-detrobriand.md; carries the ED-59-candidate withdrawal accusation vs Tilton/Sweitzer"
@@ -830,7 +830,7 @@
     "csa-bryan": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok (July 2 mover)",
       "EC1 identity/command": "Semmes's bde (10/50/51/53 GA); SEMMES MW 'in the ravine near the Loop' (tablet verbatim; advance marker (3357,2864) = check point), d. July 10 -> Bryan. NO OR REPORT at any echelon (verified-negative - the Barksdale class)",
-      "EC2 engaged strength": "tablet 'Present about 1200' (compilation, hop flagged); no primary",
+      "EC2 engaged strength": "tablet 'Present about 1200' (compilation, hop flagged); no primary ; p11 sweep: B&M-repro 1,334 (Semmes; hop) beside tablet ~1,200",
       "EC3 position anchors": "[A vs CA-J2A-7] Kershaw's support slot (Alexander ladder attack 3); [C tablet] Rose Hill/ravine/Loop fight; wave-4 sweep to Plum Run; July 3 the woodland S of Wheatfield to 13:00 (Benning's exposed-left note cross-bears the extraction)",
       "EC4 movement legs": "[D trigger] committal = Kershaw's 'Semmes brought up' (supported unit's primary); [B] 400m ravine advance",
       "EC5 activity record": "[D] ravine fight vs Kelly/Zook/Brooke prongs (both-sided); July 3 woodland occupancy (ED-44 adjacent)",
@@ -841,7 +841,7 @@
     "csa-wofford": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok (July 2 mover)",
       "EC1 identity/command": "Wofford's bde (16/18/24 GA, Cobb's + Phillips Legions); Wofford unwounded; NO OR REPORT (verified-negative)",
-      "EC2 engaged strength": "tablet 'Present about 1350' (compilation, hop flagged)",
+      "EC2 engaged strength": "tablet 'Present about 1350' (compilation, hop flagged) ; p11 sweep: B&M-repro 1,398 (hop) - agrees with tablet ~1,350",
       "EC3 position anchors": "[C tablet] formed 100yd W of tablet (2652,3802); the Wheatfield-Rd sweep axis; farthest = LRT foot; [A vs CA-J2A-11] FELL BACK AT SUNSET (19:29 astronomical pin - the ladder's only document-grade end clock); [E drawn j2-05] red bars w/ withdrawal arrows on the Wheatfield's W ravine slope, '...FORD GA' label class (legibility partial, flagged) opposite McCandless (4011,3016)/Nevin (4290,3119)",
       "EC4 movement legs": "[B] ~1200m road-axis sweep 15-20 min; trigger both-sided (Kershaw's 'Wofford coming in in splendid style' + Fraser's flanked-right + Alexander's attack-4 ladder)",
       "EC5 activity record": "[D] wave-4 flank sweep to the mountain's foot; the Crawford/McCandless collision; July 3 orchard-ridge artillery support",
@@ -1017,7 +1017,7 @@
     "csa-dungan": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok (the assault's lead brigade)",
       "EC1 identity/command": "Jones's bde (21/25/42/44/48/50 VA); JONES w JULY 2 EVENING (register corrected) -> Dungan; Higginbotham w before him; two-roster commander disagreement carried",
-      "EC2 engaged strength": "OPEN (no primary; no hop taken - flagged); tablet 'Present 1600' (pass-10 hop)",
+      "EC2 engaged strength": "OPEN (no primary; no hop taken - flagged); tablet 'Present 1600' (pass-10 hop) ; p11 sweep: B&M-repro 1,520 (hop) beside tablet ~1,600",
       "EC3 position anchors": "[C 16:00] Benner's Hill support anchor ('300 yards in rear and to the left' of Latimer, tab-csa-2c-bn-latimer (6329,6396.6)); [D->E] the right assault lane (tablet (5800.3,5865.9); j2-05 red approach label (6312,5783))",
       "EC4 movement legs": "[C ~1 km] the 16:00 move; [D<-Johnson's order, A-bracket vs CA-J2E-2] the assault across Rock Creek up the steep east face - 'the lateness of the hour... the darkness in the woods' (ED-31 physics)",
       "EC5 activity record": "Lilley's skirmish screen; the Latimer support stand; the lead assault (Jones w at the first line of works)",
@@ -1028,7 +1028,7 @@
     "csa-williams": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok (the center lane; the CSA agreeing clock)",
       "EC1 identity/command": "Nicholls's bde (1/2/10/14/15 LA), Col. J. M. Williams commanding (Nicholls absent w)",
-      "EC2 engaged strength": "OPEN (no primary; no hop taken - flagged); tablet 'Present about 1100' (pass-10 hop)",
+      "EC2 engaged strength": "OPEN (no primary; no hop taken - flagged); tablet 'Present about 1100' (pass-10 hop) ; p11 sweep: B&M-repro 1,104 (hop) - agrees with tablet ~1,100",
       "EC3 position anchors": "[E] division right on the railroad ravine -> re-formed left of Jones; [A-bracket+D] the 100-yards-from-the-works fire line held all night; tablet (5968.5,5748.2); j2-05 red label (6435,5522)",
       "EC4 movement legs": "[C 19:00 STATED - agrees with Greene] 'ordered forward... about three-quarters of a mile' (stated leg distance, B-timeable); noon-July-3 300-yard retirement",
       "EC5 activity record": "the FOUR-HOURS incessant fire + repeated assaults 'entirely unsupported on the right [Jones' brigade having failed...]' (inter-brigade accusation carried both dossiers); July 3 four more hours from early light",
@@ -1039,7 +1039,7 @@
     "csa-steuart": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok (the left wing; the lodgment that held)",
       "EC1 identity/command": "Steuart's bde (1st MD Bn, 1/3 NC, 10/23/37 VA); Herbert (1st MD) w eve July 2 -> Goldsborough w morning July 3 -> Crane; Betterton (37th VA) took a US flag, w - two-echelon colors chain",
-      "EC2 engaged strength": "OPEN (no primary; no hop taken - flagged); tablet 'Present about 1700' (pass-10 hop)",
+      "EC2 engaged strength": "OPEN (no primary; no hop taken - flagged); tablet 'Present about 1700' (pass-10 hop) ; p11 sweep: B&M-repro 2,121 (hop) beside tablet ~1,700 - divergent hops, both carried",
       "EC3 position anchors": "[D ~18:00 tablet crossing] the Rock Creek approach; [A vs Greene's 20:00] the captured perpendicular works between mon-137ny and the stone wall (the wall fixed from BOTH sides, Geary 200 yards); tablet (6193.3,5286.5)",
       "EC4 movement legs": "[D] THE HALF-WHEEL approach leg (right wing crossed first - the misunderstood wheel, primary); the 23rd VA work-charge + file-right; the 10th VA four-move wall probe in the dark; [C ~10 a.m. July 3] the doomed perpendicular charge",
       "EC5 activity record": "the night cross-fire + friendly-fire hesitation (pairs w/ Kane's two-volley discovery - both sides misread the same darkness); the 3rd NC cartridge crisis; July 3: the charge, the wall hour, the creek",
@@ -1050,7 +1050,7 @@
     "csa-walker": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok (evening negative-evidence class; July 3 full arc)",
       "EC1 identity/command": "Stonewall bde (2/4/5/27/33 VA), Walker (distinguish or-27-2-walker-stonewall from R.L. Walker arty)",
-      "EC2 engaged strength": "OPEN; Terry's 4th VA 'three-fourths' fraction primary carried w/ scope flag (vs return 86); tablet 'Present about 1450' (pass-10 hop)",
+      "EC2 engaged strength": "OPEN; Terry's 4th VA 'three-fourths' fraction primary carried w/ scope flag (vs return 86); tablet 'Present about 1450' (pass-10 hop) ; p11 sweep: B&M-repro 1,323 (hop)",
       "EC3 position anchors": "[E] Culp's farm/Hanover road all day; [D ~18:00-dark] Brinkerhoff's Ridge front (2nd VA vs Gregg's cavalry - CSA-side primary); avenue tablet (6159.4,5186.8) semantics-flagged (July 3 ground)",
       "EC4 movement legs": "[D 'after dark'] the rejoin leg TO the works - the leg that did NOT happen during the assault is the record; July 3: daylight support of Steuart, refit, two renewals",
       "EC5 activity record": "THE EVENING NEGATIVE double-attested (Walker's discretion verbatim + Johnson's 'did not arrive in time'); July 3 five hours + renewals ('my right... suffered very heavily')",
@@ -1061,7 +1061,7 @@
     "csa-hays": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok (CA-J2E-3 executor and clock-bearer)",
       "EC1 identity/command": "Hays's bde (5/6/7/8/9 LA); commanded BOTH assault brigades ('my own and Hoke's... placed for the time under my command')",
-      "EC2 engaged strength": "OPEN (hop flagged); July 1 loss pre-shrinks the line (his own figures); tablet 'Present about 1200' (pass-10 hop; k/w cells = return exact)",
+      "EC2 engaged strength": "OPEN (hop flagged); July 1 loss pre-shrinks the line (his own figures); tablet 'Present about 1200' (pass-10 hop; k/w cells = return exact) ; p11 sweep: B&M-repro 1,295 (hop)",
       "EC3 position anchors": "[C 02:00] the jump-off field after his midnight reconnaissance; [A vs E-3] the three-line ascent to the crest intrenchments (j2-05 lodgment bar 21 m from mon-wiedrich); [D] the wall->fence-75-yards->around-the-hill withdrawal chain; tablet (5318.3,6523.3) pair",
       "EC4 movement legs": "[A; trigger primary on Early's record: advance 'as soon as Johnson became warmly engaged'] the assault under the TWILIGHT PASSAGE ('darkness of the evening, now verging into night' - ED-31 physics dating the ascent ~19:45-20:10 without a watch)",
       "EC5 activity record": "the summit moment ('several pieces of artillery, four stand of colors... every piece... silenced' - ED-63 convergent w/ Wiedrich/Ricketts; trophies brought off = the COLORS); the reserved-fire counterattack reception (expected friends; three lines = Carroll); July 1 town fight + the two-Napoleon joint capture (Early's own convergent ruling)",
@@ -1072,17 +1072,17 @@
     "csa-godwin": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok (no-report class; the left lane)",
       "EC1 identity/command": "Hoke's bde (6/21/57 NC); AVERY mw in the ascent -> Godwin; the Avery note (State Archives NC): left-handed, to Maj. Tate - 'written in the dark' legend corrected against the archival page",
-      "EC2 engaged strength": "tablet 'Present about 900' (pass-10 hop); no report primary",
+      "EC2 engaged strength": "tablet 'Present about 900' (pass-10 hop); no report primary ; p11 sweep: B&M-repro 1,244 (hop) beside the tablet ~900 - both hops, un-averaged",
       "EC3 position anchors": "[E] jump-off left of Hays (tablet pair 30 m apart); [A vs E-3] the outside wheeling lane over the same ladder; tablet clock 'at 8 P.M... planted its colors on the lunettes' (R1-verified)",
       "EC4 movement legs": "[A+B-adjacent] the left-wheel ascent raked by the 5th ME from Stevens Knoll (mon-5me-stevens (5435.2,5542.1) + Wainwright's 50-yards-forward verbatim); the ordered withdrawal under Godwin",
       "EC5 activity record": "the lunette colors moment (ED-63 convergent); Avery mw pin + note document; July 1 joint Napoleon capture",
-      "EC6 casualty apportionment": "return 345 (6th NC 172 / 21st 111 / 57th 62 - COLUMN-NOISE '623' cell caught by row arithmetic); no per-day primary - split flagged reconstruction",
+      "EC6 casualty apportionment": "return 345 (6th NC 172 / 21st 111 / 57th 62 - COLUMN-NOISE '623' cell caught by row arithmetic); no per-day primary - split flagged reconstruction ; p11: 57th NC = 62 adopted at quadruple-arithmetic grade (printed '623' both channels; ED-71 candidate)",
       "Achieved T-level (audited)": "T4 (no-report class)",
       "Notes": "Dossier: reconstruction/dossiers/csa-2c-ear-3-avery.md; no brigade report verified negative (Avery dead, Godwin silent); July 1 extended + EC2 tablet hop (~900) pass 10"
     },
     "us-harris": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok (the breached base wall)",
-      "EC1 identity/command": "Ames -> division (Barlow w July 1) -> HARRIS commanding the bde from late July 1; Fowler (17th CT) k July 1; Noble took over July 4",
+      "EC1 identity/command": "Ames -> division (Barlow w July 1) -> HARRIS commanding the bde from late July 1; Fowler (17th CT) k July 1; Noble took over July 4 ; p11: the structured Barlow-Gordon record added (contemporary layer adopted - the July 7 letter + Gordon's OR pin; the 1903 memoir NO status)",
       "EC2 engaged strength": "aggregate OPEN; PRIMARIES: 75th OH marched ~160 -> 91 after July 1; neighbor 41st NY 218 (Einsiedel) - the brigade fought July 2 at a fraction of its return basis",
       "EC3 position anchors": "[E] the base stone wall (mon-25-75oh (5065.9,5977.3), mon-17ct (5099.2,5909.9)); [D] THE VACATED SPACE (the 17th CT move - the gap primary); [D] the re-formed rear wall",
       "EC4 movement legs": "[D] the near-sundown re-shuffle whose vacancy became the breach; [D ~20:00] the break ('in front and on the flank and rear at nearly the same time... few escaped, and those only in the darkness and smoke' - the same darkness BOTH sides claim as cover)",
@@ -1215,7 +1215,7 @@
     "csa-daniel": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok",
       "EC1 identity/command": "Daniel's Bde, Rodes's Div (32/43/45/53 NC + 2nd NC Bn); Daniel throughout; Bond/Green w July 1 pins",
-      "EC2 engaged strength": "OPEN; July 1 cost 'nearly one-third' = July 3 at two-thirds-strength CLASS (his fraction, not a number)",
+      "EC2 engaged strength": "OPEN; July 1 cost 'nearly one-third' = July 3 at two-thirds-strength CLASS (his fraction, not a number) ; p11: June-30 return PRIMARY 171+2,123=2,294 (p. 564) beside his 'about 2,200' report figure; B&M-repro 2,162 (hop)",
       "EC3 position anchors": "[C] 1.30 a.m. off / 4 a.m. reported to Johnson; [D+drawn] j3-01 DANIEL (5754,5842) behind JONES (5721,5780); j3-02 (6035,5465) the left-flank move drawn; E Conf Ave tablet (formation-line semantics)",
       "EC4 movement legs": "[B] the 4-mile night march at ~0.7 m/s (physics-consistent); [D] into Jones's support; the costly staff-guided lateral leg; the Steuart co-charge",
       "EC5 activity record": "THE ASSESSMENT PRIMARY ('could not have been carried by any force'); the co-charge both-sided (Daniel/Steuart/Kane); the holding phase to 15:00-16:00 + midnight skirmishers",
@@ -1226,7 +1226,7 @@
     "csa-oneal": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok",
       "EC1 identity/command": "O'Neal's (Rodes's old) Bde (3/5/6/12/26 AL); O'Neal (senior colonel, commission withheld); July 3 orders direct from Johnson",
-      "EC2 engaged strength": "OPEN",
+      "EC2 engaged strength": "OPEN ; p11: June-30 return PRIMARY 138+1,656=1,794 (p. 564, Rodes' old brigade row); B&M-repro 1,688 (hop)",
       "EC3 position anchors": "[C] 2 a.m. off / arrived at daylight; [D+drawn] j3-01 (6223,5804) NE arrival vs j3-02 (5721,5694) north-slope attack — the ~510 m drawn advance IS the 8 a.m. attack; E Conf Ave tablet",
       "EC4 movement legs": "[B] the same-route night march; [C 8 a.m.] the wave-2 attack (four named regiments); [D] fall back with the entire line -> behind-the-hill hold till midnight",
       "EC5 activity record": "THE CA-J3M-2 WAVE-2 EXECUTOR CLOCK ('did not actively engage the foe until 8 a.m.'); grape-range attestation; the three-hour murderous-fire hold",
@@ -1237,7 +1237,7 @@
     "csa-smith": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok (command-note grain)",
       "EC1 identity/command": "Smith's Bde, Early's Div (31/49/52 VA — three regiments); 'Extra Billy' Smith; Hoffman the later commander",
-      "EC2 engaged strength": "three-regiment structure primary (13th/58th VA detached, Hoffman); tablet 'Present about 800' (pass-10 hop)",
+      "EC2 engaged strength": "three-regiment structure primary (13th/58th VA detached, Hoffman); tablet 'Present about 800' (pass-10 hop) ; p11 sweep: B&M-repro 806 (hop) - agrees with the tablet ~800",
       "EC3 position anchors": "[E] July 1-2 York-road flank guard (Early); [D+drawn] Johnson's extreme left near the creek (j3-01 SMITH VA (6324,5152); j3-02 (6107,5116)); E Conf Ave tablet",
       "EC4 movement legs": "[D] the by-daylight night detachment march (Early's order primary; no own clock)",
       "EC5 activity record": "'his three regiments were engaged on the 3rd on the extreme left, under General Johnson's directions' (Early) — vs JOHNSON'S SILENCE (his July 3 paragraph names only Daniel/O'Neal): the echelon-asymmetry record; Hoffman report referral UNRESOLVED",
@@ -1251,7 +1251,7 @@
       "EC2 engaged strength": "PRIMARY 'about 1,600 strong' + the battery",
       "EC3 position anchors": "[C ~8:00 + drawn] the delay line geometry primary (1 mi W of seminary, RR to Fairfield rd); j1-03 drawn bar vs OSM Gamble-HQ marker 115 m (HQ-on-the-line); [D+drawn] the j1-13 afternoon stand, seminary on the right as reported",
       "EC4 movement legs": "[D] camp->line on the 8:00 warning; the 200-yd fall-back; the relief hand-off; the afternoon trot + dismount + mounted withdrawal",
-      "EC5 activity record": "THE CA-J1M-2 EXECUTOR ('checking and retarding... several hours'; Buford: 'held its own for more than two hours'); the afternoon carbine stand ('saved a division of our infantry'); 'commenced the fight in the morning and close it in the evening'",
+      "EC5 activity record": "THE CA-J1M-2 EXECUTOR ('checking and retarding... several hours'; Buford: 'held its own for more than two hours'); the afternoon carbine stand ('saved a division of our infantry'); 'commenced the fight in the morning and close it in the evening' ; p11: the afternoon stand's CSA half CLOSED (Lane's Hudson-40 detail + Perrin's 'Lane did not move') - the saved-a-division claim now three-report convergent",
       "EC6 casualty apportionment": "return (p. 185) 99 campaign aggregate; July 1 dominant; no per-day split (flagged)",
       "Achieved T-level (audited)": "T4 (July 1 grain)",
       "Notes": "Dossier: reconstruction/dossiers/us-cav-1-1-gamble.md; CA-J1M-2 executor"
@@ -1259,7 +1259,7 @@
     "reg-us-cav-1-2": {
       "Class (attested-static / unauthored / authored-ok)": "unauthored",
       "EC1 identity/command": "Devin (6th NY); 9th NY named twice (Heidlersburg support; the town counter-charge)",
-      "EC2 engaged strength": "OPEN (no primary; B&M-class reading not located)",
+      "EC2 engaged strength": "OPEN (no primary; B&M-class reading not located) ; CLOSED-at-hop p11: B&M-repro 1,148 (the pass-10 'not located' now located)",
       "EC3 position anchors": "[D] the four-road screen geometry primary (York->Cashtown continuous line); OSM Devin-HQ marker; the York-road post; night extreme left",
       "EC4 movement legs": "[D] the successive-formations-by-regiment withdrawal drill; the through-town displacement under friendly shells",
       "EC5 activity record": "the two-hour Heidlersburg hold until XI Corps relief; THE FRIENDLY-FIRE RECORD (own Cemetery Hill battery); the 9th NY town counter-charge; July 2 Berdan support (Pitzer Woods both-sided)",
@@ -1270,7 +1270,7 @@
     "us-meredith": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok",
       "EC1 identity/command": "Meredith (w July 1) -> Robinson (7th Wis, pinned in Dawes); 6th Wis + brigade guard detached as corps reserve; Morrow w&c; 24th Mich officer ledger 8k/14w",
-      "EC2 engaged strength": "24th Mich PRIMARY 496; brigade aggregate open",
+      "EC2 engaged strength": "24th Mich PRIMARY 496; brigade aggregate open ; p11 sweep: B&M-repro 1,829 brigade hop beside the 24th Mich 496 primary",
       "EC3 position anchors": "[B+drawn] the Willoughby Run charge ground (j1-03 bars; Archer-captured marker on the axis); McPherson's woods line (order 19-24-7 curved); j1-13 seminary barricade drawn; Culp's Hill evening",
       "EC4 movement legs": "[D] the unloaded double-quick charge; the east-bank withdrawal; step-by-step to the barricade; through town to Culp's Hill",
       "EC5 activity record": "the Archer capture (Maloney/2nd Wis, both-sided w/ Shepard's ~75-pocket); the 6th Wis railroad-cut charge (Blair's 2nd Miss surrender, flag, 2nd Me gun recaptured); the woods defense vs the 26th NC (facing color ledgers)",
@@ -1314,18 +1314,18 @@
     "csa-iverson": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok",
       "EC1 identity/command": "Iverson; Halsey's remnant rally; Davis's intact 12th NC; the quiet post-battle relief ('my connection with the brigade ceased')",
-      "EC2 engaged strength": "tablet '820 of 1,470' (adjudicated class); no report primary",
+      "EC2 engaged strength": "tablet '820 of 1,470' (adjudicated class); no report primary ; CLOSED p11: June-30 return PRIMARY 114+1,350=1,464 (p. 564) beside tablet 1,470 + B&M-repro 1,384 (hop) - un-averaged",
       "EC3 position anchors": "[E+tablet] Oak Hill launch (mon-iverson-hq + mon-rodes-div); [D+drawn] j1-09 mid-advance bar 408 m SE along the axis; THE DEATH LINE ('a line as straight as a dress parade' = Rodes 'distinctly marked line of battle'); evening street line w/ Ramseur",
       "EC4 movement legs": "[D 14:00-15:00 bracket] the advance to 100 yards; the surrender of three regiments' survivors; the remnant charge + railroad pursuit; July 4 train escort",
       "EC5 activity record": "the destruction fight + THE SURRENDER-AND-EXONERATION RECORD (verbatim two-stage); the support-miscarriage ledger; July 2 night 'advancing to certain destruction'",
-      "EC6 casualty apportionment": "return (p. 342) 820 = 130/382/308 (m POOLED - the capture mass; single-cell OCR flag on w); THE SINGLE-SPIKE EXEMPLAR - one line, one field, minutes-scale; 12th NC 56 bounds the residue",
+      "EC6 casualty apportionment": "return (p. 342) 820 = 130/382/308 (m POOLED - the capture mass; single-cell OCR flag on w); THE SINGLE-SPIKE EXEMPLAR - one line, one field, minutes-scale; 12th NC 56 bounds the residue ; p11 re-read: printed total row 130/328/308/820 fails own arithmetic (766 vs 820) both channels; 382 reconciliation-only; regiment rows digit-read (ED-71 candidate)",
       "Achieved T-level (audited)": "T4 full-arc",
       "Notes": "Dossier: reconstruction/dossiers/csa-2c-rod-2-iverson.md; CA-J1P-2 upgraded to bracketed+geometric (ED-67 rider)"
     },
     "csa-ramseur": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok",
       "EC1 identity/command": "Ramseur; Parker/Bennett/Grimes/Hurtt credited; Harney (14th NC) mw taking the 150th Pa colors - the pass-4 Stone record closed both-sided at man grain",
-      "EC2 engaged strength": "OPEN (no primary)",
+      "EC2 engaged strength": "OPEN (no primary) ; CLOSED p11: June-30 return PRIMARY 119+971=1,090 (p. 564); B&M-repro 1,027 (hop)",
       "EC3 position anchors": "[D+tablet] Oak Hill reserve ground; the wall-and-woods counter-stroke ground; the east-west street line; July 2 night THE 200-YARD POINT (the reconnaissance that stopped the division); the deep-road withdrawal",
       "EC4 movement legs": "[D] the fifteen-minute commitment; the 2+4/14+30 split order; the en-masse flank attack w/ Battle's self-attached 3rd Ala; the through-town pursuit to the halt",
       "EC5 activity record": "the counter-stroke ('800 and 900 prisoners'); the street fighting + colors; July 3 friendly-fire row (7 k+w by 'our own short-range guns')",
@@ -1336,24 +1336,101 @@
     "csa-gordon": {
       "Class (attested-static / unauthored / authored-ok)": "authored-ok",
       "EC1 identity/command": "Gordon; 26th Ga detached to Jones's artillery (EC2 primary)",
-      "EC2 engaged strength": "PRIMARY 'about 1,200 men' (one regiment detached); tablet class pending",
+      "EC2 engaged strength": "PRIMARY 'about 1,200 men' (one regiment detached); tablet class pending ; p11 sweep: B&M-repro 1,813 (hop) beside the 1,200-engaged primary (one regiment detached)",
       "EC3 position anchors": "[D+drawn+tablet] Blocher's formation (GORDON GA label 5254,8676); the contact bar 82 m from the Barlow statue; mon-gordon-tablet ON the knoll; the halt line; July 2-3 the dismissal-sentence negative",
       "EC4 movement legs": "[C ~15:00] the 3 p.m. commitment (deliberate slow approach); THE FENCE-AND-CREEK OBSTACLE LEG (abrupt banks, certain points only); the two-line break to the halt order",
       "EC5 activity record": "the knoll fight (50-paces colors range); the Barlow w&c pin; July 5 Fairfield rear guard",
-      "EC6 casualty apportionment": "his 350 k&w (40 k) vs return 380 (71 k) - the k conflict carried; 'nearly 300 buried'; the 1,800-prisoner inspector credit (not adopted); 26th Ga 11 = the structural control row",
+      "EC6 casualty apportionment": "his 350 k&w (40 k) vs return 380 (71 k) - the k conflict carried; 'nearly 300 buried'; the 1,800-prisoner inspector credit (not adopted); 26th Ga 11 = the structural control row ; p11: 13th Ga row closed at arithmetic grade (103 = 20/83/0); Guild k&w ledger 65/258=323 noted (third count set)",
       "Achieved T-level (audited)": "T4 full-arc",
       "Notes": "Dossier: reconstruction/dossiers/csa-2c-ear-4-gordon.md; THE 3 P.M. CROSS-LINE PAIR with Schurz (CA-J1P-3 upgraded, ED-67 rider)"
     },
     "us-vongilsa": {
       "Class (attested-static / unauthored / authored-ok)": "unauthored",
       "EC1 identity/command": "von Gilsa; NO brigade report (verified negative); 41st NY absent July 1 (arrived ~10 p.m.)",
-      "EC2 engaged strength": "OPEN; three-regiment knoll line (structural)",
+      "EC2 engaged strength": "OPEN; three-regiment knoll line (structural) ; p11 sweep: B&M-repro 1,118 (hop)",
       "EC3 position anchors": "[D+drawn] the knoll north face under the Gordon line; the ECH marker = July 2-3 semantics; no located July 1 brigade marker (negative)",
       "EC4 movement legs": "[D ~15:00-15:30 bracket] Barlow's forward tilt; the break under enfilade + frontal charge; through town",
       "EC5 activity record": "the receiving side of the 50-paces fight (attested by the attacker); the corps' capture-mass retreat",
       "EC6 casualty apportionment": "return (p. 182) 527 - 41 NY 75 (July 2-3 only - structural day-split anchor), 54 NY 102, 68 NY 138, 153 Pa 211",
       "Achieved T-level (audited)": "T2 (honestly thin)",
       "Notes": "Dossier: reconstruction/dossiers/us-xi-1-1-vongilsa.md; the which-brigade-broke-first Schurz-vs-Ames conflict carried"
+    },
+    "csa-doles": {
+      "Class (attested-static / unauthored / authored-ok)": "unauthored",
+      "EC1 identity/command": "Doles throughout (the one uninjured Rodes brigade commander); Winn k + Lumpkin severely w (July 1)",
+      "EC2 engaged strength": "PRIMARY 'went into action with 131 officers and 1,238 enlisted men; total, 1,369' + June-30 return 128+1,275=1,403 (p. 564); B&M-repro 1,323 (hop) carried",
+      "EC3 position anchors": "[C ~13:00] the left-of-division formation in the plain; the skirmisher hill (3.30 referent ambiguity recorded); the east-west street line July 1-2; [C ~20:00 Jul 2] within 100 yd of Cemetery Hill -> the dirt road 300 yd back, held to 1 a.m. July 4",
+      "EC4 movement legs": "[D] the left-flank moves vs the knoll; the Gordon-conjunction attack; the 157th NY front-change + plain pursuit; the failed college cut-off (pace-class negative); the July 2 evening column with Ramseur/Iverson",
+      "EC5 activity record": "The knoll rock-fence assault; THE 157th NY DESTRUCTION both-sided; THE FRIENDLY-FIRE APPENDIX (the two-gun brass battery at Rodes's HQ hill); July 2-4 heavy skirmishing",
+      "EC6 casualty apportionment": "Report=return EXACT 24/124/31 = 179 (regiment rows 45/49/17/68 both ledgers); July-1-dominant shape",
+      "Achieved T-level (audited)": "T4 (full arc)",
+      "Notes": "Dossier: reconstruction/dossiers/csa-2c-rod-3-doles.md; CA-J1P-1/3 + CA-J2E context"
+    },
+    "us-baxter": {
+      "Class (attested-static / unauthored / authored-ok)": "unauthored",
+      "EC1 identity/command": "Baxter uninjured; Bates w x2, Wheelock captured/escaped, Lt. Thomas k in the streets; Coulter+11th Pa transferred out to 1st Bde",
+      "EC2 engaged strength": "No brigade primary (negative); B&M-repro 1,452 (hop); division frame 'less than 2,500' (Robinson) CONFLICTS with the two-brigade B&M sum 2,989 - both carried",
+      "EC3 position anchors": "[C 11:00] arrival; the two front-changes to the Oak Ridge crest (the pass-10 drawn wall bar = this line); [C ~17:00] the Emmitsburg-road line; [C Jul 2 10:00] relieved by Webb; the July 2-3 support ladder (six clocked moves); [C Jul 3 ~13:00] Cemetery Hill right-front under the cannonade ~2 h, then Hays's right",
+      "EC4 movement legs": "[D] the relief hand-off ~15:00+ (Coulter's after-3, ammunition exhausted); the town retreat under fire; the clocked July 2-3 ladder",
+      "EC5 activity record": "THE IVERSON REPULSE RECEIVING RECORD: the deadly fire, the charge (88th Pa two flags + 97th NY one), the 12th Mass flank fire 'great influence upon its surrender'; Coulter 12:30 general-firing pin; division 'three flags and about 1,000 prisoners'; the Northrup conduct record",
+      "EC6 casualty apportionment": "Return p. 174 rows (not digit-re-read); division 'lost considerably more than half' of <2,500 (primary); shape: the Oak Ridge window + the town capture spike; July 3 'considerable loss' skirmish clear (unquantified)",
+      "Achieved T-level (audited)": "T4 (July 1 grain; full arc T3)",
+      "Notes": "Dossier: reconstruction/dossiers/us-i-2-2-baxter.md; CA-J1P-2 Union receiving executor"
+    },
+    "us-coulter": {
+      "Class (attested-static / unauthored / authored-ok)": "unauthored",
+      "EC1 identity/command": "THE CASCADE: Paul severely w -> Leonard w -> Root w -> Coulter (assigned on Cemetery Hill, w himself July 3) - five commanders; three Paul staff missing",
+      "EC2 engaged strength": "No brigade primary (negative); B&M-repro 1,537 (hop); 16th Me ~275 literature-class NOT hopped",
+      "EC3 position anchors": "[D] the seminary rail-barricade (Paul entrenching - the artifact Perrin stormed, both-sided); the Oak Ridge relief slots; the 16th Maine sacrifice hill; Cemetery Hill; the Baxter-parallel July 2-3 ladder",
+      "EC4 movement legs": "[D ~15:00] the relief insertion (Coulter-clocked); the 16th Me detachment + three-stage collapse; the town retreat",
+      "EC5 activity record": "The repeated-attacks repulse record (division grain); the 16th Maine hold-as-long-as-there-is-a-man order VERBATIM; July 2 dark gauntlet run; July 3 arrival at the repulse",
+      "EC6 casualty apportionment": "THE DAY-SPLIT PRIMARY: 776/28/14/3 = 821 (Coulter's table, excl. 11th Pa Jul 1); 16th Me July 1 223 (162 m = the pocket)",
+      "Achieved T-level (audited)": "T3 (July 1 grain; full arc T2)",
+      "Notes": "Dossier: reconstruction/dossiers/us-i-2-1-paul.md; the ED-52 Union day-split exemplar"
+    },
+    "csa-perrin": {
+      "Class (attested-static / unauthored / authored-ok)": "unauthored",
+      "EC1 identity/command": "Perrin (14th SC) commanding McGowan's brigade from June 5; five regimental commanders named; division succession (Pender mw Jul 2 ~sunset -> Lane) recorded",
+      "EC2 engaged strength": "No report figure (negative); B&M-repro 1,882 (hop); the 1st SC Rifles LEFT AS TRAIN GUARD (named detachment primary) bounds engaged below the hop",
+      "EC3 position anchors": "[C ~08:00] the march order behind Heth; the deploy 3 mi out; the two bounds ([C ~15:00]; [C after 16:00] the Pender assault order); the fence->grove->barricade->stone-wall->town axis (both-sided artifacts: Paul's barricade, Gamble's wall, Wainwright's thirty pieces)",
+      "EC4 movement legs": "[C after-16:00] THE ASSAULT LEG: pass-through of Pettigrew's exhausted line, the ravine dress, the hold-fire order, the two oblique splits, the town entry",
+      "EC5 activity record": "CA-J1P-5 EXECUTOR: 'the most destructive fire of musketry I have ever been exposed to'; Scales halted / 'Lane did not move upon my right at all' (both both-sided); 'hundreds of prisoners, two field-pieces'; Hill's corps ledger + halt decision",
+      "EC6 casualty apportionment": "Return p. 344: 100/477/0 = 577 (division 1,690 printed-exact); the two-left-regiments halving statement; July-1-dominant",
+      "Achieved T-level (audited)": "T4 (July 1 grain; full arc T3)",
+      "Notes": "Dossier: reconstruction/dossiers/csa-3c-pen-1-perrin.md; CA-J1P-5 executor; feeds ED-70 candidate"
+    },
+    "us-vonamsberg": {
+      "Class (attested-static / unauthored / authored-ok)": "unauthored",
+      "EC1 identity/command": "THE CASCADE UP: Howard->field, Schurz->corps, Schimmelfennig->division (cut off in town Jul 1-4), von Amsberg->brigade at commitment",
+      "EC2 engaged strength": "No brigade primary (negative); B&M-repro 1,670 (hop); 45th NY one-third-assembled fraction; Schurz 'hardly over 6,000' division frame",
+      "EC3 position anchors": "[C 11:00-11:30] the I-Corps-right deploy (45th NY skirmish line, Dilger rear, 61st OH right); the open-field line under Oak Hill fire; [D ~16:00] the seminary cover halt; the town maze; Cemetery Hill stone fence",
+      "EC4 movement legs": "[C] double-quick through town to deploy; the 16:00 retreat + THE ALLEY-TRAP town leg (~100 escaped); the July 2 night mile to the Culp's stone wall",
+      "EC5 activity record": "[C 13:30 early-lean] the flank fire + surrender event (the O'Neal/Iverson front from the XI side); the 157th NY vs Doles episode both-sided; the cross-corps retreat-cover order",
+      "EC6 casualty apportionment": "Return p. 183 digit-exact: 112/224/307/54/110 = 807 (rows sum); missing 453 = the town pockets",
+      "Achieved T-level (audited)": "T3 (July 1 grain; full arc T2)",
+      "Notes": "Dossier: reconstruction/dossiers/us-xi-3-1-schimmelfennig.md; Dobke 1:30 feeds ED-69"
+    },
+    "us-krzyzanowski": {
+      "Class (attested-static / unauthored / authored-ok)": "unauthored",
+      "EC1 identity/command": "Krzyzanowski (no own report - verified negative); Col. J.S. Robinson (82nd OH) severely w; 26th WI Boebel w -> Fuchs -> Jacobs",
+      "EC2 engaged strength": "82nd OH PRIMARY 312 PFD (->220 Jul 11 bracket); no brigade primary; B&M-repro 1,403 (hop)",
+      "EC3 position anchors": "[C ~14:00 secondhand] arrival + the line north of town (82nd OH left, 26th WI right); [C ~16:00] the Cemetery Hill stone-fence rally; the cemetery-building position Jul 2-5",
+      "EC4 movement legs": "[D] the forward commitment; the division-ordered fall-back through town; the ~16:00 rally",
+      "EC5 activity record": "The open-field stand vs Gordon/Doles converging (both-sided); the town gauntlet; July 2-3 attested-quiet (26th WI no-loss negative)",
+      "EC6 casualty apportionment": "Return p. 183 digit-exact: 20/140/181/111/217 = 669; 82nd OH report=return EXACT 181; July 1 near-total",
+      "Achieved T-level (audited)": "T3 (July 1 grain; full arc T2)",
+      "Notes": "Dossier: reconstruction/dossiers/us-xi-3-2-krzyzanowski.md; CA-J1P-3 receiving center"
+    },
+    "us-coster": {
+      "Class (attested-static / unauthored / authored-ok)": "unauthored",
+      "EC1 identity/command": "Coster; NO report at any brigade echelon (verified negative - the third XI no-report brigade)",
+      "EC2 engaged strength": "No primary (negative); B&M-repro 1,156 (hop); the brickyard force = three regiments (73rd Pa stayed on the hill)",
+      "EC3 position anchors": "[C ~14:00 via von Steinwehr] Cemetery Hill NE supporting Wiedrich (+ the stone-church regiment); [D] the brickyard line NE of town; the fall-back with the brick-house stopper; the hill's NE front July 2-3",
+      "EC4 movement legs": "[D] the through-town commitment to the brickyard; the covered fall-back",
+      "EC5 activity record": "The brickyard delaying action (division grain + BOTH-SIDED by Hays/Avery pass 10); the brick-house stopper",
+      "EC6 casualty apportionment": "Return p. 183: 252/200/111/34 = 597 aggregate-exact (m column row-forced 313, noisy); the minutes-scale single-spike wreck second only to Iverson's",
+      "Achieved T-level (audited)": "T2 (honestly thin; the fight T3 via the attackers)",
+      "Notes": "Dossier: reconstruction/dossiers/us-xi-2-1-coster.md"
     }
   }
 }

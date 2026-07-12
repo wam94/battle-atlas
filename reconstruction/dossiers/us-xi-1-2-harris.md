@@ -121,6 +121,31 @@ closer).
 3. Ames's division report is two sentences on the evening — thinness
    recorded (kind-none profile).
 4. EC2 brigade aggregate open; EC6 per-day split reconstruction.
+5. **THE BARLOW-GORDON RECORD (added pass 11 — the division
+   commander's wounding aftermath, structured):**
+   - *Contemporary layer (adopted for the cast record)*: Barlow shot
+     and left inside CSA lines at the knoll collapse (Ames's report,
+     above; the Gordon report's minimal contemporary pin — "Among
+     the latter was a division commander (General [F. C.] Barlow),
+     who was severely wounded", or-27-2-gordon, pass 10). **Barlow's
+     own letter of July 7, 1863** (to his mother; barlow-letter-1863):
+     nursed in a town house under morphine; "Some of the staff
+     officers of Ewell + Early came to see me + I talked very freely
+     with them"; he had himself destroyed the letters in his pockets
+     as he lay wounded. No Gordon named.
+   - *Memoir layer (carried, NOT adopted)*: Gordon's Reminiscences
+     (1903) — the dismount, the water, the letters-read-and-destroyed
+     scene, the promised message to Mrs. Barlow. The letters element
+     contradicts Barlow's contemporary self-destruction statement.
+   - *Adjudication literature*: Hanna (CWTI, May 1985, "A Gettysburg
+     Myth Exploded") argues invention in the reconciliation cause;
+     the NPS GNMP blog series (2012) and later writing hold a "murky
+     middle" (some kindness incident plausible; the dramatic details
+     unsupported). **Disposition per ED-25 rule 4 + ED-39's
+     spirit**: the cast renders only the contemporary layer (Barlow
+     w, left on the field, recovered in town, visited by CSA staff
+     officers); the 1903 scene gets NO status. Recorded here because
+     the knoll fight is this dossier's ground.
 
 ## Chain anchors substantiated
 
@@ -151,5 +176,6 @@ or-27-1-harris (pp. 715-716, the spine — regiment + brigade reports)
 · or-27-1-ames (division frame) · or-27-1-einsiedel-41ny (the von
 Gilsa frame) · or-27-2-hays + or-27-2-early (the other side) ·
 or-27-1-wiedrich + or-27-1-ricketts (the batteries above) ·
-or-27-1-union-return p. 182 · OSM/Overpass (mon-17ct, mon-25-75oh,
-mon-41ny, tab-us-xi-1-1-hq) · or-27-oob.
+or-27-1-union-return p. 182 · barlow-letter-1863 (the July 7 letter +
+the controversy record, added pass 11) · OSM/Overpass (mon-17ct,
+mon-25-75oh, mon-41ny, tab-us-xi-1-1-hq) · or-27-oob.

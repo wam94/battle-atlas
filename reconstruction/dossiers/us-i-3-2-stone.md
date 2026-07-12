@@ -4,8 +4,9 @@ Pass 4 (Union center command batch — the deferred Doubleday pieces) ·
 Cast status: in-build (`us-dana`) · Achieved T-level: **T4 full-arc**
 (pass-5 upgrade: the 150th Pa regimental history landed — the July 2-3
 activity record is now regimental-history grade with a stated July 2
-strength, two movement legs, and clocked July 3 losses) · 2026-07-11
-(pass-5 upgrade)
+strength, two movement legs, and clocked July 3 losses; pass-11
+July 1 back-extension: Roy Stone's own report in full — the 11:00 /
+12-1 Oak Hill / 1.30 grand-advance clock ladder) · 2026-07-12
 
 Command-batch role: the second of Doubleday's July 3 frame pieces — the
 Bucktail brigade wrecked at the McPherson barn on July 1, standing in
@@ -44,9 +45,31 @@ drawn states), not narrative — recorded at that honesty grade.
 
 ## EC4 — Movement legs
 
-1. July 1: the McPherson barn / railroad cut fight and the retreat to
-   Cemetery Hill (July 1 record carried at register grain; the
-   commissioned window here is July 2-3).
+1. **July 1 (back-extended pass 11, or-27-1-stone-roy in full)**
+   [C ~0/D]: posted **"at 11 o'clock a.m."** between Wadsworth's two
+   brigades, "right resting upon the Chambersburg or Cashtown road",
+   left nearly to Meredith's wood; the skirmisher dash to the fence
+   (held all day); **"between 12 and 1 o'clock… a new battery upon a
+   hill on the extreme right opened a most destructive enfilade"**
+   (the Oak Hill/Carter arrival receiving clock — pairs the Rodes
+   tablet's "about noon") and the right-angle re-fold (149th into
+   the pike, 143rd to its right, 150th on the west face); **"At
+   about 1.30 p.m. the grand advance of the enemy's infantry began"
+   — traced "for at least 2 miles"** (the CA-J1P-1 early-side
+   primary; see ED-69 candidate); the flank fire on the battalions
+   engaged against Seminary Ridge's northern prolongation; the
+   149th's railroad-cut episode (the fence volley at pistol-shot,
+   the 30-yard volley + charge, the enfilading battery forcing it
+   out); the command cascade IN ACTION (Stone w → Wister — "badly
+   wounded in the mouth and unable to speak, remained in the front"
+   — → Dana; Huidekoper and Dwight fighting wounded); the fighting
+   withdrawal "making an occasional stand" to Seminary Ridge ("a
+   firm stand was made and a battery brought off"), then the town
+   gauntlet ("the enemy… already occupied the streets on both their
+   flanks"); **"Nearly two-thirds of my command fell on the field.
+   Every field officer save one was wounded"** (or-27-1-stone-roy).
+   B&M-repro 1,317 (addressing-gettysburg-oob, hop) — two-thirds of
+   it ≈ the return's 853 ✓.
 2. **PASS-5 (chamberlin-150pa-1895) — the static reading is
    CORRECTED for July 2 evening**: "About six p.m. the brigade was
    double-quicked to the left, down the Taneytown road" to the right
@@ -115,10 +138,14 @@ drawn states), not narrative — recorded at that honesty grade.
 
 ## ED candidates proposed
 
-- None new.
+- Feeds **ED-69** (candidate, pass 11): Stone's "about 1.30 p.m."
+  grand-advance clock is one of its two independent primaries.
+  Nothing self-adopted.
 
 ## Source register
 
+or-27-1-stone-roy (No. 61, pp. 329-331, fetched pass 11 — the July 1
+spine; three stated clocks incl. the 1.30 grand-advance primary) ·
 or-27-1-doubleday (p. 258 — the structure statement; his two-gun
 recovery quote reproduced in the history) · chamberlin-150pa-1895
 (ch. XV, fetch-verified pass 5 — the upgrade source) ·

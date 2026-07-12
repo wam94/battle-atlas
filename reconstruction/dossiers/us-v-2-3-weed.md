@@ -95,12 +95,17 @@ return rows, Bachelder j2-03/j2-04/j2-05.
 
 ## EC6 — Casualty apportionment
 
-- **Union return (ED-52 basis)**: **140th NY 26/89/18 = 133** (the
-  aggregate reconciles exactly); 91st PA / 146th NY / 155th PA rows
-  read with column-alignment noise (aggregate class ~19 / ~28 / ~19);
-  **brigade total 200**; 2nd Division 1,029 (or-27-1-union-return
-  p. 180; the noisy rows flagged for a clean re-read, not adopted at
-  digit grain).
+- **Union return (ED-52 basis; p. 180 RE-READ pass 11, both
+  channels)**: **140th NY now digit-exact at officers/men grain —
+  1+25 k / 5+84 w / 18 m = 133** ✓; **the brigade TOTAL row now
+  digit-exact and internally perfect: 2+38 k / 11+131 w / 18 m =
+  40+142+18 = 200** ✓✓. The three small rows remain
+  aggregate-class (146th NY 28 / 91st PA 19 / 155th PA 19) with an
+  honest off-by-one open: 133+28+19+19 = 199 vs the exact 200 —
+  one of the three aggregates is one higher; neither channel's
+  column OCR resolves which (carried; the noise class stands at
+  single-digit width).
+  2nd Division 1,029 (or-27-1-union-return p. 180).
 - Episode split [D, strong]: the 140th's 133 concentrated in the
   ~17:30-18:30 crisis window; the other three regiments' lighter
   losses spread across the summit hold (sharpshooter attrition class,

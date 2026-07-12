@@ -70,6 +70,29 @@ plus Engelhard give the batch's most complete wrecked-formation arc.
 
 ## EC5 — Activity record
 
+0. **July 1 (back-extended pass 11, or-27-2-scales in full)** [D]:
+   the deployment "my left resting upon the turnpike leading from
+   Cashtown to Gettysburg" (Scales between the pike and McGowan's;
+   Lane's swap to the far right recorded); the ~30-min halt behind
+   Hill's corps artillery; **the Davis-front rescue** — "a regiment
+   or two of the enemy… engaged a regiment of our men (supposed to
+   be a part of General Davis' brigade)… The enemy, with their flank
+   thus exposed to our charge, immediately gave way" (both-sided
+   with the pass-10 Davis/Cutler records); the pass-through of
+   Heth's halted line ("without ammunition, and would not advance
+   farther" — the first line's ammunition state, primary); the
+   seminary descent — "a most terrific fire of grape and shell on
+   our flank, and grape and musketry in our front. Every discharge
+   made sad havoc in our line" — halted at the bottom, **~75 yards
+   from the ridge and ~75 from the college**, where Scales fell
+   wounded and "only a squad here and there marked the place where
+   regiments had rested"; **"In less than ten minutes after I was
+   disabled… the enemy… gave way"** — a minutes-grade pin welding
+   the brigade's wreck to the Perrin breakthrough (CA-J1P-5).
+   Perrin's side: "General Scales' brigade had halted to return the
+   enemy's fire, near the fence, about 200 yards distance from the
+   enemy" (or-27-2-perrin) — the halt both-sided (the 75-vs-200-yard
+   range readings carried as the two reports' own).
 1. **Bombardment** [A window + B duration]: "here we remained at least
    one hour, under a most galling fire of artillery, which ... the men
    endured with the coolness and determined spirit of veterans"
@@ -120,8 +143,10 @@ plus Engelhard give the batch's most complete wrecked-formation arc.
 
 ## Source register
 
-or-27-2-lowrance (No. 561, fetched this pass; sequence-only profile) ·
-or-27-2-scales (No. 560, the July 1 record + conflicting table) ·
+or-27-2-lowrance (No. 561, fetched pass 3; sequence-only profile) ·
+or-27-2-scales (No. 560, the July 1 record + conflicting table —
+July 1 narrative consumed IN FULL pass 11, pp. 669-671) ·
+or-27-2-perrin (the halt-line both-siding, pass 11) ·
 or-27-2-engelhard (division record) · or-27-2-anv-return (p. 345) ·
 bachelder-manifest j3-02 (pre-move label read, drawn-state flagged) ·
 or-27-oob.
