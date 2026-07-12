@@ -91,11 +91,11 @@ candidate. The first VI Corps infantry dossier in the audit.
 
 ## EC6 — Casualty apportionment
 
-- **Tablet: 53** (2 men k / 7 officers + 44 men w — no missing);
-  the Union return's VI Corps 3rd Div rows lie beyond the p. 180
-  fetch — return row UNVERIFIED this pass (flagged; the tablet's 53
-  is the working reading, ED-43 scope note: single-engagement
-  brigade, scope risk low).
+- **Tablet: 53** (2 men k / 7 officers + 44 men w — no missing) =
+  **the Union return's p. 182 row, FETCHED PASS 8: 2 k / 7+44 w =
+  53 — TABLET=RETURN EXACT at component grain** (the pass-7 flag
+  closed; 62nd NY 12, 93rd PA 10-class, 98th/102nd/139th PA rows on
+  the page; or-27-1-union-return).
 - Episode split [D]: the W5 charge (July 2 evening) + the July 3
   shelling — a light, two-episode shape; the brigade's cost was
   bought mostly by the march.
@@ -107,8 +107,7 @@ candidate. The first VI Corps infantry dossier in the audit.
    no exclusive credit encodable; ED-61 proposed below.
 2. Stated 4.30 p.m. vs canonical ~18:45–19:15 (+75 class, ED-58 —
    the VI Corps limb, third Union corps in the class).
-3. Return row unfetched (p. 181 region) — EC6 rests on the tablet;
-   cheap follow-up flagged.
+3. Return row FETCHED pass 8 (p. 182): 53 exact — the flag closed.
 4. The triple command succession (Wheaton→Nevin→Bartlett-attached)
    is a rendering-metadata hazard: the BUILD id is us-nevin; the
    tablet titles the brigade Wheaton's (carried on EC1).

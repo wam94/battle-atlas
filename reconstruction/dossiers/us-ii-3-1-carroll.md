@@ -53,7 +53,14 @@ documented counterpart of Brockenbrough's collapse
    (20:00–21:00) writes "Carroll's Brig 2d Corps" on the hill's NE
    face at ~local **(5100, 5624)** ±150 m, with residual bars at the
    Ziegler's start slot ~(4671, 5265) — start and end states of the
-   night move on one sheet.
+   night move on one sheet. **Pass-8 re-read: the same label picked
+   at (5110, 5600) — 27 m repeatability**; and the OSM-served
+   Carroll brigade HQ marker on the hill (tab-us-ii-3-1-hq-carroll,
+   **(5024.1, 5793.3)**) lands 34 m from the Ricketts monument —
+   the counterattack's pin sits AMONG the guns it retook
+   (or-27-1-ricketts's "a part of the Second Army Corps charged in",
+   the receiving-side sequence now dossier'd both ways; see
+   us-btty-ricketts.md / us-btty-wiedrich.md, pass 8).
 
 ## EC4 — Movement legs
 
