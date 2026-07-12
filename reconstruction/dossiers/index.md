@@ -15,14 +15,17 @@ Citations are `(source-id, locator)`; source ids resolve in
 `reconstruction/sources/sources.json`. Facts with **no tier bracket are
 untimed** (identity, strength, materiel). Negative evidence and conflicts are
 first-class and live in their own section. New editorial calls are PROPOSED
-as ED candidates (ED-60+ as of pass 7 — the pass-1 candidates ED-32…ED-38,
+as ED candidates (ED-62+ as of pass 8 — the pass-1 candidates ED-32…ED-38,
 the monument profile ED-39, the pass-2 candidates ED-40…ED-45, the
 pass-3 candidates ED-46…ED-49, the pass-4 candidates ED-50…ED-52, the
 pass-5 candidates ED-53…ED-55 (incl. the CA-J2A-2/3 chain revision), and
 the pass-6 candidates ED-56…ED-59 (the guns convergent-capture, the
 occupation-wave record, the field-wide early-skew class, the
-withdrawal-conflict ruling) were all adopted 2026-07-11), never
-self-adopted.
+withdrawal-conflict ruling) were all adopted 2026-07-11, and the
+pass-7 candidates ED-60/ED-61 (the Wright high-water ruling; the
+Trostle gun-recovery cross-credit rule, its Bigelow/Watson
+precondition satisfied first) were adopted 2026-07-11 at pass-8
+start), never self-adopted.
 
 ## Fixed heading schema
 

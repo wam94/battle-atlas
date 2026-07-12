@@ -123,6 +123,13 @@ candidate. The first VI Corps infantry dossier in the audit.
 
 ## ED candidates proposed
 
+> **ADOPTED 2026-07-11 (pass-8 batch ruling)** — precondition satisfied
+> first: the Bigelow (McGilvery pp. 881-884 + Milton No. 320) and
+> Watson (Martin p. 660) records fixed the objects at 4 + 4 guns, all
+> eight hauled off by McGilvery's details the same night (~20:00-21:00);
+> Nevin's two Napoleons ride the ledger as an infantry ground-retaking
+> claim inside that sequence. See angle-editorial-decisions.md ED-61.
+
 - **ED-61 (proposed, NOT self-adopted) — the Plum Run gun-recovery
   cross-credit rule.** Adopt the ED-56 convergent-event pattern for
   RECOVERIES: guns lost on the Trostle/Plum Run ground July 2

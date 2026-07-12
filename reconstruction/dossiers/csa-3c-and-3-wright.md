@@ -165,6 +165,11 @@ Emmitsburg-road gun line/west slope. Proposes ED-60.
 
 ## ED candidates proposed
 
+> **ADOPTED 2026-07-11 (pass-8 batch ruling)** — as proposed: gun-line
+> high-water canonical, crest claims carried as the commander's account
+> the tablet inherited, EC6 basis 668. See angle-editorial-decisions.md
+> ED-60.
+
 - **ED-60 (proposed, NOT self-adopted) — the Wright high-water
   ruling.** Adopt: the brigade's farthest advance is the Emmitsburg
   -road-to-west-slope gun line fixed by the advance marker
