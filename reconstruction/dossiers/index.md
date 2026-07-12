@@ -236,3 +236,40 @@ thirty-minute stand, the 1st-MN receiving side), us-ii-2-1-harrow.md
 primary + Wilcox p. 618 + the j2-04 drawn pair).
 
 Companion: `docs/reconstruction/audit/dossier-pass-6.md`.
+
+## Pass 7 — the Peach Orchard / Plum Run periphery (the July 2 afternoon phase's completion)
+
+The phase's remaining executor mass per pass 6 §9 and the sequencing
+doctrine (finish the current phase's chain executors before opening a
+new phase's): the III Corps salient at brigade grain (Graham's apex +
+Humphreys's division — the CA-J2A-9/10 legs), the Plum Run
+stabilization that ends wave 5 (McCandless/Nevin + Ayres's regulars,
+the W4 extraction), and the Anderson-division salient-north pair
+(Wright's famous high-water CONFLICT record treated as such; Lang's
+July 2 backward-extension). Batch adoption of ED-56…ED-59 executed at
+pass start (no anchor moves; CA-J2A-8 CONFIRMED, CA-J2A-11 exercised).
+Headline evidence classes: FIVE tablet=return exact agreements
+(Graham 740, Carr 790, Day 382, Burbank 447, McCandless 155) plus two
+TRIPLES (report=tablet=return: Brewster 778, Burling 513); the 8th
+Florida colors both-sided at flag grain; the division-grain AGREEING
+clock counter-class (Carr 4.08 p.m.); Wright's three-reading EC6 with
+missing=333 agreed. Monument register +20 (111).
+
+| Dossier | Register id | Arc role | Achieved T |
+|---|---|---|---|
+| [us-iii-1-1-graham.md](us-iii-1-1-graham.md) | reg-us-iii-1-1 (us-madill) | the salient apex; Graham w&c pin; the Union no-report-class member | T4 full-arc |
+| [us-iii-2-hq-humphreys.md](us-iii-2-hq-humphreys.md) | reg-us-iii-2-hq (added pass 7) | the fighting-withdrawal physics spine; Sickles pin | T3 (command record) |
+| [us-iii-2-1-carr.md](us-iii-2-1-carr.md) | reg-us-iii-2-1 (us-carr) | the road front line; the 4.08 p.m. agreeing clock | T4 full-arc |
+| [us-iii-2-2-brewster.md](us-iii-2-2-brewster.md) | reg-us-iii-2-2 (us-brewster) | second line; 778 triple; the 8th Fla colors both-sided | T4 full-arc |
+| [us-iii-2-3-burling.md](us-iii-2-3-burling.md) | reg-us-iii-2-3 (us-burling) | the dispersed-class detachment ledger; 513 triple | T4 full-arc |
+| [us-v-2-1-day.md](us-v-2-1-day.md) | reg-us-v-2-1 (us-day) | W3-W4 regulars second line; forwarding-cover negative | T4 full-arc (thin) |
+| [us-v-2-2-burbank.md](us-v-2-2-burbank.md) | reg-us-v-2-2 (us-burbank) | the W4 extraction's biggest victim; <900-muskets primary | T4 full-arc |
+| [us-v-3-1-mccandless.md](us-v-3-1-mccandless.md) | reg-us-v-3-1 (us-mccandless) | W5 left pole; 700-yards geometry; Taylor pin | T4 full-arc |
+| [us-vi-3-3-nevin.md](us-vi-3-3-nevin.md) | reg-us-vi-3-3 (us-nevin) | W5 right pole; Wofford named-opponent; ED-61 proposer | T4 full-arc |
+| [csa-3c-and-3-wright.md](csa-3c-and-3-wright.md) | reg-csa-3c-and-3 (csa-wright) | CA-J2A-10's named executor; THE high-water conflict record; ED-60 proposer | T4 full-arc |
+
+Pass-7 upgrades to existing dossiers: csa-3c-and-4-lang.md (**July 2
+arc extended backward** — the advanced Emmitsburg-Rd tablet, the 8th
+Fla colors both-sided, the opposite-direction clock heterogeneity).
+
+Companion: `docs/reconstruction/audit/dossier-pass-7.md`.
