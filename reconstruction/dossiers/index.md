@@ -15,7 +15,7 @@ Citations are `(source-id, locator)`; source ids resolve in
 `reconstruction/sources/sources.json`. Facts with **no tier bracket are
 untimed** (identity, strength, materiel). Negative evidence and conflicts are
 first-class and live in their own section. New editorial calls are PROPOSED
-as ED candidates (ED-74+ as of pass 13 — the pass-1 candidates ED-32…ED-38,
+as ED candidates (ED-75+ as of pass 14 — the pass-1 candidates ED-32…ED-38,
 the monument profile ED-39, the pass-2 candidates ED-40…ED-45, the
 pass-3 candidates ED-46…ED-49, the pass-4 candidates ED-50…ED-52, the
 pass-5 candidates ED-53…ED-55 (incl. the CA-J2A-2/3 chain revision), and
@@ -42,7 +42,9 @@ Robinson rear-guard tail; the failed-row-arithmetic rule) were
 adopted 2026-07-12 at pass-12 start, and the pass-12 candidates ED-72/
 ED-73 (the East/South Cavalry Field chain; the CSA cavalry-brigade
 position-marker evidence class) were adopted 2026-07-13 at pass-13
-start), never self-adopted.
+start, and the pass-13 candidate ED-74 (the report-vs-corroborated-
+tablet-conflict class, extending ED-71) was adopted 2026-07-14 at
+pass-14 start), never self-adopted.
 
 ## Fixed heading schema
 

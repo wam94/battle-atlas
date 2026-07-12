@@ -135,8 +135,10 @@ main chain's Peach Orchard/Seminary Ridge sources don't cover.
   yielding report total 29 vs tablet/battery-sum total 30 (off by
   ONE). The report's own internal arithmetic is self-consistent
   (3+22+4=29); it simply does NOT match the tablet/battery-marker
-  figure. **Recorded as a first-class conflict, NOT adopted either
-  way** — this is a genuinely new case for the ED-71 pattern (a
+  figure. **Tagged `report-vs-corroborated-tablet-conflict` (ED-74,
+  ADOPTED pass 14)**: the tablet/battery-sum figure (30) is the EC6
+  basis; the report's 29 rides the record verbatim as a first-class
+  component — this was the exhibit case for the ED-74 ruling (a
   report's own total disagreeing with an independently-cross-checked
   tablet/battery-marker consensus, rather than a single table failing
   its own arithmetic) — see ED candidates below.
@@ -167,17 +169,24 @@ main chain's Peach Orchard/Seminary Ridge sources don't cover.
 
 ## ED candidates proposed
 
-- **ED-74 candidate (new this pass)** — extend ED-71's failed-row-
+> **ADOPTED 2026-07-14 (pass-14 batch ruling)** — see
+> `angle-editorial-decisions.md` §"Dossier pass 13 adoption ruling
+> (ED-74)". The battery-marker-corroborated tablet figure (30) is the
+> EC6 basis for this battalion; the report's 29 rides the record as a
+> first-class component, tagged `report-vs-corroborated-tablet-
+> conflict`.
+
+- ~~ED-74 candidate (new this pass)~~ — extend ED-71's failed-row-
   arithmetic rule to cover a THIRD conflict shape: a report's own
   internally-consistent total disagreeing with an independently
   cross-checked tablet/battery-marker consensus (this dossier's EC6,
   above), distinct from ED-71's single-table self-contradiction and
-  from ED-49/ED-52's report-vs-return scope conflicts. Proposal: name
-  this `report-vs-corroborated-tablet-conflict` and adopt the
+  from ED-49/ED-52's report-vs-return scope conflicts. Name this
+  `report-vs-corroborated-tablet-conflict` and adopt the
   battery-marker-corroborated tablet figure (30) as the EC6 basis
   while carrying the report's 29 verbatim as a first-class component,
   matching ED-71(a)/(b)'s treatment exactly but for a different
-  evidence-class pairing. NOT self-adopted — owner ruling needed.
+  evidence-class pairing.
 
 ## Source register
 
