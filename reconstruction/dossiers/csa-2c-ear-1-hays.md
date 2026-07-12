@@ -77,9 +77,17 @@ and Ricketts (whose "about 8 p. m." clocks agree across the lines).
    named as the expected supports; the caution that cost the first
    volleys), then the three-deep lines (Carroll's front, both-sided
    with us-ii-3-1-carroll.md) forced the retire.
-3. July 1 [C]: the town fight (drove "entirely out of the city");
-   the two-Napoleon joint capture with Avery's brigade — **Early's
-   own convergent-credit ruling carried on both dossiers**.
+3. **July 1 (extended pass 10)** [C/D]: committed on Gordon's left
+   in the division's second effort — Early: "Hays and Avery
+   advanced on Gordon's left, 'driving back into the town in great
+   confusion the second line'" (or-27-2-early, the Coster-front
+   collapse from the attacking side; both-sided with Schurz's
+   Coster-deployment regret record, or-27-1-schurz, pass 10); the
+   town fight (drove "entirely out of the city"); the two-Napoleon
+   joint capture with Avery's brigade — **Early's own
+   convergent-credit ruling carried on both dossiers**. The
+   Harrisburg-Road approach tablet registered pass 10
+   (mon-hays-tablet-j1).
 4. July 3 [E]: town-street sharpshooter duty; no assault role.
 
 ## EC6 — Casualty apportionment
@@ -103,9 +111,11 @@ and Ricketts (whose "about 8 p. m." clocks agree across the lines).
    temporary-loss records — convergent, not contradictory; encoded
    per ED-63 (proposed).
 3. Gordon's non-advance ("occupying the precise position... and not
-   advancing") — carried as Hays's observation; Gordon's side
-   unfetched this pass (flagged for the July 1 batch, where Gordon's
-   report is core).
+   advancing") — carried as Hays's observation; **CLOSED pass 10**:
+   Gordon's own report corroborates by silence ("The movements
+   during the succeeding days of the battle (July 2 and 3), I do
+   not consider of sufficient importance to mention",
+   or-27-2-gordon) — observation + self-attestation now agree.
 4. EC2 open.
 
 ## Chain anchors substantiated
