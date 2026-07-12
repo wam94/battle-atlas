@@ -76,8 +76,8 @@
         },
         "anchorsUsed": {
           "type": "array",
-          "items": { "type": "string", "pattern": "^CA-[A-Z0-9]+-[0-9]+$" },
-          "description": "Canonical anchors the offset derivation compared against (reproducibility)."
+          "items": { "type": "string", "pattern": "^CA-[A-Z0-9]+-[0-9]+[a-z]?$" },
+          "description": "Canonical anchors the offset derivation compared against (reproducibility). Trailing lowercase letter admits split-anchor ids (ED-66: CA-J1M-4a/4b)."
         },
         "assessment": {
           "type": "string",
