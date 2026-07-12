@@ -1,7 +1,8 @@
 # Dossier: Archer's Brigade (Fry's), Heth's Division (reg-csa-3c-het-3)
 
-Pass 3 (first command batch) · Cast status: in-build (`csa-fry`) ·
-Achieved T-level: **T4 full-arc** · 2026-07-11
+Pass 3 (first command batch) · **July 1 arc extended pass 10 (Archer
+fresh)** · Cast status: in-build (`csa-fry`) · Achieved T-level:
+**T4 full-arc** · 2026-07-12
 
 Command-batch role: the column's GUIDE — the brigade both divisions dressed
 on (claim-fry-guide, T5), now documented from the executing side by
@@ -32,6 +33,30 @@ Shepard's report. The build's 1,048 strength turns out to BE the primary.
 
 ## EC3 — Position anchors
 
+0. **July 1 morning (extended pass 10)** [D + drawn]: "We left our
+   camp near Cashtown, Pa., early on the morning of July 1, and
+   marched down the turnpike road leading to Gettysburg... came upon
+   the enemy's pickets, who gradually fell back before us for about
+   3 miles" (or-27-2-shepard — the deploy-phase's CSA ground truth:
+   the 'pickets' were Gamble's squadrons, us-cav-1-1-gamble.md);
+   south of the pike opposite the arriving Iron Brigade. **The creek
+   pocket**: "At the extreme side of the field there was a small
+   creek [Willoughby Run] with a fence and undergrowth, which was
+   some disadvantage to our line in crossing, but the brigade rushed
+   across with a cheer" — then the Iron Brigade's counter-charge:
+   "some 75 of the brigade were unable to make their escape, General
+   Archer among the rest. I saw General Archer a short time before he
+   surrendered, and he appeared to be very much exhausted with
+   fatigue" (or-27-2-shepard) — **now BOTH-SIDED at man grain**:
+   Archer brought in by Pvt. Patrick Maloney, 2nd Wis
+   (or-27-1-doubleday); Morrow's 24th Mich "captured a large number
+   of prisoners, being a part of General Archer's brigade" at the
+   run. Drawn: j1-03 red "ARCHER' BRIG" bars with 13 Ala / 5 Ala Bn /
+   1st Tenn labels W of the run (label read 2700, 7086); the
+   Archer-captured marker mon-archer-captured (2731.1, 7504.7) and
+   the Willoughby-Run front marker mon-archer-hq-herbst registered
+   this pass. **Archer captured = the first Lee-army general lost**
+   (the day's command-cost pin, carried on EC1).
 1. **July 1 night–July 2** [D]: "we lay in position upon a road upon the
    right of our line" (or-27-2-shepard).
 2. **July 2 night → July 3** [D]: "During the night of the 2d, we moved
@@ -118,6 +143,11 @@ Shepard's report. The build's 1,048 strength turns out to BE the primary.
 
 ## Chain anchors substantiated
 
+- **CA-J1M-2/4 (pass 10)**: the three-mile picket-driving approach is
+  the deploy phase from the CSA side; the creek pocket and Archer's
+  capture are CA-J1M-4's climax on the south-of-pike front
+  (time-silent in Shepard — the clock rides Davis's 10.30 +
+  the Union receiving cluster).
 - **CA-J3A-6/7**: the convergence executed ("Guide right"), the lane
   crossing at 180–200 yards.
 - **CA-J3A-9**: the works fight and color record on the Fry front (the
@@ -125,11 +155,15 @@ Shepard's report. The build's 1,048 strength turns out to BE the primary.
 
 ## ED candidates proposed
 
-- None new (ED-5 confirmed from the executing side; ED-49 shared).
+- None new (ED-5 confirmed from the executing side; ED-49 shared;
+  ED-66 rider with Davis).
 
 ## Source register
 
-or-27-2-shepard (No. 552, fetched this pass; sequence-only profile) ·
+or-27-2-shepard (No. 552; sequence-only profile) · or-27-1-doubleday +
+or-27-1-morrow-24mi (the capture both-sided, pass 10) ·
+bachelder-manifest j1-03 + monuments mon-archer-captured /
+mon-archer-hq-herbst (pass 10) ·
 or-27-2-anv-return (p. 344) · fry-shsp7-1879 (T5 layer) ·
 or-27-2-davis-jr (division order + step-off clock) · angle.claims.json
 (claim-fry-guide, claim-fry-colors-at-works, claim-strength-fry) ·

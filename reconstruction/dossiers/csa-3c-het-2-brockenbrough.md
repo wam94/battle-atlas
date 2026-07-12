@@ -1,9 +1,10 @@
 # Dossier: Brockenbrough's Brigade, Heth's Division (reg-csa-3c-het-2)
 
-Pass 3 (first command batch) · Cast status: in-build (`csa-brockenbrough`,
+Pass 3 (first command batch) · **July 1 arc extended pass 10 (thin,
+honest)** · Cast status: in-build (`csa-brockenbrough`,
 rendered as two wing tracks `csa-brock-left` / `csa-brock-right`) ·
 Achieved T-level: **T3 full-arc** (weakest evidence base in the batch, and
-now honestly bounded) · 2026-07-11
+now honestly bounded) · 2026-07-12
 
 Command-batch role: the column's extreme left — the wing that broke first
 under the 8th Ohio's flank attack and the Osborn arc, whose collapse is the
@@ -41,6 +42,17 @@ casualty floor: the ANV return's regiment-grain 148 k+w.
 
 ## EC3 — Position anchors
 
+0. **July 1 (extended pass 10)** [E, honestly thin]: with Heth's
+   division on the pike (behind the Archer/Davis first line — the
+   division frame, or-27-2-heth); committed in the AFTERNOON renewal
+   on the McPherson's Ridge / Stone-front sector (the receiving side
+   documents the front: Stone's/Dana's changed-front fights,
+   us-i-3-2-stone.md pass 4). **No brigade-authored July 1 statement
+   exists** (the no-report negative governs the whole arc); the
+   July 1 share of the 148-k+w floor is unapportionable (EC6). The
+   W Conf Ave tablet mon-brockenbrough-tablet (formation-line
+   semantics) registered pass 10 — no July 1 field marker located
+   through the OSM channel (negative, recorded).
 1. **July 2 evening / July 3 morning — the division's LEFT** [D]:
    Davis's order of battle (or-27-2-davis-jr); **sheet read (new)**
    [E, ±120 m]: "BROCKENBOROUGH VA." drawn at ~local (3320, 5980) on

@@ -1,7 +1,8 @@
 # Dossier: Davis's Brigade, Heth's Division (reg-csa-3c-het-4)
 
-Pass 3 (first command batch) · Cast status: in-build (`csa-davis`) ·
-Achieved T-level: **T4 full-arc** · 2026-07-11
+Pass 3 (first command batch) · **July 1 arc extended pass 10** · Cast
+status: in-build (`csa-davis`) · Achieved T-level: **T4 full-arc** ·
+2026-07-12
 
 Command-batch role: the left wing's left-center — the railroad-cut brigade
 of July 1 and the Bryan-barn front of July 3, with the 11th Mississippi's
@@ -35,7 +36,27 @@ this brigade the batch's best bombardment casualty figure.
 
 ## EC3 — Position anchors
 
-1. July 1: the railroad-cut fight north of the pike (or-27-2-davis-jr).
+1. **July 1 (extended pass 10)** [C via or-27-2-davis-jr ~0]: from
+   "camp on the heights near Cashtown" down the pike behind Archer;
+   artillery in position "within about 2 miles from town";
+   **"About 10.30 o'clock a line of battle was formed — with the
+   Forty-second Mississippi... on the right; Fifty-fifth North
+   Carolina... on the left, and Second Mississippi... in the center —
+   skirmishers thrown forward, and the brigade moved forward to the
+   attack"** — THE CSA ATTACK-POLE CLOCK for the Heth
+   deploy-vs-attack split (ED-66 candidate keystone; left of the
+   pike, opposite Cutler's three-regiment wing). The cut: "rallied
+   near the railroad, where he again made a stand, and, after
+   desperate fighting, with heavy loss on both sides" — then the
+   trap (both-sided: Dawes's charge, Blair's 2nd Miss surrender,
+   or-27-1-dawes-6wi; the 147th NY's release, or-27-1-cutler).
+   Withdrawal "This was about 1 p.m."; re-advance "About 3 p.m. [when]
+   a division of Lieutenant-General Ewell's corps came up on our
+   left, moving in line perpendicular to ours... reached the suburbs
+   of the town." Drawn: j1-03 shows the brigade front N of the pike
+   opposite the "147 N.Y" bar (3170, 7528); the July 1 railroad-cut
+   front marker mon-davis-hq-rrcut (3454.4, 7700.5) registered this
+   pass.
 2. **July 2 evening** [D]: division first line, Davis left center
    (or-27-2-davis-jr).
 3. **July 3 ~09:00** [C +5]: the quarter-mile left shift behind Pegram's
@@ -99,6 +120,20 @@ this brigade the batch's best bombardment casualty figure.
 
 ## Chain anchors substantiated
 
+- **CA-J1M-4 (pass 10) — THE ATTACK-POLE EXECUTOR CLOCK**: "About
+  10.30 o'clock a line of battle was formed... and the brigade moved
+  forward to the attack" — with Heth's own report time-silent, this
+  is the CSA side's only stated attack clock, and it agrees with the
+  Union receiving cluster (Wadsworth 10:00 arrival / 10:15 Reynolds
+  pin / Cutler "in action from 10 a.m.").
+- **CA-J1M-6**: the cut fight and its ~1 p.m. withdrawal bound the
+  morning fight's end from the CSA side (the skeleton's ~11:00
+  railroad-cut conclusion reads EARLY against Davis's 1 p.m. — a
+  recorded tension: his "about 1 p.m." is the brigade's retirement,
+  not the cut's fall; see pass-10 report §5).
+- **CA-J1P-1 adjacency**: "About 3 p.m. a division of
+  Lieutenant-General Ewell's corps came up on our left" — the
+  Rodes-progress sync read from Hill's front.
 - **CA-J3A-1/5/6** [C +5]: the division report's agreeing clocks (this
   brigade is the report's author's own).
 - **CA-J3A-9**: the Bryan-barn farthest advance (mon-11ms-1) against the
@@ -106,13 +141,17 @@ this brigade the batch's best bombardment casualty figure.
 
 ## ED candidates proposed
 
-- **ED-49 candidate** (shared).
+- **ED-49 candidate** (shared). **ED-66 rider (pass 10)**: the 10.30
+  attack clock is the split's CSA keystone — proposed with the
+  pass-10 report, NOT self-adopted.
 
 ## Source register
 
-or-27-2-davis-jr (No. 553 both reports, fetched this pass; clockProfile
-+5 medium) · or-27-2-anv-return (p. 344) · mon-11ms / mon-11ms-1
+or-27-2-davis-jr (No. 553 both reports; p. 649 verbatim upgrade pass
+10; clockProfile +5 medium) · or-27-2-anv-return (p. 344) ·
+or-27-1-dawes-6wi + or-27-1-cutler (the cut both-sided, pass 10) ·
+mon-11ms / mon-11ms-1 / mon-davis-hq-rrcut
 (reconstruction/spatial/monuments.json; ED-39) · bachelder-manifest
-j3-02 (label read 2026-07-11) · us-ii-3-2-smyth.md +
+j3-02 (label read 2026-07-11) + j1-03 (pass 10) · us-ii-3-2-smyth.md +
 us-btty-woodruff.md (pass-2 frames) · stone-sentinels (scope-flagged) ·
 or-27-oob.
