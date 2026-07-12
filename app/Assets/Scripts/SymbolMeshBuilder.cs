@@ -41,7 +41,10 @@ namespace BattleAtlas
 
         public const float BorderWidthM = 2f;     // perimeter/stroke strip width
         public const float CavalryShearDeg = 30f; // the map-symbol slash, structural
-        public const float GunDotSizeM = 6f;      // artillery gun-dot edge length
+        // gun-dot edge length: raised 6 -> 9 m for the cartography slice —
+        // at theater zoom a battery must still read as a beaded row, and a
+        // 6 m dot fell below one pixel before the field fit the frame
+        public const float GunDotSizeM = 9f;
         public const float BaselineWidthM = 1.5f; // artillery baseline stroke
         public const float BaselineGapM = 2.5f;   // dot row -> baseline, baseline -> baseline
         // skirmish dotted line: matches FillSkirmish's frontage x 1.2 spread
@@ -62,6 +65,59 @@ namespace BattleAtlas
         // BorderBandUvY + 1] across the strip width
         public const float BorderBandUvY = 2f;
 
+        // solid-ink band (cartography slice 3): uv.y at/above this renders
+        // as unconditional border-shade ink — no echelon weight clip. The
+        // facing chevron and the motion-trail dashes ride it: a brigade's
+        // double-border rule would hollow a chevron out, and neither mark
+        // is an echelon statement.
+        public const float InkBandUvY = 4f;
+
+        // facing chevron: a draped "Λ" of two strips at the symbol's
+        // leading edge, INSIDE the footprint (extents doctrine: the symbol
+        // spans exactly frontage x depth). Ordered formations only —
+        // scattered/routed men have no coherent facing to assert.
+        public const float ChevronMaxWidthM = 36f;
+        public const float ChevronMinWidthM = 8f;
+        public const float ChevronWidthFraction = 0.2f;
+        public const float ChevronMaxDepthM = 10f;
+        public const float ChevronDepthFraction = 0.5f;
+        public const float ChevronStrokeM = 2f;
+        const int ChevronSegs = 3;
+
+        // motion trail: a dashed wake strip from where the unit stood
+        // TrailWindowS battle-seconds ago to its current center — moving
+        // units read as moving at every zoom, holding units grow no tail.
+        // Deterministic in t (track states), dashes deterministic per unit.
+        public const float TrailWindowS = 180f;
+        public const float TrailWidthM = 3f;
+        public const float TrailSegLenM = 12f;
+        public const int TrailMaxSegs = 32;
+        const int TrailGapSalt = 53;
+
+        // column formation (slice 3): the monolithic ribbon narrows to the
+        // column footprint FormationLayout already uses for figures and
+        // roster slots — frontage/4 wide, depth x4 deep — so a marching
+        // column stops reading as a deployed line at every tier.
+        public const float ColumnFrontageFraction = 0.25f;
+        public const float ColumnDepthMultiplier = 4f;
+
+        // The bar grammar's effective footprint for a formation: column
+        // narrows and deepens (see above); everything else keeps the
+        // attested frontage and strength depth. Artillery and the park
+        // never reshape — a battery's dot row is its own grammar. Pure so
+        // the picker and the builder can never disagree.
+        public static (float frontage, float depth) EffectiveExtents(
+            UnitSymbol.SymbolKind kind, string formation,
+            float frontage, float displayDepth)
+        {
+            bool bar = kind == UnitSymbol.SymbolKind.Infantry
+                || kind == UnitSymbol.SymbolKind.Cavalry;
+            if (bar && formation == "column")
+                return (frontage * ColumnFrontageFraction,
+                    displayDepth * ColumnDepthMultiplier);
+            return (frontage, displayDepth);
+        }
+
         // rebuild-predicate epsilons: position mirrors the IsMovingAt
         // epsilon (BattleDirector.MovingEpsilonM — the same "has it really
         // moved" question at the same grain)
@@ -70,11 +126,13 @@ namespace BattleAtlas
 
         // Buffer capacity, audited worst case: 64x4 fill grid (256) +
         // border frame (2 long strips at 2x64 + 2 end strips at 2x4 = 272)
-        // + cavalry stroke (8) totals 536 verts; the park and an 8-dot
-        // battalion come in under it. Headroom to 1024 covers the Task 4
-        // skirt without a resize. Indices worst case ~1944 (cavalry);
-        // 6144 leaves the same headroom. Never grown at render time —
-        // BuildRibbon asserts. (Arithmetic re-audited per review.)
+        // + cavalry stroke (8) totals 536 verts; the cartography slice adds
+        // the facing chevron (2 strips at 2x4 = 16) and the motion trail
+        // (<= 2x33 = 66) for <= 618; the park and an 8-dot battalion come
+        // in under it. Headroom to 1024 covers the Task 4 skirt without a
+        // resize. Indices worst case ~1944 (cavalry) + chevron 36 + trail
+        // 192 ~= 2172; 6144 leaves the same headroom. Never grown at render
+        // time — BuildRibbon asserts.
         public const int MaxSymbolVerts = 1024;
         public const int MaxSymbolIndices = 6144;
 
@@ -106,18 +164,25 @@ namespace BattleAtlas
         // UnitSymbol.GunDotCount, encodes strength); groundY samples the
         // DISPLAYED terrain height at world (x, z); lift is the
         // display-meter clearance (DefaultLiftM). unitId feeds the
-        // deterministic fragment gaps.
+        // deterministic fragment gaps. facingSpine adds the leading-edge
+        // chevron (the director's monolithic symbols; roster ribbons skip
+        // it — one arrow per brigade, not five); hasTrail appends the
+        // dashed motion wake from world-XZ trailFromXZ to the center.
         public static SymbolCounts BuildRibbon(
             string unitId, Vector2 centerXZ, float facingDeg, float frontage,
             float displayDepth, UnitSymbol.SymbolKind kind, string formation,
             int gunDots, Func<float, float, float> groundY, float lift,
-            Vector3[] verts, Vector2[] uvs, int[] tris)
+            Vector3[] verts, Vector2[] uvs, int[] tris,
+            bool facingSpine = false, bool hasTrail = false,
+            Vector2 trailFromXZ = default)
         {
             var rot = Quaternion.Euler(0f, facingDeg, 0f);
             int vertCount = 0, indexCount = 0;
-            float halfF = frontage / 2f;
-            float halfD = displayDepth / 2f;
-            int cols = ColumnCount(frontage);
+            (float effF, float effD) = EffectiveExtents(
+                kind, formation, frontage, displayDepth);
+            float halfF = effF / 2f;
+            float halfD = effD / 2f;
+            int cols = ColumnCount(effF);
             bool fragmented = formation == "scattered" || formation == "routed";
             int bodyIndexCount;
 
@@ -235,6 +300,54 @@ namespace BattleAtlas
                 }
             }
 
+            // facing chevron (slice 3): bar grammar, ordered formations
+            // only — a dotted skirmish line and a dissolving unit assert
+            // no arrow. Rides the solid-ink band, so echelon border rules
+            // can't hollow it out.
+            if (facingSpine
+                && (kind == UnitSymbol.SymbolKind.Infantry
+                    || kind == UnitSymbol.SymbolKind.Cavalry)
+                && (formation == "line" || formation == "column"))
+            {
+                float shear = kind == UnitSymbol.SymbolKind.Cavalry
+                    ? Mathf.Tan(CavalryShearDeg * Mathf.Deg2Rad) : 0f;
+                float w = Mathf.Clamp(effF * ChevronWidthFraction,
+                    ChevronMinWidthM, ChevronMaxWidthM);
+                float zTip = halfD - BorderWidthM * 1.5f;
+                float z0 = zTip - Mathf.Min(
+                    effD * ChevronDepthFraction, ChevronMaxDepthM);
+                var tip = new Vector2(shear * zTip, zTip);
+                EmitStrip(unitId, 0, false,
+                    new Vector2(-w / 2f + shear * z0, z0), tip,
+                    ChevronStrokeM, ChevronSegs, centerXZ, rot, groundY, lift,
+                    verts, uvs, tris, ref vertCount, ref indexCount,
+                    InkBandUvY);
+                EmitStrip(unitId, 0, false,
+                    tip, new Vector2(w / 2f + shear * z0, z0),
+                    ChevronStrokeM, ChevronSegs, centerXZ, rot, groundY, lift,
+                    verts, uvs, tris, ref vertCount, ref indexCount,
+                    InkBandUvY);
+            }
+
+            // motion trail (slice 3): the dashed wake, any kind — a
+            // displacing battery earns its tail exactly like a marching
+            // brigade. World-frame endpoints, so no facing rotation.
+            if (hasTrail)
+            {
+                Vector2 back = trailFromXZ - centerXZ;
+                float len = back.magnitude;
+                if (len > TrailSegLenM)
+                {
+                    int segs = Mathf.Clamp(
+                        Mathf.CeilToInt(len / TrailSegLenM), 2, TrailMaxSegs);
+                    EmitStrip(unitId, TrailGapSalt, true,
+                        back, Vector2.zero, TrailWidthM, segs,
+                        centerXZ, Quaternion.identity, groundY, lift,
+                        verts, uvs, tris, ref vertCount, ref indexCount,
+                        InkBandUvY);
+                }
+            }
+
             Debug.Assert(
                 vertCount <= MaxSymbolVerts && indexCount <= MaxSymbolIndices,
                 "symbol geometry exceeded its audited worst case");
@@ -320,13 +433,14 @@ namespace BattleAtlas
 
         // Emits one draped strip from local point a to local point b,
         // `width` across, segs cells along — the border-band primitive
-        // (uv.y rides [BorderBandUvY, BorderBandUvY+1]). When dashed, whole
-        // segments drop via the same deterministic gap rule as the fill.
+        // (uv.y rides [bandUvY, bandUvY+1]; BorderBandUvY unless the caller
+        // asks for the solid-ink band). When dashed, whole segments drop
+        // via the same deterministic gap rule as the fill.
         static void EmitStrip(string unitId, int gapSalt, bool dashed,
             Vector2 a, Vector2 b, float width, int segs,
             Vector2 centerXZ, Quaternion rot, Func<float, float, float> groundY,
             float lift, Vector3[] verts, Vector2[] uvs, int[] tris,
-            ref int vertCount, ref int indexCount)
+            ref int vertCount, ref int indexCount, float bandUvY = BorderBandUvY)
         {
             int baseVert = vertCount;
             Vector2 dir = (b - a).normalized;
@@ -343,7 +457,7 @@ namespace BattleAtlas
                     float wz = centerXZ.y + world.z;
                     verts[vertCount] = new Vector3(wx, groundY(wx, wz) + lift, wz);
                     uvs[vertCount] = new Vector2(
-                        c / (float)segs, BorderBandUvY + r);
+                        c / (float)segs, bandUvY + r);
                     vertCount++;
                 }
             }
