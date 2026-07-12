@@ -1,8 +1,9 @@
 # Dossier: VI Corps headquarters (reg-us-vi-hq)
 
-Pass 12 (the VI Corps cheap batch) · Cast status: not-yet-cast ·
-Achieved T-level: **T2 (command record, attested-static-with-named-
-exceptions class)** · 2026-07-12
+Pass 12 (the VI Corps cheap batch) · Pass-14 update (the brigade
+batch closes six of the seven remaining brigade rows) · Cast status:
+not-yet-cast · Achieved T-level: **T2 (command record, attested-
+static-with-named-exceptions class)** · 2026-07-14
 
 Chain role: none proposed — a coverage/completeness dossier per the
 pass-12 brief, not an anchor executor. The corps-grain frame for its
@@ -66,15 +67,25 @@ carried in the pass-12 register triage, §"battery disposition" below).
    precisely to record that the exception is ALREADY covered, per the
    pass-12 brief's own framing.
 3. **Named exception 2 — Shaler's brigade (1st Brigade, 3rd
-   Division)**: sent to reinforce Culp's Hill on the morning of July 3,
-   per the secondary survey consulted this pass ("marched up the back
-   slope of Culp's Hill around 8:45 a.m."), placing it inside the
-   CA-J3M chain's ground (ED-30) alongside the XII Corps defense —
-   **NOT independently verified against a primary this pass** (no
-   Shaler report or XII Corps report cross-reference was fetched);
-   flagged as a pass-13 target, since a primary would let Shaler's
-   brigade graduate from this corps-frame dossier to its own executor
-   dossier inside the CA-J3M chain.
+   Division)**: sent to reinforce Culp's Hill on the morning of July 3
+   — **PASS-14: VERIFIED AND CLOSED.** Shaler's own two reports plus
+   the brigade tablet (`reconstruction/dossiers/us-vi-3-1-shaler.md`,
+   T4) confirm the 8 A.M. order to support Geary's (XII Corps)
+   division, engagement 9-11 A.M. inside the CA-J3M-2/4 window, and a
+   sub-hour regiment-grain timeline — the brigade has graduated to its
+   own executor-adjacent dossier exactly as this flag anticipated.
+4. **PASS-14: the six other infantry brigades this dossier left
+   unresearched are now individually dossiered** — Torbert's
+   (`us-vi-1-1-torbert.md`, T3), Bartlett's (`us-vi-1-2-bartlett.md`,
+   T4 — genuinely engaged July 3, resolving the Nevin-dossier's
+   "triple command succession" hazard), Russell's
+   (`us-vi-1-3-russell.md`, T3), Grant's (`us-vi-2-1-grant.md`, T3),
+   Neill's (`us-vi-2-2-neill.md`, T3 — the Powers Hill/Rock Creek
+   detachment, the corps's least-static reserve brigade), and
+   Eustis's (`us-vi-3-2-eustis.md`, T3 — a confirmed no-report-class
+   unit). Only the corps's Artillery Brigade (`reg-us-vi-arty`) and
+   the 2nd Division's missing 1st Brigade register slot (EC1/Conflicts
+   §2, still unresolved) remain outside this corps's own dossier set.
 
 ## EC6 — Casualty apportionment
 
@@ -98,8 +109,8 @@ carried in the pass-12 register triage, §"battery disposition" below).
    composition (which brigade, if any, filled that slot in the July
    1863 organization actually present at Gettysburg) was not
    independently re-verified this pass.
-3. **Shaler's Culp's Hill movement is attributed-grade only** (EC5.2) —
-   flagged, not adopted as a cited primary fact.
+3. **Shaler's Culp's Hill movement — CLOSED pass 14** (EC5.3): now a
+   cited primary fact via `us-vi-3-1-shaler.md`.
 
 ## Chain anchors substantiated
 

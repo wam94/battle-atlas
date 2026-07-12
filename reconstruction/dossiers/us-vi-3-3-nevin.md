@@ -111,6 +111,14 @@ candidate. The first VI Corps infantry dossier in the audit.
 4. The triple command succession (Wheaton→Nevin→Bartlett-attached)
    is a rendering-metadata hazard: the BUILD id is us-nevin; the
    tablet titles the brigade Wheaton's (carried on EC1).
+   **PASS-14 UPDATE (`us-vi-1-2-bartlett.md`)**: the Bartlett-attached
+   layer is now dated and sourced from Bartlett's OWN report — it is
+   the JULY 3 Crawford-support Wheatfield-area sweep (~17:00-18:00),
+   NOT the July 2 evening W5 charge this brigade fought under its own
+   colors; Bartlett's report states "loss in killed and wounded in my
+   command was between 20 and 30" for that specific action, roughly
+   consistent with (a sub-total of) this brigade's own 53-total EC6
+   figure across its full two-day arc.
 
 ## Chain anchors substantiated
 
