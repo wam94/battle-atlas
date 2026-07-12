@@ -3996,9 +3996,9 @@
           "z": 4450,
           "facing": 80,
           "formation": "line",
-          "strength": 1777,
+          "strength": 1200,
           "confidence": "documented",
-          "citation": "Bachelder Third Day sheet, LOC 99447492 (echelon on Pickett's right, south of Spangler's Woods); strength 1,777 present: Stone Sentinels Wilcox's Brigade page (monument inscription; a conflicting 1,725 extraction of the same page exists — flagged); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Wilcox's Brigade regiment list, order as listed there — not independently attested)"
+          "citation": "or-27-2-wilcox (No. 537): before sunrise 'ordered out to support artillery under the command of Colonel Alexander ... formed in line parallel to the Emmitsburg turnpike and about 200 yards from it, artillery being in front, much of it on the road'; Bachelder j3-01 'WILCOX ALA.' ~(3100,4400) ±120 (04:00-08:00 window brackets the before-sunrise move) — reconstruction/dossiers/csa-3c-and-1-wilcox.md EC3.1; STRENGTH IS THE JULY 3 PRIMARY: 'My brigade, about 1,200 in number' (or-27-2-wilcox) — the pre-battle 1,777 (Stone Sentinels monument; conflicting 1,725 extraction flagged) minus the July 2 PRIMARY loss of 577 closes to 1,200 exactly, the two primaries mutually consistent to the man (dossier EC2/EC6); July 3 order right-to-left 9th-10th-11th-8th-14th Alabama (or-27-2-wilcox)"
         },
         {
           "t": 7200,
@@ -4006,9 +4006,9 @@
           "z": 4450,
           "facing": 80,
           "formation": "line",
-          "strength": 1772,
-          "confidence": "inferred",
-          "citation": "interpolated: line static under bombardment (Alexander 1907)"
+          "strength": 1195,
+          "confidence": "documented",
+          "citation": "bombardment received at the support line: 'suffered comparatively little, probably less than a dozen men killed and wounded' (or-27-2-wilcox), against Anderson's 'suffering the most seriously' of his division (or-27-2-anderson-rh) — both carried, compatible (dossier EC5.1); decay shape inferred inside the attested <12"
         },
         {
           "t": 9840,
@@ -4016,39 +4016,39 @@
           "z": 4450,
           "facing": 80,
           "formation": "line",
-          "strength": 1770,
+          "strength": 1188,
           "confidence": "inferred",
-          "citation": "belated supporting advance steps off ~15:44: inferred timing (modern reconstruction; Wilcox advanced roughly 20 minutes after Pickett, too late to support the repulsed column)"
+          "citation": "the delayed launch: 'The advance had not been made more than twenty or thirty minutes, before three staff officers in quick succession ... gave me orders to advance to the support of Pickett's division' (or-27-2-wilcox); Alexander concurs ('ordered forward 20 minutes or more later'); LAUNCH-CLOCK ENVELOPE CARRIED, NOT RECONCILED (dossier EC4.2): Wilcox's own 'twenty or thirty minutes' after the advance (A vs CA-J3A-6 ⇒ ~15:25-15:35) vs Lang's 'soon after General Pickett's troops retired' (after the repulse) vs Longstreet's forward-then-halt — one envelope, 'all consistent with launch ≈ crest-of-repulse'; the built 15:44 leg is kept inside CA-J3A-10's 15:30-16:00 adoption because the 16th VT reversal keyframes and the Stannard (Angle-cast, untouchable) second-flank-action keyframes pin the contact phase at 10200-10500"
         },
         {
           "t": 10380,
-          "x": 3720,
-          "z": 4425,
+          "x": 4060,
+          "z": 4290,
           "facing": 85,
           "formation": "line",
-          "strength": 1650,
+          "strength": 1090,
           "confidence": "inferred",
-          "citation": "reconstruction: advances ~590m into the open (1.09 m/s), taking artillery and flank fire from Stannard's Vermonters wheeled south (Stone Sentinels 3rd Brig 3rd Div I Corps page)"
+          "citation": "farthest advance = THE DOCUMENTED RAVINE LINE below the McGilvery crest: 'near the hill upon which were the enemy's batteries and intrenchments' (or-27-2-wilcox); alexander-1907 'several hundred yards beyond our guns ... a small ravine' — the previous build displacement (~590 m to x=3720) understated the documented advance (dossier EC3.3 authoring flag, executed this wave); ~940 m under 'all of the enemy's terrible artillery that could bear ... from both flanks and directly in front' — the McGilvery-line object record; leg pace ~1.75 m/s (quick/double-quick mix under fire), position class ±80 m"
         },
         {
           "t": 10500,
-          "x": 3650,
-          "z": 4430,
+          "x": 3800,
+          "z": 4330,
           "facing": 260,
           "formation": "scattered",
-          "strength": 1620,
+          "strength": 1040,
           "confidence": "inferred",
-          "citation": "reconstruction: withdrawal ordered ~15:55 with no support on either flank (Stone Sentinels Wilcox's Brigade narrative; ABT 3:45-4:00 PM map)"
+          "citation": "withdrawal on his own judgment ('my small force could do nothing save to make a useless sacrifice of themselves'), retired under artillery fire (or-27-2-wilcox); 'engaged but a few minutes' at the ravine — no musketry phase, the July 3 loss is artillery-dominated (dossier EC5.4/EC6)"
         },
         {
           "t": 10800,
-          "x": 3300,
-          "z": 4445,
+          "x": 3400,
+          "z": 4430,
           "facing": 260,
           "formation": "scattered",
-          "strength": 1577,
+          "strength": 996,
           "confidence": "inferred",
-          "citation": "end strength: Wilcox reported losses of ~200 in the July 3 advance (Wikipedia 'Pickett's Charge', uncited there; his whole-battle monument total is 781 — conflict flagged, July-3-only reading used)"
+          "citation": "still retiring at the window end — 'My line was reformed on the ground it occupied before it advanced' (or-27-2-wilcox) completes POST-window (Alexander: 'moved by his right flank and making a circuit regained our lines at the Peach Orchard'); END STRENGTH ON THE PER-DAY PRIMARY: July 3 loss 204 (or-27-2-wilcox; Alexander concurs 'His loss in this charge was 204 killed and wounded') ⇒ 1,200 − 204 = 996; the return 51/469/257 = 777 whole-battle matches (or-27-2-anv-return p. 343)"
         }
       ]
     },
@@ -4066,63 +4066,63 @@
       "keyframes": [
         {
           "t": 0,
-          "x": 3120,
-          "z": 4300,
+          "x": 3190,
+          "z": 4640,
           "facing": 80,
           "formation": "line",
-          "strength": 700,
+          "strength": 400,
           "confidence": "documented",
-          "citation": "Bachelder Third Day sheet, LOC 99447492 (echelon on Wilcox's left-rear, far right of the supports); strength 700 present: Stone Sentinels Perry's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Lang's/Perry's Brigade regiment list, order as listed there — not independently attested)"
+          "citation": "PLACED ON WILCOX'S LEFT (the previous build had the brigade on his right): 'About 7 a.m. General Wilcox moved forward ... and, in accordance with orders, I moved up with his left, and put my command in front and at the foot of the hill upon which the batteries were in position, at the same time advancing my skirmishers to the crest of the next hill' (or-27-2-lang) — the below-the-guns anchor; Bachelder j3-01 'PERRY FLA.' ~(3230,4820) ±120 draws the pre-07:00 state NORTH of Wilcox (reconstruction/dossiers/csa-3c-and-4-lang.md EC3.1); position class ±100 m; STRENGTH: 'The brigade went into action near 700 strong' (or-27-2-lang, whole battle) minus his own July 2 figure 'about 300' ⇒ ~400 on July 3 (tier-B subtraction on two primaries, dossier EC6); the smallest brigade in the assault's orbit"
         },
         {
           "t": 7200,
-          "x": 3120,
-          "z": 4300,
+          "x": 3190,
+          "z": 4640,
           "facing": 80,
           "formation": "line",
-          "strength": 697,
+          "strength": 397,
           "confidence": "inferred",
-          "citation": "interpolated: line static under bombardment (Alexander 1907)"
+          "citation": "under the bombardment: 'remained quietly until nearly 2 p.m., when the batteries opened a furious bombardment ... which lasted till nearly 4 p.m.' (or-27-2-lang, the −53 late-stated clock pole, profiled rule 4); no brigade bombardment casualty figure exists (dossier EC5.1 open) — decay held near-flat"
         },
         {
           "t": 9840,
-          "x": 3120,
-          "z": 4300,
+          "x": 3190,
+          "z": 4640,
           "facing": 80,
           "formation": "line",
-          "strength": 695,
+          "strength": 395,
           "confidence": "inferred",
-          "citation": "steps off with Wilcox ~15:44: inferred timing (modern reconstruction)"
+          "citation": "the echelon's launch by standing conformity order: 'Soon after General Pickett's troops retired behind our position, General Wilcox began to advance, and, in accordance with previous orders to conform to his movements, I moved forward also' (or-27-2-lang) — trigger class, no new order by design; sequencing envelope shared with Wilcox (dossier conflict 1), leg time slaved to the Wilcox spine"
         },
         {
           "t": 10380,
-          "x": 3700,
-          "z": 4285,
+          "x": 4020,
+          "z": 4430,
           "facing": 85,
           "formation": "line",
-          "strength": 480,
+          "strength": 340,
           "confidence": "inferred",
-          "citation": "reconstruction: advances ~580m (1.07 m/s) under flank fire from Stannard's 16th/14th Vermont wheeled south (Stone Sentinels 3rd Brig 3rd Div I Corps page)"
+          "citation": "advanced on Wilcox's left 'under a heavy fire from artillery, but without encountering any infantry until coming to the skirt of woods at the foot of the heights' (or-27-2-lang; alexander-1907 'a small ravine ... some undergrowth') — the woods-skirt line below the McGilvery crest, left of Wilcox's ravine position; ~855 m at ~1.6 m/s; the 16th Vermont's reversed front closes on this flank (us-16vt documented keyframe t=10380 at (4180,4360); veazey-or)"
         },
         {
           "t": 10500,
-          "x": 3630,
-          "z": 4290,
+          "x": 3830,
+          "z": 4470,
           "facing": 260,
           "formation": "scattered",
-          "strength": 420,
+          "strength": 280,
           "confidence": "inferred",
-          "citation": "reconstruction: withdraws with Wilcox ~15:55 (ABT 3:45-4:00 PM map)"
+          "citation": "THE LEFT-FLANK COLLAPSE: 'a heavy body of infantry advanced upon my left flank ... To remain ... was certain annihilation'; the retreat order 'failed to reach men firing from the rocks, and [they] remained there until captured'; 'not in time to save a large number of the Second Florida Infantry, together with their colors, from being cut off and captured' (or-27-2-lang) — the capture pocket concentrates the day's 205 missing here (dossier EC6); Capt. McCaslan (AAAG) k during the retreat [D pin]"
         },
         {
           "t": 10800,
-          "x": 3290,
-          "z": 4297,
+          "x": 3450,
+          "z": 4590,
           "facing": 260,
           "formation": "scattered",
-          "strength": 300,
+          "strength": 245,
           "confidence": "inferred",
-          "citation": "end strength: 'about 400' casualties per Wikipedia 'Pickett's Charge' (uncited there; Stone Sentinels whole-battle total is 455 — conflict flagged; July-3-leaning reading used); Lang's own fate on July 3 not located in any source"
+          "citation": "'Falling back to our artillery, we reformed in our old line' (or-27-2-lang) — the reform completes post-window (night: withdrawn to the original woods line by Anderson's order); END STRENGTH ON THE PER-DAY SPLIT: July 3 ≈ 155 of the whole-battle 455 = 33k/217w/205m (or-27-2-lang = or-27-2-anv-return p. 343 EXACT; July 2 'about 300' his own figure; Alexander: 'Perry's loss was about proportional [to Wilcox's 204], with some prisoners in addition') ⇒ ~400 − 155 = 245; 65% whole-battle loss rate, the highest documented in the dossier batch"
         }
       ]
     },
@@ -4193,23 +4193,33 @@
       "keyframes": [
         {
           "t": 0,
-          "x": 3140,
-          "z": 4600,
-          "facing": 85,
+          "x": 3630,
+          "z": 4450,
+          "facing": 78,
           "formation": "line",
           "strength": 432,
           "confidence": "documented",
-          "citation": "War Dept tablet verbatim: 'Advanced to the front about daybreak and took a conspicuous part in the battle. In the cannonade preceding Longstreet's assault it fired by battery and very effectively.' (https://gettysburg.stonesentinels.com/confederate-headquarters/dearings-battalion/, fetched 2026-07-08); Maj. James Dearing; Stribling's, Caskie's, Macon's, Blount's batteries — sheet 8 s8_peachorchard.jpg names Blount, Caskie, Macon on the Emmitsburg Rd ridge fronting Pickett (docs/research/2026-07-02-full-cast-sources.md §3.2); 18 pieces (two 20-pdr Parrotts, three 10-pdr Parrotts, one 3-inch Rifle, twelve Napoleons); casualties killed 8, wounded 17, 37 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 18-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+          "citation": "PLACED ON THE DAYBREAK-ADVANCED ROAD-CREST LINE (the previous build held the start-line centroid (3140,4600) all window): early July 3 'marched to the field of battle' into position 'on the crest of the hill immediately in front of the enemy's position' (or-27-2-dearing); tablet 'advanced to the front about daybreak' — the advance COMPLETES pre-window; Bachelder j3-03 per-battery labels CASKIE (~3610,4480) · BLOUNT (~3670,4550) · MACON (~3620,4310) along the road-crest line between the Spangler and Codori farms (reconstruction/dossiers/csa-1c-bn-dearing.md EC3.2-4; 'the two anchors are different moments, not a conflict'), centroid adopted (3630,4450) ±60 m; BATTALION RELATIONS PRIMARY: 'On my left and rear was Colonel Cabell's Artillery Battalion, and on my right and rear was the Washington Artillery Battalion' (or-27-2-dearing) — Dearing forwardmost of the First Corps arc; 18 guns (tablet verbatim); Maj. Read w (head, shell fragment) July 3 morning skirmish phase [D pin]; strength 432 = B&M-type hop per ED-38 (no primary return)"
+        },
+        {
+          "t": 7200,
+          "x": 3630,
+          "z": 4450,
+          "facing": 78,
+          "formation": "line",
+          "strength": 424,
+          "confidence": "inferred",
+          "citation": "cannonade + the famine: fire from the signal until ammunition 'became completely exhausted, excepting a few round in my rifled guns', then 'a very heavy fire for upward of an hour without being able to fire a single shot' (or-27-2-dearing) — the silent-under-fire hour is the CSA counterpart of Hazard's exhaustion record and the physical substance of CA-J3A-2/3; decay shape inferred inside the attested per-battery losses"
         },
         {
           "t": 10800,
-          "x": 3140,
-          "z": 4600,
-          "facing": 85,
+          "x": 3630,
+          "z": 4450,
+          "facing": 78,
           "formation": "line",
-          "strength": 432,
-          "confidence": "documented",
-          "citation": "War Dept tablet verbatim: 'Advanced to the front about daybreak and took a conspicuous part in the battle. In the cannonade preceding Longstreet's assault it fired by battery and very effectively.' (https://gettysburg.stonesentinels.com/confederate-headquarters/dearings-battalion/, fetched 2026-07-08); Maj. James Dearing; Stribling's, Caskie's, Macon's, Blount's batteries — sheet 8 s8_peachorchard.jpg names Blount, Caskie, Macon on the Emmitsburg Rd ridge fronting Pickett (docs/research/2026-07-02-full-cast-sources.md §3.2); 18 pieces (two 20-pdr Parrotts, three 10-pdr Parrotts, one 3-inch Rifle, twelve Napoleons); casualties killed 8, wounded 17, 37 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 18-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+          "strength": 418,
+          "confidence": "inferred",
+          "citation": "holds the crest line to the window end (his own report still driving back infantry 'about 6 p.m.' vs tablet withdrawal 'about 4 P. M.' — the two-hour conflict CARRIED, not authored: the tablet's 16:00 sits at the window edge and neither reading is strong enough to move the block, rule 4); END STRENGTH ON THE PER-BATTERY PRIMARY: Stribling 3 w + Macon 3 k / 3 w + Blount 5 k&w = 14 men (+ 30 horses) all July 3 (or-27-2-dearing p. 389); CASKIE'S FIGURE IS AN EXTRACTION GAP, not attested-absent — the battalion aggregate may exceed 14 (dossier EC6 flag)"
         }
       ]
     },
@@ -4226,9 +4236,19 @@
           "z": 3550,
           "facing": 55,
           "formation": "line",
-          "strength": 240,
+          "strength": 338,
           "confidence": "documented",
-          "citation": "War Dept tablet verbatim: 'Arrived on the field before daylight and was engaged all day. Captured one 3 inch rifle.' (https://gettysburg.stonesentinels.com/confederate-headquarters/eshlemans-artillery-battalion/, fetched 2026-07-08); Maj. Benjamin F. Eshleman; Miller's, Squires's, Richardson's, Norcom's batteries (the Washington Louisiana Artillery); THE 13:07 SIGNAL GUNS ARE HIS — Miller's battery tablet: 'advanced before daylight into position about 100 yards north of the Peach Orchard… fired the signal guns for the cannonade preceding Longstreet's assault, took part therein, and supported the charge of the infantry by advancing 450 yards and keeping up a vigorous fire' (https://gettysburg.stonesentinels.com/confederate-batteries/millers-louisiana-battery/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.2 and §4 item 1); 10 guns (eight Napoleons, two 12-pdr howitzers); casualties killed 3, wounded 26, missing 16, 37 horses, 3 guns disabled (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 10-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+          "citation": "War Dept tablet verbatim: 'Arrived on the field before daylight and was engaged all day. Captured one 3 inch rifle.' (https://gettysburg.stonesentinels.com/confederate-headquarters/eshlemans-artillery-battalion/, fetched 2026-07-08); Maj. Benjamin F. Eshleman; Miller's, Squires's, Richardson's, Norcom's batteries (the Washington Louisiana Artillery); THE 13:07 SIGNAL GUNS ARE HIS — Miller's battery tablet: 'advanced before daylight into position about 100 yards north of the Peach Orchard… fired the signal guns for the cannonade preceding Longstreet's assault, took part therein, and supported the charge of the infantry by advancing 450 yards and keeping up a vigorous fire' (https://gettysburg.stonesentinels.com/confederate-batteries/millers-louisiana-battery/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.2 and §4 item 1); 10 guns (eight Napoleons, two 12-pdr howitzers); casualties killed 3, wounded 26, missing 16, 37 horses, 3 guns disabled (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 10-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent); ED-38 ADOPTED STRENGTH: 338 men, 10 guns (addressing-gettysburg-oob, B&M-type figures, secondary hop cited per the cite-the-hop rule; '340 men' SNIPPET variant recorded; the previous build's 240 retired) — per company: 1st 77 (1 Napoleon, co-operated all day with Miller), 2nd 80, 3rd (Miller) 92, 4th 80; armament tablet + OR concur 8 Napoleons + 2 12-pdr howitzers (reconstruction/dossiers/csa-1c-bn-wash-eshleman.md EC2)"
+        },
+        {
+          "t": 7200,
+          "x": 3220,
+          "z": 3550,
+          "facing": 55,
+          "formation": "line",
+          "strength": 315,
+          "confidence": "inferred",
+          "citation": "bombardment fought from the signal guns (CA-J3A-1, Miller's two guns) through the duel — 'my men stood bravely to th[eir] work' (or-27-2-eshleman); Richardson's 2nd Co. served a captured Union 3-inch rifle until axle-struck (marker + OR — an eleventh tube, documented); decay shape inferred inside the attested single-day total; Capt. Norcom w 'early in the day' [pin]"
         },
         {
           "t": 10800,
@@ -4236,9 +4256,9 @@
           "z": 3550,
           "facing": 55,
           "formation": "line",
-          "strength": 240,
-          "confidence": "documented",
-          "citation": "War Dept tablet verbatim: 'Arrived on the field before daylight and was engaged all day. Captured one 3 inch rifle.' (https://gettysburg.stonesentinels.com/confederate-headquarters/eshlemans-artillery-battalion/, fetched 2026-07-08); Maj. Benjamin F. Eshleman; Miller's, Squires's, Richardson's, Norcom's batteries (the Washington Louisiana Artillery); THE 13:07 SIGNAL GUNS ARE HIS — Miller's battery tablet: 'advanced before daylight into position about 100 yards north of the Peach Orchard… fired the signal guns for the cannonade preceding Longstreet's assault, took part therein, and supported the charge of the infantry by advancing 450 yards and keeping up a vigorous fire' (https://gettysburg.stonesentinels.com/confederate-batteries/millers-louisiana-battery/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.2 and §4 item 1); 10 guns (eight Napoleons, two 12-pdr howitzers); casualties killed 3, wounded 26, missing 16, 37 horses, 3 guns disabled (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 10-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+          "strength": 293,
+          "confidence": "inferred",
+          "citation": "END STRENGTH ON THE BATTALION RETURN, ALL JULY 3 (clean single-day): 'Wounded, 3 officers. Killed, 3; wounded, 23, and missing, 16, non-commissioned officers and privates; 37 horses killed and disabled; 3 guns disabled; 1 limber blown up' (or-27-2-eshleman verbatim; tablet folds to 3/26/16 = 45) ⇒ 338 − 45 = 293; horse losses concentrated on Miller's advanced guns — 'From loss of horses but one gun could then be used' (marker; see the csa-wa-miller-advanced-section event); withdrawal to park at dark is post-window"
         }
       ]
     },
@@ -4349,14 +4369,24 @@
           "citation": "monument verbatim: 'July 1 – 3. The Battalion was actively engaged on each of the three days'; ammunition expended 3,800 rounds (https://gettysburg.stonesentinels.com/confederate-headquarters/pegrams-artillery-battalion/, fetched 2026-07-08); Maj. William J. Pegram; Marye's, Crenshaw's, Zimmerman's, McGraw's, Brander's batteries — sheet 8 s8_semridge_n.jpg names Marye, Zimmerman, Brander on Seminary Ridge S of Fairfield Rd (docs/research/2026-07-02-full-cast-sources.md §3.2); 20 guns (ten Napoleons, four 10-pdr Parrotts, four 3-inch Rifles, two 12-pdr howitzers); casualties killed 10, wounded 37, 38 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 20-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
         },
         {
+          "t": 7200,
+          "x": 3580,
+          "z": 6400,
+          "facing": 105,
+          "formation": "line",
+          "strength": 445,
+          "confidence": "inferred",
+          "citation": "the July 3 cannonade fought from the Jul 2-3 line right of the Fairfield pike (~1,400 yd from the Union guns); decay shape inferred inside the attested July 3 total; rounds 3,800 over three days (or-27-2-brunson verbatim; tablet concurs)"
+        },
+        {
           "t": 10800,
           "x": 3580,
           "z": 6400,
           "facing": 105,
           "formation": "line",
-          "strength": 480,
-          "confidence": "documented",
-          "citation": "monument verbatim: 'July 1 – 3. The Battalion was actively engaged on each of the three days'; ammunition expended 3,800 rounds (https://gettysburg.stonesentinels.com/confederate-headquarters/pegrams-artillery-battalion/, fetched 2026-07-08); Maj. William J. Pegram; Marye's, Crenshaw's, Zimmerman's, McGraw's, Brander's batteries — sheet 8 s8_semridge_n.jpg names Marye, Zimmerman, Brander on Seminary Ridge S of Fairfield Rd (docs/research/2026-07-02-full-cast-sources.md §3.2); 20 guns (ten Napoleons, four 10-pdr Parrotts, four 3-inch Rifles, two 12-pdr howitzers); casualties killed 10, wounded 37, 38 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 20-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+          "strength": 433,
+          "confidence": "inferred",
+          "citation": "END STRENGTH ON THE PER-DAY PRIMARY (the only one in the CSA battalion set): July 3 = 10 k / 37 w (+ 38 horses) (or-27-2-brunson; reconstruction/dossiers/csa-3c-bn-pegram.md EC6) ⇒ 480 − 47 = 433; the tablet's '47' reproduces ONLY the July 3 row as if it were the battle total — conflict carried (ED-43: tablet casualty lines are day-scoped until corroborated)"
         }
       ]
     },
@@ -4404,7 +4434,7 @@
           "formation": "line",
           "strength": 360,
           "confidence": "documented",
-          "citation": "DOCUMENTED SILENCE, DISAGREEMENT CARRIED — War Dept tablet verbatim: 'The Parrotts and Rifles took part in the battle in different position on each of the three days their most active service being on the second day in this position. The Napoleons and Howitzers were in reserve and not actively engaged at any time.' (https://gettysburg.stonesentinels.com/confederate-headquarters/garnetts-artillery-battalion/, fetched 2026-07-08) — the July 3 credit is nonspecific (most active service July 2) and half the battalion is explicitly idle; secondaries credit his rifles in the July 3 cannonade — ⚠️ fired-or-not disagreement kept here, WEIGHT THE TABLET per the survey (docs/research/2026-07-02-full-cast-sources.md §3.2, §4 item 13): NO events, presence without fire IS the encoding; Lt. Col. John J. Garnett; Grandy's, Moore's, Lewis's, Maurin's batteries; position near McMillan Woods (monument ~160 ft N of the McMillan House); 15 guns (four Napoleons, two 10-pdr Parrotts, seven 3-inch Rifles, two 12-pdr howitzers); casualties wounded 5, missing 17, 13 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 15-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+          "citation": "DOCUMENTED SILENCE, DISAGREEMENT CARRIED — War Dept tablet verbatim: 'The Parrotts and Rifles took part in the battle in different position on each of the three days their most active service being on the second day in this position. The Napoleons and Howitzers were in reserve and not actively engaged at any time.' (https://gettysburg.stonesentinels.com/confederate-headquarters/garnetts-artillery-battalion/, fetched 2026-07-08) — the July 3 credit is nonspecific (most active service July 2) and half the battalion is explicitly idle; secondaries credit his rifles in the July 3 cannonade — ⚠️ fired-or-not disagreement kept here, WEIGHT THE TABLET per the survey (docs/research/2026-07-02-full-cast-sources.md §3.2, §4 item 13): NO events, presence without fire IS the encoding; Lt. Col. John J. Garnett; Grandy's, Moore's, Lewis's, Maurin's batteries; position near McMillan Woods (monument ~160 ft N of the McMillan House); 15 guns (four Napoleons, two 10-pdr Parrotts, seven 3-inch Rifles, two 12-pdr howitzers); casualties wounded 5, missing 17, 13 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 15-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent) — RESOLVED PRIMARY (dossier pass 2; ED-44 attested-silence rendering rule): Garnett's own OR verbatim — the rifle group July 3 'did not fire a single shot, having received orders to that effect'; the smoothbores 'bore no part in these actions' (or-27-2-garnett-jj via reconstruction/dossiers/csa-3c-bn-garnett.md EC5) — the fired-or-not disagreement carried above CLOSES toward silence at primary grade; render present-but-not-firing, muzzles cold; the 15 idle tubes subtract from every cannonade gun-count claim (pass-2 ledger)"
         },
         {
           "t": 10800,
@@ -4414,7 +4444,7 @@
           "formation": "line",
           "strength": 360,
           "confidence": "documented",
-          "citation": "DOCUMENTED SILENCE, DISAGREEMENT CARRIED — War Dept tablet verbatim: 'The Parrotts and Rifles took part in the battle in different position on each of the three days their most active service being on the second day in this position. The Napoleons and Howitzers were in reserve and not actively engaged at any time.' (https://gettysburg.stonesentinels.com/confederate-headquarters/garnetts-artillery-battalion/, fetched 2026-07-08) — the July 3 credit is nonspecific (most active service July 2) and half the battalion is explicitly idle; secondaries credit his rifles in the July 3 cannonade — ⚠️ fired-or-not disagreement kept here, WEIGHT THE TABLET per the survey (docs/research/2026-07-02-full-cast-sources.md §3.2, §4 item 13): NO events, presence without fire IS the encoding; Lt. Col. John J. Garnett; Grandy's, Moore's, Lewis's, Maurin's batteries; position near McMillan Woods (monument ~160 ft N of the McMillan House); 15 guns (four Napoleons, two 10-pdr Parrotts, seven 3-inch Rifles, two 12-pdr howitzers); casualties wounded 5, missing 17, 13 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 15-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent)"
+          "citation": "DOCUMENTED SILENCE, DISAGREEMENT CARRIED — War Dept tablet verbatim: 'The Parrotts and Rifles took part in the battle in different position on each of the three days their most active service being on the second day in this position. The Napoleons and Howitzers were in reserve and not actively engaged at any time.' (https://gettysburg.stonesentinels.com/confederate-headquarters/garnetts-artillery-battalion/, fetched 2026-07-08) — the July 3 credit is nonspecific (most active service July 2) and half the battalion is explicitly idle; secondaries credit his rifles in the July 3 cannonade — ⚠️ fired-or-not disagreement kept here, WEIGHT THE TABLET per the survey (docs/research/2026-07-02-full-cast-sources.md §3.2, §4 item 13): NO events, presence without fire IS the encoding; Lt. Col. John J. Garnett; Grandy's, Moore's, Lewis's, Maurin's batteries; position near McMillan Woods (monument ~160 ft N of the McMillan House); 15 guns (four Napoleons, two 10-pdr Parrotts, seven 3-inch Rifles, two 12-pdr howitzers); casualties wounded 5, missing 17, 13 horses (monument); NO personnel figure on the battalion page — strength reconstructed at ~24 men/gun from the monument's 15-gun armament list (crews, drivers, battalion staff), flagged (the Wave-2 Dilger precedent) — RESOLVED PRIMARY (dossier pass 2; ED-44 attested-silence rendering rule): Garnett's own OR verbatim — the rifle group July 3 'did not fire a single shot, having received orders to that effect'; the smoothbores 'bore no part in these actions' (or-27-2-garnett-jj via reconstruction/dossiers/csa-3c-bn-garnett.md EC5) — the fired-or-not disagreement carried above CLOSES toward silence at primary grade; render present-but-not-firing, muzzles cold; the 15 idle tubes subtract from every cannonade gun-count claim (pass-2 ledger)"
         }
       ]
     },
@@ -6199,23 +6229,33 @@
       "keyframes": [
         {
           "t": 0,
-          "x": 4470,
-          "z": 5110,
+          "x": 4540,
+          "z": 5115,
           "facing": 258,
           "formation": "line",
           "strength": 1510,
           "confidence": "documented",
-          "citation": "Bachelder Third Day sheet, LOC 99447492 (Hays's right, Bryan farm toward Ziegler's Grove; Bryan house anchor OSM way 451707950); strength 1,510: Stone Sentinels Strength & Casualties USA table; Willard killed July 2, Sherrill commanding; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Sherrill's/Willard's Brigade regiment list)"
+          "citation": "Bachelder Third Day sheet, LOC 99447492 (Hays's right, Bryan farm toward Ziegler's Grove; Bryan house anchor OSM way 451707950); strength 1,510: Stone Sentinels Strength & Casualties USA table; Willard killed July 2, Sherrill commanding; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Sherrill's/Willard's Brigade regiment list) — RE-PLACED ON THE SLOPE EAST OF THE WALL (dossier pass 4): July 3 the regiments were 'so placed as supports to the artillery' on 'the slope of the hill occupied by us' (or-27-1-bull) — the monument row x≈4460-4540 is the CLIMAX line (ED-39 semantics), reached by the 15:00 move-up below; pre-move position class ~70 m east of the wall line, inferred radius (reconstruction/dossiers/us-ii-3-3-willard.md EC3.3)"
         },
         {
           "t": 7200,
-          "x": 4470,
-          "z": 5110,
+          "x": 4540,
+          "z": 5115,
           "facing": 258,
           "formation": "line",
           "strength": 1440,
           "confidence": "inferred",
           "citation": "interpolated: holding under bombardment (Alexander 1907)"
+        },
+        {
+          "t": 7440,
+          "x": 4470,
+          "z": 5110,
+          "facing": 258,
+          "formation": "line",
+          "strength": 1430,
+          "confidence": "documented",
+          "citation": "THE BRIGADE'S ONE IN-WINDOW LEG (A vs CA-J3A-5, tablet-adjudicated 15:00): 'At 3 P. M. after a terrific cannonade of two hours the Brigade was moved up to the line of the Second Brigade and assisted in repulsing Longstreet's assault' (stone-sentinels 3rd Bde 3rd Div II Corps tablet; or-27-1-bull's cannonade clock 'About 1 p.m. ... continued about two hours' is the +7-class agreement) — a short support-to-wall leg [B: 2-4 min at advance pace]; the brigade's climax line interleaves Smyth's regimental stones (39th NY 4467,4988 · 125th NY 4468,5053 · 111th NY 4458,5127 · 126th NY 4543,5267; reconstruction/dossiers/us-ii-3-3-willard.md EC3.4)"
         },
         {
           "t": 8700,
@@ -6262,9 +6302,9 @@
           "z": 5310,
           "facing": 265,
           "formation": "skirmish",
-          "strength": 209,
+          "strength": 164,
           "confidence": "documented",
-          "citation": "on the advanced picket line in the sunken Emmitsburg road cut, ~200 yds in front of Hays's main line, held from July 2 (Sawyer 1881, A Military History of the 8th Reg't Ohio Vol. Inf'y, full text verified; ABT 'The Picket Line Against Pickett's Charge': 209 men); Bachelder Third Day sheet, LOC 99447492 ('8'Ohio' bar); Sawyer clocks the cannonade opening 'between twelve and one o'clock' and lasting 'nearly two hours' — against the 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864) anchors, disagreement kept, not reconciled; road-cut coordinate inferred from the road trace northwest of the Bryan farm"
+          "citation": "on the advanced picket line in the sunken Emmitsburg road cut, ~200 yds in front of Hays's main line, held from July 2 (Sawyer 1881, A Military History of the 8th Reg't Ohio Vol. Inf'y, full text verified; ABT 'The Picket Line Against Pickett's Charge': 209 men); Bachelder Third Day sheet, LOC 99447492 ('8'Ohio' bar); Sawyer clocks the cannonade opening 'between twelve and one o'clock' and lasting 'nearly two hours' — against the 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864) anchors, disagreement kept, not reconciled; road-cut coordinate inferred from the road trace northwest of the Bryan farm — ED-50 EXECUTED (this wave): '4 of my men having been killed, and 1 captain, 1 lieutenant, the sergeant-major, and 38 men wounded' BY NOON JULY 3 on the picket line (or-27-1-sawyer) — ≈45 of the whole-battle 102 (report total = return row EXACT, or-27-1-union-return p. 176) fell BEFORE this window opens ⇒ t=0 strength 209 − 45 = 164; the famous flank action cost the regiment LESS than its 40-hour picket tour — flat-attrition-then-moderate-spike shape, superseding the climax-spike default (reconstruction/dossiers/us-ii-3-1-carroll.md EC6)"
         },
         {
           "t": 7800,
@@ -6272,9 +6312,9 @@
           "z": 5425,
           "facing": 185,
           "formation": "line",
-          "strength": 195,
+          "strength": 152,
           "confidence": "documented",
-          "citation": "'We changed our front, and taking position by a fence, facing the left flank of the advancing column of rebels, the men were ordered to fire into their flank at will' (Sawyer 1881; Sawyer's report, OR 27/1:461-62) — the flank fire under which Brockenbrough's command broke; fence coordinate north of the column's path and time ~15:10 inferred"
+          "citation": "'We changed our front, and taking position by a fence, facing the left flank of the advancing column of rebels, the men were ordered to fire into their flank at will' (Sawyer 1881; Sawyer's report, OR 27/1:461-62) — the flank fire under which Brockenbrough's command broke; fence coordinate north of the column's path and time ~15:10 inferred; ED-50 shape: cannonade attrition on the picket line — 'Soon after 2 p.m. the enemy opened a terrific fire from sixty-four pieces of artillery, in a semicircle which inclosed my position' (or-27-1-sawyer, −55 late-stated profile)"
         },
         {
           "t": 8700,
@@ -6282,9 +6322,9 @@
           "z": 5360,
           "facing": 180,
           "formation": "line",
-          "strength": 170,
+          "strength": 118,
           "confidence": "documented",
-          "citation": "advanced and cut off three regiments of the column's left, taking the colors of the 34th North Carolina (Lowrance's) and the 38th Virginia (Armistead's) (Sawyer 1881; OR 27/1:461-62); time ~15:25 inferred; strength decline reconstructed — no July-3-only casualty split located"
+          "citation": "advanced and cut off three regiments of the column's left, taking the colors of the 34th North Carolina (Lowrance's) and the 38th Virginia (Armistead's) (Sawyer 1881; OR 27/1:461-62); time ~15:25 inferred; strength decline reconstructed — no July-3-only casualty split located; ED-50 shape: the flank action's moderate spike (~34 across the fire window), the balance of the 102 falling in the post-window evening skirmishing — decline reconstructed inside the primary split (supersedes the previous 'no July-3-only casualty split located' note: the split is now primary, or-27-1-sawyer)"
         }
       ]
     },
@@ -8523,9 +8563,9 @@
           "z": 3870,
           "facing": 265,
           "formation": "line",
-          "strength": 114,
+          "strength": 113,
           "confidence": "inferred",
-          "citation": "holds the line slot to the window end; casualties killed 3 men, wounded 1 officer and 8 men, total 12 (marker) — decline not clocked, strength held"
+          "citation": "holds the line slot to the window end; casualties killed 3 men, wounded 1 officer and 8 men, total 12 (marker) — decline not clocked, strength held — PER-DAY PINS PRIMARY (dossier pass 2): July 3 loss = 1 w by the battery's own report (whole-battle 12 = 3k/9w; July 1 dominant, July 2 = 2k/6w) — 'the monument's July-3 heading [is] wrong by the battery's own report' (reconstruction/dossiers/us-btty-cooper.md EC6); rounds per day ~400/500/150, the set's best tier-B basis [July 3 ≈ 20-25 min fire]"
         }
       ]
     },
@@ -8547,12 +8587,32 @@
           "citation": "Monument: 'Dow's 6th Maine Battery / McGilvery's Brigade. Reserve Artillery.' — no July 3 activity inscription; the page's descriptive text (prose, not tablet) has the battery suffer 13 men wounded 'in the artillery duel that preceded Pickett's Charge on the afternoon of July 3' — under fire while holding (Stone Sentinels 6th Maine Battery page, fetched 2026-07-08); Bachelder timed sheet No. 8 written McGilvery battery list (s8_mcgilvery.jpg crop — position class, time inferred) — 'DOW.' second from the south end; 103 men, four 12-pounder Napoleons; Lt. Edwin B. Dow; held fire through the cannonade under Hunt's conserve-ammunition policy — the line's silence is itself documented (docs/research/2026-07-02-full-cast-sources.md §3.3; padresteve.com Hunt essay; Wikipedia Pickett's Charge: only McGilvery, Osborn and Rittenhouse fired on the advance itself; McGilvery's own OR report not found online — flagged)"
         },
         {
-          "t": 10800,
+          "t": 420,
           "x": 4180,
           "z": 3800,
           "facing": 265,
           "formation": "line",
           "strength": 103,
+          "confidence": "inferred",
+          "citation": "decay begins with the cannonade (CA-J3A-1)"
+        },
+        {
+          "t": 7200,
+          "x": 4180,
+          "z": 3800,
+          "facing": 265,
+          "formation": "line",
+          "strength": 90,
+          "confidence": "documented",
+          "citation": "the battery's 13 wounded fell 'in the artillery duel that preceded Pickett's Charge on the afternoon of July 3' (Stone Sentinels 6th Maine Battery page prose) — under fire while holding McGilvery's silent line; the one per-battery bombardment apportionment on the line (us-ar-1v-mcgilvery.md EC6: 'July 3 light by his own overshoot statement' at line grain)"
+        },
+        {
+          "t": 10800,
+          "x": 4180,
+          "z": 3800,
+          "facing": 265,
+          "formation": "line",
+          "strength": 90,
           "confidence": "documented",
           "citation": "Monument: 'Dow's 6th Maine Battery / McGilvery's Brigade. Reserve Artillery.' — no July 3 activity inscription; the page's descriptive text (prose, not tablet) has the battery suffer 13 men wounded 'in the artillery duel that preceded Pickett's Charge on the afternoon of July 3' — under fire while holding (Stone Sentinels 6th Maine Battery page, fetched 2026-07-08); Bachelder timed sheet No. 8 written McGilvery battery list (s8_mcgilvery.jpg crop — position class, time inferred) — 'DOW.' second from the south end; 103 men, four 12-pounder Napoleons; Lt. Edwin B. Dow; held fire through the cannonade under Hunt's conserve-ammunition policy — the line's silence is itself documented (docs/research/2026-07-02-full-cast-sources.md §3.3; padresteve.com Hunt essay; Wikipedia Pickett's Charge: only McGilvery, Osborn and Rittenhouse fired on the advance itself; McGilvery's own OR report not found online — flagged)"
         }
@@ -8625,14 +8685,24 @@
           "citation": "monument rear verbatim: 'Battery K, (Fitzhugh's), Held this position July 3rd 1863 and assisted in repulsing Pickett's Charge.' (Stone Sentinels 1st New York Battery K page — slug 1s-new-york-battery-k, fetched 2026-07-08); on the Second Corps line south of the Copse ('on Second Corps line', survey §3.3); 149 men, six 3-inch Ordnance Rifles; arrival clock ~15:18 inferred from the narrative's height-of-the-charge timing"
         },
         {
+          "t": 9000,
+          "x": 4437,
+          "z": 4640,
+          "facing": 262,
+          "formation": "line",
+          "strength": 144,
+          "confidence": "inferred",
+          "citation": "crisis-window spike (ED-41 casualty-curve class: near-zero before arrival, single spike across the fire window); 7 wounded + 5 horses, K/1st NY + 11th NY (reconstruction/dossiers/us-btty-fitzhugh.md EC6, single-episode)"
+        },
+        {
           "t": 10800,
           "x": 4437,
           "z": 4640,
           "facing": 262,
           "formation": "line",
-          "strength": 149,
+          "strength": 142,
           "confidence": "inferred",
-          "citation": "holds the crest position to the window end; casualties 7 wounded (monument)"
+          "citation": "holds the crest position to the window end; end strength 149 − 7 (7 w + 5 horses, single-episode crisis profile, dossier EC6)"
         }
       ]
     },
@@ -8674,14 +8744,24 @@
           "citation": "monument verbatim: '…galloped into action at 3 p.m., July 3, 1863.' with 'Position in action 45 yards E. of this stone.' (Stone Sentinels New Jersey Battery A page) — 'on line of Second Division Second Corps' (survey §3.3); a documented in-window arrival clock"
         },
         {
+          "t": 9000,
+          "x": 4450,
+          "z": 4690,
+          "facing": 262,
+          "formation": "line",
+          "strength": 108,
+          "confidence": "inferred",
+          "citation": "crisis-window spike (ED-41 class); 2 k / 7 w + 5 horses (reconstruction/dossiers/us-btty-parsons.md EC6, single-episode)"
+        },
+        {
           "t": 10800,
           "x": 4450,
           "z": 4690,
           "facing": 262,
           "formation": "line",
-          "strength": 116,
+          "strength": 107,
           "confidence": "inferred",
-          "citation": "holds the crest position to the window end; losses killed 2, wounded 7 (monument)"
+          "citation": "holds to the window end; end strength 116 − 9 (2 k / 7 w, single-episode crisis profile, dossier EC6)"
         }
       ]
     },
@@ -9578,11 +9658,11 @@
       "id": "csa-bn-dearing-cannonade",
       "kind": "artillery_fire",
       "t0": 420,
-      "t1": 7500,
+      "t1": 5700,
       "unitId": "csa-bn-dearing",
       "confidence": "documented",
-      "citation": "tablet: 'In the cannonade preceding Longstreet's assault it fired by battery and very effectively.' (https://gettysburg.stonesentinels.com/confederate-headquarters/dearings-battalion/, fetched 2026-07-08)",
-      "note": "window = the retired csa-seminary-bombardment segment's spine, kept exactly: t0=420 per Jacobs 1864 (Notes on the Rebel Invasion), 'At seven minutes past 1 p.m., the awful and portentous silence was broken' — 13:07, contemporaneous and habitually precise; onset disagreement carried, never reconciled (Alexander 1907 'just 1 P.M. by my watch'; Haskell watch-checked ~13:00; Sawyer (8th OH) 'between twelve and one' — a 0–7 minute spread); t1=7500 follows the authored track spine (step-off keyframes at t=7500); witnesses put the general fire's end anywhere 13:50–15:00 (Alexander ~13:50, Jacobs 14:30, Haskell 'two mortal hours… at three o'clock almost precisely') — geometry follows the spine, the citation carries the spread"
+      "citation": "tablet: 'In the cannonade preceding Longstreet's assault it fired by battery and very effectively.' (https://gettysburg.stonesentinels.com/confederate-headquarters/dearings-battalion/, fetched 2026-07-08); WINDOW SHORTENED THIS WAVE on his own report (or-27-2-dearing, fetched dossier pass 2): 'commencing firing slowly and deliberately' by battery at the signal, until ammunition 'became completely exhausted, excepting a few round in my rifled guns'; then 'a very heavy fire for upward of an hour without being able to fire a single shot' — the silent-under-fire hour spans the cannonade's last phase (t1 ≈ 5700 ≈ 14:35, inferred inside the ≥1 h attested silence before the assault's support phase; Wilcox's 'I then rode back rapidly to our artillery, but could find none near that had ammunition' is the infantry-side witness of the same famine)",
+      "note": "window = the retired csa-seminary-bombardment segment's spine, kept exactly: t0=420 per Jacobs 1864 (Notes on the Rebel Invasion), 'At seven minutes past 1 p.m., the awful and portentous silence was broken' — 13:07, contemporaneous and habitually precise; onset disagreement carried, never reconciled (Alexander 1907 'just 1 P.M. by my watch'; Haskell watch-checked ~13:00; Sawyer (8th OH) 'between twelve and one' — a 0–7 minute spread); t1=7500 follows the authored track spine (step-off keyframes at t=7500); witnesses put the general fire's end anywhere 13:50–15:00 (Alexander ~13:50, Jacobs 14:30, Haskell 'two mortal hours… at three o'clock almost precisely') — geometry follows the spine, the citation carries the spread; the tablet's 16:00 withdrawal vs his own 18:00 repulse-fire statement is a carried two-hour conflict (dossier EC4.3) — neither authored"
     },
     {
       "id": "csa-bn-eshleman-signal",
@@ -9918,6 +9998,66 @@
       "note": "clock unattested — the tablet's skirmishing is unwindowed; one small window placed mid-early in the slice per plan Task 6 ('one small musketry window'), the Wave-1 Hart pattern: fire documented, window inferred; skirmish grain, low intensity"
     },
     {
+      "id": "us-btty-ames-deliberate-reply",
+      "kind": "artillery_fire",
+      "t0": 5820,
+      "t1": 7200,
+      "unitId": "us-btty-ames",
+      "confidence": "inferred",
+      "citation": "McGilvery's OR (No. 318, p. 884) verbatim: 'After the enemy had fired about one hour and a half, and expended at least 10,000 rounds of ammunition, with but comparatively little damage to our immediate line, a slow, well-directed fire from all the guns under my command was concentrated upon single batteries of the enemy of those best in view, and several badly broken up and successively driven from their position to the rear' — the deliberate reply, Hunt's 10:00 husband-ammunition instruction executed to the letter (reconstruction/dossiers/us-ar-1v-mcgilvery.md EC5.3, the ED-34 silent-then-fire class exemplar); per-battery window inferred on the line-grain attestation",
+      "note": "window: CA-J3A-1 + ~1.5 h ⇒ t0=5820 (≈14:37; his stated 12:30 opening is the corpus's one EARLY clock, profiled +5 [-30,+37]); t1 at the cannonade's fall-quiet (CA-J3A-5, t=7200); distinct from the two evented cannonade-phase breaches (Phillips ~13:30 by Hunt's order, Hart by Hancock's direction) and from the 7800-9000 repulse enfilade"
+    },
+    {
+      "id": "us-btty-dow-deliberate-reply",
+      "kind": "artillery_fire",
+      "t0": 5820,
+      "t1": 7200,
+      "unitId": "us-btty-dow",
+      "confidence": "inferred",
+      "citation": "McGilvery's OR (No. 318, p. 884) verbatim: 'After the enemy had fired about one hour and a half, and expended at least 10,000 rounds of ammunition, with but comparatively little damage to our immediate line, a slow, well-directed fire from all the guns under my command was concentrated upon single batteries of the enemy of those best in view, and several badly broken up and successively driven from their position to the rear' — the deliberate reply, Hunt's 10:00 husband-ammunition instruction executed to the letter (reconstruction/dossiers/us-ar-1v-mcgilvery.md EC5.3, the ED-34 silent-then-fire class exemplar); per-battery window inferred on the line-grain attestation",
+      "note": "window: CA-J3A-1 + ~1.5 h ⇒ t0=5820 (≈14:37; his stated 12:30 opening is the corpus's one EARLY clock, profiled +5 [-30,+37]); t1 at the cannonade's fall-quiet (CA-J3A-5, t=7200); distinct from the two evented cannonade-phase breaches (Phillips ~13:30 by Hunt's order, Hart by Hancock's direction) and from the 7800-9000 repulse enfilade"
+    },
+    {
+      "id": "us-btty-hart-deliberate-reply",
+      "kind": "artillery_fire",
+      "t0": 5820,
+      "t1": 7200,
+      "unitId": "us-btty-hart",
+      "confidence": "inferred",
+      "citation": "McGilvery's OR (No. 318, p. 884) verbatim: 'After the enemy had fired about one hour and a half, and expended at least 10,000 rounds of ammunition, with but comparatively little damage to our immediate line, a slow, well-directed fire from all the guns under my command was concentrated upon single batteries of the enemy of those best in view, and several badly broken up and successively driven from their position to the rear' — the deliberate reply, Hunt's 10:00 husband-ammunition instruction executed to the letter (reconstruction/dossiers/us-ar-1v-mcgilvery.md EC5.3, the ED-34 silent-then-fire class exemplar); per-battery window inferred on the line-grain attestation",
+      "note": "window: CA-J3A-1 + ~1.5 h ⇒ t0=5820 (≈14:37; his stated 12:30 opening is the corpus's one EARLY clock, profiled +5 [-30,+37]); t1 at the cannonade's fall-quiet (CA-J3A-5, t=7200); distinct from the two evented cannonade-phase breaches (Phillips ~13:30 by Hunt's order, Hart by Hancock's direction) and from the 7800-9000 repulse enfilade"
+    },
+    {
+      "id": "us-btty-phillips-deliberate-reply",
+      "kind": "artillery_fire",
+      "t0": 5820,
+      "t1": 7200,
+      "unitId": "us-btty-phillips",
+      "confidence": "inferred",
+      "citation": "McGilvery's OR (No. 318, p. 884) verbatim: 'After the enemy had fired about one hour and a half, and expended at least 10,000 rounds of ammunition, with but comparatively little damage to our immediate line, a slow, well-directed fire from all the guns under my command was concentrated upon single batteries of the enemy of those best in view, and several badly broken up and successively driven from their position to the rear' — the deliberate reply, Hunt's 10:00 husband-ammunition instruction executed to the letter (reconstruction/dossiers/us-ar-1v-mcgilvery.md EC5.3, the ED-34 silent-then-fire class exemplar); per-battery window inferred on the line-grain attestation",
+      "note": "window: CA-J3A-1 + ~1.5 h ⇒ t0=5820 (≈14:37; his stated 12:30 opening is the corpus's one EARLY clock, profiled +5 [-30,+37]); t1 at the cannonade's fall-quiet (CA-J3A-5, t=7200); distinct from the two evented cannonade-phase breaches (Phillips ~13:30 by Hunt's order, Hart by Hancock's direction) and from the 7800-9000 repulse enfilade"
+    },
+    {
+      "id": "us-btty-sterling-deliberate-reply",
+      "kind": "artillery_fire",
+      "t0": 5820,
+      "t1": 7200,
+      "unitId": "us-btty-sterling",
+      "confidence": "inferred",
+      "citation": "McGilvery's OR (No. 318, p. 884) verbatim: 'After the enemy had fired about one hour and a half, and expended at least 10,000 rounds of ammunition, with but comparatively little damage to our immediate line, a slow, well-directed fire from all the guns under my command was concentrated upon single batteries of the enemy of those best in view, and several badly broken up and successively driven from their position to the rear' — the deliberate reply, Hunt's 10:00 husband-ammunition instruction executed to the letter (reconstruction/dossiers/us-ar-1v-mcgilvery.md EC5.3, the ED-34 silent-then-fire class exemplar); per-battery window inferred on the line-grain attestation",
+      "note": "window: CA-J3A-1 + ~1.5 h ⇒ t0=5820 (≈14:37; his stated 12:30 opening is the corpus's one EARLY clock, profiled +5 [-30,+37]); t1 at the cannonade's fall-quiet (CA-J3A-5, t=7200); distinct from the two evented cannonade-phase breaches (Phillips ~13:30 by Hunt's order, Hart by Hancock's direction) and from the 7800-9000 repulse enfilade"
+    },
+    {
+      "id": "us-btty-thompson-deliberate-reply",
+      "kind": "artillery_fire",
+      "t0": 5820,
+      "t1": 7200,
+      "unitId": "us-btty-thompson",
+      "confidence": "inferred",
+      "citation": "McGilvery's OR (No. 318, p. 884) verbatim: 'After the enemy had fired about one hour and a half, and expended at least 10,000 rounds of ammunition, with but comparatively little damage to our immediate line, a slow, well-directed fire from all the guns under my command was concentrated upon single batteries of the enemy of those best in view, and several badly broken up and successively driven from their position to the rear' — the deliberate reply, Hunt's 10:00 husband-ammunition instruction executed to the letter (reconstruction/dossiers/us-ar-1v-mcgilvery.md EC5.3, the ED-34 silent-then-fire class exemplar); per-battery window inferred on the line-grain attestation",
+      "note": "window: CA-J3A-1 + ~1.5 h ⇒ t0=5820 (≈14:37; his stated 12:30 opening is the corpus's one EARLY clock, profiled +5 [-30,+37]); t1 at the cannonade's fall-quiet (CA-J3A-5, t=7200); distinct from the two evented cannonade-phase breaches (Phillips ~13:30 by Hunt's order, Hart by Hancock's direction) and from the 7800-9000 repulse enfilade"
+    },
+    {
       "id": "us-btty-cowan-cannonade",
       "kind": "artillery_fire",
       "t0": 6300,
@@ -10167,6 +10307,19 @@
       "confidence": "inferred",
       "citation": "collective attestation, the Webb-siblings pattern: Osborn's ~39-gun Cemetery Hill concentration poured its fire into the flank of Pettigrew's division during the assault — 'More than 1,600 rounds were fired at Pettigrew's men during the assault.' (https://en.wikipedia.org/wiki/Pickett%27s_Charge, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.3; padresteve.com Hunt essay) — per-battery window inferred on the group's attested fire (per-battery arcs/rounds attested collectively, not individually — survey flag)",
       "note": ">1,600 rounds into the flank of Pettigrew's left during the assault (Wikipedia Pickett's Charge; survey §4 item 9); window on the track spine (advance under way ~15:10 to the climax's collapse)"
+    },
+    {
+      "id": "csa-wa-miller-advanced-section",
+      "kind": "artillery_fire",
+      "t0": 8100,
+      "t1": 9600,
+      "x": 3536,
+      "z": 3814,
+      "x2": 3576,
+      "z2": 3756,
+      "confidence": "documented",
+      "citation": "or-27-2-eshleman verbatim: 'I immediately directed Captain Miller to advance his and Lieutenant Battles' batteries ... he took position 400 or 500 yards to the front, and opened with deadly effect upon the enemy'; marker: 'supported the charge of the infantry by advancing 450 yards' (stone-sentinels Miller's Louisiana Battery marker; reconstruction/dossiers/csa-1c-wsh-3-miller.md EC4.2) — THE documented CSA close-range phase of the repulse window, retiring the pass-1 attested-static reading",
+      "note": "segment = ~450 yd forward of the battalion's tablet line on its facing (coordinate inference ±80 m); leg [B: ~410 m at horsed-battery walk + limber/unlimber ≈ 6-8 min from the post-step-off order] ⇒ opens ~t=8100; fire until horse losses left 'but one gun' usable (marker), end inferred ~t=9600; the battalion-level cannonade event ends t=7500 — different window, never the same fire at two grains"
     },
     {
       "id": "us-biddle-repulse-fire",
@@ -10437,6 +10590,16 @@
       "confidence": "documented",
       "citation": "Veazey's OR report: the 16th's reversal - strikes the left flank of Wilcox and Lang's supporting advance (track kf t=10380 documented)",
       "note": "Window brackets the documented strike (kf t=10380) between the re-form facing south (track kfs t=9900-10200) and Wilcox's/Lang's withdrawal ~15:55 (their tracks, t=10500); window edges inferred around the documented event."
+    },
+    {
+      "id": "us-btty-fitzhugh-wilcox-enfilade",
+      "kind": "artillery_fire",
+      "t0": 10200,
+      "t1": 10500,
+      "unitId": "us-btty-fitzhugh",
+      "confidence": "documented",
+      "citation": "the battery's two-attack record (reconstruction/dossiers/us-btty-fitzhugh.md EC5): the first attack 'collapsed in 30-45 min of his fire'; the second (Wilcox/Lang) 'broken by enfilade' — window = the Wilcox/Lang follow-up spine (10200-10500), matching us-btty-phillips-florida-repulse and us-btty-hart-second-line on the same ground",
+      "note": "ROUNDS ITEMIZED across both windows: 57 percussion shell + 15 shrapnel + 17 time shell = 89 (or-27-1-fitzhugh via dossier) [B: ~8-10 min of full-battery fire total] — the physical tiebreaker that ruled his move-clock conflict toward ~15:00 (13:00-vs-15:00 carried on the unit)"
     },
     {
       "id": "us-btty-hart-second-line",
