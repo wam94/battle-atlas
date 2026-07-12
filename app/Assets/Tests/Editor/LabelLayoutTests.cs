@@ -196,4 +196,120 @@ public class LabelLayoutTests
         Assert.AreEqual(LabelLayout.LabelScale(LabelLayout.MinScaleDistance),
             LabelLayout.LabelScale(1f), 1e-6f);
     }
+
+    // ------------------------------------------------------------------
+    // Cartography slice 1: the altitude-band policy
+
+    [Test]
+    public void BandFor_AltitudeThresholdsSelectTheBands()
+    {
+        Assert.AreEqual(LabelLayout.LabelBand.Theater,
+            LabelLayout.BandFor(5000f, LabelLayout.LabelBand.Mid));
+        Assert.AreEqual(LabelLayout.LabelBand.Mid,
+            LabelLayout.BandFor(1500f, LabelLayout.LabelBand.Theater));
+        Assert.AreEqual(LabelLayout.LabelBand.Tactical,
+            LabelLayout.BandFor(600f, LabelLayout.LabelBand.Mid));
+        // a dive straight from theater height to the deck lands tactical
+        Assert.AreEqual(LabelLayout.LabelBand.Tactical,
+            LabelLayout.BandFor(300f, LabelLayout.LabelBand.Theater));
+        Assert.AreEqual(LabelLayout.LabelBand.Theater,
+            LabelLayout.BandFor(8000f, LabelLayout.LabelBand.Tactical));
+    }
+
+    [Test]
+    public void BandFor_HysteresisHoldsTheBandAtTheBoundary()
+    {
+        // between out- and in-thresholds the CURRENT band holds, so an
+        // orbit hovering at a boundary can't strobe the label set
+        float midTheater =
+            (LabelLayout.TheaterOutAltM + LabelLayout.TheaterInAltM) / 2f;
+        Assert.AreEqual(LabelLayout.LabelBand.Theater,
+            LabelLayout.BandFor(midTheater, LabelLayout.LabelBand.Theater));
+        Assert.AreEqual(LabelLayout.LabelBand.Mid,
+            LabelLayout.BandFor(midTheater, LabelLayout.LabelBand.Mid));
+        float midTactical =
+            (LabelLayout.TacticalInAltM + LabelLayout.TacticalOutAltM) / 2f;
+        Assert.AreEqual(LabelLayout.LabelBand.Tactical,
+            LabelLayout.BandFor(midTactical, LabelLayout.LabelBand.Tactical));
+        Assert.AreEqual(LabelLayout.LabelBand.Mid,
+            LabelLayout.BandFor(midTactical, LabelLayout.LabelBand.Mid));
+    }
+
+    [Test]
+    public void LabelsAtBand_TheaterSilencesUnitsMidReadsCommandGrain()
+    {
+        // Theater: no unit names at all — the corps aggregates own the sky
+        Assert.IsFalse(LabelLayout.LabelsAtBand(LabelLayout.LabelBand.Theater,
+            BattleDirector.LodTier.Block, UnitSymbol.Echelon.Brigade, true, false));
+        Assert.IsFalse(LabelLayout.LabelsAtBand(LabelLayout.LabelBand.Theater,
+            BattleDirector.LodTier.Block, UnitSymbol.Echelon.Park, false, false));
+        // ... except a selected unit: deliberate attention keeps its name
+        Assert.IsTrue(LabelLayout.LabelsAtBand(LabelLayout.LabelBand.Theater,
+            BattleDirector.LodTier.Block, UnitSymbol.Echelon.Battery, false, true));
+        // Mid: command echelon only — batteries/regiments stay quiet
+        Assert.IsTrue(LabelLayout.LabelsAtBand(LabelLayout.LabelBand.Mid,
+            BattleDirector.LodTier.Block, UnitSymbol.Echelon.Brigade, false, false));
+        Assert.IsTrue(LabelLayout.LabelsAtBand(LabelLayout.LabelBand.Mid,
+            BattleDirector.LodTier.Block, UnitSymbol.Echelon.Park, false, false));
+        Assert.IsFalse(LabelLayout.LabelsAtBand(LabelLayout.LabelBand.Mid,
+            BattleDirector.LodTier.Regiments, UnitSymbol.Echelon.Battery, true, false));
+        Assert.IsFalse(LabelLayout.LabelsAtBand(LabelLayout.LabelBand.Mid,
+            BattleDirector.LodTier.Regiments, UnitSymbol.Echelon.Regiment, true, false));
+        // Tactical: delegates to the tier rule verbatim
+        Assert.AreEqual(
+            LabelLayout.LabelsAtTier(BattleDirector.LodTier.Regiments,
+                UnitSymbol.Echelon.Regiment, false, false),
+            LabelLayout.LabelsAtBand(LabelLayout.LabelBand.Tactical,
+                BattleDirector.LodTier.Regiments,
+                UnitSymbol.Echelon.Regiment, false, false));
+        Assert.AreEqual(
+            LabelLayout.LabelsAtTier(BattleDirector.LodTier.Block,
+                UnitSymbol.Echelon.Battery, false, false),
+            LabelLayout.LabelsAtBand(LabelLayout.LabelBand.Tactical,
+                BattleDirector.LodTier.Block,
+                UnitSymbol.Echelon.Battery, false, false));
+    }
+
+    [Test]
+    public void AggregatePriority_SitsBetweenSelectedAndEveryUnitRank()
+    {
+        float corps = LabelLayout.AggregatePriority("II CORPS");
+        Assert.Greater(corps, LabelLayout.SelectedPriority);
+        Assert.Less(corps,
+            Priority(UnitSymbol.Echelon.Brigade, true, false, "us-webb"));
+        // deterministic and strictly ordered among aggregates
+        Assert.AreEqual(corps, LabelLayout.AggregatePriority("II CORPS"));
+        Assert.AreNotEqual(corps, LabelLayout.AggregatePriority("I CORPS"));
+    }
+
+    [Test]
+    public void ShortName_StripsQualifyingTailsKeepsIdentity()
+    {
+        Assert.AreEqual("Riddle's Brigade", LabelLayout.ShortName(
+            "Riddle's Brigade (1st Bde, 3rd Div, I Corps — Col. Gates at the line)"));
+        Assert.AreEqual("Barksdale's Brigade", LabelLayout.ShortName(
+            "Barksdale's Brigade, McLaws's Division (Col. B. G. Humphreys)"));
+        Assert.AreEqual("Perrin's Brigade", LabelLayout.ShortName(
+            "Perrin's Brigade (McGowan's), Pender's Division"));
+        Assert.AreEqual("Bachman's Battery", LabelLayout.ShortName(
+            "Bachman's Battery, Henry's Battalion (German Artillery, SC)"));
+        // a mid-name parenthetical that is NOT a trailing qualifier stays
+        Assert.AreEqual("Lane's Sumter (Georgia) Artillery Battalion",
+            LabelLayout.ShortName("Lane's Sumter (Georgia) Artillery Battalion"));
+        Assert.AreEqual("8th Ohio Infantry", LabelLayout.ShortName("8th Ohio Infantry"));
+        // degenerate input can never produce an empty label
+        Assert.AreEqual("(x)", LabelLayout.ShortName("(x)"));
+    }
+
+    [Test]
+    public void InkTint_LiftsTowardWhitePreservingHue()
+    {
+        Color union = BattleDirector.SideColor("union");
+        Color tinted = LabelLayout.InkTint(union);
+        Assert.Greater(tinted.r, union.r);
+        Assert.Greater(tinted.g, union.g);
+        Assert.Greater(tinted.b, union.b);
+        // still recognizably blue: the blue channel keeps its lead
+        Assert.Greater(tinted.b, tinted.r);
+    }
 }

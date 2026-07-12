@@ -61,6 +61,17 @@ namespace BattleAtlas
             shown = new bool[capacity];
             results = new int[PoolSize];
             pool = new TextMeshPro[PoolSize];
+            // the halo ink material (cartography slice 1): a SHARED asset —
+            // the default TMP atlas with a dark outline, so map lettering
+            // reads against the terrain palette whatever hue the label
+            // carries. Asset reference (Resources), never a runtime
+            // material instance — the magenta/stripping doctrine. Missing:
+            // warn once and keep the un-haloed default, nothing else breaks.
+            var inkMaterial = Resources.Load<Material>("UI/UnitLabelInk");
+            if (inkMaterial == null)
+                Debug.LogWarning(
+                    "UnitLabelField: Resources/UI/UnitLabelInk.mat missing — "
+                    + "labels render without their contrast halo");
             for (int i = 0; i < PoolSize; i++)
             {
                 var go = new GameObject($"unit label {i}");
@@ -70,6 +81,8 @@ namespace BattleAtlas
                 label.fontSize = FontSize;
                 label.alignment = TextAlignmentOptions.Center;
                 label.textWrappingMode = TextWrappingModes.NoWrap;
+                if (inkMaterial != null)
+                    label.fontSharedMaterial = inkMaterial;
                 // map ink casts no shadow — same rule as the symbols
                 var renderer = go.GetComponent<MeshRenderer>();
                 renderer.shadowCastingMode = ShadowCastingMode.Off;
@@ -94,6 +107,7 @@ namespace BattleAtlas
             Vector3[] positions = director.LabelPositions;
             string[] texts = director.LabelTexts;
             Color[] colors = director.LabelColors;
+            float[] scales = director.LabelScales;
             for (int i = 0; i < capacity; i++)
             {
                 if (float.IsPositiveInfinity(priorities[i]))
@@ -106,7 +120,19 @@ namespace BattleAtlas
                     priorities[i] = float.PositiveInfinity;
                     continue;
                 }
-                rects[i] = LabelLayout.ScreenRect(new Vector2(sp.x, sp.y), texts[i].Length);
+                // the slot's scale multiplier widens its claim too — a
+                // corps headline reserves headline space
+                Rect r = LabelLayout.ScreenRect(
+                    new Vector2(sp.x, sp.y), texts[i].Length);
+                if (scales[i] != 1f)
+                {
+                    float grow = scales[i];
+                    r = new Rect(
+                        r.center.x - r.width * grow / 2f,
+                        r.center.y - r.height * grow / 2f,
+                        r.width * grow, r.height * grow);
+                }
+                rects[i] = r;
             }
             int shownCount = LabelLayout.Declutter(
                 capacity, priorities, rects, shown,
@@ -126,10 +152,11 @@ namespace BattleAtlas
                 // the shown set is
                 if (label.text != texts[i]) label.text = texts[i];
                 if (label.color != colors[i]) label.color = colors[i];
-                // billboard + constant screen size
+                // billboard + constant screen size, times the slot's grain
+                // multiplier (corps headline > division subhead > unit)
                 label.transform.SetPositionAndRotation(positions[i], camRot);
                 float scale = LabelLayout.LabelScale(
-                    Vector3.Distance(camPos, positions[i]));
+                    Vector3.Distance(camPos, positions[i])) * scales[i];
                 label.transform.localScale = new Vector3(scale, scale, scale);
             }
             for (int k = shownCount; k < PoolSize; k++)
