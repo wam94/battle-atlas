@@ -1,5 +1,8 @@
 {
     "name": "BattleAtlas.Runtime",
     "rootNamespace": "BattleAtlas",
-    "references": ["Unity.TextMeshPro"]
+    "references": [
+        "Unity.TextMeshPro",
+        "Unity.RenderPipelines.HighDefinition.Runtime"
+    ]
 }
