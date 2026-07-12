@@ -478,3 +478,35 @@ row digit-exact), us-iii-1-3-detrobriand.md (the garbled clock
 resolved: "About 2 p. m." = the tablet pair).
 
 Companion: `docs/reconstruction/audit/dossier-pass-11.md`.
+
+## Pass 12 — the cavalry theater opener + register triage
+
+Pass-11's deferred recommendation executed: East Cavalry Field at
+brigade grain (Gregg's division vs Stuart's four engaged brigades)
+and South Cavalry Field (Farnsworth vs Merritt), the theater's clock
+problem assessed honestly (mostly tablet-adjudicated, thin below the
+hour), plus the VI Corps cheap batch (one corps-grain command record)
+and a REGISTER-GRAIN TRIAGE pass over all 136 battery entries
+(disposition + reason, closing the "measurable coverage" item). ED-69
+…ED-71 (pass-11's candidates) batch-adopted at pass open; the
+source-schema `anchorsUsed` pattern fixed to admit split anchor ids.
+ED-72 (the ECF/SCF chain) and ED-73 (the CSA cavalry marker-provenance
+class) proposed, NOT adopted.
+
+| Dossier | Register id | Role | Achieved T |
+|---|---|---|---|
+| [us-cav-2-1-mcintosh.md](us-cav-2-1-mcintosh.md) | reg-us-cav-2-1 | ECF Union right; CA-ECF-2/3 co-executor | T3 (ECF grain) |
+| [us-cav-3-2-custer.md](us-cav-3-2-custer.md) | reg-us-cav-3-2 | ECF Union right; CA-ECF-2/3 co-executor; the day-scope EC6 conflict (ED-43 class) | T3 (ECF grain) |
+| [us-cav-2-3-jigregg.md](us-cav-2-3-jigregg.md) | reg-us-cav-2-3 | the reserve; Brinkerhoff's Ridge July 2; the pass's weakest sourcing | T2 (honestly thin) |
+| [csa-cav-ham-hampton.md](csa-cav-ham-hampton.md) | reg-csa-cav-ham | CA-ECF-1/3; Hampton's wounding, the theater's clearest officer pin | T3 (ECF grain) |
+| [csa-cav-fitz-lee.md](csa-cav-fitz-lee.md) | reg-csa-cav-fitz | CA-ECF-1/3; the 1st Md. Battalion detachment negative | T3 (ECF grain) |
+| [csa-cav-chambliss.md](csa-cav-chambliss.md) | reg-csa-cav-chambliss | CA-ECF-1; the pass's thinnest CSA OR-report coverage | T2 (honestly thin) |
+| [csa-cav-jenkins.md](csa-cav-jenkins.md) | reg-csa-cav-jenkins | CA-ECF-1; THE AMMUNITION NEGATIVE (~10 rounds/man, ED-44 class) | T2 (honestly thin, negative-evidence) |
+| [csa-cav-bn-ha-beckham.md](csa-cav-bn-ha-beckham.md) | reg-csa-cav-bn-ha | frame unit; the distribution table (at most 2 of 6 batteries actually at ECF) | T2 (command/frame grain) |
+| [us-cav-3-1-farnsworth.md](us-cav-3-1-farnsworth.md) | reg-us-cav-3-1 (us-cav-farnsworth) | CA-SCF-1/2; the death pin + the Oates-suicide-vs-Parsons conflict | T3 (SCF grain) |
+| [us-cav-1-3-merritt.md](us-cav-1-3-merritt.md) | reg-us-cav-1-3 (us-cav-merritt) | CA-SCF-1/2; THE FAIRFIELD-POOLING EC6 FINDING | T4 (July 3 grain) |
+| [us-vi-hq-sedgwick.md](us-vi-hq-sedgwick.md) | reg-us-vi-hq (new row) | VI Corps cheap batch; attested-static-with-exceptions (Nevin pass 7, Shaler flagged) | T2 (command record) |
+
+Companion: `docs/reconstruction/audit/dossier-pass-12.md`; the battery
+triage lives in `docs/reconstruction/audit/oob-register.json` (each
+battery entry's `triage` object) with a summary in the pass report §4.
