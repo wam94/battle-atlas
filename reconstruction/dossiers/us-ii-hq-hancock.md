@@ -113,8 +113,35 @@ pin.
 2. The wounding-time framing (during-the-maneuver vs
    end-of-action) — EC6 above.
 3. The Hancock-vs-Hunt authority dispute — recorded, ED-33 governs.
-4. July 1 arrival controversy — ADOPTED AS RECORDED (ED-27); nothing
-   new fetched.
+4. **July 1 arrival controversy — FORMALIZED pass 10 (the CA-J1P-7
+   conflict record, structured):**
+   - *Pole A (early)*: Hancock's report "At 3 p.m. I arrived at
+     Gettysburg and assumed the command" (p. 368) + his 1876 Galaxy
+     ~15:30 (compilation-grade).
+   - *Pole B (late)*: his OWN timestamped dispatch "5.25 [P.M.]...
+     When I arrived here an hour since" ⇒ ~16:25 (p. 366 — a
+     document pin CONTRADICTING his own report) + Howard "At 4.30
+     p.m. ... General Hancock came to me about this time" +
+     modern consensus 16:00-16:30.
+   - *Third-party scene (new, pass 10)*: Doubleday — "Major-General
+     Hancock now rode up, and informed me he had been placed in
+     command of both corps... Immediately afterward orders came
+     from Major-General Howard, who ranked Hancock, to send the
+     troops in another direction" — the dual-command friction
+     witnessed AFTER the corps reformed on the hill (his sequence
+     puts the scene post-retreat, i.e. after ~16:30: Pole-B-
+     consistent).
+   - *Bound (new, pass 10)*: Schurz "It was after 5 o'clock when
+     the Eleventh Corps occupied the position on Cemetery Hill" —
+     a Pole-A 15:00 arrival would precede the corps he was sent to
+     rally by TWO HOURS on its own clocks.
+   - *Structural note*: both principals had stakes in the
+     command-authority feud (the ED-27 partisan-dispute note); the
+     ~16:15 adoption with the 15:00-16:30 envelope STANDS — the
+     record now carries a document pin, a third-party scene, and a
+     receiving-corps bound all on the late pole (→ ED-68 candidate:
+     tighten the envelope's front edge to ~15:30; owner's call, NOT
+     self-adopted).
 5. No corps-command register row (flagged).
 
 ## Chain anchors substantiated
@@ -127,8 +154,11 @@ pin.
 
 ## ED candidates proposed
 
-- None new (the wounding stays a conflict record by design; an
-  authoring pass that needs a point-event can propose an ED then).
+- **ED-68 component (pass 10)**: the CA-J1P-7 envelope's front edge
+  (15:00 → ~15:30) on the formalized record above — proposed with
+  the pass-10 report, NOT self-adopted.
+- The wounding stays a conflict record by design (an authoring pass
+  that needs a point-event can propose an ED then).
 
 ## Source register
 
