@@ -2,8 +2,9 @@
 
 Pass 2 (reference frame) · Cast status: in-build (`us-harrow`) ·
 Achieved T-level: **T4 full-arc** (brigade grain; division-report
-primary; July 2 arc audited full-arc at pass 5) · 2026-07-11
-(pass-5 upgrade)
+primary; July 2 arc audited full-arc at pass 5; **the 1st Minnesota
+moment closed BOTH-SIDED at regiment grain pass 6** — the regiment's
+own primary landed) · 2026-07-11 (pass-6 upgrade)
 
 Frame role: the left of Gibbon's front — the line Rorty's battery and
 the 19th ME/15th MA/1st MN/82nd NY stones fix, and the southern jaw of
@@ -67,6 +68,32 @@ Bachelder j3-03.
 2. **July 2 evening** [D]: 1st MN's charge (Colvill; mon-1mn at
   (4462,4152) marks it — "NOT the July 3 position", register
   semantics).
+   **PASS-6 UPGRADE — THE MOMENT BOTH-SIDED AT REGIMENT GRAIN**: the
+  1st MN's own primary landed (or-27-1-coates-1mn, pp. 424-425,
+  fetch-verified): "About 5 p. m. ... moved to support Battery C,
+  Fourth U. S. Artillery" (the support anchor; stated clock early
+  class), companies F and L detached (a named EC2 subtraction — the
+  charge body is EIGHT companies); the charge went "at double-quick
+  down the slope of the hill right upon the rebel line"; "more than
+  two-thirds of our men and officers" fell; Colvill, Lt. Col. Adams,
+  Maj. Downie w severely; Capt. Muller k, Lt. Farrar k, Capt. Periam
+  mw (or-27-1-coates-1mn). THE RECEIVING SIDE (or-27-2-wilcox
+  p. 618, pass-6 fetch): "a third [Union] line descended at a
+  double-quick to support their broken comrades and defend the
+  batteries"; Wilcox withdrew "after some thirty minutes"
+  unsupported — the charge-and-stand duration from the enemy's
+  clock. Drawn pair, j2-04 (19:00): "1' Minn" bar at (4230, 4282)
+  opposite "WILCOX ALA." (4112, 4368) with regiment bars at the pike
+  (read 2026-07-11). Strength/loss layers carried, never averaged:
+  monument bronze "eight companies ... 262 men" / "215 killed and
+  wounded ... 47 men still in line" July 2, +17 July 3 = "232 out of
+  330 engaged" (330 scope includes the detached companies); the
+  official return prints the three-day row 50/174/0 = **224**
+  (or-27-1-union-return p. 175) — ED-52 adopts the return as the
+  battle-total basis, the monument ledger carried as the veterans'
+  count (ED-39 §1 latency class). July 3: Capt. Messick k, Capt.
+  Farrell mw; the 28th Va colors taken (Pvt. Marshall Sherman, MoH)
+  with ~500 prisoners claimed on the front (or-27-1-coates-1mn).
    **PASS-5 UPGRADE (the II Corps evening counterattack leg,
   both-sided)**: the charge's object was the head of the CSA echelon
   reaching the run after the Peach Orchard collapse — the sequence
@@ -137,6 +164,11 @@ Bachelder j3-03.
   ruling need yet).
 
 ## Source register
+
+Pass-6 additions: or-27-1-coates-1mn (pp. 424-425) · or-27-2-wilcox
+(p. 618, receiving side) · monuments.json mon-1mn-main / mon-1mn-j3 ·
+bachelder-manifest j2-04 (read 2026-07-11).
+
 
 or-27-1-harrow (pp. 419-421, fetch-verified this pass; clockProfile
 report-nominal +7 [0,+12]) · stone-sentinels (1st Bde 2nd Div tablet,
