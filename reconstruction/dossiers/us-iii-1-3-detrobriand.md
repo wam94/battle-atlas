@@ -88,9 +88,15 @@ ED-59 (candidate) must handle.
 2. The 40th NY's loss is spatially de Trobriand's ledger but
   tactically Ward's front — an apportionment cross-charge noted on
   both dossiers.
-3. No strength primary; the report's one stated clock survives only
-  as a garbled fetch ("About @ p.m.") — carried unusable (kind
-  none pending a clean re-read).
+3. No strength primary. ~~The garbled clock~~ — **RE-READ pass 11
+  (IA full-text, pp. 519-520): the report's clock set is clean:**
+  July 2 ~02:00 the join-the-corps order at Emmitsburg; "started at
+  daybreak, and reported to Major-General Birney about 10 o'clock";
+  **"About 2 p.m. the same day, a line of battle was formed in
+  expectation of an impending attack"** — the garbled "About @
+  p.m." was "About 2 p. m.", AGREEING with the tablet's "between 2
+  and 3 P.M." deployment (report=tablet pair; the source's
+  clockProfile upgrades kind-none → report-nominal ~0).
 
 ## Chain anchors substantiated
 

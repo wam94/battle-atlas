@@ -95,10 +95,14 @@ tablet-adjudicated grade (stone-sentinels fetch 2026-07-12).
 
 - **Return (p. 340): 35 k / 216 w / 94 m = 345** — 6th NC 172,
   21st NC 111, 57th NC 62 (full per-regiment missing columns).
-  **COLUMN-NOISE CASE flagged**: the 57th NC aggregate prints "623"
-  where its row sums 6+20+36 = 62 (the p. 177 class; 172+111+62 =
-  345 exact against the brigade total — the noise is in one cell,
-  caught by row arithmetic).
+  **COLUMN-NOISE CASE — RE-READ AND CLOSED pass 11**: the 57th NC
+  aggregate prints "623" in BOTH channels (IA full-text + a fresh
+  civilwar.com p. 340 read) — so the noise is in the PRINT layer,
+  not our extraction. The row is arithmetic-forced ×4: k
+  20+9+6 = 35 ✓, w 131+65+20 = 216 ✓, m 21+37+36 = 94 ✓, agg
+  172+111+62 = 345 ✓ — **57th NC = 62 adopted at
+  quadruple-arithmetic grade**, the printed "623" carried as the
+  print reading (feeds the ED-71 candidate with the Iverson row).
 - Episode split [D]: overwhelmingly July 2 evening (July 1 was the
   town advance with "small" division loss language; July 3 passive)
   — the 6th NC's 172 (Avery's own regiment, the inside of the

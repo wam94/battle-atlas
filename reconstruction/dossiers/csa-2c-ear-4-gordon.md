@@ -88,9 +88,18 @@ evidence.
 
 - **His statement: "The loss of the brigade in killed and wounded
   was 350, of whom 40 were killed"**; **return (p. 341): 380
-  aggregate (71 k / 270 w / 39 m)** — rows 26th Ga 11, 31st Ga 43,
-  38th Ga 92, 60th Ga 38, 61st Ga 93 (13th Ga row not extracted —
-  single-row gap flagged) (or-27-2-gordon; or-27-2-anv-return).
+  aggregate (71 k / 270 w / 39 m)** — rows 26th Ga 11 (2/4/5), 31st
+  Ga 43 (9/34/0), 38th Ga 92 (12/51/29), 60th Ga 38 (4/29/5), 61st
+  Ga 93 (24/69/0); **13th Ga row CLOSED pass 11 at arithmetic
+  grade: aggregate 103** — "103" reads in the block's channel
+  output and the five read rows + verified totals force 20 k /
+  83 w / 0 m = 103 exactly (direct cell read still scrambled in
+  both channels; the closure is five-row + four-column arithmetic,
+  recorded as such) (or-27-2-gordon; or-27-2-anv-return).
+  SECOND LEDGER noted pass 11: the Second Corps' k&w-only return
+  (Guild's, pp. ~330s) prints Gordon 65 k / 258 w = 323 — a third
+  count set (report 350 k&w / Guild 323 k&w / return 341 k&w+39 m),
+  all carried un-averaged (ED-42 two-ledger discipline).
   The two k readings (40 vs 71) CONFLICT beyond rounding — both
   carried, neither adopted (candidate cause: mortally-wounded
   migration between the July 30-class report and the compiled
@@ -109,8 +118,8 @@ evidence.
 1. The 40-vs-71 killed conflict (EC6) — recorded.
 2. The 1,800-prisoner credit vs the corps-wide 1,448 c/m return —
    overcount recorded, inspector-credit class.
-3. The 13th Ga return row unread (single-row gap; cheap pass-11
-   close).
+3. ~~The 13th Ga return row unread~~ — CLOSED pass 11 (arithmetic
+   grade, EC6 above).
 4. No clock after the 3 p.m. order (the fight's interior untimed;
    the after-5 Cemetery Hill state rides Schurz).
 

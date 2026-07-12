@@ -27,6 +27,8 @@ stand that closes the I Corps day.
 - **PRIMARY: "about 1,600 strong"** with the battery
   (or-27-1-gamble — stated for the same composition at Upperville
   June 21 and repeated in the Gettysburg section's brigade list).
+  B&M-repro 1,600 EXACT (addressing-gettysburg-oob, pass-11 sweep) —
+  report=compilation agreement.
 
 ## EC3 — Position anchors
 
@@ -113,10 +115,17 @@ stand that closes the I Corps day.
 2. No clock after the 8:00 warning anywhere in the report — the
    morning's interior timing rides Buford's 8-9 window, the 10:10
    dispatch (document pin), and the I Corps arrival clocks.
-3. The afternoon stand's CSA counterpart (Lane's/Perrin's right
-   checked by cavalry) is not yet fetched from the CSA side at
-   brigade grain (Lane's report consumed pass 3 covers July 2-3;
-   flagged for pass 11, cheap).
+3. ~~The afternoon stand's CSA counterpart not yet fetched~~ —
+   **CLOSED pass 11, both CSA units**: Lane — "Colonel Barbour threw
+   out 40 men, under Captain Hudson, to keep back some of the
+   enemy's cavalry, which had dismounted and were annoying us with
+   an enfilade fire", then the woods rush and the McMillan
+   peach-orchard halt (or-27-2-lane-jh, July 1 section); Perrin —
+   "General Lane's brigade did not move upon my right at all, and
+   was not at this time in sight of me" (or-27-2-perrin) — the
+   dismounted stand PULLED Lane off the assault, exactly the
+   "saved a division of our infantry" effect Gamble claimed; his
+   claim upgrades from self-report to three-report convergence.
 
 ## Chain anchors substantiated
 

@@ -1,9 +1,11 @@
 # Dossier: Biddle's Brigade (1st Bde, 3rd Div, I Corps — Gates's demi-brigade at the July 3 line) (reg-us-i-3-1)
 
-Pass 4 (Union center command batch — the deferred Doubleday pieces) ·
-Cast status: in-build (`us-biddle`) · Achieved T-level: **T3 full-arc**
-(honestly bounded — the July 3 record is strong but the casualty ledger
-cannot be split by day at primary grade) · 2026-07-11
+Pass 4 (Union center command batch — the deferred Doubleday pieces);
+July 1 back-extension pass 11 · Cast status: in-build (`us-biddle`) ·
+Achieved T-level: **T4 (July 1 grain; July 3 T3)** — the pass-11
+Chapman-Biddle primary (1,287 in / 440 k&w + 457 m / 390 left, dated
+July 2) gives the day split the pass-4 ceiling note said was missing ·
+2026-07-12
 
 Command-batch role: the I Corps brigade wrecked on July 1 whose
 two-regiment remnant (80th NY + 151st Pa under Col. Gates) stood in the
@@ -29,9 +31,17 @@ the other.
 ## EC2 — Engaged strength
 
 - Build row: 460 (July 3 remnant; compilation tier, flagged). No
-  primary strength statement fetched for July 3 (open) — the July 1
-  wreck (898 casualties of ~1,350-1,500 compilation strength) explains
-  the remnant scale but is not itself a morning-report figure.
+  primary strength statement fetched for July 3 (open).
+- **July 1 PRIMARY (back-extended pass 11)**: "The total number of
+  officers and men who went into the action was 1,287; out of this,
+  440 were either killed or wounded, and 457 are missing, leaving as
+  the present effective force only 390 officers and men" (Chapman
+  Biddle's July 2 report, or-27-1-cbiddle) — strength, loss, AND
+  remnant in one statement; the build's 460 July 3 row now has a
+  documented 390 July-2-morning floor beneath it (authoring note;
+  the 897 loss ≈ the return's 898). B&M-repro 1,361
+  (addressing-gettysburg-oob, hop) carried beside — the 1,287 vs
+  1,361 gap is the detached-elements scope, recorded un-averaged.
 
 ## EC3 — Position anchors
 
@@ -57,9 +67,22 @@ the other.
 
 ## EC4 — Movement legs
 
-1. July 1: the McPherson Ridge fight and retreat through town (July 1
-   record carried at register grain; this dossier's commissioned window
-   is the July 2-3 frame).
+1. **July 1 (back-extended pass 11, or-27-1-cbiddle)** [C ~0/D]:
+   arrival ~11:00 one mile west of town; the line "on the extreme
+   left, in a field one-third of a mile in front of the seminary and
+   facing west", Cooper's four-piece battery in the interval, the
+   brick house + large stone barn sharpshooter cover named; the
+   151st Pa detached right-rear; position shifted "two or three
+   times" under the enfilading artillery from the north; **"between
+   2 and 3 p.m. a large body of them, amounting to a division or
+   more, advanced in two lines toward us"** (the Pettigrew-front
+   receiving clock, both-sided with the pass-10 Marshall records);
+   outflanked left; **"compelled about 4 p.m. to retire"** to cover
+   at the seminary edge — held "till the batteries and many of the
+   troops in the town had withdrawn", then retired to the cemetery
+   (the CA-J1P-5 receiving ladder from the corps' left brigade).
+   Officer pins: Col. Cummins (142nd Pa) k; McFarland (151st) badly
+   w (or-27-1-cbiddle).
 2. July 2 ~17:00: Taneytown road → the left-center low ridge [C]
    (or-27-1-gates).
 3. **July 3 — the lateral slide north (the climax leg)** [D]: "I moved
@@ -103,8 +126,12 @@ the other.
 1. Rowley-vs-Gates command reading for July 3 (register carries
    "Gates at the line"; Gates reports directly to Doubleday) — a
    command-structure softness, flagged, no geometry consequence.
-2. No July 3-only casualty measure exists (EC6) — T3 ceiling until a
-   regimental-history split surfaces.
+2. ~~No July 3-only casualty measure exists~~ **CLOSED pass 11**: the
+   Chapman-Biddle July 2 statement (897 by July 2 morning) against
+   the battle return's 898 pins the July 2-3 net loss at return
+   grain to ~1 — with the recovered-missing caveat (some town
+   "missing" later rejoined, so the true July 3 loss is small but
+   not literally one; class, not digit).
 3. The 121st/142nd Pa July 3 positions (the other two regiments) are
    NOT in the fetched primaries — the second "BIDDLE." sheet bar
    ~(4625, 4515) is their probable rear slot (sheet-only, flagged).
@@ -121,7 +148,9 @@ the other.
 
 ## Source register
 
-or-27-1-gates (pp. 321-323, fetched this pass — the spine) ·
+or-27-1-cbiddle (No. 56, pp. 314-316, fetched pass 11 — the July 1
+spine; the 2-3 p.m. + ~4 p.m. receiving clocks) ·
+or-27-1-gates (pp. 321-323, fetched pass 4 — the July 3 spine) ·
 or-27-1-doubleday (p. 258 structure statement) · or-27-1-union-return
 (p. 174) · us-i-3-3-stannard.md (flank neighbor, pass 1) ·
 bachelder-manifest j3-02/j3-03 (label reads 2026-07-11) · or-27-oob.
