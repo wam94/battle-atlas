@@ -11,13 +11,13 @@
   "sources": "ids resolve in reconstruction/sources/sources.json. Structure and successions: or-27-oob + wikipedia-oob-union/-csa (verified 2026-07-10); activity notes: stone-sentinels War Department tablets via the 2026-07-02 full-cast survey."
  },
  "stats": {
-  "totalEntries": 287,
+  "totalEntries": 288,
   "union": {
    "infantryBrigades": 51,
    "cavalryBrigades": 8,
    "batteries": 67,
    "artilleryBrigades": 14,
-   "commandEntries": 12
+   "commandEntries": 13
   },
   "confederate": {
    "infantryBrigades": 37,
@@ -7823,6 +7823,28 @@
     "or-27-1-hancock"
    ],
    "notes": "Added dossier pass 10 (the ED-26/27 Howard-assumes-command sub-anchor + the CA-J1P-7 dual-command record): Howard's 11.30 = Schurz's 11.30 two-primary agreement; the 16:00/16:10/16:30 fall-back ladder; the Cemetery Hill rally frame. Dossier: reconstruction/dossiers/us-xi-hq-howard.md."
+  },
+  {
+   "id": "reg-us-vi-hq",
+   "castStatus": "not-yet-cast",
+   "name": "VI Corps headquarters (corps command)",
+   "side": "union",
+   "arm": "infantry",
+   "echelon": "command",
+   "parentChain": [
+    "Army of the Potomac",
+    "VI Corps"
+   ],
+   "commander": "Maj. Gen. John Sedgwick",
+   "daysPresent": [
+    2,
+    3
+   ],
+   "sources": [
+    "or-27-oob",
+    "gettysburg-stonesentinels-6corps"
+   ],
+   "notes": "Added dossier pass 12 (the VI Corps cheap batch): the corps-grain command record for the army's largest corps (~16,000 men), positional reserve after its ~30-mile July 2 forced march, with its brigades detached independently rather than fought as a corps (Nevin/Wheaton to the Wheatfield/Plum Run July 2 evening, already dossier'd pass 7; Shaler to Culp's Hill July 3 morning). Dossier: reconstruction/dossiers/us-vi-hq-sedgwick.md."
   }
  ]
 }
