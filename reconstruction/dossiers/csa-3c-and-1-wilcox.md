@@ -1,7 +1,9 @@
 # Dossier: Wilcox's Brigade, Anderson's Division (reg-csa-3c-and-1)
 
-Pass 3 (first command batch) · Cast status: in-build (`csa-wilcox`) ·
-Achieved T-level: **T4 full-arc** · 2026-07-11
+Pass 3 (first command batch); **July 2 arc EXTENDED BACKWARD pass 6**
+(CA-J2A-10 executor leg — the ED-51/54 two-days-two-units pattern
+applied in time instead of space) · Cast status: in-build
+(`csa-wilcox`) · Achieved T-level: **T4 full-arc** · 2026-07-11
 
 Command-batch role: the late echelon on the right — the CA-J3A-10 object
 the McGilvery line and Stannard's second flank action fired into. Wilcox's
@@ -33,6 +35,26 @@ any assistance whatever" (Alexander).
 
 ## EC3 — Position anchors
 
+0. **July 2 arc (pass-6 extension)**: [D] into line ~7 a.m. on
+   Seminary Ridge (Anderson's division front); the 10th/11th Ala
+   morning wood fight (Pitzer's Woods, vs Berdan/3rd ME — the
+   morning recon collision); McLaws formed at right angles behind
+   his right ~2 p.m. (stated) (or-27-2-wilcox). **The July 2
+   evening advance** [A vs CA-J2A-10, 19:00-19:15]: stepped off when
+   "McLaws' troops advanced to the attack" reached him (his stated
+   clock "about 6.20 p.m.", report-nominal early class), crossed the
+   Emmitsburg pike, broke two Union lines, "captured two artillery
+   pieces whose horses had been killed" at the road and later "a
+   six-piece battery" in the swale, descended into "a rocky ravine
+   or stream" (Plum Run) and climbed toward the ridge
+   (or-27-2-wilcox p. 618, fetch-verified this pass). **Drawn
+   state, j2-04 (19:00)**: "WILCOX ALA." at **(4112, 4368)** ±62 m
+   with the regiment bars at the pike (4209, 4410) and a detached
+   bar class at (4131, 4207) (read 2026-07-11) — the brigade drawn
+   astride the road at the Bachelder 19:00 frame, the "1' Minn" bar
+   opposite at **(4230, 4282)** — the sheet draws BOTH sides of the
+   charge moment.
+
 1. **July 3, before sunrise** [D]: "ordered out to support artillery
    under the command of Colonel Alexander ... formed in line parallel to
    the Emmitsburg turnpike and about 200 yards from it, artillery being
@@ -56,7 +78,20 @@ any assistance whatever" (Alexander).
 
 ## EC4 — Movement legs
 
-1. Before sunrise: rear line → the artillery-support line [D].
+0. **July 2 (pass-6 extension)**: the pike crossing → the swale →
+   the ravine climb [B: ~1,400 m in ~25-35 min under fire]; **the
+   thirty-minute unsupported stand and withdrawal** [D, duration
+   primary]: "a third Union line descended 'at a double-quick' to
+   support their broken comrades and defend the batteries" — THE
+   1st MINNESOTA MOMENT FROM THE RECEIVING SIDE (both-sided with
+   or-27-1-coates-1mn: "at double-quick down the slope of the hill
+   right upon the rebel line") — and "without flanking support and
+   facing continued reinforcement, Wilcox withdrew after 'some
+   thirty minutes' to prevent 'entire destruction or capture'",
+   retiring under artillery fire to the original line
+   (or-27-2-wilcox p. 618).
+
+1. July 3, before sunrise: rear line → the artillery-support line [D].
 2. **The delayed launch** [A vs CA-J3A-6 +20–30 min]: "The advance had
    not been made more than twenty or thirty minutes, before three staff
    officers in quick succession (one from the major-general commanding
@@ -109,6 +144,10 @@ any assistance whatever" (Alexander).
   51/469/257 = 777 exactly (or-27-2-anv-return p. 343). Alexander
   corroborates July 3: "His loss in this charge was 204 killed and
   wounded" (alexander-1907).
+- (Pass 6) July 2 shape [D]: the 577 concentrates in the evening
+  advance-and-withdrawal (~19:00-19:45) — four of five regimental
+  commanders wounded that evening; the morning wood fight
+  (10th/11th Ala) carries a documented minor component.
 - July 3 shape [D]: <12 k&w in the bombardment window; the 204
   concentrates on the supporting advance's artillery gauntlet (both
   flanks + front, no musketry phase) — an artillery-dominated cause mix,
@@ -118,6 +157,14 @@ any assistance whatever" (Alexander).
   reproduction — read-with-care flag).
 
 ## Conflicts & negative evidence
+
+0. (Pass 6) His July 2 "6.20 p.m." step-off vs CA-J2A-10's
+   19:00-19:15 sunset-adjacent adoption — ~+45 early, the
+   southern-field report-clock class (ED-58 candidate exemplar);
+   the captured-guns claims (two at the road + a six-piece battery)
+   are the Union side's Weir/Turnbull ground — battery-identity
+   cross-check carried open (the pass-2 Weir dossier's loss records
+   are the receiving frame).
 
 1. Launch sequencing: Wilcox "20–30 min after" vs Lang "after Pickett's
    troops retired" vs Longstreet's forward-then-halt narrative — carried
@@ -130,6 +177,11 @@ any assistance whatever" (Alexander).
 
 ## Chain anchors substantiated
 
+- **CA-J2A-10 (pass 6)**: the July 2 evening executor leg — his
+  two-lines-broken + third-line-at-the-double-quick record pairs
+  with the 1st MN's charge account (us-ii-2-1-harrow.md §1st MN) and
+  the j2-04 drawn pair; the anchor's sunset-adjacency pinning holds
+  from the CSA side.
 - **CA-J3A-10**: the supporting advance is THIS brigade's record — now
   documented from its commander, its corps artillery observer
   (Alexander), its division commander (Anderson, including the
@@ -146,7 +198,9 @@ any assistance whatever" (Alexander).
 
 ## Source register
 
-or-27-2-wilcox (No. 537, fetched this pass; clockProfile weak) ·
+or-27-2-wilcox (No. 537, pass-3 fetch; p. 618 July 2 keys
+fetch-verified pass 6; clockProfile weak) · or-27-1-coates-1mn (the
+receiving side, pass-6 fetch) ·
 or-27-2-anv-return (p. 343) · or-27-2-anderson-rh (No. 536, the stop
 order + cannonade attribution) · alexander-1907 (ch. 19 epilogue) ·
 or-27-2-lang (the echelon's other half) · us-ar-1v-mcgilvery.md +
