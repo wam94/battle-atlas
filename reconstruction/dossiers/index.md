@@ -551,3 +551,52 @@ Companion: `docs/reconstruction/audit/dossier-pass-13.md`; the ten
 pass-12 cavalry dossiers' EC3 patches and the battery-triage update
 (Henry's/Lane's constituent batteries + Randol's/Pennington's) are
 recorded in the pass report §1/§6, not re-listed here.
+
+## Pass 14 — the first finish-line batch (ED-74 adoption + the census's recommended slice)
+
+ED-74 batch-adopted at pass open (`csa-3c-bn-lane.md`'s
+report-vs-corroborated-tablet-conflict class, extending ED-71). Then
+the pass-13 census's full recommended order: the two horse-artillery
+brigade HQs; the South Cavalry Field EC3 sheet-crop exercise (the gap
+pass 13 explicitly left open, patching Farnsworth's/Merritt's/Henry's
+battalion's dossiers); the VI Corps brigade batch (all seven remaining
+brigades, closing the corps HQ dossier's own Shaler verification
+flag); the III Corps Artillery Brigade (the last uncovered Union
+corps-artillery group); and all four remaining Artillery Reserve
+brigade HQs. Fourteen new dossiers; no new register rows (all fourteen
+were existing register entries). A structural finding this pass:
+three of the four Artillery Reserve volunteer-brigade commanders
+(who double as their own battery's captain) filed NO separate
+brigade-command report — only Fitzhugh's is a genuine brigade
+narrative.
+
+| Dossier | Register id | Role | Achieved T |
+|---|---|---|---|
+| [us-ha-1-robertson.md](us-ha-1-robertson.md) | reg-us-ha-1 | the July 3 Artillery-Reserve succession finding (Robertson replaced Tyler); batteries split across 3 theaters | T3 (command grain, own-report primary) |
+| [us-ha-2-tidball.md](us-ha-2-tidball.md) | reg-us-ha-2 | a forwarding-letter-class report, self-explained | T2 (command record) |
+| [us-vi-1-1-torbert.md](us-vi-1-1-torbert.md) | reg-us-vi-1-1 (us-torbert) | attested-static reserve; commander-itemized 1,663-strength table | T3 |
+| [us-vi-1-2-bartlett.md](us-vi-1-2-bartlett.md) | reg-us-vi-1-2 (us-bartlett) | GENUINELY ENGAGED; the composite-command resolution of Nevin's "triple succession" hazard (July 3 Crawford-support sweep) | T4 |
+| [us-vi-1-3-russell.md](us-vi-1-3-russell.md) | reg-us-vi-1-3 (us-russell) | attested-static; the report-vs-tablet casualty conflict (0 vs 2) | T3 |
+| [us-vi-2-1-grant.md](us-vi-2-1-grant.md) | reg-us-vi-2-1 (us-grant) | attested-static; the OR report's Gettysburg content honestly not located | T3 |
+| [us-vi-2-2-neill.md](us-vi-2-2-neill.md) | reg-us-vi-2-2 (us-neill) | the corps's least-static brigade — detached to hold Powers Hill, then Rock Creek to the extreme right | T3 |
+| [us-vi-3-1-shaler.md](us-vi-3-1-shaler.md) | reg-us-vi-3-1 (us-shaler) | CLOSES the corps HQ dossier's own flagged verification item; engaged at Culp's Hill 9-11am, sub-hour ladder feeds CA-J3M-2/4 | T4 |
+| [us-vi-3-2-eustis.md](us-vi-3-2-eustis.md) | reg-us-vi-3-2 (us-eustis) | the corpus's 4th confirmed no-report-class Union brigade; the unexplained 25-missing figure | T3 |
+| [us-iii-arty-randolph.md](us-iii-arty-randolph.md) | reg-us-iii-arty | closes the last uncovered Union corps-artillery group; 3 named officer casualties incl. Randolph himself | T4 (group grain) |
+| [us-ar-1r-ransom.md](us-ar-1r-ransom.md) | reg-us-ar-1r | CONFIRMED no brigade report exists; explains Tyler's own "no report from Ransom's battery" line | T2 (command record) |
+| [us-ar-2v-taft.md](us-ar-2v-taft.md) | reg-us-ar-2v | own-battery-scoped report; 4 individually-timed casualties | T3 |
+| [us-ar-3v-huntington.md](us-ar-3v-huntington.md) | reg-us-ar-3v | 3rd confirmed no-brigade-report instance; Edgell's own battery report | T3 |
+| [us-ar-4v-fitzhugh.md](us-ar-4v-fitzhugh.md) | reg-us-ar-4v | the ONE genuine brigade report of the four; a new repulse-duration detail on the Webb's-fence crisis-reinforcement record (ED-41) | T4 |
+
+Pass-14 upgrades to existing dossiers: `us-cav-3-1-farnsworth.md` +
+`us-cav-1-3-merritt.md` (the SCF sheet-crop patch — Farnsworth's
+Brigade, Merritt's regulars, and Elder's battery all drawn adjacent on
+Bachelder sheet j3-03; j3-04 checked negative), `csa-1c-bn-henry.md`
+(Bachman's battery sector-positioned by the same exercise),
+`csa-cav-bn-ha-beckham.md` (an incidental first-class conflict: a
+"HART'S S.C." block drawn at South Cavalry Field directly contradicts
+the battalion's own marker, which places Hart's battery off-ground
+guarding trains), `us-vi-3-3-nevin.md` + `us-vi-hq-sedgwick.md`
+(cross-reference patches), `us-ar-hq-tyler-park.md` (the Ransom-naming
+explanation).
+
+Companion: `docs/reconstruction/audit/dossier-pass-14.md`.

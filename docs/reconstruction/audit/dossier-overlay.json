@@ -1651,6 +1651,160 @@
       "EC6 casualty apportionment": "1 killed, 4 wounded (attributed, whole command)",
       "Achieved T-level (audited)": "T2 (command record)",
       "Notes": "Dossier: reconstruction/dossiers/us-hq-provost-patrick.md; the cheap command-record closer named in the task; thinnest sourcing of this pass's command batch (only the 93rd NY tablet is fetch-verified)"
+    },
+    "reg-us-ha-1": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok (command/frame grain)",
+      "EC1 identity/command": "1st Bde Horse Arty (9th MI/6th NY/2nd US B&L/2nd US M/4th US E); Capt. James M. Robertson; report-primary",
+      "EC2 engaged strength": "open",
+      "EC3 position anchors": "[C report] approach march June28-Jul1; [C] July3 assumed Artillery Reserve command after Tyler's sunstroke; batteries split 3 theaters July3 (Pennington ECF, Elder SCF sheet-confirmed, Daniels Cemetery Ridge)",
+      "EC4 movement legs": "[C] approach legs; [D] July2 reserve shift",
+      "EC5 activity record": "[C] Daniels 9th MI engaged under Newton; Martin/Heaton 'In Reserve' both tablets",
+      "EC6 casualty apportionment": "tablet 8 (2k/1+5w); Daniels component 1k/4w/23 horses",
+      "Achieved T-level (audited)": "T3 (command grain, own-report primary)",
+      "Notes": "Dossier: reconstruction/dossiers/us-ha-1-robertson.md; the July3 Tyler-succession cross-ref to reg-us-ar-hq"
+    },
+    "reg-us-ha-2": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok (command/frame grain)",
+      "EC1 identity/command": "2nd Bde Horse Arty (1st US E&G/1st US K/2nd US A/3rd US C); Capt. John C. Tidball; report is a forwarding letter",
+      "EC2 engaged strength": "open",
+      "EC3 position anchors": "[D] no brigade-level anchor; batteries dispersed (Calef Jul1 w/Gamble, Randol ECF, Graham SCF w/Merritt, Fuller off-map Westminster)",
+      "EC4 movement legs": "not authored",
+      "EC5 activity record": "forwarding-letter only; no first-hand narrative",
+      "EC6 casualty apportionment": "tablet 15 (2k/13w)",
+      "Achieved T-level (audited)": "T2 (command record, forwarding-letter class)",
+      "Notes": "Dossier: reconstruction/dossiers/us-ha-2-tidball.md"
+    },
+    "reg-us-iii-arty": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok (command/frame grain)",
+      "EC1 identity/command": "Artillery Brigade III Corps (2NJ/1NY-D Winslow/4NY Smith/1RI-E/4US-K); Capt George E. Randolph (w Jul2)->Capt A.J. Clark; BOTH own reports fetched",
+      "EC2 engaged strength": "open",
+      "EC3 position anchors": "[C] approach march Jun28-Jul1; [C] Jul2 Emmitsburg Rd salient line (Birney's ground); [C ~09:30] Clark's early long-range fire; [C 13:00-13:30] Sickles repositioning notice; [D] extended gun line to dark",
+      "EC4 movement legs": "[C] the march; [C ~09:30] Clark's deployment; [C 13:00+] the repositioning",
+      "EC5 activity record": "[C] solid shot->case->canister sequence; [C ~15:00+] the rolling infantry assault 'shortly after 3pm'; [C] battery-by-piece withdrawal; [C ~17:30] Seeley's crisis, wounded, Lt James succeeds",
+      "EC6 casualty apportionment": "tablet 106 (8k/3off+78w/17 missing); 3 officer casualties (Randolph, Bucklyn, Seeley) match the tablet's '3 Officers' wounded exactly",
+      "Achieved T-level (audited)": "T4 (group grain, own-report primary)",
+      "Notes": "Dossier: reconstruction/dossiers/us-iii-arty-randolph.md; closes the last uncovered Union corps-artillery group"
+    },
+    "reg-us-ar-1r": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok (command/frame grain)",
+      "EC1 identity/command": "1st Regular Bde Artillery Reserve (1US-H Mason/3US-F&K Turnbull/4US-C Thomas/5US-C Weir); Capt Dunbar R. Ransom (w Jul3); NO brigade report exists - CONFIRMED by direct page check",
+      "EC2 engaged strength": "open",
+      "EC3 position anchors": "not authored - no report to supply one",
+      "EC4 movement legs": "not authored",
+      "EC5 activity record": "not authored - see us-btty-weir.md",
+      "EC6 casualty apportionment": "tablet 68 (1off+12men k/4off+49w/2 missing)",
+      "Achieved T-level (audited)": "T2 (command record, confirmed no-report class)",
+      "Notes": "Dossier: reconstruction/dossiers/us-ar-1r-ransom.md; explains Tyler's own 'no report from Ransom's battery' line as an old-habit naming artifact"
+    },
+    "reg-us-ar-2v": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok (command/frame grain)",
+      "EC1 identity/command": "2nd Volunteer Bde Artillery Reserve (1CT-Hvy-B Brooker/1CT-Hvy-M Pratt/2CT Sterling/5NY Taft); Capt Elijah D. Taft; own report scoped to HIS OWN battery only",
+      "EC2 engaged strength": "open",
+      "EC3 position anchors": "[C ~16:30-17:00] Taneytown march, cemetery arrival, reported to HOWARD (XI Corps), in position 5pm Jul2",
+      "EC4 movement legs": "[B] the staged approach march; [D ~10:00 Jul5] return march",
+      "EC5 activity record": "[C ~08:00 & 13:30+ Jul3] sustained fire, one 20-pdr Parrott burst; itemized rounds expended",
+      "EC6 casualty apportionment": "tablet 8 (1k/5w/2 missing); Taft's own battery: FOUR individually-timed casualties (Begg mw, Thalheimer mw, Dillon, Wittenberg)",
+      "Achieved T-level (audited)": "T3 (own-battery-scoped report)",
+      "Notes": "Dossier: reconstruction/dossiers/us-ar-2v-taft.md; ties into East Cemetery Hill's Howard-reporting chain"
+    },
+    "reg-us-ar-3v": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok (command/frame grain)",
+      "EC1 identity/command": "3rd Volunteer Bde Artillery Reserve (1NH Edgell/1OH-H Norton/1PA-F&G Ricketts/1WV-C Hill); Capt James F. Huntington; NO brigade report - 3rd confirmed instance of the class pattern",
+      "EC2 engaged strength": "open",
+      "EC3 position anchors": "[C ~14:30 Jul2] Edgell's Cemetery Hill position; [C ~16:00] Norton's position; [D] Ricketts already T4 on own dossier",
+      "EC4 movement legs": "[C] Edgell's move + Jul3 relocation to a cornfield near the Baltimore turnpike",
+      "EC5 activity record": "[C] Edgell vs Chambersburg-Rd CSA guns, 105 then 353 total rounds (scope, not conflict); 3 wounded/3 horses/1 wheel-axle",
+      "EC6 casualty apportionment": "tablet 37 (10k/1off+23w/3 missing)",
+      "Achieved T-level (audited)": "T3 (battery-grain own-reports; no brigade report)",
+      "Notes": "Dossier: reconstruction/dossiers/us-ar-3v-huntington.md"
+    },
+    "reg-us-ar-4v": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok (command/frame grain)",
+      "EC1 identity/command": "4th Volunteer Bde Artillery Reserve (6ME Dow/1MD-A Rigby/1NJ-A Parsons/1NY-G Ames/1NY-K Fitzhugh); Capt Robert H. Fitzhugh; GENUINE brigade report (the one exception)",
+      "EC2 engaged strength": "open",
+      "EC3 position anchors": "[C ~08:00 Jul2] Taneytown arrival; [C] Tyler's own order dispersing 2 batteries to the Baltimore Pike near Slocum; Dow/Ames detached under McGilvery, Rigby to XII Corps; [C ~13:00 Jul3] Hunt personally orders remainder to Webb's fence",
+      "EC4 movement legs": "[C ~08:00] the arrival march; [C ~13:00, ED-41 trigger=Hunt's order] the crisis-reinforcement displacement",
+      "EC5 activity record": "[C ~13:00-14:00] Parsons ~40 rds shrapnel into CSA flank; Fitzhugh's K vs CSA guns ~1,000 yds; repulsed within 'half or three-quarters of an hour' (new duration detail)",
+      "EC6 casualty apportionment": "tablet 36 (2k/34w); K+11NY component 7w/5 horses/89 rds (EXACT match to us-btty-fitzhugh.md's own return); Parsons component '2 killed' (partial)",
+      "Achieved T-level (audited)": "T4 (a genuine brigade command report)",
+      "Notes": "Dossier: reconstruction/dossiers/us-ar-4v-fitzhugh.md; the ONE of four AR brigades this pass with a real brigade narrative"
+    },
+    "us-torbert": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok (command/frame grain)",
+      "EC1 identity/command": "1st Bde 1st Div VI Corps (1/2/3/15 NJ); Brig Gen A.T.A. Torbert; report=tablet",
+      "EC2 engaged strength": "1,663 (106 off/1,557 enl, report-primary itemized)",
+      "EC3 position anchors": "[C ~16:00] 35mi march, arrived 4pm Jul2; [C] LRT reserve; [C] Jul3 Weikert-House-area center",
+      "EC4 movement legs": "[B] the 35mi march",
+      "EC5 activity record": "[D] attested-static, picket only; 11 wounded on picket Jul3",
+      "EC6 casualty apportionment": "tablet 11w = report's Jul3 picket figure exact; report's broader 1k/17w is a CAMPAIGN total (scope, not conflict)",
+      "Achieved T-level (audited)": "T3",
+      "Notes": "Dossier: reconstruction/dossiers/us-vi-1-1-torbert.md"
+    },
+    "us-bartlett": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok (command/frame grain)",
+      "EC1 identity/command": "2nd Bde 1st Div VI Corps (5ME/121NY/95,96PA); Brig Gen J.J. Bartlett; report=tablet; GENUINELY ENGAGED",
+      "EC2 engaged strength": "open",
+      "EC3 position anchors": "[D] Jul2 arrival ~5pm supporting Sykes; [C] Jul3 composite command of Nevin's 3rd Bde 3rd Div for the Crawford-support Wheatfield sweep (three-dossier cross-ref: this + us-vi-3-3-nevin.md + us-v-3-1-mccandless.md)",
+      "EC4 movement legs": "[C ~17:00-18:00] the composite-command advance",
+      "EC5 activity record": "[C] Jul3 ~200 CSA prisoners + 15th GA colors captured jointly w/ McCandless",
+      "EC6 casualty apportionment": "own-bde tablet 5 (1k/4w); composite-command loss separately stated 'between 20 and 30'",
+      "Achieved T-level (audited)": "T4",
+      "Notes": "Dossier: reconstruction/dossiers/us-vi-1-2-bartlett.md; resolves Nevin's 'triple command succession' hazard"
+    },
+    "us-russell": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok (command/frame grain)",
+      "EC1 identity/command": "3rd Bde 1st Div VI Corps (6ME/49(4co)/119PA/5WI); Brig Gen D.A. Russell; report=tablet",
+      "EC2 engaged strength": "open",
+      "EC3 position anchors": "[C ~16:00] arrival; [C] Jul3 extreme left then left-centre 'anticipated attack on the center' (report's cause, tablet's terser text)",
+      "EC4 movement legs": "[B] the march; [D] the afternoon shift",
+      "EC5 activity record": "[D] attested-static both sources: 'Not engaged' / 'not actually engaged'",
+      "EC6 casualty apportionment": "CONFLICT: tablet 2w vs report's 'no casualties' - carried unresolved",
+      "Achieved T-level (audited)": "T3",
+      "Notes": "Dossier: reconstruction/dossiers/us-vi-1-3-russell.md"
+    },
+    "us-grant": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok (command/frame grain)",
+      "EC1 identity/command": "2nd Bde 2nd Div VI Corps, the Vermont Bde (2/3/4/5/6 VT); Col Lewis A. Grant; OR entry's Gettysburg content NOT located",
+      "EC2 engaged strength": "open",
+      "EC3 position anchors": "[C ~17:00] 33mi march arrived 5pm Jul2; [C] Jul3 right on Round-Top-east-slope, left on Taneytown Rd, 'under no fire except artillery'",
+      "EC4 movement legs": "[B] the march; [D] short Jul3 advance",
+      "EC5 activity record": "[D] present-but-not-firing, ED-44 class; 5th VT on picket Jul2 night",
+      "EC6 casualty apportionment": "tablet 1w",
+      "Achieved T-level (audited)": "T3 (tablet-primary; report access gap honestly recorded)",
+      "Notes": "Dossier: reconstruction/dossiers/us-vi-2-1-grant.md; fetched pages surfaced only a June Franklin's-Crossing letter, not Gettysburg"
+    },
+    "us-neill": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok (command/frame grain)",
+      "EC1 identity/command": "3rd Bde 2nd Div VI Corps (7ME(6co)/43,49,77NY/61PA); Brig Gen T.H. Neill; report thin on the battle days",
+      "EC2 engaged strength": "open",
+      "EC3 position anchors": "[C] Jul2 arrival then DETACHED ~6pm to hold Powers Hill (Meade's direct order); [C] Jul3 crossed Rock Creek to extreme right, connecting w/ cavalry pickets (Slocum's order)",
+      "EC4 movement legs": "[C] Powers Hill leg; [C] Rock Creek crossing leg",
+      "EC5 activity record": "[D] ground-security/liaison roles, no documented firing episode",
+      "EC6 casualty apportionment": "tablet 15 (1 off+1 man k/11w/2 missing) - cause not attested",
+      "Achieved T-level (audited)": "T3",
+      "Notes": "Dossier: reconstruction/dossiers/us-vi-2-2-neill.md; the corps's least-static brigade this pass"
+    },
+    "us-shaler": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok (command/frame grain)",
+      "EC1 identity/command": "1st Bde 3rd Div VI Corps (65,67,122NY/23,82PA); Brig Gen Alexander Shaler; TWO reports (battle narrative + Nov1863 correction letter)",
+      "EC2 engaged strength": "open",
+      "EC3 position anchors": "[C ~14:00] arrival; [C ~08:00 Jul3] detached to Culp's Hill supporting Geary; regiment-grain sub-hour ladder 9:00-11:30am; [C ~15:30] withdrew under fire to III Corps center-rear reserve",
+      "EC4 movement legs": "[C] the 8am detachment leg; [C] the 3:30pm withdrawal leg",
+      "EC5 activity record": "[C] ENGAGED 9-11am under Geary, 'severe fire'/'galling fire of musketry'",
+      "EC6 casualty apportionment": "tablet 74 (1off+14men k/3off+53w/3 missing) - heaviest VI Corps brigade loss this pass",
+      "Achieved T-level (audited)": "T4",
+      "Notes": "Dossier: reconstruction/dossiers/us-vi-3-1-shaler.md; CLOSES the corps HQ dossier's own flagged verification item; feeds CA-J3M-2/4"
+    },
+    "us-eustis": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok (command/frame grain)",
+      "EC1 identity/command": "2nd Bde 3rd Div VI Corps (7,10,37MA/2RI); Col Henry L. Eustis; NO brigade report - confirmed, only Rogers's 2nd RI regimental report fills the numbered slot",
+      "EC2 engaged strength": "open",
+      "EC3 position anchors": "[C ~14:00] arrival; [C] Jul3 right-centre reserve reporting to Newton, 'not engaged but subject to artillery fire'",
+      "EC4 movement legs": "not authored",
+      "EC5 activity record": "[D] present-but-not-firing; Rogers's 2RI: 'the hottest of the battle'/'severest engagement of the war' (tension w/ 'not engaged')",
+      "EC6 casualty apportionment": "tablet 69 (3k/2off+39w/25 missing) - the missing-25 figure has NO attested cause, honestly flagged",
+      "Achieved T-level (audited)": "T3",
+      "Notes": "Dossier: reconstruction/dossiers/us-vi-3-2-eustis.md; the corpus's 4th confirmed no-report-class Union brigade"
     }
   }
 }
