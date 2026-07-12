@@ -291,14 +291,16 @@ describe("authored July 3 battle", () => {
     expect(byId("csa-lane").regiments).toBeDefined();
     // THE SEGMENT RETIRED (battle-format.md "Segment-emitter migration"):
     // csa-seminary-bombardment is gone, and the only surviving segment-form
-    // events are the three attested detachments (Carter's rifles at the
-    // railroad cut, Raine's 20-pdr section N of Benner's Hill, and — Wave 6 —
-    // Reilly's two-Parrott section at its own marker-attested position).
+    // events are the four attested detachments (Carter's rifles at the
+    // railroad cut, Raine's 20-pdr section N of Benner's Hill, Wave 6's
+    // Reilly two-Parrott section at its own marker-attested position, and —
+    // Wave A1 — Miller's advanced Washington Artillery section, 450 yds
+    // forward of the battalion's tablet line per or-27-2-eshleman).
     expect(events.some((e: any) => e.id === "csa-seminary-bombardment")).toBe(false);
     const segmentEvents = events.filter((e: any) => e.unitId === undefined);
     expect(segmentEvents.map((e: any) => e.id).sort()).toEqual(
       ["csa-bn-carter-rifles-cannonade", "csa-bn-raine-20pdr-cannonade",
-        "csa-btty-reilly-parrott-section"]);
+        "csa-btty-reilly-parrott-section", "csa-wa-miller-advanced-section"]);
     for (const e of segmentEvents) expect(e.confidence).toBe("documented");
     // DOCUMENTED SILENCES (survey §3.2 ⚠️; §4 item 13): Garnett's and
     // Jones's battalions have ZERO events — the negative rides the t=0
@@ -650,6 +652,62 @@ describe("authored July 3 battle", () => {
       expect(u.regiments.length).toBeGreaterThanOrEqual(2);
       expect(u.parent).toBeUndefined();
       expect(childrenOf(id)).toEqual([]);
+    }
+  });
+  it("Wave A1: dossier placement — the echelon re-placed, the famine windows, ED-38/44/50 executed", () => {
+    const units = (battle as any).units;
+    const events = (battle as any).events;
+    const byId = (id: string) => units.find((u: any) => u.id === id);
+    const evt = (id: string) => events.find((e: any) => e.id === id);
+    // Wilcox/Lang: July 3 strengths on their own OR primaries (1,200 / ~400),
+    // Lang on Wilcox's LEFT, the advance reaching the documented ravine line
+    const wilcox = byId("csa-wilcox").keyframes;
+    expect(wilcox[0].strength).toBe(1200);
+    expect(wilcox[wilcox.length - 1].strength).toBe(996); // − the 204 per-day primary
+    const lang = byId("csa-lang").keyframes;
+    expect(lang[0].strength).toBe(400);
+    expect(lang[0].z).toBeGreaterThan(wilcox[0].z); // left = north of Wilcox
+    const wilcoxFarthest = wilcox.find((k: any) => k.t === 10380);
+    expect(wilcoxFarthest.x).toBeGreaterThan(4000); // the ravine below McGilvery's crest
+    // Dearing: the daybreak-advanced road-crest line + the famine-shortened window
+    expect(byId("csa-bn-dearing").keyframes[0].x).toBe(3630);
+    expect(evt("csa-bn-dearing-cannonade").t1).toBe(5700);
+    // McGilvery's deliberate reply: six per-battery windows, hold → reply → quiet
+    for (const b of ["ames", "dow", "sterling", "hart", "phillips", "thompson"]) {
+      const reply = evt(`us-btty-${b}-deliberate-reply`);
+      expect(reply, b).toBeDefined();
+      expect(reply.t0, b).toBe(5820);
+      expect(reply.t1, b).toBe(7200);
+      expect(reply.confidence, b).toBe("inferred"); // line-grain OR, per-battery inferred
+    }
+    // Miller's advanced section: segment form, documented, post-cannonade window
+    const miller = evt("csa-wa-miller-advanced-section");
+    expect(miller.unitId).toBeUndefined();
+    expect(miller.t0).toBe(8100);
+    expect(miller.confidence).toBe("documented");
+    expect(miller.citation).toMatch(/400 or 500 yards/);
+    // Fitzhugh's second window rides the Wilcox/Lang spine
+    expect(evt("us-btty-fitzhugh-wilcox-enfilade").t0).toBe(10200);
+    // ED-50: the 8th Ohio's inverted shape (~45 of 102 pre-window)
+    const ohio = byId("us-8oh").keyframes;
+    expect(ohio[0].strength).toBe(164);
+    expect(ohio[0].citation).toMatch(/ED-50/);
+    // ED-38: Eshleman re-strengthed; ED-44: Garnett's silence at primary grade
+    expect(byId("csa-bn-eshleman").keyframes[0].strength).toBe(338);
+    expect(byId("csa-bn-garnett").keyframes[0].citation)
+      .toMatch(/did not fire a single shot/);
+    expect(events.some((e: any) => e.unitId === "csa-bn-garnett")).toBe(false);
+    // Sherrill's one in-window leg: slope → the wall line at the tablet's 15:00
+    const sherrill = byId("us-sherrill").keyframes;
+    expect(sherrill[0].x).toBe(4540);
+    expect(sherrill.find((k: any) => k.t === 7440).x).toBe(4470);
+    // dossier-apportioned decay is monotonic non-increasing everywhere it landed
+    for (const id of ["csa-wilcox", "csa-lang", "csa-bn-dearing", "csa-bn-eshleman",
+      "csa-bn-pegram", "us-8oh", "us-btty-dow", "us-btty-fitzhugh",
+      "us-btty-parsons", "us-btty-cooper"]) {
+      const kfs = byId(id).keyframes;
+      for (let i = 1; i < kfs.length; i++)
+        expect(kfs[i].strength, `${id} t=${kfs[i].t}`).toBeLessThanOrEqual(kfs[i - 1].strength);
     }
   });
 });

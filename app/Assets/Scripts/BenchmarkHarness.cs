@@ -19,7 +19,12 @@ namespace BattleAtlas
     // stays untouched — see docs/benchmarks/2026-07-08-v2-phase0-baseline.md.
     public class BenchmarkHarness : MonoBehaviour
     {
-        static readonly float[] Timestamps = { 0f, 8160f, 8700f, 9000f };
+        // Default = the Phase 0 reference timestamps; -benchmarkTimes overrides
+        // with a comma-separated list (Wave A1 evidence captures pass
+        // "0,5400,8160,8700,9900" — the audit's slacken/road/wall/echelon
+        // moments) without disturbing the reproducible Phase 0/4 baselines.
+        static readonly float[] DefaultTimestamps = { 0f, 8160f, 8700f, 9000f };
+        float[] timestamps = DefaultTimestamps;
         const float WarmupSeconds = 2f;
         const float SettleSeconds = 1.0f;   // renderers pose from the clock each frame
         const float SampleSeconds = 10f;
@@ -57,6 +62,11 @@ namespace BattleAtlas
             outDir = ArgValue("-benchmarkOut",
                 Path.Combine(Application.persistentDataPath, "p0-benchmark"));
             prefix = ArgValue("-benchmarkPrefix", "atlas");
+            string times = ArgValue("-benchmarkTimes", "");
+            if (!string.IsNullOrWhiteSpace(times))
+                timestamps = times.Split(',')
+                    .Select(s => float.Parse(s.Trim(), CultureInfo.InvariantCulture))
+                    .ToArray();
             Directory.CreateDirectory(outDir);
             clock = FindFirstObjectByType<BattleClock>();
             if (clock == null)
@@ -83,9 +93,9 @@ namespace BattleAtlas
             report.AppendFormat("  \"clockEndTime\": {0},\n", clock.EndTime);
             report.Append("  \"samples\": [\n");
 
-            for (int i = 0; i < Timestamps.Length; i++)
+            for (int i = 0; i < timestamps.Length; i++)
             {
-                yield return CaptureAt(Timestamps[i], i == Timestamps.Length - 1);
+                yield return CaptureAt(timestamps[i], i == timestamps.Length - 1);
             }
 
             report.Append("  ]\n}\n");

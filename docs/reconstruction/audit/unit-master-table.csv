@@ -77,14 +77,14 @@ csa-bn-raine,Andrews's (Latimer's) Artillery Battalion (Capt. Raine),confederate
 csa-bn-cabell,Cabell's Artillery Battalion,confederate,standalone,artillery,384,384,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,Cabell,yes,T1,T4,in-build,reg-csa-1c-bn-cabell
 csa-bn-carter,Carter's Artillery Battalion,confederate,standalone,artillery,384,384,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Carter,yes,T1,T2,in-build,reg-csa-2c-bn-carter
 csa-bn-dance,Dance's 1st Virginia Artillery Battalion,confederate,standalone,artillery,480,480,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,Dance,yes,T1,T4,in-build,reg-csa-2c-bn-dance
-csa-bn-dearing,Dearing's Artillery Battalion,confederate,standalone,artillery,432,432,0,2,2,0,0,2,0.0,0.0,no,line,1,0,2,Dearing,yes,T1,T4,in-build,reg-csa-1c-bn-dearing
-csa-bn-eshleman,"Eshleman's Battalion, Washington Artillery",confederate,standalone,artillery,240,240,0,2,2,0,0,2,0.0,0.0,no,line,2,0,1,Eshleman,yes,T1,T4,in-build,reg-csa-1c-bn-wash
+csa-bn-dearing,Dearing's Artillery Battalion,confederate,standalone,artillery,432,418,14,3,1,2,0,3,0.0,0.0,no,line,1,0,2,Dearing,yes,T0,T4,in-build,reg-csa-1c-bn-dearing
+csa-bn-eshleman,"Eshleman's Battalion, Washington Artillery",confederate,standalone,artillery,338,293,45,3,1,2,0,3,0.0,0.0,no,line,2,0,1,Eshleman,yes,T0,T4,in-build,reg-csa-1c-bn-wash
 csa-bn-garnett,Garnett's Artillery Battalion,confederate,standalone,artillery,360,360,0,2,2,0,0,2,0.0,0.0,no,line,0,0,5,Garnett,yes,T1,T2,in-build,reg-csa-3c-bn-garnett
 csa-bn-jones,Jones's Artillery Battalion,confederate,standalone,artillery,384,384,0,2,2,0,0,2,0.0,0.0,no,line,0,0,2,Jones,yes,T1,T2,in-build,reg-csa-2c-bn-jones
 csa-bn-lane,Lane's Sumter (Georgia) Artillery Battalion,confederate,standalone,artillery,408,408,0,2,2,0,0,2,0.0,0.0,no,line,1,0,4,Lane,yes,T1,T4,in-build,reg-csa-3c-bn-lane
 csa-bn-mcintosh,McIntosh's Artillery Battalion,confederate,standalone,artillery,384,384,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,McIntosh,yes,T1,T4,in-build,reg-csa-3c-bn-mcintosh
 csa-bn-nelson,Nelson's Artillery Battalion,confederate,standalone,artillery,264,264,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,Nelson,yes,T1,T4,in-build,reg-csa-2c-bn-nelson
-csa-bn-pegram,Pegram's Artillery Battalion,confederate,standalone,artillery,480,480,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,Pegram,yes,T1,T4,in-build,reg-csa-3c-bn-pegram
+csa-bn-pegram,Pegram's Artillery Battalion,confederate,standalone,artillery,480,433,47,3,1,2,0,3,0.0,0.0,no,line,1,0,1,Pegram,yes,T0,T4,in-build,reg-csa-3c-bn-pegram
 csa-bn-poague,Poague's Artillery Battalion,confederate,standalone,artillery,384,384,0,2,2,0,0,2,0.0,0.0,no,line,1,0,2,Poague,yes,T1,T4,in-build,reg-csa-3c-bn-poague
 reg-csa-cav-fitz,"Fitzhugh Lee's Brigade, Stuart's Division",confederate,brigade,cavalry,,,,,,,,,,,,,,,4,Lee,yes,,T2,not-yet-cast,reg-csa-cav-fitz
 reg-csa-cav-ham,"Hampton's Brigade, Stuart's Division",confederate,brigade,cavalry,,,,,,,,,,,,,,,1,Hampton,yes,,T2,not-yet-cast,reg-csa-cav-ham
@@ -146,7 +146,7 @@ csa-iverson,"Iverson's Brigade, Rodes's Division",confederate,standalone,infantr
 csa-dungan,"Jones's Brigade, Johnson's Division (Lt. Col. R. H. Dungan)",confederate,standalone,infantry,1180,1180,0,2,2,0,0,2,0.0,0.0,no,line,0,0,2,Jones,yes,T1,T2,in-build,reg-csa-2c-joh-4
 csa-kershaw,"Kershaw's Brigade, McLaws's Division",confederate,standalone,infantry,1170,1170,0,3,3,0,0,3,680.1,680.1,yes,line,0,0,1,Kershaw,yes,T1,T3,in-build,reg-csa-1c-mcl-1
 csa-lane,Lane's Brigade,confederate,standalone,infantry,1355,695,660,8,1,7,0,8,2541.1,20.6,yes,line/routed/scattered,0,0,4,Lane,yes,T0,T4,in-build,reg-csa-3c-pen-2
-csa-lang,Lang's Brigade (Perry's Florida Brigade),confederate,standalone,infantry,700,300,400,6,1,5,0,6,990.4,170.0,yes,line/scattered,0,0,3,Lang,yes,T0,T4,in-build,reg-csa-3c-and-4
+csa-lang,Lang's Brigade (Perry's Florida Brigade),confederate,standalone,infantry,400,245,155,6,1,5,0,6,1448.8,264.8,yes,line/scattered,0,0,3,Lang,yes,T0,T4,in-build,reg-csa-3c-and-4
 csa-sheffield,"Law's Brigade, Hood's Division (Col. James L. Sheffield)",confederate,standalone,infantry,950,950,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Law,yes,T1,T2,in-build,reg-csa-1c-hood-1
 csa-lowrance,Lowrance's Brigade (Scales's),confederate,standalone,infantry,1250,651,599,8,1,7,0,8,2443.9,20.1,yes,line/routed/scattered,0,0,3,Lowrance,yes,T0,T4,in-build,reg-csa-3c-pen-4
 csa-mahone,"Mahone's Brigade, Anderson's Division",confederate,standalone,infantry,1400,1400,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Mahone,yes,T1,T2,in-build,reg-csa-3c-and-2
@@ -161,7 +161,7 @@ csa-smith,"Smith's Brigade, Early's Division (attached to Johnson)",confederate,
 csa-steuart,"Steuart's Brigade, Johnson's Division",confederate,standalone,infantry,1020,1020,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Steuart,yes,T1,T2,in-build,reg-csa-2c-joh-1
 csa-walker,"Stonewall Brigade, Johnson's Division (Brig. Gen. James A. Walker)",confederate,standalone,infantry,1120,1120,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Johnson,yes,T1,T2,in-build,reg-csa-2c-joh-2
 csa-thomas,"Thomas's Brigade, Pender's Division",confederate,standalone,infantry,930,930,0,2,2,0,0,2,0.0,0.0,no,line,1,0,2,Thomas,yes,T1,T4,in-build,reg-csa-3c-pen-3
-csa-wilcox,Wilcox's Brigade,confederate,standalone,infantry,1777,1577,200,6,1,5,0,6,1011.0,170.1,yes,line/scattered,0,0,4,Wilcox,yes,T0,T4,in-build,reg-csa-3c-and-1
+csa-wilcox,Wilcox's Brigade,confederate,standalone,infantry,1200,996,204,6,2,4,0,6,1619.0,270.7,yes,line/scattered,0,0,4,Wilcox,yes,T0,T4,in-build,reg-csa-3c-and-1
 csa-wofford,"Wofford's Brigade, McLaws's Division",confederate,standalone,infantry,995,995,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Wofford,yes,T1,T2,in-build,reg-csa-1c-mcl-4
 csa-wright,"Wright's Brigade, Anderson's Division",confederate,standalone,infantry,580,580,0,5,5,0,0,5,1100.9,0.0,yes,line,0,0,1,Wright,yes,T1,T3,in-build,reg-csa-3c-and-3
 reg-us-ha-1,"1st Brigade, Horse Artillery",union,artillery-brigade,artillery,,,,,,,,,,,,,,,0,1st Brigade,VERIFY,,T2,not-yet-cast,reg-us-ha-1
@@ -206,42 +206,42 @@ reg-us-v-b3,"Battery L, 1st Ohio Light",union,battery,artillery,,,,,,,,,,,,,,,0,
 reg-us-ar-2v-2,"Battery M, 1st Connecticut Heavy",union,battery,artillery,,,,,,,,,,,,,,,0,Battery M,VERIFY,,T2,not-yet-cast,reg-us-ar-2v-2
 reg-us-ha-1-4,"Battery M, 2nd US",union,battery,artillery,,,,,,,,,,,,,,,0,Battery M,VERIFY,,T2,not-yet-cast,reg-us-ha-1-4
 reg-us-arty-hq,"Artillery command, Army of the Potomac (Chief of Artillery)",union,command,artillery,,,,,,,,,,,,,,,0,Artillery command,VERIFY,,T2,not-yet-cast,reg-us-arty-hq
-us-btty-ames,"Ames's Battery G, 1st New York Light Artillery",union,standalone,artillery,132,132,0,2,2,0,0,2,0.0,0.0,no,line,1,0,2,Ames,yes,T1,T4,in-build,reg-us-ar-4v-4
+us-btty-ames,"Ames's Battery G, 1st New York Light Artillery",union,standalone,artillery,132,132,0,2,2,0,0,2,0.0,0.0,no,line,2,0,2,Ames,yes,T1,T4,in-build,reg-us-ar-4v-4
 us-btty-arnold,"Arnold's Battery A, 1st Rhode Island Light Artillery",union,standalone,artillery,139,111,28,4,2,2,0,4,0.0,0.0,no,line,2,2,3,Arnold,yes,T5,T4,in-build,reg-us-ii-b2
 us-arty-reserve-park,Artillery Reserve park + ammunition train (Tyler's),union,standalone,artillery,2375,2375,0,4,2,2,0,4,1486.6,1486.6,yes,column,0,0,1,(Tyler,yes,T0,T3,in-build,reg-us-ar-hq
 us-btty-atwell,"Atwell's Independent Battery E, Pennsylvania Light (Knap's)",union,standalone,artillery,139,139,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Atwell,yes,T1,T2,in-build,reg-us-xii-b2
 us-btty-bancroft,"Bancroft's Battery G, 4th US Artillery",union,standalone,artillery,124,124,0,2,2,0,0,2,0.0,0.0,no,line,2,0,1,Bancroft,yes,T1,T4,in-build,reg-us-xi-b5
 us-btty-breck,"Breck's Battery L (with E), 1st New York Light Artillery (Reynolds's)",union,standalone,artillery,141,141,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,Breck,yes,T1,T4,in-build,reg-us-i-b3
 us-btty-brown,"Brown's Battery B, 1st Rhode Island Light Artillery",union,standalone,artillery,103,88,15,5,2,3,0,5,165.7,165.7,yes,column/line,1,0,3,Brown,yes,T0,T4,in-build,reg-us-ii-b3
-us-btty-cooper,"Cooper's Battery B, 1st Pennsylvania Light Artillery",union,standalone,artillery,114,114,0,4,2,2,0,4,2080.5,2080.5,yes,column/line,1,0,2,Cooper,yes,T0,T4,in-build,reg-us-i-b4
+us-btty-cooper,"Cooper's Battery B, 1st Pennsylvania Light Artillery",union,standalone,artillery,114,113,1,4,2,2,0,4,2080.5,2080.5,yes,column/line,1,0,2,Cooper,yes,T0,T4,in-build,reg-us-i-b4
 us-btty-cowan,Cowan's 1st New York Independent Battery,union,standalone,artillery,113,101,12,6,2,4,0,6,150.0,150.0,yes,column/line,2,2,5,Cowan,yes,T5,T4,in-build,reg-us-vi-b2
 us-btty-cushing,"Cushing's Battery A, 4th US Artillery",union,standalone,artillery,126,88,38,6,2,4,0,6,0.0,0.0,no,line/scattered,2,10,6,Cushing,yes,T5,T4,in-build,reg-us-ii-b5
 us-btty-dilger,"Dilger's Battery I, 1st Ohio Light Artillery",union,standalone,artillery,127,127,0,2,2,0,0,2,0.0,0.0,no,line,2,0,1,Dilger,yes,T1,T4,in-build,reg-us-xi-b3
-us-btty-dow,"Dow's 6th Maine Battery (F, 1st Maine Light)",union,standalone,artillery,103,103,0,2,2,0,0,2,0.0,0.0,no,line,1,0,5,Dow,yes,T1,T4,in-build,reg-us-ar-4v-1
+us-btty-dow,"Dow's 6th Maine Battery (F, 1st Maine Light)",union,standalone,artillery,103,90,13,4,3,1,0,4,0.0,0.0,no,line,2,0,5,Dow,yes,T1,T4,in-build,reg-us-ar-4v-1
 us-btty-edgell,Edgell's 1st New Hampshire Battery,union,standalone,artillery,111,111,0,2,2,0,0,2,0.0,0.0,no,line,2,0,1,Edgell,yes,T1,T4,in-build,reg-us-ar-3v-1
 us-btty-elder,"Elder's Battery E, 4th US Artillery",union,standalone,artillery,96,96,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,Elder,yes,T1,T4,in-build,reg-us-ha-1-5
-us-btty-fitzhugh,"Fitzhugh's Battery K, 1st New York Light Artillery (11th NY attached)",union,standalone,artillery,149,149,0,4,1,3,0,4,806.6,806.6,yes,column/line,1,0,1,Fitzhugh,yes,T0,T4,in-build,reg-us-ar-4v-5
+us-btty-fitzhugh,"Fitzhugh's Battery K, 1st New York Light Artillery (11th NY attached)",union,standalone,artillery,149,142,7,5,1,4,0,5,806.6,806.6,yes,column/line,2,0,1,Fitzhugh,yes,T0,T4,in-build,reg-us-ar-4v-5
 us-btty-graham,"Graham's Battery K, 1st US Artillery",union,standalone,artillery,144,144,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,Graham,yes,T1,T4,in-build,reg-us-ha-2-2
 us-btty-hall-2me,"Hall's 2nd Maine Battery (rear, withdrawn)",union,standalone,artillery,127,127,0,2,2,0,0,2,0.0,0.0,no,column,0,0,4,Hall,yes,T1,T2,in-build,reg-us-i-b1
-us-btty-hart,Hart's 15th New York Independent Battery,union,standalone,artillery,99,99,0,2,2,0,0,2,0.0,0.0,no,line,3,0,4,Hart,yes,T1,T4,in-build,reg-us-ar-1v-3
+us-btty-hart,Hart's 15th New York Independent Battery,union,standalone,artillery,99,99,0,2,2,0,0,2,0.0,0.0,no,line,4,0,4,Hart,yes,T1,T4,in-build,reg-us-ar-1v-3
 us-btty-hill-wv,"Hill's Battery C, 1st West Virginia Artillery",union,standalone,artillery,124,124,0,2,2,0,0,2,0.0,0.0,no,line,2,0,4,Hill,yes,T1,T4,in-build,reg-us-ar-3v-4
 us-btty-james,"James's Battery K, 4th US Artillery (Seeley's)",union,standalone,artillery,134,134,0,2,2,0,0,2,0.0,0.0,no,line,1,0,3,James,yes,T1,T4,in-build,reg-us-iii-b5
 us-btty-kinzie,"Kinzie's Battery K, 5th US Artillery",union,standalone,artillery,77,77,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Kinzie,yes,T1,T2,in-build,reg-us-xii-b4
 us-btty-mason,"Mason's Battery H, 1st US Artillery (Eakin's)",union,standalone,artillery,153,153,0,2,2,0,0,2,0.0,0.0,no,line,2,0,1,Mason,yes,T1,T4,in-build,reg-us-ar-1r-1
 us-btty-norton,"Norton's Battery H, 1st Ohio Light Artillery (Huntington's)",union,standalone,artillery,123,123,0,2,2,0,0,2,0.0,0.0,no,line,2,0,1,Norton,yes,T1,T4,in-build,reg-us-ar-3v-2
-us-btty-parsons,"Parsons's Battery A, 1st New Jersey Light Artillery",union,standalone,artillery,116,116,0,4,2,2,0,4,1578.9,1578.9,yes,column/line,1,0,1,Parsons,yes,T0,T4,in-build,reg-us-ar-4v-3
-us-btty-phillips,Phillips's 5th Massachusetts Battery (E),union,standalone,artillery,104,104,0,2,2,0,0,2,0.0,0.0,no,line,3,0,1,Phillips,yes,T1,T4,in-build,reg-us-ar-1v-1
+us-btty-parsons,"Parsons's Battery A, 1st New Jersey Light Artillery",union,standalone,artillery,116,107,9,5,2,3,0,5,1578.9,1578.9,yes,column/line,1,0,1,Parsons,yes,T0,T4,in-build,reg-us-ar-4v-3
+us-btty-phillips,Phillips's 5th Massachusetts Battery (E),union,standalone,artillery,104,104,0,2,2,0,0,2,0.0,0.0,no,line,4,0,1,Phillips,yes,T1,T4,in-build,reg-us-ar-1v-1
 us-btty-ricketts,"Ricketts's Batteries F & G, 1st Pennsylvania Light Artillery",union,standalone,artillery,144,144,0,2,2,0,0,2,0.0,0.0,no,line,2,0,1,Ricketts,yes,T1,T4,in-build,reg-us-ar-3v-3
 us-btty-rigby,"Rigby's Battery A, 1st Maryland Light Artillery",union,standalone,artillery,106,106,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Rigby,yes,T1,T2,in-build,reg-us-ar-4v-2
 us-btty-rittenhouse,"Rittenhouse's Battery D, 5th US Artillery (Hazlett's)",union,standalone,artillery,73,73,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,Rittenhouse,yes,T1,T4,in-build,reg-us-v-b4
 us-btty-rorty,"Rorty's Battery B, 1st New York Light Artillery",union,standalone,artillery,114,88,26,5,3,2,0,5,0.0,0.0,no,line/scattered,2,0,5,Rorty,yes,T0,T4,in-build,reg-us-ii-b1
 us-btty-rugg,"Rugg's Battery F, 4th US Artillery",union,standalone,artillery,96,96,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Rugg,yes,T1,T2,in-build,reg-us-xii-b3
-us-btty-sterling,Sterling's 2nd Connecticut Light Battery,union,standalone,artillery,106,106,0,2,2,0,0,2,0.0,0.0,no,line,1,0,2,Sterling,yes,T1,T4,in-build,reg-us-ar-2v-3
+us-btty-sterling,Sterling's 2nd Connecticut Light Battery,union,standalone,artillery,106,106,0,2,2,0,0,2,0.0,0.0,no,line,2,0,2,Sterling,yes,T1,T4,in-build,reg-us-ar-2v-3
 us-btty-stevens,Stevens's 5th Maine Battery (Whittier's),union,standalone,artillery,136,136,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,Stevens,yes,T1,T4,in-build,reg-us-i-b2
 us-btty-stewart,"Stewart's Battery B, 4th US Artillery",union,standalone,artillery,132,132,0,2,2,0,0,2,0.0,0.0,no,line,1,0,5,Stewart,yes,T1,T4,in-build,reg-us-i-b5
 us-btty-taft,Taft's 5th New York Independent Battery,union,standalone,artillery,146,146,0,2,2,0,0,2,0.0,0.0,no,line,2,0,1,Taft,yes,T1,T4,in-build,reg-us-ar-2v-4
 us-btty-thomas,"Thomas's Battery C, 4th US Artillery",union,standalone,artillery,115,115,0,2,2,0,0,2,0.0,0.0,no,line,1,0,2,Thomas,yes,T1,T4,in-build,reg-us-ar-1r-3
-us-btty-thompson,"Thompson's Batteries C & F, 1st Pennsylvania Light Artillery",union,standalone,artillery,105,105,0,2,2,0,0,2,0.0,0.0,no,line,1,0,3,Thompson,yes,T1,T4,in-build,reg-us-ar-1v-4
+us-btty-thompson,"Thompson's Batteries C & F, 1st Pennsylvania Light Artillery",union,standalone,artillery,105,105,0,2,2,0,0,2,0.0,0.0,no,line,2,0,3,Thompson,yes,T1,T4,in-build,reg-us-ar-1v-4
 us-btty-weir,"Weir's Battery C, 5th US Artillery",union,standalone,artillery,123,123,0,4,2,2,0,4,216.5,216.5,yes,column/line,1,0,1,Weir,yes,T0,T4,in-build,reg-us-ar-1r-4
 us-btty-wheeler,Wheeler's 13th New York Independent Battery,union,standalone,artillery,118,118,0,4,2,2,0,4,667.7,667.7,yes,column/line,1,0,1,Wheeler,yes,T0,T4,in-build,reg-us-xi-b2
 us-btty-wiedrich,"Wiedrich's Battery I, 1st New York Light Artillery",union,standalone,artillery,141,141,0,2,2,0,0,2,0.0,0.0,no,line,2,0,1,Wiedrich,yes,T1,T4,in-build,reg-us-xi-b1
@@ -279,7 +279,7 @@ reg-us-xii-hq,XII Corps headquarters (corps command),union,command,infantry,,,,,
 us-hall,Hall's Brigade,union,parent-brigade,infantry,920,555,365,5,1,4,0,5,60.9,0.0,no,line,0,4,4,Hall,yes,T5,T4,in-build,reg-us-ii-2-3
 us-stannard,Stannard's Vermont Brigade,union,parent-brigade,infantry,1950,1600,350,7,1,6,0,7,297.9,0.0,yes,line,0,3,6,Stannard,yes,T5,T4,in-build,reg-us-i-3-3
 us-webb,Webb's Brigade (Philadelphia Brigade),union,parent-brigade,infantry,1250,760,490,6,2,4,0,6,23.3,0.0,no,line,0,5,5,Webb,yes,T5,T4,in-build,reg-us-ii-2-2
-us-8oh,8th Ohio Infantry,union,standalone,infantry,209,170,39,3,3,0,0,3,219.5,64.0,yes,line/skirmish,1,0,2,8th Ohio,yes,T1,T4,in-build,
+us-8oh,8th Ohio Infantry,union,standalone,infantry,164,118,46,3,3,0,0,3,219.5,64.0,yes,line/skirmish,1,0,2,8th Ohio,yes,T1,T4,in-build,
 us-bartlett,"Bartlett's Brigade (2nd Bde, 1st Div, VI Corps)",union,standalone,infantry,1325,1325,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Bartlett,yes,T1,T2,in-build,reg-us-vi-1-2
 us-baxter,"Baxter's Brigade (2nd Bde, 2nd Div, I Corps)",union,standalone,infantry,800,800,0,4,3,1,0,4,1021.5,1021.5,yes,column/line,0,0,1,Baxter,yes,T1,T3,in-build,reg-us-i-2-2
 us-berdan,"Berdan's Brigade (2nd Bde, 1st Div, III Corps — Ward's)",union,standalone,infantry,1405,1405,0,2,2,0,0,2,0.0,0.0,no,column,0,0,1,Berdan,yes,T1,T2,in-build,reg-us-iii-1-2
@@ -319,7 +319,7 @@ us-nevin,"Nevin's Brigade (3rd Bde, 3rd Div, VI Corps — Wheaton's)",union,stan
 us-rice,"Rice's Brigade (3rd Bde, 1st Div, V Corps — Vincent's)",union,standalone,infantry,985,985,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Rice,yes,T1,T2,in-build,reg-us-v-1-3
 us-russell,"Russell's Brigade (3rd Bde, 1st Div, VI Corps)",union,standalone,infantry,1480,1480,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Russell,yes,T1,T2,in-build,reg-us-vi-1-3
 us-shaler,"Shaler's Brigade (1st Bde, 3rd Div, VI Corps)",union,standalone,infantry,1770,1770,0,4,3,1,0,4,1210.8,1210.8,yes,column/line,0,0,1,Shaler,yes,T0,T3,in-build,reg-us-vi-3-1
-us-sherrill,Sherrill's Brigade (Willard's),union,standalone,infantry,1510,800,710,5,2,3,0,5,0.0,0.0,no,line,1,0,3,Sherrill,yes,T0,T4,in-build,reg-us-ii-3-3
+us-sherrill,Sherrill's Brigade (Willard's),union,standalone,infantry,1510,800,710,6,3,3,0,6,70.2,70.2,no,line,1,0,3,Sherrill,yes,T0,T4,in-build,reg-us-ii-3-3
 us-smith,"Smith's Brigade (2nd Bde, 2nd Div, XI Corps)",union,standalone,infantry,1290,1290,0,2,2,0,0,2,0.0,0.0,no,line,0,0,6,Smith,yes,T1,T2,in-build,reg-us-xi-2-2
 us-smyth,Smyth's Brigade,union,standalone,infantry,1190,825,365,5,1,4,0,5,0.0,0.0,no,line,1,0,4,Smyth,yes,T0,T4,in-build,reg-us-ii-3-2
 us-sweitzer,"Sweitzer's Brigade (2nd Bde, 1st Div, V Corps)",union,standalone,infantry,995,995,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Sweitzer,yes,T1,T2,in-build,reg-us-v-1-2
