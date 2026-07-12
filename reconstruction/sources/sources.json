@@ -550,8 +550,21 @@
    "title": "Brig. Gen. Ambrose R. Wright's report, OR Series I Vol. 27 Part 2 (NPS reproduction)",
    "author": "Ambrose R. Wright",
    "year": 1863,
-   "url": "https://www.nps.gov/gett/learn/historyculture/official-report-of-brig-general-ambrose-wright.htm",
-   "editionNote": "Fetch-verified 2026-07-10. Gives 'about 5 p.m.' for the July 2 general-advance signal — ~1.5-2 h early against the modern clock for his own breakthrough; notoriously self-serving on depth of penetration. Report-nominal exemplar."
+   "url": "https://www.civilwar.com/official-record/931-gettysburg-campaign-part-ii/190305-622-series-i-volume-xxvii-ii-serial-44-gettysburg-campaign-part-ii.html",
+   "editionNote": "Fetch-verified 2026-07-11 at the page level (civilwar.com part-ii route, pp. 622-625 read; supersedes the 2026-07-10 NPS-transcription fetch). No. 539, dated September 28, 1863. July 2 keys: took command 7 a.m.; Anderson's en-echelon order 'about noon' ('each brigade of the division would begin the attack as soon as the brigade on its immediate right commenced the movement' - the division trigger verbatim); attacked 'about 5 p.m.' (report-nominal, profiled), advancing 'more than a mile' over the open plain under artillery; took the Emmitsburg road gun line near the Codori house; THE HIGH-WATER CLAIMS (carried as commander's account, conflict-recorded): 'complete masters of the field', 'the key, as it were, of the enemy's whole line'; Posey 'had not advanced' on his left (Bell sent for help, told to 'press on'); the right 'had not only not advanced across the turnpike, but had actually given way' [Perry's withdrawal, cross: or-27-2-lang]; 'a strong body of infantry under cover of a high ledge of rocks ... came upon my right and rear'; 'we abandoned our captured guns, faced about, and prepared to cut our way through the closing lines in our rear'; Col. Joseph Wasden (22nd GA) k near the turnpike; THE GUN COUNT (carried, contradicted by receiving-side battery records): 'over twenty pieces of artillery, all of which we were compelled to abandon' (3rd GA 11, 22nd GA 3, 48th GA 4, 2nd Bn 5-6); LOSS STATED 688 'in killed, wounded, and missing' (vs the p. 343 return 40/295/333 = 668 and the tablet's 146/394/333 = 873 - the three-reading EC6 conflict); 48th GA suffered most, its colors 'shot down no less than seven times, and were finally lost', Col. Gibson w. July 3: in line through the morning; late afternoon 'moved forward 500 or 600 yards, to cover the retreat of Pickett's division'; then by Lee's personal order rightward behind Wilcox.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 100,
+    "offsetEnvelope": [
+     75,
+     120
+    ],
+    "anchorsUsed": [
+     "CA-J2A-10"
+    ],
+    "assessment": "Stated 'about 5 p.m.' for the brigade's step-off in the division echelon whose ridge climax is CA-J2A-10 (19:00-19:15, sunset-adjacent); the step-off reads ~18:30-18:45 canonical: raw ~+100. The CSA road-front limb of the field-wide ED-58 class (beside Lang's 6 p.m. at ~+45..+60). The tablet's 'Advanced at 6 P.M.' is the familiar partial correction. Rule 4: display-only - CA-J2A-10's ruling already records this report as 'notoriously self-serving'.",
+    "confidence": "weak"
+   }
   },
   {
    "id": "or-27-1-buford",
@@ -852,7 +865,7 @@
    "author": "Addressing Gettysburg",
    "year": 2024,
    "url": "https://www.addressinggettysburg.com/confederate-order-of-battle/",
-   "editionNote": "Accessed 2026-07-10. Busey & Martin-type engaged strengths and armament as reproduced (the book itself remains unreachable - the standing busey-martin-2005 caveat applies; SECONDARY HOP flagged wherever cited). Used for: Eshleman's battalion 338 men/10 guns (1st Co. 77 men/1 Napoleon; 2nd 80/2 Napoleons+1 howitzer; 3rd 92/3 Napoleons; 4th 80/2 Napoleons+1 howitzer); Alexander's battalion 576 men/24 guns with per-battery figures (Moody 135, Woolfolk 103, Taylor 90, Parker 90, Jordan 78, Gilbert 71). Ashland armament discrepancy vs the park tablet (10-pdr vs 20-pdr Parrotts) recorded in the dossier. PASS-4 ADDITION (2026-07-11, the Kemper/Armistead morning-report sweep): the reproduction's Pickett-division engaged figures read - Garnett 1,459 (8Va 193, 18Va 312, 19Va 328, 28Va 333, 56Va 289), Kemper 1,634 (1Va 209, 3Va 322, 7Va 335, 11Va 359, 24Va 395), Armistead 2,055 (9Va 318, 14Va 422, 38Va 400, 53Va 435, 57Va 476), division 5,578. B&M-type hop flagged on every use (ED-38 pattern); no primary morning report for Kemper or Armistead exists in any OR page fetched across passes 1-4 (consistent with the Lee-Pickett suppression aftermath, or-27-3-lee-pickett) - the sweep is CLOSED as verified-negative for primaries."
+   "editionNote": "Accessed 2026-07-10. Busey & Martin-type engaged strengths and armament as reproduced (the book itself remains unreachable - the standing busey-martin-2005 caveat applies; SECONDARY HOP flagged wherever cited). Used for: Eshleman's battalion 338 men/10 guns (1st Co. 77 men/1 Napoleon; 2nd 80/2 Napoleons+1 howitzer; 3rd 92/3 Napoleons; 4th 80/2 Napoleons+1 howitzer); Alexander's battalion 576 men/24 guns with per-battery figures (Moody 135, Woolfolk 103, Taylor 90, Parker 90, Jordan 78, Gilbert 71). Ashland armament discrepancy vs the park tablet (10-pdr vs 20-pdr Parrotts) recorded in the dossier. PASS-4 ADDITION (2026-07-11, the Kemper/Armistead morning-report sweep): the reproduction's Pickett-division engaged figures read - Garnett 1,459 (8Va 193, 18Va 312, 19Va 328, 28Va 333, 56Va 289), Kemper 1,634 (1Va 209, 3Va 322, 7Va 335, 11Va 359, 24Va 395), Armistead 2,055 (9Va 318, 14Va 422, 38Va 400, 53Va 435, 57Va 476), division 5,578. B&M-type hop flagged on every use (ED-38 pattern); no primary morning report for Kemper or Armistead exists in any OR page fetched across passes 1-4 (consistent with the Lee-Pickett suppression aftermath, or-27-3-lee-pickett) - the sweep is CLOSED as verified-negative for primaries. PASS-7 ADDITION (2026-07-11): Union brigade engaged-strength reproductions read - Graham 1,516; Carr 1,718; Brewster 1,837; Burling 1,365; Day 1,574; Burbank 958; McCandless 1,243; Wheaton/Nevin 1,368; CSA - Wright 1,413 (3rd GA 441, 22nd GA 400, 48th GA 395, 2nd Bn 173), Perry 742 (2nd FL 242, 5th FL 321, 8th FL 176), Wilcox 1,726. All SECONDARY HOP per the standing caveat; the Union page (union-order-of-battle) verified serving the same B&M-type reproduction."
   },
   {
    "id": "or-27-1-hunt",
@@ -1395,7 +1408,7 @@
    "author": "U.S. War Department compilation (Guild medical-director statement + commanders' figures)",
    "year": 1863,
    "url": "https://www.civilwar.com/official-record/931-gettysburg-campaign-part-ii/190022-339-series-i-volume-xxvii-ii-serial-44-gettysburg-campaign-part-ii.html",
-   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com part-ii route, pp. 338-346 read in full). THE regiment-grain casualty primary for the assault column. Editorial headnote (p. 338, verbatim): where regimental sums disagree with brigade totals 'the discrepancy is due to disagreements between the detailed statement furnished by Surg. L. Guild ... and the numbers reported by brigade and other superior commanders'; 'the compilation can only be regarded as approximative. Several of the reports indicate that many of the \"missing\" were killed or wounded. Especially is this the case with Pickett's division.' Scope caution: per-regiment aggregates are k+w only for most infantry brigades (captured/missing pooled at brigade grain or absent). Key rows: Garnett 78/324/539=941 (regt k+w: 8Va 54, 18Va 87, 19Va 44, 28Va 77, 56Va 62; staff 1k); Armistead 88/460/643=1,191 (9Va 71, 14Va 108, 38Va 170, 53Va 104, 57Va 121; staff 1k); Kemper 58/356/317=731 (1Va 64, 3Va 67, 7Va 94, 11Va 109, 24Va 128; staff 1k/3w); Dearing bn 8/17/-=25 '*Not reported in detail'; TOTAL Pickett's division 232/1,157/1,490=2,888. Pettigrew's/Marshall's 190/915/-=1,105 (11NC 209, 26NC 588 [86k/502w], 47NC 161, 52NC 147; NO missing reported); Brockenbrough 25/123/-=148 (40Va 42, 47Va 48, 55Va 34, 22Va Bn 24); Archer's/Fry's 16/144/517=677 (13Ala 42, 5Ala Bn 26, 1Tenn 42, 7Tenn 23, 14Tenn 27); Davis 180/717/-=897 (2Miss 232, 11Miss 202, 42Miss 265, 55NC 198); Heth's division 411/1,905/534=2,850; Garnett's (arty) bn -/5/17=22 '*Not reported in detail' (cross-noted by the OR editors against the report's p. 654 figures); Lane 41/348/-=389 with footnote '+General Lane reports his entire loss at 660'; Scales 102/323/110=535 (13NC 126, 16NC 66, 22NC 89, 34NC 64, 38NC 79); Pender's division 262/1,312/116=1,690; McIntosh bn 7/25/-=32; Pegram bn 10/37/1=48; Wilcox 51/469/257=777 (8Ala 161*, 9Ala 58, 10Ala 104, 11Ala 75, 14Ala 48; *8Ala row rides the corps header line in the reproduction, read with care); Perry's/Lang's 33/217/205=455 (2Fla 81, 5Fla 75, 8Fla 94); Cabell bn PER-BATTERY (p. 338): Carlton 1/6=7, Fraser 4/14=18, McCarthy 2/3=5, Manly 1/6=7, total 8/29/-=37. Grand total 2,592/12,709/5,150=20,451 with the U.S. prisoner-record counter-note (12,227 names). PASS-4 ADDITIONS (pp. 342-345 re-read 2026-07-11): Poague's battalion row - batteries '*Not reported in detail', battalion TOTAL 2/24/6 = 32 (the tablet's figure matches exactly, ED-43 corroborated scope); Scales's brigade regiment rows (13th NC 126, 16th NC 66, 22nd NC 89, 34th NC 64, 38th NC 79; total row 102/323/110 = 535); Pender division total 262/1,312/116 = 1,690; Third Corps reserve artillery McIntosh 7/25/- = 32, Pegram 10/37/1 = 48; Second Corps reserve 'Brown's Battalion' (Dance's 1st Va Arty; batteries dashed) total 3/19/- = 22; Third Army Corps total 837/4,407/1,491 = 6,735. PASS-5 EXTRACTION (pp. 338-343): McLaws's division rows - Kershaw 115/483/32=630 (missing itemized, the wing's clean case), Semmes 55/284/[91 pooled]=430, Barksdale 105/550/[92 pooled]=747 (pooled figure confirmed EXACTLY by the brigade tablet's 105/550/92), Wofford 30/192/[112 pooled]=334; Hood's division rows - Law 74/276/[146 pooled]=496 (regiment rows k+w only: 4th AL 66, 15th AL 83, 44th AL 88, 47th AL 40, 48th AL 75), Robertson 84/393/[120 pooled]=597 (1st TX row transcribed inconsistently - 24k/54w vs aggregate 178, likely w=130 or 154; flagged), Anderson 105/512/[54 pooled]=671, Benning 76/299/[122 pooled]=497, Henry's bn 4/23/-=27, division 343/1,504/442=2,289; First Corps total 910/4,339/2,290=7,539. Second Corps artillery (the pass-4 standing item, CLOSED): Latimer's [Andrews's] battalion BY BATTERY - Brown's Chesapeake 4/12/0=16, Carpenter's Alleghany 5/19/0=24, Dement 1st MD 1/4/0=5, Raine Lee Battery 0/4/0=4, battalion 10/40/0=50; reserve: Brown's [Dance's 1st VA] 3/19/0=22, NELSON'S ROW PRINTS DASHES (an ED-49 rule-2 gap, not a zero); corps total 809/3,823/1,305=5,937."
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com part-ii route, pp. 338-346 read in full). THE regiment-grain casualty primary for the assault column. Editorial headnote (p. 338, verbatim): where regimental sums disagree with brigade totals 'the discrepancy is due to disagreements between the detailed statement furnished by Surg. L. Guild ... and the numbers reported by brigade and other superior commanders'; 'the compilation can only be regarded as approximative. Several of the reports indicate that many of the \"missing\" were killed or wounded. Especially is this the case with Pickett's division.' Scope caution: per-regiment aggregates are k+w only for most infantry brigades (captured/missing pooled at brigade grain or absent). Key rows: Garnett 78/324/539=941 (regt k+w: 8Va 54, 18Va 87, 19Va 44, 28Va 77, 56Va 62; staff 1k); Armistead 88/460/643=1,191 (9Va 71, 14Va 108, 38Va 170, 53Va 104, 57Va 121; staff 1k); Kemper 58/356/317=731 (1Va 64, 3Va 67, 7Va 94, 11Va 109, 24Va 128; staff 1k/3w); Dearing bn 8/17/-=25 '*Not reported in detail'; TOTAL Pickett's division 232/1,157/1,490=2,888. Pettigrew's/Marshall's 190/915/-=1,105 (11NC 209, 26NC 588 [86k/502w], 47NC 161, 52NC 147; NO missing reported); Brockenbrough 25/123/-=148 (40Va 42, 47Va 48, 55Va 34, 22Va Bn 24); Archer's/Fry's 16/144/517=677 (13Ala 42, 5Ala Bn 26, 1Tenn 42, 7Tenn 23, 14Tenn 27); Davis 180/717/-=897 (2Miss 232, 11Miss 202, 42Miss 265, 55NC 198); Heth's division 411/1,905/534=2,850; Garnett's (arty) bn -/5/17=22 '*Not reported in detail' (cross-noted by the OR editors against the report's p. 654 figures); Lane 41/348/-=389 with footnote '+General Lane reports his entire loss at 660'; Scales 102/323/110=535 (13NC 126, 16NC 66, 22NC 89, 34NC 64, 38NC 79); Pender's division 262/1,312/116=1,690; McIntosh bn 7/25/-=32; Pegram bn 10/37/1=48; Wilcox 51/469/257=777 (8Ala 161*, 9Ala 58, 10Ala 104, 11Ala 75, 14Ala 48; *8Ala row rides the corps header line in the reproduction, read with care); Perry's/Lang's 33/217/205=455 (2Fla 81, 5Fla 75, 8Fla 94); Cabell bn PER-BATTERY (p. 338): Carlton 1/6=7, Fraser 4/14=18, McCarthy 2/3=5, Manly 1/6=7, total 8/29/-=37. Grand total 2,592/12,709/5,150=20,451 with the U.S. prisoner-record counter-note (12,227 names). PASS-4 ADDITIONS (pp. 342-345 re-read 2026-07-11): Poague's battalion row - batteries '*Not reported in detail', battalion TOTAL 2/24/6 = 32 (the tablet's figure matches exactly, ED-43 corroborated scope); Scales's brigade regiment rows (13th NC 126, 16th NC 66, 22nd NC 89, 34th NC 64, 38th NC 79; total row 102/323/110 = 535); Pender division total 262/1,312/116 = 1,690; Third Corps reserve artillery McIntosh 7/25/- = 32, Pegram 10/37/1 = 48; Second Corps reserve 'Brown's Battalion' (Dance's 1st Va Arty; batteries dashed) total 3/19/- = 22; Third Army Corps total 837/4,407/1,491 = 6,735. PASS-5 EXTRACTION (pp. 338-343): McLaws's division rows - Kershaw 115/483/32=630 (missing itemized, the wing's clean case), Semmes 55/284/[91 pooled]=430, Barksdale 105/550/[92 pooled]=747 (pooled figure confirmed EXACTLY by the brigade tablet's 105/550/92), Wofford 30/192/[112 pooled]=334; Hood's division rows - Law 74/276/[146 pooled]=496 (regiment rows k+w only: 4th AL 66, 15th AL 83, 44th AL 88, 47th AL 40, 48th AL 75), Robertson 84/393/[120 pooled]=597 (1st TX row transcribed inconsistently - 24k/54w vs aggregate 178, likely w=130 or 154; flagged), Anderson 105/512/[54 pooled]=671, Benning 76/299/[122 pooled]=497, Henry's bn 4/23/-=27, division 343/1,504/442=2,289; First Corps total 910/4,339/2,290=7,539. Second Corps artillery (the pass-4 standing item, CLOSED): Latimer's [Andrews's] battalion BY BATTERY - Brown's Chesapeake 4/12/0=16, Carpenter's Alleghany 5/19/0=24, Dement 1st MD 1/4/0=5, Raine Lee Battery 0/4/0=4, battalion 10/40/0=50; reserve: Brown's [Dance's 1st VA] 3/19/0=22, NELSON'S ROW PRINTS DASHES (an ED-49 rule-2 gap, not a zero); corps total 809/3,823/1,305=5,937. PASS-7 ADDITION (2026-07-11, p. 343 Anderson-division block read): Wilcox 51/469/257=777, Mahone 8/55/39=102, Wright 40/295/333=668 (22nd GA 96, 48th GA 90, 2nd Bn 49; 3rd GA row unitemized), Perry 33/217/205=455 (2nd FL 81, 5th FL 75, 8th FL 94), Posey 12/71=83 (missing column absent - ED-49 rule 2 gap), Sumter Bn 30; division 147/1,128/840=2,115. NOTE: this division's Wright/Perry rows DO carry missing columns (unlike the Pickett/McLaws pooled pattern) - Wright 333 missing = the tablet's 333 EXACT while k/w diverge (40/295 vs 146/394): the three-reading conflict rides the Wright dossier."
   },
   {
    "id": "or-27-2-wilcox",
@@ -1427,7 +1440,7 @@
    "author": "David Lang",
    "year": 1863,
    "url": "https://www.civilwar.com/official-record/931-gettysburg-campaign-part-ii/190314-631-series-i-volume-xxvii-ii-serial-44-gettysburg-campaign-part-ii.html",
-   "editionNote": "Fetch-verified 2026-07-11 (pp. 631-633 read in full). Dated July 29, 1863. July 3 keys: at daylight ordered by Anderson to connect his right with Wilcox's left and 'conform my movements during the day to those of his brigade ... I would receive no further orders' (the standing-conformity trigger, EC4); ~7 a.m. moved up with Wilcox's left 'in front and at the foot of the hill upon which the batteries were in position', skirmishers advanced to the next crest; 'remained quietly until nearly 2 p.m., when the batteries opened a furious bombardment ... which lasted till nearly 4 p.m., when Pickett's division ... charged'; the echelon: 'Soon after General Pickett's troops retired behind our position, General Wilcox began to advance, and, in accordance with previous orders to conform to his movements, I moved forward also' (sequence: the supporting advance follows the repulse); advanced under artillery fire without meeting infantry until the woods at the foot of the heights; left flanked, 'certain annihilation', ordered retreat; 2nd Florida colors + a large number cut off and captured (the 16th Vermont's flank action object, cross: us-i-3-3-stannard.md); Capt. McCaslan (AAAG) killed during the retreat; Maj. Moore (2d Fla) wounded and captured, Capt. Gardner (5th Fla) wounded. Strength/loss primary: 'The brigade went into action near 700 strong, and lost ... 455 killed, wounded, and missing' (matches the p. 343 return 33/217/205=455); July 2 charge lost 'about 300' (=> July 3 share ~155 by subtraction, [B]-grade). July 2 arc: 6 p.m. advance on Wilcox's left, 8th Fla colors lost.",
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 631-633 read in full). Dated July 29, 1863. July 3 keys: at daylight ordered by Anderson to connect his right with Wilcox's left and 'conform my movements during the day to those of his brigade ... I would receive no further orders' (the standing-conformity trigger, EC4); ~7 a.m. moved up with Wilcox's left 'in front and at the foot of the hill upon which the batteries were in position', skirmishers advanced to the next crest; 'remained quietly until nearly 2 p.m., when the batteries opened a furious bombardment ... which lasted till nearly 4 p.m., when Pickett's division ... charged'; the echelon: 'Soon after General Pickett's troops retired behind our position, General Wilcox began to advance, and, in accordance with previous orders to conform to his movements, I moved forward also' (sequence: the supporting advance follows the repulse); advanced under artillery fire without meeting infantry until the woods at the foot of the heights; left flanked, 'certain annihilation', ordered retreat; 2nd Florida colors + a large number cut off and captured (the 16th Vermont's flank action object, cross: us-i-3-3-stannard.md); Capt. McCaslan (AAAG) killed during the retreat; Maj. Moore (2d Fla) wounded and captured, Capt. Gardner (5th Fla) wounded. Strength/loss primary: 'The brigade went into action near 700 strong, and lost ... 455 killed, wounded, and missing' (matches the p. 343 return 33/217/205=455); July 2 charge lost 'about 300' (=> July 3 share ~155 by subtraction, [B]-grade). July 2 arc: 6 p.m. advance on Wilcox's left, 8th Fla colors lost. PASS-7 ADDITION (2026-07-11, p. 631 read - the July 2 portion): morning move ~1.5 miles, formed behind a mile-wide open field; 'At 5 p.m.' the Longstreet-is-driving notice, 'at 6 p.m.' the advance on Wilcox's movement (stated clocks ~+45..+60 early vs the ~18:45-19:00 canonical - the brigade's July 2 clocks join the ED-58 field-wide class even though its July 3 clocks sit in the -53 LATE cluster: the same house's two reports of two days skew in OPPOSITE directions, the audit's sharpest single-source clock heterogeneity); 'a murderous fire of grape, canister, and musketry' at the first crest; charged at the double-quick past the guns, 'four or five pieces of cannon' taken but horses/limbers retained by the enemy (contrast Wright's 'over twenty'); halted at the base of the heights to reform; the aide's report that Wilcox was being forced back triggered the withdrawal; July 2 loss 'about 300'; THE 8th FLORIDA COLORS (both-sided): the Perry advanced tablet has 'the color bearer of the 8th Florida fell and its flag was lost' = Brewster's report names Sgt. Thomas Hogan (3rd Excelsior) taking 'the colors of the Eighth Florida Regiment' in the evening recharge.",
    "clockProfile": {
     "kind": "report-nominal",
     "offsetMinutes": -53,
@@ -1768,7 +1781,7 @@
    "author": "U.S. War Department compilation",
    "year": 1863,
    "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/188796-174-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
-   "editionNote": "Fetch-verified 2026-07-11 (pp. 174-176 read at regiment grain - the Union counterpart of the ANV return, THREE-DAY battle totals with a full k/w/captured-missing column set (unlike the ANV return's pooled/absent missing, ED-49's asymmetry runs the other way here). Key rows this pass: I Corps 3rd Div - Biddle's brigade 898 (80th NY 170, 121st Pa 179, 142nd Pa 211, 151st Pa 337), Stone's brigade 853 (143rd Pa 253, 149th Pa 336, 150th Pa 264), Stannard's 351 (13th Vt 123, 14th Vt 107, 16th Vt 119; the pass-1 figure re-verified), division aggregate 2,103. II Corps 2nd Div - Harrow 768 (19th Me 202?, 15th Ma 148, 1st Minn 224, 82nd NY 192 - brigade sums verbatim '10 off 137 men k; 46 off 527 men w; 1 off 47 men c/m'), WEBB 491 (69th Pa 137, 71st Pa 98, 72nd Pa 192, 106th Pa 64), Hall 377. II Corps 3rd Div - CARROLL 211 (14th Ind 31, 4th Oh 31, 8TH OHIO 102, 7th WV 47), Smyth 366. Scope note: three-day totals; day/episode splits require the unit reports (e.g. Webb's report 525 vs the return's 491 - conflict carried; 8th Ohio report 102 = return 102 exact). Public domain. PASS-5 EXTRACTION (pp. 179-180, V Corps rows): Vincent's brigade - 20th ME 29/91/5=125, 16th MI 23/34/3=60, 44th NY 26/82/3=111, 83rd PA 10/45/0=55, brigade 352; Weed's brigade - 140th NY 26/89/18=133 (aggregate reconciles exactly), 91st PA/146th NY/155th PA rows read with column-alignment noise (aggregates ~19/28/19 class; brigade total 200, 2nd Division total 1,029 - both canonical); Martin's artillery brigade - Battery D 5th US 7/6/0=13 (vs the tablet's 14: a return-vs-tablet conflict, ED-52 adopts the return). PASS-6 EXTRACTION (pp. 175, 177-180): II Corps 1st Div (Caldwell) blocks - Cross 330 (5th NH 80, 61st NY 62, 81st PA 62, 148th PA 125; report=return EXACT), Kelly 198 (28th MA 100, 63rd NY 23, 69th NY 25, 88th NY 28, 116th PA 22; report 202 carried), Zook/Fraser 358 (52nd NY 38, 57th NY 34, 66th NY 44, 140th PA 241), Brooke 389 (27th CT 37, 2nd DE 84, 64th NY 98, 53rd PA 80, 145th PA 90), division 1,275. III Corps 1st Div - Ward 781 (20th IN 156, 3rd ME 122, 4th ME 144-class [row read with column noise: k+w 70 + pooled captured ~74 - re-read flagged], 86th NY 66, 124th NY 90, 99th PA 110, 1st USSS 49, 2nd USSS 43), de Trobriand 490 (17th ME 133, 3rd MI 45, 5th MI 109, 40th NY 150, 110th PA 53; report=return EXACT), Burling 513; III Corps artillery - Clark 20, Winslow 18, SMITH'S 4TH NY 13 (2/10/1; report states 12 + one pooled missing), Bucklyn 30, Seeley 25 = 106. V Corps 1st Div - Tilton 125 (18th MA 54, 22nd MA 31, 1st MI 42, 118th PA 25; report 109 carried), Sweitzer 427 (9th MA 7, 32nd MA 80, 4th MI 165, 62nd PA 175), Vincent 352 + staff 1, division 904. WEED DIGIT-NOISE RE-READ (standing pass-5 item, CLOSED): p. 180 re-read gives clean aggregates 140th NY 133 / 146th NY 28 / 91st PA 19 / 155th PA 19 (sum 199 + staff 1 = brigade 200 canonical); the 146th/91st/155th COLUMN split still carries alignment noise (e.g. 146th read 4k/2w/22m vs the published 4k/24w shape) - aggregates firm, splits flagged."
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 174-176 read at regiment grain - the Union counterpart of the ANV return, THREE-DAY battle totals with a full k/w/captured-missing column set (unlike the ANV return's pooled/absent missing, ED-49's asymmetry runs the other way here). Key rows this pass: I Corps 3rd Div - Biddle's brigade 898 (80th NY 170, 121st Pa 179, 142nd Pa 211, 151st Pa 337), Stone's brigade 853 (143rd Pa 253, 149th Pa 336, 150th Pa 264), Stannard's 351 (13th Vt 123, 14th Vt 107, 16th Vt 119; the pass-1 figure re-verified), division aggregate 2,103. II Corps 2nd Div - Harrow 768 (19th Me 202?, 15th Ma 148, 1st Minn 224, 82nd NY 192 - brigade sums verbatim '10 off 137 men k; 46 off 527 men w; 1 off 47 men c/m'), WEBB 491 (69th Pa 137, 71st Pa 98, 72nd Pa 192, 106th Pa 64), Hall 377. II Corps 3rd Div - CARROLL 211 (14th Ind 31, 4th Oh 31, 8TH OHIO 102, 7th WV 47), Smyth 366. Scope note: three-day totals; day/episode splits require the unit reports (e.g. Webb's report 525 vs the return's 491 - conflict carried; 8th Ohio report 102 = return 102 exact). Public domain. PASS-5 EXTRACTION (pp. 179-180, V Corps rows): Vincent's brigade - 20th ME 29/91/5=125, 16th MI 23/34/3=60, 44th NY 26/82/3=111, 83rd PA 10/45/0=55, brigade 352; Weed's brigade - 140th NY 26/89/18=133 (aggregate reconciles exactly), 91st PA/146th NY/155th PA rows read with column-alignment noise (aggregates ~19/28/19 class; brigade total 200, 2nd Division total 1,029 - both canonical); Martin's artillery brigade - Battery D 5th US 7/6/0=13 (vs the tablet's 14: a return-vs-tablet conflict, ED-52 adopts the return). PASS-6 EXTRACTION (pp. 175, 177-180): II Corps 1st Div (Caldwell) blocks - Cross 330 (5th NH 80, 61st NY 62, 81st PA 62, 148th PA 125; report=return EXACT), Kelly 198 (28th MA 100, 63rd NY 23, 69th NY 25, 88th NY 28, 116th PA 22; report 202 carried), Zook/Fraser 358 (52nd NY 38, 57th NY 34, 66th NY 44, 140th PA 241), Brooke 389 (27th CT 37, 2nd DE 84, 64th NY 98, 53rd PA 80, 145th PA 90), division 1,275. III Corps 1st Div - Ward 781 (20th IN 156, 3rd ME 122, 4th ME 144-class [row read with column noise: k+w 70 + pooled captured ~74 - re-read flagged], 86th NY 66, 124th NY 90, 99th PA 110, 1st USSS 49, 2nd USSS 43), de Trobriand 490 (17th ME 133, 3rd MI 45, 5th MI 109, 40th NY 150, 110th PA 53; report=return EXACT), Burling 513; III Corps artillery - Clark 20, Winslow 18, SMITH'S 4TH NY 13 (2/10/1; report states 12 + one pooled missing), Bucklyn 30, Seeley 25 = 106. V Corps 1st Div - Tilton 125 (18th MA 54, 22nd MA 31, 1st MI 42, 118th PA 25; report 109 carried), Sweitzer 427 (9th MA 7, 32nd MA 80, 4th MI 165, 62nd PA 175), Vincent 352 + staff 1, division 904. WEED DIGIT-NOISE RE-READ (standing pass-5 item, CLOSED): p. 180 re-read gives clean aggregates 140th NY 133 / 146th NY 28 / 91st PA 19 / 155th PA 19 (sum 199 + staff 1 = brigade 200 canonical); the 146th/91st/155th COLUMN split still carries alignment noise (e.g. 146th read 4k/2w/22m vs the published 4k/24w shape) - aggregates firm, splits flagged. PASS-7 ADDITION (2026-07-11, pp. 177-180 re-read at brigade grain): III Corps - Graham 740 (6+61k/45+463w/6+159m; 141st PA row 149 = Birney's 149-of-200 EXACT; 114th PA k-column '9 officers/1 man' carries alignment noise, flagged), Ward 781, Carr 790, Brewster 778, Burling 513, division (Humphreys) 2,092 vs his stated 2,088 (ED-52: return adopted, report carried); V Corps - Day 382, Burbank 447, McCandless 155, Fisher 55 (sum 210 = Crawford's stated '20 officers and 190 men'); VI Corps 3rd Div 3rd Bde row beyond p. 180 (unfetched; the tablet's 53 stands as the working reading)."
   },
   {
    "id": "or-27-1-meade",
@@ -2245,6 +2258,229 @@
      "CA-J2A-3"
     ],
     "assessment": "Stated 'about 2 or 3 p.m.' for Hood's briefing, which preceded the ~16:30 step-off (CA-J2A-3, ED-53) by less than an hour on the deployment evidence: raw +60..+90 against a ~15:30-16:00 real briefing. The CSA limb of the field-wide early class beside the McLaws exemplar (ED-55). Rule 4 applies.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-1-birney",
+   "kind": "official_report",
+   "title": "Report of Maj. Gen. David B. Birney, First Division, Third Corps (OR 27/1 pp. 482-486)",
+   "author": "David B. Birney",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189104-482-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-11 (civilwar.com part-i route, pp. 482-485 read). Dated August 7, 1863. July 2 keys: relieved Geary 7 a.m., line 'resting its left on the Sugar Loaf Mountain'; the noon Berdan/3rd ME Pitzer Woods reconnaissance ('about 60, killed and wounded'); 'I now opened [say at 3.30 p.m.] with Clark's and Smith's batteries'; 'At 4 o'clock the enemy returned the artillery fire'; battery frame (Smith at the gorge/Sugar Loaf, Winslow right of Ward, Randolph/Seeley/Turnbull near the Emmitsburg road); Graham at the Peach Orchard with his right on the Emmitsburg road; THE SICKLES PIN: 'At 6 o'clock I found Major-General Sickles seriously wounded, and, at his request, took command of the troops'; Graham's brigade 'held the peach orchard until nearly dusk, when, finding the right unsupported, it fell back to the next ridge'; 'Major-General Hancock reached me about 7.30 o'clock'; GRAHAM PIN: 'wounded and fell into the hands of the enemy, with Lieutenant-Colonel Cavada'; the 141st PA 'lost, out of 200 taken into the fight, 149' (EXACT match to the p. 177 return row); 'hurled on my small division for three hours'; Ellis and Wheeler k 'with their crowns to the foe'; July 3 division under Ward in reserve; casualties '+Embodied in revised statement, p. 177'.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 30,
+    "offsetEnvelope": [
+     0,
+     45
+    ],
+    "anchorsUsed": [
+     "CA-J2A-2",
+     "CA-J2A-9"
+    ],
+    "assessment": "Three stated clocks: his batteries open 'say at 3.30 p.m.' and the enemy 'returned' at 4:00 (vs CA-J2A-2's ~15:45-16:20 two-pole: near-agreeing to ~+30 early), and the Sickles wounding at '6 o'clock' vs the CA-J2A-9 climax ~18:15-18:30 (+15..+30 early). MILD early skew - notably shallower than the southern-field brigade class (ED-58), consistent with a division/corps-command clock. Rule 4: display-only.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-1-tippin",
+   "kind": "official_report",
+   "title": "Report of Col. Andrew H. Tippin, 68th Pennsylvania Infantry (commanding regiment; senior at the Peach Orchard after Graham fell) (OR 27/1 pp. 498-499)",
+   "author": "Andrew H. Tippin",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189120-498-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 498-499 read). Keys: brigade 'deployed in line of battle by battalions, doubled on the center, my regiment being on the left', in rear of Clark's battery; 'ordered to lie down. We remained in this position nearly two hours, suffering severely from the destructive fire' (the pre-assault artillery endurance window, EC5); 'ordered to move my regiment forward into a peach orchard, and fronting a road running parallel with the enemy's front'; THE GRAHAM PIN (attacking-side of the brigade seam): 'Here I met General Graham, who ordered me at once to engage the enemy ... the gallant general was severely wounded'; officer-casualty list (McLearn k, Black and Reynolds k, Lt.-Col. Reynolds, Maj. Winslow w et al.). NO stated clock anywhere in the read - the brigade's clock rides Birney and the tablet.",
+   "clockProfile": {
+    "kind": "none",
+    "assessment": "No stated clock in the report (durations only: 'nearly two hours' under fire). Sequence-rich, clock-poor - tier D/B material."
+   }
+  },
+  {
+   "id": "or-27-1-humphreys",
+   "kind": "official_report",
+   "title": "Report of Brig. Gen. Andrew A. Humphreys, Second Division, Third Corps (OR 27/1 pp. 530-534)",
+   "author": "Andrew A. Humphreys",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189152-530-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 530-534 read). July 2 keys: bivouacked 1 a.m.; 9 a.m. Third Brigade + Smith's battery rejoined; 'shortly after midday, I was ordered to form my division in line of battle, my left joining the right of the First Division', right opposite Caldwell's left; the ~16:00 advance: moved forward so 'the first line ran along the Emmitsburg road a short distance behind the crest upon which that road lies' (Carr's first line, Brewster 'in line of battalions in mass 200 yards in rear', Burling 200 more); Seeley's K/4th US at the log house then moved left, 'soon silenced the battery in our front'; Turnbull's F&K/3rd US into the vacated position; his front 'merely made demonstrations' while the left was engaged; Sewell's report of two attacking lines forming; 'Major Burns' Fourth Excelsior to General Graham's brigade'; Christiancy sent to Hancock for support; after Sickles 'dangerously wounded and carried from the field', Birney's order to 'throw back my left, and form a line oblique to and in rear of the one I then held' - executed 'under a heavy fire of artillery and infantry'; THE FIGHTING WITHDRAWAL: withdrew to the ridge crest 'slowly, continuing the contest with the enemy, whose fire of artillery and infantry was destructive in the extreme'; 'formed on the left of General Hancock's troops' and joined the counterattack that 'drove [the enemy] from the field'; battery losses itemized (Seeley 2k/20w, Turnbull 9k/14w); STRENGTH/LOSS PRIMARY: into action ~5,000, loss 2,088 (171 officers + 1,917 men; missing 3 off + 263 men 'the greater part of whom were probably wounded; some were killed' - his own missing-scope caveat); Burling's detachment loss 430 k+w stated at division grain.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -15,
+     30
+    ],
+    "anchorsUsed": [
+     "CA-J2A-2",
+     "CA-J2A-9"
+    ],
+    "assessment": "One stated afternoon clock: the advance to the Emmitsburg road 'about 4 p.m.' - the movement that put the division on the road as/just before Longstreet's artillery opened (CA-J2A-2 ~15:45-16:20 two-pole; CA-J2A-1's salient complete ~15:30). Reads near-agreeing to slightly early - the division-grain clocks on this front do NOT share the southern-field brigade skew (recorded as an ED-58 counter-class finding beside Carr's 4.08). Rule 4: display-only.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-1-carr",
+   "kind": "official_report",
+   "title": "Report of Brig. Gen. Joseph B. Carr, First Brigade, Second Division, Third Corps (OR 27/1 pp. 542-544)",
+   "author": "Joseph B. Carr",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189164-542-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 542-544 read). July 2 keys: arrived '1.30 a.m. on Thursday, July 2'; ordered to the front 12.30 p.m., formed on the 'prolongation of a line composed of the First Division'; THE MINUTE-PRECISION CLOCK: 'at 4.08 p.m.' advanced the line 300 yards (to the Emmitsburg road - the tablet's 'between 3 and 4 P.M.' is its rounding); the flanking attack and the withdrawal under Birney's order; the counterattack retaking the ground. July 3: 6 a.m. to the rear for ammunition; '3.22 p.m.' ordered to the center to support the Second Corps (the repulse hour); dusk return. Casualty basis: the p. 178 return row 790 (report defers to the revised statement).",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 0,
+    "offsetEnvelope": [
+     -15,
+     15
+    ],
+    "anchorsUsed": [
+     "CA-J2A-2",
+     "CA-J3A-9"
+    ],
+    "assessment": "Two minute-precision stated clocks: 4.08 p.m. for the 300-yard advance (against the CA-J2A-2 window and Humphreys's 'about 4 p.m.' - agreeing) and 3.22 p.m. July 3 for the move to the center (against the ~15:25 repulse climax CA-J3A-9 - agreeing). The Buford-dispatch-style precision suggests a kept headquarters clock; the cleanest brigade-grain agreeing profile on the July 2 field, and the strongest counter-exemplar to the ED-58 early class. Rule 4: display-only.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "id": "or-27-1-brewster",
+   "kind": "official_report",
+   "title": "Report of Col. William R. Brewster, Second (Excelsior) Brigade, Second Division, Third Corps (OR 27/1 pp. 558-560)",
+   "author": "William R. Brewster",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189180-558-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 558-559 read). Dated August 15, 1863. July 2 keys: 'At about 1 o'clock ... move the brigade to the front, and form line of battle in rear of the First Brigade'; 73rd NY advanced to the hill crest 250 yards ahead; 72nd/71st NY to left/right of the First Brigade, 70th in reserve; 'At 4 p.m.' advanced - 'exposed to a most terrible fire from the enemy's artillery on our left, which was most destructive'; 'about 5.30 p.m.' the 4th Excelsior sent 'to the support of General Graham's brigade' (the Humphreys/Burns order, both ends now primary); the collapse: 'the enemy advanced upon us in great force, pouring into us a most terrific fire of artillery and musketry, both upon our front and left flank'; withdrew 'in good order, but with terrible loss'; THE COLORS EVENT: Brewster with 'about 150 men, from the Second, Third, Fourth, Fifth, and One hundred and twentieth Regiments' recharged, 'recapturing them, taking from one the colors of the Eighth Florida Regiment' - Sgt. Thomas Hogan (3rd Excelsior) the captor (BOTH-SIDED with Lang's report and the Perry advanced tablet's 'the color bearer of the 8th Florida fell and its flag was lost'). July 3: battery support under severe artillery fire. CASUALTY STATEMENT 778 (12+118 k / 50+523 w / 75 m) - EXACT triple with the tablet 778 and the p. 178 return row 778.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 45,
+    "offsetEnvelope": [
+     30,
+     75
+    ],
+    "anchorsUsed": [
+     "CA-J2A-9"
+    ],
+    "assessment": "Stated 'about 5.30 p.m.' for the 4th Excelsior's dispatch to Graham, an event tied to the Peach Orchard crisis onset (~18:00-18:15, CA-J2A-9): raw ~+45. His 4 p.m. advance clock agrees with Carr/Humphreys. A mixed profile - the crisis clock carries the early class, the routine clocks do not. Rule 4: display-only.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-1-burling",
+   "kind": "official_report",
+   "title": "Report of Col. George C. Burling, Third Brigade, Second Division, Third Corps (OR 27/1 pp. 570-571)",
+   "author": "George C. Burling",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189192-570-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 570-571 read). July 2 keys: 'At 1.30 a.m., July 2, I received orders from General Meade to immediately rejoin the corps' (from the Emmitsburg detachment); massed in column of regiments, then reserve behind the First and Second Brigades; enemy artillery 'on our left flank, at a distance of not more than 1,000 yards'; THE DISPERSAL LEDGER (EC4 as detachments): 2nd NH + 7th NJ to Graham at the Peach Orchard; 5th NJ to the picket/Seeley support; the strongest regiment (6th NJ) to Ward's front; 'The Eighth New Jersey Volunteers was taken from me without my knowledge'; left with the 115th PA '(about 140 soldiers)' and 'reported to General Humphreys for instructions, remaining with him for some time'; collected retiring colors; 'we lay on our arms until daylight of the 3d'. July 3: rear, then right 'to support batteries' under severe artillery fire. CASUALTY STATEMENT 513 - EXACT triple with the tablet 513 and the p. 178 return row 513; 2nd NH heaviest at 193; Lt. Henry R. Clark (ambulance officer) mw 'died on the field'.",
+   "clockProfile": {
+    "kind": "none",
+    "assessment": "One stated clock (the 1.30 a.m. Meade order - night march, no chain anchor); the afternoon record is triggers and detachments without clocks. Tier D material by construction."
+   }
+  },
+  {
+   "id": "or-27-1-ayres",
+   "kind": "official_report",
+   "title": "Report of Brig. Gen. Romeyn B. Ayres, Second Division, Fifth Corps (OR 27/1 pp. 634-635)",
+   "author": "Romeyn B. Ayres",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189256-634-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 634-635 read). Dated July 28, 1863, camp near Warrenton. July 2 keys: marched forward the night of July 1-2 on the Gettysburg-Hanover road, formed 'in rear of and facing that road'; Third Brigade (Weed) detached to 'a rocky hill (usually called Round Top hill) of great importance'; the First and Second Brigades (Day/Burbank) 'ordered to advance and carry a point some 250 yards in advance' - 'crossing the intermediate swampy ground rapidly, and forming on the left of a division of the Second Corps [Caldwell's]'; 'immediately the troops became actively engaged with the enemy in the woods'; THE WITHDRAWAL DECISION: on the collapse to his right 'I immediately ordered the two brigades to face about and move to the right and rear, and form on the general line of battle'; 'the fight was virtually over, the enemy having failed to break the general line of battle'. No stated clocks. Casualty basis: the p. 179 return rows (Day 382, Burbank 447).",
+   "clockProfile": {
+    "kind": "none",
+    "assessment": "No stated clock in the Gettysburg narrative; the division's timing rides the Wheatfield wave record (ED-57 W3-W4) and Burbank's stated 5 p.m."
+   }
+  },
+  {
+   "id": "or-27-1-day",
+   "kind": "official_report",
+   "title": "Report (forwarding letter) of Col. Hannibal Day, First Brigade, Second Division, Fifth Corps (OR 27/1 p. 636)",
+   "author": "Hannibal Day",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189258-636-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-11 (p. 636 read). Dated July 28, 1863. A FORWARDING COVER, not a narrative: 'In forwarding the report of regimental commanders ... although not called on myself for a report, I have the honor to say that among casualties not included in the reports of battalion commanders my acting assistant adjutant-general, Captain S. Van Rensselaer [was wounded]'. The brigade's narrative record lives in Ayres's division report and the regular regimentals (No. 205 Sheridan/3rd US - commander absent, Freedley w commanding in action, 4+8k/60w/3m; No. 206 Adams/4th US 'broke camp at 4 o'clock' July 2). Verified-negative class at the brigade echelon for EC5 narrative.",
+   "clockProfile": {
+    "kind": "none",
+    "assessment": "No narrative, no clock - a forwarding cover. The brigade clock rides Ayres/Burbank and the wave record."
+   }
+  },
+  {
+   "id": "or-27-1-burbank",
+   "kind": "official_report",
+   "title": "Report of Col. Sidney Burbank, Second Brigade, Second Division, Fifth Corps (OR 27/1 pp. 644-645)",
+   "author": "Sidney Burbank",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189266-644-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 644-645 read). Dated July 21, 1863. July 2 keys: arrived morning July 2, formed 'left resting on the right of the Twelfth Army Corps', advanced slowly through thick woods behind skirmishers, then withdrawn to a rear position; 'about 5 p.m., when, during a heavy cannonading, I received orders to advance, and the brigade took a route to the left' (the stated clock, +75..+100 early against the W3-W4 window); deployed 'left resting on a battery then in position and its right extending back into the woods'; THE ADVANCE: 'to the foot of the hill and out of the woods to the edge of a wide marsh', crossed 'at double-quick', ascended the opposite crest to 'a fence and stone wall on the edge of the woods'; THE FLANK CRISIS: 'the enemy was seen ... moving through a wheat-field to our rear'; ordered to retire - the withdrawal exposed the line 'to a heavy fire on both flanks', losses 'very severe'; STRENGTH/OFFICER PRIMARY: went in 'with less than 900 muskets'; of 80 officers, 40 casualties ('7 killed and 33 wounded, 1 mortally ... since dead'); July 3 held in readiness, 'was not engaged again'. Return row 447 (p. 179) = tablet 447 EXACT.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 80,
+    "offsetEnvelope": [
+     60,
+     105
+    ],
+    "anchorsUsed": [
+     "CA-J2A-8"
+    ],
+    "assessment": "Stated 'about 5 p.m.' for the advance order that put the regulars into the Wheatfield ground during waves 3-4 (~18:15-18:40 by the ED-57 record, on CA-J2A-8's confirmed start): raw ~+80. The V Corps regulars join the field-wide ED-58 early class beside Tilton +75 and Kershaw +90. Rule 4: display-only.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-1-crawford",
+   "kind": "official_report",
+   "title": "Report of Brig. Gen. Samuel W. Crawford, Third Division (Pennsylvania Reserves), Fifth Corps (OR 27/1 pp. 652-656)",
+   "author": "Samuel W. Crawford",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189274-652-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 653-655 read). July 2 keys: position 'rocky ridge, wooded at the top' fronting the marshy Plum Run ground with 'a low stone wall' beyond; Fisher's Third Brigade detached leftward; THE CHARGE: 'Uncovering our front, I ordered an immediate advance. The command advanced gallantly with loud cheers. Two well-directed volleys were delivered upon the advancing masses of the enemy, when the whole column charged at a run down the slope, driving the enemy back across the space beyond' and 'across the stone wall, for the possession of which there was a short but determined struggle'; 'I directed Colonel McCandless to hold the line of the stone wall and the woods on the right'; Fisher + 20th ME to Big Round Top. July 3: 'At 5 o'clock on the 3d, I received orders from General Sykes ... to advance' - the sweep that hit 'one brigade of the enemy, commanded by brigadier-General George T. Anderson' [tablet/report class attributes the collision to Benning's 15th GA - the McCandless dossier carries the misattribution note], 'completely routing them, taking over 200 prisoners, one stand of colors belonging to the Fifteenth Georgia'; recovered 'one 12-pounder Napoleon gun', three caissons, 'upward of 7,000 stand of arms', and 'all of the ground lost the previous day'; Col. Charles Fred. Taylor (Bucktails) k. DIVISION LOSS STATED: '20 officers and 190 men, 3 only missing' (= the return's McCandless 155 + Fisher 55).",
+   "clockProfile": {
+    "kind": "none",
+    "assessment": "The July 2 charge is unclocked in the read pages (trigger: the retiring V Corps units cleared his front - the ED-57 W5 seam); the one stated clock is July 3's 5 a.m. Sykes order, which no chain anchor yet covers. Rule 4 would apply regardless."
+   }
+  },
+  {
+   "id": "or-27-1-mccandless",
+   "kind": "official_report",
+   "title": "Report of Col. William McCandless, First Brigade, Third Division, Fifth Corps (OR 27/1 pp. 657-658)",
+   "author": "William McCandless",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189279-657-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-11 (p. 657 read). No. 219, dated July 9, 1863. July 2 keys: 'the command arrived on the field about 1 p.m. of the 2nd instant, and at 5 p.m. was assigned a position near the left' (stated clock, early class); 'Our first position was naturally strong, being a rocky, wooded hillside, with good cover, sloping steeply down to a plain, which extended from the base about 700 yards to a stone wall' (the charge geometry primary - 700 yards to the wall); THE CHARGE: 'the brigade advanced in gallant style, the first line delivering one volley; then the whole brigade charged at a full run down the hillside and across the plain, driving the advancing masses of the enemy back upon the stone wall'; Col. Charles F. Taylor k leading the Bucktails. July 3: the sweep - 'capturing nearly 200 prisoners (among whom was a lieutenant-colonel), also a stand of colors' [15th GA]. Return row 155 (p. 180) = tablet 155 EXACT.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 75,
+    "offsetEnvelope": [
+     45,
+     105
+    ],
+    "anchorsUsed": [
+     "CA-J2A-8",
+     "CA-J2A-11"
+    ],
+    "assessment": "Stated 'at 5 p.m. was assigned a position near the left' for a posting that preceded the W5 charge (~19:15-19:30, bracketed by CA-J2A-8 downstream and the CA-J2A-11 sunset pin); the assignment itself is plausibly ~18:00-18:30 canonical: raw ~+60..+90. Joins the ED-58 field-wide class. Rule 4: display-only.",
+    "confidence": "weak"
+   }
+  },
+  {
+   "id": "or-27-1-nevin",
+   "kind": "official_report",
+   "title": "Report of Col. David J. Nevin, Third Brigade, Third Division, Sixth Corps (OR 27/1 pp. 684-685)",
+   "author": "David J. Nevin",
+   "year": 1863,
+   "url": "https://www.civilwar.com/official-record/930-gettysburg-campaign-part-i/189306-684-series-i-volume-xxvii-i-serial-43-gettysburg-campaign-part-i.html",
+   "editionNote": "Fetch-verified 2026-07-11 (pp. 684-685 read). No. 234, dated July 5, 1863 (a FIVE-DAY-LATENCY report - the freshest brigade report on this field). Keys: the forced march primary - left Manchester 9 p.m. July 1, 'passed through Littlestown, Pa.' 8 a.m., halted 2 p.m. 'within 2 miles of Cemetery Hill, having marched nearly 34 miles within seventeen hours'; 'At 4.30 p.m. we were hastily marched forward and to the left of Rocky Hill {Round Top} the extreme left of our line, to support the lines of the Second and Fifth Corps'; THE W5 RECEIVING STATE: 'had barely gotten into position when all the troops in front, excepting two regiments of the Pennsylvania Reserves, were driven back and up the hill, retreating irregularly through and past our line'; three regiments advanced supported by the 98th PA, 'delivered two volleys into the ranks of the advancing rebels' then 'charged their column, breaking the same and driving them in disorder down the hill, recovering in the charge two light 12-pounder brass pieces' (the gun-recovery cross-credit - see the dossier); crossed 'a narrow swamp', halted 100 yards beyond, 'left resting at the foot of a small hill'. July 3: 10 a.m. reconnaissance repulsed; 2 p.m. shelled; 6 p.m. supported Crawford's advance, 'recapturing artillery'. July 4: 9 a.m. Sykes reconnaissance support.",
+   "clockProfile": {
+    "kind": "report-nominal",
+    "offsetMinutes": 75,
+    "offsetEnvelope": [
+     45,
+     120
+    ],
+    "anchorsUsed": [
+     "CA-J2A-11"
+    ],
+    "assessment": "Stated 'At 4.30 p.m. hastily marched forward' for the move onto the LRT north slope that ended 'barely gotten into position' when the W4 collapse swept past - canonical ~18:45-19:15 against the CA-J2A-11-pinned W5 charge: raw ~+75 (up to +120 at the envelope edge). VI Corps joins the ED-58 field-wide class - the third corps on the Union side to carry it. Rule 4: display-only.",
     "confidence": "weak"
    }
   }
