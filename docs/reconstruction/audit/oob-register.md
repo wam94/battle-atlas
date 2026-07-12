@@ -19,6 +19,26 @@ ruling (full-battle research upfront, phased authoring).
 | Command entries | 10 (Artillery Reserve park; Provost; Chief of Artillery [pass 1]; II Corps HQ, 2nd Div II Corps, 3rd Div II Corps, 3rd Div I Corps [pass 5]; 2nd Div III Corps [pass 7]; XII Corps HQ, 2nd Div XII Corps [pass 8]) | 6 (First Corps artillery command [pass 1]; Pickett's Div, Heth's Div, Pender's Div, Second Corps artillery command [pass 5]; Johnson's Div [pass 8]) |
 | **Total register entries** | **150** | **135** (285 overall) |
 
+**Note (pass 12, honesty flag):** this counts table was last reconciled at
+pass 8 and has not tracked the I Corps/XI Corps command rows added at pass
+10 (`reg-us-i-hq`, `reg-us-xi-hq`) or `reg-us-vi-hq` added this pass (the
+VI Corps cheap batch, §"Pass 12" below) — the machine-readable
+`oob-register.json`'s own `stats` block is authoritative (**288 total
+entries** as of this pass; union command entries 13) and this table is
+flagged stale rather than silently corrected without a full pass-by-pass
+reconciliation (a pass-13 register-maintenance item).
+
+## Pass 12 addition
+
+- **`reg-us-vi-hq`** (VI Corps headquarters, corps command) — added for
+  the VI Corps cheap batch (`docs/reconstruction/audit/dossier-pass-12.md`
+  §3); dossier: `reconstruction/dossiers/us-vi-hq-sedgwick.md`.
+- **Battery register triage** (the ~136-battery tail): every battery
+  entry in `oob-register.json` gained a `triage` object (disposition +
+  reason + `coveredBy`) this pass — see
+  `docs/reconstruction/audit/dossier-pass-12.md` §4 for the method and
+  summary counts.
+
 Regiments enumerated: 478. Cast status: **148 entries matched to in-build
 unit ids** in `app/Assets/Battle/gettysburg-july3.json`; **134 not-yet-cast**
 (the eight command rows flagged by dossier passes 3-4 — Pickett, Heth,

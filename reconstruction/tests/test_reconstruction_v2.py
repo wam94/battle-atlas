@@ -128,6 +128,26 @@ def test_committed_clock_profiles_present(corpus):
     assert by["stone-sentinels"]["kind"] == "tablet-adjudicated"
 
 
+def test_clock_profile_anchors_used_admits_split_anchor_ids(mutable):
+    """Pass-11 flagged follow-up, closed pass 12: ED-66 split CA-J1M-4 into
+    CA-J1M-4a/4b, but the anchorsUsed pattern only admitted bare-digit anchor
+    ids. A profile citing the split ids must validate cleanly."""
+    for s in mutable.sources["sources"]:
+        if s["id"] == "jacobs-1864":
+            s["clockProfile"]["anchorsUsed"] = ["CA-J1M-4a", "CA-J1M-4b", "CA-J3A-1"]
+            break
+    assert validate_corpus(mutable) == []
+
+
+def test_clock_profile_anchors_used_still_rejects_malformed_ids(mutable):
+    for s in mutable.sources["sources"]:
+        if s["id"] == "jacobs-1864":
+            s["clockProfile"]["anchorsUsed"] = ["CA-J1M-"]
+            break
+    errs = validate_corpus(mutable)
+    assert any("anchorsUsed" in e for e in errs)
+
+
 def test_time_envelope_ordering_enforced(mutable):
     for c in mutable.claims["claims"]:
         if "time" in c:

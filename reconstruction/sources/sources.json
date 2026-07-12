@@ -3536,7 +3536,7 @@
           "CA-J1P-1",
           "CA-J1P-4"
         ],
-        "assessment": "EARLY LEAN NOTED: his 1.30 flanking-line clock reads ~30 early against CA-J1P-1's 14:00 tablet but AGREES with Stone's independent 1.30 across corps (the ED-69 candidate pair); his 4 p.m. collapse clock agrees with the tablet exactly. Offset set between the two readings; profile revisable on the ED-69 ruling.",
+        "assessment": "EARLY LEAN, recorded per ED-69 (adopted 2026-07-12): his 1.30 flanking-line clock reads ~30 early against CA-J1P-1's 14:00 tablet-adopted time but AGREES with Stone's independent 1.30 across corps (the CA-J1P-1 interior ladder); his 4 p.m. collapse clock agrees with the tablet exactly. ED-69 annotates the ladder and holds CA-J1P-1 at 14:00 (ED-25 rule 4: report-nominal clocks do not move an anchor); offset set between the two readings.",
         "confidence": "medium"
       }
     },
@@ -3616,7 +3616,7 @@
           "CA-J1P-1",
           "CA-J1M-7"
         ],
-        "assessment": "EARLY LEAN NOTED like Dobke: 1.30 grand-advance vs the 14:00 tablet; his 11:00 and 12-1 readings agree with the independent ladder. The two 1.30s are cross-corps independent - the ED-69 candidate's evidence pair; profile revisable on the ruling.",
+        "assessment": "EARLY LEAN, recorded per ED-69 (adopted 2026-07-12), like Dobke: 1.30 grand-advance vs CA-J1P-1's 14:00 tablet-adopted time; his 11:00 and 12-1 readings agree with the independent ladder. The two 1.30s are cross-corps independent, now the CA-J1P-1 interior ladder's early rung (ED-69 annotates, does not move the anchor; ED-25 rule 4).",
         "confidence": "medium"
       }
     },

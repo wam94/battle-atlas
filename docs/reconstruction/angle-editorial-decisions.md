@@ -1637,6 +1637,97 @@ class). NOT a resolution.
 
 ---
 
+## Dossier pass 11 adoption rulings (ED-69 … ED-71) — 2026-07-12
+
+Owner ruling (standing adopt-and-adjust doctrine): the ED candidates
+proposed by dossier pass 11 (`docs/reconstruction/audit/dossier-pass-11.md`
+§5, drafted on branch audit-dossiers-11) are ADOPTED as recorded below,
+executed at the start of dossier pass 12 (branch audit-dossiers-12). No
+renumbers. **No anchor moves** — ED-69 is an annotation ruling under ED-25
+rule 4 (both new primaries are report-nominal-class, so the ladder is
+recorded, not promoted to a move); ED-70 is a basis upgrade in the ED-62/
+ED-67 pattern; ED-71 is a rule of computation, generalizing ED-49/ED-52 to
+a case those rulings did not anticipate (the printed figure fails its OWN
+arithmetic, not just a rival source's). Validators green after the edit.
+
+### ED-69 — The CA-J1P-1 early-component annotation (no move)
+
+Pass 11 landed a two-independent-primary early pole — Roy Stone "At about
+1.30 p.m. the grand advance of the enemy's infantry began" and Dobke (45th
+NY) "At about 1.30 p.m. a long line of the enemy moved on the extreme
+right of the First Corps" — a cross-corps agreement sitting 30 minutes
+ahead of the adopted 14:00 tablet reading, inside an interior ladder
+(Coulter 12:30 general firing → Doles ~13:00 formation → Stone/Dobke 13:30
+→ tablet 14:00 adopted → Hill ~14:30 corps retrospective).
+
+**Canonical choice:** CA-J1P-1 KEEPS **14:00 adopted, envelope 13:30–14:45
+unchanged** (the 13:30 pole already sits inside the standing envelope), and
+gains the full interior ladder as recorded structure — the same annotation
+treatment ED-65 gave CA-J3M-1's opening cluster. Stone's and Dobke's
+clockProfiles resolve from "pending revision" to a named early-lean class
+(**report-nominal, offset −20, envelope [−45, 10], medium confidence** — the pass-11
+provisional figures, now final) — descriptive of the skew, not
+anchor-moving, per ED-25 rule 4. **Rationale:** both primaries are
+report-nominal kind (a Union brigade commander's after-action narrative
+and a regimental commander's, both written after the fact); rule 4 exists
+exactly for this shape of evidence — real, cross-corps, and still not
+promoted to redefine an anchor a tablet-adjudicated reading already
+occupies within its own envelope. **Alternative rejected:** widening the
+front envelope to 13:30 flush with the pole — the envelope already covers
+13:30; nothing about the pole falls outside the standing bracket, so a
+widen-only move would edit metadata for a case already inside tolerance.
+
+### ED-70 — The CA-J1P-5 cross-line basis upgrade (no move)
+
+**Canonical choice:** CA-J1P-5's evidence basis upgrades from tablet +
+Pfanz-via-Wikipedia to the **Perrin-vs-receiving-cluster cross-line
+pair** as its primary spine — Perrin ("I remained in this position
+probably until after 4 o'clock, when I was ordered by General Pender to
+advance") against the four-source receiving cluster (I Corps tablet "At
+4 P.M. the Corps retired"; Dobke "about 4 p.m., when the First Corps, on
+our left, gave way"; Jacobs "At about 4 o'clock the regiment rallied";
+Chapman Biddle "compelled about 4 p.m. to retire") — the same
+cross-line-agreement pattern the chain now runs on at CA-J1M-4b/CA-J1P-3.
+Robinson's rear-guard "until nearly 5 p.m." is added as the recorded
+**back-edge tail**, extending the anchor's documented activity without
+moving its adopted time. **Adopted time and envelope UNCHANGED**
+(~16:00–16:30, 15:45–16:45) — the pair already sits inside the standing
+bracket. **Rationale:** ED-62's discipline exactly — an executor-sourced
+basis upgrade on an anchor whose adopted arithmetic is untouched;
+Robinson's tail is exactly the kind of negative-space fact (how late the
+position was actually held) the executor-first doctrine exists to surface.
+
+### ED-71 — The failed-row-arithmetic rule (extends ED-49/ED-52)
+
+Pass 11's cheap-cell re-reads surfaced two return rows that fail their OWN
+printed arithmetic in both fetch channels: Iverson's total row
+(130+328+308 = 766 by column sum, vs the row's printed total of 820) and
+the 57th NC aggregate (the printed "623" fails quadruple column
+cross-checks that force 62). Neither ED-49 (return-vs-report scope) nor
+ED-52 (report-vs-return conflict) covers a printed table disagreeing with
+itself.
+
+**Canonical choice:** where a printed return row fails its own row/column
+arithmetic and the failure reproduces in two independent fetch channels
+(verified-not-OCR), the audit (a) adopts the **multiply-cross-checked
+arithmetic reconstruction** as the basis for any EC6 computation that
+depends on the row, (b) carries the **printed reading verbatim** on the
+record as a first-class conflict component (never silently corrected
+away), and (c) tags the cell class **`printed-arithmetic-conflict`** so
+future passes can find the pattern without re-deriving it. Exhibits:
+Iverson's wounded/total row (printed 820; arithmetic 766; the 382-vs-328
+wounded-cell dispute rides the same row); the 57th NC row (printed 623;
+arithmetic 62); the mirror case already on the record under ED-49 (the
+Scales report-table 545 vs return 535). **Rationale:** two independent
+cases in one pass establish print-layer defects as a distinct evidence
+class from source disagreement or OCR noise; the rule gives EC6 a
+computation basis without pretending the printed number was never there —
+exactly ED-49's own headnote discipline ("approximative… many of the
+'missing' were killed or wounded"), extended to arithmetic instead of
+scope.
+
+---
+
 ## Connective-reconstruction rules (named inference rules)
 
 Segments cite these rules by name in `inferenceRules`. A segment with no

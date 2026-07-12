@@ -15,7 +15,7 @@ Citations are `(source-id, locator)`; source ids resolve in
 `reconstruction/sources/sources.json`. Facts with **no tier bracket are
 untimed** (identity, strength, materiel). Negative evidence and conflicts are
 first-class and live in their own section. New editorial calls are PROPOSED
-as ED candidates (ED-69+ as of pass 11 — the pass-1 candidates ED-32…ED-38,
+as ED candidates (ED-72+ as of pass 12 — the pass-1 candidates ED-32…ED-38,
 the monument profile ED-39, the pass-2 candidates ED-40…ED-45, the
 pass-3 candidates ED-46…ED-49, the pass-4 candidates ED-50…ED-52, the
 pass-5 candidates ED-53…ED-55 (incl. the CA-J2A-2/3 chain revision), and
@@ -36,7 +36,10 @@ the ED-65 addendum (the CA-J1M-4 deploy-vs-attack split with the
 CA-J1M-5 three-primary rider; the CA-J1P-2/3 basis upgrades; the
 Howard ~11:30 sub-anchor + the CA-J1P-7 front-edge tightening; the
 Geary/Muhlenberg record-only conflict) were adopted 2026-07-12 at
-pass-11 start), never self-adopted.
+pass-11 start, and the pass-11 candidates ED-69…ED-71 (the CA-J1P-1
+early-component annotation; the CA-J1P-5 cross-line basis upgrade +
+Robinson rear-guard tail; the failed-row-arithmetic rule) were
+adopted 2026-07-12 at pass-12 start), never self-adopted.
 
 ## Fixed heading schema
 
@@ -475,3 +478,35 @@ row digit-exact), us-iii-1-3-detrobriand.md (the garbled clock
 resolved: "About 2 p. m." = the tablet pair).
 
 Companion: `docs/reconstruction/audit/dossier-pass-11.md`.
+
+## Pass 12 — the cavalry theater opener + register triage
+
+Pass-11's deferred recommendation executed: East Cavalry Field at
+brigade grain (Gregg's division vs Stuart's four engaged brigades)
+and South Cavalry Field (Farnsworth vs Merritt), the theater's clock
+problem assessed honestly (mostly tablet-adjudicated, thin below the
+hour), plus the VI Corps cheap batch (one corps-grain command record)
+and a REGISTER-GRAIN TRIAGE pass over all 136 battery entries
+(disposition + reason, closing the "measurable coverage" item). ED-69
+…ED-71 (pass-11's candidates) batch-adopted at pass open; the
+source-schema `anchorsUsed` pattern fixed to admit split anchor ids.
+ED-72 (the ECF/SCF chain) and ED-73 (the CSA cavalry marker-provenance
+class) proposed, NOT adopted.
+
+| Dossier | Register id | Role | Achieved T |
+|---|---|---|---|
+| [us-cav-2-1-mcintosh.md](us-cav-2-1-mcintosh.md) | reg-us-cav-2-1 | ECF Union right; CA-ECF-2/3 co-executor | T3 (ECF grain) |
+| [us-cav-3-2-custer.md](us-cav-3-2-custer.md) | reg-us-cav-3-2 | ECF Union right; CA-ECF-2/3 co-executor; the day-scope EC6 conflict (ED-43 class) | T3 (ECF grain) |
+| [us-cav-2-3-jigregg.md](us-cav-2-3-jigregg.md) | reg-us-cav-2-3 | the reserve; Brinkerhoff's Ridge July 2; the pass's weakest sourcing | T2 (honestly thin) |
+| [csa-cav-ham-hampton.md](csa-cav-ham-hampton.md) | reg-csa-cav-ham | CA-ECF-1/3; Hampton's wounding, the theater's clearest officer pin | T3 (ECF grain) |
+| [csa-cav-fitz-lee.md](csa-cav-fitz-lee.md) | reg-csa-cav-fitz | CA-ECF-1/3; the 1st Md. Battalion detachment negative | T3 (ECF grain) |
+| [csa-cav-chambliss.md](csa-cav-chambliss.md) | reg-csa-cav-chambliss | CA-ECF-1; the pass's thinnest CSA OR-report coverage | T2 (honestly thin) |
+| [csa-cav-jenkins.md](csa-cav-jenkins.md) | reg-csa-cav-jenkins | CA-ECF-1; THE AMMUNITION NEGATIVE (~10 rounds/man, ED-44 class) | T2 (honestly thin, negative-evidence) |
+| [csa-cav-bn-ha-beckham.md](csa-cav-bn-ha-beckham.md) | reg-csa-cav-bn-ha | frame unit; the distribution table (at most 2 of 6 batteries actually at ECF) | T2 (command/frame grain) |
+| [us-cav-3-1-farnsworth.md](us-cav-3-1-farnsworth.md) | reg-us-cav-3-1 (us-cav-farnsworth) | CA-SCF-1/2; the death pin + the Oates-suicide-vs-Parsons conflict | T3 (SCF grain) |
+| [us-cav-1-3-merritt.md](us-cav-1-3-merritt.md) | reg-us-cav-1-3 (us-cav-merritt) | CA-SCF-1/2; THE FAIRFIELD-POOLING EC6 FINDING | T4 (July 3 grain) |
+| [us-vi-hq-sedgwick.md](us-vi-hq-sedgwick.md) | reg-us-vi-hq (new row) | VI Corps cheap batch; attested-static-with-exceptions (Nevin pass 7, Shaler flagged) | T2 (command record) |
+
+Companion: `docs/reconstruction/audit/dossier-pass-12.md`; the battery
+triage lives in `docs/reconstruction/audit/oob-register.json` (each
+battery entry's `triage` object) with a summary in the pass report §4.
