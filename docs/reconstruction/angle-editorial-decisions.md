@@ -1522,6 +1522,121 @@ ED-42/ED-43 jurisprudence says they live — on the record, unresolved.
 
 ---
 
+## Dossier pass 10 adoption rulings (ED-66 … ED-68, + the ED-65 addendum) — 2026-07-12
+
+Owner ruling (standing adopt-and-adjust doctrine): the ED candidates
+proposed by dossier pass 10 (`docs/reconstruction/audit/dossier-pass-10.md`
+§5, drafted on branch audit-dossiers-10) are ADOPTED as recorded below,
+executed at the start of dossier pass 11 (branch audit-dossiers-11). No
+renumbers. **One structural chain change** — ED-66 splits CA-J1M-4 into
+two rows (the deploy-vs-attack split the anchor carried as a
+precondition since proposal); the split is evidence-driven (both poles
+now executor-clocked) and narrows envelopes, moving no adopted time
+outside its prior envelope. ED-67 and ED-68(a) are basis upgrades;
+ED-68(b) is an envelope-edge tightening on an unchanged ~16:15
+adoption. Batch adoption executed directly, validators green after the
+edit.
+
+### ED-66 — The CA-J1M-4 deploy-vs-attack split ruling
+
+**Canonical choice:** CA-J1M-4 is split into two chain rows, both
+sides now executor-clocked (dossier pass 10 delivered the evidence the
+proposal's precondition asked for):
+
+- **CA-J1M-4a — Heth deploys / artillery phase opens**, adopted
+  **~08:00–09:00** (envelope 07:30–09:30): Gamble "About 8 o'clock…
+  approaching his pickets… about 3 miles distant" + Buford "between 8
+  and 9 a.m." + "held its own for more than two hours" (the delay
+  duration pair); **Heth's own "at this time — 9 o'clock… I was
+  ignorant what force was at or near Gettysburg"** is recorded as the
+  deploy-phase CSA clock AND as time-silent on the attack (the
+  conflation his report invited is the reason for the split).
+- **CA-J1M-4b — Heth's infantry attack strikes the I Corps line**,
+  adopted **~10:15–10:30** (envelope 10:00–10:45): **Davis's "About
+  10.30 o'clock a line of battle was formed… and the brigade moved
+  forward to the attack" (No. 553 p. 649 verbatim — the only stated
+  CSA attack clock)** against the Union receiving cluster — Wadsworth
+  10:00 road-strike, Cutler "in action from 10 a.m.", the Reynolds
+  10:15 pin (killed receiving this attack). The old 09:00–10:45
+  envelope is closed from both sides.
+- **CA-J1M-5 basis upgrade (rider, as proposed):** the Reynolds-killed
+  pin's basis note upgrades from tablet-adjudicated to
+  **tablet + two-report three-primary agreement** (tablet "about 10.15
+  A.M." = Wadsworth "at this time (about 10.15 a.m.) our gallant
+  leader fell" = Doubleday "about 10.15 a.m."); Howard's 11.30 reading
+  is COLLAPSED as word-reaching-him (Schurz independently witnesses
+  the 11:30 scene). Adopted time unchanged.
+
+**Alternative rejected:** keeping one row with a wide 09:00–10:45
+envelope — the wide row existed only because Heth's report conflates
+the phases; with executors clocked at both poles, the single row
+mis-renders ~90 minutes of cavalry-only fighting as "assault".
+**Rationale:** the split is what the anchor's own carried precondition
+("split into two events as above") called for; downstream, movers
+placed against "the attack" (Meredith/Cutler/Davis/Fry) gain a
+half-hour-class envelope for free.
+
+### ED-67 — The CA-J1P-2/3 basis-upgrade ruling (Iverson; Gordon/knoll)
+
+**Canonical choice:**
+
+- **CA-J1P-2 (Iverson destroyed)** upgrades from "slaved to CA-J1P-1,
+  sequence" to a **bracketed event with drawn geometry**: adopted
+  window 14:30–15:00 held, envelope 14:15–15:15 held; basis now the
+  four-source dress-parade convergence (Iverson + Rodes + Ramseur +
+  Cutler receiving) plus the j1-09 drawn mid-advance bar 408 m along
+  the advance axis from his formation tablet. The audit's cleanest
+  single-spike EC6 exemplar backs the anchor.
+- **CA-J1P-3 (Early's assault, Barlow Knoll)** adopted **~15:00–15:30**
+  on the **Gordon = Schurz cross-line pair** (attacker's "About 3 p.m.
+  I was ordered to move my brigade forward" vs receiver's "about 3
+  o'clock… the enemy appeared in our front with heavy masses") — the
+  skeleton's "Early's OR (MEMORY-grade, fetch)" precondition is CLOSED
+  with a page-verified brigade primary. Envelope 14:30–15:45 held.
+
+**No downstream moves** (both adopted windows unchanged; only their
+evidence class rises). **Rationale:** ED-62's discipline — basis
+upgrades on adopted anchors, arithmetic untouched.
+
+### ED-68 — The July 1 command sub-anchors (Howard; the Hancock front edge)
+
+**Canonical choice:**
+
+- **(a) Howard-assumes-command adopted ~11:30** as a formal sub-anchor
+  of the ED-26 chain (Howard = Schurz two-primary agreement; the
+  XI-Corps tablet's 10:30 is COLLAPSED onto the hurry-forward order,
+  not the assumption of command). **The Pfanz 10:30 derivation stays
+  an honest open gate** — recorded on the sub-anchor, not blocking it.
+- **(b) The CA-J1P-7 front edge tightens 15:00 → ~15:30** (envelope now
+  **15:30–16:30**, adopted **~16:15 unchanged**): the formalized
+  conflict record has every piece beyond Hancock's report-nominal
+  15:00 on the late pole — his own 17:25 dispatch's "an hour since"
+  (a document pin AGAINST his own report), Howard's 16:30, Doubleday's
+  post-retreat dual-command scene, Schurz's "after 5 o'clock" corps
+  bound. Hancock's 15:00 stays carried verbatim as the report-nominal
+  pole (this tightens an envelope edge; it does not delete a primary).
+- **(c) Wadsworth's "2.30 Schurz fell back" early counter-reading:
+  RECORDED, no status** (report-nominal, ED-25 rule 4) — as proposed.
+
+**Alternative rejected:** holding the 15:00 front edge for symmetry
+with the report — the edge would then be held by a reading the record
+shows contradicted by its own author's same-day dispatch.
+**Rationale:** the ED-64 lesson applied with the poles reversed: there
+the record stayed two-pole because both poles had uncontradicted
+primaries; here one pole is document-pinned against itself.
+
+### ED-65 addendum (record-only) — the Geary/Muhlenberg opening conflict
+
+The CA-J3M-1 carried conflict set (ED-65(b)) gains the pass-10
+within-command pair: **Geary's "3.30 a.m. + about ten minutes"
+opening vs Muhlenberg's author-primary "4.30 + ~15 minutes"** — carried
+unresolved alongside the 20-vs-26-guns and 10:00-vs-10:30 records. The
+anchor's 04:30 adopted time is unchanged (Muhlenberg remains the
+author primary; Geary's version joins the recorded early component
+class). NOT a resolution.
+
+---
+
 ## Connective-reconstruction rules (named inference rules)
 
 Segments cite these rules by name in `inferenceRules`. A segment with no

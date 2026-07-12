@@ -272,28 +272,34 @@ CA-J1M-2 on Gamble's/Buford's own reports (the 8:00 warning + the
 several-hours/two-hours duration pair); CA-J1M-4's carried
 deploy-vs-attack precondition now has BOTH poles clocked (Davis's
 10.30 formed-and-attacked verbatim vs the Wadsworth/Cutler/pin
-receiving cluster 10:00-10:15) → **ED-66 candidate**; CA-J1M-5
+receiving cluster 10:00-10:15) → **ADOPTED as ED-66 (2026-07-12,
+pass-11 open): CA-J1M-4 split into 4a/4b below**; CA-J1M-5
 upgraded to THREE-primary agreement (tablet = Wadsworth = Doubleday
 at 10.15; Howard's 11.30 collapsed as word-reaching-him, Schurz
-concurring); CA-J1M-6 gains a recorded tension (Davis's 'about
-1 p.m.' brigade retirement vs the skeleton's ~11:00 cut
-conclusion). The Howard-assumes-command sub-anchor is two-primary
-at ~11:30 → **ED-68 candidate**. See dossier-pass-10.md §3/§5.
+concurring — the upgrade rides ED-66); CA-J1M-6 gains a recorded
+tension (Davis's 'about 1 p.m.' brigade retirement vs the
+skeleton's ~11:00 cut conclusion). The Howard-assumes-command
+sub-anchor is two-primary at ~11:30 → **ADOPTED as ED-68(a)
+(~11:30; the tablet 10:30 collapsed onto the hurry-forward order;
+Pfanz derivation an open gate)**. See dossier-pass-10.md §3/§5 and
+angle-editorial-decisions.md ED-66…ED-68.
 
 | id | Event | Adopted | Envelope | Principal sources |
 |---|---|---|---|---|
 | CA-J1M-1 | First shot, Chambersburg Pike (Jones, 8th IL Cav) | 07:30 | 07:00–08:00 | 1886 First Shot marker inscription, VERIFIED: "First shot / Gettysburg / July 1st 1863 / 7:30 a.m" (veteran self-commemoration; the *identity* was contested, the hour broadly accepted) |
 | CA-J1M-2 | Buford's delaying fight opens (Gamble vs Heth) | 08:00–09:00 | 07:30–09:00 | Buford's OR report, VERIFIED reproduction: "between 8 and 9 a.m., reports came in … that the enemy was coming down from toward Cashtown in force"; Gamble "held its own for more than two hours" |
 | CA-J1M-3 | **Buford's 10:10 dispatch to Meade** | 10:10 | ±0 (timestamped document) | SNIPPET via NPS Seminar 10 essay 3 (Phipps) — "driving my pickets and skirmishers very rapidly"; **the hardest clock of the morning; verify in OR 27/1 correspondence** |
-| CA-J1M-4 | Heth's infantry assault across Willoughby Run (Archer/Davis vs I Corps) | 10:00–10:30 | 09:00–10:45 | Heth's OR report (VERIFIED, NPS reproduction — gives 9:00 for his ignorance of the force ahead, no attack clock; his July 1 narrative is noted-unreliable); Stone Sentinels timeline 09:00 advance (VERIFIED); Pfanz via Wikipedia: Herr Ridge 10:20 (pp. 57, 59) |
+| CA-J1M-4a | Heth deploys; artillery phase opens (ED-66 split) | ~08:00–09:00 | 07:30–09:30 | Gamble "About 8 o'clock… about 3 miles distant" + Buford "between 8 and 9 a.m." + the several-hours/two-hours delay-duration pair (executor primaries, pass 10); Heth's "at this time — 9 o'clock… I was ignorant what force was at or near Gettysburg" (deploy-phase CSA clock; time-silent on the attack) |
+| CA-J1M-4b | Heth's infantry attack strikes the I Corps line (Archer/Davis; ED-66 split) | **~10:15–10:30** | 10:00–10:45 | **Davis "About 10.30 o'clock a line of battle was formed… and the brigade moved forward to the attack" (No. 553 p. 649, the only stated CSA attack clock)** vs the receiving cluster: Wadsworth 10:00 road-strike, Cutler "in action from 10 a.m.", the Reynolds 10:15 pin; the old single-row envelope closed from both sides |
 | CA-J1M-5 | Reynolds arrives; Reynolds killed | arrive ~10:00; killed **10:15** | 10:00–11:00 | 1st Corps tablet, VERIFIED: "Arrived at Gettysburg between 10 A. M. and noon... General Reynolds fell mortally wounded about 10.15 A. M." — the park-commission ruling; eyewitness letter "about ten o'clock" (SNIPPET) |
 | CA-J1M-6 | Railroad-cut fight concludes | ~11:00 | 10:30–11:30 | Dawes's OR report (VERIFIED, time-silent — the clock is modern back-solving from CA-J1M-5); Stone Sentinels timeline 10:45–11:00 (VERIFIED) |
 | CA-J1M-7 | Midday lull onset | ~11:30 | 11:00–12:00 | Stone Sentinels timeline (VERIFIED); Rodes division tablet "occupied Oak Ridge about noon" (VERIFIED) bounds the far side |
 
-Known disagreements to rule on at adoption: Howard-assumes-command 10:30
-(Pfanz) vs 11:30 (Martin) — a pure scholarly split worth its own sub-anchor if
-a Union command node is needed; Heth deploy-vs-attack conflation (9:00 vs
-10:30) — split into two events as above.
+Known disagreements, disposition as of pass-11 open: Howard-assumes-command
+→ ADOPTED ~11:30 as the ED-68(a) sub-anchor (two-primary; tablet 10:30
+collapsed; the Pfanz-derivation gate stays open on the record); Heth
+deploy-vs-attack conflation → RESOLVED by the ED-66 split (rows 4a/4b
+above).
 
 ### 2.2 July 1 afternoon — collapse and retreat through town (proposed ED-27)
 
@@ -302,24 +308,27 @@ from slaved-sequence to a bracketed event with drawn geometry (the
 j1-09 mid-advance bar; the dress-parade line four-source) and
 CA-J1P-3 (Gordon/knoll) closed its MEMORY-grade precondition with
 the page-verified Gordon primary — 'About 3 p.m.' pairing Schurz's
-'about 3 o'clock' ACROSS THE LINES → **ED-67 candidate**. CA-J1P-4/5
+'about 3 o'clock' ACROSS THE LINES → **ADOPTED as ED-67 (2026-07-12,
+pass-11 open; both anchors' adopted windows unchanged)**. CA-J1P-4/5
 confirmed by the Howard 16:00/16:10/16:30 issuing ladder +
 Wadsworth's 3.45 (front edge) + Doubleday's 'about 4 p.m.'.
 CA-J1P-7 FORMALIZED as a structured conflict record (document pin +
 Doubleday's dual-command scene + Schurz's after-5 corps bound, all
-on the late pole) → the ED-68 front-edge question. CA-J1P-9 gains
+on the late pole) → **the front edge TIGHTENED 15:00 → 15:30 by
+ED-68(b) (2026-07-12, pass-11 open; ~16:15 adoption unchanged;
+Hancock's 15:00 carried as the report-nominal pole)**. CA-J1P-9 gains
 Rodes's division-grain companion record (his verbatim non-attack
 rationale). See dossier-pass-10.md §3/§5.
 
 | id | Event | Adopted | Envelope | Principal sources |
 |---|---|---|---|---|
 | CA-J1P-1 | Rodes attacks from Oak Hill (ends the lull) | **14:00** | 13:30–14:45 | 1st Corps tablet, VERIFIED: "made a vigorous attack at 2 P. M. with superior numbers along the entire line"; Stone Sentinels timeline 14:30; Rodes's own report has NO July 1 clocks (VERIFIED negative) |
-| CA-J1P-2 | Iverson's brigade destroyed (Forney field) | 14:30–15:00 | 14:15–15:15 | Iverson tablet (VERIFIED, no clock; "almost annihilated," 820 of 1,470); slaved to CA-J1P-1 — keep as sequence anchor |
-| CA-J1P-3 | Early's assault on the XI Corps right (Barlow Knoll) | 15:00–15:30 | 14:30–15:45 | Early division tablet (VERIFIED, but its extracted "about noon" arrival is suspect vs modern ~14:30–15:00 — re-verify tablet wording); Stone Sentinels timeline 15:00–16:00 (VERIFIED); Early's OR "about 3 o'clock" (MEMORY-grade, fetch) |
+| CA-J1P-2 | Iverson's brigade destroyed (Forney field) | 14:30–15:00 | 14:15–15:15 | **ED-67 basis: bracketed event with drawn geometry** — the four-source dress-parade convergence (Iverson + Rodes + Ramseur + Cutler receiving) + the j1-09 drawn mid-advance bar (408 m along the advance axis from the formation tablet); tablet "almost annihilated," 820 of 1,470 |
+| CA-J1P-3 | Early's assault on the XI Corps right (Barlow Knoll) | 15:00–15:30 | 14:30–15:45 | **ED-67 basis: the Gordon = Schurz cross-line pair** — Gordon "About 3 p.m. I was ordered to move my brigade forward" (page-verified, pass 10) vs Schurz "about 3 o'clock… heavy masses"; the old MEMORY-grade Early precondition CLOSED; Stone Sentinels timeline 15:00–16:00 (VERIFIED) |
 | CA-J1P-4 | XI Corps collapse north of town | **~16:00** | 15:30–16:30 | 11th Corps tablet, VERIFIED: "About 4 P. M. the Corps was forced back and retired through the town to Cemetery Hill" |
 | CA-J1P-5 | I Corps collapse on Seminary Ridge (Pender's assault) | **~16:00–16:30** | 15:45–16:45 | 1st Corps tablet, VERIFIED: "At 4 P. M. the Corps retired and took positions on Culps Hill and Cemetery ridge"; Wikipedia/Pfanz 16:00–16:30 (VERIFIED page) |
 | CA-J1P-6 | Retreat through the town streets | 16:00→16:30 | 16:00–17:00 | interval hung between CA-J1P-4/5 and CA-J1P-7; ABT map sheet "3:45–5:00 pm" brackets it (VERIFIED) |
-| CA-J1P-7 | Hancock arrives on Cemetery Hill | **~16:15** | **15:00–16:30** | THE canonical watch controversy: Hancock's own report ~15:00 / his 1876 Galaxy account ~15:30 vs Howard's ~16:30; modern consensus (Coddington/Pfanz/Martin) 16:00–16:30. Both principals had stakes in the command-authority feud. Adopt ~16:15 with the full envelope and a partisan-dispute note |
+| CA-J1P-7 | Hancock arrives on Cemetery Hill | **~16:15** | **15:30–16:30 (front edge tightened by ED-68(b))** | THE canonical watch controversy, FORMALIZED (pass 10): Hancock's own report ~15:00 (report-nominal pole, carried) vs his own 17:25 dispatch's "an hour since" ⇒ ~16:25 (document pin AGAINST his own report), Howard's ~16:30, Doubleday's post-retreat dual-command scene, Schurz's "after 5 o'clock" corps bound; modern consensus (Coddington/Pfanz/Martin) 16:00–16:30. Both principals had stakes in the command-authority feud — partisan-dispute note stands |
 | CA-J1P-8 | Hancock's "we can fight here" dispatch to Meade | 17:25 | ±0 if verified | Stone Sentinels timeline "5:25 p.m." (VERIFIED at the page level) — a timestamped document if confirmed in OR 27/1; second hard clock of the day |
 | CA-J1P-9 | Ewell declines Cemetery/Culp's Hill ("if practicable") | unclocked | sequence: after CA-J1P-7, before dark | Lee's report wording via VERIFIED secondary ("Carry the hill occupied by the enemy, if he found it practicable…"); Ewell's report "jaded by twelve hours' marching and fighting" — correctly scoped sequence-only, no clock assigned |
 
@@ -513,8 +522,8 @@ a per-wing note on the source record.
 |---|---|---|
 | **ED-24** | Adopt the canonical anchor chain structure (`CA-<phase>-<n>`) and the July 3 afternoon chain (§1.1), formalizing ED-1/ED-2 as chain nodes CA-J3A-6/9; record the 13:00-vs-13:07 shipped skew and the step-off literature tension (§1.2) | drafted here, ready for ruling |
 | **ED-25** | Adopt the `clockProfile` schema, assessment method, and the five worked profiles (§3) | drafted here, ready for ruling |
-| **ED-26** | July 1 morning chain (§2.1) | ADOPTED provisional 2026-07-10; CA-J1M-3 document-pin verified at adoption; EXECUTOR-HARDENED by dossier pass 10 (2026-07-12) — the Heth split evidence complete (ED-66 candidate), the Reynolds pin three-primary, the Howard sub-anchor two-primary (ED-68 candidate) |
-| **ED-27** | July 1 afternoon chain (§2.2), incl. the Hancock-arrival ruling (~16:15, envelope 15:00–16:30, partisan-dispute note) | ADOPTED provisional 2026-07-10 (Hancock/Howard texts verified at adoption); EXECUTOR-HARDENED by dossier pass 10 (2026-07-12) — CA-J1P-2/3 basis upgrades proposed (ED-67), CA-J1P-7 formalized as a structured conflict record (ED-68 front-edge question) |
+| **ED-26** | July 1 morning chain (§2.1) | ADOPTED provisional 2026-07-10; CA-J1M-3 document-pin verified at adoption; EXECUTOR-HARDENED by dossier pass 10 (2026-07-12); **CA-J1M-4 SPLIT into 4a/4b + CA-J1M-5 three-primary upgrade by ED-66, and the Howard ~11:30 sub-anchor adopted by ED-68(a) (2026-07-12, pass-11 open)** |
+| **ED-27** | July 1 afternoon chain (§2.2), incl. the Hancock-arrival ruling (~16:15, partisan-dispute note) | ADOPTED provisional 2026-07-10 (Hancock/Howard texts verified at adoption); EXECUTOR-HARDENED by dossier pass 10 (2026-07-12); **CA-J1P-2/3 basis upgrades adopted by ED-67, CA-J1P-7 front edge tightened to 15:30 by ED-68(b) (2026-07-12, pass-11 open)** |
 | **ED-28** | July 2 afternoon chain (§2.3), incl. the Longstreet step-off ruling (16:00–16:30; the dawn-order claim documented as polemic, not clock) and the McLaws-wing tablet-skew rule | ADOPTED provisional 2026-07-10; precondition (LRT verification pass) CLOSED by dossier pass 5; CA-J2A-2/3 REVISED & upgraded to ruled by ED-53 (2026-07-11); skew rule extended to report clocks by ED-55; CA-J2A-8 CONFIRMED + CA-J2A-11 exercised by the ED-57 wave record; skew class generalized field-wide by ED-58 (2026-07-11) |
 | **ED-29** | July 2 evening chain (§2.4) | skeleton; strongest of the five (Hays's OR clock) |
 | **ED-30** | July 3 morning chain (§2.5), incl. the Spangler's Meadow ruling (~10:00 vs the 06:00 outlier) | ADOPTED provisional 2026-07-10; hardened by dossier pass 9 (CA-J3M-1 author primary, wave clocks, receiving-side 10.30); CA-J3M-1 annotated + CA-J3M-3 restructured two-pole by ED-64/ED-65 (2026-07-11) — the ~10:00 direction stays provisional; precondition Pfanz pp. ~340–355 STANDS |
