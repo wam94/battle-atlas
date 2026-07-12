@@ -1726,6 +1726,82 @@ exactly ED-49's own headnote discipline ("approximative… many of the
 'missing' were killed or wounded"), extended to arithmetic instead of
 scope.
 
+## Dossier pass 12 adoption rulings (ED-72 … ED-73) — 2026-07-13
+
+Owner ruling (standing adopt-and-adjust doctrine): the ED candidates
+proposed by dossier pass 12 (`docs/reconstruction/audit/dossier-pass-12.md`
+§5, drafted on branch audit-dossiers-12) are ADOPTED as recorded below,
+executed at the start of dossier pass 13 (branch audit-dossiers-13). No
+renumbers. ED-72 installs the East/South Cavalry Field chain as a new
+skeleton (§2.6 of `anchor-chain-proposal.md`, added this pass, hardened
+with the EC3 sheet-crop exercise below); ED-73 names the CSA
+cavalry-brigade position-marker class as its own evidence subclass,
+distinct from ED-39's War Department tablet class.
+
+### ED-72 — The East/South Cavalry Field chain (CA-ECF-1…3, CA-SCF-1…2)
+
+**Canonical choice:** adopt the five-anchor skeleton exactly as pass 12
+built it from the executor dossiers' own tablets/reports (full text:
+`anchor-chain-proposal.md` §2.6, ADOPTED table below) — CA-ECF-1
+(~noon, envelope 11:00–13:00, tablet-adjudicated four-primary CSA
+cluster), CA-ECF-2 (~14:00, McIntosh=Custer tablet pair), CA-ECF-3
+(~15:00, McIntosh=2nd Division tablet pair), CA-SCF-1 (~noon/13:00,
+Merritt's own report, PRIMARY not tablet-class), CA-SCF-2 (~17:30,
+triple agreement — 3rd Division tablet + 1st Brigade tablet + Merritt's
+own report). Adopted as a **fifth-tier evidence chain**: tablet-
+adjudicated alongside the ED-39 monument class, with the ED-73
+marker-provenance caveat attached to every CA-ECF anchor (below) —
+**not** promoted to report-primary tier, since only CA-SCF-1/2 rest
+partly on report primaries. **Precondition carried, not blocking
+adoption:** a primary-report pass on Stuart's full OR report (identified
+pp. 679-720, not exhaustively fetched) and Kilpatrick's report
+(identified, not fetched) remains open; if either report's East/South
+Cavalry Field section surfaces a clock materially outside the adopted
+envelopes, the anchor is revised under the standing adopt-and-adjust
+rule, not silently held. **Rationale:** the same rationale pass 12
+recorded — no R1 skeleton existed for this theater; a from-scratch
+chain built off executor primaries/tablets is stronger evidence than
+leaving the theater unchained while the field's own dossiers already
+cite CA-ECF/CA-SCF ids. **This pass's addition to the basis:** the EC3
+sheet-crop exercise (§2.6, below) — the Bachelder 12441 (East Cavalry
+Field) sheet set, fetched and read this pass for the first time — draws
+EVERY CA-ECF-executing brigade at brigade-block grain with the
+sheet's own hand-marked clock annotations (e.g. "JENKINS 2 P.M.",
+"CHAMBLISS 2½ P.M.", "1 N.J. BEAUMONT 2½ P.M.") independently
+corroborating the tablet-adjudicated adopted times without being
+counted as a new primary tier (drawn map annotations are ED-73-class
+evidence, same caveat as the position markers — see below).
+
+### ED-73 — The CSA cavalry-brigade position-marker class
+
+**Canonical choice:** adopt the gettysburg.stonesentinels.com
+"confederate-headquarters" cavalry pages (Hampton's, Fitz Lee's,
+Chambliss's, Jenkins's, Stuart's Division, Stuart Horse Artillery) —
+and, by the same reasoning, the Bachelder East Cavalry Field sheet
+set's own hand-lettered unit blocks and clock annotations — as a named
+**monument-adjacent evidence subclass**, distinct from ED-39's War
+Department troop-tablet class: no erection date or adjudicating body
+was found on any fetched marker page, and the Bachelder sheets are a
+19th-century cartographer's own compiled adjudication (Bachelder
+interviewed veterans and compiled composite positions decades after
+the battle — a different process than the War Department Commission's
+tablet-siting work ED-39 profiles). **Weight:** ±30 min class per
+event for clock content; position content from this class earns EC3
+anchors at the sheet's own registration-residual radius
+(**~75-80 m**, per `bachelder-manifest.json`'s ECF `estAbsUncertaintyM`
+~76-77 m) but is **never anchor-defining alone until corroborated** —
+exactly the same discipline ED-72's CA-ECF anchors already apply
+(tablet + sheet, not sheet alone). **Rationale:** CSA cavalry
+essentially has NO other physical marker record at Gettysburg (no
+War Department tablets for CSA units generally, and the ECF/SCF
+theater additionally lacks the monument density of the main field) —
+ED-39 §4's asymmetry-by-side rule in its strongest form. Naming the
+class lets future passes weight it consistently instead of re-deriving
+the caveat dossier by dossier.
+
+`anchor-chain-proposal.md` §4's status table and the dossiers index's
+ED-counter updated in place.
+
 ---
 
 ## Connective-reconstruction rules (named inference rules)

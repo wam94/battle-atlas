@@ -4,7 +4,9 @@
 are canonical as ruled in `docs/reconstruction/angle-editorial-decisions.md`:
 ED-24 (July 3 afternoon, with verification updates), ED-25 (clock profiles,
 implemented on `reconstruction/sources/` + validator), ED-26…ED-30 (the five
-skeleton chains, PROVISIONAL with preconditions carried), ED-31 (LMT frame).
+skeleton chains, PROVISIONAL with preconditions carried), ED-31 (LMT frame),
+**ED-72 (§2.6, East/South Cavalry Field chain, ADOPTED 2026-07-13) + ED-73
+(the CSA cavalry position-marker evidence class, ADOPTED 2026-07-13)**.
 **The step-off gate resolved: ED-1 STANDS** — the one-hop 14:00–14:30 center
 did not survive page-level verification (Coddington p. 502 reads 3:00 P.M.;
 Hess/Wert verified as the genuine short-cannonade school; Sears unreachable;
@@ -425,6 +427,74 @@ renders the charge until the gate resolves.
 | CA-J3M-4 | Final repulse; Johnson retires east of Rock Creek | **10:30–11:00** | tight | Johnson tablet: "Retired at 10.30 A.M. to former position of July 2" … "held until 10 P.M." (VERIFIED — exactly per the full-cast survey); Steuart tablet: fighting "raged fiercely until 11 A.M." (VERIFIED); XII arty tablet "until 10.30 A.M."; Jacobs "10½ A.M." — quadruple attestation, the best-anchored event outside July 3 afternoon. Adopt 10:30 division order / 11:00 last units clear |
 | CA-J3M-5 | Astronomical pins | first light ~04:00–04:15; sunrise **~04:38 LMT** | — | tablets' "daylight" ≈ civil twilight ≈ 04:30; the 05:45 figure circulating is a modern-EDT frame artifact. Recompute per ED-31 |
 
+### 2.6 East/South Cavalry Field (ADOPTED ED-72, 2026-07-13)
+
+Built from scratch by dossier pass 12 (no R1 skeleton existed for this
+theater — East/South Cavalry Field sit off the main-field frame the
+other five phases share) off the executor dossiers' own tablets and
+reports; adopted by the owner at the start of pass 13 together with
+ED-73 (the CSA cavalry-brigade position-marker class, which every
+CA-ECF anchor below cites as a corroborating, never anchor-defining-
+alone, evidence layer). **Hardened this pass by the EC3 sheet-crop
+exercise** (§2.6.1): the Bachelder East Cavalry Field sheet set
+(`12441001`–`12441005`, manifest ids `ecf-base`/`ecf-j2`/`ecf-j3-am`/
+`ecf-j3-mid`/`ecf-j3-pm`) was fetched (sha256-verified against
+`bachelder-manifest.json`) and read for the first time across all
+dossier passes.
+
+| id | Event | Adopted | Envelope | Tier basis |
+|---|---|---|---|---|
+| CA-ECF-1 | CSA brigades arrive/deploy at Rummel farm (Hampton, Chambliss, Fitzhugh Lee, Jenkins) | **~noon (12:00–13:00)** | 11:00–13:00 | tablet-adjudicated four-primary cluster (Hampton "about noon," Chambliss "about noon," Fitzhugh Lee "soon after midday," Jenkins "about noon") + ED-73-class corroboration: sheet `ecf-j3-am` draws the 6th Michigan's Capt. Webber picket "9 A.M.–12 M." and the 1st Michigan's Capt. Maxwell skirmish line already forward of Rummel farm by this window |
+| CA-ECF-2 | Custer's brigade engaged; McIntosh's brigade retained by Gregg over Kilpatrick's recall order | **~14:00** | 13:30–14:45 | McIntosh's and Custer's tablets independently agree: "About 2 P. M. a large Confederate force having been observed… Gregg ordered [Custer] to return" / "about 2 P. M. [Custer] was immediately engaged" |
+| CA-ECF-3 | Hampton's and Fitzhugh Lee's brigades charge and are repulsed | **~15:00** | 14:00–15:30 (front edge widened this pass — see §2.6.1) | McIntosh's tablet (names the Stallsmith Farm concealment) and the 2nd Division tablet independently agree: "About 3 P. M… Hampton's and… Fitzhugh Lee's Brigades… emerged from the woods… and charged but were repulsed." **ED-73 corroboration, this pass:** sheet `ecf-j3-pm` hand-marks "JENKINS 2 P.M.," "CHAMBLISS 2½ P.M.," "1 N.J. BEAUMONT 2½ P.M." along the same axis, and "3 VA… not engaged" on Fitzhugh Lee's line — consistent with a charge cluster beginning ~14:00–14:30 and climaxing ~15:00, corroborating rather than moving the tablet-adjudicated adopted time (ED-25 rule 4: drawn-map annotation is not promoted to redefine a tablet-pair adoption) |
+| CA-SCF-1 | Merritt's brigade + Farnsworth's brigade engage south of the Emmitsburg Road (Bushman/Slyder farms) | **~noon/13:00** | 12:00–13:30 | Merritt's own OR report ("marched… about 12 m.") — a PRIMARY, not tablet-class, start clock; Farnsworth's brigade tablet "about 1 P.M." |
+| CA-SCF-2 | Farnsworth's mounted charge; South Cavalry Field action closes | **~17:30** | 17:00–18:00 | TRIPLE agreement — the 3rd Division tablet, the 1st Brigade tablet, AND Merritt's own report's "about four hours… brought to a close by a heavy rain" — independently corroborating each other across the report/tablet divide; the strongest single clock in the cavalry theater |
+
+#### 2.6.1 The EC3 sheet-crop exercise (pass 13)
+
+Pass 12 flagged this as skipped ("the East Cavalry Field ±75 m
+georeference class… was NOT re-exercised with a new sheet crop this
+pass — no drawn-bar read, no new tie point"). This pass fetched all
+five ECF sheets (sha256-verified) and read positions at brigade/
+battery grain using `reconstruction/scripts/crop_sheet.py` +
+`georef_maps.py`'s `img_to_local`. Sample readings (local meters,
+`local_x`/`local_z`; radius = the sheet's own `estAbsUncertaintyM`,
+**~76–77 m** for every ECF sheet per the manifest — tighter than the
+~62 m main-field floor is NOT claimed, since the ECF registration is
+two-tie/one-check, coarser scan, per the manifest's own PROVISIONAL
+note):
+
+| Unit | Sheet | Local (x, z) | Note |
+|---|---|---|---|
+| Rummel farm (control) | ecf-j3-mid / ecf-j3-pm / ecf-j3-am | (10,044–10,049, 6,822–6,847) | three independent sheet reads agree within ~25 m of the manifest tie point — internal-consistency check, not a new tie |
+| Stuart (division HQ label) | ecf-j3-mid | (9,281, 7,736) | |
+| Chambliss's Brigade block | ecf-j3-mid | (9,598, 7,333) | "2 N.C." regiment block read |
+| Hampton's Brigade block | ecf-j3-mid | (10,077, 7,468) | Cobb's Legion sub-block |
+| Fitzhugh Lee's Brigade block | ecf-j3-mid | (10,782, 7,550) | 2nd/3rd/5th VA sub-blocks; "not engaged" annotation on the 3rd VA at pm |
+| Jenkins's Brigade block | ecf-j3-mid | (9,852, 6,935) | 16th/34th/36th Bn./14th VA sub-blocks |
+| McGregor's battery (Beckham's Bn.) | ecf-j3-pm | (10,186, 7,207) | confirms pass-12's Beckham distribution-table finding — the one battalion battery confidently drawn at Rummel farm |
+| Breathed's battery (Beckham's Bn.) | ecf-j3-pm | (10,091, 7,099) | drawn adjacent to McGregor's — a SECOND battalion battery at ECF, not identified by name in Beckham's own marker text (pass-12 gap partially closed; see the Beckham dossier patch) |
+| "Section of Green's Baty" | ecf-j3-mid / ecf-j3-pm | (10,321, 7,300) / (10,324, 7,377) | **unidentified** — no battery named "Green" appears in Beckham's battalion roster (Breathed/Chew/Griffin/Hart/McGregor/Moorman) or in any fetched OOB source; recorded as an open identification question, not resolved |
+| McIntosh's Brigade block | ecf-j3-mid | (10,809, 5,419) | 1st MD ("1 to 1.30"), 1st PA/Anthony Howard ("1 to 1.45 P.M.") sub-blocks with their OWN drawn clock range |
+| Custer's Brigade block | ecf-j3-mid | (9,570, 5,333) | 5th/6th/7th/1st MI sub-blocks |
+| Randol's Battery (Chester's Section) | ecf-j3-mid | (10,569, 5,638) | Batteries E&G, 1st US |
+| Randol's Battery (Kinney's Section) | ecf-j3-mid | (10,354, 5,270) | second section, separately positioned |
+| Pennington's Battery (Clark's sub-section) | ecf-j3-mid | (10,072, 5,237) | Battery M, 2nd US |
+
+J. I. Gregg's brigade (the reserve) does **not** appear on any of the
+five ECF sheets at brigade-block grain — consistent with, and a small
+positive confirmation of, its dossier's "the reserve" framing; no new
+EC3 anchor for Gregg's brigade results from this exercise (honest
+negative, not a gap in the crop method).
+
+South Cavalry Field remains OUTSIDE this pass's sheet-crop exercise —
+it sits on the main heightmap square per pass 12's note, but the
+main-field sheets covering July 3 afternoon (`12440022`/`12440023`,
+manifest ids `j3-03`/`j3-04`) were not fetched this pass (scope
+discipline: the task specified the 12441 — East Cavalry Field — set).
+Standing gap for pass 14: read Farnsworth's/Merritt's SCF positions
+off `j3-03`/`j3-04` the same way.
+
 ---
 
 ## 3. The per-source clock-offset scheme (proposed ED-25)
@@ -540,6 +610,8 @@ a per-wing note on the source record.
 | **ED-29** | July 2 evening chain (§2.4) | skeleton; strongest of the five (Hays's OR clock) |
 | **ED-30** | July 3 morning chain (§2.5), incl. the Spangler's Meadow ruling (~10:00 vs the 06:00 outlier) | ADOPTED provisional 2026-07-10; hardened by dossier pass 9 (CA-J3M-1 author primary, wave clocks, receiving-side 10.30); CA-J3M-1 annotated + CA-J3M-3 restructured two-pole by ED-64/ED-65 (2026-07-11) — the ~10:00 direction stays provisional; precondition Pfanz pp. ~340–355 STANDS |
 | **ED-31** | Time-frame convention: the battle clock is Gettysburg local mean time (~9 min ahead of modern EST); astronomical pins adopted as sunset July 2 19:29 LMT, sunrise July 3 ~04:38 LMT, with a USNO-grade recomputation as a follow-up; all imported modern-frame times (EST/EDT artifacts like "19:41" / "05:45") converted on entry | drafted here, ready for ruling |
+| **ED-72** | East/South Cavalry Field chain (§2.6): CA-ECF-1..3, CA-SCF-1..2, built from scratch off executor tablets/reports (no prior R1 skeleton) | ADOPTED 2026-07-13 (dossier pass 13, executing pass 12's candidate); **hardened same pass by the EC3 sheet-crop exercise (§2.6.1) — the 12441 East Cavalry Field sheet set fetched and read for the first time**; precondition open (Stuart's/Kilpatrick's full OR reports, ECF/SCF sections not yet fetched) — adopt-and-adjust if either surfaces a materially different clock |
+| **ED-73** | The CSA cavalry-brigade position-marker class (§2.6, monument-adjacent tier, distinct from ED-39's War Department tablet class; extends to the Bachelder ECF sheet set's own hand-lettered annotations) | ADOPTED 2026-07-13 (dossier pass 13, executing pass 12's candidate) |
 
 ## 5. Open questions and risks
 
