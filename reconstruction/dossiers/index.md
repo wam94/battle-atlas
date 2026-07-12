@@ -15,7 +15,7 @@ Citations are `(source-id, locator)`; source ids resolve in
 `reconstruction/sources/sources.json`. Facts with **no tier bracket are
 untimed** (identity, strength, materiel). Negative evidence and conflicts are
 first-class and live in their own section. New editorial calls are PROPOSED
-as ED candidates (ED-69+ as of pass 11 — the pass-1 candidates ED-32…ED-38,
+as ED candidates (ED-72+ as of pass 12 — the pass-1 candidates ED-32…ED-38,
 the monument profile ED-39, the pass-2 candidates ED-40…ED-45, the
 pass-3 candidates ED-46…ED-49, the pass-4 candidates ED-50…ED-52, the
 pass-5 candidates ED-53…ED-55 (incl. the CA-J2A-2/3 chain revision), and
@@ -36,7 +36,10 @@ the ED-65 addendum (the CA-J1M-4 deploy-vs-attack split with the
 CA-J1M-5 three-primary rider; the CA-J1P-2/3 basis upgrades; the
 Howard ~11:30 sub-anchor + the CA-J1P-7 front-edge tightening; the
 Geary/Muhlenberg record-only conflict) were adopted 2026-07-12 at
-pass-11 start), never self-adopted.
+pass-11 start, and the pass-11 candidates ED-69…ED-71 (the CA-J1P-1
+early-component annotation; the CA-J1P-5 cross-line basis upgrade +
+Robinson rear-guard tail; the failed-row-arithmetic rule) were
+adopted 2026-07-12 at pass-12 start), never self-adopted.
 
 ## Fixed heading schema
 
