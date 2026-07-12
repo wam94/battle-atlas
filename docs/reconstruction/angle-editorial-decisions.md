@@ -548,7 +548,9 @@ verified** — "we were attacked on the whole of our front by a large force
 a few minutes before 7 p. m." (OR 27/1 p. 856) — a primary Union clock
 agreeing with the Johnson-tablet "dusk" and Pfanz ~19:00; CA-J2E-2's 19:00
 start is the best-corroborated evening anchor alongside Hays's "A little
-before 8 p.m." (CA-J2E-3).
+before 8 p.m." (CA-J2E-3). **2026-07-11 update: hardened by ED-62** (see
+§"Dossier pass 8 adoption rulings") — E-1/E-2/E-3 now on executor
+primaries, both armies; no times or envelopes moved.
 
 ### ED-30 — July 3 morning chain (PROVISIONAL)
 
@@ -1315,6 +1317,114 @@ haul-off (artillery details), per the sequence the primaries carry.
 (McGilvery, as Smith's report was for ED-56) fixes count and type, and
 the multiple claimants converge on one event chain the sources decline
 to apportion.
+
+---
+
+## Dossier pass 8 adoption rulings (ED-62 … ED-63) — 2026-07-11
+
+Owner ruling (standing adopt-and-adjust doctrine): the ED candidates
+proposed by dossier pass 8 (`docs/reconstruction/audit/dossier-pass-8.md`
+§5, drafted on branch audit-dossiers-8) are ADOPTED as recorded below,
+executed at the start of dossier pass 9 (branch audit-dossiers-9). No
+renumbers. **No anchor moves** — ED-62 is a basis upgrade on the adopted
+CA-J2E chain (contrast ED-53, the audit's one chain revision), and ED-63
+is the convergent-event pattern's third application (after ED-56 and
+ED-61). Neither ruling carried a precondition; batch adoption executed
+directly, validators green after the edit.
+
+### ED-62 — The CA-J2E chain-hardening ruling (anchor upgrades, no moves)
+
+**Canonical choice:** the July 2 evening chain (ED-29, provisional at
+adoption) is upgraded anchor by anchor onto the pass-8 executor
+primaries, with every adopted time and envelope UNCHANGED:
+
+- **CA-J2E-1 (the XII Corps ordered away) — basis upgraded to
+  PRIMARY.** Greene's "until 6.30 p. m., when the First (Williams')
+  Division and the First and Second Brigades of the Second Division
+  were ordered from my right" (or-27-1-greene p. 856) is the anchor's
+  new spine — a primary clock inside the adopted 18:30–19:00 window,
+  replacing the tablet basis. Geary's stated 7 p.m. rides as a
+  propagation-vs-skew reading (order issued vs order reaching his
+  column), and the j2-04 drawn departure state (the moving
+  Geary/Candy labels, McDougall's vacated works, Ruger's column on
+  the pike) is the anchor's drawn corroboration.
+- **CA-J2E-2 (Johnson's assault strikes Greene) — CONFIRMED ~19:00**
+  on the cross-line minute-class pair: Greene "a few minutes before
+  7 p. m." vs Nicholls's "7 p. m. of July 2… ordered forward" (the
+  first CSA report clock agreeing on the evening chain), bracketed by
+  Johnson's dark-at-Rock-Creek and Jones's lateness/darkness
+  statements. The attacking force composition is fixed at THREE
+  brigades (Jones, Nicholls, Steuart) — Walker's Stonewall Brigade
+  detained on the Hanover-road flank by his own discretion-order
+  record (or-27-2-walker-stonewall), matching Johnson's
+  did-not-arrive-in-time division record.
+- **CA-J2E-3 (the East Cemetery Hill assault) — CONFIRMED
+  19:45–20:00** on the three-source both-armies agreement (Hays "a
+  little before 8" / Wiedrich "about 8" / Ricketts "at about 8", with
+  Harris's "about dusk" and the Hoke tablet's 8 P.M. concurring), and
+  EXPRESSED CAUSALLY relative to E-2 per Early's trigger primary
+  ("as soon as Johnson became warmly engaged, which was a little
+  before dusk, I ordered Hays and Avery to advance"). The
+  twilight-physics class is adopted as the anchor's independent
+  bracket: sunset 19:29 LMT / civil-twilight end ~19:59 (ED-31)
+  against Hays's "darkness of the evening, now verging into night"
+  ascent — five independent physics-adjacent darkness pins, both
+  armies.
+- **CA-J2E-4 (the counterattack clears the hill) — KEPT ~20:30 as a
+  sequence anchor.** Ricketts's "a part of the Second Army Corps
+  charged in" + Carroll's record make it both-sided, but no hard
+  clock exists on either side — the "inferred anchor" flag STAYS.
+- **CA-J2E-5 (the fighting dies down) — KEPT 22:00–22:30** on the
+  three ~22:00 primaries (Hays "about 10 o'clock", Greene's
+  Kane-return 10 o'clock, Geary's "about 10 p. m."); Nicholls's
+  four-hours-from-19:00 reading runs to the envelope's 23:00 edge and
+  is recorded, not adopted.
+
+**Consequences:** ED-29's PROVISIONAL status is lifted to
+adopted-with-primary-basis at E-1/E-2/E-3; E-4 remains
+inferred-sequence class; envelope arithmetic is untouched everywhere,
+so no downstream cast or caption re-times. Per-source clockProfiles
+(ED-25) carry the evening skew class: Einsiedel +75 and Steuart +75
+ride as profiled early-stated outliers; the agreeing cluster
+(Greene/Nicholls/Hays/Wiedrich/Ricketts/Early/Johnson ~0) is the
+chain's working set. **Alternative rejected:** re-timing E-1 to
+Geary's 7 p.m. — propagation delay is not a clock conflict.
+**Rationale:** the chain now rests on executor primaries at every
+anchor, both armies, which is exactly what the sequencing doctrine
+(research → anchor → place) was for.
+
+### ED-63 — The East Cemetery Hill battery-possession ruling (the convergent-event pattern's third application)
+
+**Canonical choice:** the ~20:00 lodgment among Wiedrich's and
+Ricketts's guns on East Cemetery Hill is ONE convergent event, not a
+set of competing captures. Hays's "several pieces of artillery…
+every piece… silenced", Ricketts's captured-and-spiked left piece,
+Wiedrich's fight inside "the intrenchments of my battery", and the
+Hoke tablet's colors-on-the-lunettes are honest views of the same
+minutes. The ruling fixes:
+
+- **No gun left the hill.** No captured-ordnance row exists on either
+  side's returns; Hays's brought-off trophies are the four COLORS
+  (his own wording). One Ricketts piece was spiked in place — damage,
+  not removal.
+- **Possession was momentary.** It ends with the infantry
+  counterattack (Carroll's brigade + the rallied XI Corps regiments,
+  CA-J2E-4), and both batteries resume service the same night.
+- **Casts render temporary possession + hand-to-hand + resumption —
+  never a captured-battery state.** The batteries' tracks never show
+  a lost-guns strength or materiel discontinuity.
+
+**Contrast case, explicitly out of scope:** the Culp's Hill lodgment
+(Steuart in the vacated XII Corps works) HELD overnight — that is
+ED-57's occupation-wave discipline, not this ruling; the two grounds
+are adjacent but the evidence classes differ (vacated works vs served
+guns). **Alternative rejected:** adjudicating which CSA regiment
+"took" which battery — the sources decline to apportion, and the
+ED-56/ED-61 pattern (fix the objects, carry the claimant ledger,
+render one event) is the recorded jurisprudence. **Rationale:** the
+same discipline that closed ED-56 (Smith's guns), ED-60 (Wright's
+high-water), and ED-61 (the Trostle recoveries): the disposition
+record fixes count and outcome; fame is not an evidence class.
 
 ---
 

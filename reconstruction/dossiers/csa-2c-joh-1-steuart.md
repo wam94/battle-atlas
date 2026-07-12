@@ -125,6 +125,12 @@ hardening is pass 9+ business).
 
 ## ED candidates proposed
 
+> **Adoption note (2026-07-11, pass 9):** ED-62 (the CA-J2E
+> chain-hardening ruling) and ED-63 (the ECH battery-possession
+> convergent ruling) were ADOPTED at the start of dossier pass 9
+> (angle-editorial-decisions.md §"Dossier pass 8 adoption rulings").
+> No anchor moves; envelopes unchanged.
+
 - Evidence contributed to **ED-62** (chain hardening) and the
   multi-occupation treatment of the traded works under **ED-57's
   wave discipline** (the Culp's Hill application the ED-57 ruling

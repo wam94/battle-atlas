@@ -151,6 +151,12 @@ brigades (csa-2c-joh-1/-3/-4).
 
 ## ED candidates proposed
 
+> **Adoption note (2026-07-11, pass 9):** ED-62 (the CA-J2E
+> chain-hardening ruling) and ED-63 (the ECH battery-possession
+> convergent ruling) were ADOPTED at the start of dossier pass 9
+> (angle-editorial-decisions.md §"Dossier pass 8 adoption rulings").
+> No anchor moves; envelopes unchanged.
+
 - Contributes the CA-J2E-1/E-2 upgrade evidence to **ED-62 (proposed
   in dossier-pass-8.md §5)** — the evening-chain hardening ruling.
   Nothing self-adopted.
