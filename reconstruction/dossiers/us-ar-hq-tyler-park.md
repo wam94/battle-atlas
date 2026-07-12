@@ -1,9 +1,10 @@
 # Dossier: Artillery Reserve HQ, park and ammunition train — Tyler's (reg-us-ar-hq)
 
-Pass 2 (reference frame) · Cast status: in-build
-(`us-arty-reserve-park`) · Achieved T-level: **T3** (park/command
-grain; moves clocked, ammunition physics primary; EC6 distributed to
-component returns) · 2026-07-11
+Pass 2 (reference frame) · Pass-14 note (the four brigade HQs this
+dossier's own frame governs are now individually dossiered) · Cast
+status: in-build (`us-arty-reserve-park`) · Achieved T-level: **T3**
+(park/command grain; moves clocked, ammunition physics primary; EC6
+distributed to component returns) · 2026-07-14
 
 Frame role: the ammunition physics behind Hunt's economy policy
 (CA-J3A-4) and the source of every reinforcing battery in this pass.
@@ -19,6 +20,14 @@ return pass 1 flagged as the uniform gap.
   Aug. 30, is silent on it — carried). Five brigades (1st Regular,
   1st/2nd/3rd/4th Volunteer) + the army ammunition train.
 - Ordnance officer: 2nd Lt. C. Gillett, 1st CT Heavy (annex author).
+- **PASS-14: all five brigade HQs now dossiered** — 1st Regular
+  (`us-ar-1r-ransom.md`, T2, no brigade report), 1st Volunteer
+  (`us-ar-1v-mcgilvery.md`, T4, pass 1), 2nd Volunteer
+  (`us-ar-2v-taft.md`, T3, own-battery-scoped report), 3rd Volunteer
+  (`us-ar-3v-huntington.md`, T3, no brigade report), 4th Volunteer
+  (`us-ar-4v-fitzhugh.md`, T4, a genuine brigade report — the ONE
+  exception to the class pattern). This dossier's own frame is now
+  fully substantiated at brigade grain across the whole Reserve.
 
 ## EC2 — Engaged strength
 
@@ -92,6 +101,16 @@ return pass 1 flagged as the uniform gap.
   (C, Fifth U. S. Artillery) or Captain Sterling's (Second
   Connecticut) batteries" — yet Weir's C/5th US report is printed at
   pp. 879-880 (an OR assembly artifact, recorded on both dossiers).
+  **PASS-14 NOTE**: this is almost certainly Tyler naming the battery
+  by its PRE-Gettysburg commander out of habit — Capt. Dunbar R.
+  Ransom had commanded Battery C, 5th U.S. before his promotion to
+  command the 1st Regular Brigade (`reg-us-ar-1r`,
+  `us-ar-1r-ransom.md`, this pass, which independently confirms NO
+  separate Ransom brigade-command report exists in the printed OR
+  sequence) — Weir had already succeeded him at the battery by July
+  1863. Tyler's phrasing is therefore not evidence of a missing
+  battery report so much as an old-habit naming artifact, consistent
+  with (and now partially explaining) this pass's own finding.
 2. Tyler's report silent on his own July 3 incapacitation and the
   Robertson succession — register-vs-report conflict carried.
 3. Consolidated Reserve casualty/expenditure tables (pp. 874-877)

@@ -1804,6 +1804,61 @@ ED-counter updated in place.
 
 ---
 
+## Dossier pass 13 adoption ruling (ED-74) — 2026-07-14
+
+Owner ruling (standing adopt-and-adjust doctrine): the ED candidate
+proposed by dossier pass 13 (`docs/reconstruction/audit/dossier-pass-13.md`
+§5, drafted on branch audit-dossiers-13) is ADOPTED as recorded below,
+executed at the start of dossier pass 14 (branch audit-dossiers-14). No
+renumber needed.
+
+### ED-74 — The report-vs-corroborated-tablet-conflict class (extends ED-71)
+
+Pass 13's Lane's (Sumter, Georgia) Artillery Battalion dossier
+(`csa-3c-bn-lane.md` §"EC6") surfaced a third conflict shape distinct
+from both standing arithmetic-conflict rules: Lane's own report gives an
+internally-consistent battalion loss total ("Men killed, 3; wounded
+seriously, 2; severely, 7; slightly, 13; missing, 4; total loss of men,
+29") that disagrees by exactly one man's worth of arithmetic with the
+battalion tablet's total (30), where the tablet figure is INDEPENDENTLY
+cross-checked — the three constituent battery markers (Ross's,
+Patterson's, Wingfield's) sum digit-exact to 30, not to 29. Neither
+ED-71 (a single printed table failing its OWN internal arithmetic) nor
+ED-49/ED-52 (a report's scope disagreeing with a return's different
+scope) covers this: here TWO different evidence classes (a commander's
+own report; an independently-summed tablet/marker consensus) each pass
+their own internal-consistency check and still disagree by a small,
+genuinely irreducible margin.
+
+**Canonical choice:** name this conflict shape
+`report-vs-corroborated-tablet-conflict` and, wherever it recurs, adopt
+the **battery-marker-corroborated tablet figure as the EC6 basis**
+while carrying the **report's total verbatim as a first-class
+component** (never averaged, never silently dropped) — the same
+carry-both discipline ED-71(a)/(b) already apply to a different
+evidence-class pairing, extended here to cover report-vs-tablet instead
+of table-vs-itself. Tag the affected cell `report-vs-corroborated-
+tablet-conflict` so future passes can find the pattern without
+re-deriving it. Exhibit of record: Lane's Sumter battalion, 29 (report)
+vs 30 (tablet, corroborated by the three-battery marker sum) —
+`csa-3c-bn-lane.md` EC6 and Conflicts sections carry the full text and
+now cite this ruling by name rather than "NOT self-adopted."
+**Rationale:** the tablet reading here is not "preferred because
+official" (that would violate ED-39's own caution about tablet
+casualty scope, ED-43) — it is preferred because it is the ONLY one of
+the two readings independently reproduced from components fetched
+separately from the total itself (three battery pages, none of which
+cites the battalion tablet or Lane's report); the report's total, while
+self-consistent, is a single unverified source on this specific
+question. Where a future case lacks that independent-sum corroboration,
+this rule does NOT apply and the conflict stays carried unresolved
+per ED-71's baseline discipline.
+
+`csa-3c-bn-lane.md`'s "ED candidates proposed" section is updated to
+record the adoption rather than re-propose it.
+
+---
+
 ## Connective-reconstruction rules (named inference rules)
 
 Segments cite these rules by name in `inferenceRules`. A segment with no

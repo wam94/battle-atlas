@@ -1,8 +1,9 @@
 # Dossier: Farnsworth's Brigade, 3rd Cavalry Division (reg-us-cav-3-1)
 
-Pass 12 (the cavalry theater opener) · Cast status: **in-build**
-(`us-cav-farnsworth`) · Achieved T-level: **T3 (South Cavalry Field
-grain)** · 2026-07-12
+Pass 12 (the cavalry theater opener) · Pass-14 EC3 patch (the SCF
+sheet-crop exercise) · Cast status: **in-build** (`us-cav-farnsworth`)
+· Achieved T-level: **T3 (South Cavalry Field grain, now sheet-crop
+confirmed)** · 2026-07-14
 
 Chain role: the CA-SCF-2 executor — Farnsworth's death pin, the
 theater's second officer-casualty event and its most heavily
@@ -34,14 +35,36 @@ primary, an ED-39-§3-class conflict).
    Corps," fetched this pass) — this ground is on-map (south of Big
    Round Top, within the main heightmap square, unlike East Cavalry
    Field), so no ±75 m ECF-class caveat applies here.
-2. **PASS-13 EC3 HONESTY NOTE:** the sheet-crop exercise this pass
-   was scoped to the Bachelder 12441 (East Cavalry Field) set only
-   (per the task's own scope discipline); South Cavalry Field's
-   sheets (`12440022`/`12440023`, main-field, manifest ids
-   `j3-03`/`j3-04`) were NOT fetched this pass — still no dedicated
-   spatial exercise for this dossier. Recorded as a standing gap for
-   pass 14 (see `anchor-chain-proposal.md` §2.6.1's closing note),
-   not silently carried forward as "done."
+2. **PASS-14 EC3 SHEET-CROP PATCH (the pass-13 gap closed):**
+   `12440022` (manifest id `j3-03`, "No. 8, 1-5 P.M. July 3") fetched
+   and sha256-verified this pass against `bachelder-manifest.json`
+   (`747fef56b7ebab92deab7a6dff309587996d3c12766aa665a138c0c53dd4ed38`).
+   Read with `reconstruction/scripts/crop_sheet.py` +
+   `georef_maps.py`'s `img_to_local`: a hand-lettered **"FARNSWORTH'S
+   BRIGADE"** block is drawn at local (2660, 1520), with regimental
+   sub-blocks legible around it — "1 W V°" / "1 VT" at (2797, 1612)
+   and "5 N.Y." at (2878, 1487) — directly adjacent to Merritt's
+   regulars' blocks ("6th PA" at (2405, 1698); "1 U.S."/"2 U.S." at
+   (2483, 1496)/(2536, 1460)) and "ELDER'S BAT." at (2728, 1351) — the
+   4th U.S. Battery E, Robertson's Horse Artillery Brigade
+   (`us-ha-1-robertson.md`, this pass), independently confirming that
+   battery's own tablet statement ("With First Brigade Third Division
+   on the left"). Radius: the sheet's own `estAbsUncertaintyM` (~31 m)
+   for the absolute plot; treated as terrain-relative/unit-to-unit
+   (15-30 m class per `spatial-evidence.md`) for the block-to-block
+   separations cited here, since all readings come off one sheet's
+   single registration. **A second sheet (`12440023`/`j3-04`, "No. 9,
+   5 P.M.") was fetched and checked at the same local coordinates and
+   draws NO troop blocks in this sector** — an honest negative,
+   consistent with (not contradicting) CA-SCF-2's ~17:30 charge/close
+   time: by the 5 P.M. window the action here had already resolved.
+   Nearby CSA units also read off `j3-03` at this pass (context, not
+   Farnsworth's own anchor): "1 TEX" (1st Texas, Robertson's brigade)
+   at ~(2860, 1895); "HART'S S.C." battery (Beckham's Stuart Horse
+   Artillery battalion — NOT Henry's battalion) at (2250, 2114),
+   beside "ANDERSON'S BRIGADE" (7th/8th/9th Georgia) at (2363, 2174) —
+   both south/east of the Farnsworth/Merritt block, consistent with
+   the charge crossing infantry-held ground (EC3.3).
 3. **The charge ground**: "through woods and across stone walls" (both
    the 3rd Division and 1st Brigade tablets agree on this terrain
    class) against "superior forces of Confederate infantry and
@@ -131,8 +154,9 @@ primary, an ED-39-§3-class conflict).
 
 ## ED candidates proposed
 
-- Fed **ED-72**, ADOPTED at the start of pass 13. EC3's honesty note
-  (above) records that the SCF-side sheet crop remains undone.
+- Fed **ED-72**, ADOPTED at the start of pass 13. EC3's pass-14 patch
+  (above) closes the SCF-side sheet-crop gap the pass-13 note left
+  open.
 - Fed **ED-73**, ADOPTED at the start of pass 13. **PASS-13
   DISENTANGLE (the pass-12 flag closed):** the two fetched
   gettysburg.stonesentinels.com pages used by this dossier
@@ -156,4 +180,8 @@ Division, Cavalry Corps," fetched 2026-07-12) · civilwarcycling-oob-
 index-1 (Kilpatrick's report No. 359 identified, NOT fetched this
 pass) · parsons-battlesandleaders-1887 (web research, Farnsworth's
 death account, attributed grade only, accessed 2026-07-12) ·
+bachelder-j3-03 (manifest id `j3-03`, sheet 12440022, sha256-verified,
+read 2026-07-14) · bachelder-j3-04 (manifest id `j3-04`, sheet
+12440023, sha256-verified, read 2026-07-14 — negative check) ·
+us-ha-1-robertson.md (Elder's battery cross-reference) ·
 addressing-gettysburg-oob (B&M-repro hop) · or-27-oob.

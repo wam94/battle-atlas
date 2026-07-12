@@ -1,8 +1,9 @@
 # Dossier: Merritt's Reserve Brigade, 1st Cavalry Division (reg-us-cav-1-3)
 
-Pass 12 (the cavalry theater opener) · Cast status: **in-build**
-(`us-cav-merritt`) · Achieved T-level: **T4 (July 3 grain — the
-Fairfield-pooling EC6 finding)** · 2026-07-12
+Pass 12 (the cavalry theater opener) · Pass-14 EC3 patch (the SCF
+sheet-crop exercise) · Cast status: **in-build** (`us-cav-merritt`) ·
+Achieved T-level: **T4 (July 3 grain — the Fairfield-pooling EC6
+finding, now sheet-crop confirmed)** · 2026-07-14
 
 Chain role: the CA-SCF-2 co-executor; the pass's best EC6 COMPOSITION
 finding — the brigade's tablet casualty total pools TWO separate
@@ -45,12 +46,25 @@ resolves at the "carry both, adopt neither silently" grade.
    standing off-map ruling (Fairfield listed alongside East Cavalry
    Field, Westminster, Cashtown) already carries this; this dossier is
    the first pass-12 unit to substantiate it with a primary quote.
-3. **PASS-13 EC3 HONESTY NOTE:** the sheet-crop exercise this pass was
-   scoped to the Bachelder 12441 (East Cavalry Field) set only; South
-   Cavalry Field's main-field sheets (`12440022`/`12440023`) were not
-   fetched — this dossier's ±75 m-class geometry remains untested by a
-   drawn-bar read, same standing gap as `us-cav-3-1-farnsworth.md`
-   (see `anchor-chain-proposal.md` §2.6.1).
+3. **PASS-14 EC3 SHEET-CROP PATCH (the pass-13 gap closed):**
+   `12440022` (manifest id `j3-03`, sha256-verified against
+   `bachelder-manifest.json`) read this pass with `crop_sheet.py` +
+   `georef_maps.py`. Merritt's regulars are drawn in a block directly
+   beside Farnsworth's Brigade's own block (full read and coordinates:
+   `us-cav-3-1-farnsworth.md` EC3, this pass) — "6th PA" at local
+   (2405, 1698) and "1 U.S." / "2 U.S." sub-blocks at (2483, 1496) /
+   (2536, 1460), ~250-350 m from Farnsworth's brigade label — a
+   terrain-relative (unit-to-unit) confirmation that the two brigades
+   fought from immediately adjacent ground, consistent with both
+   dossiers' report/tablet narrative of a joint advance. `12440023`
+   (`j3-04`, the 5 P.M. sheet) draws no troop blocks in this sector —
+   an honest negative, not a contradiction (the action had closed by
+   5 P.M. per CA-SCF-2). Radius: ~31 m absolute (sheet
+   `estAbsUncertaintyM`); 15-30 m terrain-relative for the
+   block-to-block separation, per `spatial-evidence.md`. No standalone
+   position anchor beyond the block itself was legible for Merritt's
+   6th US Cavalry detachment (EC3.2, Fairfield) — off-map, so not
+   expected on a main-field sheet.
 
 ## EC4 — Movement legs
 
@@ -127,6 +141,8 @@ resolves at the "carry both, adopt neither silently" grade.
 - Fed **ED-72**, ADOPTED at the start of pass 13; the Fairfield-
   pooling finding is cited in the ED-72 adoption text's rationale
   (not a separate ED — a per-unit application of standing doctrine).
+  EC3's pass-14 patch closes the SCF-side sheet-crop gap the pass-13
+  note left open.
 
 ## Source register
 
@@ -134,5 +150,9 @@ or-27-1-merritt (No. 340, OR 27/1 pp. 943-946, fetched this pass;
 PRIMARY, report-nominal, no clockProfile assessed this pass — but
 note EC4.2's cannonade-relative phrasing as a future clockProfile
 anchor candidate) · gettysburg-stonesentinels-reservebde1div-cav
-(marker/tablet page, fetched 2026-07-12) · addressing-gettysburg-oob
-(B&M-repro hop) · or-27-oob.
+(marker/tablet page, fetched 2026-07-12) · bachelder-j3-03 (manifest id
+`j3-03`, sheet 12440022, sha256-verified, read 2026-07-14) ·
+bachelder-j3-04 (manifest id `j3-04`, sheet 12440023, sha256-verified,
+read 2026-07-14 — negative check) · us-cav-3-1-farnsworth.md
+(shared sheet-crop reads) · addressing-gettysburg-oob (B&M-repro hop) ·
+or-27-oob.
