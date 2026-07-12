@@ -49,7 +49,9 @@ namespace BattleAtlas
             // the charge corridor: between the Emmitsburg Road crossing and
             // the Union wall (csa-garnett track ~x3200..4400 @ z~4850)
             new Preset("mid", new Vector3(3900f, 0f, 4850f), 0f, 55f, 2200f),
-            new Preset("tactical", new Vector3(4405f, 0f, 4852f), 25f, 60f, 1100f),
+            // camera behind the Union wall looking west into the oncoming
+            // charge — the formation-state and battery-glyph read
+            new Preset("tactical", new Vector3(4410f, 0f, 4852f), 250f, 45f, 1300f),
         };
 
         public static readonly float[] Times = { 5400f, 8400f };
