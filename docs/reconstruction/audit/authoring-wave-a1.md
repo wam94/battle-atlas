@@ -104,16 +104,15 @@ the full vitest suite (109 tests, incl. a new Wave A1 block) pass.
 
 | Suite | Before (main) | After (wave) |
 |---|---|---|
-| tool vitest | 108 tests | **109 passed** (new Wave A1 block; the Wave 3 segment-event pin extended for Miller's section) |
-| reconstruction pytest | 120 + 1 skip | **120 passed, 1 skipped** (after the metadata recompile) |
-| Unity EditMode | 120(+1) green per audit-d10 record | see evidence table below |
-| Unity PlayMode | 59 green per audit-d10 record | see evidence table below |
+| tool vitest | 108 passed | **109 passed, 0 failed** (new Wave A1 block; the Wave 3 segment-event pin extended for Miller's section) |
+| reconstruction pytest | 120 + 1 skip | **120 passed, 1 skipped, 0 failed** (after the metadata recompile — `test_committed_bundle_matches_recompilation` is exactly the test that forces the header recompile) |
+| Unity EditMode | green (audit-d10 record) | **353 passed, 0 failed, 5 skipped** — incl. AngleBundleTests (stagingSeed pin) + AngleBundleRuntimeTests (13-unit reconciliation) |
+| Unity PlayMode | green (audit-d10 record) | **16 passed, 0 failed** (the full current PlayMode surface: HUD flow, SoldierView sync, full-media seek) |
 
 (Unity runs: CLI `-batchmode -runTests -buildTarget OSXUniversal`, worktree
 Library, gitignored inputs restored — `data/heightmap`, `data/landcover`
-extras, SoldierView proxies.)
-
-<!-- UNITY-RESULTS -->
+extras, SoldierView proxies; logs `editmode.log` / `playmode.log` +
+`*-results.xml` in the worktree, gitignored by design.)
 
 ## 5. Evidence
 
@@ -129,8 +128,9 @@ extras, SoldierView proxies.)
   - t=8160: the road crossing under the full gun ring.
   - t=8700: the wall crisis; Miller's advanced section opening; Sherrill
     on the wall line.
-  - t=9900: the Wilcox/Lang echelon out in the open toward the ravine,
-    the Vermont reversal closing on its left.
+  - t=9900: the Wilcox/Lang echelon stepping off toward the ravine (the
+    16th VT mid-reversal on its left); the farthest-advance state itself
+    peaks at t≈10380, past the last capture point.
 - This report: `docs/reconstruction/audit/authoring-wave-a1.md`.
 
 ## 6. Risks & residuals
