@@ -4,13 +4,14 @@
  "generated": "2026-07-10",
  "frame": "battlefield-local meters: local_x = UTM 18N (EPSG:26918) easting - 304208.0216360274, local_z = northing - 4404534.271124143 (data/heightmap/heightmap.json origin; identical to the landmark-anchors convention)",
  "coverage": {
-  "included": "July 3 afternoon assault sector: full II Corps front (Webb, Hall, Harrow, Smyth, Willard/Sherrill brigades + Hazard's batteries + Cowan), Stannard's brigade, 8th Ohio, CSA state memorials on the Pickett's Charge start line, 11th MS / 26th NC advance markers, Armistead marker",
+  "included": "July 3 afternoon assault sector: full II Corps front (Webb, Hall, Harrow, Smyth, Willard/Sherrill brigades + Hazard's batteries + Cowan), Stannard's brigade, 8th Ohio, CSA state memorials on the Pickett's Charge start line, 11th MS / 26th NC advance markers, Armistead marker; SOUTHERN FIELD (pass 6, 2026-07-11): Wheatfield/Rose Woods/Devil's Den cluster (Caldwell's four brigade tablets + 5th NH/Irish Bde/4th MI/17th ME/124th NY monuments + Zook statue), Smith's 4th NY two-position pair, the four CSA ladder brigade tablets (W/S Confederate Ave) + Semmes-mw/Anderson-w/Benning/Robertson/Law advance markers, the Little Round Top summit cluster (Vincent-mw, Weed+Hazlett, 140th NY, 20th ME, 44th NY, 16th MI, 83rd PA, 91st PA, 146th NY, 155th PA + both brigade tablets), 1st Minnesota pair + Willard-KIA marker",
   "notIncluded": "right/left flank marker stones (see flankMarkerGap), McGilvery's line, Cemetery Hill/Culp's Hill fronts, July 1 field, cavalry fields — future passes",
-  "flankMarkerGap": "GNMP flank-marker stones (R.F./L.F.) physically exist for most Union regiments here, but no license-clean machine-readable coordinate source was found this pass: Stone Sentinels does not publish their coordinates, HMDB is bot-walled (Cloudflare) and catalogs few of the small stones, OpenStreetMap has essentially none mapped in this sector (2 flank-named objects park-wide), and the NPS 'Monumentation' ArcGIS layer is survey benchmarks, not war monuments. Honest coverage: 0 flank-marker entries. Recommended fill: manual HMDB browser pass or field GPS; the secondary/advance/position markers captured here partially serve the same line-extent purpose."
+  "flankMarkerGap": "GNMP flank-marker stones (R.F./L.F.) physically exist for most Union regiments here, but no license-clean machine-readable coordinate source was found this pass: Stone Sentinels does not publish their coordinates, HMDB is bot-walled (Cloudflare) and catalogs few of the small stones, OpenStreetMap has essentially none mapped in this sector (2 flank-named objects park-wide), and the NPS 'Monumentation' ArcGIS layer is survey benchmarks, not war monuments. Honest coverage: 0 flank-marker entries. Recommended fill: manual HMDB browser pass or field GPS; the secondary/advance/position markers captured here partially serve the same line-extent purpose.",
+  "southernFieldChannelNote": "Pass-6 extraction channels: CSA and most Union brigade-tablet pages on Stone Sentinels still print DMS coordinates (dms-text); Stone Sentinels regiment/monument pages served NO machine-readable coordinates through the 2026-07-11 fetch channel, so those entries carry OpenStreetMap (ODbL) as the PRIMARY coordinate source (extraction osm-node/osm-way-center, per-entry note) - a recorded deviation from the register's dms-text default. OSM was the register's calibrated cross-check source (ED-39); typical SS-vs-OSM deltas in this batch run 1-27 m with two flagged >50 m (tab-us-ii-1-3, tab-us-ii-1-4)."
  },
  "sources": {
   "stone-sentinels": "gettysburg.stonesentinels.com unit pages, accessed 2026-07-10; coordinates from published DMS text (dms-text), Google-Maps embed payloads (gmaps-embed-b64), or map query links (gmaps-q); DMS text granularity 0.1 arc-second (~3 m)",
-  "openstreetmap": "Overpass API extract of historic=memorial/monument in the battlefield bbox, accessed 2026-07-10, ODbL; used as an independent cross-check only"
+  "openstreetmap": "Overpass API extract of historic=memorial/monument in the battlefield bbox, accessed 2026-07-10, ODbL; used as an independent cross-check for dms-text entries and, in the pass-6 southern-field batch only, as the primary coordinate source where Stone Sentinels served no machine-readable coordinates (per-entry notes)"
  },
  "entries": [
   {
@@ -1021,6 +1022,816 @@
     "url": "https://gettysburg.stonesentinels.com/monuments-to-individuals/alexander-webb/",
     "accessDate": "2026-07-10",
     "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "tab-csa-semmes",
+   "registerId": "reg-csa-1c-mcl-2",
+   "unitLabel": "Semmes's Brigade tablet",
+   "side": "CSA",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "War Dept itinerary tablet on West Confederate Ave (division formation-line commemoration; narrative places the brigade's July 2 action at Rose Hill/the Loop, not here)",
+   "lat": 39.798722,
+   "lon": -77.255972,
+   "local_x": 2649.6,
+   "local_z": 3318.0,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/confederate-headquarters/semmes-brigade/",
+    "accessDate": "2026-07-11",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "tab-csa-wofford",
+   "registerId": "reg-csa-1c-mcl-4",
+   "unitLabel": "Wofford's Brigade tablet",
+   "side": "CSA",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "War Dept itinerary tablet on West Confederate Ave ('formed line 100 yards west of this'; July 2 action along the Wheatfield Road, not here)",
+   "lat": 39.803083,
+   "lon": -77.256083,
+   "local_x": 2652.3,
+   "local_z": 3802.4,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/confederate-headquarters/woffords-brigade/",
+    "accessDate": "2026-07-11",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "tab-csa-anderson-gt",
+   "registerId": "reg-csa-1c-hood-3",
+   "unitLabel": "G. T. Anderson's Brigade tablet",
+   "side": "CSA",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "War Dept itinerary tablet on West Confederate Ave (formation line; July 2 action in Rose Woods/Wheatfield, not here)",
+   "lat": 39.792472,
+   "lon": -77.255,
+   "local_x": 2715.3,
+   "local_z": 2622.2,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/confederate-headquarters/anderson/",
+    "accessDate": "2026-07-11",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "tab-csa-benning",
+   "registerId": "reg-csa-1c-hood-4",
+   "unitLabel": "Benning's Brigade tablet",
+   "side": "CSA",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "War Dept itinerary tablet on South Confederate Ave (formation line ~400 yds behind Law/Robertson; July 2 action at Devil's Den, not here)",
+   "lat": 39.789306,
+   "lon": -77.254083,
+   "local_x": 2785.0,
+   "local_z": 2268.8,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/confederate-headquarters/bennings-brigade/",
+    "accessDate": "2026-07-11",
+    "extraction": "dms-text"
+   }
+  },
+  {
+   "id": "mon-csa-semmes-mw",
+   "registerId": "reg-csa-1c-mcl-2",
+   "unitLabel": "Semmes brigade advance marker (Semmes mw vicinity)",
+   "side": "CSA",
+   "markerType": "advance-marker",
+   "positionSemantics": "Brigade advance position, Rose Woods ravine near the Loop; Semmes fell mortally wounded 'in the ravine near the Loop' (tablet narrative) - officer-pin check point",
+   "lat": 39.79479,
+   "lon": -77.247582,
+   "local_x": 3357.0,
+   "local_z": 2863.5,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6684462294",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: CS HQ Semmes+ GA Brigade"
+   }
+  },
+  {
+   "id": "mon-csa-anderson-w",
+   "registerId": "reg-csa-1c-hood-3",
+   "unitLabel": "G. T. Anderson wounded marker",
+   "side": "CSA",
+   "markerType": "individual-marker",
+   "positionSemantics": "Rose Woods south of the Wheatfield; Anderson wounded during the brigade's second advance (White's report) - officer-pin check point",
+   "lat": 39.793617,
+   "lon": -77.245538,
+   "local_x": 3528.7,
+   "local_z": 2728.9,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/9512238651",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: Anderson(w) GA Brigade marker"
+   }
+  },
+  {
+   "id": "mon-csa-benning-adv",
+   "registerId": "reg-csa-1c-hood-4",
+   "unitLabel": "Benning brigade advance marker",
+   "side": "CSA",
+   "markerType": "advance-marker",
+   "positionSemantics": "Devil's Den / Houck's Ridge ground taken and held July 2 evening to July 3 late day",
+   "lat": 39.791242,
+   "lon": -77.243499,
+   "local_x": 3696.7,
+   "local_z": 2460.9,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6681736229",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: CS Benning GA Brigade"
+   }
+  },
+  {
+   "id": "mon-csa-robertson-adv",
+   "registerId": "reg-csa-1c-hood-2",
+   "unitLabel": "Robertson brigade advance marker",
+   "side": "CSA",
+   "markerType": "advance-marker",
+   "positionSemantics": "Houck's Ridge/Devil's Den front of the 1st TX / 3rd AR wing",
+   "lat": 39.792151,
+   "lon": -77.242797,
+   "local_x": 3759.3,
+   "local_z": 2560.3,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6681736228",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: CS Robertson's Brigade"
+   }
+  },
+  {
+   "id": "mon-csa-law-adv",
+   "registerId": "reg-csa-1c-hood-1",
+   "unitLabel": "Law brigade advance marker",
+   "side": "CSA",
+   "markerType": "advance-marker",
+   "positionSemantics": "West foot of the Round Tops - the brigade's July 2 evening/night line",
+   "lat": 39.789352,
+   "lon": -77.237392,
+   "local_x": 4214.4,
+   "local_z": 2238.0,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7128731222",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: CS HQ Law AL Brigade"
+   }
+  },
+  {
+   "id": "tab-us-ii-1-1",
+   "registerId": "reg-us-ii-1-1",
+   "unitLabel": "1st Bde 1st Div II Corps (Cross) tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "Attack position east of the Wheatfield (Ayres Ave) - the stone wall line the brigade advanced from between 5 and 6 PM July 2 (tablet narrative)",
+   "lat": 39.796083,
+   "lon": -77.241694,
+   "local_x": 3864.7,
+   "local_z": 2994.4,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-headquarters/1st-brigade-1st-division-2nd-corps/",
+    "accessDate": "2026-07-11",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "US HQ 2-1-1st Brigade Cross+ / McKeen",
+    "osmType": "node",
+    "osmId": 6684237685,
+    "lat": 39.796185,
+    "lon": -77.241801,
+    "deltaMeters": 14.7,
+    "flagged": false
+   }
+  },
+  {
+   "id": "tab-us-ii-1-2",
+   "registerId": "reg-us-ii-1-2",
+   "unitLabel": "2nd Bde (Irish Bde, Kelly) 1st Div II Corps tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "Wheatfield/stony hill attack position (tablet narrative: engaged Anderson's Brigade in the Wheatfield, forced them south into the woods)",
+   "lat": 39.7975,
+   "lon": -77.245694,
+   "local_x": 3526.2,
+   "local_z": 3160.2,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-headquarters/2nd-brigade-1st-division-2nd-corps/",
+    "accessDate": "2026-07-11",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "US HQ 2-1-2nd “Irish Brigade” Kelly",
+    "osmType": "node",
+    "osmId": 7248635511,
+    "lat": 39.797668,
+    "lon": -77.24547,
+    "deltaMeters": 26.8,
+    "flagged": false
+   }
+  },
+  {
+   "id": "tab-us-ii-1-3",
+   "registerId": "reg-us-ii-1-3",
+   "unitLabel": "3rd Bde (Zook) 1st Div II Corps tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "Stony hill crest reached in the counterattack (Sickles Ave at the Loop); Zook fell at the attack's start (separate statue on Wheatfield Rd)",
+   "lat": 39.797306,
+   "lon": -77.245111,
+   "local_x": 3575.6,
+   "local_z": 3137.5,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-headquarters/3rd-brigade-1st-division-2nd-corps/",
+    "accessDate": "2026-07-11",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "US HQ 2-1-3rd Brigade Zook+ / Fraser",
+    "osmType": "node",
+    "osmId": 7248584206,
+    "lat": 39.797467,
+    "lon": -77.245713,
+    "deltaMeters": 54.4,
+    "flagged": true
+   }
+  },
+  {
+   "id": "tab-us-ii-1-4",
+   "registerId": "reg-us-ii-1-4",
+   "unitLabel": "4th Bde (Brooke) 1st Div II Corps tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "FARTHEST ADVANCE of Caldwell's counterattack - Rose ravine crest (Brooke Ave in Rose Woods)",
+   "lat": 39.79525,
+   "lon": -77.247056,
+   "local_x": 3403.3,
+   "local_z": 2913.4,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-headquarters/4th-brigade-1st-division-2nd-corps/",
+    "accessDate": "2026-07-11",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "US HQ 2-1-4th Brigade Brooke",
+    "osmType": "node",
+    "osmId": 6684462293,
+    "lat": 39.794745,
+    "lon": -77.246991,
+    "deltaMeters": 56.4,
+    "flagged": true
+   }
+  },
+  {
+   "id": "tab-us-iii-1-3",
+   "registerId": "reg-us-iii-1-3",
+   "unitLabel": "3rd Bde (de Trobriand) 1st Div III Corps tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "July 2 defense position at the Wheatfield's southwest (Sickles Ave west of de Trobriand Ave)",
+   "lat": 39.796528,
+   "lon": -77.244111,
+   "local_x": 3659.0,
+   "local_z": 3049.0,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-headquarters/3rd-brigade-1st-division-3rd-corps/",
+    "accessDate": "2026-07-11",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "US HQ 3-1-3rd Brigade De Trobriand",
+    "osmType": "node",
+    "osmId": 6684462255,
+    "lat": 39.796523,
+    "lon": -77.244103,
+    "deltaMeters": 0.9,
+    "flagged": false
+   }
+  },
+  {
+   "id": "tab-us-iii-1-2",
+   "registerId": "reg-us-iii-1-2",
+   "unitLabel": "2nd Bde (Ward) 1st Div III Corps tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "July 2 defense line, Houck's Ridge north of Devil's Den (left of the division line to LRT's west base)",
+   "lat": 39.793139,
+   "lon": -77.242778,
+   "local_x": 3763.7,
+   "local_z": 2669.9,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-headquarters/2nd-brigade-1st-division-3rd-corps/",
+    "accessDate": "2026-07-11",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "US HQ 3-1-2nd Brigade Hobart Ward(w) / Berdan",
+    "osmType": "node",
+    "osmId": 6681736233,
+    "lat": 39.792969,
+    "lon": -77.242711,
+    "deltaMeters": 19.7,
+    "flagged": false
+   }
+  },
+  {
+   "id": "tab-us-v-1-1",
+   "registerId": "reg-us-v-1-1",
+   "unitLabel": "1st Bde (Tilton) 1st Div V Corps tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "July 2 position in the woods south of Rose's house (inside the Loop) - attacked by Kershaw, withdrew across Wheatfield Rd (tablet narrative; SS page served no coordinates - OSM primary)",
+   "lat": 39.797291,
+   "lon": -77.246232,
+   "local_x": 3479.5,
+   "local_z": 3138.2,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7248584210",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: HQ US 5-1-1st Brigade Tilton"
+   }
+  },
+  {
+   "id": "tab-us-v-1-2",
+   "registerId": "reg-us-v-1-2",
+   "unitLabel": "2nd Bde (Sweitzer) 1st Div V Corps tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "July 2 first position, woods at the Wheatfield's west (de Trobriand Ave; SS page served no coordinates - OSM primary)",
+   "lat": 39.796056,
+   "lon": -77.243963,
+   "local_x": 3670.4,
+   "local_z": 2996.2,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7248635513",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: US HQ 5-1-2nd Brigade Sweitzer"
+   }
+  },
+  {
+   "id": "mon-1mn-main",
+   "registerId": "reg-us-ii-2-1",
+   "unitLabel": "1st Minnesota main monument",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 2 charge - monument stands at/near the line from which the eight companies charged Wilcox at the run (Hancock Ave; regiment of Harrow's brigade)",
+   "lat": 39.806632,
+   "lon": -77.235019,
+   "local_x": 4465.5,
+   "local_z": 4151.0,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/way/710690088",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-way-center",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: 1st MN Colvill"
+   }
+  },
+  {
+   "id": "mon-1mn-j3",
+   "registerId": "reg-us-ii-2-1",
+   "unitLabel": "1st Minnesota July 3 marker",
+   "side": "US",
+   "markerType": "position-marker",
+   "positionSemantics": "July 3 position south of the Copse (Messick k; 28th Va colors taken)",
+   "lat": 39.810563,
+   "lon": -77.236099,
+   "local_x": 4384.0,
+   "local_z": 4589.7,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/5689244622",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: 1st MN Messick / Farrell"
+   }
+  },
+  {
+   "id": "mon-4ny-dd",
+   "registerId": "reg-us-iii-b3",
+   "unitLabel": "4th New York Independent Battery monument",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Devil's Den main position of Smith's four guns (three 10-pdr Parrotts lost here July 2)",
+   "lat": 39.792077,
+   "lon": -77.242474,
+   "local_x": 3786.8,
+   "local_z": 2551.4,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/4485288364",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: 4th NY Artillery “Smith's Battery” Smith"
+   }
+  },
+  {
+   "id": "mon-4ny-rear",
+   "registerId": "reg-us-iii-b3",
+   "unitLabel": "4th NY Battery rear-section marker",
+   "side": "US",
+   "markerType": "position-marker",
+   "positionSemantics": "Rear section position, Plum Run valley (fired obliquely through the gully after the hill fell)",
+   "lat": 39.794389,
+   "lon": -77.239878,
+   "local_x": 4015.5,
+   "local_z": 2802.4,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6681791212",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: 4th NY Artillery “Smith's Battery” Smith"
+   }
+  },
+  {
+   "id": "mon-irish-bde",
+   "registerId": "reg-us-ii-1-2",
+   "unitLabel": "Irish Brigade monument (Celtic cross)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "July 2 attack position on the stony hill (Sickles Ave)",
+   "lat": 39.797064,
+   "lon": -77.24512,
+   "local_x": 3574.1,
+   "local_z": 3110.6,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/4485288326",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: US 2-1-2nd Brigade NY Irish Brigade Kelly"
+   }
+  },
+  {
+   "id": "mon-5nh",
+   "registerId": "reg-us-ii-1-1",
+   "unitLabel": "5th New Hampshire monument",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Brigade left at the Wheatfield's southeast edge; Col. Cross mw vicinity (officer-pin check point)",
+   "lat": 39.795044,
+   "lon": -77.241858,
+   "local_x": 3847.8,
+   "local_z": 2879.4,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/4489439141",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: 5th NH Hapgood"
+   }
+  },
+  {
+   "id": "mon-zook-statue",
+   "registerId": "reg-us-ii-1-3",
+   "unitLabel": "Zook statue",
+   "side": "US",
+   "markerType": "individual-marker",
+   "positionSemantics": "Zook mw site vicinity on Wheatfield Road (fell at the start of the brigade's advance) - officer-pin check point",
+   "lat": 39.798491,
+   "lon": -77.242634,
+   "local_x": 3790.9,
+   "local_z": 3263.7,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7248775343",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: US General Samuel K. Zook"
+   }
+  },
+  {
+   "id": "mon-4mi",
+   "registerId": "reg-us-v-1-2",
+   "unitLabel": "4th Michigan monument",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Wheatfield stone fence where the regiment was caught front-and-rear; Col. Jeffords killed with the colors (officer-pin check point)",
+   "lat": 39.796197,
+   "lon": -77.24388,
+   "local_x": 3677.9,
+   "local_z": 3011.7,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6684462267",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: 4th MI Jeffords+ / Lumbard"
+   }
+  },
+  {
+   "id": "mon-17me",
+   "registerId": "reg-us-iii-1-3",
+   "unitLabel": "17th Maine monument",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "The stone wall at the Wheatfield's south edge held July 2 (de Trobriand's center-left)",
+   "lat": 39.795766,
+   "lon": -77.24439,
+   "local_x": 3633.0,
+   "local_z": 2965.0,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6684462269",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: 17th ME Merrill"
+   }
+  },
+  {
+   "id": "mon-124ny",
+   "registerId": "reg-us-iii-1-2",
+   "unitLabel": "124th New York monument",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Houck's Ridge above Devil's Den; Col. Van Horne Ellis k in the counter-charge (officer-pin check point)",
+   "lat": 39.792727,
+   "lon": -77.242619,
+   "local_x": 3776.2,
+   "local_z": 2623.8,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7429200005",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: 124th NY “The Orange Blossoms” van Horne Ellis+ / Cummins"
+   }
+  },
+  {
+   "id": "mon-willard-kia",
+   "registerId": "reg-us-ii-3-3",
+   "unitLabel": "Willard killed marker",
+   "side": "US",
+   "markerType": "individual-marker",
+   "positionSemantics": "Willard k by shell returning from the Plum Run counterattack (context for the CA-J2A-9/10 legs)",
+   "lat": 39.806407,
+   "lon": -77.239097,
+   "local_x": 4115.8,
+   "local_z": 4134.8,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7510651427",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: US 2-3-3 Willard's Brigade - Colonel George Willard KIA"
+   }
+  },
+  {
+   "id": "mon-vincent-mw",
+   "registerId": "reg-us-v-1-3",
+   "unitLabel": "Strong Vincent mortally-wounded marker",
+   "side": "US",
+   "markerType": "individual-marker",
+   "positionSemantics": "Vincent mw at the 16th MI crisis point on the spur's south face (officer-pin check point; pass-5 dossier)",
+   "lat": 39.790751,
+   "lon": -77.237351,
+   "local_x": 4221.8,
+   "local_z": 2393.2,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/4489668452",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: US Col. Strong Vincent+ mortally wounded mark"
+   }
+  },
+  {
+   "id": "mon-weed-hazlett",
+   "registerId": "reg-us-v-2-3",
+   "unitLabel": "Weed & Hazlett markers at the summit",
+   "side": "US",
+   "markerType": "individual-marker",
+   "positionSemantics": "Weed mw near the battery with Hazlett mw over him - both pins in one primary (Garrard; pass-5 dossier); also serves reg-us-v-b4",
+   "lat": 39.79214,
+   "lon": -77.236545,
+   "local_x": 4294.7,
+   "local_z": 2545.7,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7419064716",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: US Stephen Weed+ & Charles Hazlett+"
+   }
+  },
+  {
+   "id": "mon-140ny",
+   "registerId": "reg-us-v-2-3",
+   "unitLabel": "140th New York monument",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "O'Rorke's regiment's counter-rush ground on the spur's west face (O'Rorke k at its head)",
+   "lat": 39.7915,
+   "lon": -77.236962,
+   "local_x": 4257.2,
+   "local_z": 2475.5,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/4485288329",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: 140th NY Patrick O'Rorke+ / Ernst"
+   }
+  },
+  {
+   "id": "mon-20me",
+   "registerId": "reg-us-v-1-3",
+   "unitLabel": "20th Maine monument",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "The refused left at the spur's southeast; the charge ground (climax position)",
+   "lat": 39.789452,
+   "lon": -77.236141,
+   "local_x": 4321.8,
+   "local_z": 2246.4,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6681686179",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: 20th ME Chamberlain"
+   }
+  },
+  {
+   "id": "mon-44ny",
+   "registerId": "reg-us-v-1-3",
+   "unitLabel": "44th New York monument (castle)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Brigade center-right on the spur's west face (with the 83rd PA)",
+   "lat": 39.791297,
+   "lon": -77.237001,
+   "local_x": 4253.3,
+   "local_z": 2453.1,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/4487576369",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: 44th NY Rice / Conner & 12th NY Ryder"
+   }
+  },
+  {
+   "id": "mon-16mi",
+   "registerId": "reg-us-v-1-3",
+   "unitLabel": "16th Michigan monument",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Brigade right - the crisis point where Vincent fell and the 140th NY came in",
+   "lat": 39.791199,
+   "lon": -77.237681,
+   "local_x": 4194.8,
+   "local_z": 2443.6,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6681736221",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: 16th MI Welch"
+   }
+  },
+  {
+   "id": "mon-83pa",
+   "registerId": "reg-us-v-1-3",
+   "unitLabel": "83rd Pennsylvania monument",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Brigade center on the spur's west face",
+   "lat": 39.790243,
+   "lon": -77.237041,
+   "local_x": 4246.9,
+   "local_z": 2336.1,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/way/710698665",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-way-center",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: 83rd PA Woodward"
+   }
+  },
+  {
+   "id": "mon-91pa",
+   "registerId": "reg-us-v-2-3",
+   "unitLabel": "91st Pennsylvania monument",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Summit line right of the 140th NY (with Hazlett's guns)",
+   "lat": 39.792168,
+   "lon": -77.236739,
+   "local_x": 4278.1,
+   "local_z": 2549.2,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/4485288366",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: 91st PA Sinex"
+   }
+  },
+  {
+   "id": "mon-146ny",
+   "registerId": "reg-us-v-2-3",
+   "unitLabel": "146th New York monument",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Summit line (castle-form monument on the crest)",
+   "lat": 39.792744,
+   "lon": -77.236658,
+   "local_x": 4286.7,
+   "local_z": 2612.9,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6682212361",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: 146th NY Garrard / Tuttle"
+   }
+  },
+  {
+   "id": "mon-155pa",
+   "registerId": "reg-us-v-2-3",
+   "unitLabel": "155th Pennsylvania monument",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Summit line left (brigade's north flank)",
+   "lat": 39.792981,
+   "lon": -77.236518,
+   "local_x": 4299.3,
+   "local_z": 2638.9,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6682212358",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: 155th PA Cain"
+   }
+  },
+  {
+   "id": "tab-us-v-1-3",
+   "registerId": "reg-us-v-1-3",
+   "unitLabel": "3rd Bde (Vincent/Rice) 1st Div V Corps tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "The spur defense line held July 2 (Vincent's Spur)",
+   "lat": 39.790929,
+   "lon": -77.236681,
+   "local_x": 4279.7,
+   "local_z": 2411.5,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6681736209",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: US HQ 5-1-3rd Brigade Strong Vincent+ / Rice"
+   }
+  },
+  {
+   "id": "tab-us-v-2-3",
+   "registerId": "reg-us-v-2-3",
+   "unitLabel": "3rd Bde (Weed) 2nd Div V Corps tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "The summit line held from the July 2 crisis (Weed's brigade; the hill's July 3 garrison per ED-54)",
+   "lat": 39.792356,
+   "lon": -77.236201,
+   "local_x": 4324.7,
+   "local_z": 2568.9,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6682212348",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: US HQ 5-2-3rd Brigade Weed+ / Garrard"
    }
   }
  ]
