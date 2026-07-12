@@ -144,4 +144,19 @@ public class UnitSymbolTests
         Assert.AreEqual(UnitSymbol.FillStyle.Hatched, UnitSymbol.StyleOf(""));
         Assert.AreEqual(UnitSymbol.FillStyle.Hatched, UnitSymbol.StyleOf(null));
     }
+
+    [Test]
+    public void FillInk_ArtilleryPrintsDarkEverythingElseFull()
+    {
+        // cartography slice 2: the period-map "batteries in black"
+        // convention as a fill multiplier — dark enough to read as ink at
+        // theater zoom, side hue preserved up close
+        Assert.AreEqual(UnitSymbol.ArtilleryFillInk,
+            UnitSymbol.FillInk(UnitSymbol.SymbolKind.Artillery));
+        Assert.Less(UnitSymbol.ArtilleryFillInk, 0.6f);
+        Assert.Greater(UnitSymbol.ArtilleryFillInk, 0.2f);
+        Assert.AreEqual(1f, UnitSymbol.FillInk(UnitSymbol.SymbolKind.Infantry));
+        Assert.AreEqual(1f, UnitSymbol.FillInk(UnitSymbol.SymbolKind.Cavalry));
+        Assert.AreEqual(1f, UnitSymbol.FillInk(UnitSymbol.SymbolKind.ArtilleryPark));
+    }
 }
