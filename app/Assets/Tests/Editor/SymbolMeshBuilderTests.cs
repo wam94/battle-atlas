@@ -206,6 +206,143 @@ public class SymbolMeshBuilderTests
         Assert.Less(countsA.BorderIndexCount, ordered.BorderIndexCount);
     }
 
+    // ------------------------------------------------------------------
+    // Cartography slice 3: facing chevron, motion trail, column extents
+
+    [Test]
+    public void FacingChevron_AddsInkInsideTheFootprintForOrderedBars()
+    {
+        var plainVerts = NewVerts();
+        var plain = Build("us-webb", UnitSymbol.SymbolKind.Infantry, "line",
+            300f, 20f, (x, z) => 0f, plainVerts, NewUvs(), NewTris());
+        var verts = NewVerts();
+        var uvs = NewUvs();
+        var counts = SymbolMeshBuilder.BuildRibbon(
+            "us-webb", default, 0f, 300f, 20f, UnitSymbol.SymbolKind.Infantry,
+            "line", 4, (x, z) => 0f, Lift, verts, uvs, NewTris(),
+            facingSpine: true);
+        // chevron ink lives in the border submesh, on the solid-ink band
+        Assert.AreEqual(plain.BodyIndexCount, counts.BodyIndexCount);
+        Assert.Greater(counts.BorderIndexCount, plain.BorderIndexCount);
+        bool sawInkBand = false;
+        for (int i = 0; i < counts.VertexCount; i++)
+        {
+            // extents doctrine: the chevron never pokes past the footprint
+            Assert.LessOrEqual(Mathf.Abs(verts[i].x), 150f + 1e-3f);
+            Assert.LessOrEqual(Mathf.Abs(verts[i].z), 10f + 1e-3f);
+            if (uvs[i].y >= SymbolMeshBuilder.InkBandUvY) sawInkBand = true;
+        }
+        Assert.IsTrue(sawInkBand, "no solid-ink band vertices emitted");
+        // chevron vertices sit forward of center: the arrow points the way
+        float maxInkZ = float.MinValue;
+        for (int i = 0; i < counts.VertexCount; i++)
+            if (uvs[i].y >= SymbolMeshBuilder.InkBandUvY)
+                maxInkZ = Mathf.Max(maxInkZ, verts[i].z);
+        Assert.Greater(maxInkZ, 0f);
+    }
+
+    [Test]
+    public void FacingChevron_SkipsDisorderAndNonBars()
+    {
+        // scattered/routed men assert no facing; a dotted skirmish line and
+        // the artillery grammar carry no chevron either
+        foreach ((UnitSymbol.SymbolKind kind, string formation) c in new[]
+        {
+            (UnitSymbol.SymbolKind.Infantry, "scattered"),
+            (UnitSymbol.SymbolKind.Infantry, "routed"),
+            (UnitSymbol.SymbolKind.Infantry, "skirmish"),
+            (UnitSymbol.SymbolKind.Artillery, "line"),
+            (UnitSymbol.SymbolKind.ArtilleryPark, "line"),
+        })
+        {
+            var uvs = NewUvs();
+            var counts = SymbolMeshBuilder.BuildRibbon(
+                "us-webb", default, 0f, 300f, 20f, c.kind, c.formation, 4,
+                (x, z) => 0f, Lift, NewVerts(), uvs, NewTris(),
+                facingSpine: true);
+            for (int i = 0; i < counts.VertexCount; i++)
+                Assert.Less(uvs[i].y, SymbolMeshBuilder.InkBandUvY,
+                    $"{c.kind}/{c.formation} emitted a chevron");
+        }
+    }
+
+    [Test]
+    public void MotionTrail_DashedWakeOnlyWhileMoving()
+    {
+        var still = Build("csa-garnett", UnitSymbol.SymbolKind.Infantry, "line",
+            250f, 20f, (x, z) => 0f, NewVerts(), NewUvs(), NewTris());
+        var verts = NewVerts();
+        var uvs = NewUvs();
+        var tris = NewTris();
+        var moving = SymbolMeshBuilder.BuildRibbon(
+            "csa-garnett", new Vector2(500f, 500f), 0f, 250f, 20f,
+            UnitSymbol.SymbolKind.Infantry, "line", 4, (x, z) => 0f, Lift,
+            verts, uvs, tris,
+            hasTrail: true, trailFromXZ: new Vector2(300f, 480f));
+        Assert.Greater(moving.BorderIndexCount, still.BorderIndexCount);
+        // the wake is dashed: strictly fewer tris than an undashed strip of
+        // its segment count would carry (gaps let the ground show through)
+        int segs = Mathf.Clamp(
+            Mathf.CeilToInt(new Vector2(200f, 20f).magnitude
+                / SymbolMeshBuilder.TrailSegLenM),
+            2, SymbolMeshBuilder.TrailMaxSegs);
+        int addedIndices = moving.BorderIndexCount - still.BorderIndexCount;
+        Assert.Less(addedIndices, segs * 6);
+        Assert.Greater(addedIndices, 0);
+        // trail vertices reach back toward where the unit came from
+        float minX = float.MaxValue;
+        for (int i = 0; i < moving.VertexCount; i++)
+            minX = Mathf.Min(minX, verts[i].x);
+        Assert.Less(minX, 320f); // the fill alone reaches only x=375
+        // determinism: the same build twice is identical (scrub replay)
+        var vertsB = NewVerts();
+        var trisB = NewTris();
+        var again = SymbolMeshBuilder.BuildRibbon(
+            "csa-garnett", new Vector2(500f, 500f), 0f, 250f, 20f,
+            UnitSymbol.SymbolKind.Infantry, "line", 4, (x, z) => 0f, Lift,
+            vertsB, NewUvs(), trisB,
+            hasTrail: true, trailFromXZ: new Vector2(300f, 480f));
+        Assert.AreEqual(moving.VertexCount, again.VertexCount);
+        Assert.AreEqual(moving.BorderIndexCount, again.BorderIndexCount);
+        for (int i = 0; i < moving.VertexCount; i++)
+            Assert.AreEqual(verts[i], vertsB[i]);
+        // a sub-segment displacement draws no wake (no flicker at the
+        // moving epsilon)
+        var tiny = SymbolMeshBuilder.BuildRibbon(
+            "csa-garnett", new Vector2(500f, 500f), 0f, 250f, 20f,
+            UnitSymbol.SymbolKind.Infantry, "line", 4, (x, z) => 0f, Lift,
+            NewVerts(), NewUvs(), NewTris(),
+            hasTrail: true, trailFromXZ: new Vector2(498f, 500f));
+        Assert.AreEqual(still.BorderIndexCount, tiny.BorderIndexCount);
+    }
+
+    [Test]
+    public void Column_NarrowsToTheFormationLayoutFootprint()
+    {
+        // the monolithic ribbon adopts the same column footprint the
+        // figures and roster slots already use: frontage/4 wide, depth x4
+        Assert.AreEqual((75f, 80f), SymbolMeshBuilder.EffectiveExtents(
+            UnitSymbol.SymbolKind.Infantry, "column", 300f, 20f));
+        Assert.AreEqual((300f, 20f), SymbolMeshBuilder.EffectiveExtents(
+            UnitSymbol.SymbolKind.Infantry, "line", 300f, 20f));
+        Assert.AreEqual((300f, 20f), SymbolMeshBuilder.EffectiveExtents(
+            UnitSymbol.SymbolKind.Artillery, "column", 300f, 20f));
+        var verts = NewVerts();
+        var counts = Build("us-webb", UnitSymbol.SymbolKind.Infantry, "column",
+            300f, 20f, (x, z) => 0f, verts, NewUvs(), NewTris());
+        float minX = float.MaxValue, maxX = float.MinValue;
+        float minZ = float.MaxValue, maxZ = float.MinValue;
+        for (int i = 0; i < counts.VertexCount; i++)
+        {
+            minX = Mathf.Min(minX, verts[i].x); maxX = Mathf.Max(maxX, verts[i].x);
+            minZ = Mathf.Min(minZ, verts[i].z); maxZ = Mathf.Max(maxZ, verts[i].z);
+        }
+        Assert.AreEqual(-37.5f, minX, 1e-3f);
+        Assert.AreEqual(37.5f, maxX, 1e-3f);
+        Assert.AreEqual(-40f, minZ, 1e-3f);
+        Assert.AreEqual(40f, maxZ, 1e-3f);
+    }
+
     [Test]
     public void SymbolDirty_StaticUnitStaysClean()
     {
@@ -280,10 +417,13 @@ public class SymbolMeshBuilderTests
         })
         {
             // a corps-length frontage pins ColumnCount at MaxColumns, max
-            // depth and MaxGunDots pin everything else at its widest
-            var counts = Build(c.id, c.kind, c.formation, 10000f,
-                UnitSymbol.MaxDepthM, (x, z) => 0f, verts, uvs, tris,
-                gunDots: UnitSymbol.MaxGunDots);
+            // depth and MaxGunDots pin everything else at its widest; the
+            // chevron and a max-length trail ride along (slice 3 audit)
+            var counts = SymbolMeshBuilder.BuildRibbon(
+                c.id, default, 0f, 10000f, UnitSymbol.MaxDepthM, c.kind,
+                c.formation, UnitSymbol.MaxGunDots, (x, z) => 0f, Lift,
+                verts, uvs, tris, facingSpine: true, hasTrail: true,
+                trailFromXZ: new Vector2(9000f, 9000f));
             Assert.LessOrEqual(counts.VertexCount, SymbolMeshBuilder.MaxSymbolVerts, c.id);
             Assert.LessOrEqual(counts.BodyIndexCount + counts.BorderIndexCount,
                 SymbolMeshBuilder.MaxSymbolIndices, c.id);

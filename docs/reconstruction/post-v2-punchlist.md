@@ -37,15 +37,27 @@ can surface.
    (echelon filtering by zoom: corps → division → brigade), halo/plate
    contrast against terrain, collision decluttering that actually drops
    labels instead of overlapping, possibly leader-line offsets.
+   *Implemented on `cartography-slice` (awaiting owner's visual gate):
+   altitude bands corps/division/unit, register-sourced corps words,
+   short names, shared halo material, widened declutter rects —
+   docs/reconstruction/cartography-slice.md.*
 2. **Unit-type differentiation in the ribbon language** (P11: "i dont
    see any differentiation among unit types (e.g. cannons)"). Artillery
    battery glyphs (gun-count ticks), cavalry cut, HQ markers — the old
    slab language encoded arm by height/shade; the ribbon language must
    encode it explicitly.
+   *Implemented on `cartography-slice` (awaiting owner's visual gate):
+   artillery prints dark (period-map black-battery convention as a fill
+   ink multiplier), gun-dots 9 m; HQ standard still deferred (no HQ
+   records in the cast).*
 3. **Macro movement/orientation quality** (P11: "unit movements and
    orientations… still rather crude"). Facing conventions during
    maneuvers, wheel representation at ribbon scale, path smoothing at
    the macro grain.
+   *First pass on `cartography-slice` (awaiting owner's visual gate):
+   leading-edge facing chevron, dashed motion trail (180 s wake),
+   column formations narrow the ribbon. Wheel representation and path
+   smoothing remain open.*
 4. **Charge-phase intensity and carnage** (P11: "a lack of action during
    the actual charge — the scale of the carnage isnt clear, the soldier
    is not on the frontline himself, and there's a lot of standing
@@ -75,15 +87,19 @@ can surface.
   behavior by the models").
 - Tile-edge haze wall + tactical-height banding (P7; Phase 10/11
   composition work never picked it up — macro context around the crop).
-- Editor Game-view UI scaling at simulated QHD (P11 session note) —
-  consider ScaleWithScreenSize or a documented editor workflow.
+- ~~Editor Game-view UI scaling at simulated QHD (P11 session note) —
+  consider ScaleWithScreenSize or a documented editor workflow.~~
+  **On `cartography-slice`**: PanelSettings → ScaleWithScreenSize
+  (ref 1200×800, match height).
 - Seek worst-case ~101–107 ms vs the ~100 ms revisit trigger (P10/P11)
   — proxy-frame transition go/no-go from feel. P12 standalone probe
   adds one data point: a backward sub-second nudge missed its
   event-side settle and rode the player's designed 3 s wedge-escape
   before converging exactly (sync never wrong on the held frame, but a
   ~3 s hold is a feel defect if it reproduces interactively).
-- Letterbox slivers need black backing on non-16:9 windows (P11 report).
+- ~~Letterbox slivers need black backing on non-16:9 windows (P11
+  report).~~ **On `cartography-slice`**: while Soldier View owns the
+  camera it culls nothing and clears to black; restored on exit.
 - Contested styling still dataless at macro grain (shader slot + drawer
   word ready; needs contested-flagged data).
 - Atlas 2.5× vertical exaggeration vs V2 true-scale doctrine (locked

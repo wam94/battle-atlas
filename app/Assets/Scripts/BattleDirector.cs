@@ -99,9 +99,13 @@ namespace BattleAtlas
         // label anchor above the unit-center ground (display meters, like
         // the symbol lift): under the flag, over the ribbon
         const float LabelLiftM = 2f;
+        // aggregate (corps/division) label anchor: well above the flags —
+        // these words float over a formation MASS, not a symbol
+        const float AggregateLabelLiftM = 60f;
         static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
         static readonly int FillStyleId = Shader.PropertyToID("_FillStyle");
         static readonly int BorderWeightId = Shader.PropertyToID("_BorderWeight");
+        static readonly int FillInkMulId = Shader.PropertyToID("_FillInkMul");
         // battle-clock seconds for the Flag shader's vertex wave — a global
         // driven from BattleClock, NOT _Time, so time-scrubbing replays the
         // identical wave (determinism even in the cloth)
@@ -180,14 +184,20 @@ namespace BattleAtlas
             public UnitSymbol.Echelon Echelon;
             public Color ActiveColor;
             // label state, fixed at Start: what the label says (unit name,
-            // id fallback), this unit's fixed candidate slot, and — for
-            // roster brigades — the first of its roster-name slots (fixed
-            // slots keep the declutter's sticky bonus keyed to the same
-            // unit across frames) and the roster names themselves
+            // id fallback), the map-short form the label pass prefers, this
+            // unit's fixed candidate slot, and — for roster brigades — the
+            // first of its roster-name slots (fixed slots keep the
+            // declutter's sticky bonus keyed to the same unit across
+            // frames) and the roster names themselves
             public string DisplayName;
+            public string ShortName;
             public int LabelSlot;
             public int RosterLabelBase;
             public List<string> RosterNames;
+            // command-overlay group indices (-1 = the overlay doesn't know
+            // this unit; it joins no aggregate label)
+            public int CorpsIndex;
+            public int DivisionIndex;
             // the persistent draped symbol: one Mesh per unit (MarkDynamic,
             // created lazily on first render at a symbol tier), rebuilt from
             // the Director's scratch buffers only when SymbolNeedsRebuild
@@ -210,6 +220,7 @@ namespace BattleAtlas
             public UnitState PrevState;
             public LodTier PrevTier;
             public bool PrevSelected;
+            public bool PrevMoving; // trail presence input of the last build
             public bool HasPrev;
             public bool SymbolBuilt;
             public bool RosterBuilt;
@@ -239,14 +250,32 @@ namespace BattleAtlas
         // the declutter and is the only one shown at the Soldiers tier.
         UnitEntry selectedEntry;
         // label candidate slots, one FIXED slot per unit plus one per
-        // roster ribbon, sized in Start and refilled every Update: +inf
+        // roster ribbon plus one per command-overlay aggregate (corps,
+        // then divisions), sized in Start and refilled every Update: +inf
         // priority = no candidate this frame. UnitLabelField reads these
         // in LateUpdate — director-owned so the render pass fills them in
-        // place with zero allocation.
+        // place with zero allocation. labelScales is Start-constant: 1 for
+        // unit slots, the aggregate multipliers for corps/division slots.
         float[] labelPriorities;
         Vector3[] labelPositions;
         string[] labelTexts;
         Color[] labelColors;
+        float[] labelScales;
+        // the command overlay (cartography slice 1): optional inspector/
+        // test injection, else Resources Battle/command-overlay; null
+        // commandGroups = no aggregate labels, warned once in Start
+        public TextAsset commandOverlayJson;
+        CommandGroups commandGroups;
+        int corpsSlotBase = -1;
+        int divisionSlotBase = -1;
+        // per-frame aggregate accumulators (strength-weighted centroids)
+        float[] corpsSumX, corpsSumZ, corpsWeight;
+        float[] divisionSumX, divisionSumZ, divisionWeight;
+        // the altitude-driven label band, latched across frames (the
+        // hysteresis lives in LabelLayout.BandFor); exposed for the HUD
+        // or tests that want the current read
+        public LabelLayout.LabelBand Band { get; private set; }
+            = LabelLayout.LabelBand.Theater;
         // pick footprints, refilled alongside the render pass: one oriented
         // rectangle per rendered SYMBOL (a roster partition registers its
         // brigade once — roster ribbons have no track or citation of their
@@ -495,6 +524,7 @@ namespace BattleAtlas
         internal Vector3[] LabelPositions => labelPositions;
         internal string[] LabelTexts => labelTexts;
         internal Color[] LabelColors => labelColors;
+        internal float[] LabelScales => labelScales;
 
         // World-space terrain height at (x, z), offset by groundYBase (the
         // terrain object's Y, refreshed once per Update). Instance method so
@@ -552,6 +582,31 @@ namespace BattleAtlas
             clock.StartTime = battle.startTime;
             BattleName = battle.name;
             Environment = battle.environment;
+
+            // command overlay (cartography slice 1): corps/division words
+            // for the altitude bands. Optional and loud when absent — the
+            // Atlas keeps rendering, the theater band just goes wordless.
+            TextAsset overlayAsset = commandOverlayJson != null
+                ? commandOverlayJson
+                : Resources.Load<TextAsset>("Battle/command-overlay");
+            if (overlayAsset == null)
+            {
+                Debug.LogWarning(
+                    "BattleDirector: Battle/command-overlay missing from Resources "
+                    + "(scripts/gen-command-overlay.py generates it) — no corps/"
+                    + "division labels at theater/mid altitude");
+            }
+            else
+            {
+                var sidesById = new Dictionary<string, bool>(battle.units.Count);
+                foreach (UnitDto u in battle.units)
+                    sidesById[u.id] = u.side == "union";
+                commandGroups = CommandGroups.Build(
+                    JsonUtility.FromJson<CommandOverlayDoc>(overlayAsset.text),
+                    id => sidesById.TryGetValue(id, out bool isU)
+                        ? isU : (bool?)null);
+            }
+
             Dictionary<string, UnitEntry> entriesById = unitsById;
             int labelSlots = 0;
             foreach (UnitDto u in battle.units)
@@ -567,6 +622,9 @@ namespace BattleAtlas
                 // matches FillStyle below the same way Active matches the
                 // color set here
                 block.SetFloat(FillStyleId, (float)UnitSymbol.FillStyle.Solid);
+                // arm ink is fixed at Start (kind never changes): artillery
+                // gun-dots print dark, every other fill at full side color
+                block.SetFloat(FillInkMulId, UnitSymbol.FillInk(kind));
 
                 var formationRenderer = new UnitFormationRenderer(
                     u.id, u.frontage_m, u.depth_m, soldierPoseMeshes, soldierMaterial,
@@ -600,20 +658,44 @@ namespace BattleAtlas
                     // fixed label slots: the unit's own, then one per
                     // roster ribbon — a name the data attests, id if not
                     DisplayName = string.IsNullOrEmpty(u.name) ? u.id : u.name,
+                    ShortName = LabelLayout.ShortName(
+                        string.IsNullOrEmpty(u.name) ? u.id : u.name),
                     LabelSlot = labelSlots,
                     RosterLabelBase = regimentCount > 0 ? labelSlots + 1 : -1,
                     RosterNames = regimentCount > 0 ? u.regiments : null,
                 };
+                (entry.CorpsIndex, entry.DivisionIndex) =
+                    commandGroups?.GroupsOf(u.id) ?? (-1, -1);
                 labelSlots += 1 + regimentCount;
                 units.Add(entry);
                 entriesById[u.id] = entry;
             }
+            // aggregate label slots append after the unit/roster slots:
+            // corps first, then divisions — fixed, like every other slot,
+            // so the declutter's sticky bonus stays keyed per aggregate
+            int corpsCount = commandGroups?.CorpsCount ?? 0;
+            int divisionCount = commandGroups?.DivisionCount ?? 0;
+            corpsSlotBase = labelSlots;
+            divisionSlotBase = labelSlots + corpsCount;
+            labelSlots += corpsCount + divisionCount;
+            corpsSumX = new float[corpsCount];
+            corpsSumZ = new float[corpsCount];
+            corpsWeight = new float[corpsCount];
+            divisionSumX = new float[divisionCount];
+            divisionSumZ = new float[divisionCount];
+            divisionWeight = new float[divisionCount];
             // label candidate buffers at the fixed slot capacity; +inf
             // priority = absent, re-stamped at the top of every Update
             labelPriorities = new float[labelSlots];
             labelPositions = new Vector3[labelSlots];
             labelTexts = new string[labelSlots];
             labelColors = new Color[labelSlots];
+            labelScales = new float[labelSlots];
+            for (int i = 0; i < labelSlots; i++) labelScales[i] = 1f;
+            for (int i = 0; i < corpsCount; i++)
+                labelScales[corpsSlotBase + i] = LabelLayout.CorpsLabelScale;
+            for (int i = 0; i < divisionCount; i++)
+                labelScales[divisionSlotBase + i] = LabelLayout.DivisionLabelScale;
             // second pass: link families. Built once here so Update never
             // searches or allocates; Parse already threw on unknown parents,
             // grandparents, and roster-carrying parents.
@@ -649,6 +731,8 @@ namespace BattleAtlas
                         (float)UnitSymbol.FillStyle.Hatched);
                     rosterBlock.SetFloat(BorderWeightId,
                         SymbolBorderWeight(UnitSymbol.Echelon.Regiment));
+                    // roster partitions are infantry-bar grammar: full ink
+                    rosterBlock.SetFloat(FillInkMulId, 1f);
                     entry.RosterBlock = rosterBlock;
                 }
             }
@@ -749,11 +833,46 @@ namespace BattleAtlas
             for (int i = 0; i < labelPriorities.Length; i++)
                 labelPriorities[i] = float.PositiveInfinity;
             pickCount = 0;
+            // the altitude band (slice 1): camera height above the
+            // DISPLAYED terrain under it, latched through BandFor's
+            // hysteresis. No camera = far = theater, matching the tier rule.
+            if (lodCamera != null)
+            {
+                Vector3 camPos = lodCamera.transform.position;
+                Band = LabelLayout.BandFor(
+                    camPos.y - GroundY(camPos.x, camPos.z), Band);
+            }
+            else
+            {
+                Band = LabelLayout.LabelBand.Theater;
+            }
+            // aggregate accumulators restart each frame
+            for (int i = 0; i < corpsWeight.Length; i++)
+                corpsSumX[i] = corpsSumZ[i] = corpsWeight[i] = 0f;
+            for (int i = 0; i < divisionWeight.Length; i++)
+                divisionSumX[i] = divisionSumZ[i] = divisionWeight[i] = 0f;
             foreach (UnitEntry entry in units)
             {
                 if (entry.Parent != null)
                     continue; // children render on their family's pass below
                 UnitState s = entry.Track.StateAt(clock.CurrentTime);
+
+                // corps/division centroids accumulate over PARENTLESS
+                // entries only — a decomposed family's parent track is the
+                // same men, so counting children too would double-weight it
+                if (entry.CorpsIndex >= 0)
+                {
+                    float w = Mathf.Max(s.strength, 1f);
+                    corpsSumX[entry.CorpsIndex] += s.posXZ.x * w;
+                    corpsSumZ[entry.CorpsIndex] += s.posXZ.y * w;
+                    corpsWeight[entry.CorpsIndex] += w;
+                    if (entry.DivisionIndex >= 0)
+                    {
+                        divisionSumX[entry.DivisionIndex] += s.posXZ.x * w;
+                        divisionSumZ[entry.DivisionIndex] += s.posXZ.y * w;
+                        divisionWeight[entry.DivisionIndex] += w;
+                    }
+                }
 
                 // one representative height sample (unit center) is enough to
                 // judge camera distance
@@ -779,10 +898,53 @@ namespace BattleAtlas
                         entry.Tier, baseY);
                 }
             }
+            StampAggregateLabels();
             RenderFlags();
             // after the render pass: the pick buffer now holds exactly this
             // frame's rendered symbol footprints
             HandleSelectionClick();
+        }
+
+        // Corps labels at the Theater band, division labels at Mid (slice
+        // 1): each aggregate's slot takes its strength-weighted member
+        // centroid, draped and lifted over the mass. UPPERCASE display —
+        // the cartographic register for command grains, so an aggregate
+        // word can never be misread as one more unit name.
+        void StampAggregateLabels()
+        {
+            if (commandGroups == null)
+                return;
+            if (Band == LabelLayout.LabelBand.Theater)
+            {
+                for (int i = 0; i < corpsWeight.Length; i++)
+                    StampAggregate(corpsSlotBase + i, corpsSumX[i], corpsSumZ[i],
+                        corpsWeight[i], commandGroups.CorpsLabels[i],
+                        commandGroups.CorpsIsUnion[i]);
+            }
+            else if (Band == LabelLayout.LabelBand.Mid)
+            {
+                for (int i = 0; i < divisionWeight.Length; i++)
+                    StampAggregate(divisionSlotBase + i, divisionSumX[i],
+                        divisionSumZ[i], divisionWeight[i],
+                        commandGroups.DivisionLabels[i],
+                        commandGroups.DivisionIsUnion[i]);
+            }
+        }
+
+        void StampAggregate(
+            int slot, float sumX, float sumZ, float weight, string label,
+            bool isUnion)
+        {
+            if (weight <= 0f)
+                return;
+            float x = sumX / weight;
+            float z = sumZ / weight;
+            labelPriorities[slot] = LabelLayout.AggregatePriority(label);
+            labelPositions[slot] = new Vector3(
+                x, GroundY(x, z) + AggregateLabelLiftM, z);
+            labelTexts[slot] = label; // already uppercased at Build time
+            labelColors[slot] = LabelLayout.InkTint(
+                SideColor(isUnion ? "union" : "confederate"));
         }
 
         // Left-click pick (plan Task 6): raymarch the cursor ray to the
@@ -1022,24 +1184,27 @@ namespace BattleAtlas
                 entry.RosterBlock?.SetColor(BaseColorId, color);
             }
 
-            // label candidate (plan D3): the unit's own slot, gated by the
-            // tier rule. A roster partition labels through its roster-name
-            // slots instead (RenderRosterSymbols) — the brigade line only
-            // keeps its own name while selected. Inactive labels take the
-            // same desaturated tint as their symbol.
+            // label candidate (plan D3 + slice 1): the unit's own slot,
+            // gated by the ALTITUDE BAND over the tier rule. A roster
+            // partition labels through its roster-name slots instead
+            // (RenderRosterSymbols) — the brigade line only keeps its own
+            // name while selected. The map shows the SHORT name (the
+            // drawer keeps the pedigree); only selection earns the full
+            // record. Ink rides InkTint over the salience color, so the
+            // label material's dark halo carries the contrast.
             bool roster = RendersRosterSymbols(entry.RegimentCount, s.formation, tier);
             bool selected = entry == selectedEntry;
             if ((!roster || selected)
-                && LabelLayout.LabelsAtTier(tier, entry.Echelon, active, selected))
+                && LabelLayout.LabelsAtBand(Band, tier, entry.Echelon, active, selected))
             {
                 int slot = entry.LabelSlot;
                 labelPriorities[slot] = LabelLayout.Priority(
                     entry.Echelon, active, selected, entry.Track.Unit.id);
                 labelPositions[slot] = new Vector3(
                     s.posXZ.x, flagY + LabelLiftM, s.posXZ.y);
-                labelTexts[slot] = entry.DisplayName;
-                labelColors[slot] = active || selected
-                    ? entry.ActiveColor : InactiveColor(entry.ActiveColor);
+                labelTexts[slot] = selected ? entry.DisplayName : entry.ShortName;
+                labelColors[slot] = LabelLayout.InkTint(active || selected
+                    ? entry.ActiveColor : InactiveColor(entry.ActiveColor));
             }
 
             if (tier == LodTier.Soldiers)
@@ -1126,9 +1291,16 @@ namespace BattleAtlas
 
         // Block tier (and the middle-tier fallback): the unit's monolithic
         // draped symbol — one persistent mesh, rebuilt only when stale.
+        // Slice 3 marks ride the build: the facing chevron always, the
+        // motion trail while the unit is moving (a moving unit's position
+        // already dirties the mesh every few frames, so the trail updates
+        // for free; the moving-flag flip below catches the stop, when the
+        // position epsilon alone would leave a stale tail).
         void RenderSymbol(UnitEntry entry, UnitState s, LodTier tier)
         {
-            if (!entry.SymbolBuilt || SymbolStale(entry, s, tier))
+            bool moving = IsMovingAt(entry.Track, clock.CurrentTime);
+            if (!entry.SymbolBuilt || SymbolStale(entry, s, tier)
+                || moving != entry.PrevMoving)
             {
                 if (entry.SymbolMesh == null)
                 {
@@ -1141,18 +1313,25 @@ namespace BattleAtlas
                     UnitSymbol.DisplayDepth(s.strength, frontage),
                     entry.Kind, s.formation, UnitSymbol.GunDotCount(s.strength),
                     groundYFunc, SymbolMeshBuilder.DefaultLiftM,
-                    symbolVerts, symbolUvs, symbolTris);
+                    symbolVerts, symbolUvs, symbolTris,
+                    facingSpine: true, hasTrail: moving,
+                    trailFromXZ: moving
+                        ? entry.Track.StateAt(
+                            clock.CurrentTime - SymbolMeshBuilder.TrailWindowS).posXZ
+                        : default);
                 ApplyScratchToMesh(entry.SymbolMesh, counts);
                 entry.BodyIndexCount = counts.BodyIndexCount;
                 entry.BorderIndexCount = counts.BorderIndexCount;
                 CommitBuild(entry, s, tier);
+                entry.PrevMoving = moving;
                 entry.SymbolBuilt = true;
                 entry.RosterBuilt = false;
             }
+            (float pickF, float pickD) = SymbolMeshBuilder.EffectiveExtents(
+                entry.Kind, s.formation, entry.Track.Unit.frontage_m,
+                UnitSymbol.DisplayDepth(s.strength, entry.Track.Unit.frontage_m));
             RegisterPickFootprint(entry, s.posXZ, s.facingDeg,
-                entry.Track.Unit.frontage_m,
-                UnitPicker.PickDepth(entry.Kind, UnitSymbol.DisplayDepth(
-                    s.strength, entry.Track.Unit.frontage_m)));
+                pickF, UnitPicker.PickDepth(entry.Kind, pickD));
             var rp = new RenderParams(symbolMaterial)
             {
                 matProps = entry.ColorBlock,
@@ -1180,23 +1359,28 @@ namespace BattleAtlas
             // many frames where no ribbon rebuild fires
             RosterSymbolSpecs(s, entry.Track.Unit.frontage_m,
                 entry.Track.Unit.depth_m, count, slotsBuffer, rosterSpecsBuffer);
-            // roster-name labels, one fixed slot per ribbon (always at the
-            // Regiments tier here, where every member is a candidate);
-            // regiment priority, the roster name as the FNV tie-break key
-            for (int i = 0; i < count; i++)
+            // roster-name labels, one fixed slot per ribbon (Regiments tier
+            // here, where every member is a tier candidate) — but only in
+            // the Tactical altitude band: regiment names are close-range
+            // reading (slice 1). Regiment priority, the roster name as the
+            // FNV tie-break key.
+            if (Band == LabelLayout.LabelBand.Tactical)
             {
-                RosterSymbolSpec spec = rosterSpecsBuffer[i];
-                int slot = entry.RosterLabelBase + i;
-                labelPriorities[slot] = LabelLayout.Priority(
-                    UnitSymbol.Echelon.Regiment, entry.Active, false,
-                    entry.RosterNames[i]);
-                labelPositions[slot] = new Vector3(
-                    spec.CenterXZ.x,
-                    GroundY(spec.CenterXZ.x, spec.CenterXZ.y) + LabelLiftM,
-                    spec.CenterXZ.y);
-                labelTexts[slot] = entry.RosterNames[i];
-                labelColors[slot] = entry.Active
-                    ? entry.ActiveColor : InactiveColor(entry.ActiveColor);
+                for (int i = 0; i < count; i++)
+                {
+                    RosterSymbolSpec spec = rosterSpecsBuffer[i];
+                    int slot = entry.RosterLabelBase + i;
+                    labelPriorities[slot] = LabelLayout.Priority(
+                        UnitSymbol.Echelon.Regiment, entry.Active, false,
+                        entry.RosterNames[i]);
+                    labelPositions[slot] = new Vector3(
+                        spec.CenterXZ.x,
+                        GroundY(spec.CenterXZ.x, spec.CenterXZ.y) + LabelLiftM,
+                        spec.CenterXZ.y);
+                    labelTexts[slot] = entry.RosterNames[i];
+                    labelColors[slot] = LabelLayout.InkTint(entry.Active
+                        ? entry.ActiveColor : InactiveColor(entry.ActiveColor));
+                }
             }
             if (!entry.RosterBuilt || SymbolStale(entry, s, tier))
             {
@@ -1226,10 +1410,13 @@ namespace BattleAtlas
                 entry.SymbolBuilt = false;
             }
             // the partition picks as ONE brigade rectangle — roster ribbons
-            // have no tracks or citations of their own to select
-            RegisterPickFootprint(entry, s.posXZ, s.facingDeg,
-                entry.Track.Unit.frontage_m,
+            // have no tracks or citations of their own to select (column
+            // formations pick by their narrowed column footprint)
+            (float rosterPickF, float rosterPickD) = SymbolMeshBuilder.EffectiveExtents(
+                entry.Kind, s.formation, entry.Track.Unit.frontage_m,
                 UnitSymbol.DisplayDepth(s.strength, entry.Track.Unit.frontage_m));
+            RegisterPickFootprint(entry, s.posXZ, s.facingDeg,
+                rosterPickF, rosterPickD);
             var rp = new RenderParams(symbolMaterial)
             {
                 matProps = entry.RosterBlock,

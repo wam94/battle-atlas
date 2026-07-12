@@ -36,6 +36,10 @@ Shader "BattleAtlas/UnitSymbol"
         _BaseColor("Base Color", Color) = (1, 1, 1, 1)
         _FillStyle("Fill Style", Float) = 0
         _BorderWeight("Border Weight", Float) = 1
+        // arm-of-service fill ink (cartography slice 2): multiplies the
+        // FILL band only — artillery gun-dots print dark (period-map
+        // convention, scale-free value contrast); everything else stays 1
+        _FillInkMul("Fill Ink Multiplier", Float) = 1
     }
     SubShader
     {
@@ -56,6 +60,7 @@ Shader "BattleAtlas/UnitSymbol"
                 float4 _BaseColor;
                 float _FillStyle;
                 float _BorderWeight;
+                float _FillInkMul;
             CBUFFER_END
 
             // clip-space depth bias toward the camera, in NDC units: small
@@ -68,6 +73,11 @@ Shader "BattleAtlas/UnitSymbol"
             // border band marker (SymbolMeshBuilder.BorderBandUvY): border
             // uv.y rides [2, 3]; anything past this threshold is border
             static const float BorderBandMin = 1.5;
+            // solid-ink band (SymbolMeshBuilder.InkBandUvY): uv.y rides
+            // [4, 5] — the facing chevron and motion-trail dashes, drawn
+            // in border shade with NO echelon weight clip (a brigade's
+            // double-line rule would hollow the chevron out)
+            static const float InkBandMin = 3.5;
             // border ink: the side hue darkened — the ring never vanishes,
             // even at the inactive fill desaturation
             static const float BorderDarken = 0.55;
@@ -112,6 +122,8 @@ Shader "BattleAtlas/UnitSymbol"
 
             float4 Frag(Varyings input) : SV_Target0
             {
+                if (input.uv.y >= InkBandMin)
+                    return float4(_BaseColor.rgb * BorderDarken, 1.0);
                 if (input.uv.y >= BorderBandMin)
                 {
                     // border band: t runs 0..1 across the strip, c runs
@@ -142,7 +154,7 @@ Shader "BattleAtlas/UnitSymbol"
                         clip(HatchDuty - hatch); // gaps show the ground
                     }
                 }
-                return float4(_BaseColor.rgb, 1.0);
+                return float4(_BaseColor.rgb * _FillInkMul, 1.0);
             }
             ENDHLSL
         }
@@ -164,12 +176,14 @@ Shader "BattleAtlas/UnitSymbol"
                 half4 _BaseColor;
                 half _FillStyle;
                 half _BorderWeight;
+                half _FillInkMul;
             CBUFFER_END
 
             // same constants as the HDRP pass — see the header comments
             static const float FillDepthBias = 3.0e-5;
             static const float BorderDepthBias = 8.0e-5;
             static const half BorderBandMin = 1.5;
+            static const half InkBandMin = 3.5; // see the HDRP pass
             static const half BorderDarken = 0.55;
             static const half DoubleBorderGap = 0.7;
             static const half HatchRepeat = 30.0;
@@ -206,6 +220,8 @@ Shader "BattleAtlas/UnitSymbol"
 
             half4 Frag(Varyings input) : SV_Target
             {
+                if (input.uv.y >= InkBandMin)
+                    return half4(_BaseColor.rgb * BorderDarken, 1.0);
                 if (input.uv.y >= BorderBandMin)
                 {
                     half t = saturate(input.uv.y - 2.0);
@@ -230,7 +246,7 @@ Shader "BattleAtlas/UnitSymbol"
                         clip(HatchDuty - hatch);
                     }
                 }
-                return half4(_BaseColor.rgb, 1.0);
+                return half4(_BaseColor.rgb * _FillInkMul, 1.0);
             }
             ENDHLSL
         }

@@ -130,6 +130,11 @@ namespace BattleAtlas
             Video.renderMode = VideoRenderMode.CameraNearPlane;
             Video.targetCamera = Camera.main;
             Video.aspectRatio = VideoAspectRatio.FitInside;
+            // letterbox backing (P11 report rider): FitInside letterboxes
+            // non-16:9 windows, and the Atlas world showed through the
+            // slivers. While the video owns the camera, the camera culls
+            // nothing and clears to black; exit restores it exactly.
+            ApplyLetterboxBacking(Camera.main);
             // The authored mix muxed in the media plays via the direct
             // path (macOS/AVFoundation decodes AAC natively). The Phase 1
             // dev proxy has no audio track — audioTrackCount 0 is fine.
@@ -157,6 +162,7 @@ namespace BattleAtlas
         {
             if (!InSoldierView) return;
             clock.Speed = savedSpeed;
+            RestoreLetterboxBacking();
             if (Video != null)
             {
                 Video.seekCompleted -= OnSeekCompleted;
@@ -171,6 +177,54 @@ namespace BattleAtlas
             seekMuted = false;
             AcousticField.SoldierViewActive = false;
             // clock.CurrentTime is untouched: Atlas returns to this exact second.
+        }
+
+        // ---- letterbox backing state (see TryEnter/Exit) ----
+        // The world yields the frame by FAR-PLANE CLAMP, not culling mask:
+        // the near-plane video quad is part of the camera's own render, and
+        // a zeroed culling mask was observed (p11 screenshot rerun) to kill
+        // the video along with the world. Pulling the far plane to just
+        // past the near plane culls every world object while the near-plane
+        // video survives by construction; the HDRP clear turns whatever is
+        // left — the letterbox slivers — black.
+        const float LetterboxFarClipM = 12f; // near plane is 10 (orbit rig)
+        Camera letterboxCamera;
+        UnityEngine.Rendering.HighDefinition.HDAdditionalCameraData letterboxHd;
+        float savedFarClip;
+        UnityEngine.Rendering.HighDefinition.HDAdditionalCameraData.ClearColorMode
+            savedClearMode;
+        Color savedBackgroundColor;
+
+        void ApplyLetterboxBacking(Camera cam)
+        {
+            letterboxCamera = cam;
+            if (cam == null) return; // headless test rigs: nothing to back
+            savedFarClip = cam.farClipPlane;
+            cam.farClipPlane = Mathf.Max(
+                cam.nearClipPlane * 1.05f, LetterboxFarClipM);
+            letterboxHd = cam.GetComponent<
+                UnityEngine.Rendering.HighDefinition.HDAdditionalCameraData>();
+            if (letterboxHd != null)
+            {
+                savedClearMode = letterboxHd.clearColorMode;
+                savedBackgroundColor = letterboxHd.backgroundColorHDR;
+                letterboxHd.clearColorMode = UnityEngine.Rendering.HighDefinition
+                    .HDAdditionalCameraData.ClearColorMode.Color;
+                letterboxHd.backgroundColorHDR = Color.black;
+            }
+        }
+
+        void RestoreLetterboxBacking()
+        {
+            if (letterboxCamera == null) return;
+            letterboxCamera.farClipPlane = savedFarClip;
+            if (letterboxHd != null)
+            {
+                letterboxHd.clearColorMode = savedClearMode;
+                letterboxHd.backgroundColorHDR = savedBackgroundColor;
+            }
+            letterboxCamera = null;
+            letterboxHd = null;
         }
 
         public void SetPlaying(bool playing)

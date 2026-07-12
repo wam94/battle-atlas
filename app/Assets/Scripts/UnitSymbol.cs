@@ -105,6 +105,20 @@ namespace BattleAtlas
             Mathf.Clamp(Mathf.RoundToInt(strength / MenPerGunDot),
                 MinGunDots, MaxGunDots);
 
+        // Arm-of-service fill ink (cartography slice 2): artillery gun-dots
+        // print in DARK ink — the period-map convention (batteries drawn
+        // black) made scale-free: value contrast survives theater zoom
+        // where a 9 m dot is a single pixel, and the side hue stays
+        // readable up close because the multiplier darkens the side color
+        // rather than replacing it. The baseline stroke below the dots
+        // keeps the undarkened side hue (border band), so side identity
+        // never rests on the dots alone. Infantry/cavalry fill stays full
+        // side color; the park has no fill tris, so its value is moot.
+        public const float ArtilleryFillInk = 0.45f;
+
+        public static float FillInk(SymbolKind kind) =>
+            kind == SymbolKind.Artillery ? ArtilleryFillInk : 1f;
+
         // USER RULING 2026-07-09 — TWO confidence states render: documented
         // = solid fill, inferred = diagonal-hatched fill, and the format's
         // "unknown" (including the empty default) RENDERS AS inferred —

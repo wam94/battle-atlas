@@ -17,7 +17,13 @@ public class AtlasUiAssetTests
         Assert.IsNotNull(settings, "AtlasPanelSettings.asset missing — run "
             + "BattleAtlas/Setup Atlas UI Panel Settings");
         Assert.IsNotNull(settings.themeStyleSheet, "panel has no theme");
-        Assert.AreEqual(PanelScaleMode.ConstantPhysicalSize, settings.scaleMode);
+        // Cartography-slice rider (P11 session note): ConstantPhysicalSize
+        // read tiny in a simulated-QHD Game view (editor DPI != device
+        // DPI). ScaleWithScreenSize matched on HEIGHT against the 800px
+        // reference keeps the HUD proportional at any window, QHD included.
+        Assert.AreEqual(PanelScaleMode.ScaleWithScreenSize, settings.scaleMode);
+        Assert.AreEqual(800f, settings.referenceResolution.y);
+        Assert.AreEqual(1f, settings.match, 1e-4f);
     }
 
     [Test]
@@ -67,7 +73,7 @@ public class AtlasUiAssetTests
     public void StyleSheet_HonorsTheReadableTextFloor()
     {
         // Phase 12 accessibility (§12 P12 "readable text"): no HUD text
-        // below 12px at the panel's ConstantPhysicalSize/160dpi scale.
+        // below 12px at the panel's reference scale.
         // Pinned on the source text so a future style tweak cannot quietly
         // reintroduce 10-11px labels.
         string uss = System.IO.File.ReadAllText(
