@@ -1,0 +1,14 @@
+{
+  "unity": "6000.4.11f1",
+  "development": true,
+  "screen": "1440x900",
+  "clockStartTime": 46800,
+  "clockEndTime": 10800,
+  "samples": [
+    {"t": 0, "screenshot": "a2-after-t0.png", "frames": 595, "avgFps": 59.5, "p95FrameMs": 17.38, "worstFrameMs": 32.32, "allocatedMB": 323.1, "reservedMB": 442.8},
+    {"t": 5400, "screenshot": "a2-after-t5400.png", "frames": 596, "avgFps": 59.5, "p95FrameMs": 17.50, "worstFrameMs": 22.04, "allocatedMB": 323.3, "reservedMB": 442.8},
+    {"t": 8160, "screenshot": "a2-after-t8160.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.13, "worstFrameMs": 23.47, "allocatedMB": 323.4, "reservedMB": 442.8},
+    {"t": 9000, "screenshot": "a2-after-t9000.png", "frames": 598, "avgFps": 59.7, "p95FrameMs": 17.16, "worstFrameMs": 22.04, "allocatedMB": 323.4, "reservedMB": 442.8},
+    {"t": 10500, "screenshot": "a2-after-t10500.png", "frames": 595, "avgFps": 59.5, "p95FrameMs": 17.46, "worstFrameMs": 22.10, "allocatedMB": 323.5, "reservedMB": 442.8}
+  ]
+}
