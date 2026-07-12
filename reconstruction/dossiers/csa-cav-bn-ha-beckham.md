@@ -46,6 +46,30 @@ East Cavalry Field as a body.
   Bachelder mislabeling of Griffin's, or a genuinely undocumented
   attachment), not resolved this pass. Radius ~77 m.
 
+- **PASS-14 SHEET-CROP CONFLICT, the South Cavalry Field flank
+  (ED-73 class):** sheet `12440022` (manifest id `j3-03`, "No. 8,
+  1-5 P.M. July 3," sha256-verified), read this pass in the course of
+  the South Cavalry Field exercise for `us-cav-3-1-farnsworth.md`,
+  draws a **"HART'S S.C."** block at local (2250, 2114) — South
+  Cavalry Field, beside "ANDERSON'S BRIGADE" (7th/8th/9th Georgia) and
+  near Bachman's battery (Henry's battalion, `csa-1c-bn-henry.md`
+  EC3.7) — **directly conflicting** with this dossier's own EC5
+  distribution table, which states (per the battalion's own marker)
+  "Hart's Battery attached to the Washington Artillery with the Army
+  Trains" (off-ground, guarding trains). Neither reading is adopted
+  over the other this pass: the marker is a post-war battalion-level
+  compilation (ED-73 class, no erection-date/adjudication text found);
+  the sheet is a contemporary-adjacent cartographic overlay of the
+  SAME evidence class, drawing a specific battery block by name at a
+  specific field. **Recorded as a first-class conflict, carried
+  unresolved** — a battalion whose own marker says one battery was
+  guarding trains, while an independently-consulted Bachelder sheet
+  draws that same battery in a firing position 3+ miles away, is
+  exactly the kind of disagreement ED-73's "never anchor-defining
+  alone" caveat exists for. Not investigated further this pass (out
+  of this dossier's own assigned scope for pass 14); flagged for
+  whichever future pass authors Hart's battery its own dossier.
+
 ## EC4 — Movement legs
 
 - Not authored this pass (battalion-grain frame dossier; per-battery

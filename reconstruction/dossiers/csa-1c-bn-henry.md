@@ -1,9 +1,11 @@
 # Dossier: Henry's Artillery Battalion, Hood's Division (reg-csa-1c-bn-henry)
 
-Pass 13 (the first of the two orphaned CSA battalions) · Cast status:
-`csa-bn-henry` (battalion) — two of its four batteries already
-in-build (Bachman's, Reilly's) with zero prior dossier coverage ·
-Achieved T-level: **T4 (battalion grain, ED-36 pattern)** · 2026-07-13
+Pass 13 (the first of the two orphaned CSA battalions) · Pass-14 EC3
+patch (the SCF sheet-crop exercise) · Cast status: `csa-bn-henry`
+(battalion) — two of its four batteries already in-build (Bachman's,
+Reilly's) with zero prior dossier coverage · Achieved T-level: **T4
+(battalion grain, ED-36 pattern; Bachman's battery now sheet-crop
+positioned)** · 2026-07-14
 
 Chain role: the CSA reference frame for Hood's Division's own guns —
 the South Cavalry Field flank's artillery arc, closing one of the two
@@ -75,6 +77,32 @@ dossiered; Henry's was the gap).
    battery markers, verbatim-identical wording — likely a shared
    template phrase across the battalion's markers, not independent
    attestation; recorded as such, not double-counted as corroboration).
+7. **PASS-14 EC3 SHEET-CROP PATCH:** `12440022` (manifest id `j3-03`,
+   sha256-verified against `bachelder-manifest.json`) read this pass
+   with `crop_sheet.py` + `georef_maps.py`, in the course of the SCF
+   exercise for `us-cav-3-1-farnsworth.md`/`us-cav-1-3-merritt.md`. A
+   hand-lettered **"BACHMAN"** block (German S.C. Artillery — this
+   battalion) is drawn at local (3272, 2061), on the ridge between the
+   J. Slyder farm (3263, 2206) and Robertson's/Law's brigade lines
+   (~3650-3700, ~1975-2220), ~1,000 m northeast of the
+   Farnsworth/Merritt block (2660, 1520) read the same pass — a
+   plausible general-sector confirmation (Bachman's battery sited on
+   the Warfield Ridge extension, behind the infantry line, not
+   forward at the actual charge ground) rather than a firing-position
+   pin. **Latham's and Garden's specific positions (the two batteries
+   that fired on Farnsworth's charge, EC3.5) were NOT legibly
+   distinguished from Bachman's/Reilly's on this crop** — the sheet
+   draws a single "BACHMAN" label in this sector with no
+   battery-by-battery breakout at this zoom, an honest gap carried
+   forward rather than guessed at. Radius: ~31 m absolute
+   (`estAbsUncertaintyM`); the ~1,000 m Bachman-to-Farnsworth
+   separation is well outside that uncertainty and is read as a
+   genuine geometric relation, not a registration artifact. Nearby
+   CSA labels on the same crop: "1 TEX" (1st Texas, Robertson's
+   brigade) at ~(2860, 1895) and "RILEY" (red text, unidentified — no
+   matching unit found in any fetched OOB source this pass) at
+   (3060, 1992); a "ROBERTSON['S]... DETACH[MENT]" annotation runs
+   along the ridge at ~(3648, 2218).
 
 ## EC4 — Movement legs
 
@@ -133,12 +161,15 @@ dossiered; Henry's was the gap).
    battery markers** — recorded as a shared-boilerplate caution (EC3.6),
    not double independent corroboration.
 3. **No per-battery July 2/3 position geometry beyond Latham's stated
-   "here" (the marker's own siting) was authored this pass** — Bachman's
+   "here" (the marker's own siting) was authored pass 13** — Bachman's
    and Reilly's markers (both batteries already in-build) were NOT
-   independently fetched this pass; a pass-14 item if either battery
-   graduates toward its own dossier (per ED-36, battalion grain is the
-   standard; per-battery detail is authored only where an anchor
-   exists, and none beyond Latham's/Garden's was found this pass).
+   independently fetched that pass. **Pass-14 update**: the SCF
+   sheet-crop exercise (EC3.7) gives Bachman's battery a sector-grain
+   position (not a firing-position pin); Reilly's remains completely
+   unlocated by any source fetched to date — a standing gap, honestly
+   carried, if either battery graduates toward its own dossier (per
+   ED-36, battalion grain is the standard; per-battery detail is
+   authored only where an anchor exists).
 
 ## Chain anchors substantiated
 
@@ -151,8 +182,9 @@ dossiered; Henry's was the gap).
 
 ## ED candidates proposed
 
-- None new. The CA-SCF-2 cross-corroboration (above) strengthens the
-  existing ED-72 adoption; no new rule is needed.
+- None new. The CA-SCF-2 cross-corroboration (pass 13) strengthens the
+  existing ED-72 adoption; the pass-14 sheet-crop patch (EC3.7)
+  corroborates it further at sector grain; no new rule is needed.
 
 ## Source register
 
@@ -164,4 +196,6 @@ gettysburg-stonesentinels-palmetto-sc-artillery (marker page,
 "Palmetto [S.C.] Light Artillery"/Garden's, fetch-verified 2026-07-13)
 · or-27-2-henry (No. 463, OR 27/2 pp. 427-428, fetch-verified this
 pass via nps.gov summary + civilwar.com page-level fetch) ·
-addressing-gettysburg-oob (register cross-reference) · or-27-oob.
+bachelder-j3-03 (manifest id `j3-03`, sheet 12440022, sha256-verified,
+read 2026-07-14) · us-cav-3-1-farnsworth.md (shared sheet-crop reads)
+· addressing-gettysburg-oob (register cross-reference) · or-27-oob.
