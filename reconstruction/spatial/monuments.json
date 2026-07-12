@@ -3428,6 +3428,63 @@
     "extraction": "osm-node",
     "note": "OSM/Overpass as PRIMARY coordinate source (the pass-6/7/8 channel deviation continues in pass 9: Stone Sentinels served inscriptions but no machine-readable coordinates). Pass-9 Spangler's Meadow / July 3 morning Culp's Hill cluster."
    }
+  },
+  {
+   "id": "mon-29pa",
+   "registerId": "reg-us-xii-2-2",
+   "unitLabel": "29th Pennsylvania (Rickards) monument",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Kane works-line chain.",
+   "lat": 39.81646,
+   "lon": -77.218401,
+   "local_x": 5915.3,
+   "local_z": 5206.5,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-9 cluster)."
+   }
+  },
+  {
+   "id": "mon-109pa",
+   "registerId": "reg-us-xii-2-2",
+   "unitLabel": "109th Pennsylvania (Gimber) monument",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Kane works-line chain.",
+   "lat": 39.816918,
+   "lon": -77.219276,
+   "local_x": 5841.6,
+   "local_z": 5259.2,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-9 cluster)."
+   }
+  },
+  {
+   "id": "mon-111pa",
+   "registerId": "reg-us-xii-2-2",
+   "unitLabel": "111th Pennsylvania (Walker) monument",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Kane works-line chain (Cobham's own regiment).",
+   "lat": 39.816757,
+   "lon": -77.218779,
+   "local_x": 5883.7,
+   "local_z": 5240.3,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-9 cluster)."
+   }
   }
  ]
 }

@@ -148,6 +148,16 @@ brigades (csa-2c-joh-1/-3/-4).
   Hill escalation's pin, simultaneous with the ECH assault.
 - **CA-J2E-5**: Kane returning "About 10 o'clock" (+ Geary's "about
   10 p. m." discontinuance).
+- **PASS-9 NOTE (the July 3 morning frame hardened around this
+  spine)**: the seven-hour fight's clocks now ride executor
+  primaries on both faces — Kane's "attack in force… at 3.30 a. m.
+  … seven hours, until about 10.30" and Cobham's 3-to-4 escalation
+  on the brigade's right (or-27-1-kane/-cobham), Muhlenberg's
+  4.30/15-min/5.30 program overhead (or-27-1-muhlenberg — CA-J3M-1's
+  author), and the Daniel/O'Neal/Smith reinforcement wave opposite
+  (Kane: "Johnson's division led, followed by Rodes'"). Randall's
+  morning-July-3 wounding (EC1) stays the brigade's July 3 officer
+  pin.
 
 ## ED candidates proposed
 

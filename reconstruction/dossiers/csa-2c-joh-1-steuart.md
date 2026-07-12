@@ -86,6 +86,19 @@ hardening is pass 9+ business).
    1st MD Bn + 3rd NC alternating in the works), the 10th VA
    skirmisher clearance ~10 a.m., the charge, the wall hour, the
    night picket line beyond the works "driven back" (report).
+4. **PASS-9 UPGRADE — the charge both-sided at three grains**:
+   (a) the co-charger: Daniel's "orders from General Johnson to
+   charge the enemy's works, in conjunction with General Steuart…
+   Owing to the heavy fire brought upon General Steuart, he was
+   unable to advance farther" (or-27-2-daniel p. 568 — the
+   neighbor's view of THIS repulse); (b) the receiving side: Kane's
+   "about 10.30 o'clock, when the enemy made their last determined
+   effort by charging in column of regiments" (or-27-1-kane — the
+   charge's formation AND clock from inside the works); (c) the
+   identification: Colgrove's prisoner intelligence "that Jones' and
+   Steuart's brigades occupied our works" (or-27-1-colgrove). The
+   ~10 a.m. division-frame placement now rides a 10.30
+   receiving-side primary.
 
 ## EC6 — Casualty apportionment
 
@@ -121,7 +134,9 @@ hardening is pass 9+ business).
   NY).
 - **CA-J2E-5**: "rested from about 11 p. m." — the die-down from the
   CSA side, inside the envelope.
-- July 3 morning frame (CA-J3M-1/2 context) carried for pass 9+.
+- July 3 morning frame — **hardened pass 9**: CA-J3M-2 wave 3 =
+  the Steuart/Daniel co-charge, both-sided (EC5.4); CA-J3M-4's
+  10.30 edge carried by Kane's receiving-side clock.
 
 ## ED candidates proposed
 

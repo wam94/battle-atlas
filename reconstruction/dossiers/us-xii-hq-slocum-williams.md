@@ -79,8 +79,16 @@ brigade grain for the five absent brigades stays premature by design
    recovery ledger (angle-editorial-decisions.md ED-61).
 3. July 3 morning plan [C via or-27-1-williams-aw]: artillery at
    daylight, 15 minutes by arrangement, "the enemy, without waiting
-   our assault, themselves attacked" — the seven-hour fight frame
-   (CA-J3M context for pass 9+).
+   our assault, themselves attacked" — the seven-hour fight frame.
+   **PASS-9 UPGRADE**: the plan's author-executor pair is closed —
+   Williams's "The artillery opened with a tremendous fire at
+   daylight, at from 600 to 800 yards range, which was continued by
+   arrangement for fifteen minutes" (p. 775 re-read) matches
+   Muhlenberg's program text at verbatim class (or-27-1-muhlenberg:
+   4.30 open, 15 minutes, 5.30 resume) — CA-J3M-1 now rides the
+   order's issuer AND executor; Slocum's Powers Hill HQ pin
+   registered (tab-us-xii-hq-slocum, with the on-hill duplicate
+   node recorded).
 
 ## EC6 — Casualty apportionment
 

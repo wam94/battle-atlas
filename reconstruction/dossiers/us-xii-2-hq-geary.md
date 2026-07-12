@@ -82,6 +82,16 @@ and the July 3 seven-hour defense frame.
    ledger repeated; "discontinued their attack at about 10 p. m."
 3. July 3 [C]: the seven-hour morning defense; the enemy attacking
    first at the 15-minute artillery preparation's end (Williams).
+   **PASS-9 UPGRADE — the wrong-road column's return clock pair at
+   brigade/regiment grain**: Candy "Remained in position until about
+   12 p. m." (midnight) and the 28th PA's "12.30 a. m. July 3…
+   moved forward to retake the position left the morning before"
+   (or-27-1-candy; p. 845) bracket the division's night
+   reoccupation; Kane's discovery leg (or-27-1-kane) and
+   McDougall's parallel stopped-approach (or-27-1-mcdougall) give
+   the division's three-column night state — the astray-and-return
+   frame is now primary at every echelon except Geary's own
+   unfetched pp. 828+ (still the flagged follow-up).
 
 ## EC6 — Casualty apportionment
 
