@@ -3485,6 +3485,519 @@
     "extraction": "osm-node",
     "note": "OSM/Overpass as PRIMARY coordinate source (pass-9 cluster)."
    }
+  },
+  {
+   "id": "mon-reynolds-kia",
+   "registerId": "reg-us-i-hq",
+   "unitLabel": "US General John F. Reynolds KIA marker",
+   "side": "US",
+   "markerType": "marker",
+   "positionSemantics": "Death-site marker at the east edge of Herbst/McPherson woods; the CA-J1M-5 10:15 pin ground.",
+   "lat": 39.834385,
+   "lon": -77.250969,
+   "local_x": 3177.2,
+   "local_z": 7265.8,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-i-corps-hq-tablet",
+   "registerId": "reg-us-i-hq",
+   "unitLabel": "US HQ 1st Corps Reynolds/Doubleday marker",
+   "side": "US",
+   "markerType": "marker",
+   "positionSemantics": "Corps HQ marker, Chambersburg Pike; command-node semantics.",
+   "lat": 39.835515,
+   "lon": -77.249597,
+   "local_x": 3297.8,
+   "local_z": 7388.3,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-reynolds-eq",
+   "registerId": "reg-us-i-hq",
+   "unitLabel": "Maj. Gen. John F. Reynolds equestrian statue",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Commemorative equestrian on the pike near where his advance arrived; not a death-site pin.",
+   "lat": 39.837876,
+   "lon": -77.251291,
+   "local_x": 3159.3,
+   "local_z": 7654.0,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-wadsworth-hq",
+   "registerId": "reg-us-i-hq",
+   "unitLabel": "US HQ 1-1st Division Wadsworth marker + statue pair",
+   "side": "US",
+   "markerType": "marker",
+   "positionSemantics": "Division HQ marker (statue at 39.838259,-77.247661); division-echelon context carried on the corps row.",
+   "lat": 39.836818,
+   "lon": -77.248729,
+   "local_x": 3375.7,
+   "local_z": 7531.1,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-buford-hq",
+   "registerId": "reg-us-cav-1-1",
+   "unitLabel": "US HQ Cavalry Corps 1st Division Buford marker (+ Buford statue at the pike)",
+   "side": "US",
+   "markerType": "marker",
+   "positionSemantics": "Division HQ marker beside the Gamble brigade marker on the morning line; statue (39.837920,-77.251636) at the pike guns.",
+   "lat": 39.835132,
+   "lon": -77.249861,
+   "local_x": 3274.1,
+   "local_z": 7346.4,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-gamble-hq",
+   "registerId": "reg-us-cav-1-1",
+   "unitLabel": "US HQ Cavalry Corps 1-1st Brigade Gamble marker",
+   "side": "US",
+   "markerType": "marker",
+   "positionSemantics": "Brigade HQ marker ON the morning delay line (115 m from the j1-03 drawn 8th Ill Cav bar - the marked HQ sits at the drawn line).",
+   "lat": 39.834955,
+   "lon": -77.249966,
+   "local_x": 3264.6,
+   "local_z": 7327.0,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-calef-a2us",
+   "registerId": "reg-us-cav-1-1",
+   "unitLabel": "2nd US Artillery Battery A (Calef) markers, Chambersburg Pike pair",
+   "side": "US",
+   "markerType": "marker",
+   "positionSemantics": "Two positions (pike straddle 39.837620,-77.251551 + Reynolds Ave 39.831947,-77.251018); Tidball-battery-under-Calef, attached to Gamble.",
+   "lat": 39.83762,
+   "lon": -77.251551,
+   "local_x": 3136.3,
+   "local_z": 7626.2,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-devin-hq",
+   "registerId": "reg-us-cav-1-2",
+   "unitLabel": "US HQ Cavalry Corps 1-2nd Brigade Devin marker",
+   "side": "US",
+   "markerType": "marker",
+   "positionSemantics": "Brigade HQ marker on the right (Carlisle-road front of the four-road screen).",
+   "lat": 39.845107,
+   "lon": -77.246676,
+   "local_x": 3574.4,
+   "local_z": 8446.8,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-cutler-hq",
+   "registerId": "reg-us-i-1-2",
+   "unitLabel": "US HQ 1-1-2nd Brigade Cutler marker",
+   "side": "US",
+   "markerType": "marker",
+   "positionSemantics": "Brigade HQ marker north of the railroad cuts (the three-regiment right wing ground).",
+   "lat": 39.839163,
+   "lon": -77.247124,
+   "local_x": 3519.6,
+   "local_z": 7788.0,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-84ny-rrcut",
+   "registerId": "reg-us-i-1-2",
+   "unitLabel": "84th NY (14th Brooklyn) monument, railroad-cut ground",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "The railroad-cut charge ground (second position marker at 39.835751,-77.252970; Oak Ridge 39.837575,-77.248574).",
+   "lat": 39.837575,
+   "lon": -77.248574,
+   "local_x": 3391.1,
+   "local_z": 7614.8,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-ironbde-hq",
+   "registerId": "reg-us-i-1-1",
+   "unitLabel": "US HQ 1-1-1st Iron Brigade Meredith/Robinson marker",
+   "side": "US",
+   "markerType": "marker",
+   "positionSemantics": "Brigade HQ marker in Herbst woods (McPherson's woods - the held-to-the-last-extremity ground).",
+   "lat": 39.835389,
+   "lon": -77.254181,
+   "local_x": 2905.0,
+   "local_z": 7384.1,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-7wi-herbst",
+   "registerId": "reg-us-i-1-1",
+   "unitLabel": "7th Wisconsin monument (Herbst woods)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Regimental on the woods line (second marker on Culp's Hill 39.819595,-77.223006 marks the July 2-3 ground).",
+   "lat": 39.835794,
+   "lon": -77.253975,
+   "local_x": 2923.8,
+   "local_z": 7428.7,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-archer-captured",
+   "registerId": "reg-csa-3c-het-3",
+   "unitLabel": "CS Archer captured marker",
+   "side": "CSA",
+   "markerType": "marker",
+   "positionSemantics": "Archer-capture site west of Willoughby Run; BOTH-SIDED with the Iron Brigade charge (419 m W of the j1-03 drawn Archer line label - the pocket past the run).",
+   "lat": 39.836435,
+   "lon": -77.256247,
+   "local_x": 2731.1,
+   "local_z": 7504.7,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-archer-hq-herbst",
+   "registerId": "reg-csa-3c-het-3",
+   "unitLabel": "CS HQ Archer Brigade marker (Willoughby Run front)",
+   "side": "CSA",
+   "markerType": "marker",
+   "positionSemantics": "July 1 morning front marker near the run; the July 3 W Conf Ave tablet (39.816968,-77.248900) carries formation-line semantics separately.",
+   "lat": 39.835019,
+   "lon": -77.254796,
+   "local_x": 2851.3,
+   "local_z": 7344.4,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-davis-hq-rrcut",
+   "registerId": "reg-csa-3c-het-4",
+   "unitLabel": "CS HQ Davis Brigade marker (railroad cut front)",
+   "side": "CSA",
+   "markerType": "marker",
+   "positionSemantics": "July 1 railroad-cut front marker; the W Conf Ave tablet (39.818394,-77.247934) is the July 3 formation line; the 11th MS marker pair (39.818986,-77.247543) marks the July 3 return of the train-guard regiment.",
+   "lat": 39.838361,
+   "lon": -77.24786,
+   "local_x": 3454.4,
+   "local_z": 7700.5,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-brockenbrough-tablet",
+   "registerId": "reg-csa-3c-het-2",
+   "unitLabel": "Brockenbrough VA Brigade tablet (W Conf Ave)",
+   "side": "CSA",
+   "markerType": "tablet",
+   "positionSemantics": "Formation-line semantics (July 2-3 ground); no July 1 field marker located through this channel.",
+   "lat": 39.819481,
+   "lon": -77.247257,
+   "local_x": 3453.5,
+   "local_z": 5603.5,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-pettigrew-tablet",
+   "registerId": "reg-csa-3c-het-1",
+   "unitLabel": "Pettigrew NC Brigade tablet (W Conf Ave)",
+   "side": "CSA",
+   "markerType": "tablet",
+   "positionSemantics": "Formation-line semantics; the 26th NC regimental (mon-26nc, registered pass 3) marks the July 1 attack ground.",
+   "lat": 39.817532,
+   "lon": -77.248526,
+   "local_x": 3339.5,
+   "local_z": 5389.9,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-iverson-hq",
+   "registerId": "reg-csa-2c-rod-2",
+   "unitLabel": "CS HQ Iverson NC Brigade tablet (Oak Hill)",
+   "side": "CSA",
+   "markerType": "tablet",
+   "positionSemantics": "Formation/launch ground on Oak Hill; the j1-09 drawn attack bar reads 408 m SE along the advance axis toward the Forney-field wall.",
+   "lat": 39.847838,
+   "lon": -77.243152,
+   "local_x": 3883.7,
+   "local_z": 8742.4,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-ramseur-hq",
+   "registerId": "reg-csa-2c-rod-4",
+   "unitLabel": "CS HQ Ramseur NC Brigade tablet (Oak Hill)",
+   "side": "CSA",
+   "markerType": "tablet",
+   "positionSemantics": "Formation ground (reserve posting); the counter-stroke ran SE past the Forney field.",
+   "lat": 39.848373,
+   "lon": -77.244568,
+   "local_x": 3764.0,
+   "local_z": 8804.9,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-rodes-div",
+   "registerId": "reg-csa-2c-rod-2",
+   "unitLabel": "CS HQ Rodes Division tablet (Oak Hill)",
+   "side": "CSA",
+   "markerType": "tablet",
+   "positionSemantics": "Division-echelon tablet carried on the Iverson row as context (no division register row); beside Daniel (39.848741,-77.243525) and the Oak Hill gun line.",
+   "lat": 39.848362,
+   "lon": -77.243206,
+   "local_x": 3880.5,
+   "local_z": 8800.7,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-gordon-tablet",
+   "registerId": "reg-csa-2c-ear-4",
+   "unitLabel": "CS Gordon GA Brigade tablet (Barlow Knoll)",
+   "side": "CSA",
+   "markerType": "tablet",
+   "positionSemantics": "ON the captured knoll (19 m-class from the Barlow statue ground); pairs with the j1-11 drawn contact bar (82 m down the N slope).",
+   "lat": 39.845,
+   "lon": -77.226389,
+   "local_x": 5310.8,
+   "local_z": 8391.6,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-barlow-statue",
+   "registerId": "reg-us-xi-1-2",
+   "unitLabel": "US General Francis C. Barlow statue (Barlow Knoll)",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "The knoll crest; the Ames/Harris brigade HQ marker (39.845134,-77.227169) and division HQ Barlow(w)/Ames marker (39.844792,-77.226701) flank it; j1-11 drawn Ames crest bar 57 m.",
+   "lat": 39.845436,
+   "lon": -77.226414,
+   "local_x": 5309.8,
+   "local_z": 8440.0,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-vongilsa-hq-ech",
+   "registerId": "reg-us-xi-1-1",
+   "unitLabel": "US HQ 11-1-1st von Gilsa marker (East Cemetery Hill)",
+   "side": "US",
+   "markerType": "marker",
+   "positionSemantics": "JULY 2-3 GROUND semantics (the ECH re-formed line, pass-8 frame); the brigade's July 1 knoll ground carries no located brigade marker through this channel - the knoll cluster (Barlow statue, Ames HQ) frames it.",
+   "lat": 39.82161,
+   "lon": -77.227427,
+   "local_x": 5156.9,
+   "local_z": 5797.5,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-howard-hq-town",
+   "registerId": "reg-us-xi-hq",
+   "unitLabel": "US HQ 11th Corps Howard markers (town + Cemetery Hill pair) + statue",
+   "side": "US",
+   "markerType": "marker",
+   "positionSemantics": "The July 1 forward node (39.842926,-77.231774) + the Cemetery Hill node (39.821503,-77.228684); equestrian statue on E Cemetery Hill (39.821931,-77.228848) - the assumed-command ground.",
+   "lat": 39.842926,
+   "lon": -77.231774,
+   "local_x": 4844.0,
+   "local_z": 8172.9,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-schurz-hq",
+   "registerId": "reg-us-xi-hq",
+   "unitLabel": "US HQ 11-3rd Division Schurz marker",
+   "side": "US",
+   "markerType": "marker",
+   "positionSemantics": "Schurz division/corps-command node north of town; carried on the corps row (no 3d-division register row in scope this pass).",
+   "lat": 39.841004,
+   "lon": -77.234238,
+   "local_x": 4627.8,
+   "local_z": 7964.8,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-hoke-tablet-j1",
+   "registerId": "reg-csa-2c-ear-3",
+   "unitLabel": "CS Hoke NC Brigade tablet (Harrisburg Rd approach)",
+   "side": "CSA",
+   "markerType": "tablet",
+   "positionSemantics": "Avery arc backward-extension: the July 1 approach/formation ground NE of town (pass-8 registered the ECH grounds).",
+   "lat": 39.827948,
+   "lon": -77.225563,
+   "local_x": 5334.1,
+   "local_z": 6497.0,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
+  },
+  {
+   "id": "mon-hays-tablet-j1",
+   "registerId": "reg-csa-2c-ear-1",
+   "unitLabel": "CS Hays LA Brigade tablet (Harrisburg Rd approach)",
+   "side": "CSA",
+   "markerType": "tablet",
+   "positionSemantics": "Hays arc backward-extension: July 1 approach/formation ground (pair 39.828182,-77.225754).",
+   "lat": 39.828779,
+   "lon": -77.226267,
+   "local_x": 5276.2,
+   "local_z": 6590.8,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://overpass-api.de/ (historic=memorial|monument extract)",
+    "accessDate": "2026-07-12",
+    "extraction": "osm-node",
+    "note": "OSM/Overpass as PRIMARY coordinate source (pass-10 July 1 cluster)."
+   }
   }
  ]
 }
