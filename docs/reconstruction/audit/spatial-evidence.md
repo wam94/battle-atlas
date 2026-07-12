@@ -127,6 +127,19 @@ documents win and the conflict is recorded.
    window-bracketed positions in one metric frame — movement legs (EC4)
    inherit endpoints from the two sheets' windows.
 
+## Per-pass crop pixel-read ledgers (pointer)
+
+The dossier passes' sheet reads (crop windows, pixel picks, converted
+locals, and marker cross-checks) are recorded per pass in the pass
+reports rather than duplicated here: dossier-pass-5.md §6,
+dossier-pass-6.md §7, dossier-pass-7.md §7, dossier-pass-8.md §7 (the
+suggestion carried since pass 6 is resolved as a pointer — the reports
+are the ledger of record; this section indexes them). Reading
+discipline unchanged: label/bar picks carry the ±62 m floor unless
+terrain-relative; every pass re-reads at least one prior pick for
+repeatability (pass 8: Carroll's ECH label, 27 m; WILCOX/1' Minn in
+pass 7).
+
 ## Rights posture (summary)
 
 Manifest carries the full per-sheet statement. Short form: Warren 1873
