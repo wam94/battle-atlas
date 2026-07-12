@@ -45,6 +45,15 @@ charge; Hampton's wounding is the theater's one CSA officer pin.
    and Jeff Davis Legion — geometrically inside the same Rummel-farm
    frame as EC3 in the Union dossiers (±75 m ECF georeference class,
    `ecf-base` tie point).
+4. **PASS-13 SHEET-CROP PATCH (ED-73 class):** sheet `ecf-j3-mid`
+   draws "HAMPTON'S BR[IGADE]" at local (10,077, 7,468), directly
+   NORTH of the Rummel farm buildings (local 10,044, 6,847) — a
+   ~620 m gap, with the brigade's own regiments (Cobb's Legion,
+   Phillips's Legion, Jeff Davis Legion, 1st/2nd SC, 1st NC) drawn as
+   a dense block astride Cress Ridge, Chambliss's brigade to its west
+   and Fitzhugh Lee's to its east. Radius ~77 m. This directly
+   substantiates the marker's "arrived here about noon" line with a
+   drawn position, not just a clock phrase.
 
 ## EC4 — Movement legs
 
@@ -104,29 +113,34 @@ charge; Hampton's wounding is the theater's one CSA officer pin.
    subclass, proposed for the record (see ED candidates below).
 2. **No clock accompanies the wounding** — it rides inside the ~15:00
    CA-ECF-3 window by sequence only [D], not independently timed.
-3. **Stuart's own report** (OR 27/2 pp. 679-720, No. 565) was
-   identified this pass (civilwarcycling.com index) but NOT
-   substantively fetched beyond the index entry — a 42-page,
-   whole-campaign report; the East Cavalry Field section's exact page
-   was not located this pass. Recorded as a standing fetch gap for
-   pass 13, not papered over with a secondary-source stand-in.
+3. **Stuart's own report** (OR 27/2 pp. 679-720, No. 565) — **PASS-13
+   RE-ATTEMPT**: two targeted civilwar.com fetches this pass (p. 693:
+   June 26-27 movements, Hampton/Fitz Lee named but pre-Gettysburg;
+   p. 712: mid-June Middleburg/Upperville casualty tables and a
+   Congressional thanks resolution, NOT the East Cavalry Field
+   narrative) confirm the report's chronological span but did NOT
+   locate the July 3 section. The gap is real, not merely unattempted
+   — three passes running (11, 12, 13) have now failed to locate the
+   exact page; recorded as a standing fetch gap, not papered over.
 
 ## Chain anchors substantiated
 
-- **CA-ECF-1 (ED-72 candidate)**: ~noon arrival on Cress Ridge — one
-  of the four independent CSA brigade-marker agreements.
-- **CA-ECF-3 (ED-72 candidate)**: the ~15:00 charge — the CSA-side
-  relief-and-melee narrative, complementing McIntosh's Union-side
-  account; Hampton's wounding is the theater's clearest officer pin,
-  though unclocked.
+- **CA-ECF-1 (ED-72 ADOPTED, pass 13)**: ~noon arrival on Cress
+  Ridge — one of the four independent CSA brigade-marker agreements,
+  now with a drawn sheet position (EC3.4).
+- **CA-ECF-3 (ED-72 ADOPTED, pass 13)**: the ~15:00 charge — the
+  CSA-side relief-and-melee narrative, complementing McIntosh's
+  Union-side account; Hampton's wounding is the theater's clearest
+  officer pin, though unclocked.
 
 ## ED candidates proposed
 
-- Feeds **ED-72 (candidate, this pass)**.
-- **ED-73 (candidate, this pass)**: name the GNMP-era CSA
-  cavalry-brigade position-marker class distinctly from the ED-39 War
-  Department tablet class (different erection process/date, no
-  adjudication record found) — see pass-12 report §5. NOT adopted.
+- Fed **ED-72**, ADOPTED at the start of pass 13; this dossier's EC3
+  gained the pass-13 sheet-crop patch above.
+- Fed **ED-73**, ADOPTED at the start of pass 13 (the CSA
+  cavalry-brigade marker class, extended this pass to cover the
+  Bachelder ECF sheet set's own hand-lettered annotations — see
+  `anchor-chain-proposal.md` §2.6).
 
 ## Source register
 
@@ -137,4 +151,6 @@ gettysburg-stonesentinels-stuart-cav-division (marker page,
 gettysburg-stonesentinels-1bde2div-cav (McIntosh's marker,
 cross-referenced) · addressing-gettysburg-oob (B&M-repro hop) ·
 warfarehistorynetwork-hampton (web research, Hampton's wounding
-mechanism, attributed grade only, accessed 2026-07-12) · or-27-oob.
+mechanism, attributed grade only, accessed 2026-07-12) ·
+bachelder-12441-sheets (PASS 13: `ecf-j3-mid`, sha256-verified,
+crop-read this pass) · or-27-oob.

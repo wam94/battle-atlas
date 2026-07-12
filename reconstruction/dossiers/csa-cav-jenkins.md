@@ -39,6 +39,19 @@ brigade forced onto foot by an ammunition failure, exactly the ED-44
    explicit tie to the Rummel FARM BUILDINGS specifically (as opposed
    to the open ground/woods the other brigades' markers describe),
    inside the shared ±75 m ECF georeference frame.
+3. **PASS-13 SHEET-CROP PATCH (ED-73 class):** sheet `ecf-j3-mid`
+   draws "JENKINS' BRIGADE" directly astride the Rummel farm buildings
+   at local (9,852, 6,935) — only ~120 m from the farm centroid
+   (10,044, 6,847), the closest of any CSA brigade block to the
+   buildings, drawn confirmation of the marker's "around and in front
+   of the Rummel Barn" text. A DETACHED "34 VA" block is drawn
+   separately, ~200 m south of the farm at local (9,950, 6,675) —
+   consistent with the battalion-grain fragmentation the brigade's
+   ammunition failure implies (small, separated firing positions
+   rather than a single massed line). The `ecf-j3-pm` sheet marks
+   "JENKINS 2 P.M." at local (9,829, 6,352), ~600 m south of the
+   brigade's main block — a drawn southward shift during the
+   afternoon, unremarked in any fetched text source. Radius ~77 m.
 
 ## EC4 — Movement legs
 
@@ -81,16 +94,21 @@ brigade forced onto foot by an ammunition failure, exactly the ED-44
 
 ## Chain anchors substantiated
 
-- **CA-ECF-1 (ED-72 candidate)**: ~noon rejoining, the fourth
-  independent agreement.
+- **CA-ECF-1 (ED-72 ADOPTED, pass 13)**: ~noon rejoining, the fourth
+  independent agreement, now with the theater's closest-to-the-farm
+  drawn position.
 
 ## ED candidates proposed
 
-- Feeds **ED-72 (candidate, this pass)**.
+- Fed **ED-72**, ADOPTED at the start of pass 13; this dossier's EC3
+  gained the pass-13 sheet-crop patch above.
+- Fed **ED-73**, ADOPTED at the start of pass 13.
 
 ## Source register
 
 gettysburg-stonesentinels-jenkins-brigade (marker page, "Jenkins'
 Cavalry Brigade," fetched 2026-07-12) · civilwarcycling-oob-index-2
 (verified-negative for a Jenkins OR report, consulted 2026-07-12) ·
-addressing-gettysburg-oob (B&M-repro hop) · or-27-oob.
+addressing-gettysburg-oob (B&M-repro hop) · bachelder-12441-sheets
+(PASS 13: `ecf-j3-mid`/`ecf-j3-pm`, sha256-verified, crop-read this
+pass) · or-27-oob.

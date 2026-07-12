@@ -1552,6 +1552,105 @@
       "EC6 casualty apportionment": "Corps tablet: K2/25, W14/171, CM30 = 242 (not apportioned by brigade here)",
       "Achieved T-level (audited)": "T2 (command record, attested-static-with-exceptions)",
       "Notes": "Dossier: reconstruction/dossiers/us-vi-hq-sedgwick.md; the VI Corps cheap batch; register row reg-us-vi-hq added this pass"
+    },
+    "reg-us-ha-2-1": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+      "EC1 identity/command": "Capt. Alanson M. Randol throughout; split command July 3 (Chester's section w/ Custer's brigade, Kinney's section near Hanover Road); armament discrepancy flagged (tablet '4 12-Pdrs' vs horse-arty convention of 3-in rifles)",
+      "EC2 engaged strength": "Tablet: 84 men (report-adjacent, not a B&M hop)",
+      "EC3 position anchors": "[C tablet] with 1st Brig 2nd Cav Div, not engaged July 1-2; PASS-13 SHEET-CROP: Chester's section (10569,5638) and Kinney's section (10354,5270), ~370 m apart — first drawn confirmation the tablet split is real",
+      "EC4 movement legs": "Not authored — no trigger/timing for either section located",
+      "EC5 activity record": "Chester's section co-named in McIntosh's tablet as CA-ECF-2 co-executor (~14:00); Kinney's section 'remained near Hanover Road', no engagement claimed",
+      "EC6 casualty apportionment": "Tablet: 'suffered no casualties' — explicit zero, both sections combined",
+      "Achieved T-level (audited)": "T3 (ECF grain, split-section)",
+      "Notes": "Dossier: reconstruction/dossiers/us-btty-randol.md; self-surfaced by pass-12's McIntosh tablet quote; closed pass 13"
+    },
+    "reg-us-ha-1-4": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+      "EC1 identity/command": "Lieut. A. C. M. Pennington Jr. throughout; six 3-in rifles (no armament discrepancy); parent Robertson's report defers narrative to Custer's",
+      "EC2 engaged strength": "Tablet: 129 men",
+      "EC3 position anchors": "[C, shared w/ Custer's brigade] Hanover Rd/Low Dutch sector; PASS-13 SHEET-CROP: 'PENNINGTON/CLARK BAT.M' at (10072,5237), south of Custer's block; 'Clark' unidentified",
+      "EC4 movement legs": "Inferred-by-attachment to Custer's brigade only",
+      "EC5 activity record": "July 2 Hunterstown; July 3 ~14:00 CA-ECF-2, report=tablet agreement ('engaged all day' / 'on the right of the Union Army') — the pass's second report=tablet pair",
+      "EC6 casualty apportionment": "Tablet: wounded 1 officer only (no enlisted figure stated)",
+      "Achieved T-level (audited)": "T3 (ECF grain)",
+      "Notes": "Dossier: reconstruction/dossiers/us-btty-pennington.md; self-surfaced by pass-12's McIntosh tablet quote; closed pass 13"
+    },
+    "csa-bn-henry": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+      "EC1 identity/command": "Maj. Mathis W. Henry; 4 batteries (Latham/Branch, Bachman/German, Garden/Palmetto, Reilly/Rowan); own report fetch-verified (No. 463, pp. 427-428)",
+      "EC2 engaged strength": "OPEN — no personnel total in report or tablet",
+      "EC3 position anchors": "[C report-primary] July 2 pm, 2 of 4 batteries (Reilly/Latham) engaged 'on the right of our line'; July 3 whole battalion; July-2/3 SCF-adjacent fire",
+      "EC4 movement legs": "Reilly's/Latham's into line July 2 (16:00); Bachman's/Garden's join by July 3",
+      "EC5 activity record": "1,500 rounds report=tablet exact; TWO battery markers (Latham's, Garden's) independently credit ~17:00 fire vs Farnsworth's charge — new CA-SCF-2 CSA-side corroboration (now 5 sources)",
+      "EC6 casualty apportionment": "Report=tablet digit-exact: K4/W23 (no M/C stated)",
+      "Achieved T-level (audited)": "T4 (battalion grain, ED-36 pattern)",
+      "Notes": "Dossier: reconstruction/dossiers/csa-1c-bn-henry.md; closes the First Corps battalion arc's one gap (pass-12 triage)"
+    },
+    "csa-bn-lane": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+      "EC1 identity/command": "Maj. John Lane; 3 batteries (Ross/A, Patterson/B, Wingfield/C); own report fetch-verified (No. 548, pp. 635-636) — Capt. Wingfield w July 3",
+      "EC2 engaged strength": "OPEN — no personnel total in report or tablet",
+      "EC3 position anchors": "[C report-primary] ridge east of town, '~1,400 yards' from Cemetery Hill; Patterson's battery detached to Wilcox's brigade July 2 am — cross-reference to csa-3c-and-1-wilcox.md and CA-J2A-10",
+      "EC4 movement legs": "Patterson's detachment leg (named trigger + destination activity); remainder static on the ridge",
+      "EC5 activity record": "Ross's/Wingfield's markers both name CA-J3A-1 cannonade participation — new geographic witnesses from Anderson's front",
+      "EC6 casualty apportionment": "DOUBLE digit-exact 3-way cross-check: battery-marker sums = battalion tablet on BOTH rounds (1,082) and casualties (30); Lane's OWN report gives a conflicting total (29) — ED-74 candidate proposed",
+      "Achieved T-level (audited)": "T4 (battalion grain, own-report primary)",
+      "Notes": "Dossier: reconstruction/dossiers/csa-3c-bn-lane.md; closes the Third Corps battalion arc's one gap (pass-12 triage)"
+    },
+    "reg-us-v-arty": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+      "EC1 identity/command": "Capt. Augustus P. Martin; 5 batteries (Hazlett's/Rittenhouse's, Walcott's, Watson's, Gibbs's, Barnes's); own report fetch-verified (No. 221, pp. 659-661)",
+      "EC2 engaged strength": "937 men / 48 guns (tablet, search-summary grade, not page-verified)",
+      "EC3 position anchors": "[C report-primary] brigade arrival 16:00-17:00 July 2; Battery I 'not to be found' — reassigned by III Corps staff without record (cross-corps command friction)",
+      "EC4 movement legs": "Brigade-wide arrival only; individual battery legs not authored beyond Rittenhouse's existing dossier",
+      "EC5 activity record": "Hazlett k ('shot in the head... died at 8 p.m.', upgrades the tablet-only pin on file); Battery I overrun then RETAKEN by Lt. Peeples w/ the Garibaldi Guards",
+      "EC6 casualty apportionment": "Report-primary brigade total: K9/W33/M2 = 44; Battery D's own component (7k/6w) not yet reconciled with us-btty-rittenhouse.md's existing EC6",
+      "Achieved T-level (audited)": "T4 (brigade grain)",
+      "Notes": "Dossier: reconstruction/dossiers/us-v-arty-martin.md; the pass-12-recommended Union corps-arty group, picked over III/VI on a reasoned (not exhaustive) source check"
+    },
+    "csa-mahone": {
+      "Class (attested-static / unauthored / authored-ok)": "attested-static",
+      "EC1 identity/command": "Brig. Gen. William Mahone throughout; own report fetch-verified (dated July 10, 1863)",
+      "EC2 engaged strength": "Report=tablet digit-exact: Present 1,500",
+      "EC3 position anchors": "[C report-primary] 'immediately in front of the enemy, in support of Pegram's batteries' — cross-ref csa-3c-bn-pegram.md; arrived forenoon July 2, unchanged through July 4",
+      "EC4 movement legs": "NONE — the defining fact is the absence of a July 2 advance leg",
+      "EC5 activity record": "Skirmish line only both days, report=tablet corroborating; report is SILENT on why the brigade did not advance to support Wright's/Posey's requests — first-class negative",
+      "EC6 casualty apportionment": "Report=tablet digit-exact: K8/W55/M39 = 102, mainly from shelling while stationary",
+      "Achieved T-level (audited)": "T4 (own-report primary, negative-evidence class)",
+      "Notes": "Dossier: reconstruction/dossiers/csa-3c-and-2-mahone.md; the famous CSA non-participation; cross-refs Wright's/Lang's dossiers (the neighbors that advanced)"
+    },
+    "csa-posey": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+      "EC1 identity/command": "Brig. Gen. Carnot Posey throughout; own report fetch-verified (dated July 29, 1863)",
+      "EC2 engaged strength": "CONFLICT: tablet 1,150 vs web-research 1,320 — not resolved",
+      "EC3 position anchors": "[C report-primary] open field w/ woods both flanks; advance '200-300 yds beyond the barn and house, which were burned' = the Bliss farm — NEW cross-ref to csa-3c-pen-3-thomas.md; withdrew to rear of Pegram's battery",
+      "EC4 movement legs": "FOUR-STAGE piecemeal commitment (48th/19th, then 16th, then 12th) — Posey's own report blames this for the advance's failure to cohere",
+      "EC5 activity record": "Skirmish-grain success (pushed Union pickets back, drove artillerists off guns briefly) but never joined the main Cemetery Ridge assault",
+      "EC6 casualty apportionment": "CONFLICT: tablet K12/W71=83 vs web-research K15/W68=83 — same total, different split, not resolved",
+      "Achieved T-level (audited)": "T4 (own-report primary, partial-advance class)",
+      "Notes": "Dossier: reconstruction/dossiers/csa-3c-and-5-posey.md; the PARTIAL-advance case between Mahone's none and Wright's/Lang's full advance"
+    },
+    "csa-thomas": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+      "EC1 identity/command": "Brig. Gen. Edward L. Thomas throughout; own report NOT directly fetched this pass (civilwarhome.com mirror confirmed dead) — attributed grade only",
+      "EC2 engaged strength": "CONFLICT: ~1,400 attributed vs tablet 'about 1200' — not resolved",
+      "EC3 position anchors": "[C tablet] July 1 reserve then McMillan's Woods; July 2 22:00 to Long Lane, flanked by McGowan's/Perrin's brigade (left) and the Bliss House/Barn (right) — same farm as csa-3c-and-5-posey.md's EC3.2, new cross-ref",
+      "EC4 movement legs": "Reserve->McMillan's Woods (sunset J1); artillery-support->Long Lane (22:00 J2); skirmish line->Seminary Ridge (after dark J3)",
+      "EC5 activity record": "July 1-2 reserve/artillery-support only; July 3 'severe skirmishing... most of the day' — NOT a quiet-flank case despite the task's framing",
+      "EC6 casualty apportionment": "Tablet: K34/W179/M57 = 270 — HIGHEST of the three brigades in this pass's batch (Mahone 102, Posey 83)",
+      "Achieved T-level (audited)": "T3 (tablet + attributed-report grain)",
+      "Notes": "Dossier: reconstruction/dossiers/csa-3c-pen-3-thomas.md; REGISTER CORRECTION — Thomas is Pender's Division per reg-csa-3c-pen-3, not Anderson's, despite the task's framing (noted, not silently fixed)"
+    },
+    "reg-us-hq-provost": {
+      "Class (attested-static / unauthored / authored-ok)": "authored-ok",
+      "EC1 identity/command": "Brig. Gen. Marsena R. Patrick, Provost Marshal General; 93rd NY served as HQ guard (own tablet fetch-verified)",
+      "EC2 engaged strength": "93rd NY: 399 (tablet); whole command: 1,750 (attributed, not reconciled with the 399 figure)",
+      "EC3 position anchors": "[D attributed] Sheely Farm HQ; [C tablet] 93rd NY near the Leister House/Taneytown Rd — the two positions not reconciled into one command anchor",
+      "EC4 movement legs": "Not authored — rear-area, non-maneuvering command",
+      "EC5 activity record": "Patrick's own diary quote (attributed): checked straggler disorder, organized a guard keeping ~2,000 CSA prisoners safe after the July 3 repulse — downstream CA-J3A-9/10 context",
+      "EC6 casualty apportionment": "1 killed, 4 wounded (attributed, whole command)",
+      "Achieved T-level (audited)": "T2 (command record)",
+      "Notes": "Dossier: reconstruction/dossiers/us-hq-provost-patrick.md; the cheap command-record closer named in the task; thinnest sourcing of this pass's command batch (only the 93rd NY tablet is fetch-verified)"
     }
   }
 }

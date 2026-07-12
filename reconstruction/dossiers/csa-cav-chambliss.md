@@ -26,6 +26,18 @@ theater's opening infantry-style push before the ~15:00 charge.
    fight until it ended" (gettysburg.stonesentinels.com, "Chambliss'
    Cavalry Brigade") — the third of the four independent CSA
    arrival-clock agreements (CA-ECF-1).
+2. **PASS-13 SHEET-CROP PATCH (ED-73 class):** sheet `ecf-j3-mid`
+   draws "CHAMBLISS' BRIGADE" at local (9,598, 7,333), west of
+   Hampton's block and the westernmost of the four CSA brigade blocks
+   on Cress Ridge — consistent with being the brigade whose advance
+   draws Hampton's relief (EC4.2). The `ecf-j3-pm` sheet marks
+   "CHAMBLISS 2½ P. M." at local (10,284, 6,731), well SOUTH of the
+   brigade's Cress Ridge block and close to the Rummel farm axis — a
+   drawn advance leg from the ridge block toward the farm, with its
+   OWN clock annotation half an hour ahead of the tablet-adopted
+   CA-ECF-3 15:00 (inside the widened 14:00–15:30 envelope, ED-25
+   rule 4 — corroborating, not moving, the adopted time). Radius
+   ~77 m.
 
 ## EC4 — Movement legs
 
@@ -74,18 +86,25 @@ theater's opening infantry-style push before the ~15:00 charge.
 
 ## Chain anchors substantiated
 
-- **CA-ECF-1 (ED-72 candidate)**: ~noon arrival.
-- **CA-ECF-3 (ED-72 candidate)**, adjacency only: the brigade's
-  advance is the action Hampton's brigade relieves, per Hampton's own
-  marker text ("advancing in support of Chambliss' Brigade").
+- **CA-ECF-1 (ED-72 ADOPTED, pass 13)**: ~noon arrival, now with a
+  drawn sheet position.
+- **CA-ECF-3 (ED-72 ADOPTED, pass 13)**: the brigade's advance is the
+  action Hampton's brigade relieves, per Hampton's own marker text
+  ("advancing in support of Chambliss' Brigade"); the sheet's own
+  "Chambliss 2½ P.M." annotation (EC3.2) is the pass's best drawn
+  corroboration of this brigade's own charge-leg timing.
 
 ## ED candidates proposed
 
-- Feeds **ED-72 (candidate, this pass)**.
+- Fed **ED-72**, ADOPTED at the start of pass 13; this dossier's EC3
+  gained the pass-13 sheet-crop patch above.
+- Fed **ED-73**, ADOPTED at the start of pass 13.
 
 ## Source register
 
 or-27-2-chambliss (No. 587, pp. 771-772, fetched this pass; verified
 thin for a Gettysburg narrative — see Conflicts) ·
 gettysburg-stonesentinels-chambliss-brigade (marker page, fetched
-2026-07-12) · addressing-gettysburg-oob (B&M-repro hop) · or-27-oob.
+2026-07-12) · addressing-gettysburg-oob (B&M-repro hop) ·
+bachelder-12441-sheets (PASS 13: `ecf-j3-mid`/`ecf-j3-pm`,
+sha256-verified, crop-read this pass) · or-27-oob.

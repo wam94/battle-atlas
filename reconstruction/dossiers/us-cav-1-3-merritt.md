@@ -45,6 +45,12 @@ resolves at the "carry both, adopt neither silently" grade.
    standing off-map ruling (Fairfield listed alongside East Cavalry
    Field, Westminster, Cashtown) already carries this; this dossier is
    the first pass-12 unit to substantiate it with a primary quote.
+3. **PASS-13 EC3 HONESTY NOTE:** the sheet-crop exercise this pass was
+   scoped to the Bachelder 12441 (East Cavalry Field) set only; South
+   Cavalry Field's main-field sheets (`12440022`/`12440023`) were not
+   fetched — this dossier's ±75 m-class geometry remains untested by a
+   drawn-bar read, same standing gap as `us-cav-3-1-farnsworth.md`
+   (see `anchor-chain-proposal.md` §2.6.1).
 
 ## EC4 — Movement legs
 
@@ -108,20 +114,19 @@ resolves at the "carry both, adopt neither silently" grade.
 
 ## Chain anchors substantiated
 
-- **CA-SCF-1 (ED-72 candidate)**: ~noon march start — a PRIMARY
-  (Merritt's own report), the strongest single clock in either half
-  of the cavalry theater this pass.
-- **CA-SCF-2 (ED-72 candidate)**: the ~17:30 charge/close — Merritt's
-  report's "about four hours... brought to a close by a heavy rain"
-  independently corroborates the tablet-class triple agreement found
-  in the Farnsworth dossier.
+- **CA-SCF-1 (ED-72 ADOPTED, pass 13)**: ~noon march start — a
+  PRIMARY (Merritt's own report), the strongest single clock in
+  either half of the cavalry theater.
+- **CA-SCF-2 (ED-72 ADOPTED, pass 13)**: the ~17:30 charge/close —
+  Merritt's report's "about four hours... brought to a close by a
+  heavy rain" independently corroborates the tablet-class triple
+  agreement found in the Farnsworth dossier.
 
 ## ED candidates proposed
 
-- Feeds **ED-72 (candidate, this pass)**; the Fairfield-pooling
-  finding is offered as supporting evidence for ED-72's honesty
-  section, not as a separate ED candidate (it is a per-unit
-  application of standing doctrine, not a new rule).
+- Fed **ED-72**, ADOPTED at the start of pass 13; the Fairfield-
+  pooling finding is cited in the ED-72 adoption text's rationale
+  (not a separate ED — a per-unit application of standing doctrine).
 
 ## Source register
 

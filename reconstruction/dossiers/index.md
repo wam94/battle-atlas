@@ -15,7 +15,7 @@ Citations are `(source-id, locator)`; source ids resolve in
 `reconstruction/sources/sources.json`. Facts with **no tier bracket are
 untimed** (identity, strength, materiel). Negative evidence and conflicts are
 first-class and live in their own section. New editorial calls are PROPOSED
-as ED candidates (ED-72+ as of pass 12 — the pass-1 candidates ED-32…ED-38,
+as ED candidates (ED-74+ as of pass 13 — the pass-1 candidates ED-32…ED-38,
 the monument profile ED-39, the pass-2 candidates ED-40…ED-45, the
 pass-3 candidates ED-46…ED-49, the pass-4 candidates ED-50…ED-52, the
 pass-5 candidates ED-53…ED-55 (incl. the CA-J2A-2/3 chain revision), and
@@ -39,7 +39,10 @@ Geary/Muhlenberg record-only conflict) were adopted 2026-07-12 at
 pass-11 start, and the pass-11 candidates ED-69…ED-71 (the CA-J1P-1
 early-component annotation; the CA-J1P-5 cross-line basis upgrade +
 Robinson rear-guard tail; the failed-row-arithmetic rule) were
-adopted 2026-07-12 at pass-12 start), never self-adopted.
+adopted 2026-07-12 at pass-12 start, and the pass-12 candidates ED-72/
+ED-73 (the East/South Cavalry Field chain; the CSA cavalry-brigade
+position-marker evidence class) were adopted 2026-07-13 at pass-13
+start), never self-adopted.
 
 ## Fixed heading schema
 
@@ -510,3 +513,39 @@ class) proposed, NOT adopted.
 Companion: `docs/reconstruction/audit/dossier-pass-12.md`; the battery
 triage lives in `docs/reconstruction/audit/oob-register.json` (each
 battery entry's `triage` object) with a summary in the pass report §4.
+
+## Pass 13 — the coverage closers (ED-72/73 adoption + the pass-12 recommendation set)
+
+ED-72/ED-73 batch-adopted at pass open, installing
+`anchor-chain-proposal.md` §2.6 (the ADOPTED East/South Cavalry Field
+chain) and hardening it with a first-ever EC3 sheet-crop exercise over
+the Bachelder 12441 (East Cavalry Field) sheet set — all five sheets
+fetched, sha256-verified, and read at brigade/battery grain, patching
+the ten pass-12 cavalry-theater dossiers' EC3 sections. Then the
+pass-12-recommended set in full: the two self-surfaced horse-artillery
+batteries (Randol's, Pennington's), the two orphaned CSA artillery
+battalions (Henry's, Lane's Sumter — each closing the last gap in an
+otherwise-complete corps battalion arc), one Union corps-artillery
+group (V Corps, Martin's — picked over III/VI on a reasoned source
+check), and the Anderson/Pender quiet-flank + command batch
+(Mahone/Posey/Thomas, register-corrected for Thomas's actual division;
+the Provost Guard). Nine new dossiers; no new register rows (all nine
+were existing register entries). A full coverage-gap census closes the
+pass report.
+
+| Dossier | Register id | Role | Achieved T |
+|---|---|---|---|
+| [us-btty-randol.md](us-btty-randol.md) | reg-us-ha-2-1 | ECF Union right, split-section; Chester's/Kinney's sections sheet-confirmed ~370 m apart | T3 (ECF grain) |
+| [us-btty-pennington.md](us-btty-pennington.md) | reg-us-ha-1-4 | ECF Union right, Custer's attached battery; report=tablet corroboration | T3 (ECF grain) |
+| [csa-1c-bn-henry.md](csa-1c-bn-henry.md) | reg-csa-1c-bn-henry | closes the First Corps battalion arc; the CA-SCF-2 CSA-side corroboration (2 batteries) | T4 (battalion grain) |
+| [csa-3c-bn-lane.md](csa-3c-bn-lane.md) | reg-csa-3c-bn-lane | closes the Third Corps battalion arc; the double digit-exact 3-way EC6/EC5 cross-check; the ED-74 candidate | T4 (battalion grain, own-report primary) |
+| [us-v-arty-martin.md](us-v-arty-martin.md) | reg-us-v-arty | the pass-12-recommended Union corps-arty group; Hazlett's death upgraded to report-primary; Battery I overrun-then-retaken | T4 (brigade grain) |
+| [csa-3c-and-2-mahone.md](csa-3c-and-2-mahone.md) | reg-csa-3c-and-2 (csa-mahone) | THE non-participation case; report=tablet digit-exact; the report's silence on the controversy is the finding | T4 (negative-evidence class) |
+| [csa-3c-and-5-posey.md](csa-3c-and-5-posey.md) | reg-csa-3c-and-5 (csa-posey) | the PARTIAL-advance case; the four-stage piecemeal commitment; the Bliss-farm cross-ref to Thomas's brigade | T4 (own-report primary) |
+| [csa-3c-pen-3-thomas.md](csa-3c-pen-3-thomas.md) | reg-csa-3c-pen-3 (csa-thomas) | register-corrected (Pender's, not Anderson's); NOT quiet — 270 casualties, the batch's highest | T3 |
+| [us-hq-provost-patrick.md](us-hq-provost-patrick.md) | reg-us-hq-provost | the cheap command-record closer; downstream CA-J3A-9/10 context (~2,000 prisoners) | T2 (command record) |
+
+Companion: `docs/reconstruction/audit/dossier-pass-13.md`; the ten
+pass-12 cavalry dossiers' EC3 patches and the battery-triage update
+(Henry's/Lane's constituent batteries + Randol's/Pennington's) are
+recorded in the pass report §1/§6, not re-listed here.
