@@ -267,6 +267,19 @@ were fetched 2026-07-10 by the verification passes.
 
 ### 2.1 July 1 morning — McPherson's Ridge (proposed ED-26)
 
+**Pass-10 annotation (2026-07-12):** the chain is EXECUTOR-HARDENED —
+CA-J1M-2 on Gamble's/Buford's own reports (the 8:00 warning + the
+several-hours/two-hours duration pair); CA-J1M-4's carried
+deploy-vs-attack precondition now has BOTH poles clocked (Davis's
+10.30 formed-and-attacked verbatim vs the Wadsworth/Cutler/pin
+receiving cluster 10:00-10:15) → **ED-66 candidate**; CA-J1M-5
+upgraded to THREE-primary agreement (tablet = Wadsworth = Doubleday
+at 10.15; Howard's 11.30 collapsed as word-reaching-him, Schurz
+concurring); CA-J1M-6 gains a recorded tension (Davis's 'about
+1 p.m.' brigade retirement vs the skeleton's ~11:00 cut
+conclusion). The Howard-assumes-command sub-anchor is two-primary
+at ~11:30 → **ED-68 candidate**. See dossier-pass-10.md §3/§5.
+
 | id | Event | Adopted | Envelope | Principal sources |
 |---|---|---|---|---|
 | CA-J1M-1 | First shot, Chambersburg Pike (Jones, 8th IL Cav) | 07:30 | 07:00–08:00 | 1886 First Shot marker inscription, VERIFIED: "First shot / Gettysburg / July 1st 1863 / 7:30 a.m" (veteran self-commemoration; the *identity* was contested, the hour broadly accepted) |
@@ -283,6 +296,20 @@ a Union command node is needed; Heth deploy-vs-attack conflation (9:00 vs
 10:30) — split into two events as above.
 
 ### 2.2 July 1 afternoon — collapse and retreat through town (proposed ED-27)
+
+**Pass-10 annotation (2026-07-12):** CA-J1P-2 (Iverson) upgraded
+from slaved-sequence to a bracketed event with drawn geometry (the
+j1-09 mid-advance bar; the dress-parade line four-source) and
+CA-J1P-3 (Gordon/knoll) closed its MEMORY-grade precondition with
+the page-verified Gordon primary — 'About 3 p.m.' pairing Schurz's
+'about 3 o'clock' ACROSS THE LINES → **ED-67 candidate**. CA-J1P-4/5
+confirmed by the Howard 16:00/16:10/16:30 issuing ladder +
+Wadsworth's 3.45 (front edge) + Doubleday's 'about 4 p.m.'.
+CA-J1P-7 FORMALIZED as a structured conflict record (document pin +
+Doubleday's dual-command scene + Schurz's after-5 corps bound, all
+on the late pole) → the ED-68 front-edge question. CA-J1P-9 gains
+Rodes's division-grain companion record (his verbatim non-attack
+rationale). See dossier-pass-10.md §3/§5.
 
 | id | Event | Adopted | Envelope | Principal sources |
 |---|---|---|---|---|
@@ -486,8 +513,8 @@ a per-wing note on the source record.
 |---|---|---|
 | **ED-24** | Adopt the canonical anchor chain structure (`CA-<phase>-<n>`) and the July 3 afternoon chain (§1.1), formalizing ED-1/ED-2 as chain nodes CA-J3A-6/9; record the 13:00-vs-13:07 shipped skew and the step-off literature tension (§1.2) | drafted here, ready for ruling |
 | **ED-25** | Adopt the `clockProfile` schema, assessment method, and the five worked profiles (§3) | drafted here, ready for ruling |
-| **ED-26** | July 1 morning chain (§2.1) | skeleton; precondition: OR 27/1 fetches (Buford 10:10 dispatch) |
-| **ED-27** | July 1 afternoon chain (§2.2), incl. the Hancock-arrival ruling (~16:15, envelope 15:00–16:30, partisan-dispute note) | skeleton; precondition: Hancock/Howard OR texts |
+| **ED-26** | July 1 morning chain (§2.1) | ADOPTED provisional 2026-07-10; CA-J1M-3 document-pin verified at adoption; EXECUTOR-HARDENED by dossier pass 10 (2026-07-12) — the Heth split evidence complete (ED-66 candidate), the Reynolds pin three-primary, the Howard sub-anchor two-primary (ED-68 candidate) |
+| **ED-27** | July 1 afternoon chain (§2.2), incl. the Hancock-arrival ruling (~16:15, envelope 15:00–16:30, partisan-dispute note) | ADOPTED provisional 2026-07-10 (Hancock/Howard texts verified at adoption); EXECUTOR-HARDENED by dossier pass 10 (2026-07-12) — CA-J1P-2/3 basis upgrades proposed (ED-67), CA-J1P-7 formalized as a structured conflict record (ED-68 front-edge question) |
 | **ED-28** | July 2 afternoon chain (§2.3), incl. the Longstreet step-off ruling (16:00–16:30; the dawn-order claim documented as polemic, not clock) and the McLaws-wing tablet-skew rule | ADOPTED provisional 2026-07-10; precondition (LRT verification pass) CLOSED by dossier pass 5; CA-J2A-2/3 REVISED & upgraded to ruled by ED-53 (2026-07-11); skew rule extended to report clocks by ED-55; CA-J2A-8 CONFIRMED + CA-J2A-11 exercised by the ED-57 wave record; skew class generalized field-wide by ED-58 (2026-07-11) |
 | **ED-29** | July 2 evening chain (§2.4) | skeleton; strongest of the five (Hays's OR clock) |
 | **ED-30** | July 3 morning chain (§2.5), incl. the Spangler's Meadow ruling (~10:00 vs the 06:00 outlier) | ADOPTED provisional 2026-07-10; hardened by dossier pass 9 (CA-J3M-1 author primary, wave clocks, receiving-side 10.30); CA-J3M-1 annotated + CA-J3M-3 restructured two-pole by ED-64/ED-65 (2026-07-11) — the ~10:00 direction stays provisional; precondition Pfanz pp. ~340–355 STANDS |
