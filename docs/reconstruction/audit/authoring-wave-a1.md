@@ -132,6 +132,18 @@ extras, SoldierView proxies; logs `editmode.log` / `playmode.log` +
     16th VT mid-reversal on its left); the farthest-advance state itself
     peaks at t≈10380, past the last capture point.
 - This report: `docs/reconstruction/audit/authoring-wave-a1.md`.
+- Capture verification (runtime, both builds from the same worktree +
+  restored gitignored inputs incl. `app/Assets/Generated`): every
+  before/after pair differs only in a localized battlefield region
+  (pixel-diff bboxes over the CSA line / corridor / echelon ground —
+  t0 656 px, t5400 792, t8160 446, t8700 400, **t9900 2,944** — the
+  echelon phase is the wave's biggest visual change, as intended);
+  the rest of each frame is stable. Player performance steady at
+  ~59.7 avg FPS across all five timestamps (a1-after-benchmark.json) —
+  the +8 events / +18 keyframes cost nothing measurable.
+- Captures are force-added past the `docs/benchmarks/captures/`
+  gitignore: this branch is a gate-style review and the owner judges
+  the tabletop visually — the evidence must travel with the branch.
 
 ## 6. Risks & residuals
 
