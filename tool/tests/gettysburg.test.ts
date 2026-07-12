@@ -710,4 +710,62 @@ describe("authored July 3 battle", () => {
         expect(kfs[i].strength, `${id} t=${kfs[i].t}`).toBeLessThanOrEqual(kfs[i - 1].strength);
     }
   });
+  it("Wave A2: completion — Harrow's monument-row axis, the attested decays, Rittenhouse's cannonade fire", () => {
+    const units = (battle as any).units;
+    const events = (battle as any).events;
+    const byId = (id: string) => units.find((u: any) => u.id === id);
+    const evt = (id: string) => events.find((e: any) => e.id === id);
+    // Harrow re-placed onto the regimental monument-row axis (x≈4384)
+    const harrow = byId("us-harrow").keyframes;
+    expect(harrow[0].x).toBe(4384);
+    expect(harrow[0].z).toBe(4602);
+    expect(harrow[harrow.length - 1].x).toBe(4384); // end pose back on the axis
+    expect(harrow.find((k: any) => k.t === 8700).x).toBe(4430); // crisis lateral kept
+    // Davis: the bombardment-share primary (2 k + 21 w = 23, not the interpolated 30)
+    const davis = byId("csa-davis").keyframes;
+    expect(davis.find((k: any) => k.t === 7200).strength).toBe(1977);
+    expect(davis.find((k: any) => k.t === 7200).confidence).toBe("documented");
+    expect(davis.find((k: any) => k.t === 7500).strength).toBe(1977); // monotonic step-off
+    // Poague: return=tablet 32, all July 3 (attested July 1-2 non-participation)
+    const poague = byId("csa-bn-poague").keyframes;
+    expect(poague[poague.length - 1].strength).toBe(352);
+    expect(poague[0].citation).toMatch(/non-participation/i);
+    // Taft: two pre-window pins (146→144), the Wittenberg ~2 P.M. in-window pin,
+    // and the marker's own 4 P.M. window end on the fire event
+    const taft = byId("us-btty-taft").keyframes;
+    expect(taft[0].strength).toBe(144);
+    expect(taft.find((k: any) => k.t === 3600).strength).toBe(143);
+    expect(evt("us-btty-taft-pettigrew-flank").t1).toBe(10800);
+    // Hill's (WV): the per-day-dated fatality pair (Braddock July 2 / Lacy July 3)
+    const hill = byId("us-btty-hill-wv").keyframes;
+    expect(hill[0].strength).toBe(123);
+    expect(hill[hill.length - 1].strength).toBe(122);
+    // Torbert: the report=tablet-exact 11 picket-line wounded
+    const torbert = byId("us-torbert").keyframes;
+    expect(torbert[torbert.length - 1].strength).toBe(1309);
+    // Rittenhouse: cannonade-phase fire now report-attested (supersession), and
+    // the conservation quiet (5400-7800) stays a gap
+    const ritt = evt("us-btty-rittenhouse-cannonade-intervals");
+    expect(ritt).toBeDefined();
+    expect(ritt.t0).toBe(600);
+    expect(ritt.t1).toBe(5400);
+    expect(ritt.confidence).toBe("documented");
+    expect(ritt.citation).toMatch(/at intervals during the day/);
+    expect(evt("us-btty-rittenhouse-repulse-enfilade").note).toMatch(/SUPERSESSION \(wave A2\)/);
+    // ED-51 verified in place: Carroll stays on East Cemetery Hill, eventless
+    const carroll = byId("us-carroll").keyframes;
+    expect(carroll[0].x).toBe(5115);
+    expect(carroll[0].citation).toMatch(/ED-51 VERIFIED IN PLACE/);
+    expect(events.some((e: any) => e.unitId === "us-carroll")).toBe(false);
+    // conflicts carried, not authored: Evan Thomas's withdrawal, Edgell's relocation
+    expect(byId("us-btty-thomas").keyframes[0].citation).toMatch(/CONFLICT CARRIED/);
+    expect(byId("us-btty-edgell").keyframes[0].citation).toMatch(/cornfield near/);
+    // decay monotonic non-increasing everywhere wave A2 landed
+    for (const id of ["us-harrow", "csa-davis", "csa-bn-poague", "us-btty-taft",
+      "us-btty-hill-wv", "us-torbert"]) {
+      const kfs = byId(id).keyframes;
+      for (let i = 1; i < kfs.length; i++)
+        expect(kfs[i].strength, `${id} t=${kfs[i].t}`).toBeLessThanOrEqual(kfs[i - 1].strength);
+    }
+  });
 });
