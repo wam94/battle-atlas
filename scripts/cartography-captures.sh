@@ -25,9 +25,9 @@ if pgrep -f "MacOS/Unity -projectpath $REPO/app" >/dev/null 2>&1 ||
   exit 2
 fi
 
-echo "== Preparing the Atlas scene (terrain import; saves the scene) =="
+echo "== Preparing the Atlas scene (heightmap + landcover import; saves the scene) =="
 "$UNITY" -batchmode -quit -projectPath "$REPO/app" -buildTarget OSXUniversal \
-  -executeMethod BattleAtlas.EditorTools.Phase12Review.PrepareStandaloneScene \
+  -executeMethod BattleAtlas.EditorTools.CartographyStage.PrepareScene \
   -logFile "$OUT/$PREFIX-prepare.log"
 
 echo "== Building Development standalone =="
