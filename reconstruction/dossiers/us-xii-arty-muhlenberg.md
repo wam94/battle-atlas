@@ -117,7 +117,9 @@ fragments inside it).
 
 - The CA-J3M-1 author-basis note rides the pass-9 report; the 20-vs-26
   and 10:00-vs-10:30 conflicts are recorded on the anchor. Nothing
-  self-adopted.
+  self-adopted. **ED-65 ADOPTED 2026-07-11 at pass-10 start** — the
+  opening-cluster annotation + both carried conflicts (the Rigby
+  reconciliation flagged, unadopted); 04:30 unmoved.
 
 ## Source register
 

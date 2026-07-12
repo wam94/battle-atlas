@@ -356,6 +356,19 @@ report-clock early-skew class is generalized FIELD-WIDE (both armies,
 
 ### 2.5 July 3 morning — Culp's Hill (proposed ED-30)
 
+**ED-64/ED-65 annotation (2026-07-11):** CA-J3M-1 keeps 04:30 at
+author-primary basis (Muhlenberg = Ruger = Williams = tablet) and
+carries the 03:00–04:00 infantry-escalation preamble plus the two
+author-vs-tablet conflicts (20-vs-26 guns; 10:00-vs-10:30 end) as
+recorded structure (ED-65 — no move). CA-J3M-3's evidence is
+RESTRUCTURED as a two-pole primary conflict (ED-64): EARLY
+~05:30–06:00 (Morse 5.30 / Fesler between-5-and-6 / the 27th IN
+advance marker's inscribed 6 a.m.) vs LATE ~10:00 (Ruger's order
+clock + Bachelder's drawn adjudication — the charge appears on
+j3-02, 8–11 a.m., only); the ~10:00 ruling direction stays
+PROVISIONAL behind the standing Pfanz pp. ~340–355 gate; no cast
+renders the charge until the gate resolves.
+
 | id | Event | Adopted | Envelope | Principal sources |
 |---|---|---|---|---|
 | CA-J3M-1 | XII Corps artillery opens (26 guns) | **04:30 ("daylight")** | 04:15–04:45 | XII Corps Artillery tablet, VERIFIED: "At daylight the artillery (26) guns opened … and fired for about 15 minutes then ceased to allow the infantry to advance. Began firing again at 5.30 and continued at intervals until 10.30 A.M." — the richest single source of the phase (opening, pause, resumption, end); Jacobs: "From 4½ to 10½ A.M. … our men pushed the enemy backward" (VERIFIED) |
@@ -477,7 +490,7 @@ a per-wing note on the source record.
 | **ED-27** | July 1 afternoon chain (§2.2), incl. the Hancock-arrival ruling (~16:15, envelope 15:00–16:30, partisan-dispute note) | skeleton; precondition: Hancock/Howard OR texts |
 | **ED-28** | July 2 afternoon chain (§2.3), incl. the Longstreet step-off ruling (16:00–16:30; the dawn-order claim documented as polemic, not clock) and the McLaws-wing tablet-skew rule | ADOPTED provisional 2026-07-10; precondition (LRT verification pass) CLOSED by dossier pass 5; CA-J2A-2/3 REVISED & upgraded to ruled by ED-53 (2026-07-11); skew rule extended to report clocks by ED-55; CA-J2A-8 CONFIRMED + CA-J2A-11 exercised by the ED-57 wave record; skew class generalized field-wide by ED-58 (2026-07-11) |
 | **ED-29** | July 2 evening chain (§2.4) | skeleton; strongest of the five (Hays's OR clock) |
-| **ED-30** | July 3 morning chain (§2.5), incl. the Spangler's Meadow ruling (~10:00 vs the 06:00 outlier) | skeleton; precondition: Pfanz Culp's Hill pp. ~340–355 |
+| **ED-30** | July 3 morning chain (§2.5), incl. the Spangler's Meadow ruling (~10:00 vs the 06:00 outlier) | ADOPTED provisional 2026-07-10; hardened by dossier pass 9 (CA-J3M-1 author primary, wave clocks, receiving-side 10.30); CA-J3M-1 annotated + CA-J3M-3 restructured two-pole by ED-64/ED-65 (2026-07-11) — the ~10:00 direction stays provisional; precondition Pfanz pp. ~340–355 STANDS |
 | **ED-31** | Time-frame convention: the battle clock is Gettysburg local mean time (~9 min ahead of modern EST); astronomical pins adopted as sunset July 2 19:29 LMT, sunrise July 3 ~04:38 LMT, with a USNO-grade recomputation as a follow-up; all imported modern-frame times (EST/EDT artifacts like "19:41" / "05:45") converted on entry | drafted here, ready for ruling |
 
 ## 5. Open questions and risks

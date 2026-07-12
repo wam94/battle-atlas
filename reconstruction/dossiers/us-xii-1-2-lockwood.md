@@ -102,7 +102,9 @@ woods deployment (the 1st MD PHB's costly morning).
 
 ## ED candidates proposed
 
-- None (context to ED-64). Nothing self-adopted.
+- None (context to ED-64). Nothing self-adopted. (ED-64 ADOPTED
+  2026-07-11 at pass-10 start — the ~6 a.m. woods action is now the
+  ruling's recorded conflation-candidate; the Pfanz gate stands.)
 
 ## Source register
 

@@ -123,7 +123,8 @@ column-of-regiments last effort = Steuart/Daniel received).
 
 - Contributes the pre-program escalation evidence to the pass-9
   CA-J3M-1 hardening note (report §3) and the receiving-side text to
-  ED-64's context. Nothing self-adopted.
+  ED-64's context. Nothing self-adopted. (ED-64/65 ADOPTED
+  2026-07-11 at pass-10 start — record-only; the Pfanz gate stands.)
 
 ## Source register
 

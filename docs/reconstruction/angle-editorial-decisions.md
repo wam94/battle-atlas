@@ -556,7 +556,13 @@ primaries, both armies; no times or envelopes moved.
 
 Proposal §2.5 adopted as provisional, including the Spangler's Meadow
 ~10:00 ruling direction. Carried precondition: Pfanz *Culp's Hill* pp.
-~340–355 before CA-J3M-3 hardens.
+~340–355 before CA-J3M-3 hardens. **2026-07-11 update: hardened by the
+pass-9 executor layer** — CA-J3M-1 at author-primary basis with the
+opening-cluster annotation (ED-65), CA-J3M-2's waves clocked by their
+executors, CA-J3M-4 receiving-side corroborated; **CA-J3M-3 upgraded
+to a structured two-pole primary conflict record by ED-64 (see
+§"Dossier pass 9 adoption rulings") — its ~10:00 ruling direction
+stays PROVISIONAL and the Pfanz precondition STANDS.**
 
 ### ED-31 — Time-frame convention
 
@@ -1425,6 +1431,94 @@ render one event) is the recorded jurisprudence. **Rationale:** the
 same discipline that closed ED-56 (Smith's guns), ED-60 (Wright's
 high-water), and ED-61 (the Trostle recoveries): the disposition
 record fixes count and outcome; fame is not an evidence class.
+
+---
+
+## Dossier pass 9 adoption rulings (ED-64 … ED-65) — 2026-07-11
+
+Owner ruling (standing adopt-and-adjust doctrine): the ED candidates
+proposed by dossier pass 9 (`docs/reconstruction/audit/dossier-pass-9.md`
+§5, drafted on branch audit-dossiers-9) are ADOPTED as recorded below,
+executed at the start of dossier pass 10 (branch audit-dossiers-10). No
+renumbers. **No anchor moves** — ED-64 adopts a conflict-record
+STRUCTURE (the two-pole upgrade), not a resolution: CA-J3M-3's ~10:00
+ruling direction stays PROVISIONAL behind the standing Pfanz *Culp's
+Hill* pp. ~340–355 gate, which this adoption does not touch. ED-65 is
+an annotation ruling (preamble + carried conflicts) on an anchor whose
+04:30 time is unchanged. Batch adoption executed directly, validators
+green after the edit.
+
+### ED-64 — The CA-J3M-3 two-pole conflict-record upgrade (the Spangler's Meadow charge time)
+
+**Canonical choice:** the anchor's evidence basis is restructured as an
+explicit two-pole PRIMARY conflict — the record is adopted; the
+resolution is not.
+
+- **EARLY pole ~05:30–06:00**: Morse (2nd MA, or-27-1-morse-2ma)
+  "Firing was kept up until 5.30 o'clock, when the regiment was
+  ordered to charge the woods in front of us"; Fesler (27th IN,
+  or-27-1-fesler-27in) works occupied "between 5 and 6 o'clock" then
+  charge in one narrative motion; the 27th IN advance marker's
+  INSCRIBED "its charge at 6 a.m. July 3d. 1863."; Colgrove's
+  early-morning narrative placement (clock-silent, verified).
+- **LATE pole ~10:00**: Ruger's "This state of things continued until
+  about 10 a. m.… At this time I received orders" (or-27-1-ruger),
+  welded to the CA-J3M-4 works-reoccupation sequence; **Bachelder's
+  drawn adjudication** — the advanced "2 Mass"/"27 Ind" bars appear on
+  j3-02 (8–11 a.m.) and NOT on j3-01 (4–8 a.m.); Pfanz-derived ~10:00
+  and Sears's near-noon as the secondary layer.
+- **The ~10:00 ruling direction is RETAINED as provisional** (the
+  order-chain + drawn + secondary convergence). **The Pfanz
+  pp. ~340–355 precondition STANDS as the hardening gate.**
+- The early-pole sources carry NO clockProfile offset — profiling
+  would prejudge the dispute (recorded on or-27-1-morse-2ma /
+  or-27-1-fesler-27in as kind-none with reasons; the dispute-pole
+  rule).
+- The Lockwood ~6 a.m. woods deployment (1st MD PHB, the meadow's NW
+  woods) is recorded as the conflation-candidate adjacent event.
+- **Cast rule:** no cast renders the charge before the Pfanz gate
+  resolves the pole; the morning sheet's Colgrove position state is
+  safe either way (in position south of the meadow on j3-01).
+
+**Alternative rejected:** adopting the early pole on its
+two-regimental-primaries + inscription strength — Ruger's order clock
+is the ISSUING echelon's primary, Bachelder drew the late reading, and
+ED-25 rule 4 (no fiat resolution of primary disputes) controls.
+**Rationale:** the executor-first doctrine's first DISPUTED-anchor
+outcome: the right deliverable was a properly-structured conflict
+record, not a pick. The order-corruption pair (Ruger's
+"mistake of the staff officer" vs Colgrove's verbal "advance your
+line immediately") is carried verbatim at both echelons.
+
+### ED-65 — The CA-J3M-1 opening-cluster annotation (no move)
+
+**Canonical choice:** CA-J3M-1 keeps **04:30** as the ARTILLERY
+opening, now at author-primary basis (Muhlenberg 4.30 = Ruger 4.30 =
+Williams "daylight" = the XII Corps tablet), and gains:
+
+- **(a) the 03:00–04:00 infantry-escalation preamble** as recorded
+  pre-anchor structure: Cobham "At 3 o'clock… the enemy's skirmishers
+  commenced firing on us, and by 4 o'clock the firing had become
+  general"; Kane 3.30 "attack in force"; Candy's 3.45 battery clock;
+  Grimes (13th NJ) 4 a.m. The anchor's text already says "artillery
+  opens" — the infantry fire precedes it and is rendered as
+  escalation, not as a competing opening time.
+- **(b) the two author-vs-tablet conflicts as carried records**:
+  **20 guns (Muhlenberg's report) vs 26 (tablet)** — Rigby's A/1st MD
+  (Powers Hill, registered) is the flagged reconciliation candidate,
+  NOT adopted; and **"until 10 a. m." (report) vs "10.30 A.M."
+  (tablet)** — Jacobs and the Johnson tablet side 10.30, and
+  CA-J3M-4's quadruple-attested 10:30 close is unaffected (the
+  report's 10:00 rides as the recorded early component).
+- The aftermath gains the Daniel/O'Neal midnight-release clocks
+  (skirmishers to ~24:00; Daniel's main body 15:00–16:00) as envelope
+  notes on the anchor context — no anchor move.
+
+**Alternative rejected:** re-timing the anchor to the 03:00–04:00
+infantry cluster — that would change the anchor's referent (the guns)
+to a different event class. **Rationale:** same discipline as ED-62
+(basis upgrade, arithmetic untouched); the conflicts are carried where
+ED-42/ED-43 jurisprudence says they live — on the record, unresolved.
 
 ---
 

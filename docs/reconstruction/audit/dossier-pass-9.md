@@ -219,6 +219,13 @@ averaged anywhere in the pass.
 
 ## 5. New ED candidates (proposed, NOT adopted)
 
+**2026-07-11 pass-10 adoption note:** ED-64/ED-65 were ADOPTED as
+proposed at pass-10 start (angle-editorial-decisions.md §"Dossier
+pass 9 adoption rulings") — ED-64 as a conflict-record STRUCTURE
+(the ~10:00 ruling direction stays provisional; the Pfanz
+pp. ~340–355 precondition STANDS), ED-65 as an annotation with no
+anchor move. Validators green after the edit; stagingSeed pin held.
+
 - **ED-64 — the CA-J3M-3 two-pole conflict-record upgrade (the
   Spangler's Meadow charge time).** Propose: the anchor's evidence
   is restructured as an explicit two-pole primary conflict —

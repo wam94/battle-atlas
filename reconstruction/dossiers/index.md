@@ -15,7 +15,7 @@ Citations are `(source-id, locator)`; source ids resolve in
 `reconstruction/sources/sources.json`. Facts with **no tier bracket are
 untimed** (identity, strength, materiel). Negative evidence and conflicts are
 first-class and live in their own section. New editorial calls are PROPOSED
-as ED candidates (ED-64+ as of pass 9 — the pass-1 candidates ED-32…ED-38,
+as ED candidates (ED-66+ as of pass 10 — the pass-1 candidates ED-32…ED-38,
 the monument profile ED-39, the pass-2 candidates ED-40…ED-45, the
 pass-3 candidates ED-46…ED-49, the pass-4 candidates ED-50…ED-52, the
 pass-5 candidates ED-53…ED-55 (incl. the CA-J2A-2/3 chain revision), and
@@ -27,7 +27,11 @@ Trostle gun-recovery cross-credit rule, its Bigelow/Watson
 precondition satisfied first) were adopted 2026-07-11 at pass-8
 start, and the pass-8 candidates ED-62/ED-63 (the CA-J2E
 chain-hardening basis upgrade; the ECH battery-possession convergent
-ruling) were adopted 2026-07-11 at pass-9 start), never self-adopted.
+ruling) were adopted 2026-07-11 at pass-9 start, and the pass-9
+candidates ED-64/ED-65 (the CA-J3M-3 two-pole conflict-record upgrade
+— record adopted, ~10:00 direction provisional behind the standing
+Pfanz gate; the CA-J3M-1 opening-cluster annotation) were adopted
+2026-07-11 at pass-10 start), never self-adopted.
 
 ## Fixed heading schema
 
