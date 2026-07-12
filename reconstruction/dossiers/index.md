@@ -322,3 +322,51 @@ CLOSED — tablet=return 53 exact**, the pass-7 flag), us-iii-1-2-ward.md
 label repeatability + the HQ-marker-to-Ricketts 34-m pin).
 
 Companion: `docs/reconstruction/audit/dossier-pass-8.md`.
+
+## Pass 9 — the July 3 morning Culp's Hill resumption (ED-30's chain) + the Spangler's Meadow test
+
+The morning phase opened per pass 8 §9: six executors inherited from
+the pass-8 full-arc dossiers (Greene, Steuart, Walker, Nicholls,
+Jones, the XII Corps command records — all upgraded in place), the
+NEW executor set dossier'd (the returning XII Corps brigades at
+brigade grain, the artillery ladder's author at group grain, the CSA
+morning reinforcements), and the commissioned CHEAP-FETCH TEST of the
+Spangler's Meadow dispute run FIRST. Batch adoption of **ED-62/ED-63**
+executed at pass start (no preconditions; no anchor moves). Headline
+evidence classes: the CA-J3M-1 ladder landed on its AUTHOR primary
+(Muhlenberg's 4.30 / 15-min / 5.30 program, Williams verbatim-class
+concurring); the CA-J3M-2 wave structure clocked by its executors
+(O'Neal's 8 a.m. wave-2 primary; the Daniel/Steuart co-charge
+both-sided; Kane's 10.30 column-of-regiments receiving clock); and
+**the Spangler's Meadow dispute upgraded from
+secondary-vs-secondary to a fully-characterized primary TWO-POLE
+conflict** (Morse's 5.30 + Fesler's sequence + the 27th IN advance
+marker's inscribed "6 a.m." vs Ruger's "about 10 a. m." order clock
++ Bachelder's drawn adjudication — the charge appears on the
+8-11 a.m. sheet, not the 4-8) → **ED-64 candidate, NOT adopted; the
+ED-30/Pfanz precondition STANDS**. Monument register +32 (175).
+
+| Dossier | Register id | Arc role | Achieved T |
+|---|---|---|---|
+| [us-xii-1-3-colgrove.md](us-xii-1-3-colgrove.md) | reg-us-xii-1-3 (us-colgrove) | THE CA-J3M-3 executor; the order-corruption pair; Mudge pin | T4 full-arc |
+| [us-xii-2-2-kane.md](us-xii-2-2-kane.md) | reg-us-xii-2-2 (us-kane) | the 652-strength primary; 3.30/seven-hours/10.30 receiving ladder | T4 full-arc |
+| [us-xii-1-1-mcdougall.md](us-xii-1-1-mcdougall.md) | reg-us-xii-1-1 (us-mcdougall) | the stopped night approach; the 123rd NY reoccupation; friendly-fire record | T3 full-arc |
+| [us-xii-1-2-lockwood.md](us-xii-1-2-lockwood.md) | reg-us-xii-1-2 (us-lockwood) | the unattached brigade; the ~6 a.m. woods deployment; ED-61 grain carried | T3 full-arc |
+| [us-xii-2-1-candy.md](us-xii-2-1-candy.md) | reg-us-xii-2-1 (us-candy) | the wrong-road confession; the rotation pool; the 66th OH enfilade | T3 full-arc |
+| [us-xii-arty-muhlenberg.md](us-xii-arty-muhlenberg.md) | reg-us-xii-arty | **CA-J3M-1's author unit** (the tablet ladder's primary text) | T3 (group grain) |
+| [csa-2c-rod-1-daniel.md](csa-2c-rod-1-daniel.md) | reg-csa-2c-rod-1 (csa-daniel) | the 1.30-4.00 a.m. reinforcement march; the co-charge; the assessment primary | T4 full-arc |
+| [csa-2c-rod-5-oneal.md](csa-2c-rod-5-oneal.md) | reg-csa-2c-rod-5 (csa-oneal) | **the wave-2 executor clock (8 a.m.)**; the ~510 m drawn advance | T4 full-arc |
+| [csa-2c-ear-2-smith.md](csa-2c-ear-2-smith.md) | reg-csa-2c-ear-2 (csa-smith) | the third reinforcement at command-note grain; Johnson's-silence record | T2 (command-note grain) |
+
+Pass-9 upgrades to existing dossiers: csa-2c-joh-1-steuart.md (**the
+10 a.m. charge both-sided at three grains** — Daniel co-charge, Kane
+10.30 receiving clock, Colgrove prisoner identification),
+csa-2c-joh-4-jones.md (the Daniel-supports-Dungan weld),
+csa-2c-joh-2-walker.md (the wave-1 composition pin),
+csa-2c-joh-3-nicholls.md (morning frame note), us-xii-2-3-greene.md
+(the hardened seven-hour frame), us-xii-hq-slocum-williams.md (the
+program's issuer-executor verbatim pair closed; Slocum Powers Hill
+pin), us-xii-2-hq-geary.md (the night-return clock pair at
+brigade/regiment grain).
+
+Companion: `docs/reconstruction/audit/dossier-pass-9.md`.
