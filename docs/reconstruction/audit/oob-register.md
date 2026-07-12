@@ -16,8 +16,8 @@ ruling (full-battle research upfront, phased authoring).
 | Cavalry brigades | 8 | 7 (incl. Imboden's command) |
 | Batteries (first-class entries) | 67 | 69 (incl. McClanahan's with Imboden) |
 | Artillery brigade/battalion parents | 14 | 16 (15 army battalions + Stuart horse artillery) |
-| Command entries | 8 (Artillery Reserve park; Provost; Chief of Artillery [pass 1]; II Corps HQ, 2nd Div II Corps, 3rd Div II Corps, 3rd Div I Corps [pass 5]; 2nd Div III Corps [pass 7]) | 5 (First Corps artillery command [pass 1]; Pickett's Div, Heth's Div, Pender's Div, Second Corps artillery command [pass 5]) |
-| **Total register entries** | **148** | **134** (282 overall) |
+| Command entries | 10 (Artillery Reserve park; Provost; Chief of Artillery [pass 1]; II Corps HQ, 2nd Div II Corps, 3rd Div II Corps, 3rd Div I Corps [pass 5]; 2nd Div III Corps [pass 7]; XII Corps HQ, 2nd Div XII Corps [pass 8]) | 6 (First Corps artillery command [pass 1]; Pickett's Div, Heth's Div, Pender's Div, Second Corps artillery command [pass 5]; Johnson's Div [pass 8]) |
+| **Total register entries** | **150** | **135** (285 overall) |
 
 Regiments enumerated: 478. Cast status: **148 entries matched to in-build
 unit ids** in `app/Assets/Battle/gettysburg-july3.json`; **134 not-yet-cast**

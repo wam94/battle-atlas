@@ -11,20 +11,20 @@
   "sources": "ids resolve in reconstruction/sources/sources.json. Structure and successions: or-27-oob + wikipedia-oob-union/-csa (verified 2026-07-10); activity notes: stone-sentinels War Department tablets via the 2026-07-02 full-cast survey."
  },
  "stats": {
-  "totalEntries": 282,
+  "totalEntries": 285,
   "union": {
    "infantryBrigades": 51,
    "cavalryBrigades": 8,
    "batteries": 67,
    "artilleryBrigades": 14,
-   "commandEntries": 8
+   "commandEntries": 10
   },
   "confederate": {
    "infantryBrigades": 37,
    "cavalryBrigades": 7,
    "batteries": 69,
    "artilleryBattalions": 16,
-   "commandEntries": 5
+   "commandEntries": 6
   },
   "inBuild": 148,
   "notYetCast": 134,
@@ -5348,7 +5348,7 @@
     "Second Corps",
     "Johnson's Division"
    ],
-   "commander": "Brig. Gen. John M. Jones (w July 3); Lt. Col. Robert H. Dungan",
+   "commander": "Brig. Gen. John M. Jones (w July 2 evening, Culp's Hill first assault); Lt. Col. Robert H. Dungan",
    "daysPresent": [
     1,
     2,
@@ -5366,7 +5366,8 @@
     "44th Virginia",
     "48th Virginia",
     "50th Virginia"
-   ]
+   ],
+   "notes": "PASS-8 CORRECTION: Jones was wounded on the JULY 2 EVENING assault ('When near the first line of intrenchments... I received a flesh wound through the thigh', or-27-2-jones-jm p. 532; Johnson p. 504 concurs), not July 3 as previously carried."
   },
   {
    "id": "reg-csa-2c-rod-1",
@@ -7699,6 +7700,78 @@
     "stone-sentinels"
    ],
    "notes": "With Imboden and the trains."
+  },
+  {
+   "id": "reg-us-xii-hq",
+   "castStatus": "not-yet-cast",
+   "name": "XII Corps headquarters (corps command)",
+   "side": "union",
+   "arm": "infantry",
+   "echelon": "command",
+   "parentChain": [
+    "Army of the Potomac",
+    "XII Corps"
+   ],
+   "commander": "Maj. Gen. Henry W. Slocum (commanding the right wing July 1-3); Brig. Gen. Alpheus S. Williams (commanding the corps in that interval; Ruger the 1st Division)",
+   "daysPresent": [
+    1,
+    2,
+    3
+   ],
+   "sources": [
+    "or-27-oob",
+    "or-27-1-slocum",
+    "or-27-1-williams-aw"
+   ],
+   "notes": "Added dossier pass 8 (the ED-29 evening chain's absent-then-returning frame): the CA-J2E-1 detachment order, the left-wing round trip (the Lockwood recapture, the quite-dark halt), the wrong-road discovery near midnight, and the July 3 daylight plan. Dossier: reconstruction/dossiers/us-xii-hq-slocum-williams.md."
+  },
+  {
+   "id": "reg-us-xii-2-hq",
+   "castStatus": "not-yet-cast",
+   "name": "2nd Division, XII Corps headquarters (division command)",
+   "side": "union",
+   "arm": "infantry",
+   "echelon": "command",
+   "parentChain": [
+    "Army of the Potomac",
+    "XII Corps",
+    "2nd Division"
+   ],
+   "commander": "Brig. Gen. John W. Geary",
+   "daysPresent": [
+    1,
+    2,
+    3
+   ],
+   "sources": [
+    "or-27-oob",
+    "or-27-1-geary"
+   ],
+   "notes": "Added dossier pass 8: the division command record over Greene's stand — the 16:00 Latimer counter-duel sections, the 19:00 move-away order, the astray two-brigade night march (Williams's 'By some mistake'), Kane's fired-on return, the July 3 seven-hour defense. Dossier: reconstruction/dossiers/us-xii-2-hq-geary.md."
+  },
+  {
+   "id": "reg-csa-2c-joh-hq",
+   "castStatus": "not-yet-cast",
+   "name": "Johnson's Division headquarters (division command)",
+   "side": "confederate",
+   "arm": "infantry",
+   "echelon": "command",
+   "parentChain": [
+    "Army of Northern Virginia",
+    "Second Corps",
+    "Johnson's Division"
+   ],
+   "commander": "Maj. Gen. Edward Johnson",
+   "daysPresent": [
+    1,
+    2,
+    3
+   ],
+   "sources": [
+    "or-27-oob",
+    "or-27-2-johnson"
+   ],
+   "notes": "Added dossier pass 8 (register maintenance): the division command record of the Culp's Hill assault (the 16:00 Latimer order, the Walker detention discretion, the dark-at-Rock-Creek pin, the October 7 divisional casualty table) is carried on the four brigade dossiers; division tablet tab-csa-2c-joh-hq. No standalone dossier this pass."
   }
  ]
 }
