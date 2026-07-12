@@ -123,7 +123,9 @@ withdrawal disaster as the arc's coda).
 
 ## ED candidates proposed
 
-- **ED-56** co-proposer (with us-btty-smith.md); **ED-57/ED-58**
+- **ED-56** co-proposer (with us-btty-smith.md) — **ADOPTED
+  2026-07-11**: Benning's brigade is the ruled HOLDER through July 3;
+  **ED-57/ED-58**
   exemplars — pass-6 report §5, not self-adopted.
 
 ## Source register

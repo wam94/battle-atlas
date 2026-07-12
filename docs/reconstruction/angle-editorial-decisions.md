@@ -1128,6 +1128,114 @@ pass traced the phenomenon to its source, and the profile mechanism
 
 ---
 
+## Dossier pass 6 adoption rulings (ED-56 … ED-59) — 2026-07-11
+
+Owner ruling (standing adopt-and-adjust doctrine): the ED candidates
+proposed by dossier pass 6 (`docs/reconstruction/audit/dossier-pass-6.md`
+§5, drafted on branch audit-dossiers-6) are ADOPTED as recorded below,
+executed at the start of dossier pass 7 (branch audit-dossiers-7). No
+renumbers were needed this batch. No anchor moves: ED-57 CONFIRMS
+CA-J2A-8 as wave 3's start and exercises CA-J2A-11 as wave 5's end pin;
+the anchor-chain table is annotated, not revised.
+
+### ED-56 — The Smith's-guns convergent-capture ruling
+
+Pass 5 left the three abandoned guns of the 4th New York Independent
+Battery carried as an unresolved both-dossiers cross-credit (Law tablet
+crediting the 44th/48th AL vs Robertson's 1st TX claim); pass 6 closed
+the record both-sided — Smith's own report has exactly THREE 10-pdr
+Parrotts abandoned on the Devil's Den hill (the fourth forward gun
+saved/disabled, the rear section fighting on from the gully), credits
+NO captor, and believed them later retrieved; Benning states "three
+front guns … 10-pounder Parrotts" with the enemy withdrawing "three
+rear guns" — count and type agree across the lines.
+
+**Canonical choice:** the three 10-pdr Parrotts changed hands **ONCE
+(~17:30, CA-J2A-5)** to an intermixed force — Robertson's 1st TX +
+Benning's Georgians, with the 44th/48th AL engaged up the gorge on
+their right — and all three unit-level credits (Law tablet, Robertson
+report, Benning report+tablet) are honest views of ONE convergent
+event; **no exclusive credit is encodable** (the Union primary fixes
+the object's count and type and names no captor). **Benning's brigade
+is the HOLDER through July 3** (his holding record + the j2-04/j2-05
+drawn-state continuity). Consequences: casts render one hands-change
+with a three-way provenance note; the pass-5 both-dossiers-carry-it
+conflict resolves without a winner; Smith's rear-section
+fought-on-from-the-gully state renders per his own report.
+**Rationale:** the only reading consistent with all four executor
+dossiers at once; exclusive credit would manufacture a resolution the
+sources do not contain.
+
+### ED-57 — The Wheatfield occupation-wave record (multi-occupation ground)
+
+The Wheatfield's notorious multi-occupation sequence, assembled by
+pass 6 from the executors' primaries without inventing a master clock
+(pass-6 report §3.1: W1 de Trobriand/Anderson ~17:00–17:45 · W2
+Kershaw+Semmes vs Tilton/Sweitzer ~17:45–18:15 · W3 Caldwell's
+counterattack 18:00–18:15 start · W4 Wofford's sweep + the renewal
+~18:30–19:15 · W5 the Plum Run counter-line to sunset 19:15–~19:45).
+
+**Canonical choice:** the five-wave structure is adopted as the
+canonical conflict-record treatment for multi-occupation ground: each
+wave carries BOTH sides' executor citations; wave boundaries are
+**TRIGGERED** (relief, ammunition exhaustion, flank collapse, sunset
+order) rather than clocked, except where an anchor (CA-J2A-8 —
+**CONFIRMED as wave 3's start**) or an astronomical pin (CA-J2A-11,
+Wofford's "fell back at sunset" = 19:29 LMT — wave 5's end) exists;
+the ground's occupant function follows the wave record. No anchor
+moves. **Rationale:** the waves reconciled without a single averaged
+reading — the remaining conflicts are NAMED (ED-59; the Wofford EC6
+composition) and ride their dossiers; a wave record whose seams are
+triggers is exactly what tier-D encoding wants. Consequence: any cast
+of contested ground renders occupancy by wave, and future
+multi-occupation research (Culp's Hill's traded works) applies the
+same structure.
+
+### ED-58 — The field-wide July 2 report-clock early-skew class (ED-55 generalized)
+
+Pass 6 landed six more early profiles across BOTH armies' southern
+field: Smith +90 (III Corps), Tilton +75 (V Corps), Kelly +70
+(II Corps), Caldwell +60 class, Benning +75 (Hood's wing), Coates +45
+weak — joining pass 5's Kershaw +90 (ED-55), Rice +45, Sykes +15.
+
+**Canonical choice:** the southern field's OR-report clocks run
+**+45..+110 early on BOTH armies** — a field-wide class, not a McLaws
+peculiarity. Consequences: per-source `clockProfile`s on fetch (all
+pass-5/6 exemplars landed); the ED-25 tablet exception stays
+wing-scoped but its Union counterpart is RECORDED (the Union brigade
+tablets' "between 5 and 6 P.M." class is a partial correction; Ward's
+tablet "forced back between 4 and 5 P.M." shows the tablet class skews
+early on the Union side too — heterogeneous, per-source, never
+promoted to a blanket tablet rule); **ED-25 rule 4 unchanged** —
+report-nominal clocks never define or move an anchor. Alternative
+considered and rejected: leaving ED-55 CSA-scoped (six Union profiles
+now carry the same structure). **Rationale:** the phenomenon is the
+field's, not a wing's; the profile mechanism already carries it
+per-source, so the ruling names the class and changes no anchor.
+
+### ED-59 — The Tilton/Sweitzer withdrawal-conflict ruling
+
+De Trobriand's report: the V Corps brigades "had fallen back without
+engaging the enemy" — against the V Corps record (Tilton: two
+repulses, 125 casualties by the return, a personally-reconnoitered
+flanking force "from the direction of Roses house"; Sweitzer: the
+Prescott conditional-order exchange; Barnes's 654-strength frame).
+
+**Canonical choice:** the withdrawal's CAUSE is the Barksdale-axis
+outflanking of the salient (Tilton's own reconnaissance record), and
+it PRECEDED the stony hill's storming rather than following a rout;
+the accusation is CARRIED as de Trobriand's honest view from a front
+the V Corps line did not cover. Neither report is averaged; **renders
+must not show the V Corps brigades routed** — an ordered two-stage
+withdrawal under an outflanking threat, per Tilton's own leg record.
+**Rationale:** the accusation and the casualty/repulse record cannot
+both be literal; the return's 125 and the two-repulse record are
+primary against an adjacent-front impression, and the ED-39 §3
+litigated-memory discipline (encode the conflict, adopt the reading
+the evidence carries) applies to report-vs-report conflicts equally.
+
+---
+
 ## Connective-reconstruction rules (named inference rules)
 
 Segments cite these rules by name in `inferenceRules`. A segment with no
