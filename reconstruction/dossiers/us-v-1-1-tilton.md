@@ -96,7 +96,9 @@ subject).
 ## ED candidates proposed
 
 - **ED-59** (withdrawal-conflict ruling, with us-iii-1-3) and
-  **ED-58** exemplar — pass-6 report §5, not self-adopted.
+  **ED-58** exemplar — pass-6 report §5. **ADOPTED 2026-07-11**: the
+  Barksdale-axis outflanking is the ruled cause; the accusation is
+  carried; renders must not show the brigades routed.
 
 ## Source register
 

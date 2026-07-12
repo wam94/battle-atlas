@@ -111,7 +111,9 @@ ruling (ED-56).
 ## ED candidates proposed
 
 - **ED-56** — the three-claimant convergent-capture ruling (above);
-  exemplars for **ED-58**. Pass-6 report §5, not self-adopted.
+  exemplars for **ED-58**. Pass-6 report §5. **ADOPTED 2026-07-11**
+  (pass-7 batch ruling): one hands-change ~17:30, three-way provenance,
+  Benning the holder, no exclusive credit encodable.
 
 ## Source register
 

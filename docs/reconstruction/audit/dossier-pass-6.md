@@ -203,7 +203,7 @@ supported-unit primary + the mw pin; the j2-05 red-label read behind
 Wofford's withdrawal state is flagged partial-legibility; the 4th ME
 return row stays open pending a clean re-read.
 
-## 5. New ED candidates (proposed, NOT adopted)
+## 5. New ED candidates (proposed by this pass; ADOPTED 2026-07-11 as ED-56…ED-59 in the pass-7 batch ruling, angle-editorial-decisions.md — no anchor moves; CA-J2A-8 CONFIRMED, CA-J2A-11 exercised)
 
 - **ED-56 — the Smith's-guns convergent-capture ruling.** Adopt:
   the three 10-pdr Parrotts on the Devil's Den hill changed hands

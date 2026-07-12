@@ -266,6 +266,7 @@ us-71pa,71st Pennsylvania,union,child-regiment,infantry,331,260,71,6,2,4,0,6,96.
 us-72pa,72nd Pennsylvania,union,child-regiment,infantry,458,360,98,5,2,3,0,5,53.3,53.2,no,line,1,4,1,72nd Pennsylvania,yes,T5,T4,in-build,
 us-7mi,7th Michigan,union,child-regiment,infantry,165,130,35,5,1,4,0,5,70.0,0.0,no,line,1,0,2,7th Michigan,yes,T0,T4,in-build,
 reg-us-ii-2-hq,"2nd Division, II Corps headquarters (division command)",union,command,infantry,,,,,,,,,,,,,,,1,2nd Division,yes,,T2,not-yet-cast,reg-us-ii-2-hq
+reg-us-iii-2-hq,"2nd Division, III Corps headquarters (division command)",union,command,infantry,,,,,,,,,,,,,,,1,2nd Division,yes,,T2,not-yet-cast,reg-us-iii-2-hq
 reg-us-i-3-hq,"3rd Division, I Corps headquarters (division command)",union,command,infantry,,,,,,,,,,,,,,,1,3rd Division,yes,,T2,not-yet-cast,reg-us-i-3-hq
 reg-us-ii-3-hq,"3rd Division, II Corps headquarters (division command)",union,command,infantry,,,,,,,,,,,,,,,1,3rd Division,yes,,T2,not-yet-cast,reg-us-ii-3-hq
 reg-us-ii-hq,II Corps headquarters (corps command),union,command,infantry,,,,,,,,,,,,,,,0,II Corps headquarters,VERIFY,,T2,not-yet-cast,reg-us-ii-hq

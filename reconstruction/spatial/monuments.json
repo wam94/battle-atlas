@@ -4,7 +4,7 @@
  "generated": "2026-07-10",
  "frame": "battlefield-local meters: local_x = UTM 18N (EPSG:26918) easting - 304208.0216360274, local_z = northing - 4404534.271124143 (data/heightmap/heightmap.json origin; identical to the landmark-anchors convention)",
  "coverage": {
-  "included": "July 3 afternoon assault sector: full II Corps front (Webb, Hall, Harrow, Smyth, Willard/Sherrill brigades + Hazard's batteries + Cowan), Stannard's brigade, 8th Ohio, CSA state memorials on the Pickett's Charge start line, 11th MS / 26th NC advance markers, Armistead marker; SOUTHERN FIELD (pass 6, 2026-07-11): Wheatfield/Rose Woods/Devil's Den cluster (Caldwell's four brigade tablets + 5th NH/Irish Bde/4th MI/17th ME/124th NY monuments + Zook statue), Smith's 4th NY two-position pair, the four CSA ladder brigade tablets (W/S Confederate Ave) + Semmes-mw/Anderson-w/Benning/Robertson/Law advance markers, the Little Round Top summit cluster (Vincent-mw, Weed+Hazlett, 140th NY, 20th ME, 44th NY, 16th MI, 83rd PA, 91st PA, 146th NY, 155th PA + both brigade tablets), 1st Minnesota pair + Willard-KIA marker",
+  "included": "July 3 afternoon assault sector: full II Corps front (Webb, Hall, Harrow, Smyth, Willard/Sherrill brigades + Hazard's batteries + Cowan), Stannard's brigade, 8th Ohio, CSA state memorials on the Pickett's Charge start line, 11th MS / 26th NC advance markers, Armistead marker; SOUTHERN FIELD (pass 6, 2026-07-11): Wheatfield/Rose Woods/Devil's Den cluster (Caldwell's four brigade tablets + 5th NH/Irish Bde/4th MI/17th ME/124th NY monuments + Zook statue), Smith's 4th NY two-position pair, the four CSA ladder brigade tablets (W/S Confederate Ave) + Semmes-mw/Anderson-w/Benning/Robertson/Law advance markers, the Little Round Top summit cluster (Vincent-mw, Weed+Hazlett, 140th NY, 20th ME, 44th NY, 16th MI, 83rd PA, 91st PA, 146th NY, 155th PA + both brigade tablets), 1st Minnesota pair + Willard-KIA marker; PEACH ORCHARD / PLUM RUN PERIPHERY (pass 7, 2026-07-11): III Corps salient tablets (Graham + Carr/Brewster/Burling + Humphreys division pair-flagged) + Sickles-wounded and Rogers-house pins + 73rd NY (4th Excelsior) + Humphreys statue, the V Corps regulars pair (Day/Burbank + Ayres division), PA Reserves (McCandless + Crawford division/statue), Wheaton/Nevin, and the Anderson-division pair (Wright tablet + Cemetery Ridge advance marker; Perry WCA + Emmitsburg-Rd advanced tablets)",
   "notIncluded": "right/left flank marker stones (see flankMarkerGap), McGilvery's line, Cemetery Hill/Culp's Hill fronts, July 1 field, cavalry fields — future passes",
   "flankMarkerGap": "GNMP flank-marker stones (R.F./L.F.) physically exist for most Union regiments here, but no license-clean machine-readable coordinate source was found this pass: Stone Sentinels does not publish their coordinates, HMDB is bot-walled (Cloudflare) and catalogs few of the small stones, OpenStreetMap has essentially none mapped in this sector (2 flank-named objects park-wide), and the NPS 'Monumentation' ArcGIS layer is survey benchmarks, not war monuments. Honest coverage: 0 flank-marker entries. Recommended fill: manual HMDB browser pass or field GPS; the secondary/advance/position markers captured here partially serve the same line-extent purpose.",
   "southernFieldChannelNote": "Pass-6 extraction channels: CSA and most Union brigade-tablet pages on Stone Sentinels still print DMS coordinates (dms-text); Stone Sentinels regiment/monument pages served NO machine-readable coordinates through the 2026-07-11 fetch channel, so those entries carry OpenStreetMap (ODbL) as the PRIMARY coordinate source (extraction osm-node/osm-way-center, per-entry note) - a recorded deviation from the register's dms-text default. OSM was the register's calibrated cross-check source (ED-39); typical SS-vs-OSM deltas in this batch run 1-27 m with two flagged >50 m (tab-us-ii-1-3, tab-us-ii-1-4)."
@@ -1832,6 +1832,442 @@
     "accessDate": "2026-07-11",
     "extraction": "osm-node",
     "note": "OSM as PRIMARY coordinate source for this entry (deviation from the register's dms-text default: the Stone Sentinels regiment/monument pages served no machine-readable coordinates through the 2026-07-11 fetch channel; unit brigade-tablet pages still do). OSM name string: US HQ 5-2-3rd Brigade Weed+ / Garrard"
+   }
+  },
+  {
+   "id": "tab-us-iii-1-1",
+   "registerId": "reg-us-iii-1-1",
+   "unitLabel": "1st Bde 1st Div III Corps (Graham) tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "The Peach Orchard/Emmitsburg Rd salient position held July 2 until forced back at sunset (tablet narrative; Graham w&c here)",
+   "lat": 39.80375,
+   "lon": -77.248333,
+   "local_x": 3317.7,
+   "local_z": 3859.7,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-headquarters/1st-brigade-1st-division-3rd-corps/",
+    "accessDate": "2026-07-11",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "US HQ 3-1-1st Brigade Graham(w) / Tippin",
+    "osmType": "node",
+    "osmId": 7129146447,
+    "lat": 39.803744,
+    "lon": -77.248292,
+    "deltaMeters": 3.5,
+    "flagged": false
+   }
+  },
+  {
+   "id": "tab-us-iii-2-1",
+   "registerId": "reg-us-iii-2-1",
+   "unitLabel": "1st Bde 2nd Div III Corps (Carr) tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "The Emmitsburg Rd front-line position ('between 3 and 4 P.M. advanced 300 yards to the Emmitsburg Road') held until the left gave way (tablet narrative)",
+   "lat": 39.807681,
+   "lon": -77.244207,
+   "local_x": 3681.8,
+   "local_z": 4287.2,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7129146436",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (the register's pass-6 channel deviation: Stone Sentinels served no machine-readable coordinates for this page through the 2026-07-11 fetch channel). OSM name string: US HQ 3-2-1st Brigade Carr"
+   }
+  },
+  {
+   "id": "tab-us-iii-2-2",
+   "registerId": "reg-us-iii-2-2",
+   "unitLabel": "2nd (Excelsior) Bde 2nd Div III Corps (Brewster) tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "Second-line position in rear of the First Brigade (tablet narrative); a second Excelsior node 100.6 m SW is recorded as the brigade-monument counterpart (flagged pair)",
+   "lat": 39.802546,
+   "lon": -77.24677,
+   "local_x": 3448.1,
+   "local_z": 3722.7,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7129146449",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (the register's pass-6 channel deviation: Stone Sentinels served no machine-readable coordinates for this page through the 2026-07-11 fetch channel). OSM name string: US HQ 3-2-2nd NY \"Excelsior Brigade\" Brewster"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "US HQ 3-2-2nd NY \"Excelsior Brigade\" Brewster (second node)",
+    "osmType": "node",
+    "osmId": 7276115554,
+    "lat": 39.801821,
+    "lon": -77.247474,
+    "deltaMeters": 100.6,
+    "flagged": true
+   }
+  },
+  {
+   "id": "tab-us-iii-2-3",
+   "registerId": "reg-us-iii-2-3",
+   "unitLabel": "3rd Bde 2nd Div III Corps (Burling) tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "The reserve position the brigade was dispersed FROM ('placed in reserve in rear of Second Brigade' then detached by regiments; tablet narrative) - de Trobriand Ave ground",
+   "lat": 39.796059,
+   "lon": -77.245294,
+   "local_x": 3556.4,
+   "local_z": 2999.4,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6684462257",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (the register's pass-6 channel deviation: Stone Sentinels served no machine-readable coordinates for this page through the 2026-07-11 fetch channel). OSM name string: US HQ 3-2-3rd Brigade Burling"
+   }
+  },
+  {
+   "id": "tab-us-iii-2-hq",
+   "registerId": "reg-us-iii-2-hq",
+   "unitLabel": "2nd Division III Corps (Humphreys) tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "Division front-line ground at the Emmitsburg Rd (beside the Carr tablet and the Rogers-house marker); a second Humphreys-division node 793 m SW near the Peach Orchard is recorded UNRESOLVED (flagged pair)",
+   "lat": 39.807268,
+   "lon": -77.244476,
+   "local_x": 3657.7,
+   "local_z": 4241.9,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7430722455",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (the register's pass-6 channel deviation: Stone Sentinels served no machine-readable coordinates for this page through the 2026-07-11 fetch channel). OSM name string: US HQ 3-2nd Division Humphreys"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "US HQ 3-2nd Division Humphreys (second node)",
+    "osmType": "node",
+    "osmId": 6683542031,
+    "lat": 39.801547,
+    "lon": -77.25002,
+    "deltaMeters": 793.1,
+    "flagged": true
+   }
+  },
+  {
+   "id": "mon-humphreys-statue",
+   "registerId": "reg-us-iii-2-hq",
+   "unitLabel": "Humphreys statue",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Division commander commemoration on the Emmitsburg Rd fighting ground (division front, not a timed position)",
+   "lat": 39.808237,
+   "lon": -77.243844,
+   "local_x": 3714.5,
+   "local_z": 4348.1,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/4486002434",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (the register's pass-6 channel deviation: Stone Sentinels served no machine-readable coordinates for this page through the 2026-07-11 fetch channel). OSM name string: US General Andrew Humphreys"
+   }
+  },
+  {
+   "id": "mon-rogers-house",
+   "registerId": "reg-us-iii-2-1",
+   "unitLabel": "Rogers House site marker",
+   "side": "US",
+   "markerType": "position-marker",
+   "positionSemantics": "The Rogers-house landmark on Carr's front line (terrain anchor, not a unit position; 28 m agreement with the j2-03 drawn house)",
+   "lat": 39.808485,
+   "lon": -77.244002,
+   "local_x": 3701.6,
+   "local_z": 4376.0,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/4487576365",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (the register's pass-6 channel deviation: Stone Sentinels served no machine-readable coordinates for this page through the 2026-07-11 fetch channel). OSM name string: Rogers House Marker"
+   }
+  },
+  {
+   "id": "mon-sickles-wounded",
+   "registerId": "reg-us-iii-2-hq",
+   "unitLabel": "Sickles wounded marker",
+   "side": "US",
+   "markerType": "individual-marker",
+   "positionSemantics": "Sickles struck by shot near the Trostle yard ~18:00-18:30 July 2 (CA-J2A-9's corps-command officer pin; Birney 'at 6 o'clock I found Major-General Sickles seriously wounded')",
+   "lat": 39.802556,
+   "lon": -77.242778,
+   "local_x": 3789.9,
+   "local_z": 3715.2,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/monuments-to-individuals/daniel-sickles/",
+    "accessDate": "2026-07-11",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "US General Sickles wounded",
+    "osmType": "node",
+    "osmId": 7276120479,
+    "lat": 39.802562,
+    "lon": -77.242755,
+    "deltaMeters": 2.1,
+    "flagged": false
+   }
+  },
+  {
+   "id": "mon-73ny",
+   "registerId": "reg-us-iii-2-2",
+   "unitLabel": "73rd NY (4th Excelsior) monument",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "The detached regiment's fight beside Graham's brigade at the Peach Orchard (73 m agreement with the j2-04 '4 Ex' drawn label)",
+   "lat": 39.802121,
+   "lon": -77.248142,
+   "local_x": 3329.5,
+   "local_z": 3678.5,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6683542089",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (the register's pass-6 channel deviation: Stone Sentinels served no machine-readable coordinates for this page through the 2026-07-11 fetch channel). OSM name string: 73rd NY \"Fourth Excelsior\" \"2nd Fire Zouaves\" Burns"
+   }
+  },
+  {
+   "id": "tab-us-v-2-1",
+   "registerId": "reg-us-v-2-1",
+   "unitLabel": "1st Bde 2nd Div V Corps (Day, US Regulars) tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "Houck's Ridge ground the brigade advanced to behind Burbank facing the Wheatfield, and retired from under fire on front and flank (tablet narrative)",
+   "lat": 39.795063,
+   "lon": -77.240757,
+   "local_x": 3942.1,
+   "local_z": 2879.1,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6684237377",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (the register's pass-6 channel deviation: Stone Sentinels served no machine-readable coordinates for this page through the 2026-07-11 fetch channel). OSM name string: US HQ 5-2-1st Brigade Day"
+   }
+  },
+  {
+   "id": "tab-us-v-2-2",
+   "registerId": "reg-us-v-2-2",
+   "unitLabel": "2nd Bde 2nd Div V Corps (Burbank, US Regulars) tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "Houck's Ridge/Wheatfield-edge line of the brigade's advance and withdrawal (tablet narrative; 447 casualties of 900 muskets)",
+   "lat": 39.795309,
+   "lon": -77.24139,
+   "local_x": 3888.6,
+   "local_z": 2907.8,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6684237376",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (the register's pass-6 channel deviation: Stone Sentinels served no machine-readable coordinates for this page through the 2026-07-11 fetch channel). OSM name string: US HQ 5-2-2nd Brigade Burbank"
+   }
+  },
+  {
+   "id": "tab-us-v-2-hq",
+   "registerId": "reg-us-v-2",
+   "unitLabel": "2nd Division V Corps (Ayres) tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "Division ground east of the Wheatfield (59 m agreement with the j2-04 'AYRES DIV' drawn label)",
+   "lat": 39.795303,
+   "lon": -77.239778,
+   "local_x": 4026.6,
+   "local_z": 2903.7,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6684237372",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (the register's pass-6 channel deviation: Stone Sentinels served no machine-readable coordinates for this page through the 2026-07-11 fetch channel). OSM name string: US HQ 5-2nd Division Ayres"
+   }
+  },
+  {
+   "id": "tab-us-v-3-1",
+   "registerId": "reg-us-v-3-1",
+   "unitLabel": "1st Bde 3rd Div V Corps (McCandless, PA Reserves) tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "East edge of the Wheatfield (the July 3 sweep ground; the July 2 charge ended at the stone wall west of Plum Run - j2-05 drawn label). SS-vs-OSM delta 64.4 m FLAGGED",
+   "lat": 39.796528,
+   "lon": -77.240861,
+   "local_x": 3937.3,
+   "local_z": 3042.0,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-headquarters/1st-brigade-3rd-division-5th-corps/",
+    "accessDate": "2026-07-11",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "US HQ 5-3-1st Brigade McCandless",
+    "osmType": "node",
+    "osmId": 6684237686,
+    "lat": 39.796143,
+    "lon": -77.241422,
+    "deltaMeters": 64.4,
+    "flagged": true
+   }
+  },
+  {
+   "id": "tab-us-v-3-hq",
+   "registerId": "reg-us-v-3",
+   "unitLabel": "3rd Division V Corps (Crawford) tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "Division tablet at the Plum Run counterattack ground (beside the Crawford statue)",
+   "lat": 39.79574,
+   "lon": -77.238786,
+   "local_x": 4112.8,
+   "local_z": 2950.1,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6681791219",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (the register's pass-6 channel deviation: Stone Sentinels served no machine-readable coordinates for this page through the 2026-07-11 fetch channel). OSM name string: US HQ 5-3rd Division Crawford"
+   }
+  },
+  {
+   "id": "mon-crawford-statue",
+   "registerId": "reg-us-v-3",
+   "unitLabel": "Crawford statue",
+   "side": "US",
+   "markerType": "monument",
+   "positionSemantics": "Division commander commemoration on the Plum Run charge ground (wave-5 Union pole)",
+   "lat": 39.795955,
+   "lon": -77.238762,
+   "local_x": 4115.4,
+   "local_z": 2973.9,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/4485288330",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (the register's pass-6 channel deviation: Stone Sentinels served no machine-readable coordinates for this page through the 2026-07-11 fetch channel). OSM name string: US General Samuel Crawford"
+   }
+  },
+  {
+   "id": "tab-us-vi-3-3",
+   "registerId": "reg-us-vi-3-3",
+   "unitLabel": "3rd Bde 3rd Div VI Corps (Wheaton/Nevin) tablet",
+   "side": "US",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "The Weickert-farm ground the brigade formed on before the W5 countercharge against Wofford (tablet narrative; the counter-line itself is the j2-05 'NEVIN' drawn label 100 m W)",
+   "lat": 39.79675,
+   "lon": -77.237778,
+   "local_x": 4201.9,
+   "local_z": 3060.0,
+   "source": {
+    "name": "Stone Sentinels (gettysburg.stonesentinels.com)",
+    "url": "https://gettysburg.stonesentinels.com/union-headquarters/3rd-brigade-3rd-division/",
+    "accessDate": "2026-07-11",
+    "extraction": "dms-text"
+   },
+   "crossCheck": {
+    "source": "OpenStreetMap (ODbL)",
+    "osmName": "US HQ 6-3-3rd Brigade Wheaton / David Nevin",
+    "osmType": "node",
+    "osmId": 6681791227,
+    "lat": 39.796829,
+    "lon": -77.237753,
+    "deltaMeters": 9.0,
+    "flagged": false
+   }
+  },
+  {
+   "id": "tab-csa-wright",
+   "registerId": "reg-csa-3c-and-3",
+   "unitLabel": "Wright's Brigade tablet",
+   "side": "CSA",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "War Dept itinerary tablet on West Confederate Ave (formation line 'formed line here in the forenoon'; narrative carries the crest claim and the 873 casualty line - see the dossier's EC6 three-reading conflict)",
+   "lat": 39.814008,
+   "lon": -77.250978,
+   "local_x": 3119.9,
+   "local_z": 5004.0,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7129287496",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (the register's pass-6 channel deviation: Stone Sentinels served no machine-readable coordinates for this page through the 2026-07-11 fetch channel). OSM name string: Wright GA Brigade"
+   }
+  },
+  {
+   "id": "marker-csa-wright-advance",
+   "registerId": "reg-csa-3c-and-3",
+   "unitLabel": "Wright's Brigade advance marker (Cemetery Ridge)",
+   "side": "CSA",
+   "markerType": "advance-marker",
+   "positionSemantics": "Farthest advance, July 2 evening - ~275 ft SW of the Copse, 160 ft W of the 59th NY monument (Stone Sentinels description); 28 m agreement with the j2-04 red-bars-on-the-Brown-ground drawn state: the marker and the sheet both stop the brigade AT the gun line west of the crest",
+   "lat": 39.811966,
+   "lon": -77.236768,
+   "local_x": 4330.6,
+   "local_z": 4746.9,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7433438373",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (the register's pass-6 channel deviation: Stone Sentinels served no machine-readable coordinates for this page through the 2026-07-11 fetch channel). OSM name string: CS Wright's Brigade marker"
+   }
+  },
+  {
+   "id": "tab-csa-perry-wca",
+   "registerId": "reg-csa-3c-and-4",
+   "unitLabel": "Perry's Brigade (Lang) tablet, West Confederate Ave",
+   "side": "CSA",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "War Dept itinerary tablet on the Seminary Ridge formation line",
+   "lat": 39.811169,
+   "lon": -77.253253,
+   "local_x": 2917.2,
+   "local_z": 4693.8,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/7129287501",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (the register's pass-6 channel deviation: Stone Sentinels served no machine-readable coordinates for this page through the 2026-07-11 fetch channel). OSM name string: Lang \"Perry FL Brigade\""
+   }
+  },
+  {
+   "id": "tab-csa-perry-emmitsburg",
+   "registerId": "reg-csa-3c-and-4",
+   "unitLabel": "Perry's Brigade advanced tablet, Emmitsburg Rd",
+   "side": "CSA",
+   "markerType": "brigade-tablet",
+   "positionSemantics": "ADVANCED-GROUND tablet on the west side of the Emmitsburg Rd ~1,100 ft south of the Codori farm (the July 2 breach axis; its narrative carries the 8th Florida flag loss). Distance check: 337 m from the Codori read = the described 1,100 ft",
+   "lat": 39.808902,
+   "lon": -77.243562,
+   "local_x": 3740.5,
+   "local_z": 4421.3,
+   "source": {
+    "name": "OpenStreetMap (ODbL)",
+    "url": "https://www.openstreetmap.org/node/6684167152",
+    "accessDate": "2026-07-11",
+    "extraction": "osm-node",
+    "note": "OSM as PRIMARY coordinate source for this entry (the register's pass-6 channel deviation: Stone Sentinels served no machine-readable coordinates for this page through the 2026-07-11 fetch channel). OSM name string: CS Perry's Brigade"
    }
   }
  ]

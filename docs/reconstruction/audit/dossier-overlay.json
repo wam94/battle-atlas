@@ -501,12 +501,12 @@
    "Class (attested-static / unauthored / authored-ok)": "authored-ok",
    "EC1 identity/command": "Col. Lang (Perry absent typhoid); pins: McCaslan (AAAG) k in Jul 3 retreat; Moore (2FL) w&c, Gardner (5FL) w; 8FL colors lost Jul 2",
    "EC2 engaged strength": "PRIMARY 'near 700 strong' (lang, =build) - smallest brigade in the assault's orbit",
-   "EC3 position anchors": "[C/D ~07:00] up with Wilcox's left to foot of gun hill, skirmishers one crest fwd; j3-01 label ~(3230,4820)+-120; reform on old line, night withdrawal to woods",
-   "EC4 movement legs": "[D] standing conform-to-Wilcox order ('I would receive no further orders'); advanced after Pickett's troops retired; left flanked in the woods, retreat order inaudible in the din; 2FL colors + pocket captured (16th VT object, veazey cross)",
-   "EC5 activity record": "[C -53] bombardment 'nearly 2 p.m. ... till nearly 4 p.m.' (late-stated pole, joins Longstreet/Smyth cluster); no formed fire window Jul 3 (movement and reception only)",
+   "EC3 position anchors": "[Pass 7 backward-extension] July 2: WCA tablet (2917.2,4693.8) + the ADVANCED Emmitsburg-Rd tablet (3740.5,4421.3) (1,100-ft Codori distance check EXACT); j2-04 'PERRY FLA.' (4160,4502) vs 19th-Maine-class blue (4215,4475). [C/D ~07:00] up with Wilcox's left to foot of gun hill, skirmishers one crest fwd; j3-01 label ~(3230,4820)+-120; reform on old line, night withdrawal to woods",
+   "EC4 movement legs": "[Pass 7] July 2 advance 'at 6 p.m.' stated (+45..+60 ED-58 class - OPPOSITE-direction skew from its July 3 -53 clocks, the audit's sharpest single-source heterogeneity); double-quick past the guns ('four or five pieces' - the modest counterpart of Wright's twenty); withdrawal on the Wilcox-forced-back report (trigger). [D] standing conform-to-Wilcox order ('I would receive no further orders'); advanced after Pickett's troops retired; left flanked in the woods, retreat order inaudible in the din; 2FL colors + pocket captured (16th VT object, veazey cross)",
+   "EC5 activity record": "[C -53] bombardment 'nearly 2 p.m. ... till nearly 4 p.m.' (late-stated pole, joins Longstreet/Smyth cluster); no formed fire window Jul 3 (movement and reception only); [Pass 7] the 8th FLORIDA COLORS BOTH-SIDED (advanced tablet = Brewster/Hogan captor record) - colors lost BOTH days, each with a Union captor record",
    "EC6 casualty apportionment": "455 = 33/217/205 (return = lang's own 455 of ~700 EXACT; regt k+w 81/75/94) - 65% loss rate, highest documented in batch; day split [B]: Jul 2 ~300 (his figure) -> Jul 3 ~155 concentrated in the capture pocket + retreat",
    "Achieved T-level (audited)": "T4 full-arc",
-   "Notes": "Dossier: reconstruction/dossiers/csa-3c-and-4-lang.md"
+   "Notes": "Dossier: reconstruction/dossiers/csa-3c-and-4-lang.md (July 2 arc extended backward, pass 7)"
   },
   "us-webb": {
    "Class (attested-static / unauthored / authored-ok)": "authored-ok",
@@ -870,6 +870,116 @@
    "EC6 casualty apportionment": "three readings carried: report floor 'not less than 400', return 76/299/[122 pooled]=497 (adopted basis), tablet 509; loss SPREAD over the 2-day hold (not a single spike); 15th GA July 3 component unquantified (flagged)",
    "Achieved T-level (audited)": "T4 full-arc",
    "Notes": "Dossier: reconstruction/dossiers/csa-1c-hood-4-benning.md; third claimant in the guns cross-credit - ED-56 convergent-capture candidate; count/type agreement with Smith across the lines"
+  },
+  "us-madill": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (July 2 static-then-forced-back)",
+   "EC1 identity/command": "Graham's bde (57/63/68/105/114/141 PA); GRAHAM w&c at the Peach Orchard (tablet verbatim + Birney + Tippin's seam moment) -> Tippin. NO brigade-echelon OR report (verified-negative, page-probed 495-506 - the Union member of the no-report-T4 class)",
+   "EC2 engaged strength": "B&M-type 1,516 (hop flagged); no primary; 141st PA took 200 (Birney, regiment-grain primary)",
+   "EC3 position anchors": "[C tablet] the apex from ~15:00 (CA-J2A-1); tablet (3317.7,3859.7) dms+OSM 3.5 m; [E drawn j2-03] 'Graham's Brig' (3405,3719), orchard bars (3308,3677), Sherfy (3216,3800), Clark/Phillips gun line - the apex drawn TWO-FRONTED; detached 7NJ/4th Excelsior drawn ON his ground (j2-03/j2-04)",
+   "EC4 movement legs": "[C tablet] advance to the apex ~15:00-15:30; [B] Tippin's 'nearly two hours' under fire = the CA-J2A-2->9 gap (duration AGREES with the chain); [A vs CA-J2A-9] the Barksdale-axis collapse, fell back 'to the next ridge' (Birney)",
+   "EC5 activity record": "[D] 63rd PA picket fire from morning; the endurance window behind Clark's battery; the two-front apex fight (Kershaw faces + Barksdale axis); July 3 reserve [E]",
+   "EC6 casualty apportionment": "return = tablet EXACT 740 (6+61/45+463/6+159); 141st PA 149 = Birney's 149-of-200 EXACT; 57th PA 115 report=return; episode: 17:30-19:00 dominant, captures at the collapse; 114th PA k-column noise flagged",
+   "Achieved T-level (audited)": "T4 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/us-iii-1-1-graham.md"
+  },
+  "reg-us-iii-2-hq": {
+   "Class (attested-static / unauthored / authored-ok)": "command record (not-yet-cast; register row added pass 7)",
+   "EC1 identity/command": "Humphreys 2nd Div III Corps; the command seam: Sickles mw 'At 6 o'clock' (Birney) -> Birney corps -> Hancock ~19:30; Sickles marker (3789.9,3715.2) OSM/SS 2.1 m",
+   "EC2 engaged strength": "PRIMARY ~5,000 into action (his own report p. 534)",
+   "EC3 position anchors": "[D] midday line; [C ~0] the Emmitsburg-road line ~16:00; tablet (3657.7,4241.9) (793 m duplicate node FLAGGED); [E drawn j2-03/j2-04] division label at the road then REDRAWN with NE withdrawal arrows + rallied on the ridge (4488,4469) - both ends in one window",
+   "EC4 movement legs": "[C ~0] 'about 4 p.m.' advance (= Carr's 4.08); [D] the Birney oblique order under fire; [B 12-20 min] THE FIGHTING WITHDRAWAL 'slowly, continuing the contest' ~550 m road->crest; the dusk counterattack",
+   "EC5 activity record": "[D] reinforcement dispatching under pressure (Burns's 4th Excelsior to Graham - both order ends primary; Christiancy to Hancock); battery direction (Seeley/Turnbull, losses itemized at division grain)",
+   "EC6 casualty apportionment": "division roll-up: return 2,092 vs stated 2,088 (ED-52 cleanest exercise); his own missing-scope caveat first-class; Burling detachment 430 k+w stated",
+   "Achieved T-level (audited)": "T3 (command record)",
+   "Notes": "Dossier: reconstruction/dossiers/us-iii-2-hq-humphreys.md; division-grain clocks are the ED-58 COUNTER-class (Humphreys ~0, Carr 0 medium, Birney +30 mild)"
+  },
+  "us-carr": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (July 2 mover)",
+   "EC1 identity/command": "Carr's bde (1/11/16 MA, 12 NH, 11 NJ, 26 PA; 84 PA detached); Carr unwounded",
+   "EC2 engaged strength": "B&M-type 1,718 (hop flagged); no primary",
+   "EC3 position anchors": "[C ~0 medium] the road line at 4.08 p.m. stated (~16:10 canonical); tablet (3681.8,4287.2) + Rogers-house marker ON the line (28 m agreement with the drawn house); [E drawn j2-03] 'Carr's Brig' (3826,4331), 1st MA drawn as separate forward skirmish element (3463,4407); [E drawn j2-04] 'CARR.' with NE withdrawal arrows (3669,4283)",
+   "EC4 movement legs": "[C 4.08 p.m.] the 300-yard advance; [D trigger] change of front when the left gave way; [B 12-18 min] the division fighting-withdrawal leg; the dusk counterattack return",
+   "EC5 activity record": "[D] skirmish screen from ~11 a.m., front 'merely made demonstrations' until the collapse; the front+flank fire window 18:30-19:15 (Wilcox/Lang receiving counterparts); July 3 close-column under the cannonade (tablet 'suffered severely')",
+   "EC6 casualty apportionment": "tablet = return EXACT 790 (10+111/45+559/2+63); episode: the evening window dominant + a July 3 artillery component - two-day shape",
+   "Achieved T-level (audited)": "T4 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/us-iii-2-1-carr.md; the 4.08/3.22 minute-precision AGREEING clocks = the ED-58 counter-exemplar (profiled medium)"
+  },
+  "us-brewster": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (July 2 mover)",
+   "EC1 identity/command": "Brewster's Excelsior bde (70/71/72/73/74/120 NY); Brewster unwounded; Sgt. Hogan (3rd Excelsior) the 8th-Fla-colors captor",
+   "EC2 engaged strength": "B&M-type 1,837 (hop flagged); recharge party ~150 (end-state fragment)",
+   "EC3 position anchors": "[C] second line ~13:00, 73rd NY forward at the crest; tablet (3448.1,3722.7) (100.6 m Excelsior pair FLAGGED); [D] 73rd NY at Graham's front - monument (3329.5,3678.5) 73 m from the j2-04 '4 Ex' drawn label, both order ends primary; [E drawn j2-04] rally bars mid-field (3524,3896)",
+   "EC4 movement legs": "[C agreeing] 4 p.m. advance under the left-flank artillery; [D trigger] the collapse withdrawal 'in good order, but with terrible loss'; [D after-sunset] THE RECHARGE - colors + 30 prisoners + guns recaptured (CA-J2A-11 bracket)",
+   "EC5 activity record": "[D] the artillery endurance (massed battalions - heaviest pre-musketry window this pass); the interleaved fight (regiments on three fronts); the 8th FLORIDA COLORS BOTH-SIDED (Hogan = Perry advanced tablet = Lang's record)",
+   "EC6 casualty apportionment": "TRIPLE EXACT report = tablet = return 778 (12+118/50+523/73); episode: artillery window substantial, collapse window dominant, July 3 nonzero",
+   "Achieved T-level (audited)": "T4 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/us-iii-2-2-brewster.md; recovery-side exemplar for ED-61"
+  },
+  "us-burling": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (July 2 DISPERSED class)",
+   "EC1 identity/command": "Burling's bde (2 NH, 5/6/7/8 NJ, 115 PA); Burling unwounded; pin: Lt. Clark (ambulance officer) mw 'died on the field' (staff-echelon class)",
+   "EC2 engaged strength": "B&M-type 1,365 (hop flagged); 115th PA 'about 140' (regiment-grain primary)",
+   "EC3 position anchors": "[C tablet] reserve mass in rear of Brewster ~15:00-17:00; tablet (3556.4,2999.4) stands on the DETACHED-majority ground (semantics noted); THE DISPERSAL LEDGER: 2NH+7NJ->Graham, 5NJ->Seeley picket, 6NJ->Ward, 8NJ+115PA->Wheatfield ('taken from me without my knowledge'), Burling+115PA->Humphreys - each drawn on its host's ground (j2-03/j2-04 bars)",
+   "EC4 movement legs": "NO single-body leg after ~17:00 - detachments inherit host legs (Graham's collapse; ED-57 waves); brigade centroid a fiction after the dispersal (AUTHORING NOTE)",
+   "EC5 activity record": "[D] reserve's flank-artillery endurance at 1,000 yards; detachment fights via hosts (2nd NH's orchard fight = 193, the ledger's bloodiest); Burling's rally fragment",
+   "EC6 casualty apportionment": "TRIPLE EXACT report = tablet = return 513 (6+53/43+333/78); Humphreys's division-grain 430 k+w consistent as the k+w component; apportionment BY DETACHMENT (sum of five host curves, not a unit spike)",
+   "Achieved T-level (audited)": "T4 full-arc (dispersed class)",
+   "Notes": "Dossier: reconstruction/dossiers/us-iii-2-3-burling.md; the dispersed-class EC4/EC6 structure recorded as reusable method"
+  },
+  "us-day": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (July 2 single-window mover)",
+   "EC1 identity/command": "Day's 1st Regulars (3/4/6/12/14 US); Day unwounded; Van Rensselaer (AAAG) w; Freedley (3rd US) w commanding in action (Sheridan absent - honest command-absence record). Day's No. 204 is a FORWARDING COVER ('not called on myself for a report') - self-documented negative",
+   "EC2 engaged strength": "B&M-type 1,574 (hop flagged); no primary (contrast Burbank's musket count)",
+   "EC3 position anchors": "[D] Baltimore-Pike ground then LRT north slope late day; [D] advanced across Plum Run valley behind Burbank facing the Wheatfield; tablet (3942.1,2879.1) + drawn bars (3912,2814) + division tablet cluster ~120 m; [D] retired to LRT, night to east-side woods; July 3 'remained in same position'",
+   "EC4 movement legs": "[B 3-6 min] the double-quick swampy-ground crossing (Ayres); [D trigger] THE FACE-ABOUT WITHDRAWAL through the W4 crossfire ([B] 5-8 min return leg)",
+   "EC5 activity record": "[D] second-line fire behind Burbank; withdrawal under front+flank fire (tablet wording); July 3-4 not engaged [E/negative]",
+   "EC6 casualty apportionment": "tablet = return EXACT 382 (1+45/13+305/18); SINGLE-WINDOW shape ~18:15-19:00 (in-and-out under fire); July 3 ~zero",
+   "Achieved T-level (audited)": "T4 full-arc (thin - division-report class)",
+   "Notes": "Dossier: reconstruction/dossiers/us-v-2-1-day.md"
+  },
+  "us-burbank": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (July 2 single-window mover)",
+   "EC1 identity/command": "Burbank's 2nd Regulars (2/7/10/11/17 US); Burbank unwounded; officer block: 40 of 80 officers casualties (7k/33w) - the intensity primary",
+   "EC2 engaged strength": "PRIMARY 'less than 900 muskets' beside B&M 958 all-ranks (two-scope, carried un-averaged - the Tilton pattern)",
+   "EC3 position anchors": "[D] morning right of XII Corps; [C +80] 'about 5 p.m.' stated deployment to the LRT north slope (~18:15-18:40 canonical); [D] the advance line at the fence/stone wall on the Wheatfield's edge (Sweitzer's fence ground); tablet (3888.6,2907.8) + j2-04 bar column",
+   "EC4 movement legs": "[B 8-12 min] deployment leg; [B 4-7 min] the double-quick marsh crossing + ascent; [D trigger + B 5-8 min] THE FLANK-FIRE EXTRACTION ('moving through a wheat-field to our rear' -> both-flank fire on the recrossing)",
+   "EC5 activity record": "[D] the stone-wall fight vs Wofford's sweep + the renewal (the W4 mechanism's fifth attestation); July 3 'was not engaged again' (negative closure)",
+   "EC6 casualty apportionment": "tablet = return EXACT 447 (7+71/32+310/27) 'of 900 muskets' - ~50% rate, the pass's highest; single-window dominant, extraction the peak; officer half-loss pins intensity",
+   "Achieved T-level (audited)": "T4 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/us-v-2-2-burbank.md; ED-58 V Corps regulars exemplar (+80)"
+  },
+  "us-mccandless": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (July 2 W5 executor; July 3 sweep)",
+   "EC1 identity/command": "McCandless's 1st PA Reserves (30/31/35/42 PA); pin: Col. C. F. Taylor (Bucktails) k in the charge",
+   "EC2 engaged strength": "B&M-type 1,243 (hop flagged); no primary",
+   "EC3 position anchors": "[C +75] posted 'at 5 p.m.' stated on the rocky hillside - the 700-YARDS-TO-THE-WALL charge-geometry PRIMARY; [D+drawn] the wall end-line: j2-05 'McCANDLESS Brigade' (4016,2996) re-read 21 m vs pass 6, bar to (3898,2823), retiring red in front; tablet (3937.3,3042.0) July-3 semantics, SS-vs-OSM 64.4 m FLAGGED",
+   "EC4 movement legs": "[B 4-6 min; A vs CA-J2A-11] THE W5 CHARGE - volley-then-run 700 yd, wall struggle; trigger = retiring units clearing the front; collision partner = Wofford's sunset-order withdrawal (both-sided at executor grain); [D] July 3 sweep -> 15th GA collision",
+   "EC5 activity record": "[D] two-volleys-then-charge discipline (shared with Nevin); overnight wall hold; July 3 recovery ledger (~200 prisoners, 15th GA colors, Napoleon + 3 caissons, 7,000 stand of arms)",
+   "EC6 casualty apportionment": "tablet = return EXACT 155 (2+18/14+118/3); Crawford's stated 210 = McCandless 155 + Fisher 55 EXACT (three-way division agreement); Taylor k in the charge window; July 3 light",
+   "Achieved T-level (audited)": "T4 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/us-v-3-1-mccandless.md; July 3 opponent MISATTRIBUTION carried (Crawford names G.T. Anderson; colors/prisoners fix Benning's 15th GA)"
+  },
+  "us-nevin": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (July 2 W5 executor)",
+   "EC1 identity/command": "Wheaton's/Nevin's bde (62 NY, 93/98/102/139 PA); TRIPLE succession Wheaton->Nevin->Bartlett-attached (rendering-metadata hazard noted)",
+   "EC2 engaged strength": "B&M-type 1,368 (hop flagged); 34-mile/17-hour forced-march fatigue qualifier (primary)",
+   "EC3 position anchors": "[C +75] deployed 'At 4.30 p.m.' stated (~18:45-19:15 canonical) on the LRT north slope - 'barely gotten into position' when the W4 collapse swept past (the seam verbatim); [E drawn j2-05] 'NEVIN' (4306,3075) re-read 47 m vs pass 6; tablet at the Weickert farm (4201.9,3060.0) dms+OSM 9 m",
+   "EC4 movement legs": "[B primary] the forced march; [D trigger; A-bracket vs CA-J2A-11] the countercharge - two volleys then charge vs Wofford's retiring column (tablet NAMES Wofford; order-vs-charge collision both-sided); [B 4-6 min] swamp crossing + 100-yard halt",
+   "EC5 activity record": "[D] THE GUN RECOVERY 'two light 12-pounder brass pieces' = tablet's 'two Napoleon guns' - the ED-61 pool with Brewster/Crawford/Barksdale-left-on-field records; July 3: 10 a.m. recon repulsed, 2 p.m. shelled, 6 p.m. Crawford support 'recapturing artillery'",
+   "EC6 casualty apportionment": "tablet 53 (2k/7+44w, no missing); Union-return row UNFETCHED (p. 181 region, flagged) - tablet is the working reading; two-episode light shape",
+   "Achieved T-level (audited)": "T4 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/us-vi-3-3-nevin.md; proposes ED-61 (Plum Run gun-recovery cross-credit; precondition Bigelow/Watson fetches)"
+  },
+  "csa-wright": {
+   "Class (attested-static / unauthored / authored-ok)": "authored-ok (July 2 mover; THE conflict-record unit)",
+   "EC1 identity/command": "Wright's bde (3/22/48 GA, 2 GA Bn); Wright resumed command 7 a.m. July 2; pins: Col. Wasden (22 GA) k near the turnpike, Col. Gibson (48 GA) w; 48th GA colors lost (shot down seven times)",
+   "EC2 engaged strength": "tablet 'Present 1,450' vs B&M 1,413 (both hops, carried un-averaged); no primary",
+   "EC3 position anchors": "[C tablet] WCA formation line (3119.9,5004.0); [E drawn j2-04] the attack IN PROGRESS - regt numbers strung ridge-to-road, advanced label (4289,4852), red bars ON the 15th MA/82nd NY road position and ON Brown's battery ground (4314,4724), Union ridge hatching UNBROKEN east; ADOPTED farthest advance = the Cemetery Ridge marker (4330.6,4746.9) - 28 m agreement with the drawn state (the crest claims are carried as claims, not geometry)",
+   "EC4 movement legs": "[D] the echelon trigger verbatim ('as soon as the brigade on its immediate right commenced'); [A vs CA-J2A-10; stated 'about 5 p.m.' profiled +100] the mile advance -> road gun line -> west slope [B 22-30 min]; [D] THE CUT-OUT (both supports failed; abandoned the captured guns, faced about) [B 15-20 min]; July 3: the 500-600 yd Pickett-retreat cover move + Lee's personal order rightward",
+   "EC5 activity record": "[D both-sided] the Codori-front overrun (15th MA/82nd NY; Ward-KIA marker 47 m from the drawn bar); THE GUN-COUNT CONFLICT 'over twenty pieces' carried vs receiving-side temporary losses (Brown, Weir); the 48th GA enfilade; July 3 present-but-covering (ED-44 adjacent)",
+   "EC6 casualty apportionment": "THREE READINGS CARRIED: report 688 / return 668 (40/295/333, full columns) / tablet 873 (146/394/333) - missing 333 AGREES return=tablet, k/w composition conflicts; return adopted (ED-49/52 posture), no averaging; episode: the evening hour dominant, cut-out the peak (333 missing its trace)",
+   "Achieved T-level (audited)": "T4 full-arc",
+   "Notes": "Dossier: reconstruction/dossiers/csa-3c-and-3-wright.md; proposes ED-60 (the high-water ruling); CA-J2A-10's 'notoriously self-serving' flag executor-substantiated"
   }
  }
 }

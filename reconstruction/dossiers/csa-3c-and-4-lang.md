@@ -1,7 +1,8 @@
 # Dossier: Perry's Brigade (Lang's Florida Brigade), Anderson's Division (reg-csa-3c-and-4)
 
-Pass 3 (first command batch) · Cast status: in-build (`csa-lang`) ·
-Achieved T-level: **T4 full-arc** · 2026-07-11
+Pass 3 (first command batch) · **July 2 arc extended backward, pass 7
+(p. 631 read; the Peach Orchard periphery batch)** · Cast status:
+in-build (`csa-lang`) · Achieved T-level: **T4 full-arc** · 2026-07-11
 
 Command-batch role: the late echelon's left — the three-regiment Florida
 brigade tied to Wilcox by a standing conform-to-his-movements order, and
@@ -26,6 +27,21 @@ Lang's report (No. 545) is the batch's late-stated clock pole.
 
 ## EC3 — Position anchors
 
+0. **July 2 (backward-extension, pass 7)** [D/C]: morning move ~1.5
+   miles forward, formed behind a mile-wide open field (or-27-2-lang
+   p. 631); the WCA tablet on the formation line at **(2917.2,
+   4693.8)** (tab-csa-perry-wca) and — the rarity — an ADVANCED
+   tablet on the west side of the Emmitsburg road ~1,100 ft south of
+   the Codori farm at **(3740.5, 4421.3)** (tab-csa-perry-emmitsburg;
+   the 337 m Codori distance check matches the described 1,100 ft),
+   whose narrative carries the breach ("drove back the Union lines on
+   Emmitsburg Road and by rapid pursuit compelled the temporary
+   abandonment [of the guns]") and the 8th Florida flag loss. Drawn
+   state j2-04 (19:00): "PERRY FLA." red at **(4160, 4502)** with the
+   line's red bars at the swale against blue bars read as the 19th
+   Maine class at (4215, 4475) — the Harrow-front collision geometry
+   (read 2026-07-11, sheet-j2-04-wright-codori-front.png).
+
 1. **July 3 daylight → ~07:00** [D/C]: ordered to connect his right with
    Wilcox's left and conform; "About 7 a.m. General Wilcox moved forward
    ... and, in accordance with orders, I moved up with his left, and put
@@ -45,6 +61,21 @@ Lang's report (No. 545) is the batch's late-stated clock pole.
    Anderson's order.
 
 ## EC4 — Movement legs
+
+0. **July 2 (backward-extension, pass 7)**: advanced "at 6 p.m."
+   (stated; ~18:45 canonical — the stated clocks 5 p.m./6 p.m. join
+   the ED-58 field-wide early class at +45..+60, even though the SAME
+   command's July 3 report clocks sit −53 LATE: the audit's sharpest
+   single-source clock heterogeneity, recorded on the or-27-2-lang
+   profile note) on Wilcox's movement per the echelon; through
+   "a murderous fire of grape, canister, and musketry" at the first
+   crest; charged at the double-quick past the Union guns ("four or
+   five pieces of cannon" taken, horses/limbers withdrawn by the
+   enemy — contrast Wright's "over twenty", the modest counterpart
+   claim); halted at the base of the heights to reform; withdrew when
+   the aide reported Wilcox forced back (trigger, not clock)
+   (or-27-2-lang p. 631). July 2 loss "about 300" (his own figure —
+   the EC6 split's basis, already carried below).
 
 1. ~07:00: up with Wilcox's left to the foot of the gun hill [C/D].
 2. **The supporting advance** [D, after the repulse]: "Soon after
@@ -74,6 +105,16 @@ Lang's report (No. 545) is the batch's late-stated clock pole.
 2. The advance: artillery fire only until the woods; then the left-flank
    musketry crisis (above). No formed brigade fire window July 3
    (negative — the brigade's July 3 is movement and reception).
+3. **July 2: THE 8th FLORIDA COLORS, BOTH-SIDED (pass 7)** [D]: the
+   advanced tablet's "The color bearer of the 8th Florida fell and
+   its flag was lost" meets Brewster's "recapturing them, taking from
+   one the colors of the Eighth Florida Regiment" with Sgt. Thomas
+   Hogan (3rd Excelsior) named as captor (or-27-1-brewster; Brewster
+   tablet concurs "captured the colors of the 8th Florida and thirty
+   prisoners") — captor, loser's tablet, and loser's command record
+   in agreement at flag grain; the brigade thus lost colors on BOTH
+   days (8th Fla July 2, 2nd Fla July 3), each with a Union captor
+   record (us-iii-2-2-brewster.md; us-i-3-3-stannard.md).
 
 ## EC6 — Casualty apportionment
 
@@ -112,7 +153,12 @@ Lang's report (No. 545) is the batch's late-stated clock pole.
 
 ## Source register
 
-or-27-2-lang (No. 545, fetched this pass; clockProfile −53 medium) ·
+Pass-7 additions: or-27-2-lang p. 631 (the July 2 portion) ·
+or-27-1-brewster (the colors' captor side) · stone-sentinels
+(tab-csa-perry-wca + tab-csa-perry-emmitsburg) · bachelder-manifest
+j2-04 (read 2026-07-11).
+
+or-27-2-lang (No. 545, fetched pass 3; clockProfile −53 medium) ·
 or-27-2-anv-return (p. 343) · or-27-2-wilcox (the echelon's right) ·
 or-27-2-anderson-rh (the division record) · alexander-1907 (epilogue) ·
 us-i-3-3-stannard.md + veazey-or (the Union-side capture pin) ·

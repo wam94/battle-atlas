@@ -102,7 +102,9 @@ ED-59 (candidate) must handle.
 ## ED candidates proposed
 
 - **ED-59 candidate** (the Tilton/Sweitzer withdrawal conflict
-  ruling) and exemplars for **ED-57** — pass-6 report §5, not
+  ruling — **ADOPTED 2026-07-11**: the accusation is carried as his
+  honest view from a front the V Corps line did not cover, never
+  rendered as a rout) and exemplars for **ED-57** — pass-6 report §5, not
   self-adopted.
 
 ## Source register
