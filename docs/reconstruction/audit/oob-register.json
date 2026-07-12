@@ -335,7 +335,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "July 1 Chambersburg Pike; July 3 relieved by Edgell, sent to the rear — 'no action July 3' (documented negative, full-cast survey)."
+   "notes": "July 1 Chambersburg Pike; July 3 relieved by Edgell, sent to the rear — 'no action July 3' (documented negative, full-cast survey).",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/us-i-arty-wainwright.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-us-i-b2",
@@ -360,7 +365,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "Stevens Knoll between Cemetery and Culp's Hills July 2-3."
+   "notes": "Stevens Knoll between Cemetery and Culp's Hills July 2-3.",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/us-i-arty-wainwright.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-us-i-b3",
@@ -384,7 +394,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/us-i-arty-wainwright.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-us-i-b4",
@@ -409,7 +424,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "July 3: East Cemetery Hill to Hancock Ave at 3 P.M. 'during a heavy cannonade' — documented in-window battery track (monument)."
+   "notes": "July 3: East Cemetery Hill to Hancock Ave at 3 P.M. 'during a heavy cannonade' — documented in-window battery track (monument).",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "own dossier: reconstruction/dossiers/us-btty-cooper.md",
+    "reason": "individually dossiered at battery grain"
+   }
   },
   {
    "id": "reg-us-i-b5",
@@ -434,7 +454,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "Astride the Baltimore Pike, East Cemetery Hill July 2-3."
+   "notes": "Astride the Baltimore Pike, East Cemetery Hill July 2-3.",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/us-i-arty-wainwright.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-us-ii-hq",
@@ -916,7 +941,12 @@
      "tier": "inferred",
      "doc": "oob-strengths-2026-06-13"
     }
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "own dossier: reconstruction/dossiers/us-btty-rorty.md",
+    "reason": "individually dossiered at battery grain"
+   }
   },
   {
    "id": "reg-us-ii-b2",
@@ -947,7 +977,12 @@
      "tier": "inferred",
      "doc": "oob-strengths-2026-06-13"
     }
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "own dossier: reconstruction/dossiers/us-btty-arnold.md",
+    "reason": "individually dossiered at battery grain"
+   }
   },
   {
    "id": "reg-us-ii-b3",
@@ -970,7 +1005,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "own dossier: reconstruction/dossiers/us-btty-brown.md",
+    "reason": "individually dossiered at battery grain"
+   }
   },
   {
    "id": "reg-us-ii-b4",
@@ -1003,7 +1043,12 @@
      "doc": "oob-strengths-2026-06-13",
      "note": "Casualty readings conflict between fetches: 30 total vs 25 total — both kept."
     }
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "own dossier: reconstruction/dossiers/us-btty-woodruff.md",
+    "reason": "individually dossiered at battery grain"
+   }
   },
   {
    "id": "reg-us-ii-b5",
@@ -1035,7 +1080,12 @@
      "tier": "documented-administrative",
      "doc": "oob-strengths-2026-06-13"
     }
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/us-ii-arty-hazard.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-us-iii-1-1",
@@ -1304,7 +1354,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "III Corps artillery brigade -- no battalion/group dossier exists; the corps' infantry front (Peach Orchard/Wheatfield salient) is dossier'd (passes 6-7) but its guns are unresearched at battery grain"
+   }
   },
   {
    "id": "reg-us-iii-b2",
@@ -1328,7 +1383,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "Wheatfield July 2."
+   "notes": "Wheatfield July 2.",
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "III Corps artillery brigade -- no battalion/group dossier exists; the corps' infantry front (Peach Orchard/Wheatfield salient) is dossier'd (passes 6-7) but its guns are unresearched at battery grain"
+   }
   },
   {
    "id": "reg-us-iii-b3",
@@ -1352,7 +1412,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "Devil's Den July 2; guns overrun."
+   "notes": "Devil's Den July 2; guns overrun.",
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "III Corps artillery brigade -- no battalion/group dossier exists; the corps' infantry front (Peach Orchard/Wheatfield salient) is dossier'd (passes 6-7) but its guns are unresearched at battery grain"
+   }
   },
   {
    "id": "reg-us-iii-b4",
@@ -1376,7 +1441,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "Peach Orchard July 2."
+   "notes": "Peach Orchard July 2.",
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "III Corps artillery brigade -- no battalion/group dossier exists; the corps' infantry front (Peach Orchard/Wheatfield salient) is dossier'd (passes 6-7) but its guns are unresearched at battery grain"
+   }
   },
   {
    "id": "reg-us-iii-b5",
@@ -1400,7 +1470,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "July 3 on McGilvery's line (in-build as James's)."
+   "notes": "July 3 on McGilvery's line (in-build as James's).",
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "III Corps artillery brigade -- no battalion/group dossier exists; the corps' infantry front (Peach Orchard/Wheatfield salient) is dossier'd (passes 6-7) but its guns are unresearched at battery grain"
+   }
   },
   {
    "id": "reg-us-v-1-1",
@@ -1689,7 +1764,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "V Corps artillery brigade -- only Rittenhouse (Little Round Top summit) individually dossiered; the other four batteries unresearched"
+   }
   },
   {
    "id": "reg-us-v-b2",
@@ -1712,7 +1792,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "V Corps artillery brigade -- only Rittenhouse (Little Round Top summit) individually dossiered; the other four batteries unresearched"
+   }
   },
   {
    "id": "reg-us-v-b3",
@@ -1736,7 +1821,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "Little Round Top north slope July 2."
+   "notes": "Little Round Top north slope July 2.",
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "V Corps artillery brigade -- only Rittenhouse (Little Round Top summit) individually dossiered; the other four batteries unresearched"
+   }
   },
   {
    "id": "reg-us-v-b4",
@@ -1760,7 +1850,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "Little Round Top summit; enfiladed Kemper July 3 (in-build)."
+   "notes": "Little Round Top summit; enfiladed Kemper July 3 (in-build).",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "own dossier: reconstruction/dossiers/us-btty-rittenhouse.md",
+    "reason": "individually dossiered at battery grain"
+   }
   },
   {
    "id": "reg-us-v-b5",
@@ -1784,7 +1879,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "Wrecked July 2; out of action July 3."
+   "notes": "Wrecked July 2; out of action July 3.",
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "V Corps artillery brigade -- only Rittenhouse (Little Round Top summit) individually dossiered; the other four batteries unresearched"
+   }
   },
   {
    "id": "reg-us-vi-1-1",
@@ -2075,7 +2175,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "VI Corps artillery brigade -- only Cowan (detached to the Angle, pass 2) individually dossiered; the corps-grain command dossier (us-vi-hq-sedgwick.md, pass 12) frames but does not individually research the remaining seven"
+   }
   },
   {
    "id": "reg-us-vi-b2",
@@ -2107,7 +2212,12 @@
      "tier": "inferred",
      "doc": "oob-strengths-2026-06-13"
     }
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "own dossier: reconstruction/dossiers/us-btty-cowan.md",
+    "reason": "individually dossiered at battery grain"
+   }
   },
   {
    "id": "reg-us-vi-b3",
@@ -2130,7 +2240,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "VI Corps artillery brigade -- only Cowan (detached to the Angle, pass 2) individually dossiered; the corps-grain command dossier (us-vi-hq-sedgwick.md, pass 12) frames but does not individually research the remaining seven"
+   }
   },
   {
    "id": "reg-us-vi-b4",
@@ -2153,7 +2268,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "VI Corps artillery brigade -- only Cowan (detached to the Angle, pass 2) individually dossiered; the corps-grain command dossier (us-vi-hq-sedgwick.md, pass 12) frames but does not individually research the remaining seven"
+   }
   },
   {
    "id": "reg-us-vi-b5",
@@ -2176,7 +2296,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "VI Corps artillery brigade -- only Cowan (detached to the Angle, pass 2) individually dossiered; the corps-grain command dossier (us-vi-hq-sedgwick.md, pass 12) frames but does not individually research the remaining seven"
+   }
   },
   {
    "id": "reg-us-vi-b6",
@@ -2199,7 +2324,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "VI Corps artillery brigade -- only Cowan (detached to the Angle, pass 2) individually dossiered; the corps-grain command dossier (us-vi-hq-sedgwick.md, pass 12) frames but does not individually research the remaining seven"
+   }
   },
   {
    "id": "reg-us-vi-b7",
@@ -2222,7 +2352,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "VI Corps artillery brigade -- only Cowan (detached to the Angle, pass 2) individually dossiered; the corps-grain command dossier (us-vi-hq-sedgwick.md, pass 12) frames but does not individually research the remaining seven"
+   }
   },
   {
    "id": "reg-us-vi-b8",
@@ -2245,7 +2380,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "VI Corps artillery brigade -- only Cowan (detached to the Angle, pass 2) individually dossiered; the corps-grain command dossier (us-vi-hq-sedgwick.md, pass 12) frames but does not individually research the remaining seven"
+   }
   },
   {
    "id": "reg-us-xi-1-1",
@@ -2479,7 +2619,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "East Cemetery Hill; overrun and retaken July 2."
+   "notes": "East Cemetery Hill; overrun and retaken July 2.",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "own dossier: reconstruction/dossiers/us-btty-wiedrich.md",
+    "reason": "individually dossiered at battery grain"
+   }
   },
   {
    "id": "reg-us-xi-b2",
@@ -2504,7 +2649,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "OR report transcribed (13nybattery.com): reserve during the cannonade, to the II Corps line ~4 P.M. July 3."
+   "notes": "OR report transcribed (13nybattery.com): reserve during the cannonade, to the II Corps line ~4 P.M. July 3.",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "own dossier: reconstruction/dossiers/us-btty-wheeler.md",
+    "reason": "individually dossiered at battery grain"
+   }
   },
   {
    "id": "reg-us-xi-b3",
@@ -2528,7 +2678,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/us-xi-arty-osborn.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-us-xi-b4",
@@ -2553,7 +2708,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "Wrecked July 1; July 3 role unattested (flag)."
+   "notes": "Wrecked July 1; July 3 role unattested (flag).",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/us-xi-arty-osborn.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-us-xi-b5",
@@ -2577,7 +2737,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/us-xi-arty-osborn.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-us-xii-1-1",
@@ -2811,7 +2976,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "McAllister's Hill (Baltimore Pike/Rock Creek)."
+   "notes": "McAllister's Hill (Baltimore Pike/Rock Creek).",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/us-xii-arty-muhlenberg.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-us-xii-b2",
@@ -2835,7 +3005,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "Powers Hill."
+   "notes": "Powers Hill.",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/us-xii-arty-muhlenberg.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-us-xii-b3",
@@ -2858,7 +3033,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/us-xii-arty-muhlenberg.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-us-xii-b4",
@@ -2881,7 +3061,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/us-xii-arty-muhlenberg.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-us-cav-1-1",
@@ -3179,7 +3364,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "East Cavalry Field July 3 per the OOB; Bachelder sheet 8 labels a 'Daniels' on McGilvery's line — sheet-vs-OOB conflict, encoded in the full-cast survey."
+   "notes": "East Cavalry Field July 3 per the OOB; Bachelder sheet 8 labels a 'Daniels' on McGilvery's line — sheet-vs-OOB conflict, encoded in the full-cast survey.",
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "Union horse artillery -- ECF-relevant (Battery M/2nd US = Pennington's is namechecked in Custer's OR report and the division tablet; Battery E/4th US = Elder's fought South Cavalry Field) but none individually dossiered"
+   }
   },
   {
    "id": "reg-us-ha-1-2",
@@ -3203,7 +3393,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "Union horse artillery -- ECF-relevant (Battery M/2nd US = Pennington's is namechecked in Custer's OR report and the division tablet; Battery E/4th US = Elder's fought South Cavalry Field) but none individually dossiered"
+   }
   },
   {
    "id": "reg-us-ha-1-3",
@@ -3227,7 +3422,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "Union horse artillery -- ECF-relevant (Battery M/2nd US = Pennington's is namechecked in Custer's OR report and the division tablet; Battery E/4th US = Elder's fought South Cavalry Field) but none individually dossiered"
+   }
   },
   {
    "id": "reg-us-ha-1-4",
@@ -3252,7 +3452,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "East Cavalry Field July 3 (off-map)."
+   "notes": "East Cavalry Field July 3 (off-map).",
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "Union horse artillery -- ECF-relevant (Battery M/2nd US = Pennington's is namechecked in Custer's OR report and the division tablet; Battery E/4th US = Elder's fought South Cavalry Field) but none individually dossiered"
+   }
   },
   {
    "id": "reg-us-ha-1-5",
@@ -3277,7 +3482,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "South Cavalry Field July 3; shelled Law's line in-window (in-build)."
+   "notes": "South Cavalry Field July 3; shelled Law's line in-window (in-build).",
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "Union horse artillery -- ECF-relevant (Battery M/2nd US = Pennington's is namechecked in Custer's OR report and the division tablet; Battery E/4th US = Elder's fought South Cavalry Field) but none individually dossiered"
+   }
   },
   {
    "id": "reg-us-ha-2",
@@ -3325,7 +3535,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "East Cavalry Field July 3 (off-map)."
+   "notes": "East Cavalry Field July 3 (off-map).",
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "Union horse artillery -- Batteries E&G/1st US = Randol's is namechecked in McIntosh's tablet ('the Batteries of Randol and Pennington') alongside Pennington's; none individually dossiered -- high priority for pass-13 cavalry-theater follow-through"
+   }
   },
   {
    "id": "reg-us-ha-2-2",
@@ -3350,7 +3565,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "With Merritt, South Cavalry Field July 3 (in-build)."
+   "notes": "With Merritt, South Cavalry Field July 3 (in-build).",
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "Union horse artillery -- Batteries E&G/1st US = Randol's is namechecked in McIntosh's tablet ('the Batteries of Randol and Pennington') alongside Pennington's; none individually dossiered -- high priority for pass-13 cavalry-theater follow-through"
+   }
   },
   {
    "id": "reg-us-ha-2-3",
@@ -3375,7 +3595,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "With Gamble July 1 (opening fight)."
+   "notes": "With Gamble July 1 (opening fight).",
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "Union horse artillery -- Batteries E&G/1st US = Randol's is namechecked in McIntosh's tablet ('the Batteries of Randol and Pennington') alongside Pennington's; none individually dossiered -- high priority for pass-13 cavalry-theater follow-through"
+   }
   },
   {
    "id": "reg-us-ha-2-4",
@@ -3400,7 +3625,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "With Huey at Westminster — never on the field."
+   "notes": "With Huey at Westminster — never on the field.",
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "Union horse artillery -- Batteries E&G/1st US = Randol's is namechecked in McIntosh's tablet ('the Batteries of Randol and Pennington') alongside Pennington's; none individually dossiered -- high priority for pass-13 cavalry-theater follow-through"
+   }
   },
   {
    "id": "reg-us-ar-hq",
@@ -3491,7 +3721,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "static-park",
+    "coveredBy": "reconstruction/dossiers/us-ar-hq-tyler-park.md (park + Gillett ammunition ledger, group grain only)",
+    "reason": "Artillery Reserve battery not individually researched at battery grain; the park command dossier covers general disposition/ammunition, not this battery's specific activity -- a coverage-honesty placeholder, NOT a claim the battery never fired"
+   }
   },
   {
    "id": "reg-us-ar-1r-2",
@@ -3514,7 +3749,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "static-park",
+    "coveredBy": "reconstruction/dossiers/us-ar-hq-tyler-park.md (park + Gillett ammunition ledger, group grain only)",
+    "reason": "Artillery Reserve battery not individually researched at battery grain; the park command dossier covers general disposition/ammunition, not this battery's specific activity -- a coverage-honesty placeholder, NOT a claim the battery never fired"
+   }
   },
   {
    "id": "reg-us-ar-1r-3",
@@ -3537,7 +3777,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "static-park",
+    "coveredBy": "reconstruction/dossiers/us-ar-hq-tyler-park.md (park + Gillett ammunition ledger, group grain only)",
+    "reason": "Artillery Reserve battery not individually researched at battery grain; the park command dossier covers general disposition/ammunition, not this battery's specific activity -- a coverage-honesty placeholder, NOT a claim the battery never fired"
+   }
   },
   {
    "id": "reg-us-ar-1r-4",
@@ -3560,7 +3805,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "own dossier: reconstruction/dossiers/us-btty-weir.md",
+    "reason": "individually dossiered at battery grain"
+   }
   },
   {
    "id": "reg-us-ar-1v",
@@ -3606,7 +3856,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "The best single firing attestation on McGilvery's July 3 line (monument text, full-cast survey)."
+   "notes": "The best single firing attestation on McGilvery's July 3 line (monument text, full-cast survey).",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/us-ar-1v-mcgilvery.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-us-ar-1v-2",
@@ -3630,7 +3885,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "Trostle farm stand July 2; remnant on McGilvery's line July 3."
+   "notes": "Trostle farm stand July 2; remnant on McGilvery's line July 3.",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/us-ar-1v-mcgilvery.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-us-ar-1v-3",
@@ -3653,7 +3913,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/us-ar-1v-mcgilvery.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-us-ar-1v-4",
@@ -3676,7 +3941,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/us-ar-1v-mcgilvery.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-us-ar-2v",
@@ -3722,7 +3992,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "Present; 'not engaged' (full-cast survey)."
+   "notes": "Present; 'not engaged' (full-cast survey).",
+   "triage": {
+    "disposition": "static-park",
+    "coveredBy": "reconstruction/dossiers/us-ar-hq-tyler-park.md (park + Gillett ammunition ledger, group grain only)",
+    "reason": "Artillery Reserve battery not individually researched at battery grain; the park command dossier covers general disposition/ammunition, not this battery's specific activity -- a coverage-honesty placeholder, NOT a claim the battery never fired"
+   }
   },
   {
    "id": "reg-us-ar-2v-2",
@@ -3746,7 +4021,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "Present; 'not engaged' (full-cast survey)."
+   "notes": "Present; 'not engaged' (full-cast survey).",
+   "triage": {
+    "disposition": "static-park",
+    "coveredBy": "reconstruction/dossiers/us-ar-hq-tyler-park.md (park + Gillett ammunition ledger, group grain only)",
+    "reason": "Artillery Reserve battery not individually researched at battery grain; the park command dossier covers general disposition/ammunition, not this battery's specific activity -- a coverage-honesty placeholder, NOT a claim the battery never fired"
+   }
   },
   {
    "id": "reg-us-ar-2v-3",
@@ -3769,7 +4049,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "static-park",
+    "coveredBy": "reconstruction/dossiers/us-ar-hq-tyler-park.md (park + Gillett ammunition ledger, group grain only)",
+    "reason": "Artillery Reserve battery not individually researched at battery grain; the park command dossier covers general disposition/ammunition, not this battery's specific activity -- a coverage-honesty placeholder, NOT a claim the battery never fired"
+   }
   },
   {
    "id": "reg-us-ar-2v-4",
@@ -3793,7 +4078,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "20-pdr Parrotts on Cemetery Hill."
+   "notes": "20-pdr Parrotts on Cemetery Hill.",
+   "triage": {
+    "disposition": "static-park",
+    "coveredBy": "reconstruction/dossiers/us-ar-hq-tyler-park.md (park + Gillett ammunition ledger, group grain only)",
+    "reason": "Artillery Reserve battery not individually researched at battery grain; the park command dossier covers general disposition/ammunition, not this battery's specific activity -- a coverage-honesty placeholder, NOT a claim the battery never fired"
+   }
   },
   {
    "id": "reg-us-ar-3v",
@@ -3838,7 +4128,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "static-park",
+    "coveredBy": "reconstruction/dossiers/us-ar-hq-tyler-park.md (park + Gillett ammunition ledger, group grain only)",
+    "reason": "Artillery Reserve battery not individually researched at battery grain; the park command dossier covers general disposition/ammunition, not this battery's specific activity -- a coverage-honesty placeholder, NOT a claim the battery never fired"
+   }
   },
   {
    "id": "reg-us-ar-3v-2",
@@ -3861,7 +4156,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "static-park",
+    "coveredBy": "reconstruction/dossiers/us-ar-hq-tyler-park.md (park + Gillett ammunition ledger, group grain only)",
+    "reason": "Artillery Reserve battery not individually researched at battery grain; the park command dossier covers general disposition/ammunition, not this battery's specific activity -- a coverage-honesty placeholder, NOT a claim the battery never fired"
+   }
   },
   {
    "id": "reg-us-ar-3v-3",
@@ -3885,7 +4185,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "East Cemetery Hill; overrun and retaken night July 2."
+   "notes": "East Cemetery Hill; overrun and retaken night July 2.",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "own dossier: reconstruction/dossiers/us-btty-ricketts.md",
+    "reason": "individually dossiered at battery grain"
+   }
   },
   {
    "id": "reg-us-ar-3v-4",
@@ -3908,7 +4213,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "static-park",
+    "coveredBy": "reconstruction/dossiers/us-ar-hq-tyler-park.md (park + Gillett ammunition ledger, group grain only)",
+    "reason": "Artillery Reserve battery not individually researched at battery grain; the park command dossier covers general disposition/ammunition, not this battery's specific activity -- a coverage-honesty placeholder, NOT a claim the battery never fired"
+   }
   },
   {
    "id": "reg-us-ar-4v",
@@ -3953,7 +4263,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "static-park",
+    "coveredBy": "reconstruction/dossiers/us-ar-hq-tyler-park.md (park + Gillett ammunition ledger, group grain only)",
+    "reason": "Artillery Reserve battery not individually researched at battery grain; the park command dossier covers general disposition/ammunition, not this battery's specific activity -- a coverage-honesty placeholder, NOT a claim the battery never fired"
+   }
   },
   {
    "id": "reg-us-ar-4v-2",
@@ -3977,7 +4292,12 @@
     "wikipedia-oob-union",
     "stone-sentinels"
    ],
-   "notes": "Powers Hill July 2-3."
+   "notes": "Powers Hill July 2-3.",
+   "triage": {
+    "disposition": "static-park",
+    "coveredBy": "reconstruction/dossiers/us-ar-hq-tyler-park.md (park + Gillett ammunition ledger, group grain only)",
+    "reason": "Artillery Reserve battery not individually researched at battery grain; the park command dossier covers general disposition/ammunition, not this battery's specific activity -- a coverage-honesty placeholder, NOT a claim the battery never fired"
+   }
   },
   {
    "id": "reg-us-ar-4v-3",
@@ -4000,7 +4320,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "own dossier: reconstruction/dossiers/us-btty-parsons.md",
+    "reason": "individually dossiered at battery grain"
+   }
   },
   {
    "id": "reg-us-ar-4v-4",
@@ -4023,7 +4348,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "static-park",
+    "coveredBy": "reconstruction/dossiers/us-ar-hq-tyler-park.md (park + Gillett ammunition ledger, group grain only)",
+    "reason": "Artillery Reserve battery not individually researched at battery grain; the park command dossier covers general disposition/ammunition, not this battery's specific activity -- a coverage-honesty placeholder, NOT a claim the battery never fired"
+   }
   },
   {
    "id": "reg-us-ar-4v-5",
@@ -4046,7 +4376,12 @@
     "or-27-oob",
     "wikipedia-oob-union",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "own dossier: reconstruction/dossiers/us-btty-fitzhugh.md",
+    "reason": "individually dossiered at battery grain"
+   }
   },
   {
    "id": "reg-us-hq-provost",
@@ -4511,7 +4846,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-cabell.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-1c-cab-2",
@@ -4534,7 +4874,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-cabell.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-1c-cab-3",
@@ -4557,7 +4902,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-cabell.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-1c-cab-4",
@@ -4580,7 +4930,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-cabell.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-1c-bn-dearing",
@@ -4626,7 +4981,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-dearing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-1c-dea-2",
@@ -4649,7 +5009,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-dearing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-1c-dea-3",
@@ -4672,7 +5037,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-dearing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-1c-dea-4",
@@ -4695,7 +5065,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-dearing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-1c-bn-henry",
@@ -4741,7 +5116,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "no battalion dossier exists (unlike the other three First Corps division/reserve battalion groups -- Cabell, Dearing, Alexander/Washington); two of its four batteries (Bachman's, Reilly's) are already in-build with no battery or battalion dossier coverage"
+   }
   },
   {
    "id": "reg-csa-1c-hen-2",
@@ -4765,7 +5145,12 @@
     "wikipedia-oob-csa",
     "stone-sentinels"
    ],
-   "notes": "Swung south vs Merritt ~15:00+ July 3 (in-build)."
+   "notes": "Swung south vs Merritt ~15:00+ July 3 (in-build).",
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "no battalion dossier exists (unlike the other three First Corps division/reserve battalion groups -- Cabell, Dearing, Alexander/Washington); two of its four batteries (Bachman's, Reilly's) are already in-build with no battery or battalion dossier coverage"
+   }
   },
   {
    "id": "reg-csa-1c-hen-3",
@@ -4788,7 +5173,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "no battalion dossier exists (unlike the other three First Corps division/reserve battalion groups -- Cabell, Dearing, Alexander/Washington); two of its four batteries (Bachman's, Reilly's) are already in-build with no battery or battalion dossier coverage"
+   }
   },
   {
    "id": "reg-csa-1c-hen-4",
@@ -4812,7 +5202,12 @@
     "wikipedia-oob-csa",
     "stone-sentinels"
    ],
-   "notes": "Swung south vs Merritt ~15:00+ July 3 (in-build)."
+   "notes": "Swung south vs Merritt ~15:00+ July 3 (in-build).",
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "no battalion dossier exists (unlike the other three First Corps division/reserve battalion groups -- Cabell, Dearing, Alexander/Washington); two of its four batteries (Bachman's, Reilly's) are already in-build with no battery or battalion dossier coverage"
+   }
   },
   {
    "id": "reg-csa-1c-arty-cmd",
@@ -4880,7 +5275,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-alexander.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-1c-alx-2",
@@ -4903,7 +5303,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-alexander.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-1c-alx-3",
@@ -4926,7 +5331,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-alexander.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-1c-alx-4",
@@ -4949,7 +5359,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-alexander.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-1c-alx-5",
@@ -4972,7 +5387,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-alexander.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-1c-alx-6",
@@ -4995,7 +5415,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-alexander.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-1c-bn-wash",
@@ -5041,7 +5466,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-wash-eshleman.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-1c-wsh-2",
@@ -5064,7 +5494,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-wash-eshleman.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-1c-wsh-3",
@@ -5088,7 +5523,12 @@
     "wikipedia-oob-csa",
     "stone-sentinels"
    ],
-   "notes": "Fired the July 3 signal guns (tablet)."
+   "notes": "Fired the July 3 signal guns (tablet).",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-wash-eshleman.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-1c-wsh-4",
@@ -5111,7 +5551,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-1c-bn-wash-eshleman.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-ear-1",
@@ -5572,7 +6017,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-jon-2",
@@ -5596,7 +6046,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-jon-3",
@@ -5620,7 +6075,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-jon-4",
@@ -5644,7 +6104,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-bn-latimer",
@@ -5692,7 +6157,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-lat-2",
@@ -5716,7 +6186,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-lat-3",
@@ -5740,7 +6215,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-lat-4",
@@ -5764,7 +6244,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-bn-carter",
@@ -5812,7 +6297,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-car-2",
@@ -5836,7 +6326,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-car-3",
@@ -5860,7 +6355,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-car-4",
@@ -5884,7 +6384,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-arty-cmd",
@@ -5955,7 +6460,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-dan-2",
@@ -5979,7 +6489,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-dan-3",
@@ -6003,7 +6518,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-dan-4",
@@ -6027,7 +6547,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-dan-5",
@@ -6052,7 +6577,12 @@
     "wikipedia-oob-csa",
     "stone-sentinels"
    ],
-   "notes": "The battalion's attested July 3 cannonade participant (tablet)."
+   "notes": "The battalion's attested July 3 cannonade participant (tablet).",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-bn-nelson",
@@ -6100,7 +6630,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-nel-2",
@@ -6124,7 +6659,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-2c-nel-3",
@@ -6148,7 +6688,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-2c-arty-ewell-wing.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-3c-and-1",
@@ -6754,7 +7299,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "no battalion dossier exists -- the one gap in an otherwise-complete Third Corps battalion arc (Garnett/Poague/McIntosh/Pegram all dossiered); all three batteries not-yet-cast"
+   }
   },
   {
    "id": "reg-csa-3c-lan-2",
@@ -6778,7 +7328,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "no battalion dossier exists -- the one gap in an otherwise-complete Third Corps battalion arc (Garnett/Poague/McIntosh/Pegram all dossiered); all three batteries not-yet-cast"
+   }
   },
   {
    "id": "reg-csa-3c-lan-3",
@@ -6802,7 +7357,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "no battalion dossier exists -- the one gap in an otherwise-complete Third Corps battalion arc (Garnett/Poague/McIntosh/Pegram all dossiered); all three batteries not-yet-cast"
+   }
   },
   {
    "id": "reg-csa-3c-bn-garnett",
@@ -6850,7 +7410,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-3c-bn-garnett.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-3c-gar-2",
@@ -6874,7 +7439,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-3c-bn-garnett.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-3c-gar-3",
@@ -6898,7 +7468,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-3c-bn-garnett.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-3c-gar-4",
@@ -6922,7 +7497,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-3c-bn-garnett.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-3c-bn-poague",
@@ -6970,7 +7550,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-3c-bn-poague.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-3c-poa-2",
@@ -6994,7 +7579,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-3c-bn-poague.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-3c-poa-3",
@@ -7018,7 +7608,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-3c-bn-poague.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-3c-poa-4",
@@ -7042,7 +7637,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-3c-bn-poague.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-3c-bn-mcintosh",
@@ -7090,7 +7690,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-3c-bn-mcintosh.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-3c-mci-2",
@@ -7115,7 +7720,12 @@
     "wikipedia-oob-csa",
     "stone-sentinels"
    ],
-   "notes": "Two Whitworth rifles."
+   "notes": "Two Whitworth rifles.",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-3c-bn-mcintosh.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-3c-mci-3",
@@ -7139,7 +7749,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-3c-bn-mcintosh.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-3c-mci-4",
@@ -7163,7 +7778,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-3c-bn-mcintosh.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-3c-bn-pegram",
@@ -7211,7 +7831,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-3c-bn-pegram.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-3c-peg-2",
@@ -7236,7 +7861,12 @@
     "wikipedia-oob-csa",
     "stone-sentinels"
    ],
-   "notes": "Fired the battle's first artillery shot, morning July 1 (attested tradition)."
+   "notes": "Fired the battle's first artillery shot, morning July 1 (attested tradition).",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-3c-bn-pegram.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-3c-peg-3",
@@ -7260,7 +7890,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-3c-bn-pegram.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-3c-peg-4",
@@ -7284,7 +7919,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-3c-bn-pegram.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-3c-peg-5",
@@ -7308,7 +7948,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion/group dossier: reconstruction/dossiers/csa-3c-bn-pegram.md",
+    "reason": "inherits battalion/group-grain coverage (ED-36 for CSA battalions; the corps-arty-command-dossier pattern for Union groups; the ED-35 roster for McGilvery's line)"
+   }
   },
   {
    "id": "reg-csa-cav-ham",
@@ -7557,7 +8202,12 @@
     "wikipedia-oob-csa",
     "stone-sentinels"
    ],
-   "notes": "East Cavalry Field July 3 (off-map)."
+   "notes": "East Cavalry Field July 3 (off-map).",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion dossier: reconstruction/dossiers/csa-cav-bn-ha-beckham.md",
+    "reason": "Breathed's -- Beckham's marker: 'with Brig. General W. H. F Lee's Brigade' (Chambliss's, ECF-engaged)"
+   }
   },
   {
    "id": "reg-csa-cav-ha-2",
@@ -7581,7 +8231,12 @@
     "wikipedia-oob-csa",
     "stone-sentinels"
    ],
-   "notes": "With Jones's brigade (Fairfield corridor)."
+   "notes": "With Jones's brigade (Fairfield corridor).",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion dossier: reconstruction/dossiers/csa-cav-bn-ha-beckham.md",
+    "reason": "Chew's -- Beckham's marker: 'Brig. General W. E. Jones' Brigade' -- Jones's brigade is OFF the East Cavalry Field (not among the four engaged CSA brigades); this battery is off-ground too"
+   }
   },
   {
    "id": "reg-csa-cav-ha-3",
@@ -7604,7 +8259,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion dossier: reconstruction/dossiers/csa-cav-bn-ha-beckham.md",
+    "reason": "Griffin's -- Beckham's marker: 'with the Second Army Corps' -- detached to Ewell's infantry corps artillery, off the cavalry theater entirely"
+   }
   },
   {
    "id": "reg-csa-cav-ha-4",
@@ -7628,7 +8288,12 @@
     "wikipedia-oob-csa",
     "stone-sentinels"
    ],
-   "notes": "A section engaged at South Cavalry Field vs Merritt July 3 (on-map edge; full-cast survey)."
+   "notes": "A section engaged at South Cavalry Field vs Merritt July 3 (on-map edge; full-cast survey).",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion dossier: reconstruction/dossiers/csa-cav-bn-ha-beckham.md",
+    "reason": "Hart's -- Beckham's marker: 'attached to the Washington Artillery with the Army Trains' -- off-ground, guarding trains"
+   }
   },
   {
    "id": "reg-csa-cav-ha-5",
@@ -7652,7 +8317,12 @@
     "wikipedia-oob-csa",
     "stone-sentinels"
    ],
-   "notes": "East Cavalry Field July 3 (off-map)."
+   "notes": "East Cavalry Field July 3 (off-map).",
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion dossier: reconstruction/dossiers/csa-cav-bn-ha-beckham.md",
+    "reason": "McGregor's -- Beckham's marker: 'with Brig. Gen. Wade Hampton's Brigade' -- the one battery this pass can place with confidence at East Cavalry Field"
+   }
   },
   {
    "id": "reg-csa-cav-ha-6",
@@ -7675,7 +8345,12 @@
     "or-27-oob",
     "wikipedia-oob-csa",
     "stone-sentinels"
-   ]
+   ],
+   "triage": {
+    "disposition": "attached-to-dossiered-battalion",
+    "coveredBy": "parent battalion dossier: reconstruction/dossiers/csa-cav-bn-ha-beckham.md",
+    "reason": "Moorman's -- Beckham's marker: 'no report'"
+   }
   },
   {
    "id": "reg-csa-cav-ha-7",
@@ -7699,7 +8374,12 @@
     "wikipedia-oob-csa",
     "stone-sentinels"
    ],
-   "notes": "With Imboden and the trains."
+   "notes": "With Imboden and the trains.",
+   "triage": {
+    "disposition": "needs-own-dossier",
+    "coveredBy": null,
+    "reason": "McClanahan's battery is attached to Imboden's command, not part of Beckham's Stuart-HA battalion frame (csa-cav-bn-ha-beckham.md's distribution table does not name it); Imboden arrived very late July 3, largely off the primary engaged field"
+   }
   },
   {
    "id": "reg-us-xii-hq",
