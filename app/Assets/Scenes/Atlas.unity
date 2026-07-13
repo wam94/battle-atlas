@@ -191,8 +191,8 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 0
-  m_AllowMSAA: 0
+  m_HDR: 1
+  m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -402,7 +402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.BattleDirector
   battleJson: {fileID: 4900000, guid: 6f7de17e4eee947498f4d82a7859ce27, type: 3}
-  terrain: {fileID: 0}
+  terrain: {fileID: 1375780065}
   clock: {fileID: 408470589}
   unitMaterial: {fileID: 2100000, guid: 02781c7757a964eb39207b14a1eb3fa6, type: 2}
   soldierMaterial: {fileID: 2100000, guid: 73dc016a55e04420a5253297629d4eb7, type: 2}
@@ -410,7 +410,6 @@ MonoBehaviour:
   symbolMaterial: {fileID: 2100000, guid: 0a09886002354eb9baad6671cf5f2949, type: 2}
   smokeMaterial: {fileID: 2100000, guid: a3fdcdfbd68b40a18204a324b5a41802, type: 2}
   dustMaterial: {fileID: 2100000, guid: c17624da49574c268d89074cf69ff046, type: 2}
-  commandOverlayJson: {fileID: 0}
 --- !u!114 &408470589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,7 +747,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &882421947
+--- !u!1 &1375780063
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -756,14 +755,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 882421955}
-  - component: {fileID: 882421954}
-  - component: {fileID: 882421953}
-  - component: {fileID: 882421952}
-  - component: {fileID: 882421951}
-  - component: {fileID: 882421950}
-  - component: {fileID: 882421949}
-  - component: {fileID: 882421948}
+  - component: {fileID: 1375780066}
+  - component: {fileID: 1375780065}
+  - component: {fileID: 1375780064}
+  - component: {fileID: 1375780067}
+  - component: {fileID: 1375780068}
+  - component: {fileID: 1375780070}
+  - component: {fileID: 1375780069}
   m_Layer: 0
   m_Name: Gettysburg Terrain
   m_TagString: Untagged
@@ -771,96 +769,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &882421948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882421947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08da8b120a63405e9bd6d651e806c64d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.CropField
-  cropMaterial: {fileID: 2100000, guid: 02781c7757a964eb39207b14a1eb3fa6, type: 2}
---- !u!114 &882421949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882421947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d8fcfebbbd94b04b0d372d871d429e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.FenceField
-  fencesJson: {fileID: 4900000, guid: bfa4ac6bdb1464324891ddf2f639ed12, type: 3}
-  fenceMaterial: {fileID: 2100000, guid: 02781c7757a964eb39207b14a1eb3fa6, type: 2}
---- !u!114 &882421950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882421947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c35be1f039cc84f5ba4290d441011f18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.VegetationField
-  treeMaterial: {fileID: 2100000, guid: 02781c7757a964eb39207b14a1eb3fa6, type: 2}
-  treesJson: {fileID: 4900000, guid: d02258e8035c549ed97756f558a2bfe1, type: 3}
---- !u!114 &882421951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882421947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cde4ebd188f409580cf57819af3d2c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.ReliefContourToggle
-  terrain: {fileID: 882421954}
-  baseAlbedos:
-  - {fileID: 2800000, guid: 70aafcd93bbe1480094e493b7fc72245, type: 2}
-  - {fileID: 2800000, guid: 5ae049dbe272a4c16aaf69414b232f50, type: 2}
-  - {fileID: 2800000, guid: 49af4f2f14173439fa826afcb079c5cc, type: 2}
-  - {fileID: 2800000, guid: c1c59fe9a5fdd4a0cbb624c82001886f, type: 2}
-  contourAlbedos:
-  - {fileID: 2800000, guid: 2c629d8e6750d49948064593970f3649, type: 2}
-  - {fileID: 2800000, guid: 6a03c4e57e05c4d60a94b8a4bc04e71d, type: 2}
-  - {fileID: 2800000, guid: cbed46ab049914a5dabe679be546a1d7, type: 2}
-  - {fileID: 2800000, guid: 2a9e2f1a0de6843cca15af8040ae38f7, type: 2}
---- !u!114 &882421952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882421947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d04f44cebc914828a17a22444494a0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.BattlefieldInfo
-  widthM: 8507.173
-  depthM: 8507.173
-  minElevM: 72.09622
-  maxElevM: 239.28796
-  originUtmE: 304208.03
-  originUtmN: 4404534.5
-  verticalExaggeration: 2.5
---- !u!154 &882421953
+--- !u!154 &1375780064
 TerrainCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882421947}
+  m_GameObject: {fileID: 1375780063}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -874,13 +789,13 @@ TerrainCollider:
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: 71f87b3a91c324d2886c0977e903ef24, type: 2}
   m_EnableTreeColliders: 1
---- !u!218 &882421954
+--- !u!218 &1375780065
 Terrain:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882421947}
+  m_GameObject: {fileID: 1375780063}
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 71f87b3a91c324d2886c0977e903ef24, type: 2}
@@ -915,13 +830,13 @@ Terrain:
   m_EnableTreesAndDetailsRayTracing: 0
   m_EnableHeightmapLODFrustumCulling: 1
   m_TreeMotionVectorModeOverride: 3
---- !u!4 &882421955
+--- !u!4 &1375780066
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882421947}
+  m_GameObject: {fileID: 1375780063}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -930,6 +845,70 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1375780067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375780063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35be1f039cc84f5ba4290d441011f18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.VegetationField
+  treeMaterial: {fileID: 2100000, guid: 02781c7757a964eb39207b14a1eb3fa6, type: 2}
+  treesJson: {fileID: 4900000, guid: d02258e8035c549ed97756f558a2bfe1, type: 3}
+--- !u!114 &1375780068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375780063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d8fcfebbbd94b04b0d372d871d429e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.FenceField
+  fencesJson: {fileID: 4900000, guid: bfa4ac6bdb1464324891ddf2f639ed12, type: 3}
+  fenceMaterial: {fileID: 2100000, guid: 02781c7757a964eb39207b14a1eb3fa6, type: 2}
+--- !u!114 &1375780069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375780063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08da8b120a63405e9bd6d651e806c64d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.CropField
+  cropMaterial: {fileID: 2100000, guid: 02781c7757a964eb39207b14a1eb3fa6, type: 2}
+--- !u!114 &1375780070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375780063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cde4ebd188f409580cf57819af3d2c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: BattleAtlas.Runtime::BattleAtlas.ReliefContourToggle
+  terrain: {fileID: 1375780065}
+  baseAlbedos:
+  - {fileID: 2800000, guid: 70aafcd93bbe1480094e493b7fc72245, type: 2}
+  - {fileID: 2800000, guid: 5ae049dbe272a4c16aaf69414b232f50, type: 2}
+  - {fileID: 2800000, guid: 49af4f2f14173439fa826afcb079c5cc, type: 2}
+  - {fileID: 2800000, guid: c1c59fe9a5fdd4a0cbb624c82001886f, type: 2}
+  contourAlbedos:
+  - {fileID: 2800000, guid: 2c629d8e6750d49948064593970f3649, type: 2}
+  - {fileID: 2800000, guid: 6a03c4e57e05c4d60a94b8a4bc04e71d, type: 2}
+  - {fileID: 2800000, guid: cbed46ab049914a5dabe679be546a1d7, type: 2}
+  - {fileID: 2800000, guid: 2a9e2f1a0de6843cca15af8040ae38f7, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -937,5 +916,5 @@ SceneRoots:
   - {fileID: 330585546}
   - {fileID: 410087041}
   - {fileID: 832575519}
+  - {fileID: 1375780066}
   - {fileID: 408470590}
-  - {fileID: 882421955}

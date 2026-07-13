@@ -209,11 +209,20 @@ artillery-class units; 4 regiment children):
 
 ## 8. Suites and evidence
 
-Suites (all green on the branch; details in the final report):
-tool vitest 118 · pipeline pytest 59 · reconstruction pytest 122+1s ·
-Unity EditMode 375+4s (extended: manifest echo ×3 files, overlay
-coverage ×3 files, moments battle-gate + committed July 2 files) ·
-Unity PlayMode 17.
+Suites (all green on the branch):
+tool vitest **118** · pipeline pytest **59** · reconstruction pytest
+**122 + 1 skipped** · Unity EditMode **377 passed, 0 failed, 4
+skipped** (baseline 375 + the two new moments tests; the manifest
+echo and overlay coverage tests extended to all three phase files) ·
+Unity PlayMode **17 passed** (Unity runs: CLI `-batchmode -runTests
+-buildTarget OSXUniversal`, worktree Library, gitignored inputs
+restored; logs `editmode2.log`/`playmode.log` + results XML in the
+worktree, gitignored by design).
+
+Perf (`dayexp2-afternoon-benchmark.json`, t = 0/3600/9000/12600/14340
+on the afternoon phase, 152 units): steady **59.7 avg FPS** at every
+timestamp, p95 frame 17.0–17.1 ms, allocations flat at 323 MB — the
+July 2 cast costs nothing measurable against the July 3 baseline.
 
 Evidence: `docs/benchmarks/captures/day-expansion-2/` (force-added;
 owner copies in the main checkout's same gitignored path) — the
