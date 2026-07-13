@@ -1859,6 +1859,111 @@ record the adoption rather than re-propose it.
 
 ---
 
+## Day-expansion slice 2 ruling (ED-75) — 2026-07-13
+
+### ED-75 — Marshall's and Davis's brigades: PROVISIONAL-ADOPTED placeholder July-3 strengths
+
+Day-expansion slice 1 (ED-46/47/48, executed by
+`tool/scripts/author-dayexp1-rebase.ts`) re-based every CSA assault-column
+brigade with a primary July-3 basis — except Marshall's and Davis's, which
+have none: both brigades' only strength evidence is a July-1 "present"
+tablet compilation (~2,000 each) and a whole-battle casualty return with no
+clean day split. The slice-1 script left both **annotated in-file as an
+open residual** ("a [B] subtraction re-base is an owner ruling, not an
+executor default"), pending the owner's stated intent to purchase Busey &
+Martin, *Regimental Strengths and Losses at Gettysburg* — the page-level
+per-brigade engaged-strength source the rest of the OOB register already
+treats as the superseding authority where cited as a hop (ED-38).
+
+**Owner ruling, 2026-07-13** (plain instruction: "should we do an inference
+in the meantime as a placeholder?"): **yes** — both brigades get a
+documented-inference placeholder, PROVISIONAL-ADOPTED, following the
+Pfanz-gate pattern (ED-64: the record is adopted, the resolution is not).
+
+**Canonical choice — the method (both brigades, one class of inference):**
+arrival strength = (July-1-engaged regiments' post-July-1 survivors) + (any
+regiment fresh to July 3). Where a regiment's own July-1 losses have no
+primary total, the brigade's printed whole-battle return (k+w; per ED-49,
+missing is usually absent or brigade-pooled) is read as
+**predominantly July-1-incurred** — both brigades' own dossiers document a
+single defining July-1 casualty event that plausibly accounts for most of
+the printed total (the 26th NC's stand opposite the Iron Brigade; the
+railroad-cut trap, "about three hundred Confederates surrendered").
+
+- **csa-marshall: 900** (envelope 750–1,050). 2,000 (West Conf Ave tablet,
+  "present on the first day," inferred/compilation tier) minus ~1,100 read
+  as July-1-incurred (the brigade's whole-battle regimental return, 190 k /
+  915 w = 1,105, **no missing column printed at all** — or-27-2-anv-return
+  p. 344, the ED-49 exemplar) = 900. The 26th NC's own primary day-split
+  ("We went in with over 800 men... There came out but 216" July 1;
+  "216... only about 80" July 4, or-27-2-young-26nc) is the basis for
+  reading the brigade total as dominated by July 1. This is not a new
+  figure — it is the dossier's own EC2 subtraction (`csa-3c-het-1-marshall.md`),
+  promoted from a citation annotation to the actual keyframe value. Envelope
+  poles: Wikipedia/military-history.fandom's uncited "roughly 2,500" brigade
+  base (disagreeing with the 2,000 tablet compilation, recorded verbatim,
+  NOT averaged) on the high side; the return's wholly-absent brigade-wide
+  missing/captured mass on the low side.
+- **csa-davis: 1,293** (envelope 1,100–1,550), a two-term sum. **Term 1**
+  (the three July-1-engaged regiments, 2nd/42nd Miss + 55th NC): 2,000 (the
+  West Conf Ave tablet's "present on the first day," read as these three
+  only — the same tablet separately states "Joined later by the 11th
+  Regiment previously on duty guarding trains") minus ~1,100 read as
+  July-1-incurred (regiment-grain whole-battle return for these three,
+  232+265+198=695 k+w, plus this trio's share of the brigade's ~500 missing
+  after crediting the 11th Mississippi's own 37 captured, or-27-2-anv-return
+  p. 344) = 900, mirroring Marshall's identical subtraction class. **Term 2**
+  (the 11th Mississippi's own July-3 arrival): 393 — TWO independent
+  GBMA/War Department markers (the main brigade tablet and the Bryan-barn
+  position marker) agree digit-exact on "Combatants – 393" despite
+  disagreeing on the internal killed/non-casualty split (110 vs 100 killed,
+  53 vs 39 non-casualty) — an ED-39 marker-corroboration case. **Sum:
+  900 + 393 = 1,293.** Envelope poles: the tablet-vs-uncited-secondary
+  three-regiment base disagreement (Emerging Civil War, uncited, no
+  footnote, "carrying some 1,508 men into battle on July 1st") on the low
+  side; the 11th Mississippi's own strength reported elsewhere as 592 via an
+  **unverified web-secondary citation of Busey & Martin** (a hop, not a
+  page read) on the high side. Davis's one attested PRIMARY delta — "In
+  Davis' brigade 2 men were killed and 21 wounded" during the cannonade
+  (or-27-2-davis-jr) — is preserved as an absolute −23 applied to the new
+  base, not rescaled: 23 real casualties do not change with which reading
+  of the brigade's total strength is adopted.
+
+**Decay curve:** every keyframe after t=0 (t=7200 for csa-davis, where the
+attested −23 anchors it) is **proportionally rescaled** from the existing
+ABT-map-reconstruction decay shape — no independent per-keyframe
+re-derivation exists or is claimed for the charge/repulse/withdrawal
+geometry, only the strength magnitude moves.
+
+**Confidence: INFERRED** on every touched keyframe (never `documented` —
+neither brigade has a primary July-3 total; ED-25/ED-49's citation-gate
+discipline applies). **Precondition (the hardening gate, Pfanz-gate
+pattern):** Busey & Martin page-level per-brigade figures supersede this
+placeholder on arrival — the owner has stated purchase intent. Until then
+this ruling is **PROVISIONAL-ADOPTED**: the record (the method, the cited
+inputs, the envelope) is adopted now so authoring is not blocked on a
+future book purchase; the specific numbers are explicitly not final.
+
+**Rationale:** an executor default would either invent false precision (a
+bare number with no envelope) or leave the residual open indefinitely
+(silently understating the compiled cast's honesty about these two units,
+which were already the batch's clearest heterogeneity exemplar). A
+documented-inference placeholder — envelope carried, confidence marked,
+precondition named — is the same discipline the corpus already applies to
+Lowrance's and Brockenbrough's July-3 loss shares (ED-48b) and is
+explicitly an owner ruling, not a silent executor promotion of a [B]-tier
+subtraction to a `documented` figure.
+
+**Consequence:** neither `csa-marshall` nor `csa-davis` is in the compiled
+Angle cast (`angle.reconstruction.json`, slice t=8040..9000) — this ruling
+touches no shipped film state; `stagingSeed d470c469…` is unaffected by
+construction, verified by the same film guard pattern ED-46 established.
+Full inputs, quoted verbatim with disagreements preserved, and the
+derivation arithmetic: `docs/reconstruction/audit/ed75-placeholder.md`.
+Implementation: `tool/scripts/author-ed75-placeholder.ts`.
+
+---
+
 ## Connective-reconstruction rules (named inference rules)
 
 Segments cite these rules by name in `inferenceRules`. A segment with no

@@ -39,6 +39,12 @@ regiment-grain return.
   (the build's 2,000; the 2026-06-13 scope caveat — a July 1 figure,
   NOT July 3 step-off strength). July 3 basis ≈ 2,000 − ~1,100 July 1
   k&w [B, subtraction] ≈ 900 — no primary morning report (open).
+  **ED-75 (2026-07-13): this subtraction is PROVISIONAL-ADOPTED as the
+  build's placeholder July-3 arrival strength** (900, envelope
+  750–1,050, confidence INFERRED) — promoted from a citation
+  annotation to the actual keyframe value, superseded on arrival by
+  Busey & Martin page-level figures (owner has stated purchase intent).
+  Full derivation: docs/reconstruction/audit/ed75-placeholder.md.
 
 ## EC3 — Position anchors
 
@@ -127,7 +133,8 @@ regiment-grain return.
 1. Marshall's fate: w&c (Davis) vs supposed-killed (Young) vs k
    (register) — carried, k adopted.
 2. No brigade missing figure anywhere in the return (ED-49 exemplar).
-3. July 3 step-off strength: subtraction-only (open for a primary).
+3. July 3 step-off strength: subtraction-only, PROVISIONAL-ADOPTED as
+   an ED-75 placeholder pending Busey & Martin (open for a primary).
 4. Jones's clock runs +65 early (profiled, display-only).
 
 ## Chain anchors substantiated
@@ -144,6 +151,9 @@ regiment-grain return.
 - **ED-49 candidate** (shared): this brigade is the missing-scope rule's
   cleanest exemplar (1,105 printed total vs the known July 3 capture
   mass).
+- **ED-75 (2026-07-13, ADOPTED)**: the EC2 subtraction (~900) PROVISIONAL-
+  ADOPTED as the build's placeholder July-3 arrival strength, pending
+  Busey & Martin page-level figures.
 
 ## Source register
 

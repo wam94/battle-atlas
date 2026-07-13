@@ -33,6 +33,15 @@ this brigade the batch's best bombardment casualty figure.
   brigade is the batch's one case where step-off strength includes a
   fresh regiment atop July 1 survivors [D, structural]. No morning
   report (open).
+  **ED-75 (2026-07-13): PROVISIONAL-ADOPTED placeholder July-3 arrival
+  strength, 1,293** (envelope 1,100–1,550, confidence INFERRED) —
+  two-term subtraction: the three July-1-engaged regiments' survivors
+  (~900, mirroring Marshall's ED-75 method) + the 11th Mississippi's
+  own July-3 strength (393, corroborated by two independent GBMA/War
+  Department markers agreeing digit-exact on "Combatants – 393").
+  Superseded on arrival by Busey & Martin page-level figures (owner has
+  stated purchase intent). Full derivation:
+  docs/reconstruction/audit/ed75-placeholder.md.
 
 ## EC3 — Position anchors
 
@@ -115,7 +124,9 @@ this brigade the batch's best bombardment casualty figure.
 1. No brigade missing/captured figure in the return (ED-49 exemplar);
    the known July 3 capture mass on this front (the Bryan-barn pocket)
    is unquantified in the primary record (open).
-2. No morning-report strength for either day (open).
+2. No morning-report strength for either day; the ED-75 (2026-07-13)
+   placeholder (1,293) is PROVISIONAL-ADOPTED pending Busey & Martin
+   page-level figures (open for a primary).
 3. The mon-11ms start marker is modern-era (ED-39 caution at maximum).
 
 ## Chain anchors substantiated
@@ -144,6 +155,9 @@ this brigade the batch's best bombardment casualty figure.
 - **ED-49 candidate** (shared). **ED-66 rider (pass 10)**: the 10.30
   attack clock is the split's CSA keystone — proposed with the
   pass-10 report, NOT self-adopted.
+- **ED-75 (2026-07-13, ADOPTED)**: the two-term EC2 subtraction (1,293)
+  PROVISIONAL-ADOPTED as the build's placeholder July-3 arrival
+  strength, pending Busey & Martin page-level figures.
 
 ## Source register
 
