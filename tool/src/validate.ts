@@ -1,5 +1,6 @@
 import Ajv from "ajv";
 import schema from "../../docs/format/battle.schema.json";
+import manifestSchema from "../../docs/format/battle-manifest.schema.json";
 import type { Battle } from "./model";
 
 // Recorded choice (plan Task A1): advisory findings ride a separate `warnings`
@@ -98,6 +99,79 @@ export function validateBattle(data: unknown): ValidationResult {
       warnings.push(
         `unit '${parent.id}' children's t=0 strengths sum to ${childSum}, ` +
         `outside ±15% of the parent's ${parentStrength}`);
+  }
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+// ---------------------------------------------------------------------------
+// Battle manifest (ADR 0005; docs/format/battle-manifest.md)
+
+export type PhaseStatus = "reconstructed" | "not-reconstructed";
+
+export interface ManifestPhase {
+  id: string;
+  label: string;
+  status: PhaseStatus;
+  battle?: string;
+  startTime?: number;
+  endTime?: number;
+  note?: string;
+}
+
+export interface ManifestDay {
+  id: string;
+  label: string;
+  date: string;
+  phases: ManifestPhase[];
+}
+
+export interface BattleManifest {
+  name: string;
+  _comment?: string;
+  days: ManifestDay[];
+}
+
+const manifestValidate = ajv.compile<BattleManifest>(manifestSchema);
+
+// Schema first, then the code rules draft-07 can't express
+// (battle-manifest.md): unique day ids, globally unique phase ids, days in
+// strict date order, and no [startTime, startTime+endTime) overlap between a
+// day's reconstructed phases. Cross-FILE agreement (the manifest's
+// startTime/endTime echoing the named battle file's own values) lives in the
+// repo tests, which can read both files — this function stays pure.
+export function validateManifest(data: unknown): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  if (!manifestValidate(data)) {
+    for (const e of manifestValidate.errors ?? [])
+      errors.push(`${e.instancePath || "/"} ${e.message ?? "invalid"}`);
+    return { ok: false, errors, warnings };
+  }
+  const manifest = data;
+  const dayIds = new Set<string>();
+  const phaseIds = new Set<string>();
+  let prevDate = "";
+  for (const day of manifest.days) {
+    if (dayIds.has(day.id)) errors.push(`duplicate day id '${day.id}'`);
+    dayIds.add(day.id);
+    if (prevDate && day.date <= prevDate)
+      errors.push(`day '${day.id}' date ${day.date} must follow ${prevDate} (strict date order)`);
+    prevDate = day.date;
+    const windows: Array<{ id: string; a: number; b: number }> = [];
+    for (const phase of day.phases) {
+      if (phaseIds.has(phase.id)) errors.push(`duplicate phase id '${phase.id}'`);
+      phaseIds.add(phase.id);
+      if (phase.status === "reconstructed") {
+        const a = phase.startTime!;
+        const b = a + phase.endTime!;
+        for (const w of windows) {
+          if (a < w.b && w.a < b)
+            errors.push(
+              `day '${day.id}': reconstructed phases '${w.id}' and '${phase.id}' overlap in clock time`);
+        }
+        windows.push({ id: phase.id, a, b });
+      }
+    }
   }
   return { ok: errors.length === 0, errors, warnings };
 }

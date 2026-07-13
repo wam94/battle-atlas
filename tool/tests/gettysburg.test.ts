@@ -100,7 +100,10 @@ describe("authored July 3 battle", () => {
     //      regiment strength; see author-w6-south-cavalry.ts header); East
     //      Cavalry Field contributes ZERO units by the survey's off-map
     //      ruling, annotated in the Wave-6 citations.
-    expect(units).toHaveLength(190);
+    //    + 1 day-expansion slice 1 unit: McCartney's 1st MA Battery A —
+    //      the "arrived too late" record, authorable once the window
+    //      reaches his ~16:00 arrival (author-dayexp1-sunset.ts).
+    expect(units).toHaveLength(191);
     const ohio = units.find((u: any) => u.id === "us-8oh");
     expect(ohio).toBeDefined();
     expect(ohio.parent).toBeUndefined(); // Carroll's brigade isn't modeled
@@ -195,7 +198,9 @@ describe("authored July 3 battle", () => {
     expect(evt("us-btty-phillips-repulse-enfilade").confidence).toBe("documented");
     const wheelerCanister = evt("us-btty-wheeler-canister");
     expect(wheelerCanister.confidence).toBe("documented");
-    expect(wheelerCanister.t1).toBeLessThanOrEqual(10800); // tight against the window end
+    // day-expansion slice 1: the fight's post-16:00 remainder is modeled
+    // (inferred ~10 min past the old window end)
+    expect(wheelerCanister.t1).toBe(11400);
     // the Florida/second-line follow-up rides the Wilcox/Lang spine window
     expect(evt("us-btty-phillips-florida-repulse").t0).toBe(10200);
     expect(evt("us-btty-hart-second-line").t1).toBe(10500);
@@ -390,7 +395,10 @@ describe("authored July 3 battle", () => {
     }
     // the attested in-window movers actually move (>1 keyframe, displaced);
     // everyone else is a 2-keyframe static at an identical pose
-    const movers = ["us-coulter", "us-baxter", "us-shaler"];
+    // day-expansion slice 1 adds the ~17:00 Wheatfield sweep pair
+    // (McCandless + Nevin-under-Bartlett) to the wave-4 movers
+    const movers = ["us-coulter", "us-baxter", "us-shaler",
+      "us-mccandless", "us-nevin"];
     for (const id of movers) {
       const kfs = byId(id).keyframes;
       expect(kfs.length, id).toBeGreaterThan(2);
@@ -487,7 +495,9 @@ describe("authored July 3 battle", () => {
         .toMatch(/severe skirmishing the Division was not engaged/);
     // the two attested in-window movers actually move; everyone else is a
     // 2-keyframe static at an identical pose
-    const movers = ["csa-kershaw", "csa-wright"];
+    // day-expansion slice 1 adds Benning's evening retirement (with the
+    // 15th GA disaster) to the wave-5 movers
+    const movers = ["csa-kershaw", "csa-wright", "csa-benning"];
     for (const id of wave5.filter((i) => !movers.includes(i))) {
       const kfs = byId(id).keyframes;
       expect(kfs, id).toHaveLength(2);
@@ -525,8 +535,9 @@ describe("authored July 3 battle", () => {
     for (const e of wave5Events) {
       expect(e.kind, e.id).toBe("musketry");
       expect(e.confidence, e.id).toBe("documented");
-      expect(e.t0, e.id).toBe(0); // the tablets' all-window skirmishing
-      expect(e.t1, e.id).toBe(10800);
+      expect(e.t0, e.id).toBe(0); // the tablets' all-DAY skirmishing —
+      // day-expansion slice 1 carries the day scope to sunset
+      expect(e.t1, e.id).toBe(23340);
     }
   });
   it("Wave 6: South Cavalry Field — the cluster present, the t=7200 family handoff holds, the edge and the spreads carried, East Cavalry Field empty", () => {
@@ -735,7 +746,9 @@ describe("authored July 3 battle", () => {
     const taft = byId("us-btty-taft").keyframes;
     expect(taft[0].strength).toBe(144);
     expect(taft.find((k: any) => k.t === 3600).strength).toBe(143);
-    expect(evt("us-btty-taft-pettigrew-flank").t1).toBe(10800);
+    // day-expansion slice 1: the A2 window-edge compromise (marker 4 P.M.)
+    // retires — the report's ~6 P.M. cease is authored, marker carried
+    expect(evt("us-btty-taft-pettigrew-flank").t1).toBe(18000);
     // Hill's (WV): the per-day-dated fatality pair (Braddock July 2 / Lacy July 3)
     const hill = byId("us-btty-hill-wv").keyframes;
     expect(hill[0].strength).toBe(123);
@@ -767,5 +780,117 @@ describe("authored July 3 battle", () => {
       for (let i = 1; i < kfs.length; i++)
         expect(kfs[i].strength, `${id} t=${kfs[i].t}`).toBeLessThanOrEqual(kfs[i - 1].strength);
     }
+  });
+  it("Day expansion slice 1: the sunset widening — window, McCartney, the sweep, the evening states", () => {
+    const units = (battle as any).units;
+    const events = (battle as any).events;
+    const byId = (id: string) => units.find((u: any) => u.id === id);
+    const evt = (id: string) => events.find((e: any) => e.id === id);
+    // 13:00 -> sunset 19:29 LMT (ED-31): 6h29m
+    expect((battle as any).startTime).toBe(46800);
+    expect((battle as any).endTime).toBe(23340);
+    // McCartney: the arrived-too-late record — reserve ground until the
+    // ~15:40 inferred departure, on the cemetery's left at the attested
+    // ~16:00, four rounds after arrival, no casualties (strength flat 145)
+    const mc = byId("us-btty-mccartney");
+    expect(mc).toBeDefined();
+    expect(mc.keyframes.map((k: any) => k.t)).toEqual([0, 9600, 10800, 23340]);
+    for (const k of mc.keyframes) expect(k.strength).toBe(145);
+    expect(mc.keyframes[2].citation).toMatch(/repulsed before the battery took position/);
+    const fourRounds = evt("us-btty-mccartney-four-rounds");
+    expect(fourRounds.t0).toBe(11100);
+    expect(fourRounds.t1).toBe(11400);
+    expect(fourRounds.confidence).toBe("inferred"); // window minutes-grade
+    // the ~17:00 Wheatfield sweep: McCandless leads, Nevin (under Bartlett)
+    // follows at 200 yards and decays by Bartlett's "between 20 and 30"
+    // (midpoint 25); Benning's 15th GA is caught and the brigade retires to
+    // its tablet ground
+    const sweep = byId("us-mccandless").keyframes;
+    expect(sweep.map((k: any) => k.t)).toEqual([0, 14400, 15300, 16200, 23340]);
+    expect(sweep[4].x).toBe(3760);
+    expect(sweep[0].strength).toBe(sweep[4].strength); // no day split — flat
+    const nevin = byId("us-nevin").keyframes;
+    expect(nevin[nevin.length - 1].strength).toBe(1345); // 1370 - 25
+    const benning = byId("csa-benning").keyframes;
+    expect(benning[benning.length - 1].x).toBe(2790); // tab-csa-benning ground
+    expect(benning[benning.length - 1].strength).toBe(770); // -220 (the 15th GA)
+    // Taft's cease at his report's ~6 P.M. (marker 4 P.M. carried) — the
+    // keyframe carries the expenditure ledger
+    const taft = byId("us-btty-taft").keyframes;
+    expect(taft[taft.length - 1].t).toBe(18000);
+    expect(taft[taft.length - 1].citation).toMatch(/557 cartridges/);
+    // evening states: the assault column's rally records land as t=23340
+    // keyframes — Pickett's three stay dissolution-class scattered, the
+    // reform-attested wing draws thin lines again
+    for (const id of ["csa-garnett", "csa-kemper", "csa-armistead"]) {
+      const end = byId(id).keyframes.at(-1);
+      expect(end.t, id).toBe(23340);
+      expect(end.formation, id).toBe("scattered");
+    }
+    for (const id of ["csa-fry", "csa-marshall", "csa-davis", "csa-lane",
+      "csa-lowrance", "csa-wilcox", "csa-lang", "csa-brockenbrough"]) {
+      const end = byId(id).keyframes.at(-1);
+      expect(end.t, id).toBe(23340);
+      expect(end.formation, id).toBe("line");
+      expect(end.confidence, id).toBe("inferred");
+      expect(end.citation?.trim(), id).toBeTruthy();
+    }
+    // the Angle cast's pre-sunset keyframes are byte-stable: nothing before
+    // t=23340 changed on the four CSA cast units (the widening only ADDS)
+    for (const id of ["csa-garnett", "csa-kemper", "csa-armistead", "csa-fry"]) {
+      const kfs = byId(id).keyframes;
+      expect(kfs.at(-2).t, id).toBe(10800);
+      expect(kfs.at(-1).strength, id).toBe(kfs.at(-2).strength);
+      expect(kfs.at(-1).x, id).toBe(kfs.at(-2).x);
+      expect(kfs.at(-1).z, id).toBe(kfs.at(-2).z);
+    }
+  });
+  it("Day expansion slice 1: the assault-column re-basing — primaries in, film window pinned", () => {
+    const units = (battle as any).units;
+    const byId = (id: string) => units.find((u: any) => u.id === id);
+    // Garnett (ED-46): Peyton's 1,287 + ~140 = 1,427; attested -20
+    // bombardment; the slice-edge film pin 1393 at t=8040 (the compiled
+    // Angle slice's startStrength — reconciliation ±1 by construction);
+    // in-slice values untouched; end 1,427 - 941 = 486
+    const g = byId("csa-garnett").keyframes;
+    const gAt = (t: number) => g.find((k: any) => k.t === t);
+    expect(gAt(0).strength).toBe(1427);
+    expect(gAt(7200).strength).toBe(1407);
+    expect(gAt(7200).confidence).toBe("documented"); // Peyton's ~20, attested
+    expect(gAt(8040).strength).toBe(1393); // THE FILM PIN
+    // the film window's macro values are byte-stable
+    for (const [t, s] of [[8160, 1380], [8280, 1360], [8580, 1050],
+      [8700, 850], [9000, 700]] as const)
+      expect(gAt(t).strength, `t=${t}`).toBe(s);
+    expect(gAt(10800).strength).toBe(486);
+    expect(gAt(23340).strength).toBe(486);
+    // children re-split from the new parent track (display-grain /5)
+    expect(byId("csa-8va").keyframes[0].strength).toBe(285);
+    expect(byId("csa-8va").keyframes.at(-1).strength).toBe(97);
+    expect(byId("csa-8va").keyframes.find((k: any) => k.t === 8160).strength).toBe(276); // in-slice unchanged
+    // Lowrance: the 500-man July-1-evening primary replaces the pre-July-1
+    // compilation 1,250; July-3 loss inferred-bounded (~185), end 315
+    const lw = byId("csa-lowrance").keyframes;
+    expect(lw[0].strength).toBe(500);
+    expect(lw[0].citation).toMatch(/about 500 men/);
+    expect(lw.at(-1).strength).toBe(315);
+    // Brockenbrough (ED-48): base 880 kept, decay to the return's 148
+    // k+w FLOOR (the old 100 sat below it), end 732; wings re-split
+    const br = byId("csa-brockenbrough").keyframes;
+    expect(br[0].strength).toBe(880);
+    expect(br.at(-1).strength).toBe(732);
+    expect(byId("csa-brock-left").keyframes.at(-1).strength).toBe(366);
+    // confirmed bases carry their upgrade notes; deferred bases say so
+    expect(byId("csa-lane").keyframes[0].citation).toMatch(/ED-47/);
+    expect(byId("csa-wilcox").keyframes[0].citation).toMatch(/1,777 pre-battle − 577/);
+    expect(byId("csa-lang").keyframes[0].citation).toMatch(/near 700 strong/);
+    expect(byId("csa-fry").keyframes[0].strength).toBe(1048); // cast: unchanged
+    expect(byId("csa-fry").keyframes[0].citation).toMatch(/JULY-1-scoped/);
+    for (const id of ["csa-marshall", "csa-davis"])
+      expect(byId(id).keyframes[0].citation, id)
+        .toMatch(/RE-BASING DEFERRED, HETEROGENEITY RECORDED/);
+    // no cast unit but Garnett/Fry was touched, and Fry only in citation
+    expect(byId("csa-kemper").keyframes[0].strength).toBe(1575);
+    expect(byId("csa-armistead").keyframes[0].strength).toBe(1650);
   });
 });

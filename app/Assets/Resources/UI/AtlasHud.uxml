@@ -6,8 +6,10 @@
        orbit-camera and unit-pick input underneath. -->
   <ui:VisualElement name="hud-root" class="hud-root" picking-mode="Ignore">
 
-    <!-- masthead: day/slice context + phase + conditions (top-left) -->
+    <!-- masthead: day/slice context + phase + conditions (top-left);
+         day tabs (ADR 0005) populated from Atlas/battle-manifest.json -->
     <ui:VisualElement name="masthead" class="masthead" picking-mode="Ignore">
+      <ui:VisualElement name="day-tabs" class="day-tabs" picking-mode="Ignore"/>
       <ui:Label name="context-title" class="context-title" picking-mode="Ignore"/>
       <ui:Label name="context-phase" class="context-phase" picking-mode="Ignore"/>
       <ui:Label name="context-conditions" class="context-conditions" picking-mode="Ignore"/>
@@ -113,6 +115,13 @@
         <ui:Label name="opt-motion-note" class="modal-note"/>
         <ui:VisualElement class="modal-buttons">
           <ui:Button name="options-close" text="Close" class="chip"/>
+        </ui:VisualElement>
+      </ui:VisualElement>
+      <ui:VisualElement name="day-modal" class="modal">
+        <ui:Label name="day-title" class="modal-title"/>
+        <ui:ScrollView name="day-body" class="modal-body"/>
+        <ui:VisualElement class="modal-buttons">
+          <ui:Button name="day-close" text="Close" class="chip"/>
         </ui:VisualElement>
       </ui:VisualElement>
       <ui:VisualElement name="credits-modal" class="modal">

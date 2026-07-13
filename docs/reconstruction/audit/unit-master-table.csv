@@ -99,13 +99,13 @@ csa-11va,11th Virginia,confederate,child-regiment,infantry,315,169,146,11,1,10,0
 csa-13al,13th Alabama,confederate,child-regiment,infantry,210,74,136,9,1,8,0,9,2362.2,126.6,yes,line/routed/scattered,0,0,1,13th Alabama,yes,T0,T4,in-build,
 csa-14tn,14th Tennessee,confederate,child-regiment,infantry,209,74,135,9,1,8,0,9,2431.2,255.1,yes,line/routed/scattered,0,0,1,14th Tennessee,yes,T0,T4,in-build,
 csa-14va,14th Virginia,confederate,child-regiment,infantry,330,92,238,9,0,9,0,9,2690.5,242.0,yes,line/routed/scattered,0,0,0,14th Virginia,VERIFY,T0,T4,in-build,
-csa-18va,18th Virginia,confederate,child-regiment,infantry,296,108,188,10,1,9,0,10,2428.4,157.2,yes,line/routed/scattered,0,0,0,18th Virginia,yes,T0,T4,in-build,
-csa-19va,19th Virginia,confederate,child-regiment,infantry,296,108,188,10,1,9,0,10,2349.8,51.0,yes,line/routed/scattered,0,0,0,19th Virginia,yes,T0,T4,in-build,
+csa-18va,18th Virginia,confederate,child-regiment,infantry,285,97,188,10,1,9,0,10,2428.4,157.2,yes,line/routed/scattered,0,0,0,18th Virginia,yes,T0,T4,in-build,
+csa-19va,19th Virginia,confederate,child-regiment,infantry,285,97,188,10,1,9,0,10,2349.8,51.0,yes,line/routed/scattered,0,0,0,19th Virginia,yes,T0,T4,in-build,
 csa-1tn,1st Tennessee (Provisional Army),confederate,child-regiment,infantry,210,74,136,9,1,8,0,9,2321.5,51.0,yes,line/routed/scattered,0,0,1,1st Tennessee,yes,T0,T4,in-build,
 csa-1va,1st Virginia,confederate,child-regiment,infantry,315,169,146,11,1,10,0,11,2695.9,336.1,yes,line/routed/scattered,0,0,0,1st Virginia,yes,T0,T4,in-build,
 csa-24va,24th Virginia,confederate,child-regiment,infantry,315,169,146,11,1,10,0,11,2568.8,353.5,yes,line/routed/scattered,0,0,1,24th Virginia,yes,T0,T4,in-build,
 csa-26nc,26th North Carolina,confederate,child-regiment,infantry,500,149,351,9,1,8,0,9,2469.8,133.5,yes,line/routed/scattered,0,0,1,26th North,yes,T0,T4,in-build,
-csa-28va,28th Virginia,confederate,child-regiment,infantry,296,108,188,10,1,9,0,10,2389.6,182.2,yes,line/routed/scattered,0,0,0,28th Virginia,yes,T0,T4,in-build,
+csa-28va,28th Virginia,confederate,child-regiment,infantry,285,97,188,10,1,9,0,10,2389.6,182.2,yes,line/routed/scattered,0,0,0,28th Virginia,yes,T0,T4,in-build,
 csa-2miss,2nd Mississippi,confederate,child-regiment,infantry,500,151,349,8,0,8,0,8,2387.1,388.8,yes,line/routed/scattered,0,0,1,2nd Mississippi,yes,T0,T4,in-build,
 csa-38va,38th Virginia,confederate,child-regiment,infantry,330,92,238,9,2,7,0,9,2784.1,84.9,yes,line/routed/scattered,0,0,1,38th Virginia,yes,T0,T4,in-build,
 csa-3va,3rd Virginia,confederate,child-regiment,infantry,315,169,146,11,1,10,0,11,2545.4,169.2,yes,line/routed/scattered,0,0,0,3rd Virginia,yes,T0,T4,in-build,
@@ -114,29 +114,29 @@ csa-47nc,47th North Carolina,confederate,child-regiment,infantry,500,149,351,9,0
 csa-52nc,52nd North Carolina,confederate,child-regiment,infantry,500,149,351,9,0,9,0,9,2561.1,395.6,yes,line/routed/scattered,0,0,1,52nd North,yes,T0,T4,in-build,
 csa-53va,53rd Virginia,confederate,child-regiment,infantry,330,92,238,9,2,7,0,9,2643.7,140.4,yes,line/routed/scattered,1,0,0,53rd Virginia,yes,T0,T4,in-build,
 csa-55nc,55th North Carolina,confederate,child-regiment,infantry,500,151,349,8,0,8,0,8,2351.0,400.8,yes,line/routed/scattered,0,0,1,55th North,yes,T0,T4,in-build,
-csa-56va,56th Virginia,confederate,child-regiment,infantry,296,108,188,10,1,9,0,10,2500.5,341.3,yes,line/routed/scattered,0,0,1,56th Virginia,yes,T0,T4,in-build,
+csa-56va,56th Virginia,confederate,child-regiment,infantry,285,97,188,10,1,9,0,10,2500.5,341.3,yes,line/routed/scattered,0,0,1,56th Virginia,yes,T0,T4,in-build,
 csa-57va,57th Virginia,confederate,child-regiment,infantry,330,92,238,9,1,8,0,9,2791.4,310.0,yes,line/routed/scattered,0,0,1,57th Virginia,yes,T0,T4,in-build,
 csa-5al-bn,5th Alabama Battalion,confederate,child-regiment,infantry,210,74,136,9,1,8,0,9,2447.6,242.4,yes,line/routed/scattered,0,0,1,5th Alabama,yes,T0,T4,in-build,
 csa-7tn,7th Tennessee,confederate,child-regiment,infantry,209,74,135,9,1,8,0,9,2350.7,138.2,yes,line/routed/scattered,0,0,1,7th Tennessee,yes,T0,T4,in-build,
 csa-7va,7th Virginia,confederate,child-regiment,infantry,315,169,146,11,1,10,0,11,2458.0,50.0,yes,line/routed/scattered,0,0,1,7th Virginia,yes,T0,T4,in-build,
-csa-8va,8th Virginia,confederate,child-regiment,infantry,296,108,188,10,1,9,0,10,2570.3,315.4,yes,line/routed/scattered,0,0,1,8th Virginia,yes,T0,T4,in-build,
+csa-8va,8th Virginia,confederate,child-regiment,infantry,285,97,188,10,1,9,0,10,2570.3,315.4,yes,line/routed/scattered,0,0,1,8th Virginia,yes,T0,T4,in-build,
 csa-9va,9th Virginia,confederate,child-regiment,infantry,330,92,238,9,0,9,0,9,2852.1,416.9,yes,line/routed/scattered,0,0,0,9th Virginia,VERIFY,T0,T4,in-build,
-csa-brock-left,Brockenbrough's left wing,confederate,child-regiment,infantry,440,390,50,7,1,6,0,7,735.6,5.4,yes,line/routed/scattered,0,0,3,Brockenbrough,yes,T0,T4,in-build,
-csa-brock-right,Brockenbrough's right wing,confederate,child-regiment,infantry,440,390,50,7,1,6,0,7,877.5,5.4,yes,line/routed/scattered,0,0,3,Brockenbrough,yes,T0,T4,in-build,
+csa-brock-left,Brockenbrough's left wing,confederate,child-regiment,infantry,440,366,74,7,1,6,0,7,735.6,5.4,yes,line/routed/scattered,0,0,3,Brockenbrough,yes,T0,T4,in-build,
+csa-brock-right,Brockenbrough's right wing,confederate,child-regiment,infantry,440,366,74,7,1,6,0,7,877.5,5.4,yes,line/routed/scattered,0,0,3,Brockenbrough,yes,T0,T4,in-build,
 reg-csa-3c-het-hq,Heth's Division headquarters (division command),confederate,command,infantry,,,,,,,,,,,,,,,3,Heth,yes,,T2,not-yet-cast,reg-csa-3c-het-hq
 reg-csa-2c-joh-hq,Johnson's Division headquarters (division command),confederate,command,infantry,,,,,,,,,,,,,,,1,Johnson,yes,,T2,not-yet-cast,reg-csa-2c-joh-hq
 reg-csa-3c-pen-hq,Pender's Division headquarters (division command),confederate,command,infantry,,,,,,,,,,,,,,,2,Pender,yes,,T2,not-yet-cast,reg-csa-3c-pen-hq
 reg-csa-1c-pic-hq,Pickett's Division headquarters (division command),confederate,command,infantry,,,,,,,,,,,,,,,7,Pickett,yes,,T2,not-yet-cast,reg-csa-1c-pic-hq
-csa-armistead,Armistead's Brigade,confederate,parent-brigade,infantry,1650,459,1191,9,2,7,0,9,2593.7,84.9,yes,line/routed/scattered,0,7,4,Armistead,yes,T5,T4,in-build,reg-csa-1c-pic-3
-csa-brockenbrough,Brockenbrough's Brigade,confederate,parent-brigade,infantry,880,780,100,7,2,5,0,7,821.4,5.4,yes,line/routed/scattered,0,0,3,Brockenbrough,yes,T0,T4,in-build,reg-csa-3c-het-2
-csa-davis,Davis's Brigade,confederate,parent-brigade,infantry,2000,603,1397,8,2,6,0,8,2223.2,22.4,yes,line/routed/scattered,0,0,3,Davis,yes,T0,T4,in-build,reg-csa-3c-het-4
-csa-fry,Fry's Brigade (Archer's),confederate,parent-brigade,infantry,1048,371,677,9,3,6,0,9,2321.5,51.0,yes,line/routed/scattered,1,2,4,Fry,yes,T5,T4,in-build,reg-csa-3c-het-3
-csa-garnett,Garnett's Brigade,confederate,parent-brigade,infantry,1480,539,941,10,2,8,0,10,2349.8,51.0,yes,line/routed/scattered,0,6,5,Garnett,yes,T5,T4,in-build,reg-csa-1c-pic-1
-csa-kemper,Kemper's Brigade,confederate,parent-brigade,infantry,1575,844,731,11,2,9,0,11,2458.0,50.0,yes,line/routed/scattered,0,6,5,Kemper,yes,T5,T4,in-build,reg-csa-1c-pic-2
-csa-marshall,Marshall's Brigade (Pettigrew's),confederate,parent-brigade,infantry,2000,595,1405,9,1,8,0,9,2395.0,30.4,yes,line/routed/scattered,0,0,3,Marshall,yes,T0,T4,in-build,reg-csa-3c-het-1
+csa-armistead,Armistead's Brigade,confederate,parent-brigade,infantry,1650,459,1191,10,2,8,0,10,2593.7,84.9,yes,line/routed/scattered,0,7,4,Armistead,yes,T5,T4,in-build,reg-csa-1c-pic-3
+csa-brockenbrough,Brockenbrough's Brigade,confederate,parent-brigade,infantry,880,732,148,8,2,6,0,8,821.4,5.4,yes,line/routed/scattered,0,0,3,Brockenbrough,yes,T0,T4,in-build,reg-csa-3c-het-2
+csa-davis,Davis's Brigade,confederate,parent-brigade,infantry,2000,603,1397,9,2,7,0,9,2223.2,22.4,yes,line/routed/scattered,0,0,3,Davis,yes,T0,T4,in-build,reg-csa-3c-het-4
+csa-fry,Fry's Brigade (Archer's),confederate,parent-brigade,infantry,1048,371,677,10,3,7,0,10,2321.5,51.0,yes,line/routed/scattered,1,2,4,Fry,yes,T5,T4,in-build,reg-csa-3c-het-3
+csa-garnett,Garnett's Brigade,confederate,parent-brigade,infantry,1427,486,941,12,3,9,0,12,2349.8,51.0,yes,line/routed/scattered,0,6,5,Garnett,yes,T5,T4,in-build,reg-csa-1c-pic-1
+csa-kemper,Kemper's Brigade,confederate,parent-brigade,infantry,1575,844,731,12,2,10,0,12,2458.0,50.0,yes,line/routed/scattered,0,6,5,Kemper,yes,T5,T4,in-build,reg-csa-1c-pic-2
+csa-marshall,Marshall's Brigade (Pettigrew's),confederate,parent-brigade,infantry,2000,595,1405,10,1,9,0,10,2395.0,30.4,yes,line/routed/scattered,0,0,3,Marshall,yes,T0,T4,in-build,reg-csa-3c-het-1
 csa-luffman,"Anderson's Georgia Brigade, Hood's Division (Lt. Col. William Luffman)",confederate,standalone,infantry,1130,1130,0,2,2,0,0,2,0.0,0.0,no,line,0,0,3,Anderson,yes,T1,T2,in-build,reg-csa-1c-hood-3
 csa-humphreys,"Barksdale's Brigade, McLaws's Division (Col. B. G. Humphreys)",confederate,standalone,infantry,850,850,0,2,2,0,0,2,0.0,0.0,no,line,0,0,2,Barksdale,yes,T1,T2,in-build,reg-csa-1c-mcl-3
-csa-benning,"Benning's Brigade, Hood's Division",confederate,standalone,infantry,990,990,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Benning,yes,T1,T2,in-build,reg-csa-1c-hood-4
+csa-benning,"Benning's Brigade, Hood's Division",confederate,standalone,infantry,990,770,220,5,1,4,0,5,1022.0,1021.8,yes,column/line,0,0,1,Benning,yes,T0,T4,in-build,reg-csa-1c-hood-4
 csa-daniel,"Daniel's Brigade, Rodes's Division (attached to Johnson)",confederate,standalone,infantry,1185,1185,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Daniel,yes,T1,T2,in-build,reg-csa-2c-rod-1
 csa-doles,"Doles's Brigade, Rodes's Division",confederate,standalone,infantry,1130,1130,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Doles,yes,T1,T2,in-build,reg-csa-2c-rod-3
 csa-gordon,"Gordon's Brigade, Early's Division",confederate,standalone,infantry,1120,1120,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Gordon,yes,T1,T2,in-build,reg-csa-2c-ear-4
@@ -145,10 +145,10 @@ csa-godwin,"Hoke's Brigade, Early's Division (Col. A. C. Godwin)",confederate,st
 csa-iverson,"Iverson's Brigade, Rodes's Division",confederate,standalone,infantry,650,650,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Iverson,yes,T1,T2,in-build,reg-csa-2c-rod-2
 csa-dungan,"Jones's Brigade, Johnson's Division (Lt. Col. R. H. Dungan)",confederate,standalone,infantry,1180,1180,0,2,2,0,0,2,0.0,0.0,no,line,0,0,2,Jones,yes,T1,T2,in-build,reg-csa-2c-joh-4
 csa-kershaw,"Kershaw's Brigade, McLaws's Division",confederate,standalone,infantry,1170,1170,0,3,3,0,0,3,680.1,680.1,yes,line,0,0,1,Kershaw,yes,T1,T3,in-build,reg-csa-1c-mcl-1
-csa-lane,Lane's Brigade,confederate,standalone,infantry,1355,695,660,8,1,7,0,8,2541.1,20.6,yes,line/routed/scattered,0,0,4,Lane,yes,T0,T4,in-build,reg-csa-3c-pen-2
-csa-lang,Lang's Brigade (Perry's Florida Brigade),confederate,standalone,infantry,400,245,155,6,1,5,0,6,1448.8,264.8,yes,line/scattered,0,0,3,Lang,yes,T0,T4,in-build,reg-csa-3c-and-4
+csa-lane,Lane's Brigade,confederate,standalone,infantry,1355,695,660,9,1,8,0,9,2541.1,20.6,yes,line/routed/scattered,0,0,4,Lane,yes,T0,T4,in-build,reg-csa-3c-pen-2
+csa-lang,Lang's Brigade (Perry's Florida Brigade),confederate,standalone,infantry,400,245,155,7,1,6,0,7,1448.8,264.8,yes,line/scattered,0,0,3,Lang,yes,T0,T4,in-build,reg-csa-3c-and-4
 csa-sheffield,"Law's Brigade, Hood's Division (Col. James L. Sheffield)",confederate,standalone,infantry,950,950,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Law,yes,T1,T2,in-build,reg-csa-1c-hood-1
-csa-lowrance,Lowrance's Brigade (Scales's),confederate,standalone,infantry,1250,651,599,8,1,7,0,8,2443.9,20.1,yes,line/routed/scattered,0,0,3,Lowrance,yes,T0,T4,in-build,reg-csa-3c-pen-4
+csa-lowrance,Lowrance's Brigade (Scales's),confederate,standalone,infantry,500,315,185,9,1,8,0,9,2443.9,20.1,yes,line/routed/scattered,0,0,3,Lowrance,yes,T0,T4,in-build,reg-csa-3c-pen-4
 csa-mahone,"Mahone's Brigade, Anderson's Division",confederate,standalone,infantry,1400,1400,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Mahone,yes,T1,T2,in-build,reg-csa-3c-and-2
 csa-williams,"Nicholls's Brigade, Johnson's Division (Col. J. M. Williams)",confederate,standalone,infantry,710,710,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Nicholls,yes,T1,T2,in-build,reg-csa-2c-joh-3
 csa-oneal,"O'Neal's Brigade, Rodes's Division (attached to Johnson)",confederate,standalone,infantry,1100,1100,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,O'Neal,yes,T1,T2,in-build,reg-csa-2c-rod-5
@@ -161,7 +161,7 @@ csa-smith,"Smith's Brigade, Early's Division (attached to Johnson)",confederate,
 csa-steuart,"Steuart's Brigade, Johnson's Division",confederate,standalone,infantry,1020,1020,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Steuart,yes,T1,T2,in-build,reg-csa-2c-joh-1
 csa-walker,"Stonewall Brigade, Johnson's Division (Brig. Gen. James A. Walker)",confederate,standalone,infantry,1120,1120,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Johnson,yes,T1,T2,in-build,reg-csa-2c-joh-2
 csa-thomas,"Thomas's Brigade, Pender's Division",confederate,standalone,infantry,930,930,0,2,2,0,0,2,0.0,0.0,no,line,1,0,2,Thomas,yes,T1,T4,in-build,reg-csa-3c-pen-3
-csa-wilcox,Wilcox's Brigade,confederate,standalone,infantry,1200,996,204,6,2,4,0,6,1619.0,270.7,yes,line/scattered,0,0,4,Wilcox,yes,T0,T4,in-build,reg-csa-3c-and-1
+csa-wilcox,Wilcox's Brigade,confederate,standalone,infantry,1200,996,204,7,2,5,0,7,1619.0,270.7,yes,line/scattered,0,0,4,Wilcox,yes,T0,T4,in-build,reg-csa-3c-and-1
 csa-wofford,"Wofford's Brigade, McLaws's Division",confederate,standalone,infantry,995,995,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Wofford,yes,T1,T2,in-build,reg-csa-1c-mcl-4
 csa-wright,"Wright's Brigade, Anderson's Division",confederate,standalone,infantry,580,580,0,5,5,0,0,5,1100.9,0.0,yes,line,0,0,1,Wright,yes,T1,T3,in-build,reg-csa-3c-and-3
 reg-us-ha-1,"1st Brigade, Horse Artillery",union,artillery-brigade,artillery,,,,,,,,,,,,,,,0,1st Brigade,VERIFY,,T2,not-yet-cast,reg-us-ha-1
@@ -178,7 +178,6 @@ reg-us-v-arty,"Artillery Brigade, V Corps",union,artillery-brigade,artillery,,,,
 reg-us-vi-arty,"Artillery Brigade, VI Corps",union,artillery-brigade,artillery,,,,,,,,,,,,,,,2,Artillery Brigade,yes,,T2,not-yet-cast,reg-us-vi-arty
 reg-us-xi-arty,"Artillery Brigade, XI Corps",union,artillery-brigade,artillery,,,,,,,,,,,,,,,2,Artillery Brigade,yes,,T2,not-yet-cast,reg-us-xi-arty
 reg-us-xii-arty,"Artillery Brigade, XII Corps",union,artillery-brigade,artillery,,,,,,,,,,,,,,,2,Artillery Brigade,yes,,T2,not-yet-cast,reg-us-xii-arty
-reg-us-vi-b1,1st Massachusetts Battery (A),union,battery,artillery,,,,,,,,,,,,,,,0,1st Massachusetts,VERIFY,,T2,not-yet-cast,reg-us-vi-b1
 reg-us-v-b1,3rd Massachusetts Battery (C),union,battery,artillery,,,,,,,,,,,,,,,0,3rd Massachusetts,VERIFY,,T2,not-yet-cast,reg-us-v-b1
 reg-us-vi-b3,3rd New York Independent Battery,union,battery,artillery,,,,,,,,,,,,,,,0,3rd New,VERIFY,,T2,not-yet-cast,reg-us-vi-b3
 reg-us-iii-b3,4th New York Independent Battery,union,battery,artillery,,,,,,,,,,,,,,,0,4th New,VERIFY,,T2,not-yet-cast,reg-us-iii-b3
@@ -228,6 +227,7 @@ us-btty-hill-wv,"Hill's Battery C, 1st West Virginia Artillery",union,standalone
 us-btty-james,"James's Battery K, 4th US Artillery (Seeley's)",union,standalone,artillery,134,134,0,2,2,0,0,2,0.0,0.0,no,line,1,0,3,James,yes,T1,T4,in-build,reg-us-iii-b5
 us-btty-kinzie,"Kinzie's Battery K, 5th US Artillery",union,standalone,artillery,77,77,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Kinzie,yes,T1,T2,in-build,reg-us-xii-b4
 us-btty-mason,"Mason's Battery H, 1st US Artillery (Eakin's)",union,standalone,artillery,153,153,0,2,2,0,0,2,0.0,0.0,no,line,2,0,1,Mason,yes,T1,T4,in-build,reg-us-ar-1r-1
+us-btty-mccartney,McCartney's 1st Massachusetts Battery A,union,standalone,artillery,145,145,0,4,0,4,0,4,2494.5,2494.5,yes,column/line,1,0,0,McCartney,VERIFY,T0,T4,in-build,reg-us-vi-b1
 us-btty-norton,"Norton's Battery H, 1st Ohio Light Artillery (Huntington's)",union,standalone,artillery,123,123,0,2,2,0,0,2,0.0,0.0,no,line,2,0,1,Norton,yes,T1,T4,in-build,reg-us-ar-3v-2
 us-btty-parsons,"Parsons's Battery A, 1st New Jersey Light Artillery",union,standalone,artillery,116,107,9,5,2,3,0,5,1578.9,1578.9,yes,column/line,1,0,1,Parsons,yes,T0,T4,in-build,reg-us-ar-4v-3
 us-btty-phillips,Phillips's 5th Massachusetts Battery (E),union,standalone,artillery,104,104,0,2,2,0,0,2,0.0,0.0,no,line,4,0,1,Phillips,yes,T1,T4,in-build,reg-us-ar-1v-1
@@ -239,11 +239,11 @@ us-btty-rugg,"Rugg's Battery F, 4th US Artillery",union,standalone,artillery,96,
 us-btty-sterling,Sterling's 2nd Connecticut Light Battery,union,standalone,artillery,106,106,0,2,2,0,0,2,0.0,0.0,no,line,2,0,2,Sterling,yes,T1,T4,in-build,reg-us-ar-2v-3
 us-btty-stevens,Stevens's 5th Maine Battery (Whittier's),union,standalone,artillery,136,136,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,Stevens,yes,T1,T4,in-build,reg-us-i-b2
 us-btty-stewart,"Stewart's Battery B, 4th US Artillery",union,standalone,artillery,132,132,0,2,2,0,0,2,0.0,0.0,no,line,1,0,5,Stewart,yes,T1,T4,in-build,reg-us-i-b5
-us-btty-taft,Taft's 5th New York Independent Battery,union,standalone,artillery,144,143,1,3,2,1,0,3,0.0,0.0,no,line,2,0,1,Taft,yes,T1,T4,in-build,reg-us-ar-2v-4
+us-btty-taft,Taft's 5th New York Independent Battery,union,standalone,artillery,144,143,1,4,3,1,0,4,0.0,0.0,no,line,2,0,1,Taft,yes,T1,T4,in-build,reg-us-ar-2v-4
 us-btty-thomas,"Thomas's Battery C, 4th US Artillery",union,standalone,artillery,115,115,0,2,2,0,0,2,0.0,0.0,no,line,1,0,2,Thomas,yes,T1,T4,in-build,reg-us-ar-1r-3
 us-btty-thompson,"Thompson's Batteries C & F, 1st Pennsylvania Light Artillery",union,standalone,artillery,105,105,0,2,2,0,0,2,0.0,0.0,no,line,2,0,3,Thompson,yes,T1,T4,in-build,reg-us-ar-1v-4
 us-btty-weir,"Weir's Battery C, 5th US Artillery",union,standalone,artillery,123,123,0,4,2,2,0,4,216.5,216.5,yes,column/line,1,0,1,Weir,yes,T0,T4,in-build,reg-us-ar-1r-4
-us-btty-wheeler,Wheeler's 13th New York Independent Battery,union,standalone,artillery,118,118,0,4,2,2,0,4,667.7,667.7,yes,column/line,1,0,1,Wheeler,yes,T0,T4,in-build,reg-us-xi-b2
+us-btty-wheeler,Wheeler's 13th New York Independent Battery,union,standalone,artillery,118,118,0,5,2,3,0,5,667.7,667.7,yes,column/line,1,0,1,Wheeler,yes,T0,T4,in-build,reg-us-xi-b2
 us-btty-wiedrich,"Wiedrich's Battery I, 1st New York Light Artillery",union,standalone,artillery,141,141,0,2,2,0,0,2,0.0,0.0,no,line,2,0,1,Wiedrich,yes,T1,T4,in-build,reg-us-xi-b1
 us-btty-winegar,"Winegar's Battery M, 1st New York Light Artillery",union,standalone,artillery,96,96,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Winegar,yes,T1,T2,in-build,reg-us-xii-b1
 us-btty-woodruff,"Woodruff's Battery I, 1st US Artillery",union,standalone,artillery,120,95,25,4,2,2,0,4,0.0,0.0,no,line,2,0,3,Woodruff,yes,T0,T4,in-build,reg-us-ii-b4
@@ -311,12 +311,12 @@ us-kelly,"Kelly's Irish Brigade (2nd Bde, 1st Div, II Corps)",union,standalone,i
 us-krzyzanowski,"Krzyżanowski's Brigade (2nd Bde, 3rd Div, XI Corps)",union,standalone,infantry,750,750,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Krzyżanowski,yes,T1,T2,in-build,reg-us-xi-3-2
 us-lockwood,"Lockwood's Brigade (2nd Bde, 1st Div, XII Corps)",union,standalone,infantry,1650,1650,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Lockwood,yes,T1,T2,in-build,reg-us-xii-1-2
 us-madill,"Madill's Brigade (1st Bde, 1st Div, III Corps — Graham's)",union,standalone,infantry,775,775,0,2,2,0,0,2,0.0,0.0,no,column,0,0,1,Madill,yes,T1,T2,in-build,reg-us-iii-1-1
-us-mccandless,"McCandless's Pennsylvania Reserves Brigade (1st Bde, 3rd Div, V Corps)",union,standalone,infantry,1095,1095,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,McCandless,yes,T1,T2,in-build,reg-us-v-3-1
+us-mccandless,"McCandless's Pennsylvania Reserves Brigade (1st Bde, 3rd Div, V Corps)",union,standalone,infantry,1095,1095,0,5,1,4,0,5,600.3,246.0,yes,line,0,0,1,McCandless,yes,T0,T3,in-build,reg-us-v-3-1
 us-mcdougall,"McDougall's Brigade (1st Bde, 1st Div, XII Corps)",union,standalone,infantry,1755,1755,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,McDougall,yes,T1,T2,in-build,reg-us-xii-1-1
 us-mckeen,"McKeen's Brigade (1st Bde, 1st Div, II Corps — Cross's)",union,standalone,infantry,520,520,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,McKeen,yes,T1,T2,in-build,reg-us-ii-1-1
 us-meredith,Meredith's Iron Brigade (Col. Wm. W. Robinson),union,standalone,infantry,730,730,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Meredith,yes,T1,T2,in-build,reg-us-i-1-1
 us-neill,"Neill's Brigade (3rd Bde, 2nd Div, VI Corps)",union,standalone,infantry,1775,1775,0,2,2,0,0,2,0.0,0.0,no,line,1,0,1,Neill,yes,T1,T4,in-build,reg-us-vi-2-2
-us-nevin,"Nevin's Brigade (3rd Bde, 3rd Div, VI Corps — Wheaton's)",union,standalone,infantry,1370,1370,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Nevin,yes,T1,T2,in-build,reg-us-vi-3-3
+us-nevin,"Nevin's Brigade (3rd Bde, 3rd Div, VI Corps — Wheaton's)",union,standalone,infantry,1370,1345,25,5,1,4,0,5,326.1,325.3,yes,line,0,0,1,Nevin,yes,T0,T4,in-build,reg-us-vi-3-3
 us-rice,"Rice's Brigade (3rd Bde, 1st Div, V Corps — Vincent's)",union,standalone,infantry,985,985,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Rice,yes,T1,T2,in-build,reg-us-v-1-3
 us-russell,"Russell's Brigade (3rd Bde, 1st Div, VI Corps)",union,standalone,infantry,1480,1480,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Russell,yes,T1,T2,in-build,reg-us-vi-1-3
 us-shaler,"Shaler's Brigade (1st Bde, 3rd Div, VI Corps)",union,standalone,infantry,1770,1770,0,4,3,1,0,4,1210.8,1210.8,yes,column/line,0,0,1,Shaler,yes,T0,T3,in-build,reg-us-vi-3-1

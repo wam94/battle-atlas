@@ -622,6 +622,11 @@
    "division": "1st Regular Brigade, Artillery Reserve"
   },
   {
+   "id": "us-btty-mccartney",
+   "corps": "VI Corps",
+   "division": "Artillery Brigade, VI Corps"
+  },
+  {
    "id": "us-btty-norton",
    "corps": "Artillery Reserve",
    "division": "3rd Volunteer Brigade, Artillery Reserve"
