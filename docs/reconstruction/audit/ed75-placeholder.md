@@ -140,8 +140,16 @@ bundles diffed key-for-key:
 | tool vitest | 118 | **119 passed** (+1 dedicated ED-75 test; 2 slice-1 assertions updated for the superseded state) |
 | reconstruction pytest | 122 + 1 skip | **122 passed, 1 skipped** (unchanged) |
 | pipeline pytest | 59 | **59 passed** (unchanged) |
-| Unity EditMode | — | see commit log / follow-up — battle-file change, run required |
-| Unity PlayMode | — | see commit log / follow-up — battle-file change, run required |
+| Unity EditMode | 375 + 4 skips (day-expansion slice 1 baseline) | **375 passed, 0 failed, 4 skipped** (unchanged — the 4 skips are the HDRP-bake AngleEnvironmentTests, expected on this rig) |
+| Unity PlayMode | 17 (day-expansion slice 1 baseline) | **17 passed, 0 failed** (unchanged) |
+
+(Unity runs: CLI `-batchmode -runTests -buildTarget OSXUniversal` — no
+`-quit`, which cuts the run short before the test runner starts — worktree
+Library rsync'd from the main checkout, gitignored inputs restored
+(`data/heightmap`, `data/landcover`, `app/Assets/Generated`,
+`app/Assets/StreamingAssets/SoldierView`); this branch was cut before
+day-expansion-2 merged to main, so its Unity baseline is the
+day-expansion-slice-1 numbers, not main's current post-merge count.)
 
 ## 5. What Busey & Martin will settle
 
