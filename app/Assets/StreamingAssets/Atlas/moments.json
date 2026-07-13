@@ -42,6 +42,30 @@
       "label": "Repulse",
       "detail": "The breach collapses; survivors fall back toward Seminary Ridge (~15:27). The hero Soldier View window closes here.",
       "citation": "claim-repulse-clock-frames (step-off-arithmetic frame, ~15:25 climax; collapse transition per angle-editorial-decisions.md)"
+    },
+    {
+      "t": 10800,
+      "label": "The field falls quiet",
+      "detail": "By about 4 p.m. the assault's survivors are back on Seminary Ridge — Davis's brigade returns to its morning line; McCartney's battery reaches the cemetery too late to fire more than four rounds.",
+      "citation": "or-27-2-davis-jr ('about 4 p.m.', the pass-3 retreat clock; dossier csa-3c-het-4-davis.md EC4); or-27-1-mccartney (the arrived-too-late record)"
+    },
+    {
+      "t": 14400,
+      "label": "The Wheatfield sweep",
+      "detail": "McCandless's Reserves, with Nevin's brigade under Bartlett behind, advance across the Wheatfield and sweep the woods south — the 15th Georgia is caught: ~200 prisoners and the colors (~17:00).",
+      "citation": "or-27-1-crawford pp. 653-655; or-27-1-bartlett No. 226; Crawford division tablet ('about 5 P. M.' stated, +75 profile) — inferred 17:00 canonical, spread carried (dossiers us-v-3-1-mccandless.md, us-vi-1-2-bartlett.md)"
+    },
+    {
+      "t": 18000,
+      "label": "Taft's guns cease",
+      "detail": "The 5th New York's fire from the Baltimore Pike ends about 6 p.m. by Taft's own report — his marker says 4 p.m.; the conflict is carried, not reconciled.",
+      "citation": "or-27-1-taft No. 325 pp. 891-892 (report-primary cease) vs the Baltimore Pike marker's 'until 4 p.m.' (dossier us-btty-taft.md EC5.2)"
+    },
+    {
+      "t": 23340,
+      "label": "Sunset",
+      "detail": "Sunset at 19:29 local mean time closes the phase; the armies hold their evening lines.",
+      "citation": "ED-31 (docs/reconstruction/angle-editorial-decisions.md — the astronomical pin for 39.82N 77.23W, July 1863; battle clock = Gettysburg local mean time)"
     }
   ]
 }

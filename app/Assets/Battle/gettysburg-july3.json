@@ -1,7 +1,7 @@
 {
   "name": "Pickett's Charge — July 3, 1863 (brigade level, reconstruction)",
   "startTime": 46800,
-  "endTime": 10800,
+  "endTime": 23340,
   "units": [
     {
       "id": "csa-garnett",
@@ -109,6 +109,16 @@
           "strength": 539,
           "confidence": "inferred",
           "citation": "end strength 1,480 minus 941 losses: Stone Sentinels Garnett's Brigade page; ~60% Confederate loss per Longstreet 1896 p.315; survivors rally behind Seminary Ridge (reconstruction)"
+        },
+        {
+          "t": 23340,
+          "x": 3250,
+          "z": 4920,
+          "facing": 265,
+          "formation": "scattered",
+          "strength": 539,
+          "confidence": "inferred",
+          "citation": "evening state, dissolution-class: 'about 300 ... came off slowly, but greatly scattered, the identity of every regiment being entirely lost' (peyton-or-1863); rally behind Anderson's division per the corps record (or-27-2-longstreet) — no formed brigade line to draw (reconstruction/dossiers/csa-1c-pic-1-garnett.md EC4.5)"
         }
       ]
     },
@@ -778,6 +788,16 @@
           "strength": 844,
           "confidence": "inferred",
           "citation": "end strength 1,575 minus 731 losses: Stone Sentinels Kemper's Brigade page; survivors rally behind Seminary Ridge (reconstruction)"
+        },
+        {
+          "t": 23340,
+          "x": 3200,
+          "z": 4680,
+          "facing": 260,
+          "formation": "scattered",
+          "strength": 844,
+          "confidence": "inferred",
+          "citation": "evening state, dissolution-class with the division (Kemper w&c-rescued; retreat under the reopened arc fire, division record) — no formed brigade line to draw (reconstruction/dossiers/csa-1c-pic-2-kemper.md EC4)"
         }
       ]
     },
@@ -1477,6 +1497,16 @@
           "strength": 459,
           "confidence": "inferred",
           "citation": "end strength 1,650 minus 1,191 losses: Stone Sentinels Armistead's Brigade page, corroborated by Col. W.R. Aylett's July 12, 1863 report (via Encyclopedia Virginia)"
+        },
+        {
+          "t": 23340,
+          "x": 3150,
+          "z": 4890,
+          "facing": 265,
+          "formation": "scattered",
+          "strength": 459,
+          "confidence": "inferred",
+          "citation": "evening state, dissolution-class with the division: '643 missing ... never marched back' (the ED-8 record; reconstruction/dossiers/csa-1c-pic-3-armistead.md EC4.4) — no formed brigade line to draw"
         }
       ]
     },
@@ -2076,6 +2106,16 @@
           "strength": 371,
           "confidence": "documented",
           "citation": "Stone Sentinels Archer's Brigade page: 'less than 400 men remained at the end of July 3rd' (1,048 present minus 677 losses = 371); position behind Seminary Ridge reconstructed"
+        },
+        {
+          "t": 23340,
+          "x": 3280,
+          "z": 5110,
+          "facing": 270,
+          "formation": "line",
+          "strength": 371,
+          "confidence": "inferred",
+          "citation": "evening reform: 'Those who remained at the works saw that it was a hopeless case, and fell back ... we reformed upon the ground from which we advanced' (or-27-2-shepard; reconstruction/dossiers/csa-3c-het-3-fry.md EC4.4) — a thin reformed line on the morning ground"
         }
       ]
     },
@@ -2675,6 +2715,16 @@
           "strength": 595,
           "confidence": "inferred",
           "citation": "end strength 2,000 minus 1,405 losses (whole-battle figures): Stone Sentinels Pettigrew's Brigade page — endpoints sourced, but both include July 1 fighting; per-day split not documented"
+        },
+        {
+          "t": 23340,
+          "x": 3280,
+          "z": 5325,
+          "facing": 275,
+          "formation": "line",
+          "strength": 595,
+          "confidence": "inferred",
+          "citation": "evening state: retreat endpoint = the morning position by ~16:00 canonical [C via the davis-jr clock] (or-27-2-jones-26nc; reconstruction/dossiers/csa-3c-het-1-marshall.md EC4) — 'but one field officer' left to reform it"
         }
       ]
     },
@@ -3164,6 +3214,16 @@
           "strength": 603,
           "confidence": "inferred",
           "citation": "end strength 2,000 minus 1,397 losses (whole-battle figures): Stone Sentinels Davis's Brigade page — both endpoints include July 1 fighting; per-day split not documented"
+        },
+        {
+          "t": 23340,
+          "x": 3290,
+          "z": 5530,
+          "facing": 280,
+          "formation": "line",
+          "strength": 603,
+          "confidence": "inferred",
+          "citation": "evening state: returned 'about 4 p.m.' to the morning line (or-27-2-davis-jr — THE batch's retreat clock, +5-class chain-agreeing profile; reconstruction/dossiers/csa-3c-het-4-davis.md EC4) and holds it to sunset"
         }
       ]
     },
@@ -3613,6 +3673,16 @@
           "strength": 780,
           "confidence": "inferred",
           "citation": "no reliable casualty figure located for this brigade (research pass, oob-strengths doc); light losses reconstructed from the early break"
+        },
+        {
+          "t": 23340,
+          "x": 3285,
+          "z": 5728,
+          "facing": 280,
+          "formation": "line",
+          "strength": 780,
+          "confidence": "inferred",
+          "citation": "evening state: rallying at the start line (ABT maps; the ED-48 honestly-bounded record — no report, no officer pins; reconstruction/dossiers/csa-3c-het-2-brockenbrough.md)"
         }
       ]
     },
@@ -3877,6 +3947,16 @@
           "strength": 695,
           "confidence": "inferred",
           "citation": "end strength 1,355 minus 660 losses: Stone Sentinels Lane's Brigade page (monument figures; page narrative separately claims Lane+Lowrance combined could field only ~800 on July 3 — conflict flagged, not reconciled)"
+        },
+        {
+          "t": 23340,
+          "x": 3100,
+          "z": 5345,
+          "facing": 280,
+          "formation": "line",
+          "strength": 695,
+          "confidence": "inferred",
+          "citation": "evening reform, ORDERED-class: 'reformed immediately in rear of the artillery' (or-27-2-lane-jh); Cols. Avery and Barry brought the two left regiments back 'under direct orders' (or-27-2-engelhard) — the third line's ordered retreat vs the first line's dissolution, the pass-3 rendering distinction (reconstruction/dossiers/csa-3c-pen-2-lane.md EC4.3)"
         }
       ]
     },
@@ -3973,6 +4053,16 @@
           "strength": 651,
           "confidence": "inferred",
           "citation": "end strength 1,250 minus 599 losses: Stone Sentinels Scales's Brigade page (whole-battle figures; Trimble's command combined lost 885 / 52% per Encyclopedia Virginia — not split by brigade)"
+        },
+        {
+          "t": 23340,
+          "x": 3120,
+          "z": 5148,
+          "facing": 280,
+          "formation": "line",
+          "strength": 651,
+          "confidence": "inferred",
+          "citation": "evening reform: 'without orders, the brigade retreated, leaving many on the field'; rallied 'on the same line where it was first formed' (or-27-2-lowrance; reconstruction/dossiers/csa-3c-pen-4-lowrance.md EC4.3)"
         }
       ]
     },
@@ -4049,6 +4139,16 @@
           "strength": 996,
           "confidence": "inferred",
           "citation": "still retiring at the window end — 'My line was reformed on the ground it occupied before it advanced' (or-27-2-wilcox) completes POST-window (Alexander: 'moved by his right flank and making a circuit regained our lines at the Peach Orchard'); END STRENGTH ON THE PER-DAY PRIMARY: July 3 loss 204 (or-27-2-wilcox; Alexander concurs 'His loss in this charge was 204 killed and wounded') ⇒ 1,200 − 204 = 996; the return 51/469/257 = 777 whole-battle matches (or-27-2-anv-return p. 343)"
+        },
+        {
+          "t": 23340,
+          "x": 3400,
+          "z": 4430,
+          "facing": 260,
+          "formation": "line",
+          "strength": 996,
+          "confidence": "inferred",
+          "citation": "evening reform: 'My line was reformed on the ground it occupied before it advanced' (or-27-2-wilcox; reconstruction/dossiers/csa-3c-and-1-wilcox.md EC3.4) and holds to sunset"
         }
       ]
     },
@@ -4123,6 +4223,16 @@
           "strength": 245,
           "confidence": "inferred",
           "citation": "'Falling back to our artillery, we reformed in our old line' (or-27-2-lang) — the reform completes post-window (night: withdrawn to the original woods line by Anderson's order); END STRENGTH ON THE PER-DAY SPLIT: July 3 ≈ 155 of the whole-battle 455 = 33k/217w/205m (or-27-2-lang = or-27-2-anv-return p. 343 EXACT; July 2 'about 300' his own figure; Alexander: 'Perry's loss was about proportional [to Wilcox's 204], with some prisoners in addition') ⇒ ~400 − 155 = 245; 65% whole-battle loss rate, the highest documented in the dossier batch"
+        },
+        {
+          "t": 23340,
+          "x": 3450,
+          "z": 4590,
+          "facing": 260,
+          "formation": "line",
+          "strength": 245,
+          "confidence": "inferred",
+          "citation": "evening reform: 'Falling back to our artillery, we reformed in our old line' (or-27-2-lang); the NIGHT withdrawal to the original woods line by Anderson's order falls past sunset and is NOT modeled (reconstruction/dossiers/csa-3c-and-4-lang.md EC3.3)"
         }
       ]
     },
@@ -4737,14 +4847,44 @@
           "citation": "brigade tablet verbatim, July 3: 'Held Devil's Den and the adjacent crest of rocky ridge until late in the evening when under orders the Brigade retired to position near here. Through mistake of orders the 15th Georgia did not retire directly but moved northward encountered a superior Union force and suffered considerable loss.' (https://gettysburg.stonesentinels.com/confederate-headquarters/bennings-brigade/, fetched 2026-07-08) — the withdrawal and the 15th Georgia fight are LATE EVENING, post-window: in-slice the brigade holds Devil's Den (survey §1: 3808,2465); sheet 8 s8_roundtops.jpg names 'Benning Ga.'; Hood's division tablet verbatim, July 3: 'Occupied the ground gained and with the exception of resisting a Cavalry charge and heavy skirmishing was not engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/hoods-division/, fetched 2026-07-08) — the cavalry charge (Farnsworth) is ~17:00, POST-window; the skirmishing is unwindowed division-grain and rides here, not an event (documented-silence convention, battle-format.md; docs/research/2026-07-02-full-cast-sources.md §3.1); strength: tablet Present about 1500 less its 509 (July 2 + the post-window 15th GA fight — in-window effectives ran somewhat higher) battle losses → ~990 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
         },
         {
-          "t": 10800,
+          "t": 16200,
           "x": 3790,
           "z": 2480,
           "facing": 70,
           "formation": "line",
           "strength": 990,
-          "confidence": "documented",
-          "citation": "brigade tablet verbatim, July 3: 'Held Devil's Den and the adjacent crest of rocky ridge until late in the evening when under orders the Brigade retired to position near here. Through mistake of orders the 15th Georgia did not retire directly but moved northward encountered a superior Union force and suffered considerable loss.' (https://gettysburg.stonesentinels.com/confederate-headquarters/bennings-brigade/, fetched 2026-07-08) — the withdrawal and the 15th Georgia fight are LATE EVENING, post-window: in-slice the brigade holds Devil's Den (survey §1: 3808,2465); sheet 8 s8_roundtops.jpg names 'Benning Ga.'; Hood's division tablet verbatim, July 3: 'Occupied the ground gained and with the exception of resisting a Cavalry charge and heavy skirmishing was not engaged.' (https://gettysburg.stonesentinels.com/confederate-headquarters/hoods-division/, fetched 2026-07-08) — the cavalry charge (Farnsworth) is ~17:00, POST-window; the skirmishing is unwindowed division-grain and rides here, not an event (documented-silence convention, battle-format.md; docs/research/2026-07-02-full-cast-sources.md §3.1); strength: tablet Present about 1500 less its 509 (July 2 + the post-window 15th GA fight — in-window effectives ran somewhat higher) battle losses → ~990 reconstructed July-3-afternoon effectives (losses ran before this window except where said), approximation flagged"
+          "confidence": "inferred",
+          "citation": "'Held Devil's Den and the adjacent crest of rocky ridge until late in the evening' (tablet verbatim) with the left flank 'entirely exposed' after the McLaws-wing extraction, picket screen improvised (or-27-2-benning; csa-1c-hood-4-benning.md EC5.3); retirement clock INFERRED ~17:30 — 'late in the evening' is unclocked [D] and is sequenced against the attested ~17:00 Union sweep whose recovery record is the other side (both readings carried, not reconciled)"
+        },
+        {
+          "t": 17400,
+          "x": 3450,
+          "z": 2400,
+          "facing": 250,
+          "formation": "column",
+          "strength": 820,
+          "confidence": "inferred",
+          "citation": "THE 15th GEORGIA'S DISASTER during the retirement: 'Through mistake of orders the 15th Georgia did not retire directly but moved northward encountered a superior Union force and suffered considerable loss' (tablet verbatim) — the Union side counts ~200 prisoners + the colors (or-27-1-crawford); decay -170 here + -50 to the rally is INFERRED against that attested capture mass ('considerable loss' k+w unquantified — ED-49-class floor honesty; the brigade's 3-day EC6 carries 497-509)"
+        },
+        {
+          "t": 19800,
+          "x": 2790,
+          "z": 2270,
+          "facing": 250,
+          "formation": "line",
+          "strength": 770,
+          "confidence": "inferred",
+          "citation": "'under orders the Brigade retired to position near here' (tablet verbatim — the tablet's own ground, tab-csa-benning 2785,2269 on South Confederate Ave); pace ~0.6 m/s over ~1.4 km with the fight on the column [B]"
+        },
+        {
+          "t": 23340,
+          "x": 2790,
+          "z": 2270,
+          "facing": 250,
+          "formation": "line",
+          "strength": 770,
+          "confidence": "inferred",
+          "citation": "holds the retired line at sunset; July 4 'breastworks facing south until midnight' follows (csa-1c-hood-4-benning.md EC3.5)"
         }
       ]
     },
@@ -7710,14 +7850,44 @@
           "citation": "Crawford's division tablet verbatim, July 3 (First Brigade): 'remained in position until about 5 P. M. and then advanced across the Wheatfield and through the woods beyond and on the left capturing many prisoners.' (https://gettysburg.stonesentinels.com/union-headquarters/3rd-division-5th-corps/, fetched 2026-07-08) — the Wheatfield advance is ~5 P.M., POST-window: static in 13:00–16:00, the advance is out of slice (plan Task 6 note); Col. William McCandless; position class: the advanced Plum Run line west of Little Round Top, held since the July 2 evening counterattack; sheet 8 s8_peachorchard.jpg names 'McCandless Brigade'; NO strength figure on the tablet page (casualties only) — 1095 reconstructed July-3 effectives from standard engaged-strength norms less the battle's earlier-day losses, rounded, flagged (the Wave-3 reconstruction precedent)"
         },
         {
-          "t": 10800,
+          "t": 14400,
           "x": 3980,
           "z": 2680,
           "facing": 260,
           "formation": "line",
           "strength": 1095,
-          "confidence": "documented",
-          "citation": "Crawford's division tablet verbatim, July 3 (First Brigade): 'remained in position until about 5 P. M. and then advanced across the Wheatfield and through the woods beyond and on the left capturing many prisoners.' (https://gettysburg.stonesentinels.com/union-headquarters/3rd-division-5th-corps/, fetched 2026-07-08) — the Wheatfield advance is ~5 P.M., POST-window: static in 13:00–16:00, the advance is out of slice (plan Task 6 note); Col. William McCandless; position class: the advanced Plum Run line west of Little Round Top, held since the July 2 evening counterattack; sheet 8 s8_peachorchard.jpg names 'McCandless Brigade'; NO strength figure on the tablet page (casualties only) — 1095 reconstructed July-3 effectives from standard engaged-strength norms less the battle's earlier-day losses, rounded, flagged (the Wave-3 reconstruction precedent)"
+          "confidence": "inferred",
+          "citation": "advance begins [C]: 'remained in position until about 5 P. M. and then advanced across the Wheatfield' (Crawford division tablet verbatim); sweep clock INFERRED ~17:00-17:45 from the carried spread: Crawford/McCandless stated 'At 5 o'clock on the 3d' (+75 early-stated profile), Bartlett's report class ~17:00-18:00, Nevin's tablet '6 p.m.' at the artillery recapture — adopted start 17:00, never reconciled"
+        },
+        {
+          "t": 15300,
+          "x": 3900,
+          "z": 3010,
+          "facing": 260,
+          "formation": "line",
+          "strength": 1095,
+          "confidence": "inferred",
+          "citation": "across the Wheatfield at its east edge (tab-us-v-3-1 3937,3042 — July 3 sweep semantics, ±65 m SS-vs-OSM flag carried) before the change of front southward (or-27-1-crawford pp. 653-655; or-27-1-mccandless p. 657)"
+        },
+        {
+          "t": 16200,
+          "x": 3760,
+          "z": 2790,
+          "facing": 180,
+          "formation": "line",
+          "strength": 1095,
+          "confidence": "inferred",
+          "citation": "'changed front, swept southward through the woods west and south of the Wheatfield' (tablet) — the 15th GA collision: ~200 prisoners + the colors (or-27-1-crawford; Crawford's 'G. T. Anderson' naming is his honest wrong-name of a Georgia brigade — the colors fix it as Benning's 15th GA, dossier Conflicts §1); Benning's own side: csa-1c-hood-4-benning.md EC4.3"
+        },
+        {
+          "t": 23340,
+          "x": 3760,
+          "z": 2790,
+          "facing": 180,
+          "formation": "line",
+          "strength": 1095,
+          "confidence": "inferred",
+          "citation": "holds the recovered ground to sunset: 'all of the ground lost the previous day' with the recovery ledger — ~200 prisoners incl. a lieutenant-colonel, the 15th GA colors, one 12-pdr Napoleon, three caissons (9th MA Battery materiel per the Nevin tablet's attribution), 'upward of 7,000 stand of arms', the wounded of both sides (or-27-1-crawford p. 655; ED-61 cross-credit pool); July 3 sweep loss LIGHT with NO primary day split — strength stays flat per the A1 rule (dossier us-v-3-1-mccandless.md EC6)"
         }
       ]
     },
@@ -7826,14 +7996,44 @@
           "citation": "War Dept tablet, July 3 (verbatim): 'Late in the day supported First Brigade Third Division Fifth Corps at an interval of 200 yards in advance through the Wheatfield' — POST-window (~5 P.M.); in-window static on the advanced Plum Run line beside Bartlett (https://gettysburg.stonesentinels.com/union-headquarters/3rd-brigade-3rd-division/, fetched 2026-07-08); COMMAND NOTE, carried not reconciled: the survey and sheet 8 ('Nevin') have Col. David J. Nevin commanding (Wheaton up to division); the Stone Sentinels page assigns Brig. Gen. Bartlett to the brigade the morning of July 3 — both readings kept (docs/research/2026-07-02-full-cast-sources.md §3.3); NO strength figure on the tablet page (casualties only) — 1370 reconstructed July-3 effectives from standard engaged-strength norms less the battle's earlier-day losses, rounded, flagged (the Wave-3 reconstruction precedent)"
         },
         {
-          "t": 10800,
+          "t": 14400,
           "x": 4095,
           "z": 3085,
           "facing": 260,
           "formation": "line",
           "strength": 1370,
-          "confidence": "documented",
-          "citation": "War Dept tablet, July 3 (verbatim): 'Late in the day supported First Brigade Third Division Fifth Corps at an interval of 200 yards in advance through the Wheatfield' — POST-window (~5 P.M.); in-window static on the advanced Plum Run line beside Bartlett (https://gettysburg.stonesentinels.com/union-headquarters/3rd-brigade-3rd-division/, fetched 2026-07-08); COMMAND NOTE, carried not reconciled: the survey and sheet 8 ('Nevin') have Col. David J. Nevin commanding (Wheaton up to division); the Stone Sentinels page assigns Brig. Gen. Bartlett to the brigade the morning of July 3 — both readings kept (docs/research/2026-07-02-full-cast-sources.md §3.3); NO strength figure on the tablet page (casualties only) — 1370 reconstructed July-3 effectives from standard engaged-strength norms less the battle's earlier-day losses, rounded, flagged (the Wave-3 reconstruction precedent)"
+          "confidence": "inferred",
+          "citation": "UNDER BARTLETT (the composite command, both-sided): 'ordered by Major-General Sedgwick to command Third Brigade ... and advance against Hood's division' (or-27-1-bartlett No. 226 pp. 671-673, PRIMARY — resolves the Nevin-dossier command-succession flag); sweep clock INFERRED ~17:00-17:45 from the carried spread: Crawford/McCandless stated 'At 5 o'clock on the 3d' (+75 early-stated profile), Bartlett's report class ~17:00-18:00, Nevin's tablet '6 p.m.' at the artillery recapture — adopted start 17:00, never reconciled"
+        },
+        {
+          "t": 15300,
+          "x": 3980,
+          "z": 2960,
+          "facing": 260,
+          "formation": "line",
+          "strength": 1360,
+          "confidence": "inferred",
+          "citation": "'in a second line at an interval of 200 yards' behind McCandless through the Wheatfield (Bartlett brigade tablet verbatim; us-vi-1-2-bartlett.md EC3.2) — decay begins: Bartlett's July 3 loss for THIS command 'between 20 and 30' killed and wounded (report, verbatim; midpoint 25 authored, inferred)"
+        },
+        {
+          "t": 16200,
+          "x": 3860,
+          "z": 2860,
+          "facing": 200,
+          "formation": "line",
+          "strength": 1345,
+          "confidence": "inferred",
+          "citation": "'soon after being engaged the Third Brigade Third Division advanced to the front and the combined forces captured about 200 prisoners ... and the colors of the 15th Georgia' (tablet verbatim); Nevin's own tablet carries the 6 p.m. artillery recapture (9th MA Battery materiel, ED-61 pool)"
+        },
+        {
+          "t": 23340,
+          "x": 3860,
+          "z": 2860,
+          "facing": 200,
+          "formation": "line",
+          "strength": 1345,
+          "confidence": "inferred",
+          "citation": "holds the front line beside McCandless to sunset (the recovered ground record rides us-mccandless; Bartlett's 'between 20 and 30' fully applied — total July 3 decay 25 inferred midpoint)"
         }
       ]
     },
@@ -8869,7 +9069,17 @@
           "formation": "line",
           "strength": 118,
           "confidence": "inferred",
-          "citation": "in action at the window end (his canister fight runs past 16:00 — post-window remainder not modeled); casualties 8 wounded, 3 missing (Stone Sentinels) — decline not clocked"
+          "citation": "in action at the window end (his canister fight runs past 16:00 — remainder modeled by day-expansion slice 1, see the t=11400 keyframe); casualties 8 wounded, 3 missing (Stone Sentinels) — decline not clocked"
+        },
+        {
+          "t": 11400,
+          "x": 4560,
+          "z": 5135,
+          "facing": 250,
+          "formation": "line",
+          "strength": 118,
+          "confidence": "inferred",
+          "citation": "the canister fight's inferred end (~16:10): Hancock-assigned position held; no withdrawal or further fire attested after the fight — the battery stands on the II Corps front (or-27-1-wheeler pp. 752-753; 850 rounds expended whole-battle, no per-day split — EC5.4 honesty)"
         }
       ]
     },
@@ -8996,6 +9206,65 @@
           "strength": 143,
           "confidence": "documented",
           "citation": "Baltimore Pike marker verbatim: 'July 3. Engaged at intervals in same position until 4 p.m. One gun on Baltimore Pike having burst, the other three relieved the section firing westwardly. Remained in this position until close of battle.' — July 2 disposition 'Four guns south of and facing Baltimore Pike firing on a Confederate battery on Benner's Hill. Two guns firing westwardly'; 1,114 rounds expended (https://gettysburg.stonesentinels.com/union-monuments/new-york/new-york-artillery-and-engineers/5th-new-york-independent-battery/, fetched 2026-07-08); 146 men, six 20-pounder Parrott Rifles; Capt. Elijah D. Taft; ADJUDICATION — his brigade tablet also lists '1st Conn. Heavy Battery B Capt. Albert F. Brooker Not engaged' and '1st Conn. Heavy Battery M Capt. Franklin A. Pratt Not engaged' (https://gettysburg.stonesentinels.com/union-headquarters/2nd-volunteer-brigade-artillery-reserve/, fetched 2026-07-08): verified this session the two batteries WERE NOT AT GETTYSBURG — held in reserve off-map with the trains (https://civilwarintheeast.com/us-regiments-batteries/connecticut/1st-connecticut-heavy-artillery/) — NOT authored, per the off-map geometry ruling; docs/research/2026-07-02-full-cast-sources.md §3.3 — end strength 144 − 1 (Wittenberg, the one in-window pin); the brigade-vs-battery arithmetic tension CARRIED, not reconciled: the 2nd Volunteer Brigade tablet's 8-total (with Brooker's/Pratt's attested zero shares) sits against the four individually-named casualties, Begg's and Thalheimer's deaths falling outside the tablet's day-scoped columns (dossier EC6); the report's cease-fire ~6 P.M. vs the marker's 'until 4 p.m.' is a two-hour end-clock conflict carried on the fire event"
+        },
+        {
+          "t": 18000,
+          "x": 5010,
+          "z": 5745,
+          "facing": 65,
+          "formation": "line",
+          "strength": 143,
+          "confidence": "documented",
+          "citation": "the cease, own report: firing ceased ~6 P.M. (or-27-1-taft No. 325 pp. 891-892 — PRIMARY, own-battery-scoped); expenditure itemized by type: '80 Schenkl percussion shell, 63 Schenkl combination shrapnel, 32 Parrott time-fuse shell, 382 Parrott time-fuse shrapnel, and 557 cartridges' (ED-42 expenditure-ledger class)"
+        }
+      ]
+    },
+    {
+      "id": "us-btty-mccartney",
+      "name": "McCartney's 1st Massachusetts Battery A",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4210,
+          "z": 3070,
+          "facing": 270,
+          "formation": "column",
+          "strength": 145,
+          "confidence": "inferred",
+          "citation": "waiting with the VI Corps Artillery Brigade reserve: 'South of Gettysburg, east side of Sedgwick Avenue, near the George Weickert farm' (brigade tablet verbatim [E], reconstruction/dossiers/us-vi-arty-tompkins.md EC3.2 — placed at the tablet ground beside Nevin's tab-us-vi-3-3 4202,3060; radius honest at ~±150 m, no battery-grain morning position exists); strength 145 men, six 12-pdr Napoleons (battery tablet verbatim, reconstruction/dossiers/us-btty-mccartney.md EC2); Capt. William H. McCartney, 'a Boston attorney'"
+        },
+        {
+          "t": 9600,
+          "x": 4210,
+          "z": 3070,
+          "facing": 270,
+          "formation": "column",
+          "strength": 145,
+          "confidence": "inferred",
+          "citation": "departure inferred ~15:40 (the order came with the repulse cresting; 2.4 km at a ~2 m/s road trot lands the attested ~4 P.M. arrival): 'this command was ordered into position on the left of the cemetery' (or-27-1-mccartney No. 238 pp. 688-689, verbatim)"
+        },
+        {
+          "t": 10800,
+          "x": 4890,
+          "z": 5470,
+          "facing": 260,
+          "formation": "line",
+          "strength": 145,
+          "confidence": "inferred",
+          "citation": "ARRIVED TOO LATE — the corpus's clearest record of it [C ~16:00, report-primary]: 'the enemy had been repulsed before the battery took position' (or-27-1-mccartney, verbatim); position 'near the cemetery, on the left and rear of Gettysburg' with the monument [E] at the National Cemetery's south end ~80 yards east of the Taneytown Road entrance — placed south of Norton's on the cemetery shoulder (dossier us-btty-mccartney.md EC3.2/EC3.3); no casualties (tablet) — consistent with the post-repulse arrival"
+        },
+        {
+          "t": 23340,
+          "x": 4890,
+          "z": 5470,
+          "facing": 260,
+          "formation": "line",
+          "strength": 145,
+          "confidence": "inferred",
+          "citation": "holds the cemetery-left position to sunset; activity after arrival was 'firing only four rounds of long range solid shot' (or-27-1-mccartney, verbatim — the fire event) plus the 48-round salvage of the withdrawn 1st NH battery's ammunition (the standing Edgell corroboration, wave A2)"
         }
       ]
     },
@@ -9605,31 +9874,31 @@
       "id": "csa-hays-town-sharpshooting",
       "kind": "musketry",
       "t0": 0,
-      "t1": 10800,
+      "t1": 23340,
       "unitId": "csa-hays",
       "confidence": "documented",
       "citation": "collective attestation, both sides (survey §4 item 11 'B/documented-collective'): Hays's tablet places the brigade 'on High St. in town' facing Cemetery Hill (https://gettysburg.stonesentinels.com/confederate-headquarters/hays-brigade/, fetched 2026-07-08); the fire itself is documented by its TARGETS — Wave 4's us-carroll tablet ('the Brigade was subjected to an annoying sharpshooters fire from the houses in the town', https://gettysburg.stonesentinels.com/union-headquarters/1st-brigade-3rd-division-2nd-corps/) and the XI Corps division tablets' sharpshooter negatives",
-      "note": "the town-sector house-sharpshooting, all window, LOW intensity (sharpshooter grain, not a musketry line); authored ONCE on Hays per the survey's grain — Godwin's and Gordon's shares ride their citations, never a second event (attach-level rule); Wave 4 deferred this fire here by name in us-carroll's citation"
+      "note": "the town-sector house-sharpshooting, all window, LOW intensity (sharpshooter grain, not a musketry line); authored ONCE on Hays per the survey's grain — Godwin's and Gordon's shares ride their citations, never a second event (attach-level rule); Wave 4 deferred this fire here by name in us-carroll's citation; DAY-EXPANSION SLICE 1: t1 10800 -> 23340 — the window was the old clip, the tablet's scope is the day ('constantly engaged' / 'most of the day' / the town sharpshooting) — the event now spans to sunset with the same day-scoped attestation"
     },
     {
       "id": "csa-perrin-long-lane-skirmish",
       "kind": "musketry",
       "t0": 0,
-      "t1": 10800,
+      "t1": 23340,
       "unitId": "csa-perrin",
       "confidence": "documented",
       "citation": "brigade tablet verbatim: 'In the same position and constantly engaged in skirmishing.' (https://gettysburg.stonesentinels.com/confederate-headquarters/perrins-brigade/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.1 — A−, the second attested in-window skirmish emitter)",
-      "note": "window spans the slice per the tablet's 'constantly engaged' (plan Task 7); skirmish grain, low intensity, as csa-thomas-long-lane-skirmish"
+      "note": "window spans the slice per the tablet's 'constantly engaged' (plan Task 7); skirmish grain, low intensity, as csa-thomas-long-lane-skirmish; DAY-EXPANSION SLICE 1: t1 10800 -> 23340 — the window was the old clip, the tablet's scope is the day ('constantly engaged' / 'most of the day' / the town sharpshooting) — the event now spans to sunset with the same day-scoped attestation"
     },
     {
       "id": "csa-thomas-long-lane-skirmish",
       "kind": "musketry",
       "t0": 0,
-      "t1": 10800,
+      "t1": 23340,
       "unitId": "csa-thomas",
       "confidence": "documented",
       "citation": "brigade tablet verbatim: 'Engaged most of the day in severe skirmishing and exposed to a heavy fire of artillery.' (https://gettysburg.stonesentinels.com/confederate-headquarters/thomas-brigade/, fetched 2026-07-08; docs/research/2026-07-02-full-cast-sources.md §3.1 — A−, one of 'the two attested in-window skirmish emitters of the CSA line')",
-      "note": "window spans the slice per the tablet's 'most of the day' (plan Task 7: 'one musketry event each spanning the window'); skirmish grain, low intensity — the Bliss-ground picket exchange opposite the II Corps line, not a volley line; no existing event models this fire (the corridor musketry is the Union repulse fire, 7800+)"
+      "note": "window spans the slice per the tablet's 'most of the day' (plan Task 7: 'one musketry event each spanning the window'); skirmish grain, low intensity — the Bliss-ground picket exchange opposite the II Corps line, not a volley line; no existing event models this fire (the corridor musketry is the Union repulse fire, 7800+); DAY-EXPANSION SLICE 1: t1 10800 -> 23340 — the window was the old clip, the tablet's scope is the day ('constantly engaged' / 'most of the day' / the town sharpshooting) — the event now spans to sunset with the same day-scoped attestation"
     },
     {
       "id": "csa-bn-alexander-cannonade",
@@ -10303,11 +10572,11 @@
       "id": "us-btty-taft-pettigrew-flank",
       "kind": "artillery_fire",
       "t0": 7800,
-      "t1": 10800,
+      "t1": 18000,
       "unitId": "us-btty-taft",
       "confidence": "documented",
-      "citation": "marker verbatim: 'July 3. Engaged at intervals in same position until 4 p.m. One gun on Baltimore Pike having burst, the other three relieved the section firing westwardly.' (https://gettysburg.stonesentinels.com/union-monuments/new-york/new-york-artillery-and-engineers/5th-new-york-independent-battery/, fetched 2026-07-08); WINDOW EXTENDED THIS WAVE (A2) to the marker's own end: 'Engaged at intervals in same position until 4 p.m.' — 4 P.M. is this window's exact end (t=10800); the report's 'returned enemy fire ... again after 1:30 p.m.' with cease ~6 P.M. (or-27-1-taft) overshoots the marker — the two-hour end-clock conflict is carried, the marker's reading kept because it closes inside the window (reconstruction/dossiers/us-btty-taft.md EC5)",
-      "note": ">1,600 rounds into the flank of Pettigrew's left during the assault (Wikipedia Pickett's Charge; survey §4 item 9); window on the track spine (advance under way ~15:10 to the climax's collapse)"
+      "citation": "own-report PRIMARY for the cease: 'firing ceased ~6 P.M.' (or-27-1-taft No. 325 pp. 891-892; reconstruction/dossiers/us-btty-taft.md EC5.2) — the report wins on grade now that the window reaches it; the marker's 'Engaged at intervals in same position until 4 p.m.' (https://gettysburg.stonesentinels.com/union-monuments/new-york/new-york-artillery-and-engineers/5th-new-york-independent-battery/) carried as the counter-reading",
+      "note": ">1,600 rounds into the flank of Pettigrew's left during the assault (Wikipedia Pickett's Charge; survey §4 item 9); window on the track spine (advance under way ~15:10 to the climax's collapse); DAY-EXPANSION SLICE 1: t1 10800 -> 18000 — wave A2 had extended this window to the marker's 4 P.M. because the report's ~6 P.M. cease lay beyond the old window end (the conflict was carried, authoring-wave-a2.md §1); the widened window retires that compromise: report-primary 18:00 authored, marker 4 P.M. carried"
     },
     {
       "id": "us-btty-thomas-repulse-enfilade",
@@ -10655,11 +10924,21 @@
       "id": "us-btty-wheeler-canister",
       "kind": "artillery_fire",
       "t0": 10680,
-      "t1": 10800,
+      "t1": 11400,
       "unitId": "us-btty-wheeler",
       "confidence": "documented",
       "citation": "Wheeler's OR report verbatim: 'This gave me a fine opportunity to enfilade their column with canister, which threw them into great disorder, and brought them to a halt three times.' (transcribed at 13nybattery.com/battles/wheeler_gettys.htm, VERIFIED survey §2.2)",
-      "note": "his ~4 p.m. clock sits at the window's very end — encoded tight against it per the plan (t1 = endTime); the fight's post-16:00 remainder is out of slice"
+      "note": "his ~4 p.m. clock sits at the window's very end — encoded tight against it per the plan (t1 = endTime); the fight's post-16:00 remainder is out of slice; DAY-EXPANSION SLICE 1: the post-16:00 remainder now modeled — t1 10800 -> 11400 (inferred ~10 min: his stated 'about 4 p.m.' arrival is profiled -35 [-55,0] and his three-halt enfilade reads mid-fight; the remainder is bounded short because the assault had collapsed — the alternative clock-error reading (arrival mid-repulse) stays open for a re-timing pass, us-btty-wheeler.md Conflicts §1)"
+    },
+    {
+      "id": "us-btty-mccartney-four-rounds",
+      "kind": "artillery_fire",
+      "t0": 11100,
+      "t1": 11400,
+      "unitId": "us-btty-mccartney",
+      "confidence": "inferred",
+      "citation": "'firing only four rounds of long range solid shot' after taking position (or-27-1-mccartney No. 238, verbatim, PRIMARY own-report; reconstruction/dossiers/us-btty-mccartney.md EC5.1)",
+      "note": "the fire is report-attested; the ~5-minute window ~16:05-16:10 is inferred (four deliberate long-range rounds shortly after the ~16:00 arrival) — minutes-grade, LOW intensity"
     }
   ],
   "environment": {
