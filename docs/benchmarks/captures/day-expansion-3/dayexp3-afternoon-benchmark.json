@@ -1,0 +1,14 @@
+{
+  "unity": "6000.4.11f1",
+  "development": true,
+  "screen": "1600x1000",
+  "clockStartTime": 46800,
+  "clockEndTime": 18000,
+  "samples": [
+    {"t": 0, "screenshot": "dayexp3-afternoon-t0.png", "frames": 596, "avgFps": 59.6, "p95FrameMs": 17.22, "worstFrameMs": 27.22, "allocatedMB": 321.1, "reservedMB": 442.8},
+    {"t": 3600, "screenshot": "dayexp3-afternoon-t3600.png", "frames": 598, "avgFps": 59.7, "p95FrameMs": 17.13, "worstFrameMs": 22.58, "allocatedMB": 321.1, "reservedMB": 442.8},
+    {"t": 9000, "screenshot": "dayexp3-afternoon-t9000.png", "frames": 599, "avgFps": 59.8, "p95FrameMs": 16.90, "worstFrameMs": 22.54, "allocatedMB": 321.3, "reservedMB": 442.8},
+    {"t": 12600, "screenshot": "dayexp3-afternoon-t12600.png", "frames": 600, "avgFps": 59.9, "p95FrameMs": 16.73, "worstFrameMs": 21.92, "allocatedMB": 321.2, "reservedMB": 442.8},
+    {"t": 18000, "screenshot": "dayexp3-afternoon-t18000.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.22, "worstFrameMs": 21.51, "allocatedMB": 321.2, "reservedMB": 442.8}
+  ]
+}

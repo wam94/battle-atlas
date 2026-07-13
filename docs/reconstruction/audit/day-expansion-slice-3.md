@@ -286,10 +286,27 @@ worktree Library, gitignored inputs restored; logs
 `editmode2.log`/`playmode.log` + results XML in the worktree,
 gitignored by design).
 
-Perf: PENDING (`dayexp3-afternoon-benchmark.json`).
+Perf (`dayexp3-afternoon-benchmark.json`, t = 0/3600/9000/12600/18000
+on the afternoon phase, 45 units): steady **59.6-59.9 avg FPS** at
+every timestamp, p95 frame 16.7-17.2 ms, allocations flat at ~321 MB
+— the July 1 cast costs nothing measurable against the baselines.
 
 Evidence: `docs/benchmarks/captures/day-expansion-3/` (force-added;
-owner copies in the main checkout's same gitignored path) — PENDING.
+owner copies in the main checkout's same gitignored path) — the
+morning phase's timeline/Buford/Reynolds/railroad-cut/lull shots, the
+afternoon phase's timeline/Iverson/knoll/collapse/retreat/Cemetery-Hill
+shots, the July 1 day panel from BOTH runs (all three day tabs, the
+loaded phase lit, the honest evening note rendered verbatim — the
+three-day battle's first complete panel), and the perf benchmark
+JSON + its per-timestamp screenshots. Produced by
+`scripts/dayexp3-captures.sh` (one Development build, two
+`-battleFile` runs). Presentation note, recorded honestly: the
+terrain crop (8,507 m square) ends ~200 m south of the Oak Hill
+launch tablets — the launch grounds and the approach staging render
+over the letterbox backing (the cartography slice's far-plane clamp);
+the fighting grounds (the drawn mid-advance bar, Baxter's wall, the
+knoll crest) sit on terrain. A crop extension is a cartography-scale
+residual, not an authoring one.
 
 ## 9. DAY-EXPANSION COMPLETION — the three-day battle
 
