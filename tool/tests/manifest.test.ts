@@ -3,6 +3,8 @@ import manifest from "../../app/Assets/StreamingAssets/Atlas/battle-manifest.jso
 import battle from "../../app/Assets/Battle/gettysburg-july3.json";
 import july2Afternoon from "../../app/Assets/Battle/gettysburg-july2-afternoon.json";
 import july2Evening from "../../app/Assets/Battle/gettysburg-july2-evening.json";
+import july1Morning from "../../app/Assets/Battle/gettysburg-july1-morning.json";
+import july1Afternoon from "../../app/Assets/Battle/gettysburg-july1-afternoon.json";
 import { validateManifest, type BattleManifest } from "../src/validate";
 
 // The day/phase manifest (ADR 0005; docs/format/battle-manifest.md): the
@@ -18,8 +20,21 @@ describe("battle manifest (ADR 0005)", () => {
     expect(result.ok).toBe(true);
   });
 
-  it("carries the three days in date order with July 2 and July 3 reconstructed", () => {
+  it("carries the three days in date order with all three days reconstructed", () => {
     expect(m.days.map((d) => d.id)).toEqual(["july1", "july2", "july3"]);
+    // July 1 (day-expansion slice 3): two abutting reconstructed phases
+    // seamed at the midday lull (13:00 LMT), plus the honest evening note
+    // (CA-J1P-9 is sequence-only — no clocked chain covers the evening).
+    const july1 = m.days[0]!;
+    expect(july1.phases.map((p) => p.status)).toEqual([
+      "reconstructed", "reconstructed", "not-reconstructed",
+    ]);
+    expect(july1.phases[0]!.battle).toBe("gettysburg-july1-morning.json");
+    expect(july1.phases[1]!.battle).toBe("gettysburg-july1-afternoon.json");
+    // abutting, never overlapping: morning [27000, 46800) meets afternoon
+    // [46800, 64800) exactly at the lull seam
+    expect(july1.phases[0]!.startTime! + july1.phases[0]!.endTime!)
+      .toBe(july1.phases[1]!.startTime);
     // July 2 (day-expansion slice 2): honest morning + two abutting
     // reconstructed phases seamed at sunset 19:29 LMT (ED-31/CA-J2A-11).
     const july2 = m.days[1]!;
@@ -47,6 +62,8 @@ describe("battle manifest (ADR 0005)", () => {
       "gettysburg-july3.json": battle as any,
       "gettysburg-july2-afternoon.json": july2Afternoon as any,
       "gettysburg-july2-evening.json": july2Evening as any,
+      "gettysburg-july1-morning.json": july1Morning as any,
+      "gettysburg-july1-afternoon.json": july1Afternoon as any,
     };
     for (const day of m.days)
       for (const phase of day.phases) {
@@ -69,7 +86,9 @@ describe("battle manifest (ADR 0005)", () => {
 
   it("rejects a manifest that lies (battle on a not-reconstructed phase; duplicate ids; date disorder)", () => {
     const lying = JSON.parse(JSON.stringify(manifest));
-    lying.days[0].phases[0].battle = "gettysburg-july3.json";
+    // july2-morning is the not-reconstructed phase (july1's first phase is
+    // reconstructed since day-expansion slice 3)
+    lying.days[1].phases[0].battle = "gettysburg-july3.json";
     expect(validateManifest(lying).ok).toBe(false);
 
     const dup = JSON.parse(JSON.stringify(manifest));

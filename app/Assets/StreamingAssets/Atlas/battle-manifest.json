@@ -8,10 +8,26 @@
       "date": "1863-07-01",
       "phases": [
         {
-          "id": "july1-day",
-          "label": "The first day",
+          "id": "july1-morning",
+          "label": "Morning — Buford's stand and the meeting engagement",
+          "status": "reconstructed",
+          "battle": "gettysburg-july1-morning.json",
+          "startTime": 27000,
+          "endTime": 19800
+        },
+        {
+          "id": "july1-afternoon",
+          "label": "Afternoon — the collapse and retreat to Cemetery Hill",
+          "status": "reconstructed",
+          "battle": "gettysburg-july1-afternoon.json",
+          "startTime": 46800,
+          "endTime": 18000
+        },
+        {
+          "id": "july1-evening",
+          "label": "Evening — the hills and the arriving army",
           "status": "not-reconstructed",
-          "note": "Not yet reconstructed. The research corpus carries July 1 at dossier grain (passes 10–11: the railroad cut, the Seminary Ridge collapse, the town retreat), but no July 1 tracks have been authored — nothing is shown rather than something invented."
+          "note": "Not yet reconstructed. After 18:00 the record is sequence-grade: Ewell declines Cemetery/Culp's Hill (CA-J1P-9, unclocked — 'if practicable'), the 7th Indiana extends the Culp's Hill line at dark, and the XII/III Corps arrival columns reach the field's edge. No clocked anchor chain covers the evening — nothing is shown rather than something invented."
         }
       ]
     },

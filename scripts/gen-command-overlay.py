@@ -31,6 +31,8 @@ BATTLES = [
     os.path.join(REPO, "app/Assets/Battle/gettysburg-july3.json"),
     os.path.join(REPO, "app/Assets/Battle/gettysburg-july2-afternoon.json"),
     os.path.join(REPO, "app/Assets/Battle/gettysburg-july2-evening.json"),
+    os.path.join(REPO, "app/Assets/Battle/gettysburg-july1-morning.json"),
+    os.path.join(REPO, "app/Assets/Battle/gettysburg-july1-afternoon.json"),
 ]
 OUT = os.path.join(REPO, "app/Assets/Resources/Battle/command-overlay.json")
 

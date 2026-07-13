@@ -92,13 +92,20 @@ public class CommandOverlayTests
         var doc = JsonUtility.FromJson<CommandOverlayDoc>(overlayAsset.text);
         // every reconstructed phase file's units must be covered (ADR 0005:
         // one file per phase; the generator scans them all)
-        string[] battleFiles =
+        // corps-count floor per file: the July 2-3 fields carry both full
+        // armies (8+ corps); July 1 is honestly a meeting engagement —
+        // Buford's cavalry + I/XI Corps vs Hill's and Ewell's corps = 5
+        // corps-level groups. The floor guards against a collapsed overlay,
+        // not against history.
+        (string file, int minCorps)[] battleFiles =
         {
-            "gettysburg-july3.json",
-            "gettysburg-july2-afternoon.json",
-            "gettysburg-july2-evening.json",
+            ("gettysburg-july3.json", 8),
+            ("gettysburg-july2-afternoon.json", 8),
+            ("gettysburg-july2-evening.json", 8),
+            ("gettysburg-july1-morning.json", 5),
+            ("gettysburg-july1-afternoon.json", 5),
         };
-        foreach (string file in battleFiles)
+        foreach ((string file, int minCorps) in battleFiles)
         {
             var battle = BattleLoader.Parse(System.IO.File.ReadAllText(
                 Application.dataPath + "/Battle/" + file));
@@ -112,9 +119,9 @@ public class CommandOverlayTests
                 Assert.GreaterOrEqual(corps, 0,
                     $"unit '{u.id}' ({file}) has no corps in the command overlay");
             }
-            // each field reads as a dozen-ish corps words, not a wall
+            // each field reads as a handful-to-dozen corps words, not a wall
             Assert.LessOrEqual(groups.CorpsCount, 16);
-            Assert.GreaterOrEqual(groups.CorpsCount, 8);
+            Assert.GreaterOrEqual(groups.CorpsCount, minCorps, file);
         }
     }
 }

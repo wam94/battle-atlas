@@ -120,6 +120,24 @@ public class PhaseManifestTests
             UnityEngine.Application.dataPath + "/Battle/gettysburg-july2-evening.json"));
         Assert.IsNull(m.ClockMismatch("gettysburg-july2-evening",
             j2eBattle.startTime, j2eBattle.endTime));
+        // July 1 (day-expansion slice 3): two reconstructed phases abutting
+        // at the midday-lull seam (46800 = 13:00 LMT), each echoing its file.
+        Assert.AreEqual(0, m.ActiveDayIndex("gettysburg-july1-morning"));
+        Assert.AreEqual(0, m.ActiveDayIndex("gettysburg-july1-afternoon"));
+        PhaseDto j1m = m.PhaseForBattle("gettysburg-july1-morning");
+        Assert.AreEqual("july1-morning", j1m.id);
+        PhaseDto j1a = m.PhaseForBattle("gettysburg-july1-afternoon");
+        Assert.AreEqual("july1-afternoon", j1a.id);
+        Assert.AreEqual(j1m.startTime + j1m.endTime, j1a.startTime,
+            "the July 1 phases abut at the lull seam, never overlap");
+        var j1mBattle = BattleLoader.Parse(System.IO.File.ReadAllText(
+            UnityEngine.Application.dataPath + "/Battle/gettysburg-july1-morning.json"));
+        Assert.IsNull(m.ClockMismatch("gettysburg-july1-morning",
+            j1mBattle.startTime, j1mBattle.endTime));
+        var j1aBattle = BattleLoader.Parse(System.IO.File.ReadAllText(
+            UnityEngine.Application.dataPath + "/Battle/gettysburg-july1-afternoon.json"));
+        Assert.IsNull(m.ClockMismatch("gettysburg-july1-afternoon",
+            j1aBattle.startTime, j1aBattle.endTime));
         // the empty days are honest: every not-reconstructed phase carries
         // its note and no battle
         foreach (DayDto day in m.days)

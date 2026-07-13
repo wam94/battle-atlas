@@ -577,6 +577,11 @@
    "division": "Artillery Brigade, III Corps"
   },
   {
+   "id": "us-btty-calef",
+   "corps": "Cavalry Corps",
+   "division": "2nd Brigade, Horse Artillery, Cavalry Corps"
+  },
+  {
    "id": "us-btty-clark",
    "corps": "III Corps",
    "division": "Artillery Brigade, III Corps"
@@ -797,9 +802,19 @@
    "division": "3rd Division, II Corps"
   },
   {
+   "id": "us-cav-devin",
+   "corps": "Cavalry Corps",
+   "division": "1st Division, Cavalry Corps"
+  },
+  {
    "id": "us-cav-farnsworth",
    "corps": "Cavalry Corps",
    "division": "3rd Division, Cavalry Corps"
+  },
+  {
+   "id": "us-cav-gamble",
+   "corps": "Cavalry Corps",
+   "division": "1st Division, Cavalry Corps"
   },
   {
    "id": "us-cav-merritt",
