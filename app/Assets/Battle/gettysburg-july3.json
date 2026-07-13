@@ -2642,9 +2642,9 @@
           "z": 5330,
           "facing": 100,
           "formation": "line",
-          "strength": 2000,
-          "confidence": "documented",
-          "citation": "Bachelder Third Day sheet, LOC 99447492 (Pettigrew's line north of Fry); strength 'about 2,000 present on the first day': Stone Sentinels Pettigrew's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after first-day losses (flagged, no sourced July 3 figure exists); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade regiment list, order as listed there — not independently attested) — RE-BASING DEFERRED, HETEROGENEITY RECORDED (day-expansion slice 1): the 2,000 is a JULY-1 'present' figure (stone-sentinels compilation); July 3 basis ≈ 900 by subtraction of ~1,100 July-1 k&w [B tier, no primary morning report — dossier csa-3c-het-1-marshall.md EC2]. The pass-3 re-basing (ED-46/47/48) executed on this brigade's neighbors used PRIMARIES; none exists here — a [B] subtraction re-base is an owner ruling, not an executor default. Residual for slice 2."
+          "strength": 900,
+          "confidence": "inferred",
+          "citation": "Bachelder Third Day sheet, LOC 99447492 (Pettigrew's line north of Fry); strength 'about 2,000 present on the first day': Stone Sentinels Pettigrew's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after first-day losses (flagged, no sourced July 3 figure exists); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade regiment list, order as listed there — not independently attested) — ED-75 PROVISIONAL PLACEHOLDER (owner-ruled 2026-07-13, day-expansion slice 2; supersedes the slice-1 deferred annotation): July-3 arrival strength set to 900 (envelope 750-1,050), confidence INFERRED, by subtraction — 'present on the first day about 2,000' (West Conf Ave tablet / stone-sentinels compilation, inferred tier) minus ~1,100 read as July-1-incurred from the brigade's whole-battle regimental return (190 k / 915 w = 1,105, NO missing column printed at all, or-27-2-anv-return p. 344, ED-49 exemplar) — the 26th NC's own primary day-split ('We went in with over 800 men... There came out but 216' July 1; '216... only about 80' July 4, or-27-2-young-26nc) shows this brigade's dominant loss share fell July 1, the basis for reading the printed total as ~all-July-1. Envelope reflects (a) the base-strength disagreement — Wikipedia / military-history.fandom's uncited 'roughly 2,500' vs the 2,000 tablet compilation, both attributed-only tier, recorded verbatim, NOT averaged — and (b) the return's brigade-wide missing/captured mass being wholly absent (ED-49). PRECONDITION: superseded on arrival by Busey & Martin, Regimental Strengths and Losses at Gettysburg page-level figures (owner has stated purchase intent) — until then this value is a documented inference, not a re-basing, and the decay curve below is proportionally RESCALED from the existing ABT-map reconstruction shape, not independently re-derived per keyframe. dossier csa-3c-het-1-marshall.md EC2/EC6; docs/reconstruction/audit/ed75-placeholder.md."
         },
         {
           "t": 7200,
@@ -2652,7 +2652,7 @@
           "z": 5330,
           "facing": 100,
           "formation": "line",
-          "strength": 1970,
+          "strength": 887,
           "confidence": "inferred",
           "citation": "interpolated: line static under bombardment (Alexander 1907)"
         },
@@ -2662,7 +2662,7 @@
           "z": 5330,
           "facing": 100,
           "formation": "line",
-          "strength": 1965,
+          "strength": 884,
           "confidence": "inferred",
           "citation": "step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour"
         },
@@ -2672,7 +2672,7 @@
           "z": 5085,
           "facing": 105,
           "formation": "line",
-          "strength": 1800,
+          "strength": 810,
           "confidence": "inferred",
           "citation": "reconstruction: crosses the Emmitsburg Road under canister and rifle fire from Hays's line (ABT 3:30-3:45 PM map); pace 1.20 m/s including fence crossing"
         },
@@ -2682,7 +2682,7 @@
           "z": 5015,
           "facing": 105,
           "formation": "line",
-          "strength": 1300,
+          "strength": 585,
           "confidence": "inferred",
           "citation": "reconstruction: front reaches the wall south of the Bryan barn (Fry SHSP v7 insists Pettigrew's front fought to the wall; modern scholarship partially supports); Col. Marshall killed in the advance (Stone Sentinels)"
         },
@@ -2692,7 +2692,7 @@
           "z": 5013,
           "facing": 105,
           "formation": "scattered",
-          "strength": 1100,
+          "strength": 495,
           "confidence": "inferred",
           "citation": "reconstruction: repulsed at the wall by Smyth's and Sherrill's fire (ABT maps)"
         },
@@ -2702,7 +2702,7 @@
           "z": 5120,
           "facing": 275,
           "formation": "routed",
-          "strength": 800,
+          "strength": 360,
           "confidence": "inferred",
           "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"
         },
@@ -2712,7 +2712,7 @@
           "z": 5260,
           "facing": 275,
           "formation": "routed",
-          "strength": 640,
+          "strength": 288,
           "confidence": "inferred",
           "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"
         },
@@ -2722,7 +2722,7 @@
           "z": 5325,
           "facing": 275,
           "formation": "scattered",
-          "strength": 595,
+          "strength": 268,
           "confidence": "inferred",
           "citation": "end strength 2,000 minus 1,405 losses (whole-battle figures): Stone Sentinels Pettigrew's Brigade page — endpoints sourced, but both include July 1 fighting; per-day split not documented"
         },
@@ -2732,7 +2732,7 @@
           "z": 5325,
           "facing": 275,
           "formation": "line",
-          "strength": 595,
+          "strength": 268,
           "confidence": "inferred",
           "citation": "evening state: retreat endpoint = the morning position by ~16:00 canonical [C via the davis-jr clock] (or-27-2-jones-26nc; reconstruction/dossiers/csa-3c-het-1-marshall.md EC4) — 'but one field officer' left to reform it"
         }
@@ -2752,7 +2752,7 @@
           "z": 5136,
           "facing": 100,
           "formation": "line",
-          "strength": 500,
+          "strength": 225,
           "confidence": "inferred",
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's line north of Fry); strength 'about 2,000 present on the first day': Stone Sentinels Pettigrew's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after first-day losses (flagged, no sourced July 3 figure exists); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2762,7 +2762,7 @@
           "z": 5136,
           "facing": 100,
           "formation": "line",
-          "strength": 493,
+          "strength": 222,
           "confidence": "inferred",
           "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2772,7 +2772,7 @@
           "z": 5136,
           "facing": 100,
           "formation": "line",
-          "strength": 491,
+          "strength": 221,
           "confidence": "inferred",
           "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2782,7 +2782,7 @@
           "z": 4894,
           "facing": 105,
           "formation": "line",
-          "strength": 450,
+          "strength": 203,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road under canister and rifle fire from Hays's line (ABT 3:30-3:45 PM map); pace 1.20 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2792,7 +2792,7 @@
           "z": 4824,
           "facing": 105,
           "formation": "line",
-          "strength": 325,
+          "strength": 146,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction: front reaches the wall south of the Bryan barn (Fry SHSP v7 insists Pettigrew's front fought to the wall; modern scholarship partially supports); Col. Marshall killed in the advance (Stone Sentinels)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2802,7 +2802,7 @@
           "z": 4822,
           "facing": 105,
           "formation": "scattered",
-          "strength": 275,
+          "strength": 124,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction: repulsed at the wall by Smyth's and Sherrill's fire (ABT maps)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2812,7 +2812,7 @@
           "z": 5316,
           "facing": 275,
           "formation": "routed",
-          "strength": 200,
+          "strength": 90,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2822,7 +2822,7 @@
           "z": 5456,
           "facing": 275,
           "formation": "routed",
-          "strength": 160,
+          "strength": 72,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2832,7 +2832,7 @@
           "z": 5521,
           "facing": 275,
           "formation": "scattered",
-          "strength": 149,
+          "strength": 67,
           "confidence": "inferred",
           "citation": "derived from brigade track [end strength 2,000 minus 1,405 losses (whole-battle figures): Stone Sentinels Pettigrew's Brigade page — endpoints sourced, but both include July 1 fighting; per-day split not documented]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         }
@@ -2852,7 +2852,7 @@
           "z": 5265,
           "facing": 100,
           "formation": "line",
-          "strength": 500,
+          "strength": 225,
           "confidence": "inferred",
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's line north of Fry); strength 'about 2,000 present on the first day': Stone Sentinels Pettigrew's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after first-day losses (flagged, no sourced July 3 figure exists); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2862,7 +2862,7 @@
           "z": 5265,
           "facing": 100,
           "formation": "line",
-          "strength": 493,
+          "strength": 222,
           "confidence": "inferred",
           "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2872,7 +2872,7 @@
           "z": 5265,
           "facing": 100,
           "formation": "line",
-          "strength": 491,
+          "strength": 221,
           "confidence": "inferred",
           "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2882,7 +2882,7 @@
           "z": 5021,
           "facing": 105,
           "formation": "line",
-          "strength": 450,
+          "strength": 203,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road under canister and rifle fire from Hays's line (ABT 3:30-3:45 PM map); pace 1.20 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2892,7 +2892,7 @@
           "z": 4951,
           "facing": 105,
           "formation": "line",
-          "strength": 325,
+          "strength": 146,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction: front reaches the wall south of the Bryan barn (Fry SHSP v7 insists Pettigrew's front fought to the wall; modern scholarship partially supports); Col. Marshall killed in the advance (Stone Sentinels)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2902,8 +2902,8 @@
           "z": 4958,
           "facing": 105,
           "formation": "scattered",
-          "strength": 275,
-          "confidence": "documented",
+          "strength": 124,
+          "confidence": "inferred",
           "citation": "the pair at the wall: the 26th North Carolina's colors reached the stone wall on the 12th New Jersey front — Arnold's Battery A's last double-shotted canister round is 'traditionally attributed to the 26th North Carolina' (Stone Sentinels Rhode Island Battery A page, verified; the 26th NC flag tradition, survey §3); time ~15:25 inferred; position = the wall on Smyth's front (cross-reference us-btty-arnold); melee-zone position uncertainty per survey disagreement 9"
         },
         {
@@ -2912,7 +2912,7 @@
           "z": 5185,
           "facing": 275,
           "formation": "routed",
-          "strength": 200,
+          "strength": 90,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2922,7 +2922,7 @@
           "z": 5325,
           "facing": 275,
           "formation": "routed",
-          "strength": 160,
+          "strength": 72,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2932,7 +2932,7 @@
           "z": 5390,
           "facing": 275,
           "formation": "scattered",
-          "strength": 149,
+          "strength": 67,
           "confidence": "inferred",
           "citation": "derived from brigade track [end strength 2,000 minus 1,405 losses (whole-battle figures): Stone Sentinels Pettigrew's Brigade page — endpoints sourced, but both include July 1 fighting; per-day split not documented]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         }
@@ -2952,7 +2952,7 @@
           "z": 5395,
           "facing": 100,
           "formation": "line",
-          "strength": 500,
+          "strength": 225,
           "confidence": "inferred",
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's line north of Fry); strength 'about 2,000 present on the first day': Stone Sentinels Pettigrew's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after first-day losses (flagged, no sourced July 3 figure exists); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2962,7 +2962,7 @@
           "z": 5395,
           "facing": 100,
           "formation": "line",
-          "strength": 493,
+          "strength": 222,
           "confidence": "inferred",
           "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2972,7 +2972,7 @@
           "z": 5395,
           "facing": 100,
           "formation": "line",
-          "strength": 491,
+          "strength": 221,
           "confidence": "inferred",
           "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2982,7 +2982,7 @@
           "z": 5149,
           "facing": 105,
           "formation": "line",
-          "strength": 450,
+          "strength": 203,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road under canister and rifle fire from Hays's line (ABT 3:30-3:45 PM map); pace 1.20 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -2992,7 +2992,7 @@
           "z": 5079,
           "facing": 105,
           "formation": "line",
-          "strength": 325,
+          "strength": 146,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction: front reaches the wall south of the Bryan barn (Fry SHSP v7 insists Pettigrew's front fought to the wall; modern scholarship partially supports); Col. Marshall killed in the advance (Stone Sentinels)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3002,7 +3002,7 @@
           "z": 5077,
           "facing": 105,
           "formation": "scattered",
-          "strength": 275,
+          "strength": 124,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction: repulsed at the wall by Smyth's and Sherrill's fire (ABT maps)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3012,7 +3012,7 @@
           "z": 5055,
           "facing": 275,
           "formation": "routed",
-          "strength": 200,
+          "strength": 90,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3022,7 +3022,7 @@
           "z": 5195,
           "facing": 275,
           "formation": "routed",
-          "strength": 160,
+          "strength": 72,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3032,7 +3032,7 @@
           "z": 5260,
           "facing": 275,
           "formation": "scattered",
-          "strength": 149,
+          "strength": 67,
           "confidence": "inferred",
           "citation": "derived from brigade track [end strength 2,000 minus 1,405 losses (whole-battle figures): Stone Sentinels Pettigrew's Brigade page — endpoints sourced, but both include July 1 fighting; per-day split not documented]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         }
@@ -3052,7 +3052,7 @@
           "z": 5524,
           "facing": 100,
           "formation": "line",
-          "strength": 500,
+          "strength": 225,
           "confidence": "inferred",
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's line north of Fry); strength 'about 2,000 present on the first day': Stone Sentinels Pettigrew's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after first-day losses (flagged, no sourced July 3 figure exists); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3062,7 +3062,7 @@
           "z": 5524,
           "facing": 100,
           "formation": "line",
-          "strength": 493,
+          "strength": 222,
           "confidence": "inferred",
           "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3072,7 +3072,7 @@
           "z": 5524,
           "facing": 100,
           "formation": "line",
-          "strength": 491,
+          "strength": 221,
           "confidence": "inferred",
           "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3082,7 +3082,7 @@
           "z": 5276,
           "facing": 105,
           "formation": "line",
-          "strength": 450,
+          "strength": 203,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road under canister and rifle fire from Hays's line (ABT 3:30-3:45 PM map); pace 1.20 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3092,7 +3092,7 @@
           "z": 5206,
           "facing": 105,
           "formation": "line",
-          "strength": 325,
+          "strength": 146,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction: front reaches the wall south of the Bryan barn (Fry SHSP v7 insists Pettigrew's front fought to the wall; modern scholarship partially supports); Col. Marshall killed in the advance (Stone Sentinels)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3102,7 +3102,7 @@
           "z": 5204,
           "facing": 105,
           "formation": "scattered",
-          "strength": 275,
+          "strength": 124,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction: repulsed at the wall by Smyth's and Sherrill's fire (ABT maps)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3112,7 +3112,7 @@
           "z": 4924,
           "facing": 275,
           "formation": "routed",
-          "strength": 200,
+          "strength": 90,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3122,7 +3122,7 @@
           "z": 5064,
           "facing": 275,
           "formation": "routed",
-          "strength": 160,
+          "strength": 72,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3132,7 +3132,7 @@
           "z": 5129,
           "facing": 275,
           "formation": "scattered",
-          "strength": 149,
+          "strength": 67,
           "confidence": "inferred",
           "citation": "derived from brigade track [end strength 2,000 minus 1,405 losses (whole-battle figures): Stone Sentinels Pettigrew's Brigade page — endpoints sourced, but both include July 1 fighting; per-day split not documented]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         }
@@ -3151,9 +3151,9 @@
           "z": 5540,
           "facing": 102,
           "formation": "line",
-          "strength": 2000,
-          "confidence": "documented",
-          "citation": "Bachelder Third Day sheet, LOC 99447492 (Pettigrew's left-center); strength 'about 2,000 present on the first day': Stone Sentinels Davis's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after heavy first-day losses; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Davis's Brigade regiment list, order as listed there — not independently attested) — RE-BASING DEFERRED, HETEROGENEITY RECORDED (day-expansion slice 1): the 2,000 is a JULY-1 'present' figure (stone-sentinels compilation); July 3 went in with all FOUR regiments (11th Miss fresh atop July-1 survivors — the batch's one fresh-regiment case) and no morning report survives [dossier csa-3c-het-4-davis.md EC2]. No primary to re-base to — recorded, not hidden. Residual for slice 2."
+          "strength": 1293,
+          "confidence": "inferred",
+          "citation": "Bachelder Third Day sheet, LOC 99447492 (Pettigrew's left-center); strength 'about 2,000 present on the first day': Stone Sentinels Davis's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after heavy first-day losses; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Davis's Brigade regiment list, order as listed there — not independently attested) — ED-75 PROVISIONAL PLACEHOLDER (owner-ruled 2026-07-13, day-expansion slice 2; supersedes the slice-1 deferred annotation): July-3 arrival strength set to 1,293 (envelope 1,100-1,550), confidence INFERRED, by two-term subtraction. Term 1 (the three July-1-engaged regiments, 2nd/42nd Miss + 55th NC): 2,000 (the West Confederate Ave tablet's 'present on the first day' figure, read as these three only — the SAME tablet separately states 'Joined later by the 11th Regiment previously on duty guarding trains') minus ~1,100 read as July-1-incurred (regiment-grain whole-battle return for these three, 232+265+198=695 k+w, plus this trio's share of the brigade's ~500 missing after crediting the 11th Mississippi's own 37 captured, or-27-2-anv-return p. 344 — 'about three hundred Confederates surrendered' at the railroad cut, the brigade's single dominant loss event, is the basis for the ~all-July-1 reading, mirroring Marshall's identical subtraction class) = 900. Term 2, the 11th Mississippi's OWN July-3 arrival: 393 — TWO independent GBMA/War Department markers (the main brigade tablet and the Bryan-barn position marker) agree digit-exact on 'Combatants – 393' despite disagreeing on the internal killed/non-casualty split (110 vs 100 killed, 53 vs 39 non-casualty) — ED-39 marker-corroboration. Sum: 900 + 393 = 1,293. Envelope reflects the tablet-vs-uncited-secondary three-regiment base disagreement (Emerging Civil War, uncited, 'carrying some 1,508 men into battle on July 1st') and the 11th Mississippi's OWN figure being reported elsewhere as 592 via an UNVERIFIED web-secondary citation of Busey & Martin (a hop, not a page read — exactly the class of number this ruling is a placeholder FOR). The one attested PRIMARY delta this brigade carries — 'In Davis' brigade 2 men were killed and 21 wounded' during the two-hour cannonade (or-27-2-davis-jr) — is preserved as an absolute -23 applied to the new base (a real headcount, not rescaled), not a percentage. PRECONDITION: superseded on arrival by Busey & Martin page-level figures (owner has stated purchase intent). dossier csa-3c-het-4-davis.md EC2/EC6; docs/reconstruction/audit/ed75-placeholder.md."
         },
         {
           "t": 7200,
@@ -3161,9 +3161,9 @@
           "z": 5540,
           "facing": 102,
           "formation": "line",
-          "strength": 1977,
-          "confidence": "documented",
-          "citation": "BOMBARDMENT SHARE PRIMARY (wave A2, the dossier batch's cleanest): 'In Davis' brigade 2 men were killed and 21 wounded' during the two-hour cannonade (or-27-2-davis-jr) ⇒ 2,000 − 23 = 1,977 at the cannonade's fall-quiet — replaces the build's interpolated −30; ~2.5% of the standing base, closely matching Garnett's ~20 on the other wing (the two independent primaries that size the whole column's bombardment ordeal) — reconstruction/dossiers/csa-3c-het-4-davis.md EC6; NOTE the t=0 base stays the July-1-scoped 'about 2,000' (stone-sentinels) — the July 3 morning re-strength (return 897 k+w at regiment grain; the 11th Miss fresh, train-guard July 1) is a deferred re-cast item, so the attested decay is applied to the standing base"
+          "strength": 1270,
+          "confidence": "inferred",
+          "citation": "BOMBARDMENT SHARE PRIMARY (wave A2, the dossier batch's cleanest): 'In Davis' brigade 2 men were killed and 21 wounded' during the two-hour cannonade (or-27-2-davis-jr) ⇒ 2,000 − 23 = 1,977 at the cannonade's fall-quiet — replaces the build's interpolated −30; ~2.5% of the standing base, closely matching Garnett's ~20 on the other wing (the two independent primaries that size the whole column's bombardment ordeal) — reconstruction/dossiers/csa-3c-het-4-davis.md EC6; NOTE the t=0 base stays the July-1-scoped 'about 2,000' (stone-sentinels) — the July 3 morning re-strength (return 897 k+w at regiment grain; the 11th Miss fresh, train-guard July 1) is a deferred re-cast item, so the attested decay is applied to the standing base — ED-75: the attested delta (-23, 'In Davis' brigade 2 men were killed and 21 wounded', or-27-2-davis-jr) is PRESERVED as an absolute headcount and applied to the ED-75 placeholder base (1,293 - 23 = 1,270), not rescaled proportionally — the 23 real casualties do not change with which reading of the brigade's total strength is adopted."
         },
         {
           "t": 7500,
@@ -3171,7 +3171,7 @@
           "z": 5540,
           "facing": 102,
           "formation": "line",
-          "strength": 1977,
+          "strength": 1270,
           "confidence": "inferred",
           "citation": "step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour; step-off at the bombardment-end strength (wave A2 monotonic correction on the attested −23, or-27-2-davis-jr)"
         },
@@ -3181,7 +3181,7 @@
           "z": 5170,
           "facing": 110,
           "formation": "line",
-          "strength": 1750,
+          "strength": 1124,
           "confidence": "inferred",
           "citation": "reconstruction: crosses the Emmitsburg Road angling toward the Bryan farm front (ABT 3:30-3:45 PM map); pace 1.22 m/s including fence crossing"
         },
@@ -3191,7 +3191,7 @@
           "z": 5120,
           "facing": 110,
           "formation": "scattered",
-          "strength": 1300,
+          "strength": 835,
           "confidence": "inferred",
           "citation": "reconstruction: advance stalls and breaks short of the wall under Hays's massed rifle fire and Woodruff's canister from Ziegler's Grove (ABT maps; Bryan farm anchor OSM way 451707950)"
         },
@@ -3201,7 +3201,7 @@
           "z": 5300,
           "facing": 280,
           "formation": "routed",
-          "strength": 850,
+          "strength": 546,
           "confidence": "inferred",
           "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"
         },
@@ -3211,7 +3211,7 @@
           "z": 5480,
           "facing": 280,
           "formation": "routed",
-          "strength": 650,
+          "strength": 418,
           "confidence": "inferred",
           "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"
         },
@@ -3221,7 +3221,7 @@
           "z": 5530,
           "facing": 280,
           "formation": "scattered",
-          "strength": 603,
+          "strength": 387,
           "confidence": "inferred",
           "citation": "end strength 2,000 minus 1,397 losses (whole-battle figures): Stone Sentinels Davis's Brigade page — both endpoints include July 1 fighting; per-day split not documented"
         },
@@ -3231,7 +3231,7 @@
           "z": 5530,
           "facing": 280,
           "formation": "line",
-          "strength": 603,
+          "strength": 387,
           "confidence": "inferred",
           "citation": "evening state: returned 'about 4 p.m.' to the morning line (or-27-2-davis-jr — THE batch's retreat clock, +5-class chain-agreeing profile; reconstruction/dossiers/csa-3c-het-4-davis.md EC4) and holds it to sunset"
         }
@@ -3251,7 +3251,7 @@
           "z": 5347,
           "facing": 102,
           "formation": "line",
-          "strength": 500,
+          "strength": 323,
           "confidence": "inferred",
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's left-center); strength 'about 2,000 present on the first day': Stone Sentinels Davis's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after heavy first-day losses; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Davis's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3261,7 +3261,7 @@
           "z": 5347,
           "facing": 102,
           "formation": "line",
-          "strength": 493,
+          "strength": 318,
           "confidence": "inferred",
           "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3271,7 +3271,7 @@
           "z": 5347,
           "facing": 102,
           "formation": "line",
-          "strength": 491,
+          "strength": 318,
           "confidence": "inferred",
           "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3281,7 +3281,7 @@
           "z": 4985,
           "facing": 110,
           "formation": "line",
-          "strength": 438,
+          "strength": 281,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road angling toward the Bryan farm front (ABT 3:30-3:45 PM map); pace 1.22 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3291,7 +3291,7 @@
           "z": 4935,
           "facing": 110,
           "formation": "scattered",
-          "strength": 325,
+          "strength": 209,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction: advance stalls and breaks short of the wall under Hays's massed rifle fire and Woodruff's canister from Ziegler's Grove (ABT maps; Bryan farm anchor OSM way 451707950)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3301,7 +3301,7 @@
           "z": 5494,
           "facing": 280,
           "formation": "routed",
-          "strength": 213,
+          "strength": 137,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3311,7 +3311,7 @@
           "z": 5674,
           "facing": 280,
           "formation": "routed",
-          "strength": 163,
+          "strength": 105,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3321,7 +3321,7 @@
           "z": 5724,
           "facing": 280,
           "formation": "scattered",
-          "strength": 151,
+          "strength": 97,
           "confidence": "inferred",
           "citation": "derived from brigade track [end strength 2,000 minus 1,397 losses (whole-battle figures): Stone Sentinels Davis's Brigade page — both endpoints include July 1 fighting; per-day split not documented]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         }
@@ -3341,7 +3341,7 @@
           "z": 5476,
           "facing": 102,
           "formation": "line",
-          "strength": 500,
+          "strength": 323,
           "confidence": "inferred",
           "citation": "slot share of the documented brigade start (Bachelder Third Day sheet, LOC 99447492, Pettigrew's left-center; slot order per the oob-strengths roster list, not independently attested); the regiment was FRESH on July 3 — train guard July 1 (University Greys literature via the 2026-07-02 survey: gdg.org research page; thelocalvoice.net 150th-anniversary account); strength: equal quarter of the brigade's 'about 2,000 present on the first day' (July-1 figure) — the fresh 11th likely made up a larger share of the July 3 line, but no per-regiment figure is documented; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864)"
         },
@@ -3351,7 +3351,7 @@
           "z": 5476,
           "facing": 102,
           "formation": "line",
-          "strength": 495,
+          "strength": 318,
           "confidence": "inferred",
           "citation": "interpolated: line static under bombardment (Alexander 1907); slot-follow of the brigade track"
         },
@@ -3361,7 +3361,7 @@
           "z": 5476,
           "facing": 102,
           "formation": "line",
-          "strength": 494,
+          "strength": 318,
           "confidence": "inferred",
           "citation": "step-off: modern reconstruction ~3:00 PM (ABT map set — ABT clock frame, noted per survey disagreement 7); Alexander 1907 ~1:50 / Jacobs 1864 2:30 disagree on the hour"
         },
@@ -3371,7 +3371,7 @@
           "z": 5108,
           "facing": 110,
           "formation": "line",
-          "strength": 450,
+          "strength": 281,
           "confidence": "inferred",
           "citation": "crosses the Emmitsburg Road with the brigade, angling toward the Bryan farm front (ABT 3:30-3:45 PM map — ABT clock frame noted); slot-follow of the brigade track"
         },
@@ -3381,7 +3381,7 @@
           "z": 5122,
           "facing": 105,
           "formation": "line",
-          "strength": 400,
+          "strength": 209,
           "confidence": "inferred",
           "citation": "the brigade's advance stalls and breaks short of the wall under Hays's massed fire; the fresh 11th presses on (University Greys literature via survey; reconstruction — position inferred)"
         },
@@ -3391,8 +3391,8 @@
           "z": 5125,
           "facing": 100,
           "formation": "line",
-          "strength": 340,
-          "confidence": "documented",
+          "strength": 188,
+          "confidence": "inferred",
           "citation": "farthest advance on this front: the 11th Mississippi reached the stone wall at the Brian barn, its colors with Co. A, the 'University Greys' (~31 men, ~100% casualties — University Greys literature, verified via the 2026-07-02 survey: en.wikipedia.org/wiki/University_Greys; thelocalvoice.net; gdg.org/research/OOB/Confederate/July1-3/greys.html); Bryan house anchor OSM way 451707950 (cross-reference us-sherrill's Bryan farm line); time ~15:25 inferred; whole-regiment strength at the wall not documented — reconstructed"
         },
         {
@@ -3401,7 +3401,7 @@
           "z": 5220,
           "facing": 280,
           "formation": "routed",
-          "strength": 220,
+          "strength": 137,
           "confidence": "inferred",
           "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map — ABT clock frame noted); survivors stream back across the road"
         },
@@ -3411,7 +3411,7 @@
           "z": 5450,
           "facing": 280,
           "formation": "routed",
-          "strength": 160,
+          "strength": 105,
           "confidence": "inferred",
           "citation": "reconstruction of the repulse (ABT 3:45-4:00 PM map)"
         },
@@ -3421,7 +3421,7 @@
           "z": 5510,
           "facing": 280,
           "formation": "scattered",
-          "strength": 140,
+          "strength": 97,
           "confidence": "inferred",
           "citation": "end (reconstruction): July-3 casualty split for the regiment not documented; decline reconstructed steeper than the brigade average — farthest in, Co. A ~100% casualties (University Greys literature)"
         }
@@ -3441,7 +3441,7 @@
           "z": 5604,
           "facing": 102,
           "formation": "line",
-          "strength": 500,
+          "strength": 323,
           "confidence": "inferred",
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's left-center); strength 'about 2,000 present on the first day': Stone Sentinels Davis's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after heavy first-day losses; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Davis's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3451,7 +3451,7 @@
           "z": 5604,
           "facing": 102,
           "formation": "line",
-          "strength": 493,
+          "strength": 318,
           "confidence": "inferred",
           "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3461,7 +3461,7 @@
           "z": 5604,
           "facing": 102,
           "formation": "line",
-          "strength": 491,
+          "strength": 318,
           "confidence": "inferred",
           "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3471,7 +3471,7 @@
           "z": 5232,
           "facing": 110,
           "formation": "line",
-          "strength": 438,
+          "strength": 281,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road angling toward the Bryan farm front (ABT 3:30-3:45 PM map); pace 1.22 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3481,7 +3481,7 @@
           "z": 5182,
           "facing": 110,
           "formation": "scattered",
-          "strength": 325,
+          "strength": 209,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction: advance stalls and breaks short of the wall under Hays's massed rifle fire and Woodruff's canister from Ziegler's Grove (ABT maps; Bryan farm anchor OSM way 451707950)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3491,7 +3491,7 @@
           "z": 5235,
           "facing": 280,
           "formation": "routed",
-          "strength": 213,
+          "strength": 137,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3501,7 +3501,7 @@
           "z": 5415,
           "facing": 280,
           "formation": "routed",
-          "strength": 163,
+          "strength": 105,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3511,7 +3511,7 @@
           "z": 5465,
           "facing": 280,
           "formation": "scattered",
-          "strength": 151,
+          "strength": 97,
           "confidence": "inferred",
           "citation": "derived from brigade track [end strength 2,000 minus 1,397 losses (whole-battle figures): Stone Sentinels Davis's Brigade page — both endpoints include July 1 fighting; per-day split not documented]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         }
@@ -3531,7 +3531,7 @@
           "z": 5733,
           "facing": 102,
           "formation": "line",
-          "strength": 500,
+          "strength": 323,
           "confidence": "inferred",
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's left-center); strength 'about 2,000 present on the first day': Stone Sentinels Davis's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after heavy first-day losses; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Davis's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3541,7 +3541,7 @@
           "z": 5733,
           "facing": 102,
           "formation": "line",
-          "strength": 493,
+          "strength": 318,
           "confidence": "inferred",
           "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3551,7 +3551,7 @@
           "z": 5733,
           "facing": 102,
           "formation": "line",
-          "strength": 491,
+          "strength": 318,
           "confidence": "inferred",
           "citation": "derived from brigade track [step-off: modern reconstruction ~3:00 PM (ABT map set); Alexander ~1:50 / Jacobs 2:30 disagree on the hour]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3561,7 +3561,7 @@
           "z": 5355,
           "facing": 110,
           "formation": "line",
-          "strength": 438,
+          "strength": 281,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction: crosses the Emmitsburg Road angling toward the Bryan farm front (ABT 3:30-3:45 PM map); pace 1.22 m/s including fence crossing]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3571,7 +3571,7 @@
           "z": 5305,
           "facing": 110,
           "formation": "scattered",
-          "strength": 325,
+          "strength": 209,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction: advance stalls and breaks short of the wall under Hays's massed rifle fire and Woodruff's canister from Ziegler's Grove (ABT maps; Bryan farm anchor OSM way 451707950)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3581,7 +3581,7 @@
           "z": 5106,
           "facing": 280,
           "formation": "routed",
-          "strength": 213,
+          "strength": 137,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3591,7 +3591,7 @@
           "z": 5286,
           "facing": 280,
           "formation": "routed",
-          "strength": 163,
+          "strength": 105,
           "confidence": "inferred",
           "citation": "derived from brigade track [reconstruction of the repulse (ABT 3:45-4:00 PM map)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
@@ -3601,7 +3601,7 @@
           "z": 5336,
           "facing": 280,
           "formation": "scattered",
-          "strength": 151,
+          "strength": 97,
           "confidence": "inferred",
           "citation": "derived from brigade track [end strength 2,000 minus 1,397 losses (whole-battle figures): Stone Sentinels Davis's Brigade page — both endpoints include July 1 fighting; per-day split not documented]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Davis's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         }
