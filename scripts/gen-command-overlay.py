@@ -43,6 +43,12 @@ MANUAL_CHAINS = {
     # 8th Ohio: detached from Carroll's brigade (1st Bde, 3rd Div, II
     # Corps) — the register carries it inside reg-us-ii-3-1's regiments.
     "us-8oh": ["Army of the Potomac", "II Corps", "3rd Division"],
+    # Decomposition wave 1 (docs/reconstruction/audit/decomposition-wave-1.md):
+    # three more parentless single-regiment promotions, same us-8oh pattern
+    # — the register carries each inside its brigade entry's regiments list.
+    "us-6wi": ["Army of the Potomac", "I Corps", "1st Division"],  # reg-us-i-1-1 (Meredith's)
+    "us-147ny": ["Army of the Potomac", "I Corps", "1st Division"],  # reg-us-i-1-2 (Cutler's)
+    "us-16me": ["Army of the Potomac", "I Corps", "2nd Division"],  # reg-us-i-2-1 (Paul's)
 }
 
 GENERIC_DIVISION = re.compile(r"^\d+(st|nd|rd|th) (Division|Brigade)")

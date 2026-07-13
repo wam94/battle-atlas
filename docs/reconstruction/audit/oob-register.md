@@ -39,21 +39,31 @@ reconciliation (a pass-13 register-maintenance item).
   `docs/reconstruction/audit/dossier-pass-12.md` §4 for the method and
   summary counts.
 
-Regiments enumerated: 478. Cast status: **157 entries matched to in-build
-unit ids** across the battle phase files (`gettysburg-july3.json` +
+Regiments enumerated: 478. Cast status: **157 → 161 entries matched to
+in-build unit ids** across the battle phase files (`gettysburg-july3.json` +
 the day-expansion-2 July 2 phase files, which cast six previously
 uncast batteries: Clark, Bucklyn, Winslow, Smith's 4th NY, Watson,
 Bigelow, + the day-expansion-3 July 1 phase files, which cast Gamble's
-and Devin's cavalry brigades and Calef's battery A/2nd US);
-**125 not-yet-cast**
+and Devin's cavalry brigades and Calef's battery A/2nd US, + decomposition
+wave 1, which cast the Ziegler's Grove convergence: Williston's D/2US,
+Butler's G/2US, Leonard Martin's F/5US, Harn's 3rd NY —
+`docs/reconstruction/audit/decomposition-wave-1.md`);
+**not-yet-cast reduced by the same four**
 (the eight command rows flagged by dossier passes 3-4 — Pickett, Heth,
 Pender/Trimble, Gibbon, Hancock, Hays, Doubleday, Second Corps artillery —
 were added as an explicit register-maintenance batch at pass-5 start,
-unblocking command-record overlay entries for the HQ dossiers).
-The build's 42 child-regiment units (Pickett/Pettigrew regiments, Webb/Hall/
-Stannard regiments, Brockenbrough's wings, us-8oh) are represented inside
-their brigade entries' regiment lists, not as separate register entries — so
-all 190 build units are covered by the register at or inside its grain.
+unblocking command-record overlay entries for the HQ dossiers). A direct
+scan of `oob-register.json`'s 288 entries after decomposition wave 1 gives
+162 castStatus-matched / 126 not-yet-cast — the `stats` block (previously
+stale at 148/134, now corrected to match) is the authoritative machine
+count; the small residual gap against this paragraph's hand-tracked 161/124
+predates this wave and is a bookkeeping drift, not an evidence gap.
+The build's 45 child-regiment units (Pickett/Pettigrew regiments, Webb/Hall/
+Stannard regiments, Brockenbrough's wings, us-8oh, + decomposition wave 1's
+us-6wi/us-147ny/us-16me, all PARENTLESS per the us-8oh precedent — see the
+wave report) are represented inside their brigade entries' regiment lists
+or citations, not as separate register entries — so all in-build units are
+covered by the register at or inside its grain.
 
 ## Sources and method
 

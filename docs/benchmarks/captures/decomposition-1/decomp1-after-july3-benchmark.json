@@ -1,0 +1,16 @@
+{
+  "unity": "6000.4.11f1",
+  "development": true,
+  "screen": "1600x1000",
+  "clockStartTime": 46800,
+  "clockEndTime": 23340,
+  "samples": [
+    {"t": 0, "screenshot": "decomp1-after-july3-t0.png", "frames": 595, "avgFps": 59.5, "p95FrameMs": 17.22, "worstFrameMs": 57.37, "allocatedMB": 323.6, "reservedMB": 442.8},
+    {"t": 3600, "screenshot": "decomp1-after-july3-t3600.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 16.87, "worstFrameMs": 28.23, "allocatedMB": 323.7, "reservedMB": 442.8},
+    {"t": 8160, "screenshot": "decomp1-after-july3-t8160.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.12, "worstFrameMs": 22.42, "allocatedMB": 323.8, "reservedMB": 442.8},
+    {"t": 8700, "screenshot": "decomp1-after-july3-t8700.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.11, "worstFrameMs": 23.66, "allocatedMB": 323.8, "reservedMB": 442.8},
+    {"t": 9000, "screenshot": "decomp1-after-july3-t9000.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.13, "worstFrameMs": 22.44, "allocatedMB": 323.8, "reservedMB": 442.8},
+    {"t": 10500, "screenshot": "decomp1-after-july3-t10500.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 16.95, "worstFrameMs": 33.06, "allocatedMB": 323.8, "reservedMB": 442.8},
+    {"t": 18000, "screenshot": "decomp1-after-july3-t18000.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.17, "worstFrameMs": 21.55, "allocatedMB": 323.8, "reservedMB": 442.8}
+  ]
+}

@@ -876,9 +876,9 @@
     },
     {
       "id": "us-meredith",
-      "name": "Meredith's Iron Brigade (1st Bde, 1st Div, I Corps)",
+      "name": "Meredith's Iron Brigade (1st Bde, 1st Div, I Corps — minus the 6th Wisconsin)",
       "side": "union",
-      "frontage_m": 494,
+      "frontage_m": 404,
       "depth_m": 20,
       "keyframes": [
         {
@@ -887,9 +887,9 @@
           "z": 5100,
           "facing": 340,
           "formation": "column",
-          "strength": 1829,
+          "strength": 1496,
           "confidence": "documented",
-          "citation": "March from Marsh Creek: 'moved from camp early... 6 or 7 miles' (or-27-1-morrow-24mi); Reynolds took Wadsworth's division forward in person, the corps staggered 'an hour and a half to two hours' behind (or-27-1-doubleday — the stagger primary that explains Wadsworth's lone fight). Strength: brigade ~1,829 compilation (open at brigade grain, flagged); 24th Mich PRIMARY 496 (or-27-1-morrow-24mi). Deployment order R-to-L: 2nd Wis, 7th Wis, 19th Ind, 24th Mich; the 6th Wis + 100-man brigade guard detached as corps reserve (or-27-1-doubleday; or-27-1-dawes-6wi). Dossier us-i-1-1-meredith.md (T4 full-arc)."
+          "citation": "March from Marsh Creek: 'moved from camp early... 6 or 7 miles' (or-27-1-morrow-24mi); Reynolds took Wadsworth's division forward in person, the corps staggered 'an hour and a half to two hours' behind (or-27-1-doubleday). Deployment order R-to-L: 2nd Wis, 7th Wis, 19th Ind, 24th Mich (the charging four). Strength: brigade 1,829 compilation MINUS the 6th Wisconsin's now-separately-tracked reserve detachment (333, own citation on us-6wi) = 1,496; 24th Mich PRIMARY 496 (or-27-1-morrow-24mi) is the only regiment-grain figure fetched among these four. Dossier us-i-1-1-meredith.md (T4 full-arc)."
         },
         {
           "t": 8100,
@@ -897,9 +897,9 @@
           "z": 6500,
           "facing": 320,
           "formation": "column",
-          "strength": 1829,
-          "confidence": "inferred",
-          "citation": "Obliquing left across the fields toward the seminary (the corps' approach leg at tier-B physics: ~6 miles from Marsh Creek at column pace ≈ 2.5-3 h from an early start; Morrow's 'about 9 a.m. we came near the town' runs early vs Wadsworth's 10:00 — BOTH carried, the keyframe sits on the receiving cluster's 10:00-10:15)."
+          "strength": 1496,
+          "confidence": "documented",
+          "citation": "Obliquing left across the fields toward the seminary (the corps' approach leg, tier-B physics: ~6 miles from Marsh Creek at column pace ≈ 2.5-3 h from an early start; Morrow's 'about 9 a.m.' runs early vs Wadsworth's 10:00 — both carried, keyframe sits on the receiving cluster's 10:00-10:15)."
         },
         {
           "t": 9900,
@@ -907,9 +907,9 @@
           "z": 7300,
           "facing": 292,
           "formation": "line",
-          "strength": 1829,
+          "strength": 1496,
           "confidence": "documented",
-          "citation": "THE CHARGE (CA-J1M-4b receiving / CA-J1M-5): deployed 'on the double-quick... no order being given or time allowed for loading our guns' (or-27-1-morrow-24mi); 'deployed en echelon without a moment's hesitation, charged with the utmost steadiness and fury' (or-27-1-doubleday). REYNOLDS FELL LAUNCHING THIS DEPLOYMENT — 'in the beginning of the attack referred to, about 10.15 a.m.' (or-27-1-doubleday) = Wadsworth 'at this time (about 10.15 a.m.) our gallant leader fell' = the WD tablet 'about 10.15 A.M.' — the THREE-PRIMARY pin (ED-66 rider; Howard's 11.30 is when word reached him, collapse recorded). mon-reynolds-kia (3177.2,7265.8). Drawn: j1-03 'MEREDITH'S Brig.' (2971,7100) with the 7'Wis/19'Ind/24'Mich bars arriving in echelon."
+          "citation": "THE CHARGE (CA-J1M-4b receiving / CA-J1M-5): deployed 'on the double-quick... no order being given or time allowed for loading our guns' (or-27-1-morrow-24mi); 'deployed en echelon without a moment's hesitation, charged with the utmost steadiness and fury' (or-27-1-doubleday). REYNOLDS FELL LAUNCHING THIS DEPLOYMENT — the three-primary pin (ED-66 rider). mon-reynolds-kia (3177.2,7265.8)."
         },
         {
           "t": 11700,
@@ -917,9 +917,9 @@
           "z": 7280,
           "facing": 292,
           "formation": "line",
-          "strength": 1750,
+          "strength": 1417,
           "confidence": "documented",
-          "citation": "At the run — the Archer pocket: 'the brigade dashed up and over the hill and down into the ravine, through which flows Willoughby's Run' (or-27-1-morrow-24mi); the capture climax both-sided (or-27-2-shepard's 'some 75... General Archer among the rest'). mon-archer-captured on the charge axis; Iron Bde HQ marker mon-ironbde-hq (2905.0,7384.1)."
+          "citation": "At the run — the Archer pocket: 'the brigade dashed up and over the hill and down into the ravine, through which flows Willoughby's Run' (or-27-1-morrow-24mi); the capture climax both-sided (or-27-2-shepard's 'some 75... General Archer among the rest'). Decay: −79 from the deploy state (the original whole-brigade compilation's own delta, now carried by these four regiments exactly — the 6th Wis was in reserve for this phase, per its own citation, and contributed none of this loss)."
         },
         {
           "t": 13500,
@@ -927,9 +927,9 @@
           "z": 7300,
           "facing": 292,
           "formation": "line",
-          "strength": 1700,
+          "strength": 1417,
           "confidence": "documented",
-          "citation": "Back to the east bank and into McPherson's woods: 'changed front forward on first battalion, and marched into the woods known as McPherson's woods' — 19th Ind left of 24th Mich, 7th Wis right, the 24th's right wing 'curved a little backward' (or-27-1-morrow-24mi); Doubleday's hold order: 'must be held at all hazards.'"
+          "citation": "Back to the east bank and into McPherson's woods: 'changed front forward on first battalion, and marched into the woods known as McPherson's woods' — 19th Ind left of 24th Mich, 7th Wis right (or-27-1-morrow-24mi); Doubleday's hold order: 'must be held at all hazards.' No further loss documented for these four regiments in this narrow window (their own woods-defense casualties accumulate in the afternoon phase); STRENGTH CORRECTION FLAGGED: the old undifferentiated compilation showed the whole brigade at 1,700 here, implicitly assuming the reserve detachment's share held near-full strength through this point — now that the 6th Wisconsin's own cut-charge spike (333→165, or-27-1-dawes-6wi) is separately evidenced, the combined total this instant is properly 1,417 + 165 = 1,582, not the old 1,700; the 118-man difference is the previously-uncounted slice of the 6th Wisconsin's own documented rate-class loss (a decomposition-wave evidence-layer correction, ED-32/ED-46 class, recorded in the wave report)."
         },
         {
           "t": 19800,
@@ -937,17 +937,96 @@
           "z": 7300,
           "facing": 292,
           "formation": "line",
-          "strength": 1700,
+          "strength": 1417,
           "confidence": "documented",
-          "citation": "The woods line held through the lull (skirmishers 'at once engaged'); the afternoon defense against Pettigrew's brigade — the 24th Mich vs 26th NC fight — is the next phase's record."
+          "citation": "The woods line held through the lull (skirmishers 'at once engaged'); the afternoon defense against Pettigrew's brigade is the next phase's record."
+        }
+      ]
+    },
+    {
+      "id": "us-6wi",
+      "name": "6th Wisconsin (Meredith's)",
+      "side": "union",
+      "frontage_m": 90,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4400,
+          "z": 5100,
+          "facing": 340,
+          "formation": "column",
+          "strength": 333,
+          "confidence": "documented",
+          "citation": "March from Marsh Creek with the brigade (or-27-1-morrow-24mi); detached at the deployment as 'a general reserve to the line of the division' with the 100-man brigade guard attached, by Doubleday's order (or-27-1-dawes-6wi verbatim; dossier us-i-1-1-meredith.md EC1/EC4.2). STRENGTH HONESTY: no regiment primary fetched (dossier Conflicts item 4: 'only the 24th's 496 fetched'); authored 333 compilation-class FLAGGED (brigade total 1,829 minus the 24th Mich's primaried 496, split evenly across the four un-primaried regiments — same class as Cutler's own ~1,600 brigade-level flag). The return's regiment-grain LOSS row (168, or-27-1-union-return p.173) is the only hard EC6 primary this unit carries. The attached 100-man brigade guard is NOT folded into this figure (a separate, uncounted body per Dawes's own phrasing)."
+        },
+        {
+          "t": 8100,
+          "x": 4000,
+          "z": 6500,
+          "facing": 320,
+          "formation": "column",
+          "strength": 333,
+          "confidence": "inferred",
+          "citation": "Continuity: marching with the brigade column (slot-follow of Meredith's own approach leg; no independent clock or position exists for the detachment before deployment)."
+        },
+        {
+          "t": 9900,
+          "x": 3200,
+          "z": 7150,
+          "facing": 292,
+          "formation": "line",
+          "strength": 333,
+          "confidence": "inferred",
+          "citation": "HALTED AS RESERVE: 'halted... and detached from the brigade as a general reserve to the line of the division' (or-27-1-dawes-6wi) — while the rest of the brigade charges into Willoughby Run (CA-J1M-4b/5), the 6th Wis + guard holds back. No coordinate is stated in Dawes's report; position inferred near the division's reserve ground west of the ravine, held back from Meredith's own charge line."
+        },
+        {
+          "t": 11700,
+          "x": 3400,
+          "z": 7690,
+          "facing": 290,
+          "formation": "line",
+          "strength": 333,
+          "confidence": "documented",
+          "citation": "Ordered up toward the railroad cut as Cutler's right wrecks and the 147th NY is stranded: the fence fire-by-file checks the CSA advance ('checked the advance of the rebels, who took refuge in a railroad cut', or-27-1-dawes-6wi) — the fence-line position at the ground the charge itself opens from (event j1m-rrcut-charge's own start coordinate); no loss yet attributed to this specific phase in Dawes's report."
+        },
+        {
+          "t": 12900,
+          "x": 3560,
+          "z": 7720,
+          "facing": 290,
+          "formation": "line",
+          "strength": 165,
+          "confidence": "documented",
+          "citation": "THE RAILROAD-CUT CHARGE (CA-J1M-6) concludes: 'upon a double-quick, well closed, in face of a terribly destructive fire'; 'the rebels began throwing down their arms in token of surrender'; Maj. Blair's 2nd Miss surrenders to Dawes, '7 officers and about 225 men' to the cavalry guard, the 2nd Miss flag (Cpl. Waller, MoH), the 2nd Maine gun recaptured (or-27-1-dawes-6wi) — both-sided with Davis's report and the 147th NY's release (or-27-1-cutler). LOSS, un-averaged: Dawes 'not less than 160 men killed or wounded' in the charge alone / his own itemized July-1 total 2+5 officers, 27 k / 100 w / 24 m = 158; the union return's regiment row (or-27-1-union-return p.173) gives 168 — the return figure is ADOPTED for the authored decay (333 → 165), the higher figure and consistent with how this corpus treats return-vs-report EC6 pairs elsewhere (ED-52 class)."
+        },
+        {
+          "t": 13500,
+          "x": 3520,
+          "z": 7760,
+          "facing": 292,
+          "formation": "line",
+          "strength": 165,
+          "confidence": "documented",
+          "citation": "Re-advances 'to the crest of the ridge' with Cutler's released regiments 'for half to three-quarters of an hour' (or-27-1-cutler; or-27-1-dawes-6wi both-sided) — the detachment fights on with Cutler's brigade rather than rejoining Meredith's woods line; no further loss documented."
+        },
+        {
+          "t": 19800,
+          "x": 3600,
+          "z": 7800,
+          "facing": 300,
+          "formation": "line",
+          "strength": 165,
+          "confidence": "documented",
+          "citation": "Holds with Cutler's brigade at the lull ('no support on either my right or left until 2 o'clock', or-27-1-cutler, carried on this unit by association); Dawes's own report states no clock or position between the crest re-advance and the evening Culp's Hill rendezvous — the detachment's afternoon whereabouts are this file's honest EC3 gap, closed only by the afternoon phase's Culp's Hill convergence with Col. W. W. Robinson (Meredith's own succession pin)."
         }
       ]
     },
     {
       "id": "us-cutler",
-      "name": "Cutler's Brigade (2nd Bde, 1st Div, I Corps)",
+      "name": "Cutler's Brigade (2nd Bde, 1st Div, I Corps — minus the 147th New York)",
       "side": "union",
-      "frontage_m": 432,
+      "frontage_m": 329,
       "depth_m": 20,
       "keyframes": [
         {
@@ -956,9 +1035,9 @@
           "z": 5150,
           "facing": 340,
           "formation": "column",
-          "strength": 1600,
+          "strength": 1220,
           "confidence": "documented",
-          "citation": "'Moved from camp early... being the leading brigade of the corps' (or-27-1-cutler). STRENGTH HONESTY: regiment primaries 147th NY 380, 76th NY 375, 56th Pa 252 (or-27-1-cutler); 95th NY / 14th Brooklyn / 7th Ind open — brigade authored ~1,600 compilation class FLAGGED; the 7th Ind detached 'on duty in the rear' July 1 (rejoined at evening — EC2 detachment primary). Dossier us-i-1-2-cutler.md (T4 full-arc)."
+          "citation": "'Moved from camp early on the 1st instant (being the leading brigade of the corps)' (or-27-1-cutler). STRENGTH HONESTY: brigade ~1,600 compilation MINUS the 147th New York's own regiment primary (380, or-27-1-cutler) = 1,220; the 95th NY / 14th Brooklyn / 7th Ind stay open at brigade grain; the 7th Ind detached 'on duty in the rear' July 1 (rejoined at evening — EC2 detachment primary). Dossier us-i-1-2-cutler.md (T4 full-arc)."
         },
         {
           "t": 9000,
@@ -966,9 +1045,9 @@
           "z": 7550,
           "facing": 292,
           "formation": "line",
-          "strength": 1600,
+          "strength": 1220,
           "confidence": "documented",
-          "citation": "THE OPENING LINE (CA-J1M-4 Union right): across the railroad north of the pike with 76th NY / 147th NY / 56th Pa — 'in action from 10 a.m. until 4 p.m.' (his own bracket); 95th NY + 14th Brooklyn detached left BY GENERAL REYNOLDS's order to support Hall — Reynolds's last tactical act in a brigade primary (or-27-1-cutler). Drawn: j1-03 'CUTLER'S Brig.' (3173,7397), '147 N.Y' bar (3170,7528); mon-cutler-hq (3519.6,7788.0)."
+          "citation": "THE OPENING LINE (CA-J1M-4 Union right): across the railroad north of the pike with 76th NY / 147th NY / 56th Pa — 'in action from 10 a.m. until 4 p.m.' (his own bracket); 95th NY + 14th Brooklyn detached left BY GENERAL REYNOLDS's order to support Hall — Reynolds's last tactical act in a brigade primary (or-27-1-cutler)."
         },
         {
           "t": 11400,
@@ -976,9 +1055,9 @@
           "z": 7700,
           "facing": 292,
           "formation": "line",
-          "strength": 1150,
+          "strength": 977,
           "confidence": "documented",
-          "citation": "The right wing's wreck and Wadsworth's fall-back order 'to the woods on the next ridge'; the 147th NY stranded (Lt. Col. Miller w 'at the moment of receiving' the order — the wounding that CAUSED the stranding) 'until the enemy were in possession of the railroad cut on his left'. RATE-CLASS PRIMARIES: 147th NY '207 out of 380 men and officers within half an hour'; 76th NY 169 'within thirty minutes'; 56th Pa 78+ (or-27-1-cutler — the audit's cleanest loss-rate statements)."
+          "citation": "The right wing's wreck and Wadsworth's fall-back order 'to the woods on the next ridge'; the 147th NY's own stand (its own citation, us-147ny) is what let the rest of the line disengage. RATE-CLASS PRIMARIES for the other regiments in the SAME window: '76th NY... lost 169 within thirty minutes' (Maj. Grover k); '56th Pa... lost 78+ at that point' (or-27-1-cutler) — 169+78 = 247, closely matching this residual's own −243 delta (1,220→977), a strength-conservation cross-check."
         },
         {
           "t": 12600,
@@ -986,9 +1065,9 @@
           "z": 7690,
           "facing": 292,
           "formation": "line",
-          "strength": 1100,
+          "strength": 927,
           "confidence": "documented",
-          "citation": "The railroad-cut resolution (CA-J1M-6): the 6th Wis / 95th NY / 14th Brooklyn charge releases the 147th; re-advance to 'the crest of the ridge' for 'half to three-quarters of an hour' (or-27-1-cutler; or-27-1-dawes-6wi; both-sided with or-27-2-davis-jr)."
+          "citation": "The railroad-cut resolution (CA-J1M-6): the 6th Wis / 95th NY / 14th Brooklyn charge releases the 147th; re-advance to 'the crest of the ridge' for 'half to three-quarters of an hour' (or-27-1-cutler; or-27-1-dawes-6wi both-sided)."
         },
         {
           "t": 19800,
@@ -996,9 +1075,68 @@
           "z": 7800,
           "facing": 300,
           "formation": "line",
-          "strength": 1100,
+          "strength": 927,
           "confidence": "documented",
           "citation": "On the ridge north of the pike at the lull, both flanks open — 'having no support on either my right or left until 2 o'clock' (or-27-1-cutler; the 2 o'clock Baxter/XI sync is the afternoon phase's clock)."
+        }
+      ]
+    },
+    {
+      "id": "us-147ny",
+      "name": "147th New York (Cutler's)",
+      "side": "union",
+      "frontage_m": 103,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4450,
+          "z": 5150,
+          "facing": 340,
+          "formation": "column",
+          "strength": 380,
+          "confidence": "documented",
+          "citation": "'Moved from camp early... being the leading brigade of the corps' (or-27-1-cutler); with the brigade column. STRENGTH: regiment primary 380 (or-27-1-cutler, page-verified) — one of only three regiment-grain figures in this brigade (147th NY 380, 76th NY 375, 56th Pa 252; the 95th NY / 14th Brooklyn / 7th Ind stay open at brigade grain). Dossier us-i-1-2-cutler.md (T4 full-arc)."
+        },
+        {
+          "t": 9000,
+          "x": 3170,
+          "z": 7528,
+          "facing": 292,
+          "formation": "line",
+          "strength": 380,
+          "confidence": "documented",
+          "citation": "THE OPENING LINE (CA-J1M-4 Union right): across the railroad north of the pike — 'in action from 10 a.m. until 4 p.m.' (or-27-1-cutler's own bracket). Drawn: j1-03 '147 N.Y' bar, THIS regiment's own labeled position (3170,7528) — the sharpest single-regiment geometry in the morning file."
+        },
+        {
+          "t": 11400,
+          "x": 3170,
+          "z": 7528,
+          "facing": 292,
+          "formation": "line",
+          "strength": 173,
+          "confidence": "documented",
+          "citation": "THE STRANDED STAND: Lt. Col. Miller w 'at the moment of receiving' Wadsworth's fall-back order — the wounding that CAUSED the stranding — Maj. Harney 'held the regiment to its position until the enemy were in possession of the railroad cut on his left' (or-27-1-cutler verbatim); position UNCHANGED — the whole point of the stand is that the regiment does NOT fall back with the rest of the brigade. RATE-CLASS PRIMARY, exact: '2 officers killed and 10 wounded, 42 men killed and 153 wounded — 207 out of 380 men and officers within half an hour' (or-27-1-cutler) — 380 − 207 = 173."
+        },
+        {
+          "t": 12600,
+          "x": 3450,
+          "z": 7690,
+          "facing": 292,
+          "formation": "line",
+          "strength": 173,
+          "confidence": "documented",
+          "citation": "Released by the railroad-cut charge (CA-J1M-6, us-6wi/j1m-rrcut-charge); falls back to reunite with the brigade — position matches Cutler's own t=12600 coordinate exactly. No further per-regiment loss documented in the re-advance 'to the crest of the ridge... half to three-quarters of an hour' (or-27-1-cutler)."
+        },
+        {
+          "t": 19800,
+          "x": 3600,
+          "z": 7800,
+          "facing": 300,
+          "formation": "line",
+          "strength": 173,
+          "confidence": "documented",
+          "citation": "Holds with the brigade at the lull ('no support on either my right or left until 2 o'clock', or-27-1-cutler) — matches Cutler's own t=19800 position exactly."
         }
       ]
     },
@@ -1092,9 +1230,9 @@
     },
     {
       "id": "us-coulter",
-      "name": "Paul's Brigade (1st Bde, 2nd Div, I Corps)",
+      "name": "Paul's Brigade (1st Bde, 2nd Div, I Corps — minus the 16th Maine)",
       "side": "union",
-      "frontage_m": 415,
+      "frontage_m": 341,
       "depth_m": 20,
       "keyframes": [
         {
@@ -1103,9 +1241,9 @@
           "z": 5200,
           "facing": 340,
           "formation": "column",
-          "strength": 1537,
+          "strength": 1262,
           "confidence": "documented",
-          "citation": "Robinson's division in the corps column's rear (or-27-1-robinson). Strength: B&M-repro 1,537 (hop flagged; Robinson's division frame 'We went into action with less than 2,500 men' CONFLICTS with the two-brigade B&M sum 2,989 — both carried un-averaged, dossier EC2). Dossier us-i-2-1-paul.md (T3, July 1 grain)."
+          "citation": "Robinson's division in the corps column's rear (or-27-1-robinson). Strength: B&M-repro 1,537 (hop flagged) MINUS the 16th Maine's own separately-tracked figure (275, own citation, us-16me) = 1,262; Robinson's division frame 'We went into action with less than 2,500 men' CONFLICTS with the two-brigade B&M sum — both carried un-averaged (dossier EC2). Dossier us-i-2-1-paul.md (T3, July 1 grain)."
         },
         {
           "t": 14400,
@@ -1113,7 +1251,7 @@
           "z": 7220,
           "facing": 292,
           "formation": "line",
-          "strength": 1537,
+          "strength": 1262,
           "confidence": "documented",
           "citation": "Reserve near the seminary: 'the First Brigade, under Brigadier-General Paul, was set at work to intrench the ridge' (or-27-1-robinson) — THE SEMINARY RAIL-BARRICADE the CSA final push later stormed (Perrin: 'a breastwork of rails behind [which] the enemy was posted' — both-sided across four hours, or-27-2-perrin)."
         },
@@ -1123,9 +1261,48 @@
           "z": 7220,
           "facing": 292,
           "formation": "line",
-          "strength": 1537,
+          "strength": 1262,
           "confidence": "documented",
           "citation": "At the barricade reserve at the seam (the ~15:00 Oak Ridge relief insertion — Coulter's clock — is the afternoon phase's record)."
+        }
+      ]
+    },
+    {
+      "id": "us-16me",
+      "name": "16th Maine (Paul's)",
+      "side": "union",
+      "frontage_m": 74,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4500,
+          "z": 5200,
+          "facing": 340,
+          "formation": "column",
+          "strength": 275,
+          "confidence": "documented",
+          "citation": "Robinson's division in the corps column's rear, with the brigade (or-27-1-robinson). STRENGTH HONESTY: no regiment or brigade primary exists (dossier us-i-2-1-paul.md EC2: 'no primary located this pass'); 275 is the dossier's own literature-class figure, explicitly NOT hopped to a primary — the most heavily flagged strength row this wave authors. The regiment's only hard EC6 number is its casualty total (223, or-27-1-farnham-16me), which bounds the true engaged strength from below."
+        },
+        {
+          "t": 14400,
+          "x": 3730,
+          "z": 7220,
+          "facing": 292,
+          "formation": "line",
+          "strength": 275,
+          "confidence": "documented",
+          "citation": "Reserve near the seminary: 'the First Brigade, under Brigadier-General Paul, was set at work to intrench the ridge' (or-27-1-robinson) — the seminary rail-barricade the CSA final push later stormed. With the brigade, not yet detached."
+        },
+        {
+          "t": 19800,
+          "x": 3730,
+          "z": 7220,
+          "facing": 292,
+          "formation": "line",
+          "strength": 275,
+          "confidence": "documented",
+          "citation": "At the barricade reserve at the seam; not yet engaged (the ~15:00 Oak Ridge relief insertion and the hill detachment are the afternoon phase's record)."
         }
       ]
     },
@@ -1511,6 +1688,15 @@
       "citation": "The four-road screen's checked-and-held fight: 'advanced upon Devin by four roads, and on each was checked and held' (or-27-1-buford); the two-hour Heidlersburg hold (or-27-1-devin)."
     },
     {
+      "id": "j1m-147ny-stand",
+      "kind": "musketry",
+      "t0": 9000,
+      "t1": 11400,
+      "unitId": "us-147ny",
+      "confidence": "documented",
+      "citation": "The stranded stand: Maj. Harney 'held the regiment to its position until the enemy were in possession of the railroad cut on his left' (or-27-1-cutler verbatim); RATE-CLASS: '207 out of 380 men and officers within half an hour.'"
+    },
+    {
       "id": "j1m-cutler-opening",
       "kind": "musketry",
       "t0": 9000,
@@ -1554,6 +1740,15 @@
       "unitId": "csa-davis",
       "confidence": "documented",
       "citation": "'About 10.30 o'clock... the brigade moved forward to the attack' through the cut fight (or-27-2-davis-jr p. 649)."
+    },
+    {
+      "id": "j1m-6wi-cut-charge",
+      "kind": "musketry",
+      "t0": 11700,
+      "t1": 12900,
+      "unitId": "us-6wi",
+      "confidence": "documented",
+      "citation": "The charge and volley fire (or-27-1-dawes-6wi verbatim: 'upon a double-quick, well closed, in face of a terribly destructive fire'); the ground-anchored segment j1m-rrcut-charge renders the three-regiment convergence — this event carries the 6th Wisconsin's own unit-scoped activity flag now that it is separately tracked."
     },
     {
       "id": "j1m-rrcut-charge",

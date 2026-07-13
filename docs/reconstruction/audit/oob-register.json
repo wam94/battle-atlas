@@ -26,8 +26,8 @@
       "artilleryBattalions": 16,
       "commandEntries": 6
     },
-    "inBuild": 148,
-    "notYetCast": 134,
+    "inBuild": 162,
+    "notYetCast": 126,
     "regimentsEnumerated": 478
   },
   "entries": [
@@ -2221,7 +2221,7 @@
     },
     {
       "id": "reg-us-vi-b3",
-      "castStatus": "not-yet-cast",
+      "castStatus": "us-btty-harn",
       "name": "3rd New York Independent Battery",
       "side": "union",
       "arm": "artillery",
@@ -2305,7 +2305,7 @@
     },
     {
       "id": "reg-us-vi-b6",
-      "castStatus": "not-yet-cast",
+      "castStatus": "us-btty-williston",
       "name": "Battery D, 2nd US",
       "side": "union",
       "arm": "artillery",
@@ -2333,7 +2333,7 @@
     },
     {
       "id": "reg-us-vi-b7",
-      "castStatus": "not-yet-cast",
+      "castStatus": "us-btty-butler",
       "name": "Battery G, 2nd US",
       "side": "union",
       "arm": "artillery",
@@ -2361,7 +2361,7 @@
     },
     {
       "id": "reg-us-vi-b8",
-      "castStatus": "not-yet-cast",
+      "castStatus": "us-btty-martin-5us",
       "name": "Battery F, 5th US",
       "side": "union",
       "arm": "artillery",

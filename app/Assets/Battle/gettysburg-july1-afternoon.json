@@ -1144,9 +1144,9 @@
     },
     {
       "id": "us-meredith",
-      "name": "Meredith's Iron Brigade (1st Bde, 1st Div, I Corps)",
+      "name": "Meredith's Iron Brigade (1st Bde, 1st Div, I Corps — minus the 6th Wisconsin)",
       "side": "union",
-      "frontage_m": 459,
+      "frontage_m": 383,
       "depth_m": 20,
       "keyframes": [
         {
@@ -1155,7 +1155,7 @@
           "z": 7300,
           "facing": 292,
           "formation": "line",
-          "strength": 1700,
+          "strength": 1417,
           "confidence": "documented",
           "citation": "Continuity: McPherson's woods line (Doubleday's 'must be held at all hazards')."
         },
@@ -1165,9 +1165,9 @@
           "z": 7290,
           "facing": 285,
           "formation": "line",
-          "strength": 1500,
+          "strength": 1217,
           "confidence": "documented",
-          "citation": "The woods defense against Pettigrew's renewal: 'We had inflicted severe loss on the enemy, but their numbers were so overpowering...' (or-27-1-morrow-24mi) — the 24th Mich vs 26th NC front; the 24th's flag carried by NINE men, four color-bearers k (the Union counterpart of the Fry color ledger)."
+          "citation": "The woods defense against Pettigrew's renewal: 'We had inflicted severe loss on the enemy, but their numbers were so overpowering...' (or-27-1-morrow-24mi) — the 24th Mich vs 26th NC front; the 24th's flag carried by NINE men, four color-bearers k. Decay: −200, the original combined delta carried exactly (this loss belongs to the woods-fighting four; the 6th Wis is elsewhere with Cutler's detachment, own citation)."
         },
         {
           "t": 9900,
@@ -1175,9 +1175,9 @@
           "z": 7290,
           "facing": 285,
           "formation": "line",
-          "strength": 1100,
+          "strength": 817,
           "confidence": "documented",
-          "citation": "'Forced back, step by step, contesting every foot of ground, to the barricade' west of the seminary (or-27-1-morrow-24mi); Meredith w — succession to Col. W. W. Robinson pinned in Dawes's report."
+          "citation": "'Forced back, step by step, contesting every foot of ground, to the barricade' west of the seminary (or-27-1-morrow-24mi); Meredith w — succession to Col. W. W. Robinson pinned in Dawes's report. Decay: −400, the original combined delta."
         },
         {
           "t": 11700,
@@ -1185,9 +1185,9 @@
           "z": 7200,
           "facing": 285,
           "formation": "line",
-          "strength": 900,
+          "strength": 617,
           "confidence": "documented",
-          "citation": "THE SEMINARY BARRICADE STAND with Biddle/Stone remnants and Stewart's/Cooper's/Stevens's guns (or-27-1-doubleday; drawn j1-13 'MEREDITH' bar on the seminary line (3621,7292) beside Biddle with SCALES/McGOWAN red opposite)."
+          "citation": "THE SEMINARY BARRICADE STAND with Biddle/Stone remnants and Stewart's/Cooper's/Stevens's guns (or-27-1-doubleday; drawn j1-13 'MEREDITH' bar on the seminary line beside Biddle with SCALES/McGOWAN red opposite). Decay: −200, the original combined delta."
         },
         {
           "t": 13500,
@@ -1195,9 +1195,9 @@
           "z": 6700,
           "facing": 160,
           "formation": "column",
-          "strength": 800,
+          "strength": 517,
           "confidence": "documented",
-          "citation": "Through the town ('orders... to fall back, given, I believe, by Major-General Doubleday'; Dawes's faced-by-the-rear-rank retreat with the through-town crush; Morrow w scalp & c in town)."
+          "citation": "Through the town ('orders... to fall back, given, I believe, by Major-General Doubleday'; Morrow w scalp & c in town). Decay: −100, the original combined delta."
         },
         {
           "t": 16200,
@@ -1205,9 +1205,9 @@
           "z": 5680,
           "facing": 10,
           "formation": "line",
-          "strength": 720,
+          "strength": 437,
           "confidence": "documented",
-          "citation": "CULP'S HILL: the brigade to the hill's west shoulder (Morrow: 'occupied Culp's Hill'; Dawes 'in open field on Culp's Hill' reporting to Col. Robinson 'now commanding the brigade') — the consolidation's I Corps right."
+          "citation": "CULP'S HILL: the brigade to the hill's west shoulder (Morrow: 'occupied Culp's Hill'; Dawes 'in open field on Culp's Hill' reporting to Col. Robinson 'now commanding the brigade') — the consolidation's I Corps right; the 6th Wisconsin's own detachment rejoins here (see us-6wi t=18000). Decay: −80, the original combined delta."
         },
         {
           "t": 18000,
@@ -1215,17 +1215,17 @@
           "z": 5680,
           "facing": 10,
           "formation": "line",
-          "strength": 700,
+          "strength": 417,
           "confidence": "documented",
-          "citation": "The Culp's Hill line at 18:00. Decay: return p. 173 brigade 1,153 — the heaviest Union brigade aggregate of the battle, single-day concentrated ('little or no loss' July 2-4); the Morrow 316-vs-363 return reconciliation carried (print note 'But see revised statement')."
+          "citation": "The Culp's Hill line at 18:00. Decay: −20, the original combined delta. TOTAL DAY LOSS (these four regiments): 1,829 nominal share minus the 6th Wisconsin's 333 = 1,496 start, 417 end = 1,079 lost; PLUS the 6th Wisconsin's own separately-tracked 168 = 1,247 combined — corrected UP from the pre-decomposition build's undifferentiated 1,129 (the 118-man correction flagged at t=13500, carried through unchanged from there). The return p.173 brigade total (1,153) remains the single-track EC6 anchor for the WHOLE original compilation; this decomposition's corrected 1,247 is a wave-report residual, not a silent override of that return (both recorded)."
         }
       ]
     },
     {
-      "id": "us-cutler",
-      "name": "Cutler's Brigade (2nd Bde, 1st Div, I Corps)",
+      "id": "us-6wi",
+      "name": "6th Wisconsin (Meredith's)",
       "side": "union",
-      "frontage_m": 297,
+      "frontage_m": 90,
       "depth_m": 20,
       "keyframes": [
         {
@@ -1234,7 +1234,66 @@
           "z": 7800,
           "facing": 300,
           "formation": "line",
-          "strength": 1100,
+          "strength": 165,
+          "confidence": "documented",
+          "citation": "Continuity from the morning phase's 19800 state."
+        },
+        {
+          "t": 6300,
+          "x": 3850,
+          "z": 8180,
+          "facing": 340,
+          "formation": "line",
+          "strength": 165,
+          "confidence": "inferred",
+          "citation": "Presumed still fighting with Cutler's detachment through the flank-volley phase (Iverson's line, or-27-1-cutler) — no independent report clock exists for the 6th Wis specifically in this window; position slot-follows Cutler's own citation. STRENGTH HONESTY: no further loss documented — held flat, not invented."
+        },
+        {
+          "t": 12600,
+          "x": 4300,
+          "z": 7420,
+          "facing": 130,
+          "formation": "column",
+          "strength": 165,
+          "confidence": "documented",
+          "citation": "THE EMBANKMENT RETREAT: 'the men marched with perfect steadiness and no excitement' (or-27-1-cutler, the formation-class primary) — the detachment retires with Cutler's column along the railroad embankment; Dawes's own town-retreat narrative: 'faced by the rear rank', 'the streets were crowded with retiring troops, batteries, and ambulance trains', 'hearty cheers for the old Sixth' (or-27-1-dawes-6wi)."
+        },
+        {
+          "t": 15000,
+          "x": 5300,
+          "z": 6100,
+          "facing": 20,
+          "formation": "column",
+          "strength": 165,
+          "confidence": "inferred",
+          "citation": "Through town, separating from Cutler's column to rejoin its own brigade — Dawes's report narrates the through-town retreat directly, without naming a shared column after the embankment; the separation point is inferred, not stated."
+        },
+        {
+          "t": 18000,
+          "x": 5620,
+          "z": 5680,
+          "facing": 10,
+          "formation": "line",
+          "strength": 165,
+          "confidence": "documented",
+          "citation": "TO CULP'S HILL: 'reporting to Col. W. W. Robinson, now commanding the brigade' (or-27-1-dawes-6wi verbatim) — the Meredith succession pin (dossier us-i-1-1-meredith.md EC1); rejoins the Iron Brigade's west-shoulder line at Meredith's own end coordinate (this file's us-meredith t=18000 keyframe). Decay: return p.173 168 total (adopted, un-averaged against Dawes's own 158/'not less than 160') — no further loss documented after the cut charge."
+        }
+      ]
+    },
+    {
+      "id": "us-cutler",
+      "name": "Cutler's Brigade (2nd Bde, 1st Div, I Corps — minus the 147th New York)",
+      "side": "union",
+      "frontage_m": 250,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3600,
+          "z": 7800,
+          "facing": 300,
+          "formation": "line",
+          "strength": 927,
           "confidence": "documented",
           "citation": "Continuity: the ridge north of the pike, both flanks open (or-27-1-cutler)."
         },
@@ -1244,7 +1303,7 @@
           "z": 8050,
           "facing": 340,
           "formation": "line",
-          "strength": 1100,
+          "strength": 927,
           "confidence": "documented",
           "citation": "THE 2 O'CLOCK SYNC: 'having no support on either my right or left until 2 o'clock, when a brigade from the Second Division formed on my right, and the Eleventh Corps came in on the right of them' (or-27-1-cutler) — the Baxter/XI junction clocked from the receiving line (CA-J1P-1's receiving preamble)."
         },
@@ -1254,7 +1313,7 @@
           "z": 8200,
           "facing": 340,
           "formation": "line",
-          "strength": 1080,
+          "strength": 907,
           "confidence": "documented",
           "citation": "THE FLANK VOLLEY on Iverson's line: 'came in on their flank, and opened so hot a fire on them that one regiment threw down their arms and surrendered' (or-27-1-cutler) — the Iverson capture mass from the Union left (the surrendered regiment unnamed — carried, not identified)."
         },
@@ -1264,7 +1323,7 @@
           "z": 7700,
           "facing": 320,
           "formation": "line",
-          "strength": 1050,
+          "strength": 877,
           "confidence": "documented",
           "citation": "Ammunition exhaustion and relief; the twenty-minute wait at the railroad; the three-regiment detachment to the seminary (or-27-1-cutler)."
         },
@@ -1274,7 +1333,7 @@
           "z": 7400,
           "facing": 130,
           "formation": "column",
-          "strength": 1000,
+          "strength": 827,
           "confidence": "documented",
           "citation": "THE EMBANKMENT RETREAT: 'I moved off on the railroad embankment, and, although exposed to the enemy's fire on both flanks, the men marched with perfect steadiness and no excitement. Their steadiness had the effect to bring the enemy to a halt' (or-27-1-cutler — the formation-class primary)."
         },
@@ -1284,7 +1343,7 @@
           "z": 5750,
           "facing": 45,
           "formation": "line",
-          "strength": 960,
+          "strength": 787,
           "confidence": "documented",
           "citation": "Through town to Cemetery Hill, then 'to hold the crest of a hill to the right' — the 7th Ind sent by Wadsworth: THE CULP'S HILL FIRST-OCCUPATION PIN (or-27-1-cutler; both-sided with the Greene frame)."
         },
@@ -1294,9 +1353,48 @@
           "z": 5450,
           "facing": 45,
           "formation": "line",
-          "strength": 950,
+          "strength": 777,
           "confidence": "documented",
-          "citation": "Toward Culp's Hill's right at 18:00 (the 7th Ind — fresh, detached all day — rejoins at evening, its ~20-loss return row the structural control). Decay: return 1,002, the opening half-hour dominant (the rate-class primaries)."
+          "citation": "Toward Culp's Hill's right at 18:00 (the 7th Ind — fresh, detached all day — rejoins at evening). Decay: the whole brigade's return total (1,002 — the source's own figure, carried as-is on this residual pending a full per-regiment reconciliation), the opening half-hour dominant (the rate-class primaries); the 147th New York's own 207-loss is now carried separately (us-147ny), the residual figure here is this brigade's OTHER five regiments only."
+        }
+      ]
+    },
+    {
+      "id": "us-147ny",
+      "name": "147th New York (Cutler's)",
+      "side": "union",
+      "frontage_m": 103,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3600,
+          "z": 7800,
+          "facing": 300,
+          "formation": "line",
+          "strength": 173,
+          "confidence": "documented",
+          "citation": "Continuity from the morning phase's 19800 state."
+        },
+        {
+          "t": 12600,
+          "x": 4300,
+          "z": 7400,
+          "facing": 130,
+          "formation": "column",
+          "strength": 173,
+          "confidence": "documented",
+          "citation": "THE EMBANKMENT RETREAT with the brigade: 'the men marched with perfect steadiness and no excitement' (or-27-1-cutler) — matches Cutler's own t=12600 coordinate exactly. No further loss documented for this regiment specifically in the afternoon (held flat, not invented)."
+        },
+        {
+          "t": 18000,
+          "x": 5450,
+          "z": 5450,
+          "facing": 45,
+          "formation": "line",
+          "strength": 173,
+          "confidence": "documented",
+          "citation": "Toward Culp's Hill's right at 18:00 with the brigade — matches Cutler's own t=18000 coordinate exactly."
         }
       ]
     },
@@ -1430,9 +1528,9 @@
     },
     {
       "id": "us-coulter",
-      "name": "Paul's Brigade (1st Bde, 2nd Div, I Corps)",
+      "name": "Paul's Brigade (1st Bde, 2nd Div, I Corps — minus the 16th Maine)",
       "side": "union",
-      "frontage_m": 415,
+      "frontage_m": 341,
       "depth_m": 20,
       "keyframes": [
         {
@@ -1441,9 +1539,9 @@
           "z": 7220,
           "facing": 292,
           "formation": "line",
-          "strength": 1537,
+          "strength": 1262,
           "confidence": "documented",
-          "citation": "Continuity: the seminary barricade reserve (or-27-1-robinson; B&M 1,537 hop)."
+          "citation": "Continuity: the seminary barricade reserve (or-27-1-robinson; B&M 1,537 hop, minus the 16th Maine's own 275)."
         },
         {
           "t": 7200,
@@ -1451,7 +1549,7 @@
           "z": 8380,
           "facing": 340,
           "formation": "line",
-          "strength": 1537,
+          "strength": 1262,
           "confidence": "documented",
           "citation": "THE RELIEF INSERTION: 'until after 3 p.m., at which time, the ammunition being exhausted, we were relieved by a portion of the First Brigade' (or-27-1-coulter — the Paul-for-Baxter relief clocked at the incoming echelon); brought up by Robinson in person; 'part of it in the position first occupied by Baxter's brigade' (or-27-1-robinson)."
         },
@@ -1461,9 +1559,9 @@
           "z": 8300,
           "facing": 340,
           "formation": "line",
-          "strength": 1200,
+          "strength": 925,
           "confidence": "documented",
-          "citation": "The relieved line's fight: 'The enemy now made repeated attacks on the division, in all of which he was handsomely repulsed' (or-27-1-robinson); PAUL FELL severely wounded (shot through both eyes — literature-grade nature, flagged) — the FIVE-COMMANDER CASCADE (Paul → Leonard w → Root w → Coulter, with his 11th Pa); the 16th Maine ordered 'to take possession of a hill which commanded the road, and hold the same as long as there was a man left' (or-27-1-farnham-16me — the sacrifice order verbatim)."
+          "citation": "The relieved line's fight: 'The enemy now made repeated attacks on the division, in all of which he was handsomely repulsed' (or-27-1-robinson); PAUL FELL severely wounded — the FIVE-COMMANDER CASCADE (Paul → Leonard w → Root w → Coulter). The 16th Maine is detached to the hill THIS instant (own citation, us-16me) — its loss is not yet booked; this residual's own −337 delta (1,262→925) is the OTHER four regiments' share of the relieved line's fight."
         },
         {
           "t": 13500,
@@ -1471,9 +1569,9 @@
           "z": 6900,
           "facing": 160,
           "formation": "column",
-          "strength": 900,
+          "strength": 848,
           "confidence": "documented",
-          "citation": "The town retreat under the 16th Maine's cover (its three-stage collapse: hollow → woods → 'not in time to reach the main body'; the regiment's 162-missing column IS the sacrifice hill's capture pocket); Robinson's division the ordered rear guard, 'until nearly 5 p.m.' (the ED-70 recorded back-edge tail)."
+          "citation": "The town retreat under the 16th Maine's cover (its own three-stage collapse is us-16me's citation; the regiment's sacrifice bought this residual's own retreat); Robinson's division the ordered rear guard, 'until nearly 5 p.m.' (the ED-70 recorded back-edge tail). Decay: −77 (925→848), these four regiments' own retreat losses, distinct from the 16th Maine's capture-pocket spike."
         },
         {
           "t": 16200,
@@ -1481,7 +1579,7 @@
           "z": 5700,
           "facing": 20,
           "formation": "line",
-          "strength": 780,
+          "strength": 728,
           "confidence": "documented",
           "citation": "Cemetery Hill; Coulter assigned to the brigade command 'taking his regiment with him' (or-27-1-baxter = or-27-1-coulter, both echelons)."
         },
@@ -1491,9 +1589,68 @@
           "z": 5700,
           "facing": 20,
           "formation": "line",
-          "strength": 761,
+          "strength": 709,
           "confidence": "documented",
-          "citation": "The hill line at 18:00. Decay: THE DAY-SPLIT PRIMARY — July 1 776 · July 2 28 · July 3 14 · July 4 3 = 821 (or-27-1-coulter's table, the only per-day brigade table in the division; 'Many reported missing... were killed or wounded. Some were recovered on re-entering the town.')."
+          "citation": "The hill line at 18:00. Decay: THE DAY-SPLIT PRIMARY — July 1 776 · July 2 28 · July 3 14 · July 4 3 = 821 (or-27-1-coulter's table, the only per-day brigade table in the division's records). STRENGTH-CONSERVATION CHECK: this residual's own day loss (1,262 − 709 = 553) plus the 16th Maine's own day loss (275 − 52 = 223, its own primary) = 776 — EXACTLY the brigade's day-split table total, preserved by construction (the wave report's cleanest reconciliation)."
+        }
+      ]
+    },
+    {
+      "id": "us-16me",
+      "name": "16th Maine (Paul's)",
+      "side": "union",
+      "frontage_m": 74,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3730,
+          "z": 7220,
+          "facing": 292,
+          "formation": "line",
+          "strength": 275,
+          "confidence": "documented",
+          "citation": "Continuity from the morning phase's 19800 state."
+        },
+        {
+          "t": 7200,
+          "x": 4000,
+          "z": 8380,
+          "facing": 340,
+          "formation": "line",
+          "strength": 275,
+          "confidence": "documented",
+          "citation": "THE RELIEF INSERTION with the brigade: 'until after 3 p.m., at which time, the ammunition being exhausted, we were relieved by a portion of the First Brigade' (or-27-1-coulter — the Paul-for-Baxter relief clocked at the incoming echelon); brought up by Robinson in person — matches Coulter's own t=7200 coordinate exactly."
+        },
+        {
+          "t": 10800,
+          "x": 3980,
+          "z": 8320,
+          "facing": 30,
+          "formation": "line",
+          "strength": 275,
+          "confidence": "documented",
+          "citation": "THE SACRIFICE ORDER: 'ordered, alone, by General Robinson, to take possession of a hill which commanded the road, and hold the same as long as there was a man left' (or-27-1-farnham-16me verbatim) — the detachment from the brigade begins here. POSITION HONESTY: no drawn geometry or named landmark exists for 'a hill which commanded the road' in Farnham's report; placed near the division's own retreat-corridor ground (Coulter's own t=10800 coordinate), radius wide-open — a genuine EC3 gap (dossier us-i-2-1-paul.md EC3.3, [D])."
+        },
+        {
+          "t": 12600,
+          "x": 3980,
+          "z": 8320,
+          "facing": 30,
+          "formation": "scattered",
+          "strength": 52,
+          "confidence": "documented",
+          "citation": "THE THREE-STAGE COLLAPSE: 'ordered a retreat, but not in time to reach the main body' — the fall-backs hollow → woods → the failed retreat (or-27-1-farnham-16me verbatim). LOSS PRIMARY, exact: July 1 1+8 k / 5+47 w / 11+151 m = 223 (or-27-1-farnham-16me) — the missing column (162) IS the sacrifice hill's capture pocket (dossier EC6). Strength 275 − 223 = 52 (compounded-uncertainty flag: 275 is itself not a primary; 223 is; the residual carries both flags forward, not smoothed)."
+        },
+        {
+          "t": 18000,
+          "x": 5000,
+          "z": 5700,
+          "facing": 20,
+          "formation": "line",
+          "strength": 52,
+          "confidence": "documented",
+          "citation": "The remnant reaches Cemetery Hill with the division at day's end (or-27-1-coulter; or-27-1-farnham-16me's own July 2 record picks up from Cemetery Hill battery support). No further loss documented (held flat, not invented)."
         }
       ]
     },
@@ -2856,6 +3013,15 @@
       "unitId": "us-coster",
       "confidence": "documented",
       "citation": "The brickyard delaying action and the brick-house stopper (or-27-1-vonsteinwehr; the 134th/154th NY ledger)."
+    },
+    {
+      "id": "j1p-16me-hillstand",
+      "kind": "musketry",
+      "t0": 10800,
+      "t1": 12600,
+      "unitId": "us-16me",
+      "confidence": "documented",
+      "citation": "THE SACRIFICE: 'ordered, alone, by General Robinson, to take possession of a hill which commanded the road, and hold the same as long as there was a man left' (or-27-1-farnham-16me verbatim); the three-stage collapse (hollow → woods → 'not in time to reach the main body')."
     },
     {
       "id": "j1p-calef-stand",
