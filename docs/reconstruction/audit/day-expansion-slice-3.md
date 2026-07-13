@@ -57,10 +57,10 @@ Longstreet, no Johnson/Stuart, no Artillery Reserve.
 
 | | Morning | Afternoon |
 |---|---|---|
-| Units | 32 (17 US / 15 CSA) | 45 (24 US / 21 CSA) |
+| Units | 32 (16 US / 16 CSA) | 45 (24 US / 21 CSA) |
 | New entrants at t=0 | — | 13 (Early's four brigades + Jones's battalion; Krzyzanowski, von Gilsa, Ames, Coster, Orland Smith; Wheeler, Wilkeson/G-4US, Wiedrich) |
 | Events (fire windows) | 12 | 39 |
-| Keyframes | ~120 | ~200 |
+| Keyframes | 118 (100 documented / 18 inferred; all cited) | 215 (213 documented / 2 inferred; all cited) |
 | Newly cast register rows | 3 (`us-cav-gamble`, `us-cav-devin`, `us-btty-calef` — castStatus set; overlay 204 mapped / 0 unmapped) | — |
 
 - **Morning movers** carry the ED-26 chain: Buford's delaying action
@@ -224,19 +224,26 @@ Longstreet, no Johnson/Stuart, no Artillery Reserve.
 ## 7. Residuals (the worklist)
 
 1. **Cross-file strength-continuity flags (the July-1-night vs
-   July-2-t0 class)**: this slice adopts the evidence layer, so some
+   July-2-t0 class)**: this slice adopts the evidence layer, so
    July-1-end values differ from the July 2 files' t=0 (which
-   inherited July-3/compilation bases). Exemplars: Gordon 990 vs
-   1,200 (his engaged primary reused in the July 2 files); O'Neal
-   1,300 vs 1,100; Daniel 1,650 vs 1,185; Ramseur 930 vs 1,715 (the
-   July-2/3 files carry a compilation basis ABOVE the June-30 return
-   — the return post-dates their authoring); Ames/Harris 700 vs 565.
-   Hays lands EXACT (1,137 = his own July 1 table's subtraction —
-   the class's proof it can converge). Each is the known
-   evidence-layer-vs-build class (ED-32/ED-46 pattern; slice-2 §7.2's
-   mirror) — flagged for a reconciliation pass, never silently edited.
-   NOTE the days do not abut (the July 1 evening and July 2 morning
-   are honest notes), so no validator rule is violated.
+   inherited July-3/compilation bases) on 26 of 42 shared rows.
+   SEVEN land EXACT (Hays 1,137 — his own July 1 table's
+   subtraction; Lowrance 500 — his documented waypoint; Baxter 800;
+   Dana 465; Wiedrich 141; Jones's and McIntosh's battalions): the
+   class's proof it converges where per-day primaries exist. The
+   big divergences are structural, both directions: Ramseur 930 vs
+   1,715 (the June-30 division return, found pass 11, sits far BELOW
+   the compilation the July 2/3 files carry); Daniel 1,650 vs 1,185
+   and Davis 1,200 / Marshall 1,000 vs the 2,000 'first day' figures
+   the later files hold statically (their July-1 losses were never
+   netted); von Gilsa 400 vs 605 (the 41st NY rejoins ~22:00, after
+   this window); Coulter 761 vs 510; Harris 700 vs 565. Each is the
+   known evidence-layer-vs-build class (ED-32/ED-46 pattern; slice-2
+   §7.2's mirror) — enumerated in full by the afternoon script's
+   continuity ledger, flagged for a reconciliation pass, never
+   silently edited. NOTE the days do not abut (the July 1 evening
+   and July 2 morning are honest notes), so no validator rule is
+   violated.
 2. **Heckman's battery + the XI artillery brigade grain** (cut 2).
 3. **In-HUD phase switching** (ADR 0005 residual, FIVE phases now
    waiting).
@@ -259,10 +266,15 @@ Longstreet, no Johnson/Stuart, no Artillery Reserve.
 
 Suites (all green on the branch):
 tool vitest **118** · pipeline pytest **59** · reconstruction pytest
-**122 + 1 skipped** · Unity EditMode **PENDING** · Unity PlayMode
-**PENDING** (Unity runs: CLI `-batchmode -runTests -buildTarget
-OSXUniversal`, worktree Library, gitignored inputs restored; logs +
-results XML in the worktree, gitignored by design).
+**122 + 1 skipped** · Unity EditMode **377 passed, 0 failed, 4
+skipped** (the slice-2 baseline shape; the manifest echo, overlay
+coverage, and moments gate tests extended to all five phase files —
+the overlay corps-count floor made per-file, since July 1 is honestly
+a five-corps meeting engagement) · Unity PlayMode **17 passed**
+(Unity runs: CLI `-batchmode -runTests -buildTarget OSXUniversal`,
+worktree Library, gitignored inputs restored; logs
+`editmode2.log`/`playmode.log` + results XML in the worktree,
+gitignored by design).
 
 Perf: PENDING (`dayexp3-afternoon-benchmark.json`).
 
