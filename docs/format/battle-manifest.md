@@ -59,13 +59,32 @@ navigation, warned, everything else keeps working — the moments.json
 degradation pattern). Day tabs render in date order; the day owning
 the phase whose `battle` matches the loaded battle asset is marked
 active; selecting an unreconstructed day/phase opens the honest
-empty-state panel with the phase's note. In-HUD battle hot-swapping
-between reconstructed phases remains deferred (ADR 0005
-§Consequences); day-expansion slice 2 ships the capture-path
-`-battleFile` override (BattleDirector loads a battle JSON from disk;
-`BattleAssetName` follows it, so the day panel lights the loaded
-phase) and per-phase timeline moments: the HUD first probes
+empty-state panel with the phase's note. Day-expansion slice 2 ships
+the capture-path `-battleFile` override (BattleDirector loads a battle
+JSON from disk; `BattleAssetName` follows it, so the day panel lights
+the loaded phase) and per-phase timeline moments: the HUD first probes
 `Atlas/moments-<battleAsset>.json`, falls back to `Atlas/moments.json`,
 and drops any moments file whose own `battle` field names a different
 phase — a moments file may never render against another phase's
 clock.
+
+**In-HUD phase switching** (the hot-swap ADR 0005 deferred, shipped by
+the phase-switching slice): a reconstructed phase that is not the
+loaded one carries a "Load this phase" button in the day panel
+(`AtlasHud.SwitchToPhase`). A switch destroys the running battle's
+components and spawns a fresh `BattleDirector` with the target phase's
+battle text (`BattleDirector.SpawnSuccessor` — fresh-launch
+equivalence by construction, PlayMode-pinned), re-bases the clock to
+the target phase (a never-visited phase starts at its t=0; a revisited
+one resumes at its session-remembered position), reloads the per-phase
+moments, re-lights the day tabs, and **re-runs the manifest clock-echo
+verification against the newly loaded battle** — a stale echo warns
+loudly on every switch, not just at launch. The phase battle file
+resolves from, in order: a `-battleDir <dir>` argument,
+`StreamingAssets/Battle/` (standalone builds carry post-build copies),
+`Assets/Battle/` (the editor and PlayMode tests), then the
+`-battleFile` directory. Soldier View entry is per-phase honest: the
+shipped viewpoints address the scene's serialized battle asset (July 3
+afternoon), and entry markers/window band exist only while that phase
+is loaded (`HudModel.ViewpointsApplyTo`). Not-reconstructed phases
+remain notes — never a load control.

@@ -29,8 +29,22 @@ namespace BattleAtlas.EditorTools
                                $"{report.summary.totalErrors} errors");
                 EditorApplication.Exit(1);
             }
+            // In-HUD phase switching (ADR 0005): the switcher loads sibling
+            // phase battle files at runtime. In the editor it reads
+            // Assets/Battle directly; a standalone gets copies inside the
+            // bundle's StreamingAssets so ONE launch can browse the whole
+            // battle with no arguments. Post-build copy only — the source
+            // assets and the project StreamingAssets stay byte-untouched.
+            string battleDst = System.IO.Path.Combine(report.summary.outputPath,
+                "Contents/Resources/Data/StreamingAssets/Battle");
+            System.IO.Directory.CreateDirectory(battleDst);
+            foreach (string src in System.IO.Directory.GetFiles("Assets/Battle", "*.json"))
+                System.IO.File.Copy(src,
+                    System.IO.Path.Combine(battleDst, System.IO.Path.GetFileName(src)),
+                    overwrite: true);
             Debug.Log($"Benchmark build OK: {report.summary.outputPath} " +
-                      $"({report.summary.totalSize / (1024 * 1024)} MB)");
+                      $"({report.summary.totalSize / (1024 * 1024)} MB); " +
+                      "battle files copied into StreamingAssets/Battle");
         }
     }
 }

@@ -4,10 +4,17 @@ The Battle of Gettysburg (July 3, 1863 — Pickett's Charge) as a
 desktop-first interactive reconstruction for Apple Silicon macOS, in two
 connected experiences:
 
-- **Atlas Mode** — a real-time, scrubbable documentary map of the July 3
-  battlefield: 190 units on real LiDAR terrain, unit identity/activity/
+- **Atlas Mode** — a real-time, scrubbable documentary map of the
+  battlefield: units on real LiDAR terrain, unit identity/activity/
   provenance on tap, moment markers, and an honest documented-versus-
-  reconstructed distinction throughout.
+  reconstructed distinction throughout. The battle now spans all three
+  days as five reconstructed phases (July 1 morning/afternoon, July 2
+  afternoon/evening, July 3 afternoon — the manifest,
+  `docs/format/battle-manifest.md`), and **one launch browses the whole
+  battle**: the day tabs open a phase panel, and loading another
+  reconstructed phase switches in-session (a few seconds, honest
+  loading veil); un-reconstructed stretches stay labeled notes, never
+  empty battlefields.
 - **Soldier View** — a fixed first-person viewpoint inside Pickett's
   Charge (*With Garnett's Line*, the Emmitsburg Road to the Angle,
   15:16–15:27), pre-rendered offline in HDRP as seekable video and
@@ -82,7 +89,11 @@ Then open `app/` in Unity and run **BattleAtlas ▸ Import Heightmap**
 once — this rebuilds the gitignored
 `Assets/Generated/GettysburgTerrain.asset` the Atlas scene references —
 and save the scene. Open `Assets/Scenes/Atlas.unity` and press Play for
-Atlas Mode.
+Atlas Mode. One session browses the whole battle: use the day tabs →
+phase panel to switch between the five reconstructed phases (in the
+editor the switcher reads `Assets/Battle/` directly; standalone builds
+carry the phase files inside the bundle, and capture runs may point a
+`-battleDir <dir>` at a battle-file directory).
 
 ### 3. Optional: Soldier View media (~2 GB download)
 

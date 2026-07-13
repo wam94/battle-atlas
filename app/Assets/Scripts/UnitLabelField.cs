@@ -164,6 +164,18 @@ namespace BattleAtlas
                     pool[k].gameObject.SetActive(false);
         }
 
+        void OnDestroy()
+        {
+            // the pooled label GameObjects are children of the director's
+            // GameObject, not of this component — a phase switch destroys
+            // this component while the GameObject lives on, so the pool
+            // must go down with the component (leak audit, phase-switching
+            // slice). Pool exists only in play mode (created in Start).
+            if (pool == null) return;
+            foreach (TextMeshPro label in pool)
+                if (label != null) Destroy(label.gameObject);
+        }
+
         void HideAll()
         {
             for (int k = 0; k < PoolSize; k++)
