@@ -117,17 +117,22 @@ session, `phase-switch-summary.json`):
 
 | Switch | Time |
 |---|---|
-| july3-afternoon → july1-morning | SWITCH_MS_1 ms |
-| july1-morning → july1-afternoon | SWITCH_MS_2 ms |
-| july1-afternoon → july2-afternoon | SWITCH_MS_3 ms |
-| july2-afternoon → july2-evening | SWITCH_MS_4 ms |
-| july2-evening → july3-afternoon | SWITCH_MS_5 ms |
+| july3-afternoon → july1-morning | 66 ms |
+| july1-morning → july1-afternoon | 72 ms |
+| july1-afternoon → july2-afternoon | 75 ms |
+| july2-afternoon → july2-evening | 89 ms |
+| july2-evening → july3-afternoon | 83 ms |
+
+Every switch lands in **66–89 ms** (measured click → refreshed HUD,
+Development standalone, M-series hardware) — the "few seconds"
+budget was never approached; the loading veil reads as a blink. The
+veil stays: a slower disk or a future larger phase file degrades to a
+labeled wait, never a freeze.
 
 Steady-state FPS on the identical July 3 Pickett's-Charge view
-(t=8400, same orbit): **FPS_FRESH avg FPS at fresh launch vs
-FPS_AFTER after the five-phase round trip** — switching costs nothing
-at steady state, which is the §2 no-leak result seen from the frame
-counter.
+(t=8400, same orbit): **59.5 avg FPS at fresh launch vs 59.8 after
+the five-phase round trip** — switching costs nothing at steady
+state, which is the §2 no-leak result seen from the frame counter.
 
 ## 4. Soldier View across phases
 
@@ -158,9 +163,14 @@ Suites (all green on the branch; worktree CLI runs, editor closed):
 tool vitest **119** · pipeline pytest **59** · reconstruction pytest
 **122 + 1 skipped** · Unity EditMode **383 passed, 0 failed, 4
 skipped** (377+4 baseline + 6: battle-file resolution order ×3,
-viewpoint gate ×2, successor wiring ×1) · Unity PlayMode **PLAYMODE_N
-passed** (17 baseline + 3: fresh-launch equivalence, leak audit, the
-HUD switch flow). PLAYMODE_FLAKE_NOTE
+viewpoint gate ×2, successor wiring ×1) · Unity PlayMode **20
+passed, 0 failed** (17 baseline + 3: fresh-launch equivalence, leak
+audit, the HUD switch flow). Honesty note: one full-suite PlayMode
+run had a single failure in the PRE-EXISTING
+`SoldierViewPlayerSyncTests.PlayThenPause_ClockAndVideoStayTogether`
+("video crept while paused", one 1/30 s frame) — decoder timing under
+batch load, untouched by this slice; the class in isolation (10/10)
+and the immediate full-suite re-run (20/20) both pass.
 
 Evidence: `docs/benchmarks/captures/phase-switching/` (force-added;
 owner copies in the main checkout's same gitignored path) — ONE

@@ -1,0 +1,12 @@
+{
+  "note": "one session visiting all five reconstructed phases via AtlasHud.SwitchToPhase (phase-switching slice)",
+  "switches": [
+    { "phase": "july1-morning", "switchMs": 66 },
+    { "phase": "july1-afternoon", "switchMs": 72 },
+    { "phase": "july2-afternoon", "switchMs": 75 },
+    { "phase": "july2-evening", "switchMs": 89 },
+    { "phase": "july3-afternoon", "switchMs": 83 }
+  ],
+  "fpsJuly3FreshLaunch": 59.5,
+  "fpsJuly3AfterFiveSwitches": 59.8
+}
