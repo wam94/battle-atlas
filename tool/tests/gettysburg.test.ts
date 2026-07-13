@@ -103,7 +103,12 @@ describe("authored July 3 battle", () => {
     //    + 1 day-expansion slice 1 unit: McCartney's 1st MA Battery A —
     //      the "arrived too late" record, authorable once the window
     //      reaches his ~16:00 arrival (author-dayexp1-sunset.ts).
-    expect(units).toHaveLength(191);
+    //    + 4 decomposition-wave-1 units: the Ziegler's Grove convergence
+    //      (Williston's D/2US, Butler's G/2US, Leonard Martin's F/5US,
+    //      Harn's 3rd NY) — authoring-wave-a2.md's headline cut, picked up
+    //      once new units were allowed (author-decomp1-zieglers-grove.ts).
+    //      All parentless, post-repulse legs, no fire (muzzles cold).
+    expect(units).toHaveLength(195);
     const ohio = units.find((u: any) => u.id === "us-8oh");
     expect(ohio).toBeDefined();
     expect(ohio.parent).toBeUndefined(); // Carroll's brigade isn't modeled

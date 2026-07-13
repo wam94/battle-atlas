@@ -427,6 +427,11 @@
    "division": "3rd Division, I Corps"
   },
   {
+   "id": "us-147ny",
+   "corps": "I Corps",
+   "division": "1st Division, I Corps"
+  },
+  {
    "id": "us-14vt",
    "corps": "I Corps",
    "division": "3rd Division, I Corps"
@@ -435,6 +440,11 @@
    "id": "us-15ma",
    "corps": "II Corps",
    "division": "2nd Division, II Corps"
+  },
+  {
+   "id": "us-16me",
+   "corps": "I Corps",
+   "division": "2nd Division, I Corps"
   },
   {
    "id": "us-16vt",
@@ -475,6 +485,11 @@
    "id": "us-69pa",
    "corps": "II Corps",
    "division": "2nd Division, II Corps"
+  },
+  {
+   "id": "us-6wi",
+   "corps": "I Corps",
+   "division": "1st Division, I Corps"
   },
   {
    "id": "us-71pa",
@@ -577,6 +592,11 @@
    "division": "Artillery Brigade, III Corps"
   },
   {
+   "id": "us-btty-butler",
+   "corps": "VI Corps",
+   "division": "Artillery Brigade, VI Corps"
+  },
+  {
    "id": "us-btty-calef",
    "corps": "Cavalry Corps",
    "division": "2nd Brigade, Horse Artillery, Cavalry Corps"
@@ -637,6 +657,11 @@
    "division": "Artillery Brigade, I Corps"
   },
   {
+   "id": "us-btty-harn",
+   "corps": "VI Corps",
+   "division": "Artillery Brigade, VI Corps"
+  },
+  {
    "id": "us-btty-hart",
    "corps": "Artillery Reserve",
    "division": "1st Volunteer Brigade, Artillery Reserve"
@@ -655,6 +680,11 @@
    "id": "us-btty-kinzie",
    "corps": "XII Corps",
    "division": "Artillery Brigade, XII Corps"
+  },
+  {
+   "id": "us-btty-martin-5us",
+   "corps": "VI Corps",
+   "division": "Artillery Brigade, VI Corps"
   },
   {
    "id": "us-btty-mason",
@@ -760,6 +790,11 @@
    "id": "us-btty-wiedrich",
    "corps": "XI Corps",
    "division": "Artillery Brigade, XI Corps"
+  },
+  {
+   "id": "us-btty-williston",
+   "corps": "VI Corps",
+   "division": "Artillery Brigade, VI Corps"
   },
   {
    "id": "us-btty-winegar",

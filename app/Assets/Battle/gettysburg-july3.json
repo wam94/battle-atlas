@@ -9279,6 +9279,202 @@
       ]
     },
     {
+      "id": "us-btty-williston",
+      "name": "Williston's Battery D, 2nd US Artillery",
+      "side": "union",
+      "frontage_m": 80,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4195,
+          "z": 3055,
+          "facing": 270,
+          "formation": "column",
+          "strength": 109,
+          "confidence": "inferred",
+          "citation": "Waiting with the VI Corps Artillery Brigade reserve: 'South of Gettysburg, east side of Sedgwick Avenue, near the George Weickert farm' (brigade tablet verbatim [E], reconstruction/dossiers/us-vi-arty-tompkins.md EC3.2; radius honest at ~±150 m, no battery-grain morning position exists). Strength 109 (own tablet, verbatim, reconstruction/dossiers/us-btty-williston.md EC2). GUN-COUNT CONFLICT CARRIED, not adjudicated: this battery's own tablet states 'four light 12 pounders'; the brigade-level tablet and a separate cross-check both state six guns for this slot (dossier Conflicts item 1) — neither reading adopted. 1st Lt. Edward B. Williston commanding, brevetted major July 3 'for gallantry and meritorious services in the Gettysburg campaign' (tablet verbatim)."
+        },
+        {
+          "t": 9000,
+          "x": 4195,
+          "z": 3055,
+          "facing": 270,
+          "formation": "column",
+          "strength": 109,
+          "confidence": "inferred",
+          "citation": "Still parked at the reserve ground at the moment of the repulse (no departure clock stated in any source for this battery)."
+        },
+        {
+          "t": 10500,
+          "x": 4600,
+          "z": 5170,
+          "facing": 252,
+          "formation": "line",
+          "strength": 109,
+          "confidence": "inferred",
+          "citation": "POSITION CONFLICT CARRIED, not silently resolved: per the companion Battery G (Butler's) page, this battery's PAIR (D and G, both 2nd U.S.) were 'brought up to Ziegler's Grove in rear of Third Division Second Corps on repulse of Longstreet's Assault' (reconstruction/dossiers/us-btty-williston.md EC3.2, cross-referenced via us-btty-butler.md) — adopted here as the authored leg (trigger = the repulse, matching Butler's and Martin's own independently-attested moves to the SAME ground). Williston's OWN individual tablet page, however, states only 'placed in reserve' and 'Not engaged' on Taneytown Road, WITHOUT independently repeating the Ziegler's Grove move — an unresolved internal cross-source tension (dossier Conflicts item 2), carried whole per this corpus's standing doctrine (both readings recorded, neither averaged; candidate reading: Taneytown Road the approach, Ziegler's Grove the final position — NOT ruled). Position placed rear of Woodruff's own gun line (mon-woodruff 4502.6,5190.6), radius wide-open; frontage/depth per Woodruff's own battery-scale convention (80x40). NO FIRE: 'Not engaged' (tablet, verbatim) — no event authored, muzzles cold. NO CASUALTIES (tablet, verbatim)."
+        },
+        {
+          "t": 23340,
+          "x": 4600,
+          "z": 5170,
+          "facing": 252,
+          "formation": "line",
+          "strength": 109,
+          "confidence": "inferred",
+          "citation": "Holds the Ziegler's Grove reinforcement position to sunset (no further movement or activity documented)."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-butler",
+      "name": "Butler's Battery G, 2nd US Artillery",
+      "side": "union",
+      "frontage_m": 80,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4225,
+          "z": 3055,
+          "facing": 270,
+          "formation": "column",
+          "strength": 113,
+          "confidence": "inferred",
+          "citation": "Waiting with the VI Corps Artillery Brigade reserve, arrived 'in the afternoon with the Corps and held in reserve' July 2 (brigade tablet verbatim, reconstruction/dossiers/us-btty-butler.md EC3.1); reserve ground per us-vi-arty-tompkins.md EC3.2 (Sedgwick Avenue, near the Weickert farm), placed beside Williston's. Strength 113 (own tablet, verbatim); six 12-pounders (tablet, verbatim — a brigade-tablet gun-listing variance for this slot noted, not adjudicated). 1st Lt. John H. Butler commanding."
+        },
+        {
+          "t": 9000,
+          "x": 4225,
+          "z": 3055,
+          "facing": 270,
+          "formation": "column",
+          "strength": 113,
+          "confidence": "inferred",
+          "citation": "Still at the reserve ground at the moment of the repulse."
+        },
+        {
+          "t": 10500,
+          "x": 4630,
+          "z": 5170,
+          "facing": 252,
+          "formation": "line",
+          "strength": 113,
+          "confidence": "inferred",
+          "citation": "THE ZIEGLER'S GROVE CONVERGENCE, this battery's own tablet — the clearest single statement of this wave's authored fact: 'brought up to Ziegler's Grove in rear of Third Division Second Corps on repulse of Longstreet's Assault' (tablet verbatim, reconstruction/dossiers/us-btty-butler.md EC3.2) — trigger = the repulse itself (a post-crisis reinforcement move, not a pre-charge deployment); no distance or exact clock stated, arrival inferred at a comparable pace to McCartney's own documented leg (this file, us-btty-mccartney). Position rear of Woodruff's gun line (mon-woodruff 4502.6,5190.6), radius wide-open. NO FIRE: 'no fire narrative located this pass' — the battery's own page frames its role as reserve/reinforcement, matching the tablet's zero-casualty line; no event authored, muzzles cold. NO CASUALTIES (tablet, verbatim)."
+        },
+        {
+          "t": 23340,
+          "x": 4630,
+          "z": 5170,
+          "facing": 252,
+          "formation": "line",
+          "strength": 113,
+          "confidence": "inferred",
+          "citation": "Holds the Ziegler's Grove reinforcement position to sunset."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-martin-5us",
+      "name": "(Leonard) Martin's Battery F, 5th US Artillery",
+      "side": "union",
+      "frontage_m": 80,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4195,
+          "z": 3095,
+          "facing": 270,
+          "formation": "column",
+          "strength": 125,
+          "confidence": "inferred",
+          "citation": "Waiting with the VI Corps Artillery Brigade reserve, arrived 'in the afternoon with the Corps and held in reserve' July 2 (brigade tablet verbatim, reconstruction/dossiers/us-btty-martin-5us.md EC3.1); reserve ground per us-vi-arty-tompkins.md EC3.2. Strength 3 officers + 122 enlisted = 125 (tablet, verbatim); six 10-pounder Parrotts (tablet, verbatim). 1st Lt. Leonard Martin commanding — DISTINCT from Lt. David H. Kinzie's separate 'Battery F, 5th U.S.' (XII Corps Artillery Brigade); the name-collision independently resolved, both units confirmed distinct (dossier EC1)."
+        },
+        {
+          "t": 9000,
+          "x": 4195,
+          "z": 3095,
+          "facing": 270,
+          "formation": "column",
+          "strength": 125,
+          "confidence": "inferred",
+          "citation": "Still at the reserve ground at the moment of the repulse."
+        },
+        {
+          "t": 10500,
+          "x": 4600,
+          "z": 5210,
+          "facing": 252,
+          "formation": "line",
+          "strength": 125,
+          "confidence": "inferred",
+          "citation": "THE ZIEGLER'S GROVE CONVERGENCE, third of the three regular-battery statements: 'brought up to Ziegler's Grove in rear of Third Division Second Corps on the repulse of Longstreet's assault' (tablet verbatim, reconstruction/dossiers/us-btty-martin-5us.md EC3.2) — trigger = the repulse; no distance or clock stated. Position rear of Woodruff's gun line (mon-woodruff 4502.6,5190.6), radius wide-open; the monument itself sits ON Ziegler's Grove ground (east side of Hancock Avenue, ~225 ft east of the avenue, at the former Cyclorama building site — dossier EC3.3 [E], a rare case where the memorial siting matches the attested battle-day ground). NO FIRE: 'no fire narrative located this pass' — reserve/reinforcement framing, matching Williston's and Butler's own pattern; no event authored, muzzles cold. NO CASUALTIES (tablet, verbatim)."
+        },
+        {
+          "t": 23340,
+          "x": 4600,
+          "z": 5210,
+          "facing": 252,
+          "formation": "line",
+          "strength": 125,
+          "confidence": "inferred",
+          "citation": "Holds the Ziegler's Grove reinforcement position to sunset."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-harn",
+      "name": "Harn's 3rd New York Independent Battery",
+      "side": "union",
+      "frontage_m": 80,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4225,
+          "z": 3095,
+          "facing": 270,
+          "formation": "column",
+          "strength": 119,
+          "confidence": "inferred",
+          "citation": "Waiting with the VI Corps Artillery Brigade reserve after a '36 mile forced march from Manchester Maryland' arriving July 2 afternoon (tablet verbatim, reconstruction/dossiers/us-btty-harn.md EC3.2); reserve ground per us-vi-arty-tompkins.md EC3.2. Strength 119 (tablet, verbatim); six 10-pounder Parrott rifles (tablet, verbatim). Capt. William A. Harn commanding (own report No. 240, OR 27/1 pp. 691-693 — a march-itinerary document, no July 2-3 action narrative)."
+        },
+        {
+          "t": 9000,
+          "x": 4225,
+          "z": 3095,
+          "facing": 270,
+          "formation": "column",
+          "strength": 119,
+          "confidence": "inferred",
+          "citation": "Still at the reserve ground at the moment of the repulse."
+        },
+        {
+          "t": 10500,
+          "x": 4630,
+          "z": 5210,
+          "facing": 252,
+          "formation": "line",
+          "strength": 119,
+          "confidence": "inferred",
+          "citation": "THE FOURTH ZIEGLER'S-GROVE-CROSS-REFERENCE WITNESS, a different (New York, not regular) battery: 'ordered to support Hays's Division of the Second Corps during Pickett's Charge' (tablet verbatim, reconstruction/dossiers/us-btty-harn.md EC3.3) — trigger inferred as the same repulse-window reinforcement Williston's, Butler's, and Martin's own tablets independently attest, per the parent dossier's four-battery grouping (us-vi-arty-tompkins.md EC3.3/EC5.4); no distance or clock stated. Position rear of Woodruff's gun line, radius wide-open. NO FIRE: 'no engagement narrative located this pass' beyond the 'ordered to support' fact — a reserve/support record, own-report and tablet consistent; no event authored, muzzles cold. NO CASUALTIES (tablet, verbatim)."
+        },
+        {
+          "t": 23340,
+          "x": 4630,
+          "z": 5210,
+          "facing": 252,
+          "formation": "line",
+          "strength": 119,
+          "confidence": "inferred",
+          "citation": "Holds the Hays-front support position to sunset."
+        }
+      ]
+    },
+    {
       "id": "us-btty-mason",
       "name": "Mason's Battery H, 1st US Artillery (Eakin's)",
       "side": "union",
