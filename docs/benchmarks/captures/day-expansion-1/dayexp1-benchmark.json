@@ -1,0 +1,14 @@
+{
+  "unity": "6000.4.11f1",
+  "development": true,
+  "screen": "1600x1000",
+  "clockStartTime": 46800,
+  "clockEndTime": 23340,
+  "samples": [
+    {"t": 0, "screenshot": "dayexp1-t0.png", "frames": 597, "avgFps": 59.6, "p95FrameMs": 17.37, "worstFrameMs": 22.11, "allocatedMB": 323.2, "reservedMB": 443.8},
+    {"t": 8400, "screenshot": "dayexp1-t8400.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.10, "worstFrameMs": 22.79, "allocatedMB": 323.2, "reservedMB": 443.8},
+    {"t": 10800, "screenshot": "dayexp1-t10800.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.14, "worstFrameMs": 22.25, "allocatedMB": 323.2, "reservedMB": 443.8},
+    {"t": 16200, "screenshot": "dayexp1-t16200.png", "frames": 596, "avgFps": 59.5, "p95FrameMs": 17.42, "worstFrameMs": 22.05, "allocatedMB": 323.2, "reservedMB": 443.8},
+    {"t": 23340, "screenshot": "dayexp1-t23340.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.17, "worstFrameMs": 21.84, "allocatedMB": 323.2, "reservedMB": 443.8}
+  ]
+}

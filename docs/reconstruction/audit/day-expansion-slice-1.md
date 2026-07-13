@@ -160,7 +160,10 @@ in the main checkout's same gitignored path):
 - `dayexp1-sunset-1929.png` — the 19:29 sunset light at theater zoom;
 - `dayexp1-day-july1-empty.png` / `dayexp1-day-july3-phases.png` — the
   honest empty-day states;
-- `dayexp1-benchmark.json` — perf at t = 0/8400/10800/16200/23340.
+- `dayexp1-benchmark.json` — perf at t = 0/8400/10800/16200/23340:
+  steady 59.5–59.7 avg FPS at every timestamp including the new
+  sunset window — the widening costs nothing measurable (p95 frame
+  ~17.1–17.4 ms, allocations flat at 323 MB).
 
 ## 7. Residuals (what slices 2–3 need)
 
