@@ -845,4 +845,52 @@ describe("authored July 3 battle", () => {
       expect(kfs.at(-1).z, id).toBe(kfs.at(-2).z);
     }
   });
+  it("Day expansion slice 1: the assault-column re-basing — primaries in, film window pinned", () => {
+    const units = (battle as any).units;
+    const byId = (id: string) => units.find((u: any) => u.id === id);
+    // Garnett (ED-46): Peyton's 1,287 + ~140 = 1,427; attested -20
+    // bombardment; the slice-edge film pin 1393 at t=8040 (the compiled
+    // Angle slice's startStrength — reconciliation ±1 by construction);
+    // in-slice values untouched; end 1,427 - 941 = 486
+    const g = byId("csa-garnett").keyframes;
+    const gAt = (t: number) => g.find((k: any) => k.t === t);
+    expect(gAt(0).strength).toBe(1427);
+    expect(gAt(7200).strength).toBe(1407);
+    expect(gAt(7200).confidence).toBe("documented"); // Peyton's ~20, attested
+    expect(gAt(8040).strength).toBe(1393); // THE FILM PIN
+    // the film window's macro values are byte-stable
+    for (const [t, s] of [[8160, 1380], [8280, 1360], [8580, 1050],
+      [8700, 850], [9000, 700]] as const)
+      expect(gAt(t).strength, `t=${t}`).toBe(s);
+    expect(gAt(10800).strength).toBe(486);
+    expect(gAt(23340).strength).toBe(486);
+    // children re-split from the new parent track (display-grain /5)
+    expect(byId("csa-8va").keyframes[0].strength).toBe(285);
+    expect(byId("csa-8va").keyframes.at(-1).strength).toBe(97);
+    expect(byId("csa-8va").keyframes.find((k: any) => k.t === 8160).strength).toBe(276); // in-slice unchanged
+    // Lowrance: the 500-man July-1-evening primary replaces the pre-July-1
+    // compilation 1,250; July-3 loss inferred-bounded (~185), end 315
+    const lw = byId("csa-lowrance").keyframes;
+    expect(lw[0].strength).toBe(500);
+    expect(lw[0].citation).toMatch(/about 500 men/);
+    expect(lw.at(-1).strength).toBe(315);
+    // Brockenbrough (ED-48): base 880 kept, decay to the return's 148
+    // k+w FLOOR (the old 100 sat below it), end 732; wings re-split
+    const br = byId("csa-brockenbrough").keyframes;
+    expect(br[0].strength).toBe(880);
+    expect(br.at(-1).strength).toBe(732);
+    expect(byId("csa-brock-left").keyframes.at(-1).strength).toBe(366);
+    // confirmed bases carry their upgrade notes; deferred bases say so
+    expect(byId("csa-lane").keyframes[0].citation).toMatch(/ED-47/);
+    expect(byId("csa-wilcox").keyframes[0].citation).toMatch(/1,777 pre-battle − 577/);
+    expect(byId("csa-lang").keyframes[0].citation).toMatch(/near 700 strong/);
+    expect(byId("csa-fry").keyframes[0].strength).toBe(1048); // cast: unchanged
+    expect(byId("csa-fry").keyframes[0].citation).toMatch(/JULY-1-scoped/);
+    for (const id of ["csa-marshall", "csa-davis"])
+      expect(byId(id).keyframes[0].citation, id)
+        .toMatch(/RE-BASING DEFERRED, HETEROGENEITY RECORDED/);
+    // no cast unit but Garnett/Fry was touched, and Fry only in citation
+    expect(byId("csa-kemper").keyframes[0].strength).toBe(1575);
+    expect(byId("csa-armistead").keyframes[0].strength).toBe(1650);
+  });
 });
