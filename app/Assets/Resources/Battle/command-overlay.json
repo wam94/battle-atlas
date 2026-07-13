@@ -432,12 +432,27 @@
    "division": "3rd Division, I Corps"
   },
   {
+   "id": "us-15ma",
+   "corps": "II Corps",
+   "division": "2nd Division, II Corps"
+  },
+  {
    "id": "us-16vt",
    "corps": "I Corps",
    "division": "3rd Division, I Corps"
   },
   {
    "id": "us-19ma",
+   "corps": "II Corps",
+   "division": "2nd Division, II Corps"
+  },
+  {
+   "id": "us-19me",
+   "corps": "II Corps",
+   "division": "2nd Division, II Corps"
+  },
+  {
+   "id": "us-1mn",
    "corps": "II Corps",
    "division": "2nd Division, II Corps"
   },
@@ -473,6 +488,11 @@
   },
   {
    "id": "us-7mi",
+   "corps": "II Corps",
+   "division": "2nd Division, II Corps"
+  },
+  {
+   "id": "us-82ny",
    "corps": "II Corps",
    "division": "2nd Division, II Corps"
   },
@@ -537,6 +557,11 @@
    "division": "Artillery Brigade, XI Corps"
   },
   {
+   "id": "us-btty-bigelow",
+   "corps": "Artillery Reserve",
+   "division": "1st Volunteer Brigade, Artillery Reserve"
+  },
+  {
    "id": "us-btty-breck",
    "corps": "I Corps",
    "division": "Artillery Brigade, I Corps"
@@ -545,6 +570,16 @@
    "id": "us-btty-brown",
    "corps": "II Corps",
    "division": "Artillery Brigade, II Corps"
+  },
+  {
+   "id": "us-btty-bucklyn",
+   "corps": "III Corps",
+   "division": "Artillery Brigade, III Corps"
+  },
+  {
+   "id": "us-btty-clark",
+   "corps": "III Corps",
+   "division": "Artillery Brigade, III Corps"
   },
   {
    "id": "us-btty-cooper",
@@ -667,6 +702,11 @@
    "division": "Artillery Brigade, XII Corps"
   },
   {
+   "id": "us-btty-smith4ny",
+   "corps": "III Corps",
+   "division": "Artillery Brigade, III Corps"
+  },
+  {
    "id": "us-btty-sterling",
    "corps": "Artillery Reserve",
    "division": "2nd Volunteer Brigade, Artillery Reserve"
@@ -697,6 +737,11 @@
    "division": "1st Volunteer Brigade, Artillery Reserve"
   },
   {
+   "id": "us-btty-watson",
+   "corps": "V Corps",
+   "division": "Artillery Brigade, V Corps"
+  },
+  {
    "id": "us-btty-weir",
    "corps": "Artillery Reserve",
    "division": "1st Regular Brigade, Artillery Reserve"
@@ -715,6 +760,11 @@
    "id": "us-btty-winegar",
    "corps": "XII Corps",
    "division": "Artillery Brigade, XII Corps"
+  },
+  {
+   "id": "us-btty-winslow",
+   "corps": "III Corps",
+   "division": "Artillery Brigade, III Corps"
   },
   {
    "id": "us-btty-woodruff",

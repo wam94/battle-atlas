@@ -90,20 +90,31 @@ public class CommandOverlayTests
             "Resources/Battle/command-overlay.json missing — run "
             + "scripts/gen-command-overlay.py");
         var doc = JsonUtility.FromJson<CommandOverlayDoc>(overlayAsset.text);
-        var battle = BattleLoader.Parse(System.IO.File.ReadAllText(
-            Application.dataPath + "/Battle/gettysburg-july3.json"));
-        var sides = new Dictionary<string, bool>();
-        foreach (UnitDto u in battle.units) sides[u.id] = u.side == "union";
-        var groups = CommandGroups.Build(doc,
-            id => sides.TryGetValue(id, out bool isU) ? isU : (bool?)null);
-        foreach (UnitDto u in battle.units)
+        // every reconstructed phase file's units must be covered (ADR 0005:
+        // one file per phase; the generator scans them all)
+        string[] battleFiles =
         {
-            (int corps, int _) = groups.GroupsOf(u.id);
-            Assert.GreaterOrEqual(corps, 0,
-                $"unit '{u.id}' has no corps in the command overlay");
+            "gettysburg-july3.json",
+            "gettysburg-july2-afternoon.json",
+            "gettysburg-july2-evening.json",
+        };
+        foreach (string file in battleFiles)
+        {
+            var battle = BattleLoader.Parse(System.IO.File.ReadAllText(
+                Application.dataPath + "/Battle/" + file));
+            var sides = new Dictionary<string, bool>();
+            foreach (UnitDto u in battle.units) sides[u.id] = u.side == "union";
+            var groups = CommandGroups.Build(doc,
+                id => sides.TryGetValue(id, out bool isU) ? isU : (bool?)null);
+            foreach (UnitDto u in battle.units)
+            {
+                (int corps, int _) = groups.GroupsOf(u.id);
+                Assert.GreaterOrEqual(corps, 0,
+                    $"unit '{u.id}' ({file}) has no corps in the command overlay");
+            }
+            // each field reads as a dozen-ish corps words, not a wall
+            Assert.LessOrEqual(groups.CorpsCount, 16);
+            Assert.GreaterOrEqual(groups.CorpsCount, 8);
         }
-        // the July 3 field reads as a dozen-ish corps words, not a wall
-        Assert.LessOrEqual(groups.CorpsCount, 16);
-        Assert.GreaterOrEqual(groups.CorpsCount, 8);
     }
 }

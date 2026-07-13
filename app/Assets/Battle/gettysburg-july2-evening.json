@@ -1,0 +1,5043 @@
+{
+  "name": "Gettysburg — July 2, 1863: Evening (Culp's Hill and East Cemetery Hill)",
+  "startTime": 70140,
+  "endTime": 10860,
+  "units": [
+    {
+      "id": "csa-dungan",
+      "name": "Jones's Brigade, Johnson's Division",
+      "side": "confederate",
+      "frontage_m": 319,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5960,
+          "z": 5850,
+          "facing": 235,
+          "formation": "line",
+          "strength": 1560,
+          "confidence": "documented",
+          "citation": "Continuity from the afternoon phase's 19:29 state: Jones's brigade on the steep east face against Greene's right (or-27-2-jones-jm; CA-J2E-2)."
+        },
+        {
+          "t": 2760,
+          "x": 5880,
+          "z": 5760,
+          "facing": 240,
+          "formation": "line",
+          "strength": 1440,
+          "confidence": "documented",
+          "citation": "Two assaults pressed and repulsed in 'darkness in the woods' (or-27-2-jones-jm); Jones w this evening ('When near the first line of intrenchments ... I received a flesh wound' — the pass-8 register correction); Higginbotham, Cobb, Pendleton Jones pins on the slope."
+        },
+        {
+          "t": 5460,
+          "x": 6120,
+          "z": 5890,
+          "facing": 235,
+          "formation": "line",
+          "strength": 1400,
+          "confidence": "documented",
+          "citation": "Withdrawn to the low ground at the creek after the repulses (his report's sequence)."
+        },
+        {
+          "t": 10860,
+          "x": 6120,
+          "z": 5890,
+          "facing": 235,
+          "formation": "line",
+          "strength": 1400,
+          "confidence": "documented",
+          "citation": "Holds the bottom overnight (the July 3 morning renewal under Dungan is the next phase's record)."
+        }
+      ]
+    },
+    {
+      "id": "csa-williams",
+      "name": "Nicholls's Brigade, Johnson's Division (Col. J. M. Williams)",
+      "side": "confederate",
+      "frontage_m": 192,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6030,
+          "z": 5780,
+          "facing": 235,
+          "formation": "line",
+          "strength": 1070,
+          "confidence": "documented",
+          "citation": "Continuity: Nicholls's brigade climbing at sunset (or-27-2-williams-nicholls)."
+        },
+        {
+          "t": 1860,
+          "x": 5975,
+          "z": 5752,
+          "facing": 235,
+          "formation": "line",
+          "strength": 1000,
+          "confidence": "documented",
+          "citation": "The fire line 'about 100 yards from the enemy's works' — tab-csa-2c-joh-3 (5968,5748); the assaults failed to carry the crest."
+        },
+        {
+          "t": 10860,
+          "x": 5975,
+          "z": 5752,
+          "facing": 235,
+          "formation": "line",
+          "strength": 940,
+          "confidence": "documented",
+          "citation": "'Held during the night' at the fire line (his report verbatim); the loss split across the two four-hour fires carried half-half AS FLAGGED RECONSTRUCTION (dossier EC6)."
+        }
+      ]
+    },
+    {
+      "id": "csa-steuart",
+      "name": "Steuart's Brigade, Johnson's Division",
+      "side": "confederate",
+      "frontage_m": 275,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6080,
+          "z": 5350,
+          "facing": 245,
+          "formation": "line",
+          "strength": 1680,
+          "confidence": "documented",
+          "citation": "Continuity: Steuart's brigade on the lower slope at sunset."
+        },
+        {
+          "t": 1860,
+          "x": 5940,
+          "z": 5245,
+          "facing": 250,
+          "formation": "line",
+          "strength": 1620,
+          "confidence": "documented",
+          "citation": "THE VACATED-WORKS LODGMENT (~20:00, vs Greene's clock frame): the perpendicular breastwork + traverse ground between the 137th NY monument (5814,5305) and the Williams-division works — the works the XII Corps left at 18:30 (CA-J2E-1). The lodgment HOLDS overnight — the ED-57-class occupation record (the ED-63 contrast case: vacated works, not served guns)."
+        },
+        {
+          "t": 10860,
+          "x": 5940,
+          "z": 5245,
+          "facing": 250,
+          "formation": "line",
+          "strength": 1580,
+          "confidence": "documented",
+          "citation": "The night line 'between the captured breastwork and a stone wall on the left of and parallel to it' (report; Geary fixes the same wall from the other side). The 10th/23rd VA works-takers lost light — the episode structure in the return's regiment rows."
+        }
+      ]
+    },
+    {
+      "id": "csa-walker",
+      "name": "Stonewall Brigade, Johnson's Division (Brig. Gen. James A. Walker)",
+      "side": "confederate",
+      "frontage_m": 302,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6900,
+          "z": 6050,
+          "facing": 200,
+          "formation": "line",
+          "strength": 1440,
+          "confidence": "documented",
+          "citation": "Continuity: the Stonewall Brigade turning in from the Hanover-road flank (or-27-2-walker-stonewall; ED-62's three-brigade composition fact)."
+        },
+        {
+          "t": 10860,
+          "x": 6500,
+          "z": 5950,
+          "facing": 230,
+          "formation": "line",
+          "strength": 1440,
+          "confidence": "documented",
+          "citation": "Rejoins the division's left overnight (his July 3 morning fight is the next phase's record)."
+        }
+      ]
+    },
+    {
+      "id": "us-greene",
+      "name": "Greene's Brigade (3rd Bde, 2nd Div, XII Corps)",
+      "side": "union",
+      "frontage_m": 304,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5812,
+          "z": 5510,
+          "facing": 60,
+          "formation": "line",
+          "strength": 1310,
+          "confidence": "documented",
+          "citation": "Continuity: the brigade single-line in the works, attacked since 'a few minutes before 7 p. m.' (or-27-1-greene p. 856)."
+        },
+        {
+          "t": 3660,
+          "x": 5812,
+          "z": 5510,
+          "facing": 60,
+          "formation": "line",
+          "strength": 1220,
+          "confidence": "documented",
+          "citation": "The four charges received; the 137th NY refused perpendicular to the works against Steuart's lodgment (Ireland's record; the regiment's 137 = nearly half the brigade's cost); the reinforcement ledger in action — I Corps 355 + XI Corps ~400 + part of Candy's 1,000: 'Not more than 1,300 men were in the lines at any one time' (or-27-1-greene p. 858)."
+        },
+        {
+          "t": 10860,
+          "x": 5812,
+          "z": 5510,
+          "facing": 60,
+          "formation": "line",
+          "strength": 1170,
+          "confidence": "documented",
+          "citation": "Firing dies down ~22:00 (Greene's Kane-return 10 o'clock; Geary 'about 10 p. m.'; CA-J2E-5). Decay: report 307 vs return 303 — the 4-man component conflict CARRIED (dossier)."
+        }
+      ]
+    },
+    {
+      "id": "csa-hays",
+      "name": "Hays's Brigade, Early's Division",
+      "side": "confederate",
+      "frontage_m": 235,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5318,
+          "z": 6523,
+          "facing": 200,
+          "formation": "line",
+          "strength": 1137,
+          "confidence": "documented",
+          "citation": "Continuity: the jump-off field (tab-csa-2c-ear-1). Early's trigger primary welds the assault to Johnson's: 'as soon as Johnson became warmly engaged, which was a little before dusk, I ordered Hays and Avery to advance' (or-27-2-early; ED-62)."
+        },
+        {
+          "t": 1020,
+          "x": 5318,
+          "z": 6523,
+          "facing": 200,
+          "formation": "line",
+          "strength": 1137,
+          "confidence": "documented",
+          "citation": "Step-off 19:45-20:00 (CA-J2E-3, CONFIRMED): the three-source both-armies agreement — Hays 'a little before 8' / Wiedrich 'about 8' / Ricketts 'at about 8'; the twilight-physics bracket (sunset 19:29, civil-twilight end ~19:59) against 'the darkness of the evening, now verging into night'."
+        },
+        {
+          "t": 1860,
+          "x": 5150,
+          "z": 6100,
+          "facing": 205,
+          "formation": "line",
+          "strength": 1060,
+          "confidence": "documented",
+          "citation": "The ascent ladder: over the first hill, the bottom, the stone-wall second line, the abatis/rifle-pit third line (or-27-2-hays — the ladder verbatim)."
+        },
+        {
+          "t": 2460,
+          "x": 5060,
+          "z": 5880,
+          "facing": 210,
+          "formation": "line",
+          "strength": 1010,
+          "confidence": "documented",
+          "citation": "THE LODGMENT among the batteries: 'several pieces of artillery ... every piece ... silenced' — the drawn red bars at (5021,5869), 21 m from the Wiedrich monument (bachelder j2-05; ED-63: possession momentary, NO gun left the hill, the brought-off trophies are four COLORS)."
+        },
+        {
+          "t": 3960,
+          "x": 5140,
+          "z": 6080,
+          "facing": 30,
+          "formation": "line",
+          "strength": 970,
+          "confidence": "documented",
+          "citation": "Driven out by the infantry counterattack (Carroll + the rallied XI Corps regiments, CA-J2E-4 ~20:30 — the sequence anchor's inferred-clock flag carried); the withdrawal chain: the stone wall, 'a fence some 75 yards distant', around the hill by the right flank (or-27-2-hays)."
+        },
+        {
+          "t": 9060,
+          "x": 5318,
+          "z": 6523,
+          "facing": 20,
+          "formation": "line",
+          "strength": 956,
+          "confidence": "documented",
+          "citation": "'About 10 o'clock' back at the original position (or-27-2-hays — CA-J2E-5's clock). Decay: his per-day table July 2 = 21k/119w/41m = 181 (p. 481 — the evening phase's only per-day brigade split, PRIMARY; the return's 313 scope conflict flagged, not averaged)."
+        },
+        {
+          "t": 10860,
+          "x": 5318,
+          "z": 6523,
+          "facing": 20,
+          "formation": "line",
+          "strength": 956,
+          "confidence": "documented",
+          "citation": "The night line (to the town street before daybreak — the July 3 record)."
+        }
+      ]
+    },
+    {
+      "id": "csa-godwin",
+      "name": "Hoke's Brigade, Early's Division (Col. I. E. Avery)",
+      "side": "confederate",
+      "frontage_m": 150,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5334,
+          "z": 6497,
+          "facing": 200,
+          "formation": "line",
+          "strength": 850,
+          "confidence": "documented",
+          "citation": "Continuity: Hoke's brigade (Avery) on Hays's left at the jump-off pair (tab-csa-2c-ear-3, 30 m from the Hays tablet)."
+        },
+        {
+          "t": 1020,
+          "x": 5334,
+          "z": 6497,
+          "facing": 200,
+          "formation": "line",
+          "strength": 850,
+          "confidence": "documented",
+          "citation": "Steps with Hays (Early's trigger; the Hoke tablet's '8 P.M.' concurring — CA-J2E-3)."
+        },
+        {
+          "t": 1860,
+          "x": 5200,
+          "z": 6060,
+          "facing": 210,
+          "formation": "line",
+          "strength": 780,
+          "confidence": "documented",
+          "citation": "The outside (left/east) lane of the two-brigade front, over the same ridge-bottom-wall-abatis ladder; AVERY MW on the ascent — 'I died with my face to the enemy' written left-handed to Maj. Tate (or-27-2-early + the NC State Archives note; the 'written in the dark' framing corrected against the archival page — paralysis/left hand, not lighting)."
+        },
+        {
+          "t": 2580,
+          "x": 5100,
+          "z": 5850,
+          "facing": 215,
+          "formation": "line",
+          "strength": 730,
+          "confidence": "documented",
+          "citation": "Colors planted on the lunettes (the R1-verified Hoke tablet; the ED-63 convergent lodgment among Ricketts's guns — the captured-and-spiked left piece is damage, not removal)."
+        },
+        {
+          "t": 4260,
+          "x": 5230,
+          "z": 6150,
+          "facing": 30,
+          "formation": "line",
+          "strength": 650,
+          "confidence": "documented",
+          "citation": "Repulsed by the counterattack (CA-J2E-4); the darkness claimed as cover by BOTH sides on this ground (pass-8 twilight class)."
+        },
+        {
+          "t": 7260,
+          "x": 5334,
+          "z": 6497,
+          "facing": 20,
+          "formation": "line",
+          "strength": 605,
+          "confidence": "documented",
+          "citation": "Re-formed at the jump-off field under Godwin (no brigade report exists — Avery dead, Godwin silent; verified negative). Decay: return 345 with the 57th NC print-conflict row adopted at quadruple-arithmetic grade 62 (ED-71 exhibit)."
+        },
+        {
+          "t": 10860,
+          "x": 5334,
+          "z": 6497,
+          "facing": 20,
+          "formation": "line",
+          "strength": 605,
+          "confidence": "documented",
+          "citation": "The night line."
+        }
+      ]
+    },
+    {
+      "id": "csa-gordon",
+      "name": "Gordon's Brigade, Early's Division",
+      "side": "confederate",
+      "frontage_m": 302,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5230,
+          "z": 6470,
+          "facing": 200,
+          "formation": "line",
+          "strength": 1200,
+          "confidence": "documented",
+          "citation": "Continuity: Gordon's brigade in Early's support echelon at Winebrenner's Run."
+        },
+        {
+          "t": 2460,
+          "x": 5260,
+          "z": 6420,
+          "facing": 200,
+          "formation": "line",
+          "strength": 1200,
+          "confidence": "documented",
+          "citation": "Advanced to the position from which Hays and Avery had moved, and HALTED there — Early stopped the support when Rodes's advance on the right did not develop (or-27-2-early/-gordon frame; documented halt, rendered halted)."
+        },
+        {
+          "t": 10860,
+          "x": 5260,
+          "z": 6420,
+          "facing": 200,
+          "formation": "line",
+          "strength": 1200,
+          "confidence": "documented",
+          "citation": "The night line at the run."
+        }
+      ]
+    },
+    {
+      "id": "us-carroll",
+      "name": "Carroll's Brigade (1st Bde, 3rd Div, II Corps — minus the 8th Ohio)",
+      "side": "union",
+      "frontage_m": 173,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4560,
+          "z": 5080,
+          "facing": 260,
+          "formation": "line",
+          "strength": 640,
+          "confidence": "documented",
+          "citation": "Continuity: Carroll's brigade near Ziegler's Grove (ED-51's day ground)."
+        },
+        {
+          "t": 3540,
+          "x": 4560,
+          "z": 5080,
+          "facing": 260,
+          "formation": "column",
+          "strength": 640,
+          "confidence": "documented",
+          "citation": "Sent at the sound of the hill's crisis (Hancock's dispatch of the brigade — the II Corps night reinforcement)."
+        },
+        {
+          "t": 4260,
+          "x": 5115,
+          "z": 5680,
+          "facing": 30,
+          "formation": "line",
+          "strength": 630,
+          "confidence": "documented",
+          "citation": "THE COUNTERATTACK CLEARS THE HILL (CA-J2E-4, ~20:30 — a SEQUENCE anchor, no hard clock on either side; the inferred-anchor flag stays, ED-62): Ricketts's 'a part of the Second Army Corps charged in' is the receiving-side pin, 34 m from the Carroll HQ marker (5024,5793)."
+        },
+        {
+          "t": 10860,
+          "x": 5115,
+          "z": 5680,
+          "facing": 30,
+          "formation": "line",
+          "strength": 625,
+          "confidence": "documented",
+          "citation": "Holds East Cemetery Hill 'until the 5th' (or-27-1-carroll; ED-51 — the brigade's July 3 is HERE, not the center)."
+        }
+      ]
+    },
+    {
+      "id": "us-harris",
+      "name": "Ames's Brigade (2nd Bde, 1st Div, XI Corps)",
+      "side": "union",
+      "frontage_m": 153,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5170,
+          "z": 5790,
+          "facing": 40,
+          "formation": "line",
+          "strength": 565,
+          "confidence": "documented",
+          "citation": "Continuity: Ames's brigade (Harris) behind the ECH stone walls at a fraction of its rolls (the 75th OH's 91-man July 2 basis)."
+        },
+        {
+          "t": 2460,
+          "x": 5170,
+          "z": 5790,
+          "facing": 40,
+          "formation": "line",
+          "strength": 520,
+          "confidence": "documented",
+          "citation": "The wall fight in 'darkness and smoke' (or-27-1-harris); the line pierced at the von Gilsa seam; the batteries' ground fought hand-to-hand."
+        },
+        {
+          "t": 10860,
+          "x": 5170,
+          "z": 5790,
+          "facing": 40,
+          "formation": "line",
+          "strength": 505,
+          "confidence": "documented",
+          "citation": "Re-established with the counterattack; the July 2 evening share REAL but BOUNDED by the shrunken line (no per-day primary — split flagged as reconstruction, dossier us-xi-1-2-harris.md)."
+        }
+      ]
+    },
+    {
+      "id": "us-vongilsa",
+      "name": "von Gilsa's Brigade (1st Bde, 1st Div, XI Corps)",
+      "side": "union",
+      "frontage_m": 163,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5130,
+          "z": 5860,
+          "facing": 10,
+          "formation": "line",
+          "strength": 605,
+          "confidence": "documented",
+          "citation": "Continuity: von Gilsa's brigade at the hill's north foot (the 41st NY's 218 all-ranks the neighbor datapoint; no brigade report — verified negative)."
+        },
+        {
+          "t": 2460,
+          "x": 5130,
+          "z": 5860,
+          "facing": 10,
+          "formation": "line",
+          "strength": 560,
+          "confidence": "documented",
+          "citation": "The first line struck by the assault ('attack ... at 6.30 p. m.' — von Einsiedel's +75 profiled early clock CARRIED, never moving the anchor; ED-58's evening extension)."
+        },
+        {
+          "t": 10860,
+          "x": 5130,
+          "z": 5860,
+          "facing": 10,
+          "formation": "line",
+          "strength": 545,
+          "confidence": "documented",
+          "citation": "The line re-established after the repulse; 'the few escaped in it' — the darkness claimed as cover on the Union side too (pass-8 twilight class)."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-wiedrich",
+      "name": "Wiedrich's Battery I, 1st New York Light Artillery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5115,
+          "z": 5795,
+          "facing": 20,
+          "formation": "line",
+          "strength": 141,
+          "confidence": "documented",
+          "citation": "Continuity: Wiedrich's I/1st NY on the north front."
+        },
+        {
+          "t": 2460,
+          "x": 5115,
+          "z": 5795,
+          "facing": 20,
+          "formation": "line",
+          "strength": 132,
+          "confidence": "documented",
+          "citation": "The fight 'got into the intrenchments of my battery' (or-27-1-wiedrich — hand-to-hand among the guns; ED-63: one convergent event, honest views of the same minutes)."
+        },
+        {
+          "t": 4260,
+          "x": 5115,
+          "z": 5795,
+          "facing": 20,
+          "formation": "line",
+          "strength": 128,
+          "confidence": "documented",
+          "citation": "Possession ends with the infantry counterattack; the battery RESUMES SERVICE the same night — never a captured-battery state (ED-63's rendering rule)."
+        },
+        {
+          "t": 10860,
+          "x": 5115,
+          "z": 5795,
+          "facing": 20,
+          "formation": "line",
+          "strength": 128,
+          "confidence": "documented",
+          "citation": "In battery at the walls. Decay: the 14-vs-13 one-man conflict carried (dossier)."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-ricketts",
+      "name": "Ricketts's Batteries F & G, 1st Pennsylvania Light Artillery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5140,
+          "z": 5745,
+          "facing": 55,
+          "formation": "line",
+          "strength": 144,
+          "confidence": "documented",
+          "citation": "Continuity: Ricketts's F&G PA in position on the east front ('at about 8' his own clock for the assault — CA-J2E-3's third source)."
+        },
+        {
+          "t": 2460,
+          "x": 5140,
+          "z": 5745,
+          "facing": 55,
+          "formation": "line",
+          "strength": 130,
+          "confidence": "documented",
+          "citation": "The left piece captured and SPIKED IN PLACE — damage, not removal (or-27-1-ricketts; ED-63: no captured-ordnance row exists on either side's returns)."
+        },
+        {
+          "t": 4260,
+          "x": 5140,
+          "z": 5745,
+          "facing": 55,
+          "formation": "line",
+          "strength": 124,
+          "confidence": "documented",
+          "citation": "'A part of the Second Army Corps charged in' (or-27-1-ricketts — CA-J2E-4's receiving pin); service resumed."
+        },
+        {
+          "t": 10860,
+          "x": 5140,
+          "z": 5745,
+          "facing": 55,
+          "formation": "line",
+          "strength": 121,
+          "confidence": "documented",
+          "citation": "In battery at the lunettes."
+        }
+      ]
+    },
+    {
+      "id": "us-colgrove",
+      "name": "Colgrove's Brigade (3rd Bde, 1st Div, XII Corps)",
+      "side": "union",
+      "frontage_m": 316,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5700,
+          "z": 4400,
+          "facing": 210,
+          "formation": "column",
+          "strength": 1170,
+          "confidence": "documented",
+          "citation": "Continuity: Ruger's column on the pike."
+        },
+        {
+          "t": 5460,
+          "x": 6080,
+          "z": 4800,
+          "facing": 30,
+          "formation": "line",
+          "strength": 1170,
+          "confidence": "documented",
+          "citation": "The return: the drawn '9. P.M.' annotation beside 'RUGER'S' (5931,4723) — a sheet-internal clock (bachelder j2-05); back at McAllister's Woods/Spangler's Spring south."
+        },
+        {
+          "t": 10860,
+          "x": 6080,
+          "z": 4800,
+          "facing": 30,
+          "formation": "line",
+          "strength": 1170,
+          "confidence": "documented",
+          "citation": "The night line (the Spangler's Meadow morning is July 3's record)."
+        }
+      ]
+    },
+    {
+      "id": "us-mcdougall",
+      "name": "McDougall's Brigade (1st Bde, 1st Div, XII Corps)",
+      "side": "union",
+      "frontage_m": 474,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5500,
+          "z": 4750,
+          "facing": 190,
+          "formation": "column",
+          "strength": 1755,
+          "confidence": "documented",
+          "citation": "Continuity: on the pike with Ruger."
+        },
+        {
+          "t": 6360,
+          "x": 5860,
+          "z": 5090,
+          "facing": 60,
+          "formation": "column",
+          "strength": 1755,
+          "confidence": "documented",
+          "citation": "Returned toward the lower works and HALTED — the works found occupied (A. S. Williams's near-midnight report of the wrong state of things; the Steuart lodgment)."
+        },
+        {
+          "t": 10860,
+          "x": 5860,
+          "z": 5090,
+          "facing": 60,
+          "formation": "line",
+          "strength": 1755,
+          "confidence": "documented",
+          "citation": "In line short of the vacated works overnight (the July 3 dawn recovery is the next phase's record)."
+        }
+      ]
+    },
+    {
+      "id": "us-lockwood",
+      "name": "Lockwood's Brigade (2nd Bde, 1st Div, XII Corps)",
+      "side": "union",
+      "frontage_m": 446,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5300,
+          "z": 4700,
+          "facing": 210,
+          "formation": "column",
+          "strength": 1650,
+          "confidence": "documented",
+          "citation": "Continuity: conducted toward the left by A. S. Williams."
+        },
+        {
+          "t": 2160,
+          "x": 3900,
+          "z": 3690,
+          "facing": 250,
+          "formation": "line",
+          "strength": 1645,
+          "confidence": "documented",
+          "citation": "'Recapturing three pieces of artillery abandoned by the enemy' at 'quite dark' (A. S. Williams — the ED-61 claimant ledger's command-grain entry; the Trostle ground, McGilvery in-person context)."
+        },
+        {
+          "t": 7260,
+          "x": 5137,
+          "z": 5396,
+          "facing": 40,
+          "formation": "column",
+          "strength": 1645,
+          "confidence": "documented",
+          "citation": "Withdrawn east — 'LOCKWOOD's Brigade During the night' drawn at (5137,5396) (bachelder j2-05)."
+        },
+        {
+          "t": 10860,
+          "x": 5137,
+          "z": 5396,
+          "facing": 40,
+          "formation": "column",
+          "strength": 1645,
+          "confidence": "documented",
+          "citation": "The night ground."
+        }
+      ]
+    },
+    {
+      "id": "us-kane",
+      "name": "Kane's Brigade (2nd Bde, 2nd Div, XII Corps — Col. Cobham)",
+      "side": "union",
+      "frontage_m": 162,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5500,
+          "z": 4800,
+          "facing": 170,
+          "formation": "column",
+          "strength": 600,
+          "confidence": "documented",
+          "citation": "Continuity: Geary's wrong-road column on the pike."
+        },
+        {
+          "t": 7260,
+          "x": 5750,
+          "z": 5150,
+          "facing": 60,
+          "formation": "column",
+          "strength": 600,
+          "confidence": "documented",
+          "citation": "Kane's brigade returns first up the pike (Geary's record of the counter-march)."
+        },
+        {
+          "t": 9060,
+          "x": 5845,
+          "z": 5400,
+          "facing": 60,
+          "formation": "line",
+          "strength": 595,
+          "confidence": "documented",
+          "citation": "THE TWO-VOLLEY DISCOVERY (~22:00 class): the returning brigade fired into from the works it had left — the occupied-works discovery at narrative grain (Kane via Geary; pass 8); takes position on Greene's right."
+        },
+        {
+          "t": 10860,
+          "x": 5845,
+          "z": 5400,
+          "facing": 60,
+          "formation": "line",
+          "strength": 595,
+          "confidence": "documented",
+          "citation": "The night line right of Greene."
+        }
+      ]
+    },
+    {
+      "id": "us-candy",
+      "name": "Candy's Brigade (1st Bde, 2nd Div, XII Corps)",
+      "side": "union",
+      "frontage_m": 378,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5450,
+          "z": 4650,
+          "facing": 170,
+          "formation": "column",
+          "strength": 1400,
+          "confidence": "documented",
+          "citation": "Continuity: Geary's wrong-road column."
+        },
+        {
+          "t": 9960,
+          "x": 5620,
+          "z": 4950,
+          "facing": 50,
+          "formation": "column",
+          "strength": 1400,
+          "confidence": "documented",
+          "citation": "Counter-marching up the pike behind Kane (Geary's wrong-road narrative — his own pp. 828+ unfetched, carried at command grain; the full return completes before dawn, the July 3 phase's t=0)."
+        },
+        {
+          "t": 10860,
+          "x": 5620,
+          "z": 4950,
+          "facing": 50,
+          "formation": "column",
+          "strength": 1400,
+          "confidence": "documented",
+          "citation": "En route at the window's end."
+        }
+      ]
+    },
+    {
+      "id": "csa-wofford",
+      "name": "Wofford's Brigade, McLaws's Division",
+      "side": "confederate",
+      "frontage_m": 269,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3900,
+          "z": 3060,
+          "facing": 260,
+          "formation": "line",
+          "strength": 995,
+          "confidence": "documented",
+          "citation": "Continuity: falling back on the sunset order (CA-J2A-11)."
+        },
+        {
+          "t": 1860,
+          "x": 3520,
+          "z": 3160,
+          "facing": 260,
+          "formation": "line",
+          "strength": 995,
+          "confidence": "documented",
+          "citation": "'Fell back at sunset to the grove west of the Wheatfield' (tablet verbatim — the withdrawal's own destination)."
+        },
+        {
+          "t": 10860,
+          "x": 3520,
+          "z": 3160,
+          "facing": 260,
+          "formation": "line",
+          "strength": 995,
+          "confidence": "documented",
+          "citation": "The night grove."
+        }
+      ]
+    },
+    {
+      "id": "csa-kershaw",
+      "name": "Kershaw's Brigade, McLaws's Division",
+      "side": "confederate",
+      "frontage_m": 316,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3380,
+          "z": 3350,
+          "facing": 80,
+          "formation": "line",
+          "strength": 1170,
+          "confidence": "documented",
+          "citation": "Continuity: the stony hill/Rose ground at sunset."
+        },
+        {
+          "t": 3660,
+          "x": 3350,
+          "z": 3620,
+          "facing": 80,
+          "formation": "line",
+          "strength": 1170,
+          "confidence": "documented",
+          "citation": "Ordered back to the Peach Orchard after dark (or-27-2-kershaw; tablet concurs)."
+        },
+        {
+          "t": 10860,
+          "x": 3350,
+          "z": 3620,
+          "facing": 80,
+          "formation": "line",
+          "strength": 1170,
+          "confidence": "documented",
+          "citation": "The Peach Orchard night line (held to noon July 3)."
+        }
+      ]
+    },
+    {
+      "id": "csa-humphreys",
+      "name": "Barksdale's Brigade, McLaws's Division",
+      "side": "confederate",
+      "frontage_m": 230,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3820,
+          "z": 3960,
+          "facing": 250,
+          "formation": "line",
+          "strength": 851,
+          "confidence": "documented",
+          "citation": "Continuity: Barksdale's survivors falling back from Plum Run."
+        },
+        {
+          "t": 2760,
+          "x": 3450,
+          "z": 3830,
+          "facing": 250,
+          "formation": "line",
+          "strength": 851,
+          "confidence": "documented",
+          "citation": "Re-formed toward the Peach Orchard/Emmitsburg road ground under Humphreys (the brigade's night frame; Barksdale mw left on the field, dying at the Hummelbaugh farm July 3)."
+        },
+        {
+          "t": 10860,
+          "x": 3450,
+          "z": 3830,
+          "facing": 250,
+          "formation": "line",
+          "strength": 851,
+          "confidence": "documented",
+          "citation": "The night line."
+        }
+      ]
+    },
+    {
+      "id": "csa-wilcox",
+      "name": "Wilcox's Brigade",
+      "side": "confederate",
+      "frontage_m": 470,
+      "depth_m": 40,
+      "regiments": [
+        "8th Alabama",
+        "9th Alabama",
+        "10th Alabama",
+        "11th Alabama",
+        "14th Alabama"
+      ],
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3950,
+          "z": 4420,
+          "facing": 260,
+          "formation": "line",
+          "strength": 1404,
+          "confidence": "documented",
+          "citation": "Continuity: withdrawing from the ravine stand."
+        },
+        {
+          "t": 2760,
+          "x": 3200,
+          "z": 4460,
+          "facing": 80,
+          "formation": "line",
+          "strength": 1404,
+          "confidence": "documented",
+          "citation": "Back on the Seminary Ridge line (or-27-2-wilcox — the ~30-minute stand's withdrawal completed at dark)."
+        },
+        {
+          "t": 10860,
+          "x": 3200,
+          "z": 4460,
+          "facing": 80,
+          "formation": "line",
+          "strength": 1404,
+          "confidence": "documented",
+          "citation": "The ridge night line (his July 3 echelon post is the next day's)."
+        }
+      ]
+    },
+    {
+      "id": "csa-lang",
+      "name": "Lang's Brigade (Perry's Florida Brigade)",
+      "side": "confederate",
+      "frontage_m": 200,
+      "depth_m": 40,
+      "regiments": [
+        "2nd Florida",
+        "5th Florida",
+        "8th Florida"
+      ],
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3700,
+          "z": 4570,
+          "facing": 260,
+          "formation": "line",
+          "strength": 400,
+          "confidence": "documented",
+          "citation": "Continuity: withdrawing."
+        },
+        {
+          "t": 2460,
+          "x": 3250,
+          "z": 4640,
+          "facing": 80,
+          "formation": "line",
+          "strength": 400,
+          "confidence": "documented",
+          "citation": "Back on the ridge (or-27-2-lang; the 400 July 3 basis = the return exactly)."
+        },
+        {
+          "t": 10860,
+          "x": 3250,
+          "z": 4640,
+          "facing": 80,
+          "formation": "line",
+          "strength": 400,
+          "confidence": "documented",
+          "citation": "The ridge night line."
+        }
+      ]
+    },
+    {
+      "id": "csa-wright",
+      "name": "Wright's Brigade, Anderson's Division",
+      "side": "confederate",
+      "frontage_m": 157,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3700,
+          "z": 4850,
+          "facing": 265,
+          "formation": "line",
+          "strength": 800,
+          "confidence": "documented",
+          "citation": "Continuity: falling back from the gun line (ED-60)."
+        },
+        {
+          "t": 2760,
+          "x": 3100,
+          "z": 4880,
+          "facing": 85,
+          "formation": "line",
+          "strength": 582,
+          "confidence": "documented",
+          "citation": "Rallied on Seminary Ridge; the brigade's 668 (return; report 688 and tablet 873 carried) consumed by the night count — the July 2 fight was the brigade's battle (ED-60's EC6 basis)."
+        },
+        {
+          "t": 10860,
+          "x": 3100,
+          "z": 4880,
+          "facing": 85,
+          "formation": "line",
+          "strength": 582,
+          "confidence": "documented",
+          "citation": "The ridge night line."
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-alexander",
+      "name": "Alexander's Artillery Battalion (Maj. Huger)",
+      "side": "confederate",
+      "frontage_m": 500,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2694,
+          "z": 3567,
+          "facing": 80,
+          "formation": "line",
+          "strength": 576,
+          "confidence": "documented",
+          "citation": "Continuity: the Warfield ridge line."
+        },
+        {
+          "t": 1860,
+          "x": 3497,
+          "z": 3751,
+          "facing": 70,
+          "formation": "line",
+          "strength": 576,
+          "confidence": "documented",
+          "citation": "Advanced to the captured Peach Orchard ground at dark ('ALEXANDER'S BATT.' drawn advanced at (3497,3751), bachelder j2-04) — the July 3 cannonade's core position taken."
+        },
+        {
+          "t": 10860,
+          "x": 3497,
+          "z": 3751,
+          "facing": 70,
+          "formation": "line",
+          "strength": 576,
+          "confidence": "documented",
+          "citation": "In battery on the orchard ground overnight."
+        }
+      ]
+    },
+    {
+      "id": "us-fisher",
+      "name": "Fisher's Pennsylvania Reserves Brigade (3rd Bde, 3rd Div, V Corps)",
+      "side": "union",
+      "frontage_m": 420,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4280,
+          "z": 2320,
+          "facing": 210,
+          "formation": "line",
+          "strength": 1555,
+          "confidence": "documented",
+          "citation": "Continuity: the spur's south shoulder."
+        },
+        {
+          "t": 5460,
+          "x": 4150,
+          "z": 1990,
+          "facing": 200,
+          "formation": "line",
+          "strength": 1555,
+          "confidence": "documented",
+          "citation": "The Great Round Top night ascent (~21:00): Chamberlain's ordered advance with Fisher's regiments behind — the 20th ME drawn ONTO Great Round Top (bachelder j2-05; or-27-1-chamberlain; 'Big Round Top breastworks night July 2', register/tablet)."
+        },
+        {
+          "t": 10860,
+          "x": 4150,
+          "z": 1990,
+          "facing": 200,
+          "formation": "line",
+          "strength": 1555,
+          "confidence": "documented",
+          "citation": "The summit breastworks overnight."
+        }
+      ]
+    },
+    {
+      "id": "us-brewster",
+      "name": "Brewster's Excelsior Brigade (2nd Bde, 2nd Div, III Corps)",
+      "side": "union",
+      "frontage_m": 286,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4300,
+          "z": 4300,
+          "facing": 255,
+          "formation": "line",
+          "strength": 1059,
+          "confidence": "documented",
+          "citation": "Continuity: rallied on the ridge."
+        },
+        {
+          "t": 2160,
+          "x": 3980,
+          "z": 4250,
+          "facing": 255,
+          "formation": "line",
+          "strength": 1059,
+          "confidence": "documented",
+          "citation": "The after-sunset advance: 'recaptured guns that had been left on the field' (or-27-1-brewster — the ED-61 claimant ledger's infantry entry; ground-retaken, then haul-off by the artillery details, per the sequence the primaries carry)."
+        },
+        {
+          "t": 4560,
+          "x": 4300,
+          "z": 4300,
+          "facing": 255,
+          "formation": "line",
+          "strength": 1059,
+          "confidence": "documented",
+          "citation": "Back on the ridge line."
+        },
+        {
+          "t": 10860,
+          "x": 4300,
+          "z": 4300,
+          "facing": 255,
+          "formation": "line",
+          "strength": 1059,
+          "confidence": "documented",
+          "citation": "The night line."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-watson",
+      "name": "Watson's Battery I, 5th US",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4208,
+          "z": 3744,
+          "facing": 250,
+          "formation": "scattered",
+          "strength": 55,
+          "confidence": "documented",
+          "citation": "Continuity: the four guns abandoned on the knoll (ED-61's object count)."
+        },
+        {
+          "t": 1860,
+          "x": 4208,
+          "z": 3744,
+          "facing": 250,
+          "formation": "line",
+          "strength": 55,
+          "confidence": "documented",
+          "citation": "The ground retaken — Peeples + the Garibaldi Guards' (39th NY) recapture charge, the one named-actor recapture primary (or-27-1-martin-v p. 660)."
+        },
+        {
+          "t": 5460,
+          "x": 5050,
+          "z": 4350,
+          "facing": 60,
+          "formation": "column",
+          "strength": 55,
+          "confidence": "documented",
+          "citation": "The haul-off: 'a detail from the 6th Maine + Seeley's battery hauled off Battery I's guns' — 'The guns of the two batteries, numbering eight, were brought safely to the rear' by ~21:00 (or-27-1-mcgilvery ~20:00 disposition record; ED-61's recovery spine)."
+        },
+        {
+          "t": 10860,
+          "x": 5050,
+          "z": 4350,
+          "facing": 60,
+          "formation": "column",
+          "strength": 55,
+          "confidence": "documented",
+          "citation": "In the Reserve park; ALL EIGHT guns off the field."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-bigelow",
+      "name": "Bigelow's 9th Massachusetts Battery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4100,
+          "z": 3800,
+          "facing": 240,
+          "formation": "column",
+          "strength": 76,
+          "confidence": "documented",
+          "citation": "Continuity: the remnant behind the Plum Run line."
+        },
+        {
+          "t": 5460,
+          "x": 5020,
+          "z": 4320,
+          "facing": 60,
+          "formation": "column",
+          "strength": 76,
+          "confidence": "documented",
+          "citation": "Dow procured the infantry detail that brought off the four 9th MA guns the same night (or-27-1-mcgilvery; Milton: 'Our four guns were recovered the same day' — ED-61's recovery spine; the Crawford July 3 Napoleon attribution carried as the ledger's named residue)."
+        },
+        {
+          "t": 10860,
+          "x": 5020,
+          "z": 4320,
+          "facing": 60,
+          "formation": "column",
+          "strength": 76,
+          "confidence": "documented",
+          "citation": "In the Reserve park."
+        }
+      ]
+    },
+    {
+      "id": "us-stannard",
+      "name": "Stannard's Vermont Brigade",
+      "side": "union",
+      "frontage_m": 350,
+      "depth_m": 60,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4650,
+          "z": 4000,
+          "facing": 300,
+          "formation": "column",
+          "strength": 1788,
+          "confidence": "documented",
+          "citation": "Continuity: closing on the field."
+        },
+        {
+          "t": 5460,
+          "x": 4400,
+          "z": 4300,
+          "facing": 280,
+          "formation": "column",
+          "strength": 1788,
+          "confidence": "documented",
+          "citation": "Joins the I Corps mass behind the ridge in the night (the brigade's evening arrival; its July 3 flank attack is the shipped record)."
+        },
+        {
+          "t": 10860,
+          "x": 4400,
+          "z": 4300,
+          "facing": 280,
+          "formation": "column",
+          "strength": 1788,
+          "confidence": "documented",
+          "citation": "The night mass."
+        }
+      ]
+    },
+    {
+      "id": "csa-sheffield",
+      "name": "Law's Brigade, Hood's Division",
+      "side": "confederate",
+      "frontage_m": 257,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4214,
+          "z": 2238,
+          "facing": 90,
+          "formation": "line",
+          "strength": 950,
+          "confidence": "documented",
+          "citation": "The Round Tops' west-foot night line (mon-csa-law-adv; j2-05 'LAW'S ALA'; Scruggs's rock breastworks)."
+        },
+        {
+          "t": 10860,
+          "x": 4214,
+          "z": 2238,
+          "facing": 90,
+          "formation": "line",
+          "strength": 950,
+          "confidence": "documented",
+          "citation": "The Round Tops' west-foot night line (mon-csa-law-adv; j2-05 'LAW'S ALA'; Scruggs's rock breastworks)."
+        }
+      ]
+    },
+    {
+      "id": "csa-robertson",
+      "name": "Robertson's Texas Brigade, Hood's Division",
+      "side": "confederate",
+      "frontage_m": 151,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3950,
+          "z": 2140,
+          "facing": 80,
+          "formation": "line",
+          "strength": 570,
+          "confidence": "documented",
+          "citation": "Night between the Den and the Round Tops' foot (the division's night line frame)."
+        },
+        {
+          "t": 10860,
+          "x": 3950,
+          "z": 2140,
+          "facing": 80,
+          "formation": "line",
+          "strength": 570,
+          "confidence": "documented",
+          "citation": "Night between the Den and the Round Tops' foot (the division's night line frame)."
+        }
+      ]
+    },
+    {
+      "id": "csa-luffman",
+      "name": "G. T. Anderson's Georgia Brigade, Hood's Division",
+      "side": "confederate",
+      "frontage_m": 305,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3320,
+          "z": 2880,
+          "facing": 75,
+          "formation": "line",
+          "strength": 1130,
+          "confidence": "documented",
+          "citation": "Rose farm night ground (tablet; July 3 continuity)."
+        },
+        {
+          "t": 10860,
+          "x": 3320,
+          "z": 2880,
+          "facing": 75,
+          "formation": "line",
+          "strength": 1130,
+          "confidence": "documented",
+          "citation": "Rose farm night ground (tablet; July 3 continuity)."
+        }
+      ]
+    },
+    {
+      "id": "csa-benning",
+      "name": "Benning's Brigade, Hood's Division",
+      "side": "confederate",
+      "frontage_m": 267,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3790,
+          "z": 2480,
+          "facing": 70,
+          "formation": "line",
+          "strength": 990,
+          "confidence": "documented",
+          "citation": "Holds Devil's Den overnight — the HOLDER through July 3 (ED-56; j2-04/j2-05 drawn continuity)."
+        },
+        {
+          "t": 10860,
+          "x": 3790,
+          "z": 2480,
+          "facing": 70,
+          "formation": "line",
+          "strength": 990,
+          "confidence": "documented",
+          "citation": "Holds Devil's Den overnight — the HOLDER through July 3 (ED-56; j2-04/j2-05 drawn continuity)."
+        }
+      ]
+    },
+    {
+      "id": "csa-bryan",
+      "name": "Semmes's Brigade, McLaws's Division",
+      "side": "confederate",
+      "frontage_m": 208,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3280,
+          "z": 3080,
+          "facing": 85,
+          "formation": "line",
+          "strength": 770,
+          "confidence": "documented",
+          "citation": "The Rose/Wheatfield-south woodland overnight (July 3 tablet frame)."
+        },
+        {
+          "t": 10860,
+          "x": 3280,
+          "z": 3080,
+          "facing": 85,
+          "formation": "line",
+          "strength": 770,
+          "confidence": "documented",
+          "citation": "The Rose/Wheatfield-south woodland overnight (July 3 tablet frame)."
+        }
+      ]
+    },
+    {
+      "id": "csa-posey",
+      "name": "Posey's Brigade, Anderson's Division",
+      "side": "confederate",
+      "frontage_m": 288,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3050,
+          "z": 5240,
+          "facing": 85,
+          "formation": "line",
+          "strength": 1100,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 3050,
+          "z": 5240,
+          "facing": 85,
+          "formation": "line",
+          "strength": 1100,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-raine",
+      "name": "Andrews's Artillery Battalion (Maj. J. W. Latimer)",
+      "side": "confederate",
+      "frontage_m": 300,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6520,
+          "z": 6300,
+          "facing": 245,
+          "formation": "column",
+          "strength": 334,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 6520,
+          "z": 6300,
+          "facing": 245,
+          "formation": "column",
+          "strength": 334,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-rice",
+      "name": "Vincent's Brigade (3rd Bde, 1st Div, V Corps)",
+      "side": "union",
+      "frontage_m": 266,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4265,
+          "z": 2400,
+          "facing": 230,
+          "formation": "line",
+          "strength": 984,
+          "confidence": "documented",
+          "citation": "Holds the spur overnight (the 20th ME's Great Round Top line rides Fisher's night track — Chamberlain's ~200-man advance; or-27-1-rice-vincent frame)."
+        },
+        {
+          "t": 10860,
+          "x": 4265,
+          "z": 2400,
+          "facing": 230,
+          "formation": "line",
+          "strength": 984,
+          "confidence": "documented",
+          "citation": "Holds the spur overnight (the 20th ME's Great Round Top line rides Fisher's night track — Chamberlain's ~200-man advance; or-27-1-rice-vincent frame)."
+        }
+      ]
+    },
+    {
+      "id": "us-garrard",
+      "name": "Weed's Brigade (3rd Bde, 2nd Div, V Corps)",
+      "side": "union",
+      "frontage_m": 348,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4275,
+          "z": 2560,
+          "facing": 240,
+          "formation": "line",
+          "strength": 1290,
+          "confidence": "documented",
+          "citation": "The summit line overnight; Weed dies ~21:00 ('dead as Julius Caesar' — Farley via Norton)."
+        },
+        {
+          "t": 10860,
+          "x": 4275,
+          "z": 2560,
+          "facing": 240,
+          "formation": "line",
+          "strength": 1290,
+          "confidence": "documented",
+          "citation": "The summit line overnight; Weed dies ~21:00 ('dead as Julius Caesar' — Farley via Norton)."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-rittenhouse",
+      "name": "Hazlett's Battery D, 5th US Artillery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4270,
+          "z": 2560,
+          "facing": 250,
+          "formation": "line",
+          "strength": 68,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4270,
+          "z": 2560,
+          "facing": 250,
+          "formation": "line",
+          "strength": 68,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-tilton",
+      "name": "Tilton's Brigade (1st Bde, 1st Div, V Corps)",
+      "side": "union",
+      "frontage_m": 143,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4150,
+          "z": 3250,
+          "facing": 240,
+          "formation": "line",
+          "strength": 529,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4150,
+          "z": 3250,
+          "facing": 240,
+          "formation": "line",
+          "strength": 529,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-sweitzer",
+      "name": "Sweitzer's Brigade (2nd Bde, 1st Div, V Corps)",
+      "side": "union",
+      "frontage_m": 269,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4100,
+          "z": 3130,
+          "facing": 240,
+          "formation": "line",
+          "strength": 583,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4100,
+          "z": 3130,
+          "facing": 240,
+          "formation": "line",
+          "strength": 583,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-day",
+      "name": "Day's US Regular Brigade (1st Bde, 2nd Div, V Corps)",
+      "side": "union",
+      "frontage_m": 316,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4280,
+          "z": 2700,
+          "facing": 245,
+          "formation": "line",
+          "strength": 1192,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4280,
+          "z": 2700,
+          "facing": 245,
+          "formation": "line",
+          "strength": 1192,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-burbank",
+      "name": "Burbank's US Regular Brigade (2nd Bde, 2nd Div, V Corps)",
+      "side": "union",
+      "frontage_m": 136,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4260,
+          "z": 2670,
+          "facing": 245,
+          "formation": "line",
+          "strength": 511,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4260,
+          "z": 2670,
+          "facing": 245,
+          "formation": "line",
+          "strength": 511,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-mccandless",
+      "name": "McCandless's Pennsylvania Reserves Brigade (1st Bde, 3rd Div, V Corps)",
+      "side": "union",
+      "frontage_m": 296,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4016,
+          "z": 3000,
+          "facing": 260,
+          "formation": "line",
+          "strength": 1088,
+          "confidence": "documented",
+          "citation": "Holds the recovered stone-wall line at the Wheatfield's east edge overnight (or-27-1-crawford; j2-05 drawn)."
+        },
+        {
+          "t": 10860,
+          "x": 4016,
+          "z": 3000,
+          "facing": 260,
+          "formation": "line",
+          "strength": 1088,
+          "confidence": "documented",
+          "citation": "Holds the recovered stone-wall line at the Wheatfield's east edge overnight (or-27-1-crawford; j2-05 drawn)."
+        }
+      ]
+    },
+    {
+      "id": "us-nevin",
+      "name": "Wheaton's/Nevin's Brigade (3rd Bde, 3rd Div, VI Corps)",
+      "side": "union",
+      "frontage_m": 370,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4300,
+          "z": 3090,
+          "facing": 260,
+          "formation": "line",
+          "strength": 1315,
+          "confidence": "documented",
+          "citation": "The Plum Run line overnight (or-27-1-nevin; the two recovered Napoleons in the ED-61 ledger)."
+        },
+        {
+          "t": 10860,
+          "x": 4300,
+          "z": 3090,
+          "facing": 260,
+          "formation": "line",
+          "strength": 1315,
+          "confidence": "documented",
+          "citation": "The Plum Run line overnight (or-27-1-nevin; the two recovered Napoleons in the ED-61 ledger)."
+        }
+      ]
+    },
+    {
+      "id": "us-madill",
+      "name": "Graham's Brigade (1st Bde, 1st Div, III Corps)",
+      "side": "union",
+      "frontage_m": 209,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4280,
+          "z": 4230,
+          "facing": 255,
+          "formation": "line",
+          "strength": 776,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4280,
+          "z": 4230,
+          "facing": 255,
+          "formation": "line",
+          "strength": 776,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-carr",
+      "name": "Carr's Brigade (1st Bde, 2nd Div, III Corps)",
+      "side": "union",
+      "frontage_m": 250,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4488,
+          "z": 4469,
+          "facing": 260,
+          "formation": "line",
+          "strength": 928,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4488,
+          "z": 4469,
+          "facing": 260,
+          "formation": "line",
+          "strength": 928,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-burling",
+      "name": "Burling's Brigade (3rd Bde, 2nd Div, III Corps)",
+      "side": "union",
+      "frontage_m": 230,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4250,
+          "z": 4250,
+          "facing": 255,
+          "formation": "line",
+          "strength": 852,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4250,
+          "z": 4250,
+          "facing": 255,
+          "formation": "line",
+          "strength": 852,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-mckeen",
+      "name": "Cross's Brigade (1st Bde, 1st Div, II Corps)",
+      "side": "union",
+      "frontage_m": 140,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4380,
+          "z": 4300,
+          "facing": 255,
+          "formation": "line",
+          "strength": 450,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4380,
+          "z": 4300,
+          "facing": 255,
+          "formation": "line",
+          "strength": 450,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-kelly",
+      "name": "Kelly's Irish Brigade (2nd Bde, 1st Div, II Corps)",
+      "side": "union",
+      "frontage_m": 89,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4360,
+          "z": 4280,
+          "facing": 255,
+          "formation": "line",
+          "strength": 332,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4360,
+          "z": 4280,
+          "facing": 255,
+          "formation": "line",
+          "strength": 332,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-fraser",
+      "name": "Zook's Brigade (3rd Bde, 1st Div, II Corps)",
+      "side": "union",
+      "frontage_m": 166,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4390,
+          "z": 4340,
+          "facing": 255,
+          "formation": "line",
+          "strength": 617,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4390,
+          "z": 4340,
+          "facing": 255,
+          "formation": "line",
+          "strength": 617,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-brooke",
+      "name": "Brooke's Brigade (4th Bde, 1st Div, II Corps)",
+      "side": "union",
+      "frontage_m": 124,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4340,
+          "z": 4260,
+          "facing": 255,
+          "formation": "line",
+          "strength": 461,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4340,
+          "z": 4260,
+          "facing": 255,
+          "formation": "line",
+          "strength": 461,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-sherrill",
+      "name": "Willard's Brigade (3rd Bde, 3rd Div, II Corps)",
+      "side": "union",
+      "frontage_m": 300,
+      "depth_m": 50,
+      "regiments": [
+        "39th New York (4 companies)",
+        "111th New York",
+        "125th New York",
+        "126th New York"
+      ],
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4180,
+          "z": 4160,
+          "facing": 240,
+          "formation": "line",
+          "strength": 1290,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4180,
+          "z": 4160,
+          "facing": 240,
+          "formation": "line",
+          "strength": 1290,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-harrow",
+      "name": "Harrow's Brigade (2nd Bde, 2nd Div, II Corps)",
+      "side": "union",
+      "frontage_m": 240,
+      "depth_m": 60,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4340,
+          "z": 4550,
+          "facing": 260,
+          "formation": "line",
+          "strength": 1050,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4340,
+          "z": 4550,
+          "facing": 260,
+          "formation": "line",
+          "strength": 1050,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-15ma",
+      "name": "15th Massachusetts (Harrow's)",
+      "side": "union",
+      "frontage_m": 65,
+      "depth_m": 20,
+      "parent": "us-harrow",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4370,
+          "z": 4600,
+          "facing": 260,
+          "formation": "line",
+          "strength": 160,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4370,
+          "z": 4600,
+          "facing": 260,
+          "formation": "line",
+          "strength": 160,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-82ny",
+      "name": "82nd New York (Harrow's)",
+      "side": "union",
+      "frontage_m": 90,
+      "depth_m": 20,
+      "parent": "us-harrow",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4360,
+          "z": 4540,
+          "facing": 260,
+          "formation": "line",
+          "strength": 270,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4360,
+          "z": 4540,
+          "facing": 260,
+          "formation": "line",
+          "strength": 270,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-1mn",
+      "name": "1st Minnesota (Harrow's)",
+      "side": "union",
+      "frontage_m": 89,
+      "depth_m": 20,
+      "parent": "us-harrow",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4230,
+          "z": 4290,
+          "facing": 255,
+          "formation": "line",
+          "strength": 106,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4230,
+          "z": 4290,
+          "facing": 255,
+          "formation": "line",
+          "strength": 106,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-19me",
+      "name": "19th Maine (Harrow's)",
+      "side": "union",
+      "frontage_m": 119,
+      "depth_m": 20,
+      "parent": "us-harrow",
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4340,
+          "z": 4480,
+          "facing": 260,
+          "formation": "line",
+          "strength": 415,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4340,
+          "z": 4480,
+          "facing": 260,
+          "formation": "line",
+          "strength": 415,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-detrobriand",
+      "name": "de Trobriand's Brigade (3rd Bde, 1st Div, III Corps)",
+      "side": "union",
+      "frontage_m": 242,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4150,
+          "z": 3550,
+          "facing": 240,
+          "formation": "line",
+          "strength": 897,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4150,
+          "z": 3550,
+          "facing": 240,
+          "formation": "line",
+          "strength": 897,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-berdan",
+      "name": "Ward's Brigade (2nd Bde, 1st Div, III Corps)",
+      "side": "union",
+      "frontage_m": 379,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4250,
+          "z": 3000,
+          "facing": 220,
+          "formation": "line",
+          "strength": 719,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4250,
+          "z": 3000,
+          "facing": 220,
+          "formation": "line",
+          "strength": 719,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-dana",
+      "name": "Stone's Brigade (2nd Bde, 3rd Div, I Corps — Col. Dana)",
+      "side": "union",
+      "frontage_m": 126,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4300,
+          "z": 4560,
+          "facing": 262,
+          "formation": "line",
+          "strength": 450,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4300,
+          "z": 4560,
+          "facing": 262,
+          "formation": "line",
+          "strength": 450,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-clark",
+      "name": "Clark's Battery B, 1st New Jersey",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4150,
+          "z": 3900,
+          "facing": 250,
+          "formation": "column",
+          "strength": 90,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4150,
+          "z": 3900,
+          "facing": 250,
+          "formation": "column",
+          "strength": 90,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-bucklyn",
+      "name": "Bucklyn's Battery E, 1st Rhode Island",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4120,
+          "z": 3950,
+          "facing": 255,
+          "formation": "column",
+          "strength": 73,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4120,
+          "z": 3950,
+          "facing": 255,
+          "formation": "column",
+          "strength": 73,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-james",
+      "name": "Seeley's Battery K, 4th US Artillery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4320,
+          "z": 4450,
+          "facing": 260,
+          "formation": "column",
+          "strength": 112,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4320,
+          "z": 4450,
+          "facing": 260,
+          "formation": "column",
+          "strength": 112,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-winslow",
+      "name": "Winslow's Battery D, 1st New York",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4200,
+          "z": 3700,
+          "facing": 250,
+          "formation": "column",
+          "strength": 98,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4200,
+          "z": 3700,
+          "facing": 250,
+          "formation": "column",
+          "strength": 98,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-smith4ny",
+      "name": "Smith's 4th New York Independent Battery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4180,
+          "z": 3050,
+          "facing": 230,
+          "formation": "column",
+          "strength": 108,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4180,
+          "z": 3050,
+          "facing": 230,
+          "formation": "column",
+          "strength": 108,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-phillips",
+      "name": "Phillips's 5th Massachusetts Battery (E)",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4212,
+          "z": 4080,
+          "facing": 260,
+          "formation": "line",
+          "strength": 92,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4212,
+          "z": 4080,
+          "facing": 260,
+          "formation": "line",
+          "strength": 92,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-hart",
+      "name": "Hart's 15th New York Independent Battery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4205,
+          "z": 4010,
+          "facing": 260,
+          "formation": "line",
+          "strength": 90,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4205,
+          "z": 4010,
+          "facing": 260,
+          "formation": "line",
+          "strength": 90,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-ames",
+      "name": "Ames's Battery G, 1st New York Light Artillery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4172,
+          "z": 3730,
+          "facing": 260,
+          "formation": "line",
+          "strength": 118,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4172,
+          "z": 3730,
+          "facing": 260,
+          "formation": "line",
+          "strength": 118,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-thompson",
+      "name": "Thompson's Batteries C & F, 1st Pennsylvania Light Artillery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4220,
+          "z": 4150,
+          "facing": 260,
+          "formation": "line",
+          "strength": 88,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4220,
+          "z": 4150,
+          "facing": 260,
+          "formation": "line",
+          "strength": 88,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-dow",
+      "name": "Dow's 6th Maine Battery (F, 1st Maine Light)",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4180,
+          "z": 3800,
+          "facing": 250,
+          "formation": "line",
+          "strength": 99,
+          "confidence": "documented",
+          "citation": "The Plum Run line overnight; Dow's procured detail executes the 9th MA haul-off (ED-61)."
+        },
+        {
+          "t": 10860,
+          "x": 4180,
+          "z": 3800,
+          "facing": 250,
+          "formation": "line",
+          "strength": 99,
+          "confidence": "documented",
+          "citation": "The Plum Run line overnight; Dow's procured detail executes the 9th MA haul-off (ED-61)."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-weir",
+      "name": "Weir's Battery C, 5th US Artillery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4620,
+          "z": 4680,
+          "facing": 260,
+          "formation": "line",
+          "strength": 115,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4620,
+          "z": 4680,
+          "facing": 260,
+          "formation": "line",
+          "strength": 115,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-atwell",
+      "name": "Atwell's Independent Battery E, Pennsylvania Light (Knap's)",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5960,
+          "z": 4100,
+          "facing": 40,
+          "formation": "line",
+          "strength": 133,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5960,
+          "z": 4100,
+          "facing": 40,
+          "formation": "line",
+          "strength": 133,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-kinzie",
+      "name": "Kinzie's Battery K, 5th US Artillery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5560,
+          "z": 4880,
+          "facing": 60,
+          "formation": "line",
+          "strength": 74,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5560,
+          "z": 4880,
+          "facing": 60,
+          "formation": "line",
+          "strength": 74,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-bartlett",
+      "name": "Bartlett's Brigade (2nd Bde, 1st Div, VI Corps)",
+      "side": "union",
+      "frontage_m": 358,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4150,
+          "z": 3000,
+          "facing": 260,
+          "formation": "line",
+          "strength": 1325,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4150,
+          "z": 3000,
+          "facing": 260,
+          "formation": "line",
+          "strength": 1325,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-torbert",
+      "name": "Torbert's New Jersey Brigade (1st Bde, 1st Div, VI Corps)",
+      "side": "union",
+      "frontage_m": 356,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4260,
+          "z": 3540,
+          "facing": 260,
+          "formation": "line",
+          "strength": 1320,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4260,
+          "z": 3540,
+          "facing": 260,
+          "formation": "line",
+          "strength": 1320,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-russell",
+      "name": "Russell's Brigade (3rd Bde, 1st Div, VI Corps)",
+      "side": "union",
+      "frontage_m": 400,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4400,
+          "z": 2200,
+          "facing": 240,
+          "formation": "line",
+          "strength": 1480,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4400,
+          "z": 2200,
+          "facing": 240,
+          "formation": "line",
+          "strength": 1480,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-grant",
+      "name": "Grant's Vermont Brigade (2nd Bde, 2nd Div, VI Corps)",
+      "side": "union",
+      "frontage_m": 494,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4450,
+          "z": 2280,
+          "facing": 240,
+          "formation": "line",
+          "strength": 1830,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4450,
+          "z": 2280,
+          "facing": 240,
+          "formation": "line",
+          "strength": 1830,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-neill",
+      "name": "Neill's Brigade (3rd Bde, 2nd Div, VI Corps)",
+      "side": "union",
+      "frontage_m": 479,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6350,
+          "z": 4400,
+          "facing": 30,
+          "formation": "column",
+          "strength": 1775,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 6350,
+          "z": 4400,
+          "facing": 30,
+          "formation": "column",
+          "strength": 1775,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-eustis",
+      "name": "Eustis's Brigade (2nd Bde, 3rd Div, VI Corps)",
+      "side": "union",
+      "frontage_m": 431,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4850,
+          "z": 4200,
+          "facing": 270,
+          "formation": "column",
+          "strength": 1595,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4850,
+          "z": 4200,
+          "facing": 270,
+          "formation": "column",
+          "strength": 1595,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-shaler",
+      "name": "Shaler's Brigade (1st Bde, 3rd Div, VI Corps)",
+      "side": "union",
+      "frontage_m": 478,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5650,
+          "z": 4500,
+          "facing": 20,
+          "formation": "column",
+          "strength": 1770,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5650,
+          "z": 4500,
+          "facing": 20,
+          "formation": "column",
+          "strength": 1770,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-mccartney",
+      "name": "McCartney's 1st Massachusetts Battery A",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4210,
+          "z": 3070,
+          "facing": 270,
+          "formation": "column",
+          "strength": 145,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4210,
+          "z": 3070,
+          "facing": 270,
+          "formation": "column",
+          "strength": 145,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-cowan",
+      "name": "Cowan's 1st New York Independent Battery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 30,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4700,
+          "z": 4300,
+          "facing": 270,
+          "formation": "column",
+          "strength": 113,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4700,
+          "z": 4300,
+          "facing": 270,
+          "formation": "column",
+          "strength": 113,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-fry",
+      "name": "Fry's Brigade (Archer's)",
+      "side": "confederate",
+      "frontage_m": 300,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2750,
+          "z": 5350,
+          "facing": 90,
+          "formation": "column",
+          "strength": 1048,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 2750,
+          "z": 5350,
+          "facing": 90,
+          "formation": "column",
+          "strength": 1048,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-marshall",
+      "name": "Marshall's Brigade (Pettigrew's)",
+      "side": "confederate",
+      "frontage_m": 520,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2720,
+          "z": 5500,
+          "facing": 90,
+          "formation": "column",
+          "strength": 2000,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 2720,
+          "z": 5500,
+          "facing": 90,
+          "formation": "column",
+          "strength": 2000,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-davis",
+      "name": "Davis's Brigade",
+      "side": "confederate",
+      "frontage_m": 520,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2720,
+          "z": 5680,
+          "facing": 90,
+          "formation": "column",
+          "strength": 2000,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 2720,
+          "z": 5680,
+          "facing": 90,
+          "formation": "column",
+          "strength": 2000,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-brockenbrough",
+      "name": "Brockenbrough's Brigade",
+      "side": "confederate",
+      "frontage_m": 250,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2750,
+          "z": 5850,
+          "facing": 90,
+          "formation": "column",
+          "strength": 880,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 2750,
+          "z": 5850,
+          "facing": 90,
+          "formation": "column",
+          "strength": 880,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-lane",
+      "name": "Lane's Brigade",
+      "side": "confederate",
+      "frontage_m": 370,
+      "depth_m": 40,
+      "regiments": [
+        "7th North Carolina",
+        "18th North Carolina",
+        "28th North Carolina",
+        "33rd North Carolina",
+        "37th North Carolina"
+      ],
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3450,
+          "z": 5550,
+          "facing": 90,
+          "formation": "line",
+          "strength": 1355,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 3450,
+          "z": 5550,
+          "facing": 90,
+          "formation": "line",
+          "strength": 1355,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-lowrance",
+      "name": "Lowrance's Brigade (Scales's)",
+      "side": "confederate",
+      "frontage_m": 340,
+      "depth_m": 40,
+      "regiments": [
+        "13th North Carolina",
+        "16th North Carolina",
+        "22nd North Carolina",
+        "34th North Carolina",
+        "38th North Carolina"
+      ],
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3480,
+          "z": 5400,
+          "facing": 90,
+          "formation": "line",
+          "strength": 500,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 3480,
+          "z": 5400,
+          "facing": 90,
+          "formation": "line",
+          "strength": 500,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-cabell",
+      "name": "Cabell's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 350,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2850,
+          "z": 3300,
+          "facing": 80,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 2850,
+          "z": 3300,
+          "facing": 80,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-eshleman",
+      "name": "Eshleman's Battalion, Washington Artillery",
+      "side": "confederate",
+      "frontage_m": 250,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2500,
+          "z": 3520,
+          "facing": 80,
+          "formation": "column",
+          "strength": 338,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 2500,
+          "z": 3520,
+          "facing": 80,
+          "formation": "column",
+          "strength": 338,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-henry",
+      "name": "Henry's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 450,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2920,
+          "z": 2260,
+          "facing": 120,
+          "formation": "line",
+          "strength": 456,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 2920,
+          "z": 2260,
+          "facing": 120,
+          "formation": "line",
+          "strength": 456,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-btty-bachman",
+      "name": "Bachman's Battery, Henry's Battalion (German Artillery, SC)",
+      "side": "confederate",
+      "frontage_m": 90,
+      "depth_m": 25,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2804,
+          "z": 2250,
+          "facing": 190,
+          "formation": "line",
+          "strength": 71,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 2804,
+          "z": 2250,
+          "facing": 190,
+          "formation": "line",
+          "strength": 71,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-btty-reilly",
+      "name": "Reilly's Battery, Henry's Battalion (Rowan Artillery, NC)",
+      "side": "confederate",
+      "frontage_m": 100,
+      "depth_m": 25,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2769,
+          "z": 1831,
+          "facing": 175,
+          "formation": "line",
+          "strength": 144,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 2769,
+          "z": 1831,
+          "facing": 175,
+          "formation": "line",
+          "strength": 144,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-pegram",
+      "name": "Pegram's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 450,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3580,
+          "z": 6400,
+          "facing": 105,
+          "formation": "line",
+          "strength": 480,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 3580,
+          "z": 6400,
+          "facing": 105,
+          "formation": "line",
+          "strength": 480,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-mcintosh",
+      "name": "McIntosh's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 400,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3530,
+          "z": 6180,
+          "facing": 105,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 3530,
+          "z": 6180,
+          "facing": 105,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-garnett",
+      "name": "Garnett's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 350,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3350,
+          "z": 5880,
+          "facing": 95,
+          "formation": "line",
+          "strength": 360,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 3350,
+          "z": 5880,
+          "facing": 95,
+          "formation": "line",
+          "strength": 360,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-poague",
+      "name": "Poague's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 350,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3290,
+          "z": 5300,
+          "facing": 92,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 3290,
+          "z": 5300,
+          "facing": 92,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-lane",
+      "name": "Lane's Sumter (Georgia) Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 400,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3160,
+          "z": 4870,
+          "facing": 88,
+          "formation": "line",
+          "strength": 408,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 3160,
+          "z": 4870,
+          "facing": 88,
+          "formation": "line",
+          "strength": 408,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-dance",
+      "name": "Dance's 1st Virginia Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 450,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3700,
+          "z": 6850,
+          "facing": 115,
+          "formation": "line",
+          "strength": 480,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 3700,
+          "z": 6850,
+          "facing": 115,
+          "formation": "line",
+          "strength": 480,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-nelson",
+      "name": "Nelson's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 280,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6560,
+          "z": 6420,
+          "facing": 240,
+          "formation": "line",
+          "strength": 264,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 6560,
+          "z": 6420,
+          "facing": 240,
+          "formation": "line",
+          "strength": 264,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-carter",
+      "name": "Carter's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 350,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4185,
+          "z": 8180,
+          "facing": 175,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4185,
+          "z": 8180,
+          "facing": 175,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-bn-jones",
+      "name": "Jones's Artillery Battalion",
+      "side": "confederate",
+      "frontage_m": 350,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4950,
+          "z": 7480,
+          "facing": 195,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4950,
+          "z": 7480,
+          "facing": 195,
+          "formation": "line",
+          "strength": 384,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-mahone",
+      "name": "Mahone's Brigade, Anderson's Division",
+      "side": "confederate",
+      "frontage_m": 378,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2960,
+          "z": 5480,
+          "facing": 95,
+          "formation": "line",
+          "strength": 1400,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 2960,
+          "z": 5480,
+          "facing": 95,
+          "formation": "line",
+          "strength": 1400,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-thomas",
+      "name": "Thomas's Brigade, Pender's Division",
+      "side": "confederate",
+      "frontage_m": 251,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4090,
+          "z": 5700,
+          "facing": 140,
+          "formation": "line",
+          "strength": 930,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4090,
+          "z": 5700,
+          "facing": 140,
+          "formation": "line",
+          "strength": 930,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-perrin",
+      "name": "Perrin's Brigade (McGowan's), Pender's Division",
+      "side": "confederate",
+      "frontage_m": 277,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4210,
+          "z": 5880,
+          "facing": 140,
+          "formation": "line",
+          "strength": 1025,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4210,
+          "z": 5880,
+          "facing": 140,
+          "formation": "line",
+          "strength": 1025,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-daniel",
+      "name": "Daniel's Brigade, Rodes's Division (attached to Johnson)",
+      "side": "confederate",
+      "frontage_m": 320,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4200,
+          "z": 5980,
+          "facing": 140,
+          "formation": "line",
+          "strength": 1185,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4200,
+          "z": 5980,
+          "facing": 140,
+          "formation": "line",
+          "strength": 1185,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-oneal",
+      "name": "O'Neal's Brigade, Rodes's Division (attached to Johnson)",
+      "side": "confederate",
+      "frontage_m": 297,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4300,
+          "z": 6100,
+          "facing": 140,
+          "formation": "line",
+          "strength": 1100,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4300,
+          "z": 6100,
+          "facing": 140,
+          "formation": "line",
+          "strength": 1100,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-smith",
+      "name": "Smith's Brigade, Early's Division (attached to Johnson)",
+      "side": "confederate",
+      "frontage_m": 178,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6800,
+          "z": 6420,
+          "facing": 250,
+          "formation": "line",
+          "strength": 660,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 6800,
+          "z": 6420,
+          "facing": 250,
+          "formation": "line",
+          "strength": 660,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-ramseur",
+      "name": "Ramseur's Brigade, Rodes's Division",
+      "side": "confederate",
+      "frontage_m": 463,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4330,
+          "z": 6060,
+          "facing": 140,
+          "formation": "line",
+          "strength": 1715,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4330,
+          "z": 6060,
+          "facing": 140,
+          "formation": "line",
+          "strength": 1715,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-iverson",
+      "name": "Iverson's Brigade, Rodes's Division",
+      "side": "confederate",
+      "frontage_m": 176,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4450,
+          "z": 6240,
+          "facing": 140,
+          "formation": "line",
+          "strength": 650,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4450,
+          "z": 6240,
+          "facing": 140,
+          "formation": "line",
+          "strength": 650,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "csa-doles",
+      "name": "Doles's Brigade, Rodes's Division",
+      "side": "confederate",
+      "frontage_m": 305,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4570,
+          "z": 6420,
+          "facing": 140,
+          "formation": "line",
+          "strength": 1130,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4570,
+          "z": 6420,
+          "facing": 140,
+          "formation": "line",
+          "strength": 1130,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-webb",
+      "name": "Webb's Brigade (Philadelphia Brigade)",
+      "side": "union",
+      "frontage_m": 240,
+      "depth_m": 60,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4410,
+          "z": 4850,
+          "facing": 262,
+          "formation": "line",
+          "strength": 1250,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4410,
+          "z": 4850,
+          "facing": 262,
+          "formation": "line",
+          "strength": 1250,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-hall",
+      "name": "Hall's Brigade",
+      "side": "union",
+      "frontage_m": 200,
+      "depth_m": 50,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4420,
+          "z": 4750,
+          "facing": 262,
+          "formation": "line",
+          "strength": 920,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4420,
+          "z": 4750,
+          "facing": 262,
+          "formation": "line",
+          "strength": 920,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-smyth",
+      "name": "Smyth's Brigade",
+      "side": "union",
+      "frontage_m": 260,
+      "depth_m": 50,
+      "regiments": [
+        "14th Connecticut",
+        "1st Delaware",
+        "12th New Jersey",
+        "10th New York Battalion",
+        "108th New York"
+      ],
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4440,
+          "z": 5010,
+          "facing": 258,
+          "formation": "line",
+          "strength": 1190,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4440,
+          "z": 5010,
+          "facing": 258,
+          "formation": "line",
+          "strength": 1190,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-8oh",
+      "name": "8th Ohio Infantry",
+      "side": "union",
+      "frontage_m": 120,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4270,
+          "z": 5310,
+          "facing": 265,
+          "formation": "skirmish",
+          "strength": 164,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4270,
+          "z": 5310,
+          "facing": 265,
+          "formation": "skirmish",
+          "strength": 164,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-meredith",
+      "name": "Meredith's Iron Brigade (Col. Wm. W. Robinson)",
+      "side": "union",
+      "frontage_m": 197,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5620,
+          "z": 5680,
+          "facing": 10,
+          "formation": "line",
+          "strength": 730,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5620,
+          "z": 5680,
+          "facing": 10,
+          "formation": "line",
+          "strength": 730,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-cutler",
+      "name": "Cutler's Brigade (2nd Bde, 1st Div, I Corps)",
+      "side": "union",
+      "frontage_m": 274,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5720,
+          "z": 5615,
+          "facing": 45,
+          "formation": "line",
+          "strength": 1015,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5720,
+          "z": 5615,
+          "facing": 45,
+          "formation": "line",
+          "strength": 1015,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-coster",
+      "name": "Coster's Brigade (1st Bde, 2nd Div, XI Corps)",
+      "side": "union",
+      "frontage_m": 177,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4935,
+          "z": 5765,
+          "facing": 340,
+          "formation": "line",
+          "strength": 655,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4935,
+          "z": 5765,
+          "facing": 340,
+          "formation": "line",
+          "strength": 655,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-smith",
+      "name": "Smith's Brigade (2nd Bde, 2nd Div, XI Corps)",
+      "side": "union",
+      "frontage_m": 348,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4880,
+          "z": 5610,
+          "facing": 280,
+          "formation": "line",
+          "strength": 1290,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4880,
+          "z": 5610,
+          "facing": 280,
+          "formation": "line",
+          "strength": 1290,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-vonamsberg",
+      "name": "von Amsberg's Brigade (1st Bde, 3rd Div, XI Corps — Schimmelfennig's)",
+      "side": "union",
+      "frontage_m": 236,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4900,
+          "z": 5655,
+          "facing": 300,
+          "formation": "line",
+          "strength": 875,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4900,
+          "z": 5655,
+          "facing": 300,
+          "formation": "line",
+          "strength": 875,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-krzyzanowski",
+      "name": "Krzyżanowski's Brigade (2nd Bde, 3rd Div, XI Corps)",
+      "side": "union",
+      "frontage_m": 203,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5065,
+          "z": 5625,
+          "facing": 320,
+          "formation": "line",
+          "strength": 750,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5065,
+          "z": 5625,
+          "facing": 320,
+          "formation": "line",
+          "strength": 750,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-coulter",
+      "name": "Coulter's Brigade (1st Bde, 2nd Div, I Corps — Paul's)",
+      "side": "union",
+      "frontage_m": 138,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5500,
+          "z": 5280,
+          "facing": 80,
+          "formation": "line",
+          "strength": 510,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5500,
+          "z": 5280,
+          "facing": 80,
+          "formation": "line",
+          "strength": 510,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-baxter",
+      "name": "Baxter's Brigade (2nd Bde, 2nd Div, I Corps)",
+      "side": "union",
+      "frontage_m": 216,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5545,
+          "z": 5220,
+          "facing": 80,
+          "formation": "line",
+          "strength": 800,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5545,
+          "z": 5220,
+          "facing": 80,
+          "formation": "line",
+          "strength": 800,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-biddle",
+      "name": "Biddle's Brigade (1st Bde, 3rd Div, I Corps — Col. Gates at the line)",
+      "side": "union",
+      "frontage_m": 124,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4480,
+          "z": 4555,
+          "facing": 262,
+          "formation": "line",
+          "strength": 460,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4480,
+          "z": 4555,
+          "facing": 262,
+          "formation": "line",
+          "strength": 460,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-cushing",
+      "name": "Cushing's Battery A, 4th US Artillery",
+      "side": "union",
+      "frontage_m": 80,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4398,
+          "z": 4880,
+          "facing": 262,
+          "formation": "line",
+          "strength": 126,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4398,
+          "z": 4880,
+          "facing": 262,
+          "formation": "line",
+          "strength": 126,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-rorty",
+      "name": "Rorty's Battery B, 1st New York Light Artillery",
+      "side": "union",
+      "frontage_m": 80,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5100,
+          "z": 4430,
+          "facing": 240,
+          "formation": "column",
+          "strength": 114,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5100,
+          "z": 4430,
+          "facing": 240,
+          "formation": "column",
+          "strength": 114,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-arnold",
+      "name": "Arnold's Battery A, 1st Rhode Island Light Artillery",
+      "side": "union",
+      "frontage_m": 80,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4425,
+          "z": 4955,
+          "facing": 260,
+          "formation": "line",
+          "strength": 139,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4425,
+          "z": 4955,
+          "facing": 260,
+          "formation": "line",
+          "strength": 139,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-brown",
+      "name": "Brown's Battery B, 1st Rhode Island Light Artillery",
+      "side": "union",
+      "frontage_m": 80,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4445,
+          "z": 4785,
+          "facing": 262,
+          "formation": "line",
+          "strength": 103,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4445,
+          "z": 4785,
+          "facing": 262,
+          "formation": "line",
+          "strength": 103,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-woodruff",
+      "name": "Woodruff's Battery I, 1st US Artillery",
+      "side": "union",
+      "frontage_m": 80,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4570,
+          "z": 5095,
+          "facing": 252,
+          "formation": "line",
+          "strength": 120,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4570,
+          "z": 5095,
+          "facing": 252,
+          "formation": "line",
+          "strength": 120,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-thomas",
+      "name": "Thomas's Battery C, 4th US Artillery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5120,
+          "z": 4310,
+          "facing": 240,
+          "formation": "column",
+          "strength": 115,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5120,
+          "z": 4310,
+          "facing": 240,
+          "formation": "column",
+          "strength": 115,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-sterling",
+      "name": "Sterling's 2nd Connecticut Light Battery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5180,
+          "z": 4390,
+          "facing": 240,
+          "formation": "column",
+          "strength": 106,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5180,
+          "z": 4390,
+          "facing": 240,
+          "formation": "column",
+          "strength": 106,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-cooper",
+      "name": "Cooper's Battery B, 1st Pennsylvania Light Artillery",
+      "side": "union",
+      "frontage_m": 70,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5100,
+          "z": 5740,
+          "facing": 262,
+          "formation": "line",
+          "strength": 114,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5100,
+          "z": 5740,
+          "facing": 262,
+          "formation": "line",
+          "strength": 114,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-fitzhugh",
+      "name": "Fitzhugh's Battery K, 1st New York Light Artillery (11th NY attached)",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5210,
+          "z": 4340,
+          "facing": 240,
+          "formation": "column",
+          "strength": 149,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5210,
+          "z": 4340,
+          "facing": 240,
+          "formation": "column",
+          "strength": 149,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-parsons",
+      "name": "Parsons's Battery A, 1st New Jersey Light Artillery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5240,
+          "z": 4380,
+          "facing": 240,
+          "formation": "column",
+          "strength": 116,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5240,
+          "z": 4380,
+          "facing": 240,
+          "formation": "column",
+          "strength": 116,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-wheeler",
+      "name": "Wheeler's 13th New York Independent Battery",
+      "side": "union",
+      "frontage_m": 70,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5075,
+          "z": 5560,
+          "facing": 262,
+          "formation": "line",
+          "strength": 118,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5075,
+          "z": 5560,
+          "facing": 262,
+          "formation": "line",
+          "strength": 118,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-dilger",
+      "name": "Dilger's Battery I, 1st Ohio Light Artillery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5035,
+          "z": 5705,
+          "facing": 270,
+          "formation": "line",
+          "strength": 127,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5035,
+          "z": 5705,
+          "facing": 270,
+          "formation": "line",
+          "strength": 127,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-bancroft",
+      "name": "Bancroft's Battery G, 4th US Artillery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4975,
+          "z": 5625,
+          "facing": 270,
+          "formation": "line",
+          "strength": 124,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4975,
+          "z": 5625,
+          "facing": 270,
+          "formation": "line",
+          "strength": 124,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-taft",
+      "name": "Taft's 5th New York Independent Battery",
+      "side": "union",
+      "frontage_m": 110,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5010,
+          "z": 5745,
+          "facing": 65,
+          "formation": "line",
+          "strength": 144,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5010,
+          "z": 5745,
+          "facing": 65,
+          "formation": "line",
+          "strength": 144,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-mason",
+      "name": "Mason's Battery H, 1st US Artillery (Eakin's)",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4930,
+          "z": 5585,
+          "facing": 245,
+          "formation": "line",
+          "strength": 153,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4930,
+          "z": 5585,
+          "facing": 245,
+          "formation": "line",
+          "strength": 153,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-edgell",
+      "name": "Edgell's 1st New Hampshire Battery",
+      "side": "union",
+      "frontage_m": 70,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4960,
+          "z": 5675,
+          "facing": 285,
+          "formation": "line",
+          "strength": 111,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4960,
+          "z": 5675,
+          "facing": 285,
+          "formation": "line",
+          "strength": 111,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-norton",
+      "name": "Norton's Battery H, 1st Ohio Light Artillery (Huntington's)",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 4940,
+          "z": 5540,
+          "facing": 260,
+          "formation": "line",
+          "strength": 123,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 4940,
+          "z": 5540,
+          "facing": 260,
+          "formation": "line",
+          "strength": 123,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-hill-wv",
+      "name": "Hill's Battery C, 1st West Virginia Artillery",
+      "side": "union",
+      "frontage_m": 70,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5015,
+          "z": 5595,
+          "facing": 290,
+          "formation": "line",
+          "strength": 123,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5015,
+          "z": 5595,
+          "facing": 290,
+          "formation": "line",
+          "strength": 123,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-stevens",
+      "name": "Stevens's 5th Maine Battery (Whittier's)",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5380,
+          "z": 5680,
+          "facing": 15,
+          "formation": "line",
+          "strength": 136,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5380,
+          "z": 5680,
+          "facing": 15,
+          "formation": "line",
+          "strength": 136,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-breck",
+      "name": "Breck's Battery L (with E), 1st New York Light Artillery (Reynolds's)",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5090,
+          "z": 5720,
+          "facing": 50,
+          "formation": "line",
+          "strength": 141,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5090,
+          "z": 5720,
+          "facing": 50,
+          "formation": "line",
+          "strength": 141,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-stewart",
+      "name": "Stewart's Battery B, 4th US Artillery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5055,
+          "z": 5845,
+          "facing": 350,
+          "formation": "line",
+          "strength": 132,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5055,
+          "z": 5845,
+          "facing": 350,
+          "formation": "line",
+          "strength": 132,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-hall-2me",
+      "name": "Hall's 2nd Maine Battery (rear, withdrawn)",
+      "side": "union",
+      "frontage_m": 70,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5200,
+          "z": 5300,
+          "facing": 0,
+          "formation": "column",
+          "strength": 127,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5200,
+          "z": 5300,
+          "facing": 0,
+          "formation": "column",
+          "strength": 127,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-rugg",
+      "name": "Rugg's Battery F, 4th US Artillery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5510,
+          "z": 4930,
+          "facing": 55,
+          "formation": "line",
+          "strength": 96,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5510,
+          "z": 4930,
+          "facing": 55,
+          "formation": "line",
+          "strength": 96,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-rigby",
+      "name": "Rigby's Battery A, 1st Maryland Light Artillery",
+      "side": "union",
+      "frontage_m": 100,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6010,
+          "z": 4060,
+          "facing": 40,
+          "formation": "line",
+          "strength": 106,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 6010,
+          "z": 4060,
+          "facing": 40,
+          "formation": "line",
+          "strength": 106,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-btty-winegar",
+      "name": "Winegar's Battery M, 1st New York Light Artillery",
+      "side": "union",
+      "frontage_m": 70,
+      "depth_m": 40,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6600,
+          "z": 3720,
+          "facing": 30,
+          "formation": "line",
+          "strength": 96,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 6600,
+          "z": 3720,
+          "facing": 30,
+          "formation": "line",
+          "strength": 96,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    },
+    {
+      "id": "us-arty-reserve-park",
+      "name": "Artillery Reserve park + ammunition train (Tyler's)",
+      "side": "union",
+      "frontage_m": 140,
+      "depth_m": 480,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 5150,
+          "z": 4350,
+          "facing": 200,
+          "formation": "column",
+          "strength": 2375,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        },
+        {
+          "t": 10860,
+          "x": 5150,
+          "z": 4350,
+          "facing": 200,
+          "formation": "column",
+          "strength": 2375,
+          "confidence": "inferred",
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "j2e-culp-greene",
+      "kind": "musketry",
+      "t0": 0,
+      "t1": 9060,
+      "unitId": "us-greene",
+      "confidence": "documented",
+      "citation": "The four charges received; firing dies down ~22:00 (Greene's Kane-return 10 o'clock; Geary 'about 10 p. m.' — CA-J2E-5).",
+      "note": "Nicholls's four-hours-from-19:00 reading runs to the envelope's 23:00 edge and is recorded, not adopted (ED-62)."
+    },
+    {
+      "id": "j2e-culp-jones",
+      "kind": "musketry",
+      "t0": 0,
+      "t1": 5460,
+      "unitId": "csa-dungan",
+      "confidence": "documented",
+      "citation": "Jones's assaults on Greene's right, pressed in the dark and repulsed (or-27-2-jones-jm)."
+    },
+    {
+      "id": "j2e-culp-nicholls",
+      "kind": "musketry",
+      "t0": 0,
+      "t1": 9060,
+      "unitId": "csa-williams",
+      "confidence": "documented",
+      "citation": "The fire line 100 yards from the works, 'kept up ... until late in the night' (or-27-2-williams-nicholls)."
+    },
+    {
+      "id": "j2e-ech-ricketts",
+      "kind": "artillery_fire",
+      "t0": 360,
+      "t1": 2340,
+      "unitId": "us-btty-ricketts",
+      "confidence": "documented",
+      "citation": "Canister 'at about 8' until the lodgment (or-27-1-ricketts)."
+    },
+    {
+      "id": "j2e-ech-wiedrich",
+      "kind": "artillery_fire",
+      "t0": 360,
+      "t1": 2340,
+      "unitId": "us-btty-wiedrich",
+      "confidence": "documented",
+      "citation": "Canister into the assault until the intrenchments fight (or-27-1-wiedrich 'about 8')."
+    },
+    {
+      "id": "j2e-culp-steuart",
+      "kind": "musketry",
+      "t0": 660,
+      "t1": 7260,
+      "unitId": "csa-steuart",
+      "confidence": "documented",
+      "citation": "The lower-works fight and the lodgment (report; the 137th NY's refused front is the receiving record)."
+    },
+    {
+      "id": "j2e-ech-stevens",
+      "kind": "artillery_fire",
+      "t0": 660,
+      "t1": 3660,
+      "unitId": "us-btty-stevens",
+      "confidence": "documented",
+      "citation": "The 5th ME's enfilade from the knoll across the assault's flank (the battery's ground record; mon-5me-stevens class)."
+    },
+    {
+      "id": "j2e-ech-avery",
+      "kind": "musketry",
+      "t0": 1020,
+      "t1": 4260,
+      "unitId": "csa-godwin",
+      "confidence": "documented",
+      "citation": "The left lane's assault (the Hoke tablet's 8 P.M.; Avery mw)."
+    },
+    {
+      "id": "j2e-ech-hays",
+      "kind": "musketry",
+      "t0": 1020,
+      "t1": 4260,
+      "unitId": "csa-hays",
+      "confidence": "documented",
+      "citation": "The assault ladder and the lodgment fight (or-27-2-hays; CA-J2E-3)."
+    },
+    {
+      "id": "j2e-ech-harris",
+      "kind": "musketry",
+      "t0": 1140,
+      "t1": 4560,
+      "unitId": "us-harris",
+      "confidence": "documented",
+      "citation": "The wall fight in 'darkness and smoke' (or-27-1-harris)."
+    },
+    {
+      "id": "j2e-ech-vongilsa",
+      "kind": "musketry",
+      "t0": 1140,
+      "t1": 4560,
+      "unitId": "us-vongilsa",
+      "confidence": "documented",
+      "citation": "The first line's fight at the foot (or-27-1-einsiedel-41ny)."
+    },
+    {
+      "id": "j2e-ech-carroll",
+      "kind": "musketry",
+      "t0": 3660,
+      "t1": 4860,
+      "unitId": "us-carroll",
+      "confidence": "documented",
+      "citation": "The counterattack clears the batteries (or-27-1-carroll; Ricketts's receiving-side pin — CA-J2E-4)."
+    },
+    {
+      "id": "j2e-ech-wiedrich-resume",
+      "kind": "artillery_fire",
+      "t0": 4560,
+      "t1": 6360,
+      "unitId": "us-btty-wiedrich",
+      "confidence": "documented",
+      "citation": "Service resumed the same night (ED-63 — never a captured-battery state)."
+    },
+    {
+      "id": "j2e-kane-two-volley",
+      "kind": "musketry",
+      "t0": 9060,
+      "t1": 9660,
+      "unitId": "us-kane",
+      "confidence": "documented",
+      "citation": "The two-volley discovery: the returning brigade fired into from its own vacated works (Kane via Geary — the occupied-works discovery)."
+    }
+  ],
+  "environment": {
+    "windTowardDeg": 45,
+    "windMps": 0,
+    "confidence": "unknown",
+    "note": "No sourced wind observation for the July 2 evening exists in the corpus (the ED-10/ED-19 class); calm authored."
+  }
+}

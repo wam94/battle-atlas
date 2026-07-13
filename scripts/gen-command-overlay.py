@@ -25,7 +25,13 @@ import sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REGISTER = os.path.join(REPO, "docs/reconstruction/audit/oob-register.json")
-BATTLE = os.path.join(REPO, "app/Assets/Battle/gettysburg-july3.json")
+# Every reconstructed phase file contributes unit ids (ADR 0005: one file
+# per phase; the runtime skips overlay entries the loaded battle lacks).
+BATTLES = [
+    os.path.join(REPO, "app/Assets/Battle/gettysburg-july3.json"),
+    os.path.join(REPO, "app/Assets/Battle/gettysburg-july2-afternoon.json"),
+    os.path.join(REPO, "app/Assets/Battle/gettysburg-july2-evening.json"),
+]
 OUT = os.path.join(REPO, "app/Assets/Resources/Battle/command-overlay.json")
 
 # Units the register represents only INSIDE another entry (name-only
@@ -42,7 +48,6 @@ GENERIC_DIVISION = re.compile(r"^\d+(st|nd|rd|th) (Division|Brigade)")
 
 def main():
     register = json.load(open(REGISTER))
-    battle = json.load(open(BATTLE))
 
     chains = dict(MANUAL_CHAINS)
     for entry in register["entries"]:
@@ -50,7 +55,10 @@ def main():
         if cast and cast != "not-yet-cast":
             chains[cast] = entry.get("parentChain") or []
 
-    units = {u["id"]: u for u in battle["units"]}
+    units = {}
+    for path in BATTLES:
+        for u in json.load(open(path))["units"]:
+            units.setdefault(u["id"], u)
     out_units = []
     unmapped = []
     for uid in sorted(units):

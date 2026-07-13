@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import manifest from "../../app/Assets/StreamingAssets/Atlas/battle-manifest.json";
 import battle from "../../app/Assets/Battle/gettysburg-july3.json";
+import july2Afternoon from "../../app/Assets/Battle/gettysburg-july2-afternoon.json";
+import july2Evening from "../../app/Assets/Battle/gettysburg-july2-evening.json";
 import { validateManifest, type BattleManifest } from "../src/validate";
 
 // The day/phase manifest (ADR 0005; docs/format/battle-manifest.md): the
@@ -16,8 +18,20 @@ describe("battle manifest (ADR 0005)", () => {
     expect(result.ok).toBe(true);
   });
 
-  it("carries the three days in date order with July 3 afternoon reconstructed", () => {
+  it("carries the three days in date order with July 2 and July 3 reconstructed", () => {
     expect(m.days.map((d) => d.id)).toEqual(["july1", "july2", "july3"]);
+    // July 2 (day-expansion slice 2): honest morning + two abutting
+    // reconstructed phases seamed at sunset 19:29 LMT (ED-31/CA-J2A-11).
+    const july2 = m.days[1]!;
+    expect(july2.phases.map((p) => p.status)).toEqual([
+      "not-reconstructed", "reconstructed", "reconstructed",
+    ]);
+    expect(july2.phases[1]!.battle).toBe("gettysburg-july2-afternoon.json");
+    expect(july2.phases[2]!.battle).toBe("gettysburg-july2-evening.json");
+    // abutting, never overlapping: afternoon [55800, 70140) meets evening
+    // [70140, 81000) exactly at the sunset pin
+    expect(july2.phases[1]!.startTime! + july2.phases[1]!.endTime!)
+      .toBe(july2.phases[2]!.startTime);
     const july3 = m.days[2]!;
     expect(july3.phases.map((p) => p.status)).toEqual([
       "not-reconstructed", "reconstructed",
@@ -26,11 +40,13 @@ describe("battle manifest (ADR 0005)", () => {
   });
 
   it("cross-file: reconstructed phase clocks echo the battle file exactly", () => {
-    // Only one battle file exists today; when a second phase is
-    // reconstructed, extend this lookup (the manifest may never lie about a
-    // phase's clock — battle-manifest.md "The honesty rules").
+    // Every reconstructed phase's battle file is in this lookup (the
+    // manifest may never lie about a phase's clock — battle-manifest.md
+    // "The honesty rules").
     const battles: Record<string, { startTime: number; endTime: number }> = {
       "gettysburg-july3.json": battle as any,
+      "gettysburg-july2-afternoon.json": july2Afternoon as any,
+      "gettysburg-july2-evening.json": july2Evening as any,
     };
     for (const day of m.days)
       for (const phase of day.phases) {

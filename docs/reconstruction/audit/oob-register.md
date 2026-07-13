@@ -39,8 +39,11 @@ reconciliation (a pass-13 register-maintenance item).
   `docs/reconstruction/audit/dossier-pass-12.md` §4 for the method and
   summary counts.
 
-Regiments enumerated: 478. Cast status: **148 entries matched to in-build
-unit ids** in `app/Assets/Battle/gettysburg-july3.json`; **134 not-yet-cast**
+Regiments enumerated: 478. Cast status: **154 entries matched to in-build
+unit ids** across the battle phase files (`gettysburg-july3.json` +
+the day-expansion-2 July 2 phase files, which cast six previously
+uncast batteries: Clark, Bucklyn, Winslow, Smith's 4th NY, Watson,
+Bigelow); **128 not-yet-cast**
 (the eight command rows flagged by dossier passes 3-4 — Pickett, Heth,
 Pender/Trimble, Gibbon, Hancock, Hays, Doubleday, Second Corps artillery —
 were added as an explicit register-maintenance batch at pass-5 start,
