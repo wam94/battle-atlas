@@ -575,8 +575,8 @@ const movers: M[] = [
     kfs: [
       kf(0, 4420, 4480, 260, "line", 780, "documented",
         "Cross's brigade on the II Corps left: '330 total from 780 muskets' — the strength+loss pairing primary (or-27-1-mckeen). Dossier us-ii-1-1-cross.md."),
-      kf(T(17, 50), 4420, 4480, 260, "column", 780, "documented",
-        "Caldwell's division ordered to the Wheatfield (the W3 march; trigger: de Trobriand's ammunition running out AS Caldwell arrives — seamed, not clocked)."),
+      kf(T(17, 48), 4420, 4480, 260, "column", 780, "documented",
+        "Caldwell's division ordered to the Wheatfield (the W3 march; trigger: de Trobriand's ammunition running out AS Caldwell arrives — seamed, not clocked; the leg's pace sits inside the quick-time bound, R-linear-connective-motion)."),
       kf(T(18, 5), 3862, 3088, 210, "line", 760, "documented",
         "Wave 3 opens (CA-J2A-8, CONFIRMED 18:00-18:15): Cross into the wheat — mw at the opening (5th NH ground; fall-site tradition-fixed, flagged); 'Cross' Brig' drawn east Wheatfield (3862,3088) (bachelder j2-04)."),
       kf(T(19, 0), 3980, 3150, 220, "line", 500, "documented",
