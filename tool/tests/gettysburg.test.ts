@@ -733,10 +733,13 @@ describe("authored July 3 battle", () => {
     expect(harrow[harrow.length - 1].x).toBe(4384); // end pose back on the axis
     expect(harrow.find((k: any) => k.t === 8700).x).toBe(4430); // crisis lateral kept
     // Davis: the bombardment-share primary (2 k + 21 w = 23, not the interpolated 30)
+    // — SUPERSEDED by ED-75 (day-expansion slice 2): the -23 delta is now
+    // applied to the ED-75 placeholder base (1,293), not the slice-1 base
+    // (2,000); see the dedicated ED-75 test below for the full picture.
     const davis = byId("csa-davis").keyframes;
-    expect(davis.find((k: any) => k.t === 7200).strength).toBe(1977);
-    expect(davis.find((k: any) => k.t === 7200).confidence).toBe("documented");
-    expect(davis.find((k: any) => k.t === 7500).strength).toBe(1977); // monotonic step-off
+    expect(davis.find((k: any) => k.t === 7200).strength).toBe(1270);
+    expect(davis.find((k: any) => k.t === 7200).confidence).toBe("inferred");
+    expect(davis.find((k: any) => k.t === 7500).strength).toBe(1270); // monotonic step-off
     // Poague: return=tablet 32, all July 3 (attested July 1-2 non-participation)
     const poague = byId("csa-bn-poague").keyframes;
     expect(poague[poague.length - 1].strength).toBe(352);
@@ -886,11 +889,77 @@ describe("authored July 3 battle", () => {
     expect(byId("csa-lang").keyframes[0].citation).toMatch(/near 700 strong/);
     expect(byId("csa-fry").keyframes[0].strength).toBe(1048); // cast: unchanged
     expect(byId("csa-fry").keyframes[0].citation).toMatch(/JULY-1-scoped/);
+    // Marshall/Davis's slice-1 "RE-BASING DEFERRED, HETEROGENEITY RECORDED"
+    // annotation is SUPERSEDED by ED-75 (day-expansion slice 2) — see the
+    // dedicated ED-75 test below for the placeholder values themselves.
     for (const id of ["csa-marshall", "csa-davis"])
       expect(byId(id).keyframes[0].citation, id)
-        .toMatch(/RE-BASING DEFERRED, HETEROGENEITY RECORDED/);
+        .toMatch(/ED-75 PROVISIONAL PLACEHOLDER/);
     // no cast unit but Garnett/Fry was touched, and Fry only in citation
     expect(byId("csa-kemper").keyframes[0].strength).toBe(1575);
     expect(byId("csa-armistead").keyframes[0].strength).toBe(1650);
+  });
+  it("ED-75: Marshall/Davis placeholder — day-expansion slice 2", () => {
+    const units = (battle as any).units;
+    const byId = (id: string) => units.find((u: any) => u.id === id);
+
+    // Marshall: 900 (envelope 750-1,050), the dossier's own [B] subtraction
+    // promoted from a citation annotation to the actual keyframe value; the
+    // whole decay curve is proportionally rescaled (900/2000) from the
+    // slice-1 ABT-map shape, so the end lands at round(595*0.45)=268.
+    const m = byId("csa-marshall").keyframes;
+    const mAt = (t: number) => m.find((k: any) => k.t === t);
+    expect(mAt(0).strength).toBe(900);
+    expect(mAt(0).confidence).toBe("inferred");
+    expect(mAt(0).citation).toMatch(/ED-75 PROVISIONAL PLACEHOLDER/);
+    expect(mAt(0).citation).toMatch(/envelope 750-1,050/);
+    expect(mAt(0).citation).toMatch(/Busey & Martin/);
+    expect(mAt(10800).strength).toBe(268);
+    expect(mAt(23340).strength).toBe(268);
+    for (const k of m) expect(k.confidence, `t=${k.t}`).toBe("inferred");
+
+    // Davis: two-term placeholder (900 three-regiment survivors + 393 the
+    // 11th Mississippi's own tablet-corroborated strength) = 1,293; the
+    // attested -23 bombardment delta is preserved ABSOLUTE (1,293-23=1,270,
+    // not rescaled), and only the remainder of the curve is proportionally
+    // rescaled from the slice-1 shape (scale = 1,270/1,977).
+    const d = byId("csa-davis").keyframes;
+    const dAt = (t: number) => d.find((k: any) => k.t === t);
+    expect(dAt(0).strength).toBe(1293);
+    expect(dAt(0).confidence).toBe("inferred");
+    expect(dAt(0).citation).toMatch(/ED-75 PROVISIONAL PLACEHOLDER/);
+    expect(dAt(0).citation).toMatch(/envelope 1,100-1,550/);
+    expect(dAt(0).citation).toMatch(/Combatants – 393/);
+    expect(dAt(7200).strength).toBe(1270);
+    expect(dAt(7200).citation).toMatch(/PRESERVED as an absolute headcount/);
+    expect(dAt(7500).strength).toBe(1270);
+    expect(dAt(10800).strength).toBe(387);
+    expect(dAt(23340).strength).toBe(387);
+    for (const k of d) expect(k.confidence, `t=${k.t}`).toBe("inferred");
+
+    // decay is monotonic non-increasing on both brigades and every child
+    for (const id of ["csa-marshall", "csa-davis", "csa-11nc", "csa-26nc",
+      "csa-47nc", "csa-52nc", "csa-2miss", "csa-11miss", "csa-42miss", "csa-55nc"]) {
+      const kfs = byId(id).keyframes;
+      for (let i = 1; i < kfs.length; i++)
+        expect(kfs[i].strength, `${id} t=${kfs[i].t}`).toBeLessThanOrEqual(kfs[i - 1].strength);
+    }
+    // children re-split from the new parent tracks (display-grain /4);
+    // t=0 sums re-total the parent within whole-man rounding (900/4=225.0
+    // exact; 1293/4=323.25, so 4x round(323.25)=1292, one short of 1293 —
+    // the rounding artifact the validator's own ±15% advisory tolerates)
+    const marshallChildren = ["csa-11nc", "csa-26nc", "csa-47nc", "csa-52nc"];
+    expect(marshallChildren.reduce((s, id) => s + byId(id).keyframes[0].strength, 0)).toBe(900);
+    const davisChildren = ["csa-2miss", "csa-11miss", "csa-42miss", "csa-55nc"];
+    expect(davisChildren.reduce((s, id) => s + byId(id).keyframes[0].strength, 0)).toBe(1292);
+
+    // neither brigade is in the compiled Angle cast — this ED touches no
+    // shipped film state (the film-safety property the script's own guard
+    // asserts and this test re-confirms independently)
+    const CAST = ["csa-garnett", "csa-kemper", "csa-armistead", "csa-fry",
+      "us-webb", "us-69pa", "us-71pa", "us-72pa", "us-btty-cushing",
+      "us-btty-cowan", "us-btty-arnold", "us-hall", "us-stannard"];
+    expect(CAST).not.toContain("csa-marshall");
+    expect(CAST).not.toContain("csa-davis");
   });
 });
