@@ -3070,7 +3070,7 @@
     },
     {
       "id": "reg-us-cav-1-1",
-      "castStatus": "not-yet-cast",
+      "castStatus": "us-cav-gamble",
       "name": "1st Brigade, 1st Division, Cavalry Corps (Gamble's)",
       "side": "union",
       "arm": "cavalry",
@@ -3100,7 +3100,7 @@
     },
     {
       "id": "reg-us-cav-1-2",
-      "castStatus": "not-yet-cast",
+      "castStatus": "us-cav-devin",
       "name": "2nd Brigade, 1st Division, Cavalry Corps (Devin's)",
       "side": "union",
       "arm": "cavalry",
@@ -3574,7 +3574,7 @@
     },
     {
       "id": "reg-us-ha-2-3",
-      "castStatus": "not-yet-cast",
+      "castStatus": "us-btty-calef",
       "name": "Battery A, 2nd US",
       "side": "union",
       "arm": "artillery",

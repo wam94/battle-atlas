@@ -1,0 +1,54 @@
+{
+  "_comment": "Timeline moment markers for the July 1 AFTERNOON phase (day-expansion slice 3). Times are phase battle-clock seconds (t=0 = 13:00 LMT, startTime 46800; 18:00 = 18000). Every marker cites the anchor or editorial decision that places it (docs/reconstruction/angle-editorial-decisions.md; docs/reconstruction/audit/anchor-chain-proposal.md §2.2). The `battle` field gates this file to its own phase (a moments file may never render against another phase's clock).",
+  "battle": "gettysburg-july1-afternoon",
+  "moments": [
+    {
+      "t": 3600,
+      "label": "Rodes attacks from Oak Hill",
+      "detail": "14:00 — 'a vigorous attack at 2 P.M. with superior numbers along the entire line' ends the lull. The interior ladder is recorded, not averaged: Coulter's 12:30 general firing, Doles's ~13:00 formation, Stone's and Dobke's independent 13:30 'grand advance' readings sit inside the envelope.",
+      "citation": "CA-J1P-1 (1st Corps tablet, VERIFIED; ED-69 interior-ladder annotation — no move)"
+    },
+    {
+      "t": 6000,
+      "label": "Iverson's field",
+      "detail": "14:30-15:00 — Iverson's brigade advances unsupported into Baxter's concealed wall: '500 of my men were left lying dead and wounded on a line as straight as a dress parade.' Four echelons attest it, both-sided; the missing column is the line's surrender mass. The audit's cleanest single-spike loss.",
+      "citation": "CA-J1P-2 (ED-67 basis: Iverson + Rodes + Ramseur + Cutler receiving; the j1-09 drawn mid-advance bar; ED-71 printed-arithmetic record carried)"
+    },
+    {
+      "t": 7200,
+      "label": "Early strikes Barlow's Knoll",
+      "detail": "~15:00 — Gordon's brigade crosses Blocher's Run under fire ('About 3 p.m. I was ordered to move my brigade forward' = Schurz's 'about 3 o'clock... heavy masses' across the lines); the knoll falls, Barlow is wounded and captured; Doles's conjunction rolls the seam.",
+      "citation": "CA-J1P-3 (ED-67: the Gordon = Schurz cross-line pair; or-27-2-doles; the j1-11 both-sided drawn crop)"
+    },
+    {
+      "t": 10800,
+      "label": "The double collapse",
+      "detail": "~16:00 — both corps give way: 'About 4 P.M. the Corps was forced back' (XI tablet) as Pender's assault breaks Seminary Ridge — Perrin's 'after 4 o'clock' order against the four-source receiving cluster; Scales's brigade wrecked at the 75-yard bottom; Robinson's rear guard holds 'until nearly 5 p.m.'",
+      "citation": "CA-J1P-4 + CA-J1P-5 (ED-70: Perrin vs tablet/Dobke/Jacobs/C.Biddle; Robinson's tail recorded)"
+    },
+    {
+      "t": 11700,
+      "label": "Hancock on Cemetery Hill (the conflict record)",
+      "detail": "~16:15 adopted — THE canonical watch controversy, carried whole: Hancock's own report says 3 p.m.; his own 17:25 dispatch ('When I arrived here an hour since') puts it ~16:25; Howard says 4:30; Doubleday witnessed the dual-command friction. Both principals had stakes in the feud.",
+      "citation": "CA-J1P-7 (ED-68(b): envelope 15:30-16:30, adopted ~16:15; the partisan-dispute note stands; no pole erased)"
+    },
+    {
+      "t": 12600,
+      "label": "The retreat through town",
+      "detail": "16:00→16:30 — the streets: the 45th New York's alley trap, Cutler's perfect-steadiness embankment march, the 16th Maine spent as the ordered sacrifice, Schimmelfennig cut off and hidden until July 4. The corps' captured-missing columns are this leg's ledger.",
+      "citation": "CA-J1P-6 (interval hung between CA-J1P-4/5 and CA-J1P-7; or-27-1-dobke-45ny/-cutler/-farnham-16me; ABT map sheet 3:45-5:00 bracket)"
+    },
+    {
+      "t": 15900,
+      "label": "'We can fight here' — the 17:25 dispatch",
+      "detail": "Hancock to Meade: the day's second hard clock, a timestamped document. The I Corps re-forms west of the Baltimore Pike, the XI on the hill's front; Culp's Hill is picked up by Wadsworth's men.",
+      "citation": "CA-J1P-8 (OR 27/1 p. 366, VERIFIED as printed '5.25 [P.M.]'; the bracket caveat recorded)"
+    },
+    {
+      "t": 18000,
+      "label": "The consolidation holds",
+      "detail": "18:00 — the phase ends on the held hills. Ewell declines Cemetery/Culp's Hill ('if practicable') in the unclocked evening — a sequence anchor after Hancock's arrival and before dark; it rides the day's honest evening note, not a keyframe.",
+      "citation": "CA-J1P-9 (sequence-only, correctly unclocked); the manifest's july1-evening note"
+    }
+  ]
+}

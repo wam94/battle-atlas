@@ -1,0 +1,54 @@
+{
+  "_comment": "Timeline moment markers for the July 1 MORNING phase (day-expansion slice 3). Times are phase battle-clock seconds (t=0 = 07:30 LMT, startTime 27000; 13:00 = 19800). Every marker cites the anchor or editorial decision that places it (docs/reconstruction/angle-editorial-decisions.md; docs/reconstruction/audit/anchor-chain-proposal.md §2.1). The `battle` field gates this file to its own phase (a moments file may never render against another phase's clock).",
+  "battle": "gettysburg-july1-morning",
+  "moments": [
+    {
+      "t": 0,
+      "label": "The first shot",
+      "detail": "07:30 — Lt. Marcellus Jones of the 8th Illinois Cavalry fires on Heth's column from Buford's picket line on the Chambersburg Pike, ~3 miles west. The identity was contested by veterans; the hour was broadly accepted.",
+      "citation": "CA-J1M-1 (1886 First Shot marker inscription, VERIFIED: '7:30 a.m'; ED-26)"
+    },
+    {
+      "t": 1800,
+      "label": "Buford's delay line opens",
+      "detail": "Gamble's dismounted brigade and Calef's six rifles ('the first Union gun of the battle was fired from the right section') check Heth's deployment — 'between 8 and 9 a.m.' by Buford's clock, held 'for more than two hours'. Devin's four-road screen covers the right.",
+      "citation": "CA-J1M-2 / CA-J1M-4a (ED-66: or-27-1-gamble, or-27-1-buford; the Calef tablet verbatim)"
+    },
+    {
+      "t": 9600,
+      "label": "Buford's 10:10 dispatch",
+      "detail": "'Driving my pickets and skirmishers very rapidly' — the morning's hardest clock, a timestamped document (±0): Buford to Meade, with Reynolds 'advancing, and... within 3 miles of this point.'",
+      "citation": "CA-J1M-3 (OR 27/1 p. 924, VERIFIED as printed; timestamped-document tier, ED-25)"
+    },
+    {
+      "t": 9900,
+      "label": "Reynolds arrives — and falls",
+      "detail": "The I Corps head relieves the cavalry; Heth's infantry attack strikes at 10:15-10:30 (Davis's 'About 10.30 o'clock' vs the Union receiving cluster). Reynolds is killed at the edge of Herbst woods launching the Iron Brigade — 'about 10.15 a.m.' by THREE primaries.",
+      "citation": "CA-J1M-4b (ED-66 split) + CA-J1M-5 (tablet = Wadsworth = Doubleday three-primary; Howard's 11.30 collapsed as word-reaching-him)"
+    },
+    {
+      "t": 11700,
+      "label": "Archer captured at the run",
+      "detail": "The Iron Brigade's unloaded double-quick charge breaks Archer's brigade in the Willoughby Run pocket — 'some 75 of the brigade were unable to make their escape, General Archer among the rest': the first general of Lee's army taken in battle.",
+      "citation": "or-27-2-shepard = or-27-1-doubleday/-morrow-24mi (both-sided at man grain; the capture-count conflict carried)"
+    },
+    {
+      "t": 12600,
+      "label": "The railroad cut",
+      "detail": "The 6th Wisconsin, 95th New York, and 14th Brooklyn charge the cut where Davis's brigade rallied; Maj. Blair surrenders the 2nd Mississippi to Dawes; the stranded 147th New York is released — it had lost 207 of 380 in half an hour.",
+      "citation": "CA-J1M-6 (or-27-1-dawes-6wi; or-27-1-cutler's rate-class primaries; or-27-2-davis-jr)"
+    },
+    {
+      "t": 14400,
+      "label": "The midday lull",
+      "detail": "Firing dies to skirmishing as both sides feed the field: the XI Corps deploys north of town, Rodes reaches Oak Hill 'about noon', and Howard — commanding since ~11:30 on Reynolds's death — holds Cemetery Hill as the rally position.",
+      "citation": "CA-J1M-7 (Stone Sentinels timeline; Rodes division tablet); ED-68(a) (Howard = Schurz two-primary ~11:30; the Pfanz 10:30 gate open)"
+    },
+    {
+      "t": 18000,
+      "label": "Oak Hill's guns open",
+      "detail": "Carter's battalion arrives with Rodes and enfilades the I Corps line — 'between 12 and 1 o'clock... a most destructive enfilade' (Stone's re-fold into the pike is its consequence). The afternoon phase opens on this pressure.",
+      "citation": "or-27-1-stone-roy (receiving clock); or-27-2-rodes (deployment anatomy)"
+    }
+  ]
+}

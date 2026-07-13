@@ -97,6 +97,8 @@ public class CommandOverlayTests
             "gettysburg-july3.json",
             "gettysburg-july2-afternoon.json",
             "gettysburg-july2-evening.json",
+            "gettysburg-july1-morning.json",
+            "gettysburg-july1-afternoon.json",
         };
         foreach (string file in battleFiles)
         {

@@ -167,10 +167,11 @@ public class AtlasHudModelTests
     }
 
     [Test]
-    public void CommittedJuly2MomentsFiles_ParseAndGateToTheirPhases()
+    public void CommittedPhaseMomentsFiles_ParseAndGateToTheirPhases()
     {
         foreach (string phase in new[]
-            { "gettysburg-july2-afternoon", "gettysburg-july2-evening" })
+            { "gettysburg-july2-afternoon", "gettysburg-july2-evening",
+              "gettysburg-july1-morning", "gettysburg-july1-afternoon" })
         {
             string path = UnityEngine.Application.dataPath
                 + $"/StreamingAssets/Atlas/moments-{phase}.json";
