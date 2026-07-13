@@ -161,6 +161,20 @@ def test_unknown_claim_subject_rejected(mutable):
     assert any("not a battle unit" in e for e in validate_corpus(mutable))
 
 
+def test_claim_subject_from_day_expansion_phase_accepted(mutable):
+    """strength-reconciliation-1 pipeline fix: the claim-subject vocabulary
+    is manifest-driven (every reconstructed phase), not hardcoded to
+    gettysburg-july3.json — a claim about a unit that only exists in a
+    day-expansion phase file (Gamble's brigade, July 1 morning; not present
+    in corpus.battle, the July-3-afternoon file) must validate, not be
+    rejected as an unknown subject."""
+    assert "us-cav-gamble" not in {u["id"] for u in mutable.battle["units"]}
+    assert "us-cav-gamble" in mutable.all_battle_unit_ids
+    mutable.claims["claims"][0]["subjectId"] = "us-cav-gamble"
+    errors = validate_corpus(mutable)
+    assert not any("not a battle unit" in e for e in errors)
+
+
 def test_segment_citing_unknown_claim_rejected(mutable):
     mutable.recon["segments"][0]["claimIds"] = ["claim-does-not-exist"]
     assert any("unknown claim" in e for e in validate_corpus(mutable))

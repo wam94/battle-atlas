@@ -1,10 +1,24 @@
 #!/usr/bin/env python3
 """Build the tabletop unit-activity master table (post-V2 punchlist item 0).
 
-One row per unit in the macro battle file, with in-build movement and
-casualty metrics computed from the keyframes, research-coverage signals
-mined from docs/research and the V2 claims corpus, and empty
+One row per unit across the FULL manifest (ADR 0005) — every reconstructed
+phase's battle file, not just the July 3 afternoon file — with in-build
+movement and casualty metrics computed from the keyframes, research-coverage
+signals mined from docs/research and the V2 claims corpus, and empty
 owner-consultation columns to be layered in.
+
+Manifest-driven (not hardcoded): the phase list comes from
+app/Assets/StreamingAssets/Atlas/battle-manifest.json, so a unit authored in
+ANY reconstructed phase (Gamble/Devin/Calef in july1-morning, Harrow's
+children and Ziegler's Grove in july3, etc.) gets a row — previously only
+gettysburg-july3.json was read, so every day-expansion-authored unit was
+invisible to the computed columns (decomposition-wave-1.md §10 pickup 2).
+A unit appearing in multiple phases (a continuing brigade/battery) gets ONE
+row: its keyframes/events are concatenated across phases in manifest day/
+phase order, so "Start strength" is its earliest appearance's t=0 and "End
+strength" is its latest appearance's final keyframe — the same movement-
+metric math as before, run over the unit's full known arc instead of one
+phase's slice. A new "Phases" column names every phase the unit appears in.
 
 Per the unit-truth-spec scope ruling, the table also carries one row per
 NOT-YET-CAST entry of the full three-day OOB register
@@ -29,7 +43,8 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-BATTLE = ROOT / "app/Assets/Battle/gettysburg-july3.json"
+MANIFEST = ROOT / "app/Assets/StreamingAssets/Atlas/battle-manifest.json"
+BATTLE_DIR = ROOT / "app/Assets/Battle"
 CLAIMS = ROOT / "reconstruction/claims/angle.claims.json"
 RESEARCH_DIRS = [ROOT / "docs/research"]
 OUT_DIR = ROOT / "docs/reconstruction/audit"
@@ -92,10 +107,76 @@ def path_metrics(kfs):
     return round(path, 1), round(net, 1)
 
 
+def reconstructed_phases(manifest_path: Path = MANIFEST) -> list[tuple[str, str]]:
+    """(phaseId, battleFileName) for every reconstructed phase, in the
+    manifest's own day/phase order (day.date is required strictly
+    increasing; phases within a day are authored in clock order) —
+    manifest-driven, so a newly-added phase file is picked up with no code
+    change here."""
+    manifest = json.loads(manifest_path.read_text())
+    out = []
+    for day in manifest["days"]:
+        for phase in day["phases"]:
+            if phase["status"] == "reconstructed":
+                out.append((phase["id"], phase["battle"]))
+    return out
+
+
+def load_phase_battles(
+    manifest_path: Path = MANIFEST, battle_dir: Path = BATTLE_DIR
+) -> list[tuple[str, dict]]:
+    """(phaseId, battleFileJson) for every reconstructed phase, in manifest
+    order."""
+    return [
+        (phase_id, json.loads((battle_dir / battle_file).read_text()))
+        for phase_id, battle_file in reconstructed_phases(manifest_path)
+    ]
+
+
+def merge_units_across_phases(
+    phase_battles: list[tuple[str, dict]],
+) -> tuple[dict[str, dict], dict[str, list], set[str]]:
+    """Merge every phase's units into one row per unit id.
+
+    A unit appearing in multiple phases (a continuing brigade/battery) is
+    concatenated: keyframes and events accumulate across phases in manifest
+    order, so all the existing per-unit movement/casualty math (path
+    length, start/end strength, confidence tallies) runs over the unit's
+    full known arc. Name/side/parent/echelon-defining fields come from the
+    LAST phase the unit appears in (the most current authored state — e.g.
+    a brigade renamed "... minus the Nth ___" by a later decomposition
+    wave). Returns (merged_units, merged_events_by_unit, all_parent_ids).
+    """
+    merged: dict[str, dict] = {}
+    events_by_unit: dict[str, list] = {}
+    parents: set[str] = set()
+    for phase_id, battle in phase_battles:
+        for u in battle["units"]:
+            if u.get("parent"):
+                parents.add(u["parent"])
+            row = merged.setdefault(
+                u["id"],
+                {"id": u["id"], "keyframes": [], "phases": []},
+            )
+            # last-phase-wins for identity fields; accumulate keyframes/phases
+            row["name"] = u["name"]
+            row["side"] = u["side"]
+            row["parent"] = u.get("parent")
+            row["keyframes"].extend(u["keyframes"])
+            row["phases"].append(phase_id)
+        for e in battle["events"]:
+            uid = e.get("unitId")
+            if uid:
+                events_by_unit.setdefault(uid, []).append(e)
+    return merged, events_by_unit, parents
+
+
 def main():
-    battle = json.loads(BATTLE.read_text())
-    units = battle["units"]
-    events = battle["events"]
+    phase_battles = load_phase_battles()
+    if not phase_battles:
+        raise SystemExit(f"no reconstructed phases found in {MANIFEST}")
+    units_by_id, events_by_unit, parents = merge_units_across_phases(phase_battles)
+    units = list(units_by_id.values())
     claims = json.loads(CLAIMS.read_text())
     claim_subjects = {}
     for c in claims["claims"] if isinstance(claims, dict) else claims:
@@ -106,8 +187,6 @@ def main():
     for d in RESEARCH_DIRS:
         for f in sorted(d.glob("*.md")):
             research_texts[f.name] = f.read_text(errors="ignore")
-
-    parents = {u.get("parent") for u in units if u.get("parent")}
 
     rows = []
     for u in units:
@@ -120,7 +199,7 @@ def main():
         unknown = sum(1 for c in conf if c == "unknown")
         cited = sum(1 for k in kfs if k.get("citation"))
         s0, s1 = kfs[0]["strength"], kfs[-1]["strength"]
-        unit_events = [e for e in events if e.get("unitId") == u["id"]]
+        unit_events = events_by_unit.get(u["id"], [])
         token = research_token(u["name"])
         mention_docs = [
             fn for fn, txt in research_texts.items() if token and token in txt
@@ -151,6 +230,7 @@ def main():
                 "Side": u["side"],
                 "Echelon": echelon,
                 "Arm": arm_of(u["name"]),
+                "Phases": "/".join(u["phases"]),
                 "Start strength": s0,
                 "End strength": s1,
                 "In-build casualties (n)": s0 - s1,
@@ -193,6 +273,7 @@ def main():
             "Side": e["side"],
             "Echelon": e["echelon"],
             "Arm": e["arm"],
+            "Phases": "",
             "Start strength": "",
             "End strength": "",
             "In-build casualties (n)": "",
@@ -254,10 +335,13 @@ def main():
     ws = wb.active
     ws.title = "Units"
     computed_cols = list(rows[0].keys())
+    # "Phases" (new, manifest coverage) sits before Start/End strength, so the
+    # casualty-% formula insertion point shifts from 7 to 8 columns in.
+    STRENGTH_COLS = 8  # Unit ID..Phases..Start strength..End strength
     all_cols = (
-        computed_cols[:7]
+        computed_cols[:STRENGTH_COLS]
         + ["In-build casualty %"]
-        + computed_cols[7:]
+        + computed_cols[STRENGTH_COLS:]
         + CONSULT_COLS
     )
     arial = Font(name="Arial", size=10)
@@ -269,26 +353,39 @@ def main():
     for c in ws[1]:
         c.font = bold
 
+    # column letters for the live casualty-% formula, computed from all_cols
+    # so an inserted/reordered column (e.g. "Phases") never desyncs the
+    # formula from "Start strength"/"End strength" by magic-number drift.
+    start_col = get_column_letter(all_cols.index("Start strength") + 1)
+    end_col = get_column_letter(all_cols.index("End strength") + 1)
+    pct_col_idx = all_cols.index("In-build casualty %") + 1
+
     for i, r in enumerate(rows, start=2):
-        vals = [r[c] for c in computed_cols[:7]]
-        vals.append(f"=IF(F{i}=0,0,1-G{i}/F{i})")  # casualty % as a live formula
-        vals += [r[c] for c in computed_cols[7:]]
+        vals = [r[c] for c in computed_cols[:STRENGTH_COLS]]
+        vals.append(
+            f"=IF({start_col}{i}=0,0,1-{end_col}{i}/{start_col}{i})"
+        )  # casualty % as a live formula
+        vals += [r[c] for c in computed_cols[STRENGTH_COLS:]]
         p = preserved.get(r["Unit ID"], {})
         vals += [p.get(c) for c in CONSULT_COLS]
         ws.append(vals)
         for c in ws[i]:
             c.font = arial
-        ws.cell(row=i, column=8).number_format = "0.0%"
+        ws.cell(row=i, column=pct_col_idx).number_format = "0.0%"
         if r["Movement info available?"] == "VERIFY":
             ws.cell(row=i, column=all_cols.index("Movement info available?") + 1).font = red_font
         for cc in CONSULT_COLS:
             ws.cell(row=i, column=all_cols.index(cc) + 1).fill = yellow
 
-    widths = {1: 22, 2: 38, 3: 12, 4: 15, 5: 10, 16: 22, 20: 16}
+    # widths keyed by column NAME (not position) so inserting/reordering a
+    # column never silently mis-widths an unrelated one.
+    named_widths = {
+        "Unit ID": 22, "Name": 38, "Side": 12, "Echelon": 15, "Arm": 10,
+        "Net displacement (m)": 22, "V2 claims": 16,
+    }
     for idx, col in enumerate(all_cols, start=1):
-        ws.column_dimensions[get_column_letter(idx)].width = widths.get(
-            idx, 26 if col in CONSULT_COLS else 13
-        )
+        width = named_widths.get(col, 26 if col in CONSULT_COLS else 13)
+        ws.column_dimensions[get_column_letter(idx)].width = width
     ws.freeze_panes = "C2"
     ws.auto_filter.ref = f"A1:{get_column_letter(len(all_cols))}{len(rows)+1}"
 
@@ -357,6 +454,8 @@ def main():
 
     in_build = sum(1 for r in rows if r["Cast status"] == "in-build")
     not_cast = len(rows) - in_build
+    phase_ids = [p for p, _ in reconstructed_phases()]
+    print(f"phases read (manifest-driven): {len(phase_ids)}: {', '.join(phase_ids)}")
     print(f"rows: {len(rows)} | in-build: {in_build} | not-yet-cast (register): {not_cast}")
     movers = sum(1 for r in rows if r["Moves in build?"] == "yes")
     verify = [r["Unit ID"] for r in rows if r["Movement info available?"] == "VERIFY"]

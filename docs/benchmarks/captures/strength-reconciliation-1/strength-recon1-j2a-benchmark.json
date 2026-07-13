@@ -1,0 +1,14 @@
+{
+  "unity": "6000.4.11f1",
+  "development": true,
+  "screen": "1600x1000",
+  "clockStartTime": 55800,
+  "clockEndTime": 14340,
+  "samples": [
+    {"t": 0, "screenshot": "strength-recon1-j2a-t0.png", "frames": 592, "avgFps": 59.1, "p95FrameMs": 17.35, "worstFrameMs": 82.07, "allocatedMB": 323.0, "reservedMB": 442.8},
+    {"t": 3600, "screenshot": "strength-recon1-j2a-t3600.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.11, "worstFrameMs": 24.83, "allocatedMB": 323.1, "reservedMB": 442.8},
+    {"t": 7200, "screenshot": "strength-recon1-j2a-t7200.png", "frames": 598, "avgFps": 59.8, "p95FrameMs": 16.93, "worstFrameMs": 22.20, "allocatedMB": 323.2, "reservedMB": 442.8},
+    {"t": 10800, "screenshot": "strength-recon1-j2a-t10800.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.06, "worstFrameMs": 23.87, "allocatedMB": 323.3, "reservedMB": 442.8},
+    {"t": 14340, "screenshot": "strength-recon1-j2a-t14340.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.18, "worstFrameMs": 21.30, "allocatedMB": 323.4, "reservedMB": 442.8}
+  ]
+}
