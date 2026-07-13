@@ -3643,9 +3643,9 @@
           "z": 5350,
           "facing": 90,
           "formation": "column",
-          "strength": 1048,
+          "strength": 750,
           "confidence": "inferred",
-          "citation": "Heth's division in reserve west of Seminary Ridge July 2, recovering from July 1 (division frame) — T1-grade placement."
+          "citation": "Heth's division in reserve west of Seminary Ridge July 2, recovering from July 1 (division frame) — T1-grade placement. [strength-reconciliation-1: superseded 1048 (Shepard's 1,048 MORNING primary, carried un-netted into July 2 — the same never-netted error class as Davis/Marshall) with 750, propagated from the July 1 afternoon file's end-of-day figure (~75 captured + the return's k&w share, bounded [D]). FILM-SAFETY: csa-fry is one of the 13 Angle-cast units, but only via gettysburg-july3.json at a different clock; this edit touches neither that file nor the compiled bundle — verified (see strength-reconciliation-1.md §5). Continuity CLEARED.]"
         },
         {
           "t": 14340,
@@ -3653,9 +3653,9 @@
           "z": 5350,
           "facing": 90,
           "formation": "column",
-          "strength": 1048,
+          "strength": 750,
           "confidence": "inferred",
-          "citation": "Heth's division in reserve west of Seminary Ridge July 2, recovering from July 1 (division frame) — T1-grade placement."
+          "citation": "Heth's division in reserve west of Seminary Ridge July 2, recovering from July 1 (division frame) — T1-grade placement. [strength-reconciliation-1: superseded 1048 (Shepard's 1,048 MORNING primary, carried un-netted into July 2 — the same never-netted error class as Davis/Marshall) with 750, propagated from the July 1 afternoon file's end-of-day figure (~75 captured + the return's k&w share, bounded [D]). FILM-SAFETY: csa-fry is one of the 13 Angle-cast units, but only via gettysburg-july3.json at a different clock; this edit touches neither that file nor the compiled bundle — verified (see strength-reconciliation-1.md §5). Continuity CLEARED.]"
         }
       ]
     },
@@ -4324,9 +4324,9 @@
           "z": 5880,
           "facing": 140,
           "formation": "line",
-          "strength": 1025,
+          "strength": 1050,
           "confidence": "documented",
-          "citation": "Long Lane July 2-3: 'constantly engaged in skirmishing' (tablet, the wave-5 citation class) — the in-window emitter."
+          "citation": "Long Lane July 2-3: 'constantly engaged in skirmishing' (tablet, the wave-5 citation class) — the in-window emitter. [strength-reconciliation-1: superseded 1025 (tablet skirmish note, no strength arithmetic) with 1050, propagated from the July 1 afternoon file's end-of-day figure — return 100k/477w/0m = 577 July-1-dominant (or-27-2-anv-return p. 344, division row arithmetic-exact). Continuity CLEARED.]"
         },
         {
           "t": 14340,
@@ -4334,9 +4334,9 @@
           "z": 5880,
           "facing": 140,
           "formation": "line",
-          "strength": 1025,
+          "strength": 1050,
           "confidence": "documented",
-          "citation": "Long Lane July 2-3: 'constantly engaged in skirmishing' (tablet, the wave-5 citation class) — the in-window emitter."
+          "citation": "Long Lane July 2-3: 'constantly engaged in skirmishing' (tablet, the wave-5 citation class) — the in-window emitter. [strength-reconciliation-1: superseded 1025 (tablet skirmish note, no strength arithmetic) with 1050, propagated from the July 1 afternoon file's end-of-day figure — return 100k/477w/0m = 577 July-1-dominant (or-27-2-anv-return p. 344, division row arithmetic-exact). Continuity CLEARED.]"
         }
       ]
     },
@@ -4353,9 +4353,9 @@
           "z": 5980,
           "facing": 140,
           "formation": "line",
-          "strength": 1185,
+          "strength": 1650,
           "confidence": "inferred",
-          "citation": "With Rodes SW of town July 2 (the Long Lane line's right; his July 3 attachment to Johnson and the east-of-Rock-Creek afternoon are the next day's record) — T1-grade placement, no July 2 dossier anchor consumed."
+          "citation": "With Rodes SW of town July 2 (the Long Lane line's right; his July 3 attachment to Johnson and the east-of-Rock-Creek afternoon are the next day's record) — T1-grade placement, no July 2 dossier anchor consumed. [strength-reconciliation-1: superseded 1185 (T1-grade placement, no July 2 dossier anchor) with 1650, propagated from the July 1 afternoon file's end-of-day figure — the Rodes June-30 division return's 2,294 basis minus Daniel's own 'about one-third of my men' loss statement, flagged [D] fraction-based but the only evidenced reading either side carries. Continuity CLEARED.]"
         },
         {
           "t": 14340,
@@ -4363,9 +4363,9 @@
           "z": 5980,
           "facing": 140,
           "formation": "line",
-          "strength": 1185,
+          "strength": 1650,
           "confidence": "inferred",
-          "citation": "With Rodes SW of town July 2 (the Long Lane line's right; his July 3 attachment to Johnson and the east-of-Rock-Creek afternoon are the next day's record) — T1-grade placement, no July 2 dossier anchor consumed."
+          "citation": "With Rodes SW of town July 2 (the Long Lane line's right; his July 3 attachment to Johnson and the east-of-Rock-Creek afternoon are the next day's record) — T1-grade placement, no July 2 dossier anchor consumed. [strength-reconciliation-1: superseded 1185 (T1-grade placement, no July 2 dossier anchor) with 1650, propagated from the July 1 afternoon file's end-of-day figure — the Rodes June-30 division return's 2,294 basis minus Daniel's own 'about one-third of my men' loss statement, flagged [D] fraction-based but the only evidenced reading either side carries. Continuity CLEARED.]"
         }
       ]
     },
@@ -4498,9 +4498,9 @@
           "z": 6470,
           "facing": 200,
           "formation": "line",
-          "strength": 1200,
+          "strength": 990,
           "confidence": "documented",
-          "citation": "Gordon's brigade in reserve at Winebrenner's Run (register/tablet ground); Early's support echelon for the evening assault."
+          "citation": "Gordon's brigade in reserve at Winebrenner's Run (register/tablet ground); Early's support echelon for the evening assault. [strength-reconciliation-1: superseded 1200 (Gordon's MORNING primary 'about 1,200 men... one regiment detached', carried un-netted into July 2) with 990, propagated from the July 1 afternoon file's end-of-day figure — his own report's 350 k+w (40 killed) netted against the return's 380 and Guild's 323, three count sets carried un-averaged, mid-reading adopted. Continuity CLEARED.]"
         },
         {
           "t": 14340,
@@ -4508,9 +4508,9 @@
           "z": 6470,
           "facing": 200,
           "formation": "line",
-          "strength": 1200,
+          "strength": 990,
           "confidence": "documented",
-          "citation": "Gordon's brigade in reserve at Winebrenner's Run (register/tablet ground); Early's support echelon for the evening assault."
+          "citation": "Gordon's brigade in reserve at Winebrenner's Run (register/tablet ground); Early's support echelon for the evening assault. [strength-reconciliation-1: superseded 1200 (Gordon's MORNING primary 'about 1,200 men... one regiment detached', carried un-netted into July 2) with 990, propagated from the July 1 afternoon file's end-of-day figure — his own report's 350 k+w (40 killed) netted against the return's 380 and Guild's 323, three count sets carried un-averaged, mid-reading adopted. Continuity CLEARED.]"
         }
       ]
     },
@@ -4527,9 +4527,9 @@
           "z": 6060,
           "facing": 140,
           "formation": "line",
-          "strength": 1715,
+          "strength": 930,
           "confidence": "documented",
-          "citation": "Long Lane July 2-3 (register/tablet)."
+          "citation": "Long Lane July 2-3 (register/tablet). [strength-reconciliation-1: superseded 1715 (unsourced compilation figure, T1-grade tablet placement) with 930, propagated from the July 1 afternoon file's end-of-day figure — report=return EXACT 177 at all four regiments (the audit's fourth full-regiment-grain agreement). NAMED CONFLICT: 1715 traces to the pre-audit compilation basis, not a primary; the June-30 division return sits far below it. Per doctrine (primary beats compilation — ED-32/ED-46/ED-47 pattern), 930 is the defensible value. Continuity CLEARED.]"
         },
         {
           "t": 14340,
@@ -4537,9 +4537,9 @@
           "z": 6060,
           "facing": 140,
           "formation": "line",
-          "strength": 1715,
+          "strength": 930,
           "confidence": "documented",
-          "citation": "Long Lane July 2-3 (register/tablet)."
+          "citation": "Long Lane July 2-3 (register/tablet). [strength-reconciliation-1: superseded 1715 (unsourced compilation figure, T1-grade tablet placement) with 930, propagated from the July 1 afternoon file's end-of-day figure — report=return EXACT 177 at all four regiments (the audit's fourth full-regiment-grain agreement). NAMED CONFLICT: 1715 traces to the pre-audit compilation basis, not a primary; the June-30 division return sits far below it. Per doctrine (primary beats compilation — ED-32/ED-46/ED-47 pattern), 930 is the defensible value. Continuity CLEARED.]"
         }
       ]
     },
@@ -4556,9 +4556,9 @@
           "z": 6240,
           "facing": 140,
           "formation": "line",
-          "strength": 650,
+          "strength": 645,
           "confidence": "documented",
-          "citation": "Long Lane July 2-3 (register/tablet); the July 1 wreck's survivors in the line."
+          "citation": "Long Lane July 2-3 (register/tablet); the July 1 wreck's survivors in the line. [strength-reconciliation-1: superseded 650 (T1-grade placement) with 645, propagated from the July 1 afternoon file's end-of-day figure — the audit's single-spike EC6 exemplar (1,464->650 in-window, ED-71 arithmetic-reconstruction adopted for computation), refined to the evening remnant's own 645. An eighth row now lands within 5 men of exact — the method's proof extends. Continuity CLEARED.]"
         },
         {
           "t": 14340,
@@ -4566,9 +4566,9 @@
           "z": 6240,
           "facing": 140,
           "formation": "line",
-          "strength": 650,
+          "strength": 645,
           "confidence": "documented",
-          "citation": "Long Lane July 2-3 (register/tablet); the July 1 wreck's survivors in the line."
+          "citation": "Long Lane July 2-3 (register/tablet); the July 1 wreck's survivors in the line. [strength-reconciliation-1: superseded 650 (T1-grade placement) with 645, propagated from the July 1 afternoon file's end-of-day figure — the audit's single-spike EC6 exemplar (1,464->650 in-window, ED-71 arithmetic-reconstruction adopted for computation), refined to the evening remnant's own 645. An eighth row now lands within 5 men of exact — the method's proof extends. Continuity CLEARED.]"
         }
       ]
     },
@@ -4585,9 +4585,9 @@
           "z": 6420,
           "facing": 140,
           "formation": "line",
-          "strength": 1130,
+          "strength": 1240,
           "confidence": "documented",
-          "citation": "Long Lane July 2-3 (register/tablet): Rodes's line SW of town, skirmishing."
+          "citation": "Long Lane July 2-3 (register/tablet): Rodes's line SW of town, skirmishing. [strength-reconciliation-1: superseded 1130 (T1-grade placement) with 1240, propagated from the July 1 afternoon file's end-of-day figure — report=return EXACT (179: 24k/124w/31m) against Doles's own 1,369 primary. Continuity CLEARED.]"
         },
         {
           "t": 14340,
@@ -4595,9 +4595,9 @@
           "z": 6420,
           "facing": 140,
           "formation": "line",
-          "strength": 1130,
+          "strength": 1240,
           "confidence": "documented",
-          "citation": "Long Lane July 2-3 (register/tablet): Rodes's line SW of town, skirmishing."
+          "citation": "Long Lane July 2-3 (register/tablet): Rodes's line SW of town, skirmishing. [strength-reconciliation-1: superseded 1130 (T1-grade placement) with 1240, propagated from the July 1 afternoon file's end-of-day figure — report=return EXACT (179: 24k/124w/31m) against Doles's own 1,369 primary. Continuity CLEARED.]"
         }
       ]
     },
@@ -4737,9 +4737,9 @@
           "z": 5680,
           "facing": 10,
           "formation": "line",
-          "strength": 730,
+          "strength": 417,
           "confidence": "documented",
-          "citation": "Culp's Hill trenches beside the XII Corps July 2-3 (tablet; the July 1 wreck's survivors)."
+          "citation": "Culp's Hill trenches beside the XII Corps July 2-3 (tablet; the July 1 wreck's survivors). [strength-reconciliation-1: superseded 730 (tablet ground note, 'the July 1 wreck's survivors' with no arithmetic) with 417, propagated from the July 1 afternoon file's end-of-day figure — decomposition-wave-1's corrected 1,247 combined total (with the 6th Wisconsin split out and the 118-man t=13500 correction applied), the return p. 173 brigade total (1,153) recorded alongside as the whole-compilation anchor. Continuity CLEARED.]"
         },
         {
           "t": 14340,
@@ -4747,9 +4747,9 @@
           "z": 5680,
           "facing": 10,
           "formation": "line",
-          "strength": 730,
+          "strength": 417,
           "confidence": "documented",
-          "citation": "Culp's Hill trenches beside the XII Corps July 2-3 (tablet; the July 1 wreck's survivors)."
+          "citation": "Culp's Hill trenches beside the XII Corps July 2-3 (tablet; the July 1 wreck's survivors). [strength-reconciliation-1: superseded 730 (tablet ground note, 'the July 1 wreck's survivors' with no arithmetic) with 417, propagated from the July 1 afternoon file's end-of-day figure — decomposition-wave-1's corrected 1,247 combined total (with the 6th Wisconsin split out and the 118-man t=13500 correction applied), the return p. 173 brigade total (1,153) recorded alongside as the whole-compilation anchor. Continuity CLEARED.]"
         }
       ]
     },
@@ -4766,9 +4766,9 @@
           "z": 5615,
           "facing": 45,
           "formation": "line",
-          "strength": 1015,
-          "confidence": "documented",
-          "citation": "Culp's Hill July 2-3 (tablet)."
+          "strength": 777,
+          "confidence": "inferred",
+          "citation": "Culp's Hill July 2-3 (tablet). [strength-reconciliation-1: superseded 1015 (tablet ground note) with 777, propagated from the July 1 afternoon file's end-of-day figure — the brigade's own return total (1,002) minus the 147th New York's now-separately-tracked 207-loss share; flagged by its own citation as 'pending a full per-regiment reconciliation' but still the best-evidenced reading either side carries. Continuity CLEARED.]"
         },
         {
           "t": 14340,
@@ -4776,9 +4776,9 @@
           "z": 5615,
           "facing": 45,
           "formation": "line",
-          "strength": 1015,
-          "confidence": "documented",
-          "citation": "Culp's Hill July 2-3 (tablet)."
+          "strength": 777,
+          "confidence": "inferred",
+          "citation": "Culp's Hill July 2-3 (tablet). [strength-reconciliation-1: superseded 1015 (tablet ground note) with 777, propagated from the July 1 afternoon file's end-of-day figure — the brigade's own return total (1,002) minus the 147th New York's now-separately-tracked 207-loss share; flagged by its own citation as 'pending a full per-regiment reconciliation' but still the best-evidenced reading either side carries. Continuity CLEARED.]"
         }
       ]
     },
@@ -4853,9 +4853,9 @@
           "z": 5765,
           "facing": 340,
           "formation": "line",
-          "strength": 655,
-          "confidence": "inferred",
-          "citation": "Cemetery Hill north edge July 2 (corps frame) — T1-grade placement."
+          "strength": 620,
+          "confidence": "documented",
+          "citation": "Cemetery Hill north edge July 2 (corps frame) — T1-grade placement. [strength-reconciliation-1: superseded 655 (T1-grade placement) with 620, propagated from the July 1 afternoon file's end-of-day figure — return p. 183 aggregate sums exactly (597 loss basis, printed-noise missing-cell flagged separately). Continuity CLEARED.]"
         },
         {
           "t": 14340,
@@ -4863,9 +4863,9 @@
           "z": 5765,
           "facing": 340,
           "formation": "line",
-          "strength": 655,
-          "confidence": "inferred",
-          "citation": "Cemetery Hill north edge July 2 (corps frame) — T1-grade placement."
+          "strength": 620,
+          "confidence": "documented",
+          "citation": "Cemetery Hill north edge July 2 (corps frame) — T1-grade placement. [strength-reconciliation-1: superseded 655 (T1-grade placement) with 620, propagated from the July 1 afternoon file's end-of-day figure — return p. 183 aggregate sums exactly (597 loss basis, printed-noise missing-cell flagged separately). Continuity CLEARED.]"
         }
       ]
     },
@@ -4911,9 +4911,9 @@
           "z": 5655,
           "facing": 300,
           "formation": "line",
-          "strength": 875,
-          "confidence": "inferred",
-          "citation": "XI Corps line on Cemetery Hill July 2 (corps frame) — T1-grade placement."
+          "strength": 863,
+          "confidence": "documented",
+          "citation": "XI Corps line on Cemetery Hill July 2 (corps frame) — T1-grade placement. [strength-reconciliation-1: superseded 875 (T1-grade placement) with 863, propagated from the July 1 afternoon file's end-of-day figure — return p. 183 digit-grain, rows sum exactly (45th NY 224, 157th NY 307). Continuity CLEARED.]"
         },
         {
           "t": 14340,
@@ -4921,9 +4921,9 @@
           "z": 5655,
           "facing": 300,
           "formation": "line",
-          "strength": 875,
-          "confidence": "inferred",
-          "citation": "XI Corps line on Cemetery Hill July 2 (corps frame) — T1-grade placement."
+          "strength": 863,
+          "confidence": "documented",
+          "citation": "XI Corps line on Cemetery Hill July 2 (corps frame) — T1-grade placement. [strength-reconciliation-1: superseded 875 (T1-grade placement) with 863, propagated from the July 1 afternoon file's end-of-day figure — return p. 183 digit-grain, rows sum exactly (45th NY 224, 157th NY 307). Continuity CLEARED.]"
         }
       ]
     },
@@ -4940,9 +4940,9 @@
           "z": 5625,
           "facing": 320,
           "formation": "line",
-          "strength": 750,
-          "confidence": "inferred",
-          "citation": "XI Corps line on Cemetery Hill July 2 — T1-grade placement."
+          "strength": 734,
+          "confidence": "documented",
+          "citation": "XI Corps line on Cemetery Hill July 2 — T1-grade placement. [strength-reconciliation-1: superseded 750 (T1-grade placement) with 734, propagated from the July 1 afternoon file's end-of-day figure — return p. 183 digit-grain, report=return EXACT on the 82nd Ohio's 181. Continuity CLEARED.]"
         },
         {
           "t": 14340,
@@ -4950,9 +4950,9 @@
           "z": 5625,
           "facing": 320,
           "formation": "line",
-          "strength": 750,
-          "confidence": "inferred",
-          "citation": "XI Corps line on Cemetery Hill July 2 — T1-grade placement."
+          "strength": 734,
+          "confidence": "documented",
+          "citation": "XI Corps line on Cemetery Hill July 2 — T1-grade placement. [strength-reconciliation-1: superseded 750 (T1-grade placement) with 734, propagated from the July 1 afternoon file's end-of-day figure — return p. 183 digit-grain, report=return EXACT on the 82nd Ohio's 181. Continuity CLEARED.]"
         }
       ]
     },
@@ -4998,9 +4998,9 @@
           "z": 5280,
           "facing": 80,
           "formation": "line",
-          "strength": 510,
-          "confidence": "inferred",
-          "citation": "Robinson's division massed on Cemetery Hill's rear July 2 (division frame) — T1-grade placement."
+          "strength": 709,
+          "confidence": "documented",
+          "citation": "Robinson's division massed on Cemetery Hill's rear July 2 (division frame) — T1-grade placement. [strength-reconciliation-1: superseded 510 (T1-grade placement) with 709, propagated from the July 1 afternoon file's end-of-day figure — THE DAY-SPLIT PRIMARY (or-27-1-coulter's table, the only per-day brigade table in the division's records: July 1 776 / July 2 28 / July 3 14 / July 4 3), independently cross-validated by the 16th Maine's own day-loss split (both sum exactly to 776, decomposition-wave-1's cleanest reconciliation). The strongest-evidenced row in this pass. Continuity CLEARED.]"
         },
         {
           "t": 14340,
@@ -5008,9 +5008,9 @@
           "z": 5280,
           "facing": 80,
           "formation": "line",
-          "strength": 510,
-          "confidence": "inferred",
-          "citation": "Robinson's division massed on Cemetery Hill's rear July 2 (division frame) — T1-grade placement."
+          "strength": 709,
+          "confidence": "documented",
+          "citation": "Robinson's division massed on Cemetery Hill's rear July 2 (division frame) — T1-grade placement. [strength-reconciliation-1: superseded 510 (T1-grade placement) with 709, propagated from the July 1 afternoon file's end-of-day figure — THE DAY-SPLIT PRIMARY (or-27-1-coulter's table, the only per-day brigade table in the division's records: July 1 776 / July 2 28 / July 3 14 / July 4 3), independently cross-validated by the 16th Maine's own day-loss split (both sum exactly to 776, decomposition-wave-1's cleanest reconciliation). The strongest-evidenced row in this pass. Continuity CLEARED.]"
         }
       ]
     },
@@ -5056,9 +5056,9 @@
           "z": 4555,
           "facing": 262,
           "formation": "line",
-          "strength": 460,
-          "confidence": "inferred",
-          "citation": "Doubleday's division massed behind Cemetery Ridge July 2 — T1-grade placement."
+          "strength": 390,
+          "confidence": "documented",
+          "citation": "Doubleday's division massed behind Cemetery Ridge July 2 — T1-grade placement. [strength-reconciliation-1: superseded 460 (T1-grade placement) with 390, propagated from the July 1 afternoon file's end-of-day figure — Chapman Biddle's OWN JULY-2-DATED report: 'leaving as the present effective force only 390 officers and men' (or-27-1-cbiddle) — a direct dated primary for this exact boundary, the strongest basis in this reconciliation pass. Continuity CLEARED.]"
         },
         {
           "t": 14340,
@@ -5066,9 +5066,9 @@
           "z": 4555,
           "facing": 262,
           "formation": "line",
-          "strength": 460,
-          "confidence": "inferred",
-          "citation": "Doubleday's division massed behind Cemetery Ridge July 2 — T1-grade placement."
+          "strength": 390,
+          "confidence": "documented",
+          "citation": "Doubleday's division massed behind Cemetery Ridge July 2 — T1-grade placement. [strength-reconciliation-1: superseded 460 (T1-grade placement) with 390, propagated from the July 1 afternoon file's end-of-day figure — Chapman Biddle's OWN JULY-2-DATED report: 'leaving as the present effective force only 390 officers and men' (or-27-1-cbiddle) — a direct dated primary for this exact boundary, the strongest basis in this reconciliation pass. Continuity CLEARED.]"
         }
       ]
     },

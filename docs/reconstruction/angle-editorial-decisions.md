@@ -1964,6 +1964,83 @@ Implementation: `tool/scripts/author-ed75-placeholder.ts`.
 
 ---
 
+## Decomposition wave 1 adoption rulings (ED-76 … ED-77) — 2026-07-13
+
+Owner ruling (standing adopt-and-adjust doctrine): the ED candidates
+proposed by decomposition-wave-1 (`docs/reconstruction/audit/
+decomposition-wave-1.md` §6, drafted on branch decomposition-wave-1) are
+ADOPTED as recorded below, batch-executed at the start of
+strength-reconciliation-1 (branch strength-reconciliation-1). No
+renumbers were needed this batch. **The owner may re-rule either
+decision later**; adopt-and-adjust means authoring is not blocked on a
+ruling window, not that the ruling is closed to revision.
+
+### ED-76 — Single-regiment promotions use the parentless "minus" convention, not `parent`/family
+
+**Question:** when a wave promotes ONE regiment out of a brigade whose
+other regiments stay at aggregate grain, should the promoted regiment
+get `parent` (the Harrow/Webb/Stannard/Hall family mechanic) or be
+authored as a parentless sibling (the Carroll's-Brigade/8th-Ohio
+pattern already shipped in `gettysburg-july3.json`)?
+
+**Adopted as proposed** (decomposition-wave-1.md §1/§6): `Battle
+Director.cs`'s family-suppression contract (`RendersAtTier`) hides the
+parent's symbol at every tier nearer than Block once it has ANY
+children — correct when the children cover ALL or NEARLY ALL of the
+brigade (Harrow 4/4; Webb 3/4), wrong for a 1-of-5 or 1-of-6 promotion
+(it would erase 80%+ of the brigade from view at the Regiments/Soldiers
+tiers). Single-regiment (or small-minority-regiment) promotions are
+authored as parentless siblings; the source brigade is renamed "...
+minus the Nth ___" and its own strength track reduced by EXACT
+subtraction (not the `parent`/children ±15% advisory) at every shared
+keyframe time. `parent`/family stays reserved for decompositions
+covering all or nearly all of a brigade's regiments.
+
+**Applied by decomposition-wave-1:** `us-6wi`, `us-147ny`, `us-16me`
+(the Meredith/Cutler/Paul(Coulter) aggregate units renamed and re-based
+accordingly) — already shipped on main (4fbef4a) under this wave's own
+reading of the convention; this ruling formally adopts that reading as
+doctrine so future waves don't have to re-derive it from the
+`us-carroll`/`us-8oh` precedent by inspection. **Recommended follow-up**
+(decomposition-wave-1.md §10 item 3): write the "minus the Nth ___"
+naming/exact-subtraction convention into `battle-format.md` alongside
+the existing `parent`/children section — not done by this batch
+adoption (doc-only ED entry; the format-doc edit is separate work).
+
+### ED-77 — The Ziegler's Grove convergence: post-repulse legs authored, Williston's conflict carried on the authored reading
+
+**Question:** `authoring-wave-a2.md` cut the four Ziegler's Grove
+batteries' post-repulse move for want of new units; decomposition-wave-1
+lifted that constraint. Should all four batteries' post-repulse move be
+authored uniformly (including Williston's, whose own individual tablet
+conflicts with the move), or should Williston be held back at his own
+tablet's Taneytown Road reading pending resolution?
+
+**Adopted as proposed** (decomposition-wave-1.md §4/§6): the A2 report's
+own recorded pickup framing ("author the four as units... with the
+Williston conflict carried") reads as authoring the move for all four,
+with the conflict text carried on Williston's own citation — not as an
+instruction to exclude him. Both other batteries' tablets (Butler's most
+explicitly, Harn's by the parent dossier's four-battery grouping)
+independently corroborate the same ground and trigger. Williston's move
+is authored; his own tablet's "Not engaged"/Taneytown-Road reading is
+carried in full on the same keyframe's citation; neither reading is
+adjudicated. No fire event is authored for any of the four batteries
+(matches every one of their own dossiers: zero casualties, no fire
+narrative, or "Not engaged").
+
+**Applied by decomposition-wave-1:** `us-btty-williston`, `us-btty-
+butler`, `us-btty-martin-5us`, `us-btty-harn` (already shipped on main,
+4fbef4a) — this ruling formally adopts the reading. Film-safety already
+verified by decomposition-wave-1.md §5 (structural containment: the
+four batteries' first documented activity is t=9000, outside the film
+viewpoint window 8160..8820, no fire event authored at any time;
+re-verified independently by strength-reconciliation-1, which touched
+neither `gettysburg-july3.json` nor the compiled bundle — see
+`docs/reconstruction/audit/strength-reconciliation-1.md` §5).
+
+---
+
 ## Connective-reconstruction rules (named inference rules)
 
 Segments cite these rules by name in `inferenceRules`. A segment with no

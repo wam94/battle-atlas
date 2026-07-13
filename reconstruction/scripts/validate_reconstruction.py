@@ -41,6 +41,20 @@ RECON_PATH = REPO / "reconstruction/canonical/angle.reconstruction.json"
 LANDCOVER_PATH = REPO / "data/landcover/landcover.json"
 BATTLE_PATH = REPO / "app/Assets/Battle/gettysburg-july3.json"
 
+# The Angle reconstruction/bundle (corpus.battle, BATTLE_PATH) is and stays
+# July-3-afternoon-only by design: the compiled slice has one clock, and
+# every reconciliation/reconstruction-unit check below is inherently scoped
+# to that file. But the CLAIMS corpus's subjectId vocabulary previously
+# recognized only July-3 units, so a claim about ANY day-expansion-authored
+# unit (Gamble, Devin, the six decomposition-wave-1 units, etc.) would fail
+# validation with no way to reference it — the same blind spot
+# decomposition-wave-1.md §10 item 2 named for build_unit_audit.py, read
+# broadly per the strength-reconciliation-1 brief. MANIFEST/BATTLE_DIR make
+# the claim-subject vocabulary manifest-driven (all reconstructed phases),
+# without touching the July-3-scoped reconciliation logic.
+MANIFEST_PATH = REPO / "app/Assets/StreamingAssets/Atlas/battle-manifest.json"
+BATTLE_DIR = REPO / "app/Assets/Battle"
+
 # Abstract claim subjects that are neither battle units nor landcover features.
 # Phase 7 adds the Codori farmyard (buildings have no traced landcover feature;
 # position claims carry point geometry) and the Emmitsburg Road itself (no
@@ -88,6 +102,28 @@ class Corpus:
     recon: dict
     landcover: dict
     battle: dict
+    # union of unit ids across EVERY reconstructed phase in the manifest
+    # (not just corpus.battle/BATTLE_PATH's July-3-afternoon file) — the
+    # claim-subject vocabulary; corpus.battle stays July-3-only for the
+    # Angle-slice reconciliation checks, which are inherently single-clock.
+    all_battle_unit_ids: frozenset[str]
+
+
+def manifest_battle_unit_ids(
+    manifest_path: Path = MANIFEST_PATH, battle_dir: Path = BATTLE_DIR
+) -> frozenset[str]:
+    """Every unit id across every `status: reconstructed` phase named in the
+    battle manifest (ADR 0005), manifest-driven so a newly-added phase file
+    needs no code change here."""
+    manifest = json.loads(manifest_path.read_text())
+    ids: set[str] = set()
+    for day in manifest["days"]:
+        for phase in day["phases"]:
+            if phase["status"] != "reconstructed":
+                continue
+            battle = json.loads((battle_dir / phase["battle"]).read_text())
+            ids.update(u["id"] for u in battle["units"])
+    return frozenset(ids)
 
 
 def load_corpus(
@@ -96,6 +132,8 @@ def load_corpus(
     recon_path: Path = RECON_PATH,
     landcover_path: Path = LANDCOVER_PATH,
     battle_path: Path = BATTLE_PATH,
+    manifest_path: Path = MANIFEST_PATH,
+    battle_dir: Path = BATTLE_DIR,
 ) -> Corpus:
     return Corpus(
         sources=json.loads(sources_path.read_text()),
@@ -103,6 +141,7 @@ def load_corpus(
         recon=json.loads(recon_path.read_text()),
         landcover=json.loads(landcover_path.read_text()),
         battle=json.loads(battle_path.read_text()),
+        all_battle_unit_ids=manifest_battle_unit_ids(manifest_path, battle_dir),
     )
 
 
@@ -258,10 +297,11 @@ def validate_corpus(corpus: Corpus) -> list[str]:
 
     for c in claims:
         where = f"claims[{c['id']}]"
-        if c["subjectId"] not in units and c["subjectId"] not in features \
+        if c["subjectId"] not in corpus.all_battle_unit_ids and c["subjectId"] not in features \
                 and c["subjectId"] not in ABSTRACT_SUBJECTS:
-            errors.append(f"{where}: subjectId {c['subjectId']!r} is not a battle unit, "
-                          f"landcover feature, or declared abstract subject")
+            errors.append(f"{where}: subjectId {c['subjectId']!r} is not a battle unit "
+                          f"(in any reconstructed manifest phase), landcover feature, "
+                          f"or declared abstract subject")
         for r in c["references"]:
             if r["sourceId"] not in source_id_set:
                 errors.append(f"{where}: reference to unknown source {r['sourceId']!r}")
