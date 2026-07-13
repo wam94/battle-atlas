@@ -47,6 +47,18 @@ namespace BattleAtlas
                     "SoldierView: viewpoints.json missing — no Soldier View entry");
             }
 
+            if (set != null && BattleDirector.OverrideAssetName != null)
+            {
+                // -battleFile override (day-expansion slice 2 capture path):
+                // the shipped viewpoints/media address the July 3 afternoon
+                // phase's clock and cast — never render them against another
+                // phase's clock.
+                Debug.Log("SoldierView: -battleFile override active — Soldier "
+                    + "View entry disabled for this run (the shipped viewpoints "
+                    + "address the July 3 afternoon phase).");
+                set = null;
+            }
+
             var go = new GameObject("AtlasUI");
             var player = go.AddComponent<SoldierViewPlayer>();
             player.clock = clock;

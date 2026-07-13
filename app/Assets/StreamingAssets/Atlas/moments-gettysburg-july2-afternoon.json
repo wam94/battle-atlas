@@ -1,0 +1,60 @@
+{
+  "_comment": "Timeline moment markers for the July 2 AFTERNOON phase (day-expansion slice 2). Times are phase battle-clock seconds (t=0 = 15:30 LMT, startTime 55800; sunset 19:29 = 14340). Every marker cites the anchor or editorial decision that places it (docs/reconstruction/angle-editorial-decisions.md; docs/reconstruction/audit/anchor-chain-proposal.md §2.3). The `battle` field gates this file to its own phase (a moments file may never render against another phase's clock).",
+  "battle": "gettysburg-july2-afternoon",
+  "moments": [
+    {
+      "t": 900,
+      "label": "Longstreet's guns open",
+      "detail": "The First Corps artillery opens on the Union left — ~15:45 by Alexander's arithmetic (36 guns in action), 16:20 by Jacobs's clock reading; the two-pole spread is kept, not reconciled.",
+      "citation": "CA-J2A-2 (ED-53 two-pole structure; alexander-1907; jacobs-1864)"
+    },
+    {
+      "t": 3600,
+      "label": "Hood steps off",
+      "detail": "The en-echelon assault begins on the right — ~16:30 (envelope 16:15–17:00): the 16:00 signal dispatch excludes an earlier step-off; Law's own 'near 5 o'clock' is the late pole.",
+      "citation": "CA-J2A-3 as revised by ED-53 (the 16:00 signal dispatch via law-bl-1884; alexander-1907 arithmetic)"
+    },
+    {
+      "t": 7200,
+      "label": "Devil's Den falls",
+      "detail": "The three 10-pdr Parrotts of Smith's 4th NY change hands once, to an intermixed force — Robertson's Texans and Benning's Georgians, the 44th/48th Alabama up the gorge; no exclusive credit is encodable.",
+      "citation": "CA-J2A-5; ED-56 (or-27-1-smith-4ny; or-27-2-benning)"
+    },
+    {
+      "t": 8100,
+      "label": "Kershaw strikes the stony hill",
+      "detail": "Wave 2 of the Wheatfield record: Kershaw and Semmes against Tilton and Sweitzer — the V Corps withdrawal is ordered, on a reconnoitered outflanking, never a rout.",
+      "citation": "CA-J2A-7; ED-57 wave 2; ED-59 (or-27-2-kershaw; or-27-1-tilton)"
+    },
+    {
+      "t": 9000,
+      "label": "Caldwell counterattacks",
+      "detail": "Wave 3: four II Corps brigades into the Wheatfield — Cross and Zook fall at its opening; Brooke reaches the Rose ravine crest.",
+      "citation": "CA-J2A-8 (CONFIRMED as wave 3's start, ED-57); or-27-1-caldwell/-mckeen/-kelly/-fraser/-brooke"
+    },
+    {
+      "t": 9900,
+      "label": "Barksdale breaks the Peach Orchard",
+      "detail": "The Mississippi brigade smashes the salient's apex ~18:15 and drives to Plum Run; Graham is wounded and captured; Barksdale falls mortally wounded before Willard's counterattack.",
+      "citation": "CA-J2A-9 (Alexander's interval arithmetic; Kershaw's drums pin; the j2-03 poised drawn state)"
+    },
+    {
+      "t": 12600,
+      "label": "The Plum Run crisis",
+      "detail": "Wilcox reaches the ravine and the 1st Minnesota charges; Willard stops Barksdale's axis; Wright touches the Emmitsburg-road gun line — never the crest; Johnson's assault strikes Greene's works a few minutes before 7.",
+      "citation": "or-27-1-coates = or-27-2-wilcox (both-sided); ED-60; CA-J2E-2 (or-27-1-greene p. 856)"
+    },
+    {
+      "t": 13500,
+      "label": "The counter-line charges",
+      "detail": "Wave 5: McCandless's Reserves and Nevin's brigade charge to the stone wall as Wofford's sweep reaches the foot of Little Round Top.",
+      "citation": "ED-57 wave 5 (or-27-1-crawford/-mccandless/-nevin; the Wofford tablet names the object)"
+    },
+    {
+      "t": 14340,
+      "label": "Sunset",
+      "detail": "19:29 local mean time — Wofford's brigade 'fell back at sunset': the afternoon ladder's only astronomically pinned end clock. The fight shifts east to Culp's Hill and East Cemetery Hill (the evening phase).",
+      "citation": "CA-J2A-11 (tablet verbatim); ED-31 astronomical pin"
+    }
+  ]
+}

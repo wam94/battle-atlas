@@ -12,7 +12,17 @@ namespace BattleAtlas
     [Serializable]
     public class MomentSet
     {
+        // optional: the battle ASSET this file's clock addresses (ADR 0005
+        // consequence — moments are per-phase; a file naming a battle must
+        // never render against another phase's clock). Empty = ungated
+        // (pre-slice-2 files).
+        public string battle;
         public MomentDto[] moments;
+
+        // May this file's moments render against the given loaded battle
+        // asset? (null asset = fixture rigs: gated files do NOT apply.)
+        public bool AppliesTo(string battleAssetName) =>
+            string.IsNullOrEmpty(battle) || battle == battleAssetName;
 
         public static MomentSet FromJson(string json)
         {

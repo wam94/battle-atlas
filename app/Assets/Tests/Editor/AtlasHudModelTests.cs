@@ -152,6 +152,44 @@ public class AtlasHudModelTests
     }
 
     [Test]
+    public void Moments_BattleGate()
+    {
+        // per-phase moments (day-expansion slice 2): a file naming a battle
+        // applies only to that battle asset; an ungated file applies anywhere
+        MomentSet gated = MomentSet.FromJson(
+            "{\"battle\":\"b1\",\"moments\":[{\"t\":0,\"label\":\"A\",\"detail\":\"d\",\"citation\":\"c\"}]}");
+        Assert.IsTrue(gated.AppliesTo("b1"));
+        Assert.IsFalse(gated.AppliesTo("b2"));
+        Assert.IsFalse(gated.AppliesTo(null)); // fixture rigs get no gated moments
+        MomentSet ungated = MomentSet.FromJson(MomentsJson((0f, "A", "c")));
+        Assert.IsTrue(ungated.AppliesTo("anything"));
+        Assert.IsTrue(ungated.AppliesTo(null));
+    }
+
+    [Test]
+    public void CommittedJuly2MomentsFiles_ParseAndGateToTheirPhases()
+    {
+        foreach (string phase in new[]
+            { "gettysburg-july2-afternoon", "gettysburg-july2-evening" })
+        {
+            string path = UnityEngine.Application.dataPath
+                + $"/StreamingAssets/Atlas/moments-{phase}.json";
+            MomentSet set = MomentSet.FromJson(System.IO.File.ReadAllText(path));
+            Assert.AreEqual(phase, set.battle, path);
+            Assert.IsTrue(set.AppliesTo(phase));
+            Assert.IsFalse(set.AppliesTo("gettysburg-july3"));
+            Assert.GreaterOrEqual(set.moments.Length, 5);
+        }
+        // and the July 3 file now names its own phase (never renders
+        // against a July 2 clock)
+        string j3 = UnityEngine.Application.dataPath
+            + "/StreamingAssets/Atlas/moments.json";
+        MomentSet july3 = MomentSet.FromJson(System.IO.File.ReadAllText(j3));
+        Assert.AreEqual("gettysburg-july3", july3.battle);
+        Assert.IsFalse(july3.AppliesTo("gettysburg-july2-afternoon"));
+    }
+
+    [Test]
     public void CommittedMomentsFile_ParsesAndBracketsTheSlice()
     {
         string path = UnityEngine.Application.dataPath
