@@ -1,6 +1,9 @@
 # ADR 0005 — Multi-day model: a phase manifest over per-phase battle files
 
-**Status:** accepted (day-expansion slice 1, 2026-07-12) ·
+**Status:** accepted (day-expansion slice 1, 2026-07-12); the item-6
+deferred in-HUD hot-swap shipped by the phase-switching slice
+(2026-07-13 — battle-manifest.md "Runtime consumption",
+`docs/reconstruction/audit/phase-switching-slice.md`) ·
 **Branch:** `day-expansion-1` (owner gate) ·
 **Context:** V2 plan §10 (day tabs were always the design);
 `docs/reconstruction/audit/authoring-wave-a2.md` §6.4 (the single-window
