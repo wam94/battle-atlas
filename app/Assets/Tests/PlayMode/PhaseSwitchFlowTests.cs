@@ -198,6 +198,7 @@ public class PhaseSwitchFlowTests
         yield return SwitchDirector(
             sGo, july1Text, "gettysburg-july1-morning", d => switched = d);
         yield return null; // successor's siblings ran their Starts
+        yield return null; // deferred child destroys fully flushed
 
         // exactly ONE battle's worth of components on the host
         Assert.AreEqual(1, sGo.GetComponents<BattleDirector>().Length, "directors");
