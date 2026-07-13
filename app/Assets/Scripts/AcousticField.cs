@@ -74,6 +74,7 @@ namespace BattleAtlas
 
         AudioClip rumbleClip;
         AudioClip crackleClip;
+        AudioClip ambientClip;
         AudioSource ambientSource;
         AudioSource[] sources;
         int[] assigned;        // candidate index per source, -1 = none
@@ -135,7 +136,7 @@ namespace BattleAtlas
             // licensing surface (see AudioSynth header re: CREDITS)
             rumbleClip = AudioSynth.CreateClip("rumble", AudioSynth.FillRumble);
             crackleClip = AudioSynth.CreateClip("crackle", AudioSynth.FillCrackle);
-            AudioClip ambientClip = AudioSynth.CreateClip("ambient", AudioSynth.FillAmbient);
+            ambientClip = AudioSynth.CreateClip("ambient", AudioSynth.FillAmbient);
             listenerCamera = Camera.main;
 
             ambientSource = NewSource("acoustic ambient", spatial: false);
@@ -158,6 +159,23 @@ namespace BattleAtlas
                 sources[i].Play();
                 assigned[i] = -1;
             }
+        }
+
+        void OnDestroy()
+        {
+            // the source child GameObjects and synthesized clips are
+            // runtime objects this component created — a phase switch
+            // destroys the component and the successor battle's field
+            // builds its own set (leak audit, phase-switching slice).
+            // Destroy() is fine even when the whole GameObject is going
+            // down with us — a pending destroy is idempotent.
+            if (ambientSource != null) Destroy(ambientSource.gameObject);
+            if (sources != null)
+                foreach (AudioSource src in sources)
+                    if (src != null) Destroy(src.gameObject);
+            if (rumbleClip != null) Destroy(rumbleClip);
+            if (crackleClip != null) Destroy(crackleClip);
+            if (ambientClip != null) Destroy(ambientClip);
         }
 
         AudioSource NewSource(string name, bool spatial)

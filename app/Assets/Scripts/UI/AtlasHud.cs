@@ -72,6 +72,23 @@ namespace BattleAtlas
         bool activeDayBound;
         bool clockEchoChecked;
         string clockMismatch; // non-null = the manifest lied about the clock
+        // in-HUD phase switching (ADR 0005's deferred hot-swap, this
+        // slice): the in-flight guard, the measured switch time, the
+        // remembered per-phase clock position (session-only — returning
+        // to a phase resumes where you left it; a never-visited phase
+        // starts at its t=0), and the loading veil
+        bool switching;
+        readonly System.Diagnostics.Stopwatch switchWatch =
+            new System.Diagnostics.Stopwatch();
+        public float LastSwitchMs { get; private set; }
+        readonly Dictionary<string, float> phaseClockMemory =
+            new Dictionary<string, float>();
+        Label loadingLabel;
+        // the battle asset the wired viewpoints address (the SERIALIZED
+        // scene battle — the shipped media contract); Soldier View entry
+        // exists only while that phase is loaded (HudModel.ViewpointsApplyTo)
+        string viewpointsHomeAsset;
+        bool loggedViewpointsGated;
         ContentWarningDoc warningDoc;
         ContentWarningGate gate;
         CreditsManifest credits;
@@ -123,7 +140,8 @@ namespace BattleAtlas
 
         bool InputLockedInstance =>
             (player != null && player.InSoldierView) || transitioning
-            || warningOpen || creditsOpen || optionsOpen || dayOpen;
+            || warningOpen || creditsOpen || optionsOpen || dayOpen
+            || switching;
 
         bool PointerBusyInstance(Vector2 screenPos)
         {
@@ -162,6 +180,30 @@ namespace BattleAtlas
             Query();
             LoadDocuments();
             BuildStaticUi();
+            // Soldier View across phases: the shipped viewpoints address
+            // the SERIALIZED scene battle's clock and cast; a -battleFile
+            // launch or an in-HUD switch to another phase hides entry
+            // (HudModel.ViewpointsApplyTo). Empty for fixture rigs.
+            if (director != null)
+                viewpointsHomeAsset = director.SerializedAssetName;
+            LogViewpointGateIfChanged();
+        }
+
+        // True while the wired viewpoints address the loaded phase — the
+        // gate on entry markers, the timeline window band, and entry.
+        bool ViewpointsApply => director == null
+            || HudModel.ViewpointsApplyTo(
+                viewpointsHomeAsset, director.BattleAssetName);
+
+        void LogViewpointGateIfChanged()
+        {
+            bool gated = viewpoints != null && !ViewpointsApply;
+            if (gated == loggedViewpointsGated) return;
+            loggedViewpointsGated = gated;
+            if (gated)
+                Debug.Log($"AtlasHud: Soldier View entry hidden — the shipped "
+                    + $"viewpoints address '{viewpointsHomeAsset}', but "
+                    + $"'{director.BattleAssetName}' is loaded (per-phase media honesty).");
         }
 
         void Query()
@@ -226,25 +268,9 @@ namespace BattleAtlas
 
         void LoadDocuments()
         {
-            // Per-phase moments (ADR 0005, day-expansion slice 2): a
-            // phase-named file (Atlas/moments-<battleAsset>.json) wins;
-            // the default moments.json is the July 3 afternoon phase's
-            // file and carries its own `battle` gate — a moments file may
-            // never render against another phase's clock.
-            string battleAsset = director != null ? director.BattleAssetName : null;
-            moments = null;
-            if (!string.IsNullOrEmpty(battleAsset))
-                moments = LoadStreamingJsonQuiet(
-                    $"Atlas/moments-{battleAsset}.json", MomentSet.FromJson);
-            if (moments == null)
-                moments = LoadStreamingJson("Atlas/moments.json", MomentSet.FromJson);
-            if (moments != null && !moments.AppliesTo(battleAsset))
-            {
-                Debug.Log($"AtlasHud: moments file addresses battle "
-                    + $"'{moments.battle}' but '{battleAsset}' is loaded — "
-                    + "timeline moments omitted (per-phase moments).");
-                moments = null;
-            }
+            // per-phase moments: see LoadMoments (re-run on every phase switch)
+            moments = LoadMoments(
+                director != null ? director.BattleAssetName : null);
             // day/phase navigation (ADR 0005): missing/rejected manifest =
             // no day tabs, warned, everything else keeps working (the
             // moments.json degradation pattern)
@@ -258,6 +284,29 @@ namespace BattleAtlas
             options = new AccessibilityOptions(new PlayerPrefsStore());
             captionTrack = LoadStreamingJson(
                 "SoldierView/captions.json", CaptionTrack.FromJson);
+        }
+
+        // The per-phase moments lookup (ADR 0005, day-expansion slice 2),
+        // shared by the initial load and every phase switch: a phase-named
+        // file (Atlas/moments-<battleAsset>.json) wins; the default
+        // moments.json carries its own `battle` gate — a moments file may
+        // never render against another phase's clock.
+        MomentSet LoadMoments(string battleAsset)
+        {
+            MomentSet set = null;
+            if (!string.IsNullOrEmpty(battleAsset))
+                set = LoadStreamingJsonQuiet(
+                    $"Atlas/moments-{battleAsset}.json", MomentSet.FromJson);
+            if (set == null)
+                set = LoadStreamingJson("Atlas/moments.json", MomentSet.FromJson);
+            if (set != null && !set.AppliesTo(battleAsset))
+            {
+                Debug.Log($"AtlasHud: moments file addresses battle "
+                    + $"'{set.battle}' but '{battleAsset}' is loaded — "
+                    + "timeline moments omitted (per-phase moments).");
+                set = null;
+            }
+            return set;
         }
 
         // As LoadStreamingJson, but silent when the file is absent — the
@@ -364,6 +413,21 @@ namespace BattleAtlas
             BuildMomentMarkers();
             BuildDayTabs();
             root.Q<Button>("day-close").clicked += CloseDayPanel;
+
+            // the phase-switch loading veil: rides ABOVE the fade overlay
+            // (added last), created in code so the committed UXML stays
+            // untouched by this slice
+            loadingLabel = new Label();
+            loadingLabel.style.position = Position.Absolute;
+            loadingLabel.style.left = 0f;
+            loadingLabel.style.right = 0f;
+            loadingLabel.style.top = Length.Percent(46f);
+            loadingLabel.style.unityTextAlign = TextAnchor.MiddleCenter;
+            loadingLabel.style.fontSize = 22f;
+            loadingLabel.style.color = new Color(0.92f, 0.9f, 0.85f);
+            loadingLabel.style.display = DisplayStyle.None;
+            loadingLabel.pickingMode = PickingMode.Ignore;
+            root.Add(loadingLabel);
         }
 
         // ------------------------------------------- day navigation (ADR 0005)
@@ -443,6 +507,19 @@ namespace BattleAtlas
                 var note = new Label(body);
                 note.AddToClassList("phase-note");
                 dayBody.Add(note);
+                // in-HUD phase switching: a reconstructed phase that is
+                // not the loaded one is one click away; a not-reconstructed
+                // phase stays an honest note, never a control
+                if (phase.Reconstructed && !active)
+                {
+                    PhaseDto captured = phase;
+                    var load = new Button(() => SwitchToPhase(captured))
+                    {
+                        text = "Load this phase",
+                    };
+                    load.AddToClassList("phase-load-btn");
+                    dayBody.Add(load);
+                }
             }
             dayOpen = true;
             modalLayer.style.display = DisplayStyle.Flex;
@@ -455,6 +532,181 @@ namespace BattleAtlas
             dayModal.style.display = DisplayStyle.None;
             if (!warningOpen && !creditsOpen && !optionsOpen)
                 modalLayer.style.display = DisplayStyle.None;
+        }
+
+        // ------------------------------ in-HUD phase switching (this slice)
+
+        // A switch is in flight (the PlayMode suite and the capture
+        // harness await settled state).
+        public bool Switching => switching;
+
+        // Loads a reconstructed phase in-session: tears the current battle
+        // down (the successor pattern — see BattleDirector.SpawnSuccessor)
+        // and brings the target phase up with the HUD refreshed. Public
+        // for the day panel's buttons, the capture harness, and the
+        // PlayMode suite. Failures are loud and leave the current phase
+        // running untouched.
+        public void SwitchToPhase(PhaseDto phase)
+        {
+            if (switching || transitioning || phase == null
+                || !phase.Reconstructed || director == null || clock == null)
+                return;
+            if (player != null && player.InSoldierView)
+                return; // exit the film first — the Atlas owns switching
+            string assetName = Path.GetFileNameWithoutExtension(phase.battle);
+            if (assetName == director.BattleAssetName)
+            {
+                CloseDayPanel();
+                return; // already the loaded phase
+            }
+            string path = ResolveBattleFile(phase.battle);
+            if (path == null)
+            {
+                string msg = $"phase '{phase.id}' unavailable: battle file "
+                    + $"'{phase.battle}' not found (searched -battleDir, "
+                    + "StreamingAssets/Battle, Assets/Battle, the -battleFile "
+                    + "directory)";
+                Debug.LogWarning($"AtlasHud: {msg}");
+                ShowStatus(msg, StatusHoldSeconds);
+                return;
+            }
+            string battleText;
+            try
+            {
+                battleText = File.ReadAllText(path);
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning($"AtlasHud: phase '{phase.id}' battle file "
+                    + $"unreadable at {path} — {e.Message}");
+                ShowStatus($"phase '{phase.id}' battle file unreadable: {e.Message}",
+                    StatusHoldSeconds);
+                return;
+            }
+            StartCoroutine(SwitchRoutine(phase, assetName, battleText));
+        }
+
+        string ResolveBattleFile(string fileName)
+        {
+            foreach (string candidate in HudModel.BattleFileCandidates(
+                fileName, ArgValue("-battleDir"), Application.streamingAssetsPath,
+                Application.dataPath, BattleDirector.BattleFileOverridePath()))
+                if (File.Exists(candidate))
+                    return candidate;
+            return null;
+        }
+
+        static string ArgValue(string name)
+        {
+            string[] args = System.Environment.GetCommandLineArgs();
+            int i = System.Array.IndexOf(args, name);
+            return (i >= 0 && i + 1 < args.Length) ? args[i + 1] : null;
+        }
+
+        IEnumerator SwitchRoutine(PhaseDto phase, string assetName, string battleText)
+        {
+            switching = true;
+            switchWatch.Restart(); // measured from the accepted click
+            CloseDayPanel();
+            CloseDrawer(); // the drawer's track belongs to the old battle
+            clock.Playing = false;
+            // remember where the user left the outgoing phase — returning
+            // resumes there; a never-visited phase starts at its t=0
+            string fromAsset = director.BattleAssetName;
+            if (!string.IsNullOrEmpty(fromAsset))
+                phaseClockMemory[fromAsset] = clock.CurrentTime;
+
+            // the loading veil, rendered before the blocking load frame
+            loadingLabel.text = $"Loading {phase.label} …";
+            loadingLabel.style.display = DisplayStyle.Flex;
+            fadeOverlay.style.display = DisplayStyle.Flex;
+            fadeOverlay.style.opacity = 1f;
+            yield return null;
+            yield return null;
+
+            // validate the file BEFORE tearing anything down: a rejected
+            // battle file must leave the current phase running
+            try
+            {
+                BattleLoader.Parse(battleText);
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning($"AtlasHud: phase '{phase.id}' battle file "
+                    + $"rejected — {e.Message}; staying on '{fromAsset}'");
+                ShowStatus($"phase '{phase.id}' rejected: {e.Message}",
+                    StatusHoldSeconds);
+                loadingLabel.style.display = DisplayStyle.None;
+                fadeOverlay.style.opacity = 0f;
+                fadeOverlay.style.display = DisplayStyle.None;
+                switching = false;
+                yield break;
+            }
+
+            // teardown + successor: destroy the old battle's components
+            // (each releases its own runtime objects in OnDestroy) and
+            // spawn a FRESH director with the same wiring — no instance
+            // state can survive, which is the no-leak guarantee the
+            // PlayMode fresh-launch-equivalence test pins
+            BattleDirector old = director;
+            GameObject host = old.gameObject;
+            Destroy(host.GetComponent<ObscurationField>());
+            Destroy(host.GetComponent<AcousticField>());
+            Destroy(host.GetComponent<UnitLabelField>());
+            director = BattleDirector.SpawnSuccessor(old, battleText, assetName);
+            Destroy(old);
+            yield return null; // destroys complete; successor Start has run
+
+            // clock: the successor's Start set StartTime/EndTime from the
+            // new battle; position is the remembered spot or the phase start
+            clock.CurrentTime = phaseClockMemory.TryGetValue(assetName, out float saved)
+                ? Mathf.Clamp(saved, 0f, clock.EndTime)
+                : 0f;
+            clock.Playing = false;
+
+            RefreshAfterSwitch(assetName);
+
+            switchWatch.Stop();
+            LastSwitchMs = (float)switchWatch.Elapsed.TotalMilliseconds;
+            Debug.Log($"AtlasHud: phase switch to '{phase.id}' "
+                + $"('{assetName}') completed in {LastSwitchMs:F0} ms");
+
+            loadingLabel.style.display = DisplayStyle.None;
+            yield return Fade(1f, 0f);
+            ShowStatus($"{phase.label} — loaded in {LastSwitchMs / 1000f:0.0} s"
+                + (clockMismatch != null ? $"  ⚠ {clockMismatch}" : ""),
+                StatusHoldSeconds);
+            switching = false;
+        }
+
+        // Everything in the HUD that is a function of WHICH phase is
+        // loaded, re-derived after a switch: per-phase moments and their
+        // markers, the timeline range, the masthead words, the day-tab
+        // highlight, the manifest's clock echo (re-verified on EVERY
+        // switch — the manifest may never lie about time), and the
+        // Soldier View gate.
+        void RefreshAfterSwitch(string battleAsset)
+        {
+            moments = LoadMoments(battleAsset);
+            BuildMomentMarkers();
+            lastEndTime = int.MinValue; // LayoutTimeline re-lays-out next frame
+            contextPhase.text = moments != null
+                ? moments.PhaseAt(clock.CurrentTime) : "";
+            contextTitle.text = HudModel.DayContext(director.BattleName);
+            contextConditions.text =
+                "conditions: " + HudModel.ConditionsLine(director.Environment);
+            // day-tab highlight + clock echo re-run against the new battle
+            activeDayBound = false;
+            clockEchoChecked = false;
+            clockMismatch = null;
+            BindActiveDay();
+            if (clockMismatch != null)
+                ShowStatus(clockMismatch, StatusHoldSeconds);
+            // Soldier View entry: stale markers clear now; the per-frame
+            // gate (ViewpointsApply) owns them from here
+            visibleMarkerIds.Clear();
+            entryMarkers.Clear();
+            LogViewpointGateIfChanged();
         }
 
         void BuildMomentMarkers()
@@ -524,7 +776,7 @@ namespace BattleAtlas
 
         ViewpointDefinition FirstProductViewpoint()
         {
-            if (viewpoints?.viewpoints == null) return null;
+            if (viewpoints?.viewpoints == null || !ViewpointsApply) return null;
             foreach (ViewpointDefinition vp in viewpoints.viewpoints)
                 if (!vp.development)
                     return vp;
@@ -649,6 +901,18 @@ namespace BattleAtlas
         void UpdateEntryMarkers(bool inSv)
         {
             if (inSv || viewpoints?.viewpoints == null) return;
+            if (!ViewpointsApply)
+            {
+                // the loaded phase has no Soldier View media — no entry
+                // (per-phase honesty; only the home phase's clock matches
+                // the shipped film)
+                if (visibleMarkerIds.Count > 0)
+                {
+                    visibleMarkerIds.Clear();
+                    entryMarkers.Clear();
+                }
+                return;
+            }
             // rebuild only when the visible set changes
             bool changed = false;
             int visible = 0;
@@ -701,7 +965,17 @@ namespace BattleAtlas
         // authored cut behind a short fade. Public for the PlayMode suite.
         public void RequestEnter(ViewpointDefinition vp)
         {
-            if (player == null || player.InSoldierView || transitioning) return;
+            if (player == null || player.InSoldierView || transitioning
+                || switching) return;
+            if (!ViewpointsApply)
+            {
+                // unreachable through the UI (markers are gated) but public
+                // callers get the honest refusal, not a wrong-clock film
+                ShowStatus("Soldier View unavailable: the shipped media "
+                    + $"addresses '{viewpointsHomeAsset}', not the loaded phase",
+                    StatusHoldSeconds);
+                return;
+            }
             if (warningDoc == null || gate == null)
             {
                 // the warning is a locked requirement (§9.2) — no text, no entry

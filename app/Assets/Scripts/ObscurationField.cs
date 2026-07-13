@@ -168,6 +168,16 @@ namespace BattleAtlas
                 size + new Vector3(horizMargin, 400f, horizMargin));
         }
 
+        void OnDestroy()
+        {
+            // the puff mesh is a runtime object, not an asset — a phase
+            // switch destroys this component and the successor battle
+            // builds its own (leak audit, phase-switching slice)
+            if (puffMesh == null) return;
+            if (Application.isPlaying) Destroy(puffMesh);
+            else DestroyImmediate(puffMesh);
+        }
+
         static Matrix4x4[][] NewBuckets()
         {
             var buckets = new Matrix4x4[BucketCount][];

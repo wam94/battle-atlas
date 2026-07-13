@@ -57,6 +57,47 @@ namespace BattleAtlas
             return $"{Word(startTime)}–{Word(startTime + endTime)} local mean time";
         }
 
+        // Where the in-HUD phase switcher looks for a phase's battle file
+        // (phase-switching slice), in priority order:
+        //   1. an explicit -battleDir <dir> launch argument (capture runs);
+        //   2. StreamingAssets/Battle (standalone builds — BenchmarkBuild
+        //      copies Assets/Battle/*.json into the bundle post-build);
+        //   3. <dataPath>/Battle — the editor and PlayMode tests, where
+        //      dataPath IS Assets/ and the authored files live;
+        //   4. the directory of a -battleFile override, whose sibling
+        //      files are the other phases of the same checkout.
+        // Pure candidate enumeration (the caller probes File.Exists) so
+        // the EditMode suite can pin the order.
+        public static string[] BattleFileCandidates(
+            string fileName, string battleDirArg, string streamingAssetsPath,
+            string dataPath, string battleFileArg)
+        {
+            var list = new System.Collections.Generic.List<string>(4);
+            if (!string.IsNullOrEmpty(battleDirArg))
+                list.Add(System.IO.Path.Combine(battleDirArg, fileName));
+            if (!string.IsNullOrEmpty(streamingAssetsPath))
+                list.Add(System.IO.Path.Combine(streamingAssetsPath, "Battle", fileName));
+            if (!string.IsNullOrEmpty(dataPath))
+                list.Add(System.IO.Path.Combine(dataPath, "Battle", fileName));
+            if (!string.IsNullOrEmpty(battleFileArg))
+            {
+                string dir = System.IO.Path.GetDirectoryName(battleFileArg);
+                if (!string.IsNullOrEmpty(dir))
+                    list.Add(System.IO.Path.Combine(dir, fileName));
+            }
+            return list.ToArray();
+        }
+
+        // Soldier View across phases (phase-switching slice): the shipped
+        // viewpoints/media address ONE phase's clock and cast — the battle
+        // asset the scene was authored against (its serialized battleJson).
+        // Entry markers, the timeline window band, and entry itself exist
+        // only while that phase is the loaded one. An empty home asset
+        // (test rigs wiring viewpoints directly over unnamed fixture
+        // assets) applies everywhere — those rigs own their own truth.
+        public static bool ViewpointsApplyTo(string homeAsset, string loadedAsset)
+            => string.IsNullOrEmpty(homeAsset) || homeAsset == loadedAsset;
+
         // Eight-point compass word for a bearing in degrees (0 = north).
         public static string CompassWord(float bearingDeg)
         {

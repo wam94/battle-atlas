@@ -248,11 +248,57 @@ namespace BattleAtlas
         // the loaded battle ASSET's name (filename sans extension) — the
         // day/phase manifest matches its per-phase battle filename against
         // this to find the active phase (ADR 0005); null with no asset.
-        // A -battleFile override (phase-swap groundwork, day-expansion
-        // slice 2) substitutes that file's basename so the manifest's
-        // active-phase lookup follows the actually loaded phase.
-        public string BattleAssetName => OverrideAssetName
+        // Precedence mirrors the load precedence in Start: an in-session
+        // phase switch (pendingAssetName, this slice) wins over the
+        // -battleFile launch override (day-expansion slice 2), which wins
+        // over the serialized scene asset.
+        public string BattleAssetName => pendingAssetName
+            ?? OverrideAssetName
             ?? (battleJson != null ? battleJson.name : null);
+
+        // The SERIALIZED scene asset's name, ignoring every override — the
+        // phase the scene (and therefore the shipped Soldier View media
+        // contract) was authored against. AtlasHud keys its per-phase
+        // viewpoint gating to this: the viewpoints file addresses the
+        // scene asset's clock, whatever battle is currently loaded.
+        public string SerializedAssetName =>
+            battleJson != null ? battleJson.name : null;
+
+        // In-session phase switch injection (in-HUD phase switching slice):
+        // set by SpawnSuccessor between AddComponent and this component's
+        // Start, never serialized — a scene reload always returns to the
+        // serialized asset / -battleFile behavior.
+        [System.NonSerialized] public string pendingBattleText;
+        [System.NonSerialized] public string pendingAssetName;
+
+        // Phase switching (ADR 0005's deferred hot-swap): the successor
+        // pattern. The caller destroys the old director and the per-battle
+        // components its Start spawned (ObscurationField, AcousticField,
+        // UnitLabelField — each cleans its own runtime objects in
+        // OnDestroy), waits a frame so the destroys complete, then spawns
+        // a FRESH director on the same GameObject with the same serialized
+        // wiring and the new battle text. A fresh component has no way to
+        // carry unit/batch/label/selection state across the switch —
+        // fresh-launch equivalence by construction, pinned by the PlayMode
+        // suite's probe-time comparison.
+        public static BattleDirector SpawnSuccessor(
+            BattleDirector old, string battleText, string assetName)
+        {
+            var next = old.gameObject.AddComponent<BattleDirector>();
+            next.battleJson = old.battleJson;
+            next.terrain = old.terrain;
+            next.clock = old.clock;
+            next.unitMaterial = old.unitMaterial;
+            next.soldierMaterial = old.soldierMaterial;
+            next.flagMaterial = old.flagMaterial;
+            next.symbolMaterial = old.symbolMaterial;
+            next.smokeMaterial = old.smokeMaterial;
+            next.dustMaterial = old.dustMaterial;
+            next.commandOverlayJson = old.commandOverlayJson;
+            next.pendingBattleText = battleText;
+            next.pendingAssetName = assetName;
+            return next;
+        }
 
         // Command-line battle-file override: "-battleFile <path>" loads a
         // battle JSON from disk instead of the serialized asset — the
@@ -609,12 +655,23 @@ namespace BattleAtlas
             // would allocate a closure every Update
             groundYFunc = GroundY;
 
+            string battleText;
             string overridePath = BattleFileOverridePath();
-            string battleText = battleJson.text;
-            if (!string.IsNullOrEmpty(overridePath))
+            if (pendingBattleText != null)
+            {
+                // in-session phase switch (SpawnSuccessor) — outranks the
+                // launch-time -battleFile override, same as BattleAssetName
+                battleText = pendingBattleText;
+                Debug.Log($"BattleDirector: phase switch loaded '{pendingAssetName}'");
+            }
+            else if (!string.IsNullOrEmpty(overridePath))
             {
                 battleText = System.IO.File.ReadAllText(overridePath);
                 Debug.Log($"BattleDirector: -battleFile override loaded '{OverrideAssetName}' from {overridePath}");
+            }
+            else
+            {
+                battleText = battleJson.text;
             }
             BattleDto battle = BattleLoader.Parse(battleText);
             clock.EndTime = battle.endTime;
@@ -850,6 +907,14 @@ namespace BattleAtlas
                 foreach (Mesh m in entry.RosterMeshes)
                     DestroyMesh(m);
             }
+            // the shared pose/flag meshes are runtime objects too — a
+            // phase switch destroys and respawns the director, and the
+            // successor builds its own set (leak audit, phase-switching
+            // slice)
+            if (soldierPoseMeshes != null)
+                foreach (Mesh m in soldierPoseMeshes)
+                    DestroyMesh(m);
+            DestroyMesh(flagMesh);
         }
 
         static void DestroyMesh(Mesh mesh)
