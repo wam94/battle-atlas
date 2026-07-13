@@ -132,13 +132,19 @@ in-slice child values land unchanged).
 
 ## 5. Suites
 
-| Suite | Before (A2 record) | After (this slice) |
+| Suite | Before (baseline) | After (this slice) |
 |---|---|---|
-| tool vitest | 110 | **118** (6 manifest + the two slice blocks) |
-| reconstruction pytest | 122 + 1 skip | **122 + 1 skip** (bundle recompiled twice, metadata-only both times) |
-| pipeline pytest | 59 | **59** |
-| Unity EditMode | 354 + 4 skips | **TBD** |
-| Unity PlayMode | 16 | **TBD** |
+| tool vitest | 110 | **118 passed, 0 failed** (6 manifest tests + the widening and re-basing content blocks) |
+| reconstruction pytest | 122 + 1 skip | **122 passed, 1 skipped** (bundle recompiled twice — the widening and the re-basing — METADATA-ONLY both times: `inputs.battle` + `checksum`; `test_committed_bundle_matches_recompilation` is the forcing test) |
+| pipeline pytest | 59 | **59 passed** |
+| Unity EditMode | 369 + 4 skips | **375 passed, 0 failed, 4 skipped** (+6 PhaseManifestTests incl. the committed manifest's clock echo; the 4 skips are the HDRP-bake AngleEnvironmentTests, expected on this rig; the McCartney unit surfaced a command-overlay coverage failure on the first run — fixed by regenerating the overlay + the register castStatus, exactly what the coverage test exists to force) |
+| Unity PlayMode | 16 | **17 passed, 0 failed** (+ the day-tab honest-empty-state flow; the media sync/seek tests ran against the REAL staged full media, `garnett-road-to-angle.full.mp4`) |
+
+(Unity runs: CLI `-batchmode -runTests -buildTarget OSXUniversal`,
+worktree Library, gitignored inputs restored — `data/heightmap`,
+`data/landcover`, `app/Assets/Generated`, SoldierView proxies + full
+media; logs `editmode2.log`/`playmode.log` + `*-results*.xml` in the
+worktree, gitignored by design.)
 
 ## 6. Evidence
 

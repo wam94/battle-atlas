@@ -56,7 +56,7 @@ citation; validator + full suites green (§4).
    pickup for the battery/regiment decomposition wave**: author the four
    as units, in-window legs triggered at the repulse (t≈9000+), muzzles
    cold, with the Williston conflict carried.
-2. **The CSA assault column's July-3 re-strength** (Marshall/Davis/
+2. **The CSA assault column's July-3 re-strength** *(EXECUTED: day-expansion slice 1, tool/scripts/author-dayexp1-rebase.ts — film verified unchanged; day-expansion-slice-1.md §3)* (Marshall/Davis/
    Brockenbrough/Lane/Lowrance still carry July-1-scoped or compilation
    strengths against pass-3 dossiers' return-grade EC6) — deferred: the
    column's keyframes interlock with the Angle-cast timing spine (Fry
@@ -74,7 +74,7 @@ citation; validator + full suites green (§4).
    turnpike" [D, un-clocked, no geometry] vs his monument's "On this
    ground … July 2nd and 3rd" — ED-74-class conflict carried on the
    unit; not moved.
-5. **McCartney's battery** (1st MA): the corpus's clearest "arrived too
+5. *(EXECUTED: day-expansion slice 1 — authored with the widened window; day-expansion-slice-1.md §2)* **McCartney's battery** (1st MA): the corpus's clearest "arrived too
    late" record — position reached ~4 P.M. ("the enemy had been repulsed
    before the battery took position"), 4 rounds fired after — sits at/
    past the window's exact end. Deferred to window widening, with his
@@ -97,7 +97,7 @@ citation; validator + full suites green (§4).
    window; Shaler's 9-11 A.M. Culp's Hill engagement): already encoded
    as documented-silence/citations on the units; the day-expansion wave's
    natural content.
-10. **Out-of-window / off-map deferred set** (charter list): Shaler's
+10. **Out-of-window / off-map deferred set** (charter list) *(PARTIALLY EXECUTED: day-expansion slice 1 authored Bartlett's ~17:00 sweep and Wheeler's post-16:00 remainder; the rest stands — day-expansion-slice-1.md §2)*: Shaler's
     morning Culp's Hill move (authored in an earlier wave as the 15:00
     return leg only), Bartlett's ~17:00 Wheatfield sweep, Wheeler's
     post-16:00 canister fight remainder, Cabell's ~16:00 forward move
@@ -198,7 +198,9 @@ gitignored by design.)
    -wave content: four dossiers, one ground, a repulse trigger, cold
    muzzles — cheap to author the moment new units are allowed.
 4. **Window/day-model observations from working the format** (for day
-   expansion):
+   expansion) *(TAKEN UP: day-expansion slice 1 — ADR 0005 phase manifest,
+   the sunset widening, the re-basing; the per-day loss-ledger observation
+   remains a residual)*:
    - The single `t=0..endTime` window forces every per-day fact into
      "pre-window ⇒ subtract at t=0" arithmetic (Taft's 9/10 A.M. pins,
      Hill's Braddock, A1's 8th Ohio ED-50). A day model wants per-phase
