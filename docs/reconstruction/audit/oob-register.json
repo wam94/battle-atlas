@@ -1335,7 +1335,7 @@
     },
     {
       "id": "reg-us-iii-b1",
-      "castStatus": "not-yet-cast",
+      "castStatus": "us-btty-clark",
       "name": "Battery B, 1st New Jersey Light (2nd NJ Battery)",
       "side": "union",
       "arm": "artillery",
@@ -1363,7 +1363,7 @@
     },
     {
       "id": "reg-us-iii-b2",
-      "castStatus": "not-yet-cast",
+      "castStatus": "us-btty-winslow",
       "name": "Battery D, 1st New York Light",
       "side": "union",
       "arm": "artillery",
@@ -1392,7 +1392,7 @@
     },
     {
       "id": "reg-us-iii-b3",
-      "castStatus": "not-yet-cast",
+      "castStatus": "us-btty-smith4ny",
       "name": "4th New York Independent Battery",
       "side": "union",
       "arm": "artillery",
@@ -1421,7 +1421,7 @@
     },
     {
       "id": "reg-us-iii-b4",
-      "castStatus": "not-yet-cast",
+      "castStatus": "us-btty-bucklyn",
       "name": "Battery E, 1st Rhode Island Light",
       "side": "union",
       "arm": "artillery",
@@ -1859,7 +1859,7 @@
     },
     {
       "id": "reg-us-v-b5",
-      "castStatus": "not-yet-cast",
+      "castStatus": "us-btty-watson",
       "name": "Battery I, 5th US",
       "side": "union",
       "arm": "artillery",
@@ -3865,7 +3865,7 @@
     },
     {
       "id": "reg-us-ar-1v-2",
-      "castStatus": "not-yet-cast",
+      "castStatus": "us-btty-bigelow",
       "name": "9th Massachusetts Battery",
       "side": "union",
       "arm": "artillery",

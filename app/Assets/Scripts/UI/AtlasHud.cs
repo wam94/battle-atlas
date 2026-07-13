@@ -226,7 +226,25 @@ namespace BattleAtlas
 
         void LoadDocuments()
         {
-            moments = LoadStreamingJson("Atlas/moments.json", MomentSet.FromJson);
+            // Per-phase moments (ADR 0005, day-expansion slice 2): a
+            // phase-named file (Atlas/moments-<battleAsset>.json) wins;
+            // the default moments.json is the July 3 afternoon phase's
+            // file and carries its own `battle` gate — a moments file may
+            // never render against another phase's clock.
+            string battleAsset = director != null ? director.BattleAssetName : null;
+            moments = null;
+            if (!string.IsNullOrEmpty(battleAsset))
+                moments = LoadStreamingJsonQuiet(
+                    $"Atlas/moments-{battleAsset}.json", MomentSet.FromJson);
+            if (moments == null)
+                moments = LoadStreamingJson("Atlas/moments.json", MomentSet.FromJson);
+            if (moments != null && !moments.AppliesTo(battleAsset))
+            {
+                Debug.Log($"AtlasHud: moments file addresses battle "
+                    + $"'{moments.battle}' but '{battleAsset}' is loaded — "
+                    + "timeline moments omitted (per-phase moments).");
+                moments = null;
+            }
             // day/phase navigation (ADR 0005): missing/rejected manifest =
             // no day tabs, warned, everything else keeps working (the
             // moments.json degradation pattern)
@@ -240,6 +258,22 @@ namespace BattleAtlas
             options = new AccessibilityOptions(new PlayerPrefsStore());
             captionTrack = LoadStreamingJson(
                 "SoldierView/captions.json", CaptionTrack.FromJson);
+        }
+
+        // As LoadStreamingJson, but silent when the file is absent — the
+        // per-phase moments probe (absence is the normal case for phases
+        // without their own moments file, not a degradation).
+        static T LoadStreamingJsonQuiet<T>(string relative, System.Func<string, T> parse)
+            where T : class
+        {
+            string path = Path.Combine(Application.streamingAssetsPath, relative);
+            if (!File.Exists(path)) return null;
+            try { return parse(File.ReadAllText(path)); }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning($"AtlasHud: {relative} rejected — {e.Message}");
+                return null;
+            }
         }
 
         static T LoadStreamingJson<T>(string relative, System.Func<string, T> parse)

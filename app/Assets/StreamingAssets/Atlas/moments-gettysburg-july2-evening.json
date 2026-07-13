@@ -1,0 +1,42 @@
+{
+  "_comment": "Timeline moment markers for the July 2 EVENING phase (day-expansion slice 2). Times are phase battle-clock seconds (t=0 = 19:29 LMT sunset, startTime 70140; 22:30 = 10860). Every marker cites the anchor or editorial decision that places it (ED-29/ED-62 chain; ED-61; ED-63). The `battle` field gates this file to its own phase.",
+  "battle": "gettysburg-july2-evening",
+  "moments": [
+    {
+      "t": 0,
+      "label": "Sunset",
+      "detail": "19:29 local mean time. Johnson's three brigades are on Culp's Hill's east face; the XII Corps — ordered away at 6:30 — is on the Baltimore Pike; Greene holds the works alone.",
+      "citation": "ED-31 astronomical pin; CA-J2E-1 (or-27-1-greene, PRIMARY basis per ED-62)"
+    },
+    {
+      "t": 1020,
+      "label": "Hays and Avery step off",
+      "detail": "East Cemetery Hill, 19:45–20:00 — the three-source both-armies agreement (Hays 'a little before 8', Wiedrich 'about 8', Ricketts 'at about 8'), triggered by Johnson's engagement per Early's own order record.",
+      "citation": "CA-J2E-3 (ED-62; or-27-2-hays/-early; or-27-1-wiedrich/-ricketts)"
+    },
+    {
+      "t": 1860,
+      "label": "The lodgments",
+      "detail": "Hays's and Avery's men among Wiedrich's and Ricketts's guns — possession momentary, no gun leaves the hill; on Culp's Hill, Steuart occupies the works the XII Corps vacated, and that lodgment holds overnight.",
+      "citation": "ED-63 (the convergent-event ruling); the Steuart works record (or-27-2-steuart; ED-57-class occupation)"
+    },
+    {
+      "t": 3660,
+      "label": "The hill is cleared",
+      "detail": "Carroll's brigade and the rallied XI Corps regiments retake the batteries (~20:30 — a sequence anchor; no hard clock exists on either side). Avery lies mortally wounded on the ascent; both batteries resume service the same night.",
+      "citation": "CA-J2E-4 (inferred-sequence class, ED-62; or-27-1-carroll/-ricketts)"
+    },
+    {
+      "t": 5460,
+      "label": "The guns come off the field",
+      "detail": "By ~21:00 the eight abandoned guns of Bigelow's 9th Massachusetts and Watson's I/5th US are hauled to the rear — one loss and one recovery ledger per battery, never per-claimant duplicates. Ruger's returning column reaches Rock Creek ('9. P.M.' in Bachelder's own hand).",
+      "citation": "ED-61 (or-27-1-mcgilvery pp. 881-884; Milton No. 320); bachelder j2-05 drawn annotation"
+    },
+    {
+      "t": 9060,
+      "label": "The fighting dies down",
+      "detail": "About 10 o'clock — Hays back at his jump-off field, Greene's front quiet, Kane's returning brigade fired on from its own vacated works. Nicholls's reading runs to ~23:00 and is recorded, not adopted.",
+      "citation": "CA-J2E-5 (or-27-2-hays; or-27-1-greene; or-27-1-geary; ED-62)"
+    }
+  ]
+}

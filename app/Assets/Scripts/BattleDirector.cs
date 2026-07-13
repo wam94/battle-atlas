@@ -247,8 +247,36 @@ namespace BattleAtlas
         public EnvironmentDto Environment { get; private set; }
         // the loaded battle ASSET's name (filename sans extension) — the
         // day/phase manifest matches its per-phase battle filename against
-        // this to find the active phase (ADR 0005); null with no asset
-        public string BattleAssetName => battleJson != null ? battleJson.name : null;
+        // this to find the active phase (ADR 0005); null with no asset.
+        // A -battleFile override (phase-swap groundwork, day-expansion
+        // slice 2) substitutes that file's basename so the manifest's
+        // active-phase lookup follows the actually loaded phase.
+        public string BattleAssetName => OverrideAssetName
+            ?? (battleJson != null ? battleJson.name : null);
+
+        // Command-line battle-file override: "-battleFile <path>" loads a
+        // battle JSON from disk instead of the serialized asset — the
+        // capture/evidence path for phases the scene asset doesn't carry
+        // (in-HUD phase switching remains the deferred ADR 0005 item).
+        // Static so every consumer (this director, the HUD's per-phase
+        // moments lookup) agrees regardless of Start ordering.
+        public static string BattleFileOverridePath()
+        {
+            string[] args = System.Environment.GetCommandLineArgs();
+            int i = System.Array.IndexOf(args, "-battleFile");
+            return (i >= 0 && i + 1 < args.Length) ? args[i + 1] : null;
+        }
+
+        public static string OverrideAssetName
+        {
+            get
+            {
+                string path = BattleFileOverridePath();
+                return string.IsNullOrEmpty(path)
+                    ? null
+                    : System.IO.Path.GetFileNameWithoutExtension(path);
+            }
+        }
         // selection (Task 6 wires the click picking; null = none). The
         // label pass already honors it — a selected label always survives
         // the declutter and is the only one shown at the Soldiers tier.
@@ -581,7 +609,14 @@ namespace BattleAtlas
             // would allocate a closure every Update
             groundYFunc = GroundY;
 
-            BattleDto battle = BattleLoader.Parse(battleJson.text);
+            string overridePath = BattleFileOverridePath();
+            string battleText = battleJson.text;
+            if (!string.IsNullOrEmpty(overridePath))
+            {
+                battleText = System.IO.File.ReadAllText(overridePath);
+                Debug.Log($"BattleDirector: -battleFile override loaded '{OverrideAssetName}' from {overridePath}");
+            }
+            BattleDto battle = BattleLoader.Parse(battleText);
             clock.EndTime = battle.endTime;
             clock.StartTime = battle.startTime;
             BattleName = battle.name;

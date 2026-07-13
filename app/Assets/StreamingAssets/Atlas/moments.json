@@ -1,5 +1,6 @@
 {
   "_comment": "Atlas timeline moment markers (V2 plan §10). Times are canonical battle-clock seconds (t=0 = 13:00 local, clock.startTime 46800). Every marker cites the claim or editorial decision that places it — reconstruction/claims/angle.claims.json and docs/reconstruction/angle-editorial-decisions.md; a marker without provenance is an invented time and MomentSet.FromJson rejects it.",
+  "battle": "gettysburg-july3",
   "moments": [
     {
       "t": 0,
