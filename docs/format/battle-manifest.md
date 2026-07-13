@@ -59,6 +59,13 @@ navigation, warned, everything else keeps working — the moments.json
 degradation pattern). Day tabs render in date order; the day owning
 the phase whose `battle` matches the loaded battle asset is marked
 active; selecting an unreconstructed day/phase opens the honest
-empty-state panel with the phase's note. Battle hot-swapping between
-multiple reconstructed phases is deferred until a second
-reconstructed phase exists (ADR 0005 §Consequences).
+empty-state panel with the phase's note. In-HUD battle hot-swapping
+between reconstructed phases remains deferred (ADR 0005
+§Consequences); day-expansion slice 2 ships the capture-path
+`-battleFile` override (BattleDirector loads a battle JSON from disk;
+`BattleAssetName` follows it, so the day panel lights the loaded
+phase) and per-phase timeline moments: the HUD first probes
+`Atlas/moments-<battleAsset>.json`, falls back to `Atlas/moments.json`,
+and drops any moments file whose own `battle` field names a different
+phase — a moments file may never render against another phase's
+clock.
