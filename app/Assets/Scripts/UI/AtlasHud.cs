@@ -51,6 +51,12 @@ namespace BattleAtlas
         VisualElement atlasBar, svBar, unitDrawer, entryMarkers, speedGroup;
         VisualElement timelineMarkers, windowBand, modalLayer, warningModal, creditsModal;
         VisualElement optionsModal;
+        // day navigation (ADR 0005): tabs from the battle manifest + the
+        // honest empty-state panel for unreconstructed days/phases
+        VisualElement dayTabs, dayModal;
+        Label dayTitle;
+        ScrollView dayBody;
+        readonly List<Button> dayButtons = new List<Button>();
         VisualElement fadeOverlay, masthead, chips;
         ScrollView drawerSources, creditsList;
         Slider timelineSlider, svSlider, optMaster, optSvVolume;
@@ -61,6 +67,11 @@ namespace BattleAtlas
         readonly List<Button> speedButtons = new List<Button>();
 
         MomentSet moments;
+        PhaseManifest phaseManifest;
+        int activeDayIndex = -1;
+        bool activeDayBound;
+        bool clockEchoChecked;
+        string clockMismatch; // non-null = the manifest lied about the clock
         ContentWarningDoc warningDoc;
         ContentWarningGate gate;
         CreditsManifest credits;
@@ -73,6 +84,7 @@ namespace BattleAtlas
         bool warningOpen;
         bool creditsOpen;
         bool optionsOpen;
+        bool dayOpen;
         ViewpointDefinition pendingEntry;
         UnitTrack drawerTrack;          // unit currently in the drawer
         ViewpointDefinition drawerViewpoint; // non-null when opened from Soldier View
@@ -111,7 +123,7 @@ namespace BattleAtlas
 
         bool InputLockedInstance =>
             (player != null && player.InSoldierView) || transitioning
-            || warningOpen || creditsOpen || optionsOpen;
+            || warningOpen || creditsOpen || optionsOpen || dayOpen;
 
         bool PointerBusyInstance(Vector2 screenPos)
         {
@@ -155,6 +167,10 @@ namespace BattleAtlas
         void Query()
         {
             masthead = root.Q("masthead");
+            dayTabs = root.Q("day-tabs");
+            dayModal = root.Q("day-modal");
+            dayTitle = root.Q<Label>("day-title");
+            dayBody = root.Q<ScrollView>("day-body");
             contextTitle = root.Q<Label>("context-title");
             contextPhase = root.Q<Label>("context-phase");
             contextConditions = root.Q<Label>("context-conditions");
@@ -211,6 +227,11 @@ namespace BattleAtlas
         void LoadDocuments()
         {
             moments = LoadStreamingJson("Atlas/moments.json", MomentSet.FromJson);
+            // day/phase navigation (ADR 0005): missing/rejected manifest =
+            // no day tabs, warned, everything else keeps working (the
+            // moments.json degradation pattern)
+            phaseManifest = LoadStreamingJson(
+                "Atlas/battle-manifest.json", PhaseManifest.FromJson);
             warningDoc = LoadStreamingJson(
                 "SoldierView/content-warning.json", ContentWarningDoc.FromJson);
             if (warningDoc != null)
@@ -307,6 +328,99 @@ namespace BattleAtlas
                 root.Q<Button>("warning-decline").text = warningDoc.warning.declineLabel;
             }
             BuildMomentMarkers();
+            BuildDayTabs();
+            root.Q<Button>("day-close").clicked += CloseDayPanel;
+        }
+
+        // ------------------------------------------- day navigation (ADR 0005)
+
+        void BuildDayTabs()
+        {
+            dayTabs.Clear();
+            dayButtons.Clear();
+            if (phaseManifest == null) return; // warned at load; no tabs
+            for (int i = 0; i < phaseManifest.days.Length; i++)
+            {
+                DayDto day = phaseManifest.days[i];
+                int captured = i;
+                var b = new Button(() => OpenDayPanel(captured)) { text = day.label };
+                b.AddToClassList("day-btn");
+                // a day with no reconstructed phase reads muted — clickable
+                // (it opens the honest empty state), never disabled-and-mute
+                bool anyReconstructed = false;
+                foreach (PhaseDto p in day.phases)
+                    if (p.Reconstructed) anyReconstructed = true;
+                if (!anyReconstructed) b.AddToClassList("day-empty");
+                dayTabs.Add(b);
+                dayButtons.Add(b);
+            }
+        }
+
+        // The active-day highlight binds lazily (the director's battle asset
+        // is known immediately, but a missing director must not break tabs),
+        // and the manifest's clock echo is checked ONCE against the loaded
+        // battle's clock — the manifest may never lie about time
+        // (battle-manifest.md "The honesty rules").
+        void BindActiveDay()
+        {
+            if (phaseManifest == null) return;
+            if (!activeDayBound && director != null)
+            {
+                activeDayBound = true;
+                activeDayIndex = phaseManifest.ActiveDayIndex(director.BattleAssetName);
+                for (int i = 0; i < dayButtons.Count; i++)
+                    dayButtons[i].EnableInClassList("day-on", i == activeDayIndex);
+            }
+            if (!clockEchoChecked && director != null
+                && !string.IsNullOrEmpty(director.BattleName))
+            {
+                clockEchoChecked = true;
+                clockMismatch = phaseManifest.ClockMismatch(
+                    director.BattleAssetName, clock.StartTime, clock.EndTime);
+                if (clockMismatch != null)
+                    Debug.LogWarning($"AtlasHud: {clockMismatch}");
+            }
+        }
+
+        public bool DayPanelVisible => dayOpen;
+
+        public void OpenDayPanel(int dayIndex)
+        {
+            if (phaseManifest == null || dayIndex < 0
+                || dayIndex >= phaseManifest.days.Length) return;
+            DayDto day = phaseManifest.days[dayIndex];
+            dayTitle.text = $"{day.label} — {day.date}";
+            dayBody.Clear();
+            foreach (PhaseDto phase in day.phases)
+            {
+                bool active = director != null
+                    && phase.MatchesBattleAsset(director.BattleAssetName);
+                string status = phase.Reconstructed
+                    ? (active ? "reconstructed — the loaded phase" : "reconstructed")
+                    : "not yet reconstructed";
+                var heading = new Label($"{phase.label}  ·  {status}");
+                heading.AddToClassList("phase-heading");
+                if (active) heading.AddToClassList("phase-status-active");
+                dayBody.Add(heading);
+                string body = phase.Reconstructed
+                    ? HudModel.PhaseClockRange(phase.startTime, phase.endTime)
+                      + (active && clockMismatch != null ? "\n" + clockMismatch : "")
+                    : phase.note; // the manifest's honest words, verbatim
+                var note = new Label(body);
+                note.AddToClassList("phase-note");
+                dayBody.Add(note);
+            }
+            dayOpen = true;
+            modalLayer.style.display = DisplayStyle.Flex;
+            dayModal.style.display = DisplayStyle.Flex;
+        }
+
+        public void CloseDayPanel()
+        {
+            dayOpen = false;
+            dayModal.style.display = DisplayStyle.None;
+            if (!warningOpen && !creditsOpen && !optionsOpen)
+                modalLayer.style.display = DisplayStyle.None;
         }
 
         void BuildMomentMarkers()
@@ -427,6 +541,7 @@ namespace BattleAtlas
 
         void UpdateAtlasBar()
         {
+            BindActiveDay();
             // masthead binds lazily: BattleDirector.Start (which parses the
             // battle JSON) may run after this component's Start
             if (director != null && string.IsNullOrEmpty(contextTitle.text)
@@ -592,7 +707,7 @@ namespace BattleAtlas
         {
             warningOpen = false;
             warningModal.style.display = DisplayStyle.None;
-            if (!creditsOpen && !optionsOpen)
+            if (!creditsOpen && !optionsOpen && !dayOpen)
                 modalLayer.style.display = DisplayStyle.None;
         }
 
@@ -898,7 +1013,7 @@ namespace BattleAtlas
         {
             optionsOpen = false;
             optionsModal.style.display = DisplayStyle.None;
-            if (!warningOpen && !creditsOpen)
+            if (!warningOpen && !creditsOpen && !dayOpen)
                 modalLayer.style.display = DisplayStyle.None;
         }
 
@@ -943,7 +1058,7 @@ namespace BattleAtlas
         {
             creditsOpen = false;
             creditsModal.style.display = DisplayStyle.None;
-            if (!warningOpen && !optionsOpen)
+            if (!warningOpen && !optionsOpen && !dayOpen)
                 modalLayer.style.display = DisplayStyle.None;
         }
 

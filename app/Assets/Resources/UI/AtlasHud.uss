@@ -24,6 +24,55 @@
     -unity-font-style: bold;
 }
 
+/* day tabs (ADR 0005): the battle's days, from battle-manifest.json.
+   The active day reads as the lit chip; unreconstructed days stay
+   clickable — they open the honest empty state, never a fake field. */
+
+.day-tabs {
+    flex-direction: row;
+    margin-bottom: 6px;
+}
+
+.day-btn {
+    background-color: rgba(24, 26, 29, 0.78);
+    color: rgb(214, 208, 194);
+    border-width: 1px;
+    border-color: rgba(120, 116, 104, 0.6);
+    border-radius: 4px;
+    padding: 4px 10px;
+    margin-right: 6px;
+    font-size: 12px;
+}
+
+.day-btn:hover { background-color: rgba(52, 56, 61, 0.9); }
+
+.day-on {
+    background-color: rgba(92, 86, 66, 0.95);
+    color: rgb(245, 240, 226);
+    border-color: rgb(180, 170, 140);
+}
+
+.day-empty { color: rgb(168, 164, 154); }
+
+/* day-modal phase rows reuse the drawer's source typography */
+
+.phase-heading {
+    color: rgb(196, 184, 156);
+    font-size: 13px;
+    -unity-font-style: bold;
+    margin-top: 10px;
+    white-space: normal;
+}
+
+.phase-status-active { color: rgb(226, 210, 172); }
+
+.phase-note {
+    color: rgb(178, 174, 166);
+    font-size: 12px;
+    margin-top: 3px;
+    white-space: normal;
+}
+
 .context-phase {
     color: rgb(210, 196, 165);
     font-size: 13px;

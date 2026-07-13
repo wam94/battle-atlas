@@ -178,7 +178,6 @@ reg-us-v-arty,"Artillery Brigade, V Corps",union,artillery-brigade,artillery,,,,
 reg-us-vi-arty,"Artillery Brigade, VI Corps",union,artillery-brigade,artillery,,,,,,,,,,,,,,,2,Artillery Brigade,yes,,T2,not-yet-cast,reg-us-vi-arty
 reg-us-xi-arty,"Artillery Brigade, XI Corps",union,artillery-brigade,artillery,,,,,,,,,,,,,,,2,Artillery Brigade,yes,,T2,not-yet-cast,reg-us-xi-arty
 reg-us-xii-arty,"Artillery Brigade, XII Corps",union,artillery-brigade,artillery,,,,,,,,,,,,,,,2,Artillery Brigade,yes,,T2,not-yet-cast,reg-us-xii-arty
-reg-us-vi-b1,1st Massachusetts Battery (A),union,battery,artillery,,,,,,,,,,,,,,,0,1st Massachusetts,VERIFY,,T2,not-yet-cast,reg-us-vi-b1
 reg-us-v-b1,3rd Massachusetts Battery (C),union,battery,artillery,,,,,,,,,,,,,,,0,3rd Massachusetts,VERIFY,,T2,not-yet-cast,reg-us-v-b1
 reg-us-vi-b3,3rd New York Independent Battery,union,battery,artillery,,,,,,,,,,,,,,,0,3rd New,VERIFY,,T2,not-yet-cast,reg-us-vi-b3
 reg-us-iii-b3,4th New York Independent Battery,union,battery,artillery,,,,,,,,,,,,,,,0,4th New,VERIFY,,T2,not-yet-cast,reg-us-iii-b3
@@ -228,7 +227,7 @@ us-btty-hill-wv,"Hill's Battery C, 1st West Virginia Artillery",union,standalone
 us-btty-james,"James's Battery K, 4th US Artillery (Seeley's)",union,standalone,artillery,134,134,0,2,2,0,0,2,0.0,0.0,no,line,1,0,3,James,yes,T1,T4,in-build,reg-us-iii-b5
 us-btty-kinzie,"Kinzie's Battery K, 5th US Artillery",union,standalone,artillery,77,77,0,2,2,0,0,2,0.0,0.0,no,line,0,0,1,Kinzie,yes,T1,T2,in-build,reg-us-xii-b4
 us-btty-mason,"Mason's Battery H, 1st US Artillery (Eakin's)",union,standalone,artillery,153,153,0,2,2,0,0,2,0.0,0.0,no,line,2,0,1,Mason,yes,T1,T4,in-build,reg-us-ar-1r-1
-us-btty-mccartney,McCartney's 1st Massachusetts Battery A,union,standalone,artillery,145,145,0,4,0,4,0,4,2494.5,2494.5,yes,column/line,1,0,0,McCartney,VERIFY,T0,T4,in-build,
+us-btty-mccartney,McCartney's 1st Massachusetts Battery A,union,standalone,artillery,145,145,0,4,0,4,0,4,2494.5,2494.5,yes,column/line,1,0,0,McCartney,VERIFY,T0,T4,in-build,reg-us-vi-b1
 us-btty-norton,"Norton's Battery H, 1st Ohio Light Artillery (Huntington's)",union,standalone,artillery,123,123,0,2,2,0,0,2,0.0,0.0,no,line,2,0,1,Norton,yes,T1,T4,in-build,reg-us-ar-3v-2
 us-btty-parsons,"Parsons's Battery A, 1st New Jersey Light Artillery",union,standalone,artillery,116,107,9,5,2,3,0,5,1578.9,1578.9,yes,column/line,1,0,1,Parsons,yes,T0,T4,in-build,reg-us-ar-4v-3
 us-btty-phillips,Phillips's 5th Massachusetts Battery (E),union,standalone,artillery,104,104,0,2,2,0,0,2,0.0,0.0,no,line,4,0,1,Phillips,yes,T1,T4,in-build,reg-us-ar-1v-1

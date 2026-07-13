@@ -45,6 +45,18 @@ namespace BattleAtlas
                 + $" ({conf})";
         }
 
+        // A reconstructed phase's clock range for the day panel (ADR 0005):
+        // wall-clock HH:MM from seconds-since-midnight start to start+end.
+        public static string PhaseClockRange(float startTime, float endTime)
+        {
+            string Word(float s)
+            {
+                int v = Mathf.FloorToInt(s);
+                return $"{v / 3600 % 24:D2}:{v / 60 % 60:D2}";
+            }
+            return $"{Word(startTime)}–{Word(startTime + endTime)} local mean time";
+        }
+
         // Eight-point compass word for a bearing in degrees (0 = north).
         public static string CompassWord(float bearingDeg)
         {

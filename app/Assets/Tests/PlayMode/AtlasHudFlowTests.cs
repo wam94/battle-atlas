@@ -314,4 +314,42 @@ public class AtlasHudFlowTests
         yield return null;
         Assert.AreEqual(0, markers.childCount, "marker gone at t1");
     }
+
+    // Day navigation (ADR 0005, day-expansion slice 1): the tabs come from
+    // the REAL committed StreamingAssets manifest; an unreconstructed day
+    // opens the honest empty state showing the manifest's own note, and
+    // closing it returns the Atlas untouched. The fixture battle matches no
+    // manifest phase, so no tab is highlighted active — also asserted.
+    [UnityTest]
+    public IEnumerator DayTabs_EmptyDayShowsHonestNote_AndCloses()
+    {
+        yield return null; // Start (loads Atlas/battle-manifest.json)
+        var root = uiGo.GetComponent<UIDocument>().rootVisualElement;
+        var tabs = root.Q("day-tabs");
+        Assert.AreEqual(3, tabs.childCount, "July 1 / 2 / 3 tabs");
+        Assert.AreEqual("July 1", ((Button)tabs[0]).text);
+        yield return null; // BindActiveDay ran in Update
+        for (int i = 0; i < tabs.childCount; i++)
+            Assert.IsFalse(tabs[i].ClassListContains("day-on"),
+                "fixture battle matches no manifest phase — no active tab");
+
+        hud.OpenDayPanel(0); // July 1 — not reconstructed
+        Assert.IsTrue(hud.DayPanelVisible);
+        StringAssert.Contains("July 1", root.Q<Label>("day-title").text);
+        // the manifest's own words render verbatim — the honest empty state
+        bool foundNote = false;
+        root.Q<ScrollView>("day-body").Query<Label>().ForEach(l =>
+        {
+            if (l.text != null && l.text.Contains("Not yet reconstructed"))
+                foundNote = true;
+        });
+        Assert.IsTrue(foundNote, "the not-reconstructed note must render");
+
+        hud.CloseDayPanel();
+        Assert.IsFalse(hud.DayPanelVisible);
+        float t = clock.CurrentTime;
+        yield return null;
+        Assert.AreEqual(t, clock.CurrentTime, 1e-3f,
+            "browsing days must not touch the clock");
+    }
 }

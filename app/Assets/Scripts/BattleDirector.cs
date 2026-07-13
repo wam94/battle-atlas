@@ -245,6 +245,10 @@ namespace BattleAtlas
         // battle metadata the Phase 11 HUD masthead shows (name, wind)
         public string BattleName { get; private set; }
         public EnvironmentDto Environment { get; private set; }
+        // the loaded battle ASSET's name (filename sans extension) — the
+        // day/phase manifest matches its per-phase battle filename against
+        // this to find the active phase (ADR 0005); null with no asset
+        public string BattleAssetName => battleJson != null ? battleJson.name : null;
         // selection (Task 6 wires the click picking; null = none). The
         // label pass already honors it — a selected label always survives
         // the declutter and is the only one shown at the Soldiers tier.
