@@ -175,7 +175,17 @@ Longstreet, no Johnson/Stuart, no Artillery Reserve.
    reconstructed phases now wait on the BattleDirector re-init UI;
    this slice ships only manifest phases + per-phase moments +
    `-battleFile` capture-path runs (the slice-2 mechanism, unchanged).
-7. **Per-day loss ledgers on the unit** (A2 §6.4) — still not taken
+7. **Approach-column staging is a presentation convention**: a
+   battle file has no spawn time, so units that enter mid-window
+   (the I/XI Corps at t=0 of the morning file; Early's division at
+   t=0 of the afternoon file) are staged as marching columns at
+   their documented road corridor's crop edge, with the camp/vicinity
+   truth in the t=0 citation (Marsh Creek, Emmitsburg road; Early's
+   'within two miles' tablet). The dayexp2 VI-Corps staging
+   precedent, applied to a day that is mostly arrivals — a
+   format-level spawn/arrival concept would remove the compression
+   (recorded for the format worklist alongside the per-day ledgers).
+8. **Per-day loss ledgers on the unit** (A2 §6.4) — still not taken
    (battle-format change), and July 1 sharpens the need: this slice
    carries three clean per-day primaries (Coulter's table, Hays's
    table, the 41st NY row) in citation text only.
