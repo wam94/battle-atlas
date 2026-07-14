@@ -28,6 +28,18 @@ entries** as of this pass; union command entries 13) and this table is
 flagged stale rather than silently corrected without a full pass-by-pass
 reconciliation (a pass-13 register-maintenance item).
 
+## July 3 morning slice addition
+
+- **`reg-us-xii-arty`** castStatus updated `not-yet-cast` -> `us-xii-arty`
+  (the Muhlenberg XII Corps Artillery Brigade, newly cast this slice —
+  `docs/reconstruction/audit/july3-morning-slice.md`; dossier
+  `reconstruction/dossiers/us-xii-arty-muhlenberg.md`). No other register
+  rows change: the 2nd Massachusetts and 27th Indiana are promoted as
+  parentless siblings inside `us-colgrove`'s existing entry (ED-76 —
+  same convention as `us-8oh`/`us-6wi`/`us-147ny`/`us-16me`, no separate
+  register row for a minority-regiment promotion).
+- `stats.inBuild` 162 -> **163**, `stats.notYetCast` 126 -> **125**.
+
 ## Pass 12 addition
 
 - **`reg-us-vi-hq`** (VI Corps headquarters, corps command) — added for

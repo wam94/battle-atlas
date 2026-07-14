@@ -563,6 +563,13 @@ executors, CA-J3M-4 receiving-side corroborated; **CA-J3M-3 upgraded
 to a structured two-pole primary conflict record by ED-64 (see
 §"Dossier pass 9 adoption rulings") — its ~10:00 ruling direction
 stays PROVISIONAL and the Pfanz precondition STANDS.**
+**2026-07-13 update: the ED-30/ED-64 Pfanz-gate BLOCK on authoring is
+SUPERSEDED by the owner's ED-78 ruling** (see §"July 3 morning slice
+ruling (ED-78)") — CA-J3M-3 is now authorable at its ~10:00 direction
+as PROVISIONAL, both poles carried verbatim; the July 3 morning phase
+is authored in full (`docs/reconstruction/audit/july3-morning-slice.md`).
+The Pfanz fetch itself remains open (a hardening target, not a
+precondition any longer).
 
 ### ED-31 — Time-frame convention
 
@@ -2038,6 +2045,70 @@ viewpoint window 8160..8820, no fire event authored at any time;
 re-verified independently by strength-reconciliation-1, which touched
 neither `gettysburg-july3.json` nor the compiled bundle — see
 `docs/reconstruction/audit/strength-reconciliation-1.md` §5).
+
+---
+
+## July 3 morning slice ruling (ED-78) — 2026-07-13
+
+### ED-78 — Owner ruling: provisional inference is authorized where the primary record conflicts, superseding the ED-30/ED-64 Pfanz-gate BLOCK
+
+**Owner ruling (verbal, this session, 2026-07-13), ADOPTED as recorded
+below** — the owner's own words: **"make a best guess inference for
+right now [before we proceed]."**
+
+**Question:** the July 3 morning phase (Culp's Hill, ~04:30-13:00 LMT)
+was blocked from authoring by the standing ED-30/ED-64 precondition — a
+library-terminal fetch (Pfanz, *Culp's Hill and the Battle for
+Gettysburg*, pp. ~340-355) that no executor pass had been able to
+commission, leaving the Spangler's Meadow charge (CA-J3M-3, the 2nd
+Massachusetts/27th Indiana charge under Lt. Col. Mudge) an unresolved
+two-pole primary conflict (dossier-pass-9.md §3; ED-64) with no
+authorable render time. Everything ELSE in the July 3 morning chain
+(CA-J3M-1, -2, -4, -5) was already executor-hardened and authorable —
+this single anchor was the one standing BLOCK on the whole phase.
+
+**Adopted as ruled:** for remaining movements in question across the
+reconstruction where the primary record conflicts and no further cheap
+fetch is available, a PROVISIONAL best-guess inference is now permitted,
+**PROVIDED**:
+
+1. The inference is explicitly marked `"confidence": "inferred"` (or
+   carries an equivalent PROVISIONAL label in its citation/note) — never
+   rendered as `"documented"` fact.
+2. **Both poles of the conflict stay on the record** — the rejected
+   pole's primary sources are quoted verbatim alongside the adopted
+   pole, never silently dropped.
+3. **This ruling (ED-78) is cited from every place the provisional
+   inference is used** — so a future pass with better evidence (the
+   Pfanz fetch, still recommended, still open) can find and revise every
+   authored instance.
+
+**This specifically supersedes the ED-30/ED-64 Pfanz-gate BLOCK**: the
+CA-J3M-3 Spangler's Meadow charge is now authorable at its **~10:00
+direction** (the order-chain + Bachelder-drawn-sheet pole; ED-64 §
+"LATE pole ~10:00"), carrying the **~05:30-06:00 EARLY pole** (Morse's
+"5.30 o'clock"; the 27th Indiana's advance marker inscribed "6 a.m.")
+**verbatim alongside** on every keyframe, event, and report reference
+that uses the ruling. The Pfanz *Culp's Hill* pp. ~340-355 fetch remains
+a recommended hardening target — ED-78 unblocks authoring, it does not
+retire the open research item.
+
+**Applied by the July 3 morning slice**
+(`docs/reconstruction/audit/july3-morning-slice.md`): the `us-2ma` and
+`us-27in` charge keyframes (t≈10:00, `confidence: "inferred"`) and their
+`j3m-spangler-2ma`/`j3m-spangler-27in` fire events in
+`gettysburg-july3-morning.json`, each carrying both poles verbatim in
+its citation/note text and citing ED-78 by name. No other anchor in the
+July 3 morning chain needed ED-78 (CA-J3M-1/2/4/5 were already
+executor-primary, non-provisional).
+
+**Scope note:** ED-78 is a STANDING permission for future provisional
+calls under the same three conditions, not a one-time exception — future
+passes may cite it directly rather than re-litigating the "is a
+best-guess inference allowed here" question, but each individual
+provisional call still needs its own both-poles citation per condition
+2. The owner may re-rule this (adopt-and-adjust doctrine; the ruling is
+open to revision, not closed by being recorded).
 
 ---
 

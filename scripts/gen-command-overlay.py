@@ -29,6 +29,7 @@ REGISTER = os.path.join(REPO, "docs/reconstruction/audit/oob-register.json")
 # per phase; the runtime skips overlay entries the loaded battle lacks).
 BATTLES = [
     os.path.join(REPO, "app/Assets/Battle/gettysburg-july3.json"),
+    os.path.join(REPO, "app/Assets/Battle/gettysburg-july3-morning.json"),
     os.path.join(REPO, "app/Assets/Battle/gettysburg-july2-afternoon.json"),
     os.path.join(REPO, "app/Assets/Battle/gettysburg-july2-evening.json"),
     os.path.join(REPO, "app/Assets/Battle/gettysburg-july1-morning.json"),
@@ -49,6 +50,11 @@ MANUAL_CHAINS = {
     "us-6wi": ["Army of the Potomac", "I Corps", "1st Division"],  # reg-us-i-1-1 (Meredith's)
     "us-147ny": ["Army of the Potomac", "I Corps", "1st Division"],  # reg-us-i-1-2 (Cutler's)
     "us-16me": ["Army of the Potomac", "I Corps", "2nd Division"],  # reg-us-i-2-1 (Paul's)
+    # July 3 morning slice (docs/reconstruction/audit/july3-morning-slice.md,
+    # ED-76): the 2nd Massachusetts / 27th Indiana Spangler's Meadow charge,
+    # promoted parentless out of Colgrove's brigade — same pattern.
+    "us-2ma": ["Army of the Potomac", "XII Corps", "1st Division"],  # reg-us-xii-1-3 (Colgrove's)
+    "us-27in": ["Army of the Potomac", "XII Corps", "1st Division"],  # reg-us-xii-1-3 (Colgrove's)
 }
 
 GENERIC_DIVISION = re.compile(r"^\d+(st|nd|rd|th) (Division|Brigade)")

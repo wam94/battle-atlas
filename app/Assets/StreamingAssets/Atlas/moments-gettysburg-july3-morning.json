@@ -1,0 +1,42 @@
+{
+  "_comment": "Timeline moment markers for the JULY 3 MORNING phase (Culp's Hill; the july3-morning-slice.md authoring). Times are phase battle-clock seconds (t=0 = 04:30 LMT, startTime 16200; 13:00 = 30600). Every marker cites the anchor or editorial decision that places it (CA-J3M-1..5; ED-30/ED-64/ED-78). The `battle` field gates this file to its own phase.",
+  "battle": "gettysburg-july3-morning",
+  "moments": [
+    {
+      "t": 0,
+      "label": "Before first light",
+      "detail": "04:30 local mean time (civil twilight). Johnson's three brigades hold the works taken the evening before; Daniel's and O'Neal's brigades have just completed their night marches to reinforce him; Greene's XII Corps line stands to, Kane's and McDougall's returning brigades back in their refused works since ~22:00.",
+      "citation": "CA-J3M-5 (ED-31 astronomical pin); ED-30 (the July 3 morning chain)"
+    },
+    {
+      "t": 120,
+      "label": "Muhlenberg's guns open",
+      "detail": "The XII Corps artillery brigade opens 'for fifteen minutes without intermission' at 600-800 yards, then pauses, resuming at 5:30 and firing at intervals until 10:00. The anchor's author-primary text — the richest single source of the phase.",
+      "citation": "CA-J3M-1 (or-27-1-muhlenberg; ED-65 opening-cluster annotation)"
+    },
+    {
+      "t": 12600,
+      "label": "O'Neal's 8 a.m. attack",
+      "detail": "'The attack was made with great spirit by the Sixth, Twelfth, Twenty-sixth, and Third Alabama Regiments... under a terrific fire of grape and small-arms' — the reinforcement wave's second attack, gaining a hill near the works and holding it three hours under 'murderous fire'.",
+      "citation": "CA-J3M-2 wave 2 (or-27-2-oneal, the executor clock)"
+    },
+    {
+      "t": 19800,
+      "label": "The Steuart/Daniel charge and Spangler's Meadow (PROVISIONAL)",
+      "detail": "~10:00 — Steuart's and Daniel's brigades charge together across the ground the battlefield calls Pardee Field, repulsed by Kane's works fire; in the same window, at the ED-78 owner-ruled PROVISIONAL direction, the 2nd Massachusetts and 27th Indiana charge Spangler's Meadow under Lt. Col. Mudge (killed leading it), repulsed by Smith's Virginians. BOTH POLES ON THE RECORD: the regiments' own reports place their charge ~05:30-06:00 (Morse; the 27th Indiana's advance marker inscribes '6 a.m.'); the division order-chain and Bachelder's drawn sheets place it here, ~10:00.",
+      "citation": "CA-J3M-2 wave 3 + CA-J3M-3 (ED-64, ED-78 — docs/reconstruction/angle-editorial-decisions.md); or-27-2-steuart/-daniel; or-27-1-kane; or-27-1-morse-2ma/-fesler-27in/-ruger"
+    },
+    {
+      "t": 21600,
+      "label": "The last determined effort",
+      "detail": "10:30 — Kane: 'the enemy made their last determined effort by charging in column of regiments.' The general repulse; Johnson's division begins retiring east of Rock Creek. Muhlenberg's tablet-cited program end (vs the report's own 10:00 reading, carried as a conflict).",
+      "citation": "CA-J3M-4 (quadruple attestation: Johnson tablet, Steuart tablet, XII arty tablet, Jacobs)"
+    },
+    {
+      "t": 23400,
+      "label": "The hill falls quiet",
+      "detail": "11:00 — 'raged fiercely until 11 A.M. when this Brigade and the entire line fell back to the base of the hill' (Steuart's tablet). Shaler's VI Corps brigade, engaged under Geary from 9 to 11, is relieved. The works are recovered; the morning's fight is over.",
+      "citation": "CA-J3M-4 close; us-vi-3-1-shaler.md (Shaler's own report=tablet ladder)"
+    }
+  ]
+}

@@ -102,6 +102,20 @@ public class PhaseManifestTests
             battle.startTime, battle.endTime));
         Assert.AreEqual(46800f, phase.startTime);
         Assert.AreEqual(23340f, phase.endTime); // sunset 19:29 LMT (ED-31)
+        // July 3 morning (this slice): reconstructed, abutting the afternoon
+        // phase's UNCHANGED 46800 startTime (film-safety: the afternoon
+        // file's own clock is byte-untouched).
+        Assert.AreEqual(2, m.ActiveDayIndex("gettysburg-july3-morning"));
+        PhaseDto j3m = m.PhaseForBattle("gettysburg-july3-morning");
+        Assert.AreEqual("july3-morning", j3m.id);
+        Assert.AreEqual(j3m.startTime + j3m.endTime, phase.startTime,
+            "the July 3 phases abut at 13:00 LMT, never overlap");
+        Assert.AreEqual(16200f, j3m.startTime); // 04:30 LMT
+        Assert.AreEqual(30600f, j3m.endTime);
+        var j3mBattle = BattleLoader.Parse(System.IO.File.ReadAllText(
+            UnityEngine.Application.dataPath + "/Battle/gettysburg-july3-morning.json"));
+        Assert.IsNull(m.ClockMismatch("gettysburg-july3-morning",
+            j3mBattle.startTime, j3mBattle.endTime));
         // July 2 (day-expansion slice 2): two reconstructed phases abutting
         // at the sunset pin (70140 = 19:29 LMT), each echoing its own file.
         Assert.AreEqual(1, m.ActiveDayIndex("gettysburg-july2-afternoon"));
