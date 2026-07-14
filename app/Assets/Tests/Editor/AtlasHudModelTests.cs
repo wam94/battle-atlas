@@ -171,7 +171,8 @@ public class AtlasHudModelTests
     {
         foreach (string phase in new[]
             { "gettysburg-july2-afternoon", "gettysburg-july2-evening",
-              "gettysburg-july1-morning", "gettysburg-july1-afternoon" })
+              "gettysburg-july1-morning", "gettysburg-july1-afternoon",
+              "gettysburg-july3-morning" })
         {
             string path = UnityEngine.Application.dataPath
                 + $"/StreamingAssets/Atlas/moments-{phase}.json";

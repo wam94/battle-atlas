@@ -100,6 +100,7 @@ public class CommandOverlayTests
         (string file, int minCorps)[] battleFiles =
         {
             ("gettysburg-july3.json", 8),
+            ("gettysburg-july3-morning.json", 3),
             ("gettysburg-july2-afternoon.json", 8),
             ("gettysburg-july2-evening.json", 8),
             ("gettysburg-july1-morning.json", 5),

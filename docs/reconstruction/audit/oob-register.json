@@ -26,8 +26,8 @@
       "artilleryBattalions": 16,
       "commandEntries": 6
     },
-    "inBuild": 162,
-    "notYetCast": 126,
+    "inBuild": 163,
+    "notYetCast": 125,
     "regimentsEnumerated": 478
   },
   "entries": [
@@ -2934,7 +2934,7 @@
     },
     {
       "id": "reg-us-xii-arty",
-      "castStatus": "not-yet-cast",
+      "castStatus": "us-xii-arty",
       "name": "Artillery Brigade, XII Corps",
       "side": "union",
       "arm": "artillery",

@@ -67,9 +67,11 @@
       "phases": [
         {
           "id": "july3-morning",
-          "label": "Morning — Culp's Hill and the quiet center",
-          "status": "not-reconstructed",
-          "note": "Not yet reconstructed. The morning fight (Culp's Hill fire to ~10:30–11:00, Taft's 8 A.M. window, Shaler's 9–11 A.M. engagement) sits in the corpus as documented silence on the afternoon file's citations; it becomes this phase's content in a later slice (authoring-wave-a2.md §6.4)."
+          "label": "Morning — Culp's Hill",
+          "status": "reconstructed",
+          "battle": "gettysburg-july3-morning.json",
+          "startTime": 16200,
+          "endTime": 30600
         },
         {
           "id": "july3-afternoon",

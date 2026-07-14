@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import manifest from "../../app/Assets/StreamingAssets/Atlas/battle-manifest.json";
 import battle from "../../app/Assets/Battle/gettysburg-july3.json";
+import july3Morning from "../../app/Assets/Battle/gettysburg-july3-morning.json";
 import july2Afternoon from "../../app/Assets/Battle/gettysburg-july2-afternoon.json";
 import july2Evening from "../../app/Assets/Battle/gettysburg-july2-evening.json";
 import july1Morning from "../../app/Assets/Battle/gettysburg-july1-morning.json";
@@ -47,11 +48,20 @@ describe("battle manifest (ADR 0005)", () => {
     // [70140, 81000) exactly at the sunset pin
     expect(july2.phases[1]!.startTime! + july2.phases[1]!.endTime!)
       .toBe(july2.phases[2]!.startTime);
+    // July 3 (this slice): two abutting reconstructed phases seamed at
+    // 13:00 LMT (the Culp's Hill morning fight's window end / the shipped
+    // afternoon file's unchanged startTime).
     const july3 = m.days[2]!;
     expect(july3.phases.map((p) => p.status)).toEqual([
-      "not-reconstructed", "reconstructed",
+      "reconstructed", "reconstructed",
     ]);
+    expect(july3.phases[0]!.battle).toBe("gettysburg-july3-morning.json");
     expect(july3.phases[1]!.battle).toBe("gettysburg-july3.json");
+    // abutting, never overlapping: morning [16200, 46800) meets afternoon
+    // [46800, 70140) exactly at 13:00 LMT — the afternoon file's startTime
+    // is UNCHANGED (film-safety: 46800 was already the shipped value).
+    expect(july3.phases[0]!.startTime! + july3.phases[0]!.endTime!)
+      .toBe(july3.phases[1]!.startTime);
   });
 
   it("cross-file: reconstructed phase clocks echo the battle file exactly", () => {
@@ -60,6 +70,7 @@ describe("battle manifest (ADR 0005)", () => {
     // "The honesty rules").
     const battles: Record<string, { startTime: number; endTime: number }> = {
       "gettysburg-july3.json": battle as any,
+      "gettysburg-july3-morning.json": july3Morning as any,
       "gettysburg-july2-afternoon.json": july2Afternoon as any,
       "gettysburg-july2-evening.json": july2Evening as any,
       "gettysburg-july1-morning.json": july1Morning as any,

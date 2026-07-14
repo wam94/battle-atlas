@@ -472,6 +472,16 @@
    "division": "2nd Division, II Corps"
   },
   {
+   "id": "us-27in",
+   "corps": "XII Corps",
+   "division": "1st Division, XII Corps"
+  },
+  {
+   "id": "us-2ma",
+   "corps": "XII Corps",
+   "division": "1st Division, XII Corps"
+  },
+  {
    "id": "us-42ny",
    "corps": "II Corps",
    "division": "2nd Division, II Corps"
@@ -1055,6 +1065,11 @@
    "id": "us-webb",
    "corps": "II Corps",
    "division": "2nd Division, II Corps"
+  },
+  {
+   "id": "us-xii-arty",
+   "corps": "XII Corps",
+   "division": ""
   }
  ]
 }
