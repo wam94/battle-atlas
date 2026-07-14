@@ -2110,6 +2110,18 @@ provisional call still needs its own both-poles citation per condition
 2. The owner may re-rule this (adopt-and-adjust doctrine; the ruling is
 open to revision, not closed by being recorded).
 
+**Owner confirmation (2026-07-14, strength-reconciliation-2):** the
+`july3-morning-slice.md` §9 owner-question #1 asked explicitly whether
+this "standing permission" framing (above) was the intended breadth, or
+whether each future provisional call should get its own numbered ED. The
+owner answered **"yes"** to the standing-permission reading — this is now
+an OWNER-CONFIRMED ruling, not merely the executor's own interpretation
+of ED-78's text. `strength-reconciliation-2` is the first pass to cite
+ED-78 directly for a NEW provisional call under this confirmed scope (the
+`csa-daniel` strength + position-class best-guess, per owner ruling (c)
+of that pass's task brief) — see
+`docs/reconstruction/audit/strength-reconciliation-2.md` §2.
+
 ---
 
 ## Connective-reconstruction rules (named inference rules)

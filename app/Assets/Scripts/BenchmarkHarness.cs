@@ -34,6 +34,7 @@ namespace BattleAtlas
         // the Phase 0 names (atlas-t*.png / p0-benchmark.json); the Phase 4
         // HDRP capture passes "hdrp-atlas" so before/after files coexist.
         string prefix;
+        string cameraOverride;
         BattleClock clock;
         readonly StringBuilder report = new StringBuilder();
 
@@ -67,6 +68,13 @@ namespace BattleAtlas
                 timestamps = times.Split(',')
                     .Select(s => float.Parse(s.Trim(), CultureInfo.InvariantCulture))
                     .ToArray();
+            // strength-reconciliation-2: optional evidence-capture camera
+            // override, "-benchmarkCamera x,z,yawDeg,pitchDeg,dist" — additive,
+            // inert unless passed (existing default-camera benchmark runs are
+            // byte-for-byte unaffected). Lets a reconciliation pass aim the
+            // orbit camera at a specific sector (e.g. Culp's Hill) instead of
+            // the scene's committed default pose, for a before/after pair.
+            cameraOverride = ArgValue("-benchmarkCamera", "");
             Directory.CreateDirectory(outDir);
             clock = FindFirstObjectByType<BattleClock>();
             if (clock == null)
@@ -83,6 +91,24 @@ namespace BattleAtlas
         {
             clock.Playing = false;
             clock.CurrentTime = 0f;
+            if (!string.IsNullOrWhiteSpace(cameraOverride))
+            {
+                var orbit = FindFirstObjectByType<OrbitCameraController>();
+                if (orbit != null)
+                {
+                    var parts = cameraOverride.Split(',');
+                    float x = float.Parse(parts[0], CultureInfo.InvariantCulture);
+                    float z = float.Parse(parts[1], CultureInfo.InvariantCulture);
+                    float yaw = float.Parse(parts[2], CultureInfo.InvariantCulture);
+                    float pitch = float.Parse(parts[3], CultureInfo.InvariantCulture);
+                    float dist = float.Parse(parts[4], CultureInfo.InvariantCulture);
+                    orbit.followPivot = null;
+                    orbit.pivot = new Vector3(x, 0f, z);
+                    orbit.yawDeg = yaw;
+                    orbit.pitchDeg = pitch;
+                    orbit.distance = dist;
+                }
+            }
             yield return new WaitForSecondsRealtime(WarmupSeconds);
 
             report.Append("{\n");

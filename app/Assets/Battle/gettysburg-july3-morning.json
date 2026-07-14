@@ -460,9 +460,9 @@
           "z": 6440,
           "facing": 250,
           "formation": "line",
-          "strength": 620,
+          "strength": 660,
           "confidence": "documented",
-          "citation": "'It then moved to a position further up the creek' (brigade tablet). STRENGTH ARITHMETIC NOTE: report primary (No. 476) totals 3 off + 12 men k / 5 off + 105 men w / 17 m = 142 EXACT against the tablet ('Present about 800... Total 142') — that full loss is already reflected in this phase's inherited t=0 (660); this keyframe's further -40 is a modest documented-notional decay for the dislodgment/repulse combat, NOT independently derived (residual, see report)."
+          "citation": "'It then moved to a position further up the creek' (brigade tablet). STRENGTH ARITHMETIC NOTE (strength-reconciliation-2 fix, 2026-07-14): report primary (No. 476) totals 3 off + 12 men k / 5 off + 105 men w / 17 m = 142 EXACT against the tablet ('Present about 800... Total 142') — that full loss is already reflected in this phase's inherited t=0 (660, the A1/A2-era placeholder that pre-baked the tablet's Present-800-minus-142 arithmetic before this phase existed). PRIOR VERSION OF THIS KEYFRAME applied a further -40 'modest documented-notional decay... NOT independently derived' on top of that already-fully-netted base — a genuine double-count (subtracting Smith's one battle loss twice). CORRECTED: no further decay applied here; the dislodgment/repulse combat this phase authors is the SAME action the inherited 660 already nets, not an additional one. Refinement note (preserved, not closed): the STRUCTURAL fix — re-deriving July-2-evening's csa-smith placeholder from the tablet's ~800 PRESENT figure directly, rather than its post-loss ~660, so this phase's own t=0 needs no inherited pre-netting at all — remains open; it edits gettysburg-july2-evening.json, outside this wave's scope (see strength-reconciliation-2.md §4)."
         },
         {
           "t": 30600,
@@ -470,9 +470,9 @@
           "z": 6440,
           "facing": 250,
           "formation": "line",
-          "strength": 620,
+          "strength": 660,
           "confidence": "documented",
-          "citation": "Further up the creek, quiet at the phase's close. gettysburg-july3.json csa-smith t=0 independently cites x=6800,z=6420,strength=660 — position near-exact, strength differs by ~40 (the structural double-count risk noted above); flagged for the strength-reconciliation pipeline, not reconciled here."
+          "citation": "Further up the creek, quiet at the phase's close. gettysburg-july3.json csa-smith t=0 cites x=6800,z=6420,strength=660 — position near-exact, strength now EXACT (Δ0, the double-count above corrected, strength-reconciliation-2)."
         }
       ]
     },
