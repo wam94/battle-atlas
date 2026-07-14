@@ -227,8 +227,7 @@ reference.
 - **Status:** implementation complete, suites green (see §4), captures
   and report in place, pushed to `origin/rts-camera`. Not merged — awaiting
   the owner's flight.
-- **Branch head:** see `git rev-parse rts-camera` at push time (recorded
-  in the push confirmation).
+- **Branch head:** `a41534aea8162f336efeef0106b7a1eadd9c8deb`
 - **Report path:** `docs/reconstruction/rts-camera-slice.md` (this file).
 - **Feel-constant list:** §2 (twenty-one fields, all serialized).
 - **Needs an owner ruling:** the R/F direction mnemonic (§6) if it reads
