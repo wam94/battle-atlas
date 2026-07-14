@@ -1,0 +1,13 @@
+{
+  "unity": "6000.4.11f1",
+  "development": true,
+  "screen": "1600x1000",
+  "clockStartTime": 46800,
+  "clockEndTime": 23340,
+  "samples": [
+    {"t": 0, "screenshot": "before-t0.png", "frames": 591, "avgFps": 59.1, "p95FrameMs": 17.33, "worstFrameMs": 41.12, "allocatedMB": 323.5, "reservedMB": 443.8},
+    {"t": 8160, "screenshot": "before-t8160.png", "frames": 596, "avgFps": 59.6, "p95FrameMs": 17.09, "worstFrameMs": 27.78, "allocatedMB": 324.0, "reservedMB": 443.8},
+    {"t": 8700, "screenshot": "before-t8700.png", "frames": 594, "avgFps": 59.4, "p95FrameMs": 17.47, "worstFrameMs": 26.65, "allocatedMB": 324.0, "reservedMB": 443.8},
+    {"t": 9000, "screenshot": "before-t9000.png", "frames": 588, "avgFps": 58.8, "p95FrameMs": 17.32, "worstFrameMs": 153.99, "allocatedMB": 324.3, "reservedMB": 457.8}
+  ]
+}

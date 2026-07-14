@@ -1,0 +1,1019 @@
+{
+ "name": "Gettysburg 1863 map furniture -- roads, hydrology, town, railroad (Warren 1873 base, Bachelder sheet j3-03)",
+ "features": [
+  {
+   "id": "lane-bryan",
+   "kind": "line",
+   "cls": "lane",
+   "points": [
+    [
+     4460.2,
+     5128.1
+    ],
+    [
+     4375.6,
+     5328.9
+    ]
+   ],
+   "confidence": "inferred",
+   "note": "Short farm lane from the Taneytown Road to the Bryan farmstead (the Angle/Copse of Trees); anchored at the manifest's bryan-farm check tie point (image px 5321,5969; landmark-anchors doc #10), east/west connector snapped rather than independently paced."
+  },
+  {
+   "id": "lane-codori",
+   "kind": "line",
+   "cls": "lane",
+   "points": [
+    [
+     4029.8,
+     4655.0
+    ],
+    [
+     3940.2,
+     4721.6
+    ]
+   ],
+   "confidence": "inferred",
+   "note": "Short farm lane from the Emmitsburg Road to the N. Codori farmstead (Pickett's Charge axis); west end anchored at the manifest's codori-barn check tie point (image px 4889,6496; landmark-anchors doc #7), east end snapped toward the traced Emmitsburg Road rather than independently paced -- confidence inferred for the whole short connector."
+  },
+  {
+   "id": "rail-finished-hanover-branch",
+   "kind": "line",
+   "cls": "rail_finished",
+   "points": [
+    [
+     4882.6,
+     6828.1
+    ],
+    [
+     5130.7,
+     6977.7
+    ],
+    [
+     5404.0,
+     7071.1
+    ],
+    [
+     5704.2,
+     7163.0
+    ],
+    [
+     6069.1,
+     7344.1
+    ],
+    [
+     6960.1,
+     7533.2
+    ],
+    [
+     8003.4,
+     7831.8
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "Gettysburg & Hanover branch, in service at the time of the battle; runs the same ENE corridor as the Hanover Road."
+  },
+  {
+   "id": "rail-unfinished-cut-west",
+   "kind": "line",
+   "cls": "rail_unfinished",
+   "points": [
+    [
+     2906.5,
+     7606.8
+    ],
+    [
+     3448.8,
+     7428.5
+    ],
+    [
+     3939.0,
+     7215.2
+    ],
+    [
+     4243.1,
+     7036.7
+    ],
+    [
+     4424.1,
+     6901.9
+    ],
+    [
+     3679.6,
+     6958.6
+    ],
+    [
+     3942.5,
+     6851.0
+    ],
+    [
+     4206.9,
+     6770.3
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "The graded, unrailed cut west of town the First Day fighting turned on (Iron Brigade vs. Davis's Brigade, the Railroad Cut); runs just north of and roughly parallel to the Chambersburg Pike through the McPherson's Ridge corridor into town near Penn College."
+  },
+  {
+   "id": "road-baltimore-pike",
+   "kind": "line",
+   "cls": "pike",
+   "points": [
+    [
+     3863.5,
+     6879.5
+    ],
+    [
+     4217.6,
+     6456.4
+    ],
+    [
+     4576.2,
+     6119.8
+    ],
+    [
+     4934.8,
+     5783.2
+    ],
+    [
+     5264.5,
+     5448.0
+    ],
+    [
+     5620.9,
+     5068.2
+    ],
+    [
+     6004.7,
+     4657.9
+    ],
+    [
+     6403.6,
+     4261.4
+    ],
+    [
+     6816.1,
+     3849.8
+    ],
+    [
+     7154.3,
+     3398.5
+    ],
+    [
+     7492.6,
+     2947.3
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "SE turnpike out of town, curving along Cemetery/Culp's Hill's east base toward Rock Creek and Two Taverns."
+  },
+  {
+   "id": "road-carlisle",
+   "kind": "line",
+   "cls": "road",
+   "points": [
+    [
+     4923.4,
+     8035.8
+    ],
+    [
+     4910.2,
+     7700.8
+    ],
+    [
+     4898.2,
+     7365.7
+    ],
+    [
+     4887.6,
+     7030.6
+    ],
+    [
+     4882.6,
+     6828.1
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "Due-north street/road out of the Diamond, labeled 'CARLISLE' on the sheet."
+  },
+  {
+   "id": "road-chambersburg-pike",
+   "kind": "line",
+   "cls": "pike",
+   "points": [
+    [
+     2840.9,
+     7791.9
+    ],
+    [
+     3212.3,
+     7703.8
+    ],
+    [
+     3607.8,
+     7595.8
+    ],
+    [
+     4015.1,
+     7474.5
+    ],
+    [
+     4384.9,
+     7355.1
+    ],
+    [
+     4767.2,
+     7235.2
+    ],
+    [
+     3689.6,
+     7152.8
+    ],
+    [
+     4033.2,
+     7047.8
+    ],
+    [
+     4378.4,
+     6969.5
+    ],
+    [
+     4724.1,
+     6904.7
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "WNW turnpike into town, past the Lutheran Seminary and E. McPherson's; the First Day Iron Brigade corridor."
+  },
+  {
+   "id": "road-emmitsburg",
+   "kind": "line",
+   "cls": "road",
+   "points": [
+    [
+     4621.0,
+     6467.0
+    ],
+    [
+     4525.5,
+     6176.5
+    ],
+    [
+     4427.8,
+     5845.9
+    ],
+    [
+     4358.4,
+     5670.9
+    ],
+    [
+     4629.0,
+     5794.2
+    ],
+    [
+     4005.3,
+     5092.2
+    ],
+    [
+     3330.7,
+     4539.5
+    ],
+    [
+     3012.0,
+     4056.6
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "SSW road out of town toward the Peach Orchard crossroads (manifest tie point); Sickles' III Corps axis."
+  },
+  {
+   "id": "road-fairfield",
+   "kind": "line",
+   "cls": "road",
+   "points": [
+    [
+     2765.8,
+     6335.8
+    ],
+    [
+     3175.5,
+     6502.7
+    ],
+    [
+     3597.0,
+     6656.4
+    ],
+    [
+     3980.3,
+     6799.5
+    ],
+    [
+     4396.6,
+     6853.3
+    ],
+    [
+     3658.8,
+     6556.8
+    ],
+    [
+     4065.4,
+     6629.8
+    ],
+    [
+     4473.3,
+     6729.7
+    ],
+    [
+     4621.0,
+     6467.0
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "SW road out of town, labeled 'HAGERSTOWN ROAD' on the sheet (the Fairfield Road's period alternate name -- it continues to Hagerstown, MD); passes Black Horse Tavern (manifest tie point) at the traced extent's SW end."
+  },
+  {
+   "id": "road-hanover",
+   "kind": "line",
+   "cls": "road",
+   "points": [
+    [
+     4882.6,
+     6828.1
+    ],
+    [
+     5226.5,
+     7013.1
+    ],
+    [
+     5568.9,
+     7143.1
+    ],
+    [
+     5976.1,
+     7229.6
+    ],
+    [
+     5492.3,
+     7550.1
+    ],
+    [
+     6235.2,
+     7717.4
+    ],
+    [
+     7275.6,
+     7957.5
+    ],
+    [
+     8172.6,
+     8263.7
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "ENE road+rail corridor out of town labeled 'HANOVER' on the sheet, past David Schaffer's; York Road's own split was not separately legible at this reading scale and is merged into this traced corridor near town (residual, see map-furniture-slice.md)."
+  },
+  {
+   "id": "road-harrisburg",
+   "kind": "line",
+   "cls": "road",
+   "points": [
+    [
+     5012.5,
+     7927.3
+    ],
+    [
+     5048.4,
+     7484.9
+    ],
+    [
+     5181.8,
+     7968.8
+    ],
+    [
+     5037.8,
+     7519.6
+    ],
+    [
+     4952.2,
+     7161.5
+    ],
+    [
+     4882.6,
+     6828.1
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "N/NNE road out of town past Cobean/Ross/Yeatts, bearing toward Harrisburg."
+  },
+  {
+   "id": "road-mummasburg",
+   "kind": "line",
+   "cls": "road",
+   "points": [
+    [
+     2168.0,
+     8230.0
+    ],
+    [
+     1859.9,
+     7952.2
+    ],
+    [
+     4251.8,
+     7640.8
+    ],
+    [
+     4534.0,
+     7384.5
+    ],
+    [
+     4697.0,
+     7161.2
+    ],
+    [
+     4795.9,
+     6995.0
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "NW road toward Mummasburg, split off north of the Chambersburg Pike near Oak Ridge."
+  },
+  {
+   "id": "road-taneytown",
+   "kind": "line",
+   "cls": "road",
+   "points": [
+    [
+     3863.5,
+     6879.5
+    ],
+    [
+     3975.4,
+     6526.8
+    ],
+    [
+     4057.1,
+     6146.6
+    ],
+    [
+     4136.4,
+     5723.1
+    ],
+    [
+     4215.0,
+     5285.3
+    ],
+    [
+     4281.5,
+     4891.4
+    ],
+    [
+     4347.3,
+     4483.1
+    ],
+    [
+     4407.8,
+     3974.0
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "Due-south road out of town toward the Taneytown x Wheatfield Road crossroads (manifest tie point); Meade's HQ axis."
+  },
+  {
+   "id": "stream-marsh-creek",
+   "kind": "line",
+   "cls": "creek",
+   "points": [
+    [
+     117.4,
+     5486.6
+    ],
+    [
+     514.2,
+     5742.1
+    ],
+    [
+     1094.1,
+     5594.7
+    ],
+    [
+     1684.5,
+     5652.3
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "SW corner watercourse near Black Horse Tavern (manifest tie point); a mill-pond/oxbow shape is drawn at the tavern crossing but was not separately traced as a polygon at this reading scale (residual)."
+  },
+  {
+   "id": "stream-pitzers-run",
+   "kind": "line",
+   "cls": "run",
+   "points": [
+    [
+     2189.1,
+     5185.8
+    ],
+    [
+     2217.5,
+     4596.9
+    ],
+    [
+     2275.2,
+     4006.5
+    ],
+    [
+     2332.8,
+     3416.1
+    ],
+    [
+     2427.4,
+     2970.6
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "Small stream east of and roughly parallel to Willoughby Run, near Pitzer's Woods."
+  },
+  {
+   "id": "stream-plum-run",
+   "kind": "line",
+   "cls": "run",
+   "points": [
+    [
+     2783.7,
+     1336.7
+    ],
+    [
+     2901.8,
+     1918.1
+    ],
+    [
+     3049.2,
+     2497.9
+    ],
+    [
+     3255.1,
+     3074.7
+    ],
+    [
+     3490.4,
+     3650.0
+    ],
+    [
+     4401.7,
+     1742.6
+    ],
+    [
+     4666.3,
+     2316.4
+    ],
+    [
+     4813.7,
+     2896.2
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "Drains the Round Tops/Wheatfield sector north toward the Peach Orchard corridor; traced at coarser grain (dense contour ink over Devil's Den/the Wheatfield made the centerline harder to isolate at this reading scale -- residual, see map-furniture-slice.md)."
+  },
+  {
+   "id": "stream-rock-creek",
+   "kind": "line",
+   "cls": "creek",
+   "points": [
+    [
+     5438.2,
+     8031.5
+    ],
+    [
+     5631.2,
+     7520.2
+    ],
+    [
+     5796.2,
+     7073.1
+    ],
+    [
+     5897.0,
+     6598.0
+    ],
+    [
+     5974.6,
+     6280.6
+    ],
+    [
+     6021.0,
+     5965.0
+    ],
+    [
+     6068.9,
+     5680.5
+    ],
+    [
+     6118.6,
+     5427.3
+    ],
+    [
+     6043.2,
+     5180.6
+    ],
+    [
+     5967.8,
+     4933.8
+    ],
+    [
+     6079.9,
+     4677.4
+    ],
+    [
+     6195.2,
+     4483.5
+    ],
+    [
+     6896.6,
+     5696.6
+    ],
+    [
+     6633.6,
+     5152.1
+    ],
+    [
+     6456.9,
+     4573.8
+    ],
+    [
+     6573.1,
+     3980.4
+    ],
+    [
+     6777.3,
+     3382.4
+    ],
+    [
+     6805.7,
+     2793.5
+    ],
+    [
+     6922.0,
+     2200.1
+    ],
+    [
+     7184.6,
+     1599.1
+    ],
+    [
+     7300.9,
+     1005.7
+    ],
+    [
+     7329.3,
+     416.8
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "Main eastern watercourse; traced from its north entry past David Schaffer's, through the Stevens Run confluence, around Culp's Hill's east base, south past Benner's Hill and George Bushman's toward the SE corner of the traced square."
+  },
+  {
+   "id": "stream-stevens-run",
+   "kind": "line",
+   "cls": "run",
+   "points": [
+    [
+     5454.3,
+     8343.9
+    ],
+    [
+     5560.1,
+     7962.5
+    ],
+    [
+     5603.2,
+     7584.3
+    ],
+    [
+     5687.2,
+     7392.0
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "Tributary flowing SE past Josiah Benner's and Thomas Goldy's into Rock Creek NE of town."
+  },
+  {
+   "id": "stream-willoughby-run",
+   "kind": "line",
+   "cls": "run",
+   "points": [
+    [
+     2362.5,
+     8014.4
+    ],
+    [
+     2420.1,
+     7424.0
+    ],
+    [
+     2536.4,
+     6830.6
+    ],
+    [
+     2652.6,
+     6237.1
+    ],
+    [
+     2710.4,
+     5646.7
+    ],
+    [
+     2740.0,
+     5084.2
+    ],
+    [
+     1816.8,
+     5939.2
+    ],
+    [
+     1661.8,
+     5213.0
+    ],
+    [
+     1536.1,
+     4485.1
+    ],
+    [
+     1557.1,
+     3749.7
+    ],
+    [
+     1607.1,
+     3012.9
+    ],
+    [
+     1510.8,
+     2283.6
+    ],
+    [
+     1355.9,
+     1557.3
+    ],
+    [
+     1149.9,
+     980.4
+    ],
+    [
+     1011.4,
+     573.5
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "West of Seminary Ridge, First Day fighting axis; traced N-S the full length visible on the sheet through the traced square."
+  },
+  {
+   "id": "stream-winebrenners-run",
+   "kind": "line",
+   "cls": "run",
+   "points": [
+    [
+     5886.9,
+     6862.0
+    ],
+    [
+     6016.3,
+     6566.1
+    ],
+    [
+     6145.6,
+     6270.2
+    ],
+    [
+     6275.0,
+     5974.3
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "Minor stream SE of town near the Baltimore Pike corridor; traced at low point density (short, faint watercourse on the sheet)."
+  },
+  {
+   "id": "town-block-diamond",
+   "kind": "polygon",
+   "cls": "town_block",
+   "points": [
+    [
+     4795.9,
+     6995.0
+    ],
+    [
+     4969.9,
+     6986.0
+    ],
+    [
+     4958.2,
+     6758.4
+    ],
+    [
+     4784.1,
+     6767.4
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "The Diamond (Lincoln Square) block, centered on the four-road crossing. Street-block MASSING, not individual buildings: each polygon approximates a cluster of adjoining blocks bounded by the sheet's drawn main streets, simplified to a quad at this reading scale. See docs/reconstruction/map-furniture-slice.md 'town massing simplification'."
+  },
+  {
+   "id": "town-block-ne",
+   "kind": "polygon",
+   "cls": "town_block",
+   "points": [
+    [
+     4898.1,
+     7285.1
+    ],
+    [
+     5331.3,
+     7222.5
+    ],
+    [
+     5223.1,
+     6946.1
+    ],
+    [
+     4882.9,
+     6990.5
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "NE quadrant block cluster (York/Carlisle corner, north of the crossing). Street-block MASSING, not individual buildings: each polygon approximates a cluster of adjoining blocks bounded by the sheet's drawn main streets, simplified to a quad at this reading scale. See docs/reconstruction/map-furniture-slice.md 'town massing simplification'."
+  },
+  {
+   "id": "town-block-nw",
+   "kind": "polygon",
+   "cls": "town_block",
+   "points": [
+    [
+     4409.3,
+     7310.3
+    ],
+    [
+     4898.1,
+     7285.1
+    ],
+    [
+     4882.9,
+     6990.5
+    ],
+    [
+     4394.1,
+     7015.7
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "NW quadrant block cluster (Chambersburg St side, north of the crossing). Street-block MASSING, not individual buildings: each polygon approximates a cluster of adjoining blocks bounded by the sheet's drawn main streets, simplified to a quad at this reading scale. See docs/reconstruction/map-furniture-slice.md 'town massing simplification'."
+  },
+  {
+   "id": "town-block-se-lower",
+   "kind": "polygon",
+   "cls": "town_block",
+   "points": [
+    [
+     4871.2,
+     6762.9
+    ],
+    [
+     5172.5,
+     6747.4
+    ],
+    [
+     5163.5,
+     6573.2
+    ],
+    [
+     4862.2,
+     6588.7
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "SE quadrant block cluster, second row south of the Diamond. Street-block MASSING, not individual buildings: each polygon approximates a cluster of adjoining blocks bounded by the sheet's drawn main streets, simplified to a quad at this reading scale. See docs/reconstruction/map-furniture-slice.md 'town massing simplification'."
+  },
+  {
+   "id": "town-block-se-upper",
+   "kind": "polygon",
+   "cls": "town_block",
+   "points": [
+    [
+     4882.9,
+     6990.5
+    ],
+    [
+     5223.1,
+     6946.1
+    ],
+    [
+     5212.7,
+     6745.3
+    ],
+    [
+     4871.2,
+     6762.9
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "SE quadrant block cluster, immediately south-east of the Diamond. Street-block MASSING, not individual buildings: each polygon approximates a cluster of adjoining blocks bounded by the sheet's drawn main streets, simplified to a quad at this reading scale. See docs/reconstruction/map-furniture-slice.md 'town massing simplification'."
+  },
+  {
+   "id": "town-block-south",
+   "kind": "polygon",
+   "cls": "town_block",
+   "points": [
+    [
+     4601.1,
+     6602.2
+    ],
+    [
+     4935.8,
+     6585.0
+    ],
+    [
+     4920.6,
+     6290.4
+    ],
+    [
+     4585.9,
+     6307.7
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "Southward extension of the built-up grid along Baltimore St toward Cemetery Hill. Street-block MASSING, not individual buildings: each polygon approximates a cluster of adjoining blocks bounded by the sheet's drawn main streets, simplified to a quad at this reading scale. See docs/reconstruction/map-furniture-slice.md 'town massing simplification'."
+  },
+  {
+   "id": "town-block-sw-lower",
+   "kind": "polygon",
+   "cls": "town_block",
+   "points": [
+    [
+     4476.1,
+     6783.3
+    ],
+    [
+     4871.2,
+     6762.9
+    ],
+    [
+     4862.2,
+     6588.7
+    ],
+    [
+     4467.1,
+     6609.1
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "SW quadrant block cluster, second row south of the Diamond. Street-block MASSING, not individual buildings: each polygon approximates a cluster of adjoining blocks bounded by the sheet's drawn main streets, simplified to a quad at this reading scale. See docs/reconstruction/map-furniture-slice.md 'town massing simplification'."
+  },
+  {
+   "id": "town-block-sw-upper",
+   "kind": "polygon",
+   "cls": "town_block",
+   "points": [
+    [
+     4394.1,
+     7015.7
+    ],
+    [
+     4882.9,
+     6990.5
+    ],
+    [
+     4871.2,
+     6762.9
+    ],
+    [
+     4382.4,
+     6788.1
+    ]
+   ],
+   "confidence": "documented",
+   "source": "Bachelder Third Day sheet No. 8, 1-5 PM July 3 (j3-03, archive.org dr_battle-field-of-gettysburg-no-3-no-8-1-5-pm-july-3-1863-12440022, Rumsey/Stanford scan) -- the Warren 1873 engineer base under Bachelder's troop overlay; traced via reconstruction/scripts/crop_sheet.py crops + georef_maps.SheetGeoref.to_local (bachelder-manifest.json j3-03, 31.0 m rms absolute).",
+   "note": "SW quadrant block cluster, immediately south-west of the Diamond. Street-block MASSING, not individual buildings: each polygon approximates a cluster of adjoining blocks bounded by the sheet's drawn main streets, simplified to a quad at this reading scale. See docs/reconstruction/map-furniture-slice.md 'town massing simplification'."
+  }
+ ]
+}
