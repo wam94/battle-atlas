@@ -1,6 +1,8 @@
 # Retrograde-facing — units retire facing the enemy, not the direction of travel
 
-**Branch:** `retrograde-facing` (unmerged; owner gate) ·
+**Branch:** `retrograde-facing` (unmerged; owner gate; content commit
+`bf95eeb1cc3b119e40815815cda63e17a7167609` — this line added by the
+follow-up SHA-recording commit, the rts-camera-report convention) ·
 **Script:** `reconstruction/scripts/fix_retrograde_facing.py` (deterministic
 rewrite over the five phase battle files; no hand-edited JSON), a new
 regression test `reconstruction/tests/test_retrograde_facing.py`, and a new
