@@ -5,8 +5,9 @@ using UnityEngine;
 namespace BattleAtlas.EditorTools
 {
     // Cartography-slice batch staging: the FULL fresh-checkout terrain
-    // preparation in one headless call — heightmap import AND landcover
-    // import (splat + relief-baked layer tints), then save. Phase12Review.
+    // preparation in one headless call — heightmap import, landcover
+    // import (splat + relief-baked layer tints), AND map-furniture import
+    // (roads/hydrology/town/rail vector layer), then save. Phase12Review.
     // PrepareStandaloneScene runs the heightmap step only; re-importing
     // the heightmap rebuilds TerrainData and drops the landcover splat, so
     // a worktree staged with it alone renders the bare-relief terrain the
@@ -29,10 +30,11 @@ namespace BattleAtlas.EditorTools
                     UnityEditor.SceneManagement.OpenSceneMode.Single);
                 HeightmapImporter.Import();
                 LandcoverImporter.Import();
+                MapFurnitureImporter.Import();
                 if (!UnityEditor.SceneManagement.EditorSceneManager.SaveScene(scene))
                     throw new InvalidOperationException("could not save Atlas.unity");
-                Debug.Log("CartographyStage: heightmap + landcover imported into "
-                    + "Atlas.unity and saved");
+                Debug.Log("CartographyStage: heightmap + landcover + map-furniture imported "
+                    + "into Atlas.unity and saved");
             }
             catch (Exception e)
             {
