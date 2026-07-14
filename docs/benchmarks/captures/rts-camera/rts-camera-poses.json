@@ -1,0 +1,18 @@
+{
+  "unity": "6000.4.11f1",
+  "clockTime": 8400,
+  "poses": [
+    {"name": "01-theater", "pivot": [4254, 246.617, 4600], "yawDeg": 0, "pitchDeg": 55, "distance": 7000, "cameraY": 5980.681, "groundY": 246.617, "clearanceM": 5734.064, "nearClip": 10, "note": "whole-field read, the corps-label band"},
+    {"name": "02-zoom-mid", "pivot": [4415, 274.472, 4855], "yawDeg": 250, "pitchDeg": 45, "distance": 700, "cameraY": 769.447, "groundY": 274.472, "clearanceM": 494.975, "nearClip": 10, "note": "closing on the Angle wall crossing"},
+    {"name": "03-zoom-tactical", "pivot": [4415, 274.472, 4855], "yawDeg": 250, "pitchDeg": 40, "distance": 120, "cameraY": 351.607, "groundY": 274.472, "clearanceM": 77.134, "nearClip": 8.926, "note": "inside the Soldiers/Regiments boundary"},
+    {"name": "04-zoom-floor-5m", "pivot": [4415, 274.472, 4855], "yawDeg": 250, "pitchDeg": 35, "distance": 5, "cameraY": 277.922, "groundY": 274.472, "clearanceM": 3.449, "nearClip": 0.3, "note": "the 5 m distance floor over the wall — descent curve caps pitch at 35 degrees here (Total War oblique tilt)"},
+    {"name": "05-rotate-low-yaw000", "pivot": [4415, 274.472, 4855], "yawDeg": 0, "pitchDeg": 35, "distance": 40, "cameraY": 297.415, "groundY": 274.472, "clearanceM": 22.943, "nearClip": 1.723, "note": "low-altitude rotate, yaw 0"},
+    {"name": "06-rotate-low-yaw090", "pivot": [4415, 274.472, 4855], "yawDeg": 90, "pitchDeg": 35, "distance": 40, "cameraY": 297.415, "groundY": 274.472, "clearanceM": 22.943, "nearClip": 1.723, "note": "low-altitude rotate, yaw 90"},
+    {"name": "07-rotate-low-yaw180", "pivot": [4415, 274.472, 4855], "yawDeg": 180, "pitchDeg": 35, "distance": 40, "cameraY": 297.415, "groundY": 274.472, "clearanceM": 22.943, "nearClip": 1.723, "note": "low-altitude rotate, yaw 180"},
+    {"name": "08-pan-start", "pivot": [3900, 256.488, 4850], "yawDeg": 0, "pitchDeg": 42.333, "distance": 900, "cameraY": 862.585, "groundY": 256.488, "clearanceM": 606.097, "nearClip": 10, "note": "pan sequence start — the charge corridor"},
+    {"name": "09-pan-mid", "pivot": [4415, 274.472, 4855], "yawDeg": 0, "pitchDeg": 50, "distance": 900, "cameraY": 963.912, "groundY": 274.472, "clearanceM": 689.44, "nearClip": 10, "note": "pan sequence — the Angle"},
+    {"name": "10-pan-end", "pivot": [4900, 231.745, 4900], "yawDeg": 0, "pitchDeg": 50, "distance": 900, "cameraY": 921.185, "groundY": 231.745, "clearanceM": 689.44, "nearClip": 10, "note": "pan sequence end — the Union right of the wall"},
+    {"name": "11-slope-clearance", "pivot": [5950, 205.065, 5500], "yawDeg": 45, "pitchDeg": 30, "distance": 60, "cameraY": 235.065, "groundY": 205.065, "clearanceM": 30, "nearClip": 3.428, "note": "Culp's Hill slope — terrain clearance holds (>= 3 m above ground)"},
+    {"name": "12-near-clip-floor", "pivot": [4415, 274.472, 4855], "yawDeg": 250, "pitchDeg": 35, "distance": 5, "cameraY": 277.922, "groundY": 274.472, "clearanceM": 3.449, "nearClip": 0.3, "note": "distance floor — dynamic near-clip eased toward 0.3 m"}
+  ]
+}

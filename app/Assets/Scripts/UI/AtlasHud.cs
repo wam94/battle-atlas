@@ -168,6 +168,7 @@ namespace BattleAtlas
             if (sun == null) sun = FindFirstObjectByType<SunDirector>();
             if (contours == null) contours = FindFirstObjectByType<ReliefContourToggle>();
             if (orbit == null) orbit = FindFirstObjectByType<OrbitCameraController>();
+            WireOrbitTerrainAwareness();
 
             var document = GetComponent<UIDocument>();
             if (document == null || document.rootVisualElement == null)
@@ -187,6 +188,27 @@ namespace BattleAtlas
             if (director != null)
                 viewpointsHomeAsset = director.SerializedAssetName;
             LogViewpointGateIfChanged();
+        }
+
+        // RTS camera slice: the orbit rig's pivot-rides-terrain/bounds-
+        // clamp/zoom-anchor features need the SAME height sampler and
+        // battlefield extent the rest of the Atlas uses — wired here
+        // (HUD Start, and again on every phase switch, since a switch
+        // spawns a fresh BattleDirector/terrain) from the loaded battle,
+        // exactly where the camera is bootstrapped. Both orbit and
+        // director tolerate being null (fixture rigs, EditMode-adjacent
+        // PlayMode tests) — the camera then simply has no terrain
+        // awareness, matching pre-slice behavior.
+        void WireOrbitTerrainAwareness()
+        {
+            if (orbit == null || director == null || director.terrain == null
+                || director.terrain.terrainData == null)
+                return;
+            orbit.heightSampler = director.GroundHeightAt;
+            Vector3 origin = director.terrain.transform.position;
+            Vector3 size = director.terrain.terrainData.size;
+            orbit.boundsMinXZ = new Vector2(origin.x, origin.z);
+            orbit.boundsMaxXZ = new Vector2(origin.x + size.x, origin.z + size.z);
         }
 
         // True while the wired viewpoints address the loaded phase — the
@@ -687,6 +709,7 @@ namespace BattleAtlas
         // Soldier View gate.
         void RefreshAfterSwitch(string battleAsset)
         {
+            WireOrbitTerrainAwareness(); // the switch spawned a fresh director/terrain
             moments = LoadMoments(battleAsset);
             BuildMomentMarkers();
             lastEndTime = int.MinValue; // LayoutTimeline re-lays-out next frame
