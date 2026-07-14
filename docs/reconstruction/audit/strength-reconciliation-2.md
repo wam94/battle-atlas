@@ -409,7 +409,60 @@ before/after pair, §2.2), `daniel-before-t{0,10800}.png` /
 `daniel-after-t{0,10800}.png` (default-camera, non-diagnostic, kept for
 completeness), and the prepare/build/run logs.
 
-## 12. Owner questions
+## 12. Post-merge re-verification (main moved under this branch)
+
+Per the task's collision note: `retrograde-facing` (facing-value
+regeneration, manifest-driven, across the reconstructed phases — 8 legs
+in `gettysburg-july3-morning.json`: Steuart/Daniel/O'Neal withdrawals,
+Candy's return, the 2nd MA/27th IN charge recalls) and `map-furniture`
+(roads/streams/town/railroad) both merged to `origin/main` while this
+pass was in flight. Merged `origin/main` into this branch
+(`9f84118`). Collision resolution:
+
+- `gettysburg-july3-morning.json` / `gettysburg-july3.json`: **auto-
+  merged cleanly** — `retrograde-facing`'s 8 facing-only edits and this
+  pass's strength/position/citation edits touch disjoint keyframes (its
+  Daniel edit is `t=19800`'s facing; this pass's Daniel edits are the
+  afternoon file's `t=0`/`t=10800`, a different file and different
+  keyframes entirely; its `csa-smith` was untouched by `retrograde-
+  facing`). No manual resolution needed.
+- `app/Assets/Battle/Angle/angle.bundle.json` / `docs/reconstruction/
+  angle-bundle-audit.md`: **conflicted** (both branches recompiled the
+  bundle independently) — resolved BY REGENERATION per the established
+  precedent (`decomposition-wave-1`/`strength-reconciliation-1`'s own
+  collision doctrine): `uv run python scripts/compile_angle.py` re-run
+  fresh against the merged source tree. `stagingSeed` re-verified HELD
+  (`d470c4691d0de414534c4ecce93efd3a2fac74373d472899af8465df7e2f7ac1`).
+
+Re-verified after the merge, all clean:
+
+- **Angle-cast unit byte identity**: re-checked against the NEW
+  `origin/main` tip (`c712ad7`) — still MATCH, sha256
+  `6690091a19dcf7e27ddb63fcbd3d65052ce2593b7597d9c265416a730503a3cb`.
+- **`csa-daniel`/`csa-smith` values survived the merge intact**:
+  `csa-daniel` morning-end still `(4900,5990,facing 140,strength 1378)`;
+  afternoon `t=0`/`t=10800` still the authored transition; `csa-smith`
+  still `660` at every keyframe in both files.
+- **Master table / overlay** regenerated again on the merged tree:
+  `build_unit_audit.py` (unchanged row/column counts vs this pass's own
+  run, §7 — the merge's own files carry no strength/composition change
+  this table tracks), `gen-command-overlay.py` (214 mapped, 0 unmapped,
+  byte-identical, no diff).
+- **Suites, re-run on the merged tree** (new floor after the merge —
+  `retrograde-facing`/`map-furniture` each added tests of their own):
+
+  | Suite | Post-merge floor | This wave (post-merge) |
+  |---|---|---|
+  | tool vitest | 119 | **119 passed, 0 failed** |
+  | pipeline pytest | 59 | **59 passed** |
+  | reconstruction pytest | 132 (retrograde-facing) + map-furniture's own additions | **148 passed, 1 skipped** |
+  | Unity EditMode | 405+4 (pre-merge) + map-furniture's additions | **429 passed, 0 failed, 4 skipped** |
+  | Unity PlayMode | 21 | **21 passed, 0 failed, 0 skipped** |
+
+  No sibling Unity process on the machine during any post-merge run
+  (checked via `ps aux` immediately before each invocation).
+
+## 13. Owner questions
 
 1. **`csa-oneal`'s thin EC6** (§3) is now flagged at its SECOND file
    boundary (July 1→2 in `strength-reconciliation-1`, July-3-morning→
