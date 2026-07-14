@@ -1,0 +1,14 @@
+{
+  "unity": "6000.4.11f1",
+  "development": true,
+  "screen": "1440x900",
+  "clockStartTime": 46800,
+  "clockEndTime": 18000,
+  "samples": [
+    {"t": 0, "screenshot": "retrofacing-july1pm-t0.png", "frames": 598, "avgFps": 59.8, "p95FrameMs": 17.00, "worstFrameMs": 21.17, "allocatedMB": 321.0, "reservedMB": 442.8},
+    {"t": 6300, "screenshot": "retrofacing-july1pm-t6300.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.11, "worstFrameMs": 22.63, "allocatedMB": 321.1, "reservedMB": 442.8},
+    {"t": 9600, "screenshot": "retrofacing-july1pm-t9600.png", "frames": 597, "avgFps": 59.6, "p95FrameMs": 17.17, "worstFrameMs": 25.54, "allocatedMB": 322.1, "reservedMB": 442.8},
+    {"t": 12600, "screenshot": "retrofacing-july1pm-t12600.png", "frames": 597, "avgFps": 59.6, "p95FrameMs": 17.25, "worstFrameMs": 22.95, "allocatedMB": 323.9, "reservedMB": 448.8},
+    {"t": 18000, "screenshot": "retrofacing-july1pm-t18000.png", "frames": 594, "avgFps": 59.3, "p95FrameMs": 17.18, "worstFrameMs": 82.37, "allocatedMB": 323.9, "reservedMB": 448.8}
+  ]
+}
