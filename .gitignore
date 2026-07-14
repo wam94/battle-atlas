@@ -3,6 +3,9 @@ data/*
 !data/landcover/
 data/landcover/*
 !data/landcover/landcover.json
+!data/map-furniture/
+data/map-furniture/*
+!data/map-furniture/map-furniture.json
 pipeline/.venv/
 __pycache__/
 .pytest_cache/
