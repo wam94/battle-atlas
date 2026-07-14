@@ -51,15 +51,24 @@ Usage:
 import argparse
 import json
 import math
+import os
 import sys
 
-FILES = [
-    "gettysburg-july1-morning.json",
-    "gettysburg-july1-afternoon.json",
-    "gettysburg-july2-afternoon.json",
-    "gettysburg-july2-evening.json",
-    "gettysburg-july3.json",
-]
+MANIFEST = "app/Assets/StreamingAssets/Atlas/battle-manifest.json"
+
+
+def manifest_files(repo_root):
+    # Manifest-driven so new phases can't silently escape the scan (the
+    # july3-morning phase landed in a parallel slice and a hardcoded list
+    # missed it). Order follows the manifest's day/phase order.
+    with open(os.path.join(repo_root, MANIFEST)) as f:
+        manifest = json.load(f)
+    return [
+        phase["battle"]
+        for day in manifest["days"]
+        for phase in day["phases"]
+        if phase.get("status") == "reconstructed"
+    ]
 
 # (earlier_file, later_file) pairs where a unit's facing carries across the
 # file boundary — see module docstring for why only these two.
@@ -141,16 +150,17 @@ def main():
     args = ap.parse_args()
 
     battle_dir = f"{args.repo_root}/app/Assets/Battle"
+    files = manifest_files(args.repo_root)
     data_by_file = {}
-    for fname in FILES:
+    for fname in files:
         with open(f"{battle_dir}/{fname}", encoding="utf-8") as f:
             data_by_file[fname] = json.load(f)
 
-    results = {f: {"converted": [], "boundary": [], "preserved": [], "deferred": [], "noop": []} for f in FILES}
+    results = {f: {"converted": [], "boundary": [], "preserved": [], "deferred": [], "noop": []} for f in files}
     last_state = {}  # unit_id -> (facing, x, z), corrected, after the previous file
     prev_fname = None
 
-    for fname in FILES:
+    for fname in files:
         data = data_by_file[fname]
         this_file_final = {}  # unit_id -> (facing, x, z) after this file, for the next boundary
 
@@ -219,12 +229,12 @@ def main():
         prev_fname = fname
 
     if args.write:
-        for fname in FILES:
+        for fname in files:
             with open(f"{battle_dir}/{fname}", "w", encoding="utf-8") as f:
                 f.write(json.dumps(data_by_file[fname], indent=2, ensure_ascii=False))
 
     totals = {k: 0 for k in ("converted", "boundary", "preserved", "deferred", "noop")}
-    for fname in FILES:
+    for fname in files:
         r = results[fname]
         print(f"=== {fname} ===")
         print(f"  boundary-propagated (kf0 inherits prior file's corrected end): {len(r['boundary'])}")

@@ -49,9 +49,10 @@ ALLOWED_LARGE_DELTA_LEGS = {
 
 
 def moving_legs():
-    """Yield (fname, unit_id, kf_a, kf_b) for every leg across the five
-    battle files where the unit's position actually changes."""
-    for fname in fx.FILES:
+    """Yield (fname, unit_id, kf_a, kf_b) for every leg across all
+    manifest-reconstructed battle files where the unit's position
+    actually changes."""
+    for fname in fx.manifest_files(str(REPO)):
         data = json.loads((BATTLE_DIR / fname).read_text(encoding="utf-8"))
         for u in data["units"]:
             kfs = u["keyframes"]
