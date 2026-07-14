@@ -1,0 +1,11 @@
+{
+  "unity": "6000.4.11f1",
+  "development": true,
+  "screen": "1600x1000",
+  "clockStartTime": 46800,
+  "clockEndTime": 23340,
+  "samples": [
+    {"t": 0, "screenshot": "daniel-before-t0.png", "frames": 597, "avgFps": 59.6, "p95FrameMs": 17.34, "worstFrameMs": 26.98, "allocatedMB": 322.9, "reservedMB": 442.8},
+    {"t": 10800, "screenshot": "daniel-before-t10800.png", "frames": 596, "avgFps": 59.6, "p95FrameMs": 17.44, "worstFrameMs": 20.88, "allocatedMB": 322.9, "reservedMB": 442.8}
+  ]
+}

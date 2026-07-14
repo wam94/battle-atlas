@@ -1,0 +1,11 @@
+{
+  "unity": "6000.4.11f1",
+  "development": true,
+  "screen": "1600x1000",
+  "clockStartTime": 46800,
+  "clockEndTime": 23340,
+  "samples": [
+    {"t": 0, "screenshot": "daniel-after-culp-t0.png", "frames": 595, "avgFps": 59.4, "p95FrameMs": 17.57, "worstFrameMs": 23.10, "allocatedMB": 325.1, "reservedMB": 449.8},
+    {"t": 10800, "screenshot": "daniel-after-culp-t10800.png", "frames": 596, "avgFps": 59.6, "p95FrameMs": 17.34, "worstFrameMs": 21.42, "allocatedMB": 325.1, "reservedMB": 449.8}
+  ]
+}

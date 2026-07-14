@@ -468,14 +468,24 @@ describe("authored July 3 battle", () => {
     const rodes = ["csa-ramseur", "csa-iverson", "csa-doles"];
     const wave5 = [...hood, ...mclaws, ...hill, ...johnson, ...early, ...rodes];
     expect(wave5).toHaveLength(26);
+    // strength-reconciliation-2 (ED-78, owner-confirmed standing scope
+    // 2026-07-14): csa-daniel's t=0 keyframe is now a PROVISIONAL
+    // best-guess (not the file's usual documented tablet reading) — the
+    // one named exception to the blanket "documented t=0" rule below.
     for (const id of wave5) {
       const u = byId(id);
       expect(u, id).toBeDefined();
       expect(u.side, id).toBe("confederate");
       // parent/family rules: none — divisions and corps are not modeled
       expect(u.parent, id).toBeUndefined();
-      // every CSA brigade t=0 keyframe documented-with-citation
-      expect(u.keyframes[0].confidence, id).toBe("documented");
+      // every CSA brigade t=0 keyframe documented-with-citation, except
+      // csa-daniel (ED-78 PROVISIONAL, strength-reconciliation-2)
+      if (id === "csa-daniel") {
+        expect(u.keyframes[0].confidence, id).toBe("inferred");
+        expect(u.keyframes[0].citation, id).toMatch(/ED-78/);
+      } else {
+        expect(u.keyframes[0].confidence, id).toBe("documented");
+      }
       expect(u.keyframes[0].citation?.trim(), id).toBeTruthy();
     }
     // id-collision dodges hold: no bare csa-jones (csa-bn-jones is H.P.
@@ -485,24 +495,45 @@ describe("authored July 3 battle", () => {
     expect(byId("csa-dungan").name).toMatch(/Jones's Brigade/);
     expect(byId("csa-garnett").name).toMatch(/Brig/i);
     expect(byId("csa-lane").regiments).toBeDefined();
-    // JOHNSON'S BLOCK EAST OF ROCK CREEK (the plan's wave assertion): all
-    // seven stand beyond the creek line at the Benner's Hill base — sheet 8
-    // and the division tablet agree exactly
-    for (const id of johnson) {
+    // JOHNSON'S BLOCK EAST OF ROCK CREEK (the plan's wave assertion): the
+    // other six stand beyond the creek line at the Benner's Hill base at
+    // t=0 — sheet 8 and the division tablet agree exactly. csa-daniel
+    // (ED-78 PROVISIONAL, strength-reconciliation-2) now reads its t=0 as
+    // STILL east of the creek per Daniel's own report ("not withdrawn
+    // until between 3 and 4 o'clock in the afternoon") and only reaches
+    // the Benner's Hill base at its t=10800 keyframe — checked separately
+    // below in the daniel-transition block.
+    for (const id of johnson.filter((i) => i !== "csa-daniel")) {
       expect(byId(id).keyframes[0].x, id).toBeGreaterThan(6300);
       // the documented silence: retired 10:30 A.M., held to 10 P.M. — the
       // negative rides every t=0 citation
       expect(byId(id).keyframes[0].citation, id).toMatch(/Retired at 10.30 A. M./);
     }
+    // csa-daniel's own withdrawal transition (ED-78 PROVISIONAL,
+    // strength-reconciliation-2): t=0 east of the creek (x<6300, matching
+    // Daniel's own report, not yet at the Benner's Hill base), t=10800 AT
+    // the Benner's Hill base (x>6300, matching the tablets/Bachelder sheet
+    // 8 — the same reading the other six units carry from t=0).
+    {
+      const dan = byId("csa-daniel").keyframes;
+      expect(dan.map((k: any) => k.t)).toEqual([0, 10800]);
+      expect(dan[0].x, "csa-daniel t0").toBeLessThan(6300);
+      expect(dan[1].x, "csa-daniel t10800").toBeGreaterThan(6300);
+      expect(dan[0].strength).toBe(dan[1].strength); // no further combat, only a reposition
+      expect(dan[1].confidence).toBe("inferred");
+      expect(dan[1].citation).toMatch(/ED-78/);
+    }
     // McLaws's documented negative rides all four of his brigades
     for (const id of mclaws)
       expect(byId(id).keyframes[0].citation, id)
         .toMatch(/severe skirmishing the Division was not engaged/);
-    // the two attested in-window movers actually move; everyone else is a
+    // the attested in-window movers actually move; everyone else is a
     // 2-keyframe static at an identical pose
     // day-expansion slice 1 adds Benning's evening retirement (with the
-    // 15th GA disaster) to the wave-5 movers
-    const movers = ["csa-kershaw", "csa-wright", "csa-benning"];
+    // 15th GA disaster) to the wave-5 movers; strength-reconciliation-2
+    // (ED-78) adds csa-daniel's withdrawal-transition pose change, checked
+    // in the daniel-transition block above
+    const movers = ["csa-kershaw", "csa-wright", "csa-benning", "csa-daniel"];
     for (const id of wave5.filter((i) => !movers.includes(i))) {
       const kfs = byId(id).keyframes;
       expect(kfs, id).toHaveLength(2);
