@@ -1,6 +1,9 @@
 # Map furniture — roads, hydrology, town of Gettysburg, railroad
 
-**Branch:** `map-furniture`. **Gate:** visual — the owner judges the
+**Branch:** `map-furniture`, head `9218f5381bc27fcd1c981a9b6acd9815503b4c59`
+(branched from `origin/main` at `c6f516645507ca91f289fcfa69d19b222ee05c2a`
+— see "Invariants held" for why that fixed SHA, not the live
+`origin/main` ref, is the correct diff base). **Gate:** visual — the owner judges the
 before/after captures. **Owner's ask this slice answers:** roads,
 rivers/streams, and the town of Gettysburg "appropriately built into the
 map" — cartographic layers in the Atlas game view, in the existing map
