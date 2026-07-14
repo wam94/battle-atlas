@@ -1,6 +1,8 @@
 # July 3 morning slice — the Culp's Hill fight, and the Pfanz-gate ED-78 unblock
 
-**Branch:** `july3-morning` (unmerged; owner gate) ·
+**Branch:** `july3-morning` (unmerged; owner gate; content head
+`8e25115` — this SHA-note commit sits one above it, the rts-camera
+report convention) ·
 **Script:** `tool/scripts/author-july3-morning.ts` (committed deterministic
 derivation record, the `author-w*`/A1/A2/dayexp*/decomp1 pattern) ·
 **ADR:** 0005 (exercised, not amended) · 2026-07-13/14
