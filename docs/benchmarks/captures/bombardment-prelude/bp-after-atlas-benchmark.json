@@ -1,0 +1,12 @@
+{
+  "unity": "6000.4.11f1",
+  "development": true,
+  "screen": "1600x1000",
+  "clockStartTime": 46800,
+  "clockEndTime": 23340,
+  "samples": [
+    {"t": 7500, "screenshot": "bp-after-atlas-t7500.png", "frames": 597, "avgFps": 59.6, "p95FrameMs": 17.20, "worstFrameMs": 30.28, "allocatedMB": 323.1, "reservedMB": 443.8},
+    {"t": 7800, "screenshot": "bp-after-atlas-t7800.png", "frames": 597, "avgFps": 59.6, "p95FrameMs": 17.31, "worstFrameMs": 22.64, "allocatedMB": 323.1, "reservedMB": 443.8},
+    {"t": 8100, "screenshot": "bp-after-atlas-t8100.png", "frames": 597, "avgFps": 59.6, "p95FrameMs": 17.30, "worstFrameMs": 22.82, "allocatedMB": 323.1, "reservedMB": 443.8}
+  ]
+}
