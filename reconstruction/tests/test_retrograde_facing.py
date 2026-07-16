@@ -4,7 +4,7 @@ falling back must not spin to face its direction of travel — it holds its
 prior combat facing and moves retrograde, unless an about-face/countermarch
 is attested, or the flight itself is attested (a rout is not a formed
 retirement: men turn and run, and the authored travel-bearing facing is the
-historically correct depiction — proposed ED-79, the rout/dissolution
+historically correct depiction — ED-79 (ADOPTED), the rout/dissolution
 exemption; docs/reconstruction/audit/angle-facing-adjudication.md), or the
 unit is one of the 13 Angle-cast units in gettysburg-july3.json
 (film-safety pinned regardless of classification).
@@ -36,8 +36,8 @@ RAW_DELTA_GUARD_DEG = 150.0
 # Every leg in the committed corpus whose raw facing swing exceeds
 # RAW_DELTA_GUARD_DEG, and why it's not a spin-defect regression:
 #   - the 4 Angle-cast repulse legs: ADJUDICATED ATTESTED-FLIGHT under the
-#     proposed ED-79 rout/dissolution exemption (per-leg dispositions:
-#     proposed ED-80; docs/reconstruction/audit/angle-facing-adjudication.md)
+#     ED-79 rout/dissolution exemption, ADOPTED (per-leg dispositions:
+#     ED-80, ADOPTED; docs/reconstruction/audit/angle-facing-adjudication.md)
 #     — each leg runs formation scattered->routed, its withdrawal is
 #     dissolution-class in the unit's own dossier (Peyton's OR: "came off
 #     slowly, but greatly scattered, the identity of every regiment being
@@ -50,10 +50,10 @@ RAW_DELTA_GUARD_DEG = 150.0
 #   - us-16vt: attested about-face ("change of front to the rear", Veazey's
 #     OR report) — see fix_retrograde_facing.ATTESTED_ABOUT_FACE_LEGS.
 ALLOWED_LARGE_DELTA_LEGS = {
-    ("csa-garnett", "gettysburg-july3.json", 8700, 9000): "ATTESTED-FLIGHT, proposed ED-79/ED-80 (angle-facing-adjudication.md) — scattered->routed dissolution (peyton-or-1863); Angle-cast pinned",
-    ("csa-kemper", "gettysburg-july3.json", 8700, 9000): "ATTESTED-FLIGHT, proposed ED-79/ED-80 (angle-facing-adjudication.md) — scattered->routed dissolution (division record); Angle-cast pinned",
-    ("csa-armistead", "gettysburg-july3.json", 8700, 9000): "ATTESTED-FLIGHT, proposed ED-79/ED-80 (angle-facing-adjudication.md) — scattered->routed dissolution (ED-8; '643 missing never marched back'); Angle-cast pinned",
-    ("csa-fry", "gettysburg-july3.json", 8700, 9000): "ATTESTED-FLIGHT, proposed ED-79/ED-80 (angle-facing-adjudication.md) — scattered->routed dissolution (or-27-2-shepard: 'a hopeless case, and fell back'); Angle-cast pinned",
+    ("csa-garnett", "gettysburg-july3.json", 8700, 9000): "ATTESTED-FLIGHT, ED-79/ED-80 (angle-facing-adjudication.md) — scattered->routed dissolution (peyton-or-1863); Angle-cast pinned",
+    ("csa-kemper", "gettysburg-july3.json", 8700, 9000): "ATTESTED-FLIGHT, ED-79/ED-80 (angle-facing-adjudication.md) — scattered->routed dissolution (division record); Angle-cast pinned",
+    ("csa-armistead", "gettysburg-july3.json", 8700, 9000): "ATTESTED-FLIGHT, ED-79/ED-80 (angle-facing-adjudication.md) — scattered->routed dissolution (ED-8; '643 missing never marched back'); Angle-cast pinned",
+    ("csa-fry", "gettysburg-july3.json", 8700, 9000): "ATTESTED-FLIGHT, ED-79/ED-80 (angle-facing-adjudication.md) — scattered->routed dissolution (or-27-2-shepard: 'a hopeless case, and fell back'); Angle-cast pinned",
     ("us-16vt", "gettysburg-july3.json", 8700, 9900): "attested about-face — change of front to the rear",
 }
 

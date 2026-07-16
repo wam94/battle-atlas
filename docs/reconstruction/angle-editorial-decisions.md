@@ -2124,6 +2124,54 @@ of that pass's task brief) — see
 
 ---
 
+### ED-79 and ED-80 — ADOPTED (owner ratification, 2026-07-15: "you are good to go" on the adjudication)
+
+Adjudicated in docs/reconstruction/audit/angle-facing-adjudication.md; ratified verbatim.
+
+### ED-79 — The rout/dissolution exemption to the retrograde-facing convention
+
+The retrograde-facing owner ruling (2026-07-13, `retrograde-facing.md`)
+governs **formed units** retiring under fire: they hold their combat facing
+and move retrograde. It does not govern **attested flight**: where a leg's
+formation state is `scattered` or `routed` (or its segment action is
+`fall_back`/rout-class with a dissolution-class dossier record), the men
+attestedly turned and ran, and facing = direction of travel is the correct
+depiction. Concretely:
+
+1. A moving leg whose start AND end formations are both in
+   {`scattered`, `routed`} is exempt from the hold-facing convention when
+   the unit's dossier/citations attest dissolution-class withdrawal.
+2. The exemption is per-leg and evidence-backed — it never applies to a
+   `line`/`column`/`line_disordered` leg, and a rout exemption must cite
+   the attestation (OR report, dossier EC-4 entry, or ED).
+3. The map grammar already encodes the distinction (chevron and solid
+   borders for ordered formations only); no renderer change is implied.
+4. `fix_retrograde_facing.py` needs no code change for the current corpus
+   (its five-file rewrite already ran; the only legs it would have wrongly
+   converted are the four film-pinned ones it was forbidden to touch). Any
+   FUTURE deterministic re-run over new authoring must incorporate rule 1
+   before converting rout-class legs.
+
+### ED-80 — Dispositions for the six deferred Angle-cast legs
+
+1. `csa-garnett`/`csa-kemper`/`csa-armistead`/`csa-fry` t=8700→9000:
+   **ATTESTED-FLIGHT under ED-79 — authored facing stands, permanently.**
+   `retrograde-facing.md` §4's standing recommendation (apply the
+   formed-unit hold "whenever the owner authorizes an Angle-cast
+   re-cast/recompile wave") is WITHDRAWN — the mooted fix would contradict
+   Peyton's/Shepard's reports, the dossiers' dissolution-class records,
+   ED-8, and the shipped film's own repulse footage (t=8700–8820).
+2. `us-stannard` t=8400→9600 and t=10200→10800: **ATTESTED-MANEUVER** —
+   cited change-of-front/return facings stand (the `us-13vt`/`us-16vt`
+   precedent, CA-J3A-8/9).
+3. The film-safety pin on the 13 Angle-cast units' keyframes is unchanged
+   and stays in force (sha256 `69163017…`); nothing in this ED authorizes
+   touching them.
+4. `test_retrograde_facing.py`'s `ALLOWED_LARGE_DELTA_LEGS` annotations now
+   cite ED-79/ED-80 (this wave, comment/annotation-only): the four entries
+   are doctrine (correct depictions), not TODOs awaiting a fix.
+
+
 ## Connective-reconstruction rules (named inference rules)
 
 Segments cite these rules by name in `inferenceRules`. A segment with no
