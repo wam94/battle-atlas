@@ -149,7 +149,22 @@ NOT-A-RECONSTRUCTION demo bundle; regenerable byte-identically):
 - `iv-660*-prone-fight-{fp,c3p}-{before,after}.png` — the Iverson
   window at t≈6600 from the film's own observer (slot 184, FP + C3P):
   BEFORE (fire_independent, the fight standing — the disclosed gap)
-  vs AFTER (the left three regiments fighting prone).
+  vs AFTER (the left three regiments fighting prone). The observer's
+  own 12th NC stands in both — correct: it does not carry the claim.
+- `iv-6600-23nc-line-{before,after}.png` — the legible pair: a
+  documentary flank still down the 23rd NC's line (presentation-only
+  camera; staged states untouched). Before: the line stands. After:
+  the line is down and firing from the ground — inside the dense
+  ground-level powder bank its own prone muzzles build (the §10
+  smoke-ceiling owner-tunable from the design gate applies with
+  extra force at a 0.35 m muzzle height).
+- Clip sweep: `docs/benchmarks/captures/p6-gate/clip-sweep/
+  sweep_csa_a_{Go_Prone,Prone_Idle,Fight_Prone_Fire,
+  Fight_Prone_Reload,Rise_From_Prone,Prone_Hit_Settle}_*.png` — one
+  mid-phase frame per new clip committed (full 26-clip × 4-phase sweep
+  regenerable via `ReloadStageDiag.RenderClipSweep`); no skin
+  poke-through (the P6 defect-1 mask carries over — garment coverage
+  is body-face deletion, pose-independent).
 - `fight-prone-gate-report.json` — machine evidence: bitwise scrub
   probes + pixel tolerances (Phase 8 envelope), timing.
 - `fight-prone-demo.bundle.json` + `fight-prone-media.sha256`.
@@ -169,8 +184,8 @@ Measured results: §7.
 | tool | **119** (119) |
 | pipeline | **66** (66) |
 | reconstruction | **159 + 1 skip** (158+1; +1 new wiring test) |
-| Unity EditMode | **§7** (436+1 skip floor; +13 new tests) |
-| Unity PlayMode | **§7** (20+1 skip) |
+| Unity EditMode | **448 + 1 skip of 449** (floor 436+1 of 437; +12 new tests; the 1 skip is the terrain-material self-skip, and the Angle-bake-conditional environment tests RAN — the bake was regenerated in the worktree) |
+| Unity PlayMode | **20 + 1 skip of 21** (floor; the skip is the production-media-conditional seek test) |
 
 Unity CLI: `-batchmode -runTests -buildTarget OSXUniversal`, worktree
 Library, no `-nographics`; Angle + Oak Ridge crops and environment
@@ -192,9 +207,31 @@ bakes regenerated in the worktree; dev proxy regenerated for PlayMode.
   scrub/digest suites run against the committed Angle bundle and
   pass unchanged).
 
-## 7. Measured results
+## 7. Measured results (Apple M4 24 GB, Unity 6000.4.11f1, offline HDRP profile)
 
-FILLED AT EVIDENCE TIME — see below.
+From `fight-prone-gate-report.json` + the encode log:
+
+- **Demo staging:** 280 slots, bundle `10ddc15c34d1…`, seed
+  `fight-prone-demo-seed/1`.
+- **Sequence:** 900 frames at 2560×1440, **0.40 s/frame**.
+- **Scrub probes (frames 150/450, re-posed out of order):** logical
+  280-slot state **bitwise identical 2/2**; re-rendered pixels
+  1.64% / 0.89% differing at max channel delta 7 / 8 — well inside the
+  documented Phase 8 envelope (12 / 8%).
+- **Media:** `fight-prone-30s-1440p.mp4`
+  `58c235b09806e7e89e78459f9def24d57e84f723b225c512fd6bd1ef16511c5f`
+  (+720p proxy; libx264 slow CRF 18, GOP 30 — the media-contract
+  settings; frame-count-verified before encode; hashes in
+  `fight-prone-media.sha256`).
+- **Iverson before/after stills:** staged from the real bundle
+  (3,589 slots) — BEFORE from the pre-slice bundle
+  (`1e2e802f4eca…`, fight standing), AFTER from the regenerated
+  bundle (`2f15dd2f4e5e…`, left three regiments prone); same
+  viewpoint/observer machinery as the design-gate proofs, plus a
+  documentary flank still of the 23rd NC's line in both states.
+- **Blender kit rebuild:** all 6 variants × 26 clips, headless bpy
+  4.5.11 + MPFB 2.0.16 (`setup_toolchain.sh` unchanged); previews
+  iterated four rounds against a ground plane before the FBX bake.
 
 ## 8. Residuals (disclosed, not hidden)
 

@@ -340,6 +340,47 @@ namespace BattleAtlas.EditorTools
                     File.WriteAllBytes(p, tex.EncodeToPNG());
                     Debug.Log($"FightProneGateRender: wrote {p}");
                 }
+
+                // documentary flank still of the 23rd NC's line (the
+                // regiment the observer sees down-line frame-left): the
+                // before/after comparison must show the LINE, not the
+                // standing 12th around the camera. Presentation-only
+                // camera placement; the staged states are untouched.
+                {
+                    scene.hiddenUnitIndex = -1;
+                    scene.hiddenSlot = -1;
+                    scene.lensGuardRadiusM = 0f;
+                    var line = scene.ctx.Unit("csa-23nc");
+                    float t = 6600f;
+                    Vector2 center = line.unit.PositionAt(t);
+                    float facing = line.unit.FacingAt(t) * Mathf.Deg2Rad;
+                    var fwd = new Vector2(Mathf.Sin(facing), Mathf.Cos(facing));
+                    var left = new Vector2(-fwd.y, fwd.x);
+                    Vector2 camPos = center
+                        + left * (FormationRoster.Frontage(line.slotCount) / 2f + 9f)
+                        - fwd * 2f;
+                    Vector2 lookAt = center + fwd * 8f;
+                    var cam = scene.camera;
+                    var terrain = scene.terrain;
+                    float gy = terrain.transform.position.y + terrain.SampleHeight(
+                        new Vector3(camPos.x - scene.cropX0, 0f, camPos.y - scene.cropZ0));
+                    var camW = new Vector3(camPos.x - scene.cropX0, gy + 1.66f,
+                        camPos.y - scene.cropZ0);
+                    float ly = terrain.transform.position.y + terrain.SampleHeight(
+                        new Vector3(lookAt.x - scene.cropX0, 0f, lookAt.y - scene.cropZ0));
+                    var lookW = new Vector3(lookAt.x - scene.cropX0, ly + 0.9f,
+                        lookAt.y - scene.cropZ0);
+                    cam.transform.position = camW;
+                    cam.transform.rotation = Quaternion.LookRotation(
+                        lookW - camW, Vector3.up);
+                    cam.fieldOfView = 55f;
+                    scene.Pose(t);
+                    GateP6Render.RenderOnce(scene.camera, rt, null);
+                    GateP6Render.RenderOnce(scene.camera, rt, tex);
+                    string p = Path.Combine(OutDir, $"iv-6600-23nc-line-{tag}.png");
+                    File.WriteAllBytes(p, tex.EncodeToPNG());
+                    Debug.Log($"FightProneGateRender: wrote {p}");
+                }
             }
             finally
             {
