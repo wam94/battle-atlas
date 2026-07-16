@@ -201,6 +201,11 @@ geometry error at the same LMT; disclosed as EDI-7).
    Follow-up: a `fight_prone` action + prone aim/fire/reload clips —
    the single highest-value fidelity item for this film
    (claim-iv-lying-down carries the disclosure).
+   **STATUS: CLOSED by the `fight-prone-vocab` slice** — six prone
+   clips, the resolver's `fight_prone` action class, and the compiler
+   wiring (segments carrying claim-iv-lying-down compile to
+   `fight_prone`; the left three regiments fight prone, the 12th NC
+   stands). Evidence: `docs/reconstruction/fight-prone-vocab.md`.
 2. **The surrender.** The 308-man capture mass, the white
    handkerchiefs from a lying line — no `surrender` action, no
    hands-up/kneel-captive clips, and no captor choreography exist.
