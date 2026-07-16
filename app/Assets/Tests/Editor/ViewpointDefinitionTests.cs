@@ -13,8 +13,9 @@ public class ViewpointDefinitionTests
     {
         var set = ViewpointSet.FromJson(File.ReadAllText(CommittedJsonPath));
         // Phase 9: the required hero viewpoint (plan §3.4) joins the
-        // Phase 1 dev fixture.
-        Assert.AreEqual(2, set.viewpoints.Length);
+        // Phase 1 dev fixture. The Iverson's-field design-stage viewpoint
+        // (second film) is third.
+        Assert.AreEqual(3, set.viewpoints.Length);
 
         var hero = set.viewpoints[0];
         Assert.AreEqual("garnett-road-to-angle", hero.id);
@@ -41,6 +42,19 @@ public class ViewpointDefinitionTests
         Assert.IsFalse(vp.media.HasFull, "dev viewpoint has no full media yet");
         Assert.AreEqual(30f, vp.media.fps);
         Assert.IsNull(vp.Validate());
+
+        // The second film's design-stage viewpoint (Iverson's field).
+        // NOTE its t0/t1 ride the July 1 AFTERNOON phase clock (startTime
+        // 46800), not the July 3 clock — see its editorialNote.
+        var iv = set.viewpoints[2];
+        Assert.AreEqual("iverson-forney-field", iv.id);
+        Assert.AreEqual("csa-12nc", iv.unitId);
+        Assert.AreEqual(184, iv.slotId);
+        Assert.AreEqual(5830.0, iv.t0, 1e-9);
+        Assert.AreEqual(7040.0, iv.t1, 1e-9);
+        Assert.AreEqual(1.66f, iv.camera.eyeHeightM);
+        StringAssert.Contains("Representative unnamed soldier", iv.editorialNote);
+        Assert.IsNull(iv.Validate());
     }
 
     [Test]

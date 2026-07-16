@@ -48,6 +48,19 @@ either file must keep them consistent.
 > but they were not good. His survival is a choice we made so you could
 > see — not a claim about what happened to anyone.
 
+## The second film (Iverson's field — DRAFT, owner gate pending)
+
+The `iverson-forney-field` viewpoint (July 1, the destruction of
+Iverson's brigade — the corpus's most concentrated killing) has its own
+warning and representative-observer texts, drafted in
+`iverson-viewpoint-design.md` §7 and pending the owner gate. They ship
+beside (not replacing) the Angle texts; `content-warning.json` gains a
+per-viewpoint entry when that film's production slice is authorized.
+The Iverson observer note carries two additional disclosures the record
+forces: the observer's regiment (12th NC) is the DOCUMENTED survivor
+population, and the film ends before the surrender because the current
+vocabulary cannot yet represent it honestly.
+
 ## Presentation requirements (Phase 11)
 
 - The warning appears before the FIRST entry into any Soldier View

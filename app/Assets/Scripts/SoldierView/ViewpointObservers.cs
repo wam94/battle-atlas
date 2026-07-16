@@ -41,6 +41,15 @@ namespace BattleAtlas
                 // shows an empty road in first person; from the rear rank
                 // the whole front rank reads 1.3 m ahead)
                 { "csa-garnett", new[] { 881 } },
+                // iverson-forney-field (second film, design stage): slot
+                // 184 = rear rank of file 24 in the 12th North Carolina
+                // (319 slots -> 160 files) — the P9 rear-rank lesson
+                // applied; 28 m in from the regiment's left flank so the
+                // left three regiments' destruction plays out down-line
+                // in frame-left. The 12th NC is the documented survivor
+                // regiment, so the ED-22 exemption coincides with a real
+                // survival population (see the viewpoint's editorialNote).
+                { "csa-12nc", new[] { 184 } },
             };
 
         public static bool IsProtected(string unitId, int slot)
