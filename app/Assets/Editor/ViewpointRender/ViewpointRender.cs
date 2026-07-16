@@ -167,9 +167,9 @@ namespace BattleAtlas.EditorTools
                 sb.Append(string.Format(Inv,
                     "\n    {{\"t\": {0}, \"x\": {1:F2}, \"z\": {2:F2}, " +
                     "\"facingDeg\": {3:F1}, \"clip\": \"{4}\", " +
-                    "\"camHeadingDeg\": {5:F1}, \"chaos\": {6:F3}}}",
+                    "\"camHeadingDeg\": {5:F1}, \"chaos\": {6}}}",
                     t, st.posX, st.posZ, st.facingDeg, st.clip,
-                    pose.headingDeg, pose.chaos01));
+                    pose.headingDeg, pose.chaos01.ToString("F3", Inv)));
             }
             sb.Append("\n  ]\n}\n");
             Directory.CreateDirectory(EvidenceDir(vpId));

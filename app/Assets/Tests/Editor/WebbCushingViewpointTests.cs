@@ -16,8 +16,8 @@ using BattleAtlas;
 public class WebbCushingViewpointTests
 {
     const string Seed = "webb-cushing-test-seed";
-    static AngleBundleData bundle;
-    static AngleBundleData Bundle => bundle ??= AngleBundleLoader.Load();
+    static AngleBundle bundle;
+    static AngleBundle Bundle => bundle ??= AngleBundleLoader.Load();
 
     static ViewpointDefinition Load(string id)
     {

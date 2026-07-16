@@ -1,0 +1,23 @@
+{
+  "viewpoint": "cushing-canister",
+  "unitId": "us-btty-cushing", "slotId": 44,
+  "slotCount": 97,
+  "seed": "d470c4691d0de414534c4ecce93efd3a2fac74373d472899af8465df7e2f7ac1",
+  "bundleChecksum": "47c6f1832243307dc4b5eaac34032b16a315320229524dc887720ba382370d9b",
+  "observerFallT": null,
+  "samples": [
+    {"t": 8400, "x": 4405.21, "z": 4871.81, "facingDeg": 265.0, "clip": "KneelReady", "camHeadingDeg": -95.2, "chaos": 0.000},
+    {"t": 8430, "x": 4405.21, "z": 4871.81, "facingDeg": 265.0, "clip": "KneelReady", "camHeadingDeg": -95.0, "chaos": 0.000},
+    {"t": 8460, "x": 4405.21, "z": 4871.81, "facingDeg": 265.0, "clip": "Brace", "camHeadingDeg": -95.1, "chaos": 0.000},
+    {"t": 8490, "x": 4405.21, "z": 4871.81, "facingDeg": 265.0, "clip": "KneelReady", "camHeadingDeg": -94.9, "chaos": 0.000},
+    {"t": 8520, "x": 4405.21, "z": 4871.81, "facingDeg": 265.0, "clip": "KneelReady", "camHeadingDeg": -95.2, "chaos": 0.000},
+    {"t": 8550, "x": 4405.21, "z": 4871.81, "facingDeg": 265.0, "clip": "KneelReady", "camHeadingDeg": -95.1, "chaos": 0.000},
+    {"t": 8580, "x": 4405.21, "z": 4871.81, "facingDeg": 265.0, "clip": "KneelReady", "camHeadingDeg": -95.1, "chaos": 0.000},
+    {"t": 8610, "x": 4405.21, "z": 4871.81, "facingDeg": 265.0, "clip": "KneelReady", "camHeadingDeg": -94.9, "chaos": 0.000},
+    {"t": 8640, "x": 4405.21, "z": 4871.81, "facingDeg": 265.0, "clip": "KneelReady", "camHeadingDeg": -95.1, "chaos": 0.000},
+    {"t": 8670, "x": 4405.21, "z": 4871.81, "facingDeg": 265.0, "clip": "KneelReady", "camHeadingDeg": -95.1, "chaos": 0.000},
+    {"t": 8700, "x": 4405.21, "z": 4871.81, "facingDeg": 265.0, "clip": "KneelReady", "camHeadingDeg": -95.0, "chaos": 0.000},
+    {"t": 8730, "x": 4405.21, "z": 4871.81, "facingDeg": 265.0, "clip": "KneelReady", "camHeadingDeg": -95.1, "chaos": 0.000},
+    {"t": 8760, "x": 4405.21, "z": 4871.81, "facingDeg": 265.0, "clip": "KneelReady", "camHeadingDeg": -95.0, "chaos": 0.000}
+  ]
+}

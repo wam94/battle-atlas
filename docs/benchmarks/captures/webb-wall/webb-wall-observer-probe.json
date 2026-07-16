@@ -1,0 +1,33 @@
+{
+  "viewpoint": "webb-wall",
+  "unitId": "us-71pa", "slotId": 230,
+  "slotCount": 313,
+  "seed": "d470c4691d0de414534c4ecce93efd3a2fac74373d472899af8465df7e2f7ac1",
+  "bundleChecksum": "47c6f1832243307dc4b5eaac34032b16a315320229524dc887720ba382370d9b",
+  "observerFallT": null,
+  "samples": [
+    {"t": 8160, "x": 4401.61, "z": 4865.75, "facingDeg": 259.3, "clip": "StandReady", "camHeadingDeg": -100.9, "chaos": 0.000},
+    {"t": 8190, "x": 4401.61, "z": 4865.75, "facingDeg": 259.3, "clip": "StandReady", "camHeadingDeg": -100.8, "chaos": 0.000},
+    {"t": 8220, "x": 4401.61, "z": 4865.75, "facingDeg": 259.3, "clip": "StandReady", "camHeadingDeg": -100.8, "chaos": 0.000},
+    {"t": 8250, "x": 4401.61, "z": 4865.75, "facingDeg": 259.3, "clip": "StandReady", "camHeadingDeg": -100.6, "chaos": 0.000},
+    {"t": 8280, "x": 4401.61, "z": 4865.75, "facingDeg": 259.3, "clip": "StandReady", "camHeadingDeg": -100.5, "chaos": 0.000},
+    {"t": 8310, "x": 4401.61, "z": 4865.75, "facingDeg": 259.3, "clip": "StandReady", "camHeadingDeg": -100.9, "chaos": 0.000},
+    {"t": 8340, "x": 4401.61, "z": 4865.75, "facingDeg": 259.3, "clip": "StandReady", "camHeadingDeg": -100.9, "chaos": 0.000},
+    {"t": 8370, "x": 4401.61, "z": 4865.75, "facingDeg": 259.3, "clip": "StandReady", "camHeadingDeg": -100.6, "chaos": 0.000},
+    {"t": 8400, "x": 4401.61, "z": 4865.75, "facingDeg": 259.3, "clip": "StandReady", "camHeadingDeg": -100.9, "chaos": 0.000},
+    {"t": 8430, "x": 4401.61, "z": 4865.75, "facingDeg": 259.3, "clip": "StandReady", "camHeadingDeg": -100.7, "chaos": 0.000},
+    {"t": 8460, "x": 4401.61, "z": 4865.75, "facingDeg": 259.3, "clip": "StandReady", "camHeadingDeg": -100.8, "chaos": 0.000},
+    {"t": 8490, "x": 4401.61, "z": 4865.75, "facingDeg": 259.3, "clip": "Reload", "camHeadingDeg": -100.5, "chaos": 0.000},
+    {"t": 8520, "x": 4401.61, "z": 4865.75, "facingDeg": 259.3, "clip": "StandReady", "camHeadingDeg": -100.8, "chaos": 0.000},
+    {"t": 8550, "x": 4401.61, "z": 4865.75, "facingDeg": 259.3, "clip": "Reload", "camHeadingDeg": -100.8, "chaos": 0.000},
+    {"t": 8580, "x": 4401.61, "z": 4865.75, "facingDeg": 259.3, "clip": "Waver", "camHeadingDeg": -100.8, "chaos": 0.000},
+    {"t": 8610, "x": 4413.61, "z": 4865.25, "facingDeg": 87.3, "clip": "RouteStep", "camHeadingDeg": 88.8, "chaos": 0.000},
+    {"t": 8640, "x": 4425.61, "z": 4864.75, "facingDeg": 87.3, "clip": "RouteStep", "camHeadingDeg": 87.6, "chaos": 0.009},
+    {"t": 8670, "x": 4437.61, "z": 4864.25, "facingDeg": 87.3, "clip": "RouteStep", "camHeadingDeg": 87.8, "chaos": 0.000},
+    {"t": 8700, "x": 4449.61, "z": 4863.75, "facingDeg": 259.3, "clip": "StandReady", "camHeadingDeg": -131.4, "chaos": 0.000},
+    {"t": 8730, "x": 4445.61, "z": 4863.75, "facingDeg": 259.3, "clip": "StandReady", "camHeadingDeg": -100.9, "chaos": 0.092},
+    {"t": 8760, "x": 4441.61, "z": 4863.75, "facingDeg": 259.3, "clip": "StandReady", "camHeadingDeg": -100.7, "chaos": 0.000},
+    {"t": 8790, "x": 4437.61, "z": 4863.75, "facingDeg": 259.3, "clip": "StandReady", "camHeadingDeg": -100.9, "chaos": 0.000},
+    {"t": 8820, "x": 4433.61, "z": 4863.75, "facingDeg": 259.3, "clip": "StandReady", "camHeadingDeg": -100.7, "chaos": 0.000}
+  ]
+}
