@@ -1,0 +1,11 @@
+{
+  "unity": "6000.4.11f1",
+  "development": true,
+  "screen": "1600x1000",
+  "clockStartTime": 46800,
+  "clockEndTime": 23340,
+  "samples": [
+    {"t": 0, "screenshot": "rdc2-after-colgrove-t0.png", "frames": 599, "avgFps": 59.8, "p95FrameMs": 16.88, "worstFrameMs": 24.93, "allocatedMB": 318.1, "reservedMB": 416.3},
+    {"t": 10800, "screenshot": "rdc2-after-colgrove-t10800.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.33, "worstFrameMs": 19.45, "allocatedMB": 318.1, "reservedMB": 416.3}
+  ]
+}

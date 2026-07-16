@@ -1,0 +1,13 @@
+{
+  "unity": "6000.4.11f1",
+  "development": true,
+  "screen": "1600x1000",
+  "clockStartTime": 55800,
+  "clockEndTime": 14340,
+  "samples": [
+    {"t": 0, "screenshot": "rdc2-before-trostle-t0.png", "frames": 598, "avgFps": 59.7, "p95FrameMs": 17.09, "worstFrameMs": 25.88, "allocatedMB": 317.6, "reservedMB": 423.3},
+    {"t": 12000, "screenshot": "rdc2-before-trostle-t12000.png", "frames": 598, "avgFps": 59.8, "p95FrameMs": 17.00, "worstFrameMs": 22.24, "allocatedMB": 317.8, "reservedMB": 423.3},
+    {"t": 12900, "screenshot": "rdc2-before-trostle-t12900.png", "frames": 599, "avgFps": 59.9, "p95FrameMs": 16.70, "worstFrameMs": 29.81, "allocatedMB": 317.8, "reservedMB": 423.3},
+    {"t": 14340, "screenshot": "rdc2-before-trostle-t14340.png", "frames": 596, "avgFps": 59.6, "p95FrameMs": 17.39, "worstFrameMs": 21.68, "allocatedMB": 317.9, "reservedMB": 423.3}
+  ]
+}
