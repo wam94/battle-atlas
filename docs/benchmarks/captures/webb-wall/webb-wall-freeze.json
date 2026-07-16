@@ -1,0 +1,23 @@
+{
+  "gitSha": "e9c9555be7b01f0005449588afc25996136c7335",
+  "unityVersion": "6000.4.11f1",
+  "pipelineAssetPath": "Assets/Settings/HDRP/BattleAtlasHDRP_Offline.asset",
+  "pipelineAssetSha256": "3aa760a6c990e90ed2590df8874034f2591cd39008b449926276c88f445f7a1d",
+  "packagesLockSha256": "eb6b3a91a59cd90523bd17f0256fba2925916a15819be82cf250783f88028c28",
+  "colorSpace": "Linear",
+  "bundleChecksum": "47c6f1832243307dc4b5eaac34032b16a315320229524dc887720ba382370d9b",
+  "battleSeed": "d470c4691d0de414534c4ecce93efd3a2fac74373d472899af8465df7e2f7ac1",
+  "viewpointId": "webb-wall",
+  "viewKind": "first_person",
+  "slotId": 230,
+  "window": {"t0": 8160, "t1": 8820, "padPastT1": 0.5},
+  "output": {"width": 2560, "height": 1440, "fps": 30},
+  "lensGuardRadiusM": 0.6, "maxWheelFlankSpeedMps": 3,
+  "inputChecksums": {
+    "heightmap.json": "7cee0557e93c0101f3dc16ab2a616d4f02da7b817ae88861a4538acc876e3c8e",
+    "heightmap.raw": "0202e4376f960805b0aee298809084690b4576d1818386d692576eb37427678a",
+    "environment.json": "abc8f52c7f4faedd17b68f860c8adc980dfc3ca9fa95578d3f88ca69f9b2999d",
+    "environment_splat.raw": "5b5b3151e1a6edac66532b4db3dda5de47acec9c77da492de61609d711bdebe5"
+  },
+  "settingsHash": "11e751d0e39ee4aad2e837cc31770782c983b8d2ff609fd6647514ab7c03f3c1"
+}
