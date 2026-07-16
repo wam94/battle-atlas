@@ -915,9 +915,9 @@
     },
     {
       "id": "csa-humphreys",
-      "name": "Barksdale's Brigade, McLaws's Division",
+      "name": "Barksdale's Brigade, McLaws's Division (minus the 21st Mississippi)",
       "side": "confederate",
-      "frontage_m": 230,
+      "frontage_m": 150,
       "depth_m": 20,
       "keyframes": [
         {
@@ -926,9 +926,9 @@
           "z": 3960,
           "facing": 60,
           "formation": "line",
-          "strength": 851,
+          "strength": 554,
           "confidence": "documented",
-          "citation": "Continuity: Barksdale's survivors falling back from Plum Run."
+          "citation": "Continuity: Barksdale's OTHER three regiments' (13th/17th/18th MS) survivors falling back from Plum Run — 851 brigade-wide MINUS the 21st Mississippi's own separately-tracked 297 (own citation, us-21ms) = 554 (ED-76, residuals-decomp-2)."
         },
         {
           "t": 2760,
@@ -936,9 +936,9 @@
           "z": 3830,
           "facing": 60,
           "formation": "line",
-          "strength": 851,
+          "strength": 554,
           "confidence": "documented",
-          "citation": "Re-formed toward the Peach Orchard/Emmitsburg road ground under Humphreys (the brigade's night frame; Barksdale mw left on the field, dying at the Hummelbaugh farm July 3)."
+          "citation": "Re-formed toward the Peach Orchard/Emmitsburg road ground under Humphreys (the brigade's night frame; Barksdale mw left on the field, dying at the Hummelbaugh farm July 3) — these three regiments' own reconsolidation; the 21st Mississippi's own whereabouts after the Trostle capture are this pass's honest gap (own citation, us-21ms)."
         },
         {
           "t": 10860,
@@ -946,9 +946,38 @@
           "z": 3830,
           "facing": 250,
           "formation": "line",
-          "strength": 851,
+          "strength": 554,
           "confidence": "documented",
           "citation": "The night line."
+        }
+      ]
+    },
+    {
+      "id": "csa-21ms",
+      "name": "21st Mississippi (Barksdale's)",
+      "side": "confederate",
+      "frontage_m": 80,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 3617,
+          "z": 3643,
+          "facing": 100,
+          "formation": "line",
+          "strength": 297,
+          "confidence": "documented",
+          "citation": "Continuity: held at the Trostle ground, the afternoon file's own final attested position for this regiment (own citation, us-21ms, that file's t=14340) — no citation attests the 21st Mississippi specifically rejoining the brigade's own night reconsolidation (an honest EC3/EC4 gap, not closed by this pass)."
+        },
+        {
+          "t": 10860,
+          "x": 3617,
+          "z": 3643,
+          "facing": 100,
+          "formation": "line",
+          "strength": 297,
+          "confidence": "documented",
+          "citation": "The night line — same honest gap; no further movement or loss attested for this regiment specifically."
         }
       ]
     },
@@ -3663,9 +3692,9 @@
           "z": 6420,
           "facing": 250,
           "formation": "line",
-          "strength": 660,
+          "strength": 800,
           "confidence": "inferred",
-          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed. STRENGTH RE-DERIVED (residuals-decomp-2, 2026-07-16): carries the afternoon file's own corrected 800 (tablet 'Present about 800', reconstruction/dossiers/csa-2c-ear-2-smith.md EC2, adopted directly — not the post-loss ~660 this placeholder previously carried; see the afternoon file's t=0 citation for the full basis). Refinement note preserved there, not repeated here."
         },
         {
           "t": 10860,
@@ -3673,9 +3702,9 @@
           "z": 6420,
           "facing": 250,
           "formation": "line",
-          "strength": 660,
+          "strength": 800,
           "confidence": "inferred",
-          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed."
+          "citation": "Continuity static (day-expansion slice 2): holds the July 2 afternoon phase file's cited 19:29 end state through the evening window — the position evidence rides that file's keyframes; no independent evening anchor consumed. STRENGTH RE-DERIVED (residuals-decomp-2, 2026-07-16): held flat through the evening window's end — no combat, no documented loss (see the afternoon file's t=0 citation for the full re-derivation basis)."
         }
       ]
     },
