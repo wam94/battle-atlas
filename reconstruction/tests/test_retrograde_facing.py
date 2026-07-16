@@ -1,11 +1,13 @@
 """Regression guard for the retrograde-facing convention (owner ruling,
-2026-07-13; docs/reconstruction/audit/retrograde-facing.md): a unit falling
-back must not spin to face its direction of travel — it holds its prior
-combat facing and moves retrograde, unless an about-face/countermarch is
-attested, or the unit is one of the 13 Angle-cast units in
-gettysburg-july3.json (film-safety pinned; any still-open spin there is a
-deliberately deferred owner-ruling item, not a regression to silently
-re-tolerate).
+2026-07-13; docs/reconstruction/audit/retrograde-facing.md): a FORMED unit
+falling back must not spin to face its direction of travel — it holds its
+prior combat facing and moves retrograde, unless an about-face/countermarch
+is attested, or the flight itself is attested (a rout is not a formed
+retirement: men turn and run, and the authored travel-bearing facing is the
+historically correct depiction — proposed ED-79, the rout/dissolution
+exemption; docs/reconstruction/audit/angle-facing-adjudication.md), or the
+unit is one of the 13 Angle-cast units in gettysburg-july3.json
+(film-safety pinned regardless of classification).
 
 test_no_unattested_facing_reversal_over_150deg is the guard proper: it
 scans every moving leg (position changes by more than
@@ -33,17 +35,25 @@ RAW_DELTA_GUARD_DEG = 150.0
 
 # Every leg in the committed corpus whose raw facing swing exceeds
 # RAW_DELTA_GUARD_DEG, and why it's not a spin-defect regression:
-#   - the 4 Angle-cast pinned legs: FILM-SAFETY TRIPWIRE forbids touching
-#     these keyframes (see fix_retrograde_facing.PINNED_ANGLE_CAST_UNITS /
-#     PINNED_FILE); the spin is real and already deferred to the owner
-#     (retrograde-facing.md §4), not silently reintroduced.
+#   - the 4 Angle-cast repulse legs: ADJUDICATED ATTESTED-FLIGHT under the
+#     proposed ED-79 rout/dissolution exemption (per-leg dispositions:
+#     proposed ED-80; docs/reconstruction/audit/angle-facing-adjudication.md)
+#     — each leg runs formation scattered->routed, its withdrawal is
+#     dissolution-class in the unit's own dossier (Peyton's OR: "came off
+#     slowly, but greatly scattered, the identity of every regiment being
+#     entirely lost"), and the shipped film itself shows the turn
+#     (p10-gate-evidence.md shot list, 8700-8820: "The repulse: the line
+#     turns back"). Not defects deferred for fixing — the authored
+#     travel-bearing facing is the historically correct depiction of a
+#     rout. The keyframes additionally stay film-safety pinned (see
+#     fix_retrograde_facing.PINNED_ANGLE_CAST_UNITS / PINNED_FILE).
 #   - us-16vt: attested about-face ("change of front to the rear", Veazey's
 #     OR report) — see fix_retrograde_facing.ATTESTED_ABOUT_FACE_LEGS.
 ALLOWED_LARGE_DELTA_LEGS = {
-    ("csa-garnett", "gettysburg-july3.json", 8700, 9000): "Angle-cast pinned — deferred to owner (retrograde-facing.md)",
-    ("csa-kemper", "gettysburg-july3.json", 8700, 9000): "Angle-cast pinned — deferred to owner (retrograde-facing.md)",
-    ("csa-armistead", "gettysburg-july3.json", 8700, 9000): "Angle-cast pinned — deferred to owner (retrograde-facing.md)",
-    ("csa-fry", "gettysburg-july3.json", 8700, 9000): "Angle-cast pinned — deferred to owner (retrograde-facing.md)",
+    ("csa-garnett", "gettysburg-july3.json", 8700, 9000): "ATTESTED-FLIGHT, proposed ED-79/ED-80 (angle-facing-adjudication.md) — scattered->routed dissolution (peyton-or-1863); Angle-cast pinned",
+    ("csa-kemper", "gettysburg-july3.json", 8700, 9000): "ATTESTED-FLIGHT, proposed ED-79/ED-80 (angle-facing-adjudication.md) — scattered->routed dissolution (division record); Angle-cast pinned",
+    ("csa-armistead", "gettysburg-july3.json", 8700, 9000): "ATTESTED-FLIGHT, proposed ED-79/ED-80 (angle-facing-adjudication.md) — scattered->routed dissolution (ED-8; '643 missing never marched back'); Angle-cast pinned",
+    ("csa-fry", "gettysburg-july3.json", 8700, 9000): "ATTESTED-FLIGHT, proposed ED-79/ED-80 (angle-facing-adjudication.md) — scattered->routed dissolution (or-27-2-shepard: 'a hopeless case, and fell back'); Angle-cast pinned",
     ("us-16vt", "gettysburg-july3.json", 8700, 9900): "attested about-face — change of front to the rear",
 }
 
