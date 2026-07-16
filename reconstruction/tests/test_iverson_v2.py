@@ -96,9 +96,55 @@ def test_bundle_never_touches_angle_paths():
         ("reconstruction", vi.RECON_PATH), ("landcover", vi.LANDCOVER_PATH),
     ):
         assert "angle" not in path.name, f"{key} must come from July 1 files"
-    # and the staging seed is the proof pin, not the Angle's ED-21 seed
+    # and the staging seed is this film's own pin, not the Angle's ED-21 seed
     assert bundle["stagingSeed"] == compile_iverson.STAGING_SEED
     assert bundle["stagingSeed"] != "d470c4691d0de414534c4ecce93efd3a2fac74373d472899af8465df7e2f7ac1"
+
+
+def test_iverson_viewpoint_declares_its_phase():
+    """Cross-phase entry wiring (production slice): the July 1 film's
+    viewpoint rides the July 1 afternoon clock — its entry marker, timeline
+    band, and entry exist only while that phase is loaded."""
+    doc = json.loads(VIEWPOINTS.read_text())
+    vp = next(v for v in doc["viewpoints"] if v["id"] == "iverson-forney-field")
+    assert vp["battleAsset"] == "gettysburg-july1-afternoon"
+    # the July 3 viewpoints keep the set-home default (no battleAsset)
+    for other in doc["viewpoints"]:
+        if other["id"] != "iverson-forney-field":
+            assert "battleAsset" not in other
+
+
+def test_iverson_content_warning_override_ships():
+    """The design slice's warning text (iverson-viewpoint-design.md §7)
+    ships as a per-viewpoint override beside — never replacing — the Angle
+    warning; same acknowledgment mechanics, its own version."""
+    cw = json.loads((REPO / "app" / "Assets" / "StreamingAssets"
+                     / "SoldierView" / "content-warning.json").read_text())
+    # the default (Angle) warning is untouched
+    assert cw["warning"]["body"].startswith("You are about to watch a "
+                                            "reconstruction of infantry combat at the Angle")
+    ov = next(o for o in cw["viewpointOverrides"]
+              if o["viewpointId"] == "iverson-forney-field")
+    assert ov["version"] >= 1
+    assert "Iverson's North Carolinians" in ov["warning"]["body"]
+    assert "12th North Carolina" in ov["representativeObserver"]["body"]
+    # the film's honest shape: ends before the surrender, disclosed
+    assert "before the surrender" in ov["representativeObserver"]["body"]
+    # the prone-fight gap is CLOSED (fight-prone-vocab) — the shipped text
+    # must not claim the lying-down fight is unshown
+    assert "lying down" not in ov["representativeObserver"]["body"]
+
+
+def test_staging_seed_is_the_ed21_production_pin():
+    """ED-21 production pin (iverson-viewpoint-design.md §8.5): the owner
+    gate passed, and the render seed is re-pinned to the checksum of the
+    bundle the owner reviewed at the gate (the fight-prone merge's
+    2f15dd2f...). Provenance-only recompiles must never re-roll the film;
+    moving this pin is a deliberate editorial decision. Enforced here and
+    in EditMode (IversonBundleTests) like the Angle's d470c469... pin."""
+    bundle = json.loads(BUNDLE.read_text())
+    assert bundle["stagingSeed"] == (
+        "2f15dd2f4e5e399e9899de45e5606a5610309dfad503ff472edf5e2edb09bf43")
 
 
 def test_viewpoint_window_inside_bundle_slice():

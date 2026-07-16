@@ -98,6 +98,14 @@ namespace BattleAtlas
         public static bool ViewpointsApplyTo(string homeAsset, string loadedAsset)
             => string.IsNullOrEmpty(homeAsset) || homeAsset == loadedAsset;
 
+        // A viewpoint's own home asset (Iverson production slice): its
+        // declared battleAsset when authored (a cross-phase film), else the
+        // set's home asset. Feeds ViewpointsApplyTo per viewpoint.
+        public static string ViewpointHomeAsset(
+            ViewpointDefinition vp, string setHomeAsset)
+            => vp != null && !string.IsNullOrEmpty(vp.battleAsset)
+                ? vp.battleAsset : setHomeAsset;
+
         // Eight-point compass word for a bearing in degrees (0 = north).
         public static string CompassWord(float bearingDeg)
         {

@@ -27,6 +27,21 @@ public class IversonBundleTests
     }
 
     [Test]
+    public void Bundle_StagingSeed_IsPinnedAtTheReviewedChecksum()
+    {
+        // ED-21 production pin (iverson-viewpoint-design.md §8.5): the
+        // owner gate passed, and the render seed is re-pinned to the
+        // checksum of the bundle the owner reviewed at the gate (the
+        // fight-prone merge's 2f15dd2f...). Provenance-only recompiles
+        // must never re-roll the film; moving this pin is a deliberate
+        // editorial decision, not a recompile side effect — the same
+        // discipline as the Angle's d470c469... pin.
+        Assert.AreEqual(
+            "2f15dd2f4e5e399e9899de45e5606a5610309dfad503ff472edf5e2edb09bf43",
+            Bundle.stagingSeed);
+    }
+
+    [Test]
     public void RegimentSums_MatchTheBrigadeShape()
     {
         var b = Bundle;

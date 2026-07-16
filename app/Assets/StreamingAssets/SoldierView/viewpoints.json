@@ -11,7 +11,10 @@
       "camera": {
         "eyeHeightM": 1.66,
         "fovDeg": 68,
-        "lookOffsetDeg": [0, 0],
+        "lookOffsetDeg": [
+          0,
+          0
+        ],
         "stabilization": 0.35
       },
       "media": {
@@ -44,7 +47,10 @@
       "camera": {
         "eyeHeightM": 1.66,
         "fovDeg": 68,
-        "lookOffsetDeg": [0, 0],
+        "lookOffsetDeg": [
+          0,
+          0
+        ],
         "stabilization": 0.0
       },
       "media": {
@@ -64,12 +70,16 @@
       "unitId": "csa-12nc",
       "slotId": 184,
       "viewKind": "first_person",
+      "battleAsset": "gettysburg-july1-afternoon",
       "t0": 5830,
       "t1": 7040,
       "camera": {
         "eyeHeightM": 1.66,
         "fovDeg": 68,
-        "lookOffsetDeg": [0, 0],
+        "lookOffsetDeg": [
+          0,
+          0
+        ],
         "stabilization": 0.35
       },
       "media": {
@@ -89,7 +99,7 @@
         "claim-bx-volley",
         "claim-ct-flank-volley"
       ],
-      "editorialNote": "Representative unnamed soldier viewpoint; not an identified witness. DESIGN STAGE (second Soldier View film, Iverson's field, July 1 — media not yet rendered; owner gate pending): the observer rides formation slot 184 of the 12th North Carolina — rear rank, 28 m in from the regiment's left flank, on the brigade's sheltered right. The 12th is the regiment the record itself keeps standing (it 'held intact' under Lt. Col. Davis while the left three regiments died in line and surrendered), so the disclosed observer-survival exemption (ED-22 policy) coincides with a documented survival population instead of contradicting the destruction. IMPORTANT CLOCK NOTE: t0/t1 are seconds on the JULY 1 AFTERNOON phase clock (startTime 46800), not the July 3 clock — cross-phase entry wiring is follow-up scope with the production render. Slot 184 is excluded from procedural victim selection; the unit's casualty totals are unchanged."
+      "editorialNote": "Representative unnamed soldier viewpoint; not an identified witness. PRODUCTION (second Soldier View film, Iverson's field, July 1 — the design gate passed: 12th North Carolina observer, first person, window t=5830..7040, smoke model as reviewed): the observer rides formation slot 184 of the 12th North Carolina — rear rank, 28 m in from the regiment's left flank, on the brigade's sheltered right. The 12th is the regiment the record itself keeps standing (it 'held intact' under Lt. Col. Davis while the left three regiments died in line and surrendered), so the disclosed observer-survival exemption (ED-22 policy) coincides with a documented survival population instead of contradicting the destruction. CLOCK: t0/t1 are seconds on the JULY 1 AFTERNOON phase clock (startTime 46800); battleAsset gates entry to that loaded phase (per-phase media honesty). Slot 184 is excluded from procedural victim selection; the unit's casualty totals are unchanged. Render seed: ED-21 production pin at the reviewed bundle checksum (2f15dd2f…). The film ends at 14:57, before the surrender — the record's capture mass has no representation vocabulary yet, and the reconstruction does not fake it."
     }
   ]
 }

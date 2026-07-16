@@ -6,116 +6,104 @@ using System.IO;
 using System.Text;
 using BattleAtlas;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
 namespace BattleAtlas.EditorTools
 {
     // ------------------------------------------------------------------
-    // Phase 10 — the offline production render pipeline (plan §12 Phase
-    // 10, §3.5, §10.1; media contract docs/reconstruction/
-    // p1-media-contract.md).
+    // The SECOND Soldier View production render: `iverson-forney-field`
+    // (Oak Ridge / Forney field, July 1 afternoon), the P10 pattern
+    // site-parameterized per the design doc (iverson-viewpoint-design.md
+    // §6 "Production-render plan"). Staging is IversonGateRender.Boot
+    // (Oak Ridge crop + the Iverson bundle); the frame loop, chunking,
+    // manifests, and tolerances are Phase10Render's, unchanged.
     //
-    // Renders the full garnett-road-to-angle hero viewpoint
-    // (t=8160..8820 plus the media contract's 0.5 s end pad; 19,815
-    // frames at 2560x1440/30 fps) through the SAME deterministic staging
-    // the Gate P6..P9 evidence used: the proven
-    // RenderPipeline.SubmitRenderRequest harness (GateP6Render.
-    // RenderOnce) under the offline HDRP profile. The Unity Recorder
-    // package is installed but is NOT used: it wants a playmode timeline
-    // and editor coroutines in batchmode, while this project's harness
-    // has rendered every gate deterministically from a pure Pose(t) —
-    // the decision is recorded in the render runbook. No accumulation
-    // motion blur: the owner judged Gate P9 media rendered one
-    // deterministic sample per frame; adding subframe accumulation
-    // would change the accepted look and add a nondeterminism surface.
+    //   Preflight             global no-teleport sweep over the padded
+    //                         window t=5830..7040.5 (every unit, every
+    //                         slot) + camera sweep; hard-fails before any
+    //                         render hours are committed.
+    //   RenderDeterminismPair two INDEPENDENT stagings of t=6300..6310;
+    //                         logical + pose digests must be bitwise
+    //                         identical; pixels within the documented
+    //                         GPU tolerance.
+    //   RenderProduction      the full chunked resumable render (36,315
+    //                         frames at 2560x1440/30 fps). A killed run
+    //                         resumes; harvested chunk encodes count as
+    //                         complete (scripts/iverson-chunk-harvester.sh).
+    //   RenderStills          the five representative production stills
+    //                         (advance / volley / destruction /
+    //                         prone-fight / end) into the evidence dir.
+    //   ExportAudioEvents     the deterministic event streams for the
+    //                         9-stem mix, exported to the PRODUCTION
+    //                         evidence dir (the gate export is design-
+    //                         gate evidence and stays untouched).
     //
-    //   Preflight       global no-teleport sweep over the WHOLE padded
-    //                   window (every unit, every slot) + camera-delta
-    //                   sweep. Hard-fails before any render hours are
-    //                   committed. Writes p10-preflight.json.
-    //   RenderTeleportFixWindow
-    //                   re-renders the Gate P9 proof window t=8610..8670
-    //                   with the P10 fixes for the before/after evidence.
-    //   RenderDeterminismPair
-    //                   Gate P10 criterion: renders t=8400..8410 TWICE
-    //                   from two independent stagings; compares logical
-    //                   metadata (must be identical) and pixels (within
-    //                   the documented Phase 8 GPU tolerance).
-    //   RenderProduction
-    //                   the full chunked, resumable render. A killed run
-    //                   resumes: chunks with a complete manifest + all
-    //                   frames on disk are skipped.
+    // ED-21 production pin: every entry point refuses to run unless the
+    // bundle's stagingSeed is the pinned reviewed checksum (2f15dd2f…) —
+    // the same value IversonBundleTests and test_iverson_v2.py enforce.
     //
-    // Usage (from the repo root; Unity editor must be closed):
+    // Usage (repo root; Unity editor closed, worktree Library):
     //   "$UNITY" -batchmode -projectPath app -buildTarget OSXUniversal \
-    //     -executeMethod BattleAtlas.EditorTools.Phase10Render.<Method> \
-    //     -logFile p10-<method>.log
+    //     -executeMethod BattleAtlas.EditorTools.IversonProductionRender.<Method> \
+    //     -logFile iverson-<method>.log
     // ------------------------------------------------------------------
-    public static class Phase10Render
+    public static class IversonProductionRender
     {
         const int Width = 2560, Height = 1440, Fps = 30;
-        const int WarmupFrames = 3;
 
-        // Media contract: the last ~3 frames of a stream are unreachable
-        // seek targets (EndGuardFrames = 4), so the render runs PAST the
-        // viewpoint's t1 by half a second — the guard becomes invisible.
+        public const string ViewpointId = "iverson-forney-field";
+
+        // ED-21 production pin (iverson-viewpoint-design.md §8.5): the
+        // checksum of the bundle the owner reviewed at the design gate.
+        public const string PinnedStagingSeed =
+            "2f15dd2f4e5e399e9899de45e5606a5610309dfad503ff472edf5e2edb09bf43";
+
+        // Media contract (p1-media-contract.md): the last ~3 frames of a
+        // stream are unreachable seek targets (EndGuardFrames = 4), so the
+        // render runs 0.5 s past t1 — the guard sits in padding.
         public const float PadPastT1 = 0.5f;
 
-        // Resumable chunking (this machine has crashed mid-render).
+        // Resumable chunking (the P10 SIGKILL lessons).
         const float ChunkSeconds = 60f;
 
-        // Documented GPU pixel tolerance. Two tiers:
-        //  - the Phase 8 envelope (channel delta <= 12 on <= 8% of
-        //    pixels) for ordinary raster/temporal noise, plus
-        //  - up to MaxOutlierPixels ISOLATED pixels per frame above that
-        //    delta: two INDEPENDENT stagings (fresh scene, fresh object
-        //    ids) can resolve a handful of exact depth/coverage ties
-        //    differently, which shows as 1-4 lone pixels (~0.0001% of a
-        //    3.7 M-pixel frame) shimmering on hard edges. Measured and
-        //    documented in p10-determinism.json.
+        // Documented GPU pixel tolerance (Phase 8 envelope + the P10
+        // independent-staging outlier allowance).
         const int TolMaxDelta = 12;
         const float TolDiffPct = 8f;
         const int MaxOutlierPixels = 8;
 
-        // No-teleport bounds (same as NoTeleportTests).
+        // No-teleport bounds (NoTeleportTests / Phase10Render.Preflight).
         const float MaxDeltaPerFrameM = 8f / Fps;             // sprint
-        const float MaxCrossExitDeltaM = SoldierActionResolver.CrossTravelM + 8f / Fps;
+        const float MaxCrossExitDeltaM =
+            SoldierActionResolver.CrossTravelM + 8f / Fps;
         const float MaxCameraDeltaPerFrameM = 4.5f / Fps;
 
         static readonly CultureInfo Inv = CultureInfo.InvariantCulture;
 
         static string RepoRoot => Path.GetFullPath(
             Path.Combine(Application.dataPath, "../.."));
-        static string OutRoot => Path.Combine(RepoRoot, "app/RenderOutput/p10");
+        static string OutRoot => Path.Combine(
+            RepoRoot, "app/RenderOutput/iverson");
         static string SeqDir => Path.Combine(OutRoot, "seq-full");
         static string ManifestDir => Path.Combine(OutRoot, "manifests");
         static string EvidenceDir => Path.Combine(
-            RepoRoot, "docs/benchmarks/captures/p10-gate");
+            RepoRoot, "docs/benchmarks/captures/iverson-production");
+        static string OakridgeCropDir => Path.Combine(
+            RepoRoot, "data/heightmap_oakridge");
+        static string BundlePath => Path.Combine(
+            Application.dataPath, "Battle", "Iverson", "iverson.bundle.json");
 
         public static void Preflight() => Run(PreflightInner);
-        public static void CreateMarkerScene() => Run(CreateMarkerSceneInner);
-
-        // One-shot: creates the committed thin marker scene (plan §5
-        // AngleRender.unity). Content is staged procedurally at render
-        // time; the scene carries only the marker.
-        static void CreateMarkerSceneInner()
-        {
-            var scene = UnityEditor.SceneManagement.EditorSceneManager.NewScene(
-                UnityEditor.SceneManagement.NewSceneSetup.EmptyScene,
-                UnityEditor.SceneManagement.NewSceneMode.Single);
-            var go = new GameObject("AngleRender (staged procedurally)");
-            go.AddComponent<AngleRenderSceneMarker>();
-            const string path = "Assets/Scenes/AngleRender.unity";
-            if (!UnityEditor.SceneManagement.EditorSceneManager.SaveScene(
-                    scene, path))
-                throw new InvalidOperationException($"could not save {path}");
-            Debug.Log($"Phase10Render: wrote {path}");
-        }
-
-        public static void RenderTeleportFixWindow() => Run(TeleportFixInner);
         public static void RenderDeterminismPair() => Run(DeterminismInner);
         public static void RenderProduction() => Run(ProductionInner);
+        public static void RenderStills() => Run(StillsInner);
+        public static void ExportAudioEvents() => Run(() =>
+        {
+            AssertPin(AngleBundleLoader.Load(BundlePath));
+            IversonGateRender.WriteAudioEvents(EvidenceDir);
+        });
 
         static void Run(Action inner)
         {
@@ -123,16 +111,49 @@ namespace BattleAtlas.EditorTools
             try { inner(); }
             catch (Exception e)
             {
-                Debug.LogError($"Phase10Render failed: {e}");
+                Debug.LogError($"IversonProductionRender failed: {e}");
                 exitCode = 1;
+            }
+            finally
+            {
+                AngleEnvironmentStage.CropDirOverride = null;
             }
             if (Application.isBatchMode) EditorApplication.Exit(exitCode);
         }
 
+        static void AssertPin(AngleBundle bundle)
+        {
+            if (bundle.StagingSeed != PinnedStagingSeed)
+                throw new InvalidOperationException(
+                    "ED-21 PIN VIOLATION: the Iverson bundle's stagingSeed is "
+                    + $"'{bundle.StagingSeed}', not the pinned reviewed checksum "
+                    + $"'{PinnedStagingSeed.Substring(0, 12)}…' — the production "
+                    + "render only runs from the reviewed choreography");
+        }
+
+        // Deterministic action context WITHOUT figure staging (preflight
+        // needs positions, not pixels) — the IversonGateRender audio-export
+        // compile path.
+        static AngleActionContext CompileContext()
+        {
+            AngleEnvironmentStage.CropDirOverride = OakridgeCropDir;
+            EditorSceneManager.NewScene(
+                NewSceneSetup.EmptyScene, NewSceneMode.Single);
+            var env = AngleEnvironmentStage.StageAll();
+            var bundle = AngleBundleLoader.Load(BundlePath);
+            AssertPin(bundle);
+            var obstacles = new Dictionary<string, List<Vector2>>();
+            foreach (var fence in env.env.fences)
+                obstacles[fence.featureId] =
+                    AngleEnvironmentData.Points(fence.polylineFlat);
+            obstacles[env.env.wall.featureId] =
+                AngleEnvironmentData.Points(env.env.wall.polylineFlat);
+            return AngleActionContext.Compile(
+                bundle, bundle.StagingSeed, obstacles);
+        }
+
         // ------------------------------------------------------------------
-        // Freeze record: everything that must be pinned for the render to
-        // be reproducible, hashed into one settingsHash carried by every
-        // chunk manifest and frame-metadata record.
+        // Freeze record — Phase10Render's shape with this site's inputs.
         // ------------------------------------------------------------------
         static string Sha256File(string path)
         {
@@ -167,58 +188,10 @@ namespace BattleAtlas.EditorTools
             return sha;
         }
 
-        internal class Freeze
-        {
-            public string gitSha, unityVersion, pipelineAssetPath,
-                pipelineAssetSha, packagesLockSha, colorSpace,
-                bundleChecksum, seed, viewpointId, viewKind,
-                heightmapJsonSha, heightmapRawSha, environmentJsonSha,
-                environmentSplatSha, settingsHash;
-            public int width, height, fps;
-            public float t0, t1, padPastT1, lensGuardRadiusM,
-                maxWheelFlankSpeedMps;
-            public int slotId;
-
-            public string ToJson()
-            {
-                var sb = new StringBuilder();
-                sb.Append("{\n");
-                sb.Append($"  \"gitSha\": \"{gitSha}\",\n");
-                sb.Append($"  \"unityVersion\": \"{unityVersion}\",\n");
-                sb.Append($"  \"pipelineAssetPath\": \"{pipelineAssetPath}\",\n");
-                sb.Append($"  \"pipelineAssetSha256\": \"{pipelineAssetSha}\",\n");
-                sb.Append($"  \"packagesLockSha256\": \"{packagesLockSha}\",\n");
-                sb.Append($"  \"colorSpace\": \"{colorSpace}\",\n");
-                sb.Append($"  \"bundleChecksum\": \"{bundleChecksum}\",\n");
-                sb.Append($"  \"battleSeed\": \"{seed}\",\n");
-                sb.Append($"  \"viewpointId\": \"{viewpointId}\",\n");
-                sb.Append($"  \"viewKind\": \"{viewKind}\",\n");
-                sb.Append($"  \"slotId\": {slotId},\n");
-                sb.Append(string.Format(Inv,
-                    "  \"window\": {{\"t0\": {0}, \"t1\": {1}, \"padPastT1\": {2}}},\n",
-                    t0, t1, padPastT1));
-                sb.Append($"  \"output\": {{\"width\": {width}, " +
-                    $"\"height\": {height}, \"fps\": {fps}}},\n");
-                sb.Append(string.Format(Inv,
-                    "  \"lensGuardRadiusM\": {0}, \"maxWheelFlankSpeedMps\": {1},\n",
-                    lensGuardRadiusM, maxWheelFlankSpeedMps));
-                sb.Append("  \"inputChecksums\": {\n");
-                sb.Append($"    \"heightmap.json\": \"{heightmapJsonSha}\",\n");
-                sb.Append($"    \"heightmap.raw\": \"{heightmapRawSha}\",\n");
-                sb.Append($"    \"environment.json\": \"{environmentJsonSha}\",\n");
-                sb.Append($"    \"environment_splat.raw\": \"{environmentSplatSha}\"\n");
-                sb.Append("  },\n");
-                sb.Append($"  \"settingsHash\": \"{settingsHash}\"\n");
-                sb.Append("}\n");
-                return sb.ToString();
-            }
-        }
-
-        internal static Freeze BuildFreeze(
+        static Phase10Render.Freeze BuildFreeze(
             ViewpointDefinition vp, AngleActionContext ctx)
         {
-            string cropDir = Path.Combine(RepoRoot, "data/heightmap_angle");
-            var f = new Freeze
+            var f = new Phase10Render.Freeze
             {
                 gitSha = GitSha(),
                 unityVersion = Application.unityVersion,
@@ -241,10 +214,14 @@ namespace BattleAtlas.EditorTools
                 fps = Fps,
                 lensGuardRadiusM = LensGuard.DefaultRadiusM,
                 maxWheelFlankSpeedMps = AngleActionContext.MaxWheelFlankSpeedMps,
-                heightmapJsonSha = Sha256File(Path.Combine(cropDir, "heightmap.json")),
-                heightmapRawSha = Sha256File(Path.Combine(cropDir, "heightmap.raw")),
-                environmentJsonSha = Sha256File(Path.Combine(cropDir, "environment.json")),
-                environmentSplatSha = Sha256File(Path.Combine(cropDir, "environment_splat.raw")),
+                heightmapJsonSha = Sha256File(
+                    Path.Combine(OakridgeCropDir, "heightmap.json")),
+                heightmapRawSha = Sha256File(
+                    Path.Combine(OakridgeCropDir, "heightmap.raw")),
+                environmentJsonSha = Sha256File(
+                    Path.Combine(OakridgeCropDir, "environment.json")),
+                environmentSplatSha = Sha256File(
+                    Path.Combine(OakridgeCropDir, "environment_splat.raw")),
             };
             f.settingsHash = Sha256Text(string.Join("|", new[]
             {
@@ -262,31 +239,24 @@ namespace BattleAtlas.EditorTools
         }
 
         // ------------------------------------------------------------------
-        // Preflight: the whole-window no-teleport assertion (the Gate P9
-        // defect class must be provably absent from every slot before the
-        // production render bakes 19,815 frames).
-        //
-        // Two passes: a 10 Hz sweep of every slot (any instantaneous pop
-        // or sustained super-sprint movement shows in a 0.1 s delta), then
-        // a 30 fps refinement of every suspicious pair to classify it
-        // against the per-frame bounds (with the designed crossing-exit
-        // exemption). The camera path is swept at full 30 fps.
+        // Preflight — the global no-teleport gate over THIS window (the
+        // p10-teleport-postmortem discipline: LensGuard, the smoothed
+        // formation frame, and the crossing chain all apply to this
+        // geometry; prove the compiled tracks clean before 36,315 frames).
         // ------------------------------------------------------------------
         static void PreflightInner()
         {
             var sw = Stopwatch.StartNew();
-            var ctx = Phase10TeleportProbe.CompileContext();
-            var vp = Phase10TeleportProbe.LoadHeroViewpoint();
+            var ctx = CompileContext();
+            var vp = IversonGateRender.LoadViewpoint();
             var settings = GateP9Render.Settings(vp, thirdPerson: false);
             float t0 = (float)vp.t0;
             float tEnd = (float)vp.t1 + PadPastT1;
 
             // pass 1: 10 Hz coarse sweep, every unit, every slot
             const float coarseDt = 0.1f;
-            // a 0.1 s window can legitimately contain sprint motion plus
-            // one crossing-exit hand-off pop
             float coarseBound = 8f * coarseDt + SoldierActionResolver.CrossTravelM;
-            const float suspectBound = 8f * coarseDt; // refine above this
+            const float suspectBound = 8f * coarseDt;
             int coarseSamples = (int)((tEnd - t0) / coarseDt) + 1;
             var suspects = new List<(int unit, int slot, float t)>();
             long pairs = 0;
@@ -316,8 +286,9 @@ namespace BattleAtlas.EditorTools
                     }
                 }
             }
-            Debug.Log($"Phase10Render preflight: coarse sweep {pairs} pairs, " +
-                $"{suspects.Count} suspect windows, {sw.Elapsed.TotalSeconds:F0} s");
+            Debug.Log($"IversonProductionRender preflight: coarse sweep {pairs} " +
+                $"pairs, {suspects.Count} suspect windows, " +
+                $"{sw.Elapsed.TotalSeconds:F0} s");
 
             // pass 2: refine suspects at render rate
             var violations = new List<string>();
@@ -370,6 +341,9 @@ namespace BattleAtlas.EditorTools
             Directory.CreateDirectory(EvidenceDir);
             var report = new StringBuilder();
             report.Append("{\n");
+            report.Append($"  \"viewpointId\": \"{vp.id}\",\n");
+            report.Append($"  \"bundleChecksum\": \"{ctx.bundle.checksum}\",\n");
+            report.Append($"  \"battleSeed\": \"{ctx.seed}\",\n");
             report.Append(string.Format(Inv,
                 "  \"window\": {{\"t0\": {0}, \"t1\": {1}}},\n", t0, tEnd));
             report.Append($"  \"coarsePairsChecked\": {pairs},\n");
@@ -391,109 +365,27 @@ namespace BattleAtlas.EditorTools
                 "  \"sweepSeconds\": {0:F0}\n", sw.Elapsed.TotalSeconds));
             report.Append("}\n");
             File.WriteAllText(
-                Path.Combine(EvidenceDir, "p10-preflight.json"),
+                Path.Combine(EvidenceDir, "iverson-preflight.json"),
                 report.ToString());
-            Debug.Log($"Phase10Render preflight: {violations.Count} violations, " +
-                $"total {sw.Elapsed.TotalSeconds:F0} s");
+            Debug.Log($"IversonProductionRender preflight: {violations.Count} " +
+                $"violations, total {sw.Elapsed.TotalSeconds:F0} s");
             if (violations.Count > 0)
                 throw new InvalidOperationException(
                     $"PREFLIGHT FAIL: {violations.Count} per-frame teleport " +
-                    "violations; see p10-preflight.json");
+                    "violations; see iverson-preflight.json");
         }
 
         // ------------------------------------------------------------------
-        // Shared frame loop.
+        // Determinism pair: two INDEPENDENT stagings of t=6300..6310 (the
+        // fight at full intensity: three regiments prone-firing, Cutler's
+        // changed-front keyframe, ~2,300 muskets of smoke).
         // ------------------------------------------------------------------
-        // internal: IversonProductionRender drives the same loop over the
-        // Oak Ridge staging (the site-parameterized P10 pattern)
-        internal static float RenderFrames(
-            AngleActionScene scene, RenderTexture rt, Texture2D tex,
-            HeroCameraSettings settings, float viewT0,
-            int frame0, int count, string dir, ref bool warmed,
-            ref long peakManagedMB)
-        {
-            Directory.CreateDirectory(dir);
-            var sw = Stopwatch.StartNew();
-            for (int i = 0; i < count; i++)
-            {
-                int frame = frame0 + i;
-                float t = viewT0 + frame / (float)Fps;
-                // camera BEFORE pose: smoke billboards and the lens guard
-                // read the camera position
-                GateP9Render.ApplyHeroPose(scene, HeroViewpointCamera.Pose(
-                    scene.ctx, settings, t));
-                scene.Pose(t);
-                if (!warmed)
-                {
-                    for (int w = 0; w < WarmupFrames; w++)
-                        GateP6Render.RenderOnce(scene.camera, rt, null);
-                    if (!(UnityEngine.Rendering.RenderPipelineManager.currentPipeline
-                        is UnityEngine.Rendering.HighDefinition.HDRenderPipeline))
-                        throw new InvalidOperationException(
-                            "HDRP did not construct; run with -buildTarget OSXUniversal");
-                    warmed = true;
-                }
-                GateP6Render.RenderOnce(scene.camera, rt, tex);
-                File.WriteAllBytes(
-                    Path.Combine(dir, $"frame_{frame:D6}.png"),
-                    tex.EncodeToPNG());
-                if (i % 300 == 0)
-                {
-                    peakManagedMB = Math.Max(peakManagedMB,
-                        GC.GetTotalMemory(false) / (1024 * 1024));
-                    Debug.Log($"Phase10Render: frame {frame} " +
-                        $"({i}/{count} of range, " +
-                        $"{sw.Elapsed.TotalSeconds / (i + 1):F2} s/frame)");
-                }
-            }
-            peakManagedMB = Math.Max(peakManagedMB,
-                GC.GetTotalMemory(false) / (1024 * 1024));
-            return (float)(sw.Elapsed.TotalSeconds / count);
-        }
-
-        // ------------------------------------------------------------------
-        // Before/after evidence for the Gate P9 must-fix: the exact proof
-        // window, re-rendered with the fixes.
-        // ------------------------------------------------------------------
-        static void TeleportFixInner()
-        {
-            var vp = Phase10TeleportProbe.LoadHeroViewpoint();
-            var (scene, rt, tex) = GateP9Render.Boot(
-                out var prevDefault, out var prevQuality, out var prevGlobal);
-            try
-            {
-                var obs = scene.ctx.Unit(vp.unitId);
-                var settings = GateP9Render.Settings(vp, thirdPerson: false);
-                scene.hiddenUnitIndex = obs.unitIndex;
-                scene.hiddenSlot = vp.slotId;
-
-                const float t0 = 8610f;
-                int frames = 60 * Fps;
-                string dir = Path.Combine(EvidenceDir, "seq-teleport-fix");
-                bool warmed = false;
-                long peak = 0;
-                float spf = RenderFrames(scene, rt, tex, settings,
-                    t0, 0, frames, dir, ref warmed, ref peak);
-                Debug.Log($"Phase10Render: teleport-fix window done " +
-                    $"({spf:F2} s/frame, peak {peak} MB)");
-            }
-            finally
-            {
-                GateP9Render.Restore(prevDefault, prevQuality, prevGlobal);
-            }
-        }
-
-        // ------------------------------------------------------------------
-        // Gate P10 determinism pair: two INDEPENDENT stagings of the same
-        // ten seconds; logical metadata identical, pixels within the
-        // documented GPU tolerance.
-        // ------------------------------------------------------------------
-        const float DetT0 = 8400f;
+        const float DetT0 = 6300f;
         const int DetFrames = 10 * Fps;
 
         static void DeterminismInner()
         {
-            var vp = Phase10TeleportProbe.LoadHeroViewpoint();
+            var vp = IversonGateRender.LoadViewpoint();
             string dirA = Path.Combine(OutRoot, "det-a");
             string dirB = Path.Combine(OutRoot, "det-b");
             var digests = new string[2][];
@@ -501,10 +393,11 @@ namespace BattleAtlas.EditorTools
 
             for (int pass = 0; pass < 2; pass++)
             {
-                var (scene, rt, tex) = GateP9Render.Boot(
+                var (scene, rt, tex) = IversonGateRender.Boot(
                     out var prevDefault, out var prevQuality, out var prevGlobal);
                 try
                 {
+                    AssertPin(scene.ctx.bundle);
                     var obs = scene.ctx.Unit(vp.unitId);
                     var settings = GateP9Render.Settings(vp, thirdPerson: false);
                     scene.hiddenUnitIndex = obs.unitIndex;
@@ -514,15 +407,17 @@ namespace BattleAtlas.EditorTools
 
                     bool warmed = false;
                     long peak = 0;
-                    RenderFrames(scene, rt, tex, settings, DetT0, 0, DetFrames,
+                    Phase10Render.RenderFrames(scene, rt, tex, settings,
+                        DetT0, 0, DetFrames,
                         pass == 0 ? dirA : dirB, ref warmed, ref peak);
 
-                    // logical digests at probe frames (metadata identity)
+                    // logical + camera-pose digests at 1 Hz probes
                     digests[pass] = new string[DetFrames / 30];
                     for (int i = 0; i < digests[pass].Length; i++)
                     {
                         float t = DetT0 + i;
-                        digests[pass][i] = scene.LogicalStateDigest(t);
+                        digests[pass][i] = scene.LogicalStateDigest(t) + "|" +
+                            IversonGateRender.PoseDigest(scene.ctx, settings, t);
                     }
                 }
                 finally
@@ -531,15 +426,14 @@ namespace BattleAtlas.EditorTools
                 }
             }
 
-            // compare
             bool metadataIdentical = freezes[0] == freezes[1];
             if (!metadataIdentical)
             {
                 Directory.CreateDirectory(EvidenceDir);
-                File.WriteAllText(
-                    Path.Combine(EvidenceDir, "p10-freeze-pass-a.json"), freezes[0]);
-                File.WriteAllText(
-                    Path.Combine(EvidenceDir, "p10-freeze-pass-b.json"), freezes[1]);
+                File.WriteAllText(Path.Combine(
+                    EvidenceDir, "iverson-freeze-pass-a.json"), freezes[0]);
+                File.WriteAllText(Path.Combine(
+                    EvidenceDir, "iverson-freeze-pass-b.json"), freezes[1]);
             }
             bool digestsIdentical = true;
             for (int i = 0; i < digests[0].Length; i++)
@@ -586,13 +480,12 @@ namespace BattleAtlas.EditorTools
                 worstOutliers <= MaxOutlierPixels;
 
             Directory.CreateDirectory(EvidenceDir);
-            // keep three comparison frame pairs for the evidence dir
             foreach (int f in new[] { 0, 150, 299 })
             {
                 File.Copy(Path.Combine(dirA, $"frame_{f:D6}.png"),
-                    Path.Combine(EvidenceDir, $"p10-det-a-{f:D6}.png"), true);
+                    Path.Combine(EvidenceDir, $"iverson-det-a-{f:D6}.png"), true);
                 File.Copy(Path.Combine(dirB, $"frame_{f:D6}.png"),
-                    Path.Combine(EvidenceDir, $"p10-det-b-{f:D6}.png"), true);
+                    Path.Combine(EvidenceDir, $"iverson-det-b-{f:D6}.png"), true);
             }
             var rep = new StringBuilder();
             rep.Append("{\n");
@@ -600,7 +493,7 @@ namespace BattleAtlas.EditorTools
                 "  \"range\": {{\"t0\": {0}, \"frames\": {1}}},\n",
                 DetT0, DetFrames));
             rep.Append($"  \"freezeMetadataIdentical\": {(metadataIdentical ? "true" : "false")},\n");
-            rep.Append($"  \"logicalDigestsIdentical\": {(digestsIdentical ? "true" : "false")},\n");
+            rep.Append($"  \"logicalAndPoseDigestsIdentical\": {(digestsIdentical ? "true" : "false")},\n");
             rep.Append(string.Format(Inv,
                 "  \"worstDifferingPct\": {0:F2}, \"worstMaxChannelDelta\": {1}, " +
                 "\"worstOutlierPixels\": {2},\n",
@@ -611,12 +504,14 @@ namespace BattleAtlas.EditorTools
                 TolMaxDelta, TolDiffPct, MaxOutlierPixels));
             rep.Append($"  \"pixelsWithinTolerance\": {(pixelsWithin ? "true" : "false")},\n");
             rep.Append("  \"sampledFrames\": [" + perFrame + "\n  ]\n}\n");
-            File.WriteAllText(Path.Combine(EvidenceDir, "p10-determinism.json"),
+            File.WriteAllText(
+                Path.Combine(EvidenceDir, "iverson-determinism.json"),
                 rep.ToString());
-            File.WriteAllText(Path.Combine(EvidenceDir, "p10-freeze.json"),
-                freezes[0]);
-            Debug.Log($"Phase10Render determinism: metadata={metadataIdentical} " +
-                $"digests={digestsIdentical} pixels worst {worstPct:F2}%/{worstDelta}");
+            File.WriteAllText(
+                Path.Combine(EvidenceDir, "iverson-freeze.json"), freezes[0]);
+            Debug.Log($"IversonProductionRender determinism: " +
+                $"metadata={metadataIdentical} digests={digestsIdentical} " +
+                $"pixels worst {worstPct:F2}%/{worstDelta}");
 
             if (!metadataIdentical || !digestsIdentical)
                 throw new InvalidOperationException(
@@ -627,11 +522,11 @@ namespace BattleAtlas.EditorTools
         }
 
         // ------------------------------------------------------------------
-        // The production render: chunked and resumable.
+        // The production render: chunked and resumable (the P10 pattern).
         // ------------------------------------------------------------------
         static void ProductionInner()
         {
-            var vp = Phase10TeleportProbe.LoadHeroViewpoint();
+            var vp = IversonGateRender.LoadViewpoint();
             float t0 = (float)vp.t0;
             float tEnd = (float)vp.t1 + PadPastT1;
             int totalFrames = Mathf.RoundToInt((tEnd - t0) * Fps);
@@ -641,19 +536,21 @@ namespace BattleAtlas.EditorTools
             Directory.CreateDirectory(SeqDir);
             Directory.CreateDirectory(ManifestDir);
 
-            var (scene, rt, tex) = GateP9Render.Boot(
+            var (scene, rt, tex) = IversonGateRender.Boot(
                 out var prevDefault, out var prevQuality, out var prevGlobal);
             try
             {
+                AssertPin(scene.ctx.bundle);
                 var obs = scene.ctx.Unit(vp.unitId);
                 var settings = GateP9Render.Settings(vp, thirdPerson: false);
                 scene.hiddenUnitIndex = obs.unitIndex;
                 scene.hiddenSlot = vp.slotId;
                 var freeze = BuildFreeze(vp, scene.ctx);
-                File.WriteAllText(Path.Combine(OutRoot, "p10-freeze.json"),
-                    freeze.ToJson());
+                File.WriteAllText(
+                    Path.Combine(OutRoot, "iverson-freeze.json"), freeze.ToJson());
                 Directory.CreateDirectory(EvidenceDir);
-                File.WriteAllText(Path.Combine(EvidenceDir, "p10-freeze.json"),
+                File.WriteAllText(
+                    Path.Combine(EvidenceDir, "iverson-freeze.json"),
                     freeze.ToJson());
 
                 bool warmed = false;
@@ -668,28 +565,25 @@ namespace BattleAtlas.EditorTools
                     if (ChunkComplete(manifestPath, c, frame0, count))
                     {
                         skipped += count;
-                        Debug.Log($"Phase10Render: chunk {c} complete, skipping");
+                        Debug.Log($"IversonProductionRender: chunk {c} complete, skipping");
                         continue;
                     }
                     long peak = 0;
-                    float spf = RenderFrames(scene, rt, tex, settings,
-                        t0, frame0, count, SeqDir, ref warmed, ref peak);
+                    float spf = Phase10Render.RenderFrames(scene, rt, tex,
+                        settings, t0, frame0, count, SeqDir, ref warmed, ref peak);
                     rendered += count;
-                    WriteChunkManifest(manifestPath, c, frame0, count,
-                        t0, freeze, spf, peak);
-                    Debug.Log($"Phase10Render: chunk {c}/{chunkCount - 1} done " +
-                        $"({spf:F2} s/frame, peak {peak} MB managed)");
-                    // Long batch renders leak NATIVE memory (~both
-                    // production attempts were jetsam-SIGKILLed after
-                    // ~4,800 frames with managed memory flat at ~1 GB).
-                    // Release what can be released at every chunk
-                    // boundary; the outer runner loop
-                    // (scripts/p10-render-loop.sh) resumes a killed
-                    // process from the next incomplete chunk regardless.
+                    Phase10Render.WriteChunkManifest(manifestPath, c, frame0,
+                        count, t0, freeze, spf, peak);
+                    Debug.Log($"IversonProductionRender: chunk {c}/{chunkCount - 1} " +
+                        $"done ({spf:F2} s/frame, peak {peak} MB managed)");
+                    // the P10 native-leak-meets-jetsam lesson: release what
+                    // can be released at every chunk boundary; the outer
+                    // loop (scripts/iverson-render-loop.sh) resumes a
+                    // killed process from the next incomplete chunk
                     EditorUtility.UnloadUnusedAssetsImmediate();
                     GC.Collect();
                 }
-                Debug.Log($"Phase10Render: production render complete — " +
+                Debug.Log($"IversonProductionRender: production render complete — " +
                     $"{rendered} rendered, {skipped} resumed-skipped, " +
                     $"{totalSw.Elapsed.TotalHours:F2} h wall");
             }
@@ -699,11 +593,6 @@ namespace BattleAtlas.EditorTools
             }
         }
 
-        // A chunk is complete when its manifest exists AND its frames are
-        // still on disk — OR the rolling chunk harvester
-        // (scripts/p10-chunk-harvester.sh) has already encoded it and
-        // reclaimed the PNGs (the render machine's free disk cannot hold
-        // the full ~63 GB sequence; measured ~3.2 MB/frame).
         static bool ChunkComplete(string manifestPath, int chunk,
             int frame0, int count)
         {
@@ -718,30 +607,55 @@ namespace BattleAtlas.EditorTools
             return true;
         }
 
-        internal static void WriteChunkManifest(
-            string path, int chunk, int frame0, int count, float viewT0,
-            Freeze freeze, float secondsPerFrame, long peakManagedMB)
+        // ------------------------------------------------------------------
+        // The five representative production stills (task: advance /
+        // volley / destruction / prone-fight / end), rendered through the
+        // same staging + camera as the production frames.
+        // ------------------------------------------------------------------
+        static void StillsInner()
         {
-            var sb = new StringBuilder();
-            sb.Append("{\n");
-            sb.Append($"  \"chunk\": {chunk},\n");
-            sb.Append($"  \"frame0\": {frame0},\n");
-            sb.Append($"  \"frameCount\": {count},\n");
-            sb.Append(string.Format(Inv,
-                "  \"battleT0\": {0:F4},\n  \"battleT1\": {1:F4},\n",
-                viewT0 + frame0 / (float)Fps,
-                viewT0 + (frame0 + count - 1) / (float)Fps));
-            sb.Append($"  \"gitSha\": \"{freeze.gitSha}\",\n");
-            sb.Append($"  \"bundleChecksum\": \"{freeze.bundleChecksum}\",\n");
-            sb.Append($"  \"viewpointId\": \"{freeze.viewpointId}\",\n");
-            sb.Append($"  \"settingsHash\": \"{freeze.settingsHash}\",\n");
-            sb.Append("  \"frameTimes\": \"t(frame) = " +
-                string.Format(Inv, "{0} + frame/{1}", viewT0, Fps) + "\",\n");
-            sb.Append("  \"measured\": " + string.Format(Inv,
-                "{{\"secondsPerFrame\": {0:F3}, \"peakManagedMB\": {1}}}\n",
-                secondsPerFrame, peakManagedMB));
-            sb.Append("}\n");
-            File.WriteAllText(path, sb.ToString());
+            var vp = IversonGateRender.LoadViewpoint();
+            var (scene, rt, tex) = IversonGateRender.Boot(
+                out var prevDefault, out var prevQuality, out var prevGlobal);
+            try
+            {
+                AssertPin(scene.ctx.bundle);
+                var obs = scene.ctx.Unit(vp.unitId);
+                var settings = GateP9Render.Settings(vp, thirdPerson: false);
+                scene.hiddenUnitIndex = obs.unitIndex;
+                scene.hiddenSlot = vp.slotId;
+                var shots = new (string name, float t)[]
+                {
+                    ("ivp-still-5840-advance", 5840f),
+                    ("ivp-still-5990-volley", 5990f),
+                    ("ivp-still-6100-destruction", 6100f),
+                    ("ivp-still-6600-prone-fight", 6600f),
+                    ("ivp-still-7040-end", 7040f),
+                };
+                Directory.CreateDirectory(EvidenceDir);
+                bool warmed = false;
+                foreach (var shot in shots)
+                {
+                    GateP9Render.ApplyHeroPose(scene, HeroViewpointCamera.Pose(
+                        scene.ctx, settings, shot.t));
+                    scene.Pose(shot.t);
+                    if (!warmed)
+                    {
+                        for (int i = 0; i < 3; i++)
+                            GateP6Render.RenderOnce(scene.camera, rt, null);
+                        warmed = true;
+                    }
+                    GateP6Render.RenderOnce(scene.camera, rt, null);
+                    GateP6Render.RenderOnce(scene.camera, rt, tex);
+                    string p = Path.Combine(EvidenceDir, $"{shot.name}.png");
+                    File.WriteAllBytes(p, tex.EncodeToPNG());
+                    Debug.Log($"IversonProductionRender: wrote {p}");
+                }
+            }
+            finally
+            {
+                GateP9Render.Restore(prevDefault, prevQuality, prevGlobal);
+            }
         }
     }
 }

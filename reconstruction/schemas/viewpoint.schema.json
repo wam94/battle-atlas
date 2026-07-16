@@ -56,6 +56,11 @@
             "close_third_person"
           ]
         },
+        "battleAsset": {
+          "description": "Cross-phase viewpoints (Iverson production slice): the battle asset name (TextAsset name, no extension) whose clock and cast this viewpoint's t0/t1 and media address, e.g. 'gettysburg-july1-afternoon'. Absent = the viewpoint set's home asset (the scene's serialized battle). Entry markers, the timeline band, and entry itself exist only while this phase is the loaded one.",
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
         "t0": {
           "type": "number",
           "minimum": 0
