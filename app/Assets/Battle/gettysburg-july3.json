@@ -6934,9 +6934,9 @@
     },
     {
       "id": "us-colgrove",
-      "name": "Colgrove's Brigade (3rd Bde, 1st Div, XII Corps)",
+      "name": "Colgrove's Brigade (3rd Bde, 1st Div, XII Corps — minus the 2nd Massachusetts and 27th Indiana)",
       "side": "union",
-      "frontage_m": 316,
+      "frontage_m": 130,
       "depth_m": 20,
       "keyframes": [
         {
@@ -6945,9 +6945,9 @@
           "z": 4800,
           "facing": 30,
           "formation": "line",
-          "strength": 891,
+          "strength": 482,
           "confidence": "documented",
-          "citation": "Ruger's division tablet verbatim, July 3: 'At daylight attacked the Confederate Infantry and was hotly engaged with charges and countercharges at different points until 10:30 A. M. when the Confederate forces retired.' (https://gettysburg.stonesentinels.com/union-headquarters/1st-division-12th-corps/, fetched 2026-07-08); Col. Silas Colgrove; sheet 8 s8_culps.jpg names 'Colgrove Brig' at the line's right, Spangler's Spring/McAllister's woods, facing the meadow (survey §1 Spangler's Spring 6084,4752) — his 2nd MA/27th IN charge across the meadow was ~10 A.M., PRE-window; DOCUMENTED SILENCE (battle-format.md): the corps' seven-hour fight ended at 10:30 A. M. when Johnson retired east of Rock Creek — in 13:00–16:00 the works stand fully manned and SILENT; presence without events IS the encoding (docs/research/2026-07-02-full-cast-sources.md §3.3; the Muhlenberg gun-line negative on the Wave-2 XII Corps batteries corroborates); NO strength figure on the tablet page (casualties only) — 1170 reconstructed July-3 effectives from standard engaged-strength norms less the battle's earlier-day losses, rounded, flagged (the Wave-3 reconstruction precedent) [strength-reconciliation-2: superseded 1170 (this file's own whole-brigade, pre-decomposition figure — the same generic 'standard engaged-strength norms' placeholder class as the corps's other rows here, applied to the brigade as a single undecomposed unit) with 891, the FAMILY TOTAL from gettysburg-july3-morning.json's own decomposed EndT keyframes (csa-colgrove 482 + us-2ma 180 + us-27in 229 = 891; ED-76 convention — the morning phase promotes the 2nd MA and 27th IN as parentless siblings, this file does not). COMPOSITION NOTE (not a data conflict, matching strength-reconciliation-1's us-vongilsa class): this file renders Colgrove's brigade as ONE unit, so its strength here correctly reads as the combined family total rather than the reduced 482-man csa-colgrove-only figure; the unit-count difference is expected and not reconciled here (a future decomposition-wave pass, out of this wave's scope, would split this file's csa-colgrove into three units matching the morning phase). Continuity CLEARED (strength only).]"
+          "citation": "Ruger's division tablet verbatim, July 3: 'At daylight attacked the Confederate Infantry and was hotly engaged with charges and countercharges at different points until 10:30 A. M. when the Confederate forces retired.' (stone-sentinels, fetched 2026-07-08); Col. Silas Colgrove; sheet 8 s8_culps.jpg names 'Colgrove Brig' at the line's right, Spangler's Spring/McAllister's woods, facing the meadow. DOCUMENTED SILENCE (battle-format.md): the corps' seven-hour fight ended at 10:30 A.M., pre-window; in 13:00-16:00 the works stand fully manned and SILENT. DECOMPOSED (residuals-decomp-2, 2026-07-16, ED-76 convention, closing strength-reconciliation-2.md §13 owner question 3): this unit now covers the remaining three regiments (13th NJ, 107th NY, 3rd WI) only — the 2nd Massachusetts and 27th Indiana are promoted to their own parentless units (us-2ma, us-27in), matching gettysburg-july3-morning.json's own decomposition exactly. Strength 482 = gettysburg-july3-morning.json's own us-colgrove EndT value (exact continuity, not recomputed here — strength-reconciliation-2 already grounded this file's total at the family sum, 891 = 482+180+229; this pass only splits the count, not the arithmetic)."
         },
         {
           "t": 10800,
@@ -6955,9 +6955,67 @@
           "z": 4800,
           "facing": 30,
           "formation": "line",
-          "strength": 891,
+          "strength": 482,
           "confidence": "documented",
-          "citation": "Ruger's division tablet verbatim, July 3: 'At daylight attacked the Confederate Infantry and was hotly engaged with charges and countercharges at different points until 10:30 A. M. when the Confederate forces retired.' (https://gettysburg.stonesentinels.com/union-headquarters/1st-division-12th-corps/, fetched 2026-07-08); Col. Silas Colgrove; sheet 8 s8_culps.jpg names 'Colgrove Brig' at the line's right, Spangler's Spring/McAllister's woods, facing the meadow (survey §1 Spangler's Spring 6084,4752) — his 2nd MA/27th IN charge across the meadow was ~10 A.M., PRE-window; DOCUMENTED SILENCE (battle-format.md): the corps' seven-hour fight ended at 10:30 A. M. when Johnson retired east of Rock Creek — in 13:00–16:00 the works stand fully manned and SILENT; presence without events IS the encoding (docs/research/2026-07-02-full-cast-sources.md §3.3; the Muhlenberg gun-line negative on the Wave-2 XII Corps batteries corroborates); NO strength figure on the tablet page (casualties only) — 1170 reconstructed July-3 effectives from standard engaged-strength norms less the battle's earlier-day losses, rounded, flagged (the Wave-3 reconstruction precedent) [strength-reconciliation-2: superseded 1170 (this file's own whole-brigade, pre-decomposition figure — the same generic 'standard engaged-strength norms' placeholder class as the corps's other rows here, applied to the brigade as a single undecomposed unit) with 891, the FAMILY TOTAL from gettysburg-july3-morning.json's own decomposed EndT keyframes (csa-colgrove 482 + us-2ma 180 + us-27in 229 = 891; ED-76 convention — the morning phase promotes the 2nd MA and 27th IN as parentless siblings, this file does not). COMPOSITION NOTE (not a data conflict, matching strength-reconciliation-1's us-vongilsa class): this file renders Colgrove's brigade as ONE unit, so its strength here correctly reads as the combined family total rather than the reduced 482-man csa-colgrove-only figure; the unit-count difference is expected and not reconciled here (a future decomposition-wave pass, out of this wave's scope, would split this file's csa-colgrove into three units matching the morning phase). Continuity CLEARED (strength only).]"
+          "citation": "Held — same 'documented silence' reading as the t=0 keyframe; no combat or movement attested for these three regiments in this window."
+        }
+      ]
+    },
+    {
+      "id": "us-2ma",
+      "name": "2nd Massachusetts (Colgrove's)",
+      "side": "union",
+      "frontage_m": 49,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6096,
+          "z": 4865,
+          "facing": 30,
+          "formation": "line",
+          "strength": 180,
+          "confidence": "documented",
+          "citation": "At the works, quiet — the 2nd Massachusetts's charge across the meadow (~10 a.m., ED-78 provisional direction) is PRE-window; gettysburg-july3-morning.json's own EndT keyframe for this unit ('Back at the works, quiet — a new parentless unit this phase') is inherited directly: position (6096,4865,facing 30) and strength 180 (316 at the day's opening minus Morse's own itemized loss, 136 — or-27-1-morse-2ma p. 817-818 — carried in full on the morning file's own us-2ma t=10:12/EndT citations). PROMOTED (residuals-decomp-2, 2026-07-16, ED-76 convention, closing strength-reconciliation-2.md §13 owner question 3): this file previously rendered Colgrove's brigade as one undecomposed unit (891, the family total per strength-reconciliation-2 §1.2); now split to match gettysburg-july3-morning.json's own unit count. mon-2ma inscription: 'From the hill behind this monument on the morning of July Third 1863 the Second Massachusetts Infantry made an assault upon the Confederate troops in the works at the base of Culp's Hill opposite.'"
+        },
+        {
+          "t": 10800,
+          "x": 6096,
+          "z": 4865,
+          "facing": 30,
+          "formation": "line",
+          "strength": 180,
+          "confidence": "documented",
+          "citation": "Held — quiet at the works through the window's end; no further combat or movement attested (matching Colgrove's own 'documented silence' reading for this window)."
+        }
+      ]
+    },
+    {
+      "id": "us-27in",
+      "name": "27th Indiana (Colgrove's)",
+      "side": "union",
+      "frontage_m": 62,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 6120,
+          "z": 4885,
+          "facing": 30,
+          "formation": "line",
+          "strength": 229,
+          "confidence": "documented",
+          "citation": "At the works, quiet — the 27th Indiana's charge across the meadow (~10 a.m., ED-78 provisional direction) is PRE-window; gettysburg-july3-morning.json's own EndT keyframe for this unit is inherited directly: position (6120,4885,facing 30) and strength 229 (339 carried into action, or-27-1-fesler-27in / mon-27in exact agreement, minus the return-basis loss 110 — carried in full on the morning file's own us-27in t=10:15/EndT citations). PROMOTED (residuals-decomp-2, 2026-07-16, ED-76 convention, closing strength-reconciliation-2.md §13 owner question 3): this file previously rendered Colgrove's brigade as one undecomposed unit (891, the family total per strength-reconciliation-2 §1.2); now split to match gettysburg-july3-morning.json's own unit count. Lieut. Col. John R. Fesler commanding; monument 'Number engaged 339' (mon-27in)."
+        },
+        {
+          "t": 10800,
+          "x": 6120,
+          "z": 4885,
+          "facing": 30,
+          "formation": "line",
+          "strength": 229,
+          "confidence": "documented",
+          "citation": "Held — quiet at the works through the window's end; no further combat or movement attested (matching Colgrove's own 'documented silence' reading for this window)."
         }
       ]
     },

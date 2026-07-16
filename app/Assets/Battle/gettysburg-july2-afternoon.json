@@ -429,9 +429,9 @@
     },
     {
       "id": "csa-humphreys",
-      "name": "Barksdale's Brigade, McLaws's Division",
+      "name": "Barksdale's Brigade, McLaws's Division (minus the 21st Mississippi)",
       "side": "confederate",
-      "frontage_m": 230,
+      "frontage_m": 323,
       "depth_m": 20,
       "keyframes": [
         {
@@ -440,9 +440,9 @@
           "z": 3865,
           "facing": 75,
           "formation": "line",
-          "strength": 1598,
+          "strength": 1198,
           "confidence": "documented",
-          "citation": "The Warfield/Seminary Ridge line: tablet 'Arrived about 3 P.M. and formed line here'; Alexander's 18 guns deployed IN FRONT of the brigade (the batteries-mixed-with-the-lines extraction delay, mclaws-shsp7-1878); j2-03 (17:00) draws the regimental numbers with advance arrows POISED at (2923,3865) — the drawn state siding with the ladder against the tablet's 'Advanced at 5 P.M.' (ED-55 skew class). Strength: tablet 'Present 1,598'. Dossier csa-1c-mcl-3-barksdale.md."
+          "citation": "The Warfield/Seminary Ridge line: tablet 'Arrived about 3 P.M. and formed line here'; Alexander's 18 guns deployed IN FRONT of the brigade (the batteries-mixed-with-the-lines extraction delay, mclaws-shsp7-1878); j2-03 (17:00) draws the regimental numbers with advance arrows POISED at (2923,3865) — the drawn state siding with the ladder against the tablet's 'Advanced at 5 P.M.' (ED-55 skew class). Strength: brigade tablet 'Present 1,598' MINUS the 21st Mississippi's now-separately-tracked compilation-class share (400, own citation, us-21ms) = 1,198 (ED-76, residuals-decomp-2). Dossier csa-1c-mcl-3-barksdale.md."
         },
         {
           "t": 9900,
@@ -450,7 +450,7 @@
           "z": 3865,
           "facing": 75,
           "formation": "line",
-          "strength": 1598,
+          "strength": 1198,
           "confidence": "documented",
           "citation": "Step-off ~18:15 (CA-J2A-9, downstream-CONFIRMED): McLaws's Lamar-carried order; Kershaw's drums pin (+20-40 min after CA-J2A-7); Alexander's 'at least 20 minutes' interval arithmetic."
         },
@@ -460,19 +460,19 @@
           "z": 3760,
           "facing": 70,
           "formation": "line",
-          "strength": 1450,
+          "strength": 1050,
           "confidence": "documented",
-          "citation": "The Peach Orchard salient smashed: the assault axis through the salient angle at the Wentz corner (~(3164,3634) reference, tablet); Graham w&c on the receiving side (CA-J2A-9's Union pin)."
+          "citation": "The Peach Orchard salient smashed: the assault axis through the salient angle at the Wentz corner (~(3164,3634) reference, tablet); Graham w&c on the receiving side (CA-J2A-9's Union pin). Decay: the original combined −148 delta at this keyframe, carried in full by these three regiments (the 21st MS was in the SAME breach fight, per its own citation, but no regiment-grain attribution exists for this shared loss — exact subtraction from the flat 21st share, not an invented split, per this pass's design note)."
         },
         {
           "t": 12000,
-          "x": 3650,
-          "z": 3900,
-          "facing": 60,
+          "x": 3900,
+          "z": 4050,
+          "facing": 55,
           "formation": "line",
-          "strength": 1250,
+          "strength": 850,
           "confidence": "documented",
-          "citation": "Driving northeast, the regiments inclining left to Plum Run except the 21st MS (tablet narrative split; j2-04 draws the brigade AS TWO ELEMENTS — the '21' MISS' element at the Trostle ground (3617,3643) over BIGELOW; single-centroid track carries the split in this citation, not a second track)."
+          "citation": "THE DIVERGENCE: 'the regiments inclining left to Plum Run except the 21st MS' (tablet) — the three remaining regiments (13th/17th/18th MS) wheel northeast toward Plum Run while the 21st goes east to the Trostle ground (own citation, us-21ms). Position adjusted off the pre-decomposition single-centroid reading (3650,3900) toward the Plum Run axis specifically, since the 21st's own divergent position is now separately tracked."
         },
         {
           "t": 12600,
@@ -480,9 +480,9 @@
           "z": 4070,
           "facing": 60,
           "formation": "line",
-          "strength": 1000,
+          "strength": 600,
           "confidence": "documented",
-          "citation": "The Plum Run climax ~19:00: red bar against 'WILLARD's Brig' at (4053,4080) (bachelder j2-04); Barksdale mw here (tablet narrative + Hall's 20-yards receiving statement, compatible at ~100 m grain; died July 3 at the Hummelbaugh farm)."
+          "citation": "THE PLUM RUN CLIMAX ~19:00: red bar against 'WILLARD's Brig' at (4053,4080) (bachelder j2-04); Barksdale mw here (tablet narrative + Hall's 20-yards receiving statement, compatible at ~100 m grain; died July 3 at the Hummelbaugh farm) — the three-regiment element's own fight; the file's own clock has the 21st MS's Trostle capture at t=12900 (cross-referenced to us-btty-bigelow's own keyframe), i.e. AFTER this instant, so the 21st's flat pre-capture share (400) is still what this residual subtracts here, not yet its post-capture value."
         },
         {
           "t": 14340,
@@ -490,9 +490,78 @@
           "z": 3960,
           "facing": 60,
           "formation": "line",
-          "strength": 851,
+          "strength": 554,
           "confidence": "documented",
-          "citation": "Repulsed by Willard's counterattack, falling back westward at dark (both-sided: us-ii-3-3-willard.md). Decay: tablet 105/550/92 = 747 — the tablet that itemizes the return's pooled missing EXACTLY (pass-5 find; ED-43 satisfied)."
+          "citation": "Repulsed by Willard's counterattack, falling back westward at dark (both-sided: us-ii-3-3-willard.md). Decay: tablet 105/550/92 = 747 brigade-wide (the tablet that itemizes the return's pooled missing EXACTLY, pass-5 find, ED-43 satisfied) MINUS the 21st Mississippi's own separately-tracked 103-loss share (own citation, us-21ms) = 644, this residual's own day loss (1,198 → 554). CONSERVATION CHECK: 554 (residual) + 297 (21st) = 851 = the pre-decomposition build's own t=14340 value, EXACT."
+        }
+      ]
+    },
+    {
+      "id": "csa-21ms",
+      "name": "21st Mississippi (Barksdale's)",
+      "side": "confederate",
+      "frontage_m": 108,
+      "depth_m": 20,
+      "keyframes": [
+        {
+          "t": 0,
+          "x": 2923,
+          "z": 3865,
+          "facing": 75,
+          "formation": "line",
+          "strength": 400,
+          "confidence": "documented",
+          "citation": "With the brigade on the Warfield/Seminary Ridge line (tablet 'Arrived about 3 P.M. and formed line here'; j2-03 poised state). STRENGTH HONESTY: no regiment-level strength primary exists for any of Barksdale's four regiments (dossier csa-1c-mcl-3-barksdale.md EC2: 'No primary strength statement (negative; no report exists)' — only the brigade-wide tablet 'Present 1,598'). Authored 400 compilation-class FLAGGED (1,598 / 4, rounded — the SAME even-split technique decomposition-wave-1 used for the 6th Wisconsin, dossier us-i-1-1-meredith.md Conflicts item 4)."
+        },
+        {
+          "t": 9900,
+          "x": 2923,
+          "z": 3865,
+          "facing": 75,
+          "formation": "line",
+          "strength": 400,
+          "confidence": "documented",
+          "citation": "Step-off ~18:15 with the brigade (CA-J2A-9, downstream-CONFIRMED) — still one line; the divergence has not yet happened."
+        },
+        {
+          "t": 10800,
+          "x": 3220,
+          "z": 3760,
+          "facing": 70,
+          "formation": "line",
+          "strength": 400,
+          "confidence": "documented",
+          "citation": "The Peach Orchard salient smashed — the 21st MS fights through the breach WITH the other three regiments (dossier EC4.2: the divergence happens at 'the breach and the wheel', i.e. AFTER this point, not during it). No regiment-grain attribution exists for this shared loss (brigade 1,598→1,450 here); held FLAT — the residual brigade absorbs the full shared delta by construction (exact subtraction, not an invented per-regiment split of an unattributable shared loss)."
+        },
+        {
+          "t": 12000,
+          "x": 3617,
+          "z": 3643,
+          "facing": 90,
+          "formation": "line",
+          "strength": 400,
+          "confidence": "documented",
+          "citation": "THE DIVERGENCE: 'the regiments inclining left to Plum Run except the 21st MS' (tablet, csa-1c-mcl-3-barksdale.md EC3.2); drawn j2-04 (19:00) puts '21' MISS' separately at the Trostle ground OVER 'BIGELOW' with 'WATSON' (I/5th US) nearby — (3617,3643), the divergence's own primary coordinate (dossier EC3.3, read 2026-07-11). Facing east ('straight east past the Trostle house onto Bigelow's and Watson's batteries', EC4.2) while the brigade's other three regiments wheel northeast toward Plum Run (csa-humphreys' own t=12000 keyframe, this file). Strength still 400 — no loss yet attributed to the 21st specifically at this instant."
+        },
+        {
+          "t": 12900,
+          "x": 3617,
+          "z": 3643,
+          "facing": 100,
+          "formation": "line",
+          "strength": 297,
+          "confidence": "documented",
+          "citation": "THE TROSTLE CAPTURE, cross-referenced to us-btty-bigelow's own t=12900 keyframe (SAME real-world moment, this file): 'silenced the four pieces on my right, and prevented their withdrawal' (Milton, or-27-1-milton — the 9th MA Battery's own record); 'captured but were unable to bring off' (Barksdale's brigade tablet, csa-1c-mcl-3-barksdale.md EC5.3) — Bigelow's four guns and Watson's I/5th US four guns both taken at this ground. LOSS PRIMARY, exact: the ANV return's own 21st-Mississippi regimental row, 103 k+w (or-27-2-anv-return pp. 338-339, dossier EC6 — the SAME return whose brigade-wide total the tablet itemizes exactly; missing not broken out by regiment in the return, so 103 is the k+w floor, not an invented full total). 400 − 103 = 297."
+        },
+        {
+          "t": 14340,
+          "x": 3617,
+          "z": 3643,
+          "facing": 100,
+          "formation": "line",
+          "strength": 297,
+          "confidence": "documented",
+          "citation": "Held at the Trostle ground through the window's end. HONEST GAP (EC3/EC4, matching the corpus's own convention for this class of gap — e.g. decomposition-wave-1's 6th Wisconsin between its crest re-advance and the Culp's Hill rendezvous): no citation attests the 21st Mississippi specifically rejoining the other three regiments' fall-back to the Emmitsburg Road ground before dark; the brigade-wide reconsolidation (csa-humphreys' own evening-file citation, 'Re-formed... under Humphreys') is a BRIGADE fact, not separately regiment-attested. No further loss documented (held flat, not invented)."
         }
       ]
     },
@@ -4411,9 +4480,9 @@
           "z": 6420,
           "facing": 250,
           "formation": "line",
-          "strength": 660,
+          "strength": 800,
           "confidence": "documented",
-          "citation": "Smith's brigade on the York Pike flank guard July 1-2 (register/tablet; detached watching the left rear — documented absence from the assaults)."
+          "citation": "Smith's brigade on the York Pike flank guard July 1-2 (register/tablet; detached watching the left rear — documented absence from the assaults). STRENGTH RE-DERIVED (residuals-decomp-2, 2026-07-16, per strength-reconciliation-2.md §4's structural-fix recommendation): tablet 'Present about 800' (stone-sentinels, reconstruction/dossiers/csa-2c-ear-2-smith.md EC2) adopted DIRECTLY, approximation flagged — not the post-loss ~660 this placeholder previously carried. The brigade's only documented combat (the July 3 Culp's Hill dislodgment action; report No. 476's own 142 k/w/m total, EC6) postdates this entire July 1-2 window (flank-guard/Stuart-detachment duty only, EC3/EC5 — no engagement); netting a July-3 loss into a July-1-2 placeholder was backwards double-counting at the root, corrected here. REFINEMENT NOTE (preserved, not closed): gettysburg-july3-morning.json's inherited t=0 and gettysburg-july3.json's own t=0 (both still 660, previously Δ0 with each other per strength-reconciliation-2) are UNCHANGED by this pass — out of this task's small, contained scope — and now read a new, honestly-flagged Δ140 low against this corrected 800 baseline. Propagating the fix through the morning phase's own decay arithmetic (800 − 142 = 658, replacing the currently-inherited pre-netted 660) is the recommended next pickup (see docs/reconstruction/audit/residuals-decomp-2.md task 1)."
         },
         {
           "t": 14340,
@@ -4421,9 +4490,9 @@
           "z": 6420,
           "facing": 250,
           "formation": "line",
-          "strength": 660,
+          "strength": 800,
           "confidence": "documented",
-          "citation": "Smith's brigade on the York Pike flank guard July 1-2 (register/tablet; detached watching the left rear — documented absence from the assaults)."
+          "citation": "Smith's brigade on the York Pike flank guard July 1-2 (register/tablet; detached watching the left rear — documented absence from the assaults). STRENGTH RE-DERIVED (residuals-decomp-2, 2026-07-16): held flat through the window's end — no combat, no documented loss, per the same re-derivation as this unit's t=0 keyframe (tablet 'Present about 800' adopted directly; see that keyframe's citation for the full basis and the preserved refinement note)."
         }
       ]
     },
@@ -6435,6 +6504,15 @@
       "unitId": "us-btty-dow",
       "confidence": "documented",
       "citation": "The 6th ME on the improvised Plum Run line (~19:00 to dark; or-27-1-dow class record via McGilvery)."
+    },
+    {
+      "id": "j2p-21ms-trostle-capture",
+      "kind": "musketry",
+      "t0": 12600,
+      "t1": 12900,
+      "unitId": "csa-21ms",
+      "confidence": "documented",
+      "citation": "The 21st Mississippi overruns Bigelow's and Watson's guns at the Trostle angle: 'silenced the four pieces on my right, and prevented their withdrawal' (Milton, or-27-1-milton); 'captured but were unable to bring off' (Barksdale's brigade tablet). Cross-referenced to us-btty-bigelow's own t=12900 keyframe, same real-world moment."
     },
     {
       "id": "j2a-culp-nicholls",

@@ -55,6 +55,10 @@ MANUAL_CHAINS = {
     # promoted parentless out of Colgrove's brigade — same pattern.
     "us-2ma": ["Army of the Potomac", "XII Corps", "1st Division"],  # reg-us-xii-1-3 (Colgrove's)
     "us-27in": ["Army of the Potomac", "XII Corps", "1st Division"],  # reg-us-xii-1-3 (Colgrove's)
+    # residuals-decomp-2 (docs/reconstruction/audit/residuals-decomp-2.md,
+    # task 3): the 21st Mississippi, promoted parentless out of Barksdale's
+    # brigade — same pattern.
+    "csa-21ms": ["Army of Northern Virginia", "First Corps", "McLaws's Division"],  # reg-csa-1c-mcl-3 (Barksdale's)
 }
 
 GENERIC_DIVISION = re.compile(r"^\d+(st|nd|rd|th) (Division|Brigade)")

@@ -108,7 +108,13 @@ describe("authored July 3 battle", () => {
     //      Harn's 3rd NY) — authoring-wave-a2.md's headline cut, picked up
     //      once new units were allowed (author-decomp1-zieglers-grove.ts).
     //      All parentless, post-repulse legs, no fire (muzzles cold).
-    expect(units).toHaveLength(195);
+    //    + 2 residuals-decomp-2 units (task 2, Colgrove split parity): this
+    //      file's own us-colgrove (891, the family total per strength-
+    //      reconciliation-2) is now split three ways to match gettysburg-
+    //      july3-morning.json's own decomposition — us-2ma and us-27in
+    //      promoted parentless (ED-76), the residual renamed "... minus the
+    //      2nd Massachusetts and 27th Indiana". Neither is Angle-cast.
+    expect(units).toHaveLength(197);
     const ohio = units.find((u: any) => u.id === "us-8oh");
     expect(ohio).toBeDefined();
     expect(ohio.parent).toBeUndefined(); // Carroll's brigade isn't modeled
