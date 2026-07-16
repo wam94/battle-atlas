@@ -231,12 +231,13 @@ adjudication, which needs no bump, is the right resolution.
 | tool vitest | 119 | **119 passed** (no `tool/` source touched) |
 | pipeline pytest | 59 | **59 passed** (no `pipeline/` source touched) |
 | reconstruction pytest | 148 passed + 1 skipped (149 total) | **148 passed, 1 skipped** — includes `test_retrograde_facing.py`'s 3 (guard, allowlist-liveness, pinned-cast sha256), all green with the new annotations |
-| Unity EditMode | 429 passed, 0 failed, 4 skipped | RUN IN PROGRESS — updated by the follow-up commit |
-| Unity PlayMode | 21 passed, 0 failed | RUN IN PROGRESS — updated by the follow-up commit |
+| Unity EditMode | 429 passed, 0 failed, 4 skipped | **429 passed, 0 failed, 4 skipped** (433 total — exactly the floor) |
+| Unity PlayMode | 21 passed, 0 failed | **21 passed, 0 failed, 0 skipped** — the recorded clean run is `playmode-results2.xml`; a first run under heavy machine load (load avg ~19: the owner's editor open on the main checkout plus this worktree's first-import churn) dropped THREE video-seek-latency tests (`SeekLatency_Full1440pProductionMedia`, `Seek_OutsideWindow_ClampsToDecodableRange`, `Seek_SettlesWithinOneFrame` — drift/latency assertions, e.g. "latency 3017ms"), the same known perf-sensitive video-decode flake class `retrograde-facing.md` §9 documents; clean after a 2-minute settle (load avg ~4.8), unrelated to this wave's comment-only change |
 
 (Unity runs: CLI `-batchmode -runTests -buildTarget OSXUniversal`, this
 worktree's own `Library` (built fresh); gitignored inputs restored from the
-main checkout — `data/heightmap`, `data/dem_cache`, `app/Assets/Generated`,
+main checkout — `data/heightmap`, `data/dem_cache`, `data/landcover/*`
+(incl. `splatmap.png`), `data/map-furniture/*`, `app/Assets/Generated`,
 the SoldierView `.mp4` media; staging via `CartographyStage.PrepareScene`,
 no `-nographics`. The owner's Unity editor was open on the MAIN checkout
 throughout — never touched; this worktree is a separate Unity project
