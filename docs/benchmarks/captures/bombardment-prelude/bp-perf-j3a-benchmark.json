@@ -1,0 +1,20 @@
+{
+  "unity": "6000.4.11f1",
+  "development": true,
+  "screen": "1600x1000",
+  "clockStartTime": 46800,
+  "clockEndTime": 23340,
+  "samples": [
+    {"t": 0, "screenshot": "bp-perf-j3a-t0.png", "frames": 597, "avgFps": 59.6, "p95FrameMs": 17.39, "worstFrameMs": 23.41, "allocatedMB": 323.4, "reservedMB": 443.8},
+    {"t": 420, "screenshot": "bp-perf-j3a-t420.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.16, "worstFrameMs": 22.35, "allocatedMB": 323.4, "reservedMB": 443.8},
+    {"t": 3600, "screenshot": "bp-perf-j3a-t3600.png", "frames": 597, "avgFps": 59.6, "p95FrameMs": 17.35, "worstFrameMs": 21.84, "allocatedMB": 323.4, "reservedMB": 443.8},
+    {"t": 7200, "screenshot": "bp-perf-j3a-t7200.png", "frames": 596, "avgFps": 59.6, "p95FrameMs": 17.32, "worstFrameMs": 22.70, "allocatedMB": 323.4, "reservedMB": 443.8},
+    {"t": 7500, "screenshot": "bp-perf-j3a-t7500.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.18, "worstFrameMs": 22.88, "allocatedMB": 323.7, "reservedMB": 443.8},
+    {"t": 7800, "screenshot": "bp-perf-j3a-t7800.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.10, "worstFrameMs": 23.51, "allocatedMB": 323.7, "reservedMB": 443.8},
+    {"t": 8100, "screenshot": "bp-perf-j3a-t8100.png", "frames": 569, "avgFps": 56.9, "p95FrameMs": 17.26, "worstFrameMs": 242.52, "allocatedMB": 326.6, "reservedMB": 451.8},
+    {"t": 8160, "screenshot": "bp-perf-j3a-t8160.png", "frames": 596, "avgFps": 59.6, "p95FrameMs": 17.14, "worstFrameMs": 32.63, "allocatedMB": 329.5, "reservedMB": 451.8},
+    {"t": 8700, "screenshot": "bp-perf-j3a-t8700.png", "frames": 595, "avgFps": 59.5, "p95FrameMs": 17.08, "worstFrameMs": 33.04, "allocatedMB": 328.3, "reservedMB": 451.8},
+    {"t": 9000, "screenshot": "bp-perf-j3a-t9000.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.15, "worstFrameMs": 22.83, "allocatedMB": 328.4, "reservedMB": 451.8},
+    {"t": 10800, "screenshot": "bp-perf-j3a-t10800.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.14, "worstFrameMs": 22.69, "allocatedMB": 328.4, "reservedMB": 451.8}
+  ]
+}
