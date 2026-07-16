@@ -2647,6 +2647,26 @@
           "citation": "Bachelder Third Day sheet, LOC 99447492 (Pettigrew's line north of Fry); strength 'about 2,000 present on the first day': Stone Sentinels Pettigrew's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after first-day losses (flagged, no sourced July 3 figure exists); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade regiment list, order as listed there — not independently attested) — ED-75 PROVISIONAL PLACEHOLDER (owner-ruled 2026-07-13, day-expansion slice 2; supersedes the slice-1 deferred annotation): July-3 arrival strength set to 900 (envelope 750-1,050), confidence INFERRED, by subtraction — 'present on the first day about 2,000' (West Conf Ave tablet / stone-sentinels compilation, inferred tier) minus ~1,100 read as July-1-incurred from the brigade's whole-battle regimental return (190 k / 915 w = 1,105, NO missing column printed at all, or-27-2-anv-return p. 344, ED-49 exemplar) — the 26th NC's own primary day-split ('We went in with over 800 men... There came out but 216' July 1; '216... only about 80' July 4, or-27-2-young-26nc) shows this brigade's dominant loss share fell July 1, the basis for reading the printed total as ~all-July-1. Envelope reflects (a) the base-strength disagreement — Wikipedia / military-history.fandom's uncited 'roughly 2,500' vs the 2,000 tablet compilation, both attributed-only tier, recorded verbatim, NOT averaged — and (b) the return's brigade-wide missing/captured mass being wholly absent (ED-49). PRECONDITION: superseded on arrival by Busey & Martin, Regimental Strengths and Losses at Gettysburg page-level figures (owner has stated purchase intent) — until then this value is a documented inference, not a re-basing, and the decay curve below is proportionally RESCALED from the existing ABT-map reconstruction shape, not independently re-derived per keyframe. dossier csa-3c-het-1-marshall.md EC2/EC6; docs/reconstruction/audit/ed75-placeholder.md."
         },
         {
+          "t": 420,
+          "x": 3250,
+          "z": 5330,
+          "facing": 100,
+          "formation": "line",
+          "strength": 900,
+          "confidence": "inferred",
+          "citation": "CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). Jones's own +65-profiled clock corroborates the same real moment ('about 12 o'clock ... our batteries opened', or-27-2-jones-26nc, this brigade's own regiment-grain report). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-attested bombardment share (below) begins to accrue; strength unchanged from the arrival figure (bombardment-prelude pass)."
+        },
+        {
+          "t": 3600,
+          "x": 3250,
+          "z": 5330,
+          "facing": 100,
+          "formation": "line",
+          "strength": 893,
+          "confidence": "inferred",
+          "citation": "mid-bombardment (~14:00): 'About 1 p.m. the artillery along our entire line opened ... For two hours the fire was heavy and incessant ... The artillery ceased firing at 3 o'clock' (or-27-2-davis-jr, Heth's division report) — no brigade-specific casualty figure exists for this brigade (dossier csa-3c-het-1-marshall.md EC5: 'under the two-hour fire, division record [A window]'), so the already-established 13-man bombardment share (900→887 by ~15:00, UNCHANGED total from the prior build) is spread across the attested window rather than landing all at once at its close; this keyframe marks the even-split midpoint (compilation-class, inferred — matches the corpus's own even-split convention, e.g. decomposition-wave-1's 6th Wisconsin technique and the 21st Mississippi's 1,598/4 rounding, residuals-decomp-2 task 3a) — NOT an attested casualty-rate claim (bombardment-prelude pass)."
+        },
+        {
           "t": 7200,
           "x": 3250,
           "z": 5330,
@@ -2654,7 +2674,7 @@
           "formation": "line",
           "strength": 887,
           "confidence": "inferred",
-          "citation": "interpolated: line static under bombardment (Alexander 1907)"
+          "citation": "BOMBARDMENT SHARE, RE-TIMED (bombardment-prelude pass, docs/reconstruction/audit/charge-intensity-proposals.md §4 P1): 'About 1 p.m. the artillery along our entire line opened ... For two hours the fire was heavy and incessant ... The artillery ceased firing at 3 o'clock' (or-27-2-davis-jr, Heth's division report) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-3c-het-1-marshall.md EC5) — the already-established 13-man share (900→887, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it)."
         },
         {
           "t": 7500,
@@ -2757,6 +2777,26 @@
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's line north of Fry); strength 'about 2,000 present on the first day': Stone Sentinels Pettigrew's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after first-day losses (flagged, no sourced July 3 figure exists); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
         {
+          "t": 420,
+          "x": 3216,
+          "z": 5136,
+          "facing": 100,
+          "formation": "line",
+          "strength": 225,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe).  No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-attested bombardment share (below) begins to accrue; strength unchanged from the arrival figure (bombardment-prelude pass).]; slot order unchanged from t=0 (bombardment-prelude pass, round(parentAt(t)/4) — the same formula day-expansion slice 1 / ED-75 used for this family)"
+        },
+        {
+          "t": 3600,
+          "x": 3216,
+          "z": 5136,
+          "facing": 100,
+          "formation": "line",
+          "strength": 223,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-marshall's own t=3600 keyframe]; round(parentAt(3600)/4) (bombardment-prelude pass)"
+        },
+        {
           "t": 7200,
           "x": 3216,
           "z": 5136,
@@ -2764,7 +2804,7 @@
           "formation": "line",
           "strength": 222,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (bombardment-prelude pass, docs/reconstruction/audit/charge-intensity-proposals.md §4 P1): 'About 1 p.m. the artillery along our entire line opened ... For two hours the fire was heavy and incessant ... The artillery ceased firing at 3 o'clock' (or-27-2-davis-jr, Heth's division report) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-3c-het-1-marshall.md EC5) — the already-established 13-man share (900→887, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(parentAt(7200)/4) unchanged (bombardment-prelude pass — value not touched)"
         },
         {
           "t": 7500,
@@ -2857,6 +2897,26 @@
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's line north of Fry); strength 'about 2,000 present on the first day': Stone Sentinels Pettigrew's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after first-day losses (flagged, no sourced July 3 figure exists); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
         {
+          "t": 420,
+          "x": 3239,
+          "z": 5265,
+          "facing": 100,
+          "formation": "line",
+          "strength": 225,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe).  No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-attested bombardment share (below) begins to accrue; strength unchanged from the arrival figure (bombardment-prelude pass).]; slot order unchanged from t=0 (bombardment-prelude pass, round(parentAt(t)/4) — the same formula day-expansion slice 1 / ED-75 used for this family)"
+        },
+        {
+          "t": 3600,
+          "x": 3239,
+          "z": 5265,
+          "facing": 100,
+          "formation": "line",
+          "strength": 223,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-marshall's own t=3600 keyframe]; round(parentAt(3600)/4) (bombardment-prelude pass)"
+        },
+        {
           "t": 7200,
           "x": 3239,
           "z": 5265,
@@ -2864,7 +2924,7 @@
           "formation": "line",
           "strength": 222,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (bombardment-prelude pass, docs/reconstruction/audit/charge-intensity-proposals.md §4 P1): 'About 1 p.m. the artillery along our entire line opened ... For two hours the fire was heavy and incessant ... The artillery ceased firing at 3 o'clock' (or-27-2-davis-jr, Heth's division report) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-3c-het-1-marshall.md EC5) — the already-established 13-man share (900→887, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(parentAt(7200)/4) unchanged (bombardment-prelude pass — value not touched)"
         },
         {
           "t": 7500,
@@ -2957,6 +3017,26 @@
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's line north of Fry); strength 'about 2,000 present on the first day': Stone Sentinels Pettigrew's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after first-day losses (flagged, no sourced July 3 figure exists); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
         {
+          "t": 420,
+          "x": 3261,
+          "z": 5395,
+          "facing": 100,
+          "formation": "line",
+          "strength": 225,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe).  No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-attested bombardment share (below) begins to accrue; strength unchanged from the arrival figure (bombardment-prelude pass).]; slot order unchanged from t=0 (bombardment-prelude pass, round(parentAt(t)/4) — the same formula day-expansion slice 1 / ED-75 used for this family)"
+        },
+        {
+          "t": 3600,
+          "x": 3261,
+          "z": 5395,
+          "facing": 100,
+          "formation": "line",
+          "strength": 223,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-marshall's own t=3600 keyframe]; round(parentAt(3600)/4) (bombardment-prelude pass)"
+        },
+        {
           "t": 7200,
           "x": 3261,
           "z": 5395,
@@ -2964,7 +3044,7 @@
           "formation": "line",
           "strength": 222,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (bombardment-prelude pass, docs/reconstruction/audit/charge-intensity-proposals.md §4 P1): 'About 1 p.m. the artillery along our entire line opened ... For two hours the fire was heavy and incessant ... The artillery ceased firing at 3 o'clock' (or-27-2-davis-jr, Heth's division report) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-3c-het-1-marshall.md EC5) — the already-established 13-man share (900→887, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(parentAt(7200)/4) unchanged (bombardment-prelude pass — value not touched)"
         },
         {
           "t": 7500,
@@ -3057,6 +3137,26 @@
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's line north of Fry); strength 'about 2,000 present on the first day': Stone Sentinels Pettigrew's Brigade page — CAVEAT: July 1 figure, overstates July 3 strength after first-day losses (flagged, no sourced July 3 figure exists); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
         },
         {
+          "t": 420,
+          "x": 3284,
+          "z": 5524,
+          "facing": 100,
+          "formation": "line",
+          "strength": 225,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe).  No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-attested bombardment share (below) begins to accrue; strength unchanged from the arrival figure (bombardment-prelude pass).]; slot order unchanged from t=0 (bombardment-prelude pass, round(parentAt(t)/4) — the same formula day-expansion slice 1 / ED-75 used for this family)"
+        },
+        {
+          "t": 3600,
+          "x": 3284,
+          "z": 5524,
+          "facing": 100,
+          "formation": "line",
+          "strength": 223,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-marshall's own t=3600 keyframe]; round(parentAt(3600)/4) (bombardment-prelude pass)"
+        },
+        {
           "t": 7200,
           "x": 3284,
           "z": 5524,
@@ -3064,7 +3164,7 @@
           "formation": "line",
           "strength": 222,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Marshall's/Pettigrew's Brigade list — not independently attested); per-regiment strengths not documented — equal quarters of the brigade's 'about 2,000 present on the first day' (Stone Sentinels; July-1 figure, overstates July 3), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (bombardment-prelude pass, docs/reconstruction/audit/charge-intensity-proposals.md §4 P1): 'About 1 p.m. the artillery along our entire line opened ... For two hours the fire was heavy and incessant ... The artillery ceased firing at 3 o'clock' (or-27-2-davis-jr, Heth's division report) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-3c-het-1-marshall.md EC5) — the already-established 13-man share (900→887, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(parentAt(7200)/4) unchanged (bombardment-prelude pass — value not touched)"
         },
         {
           "t": 7500,
@@ -3625,6 +3725,26 @@
           "citation": "Bachelder Third Day sheet, LOC 99447492 (far left of Pettigrew's line); strength '800 muskets' (~880 officers and men): Col. R.M. Mayo's Aug. 13, 1863 report, cited via NPS Gettysburg Seminar essay 5 (secondary hop flagged; Stone Sentinels page for this brigade is a known duplication artifact and is not used); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Brockenbrough's Brigade regiment list, order as listed there — not independently attested) — ED-48 EXECUTED (day-expansion slice 1): (a) base 880 KEPT — the Mayo-hop '800 muskets' ≈ 880 working basis with the 800–1,100 range carried, no promotion to a clean number (the Stone Sentinels page duplicates Davis's figures byte-for-byte — permanently unusable, standing DO-NOT-USE); (b) the decay below re-derives to the return's 148 k+w LOSS FLOOR (or-27-2-anv-return p. 344 — missing unreported, so 148 is 'at least'); (c) the two-wing rendering stays reconstruction-grade (dossier csa-3c-het-2-brockenbrough.md; ED-48)"
         },
         {
+          "t": 420,
+          "x": 3280,
+          "z": 5730,
+          "facing": 102,
+          "formation": "line",
+          "strength": 880,
+          "confidence": "inferred",
+          "citation": "CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe).  No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-attested bombardment share (below) begins to accrue; strength unchanged from the arrival figure (bombardment-prelude pass)."
+        },
+        {
+          "t": 3600,
+          "x": 3280,
+          "z": 5730,
+          "facing": 102,
+          "formation": "line",
+          "strength": 876,
+          "confidence": "inferred",
+          "citation": "mid-bombardment (~14:00): 'About 1 p.m. the artillery along our entire line opened ... For two hours the fire was heavy and incessant ... The artillery ceased firing at 3 o'clock' (or-27-2-davis-jr, Heth's division report) — no brigade-specific casualty figure exists for this brigade (dossier csa-3c-het-2-brockenbrough.md EC5: 'under the two-hour fire with the division [A window, division record]; no brigade figure (open)'), so the already-established 7-man bombardment share (880→873 by ~15:00, UNCHANGED total from the prior build) is spread across the attested window rather than landing all at once at its close; this keyframe marks the even-split midpoint (compilation-class, inferred — matches the corpus's own even-split convention, e.g. decomposition-wave-1's 6th Wisconsin technique and the 21st Mississippi's 1,598/4 rounding, residuals-decomp-2 task 3a) — NOT an attested casualty-rate claim (bombardment-prelude pass)."
+        },
+        {
           "t": 7200,
           "x": 3280,
           "z": 5730,
@@ -3632,7 +3752,7 @@
           "formation": "line",
           "strength": 873,
           "confidence": "inferred",
-          "citation": "interpolated: line static under bombardment (Alexander 1907)"
+          "citation": "BOMBARDMENT SHARE, RE-TIMED (bombardment-prelude pass, docs/reconstruction/audit/charge-intensity-proposals.md §4 P1): 'About 1 p.m. the artillery along our entire line opened ... For two hours the fire was heavy and incessant ... The artillery ceased firing at 3 o'clock' (or-27-2-davis-jr, Heth's division report) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-3c-het-2-brockenbrough.md EC5) — the already-established 7-man share (880→873, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it)."
         },
         {
           "t": 7500,
@@ -3719,6 +3839,26 @@
           "citation": "wing organization documented — the brigade advanced in two wings (Col. R. M. Mayo's report, OR 27/2, cited via NPS Gettysburg Seminar 12 essay 5, secondary hop flagged; docs/research/2026-07-02-regiment-track-sources.md §3.1); Brockenbrough's right wing position = documented brigade start (Bachelder Third Day sheet, LOC 99447492, far left of Pettigrew's line) + lateral wing offset, inferred; strength: equal half of Mayo's '800 muskets' (~880 officers and men) — per-wing strength not documented; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); per-regiment movement within the wing unattested — the wing is the honest floor (survey grade W)"
         },
         {
+          "t": 420,
+          "x": 3267,
+          "z": 5667,
+          "facing": 102,
+          "formation": "line",
+          "strength": 440,
+          "confidence": "inferred",
+          "citation": "CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe).  No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-attested bombardment share (below) begins to accrue; strength unchanged from the arrival figure (bombardment-prelude pass). wing offset inferred."
+        },
+        {
+          "t": 3600,
+          "x": 3267,
+          "z": 5667,
+          "facing": 102,
+          "formation": "line",
+          "strength": 438,
+          "confidence": "inferred",
+          "citation": "mid-bombardment (~14:00), re-timed share, see csa-brockenbrough's own t=3600 keyframe; round(parentAt(3600)/2) (bombardment-prelude pass); wing offset inferred."
+        },
+        {
           "t": 7200,
           "x": 3267,
           "z": 5667,
@@ -3726,7 +3866,7 @@
           "formation": "line",
           "strength": 437,
           "confidence": "inferred",
-          "citation": "interpolated: line static under bombardment (Alexander 1907); wing offset inferred"
+          "citation": "BOMBARDMENT SHARE, RE-TIMED (bombardment-prelude pass, docs/reconstruction/audit/charge-intensity-proposals.md §4 P1): 'About 1 p.m. the artillery along our entire line opened ... For two hours the fire was heavy and incessant ... The artillery ceased firing at 3 o'clock' (or-27-2-davis-jr, Heth's division report) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-3c-het-2-brockenbrough.md EC5) — the already-established 7-man share (880→873, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it). wing offset inferred; round(parentAt(7200)/2) unchanged (value not touched)."
         },
         {
           "t": 7500,
@@ -3803,6 +3943,26 @@
           "citation": "wing organization documented — the brigade advanced in two wings (Col. R. M. Mayo's report, OR 27/2, cited via NPS Gettysburg Seminar 12 essay 5, secondary hop flagged; docs/research/2026-07-02-regiment-track-sources.md §3.1); Brockenbrough's left wing position = documented brigade start (Bachelder Third Day sheet, LOC 99447492, far left of Pettigrew's line) + lateral wing offset, inferred; strength: equal half of Mayo's '800 muskets' (~880 officers and men) — per-wing strength not documented; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); per-regiment movement within the wing unattested — the wing is the honest floor (survey grade W)"
         },
         {
+          "t": 420,
+          "x": 3293,
+          "z": 5793,
+          "facing": 102,
+          "formation": "line",
+          "strength": 440,
+          "confidence": "inferred",
+          "citation": "CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe).  No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-attested bombardment share (below) begins to accrue; strength unchanged from the arrival figure (bombardment-prelude pass). wing offset inferred."
+        },
+        {
+          "t": 3600,
+          "x": 3293,
+          "z": 5793,
+          "facing": 102,
+          "formation": "line",
+          "strength": 438,
+          "confidence": "inferred",
+          "citation": "mid-bombardment (~14:00), re-timed share, see csa-brockenbrough's own t=3600 keyframe; round(parentAt(3600)/2) (bombardment-prelude pass); wing offset inferred."
+        },
+        {
           "t": 7200,
           "x": 3293,
           "z": 5793,
@@ -3810,7 +3970,7 @@
           "formation": "line",
           "strength": 437,
           "confidence": "inferred",
-          "citation": "interpolated: line static under bombardment (Alexander 1907); wing offset inferred"
+          "citation": "BOMBARDMENT SHARE, RE-TIMED (bombardment-prelude pass, docs/reconstruction/audit/charge-intensity-proposals.md §4 P1): 'About 1 p.m. the artillery along our entire line opened ... For two hours the fire was heavy and incessant ... The artillery ceased firing at 3 o'clock' (or-27-2-davis-jr, Heth's division report) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-3c-het-2-brockenbrough.md EC5) — the already-established 7-man share (880→873, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it). wing offset inferred; round(parentAt(7200)/2) unchanged (value not touched)."
         },
         {
           "t": 7500,
@@ -3889,6 +4049,26 @@
           "citation": "Bachelder Third Day sheet, LOC 99447492 (Trimble's second line behind Pettigrew's left-center); strength 1,355 present: Stone Sentinels Lane's Brigade page (monument inscription; a conflicting 1,730 extraction of the same page exists — direct-fetch figure used, conflict flagged); bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Lane's Brigade regiment list, order as listed there — not independently attested) — BASIS CONFIRMED PRIMARY (ED-47, day-expansion slice 1): 'an effective total of 1,355, including ambulance corps and rear guard' with July 1–2 loss 'but slight' (or-27-2-lane-jh) — a serviceable July-3 basis, unlike the wing's July-1-scoped figures; the 660 decay is CONFIRMED as the battle-total basis (the return's 389 is the k+w component measure per its own footnote — different measures, not competing counts)"
         },
         {
+          "t": 420,
+          "x": 3080,
+          "z": 5350,
+          "facing": 100,
+          "formation": "line",
+          "strength": 1355,
+          "confidence": "inferred",
+          "citation": "CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe).  No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-attested bombardment share (below) begins to accrue; strength unchanged from the arrival figure (bombardment-prelude pass)."
+        },
+        {
+          "t": 3600,
+          "x": 3080,
+          "z": 5350,
+          "facing": 100,
+          "formation": "line",
+          "strength": 1347,
+          "confidence": "inferred",
+          "citation": "mid-bombardment (~14:00): 'the two hours' exposure' (or-27-2-engelhard, Pender's/Trimble's division record) — no brigade-specific casualty figure exists for this brigade (dossier csa-3c-pen-2-lane.md EC5: 'the two hours' exposure' (or-27-2-engelhard); no brigade figure (open)), so the already-established 15-man bombardment share (1355→1340 by ~15:00, UNCHANGED total from the prior build) is spread across the attested window rather than landing all at once at its close; this keyframe marks the even-split midpoint (compilation-class, inferred — matches the corpus's own even-split convention, e.g. decomposition-wave-1's 6th Wisconsin technique and the 21st Mississippi's 1,598/4 rounding, residuals-decomp-2 task 3a) — NOT an attested casualty-rate claim (bombardment-prelude pass)."
+        },
+        {
           "t": 7200,
           "x": 3080,
           "z": 5350,
@@ -3896,7 +4076,7 @@
           "formation": "line",
           "strength": 1340,
           "confidence": "inferred",
-          "citation": "interpolated: second line static under bombardment (Alexander 1907)"
+          "citation": "BOMBARDMENT SHARE, RE-TIMED (bombardment-prelude pass, docs/reconstruction/audit/charge-intensity-proposals.md §4 P1): 'the two hours' exposure' (or-27-2-engelhard, Pender's/Trimble's division record) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-3c-pen-2-lane.md EC5) — the already-established 15-man share (1355→1340, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it)."
         },
         {
           "t": 7500,
