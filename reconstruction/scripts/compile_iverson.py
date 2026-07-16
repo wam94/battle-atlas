@@ -249,7 +249,7 @@ def build_audit(corpus: vr.Corpus, bundle: dict) -> str:
         lines.append(f"| {u['unitId']} | {u['startStrength']} | {losses} | "
                      f"{u['startStrength'] - losses} |")
     lines.append("")
-    lines.append("The left three regiments lose 501 on the halted line inside the slice — "
+    lines.append("The brigade loses 525 on the halted line (t>=6000) inside the slice — "
                  "the '500 ... on a line as straight as a dress parade' exemplar "
                  "(claim-iv-death-line); the 12th NC stays light (claim-iv-return-rows). "
                  "The ~308-man capture mass (claim-iv-surrender-mass) is PAST the slice "

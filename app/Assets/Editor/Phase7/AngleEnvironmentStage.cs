@@ -25,7 +25,13 @@ namespace BattleAtlas.EditorTools
             public AngleEnvironment env;
         }
 
-        public static string CropDir => Path.GetFullPath(
+        // Second-site staging (the Iverson's-field Soldier View slice):
+        // a render harness may point the stage at another baked crop
+        // directory with the SAME environment.json contract. Null = the
+        // Angle (default; every existing harness and test is unchanged).
+        public static string CropDirOverride;
+
+        public static string CropDir => CropDirOverride ?? Path.GetFullPath(
             Path.Combine(Application.dataPath, "../../data/heightmap_angle"));
 
         const string TexRoot = "Assets/ThirdParty/Materials";

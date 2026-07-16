@@ -111,7 +111,10 @@ namespace BattleAtlas.EditorTools
             macro.y - cropZ0);
 
         // ------------------------------------------------------------------
-        public static AngleActionScene StageAll()
+        // bundlePath null = the Angle bundle (default; unchanged behavior).
+        // The Iverson's-field harness passes its own compiled bundle and
+        // sets AngleEnvironmentStage.CropDirOverride first.
+        public static AngleActionScene StageAll(string bundlePath = null)
         {
             var scene = new AngleActionScene();
             scene.env = AngleEnvironmentStage.StageAll();
@@ -120,7 +123,7 @@ namespace BattleAtlas.EditorTools
             scene.cropX0 = scene.env.env.crop.x0;
             scene.cropZ0 = scene.env.env.crop.z0;
 
-            var bundle = AngleBundleLoader.Load();
+            var bundle = AngleBundleLoader.Load(bundlePath);
             // battle seed: pinned by the compiler (plan §6.4 — victim
             // selection deterministic from battle seed + unit + slot;
             // ED-21: provenance-only recompiles never re-roll)

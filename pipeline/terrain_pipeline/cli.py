@@ -65,6 +65,14 @@ def make_parser():
         "road/fences/wall/trees/buildings/battery + ground-class splat into "
         "data/heightmap_angle/environment.json (+_splat.raw)",
     )
+    sub.add_parser(
+        "environment-oakridge",
+        help="bake the Oak Ridge / Iverson's-field crop environment (second "
+        "Soldier View film): wall/woods/farm + ground-class splat into "
+        "data/heightmap_oakridge/environment.json (+_splat.raw); requires "
+        "`crop --x0 3350 --z0 7800 --x1 4350 --z1 8800 --out "
+        "data/heightmap_oakridge` first",
+    )
     return parser
 
 
@@ -212,6 +220,27 @@ def run_environment():
     print(f"wrote {out_path} and {splat_path}")
 
 
+def run_environment_oakridge():
+    from terrain_pipeline import environment_oakridge
+    oakridge_dir = REPO_ROOT / "data" / "heightmap_oakridge"
+    crop_meta = oakridge_dir / "heightmap.json"
+    if not crop_meta.exists():
+        sys.exit(f"no {crop_meta}; run `crop --x0 3350 --z0 7800 --x1 4350 "
+                 f"--z1 8800 --out {oakridge_dir}` first")
+    oakridge_landcover = LANDCOVER_DIR / "oakridge.landcover.json"
+    if not oakridge_landcover.exists():
+        sys.exit(f"no {oakridge_landcover}")
+    out_path, splat_path = environment_oakridge.bake(
+        oakridge_landcover, crop_meta, oakridge_dir)
+    doc = json.loads(out_path.read_text())
+    print(
+        f"environment-oakridge: wall {len(doc['wall']['polylineFlat']) // 2} pts, "
+        f"{sum(len(g['trees']) for g in doc['groves'])} woods trees, "
+        f"{len(doc['buildings'])} buildings"
+    )
+    print(f"wrote {out_path} and {splat_path}")
+
+
 def main(argv=None):
     args = make_parser().parse_args(argv)
     if args.command == "fetch":
@@ -224,6 +253,8 @@ def main(argv=None):
         run_crop(args)
     elif args.command == "environment":
         run_environment()
+    elif args.command == "environment-oakridge":
+        run_environment_oakridge()
     else:
         run_relief()
 
