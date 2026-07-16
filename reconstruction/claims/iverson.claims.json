@@ -180,7 +180,7 @@
           "sourceId": "or-27-2-iverson",
           "locator": "No. 513",
           "excerpt": "my line of battle still lying down in position",
-          "interpretation": "The men fought prone/behind the swale. NOT REPRESENTABLE with the current clip vocabulary (no prone-fire clip) — carried as the slice's named T5 vocabulary gap #1; the proof renders show the fight standing/kneeling, disclosed."
+          "interpretation": "The men fought prone/behind the swale. REPRESENTED since the fight-prone-vocab slice: segments carrying this claim compile to the fight_prone action class (go-prone under fire, prone fire cycle with the attested roll-to-load compromise, prone deaths settling where the man lay) — T5 vocabulary gap #1 closed; docs/reconstruction/fight-prone-vocab.md carries the evidence."
         }
       ]
     },

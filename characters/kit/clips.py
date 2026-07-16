@@ -57,6 +57,26 @@ RELOAD_STAGES = (
 )
 RELOAD_SECONDS = 20.0
 
+# Prone reload stage boundaries (fight-prone vocabulary, Iverson slice).
+# Loading a muzzle-loader while lying is the awkward, slow compromise the
+# period skirmisher drill prescribes (the school of the skirmisher: the
+# man rolls onto his side/back to bring the piece within reach of the box
+# and the muzzle) — depicted here as a half-roll onto the LEFT side with
+# the muzzle raised, and it costs 26 s against the standing drill's 20 s
+# (~1.9 rounds/min in the full prone cycle vs ~2.5 standing).
+PRONE_RELOAD_STAGES = (
+    ("roll",             0.0),
+    ("handle_cartridge", 2.5),
+    ("tear_cartridge",   5.5),
+    ("charge_cartridge", 7.5),
+    ("draw_rammer",     10.5),
+    ("ram_cartridge",   14.0),
+    ("return_rammer",   17.0),
+    ("prime",           20.0),
+    ("roll_back",       23.0),
+)
+PRONE_RELOAD_SECONDS = 26.0
+
 
 def frame(t):
     return int(round(t * FPS)) + 1
@@ -1252,6 +1272,398 @@ def prone_crawl(P):
     return a
 
 
+# ----------------------------------------------------------------------
+# Fight-prone vocabulary (Iverson slice: "my line of battle still lying
+# down in position", or-27-2-iverson — the brigade fought prone in the
+# swale). Six clips sharing one prone-ready base pose so the resolver's
+# idle/fire/reload cycle switches read as one man, not three.
+# ----------------------------------------------------------------------
+
+def _prone_legs(P, ly, ry, lz=0.06, rz=0.05):
+    """Flat prone legs: targets inside leg reach, knee poles LOW and
+    slightly back so the knees rest on the ground instead of tenting."""
+    rs = P.rs
+    P.foot('l', (-rs * 0.15, ly, lz), pole=(-rs * 0.22, -0.35, -1.2))
+    P.foot('r', (rs * 0.15, ry, rz), pole=(rs * 0.22, -0.35, -1.2))
+
+
+def _prone_ready_pose(P, arch=0.0, head_yaw=0.0):
+    """Shared prone-ready base: on the belly, chest propped on the
+    elbows, musket at the ready toward the front, head up watching.
+    Returns the musket matrix.
+
+    Prone body frame (root pivots at the FEET): pelvis ~y 0.10,
+    shoulders ~y -0.70 z 0.25, head ~y -1.05 z 0.35, ground z 0."""
+    rs = P.rs
+    P.reset()
+    P.root(loc=(0, 0.16, -0.10), rot=[('X', 74.0)])
+    P.lean(-26.0 + arch)              # chest propped on the elbows
+    P.look(pitch=-24.0, yaw=head_yaw)
+    _prone_legs(P, 0.28, 0.34)
+    M = P.musket((rs * 0.16, -0.85, 0.20),
+                 (-rs * 0.03, -0.99, 0.10))
+    P.hand('r', M @ Vector((0, 0.16, -0.03)),
+           pole=(rs * 0.60, -0.55, 0.05))
+    P.hand('l', M @ Vector((0, 0.55, -0.04)),
+           pole=(-rs * 0.60, -0.90, 0.05))
+    return M
+
+
+def _key_prone_ready(P, a, t, arch=0.0, head_yaw=0.0):
+    _prone_ready_pose(P, arch=arch, head_yaw=head_yaw)
+    P.apply_ik()
+    P.curl('r', 0.75)
+    P.curl('l', 0.6)
+    P.key(a, t)
+
+
+def go_prone(P):
+    """Drop from standing to the prone firing position: crouch, left
+    hand to the ground, knees down, body lowered onto the belly, musket
+    brought to the front. 1.8 s, ends on the shared prone-ready pose."""
+    a = _new_action("Go_Prone")
+    rs = P.rs
+    ank = P.lm.ankle_z
+
+    # 0.0 standing at the ready
+    P.reset()
+    _stand_legs(P)
+    P.lean(3.0)
+    P.musket_carry()
+    P.hand('l', (-rs * 0.24, 0.0, P.lm.waist_z - 0.28))
+    P.apply_ik()
+    P.curl('r', 0.75)
+    P.curl('l', 0.2)
+    P.key(a, 0.0)
+
+    # 0.35 crouch: knees bend, musket comes off the shoulder
+    P.reset()
+    P.root(loc=(0, 0.03, -0.34))
+    P.lean(24.0)
+    P.look(pitch=12.0)
+    P.foot('l', (-rs * 0.12, -0.08, ank))
+    P.foot('r', (rs * 0.12, 0.16, ank + 0.02))
+    M = P.musket((rs * 0.22, -0.10, 0.42), (-rs * 0.05, -0.60, 0.80))
+    P.hand('r', M @ Vector((0, 0.16, -0.04)))
+    P.hand('l', (-rs * 0.26, -0.30, 0.45), pole=(-rs * 0.5, -0.4, 0.7))
+    P.apply_ik()
+    P.curl('r', 0.8)
+    P.curl('l', 0.3)
+    P.key(a, 0.35)
+
+    # 0.75 left hand takes the ground, right knee down
+    P.reset()
+    P.root(loc=(0, 0.06, -0.58), rot=[('X', 22.0)])
+    P.look(pitch=10.0)
+    P.foot('l', (-rs * 0.13, 0.10, ank + 0.02))
+    P.foot('r', (rs * 0.13, 0.44, 0.12))
+    M = P.musket((rs * 0.26, -0.14, 0.16), (-rs * 0.06, -0.92, 0.39))
+    P.hand('r', M @ Vector((0, 0.15, -0.03)))
+    P.hand('l', (-rs * 0.30, -0.42, 0.05), pole=(-rs * 0.5, -0.4, 0.5))
+    P.apply_ik()
+    P.curl('r', 0.8)
+    P.curl('l', 0.4)
+    P.key(a, 0.75)
+
+    # 1.15 lowering onto the belly over the braced left arm
+    P.reset()
+    P.root(loc=(0, 0.13, -0.42), rot=[('X', 56.0)])
+    P.lean(-4.0)
+    P.look(pitch=-6.0)
+    _prone_legs(P, 0.34, 0.42, lz=0.08, rz=0.07)
+    M = P.musket((rs * 0.20, -0.70, 0.16), (-rs * 0.04, -0.97, 0.24))
+    P.hand('r', M @ Vector((0, 0.15, -0.03)),
+           pole=(rs * 0.6, -0.5, 0.2))
+    P.hand('l', (-rs * 0.34, -0.72, 0.04), pole=(-rs * 0.6, -0.85, 0.1))
+    P.apply_ik()
+    P.curl('r', 0.8)
+    P.curl('l', 0.5)
+    P.key(a, 1.15)
+
+    # 1.5 settled on the prone-ready pose; 1.8 hold
+    _key_prone_ready(P, a, 1.5)
+    _key_prone_ready(P, a, 1.8)
+    return a
+
+
+def prone_idle(P):
+    """Prone at the ready between fire cycles (loop): breathing, small
+    head scan. First and last keys are the identical base pose."""
+    a = _new_action("Prone_Idle")
+    for t, arch, yaw in ((0.0, 0.0, 0.0), (0.75, -1.6, -5.0),
+                         (1.5, 0.0, 3.0), (2.25, -1.6, 6.0),
+                         (3.0, 0.0, 0.0)):
+        _key_prone_ready(P, a, t, arch=arch, head_yaw=yaw)
+    return a
+
+
+def fight_prone_fire(P):
+    """Prone fire cycle: prop higher on the elbows, cheek to the stock,
+    level the piece, discharge at t=1.5 (FireCycles.ProneMuzzleDelay),
+    recover to the prone ready. 2.4 s."""
+    a = _new_action("Fight_Prone_Fire")
+    rs = P.rs
+
+    def aim_key(t, recoil=0.0, blend=1.0):
+        P.reset()
+        P.root(loc=(0, 0.16, -0.06), rot=[('X', 74.0)])
+        P.lean(-30.0 + 4.0 * recoil)      # chest high to work the piece
+        P.look(pitch=(-14.0 - 4.0 * recoil) * blend - 24.0 * (1 - blend),
+               yaw=-rs * 4.0 * blend)
+        _prone_legs(P, 0.28, 0.34)
+        butt = Vector((rs * 0.13, -0.86 + 0.06 * recoil, 0.32))
+        mdir = Vector((-rs * 0.01, -0.99, 0.03 + 0.09 * recoil)).normalized()
+        M = P.musket(butt, mdir, top_dir=(0, 0, 1))
+        P.hand('r', M @ Vector((0, 0.16, -0.035)),
+               pole=(rs * 0.60, -0.50, 0.10))
+        P.hand('l', M @ Vector((0, 0.50, -0.045)),
+               pole=(-rs * 0.60, -0.95, 0.05))
+        P.apply_ik()
+        P.curl('r', 0.8)
+        P.curl('l', 0.55)
+        P.key(a, t)
+
+    _key_prone_ready(P, a, 0.0)
+    aim_key(0.55, blend=0.7)
+    aim_key(1.1)                      # steady on the sights
+    aim_key(1.5, recoil=1.0)          # discharge
+    aim_key(1.8, recoil=0.35)
+    _key_prone_ready(P, a, 2.4)
+    return a
+
+
+def fight_prone_reload(P):
+    """The attested compromise: to load lying down the man half-rolls
+    onto his LEFT side (skirmisher-drill precedent), brings the butt to
+    the ground at his hip with the muzzle raised, works cartridge and
+    rammer from there, primes, and rolls back onto the ready. 26 s —
+    deliberately slower than the standing drill's 20 s."""
+    a = _new_action("Fight_Prone_Reload")
+    rs = P.rs
+    lm = P.lm
+
+    butt = Vector((rs * 0.30, -0.45, 0.05))
+    mdir = Vector((-rs * 0.10, -0.80, 0.59)).normalized()
+    muzzle = butt + mdir * mk.TOTAL_LEN
+    box = Vector((rs * 0.18, -0.55, 0.32))       # cartridge box, rolled up
+    pouch = Vector((rs * 0.05, -0.75, 0.28))     # cap pouch
+    mouth = Vector((-rs * 0.08, -1.10, 0.42))
+
+    def base(roll=35.0, look_dn=6.0):
+        P.reset()
+        P.root(loc=(0, 0.16, -0.20),
+               rot=[('X', 66.0), ('Y', -rs * roll)])
+        P.look(pitch=look_dn)
+        rsv = rs
+        P.foot('l', (-rsv * 0.14, 0.30, 0.08),
+               pole=(-rsv * 0.22, -0.35, -1.2))
+        P.foot('r', (rsv * 0.10, 0.18, 0.16),
+               pole=(rsv * 0.30, -0.20, -1.0))
+        M = P.musket(butt, mdir)
+        # left hand cradles the piece low on the stock throughout
+        P.hand('l', M @ Vector((0, 0.35, 0.02)),
+               pole=(-rs * 0.5, -0.55, 0.20))
+        return M
+
+    def key_at(t, rh_target, rod=None, flipped=False, roll=35.0,
+               look=6.0, rh_pole=None, curl_r=0.6):
+        if rh_pole is None:
+            rh_pole = (rs * 0.60, -0.35, 0.55)
+        M = base(roll=roll, look_dn=look)
+        P.ramrod(rod, flipped=flipped)
+        P.hand('r', rh_target(M), pole=rh_pole)
+        P.apply_ik()
+        P.curl('l', 0.55)
+        P.curl('r', curl_r)
+        P.key(a, t)
+
+    S = dict(PRONE_RELOAD_STAGES)
+    rodC = Vector((0, mk.ROD_Y0, mk.ROD_Z))
+
+    # --- 0.0 ROLL: from the ready, half-roll left, butt to the hip
+    _key_prone_ready(P, a, 0.0)
+    key_at(1.2, lambda M: M @ Vector((0, 0.30, -0.03)), roll=18.0,
+           look=10.0, curl_r=0.75)
+
+    # --- 2.5 HANDLE CARTRIDGE: right hand to the box, round to the mouth
+    key_at(S["handle_cartridge"] + 0.5, lambda M: box,
+           rh_pole=(rs * 0.55, 0.35, 0.45), look=12.0, curl_r=0.3)
+    key_at(3.7, lambda M: box, rh_pole=(rs * 0.55, 0.35, 0.45),
+           curl_r=0.85)
+    key_at(4.7, lambda M: mouth, look=16.0, curl_r=0.85)
+
+    # --- 5.5 TEAR: bite, jerk aside
+    key_at(S["tear_cartridge"] + 0.4,
+           lambda M: mouth + Vector((0, 0, -0.01)), look=18.0, curl_r=0.9)
+    key_at(6.6, lambda M: mouth + Vector((rs * 0.08, -0.02, 0.02)),
+           look=14.0, curl_r=0.9)
+
+    # --- 7.5 CHARGE: pour at the raised muzzle
+    key_at(S["charge_cartridge"] + 0.5,
+           lambda M: muzzle + Vector((0, 0.02, 0.06)), look=8.0, curl_r=0.7)
+    key_at(9.3, lambda M: muzzle + Vector((0, 0.02, 0.025)),
+           look=8.0, curl_r=0.5)
+
+    # --- 10.5 DRAW RAMMER: to the rod head, half out, clear + flipped
+    key_at(S["draw_rammer"] + 0.4,
+           lambda M: M @ Vector((0, mk.ROD_Y1 - 0.04, mk.ROD_Z - 0.02)),
+           rod=None, look=10.0, curl_r=0.8)
+    key_at(12.2,
+           lambda M: M @ Vector((0, mk.ROD_Y0 + 0.60 + mk.ROD_LEN - 0.06,
+                                 mk.ROD_Z)),
+           rod=rodC + Vector((0, 0.60, 0)), look=8.0, curl_r=0.85)
+    key_at(13.4,
+           lambda M: M @ Vector((0, mk.TOTAL_LEN + 0.58, 0.012)),
+           rod=(0, mk.TOTAL_LEN + 0.56, 0.012), flipped=True,
+           look=4.0, curl_r=0.85)
+
+    # --- 14.0 RAM: two short awkward strokes down the raised bore
+    def rod_at(depth):
+        return (0, mk.TOTAL_LEN - depth + mk.ROD_LEN, 0.012)
+    key_at(S["ram_cartridge"] + 0.6, lambda M: M @ Vector(rod_at(0.50)),
+           rod=rod_at(0.50), flipped=True, look=8.0, curl_r=0.85)
+    key_at(15.6, lambda M: M @ Vector(rod_at(0.10)),
+           rod=rod_at(0.10), flipped=True, look=6.0, curl_r=0.85)
+    key_at(16.4, lambda M: M @ Vector(rod_at(0.55)),
+           rod=rod_at(0.55), flipped=True, look=8.0, curl_r=0.85)
+
+    # --- 17.0 RETURN RAMMER
+    key_at(S["return_rammer"] + 0.6,
+           lambda M: M @ Vector((0, mk.TOTAL_LEN + 0.56, 0.012)),
+           rod=(0, mk.TOTAL_LEN + 0.54, 0.012), flipped=True,
+           look=4.0, curl_r=0.85)
+    key_at(18.7,
+           lambda M: M @ Vector((0, mk.ROD_Y0 + 0.52 + mk.ROD_LEN, mk.ROD_Z)),
+           rod=rodC + Vector((0, 0.52, 0)), look=8.0, curl_r=0.85)
+    key_at(19.5, lambda M: M @ Vector((0, mk.ROD_Y1 - 0.03, mk.ROD_Z - 0.02)),
+           rod=None, look=10.0, curl_r=0.7)
+
+    # --- 20.0 PRIME: half-cock at the lock, cap from the pouch, cap on
+    lock = Vector((rs * 0.02, mk.BREECH_Y - 0.03, 0.03))
+    key_at(S["prime"] + 0.4, lambda M: M @ lock, look=12.0, curl_r=0.5)
+    key_at(21.6, lambda M: pouch, look=14.0, curl_r=0.4)
+    key_at(22.4, lambda M: M @ lock, look=12.0, curl_r=0.35)
+
+    # --- 23.0 ROLL BACK onto the ready
+    key_at(S["roll_back"] + 0.8, lambda M: M @ Vector((0, 0.25, -0.03)),
+           roll=16.0, look=2.0, curl_r=0.75)
+    _key_prone_ready(P, a, PRONE_RELOAD_SECONDS)
+    return a
+
+
+def rise_from_prone(P):
+    """Up from the prone ready: push up over the left arm, right knee
+    under, rise to standing with the piece. 2.2 s, ends on the standing
+    ready carry."""
+    a = _new_action("Rise_From_Prone")
+    rs = P.rs
+    ank = P.lm.ankle_z
+
+    _key_prone_ready(P, a, 0.0)
+
+    # 0.5 push up: chest off the ground over both hands
+    P.reset()
+    P.root(loc=(0, 0.14, -0.35), rot=[('X', 52.0)])
+    P.look(pitch=-8.0)
+    _prone_legs(P, 0.34, 0.42, lz=0.08, rz=0.07)
+    M = P.musket((rs * 0.22, -0.72, 0.10), (-rs * 0.05, -0.96, 0.28))
+    P.hand('r', M @ Vector((0, 0.15, -0.03)), pole=(rs * 0.6, -0.5, 0.15))
+    P.hand('l', (-rs * 0.34, -0.66, 0.04), pole=(-rs * 0.6, -0.75, 0.15))
+    P.apply_ik()
+    P.curl('r', 0.8)
+    P.curl('l', 0.5)
+    P.key(a, 0.5)
+
+    # 1.0 right knee under, low kneel, musket butt finds the ground
+    P.reset()
+    P.root(loc=(0, 0.07, -0.62), rot=[('X', 18.0)])
+    P.look(pitch=4.0)
+    P.foot('l', (-rs * 0.13, -0.10, ank + 0.02))
+    P.foot('r', (rs * 0.13, 0.50, 0.10))
+    M = P.musket((rs * 0.26, -0.28, 0.02), (rs * 0.03, 0.10, 0.99))
+    P.hand('r', M @ Vector((0, 0.95, -0.02)))
+    P.hand('l', (-rs * 0.24, -0.34, 0.28), pole=(-rs * 0.5, -0.5, 0.5))
+    P.apply_ik()
+    P.curl('r', 0.8)
+    P.curl('l', 0.3)
+    P.key(a, 1.0)
+
+    # 1.5 rising through the crouch
+    P.reset()
+    P.root(loc=(0, 0.02, -0.26))
+    P.lean(18.0)
+    P.look(pitch=6.0)
+    P.foot('l', (-rs * 0.12, -0.06, ank))
+    P.foot('r', (rs * 0.12, 0.14, ank + 0.01))
+    M = P.musket((rs * 0.20, -0.02, 0.30), (rs * 0.02, 0.10, 0.99))
+    P.hand('r', M @ Vector((0, 0.55, -0.03)))
+    P.hand('l', (-rs * 0.24, -0.16, 0.62), pole=(-rs * 0.5, -0.4, 0.8))
+    P.apply_ik()
+    P.curl('r', 0.8)
+    P.curl('l', 0.3)
+    P.key(a, 1.5)
+
+    # 2.2 standing at the ready
+    P.reset()
+    _stand_legs(P)
+    P.lean(3.0)
+    P.musket_carry()
+    P.hand('l', (-rs * 0.24, 0.0, P.lm.waist_z - 0.28))
+    P.apply_ik()
+    P.curl('r', 0.75)
+    P.curl('l', 0.2)
+    P.key(a, 2.2)
+    return a
+
+
+def prone_hit_settle(P):
+    """A man hit while lying in the firing line: a jolt through the
+    body, the grip slackens and the piece slips to the ground beside
+    him, a half-roll toward the right shoulder, then still. Sober per
+    violence-and-representation.md — a settle, not a thrash. 1.8 s;
+    the final frame persists (body stays where it lay)."""
+    a = _new_action("Prone_Hit_Settle")
+    rs = P.rs
+
+    _key_prone_ready(P, a, 0.0)
+
+    def slack_key(t, roll, head_tilt, arm_out, musket_dir, look_dn):
+        P.reset()
+        P.root(loc=(0, 0.16, -0.14), rot=[('X', 76.0), ('Y', rs * roll)])
+        P.look(pitch=look_dn, tilt=head_tilt)
+        _prone_legs(P, 0.30, 0.36)
+        _drop_musket(P, None, (rs * 0.52, -1.00, 0.035), musket_dir)
+        P.hand('r', (rs * (0.34 + arm_out), -1.00, 0.03),
+               pole=(rs * 0.6, -0.7, 0.1))
+        P.hand('l', (-rs * (0.32 + arm_out), -1.05, 0.03),
+               pole=(-rs * 0.6, -0.7, 0.1))
+        P.apply_ik()
+        P.curl('r', 0.25)
+        P.curl('l', 0.25)
+        P.key(a, t)
+
+    # 0.15 impact: the body jolts, head drops
+    P.reset()
+    P.root(loc=(rs * 0.03, 0.19, -0.11), rot=[('X', 75.0)])
+    P.lean(-6.0)
+    P.look(pitch=6.0, tilt=rs * 6.0)
+    _prone_legs(P, 0.28, 0.34)
+    M = P.musket((rs * 0.18, -0.85, 0.16), (-rs * 0.05, -0.98, 0.18))
+    P.hand('r', M @ Vector((0, 0.15, -0.03)), pole=(rs * 0.6, -0.55, 0.08))
+    P.hand('l', M @ Vector((0, 0.52, -0.04)), pole=(-rs * 0.6, -0.9, 0.05))
+    P.apply_ik()
+    P.curl('r', 0.85)
+    P.curl('l', 0.7)
+    P.key(a, 0.15)
+
+    # the grip slackens; half-roll right; settle flat
+    slack_key(0.5, 14.0, rs * 10.0, 0.02, (rs * 0.12, -0.99, 0.0), 10.0)
+    slack_key(1.0, 7.0, rs * 16.0, 0.07, (rs * 0.14, -0.99, 0.0), 8.0)
+    slack_key(1.4, 5.0, rs * 18.0, 0.09, (rs * 0.14, -0.99, 0.0), 8.0)
+    slack_key(1.8, 5.0, rs * 18.0, 0.09, (rs * 0.14, -0.99, 0.0), 8.0)
+    return a
+
+
 # ======================================================================
 # entry point
 # ======================================================================
@@ -1272,7 +1684,8 @@ def author_all(rig, lm):
                fall_back, fall_crumple, fall_side, turn_retreat,
                stand_ready, route_step, double_quick, halt_dress,
                kneel_ready, brace_artillery, flinch, waver, routed_run,
-               prone_crawl):
+               prone_crawl, go_prone, prone_idle, fight_prone_fire,
+               fight_prone_reload, rise_from_prone, prone_hit_settle):
         a = fn(P)
         made.append(a.name)
         print(f"[clips] authored {a.name}: "

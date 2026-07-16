@@ -243,6 +243,9 @@ MID_POSES = (
     ("reload_rod", "Reload_Musket", 10.6),
     ("fallen_back", "Fall_Shot_Front_Back", 1.9),
     ("fallen_side", "Fall_Shot_Left_Side", 1.6),
+    # fight-prone vocabulary: one lying-at-the-ready silhouette so a
+    # prone firing line 100 m+ out reads LOW, not standing
+    ("prone_fire", "Fight_Prone_Fire", 1.2),
 )
 
 

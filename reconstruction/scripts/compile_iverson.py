@@ -41,6 +41,26 @@ BUNDLE_FORMAT = "angle-bundle/1"  # same schema version; site-specific path
 # the production render is authorized.
 STAGING_SEED = "iverson-proof-seed/1"
 
+# Fight-prone wiring (T5 vocabulary gap #1, CLOSED by the fight-prone-vocab
+# slice): a fire segment that carries claim-iv-lying-down ("my line of
+# battle still lying down in position", or-27-2-iverson) compiles to the
+# `fight_prone` action class — the resolver's go-prone / prone fire /
+# roll-to-load / prone-idle cycle — instead of the standing fire cycle.
+# The canonical corpus keeps the semantic fire action + the claim tag;
+# this rule is the single, declarative place the attestation becomes
+# choreography. The 12th NC's fight segment does NOT carry the claim
+# (the record pins the lying line to the destroyed left) and stays a
+# standing/kneeling fire_independent.
+PRONE_CLAIM = "claim-iv-lying-down"
+_PRONE_MAPPABLE = {"fire_independent", "fire_by_rank"}
+
+
+def bundle_action(seg: dict) -> str:
+    if PRONE_CLAIM in seg.get("claimIds", []) \
+            and seg["action"] in _PRONE_MAPPABLE:
+        return "fight_prone"
+    return seg["action"]
+
 
 def compile_bundle(corpus: vr.Corpus) -> dict:
     recon = corpus.recon
@@ -110,7 +130,7 @@ def compile_bundle(corpus: vr.Corpus) -> dict:
                     "id": s["id"],
                     "t0": s["t0"],
                     "t1": s["t1"],
-                    "action": s["action"],
+                    "action": bundle_action(s),
                     "provenance": segment_provenance(s, claim_by_id),
                     "formationFrom": s["formationFrom"],
                     "formationTo": s["formationTo"],
@@ -161,7 +181,10 @@ def compile_bundle(corpus: vr.Corpus) -> dict:
                 "(Oak Ridge, July 1 afternoon; second Soldier View film, "
                 "PROOF stage). Per-second state traces to semantic segments; "
                 "segments trace to atomic claims and/or named inference rules "
-                "(docs/reconstruction/iverson-viewpoint-design.md). The Angle "
+                "(docs/reconstruction/iverson-viewpoint-design.md). Fire "
+                "segments attesting the lying-down fight (claim-iv-lying-down) "
+                "compile to the fight_prone action class "
+                "(docs/reconstruction/fight-prone-vocab.md). The Angle "
                 "bundle is untouched.",
         "slice": {"t0": t0, "t1": t1},
         "clock": {"startTimeSecondsSinceMidnight": corpus.battle["startTime"]},
@@ -255,6 +278,24 @@ def build_audit(corpus: vr.Corpus, bundle: dict) -> str:
                  "The ~308-man capture mass (claim-iv-surrender-mass) is PAST the slice "
                  "end by design: surrender is not representable with the current "
                  "action/clip vocabulary (named T5 gap #2).")
+    lines.append("")
+
+    lines.append("## Fight-prone wiring (claim-iv-lying-down — T5 gap #1 closed)")
+    lines.append("")
+    lines.append("Fire segments carrying `claim-iv-lying-down` compile to the "
+                 "`fight_prone` action class (go-prone under fire, prone fire "
+                 "cycle with the roll-to-load compromise, prone deaths that "
+                 "settle where the man lay). The 12th NC keeps the standing "
+                 "`fire_independent` — the record pins the lying line to the "
+                 "destroyed left, not the survivor regiment.")
+    lines.append("")
+    lines.append("| segment | corpus action | compiled action |")
+    lines.append("|---|---|---|")
+    for u in bundle["units"]:
+        for s in u["segments"]:
+            src = next(x for x in recon["segments"] if x["id"] == s["id"])
+            if s["action"] != src["action"] or s["action"] == "fight_prone":
+                lines.append(f"| {s['id']} | {src['action']} | {s['action']} |")
     lines.append("")
     return "\n".join(lines) + "\n"
 

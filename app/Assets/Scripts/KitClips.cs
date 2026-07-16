@@ -29,11 +29,19 @@ namespace BattleAtlas
         Flinch = 17,
         HaltDress = 18,
         ProneCrawl = 19,
+        // Fight-prone vocabulary (Iverson slice, claim-iv-lying-down:
+        // "my line of battle still lying down in position")
+        GoProne = 20,
+        ProneIdle = 21,
+        FightProneFire = 22,
+        FightProneReload = 23,
+        RiseFromProne = 24,
+        ProneHitSettle = 25,
     }
 
     public static class KitClips
     {
-        public const int Count = 20;
+        public const int Count = 26;
 
         static readonly string[] Names =
         {
@@ -43,7 +51,9 @@ namespace BattleAtlas
             "Fall_Shot_Front_Back", "Fall_Shot_Front_Crumple",
             "Fall_Shot_Left_Side", "Turn_Retreat", "Waver", "Kneel_Ready",
             "Brace_Artillery", "Flinch_Recover", "Halt_DressLine",
-            "Prone_Wounded_Crawl",
+            "Prone_Wounded_Crawl", "Go_Prone", "Prone_Idle",
+            "Fight_Prone_Fire", "Fight_Prone_Reload", "Rise_From_Prone",
+            "Prone_Hit_Settle",
         };
 
         // Authored durations in seconds (24 fps sources; loop clips list the
@@ -71,6 +81,12 @@ namespace BattleAtlas
             0.85f,         // Flinch
             2.4f,          // HaltDress
             1.6f,          // ProneCrawl (loop)
+            1.8f,          // GoProne
+            3f,            // ProneIdle (loop)
+            2.4f,          // FightProneFire (discharge at 1.5)
+            26f,           // FightProneReload (roll-to-load, 9 stages)
+            2.2f,          // RiseFromProne
+            1.8f,          // ProneHitSettle
         };
 
         static readonly bool[] Loops =
@@ -79,6 +95,8 @@ namespace BattleAtlas
             false, false, false, false, false, // aim..hit
             false, false, false, false, true,  // falls, retreat, waver
             false, false, false, false, true,  // kneel..crawl
+            false, true, false, false, false,  // go-prone..rise
+            false,                             // prone hit settle
         };
 
         public static string Name(ClipId id) => Names[(int)id];

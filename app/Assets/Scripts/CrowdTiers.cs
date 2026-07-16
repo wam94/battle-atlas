@@ -115,6 +115,14 @@ namespace BattleAtlas
                 case ClipId.FallCrumple: return "pose_fallen_back";
                 case ClipId.FallSide:
                 case ClipId.ProneCrawl: return "pose_fallen_side";
+                // the fight-prone vocabulary reads as one LOW silhouette at
+                // 100 m+ — a prone firing line must never read as standing
+                case ClipId.GoProne:
+                case ClipId.ProneIdle:
+                case ClipId.FightProneFire:
+                case ClipId.FightProneReload:
+                case ClipId.ProneHitSettle: return "pose_prone_fire";
+                case ClipId.RiseFromProne: return "pose_march_a";
                 case ClipId.March:
                 case ClipId.RouteStep:
                 case ClipId.DoubleQuick:
