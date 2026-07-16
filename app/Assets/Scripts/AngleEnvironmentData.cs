@@ -165,9 +165,11 @@ namespace BattleAtlas
         public static AngleEnvironment Parse(string json)
         {
             var env = JsonUtility.FromJson<AngleEnvironment>(json);
-            if (env == null || env.road == null || env.road.centerline == null
-                || env.road.centerline.Count == 0)
-                throw new ArgumentException("environment.json has no road centerline");
+            // An explicitly EMPTY centerline is a valid site statement
+            // ("this crop has no road corridor" — the Oak Ridge bake);
+            // a missing/null road block is still a malformed bake.
+            if (env == null || env.road == null || env.road.centerline == null)
+                throw new ArgumentException("environment.json has no road block");
             if (env.wall == null || env.wall.polylineFlat == null
                 || env.wall.polylineFlat.Count < 4)
                 throw new ArgumentException("environment.json has no wall polyline");

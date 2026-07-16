@@ -1,0 +1,18 @@
+{
+  "unityVersion": "6000.4.11f1",
+  "pipelineAsset": "Assets/Settings/HDRP/BattleAtlasHDRP_Offline.asset",
+  "bundleChecksum": "1e2e802f4ecaf2544938b7179bf5436c4232e46b78b085b8ec60e6a5daf8c941",
+  "battleSeed": "iverson-proof-seed/1",
+  "viewpoint": "iverson-forney-field",
+  "totalSlots": 3589,
+  "cameraStyle": "fp + c3p candidates (owner chooses at the gate)",
+  "sequence": {"t0": 6090, "t1": 6120, "fps": 30, "frames": 900},
+  "fpSecondsPerFrame": 0.47,
+  "peakManagedMemoryMB": 1130,
+  "probeFrames": [600,150],
+  "probesLogicalAndPoseBitwiseEqual": [true,true],
+  "probesWithinPixelTolerance": [true,true],
+  "probeStats": ["frame 600: logicalAndPoseBitwiseEqual=True differingPixels=3.84% maxChannelDelta=8", "frame 150: logicalAndPoseBitwiseEqual=True differingPixels=4.26% maxChannelDelta=8"],
+  "pixelToleranceMaxChannelDelta": 12,
+  "pixelToleranceDifferingPct": 8
+}
