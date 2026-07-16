@@ -1,0 +1,487 @@
+{
+  "id": "iverson-forney-field",
+  "note": "Canonical tactical reconstruction of the Iverson's-field destruction (Oak Ridge, July 1) for the second Soldier View film. Clock: July 1 AFTERNOON phase seconds (startTime 46800 = 13:00 LMT); slice t=5820..7050 is 14:37-14:57, inside CA-J1P-2's adopted 14:30-15:00 destruction bracket. The slice ENDS BEFORE the surrender (t~7080+): the capture of the lying line is not representable with the current action/clip vocabulary (claim-iv-surrender-mass carries the gap); the proposed film window extension is gated on that follow-up. csa-iverson is decomposed into its four regiments (R-iv-regiment-split / R-iv-regiment-apportionment; regimental order left-to-right 5th-20th-23rd-12th per EDI-5) so the destruction carries its documented left-heavy shape and the 12th NC's documented survival: the left three regiments lose ~500 on the halted line (claim-iv-death-line) while the 12th, on the sheltered right, loses lightly (claim-iv-return-rows). Strength reconciliation: per-regiment against the R-iv-regiment-split decomposition tracks, and the regiment SUM against csa-iverson's macro track (validate_iverson.py), tolerance +/-1 man each.",
+  "slice": { "t0": 5820, "t1": 7050 },
+  "units": [
+    {
+      "unitId": "csa-5nc",
+      "arm": "infantry",
+      "startStrength": {
+        "value": 319,
+        "basis": "equal-quarter split (largest remainder) of csa-iverson's macro track interpolation at t0 (1275.7 -> 1276 = 319+319+319+319; R-iv-regiment-split, R-strength-interp-endpoints)",
+        "claimIds": ["claim-iv-strength", "claim-iv-return-rows"]
+      },
+      "note": "Left regiment of the brigade line (EDI-5) — the gap-side flank O'Neal's repulse left unanswered."
+    },
+    {
+      "unitId": "csa-20nc",
+      "arm": "infantry",
+      "startStrength": {
+        "value": 319,
+        "basis": "equal-quarter split (largest remainder) of csa-iverson's macro track interpolation at t0 (R-iv-regiment-split)",
+        "claimIds": ["claim-iv-strength", "claim-iv-return-rows"]
+      }
+    },
+    {
+      "unitId": "csa-23nc",
+      "arm": "infantry",
+      "startStrength": {
+        "value": 319,
+        "basis": "equal-quarter split (largest remainder) of csa-iverson's macro track interpolation at t0 (R-iv-regiment-split)",
+        "claimIds": ["claim-iv-strength", "claim-iv-return-rows"]
+      }
+    },
+    {
+      "unitId": "csa-12nc",
+      "arm": "infantry",
+      "startStrength": {
+        "value": 319,
+        "basis": "equal-quarter split (largest remainder) of csa-iverson's macro track interpolation at t0 (R-iv-regiment-split)",
+        "claimIds": ["claim-iv-strength", "claim-iv-return-rows"]
+      },
+      "note": "Right regiment; held intact under Lt. Col. Davis (claim-iv-surrender-mass). THE OBSERVER'S REGIMENT (viewpoint iverson-forney-field, slot 184: rear rank, 27.75 m in from the regiment's left flank)."
+    },
+    {
+      "unitId": "us-baxter",
+      "arm": "infantry",
+      "startStrength": {
+        "value": 1402,
+        "basis": "macro track linear interpolation at t=5820 (1402.2), rounded (R-strength-interp-endpoints)",
+        "claimIds": ["claim-bx-strength"]
+      },
+      "note": "The receiving line at the wall (claim-bx-wall-line); staged 4 m SE of the wall-forney-field trace."
+    },
+    {
+      "unitId": "us-cutler",
+      "arm": "infantry",
+      "startStrength": {
+        "value": 911,
+        "basis": "macro track linear interpolation at t=5820 (910.6), rounded (R-strength-interp-endpoints)",
+        "claimIds": []
+      },
+      "note": "The Union-left flank fire (claim-ct-flank-volley); macro changed-front position."
+    }
+  ],
+  "segments": [
+    {
+      "id": "seg-5nc-advance",
+      "unitId": "csa-5nc",
+      "t0": 5820,
+      "t1": 6000,
+      "action": "advance",
+      "route": [[3999.6, 8723.9], [4079.9, 8551.7]],
+      "facingDeg": 155,
+      "formationFrom": "line",
+      "formationTo": "line",
+      "paceProfile": "steady",
+      "claimIds": ["claim-iv-attack-clock", "claim-iv-100yards", "claim-iv-oblique-unsupported"],
+      "inferenceRules": ["R-iv-final-approach", "R-linear-connective-motion"],
+      "note": "Final 190 m to the 100-yard line, launch-axis bearing (the drawn-bar dogleg correction is complete before t0 — claim-iv-advance-drawn anchors the pre-window route)."
+    },
+    {
+      "id": "seg-5nc-fight",
+      "unitId": "csa-5nc",
+      "t0": 6000,
+      "t1": 7050,
+      "action": "fire_independent",
+      "route": [[4079.9, 8551.7]],
+      "facingDeg": 155,
+      "formationFrom": "line",
+      "formationTo": "line",
+      "paceProfile": "static",
+      "claimIds": ["claim-iv-fight", "claim-iv-100yards", "claim-iv-death-line", "claim-iv-lying-down"],
+      "inferenceRules": [],
+      "note": "The desperate fight on the halted line. The record's prone posture (claim-iv-lying-down) is not representable — T5 vocabulary gap #1, disclosed; the line fights standing/kneeling and does not run ('nobly fought and died without a man running to the rear')."
+    },
+    {
+      "id": "seg-20nc-advance",
+      "unitId": "csa-20nc",
+      "t0": 5820,
+      "t1": 6000,
+      "action": "advance",
+      "route": [[3927.1, 8690.1], [4007.4, 8517.9]],
+      "facingDeg": 155,
+      "formationFrom": "line",
+      "formationTo": "line",
+      "paceProfile": "steady",
+      "claimIds": ["claim-iv-attack-clock", "claim-iv-100yards"],
+      "inferenceRules": ["R-iv-final-approach", "R-linear-connective-motion"]
+    },
+    {
+      "id": "seg-20nc-fight",
+      "unitId": "csa-20nc",
+      "t0": 6000,
+      "t1": 7050,
+      "action": "fire_independent",
+      "route": [[4007.4, 8517.9]],
+      "facingDeg": 155,
+      "formationFrom": "line",
+      "formationTo": "line",
+      "paceProfile": "static",
+      "claimIds": ["claim-iv-fight", "claim-iv-100yards", "claim-iv-death-line", "claim-iv-lying-down"],
+      "inferenceRules": []
+    },
+    {
+      "id": "seg-23nc-advance",
+      "unitId": "csa-23nc",
+      "t0": 5820,
+      "t1": 6000,
+      "action": "advance",
+      "route": [[3854.5, 8656.3], [3934.8, 8484.1]],
+      "facingDeg": 155,
+      "formationFrom": "line",
+      "formationTo": "line",
+      "paceProfile": "steady",
+      "claimIds": ["claim-iv-attack-clock", "claim-iv-100yards"],
+      "inferenceRules": ["R-iv-final-approach", "R-linear-connective-motion"]
+    },
+    {
+      "id": "seg-23nc-fight",
+      "unitId": "csa-23nc",
+      "t0": 6000,
+      "t1": 7050,
+      "action": "fire_independent",
+      "route": [[3934.8, 8484.1]],
+      "facingDeg": 155,
+      "formationFrom": "line",
+      "formationTo": "line",
+      "paceProfile": "static",
+      "claimIds": ["claim-iv-fight", "claim-iv-100yards", "claim-iv-death-line", "claim-iv-lying-down"],
+      "inferenceRules": []
+    },
+    {
+      "id": "seg-12nc-advance",
+      "unitId": "csa-12nc",
+      "t0": 5820,
+      "t1": 6000,
+      "action": "advance",
+      "route": [[3782.0, 8622.5], [3862.3, 8450.3]],
+      "facingDeg": 155,
+      "formationFrom": "line",
+      "formationTo": "line",
+      "paceProfile": "steady",
+      "claimIds": ["claim-iv-attack-clock", "claim-iv-100yards"],
+      "inferenceRules": ["R-iv-final-approach", "R-linear-connective-motion"],
+      "note": "The observer walks this leg: rear rank, the whole front rank 1.3 m ahead, the wall's treeline rising out of the field ahead-left."
+    },
+    {
+      "id": "seg-12nc-fight",
+      "unitId": "csa-12nc",
+      "t0": 6000,
+      "t1": 7050,
+      "action": "fire_independent",
+      "route": [[3862.3, 8450.3]],
+      "facingDeg": 155,
+      "formationFrom": "line",
+      "formationTo": "line",
+      "paceProfile": "static",
+      "claimIds": ["claim-iv-fight", "claim-iv-100yards"],
+      "inferenceRules": [],
+      "note": "The sheltered right: the 12th fights and holds; its losses stay light (claim-iv-return-rows) while the left three die in line to the observer's left."
+    },
+    {
+      "id": "seg-bx-hold",
+      "unitId": "us-baxter",
+      "t0": 5820,
+      "t1": 5985,
+      "action": "hold",
+      "route": [[4008.4, 8420.2]],
+      "facingDeg": 340,
+      "formationFrom": "line",
+      "formationTo": "line",
+      "paceProfile": "static",
+      "claimIds": ["claim-bx-wall-line", "claim-wall-structure"],
+      "inferenceRules": [],
+      "note": "The concealed line behind the wall. The documented concealment posture (kneeling below the wall crest) is not representable — T5 vocabulary gap #3, disclosed; the line stands at the ready."
+    },
+    {
+      "id": "seg-bx-volley-fire",
+      "unitId": "us-baxter",
+      "t0": 5985,
+      "t1": 7050,
+      "action": "fire_by_rank",
+      "route": [[4008.4, 8420.2]],
+      "facingDeg": 340,
+      "formationFrom": "line",
+      "formationTo": "line",
+      "paceProfile": "static",
+      "claimIds": ["claim-bx-volley", "claim-bx-wall-line"],
+      "inferenceRules": [],
+      "note": "'Opened on the advancing foes a most deadly fire' — the massed volley at the 100-yard closure, then sustained fire by rank to the slice end."
+    },
+    {
+      "id": "seg-ct-hold",
+      "unitId": "us-cutler",
+      "t0": 5820,
+      "t1": 6240,
+      "action": "hold",
+      "route": [[3850.0, 8200.0]],
+      "facingDeg": 340,
+      "formationFrom": "line",
+      "formationTo": "line",
+      "paceProfile": "static",
+      "claimIds": ["claim-ct-flank-volley"],
+      "inferenceRules": []
+    },
+    {
+      "id": "seg-ct-flank-move",
+      "unitId": "us-cutler",
+      "t0": 6240,
+      "t1": 6600,
+      "action": "advance",
+      "route": [[3850.0, 8200.0], [3850.0, 8260.0]],
+      "facingDeg": 340,
+      "facingToDeg": 340,
+      "formationFrom": "line",
+      "formationTo": "line",
+      "paceProfile": "steady",
+      "claimIds": ["claim-ct-flank-volley"],
+      "inferenceRules": ["R-linear-connective-motion"],
+      "note": "The changed-front closure toward Iverson's right flank (macro keyframe t=6300 position)."
+    },
+    {
+      "id": "seg-ct-flank-fire",
+      "unitId": "us-cutler",
+      "t0": 6600,
+      "t1": 7050,
+      "action": "fire_independent",
+      "route": [[3850.0, 8260.0]],
+      "facingDeg": 340,
+      "formationFrom": "line",
+      "formationTo": "line",
+      "paceProfile": "static",
+      "claimIds": ["claim-ct-flank-volley"],
+      "inferenceRules": [],
+      "note": "The flank fire that (with the 12th Mass) drove the surrender — the surrender itself is past the slice end (claim-iv-surrender-mass)."
+    }
+  ],
+  "casualtyProfiles": [
+    {
+      "id": "cas-5nc-approach",
+      "unitId": "csa-5nc",
+      "t0": 5820,
+      "t1": 6000,
+      "count": 6,
+      "intensityCurve": "uniform",
+      "causeMix": { "unknown": 0.7, "shell": 0.3 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-iv-strength"],
+      "note": "Macro-track decay share on the final approach (R-strength-interp-endpoints); the wall's fire is still held (claim-wall-structure: concealed)."
+    },
+    {
+      "id": "cas-5nc-volley",
+      "unitId": "csa-5nc",
+      "t0": 6000,
+      "t1": 6240,
+      "count": 70,
+      "intensityCurve": "falling",
+      "causeMix": { "musketry": 0.85, "unknown": 0.15 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-iv-death-line", "claim-bx-volley", "claim-iv-return-rows"],
+      "note": "The first massed volley from the concealed wall — front-loaded (falling curve). Apportionment R-iv-regiment-apportionment: in-window losses proportional to the ANV-return k+w rows, left three heavy."
+    },
+    {
+      "id": "cas-5nc-fight",
+      "unitId": "csa-5nc",
+      "t0": 6240,
+      "t1": 6900,
+      "count": 80,
+      "intensityCurve": "uniform",
+      "causeMix": { "musketry": 0.85, "unknown": 0.15 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-iv-death-line", "claim-iv-fight", "claim-iv-return-rows"]
+    },
+    {
+      "id": "cas-5nc-flank",
+      "unitId": "csa-5nc",
+      "t0": 6900,
+      "t1": 7050,
+      "count": 24,
+      "intensityCurve": "rising",
+      "causeMix": { "musketry": 0.85, "unknown": 0.15 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-iv-death-line", "claim-ct-flank-volley", "claim-iv-return-rows"],
+      "note": "The converging flank fire tightening before the (post-slice) charge and surrender."
+    },
+    {
+      "id": "cas-20nc-approach",
+      "unitId": "csa-20nc",
+      "t0": 5820,
+      "t1": 6000,
+      "count": 6,
+      "intensityCurve": "uniform",
+      "causeMix": { "unknown": 0.7, "shell": 0.3 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-iv-strength"]
+    },
+    {
+      "id": "cas-20nc-volley",
+      "unitId": "csa-20nc",
+      "t0": 6000,
+      "t1": 6240,
+      "count": 59,
+      "intensityCurve": "falling",
+      "causeMix": { "musketry": 0.85, "unknown": 0.15 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-iv-death-line", "claim-bx-volley", "claim-iv-return-rows"]
+    },
+    {
+      "id": "cas-20nc-fight",
+      "unitId": "csa-20nc",
+      "t0": 6240,
+      "t1": 6900,
+      "count": 68,
+      "intensityCurve": "uniform",
+      "causeMix": { "musketry": 0.85, "unknown": 0.15 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-iv-death-line", "claim-iv-fight", "claim-iv-return-rows"]
+    },
+    {
+      "id": "cas-20nc-flank",
+      "unitId": "csa-20nc",
+      "t0": 6900,
+      "t1": 7050,
+      "count": 21,
+      "intensityCurve": "rising",
+      "causeMix": { "musketry": 0.85, "unknown": 0.15 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-iv-death-line", "claim-ct-flank-volley", "claim-iv-return-rows"]
+    },
+    {
+      "id": "cas-23nc-approach",
+      "unitId": "csa-23nc",
+      "t0": 5820,
+      "t1": 6000,
+      "count": 7,
+      "intensityCurve": "uniform",
+      "causeMix": { "unknown": 0.7, "shell": 0.3 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-iv-strength"]
+    },
+    {
+      "id": "cas-23nc-volley",
+      "unitId": "csa-23nc",
+      "t0": 6000,
+      "t1": 6240,
+      "count": 65,
+      "intensityCurve": "falling",
+      "causeMix": { "musketry": 0.85, "unknown": 0.15 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-iv-death-line", "claim-bx-volley", "claim-iv-return-rows"]
+    },
+    {
+      "id": "cas-23nc-fight",
+      "unitId": "csa-23nc",
+      "t0": 6240,
+      "t1": 6900,
+      "count": 75,
+      "intensityCurve": "uniform",
+      "causeMix": { "musketry": 0.85, "unknown": 0.15 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-iv-death-line", "claim-iv-fight", "claim-iv-return-rows"]
+    },
+    {
+      "id": "cas-23nc-flank",
+      "unitId": "csa-23nc",
+      "t0": 6900,
+      "t1": 7050,
+      "count": 23,
+      "intensityCurve": "rising",
+      "causeMix": { "musketry": 0.85, "unknown": 0.15 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-iv-death-line", "claim-ct-flank-volley", "claim-iv-return-rows"]
+    },
+    {
+      "id": "cas-12nc-approach",
+      "unitId": "csa-12nc",
+      "t0": 5820,
+      "t1": 6000,
+      "count": 7,
+      "intensityCurve": "uniform",
+      "causeMix": { "unknown": 0.7, "shell": 0.3 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-iv-strength"]
+    },
+    {
+      "id": "cas-12nc-volley",
+      "unitId": "csa-12nc",
+      "t0": 6000,
+      "t1": 6240,
+      "count": 16,
+      "intensityCurve": "falling",
+      "causeMix": { "musketry": 0.85, "unknown": 0.15 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-iv-return-rows", "claim-bx-volley"],
+      "note": "The sheltered right regiment: light losses (12th NC 56 k+w total on the return — the intact regiment)."
+    },
+    {
+      "id": "cas-12nc-fight",
+      "unitId": "csa-12nc",
+      "t0": 6240,
+      "t1": 6900,
+      "count": 18,
+      "intensityCurve": "uniform",
+      "causeMix": { "musketry": 0.85, "unknown": 0.15 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-iv-return-rows", "claim-iv-fight"]
+    },
+    {
+      "id": "cas-12nc-flank",
+      "unitId": "csa-12nc",
+      "t0": 6900,
+      "t1": 7050,
+      "count": 6,
+      "intensityCurve": "rising",
+      "causeMix": { "musketry": 0.85, "unknown": 0.15 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-iv-return-rows", "claim-ct-flank-volley"]
+    },
+    {
+      "id": "cas-bx-approach",
+      "unitId": "us-baxter",
+      "t0": 5820,
+      "t1": 6000,
+      "count": 2,
+      "intensityCurve": "uniform",
+      "causeMix": { "unknown": 1.0 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-bx-strength"],
+      "note": "Macro-track decay share before the exchange opens."
+    },
+    {
+      "id": "cas-bx-fight",
+      "unitId": "us-baxter",
+      "t0": 6000,
+      "t1": 7050,
+      "count": 75,
+      "intensityCurve": "uniform",
+      "causeMix": { "musketry": 0.9, "unknown": 0.1 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-iv-fight", "claim-bx-strength"],
+      "note": "The exchange's return cost on the wall line (macro keyframe delta 6000->8100 prorated)."
+    },
+    {
+      "id": "cas-ct-hold",
+      "unitId": "us-cutler",
+      "t0": 5820,
+      "t1": 6300,
+      "count": 4,
+      "intensityCurve": "uniform",
+      "causeMix": { "unknown": 1.0 },
+      "assessment": "reconstructed",
+      "claimIds": [],
+      "note": "Macro-track decay share (keyframe 6300 = 907)."
+    },
+    {
+      "id": "cas-ct-fight",
+      "unitId": "us-cutler",
+      "t0": 6300,
+      "t1": 7050,
+      "count": 6,
+      "intensityCurve": "uniform",
+      "causeMix": { "musketry": 0.6, "unknown": 0.4 },
+      "assessment": "reconstructed",
+      "claimIds": ["claim-ct-flank-volley"]
+    }
+  ]
+}

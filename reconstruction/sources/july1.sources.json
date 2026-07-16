@@ -1,0 +1,167 @@
+{
+  "sources": [
+    {
+      "id": "or-27-2-iverson",
+      "kind": "official_report",
+      "title": "Reports of Brig. Gen. Alfred Iverson, C.S. Army, commanding brigade (No. 513)",
+      "author": "Alfred Iverson",
+      "year": 1863,
+      "url": "https://ehistory.osu.edu/books/official-records/044/0578",
+      "editionNote": "OR vol. 27 part 2, pp. 578-582; both reports. Fetched dossier pass 10.",
+      "clockProfile": {
+        "kind": "none"
+      },
+      "note": "The commander's own record of the destruction: the 100-yard closure, the 500 on the dress-parade line, the surrender-and-exoneration record, Halsey's rally. No clock in the report."
+    },
+    {
+      "id": "or-27-2-rodes",
+      "kind": "official_report",
+      "title": "Report of Maj. Gen. R. E. Rodes, C.S. Army, commanding division",
+      "author": "Robert E. Rodes",
+      "year": 1863,
+      "url": "https://ehistory.osu.edu/books/official-records/044/0552",
+      "editionNote": "OR vol. 27 part 2, pp. 552-563. Fetched dossier pass 10.",
+      "clockProfile": {
+        "kind": "report-nominal",
+        "offsetMinutes": 0,
+        "assessment": "division retrospective; times nominal"
+      },
+      "note": "The division frame: launch order, O'Neal's instant repulse, 'His dead lay in a distinctly marked line of battle.'"
+    },
+    {
+      "id": "or-27-2-ramseur",
+      "kind": "official_report",
+      "title": "Report of Brig. Gen. S. D. Ramseur, C.S. Army, commanding brigade",
+      "author": "Stephen D. Ramseur",
+      "year": 1863,
+      "url": "https://ehistory.osu.edu/books/official-records/044/0587",
+      "editionNote": "OR vol. 27 part 2, pp. 587-588. Fetched dossier pass 10.",
+      "clockProfile": {
+        "kind": "none"
+      },
+      "note": "The rescuer's record: 'almost annihilated'; the en-masse flank attack that retrieved the field; 800-900 prisoners."
+    },
+    {
+      "id": "or-27-1-baxter",
+      "kind": "official_report",
+      "title": "Report of Brig. Gen. Henry Baxter, U.S. Army, commanding 2d Brigade, 2d Division, I Corps (No. 52)",
+      "author": "Henry Baxter",
+      "year": 1863,
+      "url": "https://ehistory.osu.edu/books/official-records/043/0307",
+      "editionNote": "OR vol. 27 part 1, pp. 307-309. Fetched dossier pass 11.",
+      "clockProfile": {
+        "kind": "report-nominal",
+        "offsetMinutes": 0,
+        "assessment": "report-nominal ~0 profile (dossier); seven stated clocks, none between 11:00 and 17:00"
+      },
+      "note": "The receiving line's record: the crest/wall line, 'a most deadly fire', the three-regiment charge, the flags, the 12th Massachusetts flank fire on the surrender."
+    },
+    {
+      "id": "or-27-1-robinson",
+      "kind": "official_report",
+      "title": "Report of Brig. Gen. John C. Robinson, U.S. Army, commanding 2d Division, I Corps (No. 43, with addenda)",
+      "author": "John C. Robinson",
+      "year": 1863,
+      "url": "https://ehistory.osu.edu/books/official-records/043/0289",
+      "editionNote": "OR vol. 27 part 1, pp. 289-292 + addenda. Fetched dossier pass 11.",
+      "clockProfile": {
+        "kind": "report-nominal",
+        "offsetMinutes": 0,
+        "assessment": "division grain; the grievance addenda carried beside the main report"
+      },
+      "note": "Division frame: <2,500 engaged, more than half lost; 'about 1,000 prisoners'; the rear-guard tail."
+    },
+    {
+      "id": "or-27-1-coulter",
+      "kind": "official_report",
+      "title": "Report of Col. Richard Coulter, Eleventh Pennsylvania Infantry (No. 44)",
+      "author": "Richard Coulter",
+      "year": 1863,
+      "url": "https://ehistory.osu.edu/books/official-records/043/0292",
+      "editionNote": "OR vol. 27 part 1, pp. 292-295. Fetched dossier pass 11.",
+      "clockProfile": {
+        "kind": "report-nominal",
+        "offsetMinutes": 0,
+        "assessment": "the 12:30 general-firing pin; the ~15:00 relief clock"
+      },
+      "note": "The interior Union clock: 'about 12.30 p.m. the firing became general'; relieved 'after 3 p.m.' with ammunition exhausted."
+    },
+    {
+      "id": "or-27-1-cutler",
+      "kind": "official_report",
+      "title": "Report of Brig. Gen. Lysander Cutler, U.S. Army, commanding 2d Brigade, 1st Division, I Corps",
+      "author": "Lysander Cutler",
+      "year": 1863,
+      "url": "https://ehistory.osu.edu/books/official-records/043/0281",
+      "editionNote": "OR vol. 27 part 1, pp. 281-285. Fetched dossier pass 10.",
+      "clockProfile": {
+        "kind": "report-nominal",
+        "offsetMinutes": 0,
+        "assessment": "the 2 o'clock support sync carried"
+      },
+      "note": "The Union left flank of the destruction: 'came in on their flank, and opened so hot a fire on them that one regiment threw down their arms and surrendered.'"
+    },
+    {
+      "id": "or-27-2-anv-return",
+      "kind": "government_record",
+      "title": "Return of casualties in the Army of Northern Virginia (OR 27/2 pp. 338-346), Iverson's brigade rows",
+      "author": "Army of Northern Virginia, medical director's office",
+      "year": 1863,
+      "url": "https://ehistory.osu.edu/books/official-records/044/0338",
+      "editionNote": "p. 342: printed total row 130 k / 328 w / 308 m / 820 aggregate FAILS its own arithmetic (766); regiment rows 5th NC 31+112, 12th NC 10+46, 20th NC 29+93, 23rd NC 41+93; missing POOLED at brigade line (ED-49 pattern). ED-71 disposition: printed cells carried verbatim, arithmetic reconstruction (382 w) adopted for computation only.",
+      "note": "The EC6 exemplar's numbers: effectively all loss in the one Forney-field episode; the 308 missing IS the dress-parade line's capture mass."
+    },
+    {
+      "id": "or-27-2-rodes-return-jun30",
+      "kind": "government_record",
+      "title": "Rodes's division field return, June 30, 1863 (Carlisle)",
+      "author": "Rodes's division AAG",
+      "year": 1863,
+      "url": "https://ehistory.osu.edu/books/official-records/044/0564",
+      "editionNote": "OR vol. 27 part 2, p. 564: Iverson 114 officers + 1,350 men PFD = 1,464. Primary over the tablet's 1,470 'present about' (6 apart, different measures).",
+      "note": "The engaged-strength primary for the brigade (dossier EC2, closed pass 11)."
+    },
+    {
+      "id": "wd-iverson-tablet",
+      "kind": "monument",
+      "title": "War Department tablet: Iverson's Brigade, Rodes's Division (Oak Hill)",
+      "author": "Gettysburg National Military Park Commission",
+      "year": 1910,
+      "url": "https://www.nps.gov/gett/",
+      "editionNote": "mon-iverson-hq at battlefield-local (3883.7, 8742.4), OSM-anchored (monument register, ED-27 verification); formation semantics with the Rodes division tablet beside it. Tablet arithmetic: '820 of 1,470'.",
+      "clockProfile": {
+        "kind": "tablet-adjudicated",
+        "offsetMinutes": 0,
+        "assessment": "commission-adjudicated narrative",
+        "confidence": "medium"
+      },
+      "note": "The launch-ground anchor."
+    },
+    {
+      "id": "wd-1corps-csa-tablet",
+      "kind": "monument",
+      "title": "War Department tablet: attack of Rodes's division, 2 P.M. July 1 (First Corps front)",
+      "author": "Gettysburg National Military Park Commission",
+      "year": 1910,
+      "url": "https://www.nps.gov/gett/",
+      "editionNote": "'made a vigorous attack at 2 P.M. with superior numbers along the entire line' (ED-26/ED-27 verification; CA-J1P-1's 14:00 adopted, envelope 13:30-14:45).",
+      "clockProfile": {
+        "kind": "tablet-adjudicated",
+        "offsetMinutes": 0,
+        "assessment": "commission-adjudicated clock",
+        "confidence": "medium"
+      },
+      "note": "The attack clock the destruction window hangs from (with Coulter's 12:30 and Cutler's 2 o'clock as the interior ladder)."
+    },
+    {
+      "id": "bachelder-j1-09",
+      "kind": "map",
+      "title": "Bachelder first-day sheet, 2 P.M. position (j1-09)",
+      "author": "John B. Bachelder",
+      "year": 1876,
+      "url": "https://www.loc.gov/",
+      "editionNote": "Georeferenced via reconstruction/spatial (bachelder-manifest j1-09); reads taken 2026-07-12 (dossier pass 10): red 'IVERSON, N.C.' bar with regimental numbers at (3728, 8365); 'J. FORNEY' farm at (3614, 8637); blue 'BAXTER'S BRIGADE' bar at the Mummasburg-road wall (4007, 8424).",
+      "note": "The drawn mid-advance state and the drawn receiving wall — the two position reads the viewpoint geometry hangs on."
+    }
+  ]
+}

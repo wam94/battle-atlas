@@ -1,0 +1,33 @@
+{
+  "name": "Gettysburg 1863 land cover — Oak Ridge / Iverson's field (July 1 Soldier View slice)",
+  "note": "Separate file from landcover.json BY DESIGN: the committed angle.bundle.json embeds a sha256 of landcover.json, so July 1 features must not touch it (film-safety; ED-21 pin discipline). Geometry basis: no traced-polyline layer exists at Oak Ridge yet — these features are EDITORIAL geometry constructed from the dossier bank's pinned point reads (bachelder-j1-09 drawn bars, wd-iverson-tablet) and the OR reports' descriptions, disclosed per feature and adopted as EDI-1..EDI-2 in docs/reconstruction/iverson-viewpoint-design.md. A sheet-trace hardening pass (crop_sheet.py + georef over j1-09, the Angle-standard method) is the named follow-up before the production render.",
+  "features": [
+    {
+      "id": "wall-forney-field",
+      "kind": "line",
+      "cls": "stone_wall",
+      "points": [[3772.0, 8338.5], [4242.0, 8509.5]],
+      "confidence": "inferred",
+      "source": "EDI-1: a straight double-faced fieldstone wall through the j1-09 drawn 'BAXTER'S BRIGADE' bar center (4007, 8424), bearing 70° (perpendicular to us-baxter's authored facing 340). Existence and character documented: 'the enemy, strongly posted in woods and behind a concealed stone wall' (or-27-2-iverson); the drawn bar is AT the Mummasburg-road wall (dossier us-i-2-2-baxter EC3.3, drawn=report agreement). Length (470 m) covers Baxter's 392 m authored frontage with margin; straightness is editorial.",
+      "note": "The receiving wall — Baxter's line. The Soldier View death line stands ~90 m NW of it ('advanced to within 100 yards')."
+    },
+    {
+      "id": "woodlot-oakridge",
+      "kind": "polygon",
+      "cls": "woodlot",
+      "points": [[3774.7, 8331.0], [4244.7, 8502.0], [4282.4, 8398.6], [3812.4, 8227.6]],
+      "confidence": "inferred",
+      "source": "EDI-2: the Oak Ridge crest woods immediately behind (SE of) the wall, 110 m deep band. Existence documented: 'strongly posted in woods and behind a concealed stone wall' (or-27-2-iverson); 'the enemy's strong position in a body of woods, surrounded by a stone fence' (or-27-2-ramseur — the same wall-and-woods Iverson died in front of). Extent is editorial (band depth sized to the viewpoint's viewshed; the j1-09 sheet draws the ridge wooded).",
+      "note": "The woods Baxter's line was posted in; reads as the dark treeline behind the Union muskets from the Confederate line."
+    },
+    {
+      "id": "field-forney",
+      "kind": "polygon",
+      "cls": "field",
+      "points": [[3769.9, 8344.1], [4239.9, 8515.1], [4239.9, 8795.0], [3470.0, 8795.0], [3470.0, 8360.0]],
+      "confidence": "inferred",
+      "source": "EDI-2: John Forney's open fields NW of the wall — the killing ground. The farm is drawn on j1-09 ('J. FORNEY' at (3614, 8637)); the advance crossed open ground under fire (or-27-2-iverson: the brigade advanced unsupported and its dead lay in an open dress-parade line — or-27-2-rodes corroborating). Boundary geometry is editorial (clipped to the Soldier View crop).",
+      "note": "July grass/pasture surface class; the trampled advance corridor is stamped by the environment bake."
+    }
+  ]
+}

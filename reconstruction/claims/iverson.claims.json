@@ -1,0 +1,457 @@
+{
+  "claims": [
+    {
+      "id": "claim-iv-strength",
+      "subjectId": "csa-iverson",
+      "property": "strength",
+      "value": "1,464 present for duty, June 30 (114 officers + 1,350 men); tablet carries 'about 1,470'",
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "or-27-2-rodes-return-jun30",
+          "locator": "p. 564",
+          "excerpt": "114 officers + 1,350 men PFD",
+          "interpretation": "The engaged-strength primary (dossier EC2 closed pass 11); the tablet's 1,470 'present about' is the same population under a looser measure."
+        },
+        {
+          "sourceId": "wd-iverson-tablet",
+          "locator": "tablet text",
+          "interpretation": "Carries '820 of 1,470' — the commission's arithmetic; both figures carried, the return is primary."
+        }
+      ],
+      "note": "Macro track t=0 carries 1,464; the slice start strength is the macro interpolation at t0 (R-strength-interp-endpoints)."
+    },
+    {
+      "id": "claim-iv-launch",
+      "subjectId": "csa-iverson",
+      "property": "position",
+      "value": "Launched from the Oak Hill ground at the formation tablet; leading brigade of the division's attack, on the division right",
+      "geometry": {
+        "kind": "point",
+        "x": 3883.7,
+        "z": 8742.4,
+        "uncertaintyM": 10.0
+      },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "wd-iverson-tablet",
+          "locator": "mon-iverson-hq",
+          "interpretation": "Formation-semantics tablet position (ED-27 verification)."
+        },
+        {
+          "sourceId": "or-27-2-rodes",
+          "locator": "pp. 552-563",
+          "interpretation": "Formed on the division right; launched on Rodes's order when the enemy came out to the hill's foot."
+        }
+      ]
+    },
+    {
+      "id": "claim-iv-attack-clock",
+      "subjectId": "csa-iverson",
+      "property": "time",
+      "value": "The division attacked at 2 P.M. (tablet); the destruction window CA-J1P-2 adopted 14:30-15:00, envelope 14:15-15:15",
+      "time": {
+        "earliest": 4500,
+        "preferred": 5400,
+        "latest": 8100
+      },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "wd-1corps-csa-tablet",
+          "locator": "tablet text",
+          "excerpt": "made a vigorous attack at 2 P.M. with superior numbers along the entire line",
+          "interpretation": "The 14:00 attack clock; the interior ladder (Coulter 12:30 general firing, Cutler's 2 o'clock support sync) brackets it."
+        },
+        {
+          "sourceId": "or-27-1-coulter",
+          "locator": "pp. 292-295",
+          "excerpt": "about 12.30 p.m. the firing became general along the entire line",
+          "interpretation": "Interior Union clock below the tablet's 14:00."
+        },
+        {
+          "sourceId": "or-27-1-cutler",
+          "locator": "pp. 281-285",
+          "interpretation": "The 2 o'clock right-support sync from the receiving line (CA-J1P-1 preamble)."
+        }
+      ],
+      "note": "The slice window t=5820..7050 (14:37-14:57) sits inside the adopted destruction bracket."
+    },
+    {
+      "id": "claim-iv-advance-drawn",
+      "subjectId": "csa-iverson",
+      "property": "position",
+      "value": "Drawn mid-advance on the 2 P.M. sheet: red 'IVERSON, N.C.' bar with regimental numbers, 408 m from the formation tablet along the advance axis toward the Forney-field wall",
+      "geometry": {
+        "kind": "point",
+        "x": 3728.0,
+        "z": 8365.0,
+        "uncertaintyM": 60.0
+      },
+      "time": {
+        "earliest": 4200,
+        "preferred": 4500,
+        "latest": 5100
+      },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "bachelder-j1-09",
+          "locator": "sheet read 2026-07-12",
+          "interpretation": "The drawn mid-advance state; carried at its macro keyframe time t=4500 (14:15). The bar's regimental numbers (23, 20, 5 ...) are the slice's only drawn regimental-order evidence."
+        }
+      ],
+      "note": "Outside the slice window (t0=5820); anchors the pre-window connective route and the regimental order editorial decision EDI-5."
+    },
+    {
+      "id": "claim-iv-oblique-unsupported",
+      "subjectId": "csa-iverson",
+      "property": "movement",
+      "value": "Advanced unsupported: the gap on the left never filled (O'Neal repulsed 'almost instantaneously'), Daniel's promised support formed elsewhere",
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "or-27-2-iverson",
+          "locator": "No. 513",
+          "interpretation": "The support-miscarriage ledger in the commander's own report."
+        },
+        {
+          "sourceId": "or-27-2-rodes",
+          "locator": "pp. 552-563",
+          "interpretation": "O'Neal's repulse from the division frame."
+        }
+      ],
+      "note": "Why the left of the line dies: the wall's fire is unanswered on that flank. Drives the film's left-to-right destruction gradient."
+    },
+    {
+      "id": "claim-iv-100yards",
+      "subjectId": "csa-iverson",
+      "property": "position",
+      "value": "Advanced to within 100 yards of the enemy, strongly posted in woods and behind a concealed stone wall",
+      "geometry": {
+        "kind": "featureRef",
+        "featureId": "wall-forney-field"
+      },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "or-27-2-iverson",
+          "locator": "No. 513",
+          "excerpt": "advanced to within 100 yards",
+          "interpretation": "The standoff distance of the death line from the wall; the slice authors the halted line ~90 m NW of the wall trace (EDI-1)."
+        }
+      ]
+    },
+    {
+      "id": "claim-iv-fight",
+      "subjectId": "csa-iverson",
+      "property": "firing",
+      "value": "A most desperate fight took place at the 100-yard line; the brigade fought from where it lay",
+      "time": {
+        "earliest": 5400,
+        "preferred": 6000,
+        "latest": 7200
+      },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "or-27-2-iverson",
+          "locator": "No. 513",
+          "excerpt": "a most desperate fight took place",
+          "interpretation": "The brigade returned fire through the destruction — unlike the Angle slice's ED-23, friendly musketry and reload cycles are in-window here."
+        },
+        {
+          "sourceId": "or-27-1-baxter",
+          "locator": "No. 52",
+          "excerpt": "repeated lines repulsed",
+          "interpretation": "Sustained exchange attested from the receiving side."
+        }
+      ]
+    },
+    {
+      "id": "claim-iv-lying-down",
+      "subjectId": "csa-iverson",
+      "property": "formation",
+      "value": "The line of battle lay down in position under the fire and held its alignment; Iverson read the raised handkerchiefs against 'my line of battle still lying down in position'",
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "or-27-2-iverson",
+          "locator": "No. 513",
+          "excerpt": "my line of battle still lying down in position",
+          "interpretation": "The men fought prone/behind the swale. NOT REPRESENTABLE with the current clip vocabulary (no prone-fire clip) — carried as the slice's named T5 vocabulary gap #1; the proof renders show the fight standing/kneeling, disclosed."
+        }
+      ]
+    },
+    {
+      "id": "claim-iv-death-line",
+      "subjectId": "csa-iverson",
+      "property": "casualty_total",
+      "value": "500 dead and wounded left lying on a line as straight as a dress parade; the dead lay in a distinctly marked line of battle",
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "or-27-2-iverson",
+          "locator": "No. 513",
+          "excerpt": "500 of my men were left lying dead and wounded on a line as straight as a dress parade",
+          "interpretation": "The exemplar: killed-and-wounded concentrated on the halted line itself. Falls happen in place; bodies persist; the formation gaps ARE the record."
+        },
+        {
+          "sourceId": "or-27-2-rodes",
+          "locator": "pp. 552-563",
+          "excerpt": "His dead lay in a distinctly marked line of battle",
+          "interpretation": "Independent line-geometry corroboration from the division commander."
+        },
+        {
+          "sourceId": "or-27-2-ramseur",
+          "locator": "pp. 587-588",
+          "excerpt": "almost annihilated",
+          "interpretation": "The rescuer's summary of the brigade's state."
+        }
+      ]
+    },
+    {
+      "id": "claim-iv-return-rows",
+      "subjectId": "csa-iverson",
+      "property": "casualty_total",
+      "value": "ANV return p. 342: 5th NC 31k+112w=143, 12th NC 10+46=56, 20th NC 29+93=122, 23rd NC 41+93=134; missing pooled at brigade 308; printed total row fails its own arithmetic (ED-71)",
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "or-27-2-anv-return",
+          "locator": "p. 342",
+          "interpretation": "Regiment-grain killed+wounded shape: the left three regiments carry ~2.5-3x the 12th's loss. The slice apportions in-window losses to regiments proportional to these rows (R-iv-regiment-apportionment), with the 12th's documented lightness preserved."
+        }
+      ]
+    },
+    {
+      "id": "claim-iv-surrender-mass",
+      "subjectId": "csa-iverson",
+      "property": "casualty_timing",
+      "value": "When charged, nearly all that were left unhurt in three regiments surrendered (white handkerchiefs from the lying line); the 308 missing is the capture mass; the 12th NC held intact under Lt. Col. Davis",
+      "time": {
+        "earliest": 6900,
+        "preferred": 7200,
+        "latest": 7800
+      },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "or-27-2-iverson",
+          "locator": "No. 513",
+          "excerpt": "When I saw white handkerchiefs raised, and my line of battle still lying down in position",
+          "interpretation": "The surrender-and-exoneration record carried whole (dossier discipline: neither pole adopted)."
+        },
+        {
+          "sourceId": "or-27-1-cutler",
+          "locator": "pp. 281-285",
+          "excerpt": "one regiment threw down their arms and surrendered",
+          "interpretation": "The same capture mass read from the Union left (the flank volley)."
+        },
+        {
+          "sourceId": "or-27-1-baxter",
+          "locator": "No. 52",
+          "excerpt": "The Twelfth Massachusetts had a galling fire on the flank of this brigade at this time, which I think had a great influence upon its surrender",
+          "interpretation": "The receiving echelon's mechanism for the surrender."
+        },
+        {
+          "sourceId": "or-27-2-anv-return",
+          "locator": "p. 342",
+          "interpretation": "308 missing pooled at brigade line (ED-49 pattern)."
+        }
+      ],
+      "note": "SURRENDER IS NOT REPRESENTABLE with the current action/clip vocabulary — carried as the slice's named T5 vocabulary gap #2. The slice window therefore ENDS at t=7050, before the capture event; the proposed film window extension to ~7500 (the charge, the handkerchiefs, Halsey's rally) is gated on that follow-up."
+    },
+    {
+      "id": "claim-bx-wall-line",
+      "subjectId": "us-baxter",
+      "property": "position",
+      "value": "Moved forward to the crest of the hill — the drawn 'BAXTER'S BRIGADE' bar at the Mummasburg-road wall; drawn=report agreement",
+      "geometry": {
+        "kind": "point",
+        "x": 4007.0,
+        "z": 8424.0,
+        "uncertaintyM": 40.0
+      },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "or-27-1-baxter",
+          "locator": "No. 52",
+          "excerpt": "moved forward to the crest of the hill",
+          "interpretation": "The report's crest line."
+        },
+        {
+          "sourceId": "bachelder-j1-09",
+          "locator": "sheet read 2026-07-12",
+          "interpretation": "The drawn blue bar at (4007, 8424) — the wall trace EDI-1 passes through this point."
+        }
+      ]
+    },
+    {
+      "id": "claim-bx-volley",
+      "subjectId": "us-baxter",
+      "property": "firing",
+      "value": "The brigade opened on the advancing foes a most deadly fire, soon causing them to recoil and give way; repeated lines repulsed; engaged over two hours to ammunition exhaustion",
+      "time": {
+        "earliest": 5400,
+        "preferred": 6000,
+        "latest": 7200
+      },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "or-27-1-baxter",
+          "locator": "No. 52",
+          "excerpt": "the brigade opened on the advancing foes a most deadly fire, soon causing them to recoil and give way",
+          "interpretation": "The massed volley from the concealed wall, then sustained fire — the slice's dominant audio-visual event."
+        },
+        {
+          "sourceId": "or-27-1-coulter",
+          "locator": "pp. 292-295",
+          "interpretation": "Relieved after 3 p.m. with ammunition exhausted — bounds the fire's duration."
+        }
+      ],
+      "note": "The pre-volley concealment (Iverson's 'concealed stone wall') has no current action/clip representation (no kneel-concealed hold) — named T5 vocabulary gap #3; the slice authors hold -> fire_by_rank."
+    },
+    {
+      "id": "claim-bx-strength",
+      "subjectId": "us-baxter",
+      "property": "strength",
+      "value": "No brigade primary; B&M-repro 1,452 (hop-flagged); division primary 'less than 2,500' for both brigades",
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "or-27-1-robinson",
+          "locator": "pp. 289-292",
+          "excerpt": "We went into action with less than 2,500 men",
+          "interpretation": "Division frame; the 1,452 brigade figure rides the macro track (carried from the phase file's authored strength, itself the B&M hop — dossier EC2 conflict recorded, unresolved)."
+        }
+      ]
+    },
+    {
+      "id": "claim-ct-flank-volley",
+      "subjectId": "us-cutler",
+      "property": "firing",
+      "value": "Cutler's brigade came in on Iverson's flank and opened so hot a fire that one regiment threw down their arms and surrendered",
+      "time": {
+        "earliest": 5400,
+        "preferred": 6300,
+        "latest": 9000
+      },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "or-27-1-cutler",
+          "locator": "pp. 281-285",
+          "excerpt": "came in on their flank, and opened so hot a fire on them that one regiment threw down their arms and surrendered",
+          "interpretation": "The Union-left leg of the destruction; macro keyframe t=6300 carries the changed-front position (3850, 8200)."
+        }
+      ]
+    },
+    {
+      "id": "claim-wall-structure",
+      "subjectId": "wall-forney-field",
+      "property": "structure",
+      "value": "A concealed stone wall at the woods' edge — the enemy strongly posted behind it",
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "or-27-2-iverson",
+          "locator": "No. 513",
+          "excerpt": "the enemy, strongly posted in woods and behind a concealed stone wall",
+          "interpretation": "Existence and character; the trace geometry is editorial EDI-1 (through the drawn Baxter bar, bearing 70°)."
+        },
+        {
+          "sourceId": "or-27-2-ramseur",
+          "locator": "pp. 587-588",
+          "excerpt": "a body of woods, surrounded by a stone fence",
+          "interpretation": "Independent corroboration of the wall-and-woods position."
+        }
+      ]
+    },
+    {
+      "id": "claim-woods-oakridge",
+      "subjectId": "woodlot-oakridge",
+      "property": "land_cover",
+      "value": "Woods on the Oak Ridge crest behind the wall; the Union line posted in them",
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "or-27-2-iverson",
+          "locator": "No. 513",
+          "interpretation": "'strongly posted in woods'; band extent editorial EDI-2."
+        },
+        {
+          "sourceId": "or-27-2-ramseur",
+          "locator": "pp. 587-588",
+          "interpretation": "'a body of woods, surrounded by a stone fence'."
+        }
+      ]
+    },
+    {
+      "id": "claim-field-forney-open",
+      "subjectId": "field-forney",
+      "property": "land_cover",
+      "value": "Open farm fields NW of the wall (John Forney's farm) — the brigade crossed and died in the open",
+      "assessment": "inferred",
+      "references": [
+        {
+          "sourceId": "bachelder-j1-09",
+          "locator": "sheet read 2026-07-12",
+          "interpretation": "'J. FORNEY' farm drawn at (3614, 8637); the sheet draws the ground between the ridge and the bar as open field."
+        },
+        {
+          "sourceId": "or-27-2-rodes",
+          "locator": "pp. 552-563",
+          "interpretation": "The dead lying in a distinctly marked open line implies open ground; surface class (July grass/pasture) is editorial EDI-2."
+        }
+      ]
+    },
+    {
+      "id": "claim-forney-farm",
+      "subjectId": "field-forney",
+      "property": "structure",
+      "value": "The J. Forney farm buildings drawn on the 2 P.M. sheet at (3614, 8637)",
+      "geometry": {
+        "kind": "point",
+        "x": 3614.0,
+        "z": 8637.0,
+        "uncertaintyM": 60.0
+      },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "bachelder-j1-09",
+          "locator": "sheet read 2026-07-12",
+          "interpretation": "Drawn farm position; building massing is editorial EDI-6 (Codori-analogue prop massing, same convention as ED-13)."
+        }
+      ]
+    },
+    {
+      "id": "claim-iv-halsey-rally",
+      "subjectId": "csa-iverson",
+      "property": "command_action",
+      "value": "Capt. D. P. Halsey (AAG) rallied and led the remnant's charge; the 12th NC held intact under Lt. Col. Davis",
+      "time": {
+        "earliest": 7200,
+        "preferred": 8400,
+        "latest": 10800
+      },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "or-27-2-iverson",
+          "locator": "No. 513",
+          "interpretation": "Iverson and Rodes both credit Halsey; the macro t=8400 keyframe carries the rally. OUTSIDE the slice window — proposed film-extension scope and a named-individual observer candidate assessed (and recommended against) in the design doc."
+        },
+        {
+          "sourceId": "or-27-2-rodes",
+          "locator": "pp. 552-563",
+          "interpretation": "Corroborates Halsey's rally."
+        }
+      ]
+    }
+  ]
+}

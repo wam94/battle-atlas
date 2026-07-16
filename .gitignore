@@ -3,6 +3,7 @@ data/*
 !data/landcover/
 data/landcover/*
 !data/landcover/landcover.json
+!data/landcover/oakridge.landcover.json
 !data/map-furniture/
 data/map-furniture/*
 !data/map-furniture/map-furniture.json
