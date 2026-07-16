@@ -146,6 +146,10 @@ NOT-A-RECONSTRUCTION demo bundle; regenerable byte-identically):
   lay, and rises.
 - `fp-still-*.png` — the arc in six committed stills (standing under
   fire, going prone, prone fire, roll-to-load, rising, recovered).
+  The late stills (19 s+) are partly veiled by the line's own
+  accumulated ground-level powder bank — honest physics of what is
+  being depicted; the video carries the roll-to-load and the rise in
+  motion, and the t=8/13 stills carry the clean silhouettes.
 - `iv-660*-prone-fight-{fp,c3p}-{before,after}.png` — the Iverson
   window at t≈6600 from the film's own observer (slot 184, FP + C3P):
   BEFORE (fire_independent, the fight standing — the disclosed gap)
@@ -192,6 +196,12 @@ Library, no `-nographics`; Angle + Oak Ridge crops and environment
 bakes regenerated in the worktree; dev proxy regenerated for PlayMode.
 
 ## 6. Film-safety verdict
+
+**Base note:** origin/main advanced mid-slice (the bombardment-prelude
+merge, `7363561` — battle JSONs/audits/tool script only; zero file
+overlap with this slice). `origin/main` was merged into this branch
+(`d93d959`) and every suite re-run on the merged base; the byte checks
+below are against the CURRENT origin/main.
 
 - `app/Assets/Battle/Angle/angle.bundle.json` — **byte-identical to
   main** (git diff empty); stagingSeed pin
