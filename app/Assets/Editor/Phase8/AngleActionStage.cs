@@ -220,7 +220,8 @@ namespace BattleAtlas.EditorTools
                 }
                 foreach (var pose in new[] { "pose_march_a", "pose_march_b",
                     "pose_aim", "pose_fire", "pose_reload_rod",
-                    "pose_fallen_back", "pose_fallen_side" })
+                    "pose_fallen_back", "pose_fallen_side",
+                    "pose_prone_fire" })
                     if (!lib.ContainsKey(pose))
                         throw new InvalidOperationException(
                             $"{path}: missing baked pose {pose}");
@@ -323,11 +324,10 @@ namespace BattleAtlas.EditorTools
                     if (!fires) continue;
                     for (int slot = 0; slot < ur.slotCount; slot++)
                     {
-                        float offset = FireCycles.Offset(
-                            ctx.seed, u.unitId, seg, slot, ur.slotCount);
                         discharges.Clear();
-                        FireCycles.DischargeTimes(
-                            seg, offset, ur.casualties[slot].fallT,
+                        FireCycles.SegmentDischargeTimes(
+                            ctx.seed, u.unitId, seg, slot, ur.slotCount,
+                            ur.casualties[slot].fallT,
                             seg.t0, seg.t1, discharges);
                         foreach (float ft in discharges)
                         {
@@ -336,14 +336,20 @@ namespace BattleAtlas.EditorTools
                             // slots fire only after crossing the wall)
                             var st = SoldierActionResolver.Resolve(
                                 ctx, ur.unitIndex, slot, ft);
-                            if (st.clip != ClipId.Fire || st.Fallen) continue;
+                            bool prone = st.clip == ClipId.FightProneFire;
+                            if ((st.clip != ClipId.Fire && !prone) ||
+                                st.Fallen) continue;
                             float r = st.facingDeg * Mathf.Deg2Rad;
                             var fwd = new Vector2(Mathf.Sin(r), Mathf.Cos(r));
                             smokeEvents.Add(new SmokeEvent
                             {
                                 t = ft,
-                                pos = new Vector2(st.posX, st.posZ) + fwd * 0.9f,
-                                heightM = 1.45f,
+                                // prone: the muzzle is ~1.6 m ahead of the
+                                // slot at knee height, not shoulder height
+                                pos = new Vector2(st.posX, st.posZ)
+                                    + fwd * (prone ? 1.6f : 0.9f),
+                                heightM = prone
+                                    ? FireCycles.ProneMuzzleHeightM : 1.45f,
                                 dirDeg = st.facingDeg,
                                 kind = SmokeKind.Musket,
                                 seedIndex = seedIndex++,
@@ -791,7 +797,15 @@ namespace BattleAtlas.EditorTools
                         }
                         default:
                         {
-                            if (st.Fallen)
+                            // beyond 350 m a prone fighter reads as a LOW
+                            // ground quad like the fallen — never as a
+                            // standing cross-quad
+                            bool low = st.Fallen ||
+                                st.clip == ClipId.ProneIdle ||
+                                st.clip == ClipId.FightProneFire ||
+                                st.clip == ClipId.FightProneReload ||
+                                st.clip == ClipId.GoProne;
+                            if (low)
                                 farFallen.Add((pos, st.facingDeg, usa));
                             else
                                 farStand.Add((pos, st.facingDeg, usa));

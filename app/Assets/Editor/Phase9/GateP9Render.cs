@@ -571,18 +571,19 @@ namespace BattleAtlas.EditorTools
                     if (!fires) continue;
                     for (int slot = 0; slot < ur.slotCount; slot++)
                     {
-                        float offset = FireCycles.Offset(
-                            ctx.seed, ur.unit.unitId, seg, slot, ur.slotCount);
                         times.Clear();
-                        FireCycles.DischargeTimes(
-                            seg, offset, ur.casualties[slot].fallT,
+                        FireCycles.SegmentDischargeTimes(
+                            ctx.seed, ur.unit.unitId, seg, slot, ur.slotCount,
+                            ur.casualties[slot].fallT,
                             Mathf.Max(seg.t0, t0 - 3f),
                             Mathf.Min(seg.t1, t1), times);
                         foreach (float ft in times)
                         {
                             var st = SoldierActionResolver.Resolve(
                                 ctx, ur.unitIndex, slot, ft);
-                            if (st.clip != ClipId.Fire || st.Fallen) continue;
+                            if ((st.clip != ClipId.Fire &&
+                                 st.clip != ClipId.FightProneFire) ||
+                                st.Fallen) continue;
                             if (!first) sb.Append(",");
                             first = false;
                             discharges++;

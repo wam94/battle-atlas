@@ -119,3 +119,26 @@ def test_observer_slot_is_rear_rank():
     doc = json.loads(VIEWPOINTS.read_text())
     vp = next(v for v in doc["viewpoints"] if v["id"] == "iverson-forney-field")
     assert vp["slotId"] // files == 1, "rear rank (the P9 lesson)"
+
+
+def test_lying_down_claim_compiles_to_fight_prone(corpus):
+    """The fight-prone wiring (T5 vocabulary gap #1): every fire segment
+    carrying claim-iv-lying-down compiles to the fight_prone action class;
+    every segment WITHOUT the claim keeps its corpus action. The 12th NC —
+    the survivor regiment the record keeps standing — must stay a standing
+    fire_independent."""
+    bundle = compile_iverson.compile_bundle(corpus)
+    src_by_id = {s["id"]: s for s in corpus.recon["segments"]}
+    prone_ids = set()
+    for u in bundle["units"]:
+        for s in u["segments"]:
+            src = src_by_id[s["id"]]
+            if compile_iverson.PRONE_CLAIM in src["claimIds"]:
+                assert s["action"] == "fight_prone", s["id"]
+                prone_ids.add(s["id"])
+            else:
+                assert s["action"] == src["action"], s["id"]
+    assert prone_ids == {"seg-5nc-fight", "seg-20nc-fight", "seg-23nc-fight"}
+    twelfth = next(u for u in bundle["units"] if u["unitId"] == "csa-12nc")
+    fight = next(s for s in twelfth["segments"] if s["id"] == "seg-12nc-fight")
+    assert fight["action"] == "fire_independent"

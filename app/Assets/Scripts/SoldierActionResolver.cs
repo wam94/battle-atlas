@@ -485,6 +485,7 @@ namespace BattleAtlas
         public const float FlinchRadiusM = 8f;
         public const float BraceRadiusM = 18f;
         public const float CrawlDelay = 5f;        // fall end -> first crawl
+        public const float RiseStagger = 2f;       // prone line rises over 0..2 s
 
         // P8 locomotion review fix ("floating from position to position"):
         // below this ground speed a man is STANDING (whatever the segment
@@ -740,6 +741,29 @@ namespace BattleAtlas
             float speed = SlotSpeed(ctx, ur, slot, t);
             bool moving = speed >= MoveThresholdMps;
 
+            // fight_prone -> anything else: the man rises before the new
+            // segment's behavior takes him (staggered, like the drop). A
+            // man mid-rise ignores strike reactions — he is already as low
+            // as a reaction would put him.
+            if (segIdx > 0 && seg.action != "fight_prone" &&
+                ur.unit.segments[segIdx - 1].action == "fight_prone")
+            {
+                float riseT = seg.t0 + RiseStagger *
+                    AngleEnvironmentLayout.Hash01(
+                        ur.keyStep, slot * 13 + 5);
+                if (t < riseT)
+                {
+                    Set(ref s, ClipId.ProneIdle,
+                        KitClips.Phase(ClipId.ProneIdle, t + stepJit * 5f));
+                    return;
+                }
+                if (t < riseT + KitClips.Duration(ClipId.RiseFromProne))
+                {
+                    Set(ref s, ClipId.RiseFromProne, t - riseT);
+                    return;
+                }
+            }
+
             switch (seg.action)
             {
                 case "hold":
@@ -785,6 +809,46 @@ namespace BattleAtlas
                     else Set(ref s, ClipId.StandReady,
                         KitClips.Phase(ClipId.StandReady, t + stepJit * 5f));
                     return;
+
+                case "fight_prone":
+                {
+                    // The lying-down fight (claim-iv-lying-down): the line
+                    // drops file by file, fights from the ground on the
+                    // prone cycle (fire + roll-to-load + ready), and holds
+                    // its file position — the formation frame is unchanged.
+                    // A prone man is already low: strike reactions do not
+                    // interrupt him. Locomotion still wins if the compiled
+                    // track moves (defensive; prone segments are static).
+                    if (moving) { SetGait(ref s, ur, slot, GaitClip(seg), t); return; }
+                    float dropT = FireCycles.ProneDropTime(
+                        ctx.seed, ur.unit.unitId, seg, slot);
+                    if (t < dropT)
+                    {
+                        if (reacting) { Set(ref s, reactClip, reactTime); return; }
+                        Set(ref s, ClipId.StandReady,
+                            KitClips.Phase(ClipId.StandReady, t + stepJit * 5f));
+                        return;
+                    }
+                    if (t < dropT + KitClips.Duration(ClipId.GoProne))
+                    {
+                        Set(ref s, ClipId.GoProne, t - dropT);
+                        return;
+                    }
+                    float cycleStart = FireCycles.ProneCycleStart(
+                        ctx.seed, ur.unit.unitId, seg, slot);
+                    var (pPhase, pTime) = FireCycles.PhaseAtProne(cycleStart, t);
+                    switch (pPhase)
+                    {
+                        case FireCycles.FirePhase.Firing:
+                            Set(ref s, ClipId.FightProneFire, pTime); return;
+                        case FireCycles.FirePhase.Reloading:
+                            Set(ref s, ClipId.FightProneReload, pTime); return;
+                        default:
+                            Set(ref s, ClipId.ProneIdle,
+                                KitClips.Phase(ClipId.ProneIdle, t + stepJit * 5f));
+                            return;
+                    }
+                }
 
                 case "fire_by_rank":
                 case "fire_independent":
@@ -1013,7 +1077,12 @@ namespace BattleAtlas
             float bearing = IncomingBearing(ur, fallT, cas.cause, unitFacing);
             float rel = Mathf.DeltaAngle(unitFacing, bearing);
             ClipId fall;
-            if (Mathf.Abs(rel) > 55f)
+            if (ProneAt(ctx, ur, slot, fallT))
+                // hit while lying in the firing line: a standing fall clip
+                // would stand the body up to knock it down — the P6
+                // mannequin-fall defect class. He settles where he lay.
+                fall = ClipId.ProneHitSettle;
+            else if (Mathf.Abs(rel) > 55f)
                 fall = ClipId.FallSide;
             else
                 fall = AngleEnvironmentLayout.Hash01(ur.keyFall, slot) < 0.5f
@@ -1050,6 +1119,32 @@ namespace BattleAtlas
             s.status = SoldierState.StatusDead;
             s.clip = fall;
             s.clipTime = dur - 1f / 48f;
+        }
+
+        // Was this slot lying down at time t? True inside a fight_prone
+        // segment once his staggered Go_Prone has finished, and through
+        // the rise window of the FOLLOWING segment until his staggered
+        // Rise_From_Prone begins (a man shot mid-rise or mid-drop plays a
+        // standing fall — he was upright). Pure in t.
+        internal static bool ProneAt(
+            AngleActionContext ctx, UnitRuntime ur, int slot, float t)
+        {
+            int segIdx = SegIndexAt(ur, t);
+            var seg = ur.unit.segments[segIdx];
+            if (seg.action == "fight_prone")
+            {
+                float dropT = FireCycles.ProneDropTime(
+                    ctx.seed, ur.unit.unitId, seg, slot);
+                return t >= dropT + KitClips.Duration(ClipId.GoProne);
+            }
+            if (segIdx > 0 &&
+                ur.unit.segments[segIdx - 1].action == "fight_prone")
+            {
+                float riseT = seg.t0 + RiseStagger *
+                    AngleEnvironmentLayout.Hash01(ur.keyStep, slot * 13 + 5);
+                return t < riseT;
+            }
+            return false;
         }
 
         static float IncomingBearing(
