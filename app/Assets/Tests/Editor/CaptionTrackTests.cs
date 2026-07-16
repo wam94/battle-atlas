@@ -77,4 +77,61 @@ public class CaptionTrackTests
                 $"caption at t={c.t} is not a bracketed non-speech description");
         }
     }
+
+    // ------------------------------------------------------------------
+    // Multi-viewpoint caption selection (webb-cushing slice): each film's
+    // captions mirror ITS OWN mix; the HUD must never show one film's
+    // captions inside another film's soundscape.
+    // ------------------------------------------------------------------
+
+    [Test]
+    public void ForViewpoint_SelectsTheMatchingTrackOnly()
+    {
+        var a = CaptionTrack.FromJson(Json((10, 2, "[a]")));
+        a.viewpointId = "garnett-road-to-angle";
+        var b = CaptionTrack.FromJson(Json((10, 2, "[b]")));
+        b.viewpointId = "webb-wall";
+        var tracks = new System.Collections.Generic.List<CaptionTrack> { a, b };
+
+        Assert.AreSame(a, CaptionTrack.ForViewpoint(tracks, "garnett-road-to-angle"));
+        Assert.AreSame(b, CaptionTrack.ForViewpoint(tracks, "webb-wall"));
+        Assert.IsNull(CaptionTrack.ForViewpoint(tracks, "cushing-canister"),
+            "a viewpoint with no caption track must show none, never another film's");
+        Assert.IsNull(CaptionTrack.ForViewpoint(tracks, null));
+        Assert.IsNull(CaptionTrack.ForViewpoint(null, "webb-wall"));
+    }
+
+    [Test]
+    public void FileFor_KeepsTheGarnettFileAndNamesPerViewpointFiles()
+    {
+        Assert.AreEqual("SoldierView/captions.json",
+            CaptionTrack.FileFor("garnett-road-to-angle"));
+        Assert.AreEqual("SoldierView/captions-webb-wall.json",
+            CaptionTrack.FileFor("webb-wall"));
+        Assert.AreEqual("SoldierView/captions-cushing-canister.json",
+            CaptionTrack.FileFor("cushing-canister"));
+    }
+
+    [Test]
+    public void CommittedNewViewpointCaptionFiles_ParseAndSitInsideTheirWindows()
+    {
+        foreach (var (id, t0, t1) in new[]
+        {
+            ("webb-wall", 8160.0, 8820.5),
+            ("cushing-canister", 8400.0, 8760.5),
+        })
+        {
+            string path = UnityEngine.Application.dataPath
+                + "/StreamingAssets/" + CaptionTrack.FileFor(id);
+            var track = CaptionTrack.FromJson(File.ReadAllText(path));
+            Assert.AreEqual(id, track.viewpointId);
+            Assert.Greater(track.captions.Length, 0);
+            foreach (CaptionDto c in track.captions)
+            {
+                Assert.GreaterOrEqual(c.t, t0);
+                Assert.LessOrEqual(c.t, t1 + 2.5); // + the mix arrival tail
+                Assert.IsTrue(c.text.StartsWith("[") && c.text.EndsWith("]"));
+            }
+        }
+    }
 }
