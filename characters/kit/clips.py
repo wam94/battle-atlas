@@ -1664,6 +1664,570 @@ def prone_hit_settle(P):
     return a
 
 
+# ----------------------------------------------------------------------
+# Angle-v2 vocabulary, P3: the wall fight ("hand to hand, and of the
+# most desperate character" — Peyton, or-27-1863). SOBER per
+# violence-and-representation.md: contact is ABSTRACTED — every stroke
+# stops short of a body (the clips are authored solo; the resolver's
+# pairing only ever closes grapplers to 1.05 m), no gore, no impact
+# poses. The melee reads as struggle, not spectacle.
+# ----------------------------------------------------------------------
+
+def _melee_feet(P, fwd=0.28, lift_l=0.0, lift_r=0.0):
+    """Braced fighting stance: left foot forward, weight low."""
+    rs = P.rs
+    ank = P.lm.ankle_z
+    P.foot('l', (-rs * 0.13, -fwd, ank + lift_l))
+    P.foot('r', (rs * 0.15, 0.22, ank + lift_r))
+
+
+def melee_club_swing(P):
+    """Clubbed musket: the piece reversed, both hands on the barrel, one
+    overhead stroke that STOPS at the horizontal (contact abstracted),
+    recover to the clubbed ready. 2.6 s, re-cycles cleanly.
+
+    Keys are authored as (butt, grip): the butt plate is the club head,
+    the GRIP point is where the hands close on the barrel — the musket
+    direction and both hand targets derive from the pair, so the grip
+    can never leave the piece (the round-1 review defect)."""
+    a = _new_action("Melee_Club_Swing")
+    rs = P.rs
+
+    def pose(t, butt, grip, lean_deg, twist_deg, fwd=0.28, root_y=0.0,
+             root_z=0.0, head_pitch=8.0):
+        P.reset()
+        P.root(loc=(0, root_y, root_z))
+        P.lean(lean_deg)
+        P.twist(twist_deg, bones=("spine_02", "spine_03"))
+        P.look(pitch=head_pitch)
+        _melee_feet(P, fwd=fwd)
+        d = Vector(grip) - Vector(butt)
+        L = d.length
+        M = P.musket(butt, d / L)
+        P.hand('r', M @ Vector((0, L - 0.09, -0.035)),
+               pole=(rs * 0.6, 0.15, 0.9))
+        P.hand('l', M @ Vector((0, L + 0.07, -0.035)),
+               pole=(-rs * 0.6, 0.05, 1.0))
+        P.apply_ik()
+        P.curl('r', 0.9)
+        P.curl('l', 0.9)
+        P.key(a, t)
+
+    # clubbed ready: club-end up over the right shoulder, hands at the
+    # chest on the barrel
+    ready = ((rs * 0.30, 0.62, 1.80), (rs * 0.12, -0.14, 1.16))
+    pose(0.0, *ready, 8.0, rs * 6.0)
+    # wind-up: the club-end swings back and high, torso coils
+    pose(0.6, (rs * 0.44, 0.74, 1.96), (rs * 0.16, -0.06, 1.28),
+         2.0, rs * 16.0, root_y=0.04, head_pitch=4.0)
+    # stroke passing overhead
+    pose(1.0, (0.0, 0.22, 2.14), (rs * 0.06, -0.30, 1.40),
+         12.0, rs * 2.0, root_y=-0.04)
+    # the stroke stops at the horizontal — nothing is hit on camera
+    pose(1.3, (-rs * 0.02, -1.06, 0.96), (rs * 0.08, -0.30, 1.28),
+         24.0, -rs * 10.0, fwd=0.36, root_y=-0.10, root_z=-0.06,
+         head_pitch=16.0)
+    # drag back to a low guard
+    pose(1.8, (rs * 0.08, -0.92, 0.62), (rs * 0.12, -0.12, 1.08),
+         14.0, -rs * 2.0, root_y=-0.04, root_z=-0.03)
+    # back on the clubbed ready
+    pose(2.6, *ready, 8.0, rs * 6.0)
+    return a
+
+
+def melee_bayonet_thrust(P):
+    """On guard, one short thrust from the hip that stops at full
+    extension (contact abstracted), withdraw, guard. 2.0 s."""
+    a = _new_action("Melee_Bayonet_Thrust")
+    rs = P.rs
+
+    def pose(t, butt_y, reach, lean_deg, fwd, root_y, root_z=0.0):
+        P.reset()
+        P.root(loc=(0, root_y, root_z))
+        P.lean(lean_deg)
+        P.look(pitch=10.0)
+        _melee_feet(P, fwd=fwd)
+        # on guard: butt at the right hip, the piece angled across the
+        # front so the left hand grips the forestock ahead of the body
+        butt = (rs * 0.24, butt_y, P.lm.waist_z + 0.04)
+        M = P.musket(butt,
+                     Vector((-rs * 0.22, -0.95, 0.10 + reach * 0.02))
+                     .normalized())
+        P.hand('r', M @ Vector((0, 0.14, -0.04)),
+               pole=(rs * 0.55, 0.45, 0.85))
+        P.hand('l', M @ Vector((0, 0.60, -0.045)),
+               pole=(-rs * 0.55, -0.55, 0.55))
+        P.apply_ik()
+        P.curl('r', 0.85)
+        P.curl('l', 0.8)
+        P.key(a, t)
+
+    pose(0.0, 0.34, 0.0, 10.0, 0.28, 0.0)          # on guard
+    pose(0.45, 0.46, 0.0, 8.0, 0.24, 0.05)         # gather
+    pose(0.9, -0.06, 1.0, 20.0, 0.52, -0.24, -0.05)  # full extension, stop
+    pose(1.3, 0.28, 0.3, 14.0, 0.36, -0.10, -0.02)   # withdraw
+    pose(2.0, 0.34, 0.0, 10.0, 0.28, 0.0)          # guard
+    return a
+
+
+def _grapple_pose(P, a, t, push, arm_z, lean_base=14.0):
+    """One grapple key: own piece held crosswise at the chest, shoving
+    toward the front (-Y). push: -1 yield .. +1 drive."""
+    rs = P.rs
+    P.reset()
+    P.root(loc=(0, -0.10 * push + 0.02, -0.04 - 0.02 * abs(push)))
+    P.lean(lean_base + 6.0 * push)
+    P.twist(rs * 4.0 * push, bones=("spine_02", "spine_03"))
+    P.look(pitch=14.0 - 4.0 * push)
+    _melee_feet(P, fwd=0.34)
+    butt = (rs * 0.46, -0.26 - 0.06 * push, arm_z - 0.12)
+    M = P.musket(butt,
+                 Vector((-rs * 0.965, -0.20, 0.17)).normalized())
+    P.hand('r', M @ Vector((0, 0.24, -0.03)),
+           pole=(rs * 0.55, 0.35, 0.75))
+    P.hand('l', M @ Vector((0, 0.92, -0.03)),
+           pole=(-rs * 0.60, 0.10, 0.80))
+    P.apply_ik()
+    P.curl('r', 0.95)
+    P.curl('l', 0.95)
+    P.key(a, t)
+
+
+def melee_grapple_a(P):
+    """Grapple pair, lead half: two men locked over their crossed pieces
+    at 1.05 m (resolver spacing). A drives while B yields — anti-phase
+    loops. Contact abstracted: the pieces cross mid-gap, bodies never
+    touch. 2.8 s loop."""
+    a = _new_action("Melee_Grapple_A")
+    for t, push in ((0.0, 0.0), (0.7, 1.0), (1.4, 0.0),
+                    (2.1, -0.85), (2.8, 0.0)):
+        _grapple_pose(P, a, t, push, 1.24)
+    return a
+
+
+def melee_grapple_b(P):
+    """Grapple pair, follower half: anti-phase of A, piece a hand lower
+    so the crossed muskets read as a bind, not a mirror. 2.8 s loop."""
+    a = _new_action("Melee_Grapple_B")
+    for t, push in ((0.0, 0.0), (0.7, -0.85), (1.4, 0.0),
+                    (2.1, 1.0), (2.8, 0.0)):
+        _grapple_pose(P, a, t, push, 1.12, lean_base=15.0)
+    return a
+
+
+def melee_parry(P):
+    """The defensive half of the exchange: piece raised two-handed to
+    catch a blow, a jolt as it lands ON THE PIECE (never the man), shove
+    off, back to guard. 2.0 s."""
+    a = _new_action("Melee_Parry")
+    rs = P.rs
+
+    def pose(t, butt, mdir, lean_deg, root_z, head_pitch):
+        P.reset()
+        P.root(loc=(0, 0.02, root_z))
+        P.lean(lean_deg)
+        P.look(pitch=head_pitch)
+        _melee_feet(P, fwd=0.30)
+        M = P.musket(butt, Vector(mdir).normalized())
+        P.hand('r', M @ Vector((0, 0.20, -0.03)),
+               pole=(rs * 0.6, 0.30, 1.0))
+        P.hand('l', M @ Vector((0, 0.85, -0.03)),
+               pole=(-rs * 0.6, 0.20, 1.1))
+        P.apply_ik()
+        P.curl('r', 0.9)
+        P.curl('l', 0.9)
+        P.key(a, t)
+
+    # the piece is PRESENTED forward of the body throughout — both arms
+    # extend so the wrists genuinely reach the stock (round-1 review:
+    # targets tucked against the shoulder were unreachable and the IK
+    # left the hands floating)
+    guard = ((rs * 0.40, -0.18, 1.12), (-rs * 0.82, -0.42, 0.39))
+    pose(0.0, *guard, 12.0, 0.0, 10.0)
+    # snap up: the piece goes horizontal overhead, forward of the face
+    pose(0.4, (rs * 0.46, -0.32, 1.66), (-rs * 0.95, -0.16, 0.26),
+         6.0, -0.04, -6.0)
+    # the catch: driven down a hand's breadth, knees give a little
+    pose(0.6, (rs * 0.48, -0.26, 1.54), (-rs * 0.95, -0.14, 0.28),
+         2.0, -0.12, -10.0)
+    # straining under the bind
+    pose(1.0, (rs * 0.47, -0.28, 1.58), (-rs * 0.95, -0.15, 0.27),
+         4.0, -0.10, -8.0)
+    # shove off
+    pose(1.5, (rs * 0.44, -0.38, 1.70), (-rs * 0.94, -0.20, 0.26),
+         10.0, -0.02, 0.0)
+    pose(2.0, *guard, 12.0, 0.0, 10.0)
+    return a
+
+
+# ----------------------------------------------------------------------
+# Angle-v2 vocabulary, P4: the colors ("Every flag in the brigade
+# excepting one was captured at or within the works" — Shepard,
+# or-27-2-shepard). The STAFF AND FLAG ARE A SCENE PROP, not a kit prop
+# bone: these clips shape the hands for a vertical staff through the
+# right-hand grip (the render harness stages the staff there), and the
+# musket rides slung across the back.
+# ----------------------------------------------------------------------
+
+def _sling_musket(P):
+    """Musket slung diagonally across the back (the bearer's hands are
+    for the colors)."""
+    rs = P.rs
+    P.musket((rs * 0.20, 0.24, P.lm.hip_z - 0.12),
+             Vector((-rs * 0.34, 0.14, 0.93)).normalized())
+
+
+def _carry_key(P, a, t, sway=0.0, breath=0.0):
+    """Shared carry pose: staff vertical through the right-hand grip at
+    the chest, left hand steadying at the waist, chin up."""
+    rs = P.rs
+    lm = P.lm
+    P.reset()
+    P.root(loc=(0, 0.0, -breath))
+    P.lean(2.0)
+    P.look(pitch=-6.0, yaw=rs * sway)
+    _stand_legs(P, stance=0.06)
+    _sling_musket(P)
+    P.hand('r', (rs * (0.10 + 0.01 * sway), -0.15, lm.chest_z + 0.05),
+           pole=(rs * 0.55, -0.35, 1.0))
+    P.hand('l', (rs * 0.02, -0.11, lm.waist_z + 0.02),
+           pole=(-rs * 0.55, -0.40, 0.9))
+    P.apply_ik()
+    P.curl('r', 0.95)
+    P.curl('l', 0.85)
+    P.key(a, t)
+
+
+def colors_carry(P):
+    """Carrying the colors at the halt/advance: staff at the chest, a
+    slow proud sway. 2.0 s loop."""
+    a = _new_action("Colors_Carry")
+    _carry_key(P, a, 0.0)
+    _carry_key(P, a, 0.7, sway=2.0, breath=0.006)
+    _carry_key(P, a, 1.4, sway=-1.5, breath=0.002)
+    _carry_key(P, a, 2.0)
+    return a
+
+
+def colors_bearer_fall(P):
+    """The bearer goes down: hit, the knees give, the staff hand holds on
+    past the buckle and releases at 0.9 as he folds; he ends face-down,
+    an arm extended toward where the colors fell. Sober — a loss, not a
+    spectacle; the harness tips the staff prop from the release. 2.2 s;
+    final frame persists."""
+    a = _new_action("Colors_Bearer_Fall")
+    rs = P.rs
+    lm = P.lm
+    ank = lm.ankle_z
+
+    # carry, then the hit
+    _carry_key(P, a, 0.0)
+
+    P.reset()
+    P.root(loc=(rs * 0.02, 0.03, -0.03))
+    P.lean(7.0)
+    P.twist(rs * 10.0, bones=("spine_02", "spine_03"))
+    P.look(pitch=10.0, tilt=rs * 6.0)
+    _stand_legs(P, stance=0.10)
+    _sling_musket(P)
+    P.hand('r', (rs * 0.11, -0.14, lm.chest_z + 0.02),
+           pole=(rs * 0.55, -0.35, 1.0))
+    P.hand('l', (-rs * 0.16, -0.15, lm.waist_z - 0.05),
+           pole=(-rs * 0.55, -0.40, 0.9))
+    P.apply_ik()
+    P.curl('r', 0.95)
+    P.curl('l', 0.5)
+    P.key(a, 0.15)
+
+    # knees buckle; the staff hand still up
+    P.reset()
+    P.root(loc=(0, 0.05, -0.30))
+    P.lean(14.0)
+    P.look(pitch=16.0, tilt=rs * 6.0)
+    P.foot('l', (-rs * 0.12, -0.05, ank + 0.01))
+    P.foot('r', (rs * 0.13, 0.28, 0.10))
+    _sling_musket(P)
+    P.hand('r', (rs * 0.12, -0.16, lm.chest_z - 0.18),
+           pole=(rs * 0.55, -0.35, 0.9))
+    P.hand('l', (-rs * 0.24, -0.28, 0.55), pole=(-rs * 0.5, -0.4, 0.6))
+    P.apply_ik()
+    P.curl('r', 0.95)
+    P.curl('l', 0.3)
+    P.key(a, 0.5)
+
+    # going down — the hand releases the staff, reaches for the ground
+    P.reset()
+    P.root(loc=(0, 0.08, -0.50), rot=[('X', 32.0)])
+    P.look(pitch=20.0)
+    P.foot('l', (-rs * 0.12, 0.30, 0.08))
+    P.foot('r', (rs * 0.12, 0.42, 0.10))
+    _drop_musket(P, None, (rs * 0.34, 0.30, 0.035),
+                 (rs * 0.20, 0.95, 0.0))
+    P.hand('r', (rs * 0.30, -0.42, 0.30), pole=(rs * 0.5, -0.4, 0.5))
+    P.hand('l', (-rs * 0.28, -0.38, 0.28), pole=(-rs * 0.5, -0.4, 0.5))
+    P.apply_ik()
+    P.curl('r', 0.4)
+    P.curl('l', 0.4)
+    P.key(a, 0.9)
+
+    # folding flat
+    P.reset()
+    P.root(loc=(0, 0.11, -0.58), rot=[('X', 55.0), ('Z', -rs * 4.0)])
+    for b in SPINE:
+        P.rot(b, 'X', 6.0)
+    P.look(pitch=14.0, tilt=rs * 10.0)
+    P.foot('l', (-rs * 0.13, 0.58, 0.09))
+    P.foot('r', (rs * 0.13, 0.66, 0.07))
+    _drop_musket(P, None, (rs * 0.34, 0.30, 0.035),
+                 (rs * 0.20, 0.95, 0.0))
+    P.hand('r', (rs * 0.28, -0.52, 0.05), pole=(rs * 0.5, -0.4, 0.4))
+    P.hand('l', (-rs * 0.30, -0.44, 0.05), pole=(-rs * 0.5, -0.4, 0.4))
+    P.apply_ik()
+    P.curl('r', 0.3)
+    P.curl('l', 0.3)
+    P.key(a, 1.4)
+
+    # flat, the right arm extended toward the fallen colors
+    P.reset()
+    P.root(loc=(0, 0.13, -0.62), rot=[('X', 67.0), ('Z', -rs * 8.0)])
+    P.look(pitch=8.0, tilt=rs * 16.0)
+    P.foot('l', (-rs * 0.15, 0.68, 0.08))
+    P.foot('r', (rs * 0.14, 0.76, 0.06))
+    _drop_musket(P, None, (rs * 0.34, 0.30, 0.035),
+                 (rs * 0.20, 0.95, 0.0))
+    P.hand('r', (rs * 0.20, -0.66, 0.03), pole=(rs * 0.4, -0.5, 0.3))
+    P.hand('l', (-rs * 0.34, -0.30, 0.03), pole=(-rs * 0.5, -0.35, 0.3))
+    P.apply_ik()
+    P.curl('r', 0.15)
+    P.curl('l', 0.2)
+    P.key(a, 1.9)
+    P.key(a, 2.2)   # persistent hold
+    return a
+
+
+def colors_pickup(P):
+    """The next man takes up the fallen colors: stoop, grasp the staff at
+    0.9, rise into the carry. Ends exactly on the shared carry pose so
+    Colors_Carry follows without a seam. 2.0 s."""
+    a = _new_action("Colors_Pickup")
+    rs = P.rs
+    lm = P.lm
+    ank = lm.ankle_z
+
+    # arriving at the colors
+    P.reset()
+    P.lean(6.0)
+    P.look(pitch=18.0)
+    _stand_legs(P, stance=0.12)
+    _sling_musket(P)
+    P.hand('r', (rs * 0.16, -0.20, lm.waist_z - 0.10),
+           pole=(rs * 0.55, -0.35, 0.9))
+    P.hand('l', (-rs * 0.20, -0.06, lm.waist_z - 0.15),
+           pole=(-rs * 0.55, -0.35, 0.9))
+    P.apply_ik()
+    P.curl('r', 0.3)
+    P.curl('l', 0.3)
+    P.key(a, 0.0)
+
+    # stoop: the right hand reaches for the staff on the ground
+    P.reset()
+    P.root(loc=(0, -0.06, -0.36))
+    P.lean(30.0)
+    P.look(pitch=26.0)
+    P.foot('l', (-rs * 0.12, -0.16, ank))
+    P.foot('r', (rs * 0.14, 0.18, ank + 0.02))
+    _sling_musket(P)
+    P.hand('r', (rs * 0.14, -0.44, 0.12), pole=(rs * 0.5, -0.45, 0.5))
+    P.hand('l', (-rs * 0.24, -0.22, 0.60), pole=(-rs * 0.5, -0.35, 0.7))
+    P.apply_ik()
+    P.curl('r', 0.35)
+    P.curl('l', 0.3)
+    P.key(a, 0.4)
+
+    # grasp
+    P.reset()
+    P.root(loc=(0, -0.05, -0.32))
+    P.lean(26.0)
+    P.look(pitch=22.0)
+    P.foot('l', (-rs * 0.12, -0.16, ank))
+    P.foot('r', (rs * 0.14, 0.18, ank + 0.02))
+    _sling_musket(P)
+    P.hand('r', (rs * 0.13, -0.42, 0.14), pole=(rs * 0.5, -0.45, 0.5))
+    P.hand('l', (-rs * 0.22, -0.20, 0.62), pole=(-rs * 0.5, -0.35, 0.7))
+    P.apply_ik()
+    P.curl('r', 0.95)
+    P.curl('l', 0.3)
+    P.key(a, 0.9)
+
+    # rising, the staff coming up with the hand
+    P.reset()
+    P.root(loc=(0, -0.02, -0.12))
+    P.lean(10.0)
+    P.look(pitch=4.0)
+    _stand_legs(P, stance=0.08)
+    _sling_musket(P)
+    P.hand('r', (rs * 0.11, -0.24, lm.waist_z + 0.15),
+           pole=(rs * 0.55, -0.40, 0.9))
+    P.hand('l', (rs * 0.00, -0.14, lm.waist_z - 0.06),
+           pole=(-rs * 0.55, -0.40, 0.9))
+    P.apply_ik()
+    P.curl('r', 0.95)
+    P.curl('l', 0.6)
+    P.key(a, 1.4)
+
+    # the carry (seam-free into Colors_Carry)
+    _carry_key(P, a, 2.0)
+    return a
+
+
+# ----------------------------------------------------------------------
+# Angle-v2 vocabulary, P5: the rider (owner ruling 2026-07-15, "ship p5
+# mounted officers falling"). The HORSE is its own rig (horse.py); these
+# two clips put a kit man in the saddle and take him off it. Authored
+# with the root raised to horse.py's saddle height so the harness places
+# the figure at the horse's ground position and the clip does the rest.
+# ----------------------------------------------------------------------
+
+RIDER_SADDLE_Z = 1.42   # pelvis height in the saddle (horse.py SADDLE_Z + seat)
+
+
+def _rider_dz(P):
+    """Root lift that puts the resting pelvis at RIDER_SADDLE_Z."""
+    return RIDER_SADDLE_Z - P.rig.data.bones["pelvis"].head_local.z
+
+
+def _seat_key(P, a, t, breath=0.0, lean_deg=4.0):
+    """Shared seat pose: legs astride, feet in the stirrups, left hand
+    on the reins, right hand on the thigh."""
+    rs = P.rs
+    dz = _rider_dz(P)
+    P.reset()
+    P.root(loc=(0, 0.0, dz - breath))
+    P.lean(lean_deg)
+    P.look(pitch=2.0)
+    # musket slung on the officer's back (harness may hide it — the
+    # officer reads by his mount, not his weapon)
+    P.musket((rs * 0.20, 0.24, dz + P.lm.hip_z - 0.12),
+             Vector((-rs * 0.34, 0.14, 0.93)).normalized())
+    # stirrup line: barrel half-width out, well below the saddle
+    P.foot('l', (-rs * 0.31, -0.06, 0.86), pole=(-rs * 0.75, -0.55, 1.25))
+    P.foot('r', (rs * 0.31, -0.06, 0.86), pole=(rs * 0.75, -0.55, 1.25))
+    P.hand('l', (-rs * 0.07, -0.36, dz + 0.24),
+           pole=(-rs * 0.55, -0.45, dz + 0.55))
+    P.hand('r', (rs * 0.30, -0.10, dz + 0.06),
+           pole=(rs * 0.65, -0.25, dz + 0.45))
+    P.apply_ik()
+    P.curl('l', 0.85)
+    P.curl('r', 0.45)
+    P.key(a, t)
+
+
+def ride_seat(P):
+    """In the saddle at a walk/halt: upright seat, reins in the left
+    hand, easy sway. 2.4 s loop."""
+    a = _new_action("Ride_Seat")
+    _seat_key(P, a, 0.0)
+    _seat_key(P, a, 0.8, breath=0.010, lean_deg=5.5)
+    _seat_key(P, a, 1.6, breath=0.004, lean_deg=3.0)
+    _seat_key(P, a, 2.4)
+    return a
+
+
+def rider_fall(P):
+    """Shot from the saddle: the hit at 0.3, he tips left off the horse
+    from 0.55, one articulated slide to the ground, and lies still.
+    Reads as loss, not ragdoll spectacle: no thrash, a single slump,
+    the settle holds (persistent body). 2.4 s."""
+    a = _new_action("Rider_Fall")
+    rs = P.rs
+    dz = _rider_dz(P)
+
+    _seat_key(P, a, 0.0)
+
+    # 0.3 the hit: torso jolts, the rein hand flies
+    P.reset()
+    P.root(loc=(0, 0.02, dz - 0.02))
+    P.lean(-4.0)
+    P.twist(rs * 12.0, bones=("spine_02", "spine_03"))
+    P.look(pitch=-12.0, tilt=rs * 6.0)
+    P.musket((rs * 0.20, 0.24, dz + P.lm.hip_z - 0.12),
+             Vector((-rs * 0.34, 0.14, 0.93)).normalized())
+    P.foot('l', (-rs * 0.31, -0.06, 0.86), pole=(-rs * 0.75, -0.55, 1.25))
+    P.foot('r', (rs * 0.31, -0.06, 0.86), pole=(rs * 0.75, -0.55, 1.25))
+    P.hand('l', (-rs * 0.38, -0.24, dz + 0.52),
+           pole=(-rs * 0.7, -0.35, dz + 0.7))
+    P.hand('r', (rs * 0.26, -0.06, dz + 0.10),
+           pole=(rs * 0.65, -0.25, dz + 0.45))
+    P.apply_ik()
+    P.curl('l', 0.4)
+    P.curl('r', 0.5)
+    P.key(a, 0.3)
+
+    # 0.55 leaving the saddle: tipping character-left
+    P.reset()
+    P.root(loc=(-rs * 0.16, 0.02, dz - 0.12), rot=[('Y', -rs * 20.0)])
+    P.look(pitch=-6.0, tilt=-rs * 8.0)
+    P.musket((rs * 0.10, 0.28, dz - 0.05),
+             Vector((-rs * 0.34, 0.14, 0.93)).normalized())
+    P.foot('l', (-rs * 0.44, -0.02, 0.62), pole=(-rs * 0.8, -0.5, 1.0))
+    P.foot('r', (rs * 0.10, -0.14, 1.02), pole=(rs * 0.7, -0.55, 1.35))
+    P.hand('l', (-rs * 0.55, -0.18, dz + 0.10),
+           pole=(-rs * 0.8, -0.35, dz + 0.4))
+    P.hand('r', (rs * 0.10, -0.16, dz - 0.06),
+           pole=(rs * 0.6, -0.3, dz + 0.3))
+    P.apply_ik()
+    P.curl('l', 0.3)
+    P.curl('r', 0.4)
+    P.key(a, 0.55)
+
+    # 1.0 falling beside the horse, arms reaching down to catch
+    P.reset()
+    P.root(loc=(-rs * 0.55, 0.06, 0.52), rot=[('Y', -rs * 55.0), ('X', 8.0)])
+    P.look(tilt=-rs * 10.0, pitch=6.0)
+    _drop_musket(P, None, (-rs * 0.30, 0.42, 0.035),
+                 (-rs * 0.25, 0.94, 0.0))
+    P.foot('l', (-rs * 0.72, 0.10, 0.28), pole=(-rs * 0.9, -0.3, 0.7))
+    P.foot('r', (-rs * 0.30, -0.06, 0.62), pole=(rs * 0.2, -0.5, 1.0))
+    P.hand('l', (-rs * 0.85, -0.14, 0.28), pole=(-rs * 1.0, -0.3, 0.6))
+    P.hand('r', (-rs * 0.45, -0.24, 0.40), pole=(rs * 0.2, -0.4, 0.8))
+    P.apply_ik()
+    P.curl('l', 0.3)
+    P.curl('r', 0.35)
+    P.key(a, 1.0)
+
+    # 1.4 contact: on his left side on the ground
+    P.reset()
+    P.root(loc=(-rs * 0.82, 0.10, 0.14), rot=[('Y', -rs * 84.0), ('X', 6.0)])
+    P.look(tilt=-rs * 12.0, pitch=4.0)
+    _drop_musket(P, None, (-rs * 0.30, 0.42, 0.035),
+                 (-rs * 0.25, 0.94, 0.0))
+    P.foot('l', (-rs * 0.86, 0.34, 0.10), pole=(-rs * 1.0, 0.0, 0.5))
+    P.foot('r', (-rs * 0.66, 0.16, 0.24), pole=(rs * 0.1, -0.2, 0.7))
+    P.hand('l', (-rs * 0.95, -0.28, 0.06), pole=(-rs * 1.1, -0.4, 0.4))
+    P.hand('r', (-rs * 0.60, -0.30, 0.16), pole=(rs * 0.1, -0.4, 0.6))
+    P.apply_ik()
+    P.curl('l', 0.25)
+    P.curl('r', 0.3)
+    P.key(a, 1.4)
+
+    # 1.9 the settle: legs slide out, the head comes to rest
+    P.reset()
+    P.root(loc=(-rs * 0.86, 0.12, 0.10), rot=[('Y', -rs * 88.0), ('X', 4.0)])
+    P.look(tilt=-rs * 14.0, pitch=2.0)
+    _drop_musket(P, None, (-rs * 0.30, 0.42, 0.035),
+                 (-rs * 0.25, 0.94, 0.0))
+    P.foot('l', (-rs * 0.88, 0.44, 0.09), pole=(-rs * 1.0, 0.1, 0.4))
+    P.foot('r', (-rs * 0.70, 0.28, 0.20), pole=(rs * 0.1, -0.1, 0.6))
+    P.hand('l', (-rs * 0.96, -0.34, 0.05), pole=(-rs * 1.1, -0.4, 0.35))
+    P.hand('r', (-rs * 0.58, -0.38, 0.08), pole=(rs * 0.1, -0.4, 0.5))
+    P.apply_ik()
+    P.curl('l', 0.2)
+    P.curl('r', 0.22)
+    P.key(a, 1.9)
+    P.key(a, 2.4)   # persistent hold
+    return a
+
+
 # ======================================================================
 # entry point
 # ======================================================================
@@ -1685,7 +2249,10 @@ def author_all(rig, lm):
                stand_ready, route_step, double_quick, halt_dress,
                kneel_ready, brace_artillery, flinch, waver, routed_run,
                prone_crawl, go_prone, prone_idle, fight_prone_fire,
-               fight_prone_reload, rise_from_prone, prone_hit_settle):
+               fight_prone_reload, rise_from_prone, prone_hit_settle,
+               melee_club_swing, melee_bayonet_thrust, melee_grapple_a,
+               melee_grapple_b, melee_parry, colors_carry,
+               colors_bearer_fall, colors_pickup, ride_seat, rider_fall):
         a = fn(P)
         made.append(a.name)
         print(f"[clips] authored {a.name}: "

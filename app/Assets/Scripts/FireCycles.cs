@@ -30,7 +30,18 @@ namespace BattleAtlas
 
         public static bool IsFireAction(string action) =>
             action == "fire_by_rank" || action == "fire_independent" ||
-            action == "fight_prone";
+            action == "fight_prone" || action == "halt_fire_obstacle";
+        // halt_fire_obstacle (Angle-v2 vocabulary, P6 — Trimble: "our men
+        // stopped and began firing, instead of mounting the fence"): a
+        // moving unit halts AT a traced obstacle line and works the
+        // standing fire cycle instead of climbing. The clip needs are
+        // covered by the existing standing vocabulary (StandReady, Aim,
+        // Fire, Reload; the halt itself is HaltDress); the segment class
+        // exists so the fire-window compilers (engagements, smoke, audio)
+        // and the resolver agree that the unit is FIRING, not crossing —
+        // CompileCrossings deliberately does not scan these segments, so
+        // no man mounts the fence while the action holds. No committed
+        // bundle carries the action yet (the v2 DATA wave wires it).
 
         // ------------------------------------------------------------------
         // fight_prone (Iverson slice, claim-iv-lying-down): the line goes
@@ -140,8 +151,22 @@ namespace BattleAtlas
                 return rank * (Cycle / 2f)
                     + RankRaggedness * AngleEnvironmentLayout.Hash01(key, slot);
             }
-            return Cycle * AngleEnvironmentLayout.Hash01(key, slot);
+            float offset = Cycle * AngleEnvironmentLayout.Hash01(key, slot);
+            // halt_fire_obstacle: the man dresses to a halt at the fence
+            // before his first cycle (the resolver plays HaltDress over
+            // exactly this lead-in, so discharges and clips stay in
+            // lockstep for the VFX/audio exporters)
+            if (seg.action == "halt_fire_obstacle")
+                offset += HaltLeadIn(seed, unitId, slot);
+            return offset;
         }
+
+        // The staggered halt-dress lead-in of a halt_fire_obstacle slot
+        // (mirrors the resolver's dress_line stagger convention).
+        public static float HaltLeadIn(string seed, string unitId, int slot) =>
+            1.5f * AngleEnvironmentLayout.Hash01(
+                seed + "|" + unitId + "|step", slot * 3 + 1)
+            + KitClips.Duration(ClipId.HaltDress);
 
         public enum FirePhase : byte { Ready = 0, Aiming = 1, Firing = 2, Reloading = 3 }
 

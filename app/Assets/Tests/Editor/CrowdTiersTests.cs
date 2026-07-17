@@ -101,7 +101,7 @@ public class CrowdTiersTests
         {
             "pose_march_a", "pose_march_b", "pose_aim", "pose_fire",
             "pose_reload_rod", "pose_fallen_back", "pose_fallen_side",
-            "pose_prone_fire",
+            "pose_prone_fire", "pose_melee",
         };
         for (int c = 0; c < KitClips.Count; c++)
         {

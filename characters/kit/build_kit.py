@@ -246,6 +246,10 @@ MID_POSES = (
     # fight-prone vocabulary: one lying-at-the-ready silhouette so a
     # prone firing line 100 m+ out reads LOW, not standing
     ("prone_fire", "Fight_Prone_Fire", 1.2),
+    # Angle-v2 melee: one struggling silhouette (mid-swing, piece
+    # clubbed) so the wall fight at 100 m+ reads as a scrum, not a
+    # firing line
+    ("melee", "Melee_Club_Swing", 1.05),
 )
 
 
@@ -319,6 +323,12 @@ def main():
             if name.endswith("_a"):   # one LOD set per faction
                 export_mid_tier(name, rig, body, parts, musket)
             export_near_tier(name, body, rig, parts, musket)
+    # Angle-v2 P5: the project-owned officer's horse (its own rig +
+    # clips; horse.py). Built last on a clean scene.
+    if only in (None, "horse"):
+        clear_scene()
+        import horse
+        horse.build_and_export(OUT, previews_only=previews_only)
     print("[kit] DONE")
 
 

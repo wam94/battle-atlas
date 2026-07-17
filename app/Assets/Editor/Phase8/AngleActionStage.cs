@@ -221,7 +221,7 @@ namespace BattleAtlas.EditorTools
                 foreach (var pose in new[] { "pose_march_a", "pose_march_b",
                     "pose_aim", "pose_fire", "pose_reload_rod",
                     "pose_fallen_back", "pose_fallen_side",
-                    "pose_prone_fire" })
+                    "pose_prone_fire", "pose_melee" })
                     if (!lib.ContainsKey(pose))
                         throw new InvalidOperationException(
                             $"{path}: missing baked pose {pose}");

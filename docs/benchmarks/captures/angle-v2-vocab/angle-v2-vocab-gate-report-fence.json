@@ -1,0 +1,14 @@
+{
+  "unityVersion": "6000.4.11f1",
+  "bundleChecksum": "54622b8de4206ac29e3e6defc26ac9a7f9fa6494cdeea56b656b0c876c613dfd",
+  "battleSeed": "angle-v2-vocab-demo-seed/32",
+  "totalSlots": 380,
+  "sequence": {"tag": "fence", "t0": 6, "t1": 36, "fps": 30, "frames": 900},
+  "secondsPerFrame": 0.18,
+  "probeFrames": [450,150],
+  "probesLogicalBitwiseEqual": [true,true],
+  "probesWithinPixelTolerance": [true,true],
+  "probeStats": ["frame 450: logicalBitwiseEqual=True differingPixels=0.78% maxChannelDelta=5", "frame 150: logicalBitwiseEqual=True differingPixels=0.81% maxChannelDelta=8"],
+  "pixelToleranceMaxChannelDelta": 12,
+  "pixelToleranceDifferingPct": 8
+}

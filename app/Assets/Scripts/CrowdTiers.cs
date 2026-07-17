@@ -123,6 +123,25 @@ namespace BattleAtlas
                 case ClipId.FightProneReload:
                 case ClipId.ProneHitSettle: return "pose_prone_fire";
                 case ClipId.RiseFromProne: return "pose_march_a";
+                // Angle-v2 melee: one baked struggling silhouette at
+                // 100 m+ — a wall fight must not read as a firing line
+                case ClipId.MeleeClubSwing:
+                case ClipId.MeleeBayonetThrust:
+                case ClipId.MeleeGrappleA:
+                case ClipId.MeleeGrappleB:
+                case ClipId.MeleeParry: return "pose_melee";
+                // colors: the flag itself is a scene prop; the bearer's
+                // body reads as a standing man at distance
+                case ClipId.ColorsCarry:
+                case ClipId.ColorsPickup: return "pose_march_a";
+                case ClipId.ColorsBearerFall: return "pose_fallen_back";
+                // the mounted officer is a hero/near-tier figure by
+                // construction (one per brigade at most); if one ever
+                // lands in the mid band the rider reads as a standing man
+                // and the horse itself is excluded from tier bookkeeping
+                // (documented in angle-v2-vocab.md — data-wave concern)
+                case ClipId.RideSeat: return "pose_march_a";
+                case ClipId.RiderFall: return "pose_fallen_side";
                 case ClipId.March:
                 case ClipId.RouteStep:
                 case ClipId.DoubleQuick:
