@@ -2206,6 +2206,50 @@ Proposed decision text:
    horses killed or wounded would widen the V&R vocabulary and requires
    its own review before any build step.
 
+### ED-82 — PROPOSED: strike-correlated casualty redistribution (the burst rule)
+
+**Status: PROPOSED by the `angle-v2-data` executor (charge-intensity
+proposal P2); NOT self-adopted — awaits the owner's ruling with the v2
+film review.**
+
+Documented: losses under artillery arrived in bursts tied to individual
+projectiles — "sometimes as many as 10 men being killed and wounded by
+the bursting of a single shell" (peyton-or-1863,
+claim-cas-shell-clusters); "double and treble charges were fired,
+opening immense gaps in their lines" (fuger-1904,
+claim-cas-canister-gaps). The compiled intensity curves are faithful in
+aggregate but smooth: the shipped v1 resolver drew every fall time
+independently from the profile's inverse CDF, so no fall ever coincided
+with the discrete `StrikeEvent`s the same compiled data stages strike
+dust and flinch reactions from.
+
+Proposed decision text:
+
+1. A casualty profile MAY carry a cited `strikeCorrelation` block
+   (canonical reconstruction; schema-validated). For such a profile the
+   COMPILER re-times the victims of the named strike cause classes
+   (canister/shell — the profile's own causeMix share, i.e. the cited
+   fraction) to cluster at the compiled StrikeEvents; musketry/unknown
+   victims keep the smooth curve.
+2. Bounds: a re-timed fall stays inside the profile's [t0, t1] evidence
+   window AND within `windowS` (30 s here) of its smooth draw, so the
+   cited intensity shape is preserved in the aggregate; at most
+   `maxPerStrike` (10 — Peyton's bound) victims cluster on one strike,
+   staggered 0.25 + 0.12 j s so a burst reads as one arrival, not one
+   frame.
+3. Victim identity, cause apportionment, wounded-crawl draws,
+   per-profile counts, and profile windows are UNCHANGED — the rule
+   moves WHEN within the evidence bounds, never WHO or HOW MANY
+   (V&R §1/§2 unchanged; no new wound vocabulary, V&R §3 unchanged).
+4. The re-timed fall times are compiler-EMITTED data
+   (`fallTimes`, 1/64 s-quantized) in the bundle, and the bundle's
+   per-second strength counts them directly: schedule-to-strength
+   reconciliation becomes EXACT for correlated profiles (the smooth
+   profiles keep the documented within-one-man rounding property).
+   The Python compiler replicates the C# strike pipeline float32-
+   faithfully (verified: max deviation < 0.5 ms across all 491
+   in-window strikes, `angle-v2-data` evidence).
+
 ## Connective-reconstruction rules (named inference rules)
 
 Segments cite these rules by name in `inferenceRules`. A segment with no
