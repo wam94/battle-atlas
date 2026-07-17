@@ -283,16 +283,48 @@ Measured results: §6.
 | tool | **119** (119) |
 | pipeline | **66** (66) |
 | reconstruction | **159 + 1 skip** (159+1) |
-| Unity EditMode | **PENDING** (floor 448+1 of 449; +~40 new tests across MeleeResolverTests, ColorGuardTests, MountedOfficerTests, HaltFireObstacleTests) |
-| Unity PlayMode | **PENDING** (floor 20+1 of 21) |
+| Unity EditMode | **478 + 1 skip of 479** (floor 448+1 of 449; +30 new tests across MeleeResolverTests (9), ColorGuardTests (9), MountedOfficerTests (6), HaltFireObstacleTests (6); the 1 skip is the terrain-material self-skip, and the Angle-bake-conditional environment tests RAN — the bakes were regenerated in the worktree) |
+| Unity PlayMode | **20 + 1 skip of 21** (floor; the skip is the production-media-conditional seek test. Two video seek-latency tests flaked while a webb-wall production render saturated the machine; both pass on the re-run in a clear window — no code in this wave touches SoldierView playback) |
 
 Unity CLI: `-batchmode -runTests -buildTarget OSXUniversal`, worktree
 Library, no `-nographics`; Angle + Oak Ridge crops and environment
 bakes regenerated in the worktree; dev proxy regenerated for PlayMode.
 
-## 6. Measured results
+## 6. Measured results (Apple M4 24 GB, Unity 6000.4.11f1, offline HDRP profile)
 
-PENDING — filled from the gate reports after the staged renders.
+From the two gate reports + the encode logs:
+
+- **Demo staging:** 380 slots (5 units), bundle `54622b8de420…`, seed
+  `angle-v2-vocab-demo-seed/32` — the seed was picked by a
+  deterministic offline search (the FNV hash + victim draw replicated
+  in Python) so the colors succession PLAYS inside the render window:
+  bearer 19 falls t=9.75 → grounded → taken up by 20 at 13.75 → he
+  falls at 19.25 → grounded → taken up by 18 at 23.25. The wall
+  report's `colorsTimeline` records exactly this arc as rendered.
+- **Sequences:** 900 frames each at 2560×1440; wall **0.24 s/frame**,
+  fence **0.18 s/frame**.
+- **Scrub probes (frames 150/450, re-posed out of order):** logical
+  380-slot state **bitwise identical 4/4** (2 per sequence);
+  re-rendered pixels differing 0.34–0.81% at max channel delta 4–8 —
+  well inside the documented Phase 8 envelope (12 / 8%).
+- **Media** (gitignored, regenerable; hashes committed in
+  `angle-v2-vocab-media.sha256`):
+  `angle-v2-vocab-wall-30s-1440p.mp4` `4a2174df482d…`,
+  `angle-v2-vocab-fence-30s-1440p.mp4` `ca264f577a6a…` (+720p proxies;
+  libx264 slow CRF 18, GOP 30 — the media-contract settings;
+  frame-count-verified 900/900 before encode).
+- **The mounted officer on camera:** rides at t<14, the horse rears at
+  the hit (still `av2-mounted-15-rear`), the rider lies beside his
+  dropped piece from ~t=17 (still `av2-mounted-17-rider-down`), and by
+  t=24 the horse has bolted out of frame while the colors pass behind
+  the body (still `av2-mounted-24-riderless`).
+- **Blender kit rebuild:** all 6 variants × 36 clips + `pose_melee`
+  mid bake + `horse.fbx` (13-bone rig, 4 clips), headless bpy 4.5.11 +
+  MPFB 2.0.16 (`setup_toolchain.sh` unchanged); Workbench previews
+  iterated two rounds before the FBX bake (round-1 grip/reach defects
+  in `Melee_Club_Swing`/`Melee_Parry`/`Melee_Bayonet_Thrust` caught
+  and re-authored); rear-hoof ground contact of `Horse_Rear` verified
+  numerically at the apex (z = 0.04 m).
 
 ## 7. Film-safety verdict
 

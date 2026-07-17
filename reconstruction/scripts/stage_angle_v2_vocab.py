@@ -37,7 +37,11 @@ REPO = Path(__file__).resolve().parent.parent.parent
 OUT = (REPO / "docs/benchmarks/captures/angle-v2-vocab/"
        "angle-v2-vocab-demo.bundle.json")
 
-STAGING_SEED = "angle-v2-vocab-demo-seed/1"
+# Seed /32 picked by deterministic search (the succession must PLAY on
+# camera: bearer 19 falls t=9.75, taken up by 20 at 13.75, who falls at
+# 19.25, taken up by 18 at 23.25 — two successions inside the 2-32 s
+# render window). Demo staging only; no film pin involved.
+STAGING_SEED = "angle-v2-vocab-demo-seed/32"
 T0, T1 = 0, 40
 
 # Real Angle geometry (data/heightmap_angle/environment.json):
