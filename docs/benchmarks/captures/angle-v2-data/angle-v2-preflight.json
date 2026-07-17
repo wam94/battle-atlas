@@ -1,0 +1,12 @@
+{
+  "bundleChecksum": "1f613b3ccff5cb73327ab0dadc7cc21ad913b4ff4aa7f714992da2e666ebffcf",
+  "window": {"t0": 8160, "t1": 8820.5},
+  "coarsePairsChecked": 62110620,
+  "suspectWindowsRefined": 10777,
+  "crossingExitHandoffs": 10777,
+  "cameraFrames": 19815, "cameraMaxDeltaM": 0.1255,
+  "boundPerFrameM": 0.267, "crossExitBoundM": 1.567, "cameraBoundM": 0.150,
+  "violations": [],
+  "pass": true,
+  "sweepSeconds": 140
+}
