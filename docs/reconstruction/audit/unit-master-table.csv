@@ -95,44 +95,44 @@ reg-csa-cav-robertson,"Robertson's Brigade, Stuart's Division",confederate,briga
 reg-csa-cav-chambliss,"W. H. F. Lee's Brigade (Chambliss's), Stuart's Division",confederate,brigade,cavalry,,,,,,,,,,,,,,,,4,Lee,yes,,T2,not-yet-cast,reg-csa-cav-chambliss
 csa-11miss,11th Mississippi,confederate,child-regiment,infantry,july3-afternoon,323,97,226,9,0,9,0,9,2469.1,44.7,yes,line/routed/scattered,0,0,2,11th Mississippi,yes,T0,T4,in-build,
 csa-11nc,11th North Carolina,confederate,child-regiment,infantry,july3-afternoon,225,67,158,11,0,11,0,11,2622.2,393.4,yes,line/routed/scattered,0,0,0,11th North,VERIFY,T0,T4,in-build,
-csa-11va,11th Virginia,confederate,child-regiment,infantry,july3-afternoon,315,169,146,11,1,10,0,11,2477.9,186.1,yes,line/routed/scattered,0,0,0,11th Virginia,yes,T0,T4,in-build,
-csa-13al,13th Alabama,confederate,child-regiment,infantry,july3-afternoon,210,74,136,9,1,8,0,9,2362.2,126.6,yes,line/routed/scattered,0,0,1,13th Alabama,yes,T0,T4,in-build,
-csa-14tn,14th Tennessee,confederate,child-regiment,infantry,july3-afternoon,209,74,135,9,1,8,0,9,2431.2,255.1,yes,line/routed/scattered,0,0,1,14th Tennessee,yes,T0,T4,in-build,
-csa-14va,14th Virginia,confederate,child-regiment,infantry,july3-afternoon,330,92,238,9,0,9,0,9,2690.5,242.0,yes,line/routed/scattered,0,0,0,14th Virginia,VERIFY,T0,T4,in-build,
+csa-11va,11th Virginia,confederate,child-regiment,infantry,july3-afternoon,315,169,146,13,1,12,0,13,2477.9,186.1,yes,line/routed/scattered,0,0,0,11th Virginia,yes,T0,T4,in-build,
+csa-13al,13th Alabama,confederate,child-regiment,infantry,july3-afternoon,210,74,136,11,1,10,0,11,2362.2,126.6,yes,line/routed/scattered,0,0,1,13th Alabama,yes,T0,T4,in-build,
+csa-14tn,14th Tennessee,confederate,child-regiment,infantry,july3-afternoon,209,74,135,11,1,10,0,11,2431.2,255.1,yes,line/routed/scattered,0,0,1,14th Tennessee,yes,T0,T4,in-build,
+csa-14va,14th Virginia,confederate,child-regiment,infantry,july3-afternoon,330,92,238,11,0,11,0,11,2690.5,242.0,yes,line/routed/scattered,0,0,0,14th Virginia,VERIFY,T0,T4,in-build,
 csa-18va,18th Virginia,confederate,child-regiment,infantry,july3-afternoon,285,97,188,10,1,9,0,10,2428.4,157.2,yes,line/routed/scattered,0,0,0,18th Virginia,yes,T0,T4,in-build,
 csa-19va,19th Virginia,confederate,child-regiment,infantry,july3-afternoon,285,97,188,10,1,9,0,10,2349.8,51.0,yes,line/routed/scattered,0,0,0,19th Virginia,yes,T0,T4,in-build,
-csa-1tn,1st Tennessee (Provisional Army),confederate,child-regiment,infantry,july3-afternoon,210,74,136,9,1,8,0,9,2321.5,51.0,yes,line/routed/scattered,0,0,1,1st Tennessee,yes,T0,T4,in-build,
-csa-1va,1st Virginia,confederate,child-regiment,infantry,july3-afternoon,315,169,146,11,1,10,0,11,2695.9,336.1,yes,line/routed/scattered,0,0,0,1st Virginia,yes,T0,T4,in-build,
-csa-24va,24th Virginia,confederate,child-regiment,infantry,july3-afternoon,315,169,146,11,1,10,0,11,2568.8,353.5,yes,line/routed/scattered,0,0,1,24th Virginia,yes,T0,T4,in-build,
+csa-1tn,1st Tennessee (Provisional Army),confederate,child-regiment,infantry,july3-afternoon,210,74,136,11,1,10,0,11,2321.5,51.0,yes,line/routed/scattered,0,0,1,1st Tennessee,yes,T0,T4,in-build,
+csa-1va,1st Virginia,confederate,child-regiment,infantry,july3-afternoon,315,169,146,13,1,12,0,13,2695.9,336.1,yes,line/routed/scattered,0,0,0,1st Virginia,yes,T0,T4,in-build,
+csa-24va,24th Virginia,confederate,child-regiment,infantry,july3-afternoon,315,169,146,13,1,12,0,13,2568.8,353.5,yes,line/routed/scattered,0,0,1,24th Virginia,yes,T0,T4,in-build,
 csa-26nc,26th North Carolina,confederate,child-regiment,infantry,july3-afternoon,225,67,158,11,0,11,0,11,2469.8,133.5,yes,line/routed/scattered,0,0,1,26th North,yes,T0,T4,in-build,
 csa-28va,28th Virginia,confederate,child-regiment,infantry,july3-afternoon,285,97,188,10,1,9,0,10,2389.6,182.2,yes,line/routed/scattered,0,0,0,28th Virginia,yes,T0,T4,in-build,
 csa-2miss,2nd Mississippi,confederate,child-regiment,infantry,july3-afternoon,323,97,226,8,0,8,0,8,2387.1,388.8,yes,line/routed/scattered,0,0,1,2nd Mississippi,yes,T0,T4,in-build,
-csa-38va,38th Virginia,confederate,child-regiment,infantry,july3-afternoon,330,92,238,9,2,7,0,9,2784.1,84.9,yes,line/routed/scattered,0,0,1,38th Virginia,yes,T0,T4,in-build,
-csa-3va,3rd Virginia,confederate,child-regiment,infantry,july3-afternoon,315,169,146,11,1,10,0,11,2545.4,169.2,yes,line/routed/scattered,0,0,0,3rd Virginia,yes,T0,T4,in-build,
+csa-38va,38th Virginia,confederate,child-regiment,infantry,july3-afternoon,330,92,238,11,2,9,0,11,2784.1,84.9,yes,line/routed/scattered,0,0,1,38th Virginia,yes,T0,T4,in-build,
+csa-3va,3rd Virginia,confederate,child-regiment,infantry,july3-afternoon,315,169,146,13,1,12,0,13,2545.4,169.2,yes,line/routed/scattered,0,0,0,3rd Virginia,yes,T0,T4,in-build,
 csa-42miss,42nd Mississippi,confederate,child-regiment,infantry,july3-afternoon,323,97,226,8,0,8,0,8,2229.8,139.1,yes,line/routed/scattered,0,0,1,42nd Mississippi,yes,T0,T4,in-build,
 csa-47nc,47th North Carolina,confederate,child-regiment,infantry,july3-afternoon,225,67,158,11,0,11,0,11,2404.4,135.6,yes,line/routed/scattered,0,0,0,47th North,VERIFY,T0,T4,in-build,
 csa-52nc,52nd North Carolina,confederate,child-regiment,infantry,july3-afternoon,225,67,158,11,0,11,0,11,2561.1,395.6,yes,line/routed/scattered,0,0,1,52nd North,yes,T0,T4,in-build,
-csa-53va,53rd Virginia,confederate,child-regiment,infantry,july3-afternoon,330,92,238,9,2,7,0,9,2643.7,140.4,yes,line/routed/scattered,1,0,0,53rd Virginia,yes,T0,T4,in-build,
+csa-53va,53rd Virginia,confederate,child-regiment,infantry,july3-afternoon,330,92,238,11,2,9,0,11,2643.7,140.4,yes,line/routed/scattered,1,0,0,53rd Virginia,yes,T0,T4,in-build,
 csa-55nc,55th North Carolina,confederate,child-regiment,infantry,july3-afternoon,323,97,226,8,0,8,0,8,2351.0,400.8,yes,line/routed/scattered,0,0,1,55th North,yes,T0,T4,in-build,
 csa-56va,56th Virginia,confederate,child-regiment,infantry,july3-afternoon,285,97,188,10,1,9,0,10,2500.5,341.3,yes,line/routed/scattered,0,0,1,56th Virginia,yes,T0,T4,in-build,
-csa-57va,57th Virginia,confederate,child-regiment,infantry,july3-afternoon,330,92,238,9,1,8,0,9,2791.4,310.0,yes,line/routed/scattered,0,0,1,57th Virginia,yes,T0,T4,in-build,
-csa-5al-bn,5th Alabama Battalion,confederate,child-regiment,infantry,july3-afternoon,210,74,136,9,1,8,0,9,2447.6,242.4,yes,line/routed/scattered,0,0,1,5th Alabama,yes,T0,T4,in-build,
-csa-7tn,7th Tennessee,confederate,child-regiment,infantry,july3-afternoon,209,74,135,9,1,8,0,9,2350.7,138.2,yes,line/routed/scattered,0,0,1,7th Tennessee,yes,T0,T4,in-build,
-csa-7va,7th Virginia,confederate,child-regiment,infantry,july3-afternoon,315,169,146,11,1,10,0,11,2458.0,50.0,yes,line/routed/scattered,0,0,1,7th Virginia,yes,T0,T4,in-build,
+csa-57va,57th Virginia,confederate,child-regiment,infantry,july3-afternoon,330,92,238,11,1,10,0,11,2791.4,310.0,yes,line/routed/scattered,0,0,1,57th Virginia,yes,T0,T4,in-build,
+csa-5al-bn,5th Alabama Battalion,confederate,child-regiment,infantry,july3-afternoon,210,74,136,11,1,10,0,11,2447.6,242.4,yes,line/routed/scattered,0,0,1,5th Alabama,yes,T0,T4,in-build,
+csa-7tn,7th Tennessee,confederate,child-regiment,infantry,july3-afternoon,209,74,135,11,1,10,0,11,2350.7,138.2,yes,line/routed/scattered,0,0,1,7th Tennessee,yes,T0,T4,in-build,
+csa-7va,7th Virginia,confederate,child-regiment,infantry,july3-afternoon,315,169,146,13,1,12,0,13,2458.0,50.0,yes,line/routed/scattered,0,0,1,7th Virginia,yes,T0,T4,in-build,
 csa-8va,8th Virginia,confederate,child-regiment,infantry,july3-afternoon,285,97,188,10,1,9,0,10,2570.3,315.4,yes,line/routed/scattered,0,0,1,8th Virginia,yes,T0,T4,in-build,
-csa-9va,9th Virginia,confederate,child-regiment,infantry,july3-afternoon,330,92,238,9,0,9,0,9,2852.1,416.9,yes,line/routed/scattered,0,0,0,9th Virginia,VERIFY,T0,T4,in-build,
+csa-9va,9th Virginia,confederate,child-regiment,infantry,july3-afternoon,330,92,238,11,0,11,0,11,2852.1,416.9,yes,line/routed/scattered,0,0,0,9th Virginia,VERIFY,T0,T4,in-build,
 csa-brock-left,Brockenbrough's left wing,confederate,child-regiment,infantry,july3-afternoon,440,366,74,9,1,8,0,9,735.6,5.4,yes,line/routed/scattered,0,0,3,Brockenbrough,yes,T0,T4,in-build,
 csa-brock-right,Brockenbrough's right wing,confederate,child-regiment,infantry,july3-afternoon,440,366,74,9,1,8,0,9,877.5,5.4,yes,line/routed/scattered,0,0,3,Brockenbrough,yes,T0,T4,in-build,
 reg-csa-3c-het-hq,Heth's Division headquarters (division command),confederate,command,infantry,,,,,,,,,,,,,,,,3,Heth,yes,,T2,not-yet-cast,reg-csa-3c-het-hq
 reg-csa-2c-joh-hq,Johnson's Division headquarters (division command),confederate,command,infantry,,,,,,,,,,,,,,,,1,Johnson,yes,,T2,not-yet-cast,reg-csa-2c-joh-hq
 reg-csa-3c-pen-hq,Pender's Division headquarters (division command),confederate,command,infantry,,,,,,,,,,,,,,,,2,Pender,yes,,T2,not-yet-cast,reg-csa-3c-pen-hq
 reg-csa-1c-pic-hq,Pickett's Division headquarters (division command),confederate,command,infantry,,,,,,,,,,,,,,,,7,Pickett,yes,,T2,not-yet-cast,reg-csa-1c-pic-hq
-csa-armistead,Armistead's Brigade,confederate,parent-brigade,infantry,july3-afternoon,1650,459,1191,10,2,8,0,10,2593.7,84.9,yes,line/routed/scattered,0,7,4,Armistead,yes,T5,T4,in-build,reg-csa-1c-pic-3
+csa-armistead,Armistead's Brigade,confederate,parent-brigade,infantry,july3-afternoon,1650,459,1191,12,2,10,0,12,2593.7,84.9,yes,line/routed/scattered,0,7,4,Armistead,yes,T5,T4,in-build,reg-csa-1c-pic-3
 csa-brockenbrough,Brockenbrough's Brigade,confederate,parent-brigade,infantry,july1-morning/july1-afternoon/july2-afternoon/july2-evening/july3-afternoon,880,732,148,21,8,13,0,21,4964.9,3132.5,yes,column/line/routed/scattered,1,0,3,Brockenbrough,yes,T0,T4,in-build,reg-csa-3c-het-2
 csa-davis,Davis's Brigade,confederate,parent-brigade,infantry,july1-morning/july1-afternoon/july2-afternoon/july2-evening/july3-afternoon,2000,387,1613,24,11,13,0,24,9774.2,3125.7,yes,column/line/routed/scattered,2,0,3,Davis,yes,T0,T4,in-build,reg-csa-3c-het-4
-csa-fry,Fry's Brigade (Archer's),confederate,parent-brigade,infantry,july1-morning/july1-afternoon/july2-afternoon/july2-evening/july3-afternoon,1048,371,677,22,11,11,0,22,6538.5,3381.8,yes,column/line/routed/scattered,2,2,4,Fry,yes,T5,T4,in-build,reg-csa-3c-het-3
+csa-fry,Fry's Brigade (Archer's),confederate,parent-brigade,infantry,july1-morning/july1-afternoon/july2-afternoon/july2-evening/july3-afternoon,1048,371,677,24,11,13,0,24,6538.5,3381.8,yes,column/line/routed/scattered,2,2,4,Fry,yes,T5,T4,in-build,reg-csa-3c-het-3
 csa-garnett,Garnett's Brigade,confederate,parent-brigade,infantry,july3-afternoon,1427,486,941,12,3,9,0,12,2349.8,51.0,yes,line/routed/scattered,0,6,5,Garnett,yes,T5,T4,in-build,reg-csa-1c-pic-1
-csa-kemper,Kemper's Brigade,confederate,parent-brigade,infantry,july3-afternoon,1575,844,731,12,2,10,0,12,2458.0,50.0,yes,line/routed/scattered,0,6,5,Kemper,yes,T5,T4,in-build,reg-csa-1c-pic-2
+csa-kemper,Kemper's Brigade,confederate,parent-brigade,infantry,july3-afternoon,1575,844,731,14,2,12,0,14,2458.0,50.0,yes,line/routed/scattered,0,6,5,Kemper,yes,T5,T4,in-build,reg-csa-1c-pic-2
 csa-marshall,Marshall's Brigade (Pettigrew's),confederate,parent-brigade,infantry,july1-morning/july1-afternoon/july2-afternoon/july2-evening/july3-afternoon,2000,268,1732,24,7,17,0,24,7023.0,3416.6,yes,column/line/routed/scattered,1,0,3,Marshall,yes,T0,T4,in-build,reg-csa-3c-het-1
 csa-21ms,21st Mississippi (Barksdale's),confederate,standalone,infantry,july2-afternoon/july2-evening,400,297,103,8,8,0,0,8,728.9,728.6,yes,line,1,0,0,(Barksdale,yes,T1,T4,in-build,
 csa-luffman,"Anderson's Georgia Brigade, Hood's Division (Lt. Col. William Luffman)",confederate,standalone,infantry,july2-afternoon/july2-evening/july3-afternoon,1800,1130,670,11,8,3,0,11,1572.5,647.2,yes,line,1,0,3,Anderson,yes,T1,T4,in-build,reg-csa-1c-hood-3

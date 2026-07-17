@@ -101,13 +101,23 @@ def test_allowlist_entries_still_present():
 def test_pinned_angle_cast_units_byte_identical_to_main():
     """Film-safety tripwire, standing check: the 13 Angle-cast units'
     keyframes in gettysburg-july3.json never change, regardless of what
-    facing-convention fixes land elsewhere in the file. Pins the exact
-    sha256 established in retrograde-facing.md (matches the pre-existing
-    ED-21/decomposition-wave-1/strength-reconciliation-1 pin chain)."""
+    facing-convention fixes land elsewhere in the file.
+
+    AUTHORIZED BUMP (angle-v2-data wave, 2026-07-16): the owner's
+    "angle film v2 authorized" ruling opened the cast for the v2 data
+    wave (docs/reconstruction/angle-v2-data.md). The wave re-timed the
+    Kemper/Armistead/Fry bombardment shares (two new pre-window
+    keyframes each at t=420/t=3600, t=7200 citation upgrade, values at
+    t>=7500 byte-identical — the bombardment-prelude §3 deferral picked
+    up; verified 0 mismatches across 28 units x 661 s of in-window
+    compiled state). Previous pin (retrograde-facing.md era):
+    69163017ebc0c670b742d91e89658310d526232ecbbe966f12e291d67c03ab68.
+    The new sha below pins the v2 cast state; any FURTHER cast change
+    still trips this test and needs its own authorization."""
     data = json.loads((BATTLE_DIR / fx.PINNED_FILE).read_text(encoding="utf-8"))
     units = {u["id"]: u for u in data["units"] if u["id"] in fx.PINNED_ANGLE_CAST_UNITS}
     assert len(units) == len(fx.PINNED_ANGLE_CAST_UNITS)
     blob = json.dumps(units, sort_keys=True, ensure_ascii=False)
     import hashlib
     got = hashlib.sha256(blob.encode("utf-8")).hexdigest()
-    assert got == "69163017ebc0c670b742d91e89658310d526232ecbbe966f12e291d67c03ab68"
+    assert got == "d6bc14b84d38e214853994346e0b4e6e558da6303246d2fccae1c371cbd6956f"

@@ -700,6 +700,26 @@
           "citation": "Bachelder Third Day sheet, LOC 99447492 (Pickett's right, near Spangler's Woods); Kemper on the division right per Rawley Martin SHSP v32; strength 1,575 present: Stone Sentinels Kemper's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: Rawley Martin, SHSP v32 (regiment-by-regiment, Kemper right)"
         },
         {
+          "t": 420,
+          "x": 3150,
+          "z": 4680,
+          "facing": 80,
+          "formation": "line",
+          "strength": 1575,
+          "confidence": "inferred",
+          "citation": "CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades)."
+        },
+        {
+          "t": 3600,
+          "x": 3150,
+          "z": 4680,
+          "facing": 80,
+          "formation": "line",
+          "strength": 1562,
+          "confidence": "inferred",
+          "citation": "mid-bombardment (~14:00): 'The brigade lying on my right (Kemper's) suffered severely' during the cannonade — Wilcox, watching from ~200 yards to Kemper's right rear (or-27-2-wilcox; the column's only cross-brigade bombardment-severity comparison, sizing Kemper's share ABOVE Garnett's attested ~20 — the existing 25-man share already satisfies the relation and V&R §2 forbids converting the comparison into a new total) — no brigade-specific casualty figure exists for this brigade (dossier csa-1c-pic-2-kemper.md EC5.1/EC6: severity comparison only, no total), so the already-established 25-man bombardment share (1575→1550 by ~15:00, UNCHANGED total from the prior build) is spread across the attested window rather than landing all at once at its close; this keyframe marks the even-split midpoint (compilation-class, inferred — the corpus's even-split convention, e.g. decomposition-wave-1's 6th Wisconsin technique) — NOT an attested casualty-rate claim (angle-v2-data wave)."
+        },
+        {
           "t": 7200,
           "x": 3150,
           "z": 4680,
@@ -707,7 +727,7 @@
           "formation": "line",
           "strength": 1550,
           "confidence": "inferred",
-          "citation": "interpolated: line static under bombardment (Alexander 1907); small counter-battery losses reconstructed"
+          "citation": "BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): 'The brigade lying on my right (Kemper's) suffered severely' during the cannonade — Wilcox, watching from ~200 yards to Kemper's right rear (or-27-2-wilcox; the column's only cross-brigade bombardment-severity comparison, sizing Kemper's share ABOVE Garnett's attested ~20 — the existing 25-man share already satisfies the relation and V&R §2 forbids converting the comparison into a new total) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-1c-pic-2-kemper.md EC5.1/EC6: severity comparison only, no total) — the already-established 25-man share (1575→1550, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it)."
         },
         {
           "t": 7500,
@@ -830,6 +850,26 @@
           "citation": "Bachelder Third Day sheet, LOC 99447492 — Kemper's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '1'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,575 (Stone Sentinels Kemper's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); slot order right-to-left per Rawley Martin, SHSP v32 (Kemper on the division right)"
         },
         {
+          "t": 420,
+          "x": 3180,
+          "z": 4512,
+          "facing": 80,
+          "formation": "line",
+          "strength": 315,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades).]; slot order unchanged from t=0 (angle-v2-data wave, round(share×parentAt(t)) — the same share formula this family's existing child keyframes follow)"
+        },
+        {
+          "t": 3600,
+          "x": 3180,
+          "z": 4512,
+          "facing": 80,
+          "formation": "line",
+          "strength": 312,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-kemper's own t=3600 keyframe]; round(share×parentAt(3600)) (angle-v2-data wave)"
+        },
+        {
           "t": 7200,
           "x": 3180,
           "z": 4512,
@@ -837,7 +877,7 @@
           "formation": "line",
           "strength": 310,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907); small counter-battery losses reconstructed]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): 'The brigade lying on my right (Kemper's) suffered severely' during the cannonade — Wilcox, watching from ~200 yards to Kemper's right rear (or-27-2-wilcox; the column's only cross-brigade bombardment-severity comparison, sizing Kemper's share ABOVE Garnett's attested ~20 — the existing 25-man share already satisfies the relation and V&R §2 forbids converting the comparison into a new total) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-1c-pic-2-kemper.md EC5.1/EC6: severity comparison only, no total) — the already-established 25-man share (1575→1550, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(share×parentAt(7200)) unchanged (angle-v2-data wave — value not touched)"
         },
         {
           "t": 7500,
@@ -950,6 +990,26 @@
           "citation": "Bachelder Third Day sheet, LOC 99447492 — Kemper's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '3'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,575 (Stone Sentinels Kemper's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); slot order right-to-left per Rawley Martin, SHSP v32 (Kemper on the division right)"
         },
         {
+          "t": 420,
+          "x": 3165,
+          "z": 4596,
+          "facing": 80,
+          "formation": "line",
+          "strength": 315,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades).]; slot order unchanged from t=0 (angle-v2-data wave, round(share×parentAt(t)) — the same share formula this family's existing child keyframes follow)"
+        },
+        {
+          "t": 3600,
+          "x": 3165,
+          "z": 4596,
+          "facing": 80,
+          "formation": "line",
+          "strength": 312,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-kemper's own t=3600 keyframe]; round(share×parentAt(3600)) (angle-v2-data wave)"
+        },
+        {
           "t": 7200,
           "x": 3165,
           "z": 4596,
@@ -957,7 +1017,7 @@
           "formation": "line",
           "strength": 310,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907); small counter-battery losses reconstructed]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): 'The brigade lying on my right (Kemper's) suffered severely' during the cannonade — Wilcox, watching from ~200 yards to Kemper's right rear (or-27-2-wilcox; the column's only cross-brigade bombardment-severity comparison, sizing Kemper's share ABOVE Garnett's attested ~20 — the existing 25-man share already satisfies the relation and V&R §2 forbids converting the comparison into a new total) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-1c-pic-2-kemper.md EC5.1/EC6: severity comparison only, no total) — the already-established 25-man share (1575→1550, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(share×parentAt(7200)) unchanged (angle-v2-data wave — value not touched)"
         },
         {
           "t": 7500,
@@ -1070,6 +1130,26 @@
           "citation": "Bachelder Third Day sheet, LOC 99447492 — Kemper's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '7'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,575 (Stone Sentinels Kemper's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); slot order right-to-left per Rawley Martin, SHSP v32 (Kemper on the division right)"
         },
         {
+          "t": 420,
+          "x": 3150,
+          "z": 4680,
+          "facing": 80,
+          "formation": "line",
+          "strength": 315,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades).]; slot order unchanged from t=0 (angle-v2-data wave, round(share×parentAt(t)) — the same share formula this family's existing child keyframes follow)"
+        },
+        {
+          "t": 3600,
+          "x": 3150,
+          "z": 4680,
+          "facing": 80,
+          "formation": "line",
+          "strength": 312,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-kemper's own t=3600 keyframe]; round(share×parentAt(3600)) (angle-v2-data wave)"
+        },
+        {
           "t": 7200,
           "x": 3150,
           "z": 4680,
@@ -1077,7 +1157,7 @@
           "formation": "line",
           "strength": 310,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907); small counter-battery losses reconstructed]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): 'The brigade lying on my right (Kemper's) suffered severely' during the cannonade — Wilcox, watching from ~200 yards to Kemper's right rear (or-27-2-wilcox; the column's only cross-brigade bombardment-severity comparison, sizing Kemper's share ABOVE Garnett's attested ~20 — the existing 25-man share already satisfies the relation and V&R §2 forbids converting the comparison into a new total) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-1c-pic-2-kemper.md EC5.1/EC6: severity comparison only, no total) — the already-established 25-man share (1575→1550, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(share×parentAt(7200)) unchanged (angle-v2-data wave — value not touched)"
         },
         {
           "t": 7500,
@@ -1190,6 +1270,26 @@
           "citation": "Bachelder Third Day sheet, LOC 99447492 — Kemper's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '11'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,575 (Stone Sentinels Kemper's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); slot order right-to-left per Rawley Martin, SHSP v32 (Kemper on the division right)"
         },
         {
+          "t": 420,
+          "x": 3135,
+          "z": 4764,
+          "facing": 80,
+          "formation": "line",
+          "strength": 315,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades).]; slot order unchanged from t=0 (angle-v2-data wave, round(share×parentAt(t)) — the same share formula this family's existing child keyframes follow)"
+        },
+        {
+          "t": 3600,
+          "x": 3135,
+          "z": 4764,
+          "facing": 80,
+          "formation": "line",
+          "strength": 312,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-kemper's own t=3600 keyframe]; round(share×parentAt(3600)) (angle-v2-data wave)"
+        },
+        {
           "t": 7200,
           "x": 3135,
           "z": 4764,
@@ -1197,7 +1297,7 @@
           "formation": "line",
           "strength": 310,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907); small counter-battery losses reconstructed]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): 'The brigade lying on my right (Kemper's) suffered severely' during the cannonade — Wilcox, watching from ~200 yards to Kemper's right rear (or-27-2-wilcox; the column's only cross-brigade bombardment-severity comparison, sizing Kemper's share ABOVE Garnett's attested ~20 — the existing 25-man share already satisfies the relation and V&R §2 forbids converting the comparison into a new total) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-1c-pic-2-kemper.md EC5.1/EC6: severity comparison only, no total) — the already-established 25-man share (1575→1550, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(share×parentAt(7200)) unchanged (angle-v2-data wave — value not touched)"
         },
         {
           "t": 7500,
@@ -1310,6 +1410,26 @@
           "citation": "Bachelder Third Day sheet, LOC 99447492 — Kemper's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '24'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,575 (Stone Sentinels Kemper's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); slot order right-to-left per Rawley Martin, SHSP v32 (Kemper on the division right)"
         },
         {
+          "t": 420,
+          "x": 3120,
+          "z": 4848,
+          "facing": 80,
+          "formation": "line",
+          "strength": 315,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades).]; slot order unchanged from t=0 (angle-v2-data wave, round(share×parentAt(t)) — the same share formula this family's existing child keyframes follow)"
+        },
+        {
+          "t": 3600,
+          "x": 3120,
+          "z": 4848,
+          "facing": 80,
+          "formation": "line",
+          "strength": 312,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-kemper's own t=3600 keyframe]; round(share×parentAt(3600)) (angle-v2-data wave)"
+        },
+        {
           "t": 7200,
           "x": 3120,
           "z": 4848,
@@ -1317,7 +1437,7 @@
           "formation": "line",
           "strength": 310,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907); small counter-battery losses reconstructed]; slot order [slot order per Rawley Martin, SHSP v32 (Kemper's regiments drawn as numbered bars on Bachelder sheet 3, docs/research/2026-07-02-regiment-track-sources.md §1.1); per-regiment strengths not documented — equal fifths of the brigade's 1,575 (Stone Sentinels), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): 'The brigade lying on my right (Kemper's) suffered severely' during the cannonade — Wilcox, watching from ~200 yards to Kemper's right rear (or-27-2-wilcox; the column's only cross-brigade bombardment-severity comparison, sizing Kemper's share ABOVE Garnett's attested ~20 — the existing 25-man share already satisfies the relation and V&R §2 forbids converting the comparison into a new total) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-1c-pic-2-kemper.md EC5.1/EC6: severity comparison only, no total) — the already-established 25-man share (1575→1550, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(share×parentAt(7200)) unchanged (angle-v2-data wave — value not touched)"
         },
         {
           "t": 7500,
@@ -1429,6 +1549,26 @@
           "citation": "Bachelder Third Day sheet, LOC 99447492 (second line behind Garnett/Kemper; Rawley Martin SHSP v32 places Armistead 'in rear and center', some modern accounts left-rear — recorded, not reconciled); strength 1,650 present: Stone Sentinels Armistead's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: Rawley Martin, SHSP v32 (regiment-by-regiment, Armistead rear-center)"
         },
         {
+          "t": 420,
+          "x": 3090,
+          "z": 4830,
+          "facing": 85,
+          "formation": "line",
+          "strength": 1650,
+          "confidence": "inferred",
+          "citation": "CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades)."
+        },
+        {
+          "t": 3600,
+          "x": 3090,
+          "z": 4830,
+          "facing": 85,
+          "formation": "line",
+          "strength": 1640,
+          "confidence": "inferred",
+          "citation": "mid-bombardment (~14:00): second line under the same cannonade (Alexander 1907; the CA-J3A bracket) — no division- or brigade-grain casualty record survives for Armistead's bombardment share — no brigade-specific casualty figure exists for this brigade (dossier csa-1c-pic-3-armistead.md EC5.2: 'no brigade-specific bombardment casualty figure survives'), so the already-established 20-man bombardment share (1650→1630 by ~15:00, UNCHANGED total from the prior build) is spread across the attested window rather than landing all at once at its close; this keyframe marks the even-split midpoint (compilation-class, inferred — the corpus's even-split convention, e.g. decomposition-wave-1's 6th Wisconsin technique) — NOT an attested casualty-rate claim (angle-v2-data wave)."
+        },
+        {
           "t": 7200,
           "x": 3090,
           "z": 4830,
@@ -1436,7 +1576,7 @@
           "formation": "line",
           "strength": 1630,
           "confidence": "inferred",
-          "citation": "interpolated: second line static under bombardment (Alexander 1907)"
+          "citation": "BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): second line under the same cannonade (Alexander 1907; the CA-J3A bracket) — no division- or brigade-grain casualty record survives for Armistead's bombardment share anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-1c-pic-3-armistead.md EC5.2: 'no brigade-specific bombardment casualty figure survives') — the already-established 20-man share (1650→1630, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it)."
         },
         {
           "t": 7500,
@@ -1539,6 +1679,26 @@
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (second line behind Garnett/Kemper; Rawley Martin SHSP v32 places Armistead 'in rear and center', some modern accounts left-rear — recorded, not reconciled); strength 1,650 present: Stone Sentinels Armistead's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: Rawley Martin, SHSP v32 (regiment-by-regiment, Armistead rear-center)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
         },
         {
+          "t": 420,
+          "x": 3106,
+          "z": 4652,
+          "facing": 85,
+          "formation": "line",
+          "strength": 330,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades).]; slot order unchanged from t=0 (angle-v2-data wave, round(share×parentAt(t)) — the same share formula this family's existing child keyframes follow)"
+        },
+        {
+          "t": 3600,
+          "x": 3106,
+          "z": 4652,
+          "facing": 85,
+          "formation": "line",
+          "strength": 328,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-armistead's own t=3600 keyframe]; round(share×parentAt(3600)) (angle-v2-data wave)"
+        },
+        {
           "t": 7200,
           "x": 3106,
           "z": 4652,
@@ -1546,7 +1706,7 @@
           "formation": "line",
           "strength": 326,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: second line static under bombardment (Alexander 1907)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): second line under the same cannonade (Alexander 1907; the CA-J3A bracket) — no division- or brigade-grain casualty record survives for Armistead's bombardment share anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-1c-pic-3-armistead.md EC5.2: 'no brigade-specific bombardment casualty figure survives') — the already-established 20-man share (1650→1630, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(share×parentAt(7200)) unchanged (angle-v2-data wave — value not touched)"
         },
         {
           "t": 7500,
@@ -1639,6 +1799,26 @@
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (second line behind Garnett/Kemper; Rawley Martin SHSP v32 places Armistead 'in rear and center', some modern accounts left-rear — recorded, not reconciled); strength 1,650 present: Stone Sentinels Armistead's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: Rawley Martin, SHSP v32 (regiment-by-regiment, Armistead rear-center)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
         },
         {
+          "t": 420,
+          "x": 3098,
+          "z": 4741,
+          "facing": 85,
+          "formation": "line",
+          "strength": 330,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades).]; slot order unchanged from t=0 (angle-v2-data wave, round(share×parentAt(t)) — the same share formula this family's existing child keyframes follow)"
+        },
+        {
+          "t": 3600,
+          "x": 3098,
+          "z": 4741,
+          "facing": 85,
+          "formation": "line",
+          "strength": 328,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-armistead's own t=3600 keyframe]; round(share×parentAt(3600)) (angle-v2-data wave)"
+        },
+        {
           "t": 7200,
           "x": 3098,
           "z": 4741,
@@ -1646,7 +1826,7 @@
           "formation": "line",
           "strength": 326,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: second line static under bombardment (Alexander 1907)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): second line under the same cannonade (Alexander 1907; the CA-J3A bracket) — no division- or brigade-grain casualty record survives for Armistead's bombardment share anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-1c-pic-3-armistead.md EC5.2: 'no brigade-specific bombardment casualty figure survives') — the already-established 20-man share (1650→1630, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(share×parentAt(7200)) unchanged (angle-v2-data wave — value not touched)"
         },
         {
           "t": 7500,
@@ -1739,6 +1919,26 @@
           "citation": "Bachelder Third Day sheet, LOC 99447492 — Armistead's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '38'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,650 (Stone Sentinels Armistead's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); bar verified by inspection (survey: Armistead's 38'/57'/53' bars); slot order per Rawley Martin, SHSP v32"
         },
         {
+          "t": 420,
+          "x": 3090,
+          "z": 4830,
+          "facing": 85,
+          "formation": "line",
+          "strength": 330,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades).]; slot order unchanged from t=0 (angle-v2-data wave, round(share×parentAt(t)) — the same share formula this family's existing child keyframes follow)"
+        },
+        {
+          "t": 3600,
+          "x": 3090,
+          "z": 4830,
+          "facing": 85,
+          "formation": "line",
+          "strength": 328,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-armistead's own t=3600 keyframe]; round(share×parentAt(3600)) (angle-v2-data wave)"
+        },
+        {
           "t": 7200,
           "x": 3090,
           "z": 4830,
@@ -1746,7 +1946,7 @@
           "formation": "line",
           "strength": 326,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: second line static under bombardment (Alexander 1907)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): second line under the same cannonade (Alexander 1907; the CA-J3A bracket) — no division- or brigade-grain casualty record survives for Armistead's bombardment share anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-1c-pic-3-armistead.md EC5.2: 'no brigade-specific bombardment casualty figure survives') — the already-established 20-man share (1650→1630, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(share×parentAt(7200)) unchanged (angle-v2-data wave — value not touched)"
         },
         {
           "t": 7500,
@@ -1839,6 +2039,26 @@
           "citation": "Bachelder Third Day sheet, LOC 99447492 — Armistead's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '53'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,650 (Stone Sentinels Armistead's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); bar verified by inspection (survey: Armistead's 38'/57'/53' bars); slot order per Rawley Martin, SHSP v32"
         },
         {
+          "t": 420,
+          "x": 3082,
+          "z": 4919,
+          "facing": 85,
+          "formation": "line",
+          "strength": 330,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades).]; slot order unchanged from t=0 (angle-v2-data wave, round(share×parentAt(t)) — the same share formula this family's existing child keyframes follow)"
+        },
+        {
+          "t": 3600,
+          "x": 3082,
+          "z": 4919,
+          "facing": 85,
+          "formation": "line",
+          "strength": 328,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-armistead's own t=3600 keyframe]; round(share×parentAt(3600)) (angle-v2-data wave)"
+        },
+        {
           "t": 7200,
           "x": 3082,
           "z": 4919,
@@ -1846,7 +2066,7 @@
           "formation": "line",
           "strength": 326,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: second line static under bombardment (Alexander 1907)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): second line under the same cannonade (Alexander 1907; the CA-J3A bracket) — no division- or brigade-grain casualty record survives for Armistead's bombardment share anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-1c-pic-3-armistead.md EC5.2: 'no brigade-specific bombardment casualty figure survives') — the already-established 20-man share (1650→1630, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(share×parentAt(7200)) unchanged (angle-v2-data wave — value not touched)"
         },
         {
           "t": 7500,
@@ -1939,6 +2159,26 @@
           "citation": "Bachelder Third Day sheet, LOC 99447492 — Armistead's Seminary Ridge start line drawn as numbered regiment bars, verified legible at full res (docs/research/2026-07-02-regiment-track-sources.md §1.1); '57'' bar = this regiment's documented start (position class, not clock — time inferred); strength: equal fifth of brigade 1,650 (Stone Sentinels Armistead's Brigade page) — per-regiment July 3 strength not documented, inferred; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); bar verified by inspection (survey: Armistead's 38'/57'/53' bars); slot order per Rawley Martin, SHSP v32"
         },
         {
+          "t": 420,
+          "x": 3074,
+          "z": 5008,
+          "facing": 85,
+          "formation": "line",
+          "strength": 330,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades).]; slot order unchanged from t=0 (angle-v2-data wave, round(share×parentAt(t)) — the same share formula this family's existing child keyframes follow)"
+        },
+        {
+          "t": 3600,
+          "x": 3074,
+          "z": 5008,
+          "facing": 85,
+          "formation": "line",
+          "strength": 328,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-armistead's own t=3600 keyframe]; round(share×parentAt(3600)) (angle-v2-data wave)"
+        },
+        {
           "t": 7200,
           "x": 3074,
           "z": 5008,
@@ -1946,7 +2186,7 @@
           "formation": "line",
           "strength": 326,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: second line static under bombardment (Alexander 1907)]; slot order [slot order per Rawley Martin, SHSP v32 (9/14/38/53/57 Va); per-regiment strengths not documented — equal fifths of the brigade's 1,650 (Stone Sentinels), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): second line under the same cannonade (Alexander 1907; the CA-J3A bracket) — no division- or brigade-grain casualty record survives for Armistead's bombardment share anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-1c-pic-3-armistead.md EC5.2: 'no brigade-specific bombardment casualty figure survives') — the already-established 20-man share (1650→1630, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(share×parentAt(7200)) unchanged (angle-v2-data wave — value not touched)"
         },
         {
           "t": 7500,
@@ -2038,6 +2278,26 @@
           "citation": "Bachelder Third Day sheet, LOC 99447492 (Pettigrew's right, north of the Virginia Memorial); brigade of direction for the whole assault per Fry, SHSP v7 pp.91-93; strength 1,048 present: Stone Sentinels Archer's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Fry's Brigade regiment list, order as listed there — not independently attested) — BASIS CONFIRMED PRIMARY WITH ITS SCOPE (pass 3, day-expansion slice 1): 'We went into the fight on the 1st with 1,048 men' (or-27-2-shepard) — the build's figure IS the primary, but it is JULY-1-scoped; July 3 step-off = 1,048 minus July 1 losses (~75 captured at the railroad cut + the day's k&w), no July-3 morning report survives — subtraction-only, carried as the same heterogeneity class as Marshall/Davis (dossier csa-3c-het-3-fry.md EC2); value UNCHANGED (Angle-cast: the shipped film compiles from this track)"
         },
         {
+          "t": 420,
+          "x": 3230,
+          "z": 5120,
+          "facing": 98,
+          "formation": "line",
+          "strength": 1048,
+          "confidence": "inferred",
+          "citation": "CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades)."
+        },
+        {
+          "t": 3600,
+          "x": 3230,
+          "z": 5120,
+          "facing": 98,
+          "formation": "line",
+          "strength": 1039,
+          "confidence": "inferred",
+          "citation": "mid-bombardment (~14:00): 'About 1 p.m. the artillery along our entire line opened ... For two hours the fire was heavy and incessant ... The artillery ceased firing at 3 o'clock' (or-27-2-davis-jr, Heth's division report — Fry's brigade is Heth's right) — no brigade-specific casualty figure exists for this brigade (dossier csa-3c-het-3-fry.md EC5.2: 'under the two-hour fire with the division; no brigade figure (open)'), so the already-established 18-man bombardment share (1048→1030 by ~15:00, UNCHANGED total from the prior build) is spread across the attested window rather than landing all at once at its close; this keyframe marks the even-split midpoint (compilation-class, inferred — the corpus's even-split convention, e.g. decomposition-wave-1's 6th Wisconsin technique) — NOT an attested casualty-rate claim (angle-v2-data wave)."
+        },
+        {
           "t": 7200,
           "x": 3230,
           "z": 5120,
@@ -2045,7 +2305,7 @@
           "formation": "line",
           "strength": 1030,
           "confidence": "inferred",
-          "citation": "interpolated: line static under bombardment (Alexander 1907)"
+          "citation": "BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): 'About 1 p.m. the artillery along our entire line opened ... For two hours the fire was heavy and incessant ... The artillery ceased firing at 3 o'clock' (or-27-2-davis-jr, Heth's division report — Fry's brigade is Heth's right) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-3c-het-3-fry.md EC5.2: 'under the two-hour fire with the division; no brigade figure (open)') — the already-established 18-man share (1048→1030, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it)."
         },
         {
           "t": 7500,
@@ -2148,6 +2408,26 @@
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's right, north of the Virginia Memorial); brigade of direction for the whole assault per Fry, SHSP v7 pp.91-93; strength 1,048 present: Stone Sentinels Archer's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Fry's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
         },
         {
+          "t": 420,
+          "x": 3213,
+          "z": 4999,
+          "facing": 98,
+          "formation": "line",
+          "strength": 210,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades).]; slot order unchanged from t=0 (angle-v2-data wave, round(share×parentAt(t)) — the same share formula this family's existing child keyframes follow)"
+        },
+        {
+          "t": 3600,
+          "x": 3213,
+          "z": 4999,
+          "facing": 98,
+          "formation": "line",
+          "strength": 208,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-fry's own t=3600 keyframe]; round(share×parentAt(3600)) (angle-v2-data wave)"
+        },
+        {
           "t": 7200,
           "x": 3213,
           "z": 4999,
@@ -2155,7 +2435,7 @@
           "formation": "line",
           "strength": 206,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): 'About 1 p.m. the artillery along our entire line opened ... For two hours the fire was heavy and incessant ... The artillery ceased firing at 3 o'clock' (or-27-2-davis-jr, Heth's division report — Fry's brigade is Heth's right) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-3c-het-3-fry.md EC5.2: 'under the two-hour fire with the division; no brigade figure (open)') — the already-established 18-man share (1048→1030, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(share×parentAt(7200)) unchanged (angle-v2-data wave — value not touched)"
         },
         {
           "t": 7500,
@@ -2248,6 +2528,26 @@
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's right, north of the Virginia Memorial); brigade of direction for the whole assault per Fry, SHSP v7 pp.91-93; strength 1,048 present: Stone Sentinels Archer's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Fry's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
         },
         {
+          "t": 420,
+          "x": 3221,
+          "z": 5059,
+          "facing": 98,
+          "formation": "line",
+          "strength": 210,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades).]; slot order unchanged from t=0 (angle-v2-data wave, round(share×parentAt(t)) — the same share formula this family's existing child keyframes follow)"
+        },
+        {
+          "t": 3600,
+          "x": 3221,
+          "z": 5059,
+          "facing": 98,
+          "formation": "line",
+          "strength": 208,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-fry's own t=3600 keyframe]; round(share×parentAt(3600)) (angle-v2-data wave)"
+        },
+        {
           "t": 7200,
           "x": 3221,
           "z": 5059,
@@ -2255,7 +2555,7 @@
           "formation": "line",
           "strength": 206,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): 'About 1 p.m. the artillery along our entire line opened ... For two hours the fire was heavy and incessant ... The artillery ceased firing at 3 o'clock' (or-27-2-davis-jr, Heth's division report — Fry's brigade is Heth's right) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-3c-het-3-fry.md EC5.2: 'under the two-hour fire with the division; no brigade figure (open)') — the already-established 18-man share (1048→1030, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(share×parentAt(7200)) unchanged (angle-v2-data wave — value not touched)"
         },
         {
           "t": 7500,
@@ -2348,6 +2648,26 @@
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's right, north of the Virginia Memorial); brigade of direction for the whole assault per Fry, SHSP v7 pp.91-93; strength 1,048 present: Stone Sentinels Archer's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Fry's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
         },
         {
+          "t": 420,
+          "x": 3230,
+          "z": 5120,
+          "facing": 98,
+          "formation": "line",
+          "strength": 210,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades).]; slot order unchanged from t=0 (angle-v2-data wave, round(share×parentAt(t)) — the same share formula this family's existing child keyframes follow)"
+        },
+        {
+          "t": 3600,
+          "x": 3230,
+          "z": 5120,
+          "facing": 98,
+          "formation": "line",
+          "strength": 208,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-fry's own t=3600 keyframe]; round(share×parentAt(3600)) (angle-v2-data wave)"
+        },
+        {
           "t": 7200,
           "x": 3230,
           "z": 5120,
@@ -2355,7 +2675,7 @@
           "formation": "line",
           "strength": 206,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): 'About 1 p.m. the artillery along our entire line opened ... For two hours the fire was heavy and incessant ... The artillery ceased firing at 3 o'clock' (or-27-2-davis-jr, Heth's division report — Fry's brigade is Heth's right) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-3c-het-3-fry.md EC5.2: 'under the two-hour fire with the division; no brigade figure (open)') — the already-established 18-man share (1048→1030, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(share×parentAt(7200)) unchanged (angle-v2-data wave — value not touched)"
         },
         {
           "t": 7500,
@@ -2448,6 +2768,26 @@
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's right, north of the Virginia Memorial); brigade of direction for the whole assault per Fry, SHSP v7 pp.91-93; strength 1,048 present: Stone Sentinels Archer's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Fry's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
         },
         {
+          "t": 420,
+          "x": 3239,
+          "z": 5181,
+          "facing": 98,
+          "formation": "line",
+          "strength": 209,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades).]; slot order unchanged from t=0 (angle-v2-data wave, round(share×parentAt(t)) — the same share formula this family's existing child keyframes follow)"
+        },
+        {
+          "t": 3600,
+          "x": 3239,
+          "z": 5181,
+          "facing": 98,
+          "formation": "line",
+          "strength": 207,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-fry's own t=3600 keyframe]; round(share×parentAt(3600)) (angle-v2-data wave)"
+        },
+        {
           "t": 7200,
           "x": 3239,
           "z": 5181,
@@ -2455,7 +2795,7 @@
           "formation": "line",
           "strength": 205,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): 'About 1 p.m. the artillery along our entire line opened ... For two hours the fire was heavy and incessant ... The artillery ceased firing at 3 o'clock' (or-27-2-davis-jr, Heth's division report — Fry's brigade is Heth's right) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-3c-het-3-fry.md EC5.2: 'under the two-hour fire with the division; no brigade figure (open)') — the already-established 18-man share (1048→1030, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(share×parentAt(7200)) unchanged (angle-v2-data wave — value not touched)"
         },
         {
           "t": 7500,
@@ -2548,6 +2888,26 @@
           "citation": "derived from brigade track [Bachelder Third Day sheet, LOC 99447492 (Pettigrew's right, north of the Virginia Memorial); brigade of direction for the whole assault per Fry, SHSP v7 pp.91-93; strength 1,048 present: Stone Sentinels Archer's Brigade page; bombardment opens 1:00 PM (Alexander 1907) / 1:07 PM (Jacobs 1864); roster: docs/research/2026-06-13-oob-strengths.md (Fry's Brigade regiment list, order as listed there — not independently attested)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
         },
         {
+          "t": 420,
+          "x": 3247,
+          "z": 5241,
+          "facing": 98,
+          "formation": "line",
+          "strength": 209,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [CA-J3A-1: the signal guns open the cannonade ~13:07 (Alexander 1907's ~1:00 p.m. start / Jacobs 1864's more precise 1:07 p.m. — both already carried on this brigade's t=0 keyframe). No loss yet at the signal itself — this pin only anchors WHEN the brigade's already-established bombardment share (below) begins to accrue; strength unchanged from the arrival figure (angle-v2-data wave, owner-authorized film-v2 scope; the bombardment-prelude pattern applied to the deferred cast brigades).]; slot order unchanged from t=0 (angle-v2-data wave, round(share×parentAt(t)) — the same share formula this family's existing child keyframes follow)"
+        },
+        {
+          "t": 3600,
+          "x": 3247,
+          "z": 5241,
+          "facing": 98,
+          "formation": "line",
+          "strength": 207,
+          "confidence": "inferred",
+          "citation": "derived from brigade track [mid-bombardment (~14:00), re-timed share, see csa-fry's own t=3600 keyframe]; round(share×parentAt(3600)) (angle-v2-data wave)"
+        },
+        {
           "t": 7200,
           "x": 3247,
           "z": 5241,
@@ -2555,7 +2915,7 @@
           "formation": "line",
           "strength": 205,
           "confidence": "inferred",
-          "citation": "derived from brigade track [interpolated: line static under bombardment (Alexander 1907)]; slot order [roster order per docs/research/2026-06-13-oob-strengths.md (Fry's Brigade list — not independently attested); per-regiment strengths not documented — near-equal fifths of the brigade's 1,048 (Stone Sentinels), inferred]"
+          "citation": "derived from brigade track [BOMBARDMENT SHARE, RE-TIMED (angle-v2-data wave, owner-authorized film-v2 scope; docs/reconstruction/audit/charge-intensity-proposals.md §4 P1, the bombardment-prelude §3 deferral picked up): 'About 1 p.m. the artillery along our entire line opened ... For two hours the fire was heavy and incessant ... The artillery ceased firing at 3 o'clock' (or-27-2-davis-jr, Heth's division report — Fry's brigade is Heth's right) anchors the CA-J3A bracket (signal guns ~13:07; order to advance ~15:00-15:05, matching this brigade's own step-off keyframe below); no brigade-specific casualty figure survives (dossier csa-3c-het-3-fry.md EC5.2: 'under the two-hour fire with the division; no brigade figure (open)') — the already-established 18-man share (1048→1030, UNCHANGED total from the prior build) is re-timed to accrue across the attested window instead of sitting behind a flat generic interpolation label; confidence stays inferred (no brigade-grain primary exists to promote it).]; round(share×parentAt(7200)) unchanged (angle-v2-data wave — value not touched)"
         },
         {
           "t": 7500,
