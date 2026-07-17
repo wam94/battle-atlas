@@ -46,30 +46,88 @@ against ~44 GB free — the rolling harvester is mandatory here),
 `iverson-encode.sh` (pinned libx264 slow CRF 18, GOP 30, +faststart,
 AAC 192k mix), `iverson-release-manifest.py`.
 
-## 3. Preflight (no-teleport gate)
+## 3. Preflight (no-teleport gate) — PASS
 
-TBD (report: `docs/benchmarks/captures/iverson-production/iverson-preflight.json`)
+`iverson-preflight.json`: the whole padded window t=5830..7040.5,
+every slot of every unit — **43,441,256** coarse pairs at 10 Hz,
+**0 suspect windows** (nothing even reached the refinement pass),
+0 crossing-exit hand-offs (no fences on this site), camera swept at
+full render rate over all 36,315 frames with **max 0.0392 m/frame**
+against the 0.150 bound. 59 s sweep. The p10-teleport-postmortem
+defect classes (lens pass-through, formation-wheel steps, crossing-
+chain pops) are provably absent from this geometry under the
+production seed.
 
-## 4. Determinism pair (t=6300..6310, two independent stagings)
+## 4. Determinism pair (t=6300..6310, two independent stagings) — PASS
 
-TBD (report: `iverson-determinism.json`)
+`iverson-determinism.json`: freeze metadata byte-identical; logical
+3,589-slot state + 10-float camera pose digests **bitwise identical
+10/10** probes; pixels worst **0.02 %** differing, max channel delta 21
+carried by **1 isolated outlier pixel** per frame worst-case (tolerance:
+Phase 8 envelope 12/8 % + ≤8 independent-staging outliers, the P10
+allowance). Three comparison frame pairs committed
+(`iverson-det-{a,b}-*.png`).
 
-## 5. Render stats
+## 5. Render stats (Apple M4 24 GB, Unity 6000.4.11f1, offline HDRP profile)
 
-TBD
+- **36,315 frames** (t=5830..7040.5 at 30 fps, 2560×1440), 21 chunks.
+- **0.375 s/frame weighted** (per-chunk 0.355–0.413 — faster than the
+  gate forecast's 0.47 because the P10-pattern loop renders without the
+  proof harness's scrub probes), **3.78 h pure render**, **3.88 h wall**
+  (first launch 23:55 → render-done 03:48).
+- **~20 interruptions** (21 loop attempts): the machine SIGKILLed
+  nearly every Unity invocation after ~1 chunk (jetsam meets the known
+  native leak, aggravated by a concurrent executor's Unity work early
+  on) — the resumable-chunk design absorbed all of it with **zero lost
+  frames**. Peak managed memory 1,246 MB (flat; the leak is native).
+- **Rolling harvester mandatory and clean:** full PNG scratch would be
+  ~116 GB against ~40 GB free; the harvester encoded each completed
+  chunk with the final delivery settings (decoded-count verified per
+  chunk) and reclaimed PNGs; free disk never dropped below 13 GB.
+- A machine-wide spend-limit outage interrupted the EXECUTOR mid-render;
+  the loop kept running unattended and the render completed during the
+  outage — the resumability design also covers operator loss.
 
 ## 6. Audio (9-stem deterministic mix)
 
-TBD
+`IversonProductionRender.ExportAudioEvents` → the production-seed event
+streams (`iverson-audio-events.json`, committed): **109,527**
+resolver-confirmed musket discharges in the padded window, 266 observer
+footfalls, 0 cannon / 0 strikes / 0 crossings (the disclosed
+artillery-silent gap and the no-fence site). Stems + mix built
+byte-deterministically for t=5830..7040.5
+(`build_viewpoint_audio.py`; hashes committed in
+`iverson-stems.sha256`; mix.wav `f629974c…`). The discharge count
+differs from the gate export's 115,942 because the ED-21 re-pin
+re-rolled the per-slot fire-cycle phases — same segments, same rates,
+different deterministic offsets.
 
-## 7. Encode + media
+## 7. Encode + media (pinned settings; mode B lossless chunk concat)
 
-TBD (sha256: `app/RenderOutput/iverson/iverson-media.sha256`,
-release manifest: `iverson-release-manifest.json`)
+Chunk coverage + final decoded frame count verified = 36,315 before any
+deliverable was written.
+
+| file | bytes | avg rate | sha256 |
+|---|---|---|---|
+| `iverson-forney-field.full.mp4` (2560×1440p30 CRF18 GOP30 +faststart, AAC 192k mix) | 1,982,330,100 | 13.10 Mbit/s | `aca0536d3e17cc671e3cc7c2c39b8dd9da13e473602fc17e85ad3323250325a7` |
+| `iverson-forney-field.proxy.mp4` (1280×720p30 CRF20, same audio) | 397,709,639 | 2.63 Mbit/s | `1345d5b889e20e4b7c1b9dd78c0b1053691fb7c34fdc8e5f8e3b360fed392d51` |
+
+`iverson-media.sha256` + `iverson-release-manifest.json` +
+`iverson-release-notes.md` committed; media itself is gitignored
+(GitHub Releases artifact — **owner publishes**, release
+`soldier-view-media-v2-iverson`; the manifest carries the exact
+command). Local copies: `app/RenderOutput/iverson/` and staged in
+`app/Assets/StreamingAssets/SoldierView/` for the seek suite.
 
 ## 8. Seek measurements (media contract)
 
-TBD
+`IversonMediaSeekTests.SeekLatency_IversonFull1440pProductionMedia` —
+12 deterministic seeks across the full 20-minute 1440p stream (far
+jumps spanning ~1,200 GOPs, near jumps, sub-second nudges), every
+settle within one frame of the clock. Numbers: see §10 — the first
+pass ran while ANOTHER executor's production render saturated the
+machine and is reported as contended; the quiet-machine re-run is the
+contract measurement.
 
 ## 9. Content warning + cross-phase entry
 
