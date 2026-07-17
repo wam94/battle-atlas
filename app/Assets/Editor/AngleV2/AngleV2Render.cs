@@ -77,6 +77,30 @@ namespace BattleAtlas.EditorTools
         public static void RenderProduction() => Run(ProductionInner);
         public static void RenderFrontRankProof() => Run(FrontRankProofInner);
         public static void DumpVocabEvidence() => Run(DumpVocabEvidenceInner);
+        public static void ProbeCameraYaw() => Run(ProbeCameraYawInner);
+
+        // Diagnostic: fine-grained camera pose components around a failing
+        // comfort-bound window (writes angle-v2-yaw-probe.csv).
+        static void ProbeCameraYawInner()
+        {
+            var ctx = Phase10TeleportProbe.CompileContext();
+            var vp = Phase10TeleportProbe.LoadHeroViewpoint();
+            var settings = GateP9Render.Settings(vp, thirdPerson: false);
+            var sb = new StringBuilder("t,yaw,chaos,obsFacing\n");
+            for (float t = 8684f; t <= 8702f; t += 0.05f)
+            {
+                var pose = HeroViewpointCamera.Pose(ctx, settings, t);
+                var st = SoldierActionResolver.Resolve(
+                    ctx, ctx.Unit(vp.unitId).unitIndex, vp.slotId, t);
+                sb.Append(string.Format(Inv, "{0:F2},{1:F3},{2:F3},{3:F3}\n",
+                    t, pose.headingDeg, pose.chaos01, st.facingDeg));
+            }
+            Directory.CreateDirectory(EvidenceDir);
+            File.WriteAllText(
+                Path.Combine(EvidenceDir, "angle-v2-yaw-probe.csv"),
+                sb.ToString());
+            Debug.Log("AngleV2Render: wrote angle-v2-yaw-probe.csv");
+        }
 
         // ------------------------------------------------------------------
         // Machine evidence for the report: the C#-side strike times per CSA
@@ -156,10 +180,11 @@ namespace BattleAtlas.EditorTools
                 if (!MeleeChoreo.TryPair(ctx, garnett, seg, slot, 8676f, out var pr))
                     continue;
                 pairs++;
-                var bp = SoldierActionResolver.BasePosition(
-                    ctx, garnett, slot, pr.t0, garnett.unit.segments[
-                        SoldierActionResolver.SegIndexAt(garnett, pr.t0)]);
-                maxReach = Mathf.Max(maxReach, (pr.anchor - bp).magnitude);
+                // roster position an instant before the clinch locks
+                var pre = SoldierActionResolver.Resolve(
+                    ctx, garnett.unitIndex, slot, pr.t0 - 0.05f);
+                maxReach = Mathf.Max(maxReach,
+                    (pr.anchor - new Vector2(pre.posX, pre.posZ)).magnitude);
             }
             sb.Append(string.Format(Inv,
                 "  \"meleePairs\": {{\"garnettPairsAt8676\": {0}, " +

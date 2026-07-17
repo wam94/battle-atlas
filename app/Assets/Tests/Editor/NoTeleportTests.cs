@@ -147,20 +147,63 @@ public class NoTeleportTests
             thirdPerson = false,
             profile = HeroMotionProfile.Standard,
         };
-        const float t0 = 8630f, t1 = 8642f;
+        // window widened (v1 probe: 8630..8642) to span the v2 melee AND
+        // the start of the repulse stream past the observer, so the
+        // premise (the guard is actually exercised) stays robust to the
+        // re-timed content
+        const float t0 = 8630f, t1 = 8712f;
         const float radius = LensGuard.DefaultRadiusM;
 
-        // the known offenders from the probe + the observer's file
+        // Derive the lens offenders from the CURRENT compiled content
+        // (the original hand-pinned probe slots were v1-schedule
+        // fixtures; the angle-v2 data wave re-times in-window content,
+        // so the offender set must be re-derived, not pinned): every
+        // slot of the adjacent units whose RAW position enters the lens
+        // radius anywhere in the window, plus the observer's own file
+        // neighbors. The premise assert below still guarantees the
+        // guard is actually exercised.
         var ur = Ctx.Unit("csa-armistead");
         var own = Ctx.Unit("csa-garnett");
         var watch = new List<(UnitRuntime u, int slot)>
         {
-            (ur, 1014), (ur, 222), (ur, 223), (ur, 224), (ur, 225),
             (own, 880), (own, 882),
         };
+        {
+            var probeSettings = new HeroCameraSettings
+            {
+                unitId = "csa-garnett",
+                slot = 881,
+                eyeHeightM = 1.66f,
+                fovDeg = 68f,
+                stabilization = 0.35f,
+                thirdPerson = false,
+                profile = HeroMotionProfile.Standard,
+            };
+            var offenders = new HashSet<int>();
+            foreach (var cand in new[] { ur, own })
+            {
+                for (float t = t0; t <= t1; t += 0.2f)
+                {
+                    var pose = HeroViewpointCamera.Pose(Ctx, probeSettings, t);
+                    var cam = new Vector2(pose.camX, pose.camZ);
+                    for (int slot = 0; slot < cand.slotCount; slot++)
+                    {
+                        if (cand == own && slot == 881) continue;
+                        var st = SoldierActionResolver.Resolve(
+                            Ctx, cand.unitIndex, slot, t);
+                        if ((new Vector2(st.posX, st.posZ) - cam).magnitude
+                            < radius)
+                            offenders.Add(cand.unitIndex * 100000 + slot);
+                    }
+                }
+            }
+            foreach (int key in offenders)
+                watch.Add((Ctx.units[key / 100000], key % 100000));
+        }
 
         int frames = (int)((t1 - t0) * Fps) + 1;
         var prevGuarded = new Dictionary<int, Vector2>();
+        var prevClip = new Dictionary<int, ClipId>();
         bool anyDeflected = false;
         for (int f = 0; f < frames; f++)
         {
@@ -179,12 +222,23 @@ public class NoTeleportTests
                     $"{u.unit.unitId} slot {slot} inside the lens guard at t={t:F2}");
                 if (prevGuarded.TryGetValue(i, out var prev))
                 {
+                    // the designed crossing-exit hand-off (clip root motion
+                    // carries the body CrossTravelM in one frame) is exempt,
+                    // exactly as in the preflight bounds — the derived v2
+                    // offender set includes slots that cross the wall inside
+                    // this window
+                    bool crossExit = prevClip[i] == ClipId.Cross &&
+                                     st.clip != ClipId.Cross;
+                    float bound = crossExit
+                        ? SoldierActionResolver.CrossTravelM + MaxDeltaM
+                        : MaxDeltaM;
                     float d = (guarded - prev).magnitude;
-                    Assert.LessOrEqual(d, MaxDeltaM,
+                    Assert.LessOrEqual(d, bound,
                         $"{u.unit.unitId} slot {slot}: guarded position " +
                         $"jumped {d:F2} m at t={t:F2}");
                 }
                 prevGuarded[i] = guarded;
+                prevClip[i] = st.clip;
             }
         }
         Assert.IsTrue(anyDeflected,

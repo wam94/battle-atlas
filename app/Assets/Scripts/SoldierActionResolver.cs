@@ -906,9 +906,17 @@ namespace BattleAtlas
 
                 case "melee":
                 {
-                    // P3, the wall fight: locomotion still wins while the
-                    // compiled track carries the unit; the melee plays
-                    // where it stalls (the breach seconds)
+                    // P3, the wall fight. The fight facing applies to BOTH
+                    // branches below: the formation-frame wheel into the
+                    // repulse drifts slots across the locomotion threshold
+                    // for fractions of a second, and a facing tied to the
+                    // branch flapped the whole line (and the hero camera)
+                    // between gait facing and fight facing at ~2 Hz.
+                    ApplyMeleeFacing(ctx, ur, slot, t, seg, ref s);
+                    // locomotion still wins while the compiled track
+                    // carries the unit; the melee plays where it stalls
+                    // (the breach seconds); a shuffling melee man keeps
+                    // facing the fight
                     if (moving) { SetGait(ref s, ur, slot, ClipId.DoubleQuick, t); return; }
                     ResolveMelee(ctx, ur, slot, t, seg,
                         reacting, reactClip, reactTime, ref s);
@@ -1023,15 +1031,31 @@ namespace BattleAtlas
                 case "fall_back":
                 case "rout":
                 {
+                    // melee-exit facing continuity: a wired melee holds the
+                    // fight bearing to its last frame; blending back to the
+                    // retreat facings HERE (where the compiled about-face
+                    // sweep is already over) keeps the hand-off continuous
+                    // without lerping across the sweep's antipode (the two
+                    // camera spikes the comfort test caught at 8699-8700).
+                    float exitFacing = MeleeExitFacing(ctx, ur, slot, segIdx, pos);
+                    float kOut = float.IsNaN(exitFacing) ? 1f
+                        : Mathf.Clamp01((t - seg.t0) / MeleeFaceInDur);
+
                     float turnT = seg.t0 + 6f *
                         AngleEnvironmentLayout.Hash01(ur.keyRetreat, slot);
                     if (t < turnT)
                     {
+                        if (kOut < 1f)
+                            s.facingDeg = Mathf.LerpAngle(
+                                exitFacing, s.facingDeg, kOut);
                         Set(ref s, ClipId.Waver,
                             KitClips.Phase(ClipId.Waver, t + stepJit * 3f));
                         return;
                     }
                     s.facingDeg = MotionBearing(ur, t) + yawJit;
+                    if (kOut < 1f)
+                        s.facingDeg = Mathf.LerpAngle(
+                            exitFacing, s.facingDeg, kOut);
                     if (t < turnT + 1f)
                     {
                         Set(ref s, ClipId.TurnRetreat, t - turnT);
@@ -1146,25 +1170,63 @@ namespace BattleAtlas
         // musket/bayonet/parry bouts separated by ready pauses, facing
         // the enemy. Casualties keep the compiled schedule and the sober
         // wound table — melee adds poses, never wounds.
+        // A melee line turns to the fight over a few seconds, not in one
+        // frame: the segment-boundary snap of every man at once broke the
+        // hero camera's comfort bound (yaw 184 deg/s at t=8639.3 through
+        // the +-2.6 s smoother) and read as a formation twitch.
+        public const float MeleeFaceInDur = 3f;
+
+        // Face the fight (the melee is where the enemy is) — blended in
+        // from the inherited facing over the segment's first seconds so
+        // the turn into the fight is a movement, not a cut. There is
+        // deliberately NO blend-out at the segment end: the inherited
+        // facing sweeps through the compiled about-face there, and a lerp
+        // toward a target ~180° from a moving source flips direction at
+        // the antipode (a 285 deg/s camera spike, caught by the comfort
+        // test). The exit is a single ~95° body snap at the segment
+        // boundary — within doctrine (a man may snap his own shoulders)
+        // and within the hero camera smoother's headroom. Pure in t.
+        static void ApplyMeleeFacing(
+            AngleActionContext ctx, UnitRuntime ur, int slot, float t,
+            AngleBundleSegment seg, ref SoldierState s)
+        {
+            var opp = MeleeChoreo.Opponent(ctx, ur, seg, t);
+            if (opp == null) return;
+            Vector2 d = opp.unit.PositionAt(t) - new Vector2(s.posX, s.posZ);
+            if (d.sqrMagnitude <= 1e-6f) return;
+            float yawJit = 8f * (AngleEnvironmentLayout.Hash01(
+                ur.keyYaw, slot) - 0.5f);
+            float fightBearing = Mathf.Atan2(d.x, d.y) * Mathf.Rad2Deg
+                + yawJit;
+            float k = Mathf.Clamp01((t - seg.t0) / MeleeFaceInDur);
+            s.facingDeg = Mathf.LerpAngle(s.facingDeg, fightBearing, k);
+        }
+
+        // The fight bearing a wired melee held at its final frame (for the
+        // following retreat segment's facing hand-off), or NaN when the
+        // previous segment was not a wired melee. Pure.
+        static float MeleeExitFacing(
+            AngleActionContext ctx, UnitRuntime ur, int slot, int segIdx,
+            Vector2 pos)
+        {
+            if (segIdx <= 0) return float.NaN;
+            var prev = ur.unit.segments[segIdx - 1];
+            if (prev.action != "melee") return float.NaN;
+            float tEnd = prev.t1 - 1e-3f;
+            var opp = MeleeChoreo.Opponent(ctx, ur, prev, tEnd);
+            if (opp == null) return float.NaN;
+            Vector2 d = opp.unit.PositionAt(tEnd) - pos;
+            if (d.sqrMagnitude <= 1e-6f) return float.NaN;
+            float yawJit = 8f * (AngleEnvironmentLayout.Hash01(
+                ur.keyYaw, slot) - 0.5f);
+            return Mathf.Atan2(d.x, d.y) * Mathf.Rad2Deg + yawJit;
+        }
+
         static void ResolveMelee(
             AngleActionContext ctx, UnitRuntime ur, int slot, float t,
             AngleBundleSegment seg, bool reacting, ClipId reactClip,
             float reactTime, ref SoldierState s)
         {
-            var opp = MeleeChoreo.Opponent(ctx, ur, seg, t);
-            if (opp != null)
-            {
-                // face the fight (the melee is where the enemy is)
-                Vector2 d = opp.unit.PositionAt(t) -
-                    new Vector2(s.posX, s.posZ);
-                if (d.sqrMagnitude > 1e-6f)
-                {
-                    float yawJit = 8f * (AngleEnvironmentLayout.Hash01(
-                        ur.keyYaw, slot) - 0.5f);
-                    s.facingDeg = Mathf.Atan2(d.x, d.y) * Mathf.Rad2Deg
-                        + yawJit;
-                }
-            }
 
             if (MeleeChoreo.TryPair(ctx, ur, seg, slot, t, out var pair))
             {
