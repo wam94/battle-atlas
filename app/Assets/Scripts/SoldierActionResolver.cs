@@ -523,7 +523,61 @@ namespace BattleAtlas
                 return s;
             }
             ResolveAlive(ctx, ur, slot, t, ref s);
+            // Angle-v2 P4: the acting color-bearer carries (or takes up)
+            // the colors instead of working his piece. Gated on the
+            // bundle's colorParty field — 0 (every committed bundle)
+            // resolves bit-identically to the pre-vocabulary code.
+            if (ur.unit.colorParty > 0)
+                ApplyColorGuard(ctx, ur, slot, t, ref s);
             return s;
+        }
+
+        // Clip classes a bearer's carry may replace: the stationary
+        // fight/ready vocabulary. Locomotion, crossings, reactions, falls
+        // and the prone/melee sets keep their clips (the flag prop simply
+        // travels with the bearer's position there).
+        static bool CarryReplaceable(ClipId c) =>
+            c == ClipId.StandReady || c == ClipId.Aim || c == ClipId.Fire ||
+            c == ClipId.Reload || c == ClipId.Waver ||
+            c == ClipId.KneelReady || c == ClipId.HaltDress;
+
+        static void ApplyColorGuard(
+            AngleActionContext ctx, UnitRuntime ur, int slot, float t,
+            ref SoldierState s)
+        {
+            // only chain slots can carry — cheap early-out before the
+            // succession walk (front rank, near the center of the line)
+            int files = FormationRoster.Files(ur.slotCount);
+            if (slot >= files) return;
+            int center = (files - 1) / 2;
+            if (Math.Abs(slot - center) >
+                (ColorGuard.ChainLength(ur) + 1) / 2) return;
+            var cs = ColorGuard.StateAt(ctx, ur, t);
+            if (cs.bearerSlot != slot) return;
+            if (cs.phase == ColorGuard.Phase.Raising)
+            {
+                s.clip = ClipId.ColorsPickup;
+                s.clipTime = Mathf.Min(t - cs.sinceT,
+                    KitClips.Duration(ClipId.ColorsPickup) - 1f / 48f);
+                return;
+            }
+            if (cs.phase == ColorGuard.Phase.Carried &&
+                CarryReplaceable(s.clip))
+            {
+                s.clip = ClipId.ColorsCarry;
+                s.clipTime = KitClips.Phase(ClipId.ColorsCarry, t);
+            }
+        }
+
+        // Resolved slot position through the full pipeline (formation
+        // blend + crossing hold/catch-up), for the vocabulary classes
+        // that need a position without a full state (ColorGuard).
+        internal static Vector2 ResolvedPosition(
+            AngleActionContext ctx, UnitRuntime ur, int slot, float t)
+        {
+            t = Mathf.Clamp(t, ctx.bundle.slice.t0, ctx.bundle.slice.t1);
+            return PositionAt(ctx, ur, slot, t, SegIndexAt(ur, t),
+                out _, out _);
         }
 
         // Plan-signature facade (§7.5) for a single already-known segment;
@@ -850,12 +904,40 @@ namespace BattleAtlas
                     }
                 }
 
+                case "melee":
+                {
+                    // P3, the wall fight: locomotion still wins while the
+                    // compiled track carries the unit; the melee plays
+                    // where it stalls (the breach seconds)
+                    if (moving) { SetGait(ref s, ur, slot, ClipId.DoubleQuick, t); return; }
+                    ResolveMelee(ctx, ur, slot, t, seg,
+                        reacting, reactClip, reactTime, ref s);
+                    return;
+                }
+
                 case "fire_by_rank":
                 case "fire_independent":
+                case "halt_fire_obstacle":
                 {
                     // a unit whose track is moving cannot work the piece:
                     // locomotion wins (fire cycles resume where it halts)
                     if (moving) { SetGait(ref s, ur, slot, GaitClip(seg), t); return; }
+                    // P6, Trimble's halt at the fence: the men come to a
+                    // staggered halt-dress at the obstacle before the
+                    // fire cycle takes them ("our men stopped and began
+                    // firing, instead of mounting the fence")
+                    if (seg.action == "halt_fire_obstacle")
+                    {
+                        float haltStart = seg.t0 + 1.5f *
+                            AngleEnvironmentLayout.Hash01(
+                                ur.keyStep, slot * 3 + 1);
+                        if (t < haltStart + KitClips.Duration(ClipId.HaltDress))
+                        {
+                            Set(ref s, ClipId.HaltDress, KitClips.Phase(
+                                ClipId.HaltDress, t - haltStart));
+                            return;
+                        }
+                    }
                     float offset = FireCycles.Offset(
                         ctx.seed, ur.unit.unitId, seg, slot, ur.slotCount);
                     var (phase, phaseTime) = FireCycles.PhaseAt(seg, offset, t);
@@ -1058,6 +1140,73 @@ namespace BattleAtlas
         }
 
         // ------------------------------------------------------------------
+        // P3, the `melee` action class (MeleeChoreo owns the math): a
+        // hash-drawn front-rank subset grapples in deterministic pairs
+        // with the wired opponent; everyone else works bounded clubbed-
+        // musket/bayonet/parry bouts separated by ready pauses, facing
+        // the enemy. Casualties keep the compiled schedule and the sober
+        // wound table — melee adds poses, never wounds.
+        static void ResolveMelee(
+            AngleActionContext ctx, UnitRuntime ur, int slot, float t,
+            AngleBundleSegment seg, bool reacting, ClipId reactClip,
+            float reactTime, ref SoldierState s)
+        {
+            var opp = MeleeChoreo.Opponent(ctx, ur, seg, t);
+            if (opp != null)
+            {
+                // face the fight (the melee is where the enemy is)
+                Vector2 d = opp.unit.PositionAt(t) -
+                    new Vector2(s.posX, s.posZ);
+                if (d.sqrMagnitude > 1e-6f)
+                {
+                    float yawJit = 8f * (AngleEnvironmentLayout.Hash01(
+                        ur.keyYaw, slot) - 0.5f);
+                    s.facingDeg = Mathf.Atan2(d.x, d.y) * Mathf.Rad2Deg
+                        + yawJit;
+                }
+            }
+
+            if (MeleeChoreo.TryPair(ctx, ur, seg, slot, t, out var pair))
+            {
+                Vector2 pos = MeleeChoreo.PositionAt(
+                    ctx, ur, seg, slot, t, new Vector2(s.posX, s.posZ));
+                s.posX = pos.x;
+                s.posZ = pos.y;
+                if (t < pair.tEnd)
+                {
+                    s.facingDeg = pair.facingDeg;
+                    var clip = pair.lead
+                        ? ClipId.MeleeGrappleA : ClipId.MeleeGrappleB;
+                    Set(ref s, clip, KitClips.Phase(clip, t - pair.t0));
+                    return;
+                }
+                // the clinch dissolved (his opponent fell): he recovers a
+                // beat while walking back, then rejoins the bout work
+                if (t < pair.tEnd + MeleeChoreo.ReturnDur)
+                {
+                    Set(ref s, ClipId.StandReady,
+                        KitClips.Phase(ClipId.StandReady, t - pair.tEnd));
+                    return;
+                }
+                var (bClip, bTime) = MeleeChoreo.BoutAt(
+                    ctx.seed, ur, seg, slot,
+                    pair.tEnd + MeleeChoreo.ReturnDur, t);
+                if (bClip == ClipId.StandReady && reacting)
+                { Set(ref s, reactClip, reactTime); return; }
+                Set(ref s, bClip, bTime);
+                return;
+            }
+
+            var (clip2, time2) = MeleeChoreo.BoutAt(
+                ctx.seed, ur, seg, slot, seg.t0, t);
+            // strike reactions interrupt the ready gaps, never the bout
+            // itself (same rule as the fire cycle)
+            if (clip2 == ClipId.StandReady && reacting)
+            { Set(ref s, reactClip, reactTime); return; }
+            Set(ref s, clip2, time2);
+        }
+
+        // ------------------------------------------------------------------
         static void ResolveFallen(
             AngleActionContext ctx, UnitRuntime ur, int slot, float t,
             CasualtySchedule.Entry cas, ref SoldierState s)
@@ -1066,6 +1215,11 @@ namespace BattleAtlas
             int segIdx = SegIndexAt(ur, fallT);
             Vector2 pos = PositionAt(ctx, ur, slot, fallT, segIdx,
                 out _, out _);
+            // a grappler falls at his clinch anchor, not his roster slot
+            var fallSeg = ur.unit.segments[segIdx];
+            if (fallSeg.action == "melee")
+                pos = MeleeChoreo.PositionAt(
+                    ctx, ur, fallSeg, slot, fallT, pos);
             s.posX = pos.x;
             s.posZ = pos.y;
             s.cause = (byte)cas.cause;
@@ -1082,6 +1236,12 @@ namespace BattleAtlas
                 // would stand the body up to knock it down — the P6
                 // mannequin-fall defect class. He settles where he lay.
                 fall = ClipId.ProneHitSettle;
+            else if (ur.unit.colorParty > 0 &&
+                     ColorGuard.WasBearerAtFall(ctx, ur, slot, fallT))
+                // P4: the acting bearer goes down with the staff in shot
+                // (same compiled casualty entry, same wound table — only
+                // the clip differs)
+                fall = ClipId.ColorsBearerFall;
             else if (Mathf.Abs(rel) > 55f)
                 fall = ClipId.FallSide;
             else

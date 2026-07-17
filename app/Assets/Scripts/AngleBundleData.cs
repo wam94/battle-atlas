@@ -66,6 +66,14 @@ namespace BattleAtlas
         public List<AngleCasualtyProfile> casualtyProfiles;
         public AnglePerSecond perSecond;
 
+        // Angle-v2 vocabulary (P4 colors): length of the unit's color-
+        // guard succession chain (0 = no color party staged — the default
+        // for every committed bundle; JsonUtility leaves the field 0 when
+        // absent, so existing bundles resolve bit-identically). The v2
+        // DATA wave sets this per regiment against the attested
+        // bearer-down counts (or-27-2-shepard). See ColorGuard.cs.
+        public int colorParty;
+
         // Segment active at battle time t (segments are contiguous and
         // ordered by the Phase 5 compiler; validated at load).
         public AngleBundleSegment SegmentAt(float t)
@@ -115,6 +123,14 @@ namespace BattleAtlas
         public string paceProfile;
         public string provenance;
         public List<string> obstacleIds;
+
+        // Angle-v2 vocabulary (P3 melee): the enemy unit this melee
+        // segment fights (unset/empty for every committed bundle and for
+        // every non-melee action). A `melee` segment with an opponent set
+        // lets the resolver form deterministic grapple pairs across the
+        // two rosters; without it the melee resolves to unpaired
+        // swing/thrust/parry work only. The v2 DATA wave wires it.
+        public string meleeOpponentId;
 
         public float Progress(float t) =>
             t1 <= t0 ? 1f : Mathf.Clamp01((t - t0) / (t1 - t0));

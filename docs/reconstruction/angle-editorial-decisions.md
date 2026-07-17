@@ -2171,6 +2171,40 @@ depiction. Concretely:
    cite ED-79/ED-80 (this wave, comment/annotation-only): the four entries
    are doctrine (correct depictions), not TODOs awaiting a fix.
 
+### ED-81 — PROPOSED (awaiting owner adoption): the mounted-officer-fall vocabulary under the V&R §1 named-officer rule
+
+**Status: PROPOSED by the `angle-v2-vocab` executor — NOT adopted. The
+owner's ruling below authorizes the vocabulary build; recording it as a
+standing editorial decision requires the owner's adoption of this entry.**
+
+Owner ruling, 2026-07-15 (relayed verbatim in the Angle-v2 vocabulary
+wave brief): **"ship p5 mounted officers falling"** — exercising the
+`violence-and-representation.md` §1 named-officer rule's separate-approval
+requirement for the P5 proposal of
+`docs/reconstruction/audit/charge-intensity-proposals.md` §4.
+
+Proposed decision text:
+
+1. A mounted-officer figure (project-owned procedural horse rig +
+   kit rider; `MountedOfficer.cs`, `HorseClips`, `Ride_Seat`/`Rider_Fall`)
+   MAY be staged with a unit. The figure is **anonymous by construction**:
+   no name, rank insignia, likeness, or per-figure identification is
+   attached at the vocabulary level.
+2. The fall is staged as **loss, not spectacle** (V&R §5/§6): one rear,
+   one articulated slide from the saddle, a persistent body, the
+   riderless horse leaving the field. No wound vocabulary is added; the
+   wound table of V&R §3 is unchanged.
+3. Attaching the figure to a **named** officer's documented moment
+   (Garnett, "shot from his horse... within about 25 paces of the stone
+   wall," peyton-or-1863, `csa-1c-pic-1-garnett.md` EC1/EC4) is a
+   DATA-WAVE act that must cite its sources segment-by-segment and
+   remains bound by V&R §1's "no invented named-person wound details":
+   the render may show A mounted officer fall where the record puts one;
+   it never labels the figure, and any product-surface caption naming
+   him must quote the record, not the renderer.
+4. The horse itself is never a casualty in this vocabulary; depicting
+   horses killed or wounded would widen the V&R vocabulary and requires
+   its own review before any build step.
 
 ## Connective-reconstruction rules (named inference rules)
 

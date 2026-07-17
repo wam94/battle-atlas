@@ -33,7 +33,7 @@ public class FightProneResolverTests
     [Test]
     public void KitClips_CarryTheProneVocabulary()
     {
-        Assert.AreEqual(26, KitClips.Count);
+        Assert.AreEqual(36, KitClips.Count);   // 26 + the Angle-v2 set
         Assert.AreEqual("Go_Prone", KitClips.Name(ClipId.GoProne));
         Assert.AreEqual("Fight_Prone_Reload",
             KitClips.Name(ClipId.FightProneReload));
