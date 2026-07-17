@@ -99,7 +99,36 @@ regiment (265 of 313 stand at window end).
 
 ### Production render (measured)
 
-<!-- WEBB_RENDER_STATS -->
+- Window t=8160..8820 + 0.5 s media-contract pad = **19,815 frames** at
+  2560×1440p30 (identical geometry to the shipped garnett film).
+- **0.280 s/frame weighted** (0.235 in the hold chunks to 0.471 in the
+  smoke-heavy crisis/repulse chunks) = **1.54 h pure render**; peak
+  managed **1,166 MB**; 12 × 60 s resumable chunks, rolling-harvested
+  into losslessly-concatenating chunk encodes (1.0 GB); the loop
+  restarted Unity across jetsam kills and one wrapper kill mid-run —
+  **zero frames lost or duplicated** (frame continuity and final decoded
+  count re-verified = 19,815 by `scripts/viewpoint-encode.sh`).
+- Chunk manifests: per-chunk git SHA, bundle checksum, viewpoint id,
+  battle-time range, `t(frame) = 8160 + frame/30`, settings hash —
+  **settingsHash identical across all 12 chunks** (one documentation
+  commit landed between resume attempts, the P10 pattern); freeze
+  record `webb-wall-freeze.json` (settingsHash `11e751d0e39ee4aa…`,
+  input checksums identical to the P10 production freeze).
+- Deliverables (`webb-wall-media.sha256`, release manifest committed):
+
+| file | size | avg bitrate |
+| --- | --- | --- |
+| `webb-wall.full.mp4` | 1,014,939,176 B (0.95 GiB) | 12.29 Mbit/s — 2560×1440p30 H.264 CRF18, GOP 30, +faststart, AAC 192k deterministic mix, sha256 `908634fc64ee4583…` |
+| `webb-wall.proxy.mp4` | 201,227,997 B | 2.44 Mbit/s — 1280×720p30 CRF20, same audio, sha256 `1f454e2ec45081ab…` |
+
+  (Lower bitrate than the garnett film's 20.2 Mbit/s at the same CRF —
+  the defending camera is nearly static, so inter frames are cheap; the
+  quality target, not the bitrate, is pinned.)
+- Stills committed (`webb-wall-still-*.png`): the line at the wall
+  (8165), first fire (8460), the charge closing point-blank over the
+  front rank at the wall (8575), the wall crisis (8610), the breach
+  passing left (8650), the fall-back/rally frame (8700), the return
+  (8790) — plus one determinism frame pair.
 
 ### Audio — the receiving position's mix
 
@@ -183,11 +212,42 @@ totals unchanged (same pinned test as the 71st).
 
 ### Machine evidence
 
-<!-- CUSHING_EVIDENCE -->
+- **Preflight** (`cushing-canister-preflight.json`): padded window
+  t=8400..8760.5, every unit, every slot — 33,895,620 coarse pairs,
+  3,982 suspects refined, all designed crossing-exit hand-offs, **zero
+  violations**; camera max delta **0.0000 m/frame** (the crew slot is
+  fully static). **PASS.**
+- **Determinism pair** (`cushing-canister-determinism.json`):
+  t=8520..8530 (rolling canister, guns hot) rendered twice from
+  independent stagings. Freeze metadata identical; logical + pose
+  digests **bitwise identical 10/10 both passes**; pixels worst 0.01%
+  differing with **2 isolated outlier pixels** (≤8 allowed; max channel
+  delta 31 confined to those isolated depth/coverage-tie pixels — the
+  documented P10 two-tier tolerance). **PASS.**
 
 ### Production render (measured)
 
-<!-- CUSHING_RENDER_STATS -->
+- Window t=8400..8760 + 0.5 s pad = **10,815 frames** at 2560×1440p30.
+- **0.332 s/frame weighted** (the whole window is smoke-heavy close
+  action) = **1.00 h pure render**; peak managed **1,162 MB**; 7 × 60 s
+  resumable chunks (one resume across the session cut — 5 chunks
+  survived on disk, the loop resumed at chunk 5, zero frames lost);
+  **settingsHash identical across all 7 chunks**, single render gitSha;
+  freeze `cushing-canister-freeze.json` (settingsHash
+  `2fbed41f3b38b7dc…`, input checksums identical to the P10 freeze).
+- Deliverables (`cushing-canister-media.sha256`, release manifest
+  committed):
+
+| file | size | avg bitrate |
+| --- | --- | --- |
+| `cushing-canister.full.mp4` | 431,728,399 B | 9.58 Mbit/s — 2560×1440p30 H.264 CRF18, GOP 30, +faststart, AAC 192k deterministic mix, sha256 `69c6be7f56b0aa64…` |
+| `cushing-canister.proxy.mp4` | 103,710,405 B | 2.30 Mbit/s — 1280×720p30 CRF20, same audio, sha256 `75067d24dc21c1b6…` |
+
+- Stills committed (`cushing-canister-still-*.png`): canister opens
+  (8405), the serving rhythm (8520), the stall in front of the guns
+  (8600), double canister into the breach window (8650, the crew inside
+  the powder smoke), the overrun phase (8730) — plus one determinism
+  frame pair.
 
 ### Audio — the crew position's mix
 
@@ -217,11 +277,47 @@ per-active-viewpoint (see above).
 
 ## Seek measurements
 
-<!-- SEEK_NUMBERS -->
+PlayMode seek batteries on the real 1440p production streams (12
+deterministic seeks each — long jumps across hundreds of GOPs, near
+jumps, sub-second nudges, both directions, clear of the end-guard;
+every settle asserted within one video frame of the battle clock;
+measured on the idle machine, reports committed beside the evidence):
+
+| stream | median | worst |
+| --- | --- | --- |
+| `webb-wall.full.mp4` | **33.3 ms** | **50.1 ms** |
+| `cushing-canister.full.mp4` | **33.4 ms** | **66.7 ms** |
+
+Both beat the garnett film's Gate P10 numbers (33.9 / 107.3 ms) — no
+seek grazes the P1 ~100 ms revisit trigger, so seek-and-hold stands
+without qualification for both new streams. End-guard: both media are
+padded 0.5 s past t1, so the unreachable-final-frames window sits
+entirely in padding (P1 media contract).
 
 ## Suite state at slice end
 
-<!-- SUITES -->
+All at or above the current-main floors (tool 119 / pipeline 66 /
+recon 158+1 / EditMode 436+1 / PlayMode 20+1), run in this worktree
+via the standard CLI (`-batchmode -runTests -buildTarget OSXUniversal`,
+worktree Library, no `-nographics`):
+
+- tool **119** passed
+- pipeline **66** passed
+- reconstruction **161 + 1 skip** (+3: defending-observer mix tests)
+- Unity EditMode **446 passed + 1 known conditional skip** (447 total;
+  +9 over the 436 floor: viewpoint-definition pins ×2 extended,
+  WebbCushingViewpointTests ×6, caption selection ×3, entry-marker
+  overlap pin, observer-protection asserts — net new tests)
+- Unity PlayMode **23/23, zero skips** (20 baseline + 2 new production-
+  media seek measurements + 1; full media staged — dev proxy
+  regenerated byte-identical to main's via the pinned script; one
+  transient mid-suite failure of the P1 proxy latency test occurred
+  only while the concurrent iverson production render loaded the GPU,
+  and the suite passed 23/23 in full afterwards under the sync-flake
+  single-re-run policy)
+
+Content-warning text and gate: applied unchanged (same document, same
+first-entry flow; `ContentWarningGateTests` untouched and green).
 
 ## Reproduction
 
@@ -249,4 +345,40 @@ GitHub Releases per the per-viewpoint release manifests.
 
 ## Residuals
 
-<!-- RESIDUALS -->
+1. **Main moved mid-slice.** The angle-v2 vocabulary wave (melee,
+   colors succession, mounted falls, halt-and-fire; ED-81) merged to
+   main while these renders ran. Both films render the **v1 compiled
+   states at this branch's fork point (cff17dd)** — exactly as
+   chartered ("your renders are of the CURRENT v1 states"). This branch
+   touches zero battle files relative to its fork point, so merging it
+   cannot revert the v2 wave; but a v2-vocabulary RE-RENDER of all
+   three Angle films is the anticipated follow-up, and these two
+   viewpoints are now one `-viewpointId` argument each away from it.
+2. **ED-22 draw rerouting** (disclosed above): re-rendering the GARNETT
+   film at this commit would show different victim identities within
+   us-71pa and us-btty-cushing (totals unchanged). Since a garnett
+   re-render is expected under the v2 wave anyway, the two waves land
+   together.
+3. **Iverson marker leakage (pre-existing, out of scope):** the
+   design-stage `iverson-forney-field` entry rides the July 1 clock,
+   but the HUD's per-phase gate is per-SET (home battle asset), so its
+   entry marker appears during July 3 at t=5830..7040 and entry is
+   refused only by the missing-media path. Wiring cross-phase viewpoint
+   homes is the Iverson production slice's declared follow-up scope.
+4. **No incoming-strike layer for Union observers:** the CSA guns that
+   fired on Cemetery Ridge sit outside the staged bundle, so the
+   defenders' films carry no incoming artillery strikes (visual or
+   audible) — the mirror of the garnett film's artillery-silent
+   approach, recorded under the same rule (an authored layer would need
+   its own sourced event basis).
+5. **Battery crew choreography is the §9.1 placeholder** (brace at
+   discharge, kneel/stand otherwise): no rammer/swab/handspike drill
+   cycle exists in the kit. The cushing-canister film's mechanism
+   register would gain the most from a future crew-drill clip set;
+   recorded as kit work, not a reconstruction question.
+6. **Seek reports for the two new streams** live at
+   `docs/benchmarks/captures/<vp>/<vp>-seek-latency.json` (the app/
+   copies stay gitignored like p10's).
+7. **Media publication** is the owner's: per-viewpoint release
+   manifests + notes are committed with the exact
+   `gh release create soldier-view-media-<vp>-v1` commands.

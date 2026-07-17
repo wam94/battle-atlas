@@ -36,3 +36,10 @@ p10-audio-events-regen*.log
 app/webb-wall-seek-latency.json
 app/cushing-canister-seek-latency.json
 *-production-a*.log
+*-probe.log
+*-preflight.log
+*-determinism.log
+*-stills.log
+*-audio-events.log
+editmode-final.xml
+playmode-sync.xml
