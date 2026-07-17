@@ -81,6 +81,31 @@ namespace BattleAtlas.EditorTools
         UnityEngine.Rendering.HighDefinition.Fog fog;
         Transform sun;
 
+        // ------------------------------------------------------------------
+        // Angle-v2 DATA-wave vocabulary extras — first-class production
+        // staging of the bundle-wired P4/P5 content (the vocab wave staged
+        // these only in its demo harness; the data wave promotes them):
+        //   * a staff+flag prop per unit with colorParty > 0, posed from
+        //     ColorGuard.StateAt (carried / tipping / grounded / rising);
+        //   * a horse+rider pair per bundle mountedOfficers entry, posed
+        //     from MountedOfficer.Resolve (ED-81: anonymous figure).
+        // Both are pure functions of t — scrub-invariant like everything
+        // else in Pose(). Units without the fields stage nothing (older
+        // bundles are visually unchanged).
+        class ColorsProp
+        {
+            public UnitRuntime ur;
+            public GameObject staff;
+        }
+        class MountedProp
+        {
+            public MountedOfficerSpec spec;
+            public GameObject horse, rider;
+            public Dictionary<string, AnimationClip> horseClips, riderClips;
+        }
+        readonly List<ColorsProp> colorsProps = new();
+        readonly List<MountedProp> mountedProps = new();
+
         // state buffers
         public SoldierState[][] states;   // [unitIndex][slot]
         public CrowdTier[] tiers;
@@ -133,6 +158,7 @@ namespace BattleAtlas.EditorTools
 
             scene.ValidateCasualtyReconciliation();
             scene.LoadKit();
+            scene.StageVocabExtras();
             scene.CompileVfx();
             scene.BuildMaterials();
             scene.CompileTrampling();
@@ -227,6 +253,128 @@ namespace BattleAtlas.EditorTools
                             $"{path}: missing baked pose {pose}");
                 midPoses[side] = lib;
                 UnityEngine.Object.DestroyImmediate(template);
+            }
+        }
+
+        // ------------------------------------------------------------------
+        void StageVocabExtras()
+        {
+            foreach (var ur in ctx.units)
+            {
+                if (ur.unit.colorParty > 0)
+                {
+                    colorsProps.Add(new ColorsProp
+                    {
+                        ur = ur,
+                        staff = BuildColorsStaff(ur.unit.unitId),
+                    });
+                }
+                if (ur.unit.mountedOfficers == null) continue;
+                foreach (var spec in ur.unit.mountedOfficers)
+                {
+                    string riderKit = ur.unit.side == "union"
+                        ? "union_b" : "csa_b";
+                    var mp = new MountedProp
+                    {
+                        spec = spec,
+                        horse = GateP6Render.SpawnVariant("horse"),
+                        rider = GateP6Render.SpawnVariant(riderKit),
+                        horseClips = GateP6Render.LoadClips("horse"),
+                        riderClips = GateP6Render.LoadClips(riderKit),
+                    };
+                    mp.horse.name = $"v2_horse_{spec.officerId}";
+                    mp.rider.name = $"v2_rider_{spec.officerId}";
+                    mountedProps.Add(mp);
+                }
+            }
+            if (colorsProps.Count > 0 || mountedProps.Count > 0)
+                Debug.Log($"AngleActionScene: staged {colorsProps.Count} color " +
+                          $"parties, {mountedProps.Count} mounted officers " +
+                          "(angle-v2 vocabulary)");
+        }
+
+        // Staff + flag prop (project-owned primitives; a plain dark-red
+        // cloth — no unit identification is implied by the prop itself,
+        // matching the vocabulary wave's sober staging).
+        static GameObject BuildColorsStaff(string unitId)
+        {
+            var root = new GameObject($"v2_colors_{unitId}");
+            var pole = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+            pole.name = "staff";
+            pole.transform.SetParent(root.transform, false);
+            pole.transform.localScale = new Vector3(0.03f, 1.3f, 0.03f);
+            pole.transform.localPosition = new Vector3(0f, 1.3f, 0f);
+            var cloth = GameObject.CreatePrimitive(PrimitiveType.Quad);
+            cloth.name = "flag";
+            cloth.transform.SetParent(root.transform, false);
+            cloth.transform.localPosition = new Vector3(0.55f, 2.15f, 0f);
+            cloth.transform.localScale = new Vector3(1.1f, 0.85f, 1f);
+            cloth.transform.localRotation = Quaternion.Euler(0f, 90f, 0f);
+            var staffMat = new Material(Shader.Find("HDRP/Lit"));
+            staffMat.color = new Color(0.35f, 0.24f, 0.13f);
+            pole.GetComponent<MeshRenderer>().sharedMaterial = staffMat;
+            var clothMat = new Material(Shader.Find("HDRP/Lit"));
+            clothMat.color = new Color(0.45f, 0.10f, 0.10f);
+            clothMat.SetFloat("_CullMode", 0f);
+            cloth.GetComponent<MeshRenderer>().sharedMaterial = clothMat;
+            return root;
+        }
+
+        void PoseVocabExtras(float t)
+        {
+            foreach (var cp in colorsProps)
+            {
+                var cs = ColorGuard.StateAt(ctx, cp.ur, t);
+                var pos = new Vector2(cs.posX, cs.posZ);
+                float facing = cp.ur.unit.FacingAt(t);
+                float fr = facing * Mathf.Deg2Rad;
+                var fwd3 = new Vector3(Mathf.Sin(fr), 0f, Mathf.Cos(fr));
+                float tilt;   // 0 = staff vertical, 90 = on the ground
+                switch (cs.phase)
+                {
+                    case ColorGuard.Phase.Carried:
+                        tilt = 4f;
+                        break;
+                    case ColorGuard.Phase.BearerFalling:
+                        tilt = Mathf.Lerp(4f, 88f, Mathf.Clamp01(
+                            (t - cs.sinceT) / ColorGuard.FallDur));
+                        break;
+                    case ColorGuard.Phase.Raising:
+                        tilt = Mathf.Lerp(88f, 4f, Mathf.Clamp01(
+                            (t - cs.sinceT) / ColorGuard.RaiseDur));
+                        break;
+                    default:   // Grounded / Down
+                        tilt = 88f;
+                        break;
+                }
+                cp.staff.transform.position = World(pos, 0.05f);
+                cp.staff.transform.rotation =
+                    Quaternion.LookRotation(fwd3, Vector3.up) *
+                    Quaternion.Euler(tilt, 0f, 0f);
+            }
+
+            foreach (var mp in mountedProps)
+            {
+                var s = MountedOfficer.Resolve(ctx, mp.spec, t);
+                if (mp.horse.activeSelf != s.horseVisible)
+                    mp.horse.SetActive(s.horseVisible);
+                if (s.horseVisible)
+                {
+                    mp.horse.transform.position = World(
+                        new Vector2(s.posX, s.posZ), 0f);
+                    mp.horse.transform.rotation =
+                        Quaternion.Euler(0f, s.facingDeg, 0f);
+                    var clip = mp.horseClips[HorseClips.Name(s.horseClip)];
+                    clip.SampleAnimation(mp.horse,
+                        Mathf.Min(s.horseClipTime, clip.length));
+                }
+                mp.rider.transform.position = World(
+                    new Vector2(s.riderPosX, s.riderPosZ), 0f);
+                mp.rider.transform.rotation =
+                    Quaternion.Euler(0f, s.riderFacingDeg, 0f);
+                var rclip = mp.riderClips[KitClips.Name(s.riderClip)];
+                rclip.SampleAnimation(mp.rider,
+                    Mathf.Min(s.riderClipTime, rclip.length));
             }
         }
 
@@ -732,6 +880,9 @@ namespace BattleAtlas.EditorTools
             PoseDressing(t, camMacro);
             PoseSun(t);
             PoseTrampling(t);
+
+            // 5) angle-v2 vocabulary extras (colors staff, mounted officer)
+            PoseVocabExtras(t);
         }
 
         void PoseFigures(float t, Vector2 camMacro)

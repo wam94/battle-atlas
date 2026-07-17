@@ -40,6 +40,17 @@ namespace BattleAtlas
         public const float PairStaggerS = 4f;       // pairs lock over 0..4 s
         public const float StepInDur = 1.5f;        // walk into the clinch
         public const float ReturnDur = 2.0f;        // walk back after it ends
+
+        // Angle-v2 DATA-wave production bound: a pair only forms when each
+        // man's clinch anchor is within this reach of his roster slot. The
+        // committed melee wiring pits a ~348 m brigade line against a
+        // ~60 m regiment across the wall gap: the proportional file map
+        // would otherwise send flank files sprinting tens of meters to
+        // midpoints far from either line (the vocab wave's residual #1
+        // presumed similar-width demo lines). Center files — the ones
+        // actually AT the wall — stay inside this reach; distant files
+        // keep the unpaired bout work.
+        public const float MaxStepInM = 8f;
         public const float BoutStaggerS = 3f;
         public const float BoutRestMinS = 1.5f;
         public const float BoutRestMaxS = 4.0f;
@@ -201,8 +212,13 @@ namespace BattleAtlas
             float followFall = followUr.casualties[followSlot].fallT;
             // both men must reach the clinch alive
             if (leadFall <= pairT0 || followFall <= pairT0) return false;
-            float tEnd = Mathf.Min(Mathf.Min(leadFall, followFall),
-                Mathf.Min(leadSeg.t1, followSeg.t1));
+            // the clinch dissolves ReturnDur BEFORE the melee window ends
+            // (unless a fall ends it first), so the walk-back completes
+            // inside the segment and the hand-off to the next segment's
+            // roster position is continuous — no end-of-melee pop.
+            float segEnd = Mathf.Min(leadSeg.t1, followSeg.t1) - ReturnDur;
+            float tEnd = Mathf.Min(Mathf.Min(leadFall, followFall), segEnd);
+            if (tEnd <= pairT0) return false;
             if (t < pairT0) return false;
 
             Vector2 posL = SoldierActionResolver.BasePosition(
@@ -217,6 +233,9 @@ namespace BattleAtlas
             if (d.magnitude < 1e-3f) return false;
             Vector2 dir = d.normalized;
             Vector2 mid = (posL + posF) / 2f;
+            // production reach guard: each man walks at most MaxStepInM to
+            // his clinch anchor (~the midpoint); pairs beyond it never form
+            if (d.magnitude / 2f > MaxStepInM) return false;
 
             bool selfLead = lead;
             pair = new Pair

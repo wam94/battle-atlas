@@ -67,12 +67,19 @@ namespace BattleAtlas
         public AnglePerSecond perSecond;
 
         // Angle-v2 vocabulary (P4 colors): length of the unit's color-
-        // guard succession chain (0 = no color party staged — the default
-        // for every committed bundle; JsonUtility leaves the field 0 when
-        // absent, so existing bundles resolve bit-identically). The v2
-        // DATA wave sets this per regiment against the attested
-        // bearer-down counts (or-27-2-shepard). See ColorGuard.cs.
+        // guard succession chain (0 = no color party staged; JsonUtility
+        // leaves the field 0 when absent, so bundles without it resolve
+        // bit-identically). The v2 DATA wave sets it on csa-fry against
+        // the attested bearer-down counts (or-27-2-shepard; brigade-grain
+        // caveat in the canonical file's note). See ColorGuard.cs.
         public int colorParty;
+
+        // Angle-v2 vocabulary (P5, ED-81 ADOPTED): mounted-officer figures
+        // staged with the unit. Anonymous by construction (officerId is a
+        // unit-scoped id, never a name); the data wave cites the fall
+        // moment segment-by-segment (csa-garnett: claim-garnett-death).
+        // Null/empty for units without one. See MountedOfficer.cs.
+        public List<MountedOfficerSpec> mountedOfficers;
 
         // Segment active at battle time t (segments are contiguous and
         // ordered by the Phase 5 compiler; validated at load).
@@ -146,6 +153,18 @@ namespace BattleAtlas
         public string intensityCurve;   // uniform | rising | falling | spike
         public AngleCauseMix causeMix;
         public string assessment;
+
+        // Angle-v2 P2 (proposed ED-82): compiler-emitted per-victim fall
+        // times for a strike-correlated profile — victim k (in the hash
+        // draw order) falls at fallTimes[k] instead of the smooth inverse
+        // CDF. Canister/shell-cause victims cluster at the compiled
+        // StrikeEvents; identity, causes, counts and the window are
+        // unchanged; values are 1/64 s-quantized so this float32 parse is
+        // exact and per-second strength reconciliation is EXACT for these
+        // profiles. Empty/absent = the smooth curve (all older bundles).
+        public List<float> fallTimes;
+
+        public bool HasFallTimes => fallTimes != null && fallTimes.Count > 0;
     }
 
     // The bundle's causeMix object has a small closed key set; missing keys
@@ -219,6 +238,19 @@ namespace BattleAtlas
                 if (casTotal > u.startStrength)
                     throw new InvalidOperationException(
                         $"{u.unitId}: casualties {casTotal} exceed strength {u.startStrength}");
+                foreach (var p in u.casualtyProfiles)
+                {
+                    if (!p.HasFallTimes) continue;
+                    if (p.fallTimes.Count != p.count)
+                        throw new InvalidOperationException(
+                            $"{u.unitId}/{p.id}: fallTimes carries " +
+                            $"{p.fallTimes.Count} entries for count {p.count}");
+                    foreach (float ft in p.fallTimes)
+                        if (ft < p.t0 || ft > p.t1)
+                            throw new InvalidOperationException(
+                                $"{u.unitId}/{p.id}: fallTime {ft} outside " +
+                                $"[{p.t0}, {p.t1}]");
+                }
             }
         }
     }

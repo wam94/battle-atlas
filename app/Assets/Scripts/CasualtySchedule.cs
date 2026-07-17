@@ -103,8 +103,15 @@ namespace BattleAtlas
                 {
                     int slot = cand[k];
                     taken[slot] = true;
-                    entries[slot].fallT = p.t0 + dur *
-                        InvCdf(p.intensityCurve, (k + 0.5f) / p.count);
+                    // Angle-v2 P2 (proposed ED-82): a strike-correlated
+                    // profile carries compiler-emitted per-victim fall
+                    // times (canister/shell victims clustered at the
+                    // compiled StrikeEvents). Victim IDENTITY stays the
+                    // hash draw above; only WHEN moves.
+                    entries[slot].fallT = p.HasFallTimes
+                        ? p.fallTimes[k]
+                        : p.t0 + dur *
+                            InvCdf(p.intensityCurve, (k + 0.5f) / p.count);
                     entries[slot].cause = causes[k];
                     entries[slot].profileIndex = (short)pi;
                     entries[slot].woundedCrawl =

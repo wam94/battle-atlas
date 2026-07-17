@@ -404,7 +404,8 @@ namespace BattleAtlas.EditorTools
         // ------------------------------------------------------------------
         // Shared frame loop.
         // ------------------------------------------------------------------
-        static float RenderFrames(
+        // internal: reused by AngleV2Render (the v2 data-wave harness)
+        internal static float RenderFrames(
             AngleActionScene scene, RenderTexture rt, Texture2D tex,
             HeroCameraSettings settings, float viewT0,
             int frame0, int count, string dir, ref bool warmed,
@@ -716,7 +717,8 @@ namespace BattleAtlas.EditorTools
             return true;
         }
 
-        static void WriteChunkManifest(
+        // internal: reused by AngleV2Render (the v2 data-wave harness)
+        internal static void WriteChunkManifest(
             string path, int chunk, int frame0, int count, float viewT0,
             Freeze freeze, float secondsPerFrame, long peakManagedMB)
         {
