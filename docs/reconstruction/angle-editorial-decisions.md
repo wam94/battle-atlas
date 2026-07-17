@@ -2171,9 +2171,9 @@ depiction. Concretely:
    cite ED-79/ED-80 (this wave, comment/annotation-only): the four entries
    are doctrine (correct depictions), not TODOs awaiting a fix.
 
-### ED-81 — PROPOSED (awaiting owner adoption): the mounted-officer-fall vocabulary under the V&R §1 named-officer rule
+### ED-81 — ADOPTED: the mounted-officer-fall vocabulary under the V&R §1 named-officer rule
 
-**Status: PROPOSED by the `angle-v2-vocab` executor — NOT adopted. The
+**Status: ADOPTED — the owner's explicit 2026-07-15 ruling ("ship p5 mounted officers falling"), quoted below, is the adoption authority; ratified at merge. Originally proposed by the `angle-v2-vocab` executor. The
 owner's ruling below authorizes the vocabulary build; recording it as a
 standing editorial decision requires the owner's adoption of this entry.**
 
