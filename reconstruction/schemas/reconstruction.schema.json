@@ -62,6 +62,53 @@
             }
           }
         },
+        "colorParty": {
+          "type": "object",
+          "required": ["value", "claimIds"],
+          "additionalProperties": false,
+          "description": "angle-v2 P4: length of the unit's color-guard succession chain (ColorGuard.cs). The chain is front-rank files walking outward from the line's center; the compiled casualty schedule fells bearers and the next chain man takes the colors up. Cited at the grain the evidence gives (Fry: brigade-grain sum of the attested per-regiment bearer-down counts — a disclosed simplification). No bearer is ever a named person (V&R §1).",
+          "properties": {
+            "value": { "type": "integer", "minimum": 1 },
+            "claimIds": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string", "minLength": 1 }
+            },
+            "note": { "type": "string" }
+          }
+        },
+        "mountedOfficers": {
+          "type": "array",
+          "minItems": 1,
+          "description": "angle-v2 P5 (ED-81, ADOPTED): mounted-officer figures staged with the unit (MountedOfficer.cs). The figure is anonymous by construction; attaching one to a named officer's documented moment requires the citations here (V&R §1: the render shows A mounted officer fall where the record puts one; it never labels the figure).",
+          "items": {
+            "type": "object",
+            "required": ["officerId", "fallT", "backOffsetM", "alongOffsetM", "claimIds"],
+            "additionalProperties": false,
+            "properties": {
+              "officerId": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9-]*$",
+                "description": "Stable hash identity — a unit-scoped id, NEVER a person's name."
+              },
+              "fallT": { "type": "number", "minimum": 0 },
+              "backOffsetM": {
+                "type": "number",
+                "description": "Meters behind the line in the unit formation frame (negative = a forward station in front of the line)."
+              },
+              "alongOffsetM": {
+                "type": "number",
+                "description": "Meters along the frontage from the line's center (+right)."
+              },
+              "claimIds": {
+                "type": "array",
+                "minItems": 1,
+                "items": { "type": "string", "minLength": 1 }
+              },
+              "note": { "type": "string" }
+            }
+          }
+        },
         "note": { "type": "string" }
       }
     },
@@ -93,8 +140,15 @@
             "close_gap",
             "breach",
             "fall_back",
-            "rout"
+            "rout",
+            "melee",
+            "halt_fire_obstacle"
           ]
+        },
+        "meleeOpponentId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "melee segments only (angle-v2 P3): the enemy unit this melee fights. Wired SYMMETRICALLY (both sides name each other) for grapple pairs to form; a melee without it (or with one-sided wiring) resolves to unpaired bout work. Validated in code: must be a reconstruction unit on the other side whose own melee window overlaps."
         },
         "route": {
           "type": "array",
@@ -164,6 +218,27 @@
         "claimIds": {
           "type": "array",
           "items": { "type": "string", "minLength": 1 }
+        },
+        "strikeCorrelation": {
+          "type": "object",
+          "required": ["classes", "maxPerStrike", "windowS", "claimIds"],
+          "additionalProperties": false,
+          "description": "angle-v2 P2 (proposed ED-82): this profile's victims of the named cause classes are re-timed by the compiler to cluster at the resolver's compiled StrikeEvents (canister/shell arrivals) instead of falling on the smooth inverse-CDF curve. The compiler emits the resulting per-victim fallTimes into the bundle; counts, victim identity, causes, and the profile window are UNCHANGED (the redistribution stays within [t0, t1] and within windowS seconds of each victim's smooth draw, so the cited intensity shape is preserved in the aggregate).",
+          "properties": {
+            "classes": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "enum": ["canister", "shell"] }
+            },
+            "maxPerStrike": { "type": "integer", "minimum": 1 },
+            "windowS": { "type": "number", "exclusiveMinimum": 0 },
+            "claimIds": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string", "minLength": 1 }
+            },
+            "note": { "type": "string" }
+          }
         },
         "note": { "type": "string" }
       }

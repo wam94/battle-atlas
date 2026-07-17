@@ -1758,6 +1758,86 @@
           "interpretation": "No 1863 fence is staged."
         }
       ]
+    },
+    {
+      "id": "claim-garnett-works-melee",
+      "subjectId": "csa-garnett",
+      "property": "command_action",
+      "value": "The fight at the works was hand to hand; Garnett's men climbed the wall and fought inside the Union line until surrounded",
+      "time": { "earliest": 8580, "preferred": 8660, "latest": 8700 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "peyton-or-1863",
+          "locator": "OR 27/2 pp. 385-387",
+          "excerpt": "hand to hand, and of the most desperate character",
+          "interpretation": "The brigade's own report characterizes the wall-fight climax as a melee, not a firefight; drives the segment's melee action class (angle-v2 P3)."
+        },
+        {
+          "sourceId": "peyton-or-1863",
+          "locator": "OR 27/2 pp. 385-387",
+          "excerpt": "climbing over the wall, and fighting the enemy in his own trenches until entirely surrounded",
+          "interpretation": "Places the melee AT and OVER the traced wall; the compiled centroid stays west (the brigade never crosses as a body), so the melee straddles the wall at figure grain only."
+        }
+      ],
+      "note": "Angle-v2 data wave (P3). The clock is inferred: the works window's final minute (ED-1 step-off arithmetic)."
+    },
+    {
+      "id": "claim-armistead-works-melee",
+      "subjectId": "csa-armistead",
+      "property": "command_action",
+      "value": "Armistead's crossed party fought hand to hand inside the Angle; the 69th's companies met them with clubbed muskets",
+      "time": { "earliest": 8640, "preferred": 8685, "latest": 8760 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "mcdermott-1889",
+          "locator": "Angle narrative",
+          "excerpt": "held the enemy at bay, using their muskets as clubs",
+          "interpretation": "Receiving-side attestation of the melee against Armistead's crossers (the claim-webb-flag-over-gun precedent: the subject is the crossed party the excerpt describes fighting)."
+        },
+        {
+          "sourceId": "martin-smith-shsp32-1904",
+          "locator": "pp. 184-189 (Martin)",
+          "excerpt": "had fallen, mortally wounded, under the guns he had captured",
+          "interpretation": "The crossed party's fight reached Cushing's pieces; the melee tail ends where the penetration is sealed."
+        }
+      ],
+      "note": "Angle-v2 data wave (P3). Armistead's melee tail is unpaired at resolver grain (the symmetric grapple wiring is Garnett-69pa; disclosed in angle-v2-data.md)."
+    },
+    {
+      "id": "claim-fry-color-bearers",
+      "subjectId": "csa-fry",
+      "property": "casualty_total",
+      "value": "13 color-bearers were shot down across the brigade's regiments (1st Tenn 3, 13th Ala 3, 14th Tenn 4, 7th Tenn 3); every flag but one was captured at or within the works",
+      "time": { "earliest": 8340, "preferred": 8660, "latest": 8760 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "or-27-2-shepard",
+          "locator": "OR 27/2 No. 552",
+          "excerpt": "Every flag in the brigade excepting one was captured at or within the works",
+          "interpretation": "The densest color-fate record in the corpus: 3+3+4+3 bearers down by regiment, the 7th Tenn flag saved by Capt. Norris tearing it from the staff. Drives the brigade colorParty chain length (13) at brigade grain — a disclosed simplification (the compiled unit is one brigade line; a regiment-grain recast would carry one chain per regiment)."
+        }
+      ],
+      "note": "Angle-v2 data wave (P4). No bearer is ever named or individually placed (V&R §1/§2): the chain is a hash-and-schedule construction matching the cited COUNT."
+    },
+    {
+      "id": "claim-cas-shell-clusters",
+      "subjectId": "assault-column",
+      "property": "casualty_timing",
+      "value": "Single shell bursts and canister discharges felled clustered groups — as many as 10 men to one shell",
+      "time": { "earliest": 8280, "preferred": 8500, "latest": 8700 },
+      "assessment": "documented",
+      "references": [
+        {
+          "sourceId": "peyton-or-1863",
+          "locator": "OR 27/2 pp. 385-387",
+          "excerpt": "sometimes as many as 10 men being killed and wounded by the bursting of a single shell",
+          "interpretation": "Losses under artillery arrived in bursts tied to individual projectiles, not as a smooth drizzle; bounds the per-strike cluster size (max 10) for the strike-correlated casualty redistribution (angle-v2 P2, proposed ED-82)."
+        }
+      ],
+      "note": "Angle-v2 data wave (P2). Read with claim-cas-canister-gaps (Fuger's 'immense gaps'): both attest discrete-impact clustering inside the final approach."
     }
   ]
 }

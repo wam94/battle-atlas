@@ -5,6 +5,9 @@ description = "Battle Atlas reconstruction data: schemas, validators, and (from 
 requires-python = ">=3.11"
 dependencies = [
     "jsonschema>=4.21",
+    # angle-v2 P2 (strike_correlation.py): float32-faithful replication of
+    # the C# strike/casualty math for the compiled fallTimes.
+    "numpy>=1.26",
 ]
 
 [dependency-groups]

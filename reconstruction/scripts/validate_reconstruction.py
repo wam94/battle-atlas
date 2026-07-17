@@ -78,13 +78,17 @@ RETREAT_ACTIONS = {"fall_back", "rout"}
 
 # Maximum average segment speed (m/s) per action, by arm (plan section 13,
 # "arm-appropriate speed limits"; values recorded in R-linear-connective-motion).
-STATIC_ACTIONS = {"hold", "halt", "dress_line", "fire_by_rank", "fire_independent", "take_canister"}
+STATIC_ACTIONS = {"hold", "halt", "dress_line", "fire_by_rank", "fire_independent", "take_canister",
+                  "halt_fire_obstacle"}
 INFANTRY_SPEED_CAPS = {
     "hold": 0.35, "halt": 0.35, "dress_line": 0.35,
     "fire_by_rank": 0.35, "fire_independent": 0.35, "take_canister": 0.35,
     "advance": 1.5, "oblique": 1.5, "close_gap": 1.5,
     "double_quick": 2.7, "cross_obstacle": 1.4, "breach": 1.0,
     "waver": 0.5, "fall_back": 2.0, "rout": 3.5,
+    # angle-v2 vocabulary: a melee drifts with the stalled track, it does
+    # not march; halt_fire_obstacle is a standing fire class at a fence.
+    "melee": 0.5, "halt_fire_obstacle": 0.35,
 }
 # Artillery in this slice only holds or is manhandled short distances.
 ARTILLERY_SPEED_CAP = 0.5
@@ -331,6 +335,34 @@ def validate_corpus(corpus: Corpus) -> list[str]:
         for cid in u["startStrength"].get("claimIds", []):
             if cid not in claim_by_id:
                 errors.append(f"reconstruction[{u['unitId']}]: startStrength cites unknown claim {cid!r}")
+        # angle-v2 P4: colorParty must cite claims about this unit.
+        cp = u.get("colorParty")
+        if cp is not None:
+            for cid in cp["claimIds"]:
+                if cid not in claim_by_id:
+                    errors.append(f"reconstruction[{u['unitId']}]: colorParty cites unknown claim {cid!r}")
+                elif claim_by_id[cid]["subjectId"] != u["unitId"]:
+                    errors.append(f"reconstruction[{u['unitId']}]: colorParty cites claim {cid!r} "
+                                  f"about a different subject ({claim_by_id[cid]['subjectId']!r})")
+        # angle-v2 P5 (ED-81): mounted officers are anonymous ids with cited
+        # falls inside the slice.
+        for mo in u.get("mountedOfficers", []):
+            where = f"reconstruction[{u['unitId']}].mountedOfficers[{mo['officerId']}]"
+            if not (slice_t0 <= mo["fallT"] <= slice_t1):
+                errors.append(f"{where}: fallT {mo['fallT']} outside the slice")
+            for cid in mo["claimIds"]:
+                if cid not in claim_by_id:
+                    errors.append(f"{where}: cites unknown claim {cid!r}")
+                elif claim_by_id[cid]["subjectId"] != u["unitId"]:
+                    errors.append(f"{where}: cites claim {cid!r} about a different "
+                                  f"subject ({claim_by_id[cid]['subjectId']!r})")
+            for cid in mo["claimIds"]:
+                cl = claim_by_id.get(cid)
+                if cl and cl.get("time"):
+                    t = cl["time"]
+                    if not (t["earliest"] <= mo["fallT"] <= t["latest"]):
+                        errors.append(f"{where}: fallT {mo['fallT']} outside cited claim "
+                                      f"{cid!r}'s time envelope [{t['earliest']}, {t['latest']}]")
 
     seg_ids = [s["id"] for s in recon["segments"]]
     for sid in sorted({s for s in seg_ids if seg_ids.count(s) > 1}):
@@ -362,6 +394,34 @@ def validate_corpus(corpus: Corpus) -> list[str]:
             if oid not in obstacle_features:
                 errors.append(f"{where}: obstacleIds entry {oid!r} is not a traced "
                               f"stone_wall/rail_fence landcover line")
+        # angle-v2 P3: melee opponent wiring discipline.
+        opp = s.get("meleeOpponentId")
+        if opp is not None and s["action"] != "melee":
+            errors.append(f"{where}: meleeOpponentId on a non-melee action {s['action']!r}")
+
+    # angle-v2 P3: a NAMED melee opponent must be a reconstruction unit on
+    # the other side whose own melee segment names this unit back with an
+    # overlapping window (MeleeChoreo pairs only form under symmetric
+    # wiring; a one-sided name is an authoring mistake — leave the field
+    # unset for deliberately unpaired melee).
+    melee_segs = [s for s in recon["segments"] if s["action"] == "melee"]
+    for s in melee_segs:
+        where = f"segments[{s['id']}]"
+        opp = s.get("meleeOpponentId")
+        if opp is None:
+            continue
+        if opp not in arms:
+            errors.append(f"{where}: meleeOpponentId {opp!r} is not a reconstruction unit")
+            continue
+        if s["unitId"] in units and opp in units and \
+                units[s["unitId"]].get("side") == units[opp].get("side"):
+            errors.append(f"{where}: meleeOpponentId {opp!r} is on the same side")
+        back = [o for o in melee_segs
+                if o["unitId"] == opp and o.get("meleeOpponentId") == s["unitId"]
+                and o["t0"] < s["t1"] and s["t0"] < o["t1"]]
+        if not back:
+            errors.append(f"{where}: meleeOpponentId {opp!r} does not reciprocate with an "
+                          f"overlapping melee segment naming {s['unitId']!r} back")
 
     # 5. Per-unit contiguity, continuity, geometry, speed -------------------
     for uid, segs in sorted(segs_by_unit.items()):
@@ -445,6 +505,17 @@ def validate_corpus(corpus: Corpus) -> list[str]:
         for cid in p["claimIds"]:
             if cid not in claim_by_id:
                 errors.append(f"{where}: cites unknown claim {cid!r}")
+        # angle-v2 P2 (proposed ED-82): strike correlation must name cause
+        # classes the profile actually carries, and cite its evidence.
+        sc = p.get("strikeCorrelation")
+        if sc is not None:
+            for cls in sc["classes"]:
+                if p["causeMix"].get(cls, 0) <= 0:
+                    errors.append(f"{where}: strikeCorrelation names cause class {cls!r} "
+                                  f"with no share in causeMix")
+            for cid in sc["claimIds"]:
+                if cid not in claim_by_id:
+                    errors.append(f"{where}: strikeCorrelation cites unknown claim {cid!r}")
 
     for uid, profs in sorted(profiles_by_unit.items()):
         profs = sorted(profs, key=lambda p: (p["t0"], p["t1"]))

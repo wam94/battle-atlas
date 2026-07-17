@@ -37,10 +37,13 @@ from validate_reconstruction import (
     SOURCES_PATH,
     Corpus,
     compiled_strength,
+    cumulative_losses,
     load_corpus,
     macro_strength_at,
     validate_corpus,
 )
+
+import strike_correlation
 
 REPO = Path(__file__).resolve().parent.parent.parent
 BUNDLE_PATH = REPO / "app/Assets/Battle/Angle/angle.bundle.json"
@@ -194,32 +197,36 @@ def compile_bundle(corpus: Corpus) -> dict:
             xs.append(round(x, 1))
             zs.append(round(z, 1))
             facings.append(round(facing, 1))
-            strengths.append(compiled_strength(start, profs, t))
             seg_index.append(si)
 
-        units_out.append({
+        out_segments = []
+        for s in segs:
+            seg_out = {
+                "id": s["id"],
+                "t0": s["t0"],
+                "t1": s["t1"],
+                "action": s["action"],
+                "provenance": segment_provenance(s, claim_by_id),
+                "formationFrom": s["formationFrom"],
+                "formationTo": s["formationTo"],
+                "paceProfile": s["paceProfile"],
+                "route": s["route"],
+                "obstacleIds": s.get("obstacleIds", []),
+                "claimIds": s["claimIds"],
+                "inferenceRules": s["inferenceRules"],
+            }
+            # angle-v2 P3: symmetric melee wiring rides into the bundle.
+            if "meleeOpponentId" in s:
+                seg_out["meleeOpponentId"] = s["meleeOpponentId"]
+            out_segments.append(seg_out)
+
+        unit_out = {
             "unitId": uid,
             "name": bu["name"],
             "side": bu["side"],
             "arm": u["arm"],
             "startStrength": start,
-            "segments": [
-                {
-                    "id": s["id"],
-                    "t0": s["t0"],
-                    "t1": s["t1"],
-                    "action": s["action"],
-                    "provenance": segment_provenance(s, claim_by_id),
-                    "formationFrom": s["formationFrom"],
-                    "formationTo": s["formationTo"],
-                    "paceProfile": s["paceProfile"],
-                    "route": s["route"],
-                    "obstacleIds": s.get("obstacleIds", []),
-                    "claimIds": s["claimIds"],
-                    "inferenceRules": s["inferenceRules"],
-                }
-                for s in segs
-            ],
+            "segments": out_segments,
             "casualtyProfiles": [
                 {
                     "id": p["id"],
@@ -238,10 +245,64 @@ def compile_bundle(corpus: Corpus) -> dict:
                 "x": xs,
                 "z": zs,
                 "facingDeg": facings,
-                "strength": strengths,
+                # strengths land in the post-pass below (strike-correlated
+                # profiles count their emitted fallTimes)
+                "strength": [],
                 "segmentIndex": seg_index,
             },
-        })
+        }
+        # angle-v2 P4/P5: cited unit-level vocabulary fields.
+        if "colorParty" in u:
+            unit_out["colorParty"] = u["colorParty"]["value"]
+            unit_out["colorPartyClaimIds"] = u["colorParty"]["claimIds"]
+        if "mountedOfficers" in u:
+            unit_out["mountedOfficers"] = [
+                {
+                    "officerId": mo["officerId"],
+                    "unitId": uid,
+                    "fallT": mo["fallT"],
+                    "backOffsetM": mo["backOffsetM"],
+                    "alongOffsetM": mo["alongOffsetM"],
+                    "claimIds": mo["claimIds"],
+                }
+                for mo in u["mountedOfficers"]
+            ]
+        if u["arm"] == "artillery":
+            unit_out["_shotTimes"] = strike_correlation.compile_cannon(
+                STAGING_SEED, uid, unit_out["segments"])
+        units_out.append(unit_out)
+
+    # ---- angle-v2 P2 post-pass (proposed ED-82): strike-correlated fall
+    # times, then per-second strengths (correlated profiles count their
+    # own emitted times; smooth profiles keep the closed-form curve).
+    strikes_by_unit = strike_correlation.compile_strikes(units_out)
+    profs_by_unit = profiles_by_unit  # canonical dicts (carry strikeCorrelation)
+    for unit_out in units_out:
+        uid = unit_out["unitId"]
+        unit_strikes = strikes_by_unit.get(uid, [])
+        fall_times_by_pid: dict[str, list[float]] = {}
+        for p in profs_by_unit.get(uid, []):
+            if "strikeCorrelation" in p and p["count"] > 0:
+                fall_times_by_pid[p["id"]] = strike_correlation.profile_fall_times(
+                    p, unit_strikes)
+        for p_out in unit_out["casualtyProfiles"]:
+            if p_out["id"] in fall_times_by_pid:
+                p_out["fallTimes"] = fall_times_by_pid[p_out["id"]]
+                src = next(p for p in profs_by_unit[uid] if p["id"] == p_out["id"])
+                p_out["strikeCorrelation"] = src["strikeCorrelation"]
+        profs = profs_by_unit.get(uid, [])
+        start = unit_out["startStrength"]
+        strengths = unit_out["perSecond"]["strength"]
+        for t in seconds:
+            losses = 0
+            for p in profs:
+                ft = fall_times_by_pid.get(p["id"])
+                if ft is not None:
+                    losses += strike_correlation.cumulative_fallen(ft, t)
+                else:
+                    losses += cumulative_losses([p], t)
+            strengths.append(start - losses)
+        unit_out.pop("_shotTimes", None)
 
     claims_index = {
         c["id"]: {

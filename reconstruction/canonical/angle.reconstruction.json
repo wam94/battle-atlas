@@ -6,7 +6,17 @@
     {
       "unitId": "csa-garnett",
       "arm": "infantry",
-      "startStrength": { "value": 1393, "basis": "macro track linear interpolation at t=8040 (1392.7), rounded (R-strength-interp-endpoints)", "claimIds": ["claim-strength-garnett"] }
+      "startStrength": { "value": 1393, "basis": "macro track linear interpolation at t=8040 (1392.7), rounded (R-strength-interp-endpoints)", "claimIds": ["claim-strength-garnett"] },
+      "mountedOfficers": [
+        {
+          "officerId": "csa-garnett-mounted-1",
+          "fallT": 8580,
+          "backOffsetM": -3,
+          "alongOffsetM": 0,
+          "claimIds": ["claim-garnett-death"],
+          "note": "Angle-v2 P5 under ED-81 (ADOPTED): AN anonymous mounted officer rides at the brigade's front center and falls where and when the record puts the fall — 'shot from his horse while near the center of the brigade, within about 25 paces of the stone wall' (peyton-or-1863; claim-garnett-death T5 clock t≈8580, envelope 8520-8700; geometry (4380,4868)±30 — the ride position at fallT is ~(4383,4868), 16 m from the traced wall). The figure carries no name, rank insignia, or identification (V&R §1); any product caption naming Garnett must quote the record, not the renderer. He rode against the dismount norm because he was too unwell to walk (claim-garnett-death)."
+        }
+      ]
     },
     {
       "unitId": "csa-kemper",
@@ -21,7 +31,12 @@
     {
       "unitId": "csa-fry",
       "arm": "infantry",
-      "startStrength": { "value": 958, "basis": "macro track linear interpolation at t=8040 (957.5), rounded (R-strength-interp-endpoints)", "claimIds": ["claim-strength-fry"] }
+      "startStrength": { "value": 958, "basis": "macro track linear interpolation at t=8040 (957.5), rounded (R-strength-interp-endpoints)", "claimIds": ["claim-strength-fry"] },
+      "colorParty": {
+        "value": 13,
+        "claimIds": ["claim-fry-color-bearers", "claim-fry-colors-at-works"],
+        "note": "Angle-v2 P4: the attested bearer-down counts summed across the brigade's regiments (1st Tenn 3 + 13th Ala 3 + 14th Tenn 4 + 7th Tenn 3 = 13, or-27-2-shepard). BRIGADE-GRAIN CAVEAT (disclosed simplification): csa-fry compiles as ONE brigade line, so the four attested regimental succession chains are wired as one 13-deep brigade color party at the line's center; a regiment-grain recast would carry one chain (and one staff) per regiment. Whether a grounded flag is CAPTURED is a semantic event deliberately not depicted (ColorGuard.cs); no bearer is a named person (V&R §1)."
+      }
     },
     {
       "unitId": "us-webb",
@@ -129,20 +144,32 @@
     },
     {
       "id": "seg-garnett-take-canister-at-wall",
-      "unitId": "csa-garnett", "t0": 8580, "t1": 8700,
+      "unitId": "csa-garnett", "t0": 8580, "t1": 8640,
       "action": "take_canister",
-      "route": [[4380, 4868], [4390, 4870]],
-      "formationFrom": "line", "formationTo": "scattered",
+      "route": [[4380, 4868], [4388, 4869.6]],
+      "formationFrom": "line", "formationTo": "line_disordered",
       "paceProfile": "slowing",
       "claimIds": ["claim-garnett-death", "claim-cas-canister-gaps"],
       "inferenceRules": ["R-macro-track-geometry"],
-      "note": "The brigade shatters in front of the wall, mixing with Armistead's arriving line; it never crosses as a body."
+      "note": "The brigade shatters in front of the wall under the double-canister storm, mixing with Armistead's arriving line. Angle-v2 data wave: the original 8580-8700 take_canister window is split here — its final minute is the melee Peyton's report attests (next segment)."
+    },
+    {
+      "id": "seg-garnett-wall-melee",
+      "unitId": "csa-garnett", "t0": 8640, "t1": 8700,
+      "action": "melee",
+      "meleeOpponentId": "us-69pa",
+      "route": [[4388, 4869.6], [4394, 4870.8]],
+      "formationFrom": "line_disordered", "formationTo": "scattered",
+      "paceProfile": "slowing",
+      "claimIds": ["claim-garnett-works-melee", "claim-cas-canister-gaps"],
+      "inferenceRules": ["R-macro-track-geometry"],
+      "note": "Angle-v2 P3: 'hand to hand, and of the most desperate character' (peyton-or-1863). Wired symmetrically against us-69pa (seg-69pa-wall-melee) so grapple pairs straddle the traced wall at figure grain; the compiled centroid stays west of the wall (the brigade never crosses as a body — the men over the wall are the figure-grain tail the pairing realizes)."
     },
     {
       "id": "seg-garnett-fall-back",
       "unitId": "csa-garnett", "t0": 8700, "t1": 9000,
       "action": "fall_back",
-      "route": [[4390, 4870], [4200, 4850]],
+      "route": [[4394, 4870.8], [4200, 4850]],
       "formationFrom": "scattered", "formationTo": "routed",
       "paceProfile": "steady",
       "claimIds": ["claim-repulse-sealed", "claim-cas-garnett-total"],
@@ -275,15 +302,26 @@
     },
     {
       "id": "seg-armistead-breach",
-      "unitId": "csa-armistead", "t0": 8640, "t1": 8700,
+      "unitId": "csa-armistead", "t0": 8640, "t1": 8670,
       "action": "breach",
-      "route": [[4385, 4860], [4415, 4855]],
+      "route": [[4385, 4860], [4402, 4857.2]],
       "obstacleIds": ["wall-angle-webb-front"],
-      "formationFrom": "line", "formationTo": "scattered",
+      "formationFrom": "line", "formationTo": "line_disordered",
       "paceProfile": "surge",
       "claimIds": ["claim-armistead-crossed-wall", "claim-armistead-party-strength", "claim-wall-structure"],
       "inferenceRules": ["R-crossing-duration-drill"],
-      "note": "The documented crossing: hat on sword point, 'Boys, give them the cold steel!' — ~150 men over the wall into Cushing's battery."
+      "note": "The documented crossing: hat on sword point, 'Boys, give them the cold steel!' — ~150 men over the wall into Cushing's battery. Angle-v2 data wave: the original 8640-8700 breach is split here — the crossing surge (this segment, wall crossed at x≈4400) and the fight inside the Angle (next segment)."
+    },
+    {
+      "id": "seg-armistead-works-melee",
+      "unitId": "csa-armistead", "t0": 8670, "t1": 8700,
+      "action": "melee",
+      "route": [[4402, 4857.2], [4415, 4855]],
+      "formationFrom": "line_disordered", "formationTo": "scattered",
+      "paceProfile": "slowing",
+      "claimIds": ["claim-armistead-works-melee", "claim-armistead-party-strength"],
+      "inferenceRules": ["R-macro-track-geometry"],
+      "note": "Angle-v2 P3: the crossed party's fight at the guns ('held the enemy at bay, using their muskets as clubs' — mcdermott-1889, the receiving side). No meleeOpponentId: the symmetric grapple wiring is Garnett-69pa; Armistead's tail resolves to unpaired bout work (clubbed swing / thrust / parry) inside the Angle — disclosed in angle-v2-data.md."
     },
     {
       "id": "seg-armistead-fall-back",
@@ -424,14 +462,28 @@
     },
     {
       "id": "seg-69pa-wall-crisis",
-      "unitId": "us-69pa", "t0": 8580, "t1": 8700,
+      "unitId": "us-69pa", "t0": 8580, "t1": 8640,
       "action": "fire_independent",
       "route": [[4402, 4830]],
       "formationFrom": "line", "formationTo": "line",
       "facingDeg": 262,
       "paceProfile": "static",
       "claimIds": ["claim-69pa-position", "claim-69pa-refused-flank"],
-      "inferenceRules": ["R-fire-window-from-events"]
+      "inferenceRules": ["R-fire-window-from-events"],
+      "note": "Angle-v2 data wave: the original 8580-8700 crisis window is split — independent fire while the column closes (this segment), then the wall melee (next)."
+    },
+    {
+      "id": "seg-69pa-wall-melee",
+      "unitId": "us-69pa", "t0": 8640, "t1": 8700,
+      "action": "melee",
+      "meleeOpponentId": "csa-garnett",
+      "route": [[4402, 4830]],
+      "formationFrom": "line", "formationTo": "line",
+      "facingDeg": 262,
+      "paceProfile": "static",
+      "claimIds": ["claim-69pa-refused-flank", "claim-69pa-position"],
+      "inferenceRules": ["R-hold-position-drift"],
+      "note": "Angle-v2 P3: Co. D 'held the enemy at bay, using their muskets as clubs' (mcdermott-1889) while Cos. I/A changed front and F was enveloped; the regiment never leaves the wall. Symmetric with seg-garnett-wall-melee. ED-4: us-72pa fights from the crest through this window (its counterattack to the wall is post-slice, t≈9300) and carries NO melee; us-71pa's own record is the fall-back (claim-71pa-fallback) — also no melee."
     },
     {
       "id": "seg-69pa-melee",
@@ -700,6 +752,7 @@
       "id": "cas-garnett-final-approach", "unitId": "csa-garnett", "t0": 8280, "t1": 8580, "count": 310,
       "intensityCurve": "rising", "causeMix": { "musketry": 0.45, "canister": 0.45, "unknown": 0.1 },
       "assessment": "reconstructed",
+      "strikeCorrelation": { "classes": ["canister"], "maxPerStrike": 10, "windowS": 30, "claimIds": ["claim-cas-shell-clusters", "claim-cas-canister-gaps"], "note": "Angle-v2 P2 (proposed ED-82): canister/shell-cause victims re-time to the compiled StrikeEvents; counts, identity, causes, window and aggregate curve shape (±windowS) unchanged." },
       "claimIds": ["claim-cas-canister-gaps", "claim-garnett-strength-decay-basis", "claim-cas-garnett-total"],
       "note": "Rising into canister range per claim-cas-canister-gaps."
     },
@@ -707,6 +760,7 @@
       "id": "cas-garnett-wall-fight", "unitId": "csa-garnett", "t0": 8580, "t1": 8700, "count": 200,
       "intensityCurve": "spike", "causeMix": { "musketry": 0.5, "canister": 0.4, "unknown": 0.1 },
       "assessment": "reconstructed",
+      "strikeCorrelation": { "classes": ["canister"], "maxPerStrike": 10, "windowS": 30, "claimIds": ["claim-cas-shell-clusters", "claim-cas-canister-gaps"], "note": "Angle-v2 P2 (proposed ED-82): canister/shell-cause victims re-time to the compiled StrikeEvents; counts, identity, causes, window and aggregate curve shape (±windowS) unchanged." },
       "claimIds": ["claim-garnett-death", "claim-cas-canister-gaps", "claim-cas-garnett-total"]
     },
     {
@@ -739,6 +793,7 @@
       "id": "cas-kemper-flank-and-front", "unitId": "csa-kemper", "t0": 8400, "t1": 8640, "count": 230,
       "intensityCurve": "rising", "causeMix": { "musketry": 0.6, "canister": 0.3, "unknown": 0.1 },
       "assessment": "reconstructed",
+      "strikeCorrelation": { "classes": ["canister"], "maxPerStrike": 10, "windowS": 30, "claimIds": ["claim-cas-shell-clusters", "claim-cas-canister-gaps"], "note": "Angle-v2 P2 (proposed ED-82): canister/shell-cause victims re-time to the compiled StrikeEvents; counts, identity, causes, window and aggregate curve shape (±windowS) unchanged." },
       "claimIds": ["claim-stannard-flank-fire", "claim-cas-canister-gaps", "claim-cas-kemper-total"]
     },
     {
@@ -764,12 +819,14 @@
       "id": "cas-armistead-closing", "unitId": "csa-armistead", "t0": 8280, "t1": 8640, "count": 310,
       "intensityCurve": "rising", "causeMix": { "musketry": 0.45, "canister": 0.45, "unknown": 0.1 },
       "assessment": "reconstructed",
+      "strikeCorrelation": { "classes": ["canister"], "maxPerStrike": 10, "windowS": 30, "claimIds": ["claim-cas-shell-clusters", "claim-cas-canister-gaps"], "note": "Angle-v2 P2 (proposed ED-82): canister/shell-cause victims re-time to the compiled StrikeEvents; counts, identity, causes, window and aggregate curve shape (±windowS) unchanged." },
       "claimIds": ["claim-cas-canister-gaps", "claim-cas-armistead-total"]
     },
     {
       "id": "cas-armistead-breach", "unitId": "csa-armistead", "t0": 8640, "t1": 8700, "count": 200,
       "intensityCurve": "spike", "causeMix": { "musketry": 0.55, "canister": 0.35, "unknown": 0.1 },
       "assessment": "reconstructed",
+      "strikeCorrelation": { "classes": ["canister"], "maxPerStrike": 10, "windowS": 30, "claimIds": ["claim-cas-shell-clusters", "claim-cas-canister-gaps"], "note": "Angle-v2 P2 (proposed ED-82): canister/shell-cause victims re-time to the compiled StrikeEvents; counts, identity, causes, window and aggregate curve shape (±windowS) unchanged." },
       "claimIds": ["claim-armistead-crossed-wall", "claim-cushing-canister", "claim-cas-armistead-total"]
     },
     {
@@ -789,6 +846,7 @@
       "id": "cas-fry-closing", "unitId": "csa-fry", "t0": 8340, "t1": 8580, "count": 220,
       "intensityCurve": "rising", "causeMix": { "musketry": 0.5, "canister": 0.4, "unknown": 0.1 },
       "assessment": "reconstructed",
+      "strikeCorrelation": { "classes": ["canister"], "maxPerStrike": 10, "windowS": 30, "claimIds": ["claim-cas-shell-clusters", "claim-cas-canister-gaps"], "note": "Angle-v2 P2 (proposed ED-82): canister/shell-cause victims re-time to the compiled StrikeEvents; counts, identity, causes, window and aggregate curve shape (±windowS) unchanged." },
       "claimIds": ["claim-cas-canister-gaps", "claim-strength-fry"]
     },
     {
