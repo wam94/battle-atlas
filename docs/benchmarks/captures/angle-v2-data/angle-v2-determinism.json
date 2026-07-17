@@ -1,0 +1,7 @@
+{
+  "range": {"t0": 8400, "frames": 300},
+  "freezeMetadataIdentical": true,
+  "logicalDigestsIdentical": true,
+  "worstDifferingPct": 0.35, "worstMaxChannelDelta": 24, "worstOutlierPixels": 2,
+  "pixelsWithinTolerance": true
+}
