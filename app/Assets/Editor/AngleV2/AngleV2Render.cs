@@ -164,10 +164,11 @@ namespace BattleAtlas.EditorTools
                 sb.Append(string.Format(Inv,
                     "    {{\"t\": {0}, \"horseClip\": \"{1}\", \"riderClip\": " +
                     "\"{2}\", \"riderDown\": {3}, \"horseVisible\": {4}, " +
-                    "\"x\": {5:F1}, \"z\": {6:F1}}}",
+                    "\"x\": {5:F1}, \"z\": {6:F1}",
                     t, ms.horseClip, ms.riderClip,
                     ms.riderDown ? "true" : "false",
                     ms.horseVisible ? "true" : "false", ms.posX, ms.posZ));
+                sb.Append("}");
             }
             sb.Append("\n  ],\n");
 
@@ -188,7 +189,8 @@ namespace BattleAtlas.EditorTools
             }
             sb.Append(string.Format(Inv,
                 "  \"meleePairs\": {{\"garnettPairsAt8676\": {0}, " +
-                "\"maxStepInM\": {1:F2}}},\n", pairs, maxReach));
+                "\"maxStepInM\": {1:F2}", pairs, maxReach));
+            sb.Append("},\n");
 
             // burst census: falls per second at the wall fight
             var falls = new Dictionary<int, int>();
