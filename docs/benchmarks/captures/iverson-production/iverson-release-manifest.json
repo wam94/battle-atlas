@@ -1,0 +1,39 @@
+{
+  "release": "soldier-view-media-v2-iverson",
+  "viewpointId": "iverson-forney-field",
+  "window": {
+    "t0": 5830,
+    "t1": 7040,
+    "padPastT1": 0.5,
+    "fps": 30,
+    "clock": "gettysburg-july1-afternoon (startTime 46800)"
+  },
+  "gitSha": "6dd419d6ce3d580b0ea9954ce5b88e81d024db14",
+  "renderGitSha": "6dd419d6ce3d580b0ea9954ce5b88e81d024db14",
+  "settingsHash": "79251743299540c642370edae4984f72113945a2646d60bcd646793016c95915",
+  "bundleChecksum": "ebb9e3b6095fa54bd047557f7320a8a5e5999c62219f2ee9b5df02b5713f7f9c",
+  "battleSeed": "2f15dd2f4e5e399e9899de45e5606a5610309dfad503ff472edf5e2edb09bf43",
+  "unityVersion": "6000.4.11f1",
+  "media": [
+    {
+      "name": "iverson-forney-field.full.mp4",
+      "kind": "full 2560x1440p30",
+      "bytes": 1982330100,
+      "sha256": "aca0536d3e17cc671e3cc7c2c39b8dd9da13e473602fc17e85ad3323250325a7",
+      "durationS": 1210.5,
+      "avgVideoPlusAudioMbit": 13.1,
+      "codec": "H.264 yuv420p + AAC 192k, 1 keyframe/s, faststart"
+    },
+    {
+      "name": "iverson-forney-field.proxy.mp4",
+      "kind": "proxy 1280x720p30",
+      "bytes": 397709639,
+      "sha256": "1345d5b889e20e4b7c1b9dd78c0b1053691fb7c34fdc8e5f8e3b360fed392d51",
+      "durationS": 1210.5,
+      "avgVideoPlusAudioMbit": 2.63,
+      "codec": "H.264 yuv420p + AAC 192k, 1 keyframe/s, faststart"
+    }
+  ],
+  "publishCommand": "gh release create soldier-view-media-v2-iverson app/RenderOutput/iverson/iverson-forney-field.full.mp4 app/RenderOutput/iverson/iverson-forney-field.proxy.mp4 docs/benchmarks/captures/iverson-production/iverson-release-manifest.json --title 'Soldier View media v2 \u2014 iverson-forney-field' --notes-file docs/benchmarks/captures/iverson-production/iverson-release-notes.md",
+  "note": "OWNER publishes. Do not publish from the executor slice."
+}
