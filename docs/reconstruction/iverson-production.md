@@ -1,5 +1,49 @@
 # Iverson production render — `iverson-forney-field` (second Soldier View film)
 
+## RESUME STATE (checkpoint 2026-07-17, owner-ordered pause)
+
+**DONE (all evidence committed/pushed on `iverson-production`):**
+ED-21 seed re-pin + tests; cross-phase entry wiring + per-viewpoint
+content warning + PlayMode coverage; terrain inputs regenerated and
+byte-verified; preflight PASS; determinism pair PASS; **the full
+production render COMPLETE** (36,315/36,315 frames, 21/21 chunks
+rendered + harvested, zero lost frames); audio events + stems + mix;
+full + proxy encodes (sha256 in §7) with decoded-count verification;
+release manifest/notes; five production stills; EditMode suite 454+1
+of 455 PASS; tool 119 / pipeline 66 / reconstruction 162+1 PASS.
+Media staged in `app/Assets/StreamingAssets/SoldierView/` and kept in
+`app/RenderOutput/iverson/` (both gitignored). NO render/harvest/encode
+process of this slice is running or needed — the media pipeline is
+finished.
+
+**IN FLIGHT / REMAINING (exact next commands):**
+1. **Quiet-machine PlayMode re-run** (the only open verification). The
+   first full run (`playmode-results.xml`, kept in the worktree) ran
+   while another executor's production render saturated the machine:
+   21/24 passed incl. ALL new Iverson tests; the two failures are the
+   PRE-EXISTING dev-proxy sync tests `SoldierViewPlayerSyncTests.
+   {Seek_OutsideWindow_ClampsToDecodableRange, SeekLatency_MeasuredAcrossWindow}`
+   (drift/timeout under load — load-flaky, not code), and the Iverson
+   seek medians are contended (median 218.8 ms / worst 365 ms — NOT
+   contract numbers). When `pgrep -f "MacOS/Unity.*batchmode"` is
+   clear:
+   ```sh
+   cd <worktree> && "$UNITY" -batchmode -projectPath app \
+     -buildTarget OSXUniversal -runTests -testPlatform PlayMode \
+     -testResults playmode-results.xml -logFile iverson-playmode2.log
+   # then: app/iverson-seek-latency.json carries the contract numbers;
+   # update §8/§10 and the suite table with the quiet-run results
+   ```
+2. Fill §10 (suites final) + §11 (film-safety verdict — the byte checks
+   are already recorded in the git history of this report's commits)
+   and §12 (stills index); final push. No merge (owner instruction).
+
+**Branch head at checkpoint:** see `git log` — every artifact above is
+already pushed; nothing uncommitted remains in the worktree beyond
+run logs (`iverson-*.log`, `*-results.xml`, kept untracked by design).
+
+---
+
 **Status:** executor evidence for the `iverson-production` slice.
 **Authorization:** the design gate PASSED (owner: 12th NC observer,
 first person, window t=5830..7040, smoke AS-IS) and the named blocker
