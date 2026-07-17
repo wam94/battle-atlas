@@ -1,0 +1,12 @@
+{
+  "viewpoint": "cushing-canister",
+  "window": {"t0": 8400, "t1": 8760.5},
+  "coarsePairsChecked": 33895620,
+  "suspectWindowsRefined": 3982,
+  "crossingExitHandoffs": 3982,
+  "cameraFrames": 10815, "cameraMaxDeltaM": 0.0000,
+  "boundPerFrameM": 0.267, "crossExitBoundM": 1.567, "cameraBoundM": 0.150,
+  "violations": [],
+  "pass": true,
+  "sweepSeconds": 78
+}
