@@ -96,7 +96,9 @@ namespace BattleAtlas
         // Phase 12 accessibility (plan §12 P12): persisted options and the
         // deterministic caption track for the Soldier View voice layers
         AccessibilityOptions options;
-        CaptionTrack captionTrack;
+        // one caption track per filmed viewpoint (webb-cushing slice):
+        // selection follows the ACTIVE viewpoint in UpdateCaptions
+        readonly List<CaptionTrack> captionTracks = new List<CaptionTrack>();
 
         bool warningOpen;
         bool creditsOpen;
@@ -304,8 +306,25 @@ namespace BattleAtlas
                 gate = new ContentWarningGate(new PlayerPrefsStore(), warningDoc.version);
             credits = LoadStreamingJson("credits.json", CreditsManifest.FromJson);
             options = new AccessibilityOptions(new PlayerPrefsStore());
-            captionTrack = LoadStreamingJson(
+            // caption tracks: the garnett-era captions.json (loud when
+            // missing — it shipped with the first film) plus a quiet
+            // captions-<id>.json probe per additional committed viewpoint
+            captionTracks.Clear();
+            var garnettTrack = LoadStreamingJson(
                 "SoldierView/captions.json", CaptionTrack.FromJson);
+            if (garnettTrack != null) captionTracks.Add(garnettTrack);
+            if (viewpoints?.viewpoints != null)
+            {
+                foreach (ViewpointDefinition vp in viewpoints.viewpoints)
+                {
+                    if (vp.development) continue;
+                    string file = CaptionTrack.FileFor(vp.id);
+                    if (file == "SoldierView/captions.json") continue;
+                    var track = LoadStreamingJsonQuiet(
+                        file, CaptionTrack.FromJson);
+                    if (track != null) captionTracks.Add(track);
+                }
+            }
         }
 
         // The per-phase moments lookup (ADR 0005, day-expansion slice 2),
@@ -1326,8 +1345,11 @@ namespace BattleAtlas
 
         void UpdateCaptions()
         {
-            string text = options.CaptionsEnabled && captionTrack != null
-                ? captionTrack.TextAt(clock.CurrentTime) : "";
+            CaptionTrack track = player != null && player.Active != null
+                ? CaptionTrack.ForViewpoint(captionTracks, player.Active.id)
+                : null;
+            string text = options.CaptionsEnabled && track != null
+                ? track.TextAt(clock.CurrentTime) : "";
             svCaptions.text = text;
             svCaptions.style.display = text.Length > 0
                 ? DisplayStyle.Flex : DisplayStyle.None;

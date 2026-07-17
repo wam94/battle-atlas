@@ -1,0 +1,16 @@
+{
+  "viewpoint": "cushing-canister",
+  "range": {"t0": 8520, "frames": 300},
+  "freezeMetadataIdentical": true,
+  "logicalAndPoseDigestsIdentical": true,
+  "worstDifferingPct": 0.01, "worstMaxChannelDelta": 31, "worstOutlierPixels": 2,
+  "toleranceMaxChannelDelta": 12, "toleranceDifferingPct": 8, "toleranceOutlierPixels": 8,
+  "pixelsWithinTolerance": true,
+  "sampledFrames": [
+    {"frame": 0, "differingPct": 0.01, "maxChannelDelta": 3, "outlierPixels": 0},
+    {"frame": 60, "differingPct": 0.00, "maxChannelDelta": 1, "outlierPixels": 0},
+    {"frame": 120, "differingPct": 0.00, "maxChannelDelta": 0, "outlierPixels": 0},
+    {"frame": 180, "differingPct": 0.00, "maxChannelDelta": 0, "outlierPixels": 0},
+    {"frame": 240, "differingPct": 0.00, "maxChannelDelta": 1, "outlierPixels": 0}
+  ]
+}

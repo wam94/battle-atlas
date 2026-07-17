@@ -1,0 +1,63 @@
+{
+  "release": "soldier-view-media-cushing-canister-v1",
+  "viewpointId": "cushing-canister",
+  "window": {
+    "t0": 8400,
+    "t1": 8760,
+    "padPastT1": 0.5,
+    "fps": 30
+  },
+  "gitSha": "bb79cc61e25b51ab6a98782c43359fa488fa48c1",
+  "renderFreeze": {
+    "gitSha": "bb79cc61e25b51ab6a98782c43359fa488fa48c1",
+    "unityVersion": "6000.4.11f1",
+    "pipelineAssetPath": "Assets/Settings/HDRP/BattleAtlasHDRP_Offline.asset",
+    "pipelineAssetSha256": "3aa760a6c990e90ed2590df8874034f2591cd39008b449926276c88f445f7a1d",
+    "packagesLockSha256": "eb6b3a91a59cd90523bd17f0256fba2925916a15819be82cf250783f88028c28",
+    "colorSpace": "Linear",
+    "bundleChecksum": "47c6f1832243307dc4b5eaac34032b16a315320229524dc887720ba382370d9b",
+    "battleSeed": "d470c4691d0de414534c4ecce93efd3a2fac74373d472899af8465df7e2f7ac1",
+    "viewpointId": "cushing-canister",
+    "viewKind": "first_person",
+    "slotId": 44,
+    "window": {
+      "t0": 8400,
+      "t1": 8760,
+      "padPastT1": 0.5
+    },
+    "output": {
+      "width": 2560,
+      "height": 1440,
+      "fps": 30
+    },
+    "lensGuardRadiusM": 0.6,
+    "maxWheelFlankSpeedMps": 3,
+    "inputChecksums": {
+      "heightmap.json": "7cee0557e93c0101f3dc16ab2a616d4f02da7b817ae88861a4538acc876e3c8e",
+      "heightmap.raw": "0202e4376f960805b0aee298809084690b4576d1818386d692576eb37427678a",
+      "environment.json": "abc8f52c7f4faedd17b68f860c8adc980dfc3ca9fa95578d3f88ca69f9b2999d",
+      "environment_splat.raw": "5b5b3151e1a6edac66532b4db3dda5de47acec9c77da492de61609d711bdebe5"
+    },
+    "settingsHash": "2fbed41f3b38b7dc12508adbea05cfc65e4594833156505429e44d4e7f84305d"
+  },
+  "media": [
+    {
+      "name": "cushing-canister.full.mp4",
+      "kind": "full 2560x1440p30",
+      "bytes": 431728399,
+      "sha256": "69c6be7f56b0aa64ec7bfbebf4ce8d7c7d7fdb19fa4c264331e2dc66580909fd",
+      "durationS": 360.5,
+      "avgVideoPlusAudioMbit": 9.58,
+      "codec": "H.264 yuv420p + AAC 192k, 1 keyframe/s, faststart"
+    },
+    {
+      "name": "cushing-canister.proxy.mp4",
+      "kind": "proxy 1280x720p30",
+      "bytes": 103710405,
+      "sha256": "75067d24dc21c1b6238582bd072c4e0ed3ebbac9b23bfbad1122744429bb7a3a",
+      "durationS": 360.5,
+      "avgVideoPlusAudioMbit": 2.3,
+      "codec": "H.264 yuv420p + AAC 192k, 1 keyframe/s, faststart"
+    }
+  ]
+}

@@ -14,8 +14,9 @@ public class ViewpointDefinitionTests
         var set = ViewpointSet.FromJson(File.ReadAllText(CommittedJsonPath));
         // Phase 9: the required hero viewpoint (plan §3.4) joins the
         // Phase 1 dev fixture. The Iverson's-field design-stage viewpoint
-        // (second film) is third.
-        Assert.AreEqual(3, set.viewpoints.Length);
+        // (second film) is third. The plan's two named Angle extensions
+        // (webb-wall OP-2, cushing-canister OP-3) are fourth and fifth.
+        Assert.AreEqual(5, set.viewpoints.Length);
 
         var hero = set.viewpoints[0];
         Assert.AreEqual("garnett-road-to-angle", hero.id);
@@ -55,6 +56,41 @@ public class ViewpointDefinitionTests
         Assert.AreEqual(1.66f, iv.camera.eyeHeightM);
         StringAssert.Contains("Representative unnamed soldier", iv.editorialNote);
         Assert.IsNull(iv.Validate());
+
+        // The defender's view at the outer-angle wall (OP-2). Same July 3
+        // clock and window as the hero viewpoint: the SAME compiled bundle
+        // states, seen from the receiving line.
+        var webb = set.viewpoints[3];
+        Assert.AreEqual("webb-wall", webb.id);
+        Assert.AreEqual("us-71pa", webb.unitId);
+        Assert.AreEqual(230, webb.slotId);
+        Assert.AreEqual(8160.0, webb.t0, 1e-9);
+        Assert.AreEqual(8820.0, webb.t1, 1e-9);
+        Assert.AreEqual(1.66f, webb.camera.eyeHeightM);
+        Assert.AreEqual(68f, webb.camera.fovDeg);
+        Assert.AreEqual(0.35f, webb.camera.stabilization);
+        Assert.AreEqual("first_person", webb.viewKind);
+        Assert.IsTrue(webb.media.HasFull);
+        Assert.AreEqual("SoldierView/webb-wall.full.mp4", webb.media.full);
+        StringAssert.Contains("Representative unnamed soldier", webb.editorialNote);
+        StringAssert.Contains("ED-22", webb.editorialNote);
+        Assert.IsNull(webb.Validate());
+
+        // The gun-crew view at Cushing's battery (OP-3). The observer is
+        // an unnamed crew position, never Lt. Cushing himself (ED-3).
+        var cc = set.viewpoints[4];
+        Assert.AreEqual("cushing-canister", cc.id);
+        Assert.AreEqual("us-btty-cushing", cc.unitId);
+        Assert.AreEqual(44, cc.slotId);
+        Assert.AreEqual(8400.0, cc.t0, 1e-9);
+        Assert.AreEqual(8760.0, cc.t1, 1e-9);
+        Assert.AreEqual(1.66f, cc.camera.eyeHeightM);
+        Assert.AreEqual("first_person", cc.viewKind);
+        Assert.IsTrue(cc.media.HasFull);
+        Assert.AreEqual("SoldierView/cushing-canister.full.mp4", cc.media.full);
+        StringAssert.Contains("NOT Lieutenant Cushing", cc.editorialNote);
+        StringAssert.Contains("ED-3", cc.editorialNote);
+        Assert.IsNull(cc.Validate());
     }
 
     [Test]

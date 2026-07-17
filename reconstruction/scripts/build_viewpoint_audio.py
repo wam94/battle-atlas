@@ -84,9 +84,15 @@ GROAN_FRACTION = 0.3    # of nearby scheduled casualties voiced (sober)
 GROAN_RANGE_M = 32.0
 
 # observer-segment actions that carry a shout burst (voices_unit); shared
-# with generate_captions.py so a caption exists exactly where a shout does
+# with generate_captions.py so a caption exists exactly where a shout does.
+# webb-cushing slice: fire_by_rank / fire_independent / close_gap added for
+# the DEFENDING observers (the line opening fire and the seal are the loud
+# human moments of the receiving side). The shipped garnett viewpoint has
+# none of these actions in its segment list, so its mix and captions are
+# byte-unchanged.
 NOISY_ACTIONS = {"cross_obstacle", "take_canister", "waver",
-                 "fall_back", "rout", "breach"}
+                 "fall_back", "rout", "breach",
+                 "fire_by_rank", "fire_independent", "close_gap"}
 
 
 def h01(seed: str, stem: str, i: int, salt: int = 0) -> float:
@@ -265,6 +271,16 @@ def build(events: dict, pack_root: Path, out_dir: Path,
     seed = events["seed"]
     w0 = float(t0 if t0 is not None else events["window"]["t0"])
     w1 = float(t1 if t1 is not None else events["window"]["t1"])
+    # Observer identity (webb-cushing slice): newer event exports carry
+    # observerUnit/observerSide so a DEFENDING (Union) observer mixes
+    # correctly — the whiz layer keys on enemy fire relative to the
+    # observer's side, and the strike stem keeps every compiled impact
+    # within earshot instead of the garnett-era own-unit shortcut. The
+    # legacy garnett export has neither key; both defaults reproduce the
+    # shipped garnett stems byte-for-byte.
+    obs_unit = events.get("observerUnit")          # None => legacy export
+    obs_side = events.get("observerSide", "confederate")
+    enemy_side = "union" if obs_side == "confederate" else "confederate"
     track = ObserverTrack(events["observer"])
     pack = SamplePack(pack_root)
     stems: dict[str, StemWriter] = {}
@@ -312,10 +328,10 @@ def build(events: dict, pack_root: Path, out_dir: Path,
             clips = shots_far if r > 260.0 else shots
             clip = pack.pick(clips, seed, "musketry", i)
             mus.add(at, clip, distance_gain(r, MUSKET_REF_M), pan)
-        # §9.3 projectile layer: a hash minority of enemy fire inside
-        # whiz range passes near the observer's file (the CSA line is the
-        # target of every staged Union musket)
-        if (e["side"] == "union" and r < WHIZ_RANGE_M and
+        # §9.3 projectile layer: a hash minority of ENEMY fire inside
+        # whiz range passes near the observer's file (relative to the
+        # observer's side; legacy garnett exports default to enemy=union)
+        if (e["side"] == enemy_side and r < WHIZ_RANGE_M and
                 h01(seed, "whiz", i) < WHIZ_FRACTION):
             ball_at = e["t"] + r / 300.0  # minie ball mean flight speed
             if in_window(ball_at):
@@ -327,8 +343,9 @@ def build(events: dict, pack_root: Path, out_dir: Path,
     stk = stem("strikes")
     dirt = pack.variants("Strike")
     for i, e in enumerate(events["strikes"]):
-        if e.get("unitId") != "csa-garnett":
-            continue  # only the observer's unit's impacts are near enough
+        if obs_unit is None and e.get("unitId") != "csa-garnett":
+            continue  # legacy export: only the observer's unit's impacts
+            # were near enough (garnett-era shortcut, kept byte-exact)
         r, pan = geometry(track, e["t"], e["x"], e["z"])
         at = arrival(e["t"], r)
         if not in_window(at) or r > 120.0:

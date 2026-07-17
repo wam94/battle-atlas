@@ -55,6 +55,31 @@ namespace BattleAtlas
         // window cannot wall the screen. Empty string = nothing visible.
         public const int MaxLines = 2;
 
+        // Multi-viewpoint selection (webb-cushing slice): each film owns
+        // its own caption track (its captions mirror ITS mix's voice
+        // events), so the HUD must show the track addressing the ACTIVE
+        // viewpoint and nothing when none does — a garnett caption inside
+        // the webb-wall soundscape would caption a sound that is not
+        // there. Pure so the EditMode suite can pin it.
+        public static CaptionTrack ForViewpoint(
+            System.Collections.Generic.IReadOnlyList<CaptionTrack> tracks,
+            string viewpointId)
+        {
+            if (tracks == null || string.IsNullOrEmpty(viewpointId)) return null;
+            foreach (CaptionTrack track in tracks)
+                if (track != null && track.viewpointId == viewpointId)
+                    return track;
+            return null;
+        }
+
+        // Where a non-default viewpoint's caption track lives:
+        // captions.json stays the garnett-era file (byte-untouched);
+        // additional films ship captions-<viewpointId>.json beside it.
+        public static string FileFor(string viewpointId) =>
+            viewpointId == "garnett-road-to-angle"
+                ? "SoldierView/captions.json"
+                : $"SoldierView/captions-{viewpointId}.json";
+
         public string TextAt(double t)
         {
             if (captions == null || captions.Length == 0) return "";

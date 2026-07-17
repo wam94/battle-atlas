@@ -1,0 +1,16 @@
+{
+  "viewpoint": "webb-wall",
+  "range": {"t0": 8600, "frames": 300},
+  "freezeMetadataIdentical": true,
+  "logicalAndPoseDigestsIdentical": true,
+  "worstDifferingPct": 0.02, "worstMaxChannelDelta": 14, "worstOutlierPixels": 1,
+  "toleranceMaxChannelDelta": 12, "toleranceDifferingPct": 8, "toleranceOutlierPixels": 8,
+  "pixelsWithinTolerance": true,
+  "sampledFrames": [
+    {"frame": 0, "differingPct": 0.02, "maxChannelDelta": 2, "outlierPixels": 0},
+    {"frame": 60, "differingPct": 0.00, "maxChannelDelta": 0, "outlierPixels": 0},
+    {"frame": 120, "differingPct": 0.00, "maxChannelDelta": 1, "outlierPixels": 0},
+    {"frame": 180, "differingPct": 0.00, "maxChannelDelta": 4, "outlierPixels": 0},
+    {"frame": 240, "differingPct": 0.00, "maxChannelDelta": 0, "outlierPixels": 0}
+  ]
+}

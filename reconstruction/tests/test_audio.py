@@ -222,3 +222,61 @@ def test_wounded_voices_are_sparse_and_nearby_only(mini_pack, tmp_path):
     bva.build(doc, mini_pack, out, None, None)
     vw = load_stem(out, "voices_wounded")
     assert float(np.abs(vw).max()) == 0.0
+
+
+# --------------------------------------------------------------------------
+# Defending-observer mixes (webb-wall / cushing-canister slice): newer
+# event exports carry observerUnit/observerSide; legacy garnett exports
+# have neither and must keep their shipped byte behavior.
+# --------------------------------------------------------------------------
+
+def test_whiz_layer_keys_on_enemy_fire_relative_to_observer_side(
+        mini_pack, tmp_path):
+    # Union observer: CONFEDERATE fire whizzes, Union fire does not.
+    # (Many discharges so at least one passes the 5% hash gate.)
+    shots = [{"t": 100.3 + 0.02 * i, "x": 0.0, "z": 60.0,
+              "side": "confederate"} for i in range(200)]
+    doc = events_doc(observerUnit="us-71pa", observerSide="union",
+                     musketDischarges=shots)
+    out_enemy = tmp_path / "enemy"
+    bva.build(doc, mini_pack, out_enemy, None, None)
+    assert float(np.abs(load_stem(out_enemy, "projectiles")).max()) > 0.0
+
+    for s in shots:
+        s["side"] = "union"  # friendly fire: never a pass-by
+    out_friendly = tmp_path / "friendly"
+    bva.build(doc, mini_pack, out_friendly, None, None)
+    assert float(np.abs(load_stem(out_friendly, "projectiles")).max()) == 0.0
+
+
+def test_strikes_near_observer_are_kept_regardless_of_unit_when_tagged(
+        mini_pack, tmp_path):
+    # With observerUnit present, a compiled impact 7 m away is audible even
+    # when it belongs to ANOTHER unit's strike stream (the receiving line
+    # hears the canister tearing ground in front of the wall)...
+    strike = [{"t": 104.0, "x": 5.0, "z": 5.0, "unitId": "csa-garnett"}]
+    doc = events_doc(observerUnit="us-71pa", observerSide="union",
+                     strikes=strike)
+    out = tmp_path / "tagged"
+    bva.build(doc, mini_pack, out, None, None)
+    assert float(np.abs(load_stem(out, "strikes")).max()) > 0.0
+
+    # ...while a legacy (untagged) export keeps the garnett-era own-unit
+    # filter byte-exactly: the same impact under another unitId is dropped.
+    legacy = events_doc(strikes=[
+        {"t": 104.0, "x": 5.0, "z": 5.0, "unitId": "us-webb"}])
+    out2 = tmp_path / "legacy"
+    bva.build(legacy, mini_pack, out2, None, None)
+    assert float(np.abs(load_stem(out2, "strikes")).max()) == 0.0
+
+
+def test_defender_segment_actions_carry_shout_bursts(mini_pack, tmp_path):
+    # fire_by_rank / fire_independent / close_gap are NOISY_ACTIONS now
+    # (defending observers); the garnett segment vocabulary is unaffected.
+    assert {"fire_by_rank", "fire_independent", "close_gap"} <= bva.NOISY_ACTIONS
+    doc = events_doc(observerUnit="us-71pa", observerSide="union",
+                     observerSegments=[{"id": "s", "t0": 102.0, "t1": 109.0,
+                                        "action": "fire_by_rank"}])
+    out = tmp_path / "out"
+    bva.build(doc, mini_pack, out, None, None)
+    assert float(np.abs(load_stem(out, "voices_unit")).max()) > 0.0

@@ -50,6 +50,25 @@ namespace BattleAtlas
                 // regiment, so the ED-22 exemption coincides with a real
                 // survival population (see the viewpoint's editorialNote).
                 { "csa-12nc", new[] { 184 } },
+                // webb-wall (OP-2, the plan's named defender-side
+                // extension): slot 230 = rear rank of file 73 in the 71st
+                // Pennsylvania (313 slots -> 157 files) — the P9 rear-rank
+                // lesson again; just left of the regimental center at the
+                // outer-angle wall, in the compiled gap between two of
+                // Cushing's pieces, so the front rank, the wall, and the
+                // arriving charge all read from a forward-facing camera.
+                // The receiving line ALSO takes casualties (48 of 313
+                // in-window): the ED-22 exemption is disclosed in the
+                // viewpoint's editorialNote, and the observer's survival
+                // coincides with the regiment's documented majority.
+                { "us-71pa", new[] { 230 } },
+                // cushing-canister (OP-3, the plan's named gun-crew
+                // extension): slot 44 = gun 2's rearmost left serving
+                // position (crew slots are gun + 6*member; member 7 of 8,
+                // 6.1 m behind the piece at the trail). NOT Lt. Cushing
+                // (ED-3): no slot asserts his identity; his documented
+                // death rides claim-cushing-death, never a slot fate.
+                { "us-btty-cushing", new[] { 44 } },
             };
 
         public static bool IsProtected(string unitId, int slot)
