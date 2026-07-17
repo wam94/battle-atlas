@@ -1,0 +1,23 @@
+{
+  "gitSha": "4047c2b23d4d97d46d689419d5c59c83684fd1a8",
+  "unityVersion": "6000.4.11f1",
+  "pipelineAssetPath": "Assets/Settings/HDRP/BattleAtlasHDRP_Offline.asset",
+  "pipelineAssetSha256": "3aa760a6c990e90ed2590df8874034f2591cd39008b449926276c88f445f7a1d",
+  "packagesLockSha256": "eb6b3a91a59cd90523bd17f0256fba2925916a15819be82cf250783f88028c28",
+  "colorSpace": "Linear",
+  "bundleChecksum": "ebb9e3b6095fa54bd047557f7320a8a5e5999c62219f2ee9b5df02b5713f7f9c",
+  "battleSeed": "2f15dd2f4e5e399e9899de45e5606a5610309dfad503ff472edf5e2edb09bf43",
+  "viewpointId": "iverson-forney-field",
+  "viewKind": "first_person",
+  "slotId": 184,
+  "window": {"t0": 5830, "t1": 7040, "padPastT1": 0.5},
+  "output": {"width": 2560, "height": 1440, "fps": 30},
+  "lensGuardRadiusM": 0.6, "maxWheelFlankSpeedMps": 3,
+  "inputChecksums": {
+    "heightmap.json": "af826c48c9a5561c42252c0f7cb3d4b7b27cdc085e16444f2d8e9520a6ceca41",
+    "heightmap.raw": "7fa411ac5afed2d9ee632c900b1708ac7f636772973d410485149b868037ddfe",
+    "environment.json": "02a9e7c328f18108bb02a254830e58056c1fdbd273f4d0b55f1714258b418e01",
+    "environment_splat.raw": "379820f9d24d535709ed7f9bdd246b1236738a65324385bbb191e7b7b1ae8f90"
+  },
+  "settingsHash": "79251743299540c642370edae4984f72113945a2646d60bcd646793016c95915"
+}
