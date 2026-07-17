@@ -245,8 +245,9 @@ pixel diff):
 | wide Atlas t=420/3600/7200 | 57 / 56 / 0 | HUD-scale registration only |
 
 Perf floor: `av2-perf-j3a-benchmark.json` (default camera, 8 timestamps
-across signal-guns → repulse) — no measurable regression against the
-established ~59.5 avg-FPS floor.
+across signal-guns → repulse). NOTE: sampled while the iverson
+production render saturated the machine (~49 avg FPS under that load);
+re-sampled in a clear window before the final numbers below.
 
 ## 9. P7 comparison proof — front vs rear framing
 
