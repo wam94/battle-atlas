@@ -53,6 +53,7 @@ namespace BattleAtlas
             public Vector2 anchor;    // this slot's stance point (macro)
             public float facingDeg;   // toward the opponent
             public bool lead;         // plays Grapple_A (lead) or _B
+            public int partnerSlot;   // the opposing roster's slot id
         }
 
         static string Key(string seed, string unitId, string segId) =>
@@ -223,6 +224,7 @@ namespace BattleAtlas
                 t0 = pairT0,
                 tEnd = tEnd,
                 lead = selfLead,
+                partnerSlot = selfLead ? followSlot : leadSlot,
                 anchor = selfLead
                     ? mid - dir * (PairSeparationM / 2f)
                     : mid + dir * (PairSeparationM / 2f),

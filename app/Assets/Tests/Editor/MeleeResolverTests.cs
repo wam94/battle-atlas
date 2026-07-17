@@ -104,26 +104,23 @@ public class MeleeResolverTests
         {
             var a = SoldierActionResolver.Resolve(Ctx, csa.unitIndex, slot, t);
             if (a.clip != ClipId.MeleeGrappleA) continue;
-            // his opposite number plays the anti-phase half at clinch
-            // separation, facing back at him
-            bool matched = false;
-            for (int v = 0; v < us.slotCount; v++)
-            {
-                var b = SoldierActionResolver.Resolve(Ctx, us.unitIndex, v, t);
-                if (b.clip != ClipId.MeleeGrappleB) continue;
-                float d = new Vector2(a.posX - b.posX, a.posZ - b.posZ)
-                    .magnitude;
-                if (d > MeleeChoreo.PairSeparationM + 0.15f) continue;
-                Assert.AreEqual(MeleeChoreo.PairSeparationM, d, 0.15f);
-                float facing = Mathf.Abs(Mathf.DeltaAngle(
-                    a.facingDeg, b.facingDeg));
-                Assert.AreEqual(180f, facing, 1f,
-                    "grapplers must face each other");
-                matched = true;
-                break;
-            }
-            Assert.IsTrue(matched,
-                $"csa slot {slot} grapples with no opposite number");
+            // the pair contract names his opposite number directly
+            var seg = csa.unit.SegmentAt(t);
+            Assert.IsTrue(MeleeChoreo.TryPair(
+                Ctx, csa, seg, slot, t, out var pair));
+            var b = SoldierActionResolver.Resolve(
+                Ctx, us.unitIndex, pair.partnerSlot, t);
+            Assert.AreEqual(ClipId.MeleeGrappleB, b.clip,
+                $"csa {slot}'s partner us {pair.partnerSlot} must play " +
+                "the anti-phase half");
+            float d = new Vector2(a.posX - b.posX, a.posZ - b.posZ)
+                .magnitude;
+            Assert.AreEqual(MeleeChoreo.PairSeparationM, d, 0.05f,
+                "the clinch holds its separation");
+            float facing = Mathf.Abs(Mathf.DeltaAngle(
+                a.facingDeg, b.facingDeg));
+            Assert.AreEqual(180f, facing, 0.1f,
+                "grapplers must face each other");
             pairs++;
         }
         Assert.Greater(pairs, 2, "the hash share must realize some pairs");
