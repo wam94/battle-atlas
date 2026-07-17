@@ -78,6 +78,79 @@ namespace BattleAtlas.EditorTools
         public static void RenderFrontRankProof() => Run(FrontRankProofInner);
         public static void DumpVocabEvidence() => Run(DumpVocabEvidenceInner);
         public static void ProbeCameraYaw() => Run(ProbeCameraYawInner);
+        public static void RenderVocabStills() => Run(VocabStillsInner);
+
+        // The wired vocab moments as committed stills (free cameras, the
+        // AngleV2VocabGateRender pattern, but from the REAL v2 bundle):
+        // the wall melee, Fry's carried colors at the works, and the
+        // mounted-officer fall arc.
+        static void VocabStillsInner()
+        {
+            var (scene, rt, tex) = GateP9Render.Boot(
+                out var prevDefault, out var prevQuality, out var prevGlobal);
+            try
+            {
+                Directory.CreateDirectory(EvidenceDir);
+                void Aim(Vector2 camPos, Vector2 lookAt,
+                    float eye = 1.9f, float fov = 55f)
+                {
+                    float Ground(Vector2 m) =>
+                        scene.terrain.transform.position.y +
+                        scene.terrain.SampleHeight(new Vector3(
+                            m.x - scene.cropX0, 0f, m.y - scene.cropZ0));
+                    var cp = new Vector3(camPos.x - scene.cropX0,
+                        Ground(camPos) + eye, camPos.y - scene.cropZ0);
+                    var lp = new Vector3(lookAt.x - scene.cropX0,
+                        Ground(lookAt) + 1.1f, lookAt.y - scene.cropZ0);
+                    scene.camera.transform.position = cp;
+                    scene.camera.transform.rotation =
+                        Quaternion.LookRotation(lp - cp, Vector3.up);
+                    scene.camera.fieldOfView = fov;
+                }
+                var shots = new (string name, float t, Vector2 cam, Vector2 look, float fov)[]
+                {
+                    // the mounted officer's arc at the brigade center
+                    ("av2-mounted-8570-riding", 8570f,
+                        new Vector2(4362f, 4850f), new Vector2(4381f, 4867f), 55f),
+                    ("av2-mounted-8581-rear", 8581.5f,
+                        new Vector2(4364f, 4852f), new Vector2(4383f, 4868f), 50f),
+                    ("av2-mounted-8590-down", 8590f,
+                        new Vector2(4368f, 4854f), new Vector2(4383f, 4868f), 50f),
+                    // the wall melee (Garnett vs the 69th, pairs + bouts)
+                    ("av2-melee-8655-wall", 8655f,
+                        new Vector2(4384f, 4886f), new Vector2(4397f, 4866f), 58f),
+                    ("av2-melee-8680-wall-close", 8680f,
+                        new Vector2(4390f, 4880f), new Vector2(4398f, 4868f), 50f),
+                    // the burst spike on the approach (strike dust + falls)
+                    ("av2-burst-8560-approach", 8560f,
+                        new Vector2(4350f, 4830f), new Vector2(4378f, 4864f), 62f),
+                    // Fry's colors carried at the works (the P4 finding)
+                    ("av2-colors-8660-fry-works", 8660f,
+                        new Vector2(4358f, 4894f), new Vector2(4381f, 4914f), 55f),
+                };
+                bool warmed = false;
+                foreach (var shot in shots)
+                {
+                    Aim(shot.cam, shot.look, fov: shot.fov);
+                    scene.Pose(shot.t);
+                    if (!warmed)
+                    {
+                        for (int i = 0; i < 3; i++)
+                            GateP6Render.RenderOnce(scene.camera, rt, null);
+                        warmed = true;
+                    }
+                    GateP6Render.RenderOnce(scene.camera, rt, null);
+                    GateP6Render.RenderOnce(scene.camera, rt, tex);
+                    string p = Path.Combine(EvidenceDir, $"{shot.name}.png");
+                    File.WriteAllBytes(p, tex.EncodeToPNG());
+                    Debug.Log($"AngleV2Render: wrote {p}");
+                }
+            }
+            finally
+            {
+                GateP9Render.Restore(prevDefault, prevQuality, prevGlobal);
+            }
+        }
 
         // Diagnostic: fine-grained camera pose components around a failing
         // comfort-bound window (writes angle-v2-yaw-probe.csv).
