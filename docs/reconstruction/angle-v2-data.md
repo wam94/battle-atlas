@@ -229,6 +229,25 @@ then cushing, hold priority).
 
 <!-- RENDER-RESULTS -->
 
+### 8b. Atlas before/after captures (`docs/benchmarks/captures/angle-v2-data/`)
+
+`scripts/angle-v2-captures.sh` (BenchmarkHarness standalone, before =
+pristine pre-wave `gettysburg-july3.json`, 1600×1000, threshold-10
+pixel diff):
+
+| pair | px differ (of 1,600,000) | reading |
+|---|---|---|
+| column close-cam t=420 | 543 | the new signal-guns keyframes register (labels/dots) |
+| column close-cam t=3600 | 530 | the mid-bombardment thinning (≤13 men/brigade) registers |
+| column close-cam t=7200 | **0** | citation-only edit — value untouched, pixel-identical |
+| Angle close-cam t=8160 | **0** | THE FILM-WINDOW INVARIANT, seen visually |
+| Angle close-cam t=8700 | **0** | ditto at the climax |
+| wide Atlas t=420/3600/7200 | 57 / 56 / 0 | HUD-scale registration only |
+
+Perf floor: `av2-perf-j3a-benchmark.json` (default camera, 8 timestamps
+across signal-guns → repulse) — no measurable regression against the
+established ~59.5 avg-FPS floor.
+
 ## 9. P7 comparison proof — front vs rear framing
 
 `AngleV2Render.RenderFrontRankProof`: the same 30 climax seconds
