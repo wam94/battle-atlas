@@ -43,3 +43,5 @@ app/cushing-canister-seek-latency.json
 *-audio-events.log
 editmode-final.xml
 playmode-sync.xml
+app/iverson-seek-latency.json
+.render-logs/

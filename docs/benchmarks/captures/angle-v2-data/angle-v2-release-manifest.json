@@ -1,0 +1,38 @@
+{
+  "release": "soldier-view-media-v2-PENDING-OWNER-REVIEW",
+  "supersedes": "soldier-view-media-v2 (superseding-pending-owner-review: the shipped v1 media stays untouched on disk and in the release until the owner adopts v2)",
+  "viewpointId": "garnett-road-to-angle.v2",
+  "window": {
+    "t0": 8160,
+    "t1": 8820,
+    "padPastT1": 0.5,
+    "fps": 30
+  },
+  "gitSha": "4613194cf3b72a986183456400d762167f5ca485",
+  "renderGitSha": "4613194cf3b72a986183456400d762167f5ca485",
+  "settingsHash": "996bab3cd85e0840fe2ad1f6f4073504053fa9232b95010d59a630951a004ce0",
+  "bundleChecksum": "1f613b3ccff5cb73327ab0dadc7cc21ad913b4ff4aa7f714992da2e666ebffcf",
+  "unityVersion": "6000.4.11f1",
+  "media": [
+    {
+      "name": "garnett-road-to-angle.v2.full.mp4",
+      "kind": "full 2560x1440p30",
+      "bytes": 1689781747,
+      "sha256": "22160783608a142692f0d241b787bf553f58f93e29e2b90ddee21d44f025174f",
+      "durationS": 660.5,
+      "avgVideoPlusAudioMbit": 20.47,
+      "codec": "H.264 yuv420p + AAC 192k, 1 keyframe/s, faststart"
+    },
+    {
+      "name": "garnett-road-to-angle.v2.proxy.mp4",
+      "kind": "proxy 1280x720p30",
+      "bytes": 336832911,
+      "sha256": "bff2d2f1b98541558870986932994060f7d6451dd08064c1369a11576ea825fb",
+      "durationS": 660.5,
+      "avgVideoPlusAudioMbit": 4.08,
+      "codec": "H.264 yuv420p + AAC 192k, 1 keyframe/s, faststart"
+    }
+  ],
+  "publishCommand": "gh release create soldier-view-media-v2 app/RenderOutput/angle-v2/garnett-road-to-angle.v2.full.mp4 app/RenderOutput/angle-v2/garnett-road-to-angle.v2.proxy.mp4 docs/benchmarks/captures/angle-v2-data/angle-v2-release-manifest.json --title 'Soldier View media v2 (PENDING OWNER REVIEW) \u2014 garnett-road-to-angle' --notes-file docs/benchmarks/captures/angle-v2-data/angle-v2-release-notes.md",
+  "note": "Owner publishes at Phase 12 (plan \u00a712). Do not publish from Phase 10."
+}

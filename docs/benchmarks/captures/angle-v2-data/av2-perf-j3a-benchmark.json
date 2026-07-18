@@ -5,13 +5,13 @@
   "clockStartTime": 46800,
   "clockEndTime": 23340,
   "samples": [
-    {"t": 0, "screenshot": "av2-perf-j3a-t0.png", "frames": 493, "avgFps": 49.3, "p95FrameMs": 48.07, "worstFrameMs": 78.22, "allocatedMB": 323.0, "reservedMB": 442.8},
-    {"t": 420, "screenshot": "av2-perf-j3a-t420.png", "frames": 492, "avgFps": 49.1, "p95FrameMs": 48.83, "worstFrameMs": 67.20, "allocatedMB": 323.1, "reservedMB": 442.8},
-    {"t": 3600, "screenshot": "av2-perf-j3a-t3600.png", "frames": 500, "avgFps": 49.9, "p95FrameMs": 47.25, "worstFrameMs": 78.06, "allocatedMB": 323.1, "reservedMB": 442.8},
-    {"t": 7200, "screenshot": "av2-perf-j3a-t7200.png", "frames": 488, "avgFps": 48.8, "p95FrameMs": 47.26, "worstFrameMs": 70.54, "allocatedMB": 323.1, "reservedMB": 442.8},
-    {"t": 7500, "screenshot": "av2-perf-j3a-t7500.png", "frames": 494, "avgFps": 49.3, "p95FrameMs": 47.89, "worstFrameMs": 83.03, "allocatedMB": 323.1, "reservedMB": 442.8},
-    {"t": 8160, "screenshot": "av2-perf-j3a-t8160.png", "frames": 493, "avgFps": 49.2, "p95FrameMs": 42.39, "worstFrameMs": 73.54, "allocatedMB": 323.1, "reservedMB": 442.8},
-    {"t": 8700, "screenshot": "av2-perf-j3a-t8700.png", "frames": 492, "avgFps": 49.1, "p95FrameMs": 44.17, "worstFrameMs": 65.61, "allocatedMB": 323.2, "reservedMB": 442.8},
-    {"t": 9000, "screenshot": "av2-perf-j3a-t9000.png", "frames": 501, "avgFps": 50.1, "p95FrameMs": 46.54, "worstFrameMs": 69.37, "allocatedMB": 323.1, "reservedMB": 442.8}
+    {"t": 0, "screenshot": "av2-perf-j3a-t0.png", "frames": 597, "avgFps": 59.6, "p95FrameMs": 17.35, "worstFrameMs": 21.97, "allocatedMB": 322.7, "reservedMB": 442.8},
+    {"t": 420, "screenshot": "av2-perf-j3a-t420.png", "frames": 595, "avgFps": 59.5, "p95FrameMs": 17.42, "worstFrameMs": 21.91, "allocatedMB": 322.8, "reservedMB": 442.8},
+    {"t": 3600, "screenshot": "av2-perf-j3a-t3600.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.21, "worstFrameMs": 21.53, "allocatedMB": 322.7, "reservedMB": 442.8},
+    {"t": 7200, "screenshot": "av2-perf-j3a-t7200.png", "frames": 596, "avgFps": 59.5, "p95FrameMs": 17.37, "worstFrameMs": 24.93, "allocatedMB": 322.7, "reservedMB": 442.8},
+    {"t": 7500, "screenshot": "av2-perf-j3a-t7500.png", "frames": 595, "avgFps": 59.4, "p95FrameMs": 17.52, "worstFrameMs": 23.20, "allocatedMB": 322.8, "reservedMB": 442.8},
+    {"t": 8160, "screenshot": "av2-perf-j3a-t8160.png", "frames": 596, "avgFps": 59.6, "p95FrameMs": 17.25, "worstFrameMs": 22.68, "allocatedMB": 322.8, "reservedMB": 442.8},
+    {"t": 8700, "screenshot": "av2-perf-j3a-t8700.png", "frames": 598, "avgFps": 59.7, "p95FrameMs": 17.13, "worstFrameMs": 22.72, "allocatedMB": 322.8, "reservedMB": 442.8},
+    {"t": 9000, "screenshot": "av2-perf-j3a-t9000.png", "frames": 597, "avgFps": 59.7, "p95FrameMs": 17.15, "worstFrameMs": 22.34, "allocatedMB": 322.8, "reservedMB": 442.8}
   ]
 }

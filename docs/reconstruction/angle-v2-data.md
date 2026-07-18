@@ -189,26 +189,43 @@ production staging (`AngleActionScene.StageVocabExtras`). No caption
 names the figure (ED-81 §3: a product caption naming Garnett must quote
 the record, not the renderer).
 
-## 7. Suites (floors in parentheses)
+## 7. Suites (floors in parentheses) — FINAL, on the merged branch
+
+Re-run in full after merging `origin/main` @ f7b6570 (the
+iverson-production merge: five-viewpoint registry, webb-cushing +
+iverson tests). The union-resolved `AtlasHudModelTests.cs` /
+`ViewpointDefinitionTests.cs` compiled and ran clean — no fix needed.
 
 | suite | result |
 |---|---|
 | tool vitest | **119** (119) |
 | pipeline pytest | **66** (66) |
-| reconstruction pytest | **159 + 1 skip** (159+1) |
-| Unity EditMode | **479 of 479 passed** (floor 478+1 — the former terrain-material self-skip RAN: crops/bakes present in the worktree) |
-| Unity PlayMode | **21 of 21 passed** (floor 20+1 — the production-media-conditional seek test RAN against the copied v1 media) |
+| reconstruction pytest | **166 passed, 0 skipped** (floor 162+1 — the audio-events-conditional caption test RAN: export present) |
+| Unity EditMode | **495 of 495 passed, 0 skipped** (floor ~454–479 with environment-dependent skips — every conditional test RAN: crops/bakes/media present in the worktree) |
+| Unity PlayMode | **26 of 26 passed, 0 skipped** (floor 23–24 — ALL four production-media seek batteries RAN: v1 garnett + iverson + webb-wall + cushing media staged into the worktree, each sha-verified against its committed manifest before staging) |
+
+One environment repair during the re-run, disclosed: the worktree's
+gitignored `docs/benchmarks/captures/p9-gate/p9-audio-events.json` was
+a stale regeneration (not the main checkout's copy, the documented
+convention) and failed `test_committed_captions_match_the_event_export`
+on the first pass; restoring the main checkout's copy (sha
+`1328cc6948df7ee3…`) made the suite green. Environment contamination,
+not a determinism failure — no tracked file changed.
 
 Unity CLI: `-batchmode -runTests -buildTarget OSXUniversal`, worktree
-Library, no `-nographics`; gitignored inputs copied from the main
-checkout / sibling worktrees; `CartographyStage.PrepareScene` run once
-before any test; `Atlas.unity` fileID churn reverted per convention.
+Library, no `-nographics`; both suites on a quiet machine (no
+concurrent render); gitignored inputs copied from the main checkout /
+sibling worktrees; `CartographyStage.PrepareScene` run once before any
+test; `Atlas.unity` fileID churn reverted per convention. Seek latency
+on the real media (12 seeks each): garnett v1 median 33.5 / worst
+66.5 ms; iverson 56.1 / 133.0; webb-wall 33.5 / 66.6; cushing 33.5 /
+50.1 (`app/*-seek-latency.json`).
 Two pre-existing tests were updated for v2 content, both disclosed in
 §3: the lens-guard test now DERIVES its offender set from the compiled
 content (the v1 hand-pinned slots were schedule fixtures) and carries
 the designed crossing-exit exemption the preflight already had.
 
-## 8. The v2 render (P10 pattern) — RESULTS PENDING RENDER QUEUE
+## 8. The v2 render (P10 pattern) — COMPLETE
 
 Preflight (the global no-teleport gate over the NEW states): **PASS** —
 62,110,620 coarse pairs, 10,777 suspect windows refined (ALL of them
@@ -227,7 +244,44 @@ regenerated: it captions the shipped v1 media), and the release-style
 manifest are recorded below when the render mutex clears (iverson,
 then cushing, hold priority).
 
-<!-- RENDER-RESULTS -->
+### 8a. Render results (FINAL)
+
+- **19,815 frames** (t=8160..8820 + 0.5 s pad, 2560×1440p30) across
+  **12 resumable chunks**, rolling-harvested to delivery-codec chunk
+  mp4s (disk-constrained mode B). Weighted **0.281 s/frame**,
+  **1.55 h pure render**; survived the machine's expected batch-Unity
+  SIGKILLs across attempts with zero lost frames (the loop resumed at
+  the first incomplete chunk each time).
+- **Provenance split, disclosed:** chunks 0–4 rendered at branch head
+  `3e012a4` (pre-merge), chunks 5–11 at `4613194` (after merging
+  origin/main f7b6570, per the coordinator's resume order). ALL 12
+  chunk manifests carry the identical `bundleChecksum 1f613b3ccff5…`
+  and `settingsHash 996bab3cd85e0840…` — the merge touched no render
+  input (verified: heightmap/environment checksums match the freeze
+  record; the Angle bundle is byte-identical across the merge). The
+  determinism-relevant fields are uniform; only the bookkeeping SHA
+  differs.
+- **Encode** (`scripts/angle-v2-encode.sh`, mode B lossless concat,
+  decoded frame count re-verified = 19,815):
+  - `garnett-road-to-angle.v2.full.mp4` — 1,689,781,747 bytes,
+    ~20.47 Mbit/s, sha256 `22160783608a142692f0d241b787bf553f58f93e29e2b90ddee21d44f025174f`
+  - `garnett-road-to-angle.v2.proxy.mp4` — 336,832,911 bytes,
+    ~4.08 Mbit/s, sha256 `bff2d2f1b98541558870986932994060f7d6451dd08064c1369a11576ea825fb`
+- **Audio:** stems + mix rebuilt byte-deterministically from the
+  committed `angle-v2-audio-events.json` (per-stem sha16s in
+  `stems-full/stems.sha256`; mix `a65dce8823ace3b7`), muxed AAC 192k.
+- **v2 captions:** `captions-v2.json` (69 cues) rides beside the
+  media; the committed v1 `captions.json` untouched (it captions the
+  shipped v1 media).
+- **Media locations (both, per the never-only-in-the-worktree rule):**
+  the worktree's `app/RenderOutput/angle-v2/` AND the main checkout's
+  `app/RenderOutput/angle-v2/` — all four deliverables (full, proxy,
+  2 P7 proof clips) sha-verified against `angle-v2-media.sha256` at
+  the destination after copy.
+- Release manifest + notes:
+  `docs/benchmarks/captures/angle-v2-data/angle-v2-release-manifest.json`
+  / `angle-v2-release-notes.md` (owner publishes at Phase 12; marked
+  PENDING-OWNER-REVIEW).
 
 ### 8b. Atlas before/after captures (`docs/benchmarks/captures/angle-v2-data/`)
 
@@ -245,9 +299,11 @@ pixel diff):
 | wide Atlas t=420/3600/7200 | 57 / 56 / 0 | HUD-scale registration only |
 
 Perf floor: `av2-perf-j3a-benchmark.json` (default camera, 8 timestamps
-across signal-guns → repulse). NOTE: sampled while the iverson
-production render saturated the machine (~49 avg FPS under that load);
-re-sampled in a clear window before the final numbers below.
+across signal-guns → repulse). FINAL numbers re-sampled on the quiet
+machine (no concurrent render): **avg 59.4–59.7 FPS at every
+timestamp** (display-capped 60), p95 frame 17.1–17.5 ms, worst
+21.5–24.9 ms, allocated ~323 MB flat. (The earlier ~49 FPS sample was
+taken under concurrent iverson render load, as disclosed.)
 
 ## 9. P7 comparison proof — front vs rear framing
 
@@ -259,7 +315,46 @@ schedule (fallT = ∞; neighbors 180–189 mostly survive too — the harness
 fails loudly rather than silently re-slotting). Side-by-side stills in
 `docs/benchmarks/captures/angle-v2-data/av2-p7-*.png`.
 
-<!-- P7-RESULTS -->
+**RESULTS:** both slots rendered (900 frames each, t=8640–8670,
+front-184 at 0.37 s/frame, rear-881 at 0.35 s/frame; the slot-184
+survival guard passed — no re-slotting). Side-by-side stills at
+t=8642/8655/8668:
+`docs/benchmarks/captures/angle-v2-data/av2-p7-{front-184,rear-881}-t*.png`.
+Watchable 30 s clips, encoded with the pinned delivery settings
+(CRF 18, 1 kf/s, silent — the proof compares framing, not mix):
+
+- `av2-p7-front-184.mp4` — 91,906,748 bytes, sha256
+  `bbd24a9d9c5265930be841c63276baed68a58b595abe238161dceaa08b4463a4`
+- `av2-p7-rear-881.mp4` — 86,213,047 bytes, sha256
+  `5ea75b868fdd76a0cbe964eeebd02e6d82f8d6514ff578300850189200086498`
+
+Both in the worktree AND main-checkout `app/RenderOutput/angle-v2/`,
+sha-verified after copy; hashes appended to `angle-v2-media.sha256`.
+
+## 9b. Film-safety verdict (FINAL): SAFE
+
+- **v1 media untouched on disk:** the main checkout's staged
+  `app/Assets/StreamingAssets/SoldierView/garnett-road-to-angle.full.mp4`
+  / `.proxy.mp4` sha-verified against the committed
+  `p10-media.sha256` — `50c4725e6a904511…` / `57e164bd7c4255c6…`,
+  exact match. Every v2 output lives under `app/RenderOutput/angle-v2/`
+  and `docs/benchmarks/captures/angle-v2-data/`; nothing writes the v1
+  paths.
+- **stagingSeed pin HELD:** the production freeze records `battleSeed`
+  `d470c4691d0de414534c4ecce93efd3a2fac74373d472899af8465df7e2f7ac1`
+  verbatim, identical in all 12 chunk manifests' freeze basis.
+- **The v2 bundle changes are the authorized ones** committed by the
+  prior executor (bundle checksum `1f613b3ccff5…`, §0) — not
+  re-adjudicated here; this wave's finisher performed only mechanical
+  completion (merge, render resume, encode, suites, copies).
+- **Evidence index:** preflight `angle-v2-preflight.json` (PASS, 0
+  violations); determinism `angle-v2-determinism.json` (PASS, digests
+  bitwise identical); freeze `angle-v2-freeze.json`; chunk manifests
+  `app/RenderOutput/angle-v2/manifests/chunk_000..011.json`; media
+  hashes `angle-v2-media.sha256`; release manifest/notes; P7 stills +
+  clips (§9); before/after captures + quiet-machine perf (§8b); seek
+  latency `app/*-seek-latency.json`; suite XMLs in the worktree's
+  `.render-logs/`.
 
 ## 10. Proposed EDs and owner checklist
 
@@ -268,8 +363,12 @@ fails loudly rather than silently re-slotting). Side-by-side stills in
   the film review.
 - **Owner questions:**
   1. The v2 film itself (rear-rank slot 881, unchanged framing) — the
-     review gate this branch waits on.
-  2. P7 framing: rear (v1) vs front (slot 184) — §9 stills.
+     review gate this branch waits on. Watch
+     `app/RenderOutput/angle-v2/garnett-road-to-angle.v2.full.mp4`
+     (main checkout; proxy beside it).
+  2. P7 framing: rear (v1) vs front (slot 184) — §9 stills, plus the
+     two 30 s clips `av2-p7-front-184.mp4` / `av2-p7-rear-881.mp4`
+     in the same directory.
   3. The colors finding (§4): authorize a chain-aware victim preference
      (changes in-window draws) or accept the carried-colors depiction?
   4. ED-82 adoption (§2).
