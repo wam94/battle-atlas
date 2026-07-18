@@ -88,6 +88,62 @@ public class AtlasHudModelTests
     }
 
     [Test]
+    public void EntryMarkers_AllCommittedViewpointsInTheirOverlappingWindows()
+    {
+        // webb-cushing slice: three July 3 films share the timeline. The
+        // marker column must carry exactly the viewpoints whose windows
+        // cover the clock — the flow AtlasHud.UpdateEntryMarkers walks.
+        var set = ViewpointSet.FromJson(System.IO.File.ReadAllText(
+            System.IO.Path.Combine(UnityEngine.Application.streamingAssetsPath,
+                "SoldierView/viewpoints.json")));
+
+        int VisibleAt(double t)
+        {
+            int n = 0;
+            foreach (ViewpointDefinition vp in set.viewpoints)
+                if (HudModel.EntryMarkerVisible(vp, t)) n++;
+            return n;
+        }
+
+        Assert.AreEqual(0, VisibleAt(8000.0), "before every window");
+        Assert.AreEqual(2, VisibleAt(8200.0),
+            "garnett + webb-wall before the canister phase");
+        Assert.AreEqual(3, VisibleAt(8500.0),
+            "all three July 3 films overlap at the wall fight");
+        Assert.AreEqual(2, VisibleAt(8790.0),
+            "cushing-canister closes at 8760");
+        Assert.AreEqual(0, VisibleAt(8830.0), "after every window");
+
+        // dev-timecode never markers even inside its window
+        foreach (ViewpointDefinition vp in set.viewpoints)
+            if (vp.development)
+                Assert.IsFalse(HudModel.EntryMarkerVisible(vp, 8165.0));
+    }
+
+    [Test]
+    public void ViewpointHomeAsset_PrefersTheViewpointsOwnPhase()
+    {
+        // cross-phase films (Iverson production slice): a viewpoint with
+        // its own battleAsset gates to THAT phase; one without keeps the
+        // set's home asset (the pre-slice behavior)
+        const string setHome = "gettysburg-july3";
+        Assert.AreEqual(setHome,
+            HudModel.ViewpointHomeAsset(new ViewpointDefinition(), setHome));
+        Assert.AreEqual(setHome, HudModel.ViewpointHomeAsset(null, setHome));
+        var iv = new ViewpointDefinition
+        {
+            battleAsset = "gettysburg-july1-afternoon",
+        };
+        Assert.AreEqual("gettysburg-july1-afternoon",
+            HudModel.ViewpointHomeAsset(iv, setHome));
+        // composed with the phase gate: applies on its own phase only
+        Assert.IsTrue(HudModel.ViewpointsApplyTo(
+            HudModel.ViewpointHomeAsset(iv, setHome), "gettysburg-july1-afternoon"));
+        Assert.IsFalse(HudModel.ViewpointsApplyTo(
+            HudModel.ViewpointHomeAsset(iv, setHome), setHome));
+    }
+
+    [Test]
     public void DevelopmentFlag_DefaultsFalseFromJson()
     {
         // absent field = product viewpoint (JsonUtility zero-default)

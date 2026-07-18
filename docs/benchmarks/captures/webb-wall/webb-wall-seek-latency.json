@@ -1,0 +1,5 @@
+{
+  "description": "SoldierView seek-settle latency, production 2560x1440p30 H.264 GOP30 full media (webb-wall)",
+  "seeks": 12, "medianMs": 33.3, "worstMs": 50.1,
+  "latenciesMsSorted": [16.7, 33.2, 33.2, 33.2, 33.2, 33.3, 33.3, 33.3, 33.3, 33.5, 50.1, 50.1]
+}

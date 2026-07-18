@@ -80,4 +80,90 @@ public class ContentWarningGateTests
             "{\"version\":0,\"warning\":{\"body\":\"b\",\"acknowledgeLabel\":\"a\","
             + "\"declineLabel\":\"d\"}}"));
     }
+
+    // ---------------- per-viewpoint overrides (Iverson production slice)
+
+    const string DocWithOverride =
+        "{\"version\":1,\"warning\":{\"title\":\"T\",\"body\":\"B\","
+        + "\"acknowledgeLabel\":\"A\",\"declineLabel\":\"D\"},"
+        + "\"representativeObserver\":{\"title\":\"OT\",\"body\":\"OB\","
+        + "\"shortLine\":\"OS\"},"
+        + "\"viewpointOverrides\":[{\"viewpointId\":\"vp-x\",\"version\":3,"
+        + "\"warning\":{\"title\":\"XT\",\"body\":\"XB\"},"
+        + "\"representativeObserver\":{\"title\":\"XOT\",\"body\":\"XOB\","
+        + "\"shortLine\":\"XOS\"}}]}";
+
+    [Test]
+    public void Override_ResolvesPerViewpoint_AndFallsBackToDefault()
+    {
+        var doc = ContentWarningDoc.FromJson(DocWithOverride);
+        // the overridden viewpoint gets its own text; missing button
+        // labels fall back to the default's (shared mechanics)
+        var w = doc.WarningFor("vp-x");
+        Assert.AreEqual("XT", w.title);
+        Assert.AreEqual("XB", w.body);
+        Assert.AreEqual("A", w.acknowledgeLabel);
+        Assert.AreEqual("D", w.declineLabel);
+        Assert.AreEqual("XOS", doc.ObserverFor("vp-x").shortLine);
+        // any other viewpoint (and null) keeps the default
+        Assert.AreEqual("B", doc.WarningFor("vp-other").body);
+        Assert.AreEqual("B", doc.WarningFor(null).body);
+        Assert.AreEqual("OS", doc.ObserverFor("vp-other").shortLine);
+        Assert.IsNull(doc.OverrideFor("vp-other"));
+        Assert.AreEqual(3, doc.OverrideFor("vp-x").version);
+    }
+
+    [Test]
+    public void OverrideAcknowledgement_IsPerViewpoint()
+    {
+        // acknowledging the default warning says nothing about a film
+        // with its own override — and vice versa
+        var store = new FakeStore();
+        var def = new ContentWarningGate(store, 1);
+        var vpx = new ContentWarningGate(store, 3,
+            ContentWarningGate.KeyForViewpoint("vp-x"));
+        def.Acknowledge();
+        Assert.IsFalse(def.NeedsAcknowledgement);
+        Assert.IsTrue(vpx.NeedsAcknowledgement,
+            "the default acknowledgement must not satisfy an override gate");
+        vpx.Acknowledge();
+        Assert.IsFalse(vpx.NeedsAcknowledgement);
+        Assert.AreEqual(1, store.GetInt(ContentWarningGate.PrefsKey, 0));
+        Assert.AreEqual(3, store.GetInt(
+            ContentWarningGate.KeyForViewpoint("vp-x"), 0));
+    }
+
+    [Test]
+    public void MalformedOverride_IsRejected()
+    {
+        // override without a body
+        Assert.Throws<ArgumentException>(() => ContentWarningDoc.FromJson(
+            "{\"version\":1,\"warning\":{\"body\":\"b\",\"acknowledgeLabel\":\"a\","
+            + "\"declineLabel\":\"d\"},\"viewpointOverrides\":[{"
+            + "\"viewpointId\":\"vp-x\",\"version\":1,\"warning\":{\"title\":\"t\"}}]}"));
+        // override with version 0
+        Assert.Throws<ArgumentException>(() => ContentWarningDoc.FromJson(
+            "{\"version\":1,\"warning\":{\"body\":\"b\",\"acknowledgeLabel\":\"a\","
+            + "\"declineLabel\":\"d\"},\"viewpointOverrides\":[{"
+            + "\"viewpointId\":\"vp-x\",\"version\":0,\"warning\":{\"body\":\"xb\"}}]}"));
+    }
+
+    [Test]
+    public void CommittedWarningDoc_CarriesTheIversonOverride()
+    {
+        // the design slice's text (iverson-viewpoint-design.md §7) ships
+        // BESIDE the Angle warning with its own acknowledgement
+        string path = UnityEngine.Application.dataPath
+            + "/StreamingAssets/SoldierView/content-warning.json";
+        ContentWarningDoc doc = ContentWarningDoc.FromJson(File.ReadAllText(path));
+        var ov = doc.OverrideFor("iverson-forney-field");
+        Assert.IsNotNull(ov, "iverson-forney-field warning override must ship");
+        Assert.GreaterOrEqual(ov.version, 1);
+        StringAssert.Contains("Iverson's North Carolinians", ov.warning.body);
+        StringAssert.Contains("12th North Carolina",
+            ov.representativeObserver.body);
+        // the default (Angle) warning is untouched by the addition
+        StringAssert.Contains("at the Angle", doc.warning.body);
+        Assert.AreNotEqual(doc.warning.body, doc.WarningFor("iverson-forney-field").body);
+    }
 }

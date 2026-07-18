@@ -12,5 +12,22 @@
     "body": "No one's, and everyone's in that line. The viewpoint walks with formation slot 881 of Garnett's Virginia brigade — a rear-rank man on the brigade's left — a representative, unnamed soldier, not an identified person. No diary, letter, or service record places a specific man at this spot; the reconstruction does not pretend otherwise.\n\nThe men around the camera march, fire, fall, and die according to the same aggregate evidence that drives the whole reconstruction — unit strengths, loss totals, timing windows — distributed to individual figures deterministically. None of them is an identified casualty.\n\nOne editorial liberty is disclosed here: the observer himself is exempt from the casualty draw, so that the viewpoint can witness its full eleven minutes. Garnett's brigade lost roughly half its men in that hour; the odds this particular man walked away unhurt were real, but they were not good. His survival is a choice we made so you could see — not a claim about what happened to anyone.",
     "shortLine": "A representative, unnamed soldier — not an identified person."
   },
-  "docPath": "docs/reconstruction/soldier-view-content-warning.md"
+  "docPath": "docs/reconstruction/soldier-view-content-warning.md",
+  "viewpointOverrides": [
+    {
+      "viewpointId": "iverson-forney-field",
+      "version": 1,
+      "warning": {
+        "title": "Before you enter Soldier View",
+        "body": "You are about to watch a reconstruction of the destruction of a Confederate brigade at Gettysburg — Iverson's North Carolinians in the fields north of town, July 1, 1863 — from inside the one regiment that came through it largely intact. It depicts, explicitly and without relief: a massed volley fired into a line of men at close range, soldiers killed and wounded in great numbers in a few minutes, the dead lying where they fall — in the straight line their commander described — and the sounds of battle, including the wounded.\n\nThis field saw some of the most concentrated killing of the war. Nothing here is dramatized for effect; casualties occur where and when the reconstruction's evidence places them, and the depiction is held deliberately sober. It is still a depiction of mass violence, and it is meant to be difficult.\n\nIf you prefer not to watch this, the Atlas view presents the same events at map scale.",
+        "acknowledgeLabel": "I understand — enter Soldier View",
+        "declineLabel": "Stay in the Atlas"
+      },
+      "representativeObserver": {
+        "title": "Whose eyes are these?",
+        "body": "No one's, and everyone's in that regiment. The viewpoint stands with formation slot 184 of the 12th North Carolina — a rear-rank man near the regiment's left, a representative, unnamed soldier, not an identified person. No diary, letter, or service record places a specific man at this spot; the reconstruction does not pretend otherwise.\n\nThe 12th North Carolina is the regiment the record itself keeps standing: posted on the brigade's sheltered right, it lost lightly while the three regiments beside it were destroyed, and it did not surrender. The observer's survival through the window is still a disclosed editorial exemption — his slot is excluded from the casualty draw, and the unit's totals are unchanged — but here that choice coincides with what happened to his regiment, not against it.\n\nThe men around the camera march, fire, fall, and die according to the same aggregate evidence that drives the whole reconstruction. None of them is an identified casualty. One thing the record describes is not yet shown, and we say so rather than fake it: the survivors of the left regiments surrendered where they lay, and the film ends before the surrender.",
+        "shortLine": "A representative, unnamed soldier — not an identified person."
+      }
+    }
+  ]
 }

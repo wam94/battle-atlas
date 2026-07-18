@@ -1,0 +1,5 @@
+{
+  "description": "SoldierView seek-settle latency, iverson-forney-field 2560x1440p30 H.264 GOP30 full media",
+  "seeks": 12, "medianMs": 65.6, "worstMs": 107.3,
+  "latenciesMsSorted": [22.8, 27.5, 50.6, 54.6, 56.5, 57.3, 65.6, 75.7, 78.6, 83.7, 92.2, 107.3]
+}

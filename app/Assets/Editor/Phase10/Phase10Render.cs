@@ -404,7 +404,9 @@ namespace BattleAtlas.EditorTools
         // ------------------------------------------------------------------
         // Shared frame loop.
         // ------------------------------------------------------------------
-        // internal: reused by AngleV2Render (the v2 data-wave harness)
+        // internal: reused by AngleV2Render (the v2 data-wave harness) and
+        // by IversonProductionRender, which drives the same loop over the
+        // Oak Ridge staging (the site-parameterized P10 pattern)
         internal static float RenderFrames(
             AngleActionScene scene, RenderTexture rt, Texture2D tex,
             HeroCameraSettings settings, float viewT0,

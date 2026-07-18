@@ -1,0 +1,12 @@
+{
+  "viewpoint": "webb-wall",
+  "window": {"t0": 8160, "t1": 8820.5},
+  "coarsePairsChecked": 62110620,
+  "suspectWindowsRefined": 10757,
+  "crossingExitHandoffs": 10757,
+  "cameraFrames": 19815, "cameraMaxDeltaM": 0.0152,
+  "boundPerFrameM": 0.267, "crossExitBoundM": 1.567, "cameraBoundM": 0.150,
+  "violations": [],
+  "pass": true,
+  "sweepSeconds": 149
+}

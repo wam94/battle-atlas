@@ -46,6 +46,15 @@ namespace BattleAtlas
         // JsonUtility defaults an absent field to false = product viewpoint.
         public bool development;
 
+        // Cross-phase viewpoints (Iverson production slice): the battle
+        // asset whose clock and cast this viewpoint's t0/t1 and media
+        // address (e.g. "gettysburg-july1-afternoon"). Empty/absent = the
+        // viewpoint set's home asset (the scene's serialized battle — the
+        // pre-slice behavior, which every July 3 viewpoint keeps). Entry
+        // markers, the timeline band, and entry itself exist only while
+        // THIS phase is the loaded one (per-phase media honesty).
+        public string battleAsset;
+
         // Null when playable; otherwise a human-readable reason.
         public string Validate()
         {

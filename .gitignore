@@ -33,3 +33,13 @@ p10-audio-events-regen*.log
 # full-res map masters (Bachelder set + Elliott) are fetch-reproducible:
 # reconstruction/scripts/fetch_bachelder_maps.sh (manifest: reconstruction/spatial/bachelder-manifest.json)
 # (covered by the data/* rule above)
+app/webb-wall-seek-latency.json
+app/cushing-canister-seek-latency.json
+*-production-a*.log
+*-probe.log
+*-preflight.log
+*-determinism.log
+*-stills.log
+*-audio-events.log
+editmode-final.xml
+playmode-sync.xml

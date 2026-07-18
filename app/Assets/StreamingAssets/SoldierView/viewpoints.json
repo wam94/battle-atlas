@@ -11,7 +11,10 @@
       "camera": {
         "eyeHeightM": 1.66,
         "fovDeg": 68,
-        "lookOffsetDeg": [0, 0],
+        "lookOffsetDeg": [
+          0,
+          0
+        ],
         "stabilization": 0.35
       },
       "media": {
@@ -44,7 +47,10 @@
       "camera": {
         "eyeHeightM": 1.66,
         "fovDeg": 68,
-        "lookOffsetDeg": [0, 0],
+        "lookOffsetDeg": [
+          0,
+          0
+        ],
         "stabilization": 0.0
       },
       "media": {
@@ -64,12 +70,16 @@
       "unitId": "csa-12nc",
       "slotId": 184,
       "viewKind": "first_person",
+      "battleAsset": "gettysburg-july1-afternoon",
       "t0": 5830,
       "t1": 7040,
       "camera": {
         "eyeHeightM": 1.66,
         "fovDeg": 68,
-        "lookOffsetDeg": [0, 0],
+        "lookOffsetDeg": [
+          0,
+          0
+        ],
         "stabilization": 0.35
       },
       "media": {
@@ -89,7 +99,79 @@
         "claim-bx-volley",
         "claim-ct-flank-volley"
       ],
-      "editorialNote": "Representative unnamed soldier viewpoint; not an identified witness. DESIGN STAGE (second Soldier View film, Iverson's field, July 1 — media not yet rendered; owner gate pending): the observer rides formation slot 184 of the 12th North Carolina — rear rank, 28 m in from the regiment's left flank, on the brigade's sheltered right. The 12th is the regiment the record itself keeps standing (it 'held intact' under Lt. Col. Davis while the left three regiments died in line and surrendered), so the disclosed observer-survival exemption (ED-22 policy) coincides with a documented survival population instead of contradicting the destruction. IMPORTANT CLOCK NOTE: t0/t1 are seconds on the JULY 1 AFTERNOON phase clock (startTime 46800), not the July 3 clock — cross-phase entry wiring is follow-up scope with the production render. Slot 184 is excluded from procedural victim selection; the unit's casualty totals are unchanged."
+      "editorialNote": "Representative unnamed soldier viewpoint; not an identified witness. PRODUCTION (second Soldier View film, Iverson's field, July 1 — the design gate passed: 12th North Carolina observer, first person, window t=5830..7040, smoke model as reviewed): the observer rides formation slot 184 of the 12th North Carolina — rear rank, 28 m in from the regiment's left flank, on the brigade's sheltered right. The 12th is the regiment the record itself keeps standing (it 'held intact' under Lt. Col. Davis while the left three regiments died in line and surrendered), so the disclosed observer-survival exemption (ED-22 policy) coincides with a documented survival population instead of contradicting the destruction. CLOCK: t0/t1 are seconds on the JULY 1 AFTERNOON phase clock (startTime 46800); battleAsset gates entry to that loaded phase (per-phase media honesty). Slot 184 is excluded from procedural victim selection; the unit's casualty totals are unchanged. Render seed: ED-21 production pin at the reviewed bundle checksum (2f15dd2f…). The film ends at 14:57, before the surrender — the record's capture mass has no representation vocabulary yet, and the reconstruction does not fake it."
+    },
+    {
+      "id": "webb-wall",
+      "title": "With the Seventy-first Pennsylvania",
+      "unitId": "us-71pa",
+      "slotId": 230,
+      "viewKind": "first_person",
+      "t0": 8160,
+      "t1": 8820,
+      "camera": {
+        "eyeHeightM": 1.66,
+        "fovDeg": 68,
+        "lookOffsetDeg": [0, 0],
+        "stabilization": 0.35
+      },
+      "media": {
+        "proxy": "SoldierView/webb-wall.proxy.mp4",
+        "full": "SoldierView/webb-wall.full.mp4",
+        "fps": 30,
+        "width": 2560,
+        "height": 1440
+      },
+      "claimIds": [
+        "claim-webb-at-angle",
+        "claim-71pa-position",
+        "claim-strength-71pa",
+        "claim-webb-front-musketry",
+        "claim-71pa-fallback",
+        "claim-71pa-cushing-crews",
+        "claim-69pa-refused-flank",
+        "claim-72pa-crest",
+        "claim-cushing-canister",
+        "claim-armistead-crossed-wall",
+        "claim-cas-webb-total",
+        "claim-wall-structure"
+      ],
+      "editorialNote": "Representative unnamed soldier viewpoint; not an identified witness (ED-22). The defender's view — the plan's named webb-wall extension (OP-2): the observer rides formation slot 230 of the 71st Pennsylvania, the rear rank of file 73 (313 slots -> 157 files), just left of the regiment's center at the outer-angle wall, in the compiled gap between two of Cushing's pieces — the P9 rear-rank lesson applied so a forward-facing camera keeps the regiment's own front rank and the wall in frame while Pickett's line closes from the road to point-blank range. The receiving line also takes casualties (the compiled window costs the 71st 48 of 313); slot 230 is excluded from procedural victim selection so the viewpoint can witness its full window — another slot draws the fate the observer would have drawn, the unit's casualty totals are unchanged, and the exemption is disclosed here exactly as for every committed viewpoint. The observer follows the regiment's attested crisis fall-back from the wall and its return with the seal (claim-71pa-fallback) — his survival through the window coincides with the documented majority of the regiment (265 of 313 stand at window end)."
+    },
+    {
+      "id": "cushing-canister",
+      "title": "With Cushing's Battery",
+      "unitId": "us-btty-cushing",
+      "slotId": 44,
+      "viewKind": "first_person",
+      "t0": 8400,
+      "t1": 8760,
+      "camera": {
+        "eyeHeightM": 1.66,
+        "fovDeg": 68,
+        "lookOffsetDeg": [0, 0],
+        "stabilization": 0.35
+      },
+      "media": {
+        "proxy": "SoldierView/cushing-canister.proxy.mp4",
+        "full": "SoldierView/cushing-canister.full.mp4",
+        "fps": 30,
+        "width": 2560,
+        "height": 1440
+      },
+      "claimIds": [
+        "claim-cushing-position",
+        "claim-strength-cushing",
+        "claim-cushing-canister",
+        "claim-cushing-armament",
+        "claim-cushing-guns-to-wall",
+        "claim-71pa-cushing-crews",
+        "claim-cas-cushing-total",
+        "claim-cas-canister-gaps",
+        "claim-armistead-crossed-wall",
+        "claim-cushing-death"
+      ],
+      "editorialNote": "Representative unnamed crew viewpoint; not an identified witness (ED-22), and explicitly NOT Lieutenant Cushing (ED-3): no rendered figure in this battery asserts his identity, and his documented multi-wound death as the column closed (claim-cushing-death, canonical fatal shot ~t=8660) is a claim on the record, never assigned to a slot. The gun-crew view — the plan's named cushing-canister extension (OP-3): the observer rides slot 44 of Battery A, 4th U.S. Artillery — the rearmost serving position on the left of gun 2's eight-man crew, at the trail behind the piece — through the battery's compiled canister phase (fire_independent t=8400..8700) and into the overrun. A battery crew's own losses are light in this window (9 of 97 across the slice), so this viewpoint leans on tempo and mechanism — the crew serving the gun at drill spacing, double canister going out into a closing mass — rather than personal risk. Slot 44 is excluded from procedural victim selection; the battery's casualty totals are unchanged. Staging note (ED-16, recorded conflict): the compiled schedule works all six pieces at drill interval; Webb's three-guns-run-to-the-fence versus the corpus's two-serviceable-guns count rides claim-cushing-guns-to-wall unadjudicated."
     }
   ]
 }

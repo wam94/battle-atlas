@@ -35,11 +35,16 @@ BUNDLE_FORMAT = "angle-bundle/1"  # same schema version; site-specific path
 
 # ED-21 discipline for THIS bundle: the staging seed for every hash-drawn
 # decision (victim draws, step phase, yaw, waver) is a PINNED literal token,
-# so recompiles (including provenance-only ones) never re-roll the proof
-# choreography the owner reviews at the gate. The OWNER GATE re-pins this
-# (to the reviewed bundle's checksum, the Angle ED-21 convention) before
-# the production render is authorized.
-STAGING_SEED = "iverson-proof-seed/1"
+# so recompiles (including provenance-only ones) never re-roll the film's
+# choreography. PRODUCTION PIN (the Angle ED-21 convention): the owner gate
+# passed (iverson-viewpoint-design.md §8.5) and the seed is re-pinned to the
+# checksum of the bundle the owner reviewed at the gate — the fight-prone
+# merge's `2f15dd2f…` (design-gate proofs + fight-prone before/after
+# evidence). Moving it again is a deliberate editorial decision to be made
+# only when choreography content actually changes — never a recompile side
+# effect. (The gate-stage proof pin was `iverson-proof-seed/1`.)
+STAGING_SEED = (
+    "2f15dd2f4e5e399e9899de45e5606a5610309dfad503ff472edf5e2edb09bf43")
 
 # Fight-prone wiring (T5 vocabulary gap #1, CLOSED by the fight-prone-vocab
 # slice): a fire segment that carries claim-iv-lying-down ("my line of
@@ -221,8 +226,9 @@ def build_audit(corpus: vr.Corpus, bundle: dict) -> str:
     lines.append(f"- Units: {len(recon['units'])}  |  Segments: {len(recon['segments'])}  |  "
                  f"Casualty profiles: {len(recon['casualtyProfiles'])}")
     lines.append(f"- Bundle checksum: `{bundle['checksum']}`")
-    lines.append(f"- Staging seed (proof pin): `{bundle['stagingSeed']}` — the owner gate "
-                 f"re-pins per ED-21 before the production render")
+    lines.append(f"- Staging seed (ED-21 production pin): `{bundle['stagingSeed']}` — "
+                 f"pinned at the checksum of the bundle the owner reviewed at the "
+                 f"design gate; re-pinning is a deliberate editorial decision")
     lines.append("")
 
     lines.append("## Compiled-second provenance")

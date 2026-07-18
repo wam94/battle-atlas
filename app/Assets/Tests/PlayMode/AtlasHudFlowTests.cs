@@ -30,6 +30,11 @@ public class AtlasHudFlowTests
     Material material;
     int savedAck;
     bool hadAck;
+    int savedIvAck;
+    bool hadIvAck;
+
+    static string IversonAckKey =>
+        ContentWarningGate.KeyForViewpoint("iverson-forney-field");
 
     const string FixtureBattle = @"{
       ""name"": ""Test Battle (fixture)"",
@@ -95,6 +100,8 @@ public class AtlasHudFlowTests
     {
         hadAck = PlayerPrefs.HasKey(ContentWarningGate.PrefsKey);
         savedAck = PlayerPrefs.GetInt(ContentWarningGate.PrefsKey, 0);
+        hadIvAck = PlayerPrefs.HasKey(IversonAckKey);
+        savedIvAck = PlayerPrefs.GetInt(IversonAckKey, 0);
 
         cameraGo = new GameObject("TestCamera");
         cameraGo.tag = "MainCamera";
@@ -148,6 +155,8 @@ public class AtlasHudFlowTests
         Object.Destroy(material);
         if (hadAck) PlayerPrefs.SetInt(ContentWarningGate.PrefsKey, savedAck);
         else PlayerPrefs.DeleteKey(ContentWarningGate.PrefsKey);
+        if (hadIvAck) PlayerPrefs.SetInt(IversonAckKey, savedIvAck);
+        else PlayerPrefs.DeleteKey(IversonAckKey);
         PlayerPrefs.Save();
     }
 
@@ -200,6 +209,95 @@ public class AtlasHudFlowTests
         Assert.IsFalse(hud.WarningVisible, "acknowledged warning must not re-show");
         yield return WaitUntil(
             () => player.InSoldierView && !hud.Transitioning, "second enter");
+    }
+
+    // A fixture stand-in for the SECOND film's viewpoint: the real id
+    // (so the committed per-viewpoint warning override binds) and its
+    // cross-phase battleAsset, over the dev proxy so the flow runs
+    // without production media. Window rides the proxy's 8160..8170.
+    static ViewpointDefinition IversonFixtureViewpoint() =>
+        new ViewpointDefinition
+        {
+            id = "iverson-forney-field",
+            title = "With the Twelfth North Carolina (fixture window)",
+            unitId = "csa-garnett",
+            t0 = 8160,
+            t1 = 8170,
+            development = false,
+            battleAsset = "gettysburg-july1-afternoon",
+            editorialNote = "test fixture stand-in for the July 1 film",
+            claimIds = new string[0],
+            media = new ViewpointMedia
+            {
+                proxy = "SoldierView/dev-timecode.proxy.mp4",
+                full = null, fps = 30f, width = 1280, height = 720,
+            },
+        };
+
+    [UnityTest]
+    public IEnumerator IversonWarning_RendersInEntryFlow_WithItsOwnAcknowledgement()
+    {
+        RequireProxyOrIgnore();
+        // production shape: the July 1 afternoon phase is the loaded one
+        // and the film's viewpoint declares it home (battleAsset)
+        director.battleJson.name = "gettysburg-july1-afternoon";
+        var iv = IversonFixtureViewpoint();
+        hud.viewpoints = new ViewpointSet { viewpoints = new[] { iv } };
+        yield return null; // let Start run
+
+        // the Angle's warning was acknowledged long ago; the Iverson
+        // film's own warning must still surface before ITS first entry
+        PlayerPrefs.SetInt(ContentWarningGate.PrefsKey, 99);
+        PlayerPrefs.DeleteKey(IversonAckKey);
+        clock.CurrentTime = 8165f;
+
+        hud.RequestEnter(iv);
+        Assert.IsTrue(hud.WarningVisible,
+            "the per-viewpoint warning must gate the film's first entry "
+            + "even after the default warning was acknowledged");
+        Assert.IsFalse(player.InSoldierView);
+
+        // the modal carries the film's OWN authored text (the committed
+        // override, iverson-viewpoint-design.md §7), not the Angle's
+        var root = uiGo.GetComponent<UIDocument>().rootVisualElement;
+        var committed = ContentWarningDoc.FromJson(File.ReadAllText(
+            SoldierViewPlayer.MediaPath("SoldierView/content-warning.json")));
+        var ov = committed.OverrideFor("iverson-forney-field");
+        Assert.IsNotNull(ov, "committed content-warning.json must carry the override");
+        Assert.AreEqual(ov.warning.body, root.Q<Label>("warning-body").text);
+        StringAssert.Contains("Iverson's North Carolinians",
+            root.Q<Label>("warning-body").text);
+        StringAssert.Contains("12th North Carolina",
+            root.Q<Label>("observer-body").text);
+
+        hud.AcknowledgeWarning();
+        yield return WaitUntil(
+            () => player.InSoldierView && !hud.Transitioning,
+            "enter after acknowledging the film's warning");
+
+        // acknowledged under the film's own key; the default untouched
+        Assert.GreaterOrEqual(PlayerPrefs.GetInt(IversonAckKey, 0), 1);
+        Assert.AreEqual(99, PlayerPrefs.GetInt(ContentWarningGate.PrefsKey, 0));
+    }
+
+    [UnityTest]
+    public IEnumerator CrossPhaseViewpoint_IsRefusedOffItsOwnPhase()
+    {
+        // the July 1 film must not be enterable while July 3 is loaded
+        // (per-phase media honesty, per viewpoint)
+        director.battleJson.name = "gettysburg-july3";
+        var iv = IversonFixtureViewpoint();
+        hud.viewpoints = new ViewpointSet { viewpoints = new[] { iv } };
+        yield return null;
+        PlayerPrefs.DeleteKey(IversonAckKey);
+        clock.CurrentTime = 8165f;
+
+        hud.RequestEnter(iv);
+        yield return null;
+        Assert.IsFalse(hud.WarningVisible,
+            "no warning for a viewpoint whose phase is not loaded");
+        Assert.IsFalse(player.InSoldierView,
+            "entry must be refused off the viewpoint's home phase");
     }
 
     [UnityTest]

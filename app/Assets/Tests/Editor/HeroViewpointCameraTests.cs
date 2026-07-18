@@ -311,5 +311,11 @@ public class ViewpointObserversTests
         Assert.IsFalse(ViewpointObservers.IsProtected("us-69pa", 0));
         Assert.IsFalse(ViewpointObservers.IsProtected("csa-garnett", 184));
         Assert.IsTrue(ViewpointObservers.IsProtected("csa-garnett", 881));
+        // webb-wall / cushing-canister observers (this slice): exactly the
+        // committed slots, nothing else in their units
+        Assert.IsTrue(ViewpointObservers.IsProtected("us-71pa", 230));
+        Assert.IsFalse(ViewpointObservers.IsProtected("us-71pa", 0));
+        Assert.IsTrue(ViewpointObservers.IsProtected("us-btty-cushing", 44));
+        Assert.IsFalse(ViewpointObservers.IsProtected("us-btty-cushing", 0));
     }
 }

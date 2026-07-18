@@ -1,0 +1,14 @@
+{
+  "viewpointId": "iverson-forney-field",
+  "bundleChecksum": "ebb9e3b6095fa54bd047557f7320a8a5e5999c62219f2ee9b5df02b5713f7f9c",
+  "battleSeed": "2f15dd2f4e5e399e9899de45e5606a5610309dfad503ff472edf5e2edb09bf43",
+  "window": {"t0": 5830, "t1": 7040.5},
+  "coarsePairsChecked": 43441256,
+  "suspectWindowsRefined": 0,
+  "crossingExitHandoffs": 0,
+  "cameraFrames": 36315, "cameraMaxDeltaM": 0.0392,
+  "boundPerFrameM": 0.267, "crossExitBoundM": 1.567, "cameraBoundM": 0.150,
+  "violations": [],
+  "pass": true,
+  "sweepSeconds": 59
+}
