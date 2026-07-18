@@ -1,5 +1,11 @@
 # Iverson production render — `iverson-forney-field` (second Soldier View film)
 
+## RESUME STATE — CLOSED (slice complete 2026-07-18)
+
+Everything below was executed; the quiet-machine PlayMode re-run passed
+(23+1 of 24, zero failures) and the contract seek numbers are in §8.
+Retained for the record of the interrupted-and-resumed run.
+
 ## RESUME STATE (checkpoint 2026-07-17, owner-ordered pause)
 
 **DONE (all evidence committed/pushed on `iverson-production`):**
@@ -168,10 +174,25 @@ command). Local copies: `app/RenderOutput/iverson/` and staged in
 `IversonMediaSeekTests.SeekLatency_IversonFull1440pProductionMedia` —
 12 deterministic seeks across the full 20-minute 1440p stream (far
 jumps spanning ~1,200 GOPs, near jumps, sub-second nudges), every
-settle within one frame of the clock. Numbers: see §10 — the first
-pass ran while ANOTHER executor's production render saturated the
-machine and is reported as contended; the quiet-machine re-run is the
-contract measurement.
+settle landing within one frame of the battle clock (test-asserted).
+
+**Quiet-machine contract measurement (Apple M4 24 GB):
+median 65.6 ms, worst 107.3 ms**
+(`iverson-seek-latency.json`, committed). A contended first pass
+(another executor's production render saturating the machine) measured
+218.8/365.0 ms and is recorded only as a load data point, not contract
+evidence.
+
+**Owner attention — the P1 revisit trigger:** the media contract set
+"~3 frames (100 ms) on the lowest target Mac" as the threshold for
+switching to the proxy-frame seek-settle transition. This film's WORST
+seek is 107.3 ms on an M4 — already at the threshold on hardware far
+above the base-M1 floor (the 20-minute stream spans ~2× the Angle
+film's GOP count, and long jumps cost more). Median is comfortable
+(~2 frames), and the hold-last-frame behavior masks the settle, but a
+base-M1 measurement should be taken before this film's bitrate/GOP is
+declared locked; the player's proxy-fallback path (the designed
+mitigation) already exists if it exceeds the trigger there.
 
 ## 9. Content warning + cross-phase entry
 
@@ -201,14 +222,54 @@ now per viewpoint). The July 3 viewpoints are bit-untouched by the
 gate (no battleAsset = the set's home asset, exactly the old behavior).
 PlayMode: `CrossPhaseViewpoint_IsRefusedOffItsOwnPhase`.
 
-## 10. Suites
+## 10. Suites (floors in parentheses)
 
-TBD
+| suite | result |
+|---|---|
+| tool | **119** (119) |
+| pipeline | **66** (66) |
+| reconstruction | **162 + 1 skip** (159+1; +3: the ED-21 pin, the cross-phase viewpoint declaration, the warning-override ship test) |
+| Unity EditMode | **454 + 1 skip of 455** (448+1 of 449; +6 new tests — bundle pin, warning overrides ×4, per-viewpoint phase gate; the 1 skip is the terrain-material self-skip; the Angle-bake-conditional environment tests RAN — bake regenerated in the worktree) |
+| Unity PlayMode | **23 + 1 skip of 24** (20+1 of 21; +3 new tests — Iverson warning entry flow, cross-phase refusal, Iverson full-media seek battery, ALL RUN and passing against the real production media; the 1 skip is the garnett full-media seek test — that media is a release artifact absent from this worktree) |
+
+Quiet-machine PlayMode note: a first full pass taken while another
+executor's production render saturated the machine showed 2 failures in
+the PRE-EXISTING dev-proxy sync tests (drift/timeout under load); the
+quiet re-run passes everything — load-flakiness of timing-asserting
+tests, not code. Kept as `playmode-results.xml` (contended) vs
+`playmode-results-quiet.xml` in the worktree run logs.
 
 ## 11. Film-safety verdict
 
-TBD
+- `app/Assets/Battle/Angle/angle.bundle.json` — **byte-identical to
+  origin/main** (`git diff` names only the Iverson bundle under
+  `app/Assets/Battle/`); stagingSeed pin
+  `d470c4691d0de414534c4ecce93efd3a2fac74373d472899af8465df7e2f7ac1`
+  holds; `test_committed_bundle_matches_corpus` passes in the suite run.
+- **All six phase battle files** (`gettysburg-*.json`) + the July 3
+  bundle inputs — byte-identical to origin/main.
+- **Angle media** — untouched (not present in this worktree; nothing
+  staged over it; the garnett release artifacts are unaffected by this
+  branch).
+- **Iverson bundle** — changed EXACTLY as ordered: the ED-21 seed
+  re-pin (`stagingSeed` + `checksum` fields; every other top-level key
+  verified byte-identical to main's, §1). The render exposed **no data
+  defect**; nothing else was patched.
+- Shared-code changes are additive-defaulted: `battleAsset` (empty =
+  old behavior, all July 3 viewpoints bit-untouched by the gate),
+  warning overrides (absent = the existing single-warning flow, the
+  legacy ack key preserved), `ContentWarningGate` key parameter
+  (default = the legacy key), and two members made `internal` for
+  harness reuse (no behavior change).
 
-## 12. Stills index
+## 12. Stills index (`docs/benchmarks/captures/iverson-production/`)
 
-TBD
+| still | t | LMT | what it shows |
+|---|---|---|---|
+| `ivp-still-5840-advance.png` | 5840 | 14:37 | the final advance across Forney's open field, the wall line ahead |
+| `ivp-still-5990-volley.png` | 5990 | 14:39 | Baxter's massed volley opening (`fire_by_rank` at the 100-yard closure) |
+| `ivp-still-6100-destruction.png` | 6100 | 14:41 | the falling-curve casualty spike at peak, down-line frame-left |
+| `ivp-still-6600-prone-fight.png` | 6600 | 14:50 | the observer's 12th NC standing and firing while the left three regiments fight prone (the fight-prone vocabulary in production; Cutler's flank fire joined) |
+| `ivp-still-7040-end.png` | 7040 | 14:57 | the end state — the dead in the line the commanders described; the film ends before the surrender |
+
+Plus the determinism pairs (`iverson-det-{a,b}-{000000,000150,000299}.png`).
