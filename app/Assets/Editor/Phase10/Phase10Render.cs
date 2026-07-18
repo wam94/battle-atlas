@@ -404,7 +404,9 @@ namespace BattleAtlas.EditorTools
         // ------------------------------------------------------------------
         // Shared frame loop.
         // ------------------------------------------------------------------
-        static float RenderFrames(
+        // internal: IversonProductionRender drives the same loop over the
+        // Oak Ridge staging (the site-parameterized P10 pattern)
+        internal static float RenderFrames(
             AngleActionScene scene, RenderTexture rt, Texture2D tex,
             HeroCameraSettings settings, float viewT0,
             int frame0, int count, string dir, ref bool warmed,
@@ -716,7 +718,7 @@ namespace BattleAtlas.EditorTools
             return true;
         }
 
-        static void WriteChunkManifest(
+        internal static void WriteChunkManifest(
             string path, int chunk, int frame0, int count, float viewT0,
             Freeze freeze, float secondsPerFrame, long peakManagedMB)
         {

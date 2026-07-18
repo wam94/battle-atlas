@@ -220,6 +220,48 @@ separate full render of this pipeline:
 4. Ship as additional release artifacts; a Phase 12+ player can then
    select media by the setting.
 
+## The Iverson production render (second film — `iverson-forney-field`)
+
+The same pipeline, site-parameterized (`IversonProductionRender`, the
+P10 pattern per `iverson-viewpoint-design.md` §6): Oak Ridge crop,
+Iverson bundle, window t=5830..7040 (+0.5 s pad) = 36,315 frames in 21
+chunks. The ED-21 production seed pin (`2f15dd2f…`, the reviewed bundle
+checksum) is enforced by every entry point, by EditMode
+(`IversonBundleTests`), and by the reconstruction suite.
+
+```sh
+# inputs (adds the Oak Ridge crop to §1's Angle steps)
+cd pipeline
+uv run python -m terrain_pipeline.cli crop --x0 3350 --z0 7800 \
+  --x1 4350 --z1 8800 --out ../data/heightmap_oakridge
+uv run python -m terrain_pipeline.cli environment-oakridge
+
+# preflight + determinism pair (both hard-gate the render)
+"$UNITY" -batchmode -projectPath app -buildTarget OSXUniversal \
+  -executeMethod BattleAtlas.EditorTools.IversonProductionRender.Preflight \
+  -logFile iverson-preflight.log
+"$UNITY" ... IversonProductionRender.RenderDeterminismPair ...
+
+# the render (+ rolling harvester in a second terminal — the full PNG
+# scratch is ~116 GB; the harvester holds steady state at ~12 GB)
+scripts/iverson-render-loop.sh
+scripts/iverson-chunk-harvester.sh
+
+# audio + encode + manifest + stills
+"$UNITY" ... IversonProductionRender.ExportAudioEvents ...
+cd reconstruction && uv run python scripts/build_viewpoint_audio.py \
+  --events ../docs/benchmarks/captures/iverson-production/iverson-audio-events.json \
+  --out ../app/RenderOutput/iverson/stems-full --t0 5830 --t1 7040.5
+scripts/iverson-encode.sh
+python3 scripts/iverson-release-manifest.py
+"$UNITY" ... IversonProductionRender.RenderStills ...
+```
+
+Evidence: `docs/benchmarks/captures/iverson-production/`; measured
+numbers: `docs/reconstruction/iverson-production.md`. Owner publishes
+the media release (`iverson-release-manifest.json` carries the
+command); the executor never publishes.
+
 ## Cost controls (plan §3.5)
 
 Measured Phase 10 actuals live in the gate evidence. If a future

@@ -91,6 +91,9 @@ namespace BattleAtlas
         bool loggedViewpointsGated;
         ContentWarningDoc warningDoc;
         ContentWarningGate gate;
+        // per-viewpoint acknowledgement gates for warning overrides
+        // (created lazily; see GateFor)
+        Dictionary<string, ContentWarningGate> vpGates;
         CreditsManifest credits;
         bool creditsBuilt;
         // Phase 12 accessibility (plan §12 P12): persisted options and the
@@ -218,6 +221,14 @@ namespace BattleAtlas
         bool ViewpointsApply => director == null
             || HudModel.ViewpointsApplyTo(
                 viewpointsHomeAsset, director.BattleAssetName);
+
+        // Per-viewpoint phase gate (Iverson production slice): a viewpoint
+        // may declare its own home asset (vp.battleAsset — the July 1 film
+        // rides the July 1 afternoon clock); one without keeps the set's.
+        bool ViewpointApplies(ViewpointDefinition vp) => director == null
+            || HudModel.ViewpointsApplyTo(
+                HudModel.ViewpointHomeAsset(vp, viewpointsHomeAsset),
+                director.BattleAssetName);
 
         void LogViewpointGateIfChanged()
         {
@@ -439,18 +450,9 @@ namespace BattleAtlas
                 contextTitle.text = "";
                 contextConditions.text = "";
             }
-            if (warningDoc != null)
-            {
-                root.Q<Label>("warning-title").text = warningDoc.warning.title;
-                root.Q<Label>("warning-body").text = warningDoc.warning.body;
-                root.Q<Label>("observer-title").text =
-                    warningDoc.representativeObserver?.title ?? "";
-                root.Q<Label>("observer-body").text =
-                    warningDoc.representativeObserver?.body ?? "";
-                root.Q<Button>("warning-acknowledge").text =
-                    warningDoc.warning.acknowledgeLabel;
-                root.Q<Button>("warning-decline").text = warningDoc.warning.declineLabel;
-            }
+            // default warning text; RequestEnter re-binds per viewpoint
+            // before showing the modal (per-viewpoint warning overrides)
+            BindWarningTexts(null);
             BuildMomentMarkers();
             BuildDayTabs();
             root.Q<Button>("day-close").clicked += CloseDayPanel;
@@ -818,9 +820,9 @@ namespace BattleAtlas
 
         ViewpointDefinition FirstProductViewpoint()
         {
-            if (viewpoints?.viewpoints == null || !ViewpointsApply) return null;
+            if (viewpoints?.viewpoints == null) return null;
             foreach (ViewpointDefinition vp in viewpoints.viewpoints)
-                if (!vp.development)
+                if (!vp.development && ViewpointApplies(vp))
                     return vp;
             return null;
         }
@@ -923,7 +925,7 @@ namespace BattleAtlas
                 svSlider.SetValueWithoutNotify(clock.CurrentTime);
             if (warningDoc != null)
                 svObserverLine.text =
-                    warningDoc.representativeObserver?.shortLine ?? "";
+                    warningDoc.ObserverFor(vp?.id)?.shortLine ?? "";
         }
 
         bool SliderCaptured(Slider slider)
@@ -943,23 +945,15 @@ namespace BattleAtlas
         void UpdateEntryMarkers(bool inSv)
         {
             if (inSv || viewpoints?.viewpoints == null) return;
-            if (!ViewpointsApply)
-            {
-                // the loaded phase has no Soldier View media — no entry
-                // (per-phase honesty; only the home phase's clock matches
-                // the shipped film)
-                if (visibleMarkerIds.Count > 0)
-                {
-                    visibleMarkerIds.Clear();
-                    entryMarkers.Clear();
-                }
-                return;
-            }
+            // per-viewpoint phase honesty: a viewpoint's marker exists only
+            // while ITS phase is the loaded one (the set's home asset, or
+            // the viewpoint's own battleAsset for cross-phase films)
             // rebuild only when the visible set changes
             bool changed = false;
             int visible = 0;
             foreach (ViewpointDefinition vp in viewpoints.viewpoints)
             {
+                if (!ViewpointApplies(vp)) continue;
                 if (!HudModel.EntryMarkerVisible(vp, clock.CurrentTime)) continue;
                 if (visible >= visibleMarkerIds.Count
                     || visibleMarkerIds[visible] != vp.id) changed = true;
@@ -971,6 +965,7 @@ namespace BattleAtlas
             entryMarkers.Clear();
             foreach (ViewpointDefinition vp in viewpoints.viewpoints)
             {
+                if (!ViewpointApplies(vp)) continue;
                 if (!HudModel.EntryMarkerVisible(vp, clock.CurrentTime)) continue;
                 visibleMarkerIds.Add(vp.id);
                 ViewpointDefinition captured = vp;
@@ -1009,12 +1004,14 @@ namespace BattleAtlas
         {
             if (player == null || player.InSoldierView || transitioning
                 || switching) return;
-            if (!ViewpointsApply)
+            if (!ViewpointApplies(vp))
             {
                 // unreachable through the UI (markers are gated) but public
                 // callers get the honest refusal, not a wrong-clock film
                 ShowStatus("Soldier View unavailable: the shipped media "
-                    + $"addresses '{viewpointsHomeAsset}', not the loaded phase",
+                    + "addresses '"
+                    + HudModel.ViewpointHomeAsset(vp, viewpointsHomeAsset)
+                    + "', not the loaded phase",
                     StatusHoldSeconds);
                 return;
             }
@@ -1026,9 +1023,10 @@ namespace BattleAtlas
                     StatusHoldSeconds);
                 return;
             }
-            if (gate.NeedsAcknowledgement)
+            if (GateFor(vp).NeedsAcknowledgement)
             {
                 pendingEntry = vp;
+                BindWarningTexts(vp);
                 warningOpen = true;
                 modalLayer.style.display = DisplayStyle.Flex;
                 warningModal.style.display = DisplayStyle.Flex;
@@ -1037,10 +1035,45 @@ namespace BattleAtlas
             StartCoroutine(EnterRoutine(vp));
         }
 
+        // The acknowledgement gate for a viewpoint: a per-viewpoint warning
+        // override acknowledges under its own key + version (each film's
+        // warning surfaces before ITS first entry); viewpoints without an
+        // override share the default gate, exactly as before.
+        ContentWarningGate GateFor(ViewpointDefinition vp)
+        {
+            var ov = warningDoc?.OverrideFor(vp?.id);
+            if (ov == null) return gate;
+            vpGates ??= new Dictionary<string, ContentWarningGate>();
+            if (!vpGates.TryGetValue(ov.viewpointId, out var g))
+            {
+                g = new ContentWarningGate(new PlayerPrefsStore(), ov.version,
+                    ContentWarningGate.KeyForViewpoint(ov.viewpointId));
+                vpGates[ov.viewpointId] = g;
+            }
+            return g;
+        }
+
+        // Warning-modal text for a viewpoint (null = the default authored
+        // warning). Per-viewpoint films carry their own warning + observer
+        // note (iverson-viewpoint-design.md §7); wording is never composed
+        // in code.
+        void BindWarningTexts(ViewpointDefinition vp)
+        {
+            if (warningDoc == null) return;
+            var w = warningDoc.WarningFor(vp?.id);
+            var o = warningDoc.ObserverFor(vp?.id);
+            root.Q<Label>("warning-title").text = w.title;
+            root.Q<Label>("warning-body").text = w.body;
+            root.Q<Label>("observer-title").text = o?.title ?? "";
+            root.Q<Label>("observer-body").text = o?.body ?? "";
+            root.Q<Button>("warning-acknowledge").text = w.acknowledgeLabel;
+            root.Q<Button>("warning-decline").text = w.declineLabel;
+        }
+
         public void AcknowledgeWarning()
         {
             if (pendingEntry == null) { HideWarning(); return; }
-            gate.Acknowledge();
+            GateFor(pendingEntry).Acknowledge();
             ViewpointDefinition vp = pendingEntry;
             pendingEntry = null;
             HideWarning();

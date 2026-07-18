@@ -44,9 +44,10 @@ public class ViewpointDefinitionTests
         Assert.AreEqual(30f, vp.media.fps);
         Assert.IsNull(vp.Validate());
 
-        // The second film's design-stage viewpoint (Iverson's field).
+        // The second film's viewpoint (Iverson's field, production slice).
         // NOTE its t0/t1 ride the July 1 AFTERNOON phase clock (startTime
-        // 46800), not the July 3 clock — see its editorialNote.
+        // 46800), not the July 3 clock — battleAsset declares that home
+        // phase and gates entry to it (per-phase media honesty).
         var iv = set.viewpoints[2];
         Assert.AreEqual("iverson-forney-field", iv.id);
         Assert.AreEqual("csa-12nc", iv.unitId);
@@ -54,6 +55,10 @@ public class ViewpointDefinitionTests
         Assert.AreEqual(5830.0, iv.t0, 1e-9);
         Assert.AreEqual(7040.0, iv.t1, 1e-9);
         Assert.AreEqual(1.66f, iv.camera.eyeHeightM);
+        Assert.AreEqual("gettysburg-july1-afternoon", iv.battleAsset);
+        Assert.AreEqual("first_person", iv.viewKind);
+        Assert.IsTrue(iv.media.HasFull, "the production slice sets the full media path");
+        Assert.AreEqual("SoldierView/iverson-forney-field.full.mp4", iv.media.full);
         StringAssert.Contains("Representative unnamed soldier", iv.editorialNote);
         Assert.IsNull(iv.Validate());
 
@@ -91,6 +96,10 @@ public class ViewpointDefinitionTests
         StringAssert.Contains("NOT Lieutenant Cushing", cc.editorialNote);
         StringAssert.Contains("ED-3", cc.editorialNote);
         Assert.IsNull(cc.Validate());
+
+        // the July 3 viewpoints keep the set-home default (no battleAsset)
+        Assert.IsTrue(string.IsNullOrEmpty(hero.battleAsset));
+        Assert.IsTrue(string.IsNullOrEmpty(vp.battleAsset));
     }
 
     [Test]

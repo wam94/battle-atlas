@@ -84,7 +84,7 @@ namespace BattleAtlas.EditorTools
             if (Application.isBatchMode) EditorApplication.Exit(exitCode);
         }
 
-        static ViewpointDefinition LoadViewpoint()
+        internal static ViewpointDefinition LoadViewpoint()
         {
             string path = Path.Combine(
                 Application.streamingAssetsPath, "SoldierView/viewpoints.json");
@@ -95,7 +95,9 @@ namespace BattleAtlas.EditorTools
                 $"viewpoints.json has no {ViewpointId}");
         }
 
-        static (AngleActionScene scene, RenderTexture rt, Texture2D tex)
+        // internal: IversonProductionRender boots the same Oak Ridge
+        // staging (site + bundle are what distinguish this film's harness)
+        internal static (AngleActionScene scene, RenderTexture rt, Texture2D tex)
             Boot(out RenderPipelineAsset prevDefault,
                  out RenderPipelineAsset prevQuality, out object prevGlobal)
         {
@@ -326,7 +328,7 @@ namespace BattleAtlas.EditorTools
             }
         }
 
-        static string PoseDigest(
+        internal static string PoseDigest(
             AngleActionContext ctx, HeroCameraSettings settings, float t)
         {
             var p = HeroViewpointCamera.Pose(ctx, settings, t);
@@ -344,7 +346,11 @@ namespace BattleAtlas.EditorTools
         // Deterministic event export for the audio stem builder — the same
         // streams GateP9Render exports for the Angle, from the Iverson
         // bundle/site (no rendering needed).
-        static void AudioEventsInner()
+        static void AudioEventsInner() => WriteAudioEvents(OutDir);
+
+        // internal: the production render exports the same streams to its
+        // own evidence dir (the gate file stays the gate's evidence)
+        internal static void WriteAudioEvents(string outDir)
         {
             var vp = LoadViewpoint();
             float t0 = (float)vp.t0 - 6f, t1 = (float)vp.t1 + 1f;
@@ -585,8 +591,8 @@ namespace BattleAtlas.EditorTools
             }
             sb.Append("\n  ]\n}\n");
 
-            Directory.CreateDirectory(OutDir);
-            string outPath = Path.Combine(OutDir, "iverson-audio-events.json");
+            Directory.CreateDirectory(outDir);
+            string outPath = Path.Combine(outDir, "iverson-audio-events.json");
             File.WriteAllText(outPath, sb.ToString());
             Debug.Log($"IversonGateRender: wrote {outPath} " +
                 $"({discharges} musket discharges, {footfalls.Count} footfalls)");
